@@ -1,0 +1,55 @@
+---
+description: SpeedyCAT project map - Anki fork (MCAT) architecture, build commands, toolchain, and navigation guide
+alwaysApply: true
+---
+
+# SpeedyCAT: MCAT study app on Anki (desktop + mobile, one engine)
+
+Brownfield fork of Anki. One exam = **MCAT** (472-528, 4 sections 118-132). Two apps share **one Rust engine** and sync. See `Project Specs.pdf` and `brainlift.md` in the workspace root.
+
+## Hard spec constraints (don't violate)
+- Make a **real change in Anki's Rust code** (`anki/rslib`), not just Python screens. Add a protobuf message + call it from Python.
+- Show **three separate scores** (Memory / Performance / Readiness), each with a **range** + a **give-up rule** (refuse to score without enough data). Never show a bare readiness number.
+- Every AI output must trace to a **named source**, be checked vs a **held-out test set**, and beat a simpler baseline. Both apps must run with **AI off**.
+- License: **AGPL-3.0-or-later**, credit Anki.
+
+## Repos (both already cloned under the workspace)
+- `anki/` - desktop (upstream `ankitects/anki`). Rust + Python + TS.
+- `Anki-Android/` - phone (upstream `ankidroid/Anki-Android`). Kotlin; uses Anki's Rust engine via a prebuilt backend AAR.
+
+## anki/ architecture
+- `rslib/` - **core Rust engine** (scheduler/FSRS, collection, sync). The required Rust change goes here.
+- `pylib/` - Python lib wrapping Rust; `pylib/rsbridge/` is the Rust->Python bridge. `pylib/anki/` = `import anki`.
+- `qt/aqt/` - PyQt GUI (`import aqt`). Web UI in `ts/` (Svelte/TS), copied into `qt/aqt/data/web/` at build time.
+- `proto/anki/` - protobuf definitions; the Rust<->Python<->TS API. Adding a backend method = edit proto + rslib + regen.
+- Build system: `build/` (Rust), driven by `tools\ninja` (n2). Command runner: `justfile`.
+
+## Anki-Android/ architecture
+- Modules: `:AnkiDroid` (app), `:libanki`, `:anki-common`, `:api`, `:common`, `:compat` (see `settings.gradle.kts`).
+- Backend: by default uses prebuilt `io.github.david-allison:anki-android-backend` (see `gradle/libs.versions.toml` -> `ankiBackend`). **No NDK/Rust build needed** for stock builds.
+- To ship OUR Rust change to mobile: set `local_backend=true` in `local.properties` and build `rsdroid` from `Anki-Android-Backend` (needs NDK + Rust Android targets). Deferred until the Rust change exists.
+- App id (debug): `com.ichi2.anki.debug`. Flavors: `play` (default), `amazon`, `full`. compileSdk 36 / minSdk 24 / targetSdk 35 / AGP 9.0.1.
+
+## Build & run (verified on this Windows machine)
+Desktop (run from `anki/`; PATH must include `%USERPROFILE%\.cargo\bin` and `C:\msys64\usr\bin`):
+- Build: `tools\ninja pylib qt`  (or `just build`)
+- Run dev: `run.bat`  (or `just run`) - sets ANKIDEV, serves web at http://localhost:40000
+- Tests/checks: `just check`, `just test-rust`, `just test-py`, `just test-ts`
+- Installer (MSI): `tools\build-installer.bat`
+- **Windows link.exe fix (in `tools\ninja.bat`)**: it `call`s `vcvars64.bat` first so MSVC's `link.exe`/`cl.exe` beat msys2's `link.exe` (GNU coreutils `link`), which otherwise shadows the linker because `C:\msys64\usr\bin` is on PATH (for `rsync`) and breaks Rust MSVC linking ("link: extra operand"). `rsync` stays available (msys is still later on PATH).
+- Other Windows build-env fixes (this no-admin box): no Windows SDK is installed, so `ninja.bat` adds a `xwin`-fetched SDK from `out\winsdk\splat` (kernel32.lib/ucrt) to LIB/INCLUDE only when `WindowsSdkDir` is empty (self-deactivates if a real SDK is installed); `build/ninja_gen/build.rs` uses `manifest_optional` so a missing `rc.exe` warns instead of aborting; `build/ninja_gen/src/configure.rs` depends on `.git` only when it exists (this is a monorepo, no `anki/.git`). The `out\node_modules` junction must point at the populated `anki/node_modules`.
+
+Mobile (run from `Anki-Android/`; `JAVA_HOME` = Android Studio JBR):
+- Debug APK: `gradlew :AnkiDroid:assemblePlayDebug` -> `AnkiDroid/build/outputs/apk/play/debug/`
+- Install/run on emulator `speedrun_api36`: `adb install -r <apk>` then `adb shell monkey -p com.ichi2.anki.debug 1`
+
+## Toolchain locations (Windows)
+- Rust 1.92.0 (rustup), `cargo`/`n2`/`just` in `%USERPROFILE%\.cargo\bin`
+- MSVC: VS 2022 **Community** at `C:\Program Files\Microsoft Visual Studio\2022\Community` (NOT BuildTools; VS instance is unregistered so `vswhere` returns nothing). Windows SDK is **not installed** - a no-admin SDK is bundled via `xwin` in `anki\out\winsdk\splat`. rsync: `C:\msys64\usr\bin` (msys2). PowerShell 7 (pwsh) for `just`.
+- Android SDK: `%LOCALAPPDATA%\Android\Sdk` (platform 36, build-tools 36, cmdline-tools, emulator). JBR 21: `C:\Program Files\Android\Android Studio\jbr`. AVD: `speedrun_api36`.
+- Build prereqs/scripts live in `setup/`.
+
+## Navigating ~300k lines
+- Prefer semantic search and `explore` subagents over reading whole files; this repo is too big for one context window.
+- Canonical docs: `anki/docs/{architecture,development,build,windows}.md`, `anki/CLAUDE.md`, `anki/.cursor/rules/`, `Anki-Android/docs/`.
+- For cross-language flow (proto/IPC), check `anki/out/{pylib/anki,qt/_aqt,ts/lib/generated}` after a build.

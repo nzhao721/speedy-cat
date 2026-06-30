@@ -1,0 +1,44 @@
+# ============================================================
+# Speedrun unified repo .gitignore
+# Nested anki/.gitignore and Anki-Android/.gitignore still apply;
+# these top-level rules are belt-and-suspenders for the big outputs.
+# ============================================================
+
+# --- Desktop (anki) build outputs / caches ---
+anki/out/
+anki/node_modules/
+anki/target/
+anki/.yarn/
+anki/ts/.svelte-kit/
+anki/.n2_db
+anki/.ninja_log
+anki/.ninja_deps
+anki/anki.prof
+
+# --- Mobile (Anki-Android) build outputs / caches ---
+Anki-Android/build/
+Anki-Android/**/build/
+Anki-Android/.gradle/
+Anki-Android/.kotlin/
+Anki-Android/captures/
+# Machine-specific SDK path (recreate locally; see README/UPSTREAM.md)
+Anki-Android/local.properties
+
+# --- Python / type-check caches ---
+__pycache__/
+*.pyc
+.mypy_cache/
+.dmypy.json
+.complexipy_cache/
+.venv/
+
+# --- Setup logs / status (noisy, machine-specific; scripts are kept) ---
+setup/*.log
+setup/*.status
+
+# --- OS / editor clutter ---
+.DS_Store
+Thumbs.db
+*~
+# JetBrains / Android Studio IDE config & caches (machine-specific)
+.idea/

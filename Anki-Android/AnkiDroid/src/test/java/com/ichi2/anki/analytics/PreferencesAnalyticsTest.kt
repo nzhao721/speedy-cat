@@ -58,30 +58,23 @@ class PreferencesAnalyticsTest : RobolectricTest() {
             R.string.pref_accessibility_screen_key, // accessibilityScreen
             R.string.pref_custom_sync_server_screen_key, // customSyncServerScreen
             R.string.pref_app_bar_buttons_screen_key, // appBarButtonsScreen
-            R.string.pref_advanced_screen_key, // pref_screen_advanced
             R.string.pref_backups_screen_key, // backupsScreen
             R.string.pref_backups_help_key, // backups_help
             R.string.pref_review_reminders_screen_key, // reviewRemindersScreen
             R.string.pref_backup_limits_screen_key, // backupLimitsScreen
-            R.string.about_screen_key, // aboutScreen
             R.string.pref_switch_profile_screen_key, // switchProfileScreen
             // Categories: don't have a value
             R.string.study_screen_category_key, // studyScreenAppearance
             R.string.pref_appearance_screen_key, // appearance_preference_group
-            R.string.pref_cat_plugins_key, // category_plugins
-            R.string.pref_cat_workarounds_key, // category_workarounds
             R.string.pref_controls_tab_layout_key, // controlsTabLayout
             R.string.pref_review_category_key, // reviewsCategory
             // Preferences that only click: don't have a value
-            R.string.tts_key, // tts
-            R.string.pref_reset_languages_key, // resetLanguages
             R.string.pref_keyboard_shortcuts_key, // showKeyboardShortcuts
             R.string.search_preference_key, // searchPreference
             // Opens App Bar buttons fragment
             R.string.custom_buttons_link_preference, // custom_buttons_link
             // Opens Custom sync server fragment
             R.string.custom_sync_server_key, // custom_sync_server_link
-            R.string.thirdparty_apps_key, // thirdpartyapps_link
             // will be reworked in the future
             // Notify when
             R.string.pref_notifications_minimum_cards_due_key, // minimumCardsDueForNotification

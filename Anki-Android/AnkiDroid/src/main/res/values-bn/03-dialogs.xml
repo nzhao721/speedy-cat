@@ -39,12 +39,12 @@
         <item quantity="other">%d টি কার্ড রিসেট হয়েছে</item>
     </plurals>
     <string name="answering_error_title">ডাটাবেস ত্রুটি</string>
-    <string name="answering_error_message">Writing to the collection failed. The database could be corrupt or there may not to be enough empty space on disk.\n\nIf this happens more often, try checking the database, repairing the collection or restoring it from a backup. Touch “options” for that.\n\Or it could be an AnkiDroid bug as well; please report the error so that we can check this.</string>
+    <string name="answering_error_message">Writing to the collection failed. The database could be corrupt or there may not to be enough empty space on disk.\n\nIf this happens more often, try checking the database, repairing the collection or restoring it from a backup. Touch “options” for that.\n\Or it could be an SpeedyCAT bug as well; please report the error so that we can check this.</string>
     <string name="answering_error_report">ত্রুটি রিপোর্ট</string>
-    <string name="storage_full_message">There is not enough free storage space to open AnkiDroid. Free up some space to continue.</string>
+    <string name="storage_full_message">There is not enough free storage space to open SpeedyCAT. Free up some space to continue.</string>
     <string name="repair_deck_dialog">আপনি কি ডাটাবেস মেরামত করার চেষ্টা করার বিষয়ে নিশ্চিত?\n\nপ্রয়াস শুরু করার আগে, সাবফোল্ডার “%s”-এ একটি অনুলিপি তৈরি করা হবে।</string>
     <string name="intent_aedict_empty">বিভাগ \"ডিফল্ট\" খালি</string>
-    <string name="intent_aedict_category">AnkiDroid-এ কার্ড যোগ করতে নোটপ্যাডের সমস্ত বিভাগ সরিয়ে ফেলুন বা \"ডিফল্ট\" নামে একটি যোগ করুন।</string>
+    <string name="intent_aedict_category">SpeedyCAT-এ কার্ড যোগ করতে নোটপ্যাডের সমস্ত বিভাগ সরিয়ে ফেলুন বা \"ডিফল্ট\" নামে একটি যোগ করুন।</string>
     <string name="custom_study_new_extend">আজকের নতুন কার্ডের সীমা বাড়ান/কমান (“-3”)</string>
     <string name="custom_study_rev_extend">আজকের পর্যালোচনা সীমা বাড়ান/কমান (“-3”)</string>
     <string name="custom_study_forgotten">গত x দিনে ভুলে যাওয়া কার্ডগুলি পর্যালোচনা করুন:</string>
@@ -54,7 +54,7 @@
     <string name="storage_full_title">স্টোরেজ পূর্ণ</string>
     <string name="storage_almost_full_title">স্টোরেজ প্রায় পূর্ণ</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">No space</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">AnkiDroid needs %s free storage space to continue. Please clear some space</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">SpeedyCAT needs %s free storage space to continue. Please clear some space</string>
     <string name="restore_backup_title">ব্যাকআপ পুনরুদ্ধার করবেন?</string>
     <string name="restore_backup">Your collection will be replaced with an older copy. Any unsaved progress will be lost.</string>
     <string name="restore_backup_choose_another">অন্যটি বেছে নিন</string>
@@ -115,9 +115,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">ডাটাবেস লক করা আছে</string>
-    <string name="database_locked_summary">The AnkiDroid database is in use by another application. Please close the other application then reopen AnkiDroid.</string>
+    <string name="database_locked_summary">The SpeedyCAT database is in use by another application. Please close the other application then reopen SpeedyCAT.</string>
     <string name="incompatible_database_version_title">বেমানান ডাটাবেস সংস্করণ</string>
-    <string name="incompatible_database_version_summary">The database is a more advanced version than this version of AnkiDroid can work with. Upgrade AnkiDroid or downgrade the database to open it\n\nSupported version: %1$d\nDatabase version: %2$d\n\nThe following restore options will overwrite your current collection, possibly with a compatible database version:</string>
+    <string name="incompatible_database_version_summary">The database is a more advanced version than this version of SpeedyCAT can work with. Upgrade SpeedyCAT or downgrade the database to open it\n\nSupported version: %1$d\nDatabase version: %2$d\n\nThe following restore options will overwrite your current collection, possibly with a compatible database version:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">ব্যাকগ্রাউন্ড ইমেজ প্রয়োগ করা হয়েছে</string>
     <string name="background_image_removed">পটভূমির ছবি সরানো হয়েছে</string>
@@ -138,29 +138,29 @@
     <string name="locale_selection_dialog_title_new">ভাষা সেট করুন</string>
     <string name="locale_selection_dialog_summary">Some multilingual keyboards, such as GBoard support changing language when editing text\n\nPlease request the “setImeHintLocales” feature from your keyboard manufacturer if your keyboard does not change language.</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">AnkiDroid ব্যবহার করে</string>
-    <string name="help_item_ankidroid_manual">AnkiDroid ম্যানুয়াল</string>
-    <string name="help_item_anki_manual">Anki manual</string>
-    <string name="help_item_ankidroid_faq">AnkiDroid FAQ</string>
+    <string name="help_title_using_ankidroid">SpeedyCAT ব্যবহার করে</string>
+    <string name="help_item_ankidroid_manual">SpeedyCAT ম্যানুয়াল</string>
+    <string name="help_item_anki_manual">SpeedyCAT manual</string>
+    <string name="help_item_ankidroid_faq">SpeedyCAT FAQ</string>
     <string name="help_title_get_help">সাহায্য পান</string>
     <string name="help_item_mailing_list">মেইলিং তালিকা</string>
     <string name="help_item_reddit">রেডডিট</string>
     <string name="help_item_report_bug">একটি বাগ রিপোর্ট করুন</string>
-    <string name="help_title_support_ankidroid" maxLength="28">AnkiDroid সমর্থন করুন</string>
+    <string name="help_title_support_ankidroid" maxLength="28">SpeedyCAT সমর্থন করুন</string>
     <string name="help_item_support_opencollective_donate">দান</string>
     <string name="help_item_support_develop_ankidroid">বিকাশ</string>
     <string name="help_item_support_rate_ankidroid">হার</string>
     <string name="help_item_support_other_ankidroid">অন্যান্য</string>
     <string name="multimedia_editor_trans_translate">অনুবাদ করুন</string>
     <string name="help_title_community">সম্প্রদায়</string>
-    <string name="help_item_anki_forums">Anki forums</string>
+    <string name="help_item_anki_forums">SpeedyCAT forums</string>
     <string name="help_item_discord">Discord</string>
     <string name="help_item_facebook">ফেসবুক</string>
     <string name="help_item_twitter">টুইটার</string>
     <string name="help_title_privacy">গোপনীয়তা</string>
-    <string name="help_item_ankidroid_privacy_policy">AnkiDroid গোপনীয়তা নীতি</string>
-    <string name="help_item_ankiweb_privacy_policy">AnkiWeb গোপনীয়তা নীতি</string>
-    <string name="help_item_ankiweb_terms_and_conditions">AnkiWeb নিয়ম ও শর্তাবলী</string>
+    <string name="help_item_ankidroid_privacy_policy">SpeedyCAT গোপনীয়তা নীতি</string>
+    <string name="help_item_ankiweb_privacy_policy">SpeedyCAT গোপনীয়তা নীতি</string>
+    <string name="help_item_ankiweb_terms_and_conditions">SpeedyCAT নিয়ম ও শর্তাবলী</string>
     <string name="help_title_send_exception">একটি সমস্যা সমাধান প্রতিবেদন জমা দিন</string>
     <string name="help_dialog_exception_report_debounce">রিপোর্ট ইতিমধ্যে জমা দেওয়া হয়েছে</string>
     <string name="help_dialog_exception_report_sent">রিপোর্ট পাঠানো হয়েছে!</string>

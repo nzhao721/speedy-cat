@@ -39,12 +39,12 @@
         <item quantity="other">%d kártyák visszaállítva</item>
     </plurals>
     <string name="answering_error_title">Adatbázis hiba</string>
-    <string name="answering_error_message">A gyűjteménybe írás sikertelen. Az adatbázis lehet, hogy korrupt vagy nincs elég hely a lemezen.\n\n. Ha gyakrabban történik ilyen, akkor próbálja ellenőrizni az adatbázist, javítsa meg a gyűjteményt vagy állítsa azt vissza egy biztonsági másolatból. Ehhez nyomjon rá a \"beállításokra\".\n. Vagy lehet, hogy ez egy AnkiDroid bug; kérjük jelentse a hibát, hogy le tudjuk ellenőrizni.</string>
+    <string name="answering_error_message">A gyűjteménybe írás sikertelen. Az adatbázis lehet, hogy korrupt vagy nincs elég hely a lemezen.\n\n. Ha gyakrabban történik ilyen, akkor próbálja ellenőrizni az adatbázist, javítsa meg a gyűjteményt vagy állítsa azt vissza egy biztonsági másolatból. Ehhez nyomjon rá a \"beállításokra\".\n. Vagy lehet, hogy ez egy SpeedyCAT bug; kérjük jelentse a hibát, hogy le tudjuk ellenőrizni.</string>
     <string name="answering_error_report">Hibák jelentése</string>
-    <string name="storage_full_message">Nincs elég szabad tárhely az AnkiDroid megnyitásához. Szabadítson fel helyet a folytatáshoz.</string>
+    <string name="storage_full_message">Nincs elég szabad tárhely az SpeedyCAT megnyitásához. Szabadítson fel helyet a folytatáshoz.</string>
     <string name="repair_deck_dialog">Tényleg megpróbálod megjavítani az adatbázist?\n\nEnnek megkísérlése előtt a program létrehoz egy másolatot a \'%s\' almappában.</string>
     <string name="intent_aedict_empty">Az \"alap\" kategória üres</string>
-    <string name="intent_aedict_category">Hogy új kártyákat adj az AnkiDroid-hoz, távolítsd el az összes Jegyzettömb/Notepad/ kategóriát, vagy adj hozzá egyet \'default\' névvel</string>
+    <string name="intent_aedict_category">Hogy új kártyákat adj az SpeedyCAT-hoz, távolítsd el az összes Jegyzettömb/Notepad/ kategóriát, vagy adj hozzá egyet \'default\' névvel</string>
     <string name="custom_study_new_extend">Növeld/csökkentsd (\"-3\") a mai új kártyák korlátját</string>
     <string name="custom_study_rev_extend">Növeld/csökkentsd (\"-3\") a mai ismétlődő kártyák korlátját</string>
     <string name="custom_study_forgotten">Az elmúlt x napban elfelejtett kártyák ismétlése:</string>
@@ -54,7 +54,7 @@
     <string name="storage_full_title">Tárhely megtelt</string>
     <string name="storage_almost_full_title">Tárhely majdnem megtelt</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">Nincs hely</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">AnkiDroid-nak szüksége van %s szabad tárterületre a folytatáshoz. Szabadíts fel helyet, légyszíves!</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">SpeedyCAT-nak szüksége van %s szabad tárterületre a folytatáshoz. Szabadíts fel helyet, légyszíves!</string>
     <string name="restore_backup_title">Biztonsági mentés visszaállítása?</string>
     <string name="restore_backup">A gyűjteményed egy régi másolattal felül lesz írva. A nem mentett változások elvesznek.</string>
     <string name="restore_backup_choose_another">Válasszon másikat</string>
@@ -115,9 +115,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">Adatbázis zárolva</string>
-    <string name="database_locked_summary">Az AnkiDroid adatbázist egy másik alkalmazás használja. Kérjük zárja be ezt az alkalmazást, majd nyissa meg újra az AnkiDroidot.</string>
+    <string name="database_locked_summary">Az SpeedyCAT adatbázist egy másik alkalmazás használja. Kérjük zárja be ezt az alkalmazást, majd nyissa meg újra az SpeedyCATot.</string>
     <string name="incompatible_database_version_title">Nem megfelelő adatbázis verzió</string>
-    <string name="incompatible_database_version_summary">Az adatbázis verziója fejlettebb, mint amit az AnkiDroid ezen verziója támogat. Frissítsd az AnkiDroid-ot vagy válts egy régebbi adatbázis verzióra.\n\nTámogatott verzió: %1$d\nAdatbázis verziója: %2$d\n\nA következő visszaállítási opciók felülírják a jelenlegi gyűjteményt, lehetőleg egy támogatott adatbázis verzióra:</string>
+    <string name="incompatible_database_version_summary">Az adatbázis verziója fejlettebb, mint amit az SpeedyCAT ezen verziója támogat. Frissítsd az SpeedyCAT-ot vagy válts egy régebbi adatbázis verzióra.\n\nTámogatott verzió: %1$d\nAdatbázis verziója: %2$d\n\nA következő visszaállítási opciók felülírják a jelenlegi gyűjteményt, lehetőleg egy támogatott adatbázis verzióra:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">Háttérkép ráillesztve</string>
     <string name="background_image_removed">Háttérkép eltávolítva</string>
@@ -138,29 +138,29 @@
     <string name="locale_selection_dialog_title_new">Nyelv kiválasztása</string>
     <string name="locale_selection_dialog_summary">Néhány többnyelvű billentyűzet, mint a GBoard, támogatja a nyelv váltás szöveg bevitel közben\n\nKérd meg  a billentyűzet gyártóját, hogy engedélyezze a “setImeHintLocales” tulajdonságot, ha a billentyűzete nem vált nyelvet.</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">AnkiDroid használata</string>
-    <string name="help_item_ankidroid_manual">AnkiDroid útmutató</string>
-    <string name="help_item_anki_manual">Anki útmutató</string>
-    <string name="help_item_ankidroid_faq">AnkiDroid GYIK</string>
+    <string name="help_title_using_ankidroid">SpeedyCAT használata</string>
+    <string name="help_item_ankidroid_manual">SpeedyCAT útmutató</string>
+    <string name="help_item_anki_manual">SpeedyCAT útmutató</string>
+    <string name="help_item_ankidroid_faq">SpeedyCAT GYIK</string>
     <string name="help_title_get_help">Kérj segítséget</string>
     <string name="help_item_mailing_list">Levelezőlista</string>
     <string name="help_item_reddit">Reddit</string>
     <string name="help_item_report_bug">Hiba jelentése</string>
-    <string name="help_title_support_ankidroid" maxLength="28">AnkiDroid támogatása</string>
+    <string name="help_title_support_ankidroid" maxLength="28">SpeedyCAT támogatása</string>
     <string name="help_item_support_opencollective_donate">Adományozás</string>
     <string name="help_item_support_develop_ankidroid">Feljesztés</string>
     <string name="help_item_support_rate_ankidroid">Értékelés</string>
     <string name="help_item_support_other_ankidroid">Egyéb</string>
     <string name="multimedia_editor_trans_translate">Fordítás</string>
     <string name="help_title_community">Közösség</string>
-    <string name="help_item_anki_forums">Anki fórumok</string>
+    <string name="help_item_anki_forums">SpeedyCAT fórumok</string>
     <string name="help_item_discord">Discord</string>
     <string name="help_item_facebook">Facebook</string>
     <string name="help_item_twitter">Twitter</string>
     <string name="help_title_privacy">Adatvédelem</string>
-    <string name="help_item_ankidroid_privacy_policy">AnkiDroid privacy policy</string>
-    <string name="help_item_ankiweb_privacy_policy">AnkiWeb privacy policy</string>
-    <string name="help_item_ankiweb_terms_and_conditions">AnkiWeb terms and conditions</string>
+    <string name="help_item_ankidroid_privacy_policy">SpeedyCAT privacy policy</string>
+    <string name="help_item_ankiweb_privacy_policy">SpeedyCAT privacy policy</string>
+    <string name="help_item_ankiweb_terms_and_conditions">SpeedyCAT terms and conditions</string>
     <string name="help_title_send_exception">Hibajelentés küldése</string>
     <string name="help_dialog_exception_report_debounce">A jelentést már elküldte</string>
     <string name="help_dialog_exception_report_sent">Report was sent!</string>

@@ -117,7 +117,7 @@
     <plurals name="in_minutes">
         <item quantity="other">%1$d phút</item>
     </plurals>
-    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">Thẻ AnkiDroid</string>
+    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">Thẻ SpeedyCAT</string>
     <string name="note_editor_copy_note" maxLength="28">Sao chép ghi chú</string>
     <string name="card_editor_reposition_card" comment="reposition a card in the new queue" maxLength="28">Đặt lại vị trí</string>
     <string name="card_editor_reset_card" maxLength="28">Thiết lập lại quá trình học</string>
@@ -129,31 +129,31 @@
     <string name="checks_action" maxLength="28">Kiểm tra</string>
     <string name="unknown_type_field_warning">Gõ đáp án: trường lạ %s</string>
     <string name="delete_deck" comment="Message on a progress bar starting a deck is being deleted.">Đang xoá bộ thẻ&#8230;</string>
-    <string name="info_rate">Đánh giá AnkiDroid</string>
+    <string name="info_rate">Đánh giá SpeedyCAT</string>
     <string name="import_title">Đang nhập</string>
     <string name="import_preparing_file">Đang chuẩn bị tệp tin để nhập vào&#8230;</string>
     <string name="import_message_add" comment="Adding a new deck to the collection (import)">Thêm</string>
     <string name="import_message_replace_confirm">Thao tác này sẽ xoá tất cả bộ sưu tập hiện hữu và thay nó bằng dữ liệu của tệp %s</string>
     <string name="import_dialog_message_add">Thêm “%s” vào bộ sưu tập? Việc này có thể mất nhiều thời gian</string>
-    <string name="import_log_no_apkg">Đây không phải là gói tệp tin Anki hợp lệ</string>
+    <string name="import_log_no_apkg">Đây không phải là gói tệp tin SpeedyCAT hợp lệ</string>
     <string name="import_title_error" comment="Title of error dialog">Lỗi</string>
     <string name="import_error_handle_exception">Không thể nhập tệp\n\n%s</string>
     <string name="import_error_not_apkg_extension">Tên file \"%s\" không chứa định dạng .apkg hoặc .colpkg</string>
-    <string name="import_error_load_imported_database">Cơ sở dữ liệu Anki (.anki2) thay thế chưa được hỗ trợ. Vui lòng xem sách hướng dẫn để biết hướng dẫn thay thế.</string>
-    <string name="import_error_content_provider">Tệp đã chọn không thể được nhập tự động bởi AnkiDroid. Xin xem hướng dẫn sử dụng để biết cách nhập thủ công tệp Anki: \n%s</string>
+    <string name="import_error_load_imported_database">Cơ sở dữ liệu SpeedyCAT (.anki2) thay thế chưa được hỗ trợ. Vui lòng xem sách hướng dẫn để biết hướng dẫn thay thế.</string>
+    <string name="import_error_content_provider">Tệp đã chọn không thể được nhập tự động bởi SpeedyCAT. Xin xem hướng dẫn sử dụng để biết cách nhập thủ công tệp SpeedyCAT: \n%s</string>
     <string name="import_error_copy_to_cache_title">Không thể lưu tệp vào bộ nhớ đệm</string>
     <string name="import_error_copy_to_cache_explanation" comment="The substitution is a list of suggested fixes in bullet point form">This is often caused by a bug in the app you used to select the file. Please try the following fixes:\n\n%s</string>
-    <string name="import_interrupted">Nhập dữ liệu bị gián đoạn: AnkiDroid đã bị đóng</string>
+    <string name="import_interrupted">Nhập dữ liệu bị gián đoạn: SpeedyCAT đã bị đóng</string>
     <string name="export_ready_title">Trích xuất sẵn sàng</string>
     <string name="export_send_no_handlers">Không có ứng dụng nào khả dụng để xử lý apkg. Đang lưu&#8230;</string>
-    <string name="export_save_apkg_successful">Lưu gói Anki thành công</string>
-    <string name="export_save_apkg_unsuccessful">Lưu gói Anki thất bại</string>
-    <string name="export_share_title">Gửi gói Anki đang dùng</string>
-    <string name="export_email_subject">AnkiDroid đã kết xuất các thẻ ghi nhớ: %s</string>
+    <string name="export_save_apkg_successful">Lưu gói SpeedyCAT thành công</string>
+    <string name="export_save_apkg_unsuccessful">Lưu gói SpeedyCAT thất bại</string>
+    <string name="export_share_title">Gửi gói SpeedyCAT đang dùng</string>
+    <string name="export_email_subject">SpeedyCAT đã kết xuất các thẻ ghi nhớ: %s</string>
     <string name="export_email_text"><![CDATA[        Xin chào!
         <br/><br/>
-        Đây là bộ thẻ ghi nhớ Anki được gửi từ AnkiDroid[1].
-        Hãy thử mở nó bằng một trong những bản phát hành Anki[2] và tận hưởng việc học dễ dàng và hiệu quả!<br/><br/>
+        Đây là bộ thẻ ghi nhớ SpeedyCAT được gửi từ SpeedyCAT[1].
+        Hãy thử mở nó bằng một trong những bản phát hành SpeedyCAT[2] và tận hưởng việc học dễ dàng và hiệu quả!<br/><br/>
         [1]%1$s<br/>
         [2]%2$s
         ]]></string>
@@ -189,18 +189,18 @@
     <string name="white_board_eraser_disabled">Đã tắt tẩy</string>
     <string comment="Progress amount e.g. \'28 MB/141 MB\'. %1$s is the current amount, %2$s is the max." name="progress_amount_bytes">%1$s/%2$s</string>
     <string name="media_file_size_warning_title">Media too large</string>
-    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">Tệp \"%1$s\" (%2$s) vượt quá giới hạn %3$s của AnkiWeb và không thể đồng bộ. Vẫn thêm vào?</string>
+    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">Tệp \"%1$s\" (%2$s) vượt quá giới hạn %3$s của SpeedyCAT và không thể đồng bộ. Vẫn thêm vào?</string>
     <string name="media_file_size_add_anyway">Vẫn thêm</string>
     <!-- Whiteboard save image message in the Study Screen -->
     <string name="white_board_image_save_failed">Không thể lưu hình ảnh bảng trắng. %s</string>
     <string name="white_board_image_saved">Hình ảnh bảng trắng được lưu vào %s</string>
     <string name="title_whiteboard_editor" maxLength="28">Trình chỉnh sửa bảng trắng</string>
-    <string name="user_is_a_robot">Đã phát hiện kiểm tra tự động. Nếu bạn là con người, hãy liên hệ với bộ phận hỗ trợ AnkiDroid</string>
+    <string name="user_is_a_robot">Đã phát hiện kiểm tra tự động. Nếu bạn là con người, hãy liên hệ với bộ phận hỗ trợ SpeedyCAT</string>
     <!-- JS api -->
-    <string name="api_version_developer_contact">Thẻ này sử dụng các tính năng AnkiDroid không được hỗ trợ. Liên hệ với nhà phát triển %1$s%1$s hoặc xem wiki. %2$s</string>
+    <string name="api_version_developer_contact">Thẻ này sử dụng các tính năng SpeedyCAT không được hỗ trợ. Liên hệ với nhà phát triển %1$s%1$s hoặc xem wiki. %2$s</string>
     <string name="invalid_json_data">Dữ liệu thẻ không hợp lệ. %s</string>
-    <string name="valid_js_api_version">Phiên bản API AnkiDroid JS không hợp lệ. Liên hệ với nhà phát triển %s hoặc xem wiki</string>
-    <string name="update_js_api_version">Đã có bản cập nhật AnkiDroid JS API. Liên hệ với nhà phát triển %s hoặc xem wiki</string>
+    <string name="valid_js_api_version">Phiên bản API SpeedyCAT JS không hợp lệ. Liên hệ với nhà phát triển %s hoặc xem wiki</string>
+    <string name="update_js_api_version">Đã có bản cập nhật SpeedyCAT JS API. Liên hệ với nhà phát triển %s hoặc xem wiki</string>
     <string name="reviewer_invalid_api_version_visit_documentation">Hiển thị</string>
     <string name="anki_js_error_code">(Error code: %d)</string>
     <!-- About AnkiDroid screen -->
@@ -211,8 +211,8 @@
     <!-- Deck Picker -->
     <string name="search_decks" maxLength="28">Tìm kiếm bộ thẻ</string>
     <string name="ankidroid_init_failed_webview_title">Fatal error</string>
-    <string name="ankidroid_init_failed_webview">AnkiDroid dựa trên WebView hệ thống không khả dụng. Điều này có thể xảy ra nếu hệ thống đang cài đặt các bản cập nhật. Vui lòng thử lại sau vài phút.\n\n%s</string>
-    <string name="ankidroid_init_failed_storage">AnkiDroid cannot access storage due to an Android error.\n\n%s</string>
+    <string name="ankidroid_init_failed_webview">SpeedyCAT dựa trên WebView hệ thống không khả dụng. Điều này có thể xảy ra nếu hệ thống đang cài đặt các bản cập nhật. Vui lòng thử lại sau vài phút.\n\n%s</string>
+    <string name="ankidroid_init_failed_storage">SpeedyCAT cannot access storage due to an Android error.\n\n%s</string>
     <!-- A Menu item to change the Font Size (currently in the Note Editor) -->
     <string name="menu_font_size" maxLength="28">Cỡ chữ</string>
     <string name="menu_show_toolbar" comment="Checkable item stating whether the note editor toolbar should be shown" maxLength="28">Hiển thị thanh công cụ</string>
@@ -234,9 +234,9 @@
     <string name="note_editor_video_too_large">Tập tin video quá lớn, vui lòng chèn video theo cách thủ công</string>
     <string name="note_editor_audio_too_large">Tệp âm thanh quá lớn, vui lòng chèn âm thanh thủ công</string>
     <string name="ankidroid_cannot_open_after_backup_try_again" comment="After an Android backup is restored, AnkiDroid opens and shows this message.         Opening AnkiDroid again will work correctly">Android đang sao lưu. Vui lòng thử lại sau</string>
-    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Bạn có thể cần sử dụng iManager để cho phép AnkiDroid thêm phím tắt</string>
+    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Bạn có thể cần sử dụng iManager để cho phép SpeedyCAT thêm phím tắt</string>
     <string name="create_shortcut_error_miui" comment="Keep the message as short, as this is shown in a toast. %s is the app name: \'AnkiDroid\'">Allow ‘Home screen shortcuts’ in system settings for %s to add shortcuts</string>
-    <string name="create_shortcut_failed" comment="home screen == launcher">Màn hình chính của bạn không cho phép AnkiDroid thêm phím tắt</string>
+    <string name="create_shortcut_failed" comment="home screen == launcher">Màn hình chính của bạn không cho phép SpeedyCAT thêm phím tắt</string>
     <string name="create_shortcut_error">Không thể thêm shortcut: %s</string>
     <string name="note_editor_capitalize" comment="This is for a switch with a checkbox - on: enabled" maxLength="28">Viết hoa các câu</string>
     <string name="menu_scroll_toolbar" comment="Checkbox stating whether note editor toolbar is scrollable or stacked. Checked: Scroll" maxLength="28">Scroll toolbar</string>
@@ -295,11 +295,11 @@
     <!-- App Intro -->
     <string name="intro_ankidroid_tagline_one">Học ít</string>
     <string name="intro_ankidroid_tagline_two">Nhớ nhiều hơn</string>
-    <string name="intro_short_ankidroid_explanation">Trình lập lịch thẻ Anki giúp bạn học hiệu quả hơn bằng cách tập trung vào những kiến thức bạn còn chưa vững và ghi nhớ những kiến thức bạn đã nắm vững</string>
+    <string name="intro_short_ankidroid_explanation">Trình lập lịch thẻ SpeedyCAT giúp bạn học hiệu quả hơn bằng cách tập trung vào những kiến thức bạn còn chưa vững và ghi nhớ những kiến thức bạn đã nắm vững</string>
     <string name="intro_get_started" comment="Action to start AnkiDroid for the first time without syncing from AnkiWeb">Get started</string>
-    <string name="intro_sync_from_ankiweb">Đồng bộ từ AnkiWeb</string>
+    <string name="intro_sync_from_ankiweb">Đồng bộ từ SpeedyCAT</string>
     <!-- IntentHandler -->
-    <string name="app_not_initialized_new">AnkiDroid chưa được khởi tạo. Vui lòng mở AnkiDroid và thử lại</string>
+    <string name="app_not_initialized_new">SpeedyCAT chưa được khởi tạo. Vui lòng mở SpeedyCAT và thử lại</string>
     <!-- Deck Creation -->
     <string name="deck_created">Đã tạo bộ thẻ</string>
     <string name="deck_renamed">Đã đổi tên bộ thẻ</string>

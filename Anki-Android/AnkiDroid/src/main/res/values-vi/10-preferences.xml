@@ -61,7 +61,7 @@
     <string name="card_browser_font_size" maxLength="41">Thẻ trình duyệt font rộng</string>
     <string name="card_browser_hide_media" maxLength="41">Hiển thị tên tệp trong trình duyệt thẻ</string>
     <string name="card_browser_hide_media_summary">Display audio filenames in the card browser question/answer fields</string>
-    <string name="col_path" maxLength="41">Thư mục AnkiDroid</string>
+    <string name="col_path" maxLength="41">Thư mục SpeedyCAT</string>
     <string name="fullscreen_review" maxLength="41">Chế độ toàn màn hình</string>
     <string name="full_screen_off">Tắt</string>
     <string name="full_screen_system">Ẩn các thanh hệ thống</string>
@@ -164,8 +164,8 @@
     </plurals>
     <string name="pref_keep_screen_on" maxLength="41">Luôn bật màn hình</string>
     <string name="pref_keep_screen_on_summ">Tắt thời gian chờ của màn hình</string>
-    <string name="enable_api_title" maxLength="41">Bật AnkiDroid API</string>
-    <string name="enable_api_summary">Cho phép các ứng dụng khác kết nối với AnkiDroid và đọc / ghi dữ liệu mà không cần sự can thiệp của bạn</string>
+    <string name="enable_api_title" maxLength="41">Bật SpeedyCAT API</string>
+    <string name="enable_api_summary">Cho phép các ứng dụng khác kết nối với SpeedyCAT và đọc / ghi dữ liệu mà không cần sự can thiệp của bạn</string>
     <string name="custom_buttons" maxLength="41">Các nút trên thanh ứng dụng</string>
     <string name="custom_buttons_summary">Tùy chỉnh những hành động nào xuất hiện trên thanh ứng dụng</string>
     <string name="custom_buttons_setting_always_show">Luôn luôn hiển thị</string>
@@ -175,7 +175,7 @@
     <string name="reset_settings_to_default">Thiết lập lại cài đặt gốc</string>
     <string name="reset">Thiết lập lại</string>
     <string name="thirdparty_apps_title" maxLength="41">Ứng dụng API của bên thứ ba</string>
-    <string name="thirdparty_apps_summary">Xem danh sách các ứng dụng sử dụng AnkiDroid API như từ điển, tiện ích.</string>
+    <string name="thirdparty_apps_summary">Xem danh sách các ứng dụng sử dụng SpeedyCAT API như từ điển, tiện ích.</string>
     <string name="pref_controls_reviews_tab" maxLength="41" comment="Name of the tab to configure controls for the reviews screen">Reviews</string>
     <string name="pref_controls_previews_tab" maxLength="41" comment="Name of the tab to configure controls for the previews screen">Xem trước</string>
     <string name="toggle_backside_only" maxLength="41" comment="Control setting that toggles \'Backside only\' in the previews screen">Toggle backside only</string>
@@ -191,9 +191,9 @@
     <!-- Custom sync server settings -->
     <string name="custom_sync_server_title" maxLength="41">Máy chủ đồng bộ hóa tùy chỉnh</string>
     <string name="custom_sync_server_summary_none_of_the_two_servers_used" comment="This summary is shown when neither of the two custom sync servers are used,         which is the default.">Chưa được sử dụng</string>
-    <string name="custom_sync_server_help2"><![CDATA[Là một giải pháp thay thế cho việc đồng bộ hóa với AnkiWeb,
+    <string name="custom_sync_server_help2"><![CDATA[Là một giải pháp thay thế cho việc đồng bộ hóa với SpeedyCAT,
          bạn có thể sử dụng máy chủ của riêng mình để đồng bộ hóa.
-         Nếu không được thiết lập, máy chủ AnkiWeb mặc định sẽ được sử dụng thay thế.
+         Nếu không được thiết lập, máy chủ SpeedyCAT mặc định sẽ được sử dụng thay thế.
          <a href="%s">Tìm hiểu thêm</a>]]></string>
     <string name="custom_sync_server_base_url_title" maxLength="41">Sync URL</string>
     <string name="custom_sync_certificate_title" maxLength="41">Chứng chỉ gốc tùy chỉnh (PEM)</string>
@@ -217,9 +217,9 @@
     <string name="deck_conf_general" maxLength="41" comment="Label of the submenu for the general options of new deck">Chung</string>
     <string name="deck_conf_cram_search" maxLength="41" comment="Label of a text field that contains a search query.">Tìm</string>
     <!-- analytics options -->
-    <string name="analytics_dialog_title">Giúp cải thiện AnkiDroid!</string>
+    <string name="analytics_dialog_title">Giúp cải thiện SpeedyCAT!</string>
     <string name="analytics_title" maxLength="41">Chia sẻ việc sử dụng tính năng</string>
-    <string name="analytics_summ">Bạn có thể đóng góp cho AnkiDroid bằng cách giúp nhóm phát triển xem mọi người sử dụng những tính năng nào</string>
+    <string name="analytics_summ">Bạn có thể đóng góp cho SpeedyCAT bằng cách giúp nhóm phát triển xem mọi người sử dụng những tính năng nào</string>
     <string name="note_editor_replace_newlines" maxLength="41">Thay thế dòng mới bằng HTML</string>
     <string name="note_editor_replace_newlines_summ">Trong Trình chỉnh sửa ghi chú, chuyển đổi thẻ &lt;br&gt; thành dòng mới khi chỉnh sửa thẻ.</string>
     <string name="type_in_answer_focus" maxLength="41">Tập trung \'Nhập câu trả lời\'</string>
@@ -228,11 +228,11 @@
     <string name="open_changelog">Mở nhật ký thay đổi</string>
     <string name="pref_cat_about_title" maxLength="41">Giới thiệu</string>
     <string name="contributors_title">Những người đóng góp</string>
-    <string name="about_contributors_description"><![CDATA[Đây là <a href=\"%1$s\">cộng tác viên tuyệt vời của chúng tôi</a>. Bạn có thể hỗ trợ AnkiDroid bằng cách lập trình, dịch thuật, quyên góp và <a href=\"%2$s\">hơn thế nữa</a>!]]></string>
+    <string name="about_contributors_description"><![CDATA[Đây là <a href=\"%1$s\">cộng tác viên tuyệt vời của chúng tôi</a>. Bạn có thể hỗ trợ SpeedyCAT bằng cách lập trình, dịch thuật, quyên góp và <a href=\"%2$s\">hơn thế nữa</a>!]]></string>
     <string name="license">Giấy phép</string>
-    <string name="license_description"><![CDATA[AnkiDroid được phát hành theo giấy phép <a href=\"%1$s\">GPL-3.0</a> và <a href=\"%2$s\">AGPL-3.0</a>, với mã nguồn có sẵn <a href=\"%3$s\">trên GitHub</a>]]></string>
-    <string name="other_licenses"><![CDATA[AnkiDroid cũng sử dụng các thư viện và biểu tượng từ bên thứ ba, được cấp phép theo nhiều <a href=\"%1$s\">giấy phép mã nguồn mở</a> khác nhau.]]></string>
-    <string name="donate_description"><![CDATA[Bạn có thể hỗ trợ sự phát triển của AnkiDroid bằng cách <a href=\"%1$s\">quyên góp</a>. Bất kỳ số tiền nào cũng được đánh giá cao.]]></string>
+    <string name="license_description"><![CDATA[SpeedyCAT được phát hành theo giấy phép <a href=\"%1$s\">GPL-3.0</a> và <a href=\"%2$s\">AGPL-3.0</a>, với mã nguồn có sẵn <a href=\"%3$s\">trên GitHub</a>]]></string>
+    <string name="other_licenses"><![CDATA[SpeedyCAT cũng sử dụng các thư viện và biểu tượng từ bên thứ ba, được cấp phép theo nhiều <a href=\"%1$s\">giấy phép mã nguồn mở</a> khác nhau.]]></string>
+    <string name="donate_description"><![CDATA[Bạn có thể hỗ trợ sự phát triển của SpeedyCAT bằng cách <a href=\"%1$s\">quyên góp</a>. Bất kỳ số tiền nào cũng được đánh giá cao.]]></string>
     <!-- Controls -->
     <string name="binding_add_gesture">Add gesture</string>
     <string name="binding_add_key">Add key</string>
@@ -267,7 +267,7 @@
     <string name="bindings_already_bound">Already bound to %s</string>
     <!-- Advanced -->
     <string name="pref_cat_experimental" maxLength="41" tools:ignore="UnusedResources">Tính năng thử nghiệm</string>
-    <string name="readtext_deprecation_warn">AnkiDroid đã giới thiệu cơ chế TTS tốt hơn, tương thích với các ứng dụng khách Anki khác và bao gồm nhiều giọng nói hơn cũng như cải tiến về phát lại ngôn ngữ!\n\nVui lòng nâng cấp càng sớm càng tốt vì cài đặt này sẽ sớm bị xóa</string>
+    <string name="readtext_deprecation_warn">SpeedyCAT đã giới thiệu cơ chế TTS tốt hơn, tương thích với các ứng dụng khách SpeedyCAT khác và bao gồm nhiều giọng nói hơn cũng như cải tiến về phát lại ngôn ngữ!\n\nVui lòng nâng cấp càng sớm càng tốt vì cài đặt này sẽ sớm bị xóa</string>
     <string name="readtext_reviewer_warn" tools:ignore="UnusedResources">Vui lòng nâng cấp lên định dạng văn bản thành giọng nói mới</string>
     <string name="pref_fixed_port_title" maxLength="41">localStorage in Study Screen</string>
     <string name="pref_fixed_port_summary">Enables JavaScript localStorage by using a fixed server port in the Study Screen</string>
@@ -279,9 +279,9 @@
     <!-- #######################################################################################
          #################################### Backup options ###################################
          ####################################################################################### -->
-    <string name="pref__backups_help__summary"><![CDATA[        AnkiDroid sao lưu định kỳ bộ sưu tập của bạn.
+    <string name="pref__backups_help__summary"><![CDATA[        SpeedyCAT sao lưu định kỳ bộ sưu tập của bạn.
         Sau khi bản sao lưu cũ hơn hai ngày,
-        AnkiDroid sẽ bắt đầu xóa một số bản sao lưu để giải phóng dung lượng đĩa.
+        SpeedyCAT sẽ bắt đầu xóa một số bản sao lưu để giải phóng dung lượng đĩa.
         <br><br>
         Lưu ý rằng các đa phương tiện không được sao lưu
         Để an toàn, vui lòng đồng bộ bộ sưu tập của bạn định kỳ hoặc sao lưu bản xuất của nó.

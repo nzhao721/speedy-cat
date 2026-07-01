@@ -32,8 +32,13 @@ use crate::practice::normalize_section;
 use crate::practice::section_from_db;
 use crate::prelude::*;
 
-/// A ~10-minute break (seconds), matching the real MCAT scheduled breaks.
+/// A regular ~10-minute break (seconds), matching the real AAMC MCAT breaks
+/// after sections 1 (Chem/Phys) and 3 (Bio/Biochem).
 const BREAK_SECONDS: u32 = 600;
+
+/// The 30-minute mid-exam break (seconds) after section 2 (CARS) on the real
+/// AAMC MCAT.
+const MID_EXAM_BREAK_SECONDS: u32 = 1800;
 
 // ---- Raw (JSON) representations -------------------------------------------
 
@@ -232,14 +237,19 @@ fn validate_question_source(raw: &RawQuestion) -> Result<()> {
     Ok(())
 }
 
-/// Synthesize the standard MCAT scheduled breaks for a test with `num_sections`
-/// sections: optional ~10-min breaks after every section except the last, with
-/// the break after section 2 labelled as the mid-exam break.
+/// Synthesize the standard AAMC MCAT scheduled breaks for a test with
+/// `num_sections` sections: optional breaks after every section except the last.
+/// The break after section 2 (CARS) is the 30-minute mid-exam break; the others
+/// are regular 10-minute breaks.
 fn synthesize_breaks(num_sections: u32) -> Vec<FullLengthBreak> {
     (1..num_sections)
         .map(|after_section| FullLengthBreak {
             after_section,
-            duration_seconds: BREAK_SECONDS,
+            duration_seconds: if after_section == 2 {
+                MID_EXAM_BREAK_SECONDS
+            } else {
+                BREAK_SECONDS
+            },
             optional: true,
             label: if after_section == 2 {
                 "Mid-exam break".to_string()

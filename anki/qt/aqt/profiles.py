@@ -129,6 +129,13 @@ class ProfileManager:
     default_answer_keys = {ease_num: str(ease_num) for ease_num in range(1, 5)}
     last_run_version: int = 0
 
+    # SpeedyCAT: the default profile is branded rather than the upstream
+    # "User 1". Fresh installs get DEFAULT_PROFILE_NAME; an existing install
+    # whose sole profile is still the untouched upstream default is migrated to
+    # it once at startup (see maybe_rebrand_default_profile).
+    DEFAULT_PROFILE_NAME = "SpeedyCAT"
+    LEGACY_DEFAULT_PROFILE_NAME = "User 1"
+
     def __init__(self, base: Path) -> None:
         "base should be retrieved via ProfileMangager.get_created_base_folder"
         ## Settings which should be forgotten each Anki restart
@@ -302,6 +309,33 @@ class ProfileManager:
         else:
             self.db.commit()
 
+    def maybe_rebrand_default_profile(self) -> bool:
+        """One-time rebrand of the untouched upstream default profile.
+
+        SpeedyCAT ships as a single-profile app, but existing installs were
+        created before the rebrand and still carry Anki's default "User 1"
+        profile, which surfaces in the profile chooser. Rename it to
+        ``DEFAULT_PROFILE_NAME`` using :meth:`rename` so the profile folder and
+        the metadata DB stay consistent and the collection is preserved.
+
+        Guarded tightly and idempotent: only acts when there is exactly one
+        profile and it is literally the legacy default. A user-chosen name, a
+        profile already renamed, or multiple profiles are all left untouched, so
+        repeated calls after the first are no-ops. Returns True iff a rename
+        happened.
+        """
+        if self.profiles() != [self.LEGACY_DEFAULT_PROFILE_NAME]:
+            return False
+        # rename() refuses (with a warning dialog) when the destination folder
+        # already exists. On case-insensitive filesystems an unrelated folder
+        # can collide with the brand name; skip quietly rather than interrupt
+        # startup. A genuine install won't have this folder.
+        if os.path.exists(os.path.join(self.base, self.DEFAULT_PROFILE_NAME)):
+            return False
+        self.load(self.LEGACY_DEFAULT_PROFILE_NAME)
+        self.rename(self.DEFAULT_PROFILE_NAME)
+        return self.name == self.DEFAULT_PROFILE_NAME
+
     # Folder handling
     ######################################################################
 
@@ -447,7 +481,10 @@ create table if not exists profiles
 
     def _ensureProfile(self) -> None:
         "Create a new profile if none exists."
-        self.create(tr.profiles_user_1())
+        # SpeedyCAT: brand the default profile instead of the upstream "User 1"
+        # (tr.profiles_user_1()). Using a constant keeps the brand identical
+        # across locales and avoids surfacing a translated "User N" name.
+        self.create(self.DEFAULT_PROFILE_NAME)
         p = os.path.join(self.base, "README.txt")
         with open(p, "w", encoding="utf8") as file:
             file.write(

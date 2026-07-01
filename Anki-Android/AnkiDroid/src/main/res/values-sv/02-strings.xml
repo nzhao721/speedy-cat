@@ -120,7 +120,7 @@
         <item quantity="one">%1$d minut</item>
         <item quantity="other">%1$d minuter</item>
     </plurals>
-    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">AnkiDroid-kort</string>
+    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">SpeedyCAT-kort</string>
     <string name="note_editor_copy_note" maxLength="28">Kopiera not</string>
     <string name="card_editor_reposition_card" comment="reposition a card in the new queue" maxLength="28">Ompositionera</string>
     <string name="card_editor_reset_card" maxLength="28">Återställ framsteg</string>
@@ -132,31 +132,31 @@
     <string name="checks_action" maxLength="28">Kontrollera</string>
     <string name="unknown_type_field_warning">Skriv svar: okänt fält %s</string>
     <string name="delete_deck" comment="Message on a progress bar starting a deck is being deleted.">Raderar kortlek&#8230;</string>
-    <string name="info_rate">Betygsätt AnkiDroid</string>
+    <string name="info_rate">Betygsätt SpeedyCAT</string>
     <string name="import_title">Importera</string>
     <string name="import_preparing_file">Förbereder fil för importering&#8230;</string>
     <string name="import_message_add" comment="Adding a new deck to the collection (import)">Lägg till</string>
     <string name="import_message_replace_confirm">Detta kommer att ta bort din befintliga samling och ersätta den med datan i filen %s. Är du säker?</string>
     <string name="import_dialog_message_add">Lägg till “%s” i samlingen? Det kan ta lång tid</string>
-    <string name="import_log_no_apkg">Detta är ingen giltig Anki-paketfil</string>
+    <string name="import_log_no_apkg">Detta är ingen giltig SpeedyCAT-paketfil</string>
     <string name="import_title_error" comment="Title of error dialog">Fel</string>
     <string name="import_error_handle_exception">Misslyckades med att importera filen\n\n%s</string>
     <string name="import_error_not_apkg_extension">Filnamnet \"%s\" har varken .apkg eller .colpkg suffix</string>
-    <string name="import_error_load_imported_database">Anki Database (.anki2) ersättningar stöds inte än. Se manualen för ersättningsinstruktioner.</string>
-    <string name="import_error_content_provider">Den valda filen kunde inte importeras automatiskt av AnkiDroid. Vänligen se användarmanualen för information om manuell import av Anki-filer: \n %s</string>
+    <string name="import_error_load_imported_database">SpeedyCAT Database (.anki2) ersättningar stöds inte än. Se manualen för ersättningsinstruktioner.</string>
+    <string name="import_error_content_provider">Den valda filen kunde inte importeras automatiskt av SpeedyCAT. Vänligen se användarmanualen för information om manuell import av SpeedyCAT-filer: \n %s</string>
     <string name="import_error_copy_to_cache_title">Misslyckades att cacha filen</string>
     <string name="import_error_copy_to_cache_explanation" comment="The substitution is a list of suggested fixes in bullet point form">Detta orsakas ofta av en bugg i appen du använde för att välja filen. Försök med följande rättelser:\n\n%s</string>
-    <string name="import_interrupted">Import avbruten: AnkiDroid stängdes</string>
+    <string name="import_interrupted">Import avbruten: SpeedyCAT stängdes</string>
     <string name="export_ready_title">Export redo</string>
     <string name="export_send_no_handlers">Inga program tillgängliga för att hantera apkg. Sparar&#8230;</string>
-    <string name="export_save_apkg_successful">Anki-paketet sparades</string>
-    <string name="export_save_apkg_unsuccessful">Anki-paketet kunde inte sparas</string>
-    <string name="export_share_title">Skicka Anki-paketet med</string>
-    <string name="export_email_subject">AnkiDroid exporterade flashcards: %s</string>
+    <string name="export_save_apkg_successful">SpeedyCAT-paketet sparades</string>
+    <string name="export_save_apkg_unsuccessful">SpeedyCAT-paketet kunde inte sparas</string>
+    <string name="export_share_title">Skicka SpeedyCAT-paketet med</string>
+    <string name="export_email_subject">SpeedyCAT exporterade flashcards: %s</string>
     <string name="export_email_text"><![CDATA[        Hej!
         <br/><br/>
-        Det här är en Anki flashcard-samling från AnkiDroid[1].
-        Testa att öppna den genom en av de tillgängliga Anki-distributionerna[2] och njut av enkel och effektiv inlärning!<br/><br/>
+        Det här är en SpeedyCAT flashcard-samling från SpeedyCAT[1].
+        Testa att öppna den genom en av de tillgängliga SpeedyCAT-distributionerna[2] och njut av enkel och effektiv inlärning!<br/><br/>
         [1] %1$s<br/>
         [2] %2$s
         ]]></string>
@@ -192,18 +192,18 @@
     <string name="white_board_eraser_disabled">Raderingläget är deaktiverat</string>
     <string comment="Progress amount e.g. \'28 MB/141 MB\'. %1$s is the current amount, %2$s is the max." name="progress_amount_bytes">%1$s/%2$s</string>
     <string name="media_file_size_warning_title">Media för stor</string>
-    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">Filen \"%1$s\" (%2$s) överskrider AnkiWeb gränsen för %3$s och kan inte synkroniseras. Lägg till ändå?</string>
+    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">Filen \"%1$s\" (%2$s) överskrider SpeedyCAT gränsen för %3$s och kan inte synkroniseras. Lägg till ändå?</string>
     <string name="media_file_size_add_anyway">Lägg till ändå</string>
     <!-- Whiteboard save image message in the Study Screen -->
     <string name="white_board_image_save_failed">Det gick inte att spara whiteboardbilden. %s</string>
     <string name="white_board_image_saved">Whiteboard-bild sparad till %s</string>
     <string name="title_whiteboard_editor" maxLength="28">Redigerare för whiteboard</string>
-    <string name="user_is_a_robot">Upptäckte automatiskt test. Om du är en människa, kontakta AnkiDroid support</string>
+    <string name="user_is_a_robot">Upptäckte automatiskt test. Om du är en människa, kontakta SpeedyCAT support</string>
     <!-- JS api -->
-    <string name="api_version_developer_contact">Detta kort använder AnkiDroid-funktioner som inte stöds. Kontakta utvecklaren %1$s, eller visa wiki. %2$s</string>
+    <string name="api_version_developer_contact">Detta kort använder SpeedyCAT-funktioner som inte stöds. Kontakta utvecklaren %1$s, eller visa wiki. %2$s</string>
     <string name="invalid_json_data">Kortet angav ogiltig data. %s</string>
-    <string name="valid_js_api_version">Ogiltig version av AnkiDroid JS API. Kontakta utvecklare %s, eller visa wiki</string>
-    <string name="update_js_api_version">AnkiDroid JS API uppdatering tillgänglig. Kontakta utvecklare %s, eller visa wiki</string>
+    <string name="valid_js_api_version">Ogiltig version av SpeedyCAT JS API. Kontakta utvecklare %s, eller visa wiki</string>
+    <string name="update_js_api_version">SpeedyCAT JS API uppdatering tillgänglig. Kontakta utvecklare %s, eller visa wiki</string>
     <string name="reviewer_invalid_api_version_visit_documentation">Visa</string>
     <string name="anki_js_error_code">(Error code: %d)</string>
     <!-- About AnkiDroid screen -->
@@ -214,8 +214,8 @@
     <!-- Deck Picker -->
     <string name="search_decks" maxLength="28">Sök kortlekar</string>
     <string name="ankidroid_init_failed_webview_title">Fatal error</string>
-    <string name="ankidroid_init_failed_webview">AnkiDroid använder sig av System WebView vilket inte är tillgängligt. Detta kan hända om systemet håller på att installera uppdateringar. Försök igen om några minuter.\n\n%s</string>
-    <string name="ankidroid_init_failed_storage">AnkiDroid kan inte komma åt lagring på grund av ett Android-fel.\n\n%s</string>
+    <string name="ankidroid_init_failed_webview">SpeedyCAT använder sig av System WebView vilket inte är tillgängligt. Detta kan hända om systemet håller på att installera uppdateringar. Försök igen om några minuter.\n\n%s</string>
+    <string name="ankidroid_init_failed_storage">SpeedyCAT kan inte komma åt lagring på grund av ett Android-fel.\n\n%s</string>
     <!-- A Menu item to change the Font Size (currently in the Note Editor) -->
     <string name="menu_font_size" maxLength="28">Teckenstorlek</string>
     <string name="menu_show_toolbar" comment="Checkable item stating whether the note editor toolbar should be shown" maxLength="28">Visa verktygsfält</string>
@@ -237,9 +237,9 @@
     <string name="note_editor_video_too_large">Videofilen är för stor, lägg till videon manuellt</string>
     <string name="note_editor_audio_too_large">Ljudfilen är för stor, lägg till ljudet manuellt</string>
     <string name="ankidroid_cannot_open_after_backup_try_again" comment="After an Android backup is restored, AnkiDroid opens and shows this message.         Opening AnkiDroid again will work correctly">Säkerhetskopiering av Android pågår. Försök igen</string>
-    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Du kan behöva använda iManager för att tillåta AnkiDroid att lägga till genvägar</string>
+    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Du kan behöva använda iManager för att tillåta SpeedyCAT att lägga till genvägar</string>
     <string name="create_shortcut_error_miui" comment="Keep the message as short, as this is shown in a toast. %s is the app name: \'AnkiDroid\'">Tillåt ‘Startskärmen genvägar’ i systeminställningar för %s att lägga till genvägar</string>
-    <string name="create_shortcut_failed" comment="home screen == launcher">Din startskärm tillåter inte AnkiDroid att lägga till genvägar</string>
+    <string name="create_shortcut_failed" comment="home screen == launcher">Din startskärm tillåter inte SpeedyCAT att lägga till genvägar</string>
     <string name="create_shortcut_error">Kunde inte lägga till genväg: %s</string>
     <string name="note_editor_capitalize" comment="This is for a switch with a checkbox - on: enabled" maxLength="28">Versalisera meningar</string>
     <string name="menu_scroll_toolbar" comment="Checkbox stating whether note editor toolbar is scrollable or stacked. Checked: Scroll" maxLength="28">Rulla verktygsfält</string>
@@ -303,9 +303,9 @@
     <string name="intro_ankidroid_tagline_two">Kom ihåg mer</string>
     <string name="intro_short_ankidroid_explanation">Ankis kortschema sparar tid genom att stärka dina svagaste punkter och bevara dina starkaste</string>
     <string name="intro_get_started" comment="Action to start AnkiDroid for the first time without syncing from AnkiWeb">Get started</string>
-    <string name="intro_sync_from_ankiweb">Synka från AnkiWeb</string>
+    <string name="intro_sync_from_ankiweb">Synka från SpeedyCAT</string>
     <!-- IntentHandler -->
-    <string name="app_not_initialized_new">AnkiDroid är inte initierat än. Öppna AnkiDroid och försök igen</string>
+    <string name="app_not_initialized_new">SpeedyCAT är inte initierat än. Öppna SpeedyCAT och försök igen</string>
     <!-- Deck Creation -->
     <string name="deck_created">Kortlek skapad</string>
     <string name="deck_renamed">Kortlek namnändrad</string>

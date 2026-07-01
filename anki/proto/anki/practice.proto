@@ -181,10 +181,11 @@ message LoadBundleResponse {
 
 // ---- Query -----------------------------------------------------------------
 
-// Filter over the question bank. All fields are ANDed; `topics` matches ANY
-// (case-insensitive) tag.
+// Filter over the question bank. All fields are ANDed; `sections` matches ANY
+// selected section (empty = all sections) and `topics` matches ANY
+// (case-insensitive) tag (empty = all topics).
 message QuestionFilter {
-  optional McatSection section = 1;
+  repeated McatSection sections = 1;
   repeated string topics = 2;
   optional Difficulty difficulty = 3;
   optional string passage_id = 4;
@@ -228,8 +229,11 @@ message StartPracticeSessionRequest {
 
 message StartPracticeSessionResponse {
   string session_id = 1;
-  // Question ids matched by the filter, in serving order.
-  repeated string question_ids = 2;
+  // The questions to serve for this session, in the session's shuffled serving
+  // order and with each question's answer choices shuffled (correct_answer
+  // remapped to the new label). Stable for the life of the session; starting a
+  // new session reshuffles both the selection and the choice order.
+  repeated PracticeQuestion questions = 2;
 }
 
 message RecordPracticeAttemptRequest {
@@ -271,8 +275,8 @@ message PracticeSessionSummary {
 // ---- Full-length practice tests --------------------------------------------
 
 // A scheduled break in a full-length test, occurring AFTER a given section.
-// Mirrors the real MCAT: optional ~10-min breaks after sections 1 and 3, and
-// a ~10-min mid-exam break after section 2.
+// Mirrors the real AAMC MCAT: optional 10-min breaks after sections 1 and 3,
+// and a 30-min mid-exam break after section 2.
 message FullLengthBreak {
   uint32 after_section = 1; // 1-based section order this break follows
   uint32 duration_seconds = 2;

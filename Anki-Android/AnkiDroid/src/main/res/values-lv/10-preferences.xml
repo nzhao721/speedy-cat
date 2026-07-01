@@ -63,7 +63,7 @@
     <string name="card_browser_font_size" maxLength="41">Kartīšu pārlūka fonta mērogošana</string>
     <string name="card_browser_hide_media" maxLength="41">Kartīšu pārlūkā attēlot datņu nosaukumus</string>
     <string name="card_browser_hide_media_summary">Display audio filenames in the card browser question/answer fields</string>
-    <string name="col_path" maxLength="41">AnkiDroid mape</string>
+    <string name="col_path" maxLength="41">SpeedyCAT mape</string>
     <string name="fullscreen_review" maxLength="41">Pilnekrāna skats</string>
     <string name="full_screen_off">Izslēgts</string>
     <string name="full_screen_system">Paslēpt sistēmas joslas</string>
@@ -169,8 +169,8 @@
     </plurals>
     <string name="pref_keep_screen_on" maxLength="41">Paturēt ekrānu ieslēgtu</string>
     <string name="pref_keep_screen_on_summ">Atspējot ekrāna noildzi</string>
-    <string name="enable_api_title" maxLength="41">Iespējot AnkiDroid API</string>
-    <string name="enable_api_summary">Ļaut citām lietotnēm savienoties ar AnkiDroid un lasīt/rakstīt datus bez Tavas iejaukšanāš</string>
+    <string name="enable_api_title" maxLength="41">Iespējot SpeedyCAT API</string>
+    <string name="enable_api_summary">Ļaut citām lietotnēm savienoties ar SpeedyCAT un lasīt/rakstīt datus bez Tavas iejaukšanāš</string>
     <string name="custom_buttons" maxLength="41">Lietotnes joslas pogas</string>
     <string name="custom_buttons_summary">Pielāgot, kuras darbības ir redzamas lietotnes joslā</string>
     <string name="custom_buttons_setting_always_show">Rādīt vienmēr</string>
@@ -180,7 +180,7 @@
     <string name="reset_settings_to_default">Atiestatīt iestatījumus uz noklusējumu</string>
     <string name="reset">Atiestatīt</string>
     <string name="thirdparty_apps_title" maxLength="41">Trešo pušu lietotnes</string>
-    <string name="thirdparty_apps_summary">Apskatīt sarakstu ar lietotnēm, kas izmanto AnkiDroid API, piemēram, vārdnīcas, palīglietotnes.</string>
+    <string name="thirdparty_apps_summary">Apskatīt sarakstu ar lietotnēm, kas izmanto SpeedyCAT API, piemēram, vārdnīcas, palīglietotnes.</string>
     <string name="pref_controls_reviews_tab" maxLength="41" comment="Name of the tab to configure controls for the reviews screen">Pārskatīšanas</string>
     <string name="pref_controls_previews_tab" maxLength="41" comment="Name of the tab to configure controls for the previews screen">Priekšskatījumi</string>
     <string name="toggle_backside_only" maxLength="41" comment="Control setting that toggles \'Backside only\' in the previews screen">Pārslēgt tikai aizmugurējo pusi</string>
@@ -196,9 +196,9 @@
     <!-- Custom sync server settings -->
     <string name="custom_sync_server_title" maxLength="41">Pielāgots vienādošanas serveris</string>
     <string name="custom_sync_server_summary_none_of_the_two_servers_used" comment="This summary is shown when neither of the two custom sync servers are used,         which is the default.">Netiek izmantots</string>
-    <string name="custom_sync_server_help2"><![CDATA[        Vienādošanas ar AnkiWeb vietā
+    <string name="custom_sync_server_help2"><![CDATA[        Vienādošanas ar SpeedyCAT vietā
         var izmantot savu serveri.
-        Ja nav iestatīts, tiks izmantots noklusējuma AnkiWeb serveris.
+        Ja nav iestatīts, tiks izmantots noklusējuma SpeedyCAT serveris.
         <a href="%s">Uzzināt vairāk</a>
         ]]></string>
     <string name="custom_sync_server_base_url_title" maxLength="41">Sync URL</string>
@@ -223,9 +223,9 @@
     <string name="deck_conf_general" maxLength="41" comment="Label of the submenu for the general options of new deck">Vispārīgi</string>
     <string name="deck_conf_cram_search" maxLength="41" comment="Label of a text field that contains a search query.">Meklēt</string>
     <!-- analytics options -->
-    <string name="analytics_dialog_title">Palīdzi padarīt AnkiDroid labāku!</string>
+    <string name="analytics_dialog_title">Palīdzi padarīt SpeedyCAT labāku!</string>
     <string name="analytics_title" maxLength="41">Kopīgot iespēju lietojumu</string>
-    <string name="analytics_summ">Tu vari sniegt savu ieguldījumu AnkiDroid, palīdzot izstrādes komandai redzēt, kuras iespējas cilvēki izmanto</string>
+    <string name="analytics_summ">Tu vari sniegt savu ieguldījumu SpeedyCAT, palīdzot izstrādes komandai redzēt, kuras iespējas cilvēki izmanto</string>
     <string name="note_editor_replace_newlines" maxLength="41">Aizstāt pārejas jaunā rindā ar HTML</string>
     <string name="note_editor_replace_newlines_summ">Piezīmju redaktorā pārveidot jebkuru &lt;br&gt; par pāreju uz jaunu rindu, kad tiek labota kartīte.</string>
     <string name="type_in_answer_focus" maxLength="41">Pārslēgties uz \"Ierakstīt atbildi\"</string>
@@ -234,11 +234,11 @@
     <string name="open_changelog">Atvērt izmaiņu žurnālu</string>
     <string name="pref_cat_about_title" maxLength="41">Par</string>
     <string name="contributors_title">Līdzdalībnieki</string>
-    <string name="about_contributors_description"><![CDATA[Šie ir mūsu lieliskie <a href=\"%1$s\">līdzdalībnieki</a>. Tu arī vari palīdzēt AnkiDroid ar programmēšanu, tulkošanu, ziedojumiem un <a href=\"%2$s\">vēl</a>.]]></string>
+    <string name="about_contributors_description"><![CDATA[Šie ir mūsu lieliskie <a href=\"%1$s\">līdzdalībnieki</a>. Tu arī vari palīdzēt SpeedyCAT ar programmēšanu, tulkošanu, ziedojumiem un <a href=\"%2$s\">vēl</a>.]]></string>
     <string name="license">Licence</string>
-    <string name="license_description"><![CDATA[AnkiDroid ir laista klajā ar <a href=\"%1$s\">GPL-3.0</a> un <a href=\"%2$s\">AGPL-3.0</a> licencēm, un pirmkods ir pieejams <a href=\"%3$s\">GitHub</a>]]></string>
-    <string name="other_licenses"><![CDATA[AnkiDroid izmanto arī trešo pušu bibliotēkas un ikonas, kas ir licencētas ar dažādām atvērtā pirmkoda <a href=\"%1$s\">licencēm</a>]]></string>
-    <string name="donate_description"><![CDATA[AnkiDroid izstrādi var atbalstīt ar <a href=\"%1$s\">ziedošanu</a>. Jebkāds daudzums tiks ļoti novērtēts.]]></string>
+    <string name="license_description"><![CDATA[SpeedyCAT ir laista klajā ar <a href=\"%1$s\">GPL-3.0</a> un <a href=\"%2$s\">AGPL-3.0</a> licencēm, un pirmkods ir pieejams <a href=\"%3$s\">GitHub</a>]]></string>
+    <string name="other_licenses"><![CDATA[SpeedyCAT izmanto arī trešo pušu bibliotēkas un ikonas, kas ir licencētas ar dažādām atvērtā pirmkoda <a href=\"%1$s\">licencēm</a>]]></string>
+    <string name="donate_description"><![CDATA[SpeedyCAT izstrādi var atbalstīt ar <a href=\"%1$s\">ziedošanu</a>. Jebkāds daudzums tiks ļoti novērtēts.]]></string>
     <!-- Controls -->
     <string name="binding_add_gesture">Pievienot kustību</string>
     <string name="binding_add_key">Pievienot taustiņu</string>
@@ -273,7 +273,7 @@
     <string name="bindings_already_bound">Jau ir piesaistīts \"%s\"</string>
     <!-- Advanced -->
     <string name="pref_cat_experimental" maxLength="41" tools:ignore="UnusedResources">Izmēģinājuma</string>
-    <string name="readtext_deprecation_warn">AnkiDroid ir ieviesta labāks TTS (teksta pārvēršanas runā) mehānisms, kas ir saderīgs ar citiem Anki klientiem un iekļauj vairāk balsu un valodas atskaņošanas uzlabojumiem.\n\nLūgums atjaunināt, tiklīdz tas ir iespējams, jo šis iestatījums drīz tiks noņemts</string>
+    <string name="readtext_deprecation_warn">SpeedyCAT ir ieviesta labāks TTS (teksta pārvēršanas runā) mehānisms, kas ir saderīgs ar citiem SpeedyCAT klientiem un iekļauj vairāk balsu un valodas atskaņošanas uzlabojumiem.\n\nLūgums atjaunināt, tiklīdz tas ir iespējams, jo šis iestatījums drīz tiks noņemts</string>
     <string name="readtext_reviewer_warn" tools:ignore="UnusedResources">Lūgums uzlabot uz jauno teksta pārveidošanas runā formātu</string>
     <string name="pref_fixed_port_title" maxLength="41">localStorage apgūšanas ekrānā</string>
     <string name="pref_fixed_port_summary">Iespējo JavaScript localStorage, izmantojot noteiktu servera portu apgūšanas ekrānā</string>
@@ -285,9 +285,9 @@
     <!-- #######################################################################################
          #################################### Backup options ###################################
          ####################################################################################### -->
-    <string name="pref__backups_help__summary"><![CDATA[        AnkiDroid laiku pa laikam veic krājumu rezerves kopēšanu
+    <string name="pref__backups_help__summary"><![CDATA[        SpeedyCAT laiku pa laikam veic krājumu rezerves kopēšanu
         Tiklīdz rezerves kopijas ir vecākas par vairāk kā divām dienām,
-        AnkiDroid sāks noņemt dažas no tām, lai atbrīvuto krātuves vietu.
+        SpeedyCAT sāks noņemt dažas no tām, lai atbrīvuto krātuves vietu.
         <br><br>
         Jāņem vērāk, ka informācijas nesēju datnes netiek iekļautas rezerves kopijās.
         Drošības dēļ lūgums laiku pa laikam vienādot savu krājumu vai saglabāt tā izguves.

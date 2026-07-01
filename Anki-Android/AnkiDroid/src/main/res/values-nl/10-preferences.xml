@@ -62,7 +62,7 @@
     <string name="card_browser_font_size" maxLength="41">Lettertypegrootte van de kaartenbrowser</string>
     <string name="card_browser_hide_media" maxLength="41">Bestandsnamen in kaartenbrowser weergeven</string>
     <string name="card_browser_hide_media_summary">Namen van audiobestanden in de vraag/antwoord velden van de kaartenbrowser weergeven</string>
-    <string name="col_path" maxLength="41">AnkiDroid directory</string>
+    <string name="col_path" maxLength="41">SpeedyCAT directory</string>
     <string name="fullscreen_review" maxLength="41">Volledig schermmodus</string>
     <string name="full_screen_off">Uit</string>
     <string name="full_screen_system">De systeembalken verbergen</string>
@@ -166,8 +166,8 @@
     </plurals>
     <string name="pref_keep_screen_on" maxLength="41">Scherm aanlaten</string>
     <string name="pref_keep_screen_on_summ">Schermtimeout uitschakelen</string>
-    <string name="enable_api_title" maxLength="41">AnkiDroid API inschakelen</string>
-    <string name="enable_api_summary">Laat andere apps verbinding maken met AnkiDroid en gegevens zonder uw tussenkomst lezen/schrijven</string>
+    <string name="enable_api_title" maxLength="41">SpeedyCAT API inschakelen</string>
+    <string name="enable_api_summary">Laat andere apps verbinding maken met SpeedyCAT en gegevens zonder uw tussenkomst lezen/schrijven</string>
     <string name="custom_buttons" maxLength="41">App bar knoppen</string>
     <string name="custom_buttons_summary">Aanpassen welke acties worden weergegeven in de app-balk</string>
     <string name="custom_buttons_setting_always_show">Altijd tonen</string>
@@ -177,7 +177,7 @@
     <string name="reset_settings_to_default">Instellingen terugzetten op standaard</string>
     <string name="reset">Resetten</string>
     <string name="thirdparty_apps_title" maxLength="41">API-apps van derden</string>
-    <string name="thirdparty_apps_summary">Raadpleeg de lijst van applicaties die gebruik maken van de AnkiDroid API zoals woordenboeken, hulpprogramma\'s.</string>
+    <string name="thirdparty_apps_summary">Raadpleeg de lijst van applicaties die gebruik maken van de SpeedyCAT API zoals woordenboeken, hulpprogramma\'s.</string>
     <string name="pref_controls_reviews_tab" maxLength="41" comment="Name of the tab to configure controls for the reviews screen">Beoordelingen</string>
     <string name="pref_controls_previews_tab" maxLength="41" comment="Name of the tab to configure controls for the previews screen">Voorbeelden</string>
     <string name="toggle_backside_only" maxLength="41" comment="Control setting that toggles \'Backside only\' in the previews screen">Alleen achterzijde in-/uitschakelen</string>
@@ -193,9 +193,9 @@
     <!-- Custom sync server settings -->
     <string name="custom_sync_server_title" maxLength="41">Aangepaste synchronisatie-server</string>
     <string name="custom_sync_server_summary_none_of_the_two_servers_used" comment="This summary is shown when neither of the two custom sync servers are used,         which is the default.">Niet gebruikt</string>
-    <string name="custom_sync_server_help2"><![CDATA[        Als alternatief voor synchronisatie met AnkiWeb,
+    <string name="custom_sync_server_help2"><![CDATA[        Als alternatief voor synchronisatie met SpeedyCAT,
         U kunt uw eigen server gebruiken voor synchronisatie.
-        Als dit niet is ingesteld, wordt in plaats daarvan de standaard AnkiWeb-server gebruikt.
+        Als dit niet is ingesteld, wordt in plaats daarvan de standaard SpeedyCAT-server gebruikt.
         <a href="%s">Meer informatie</a>
         ]]></string>
     <string name="custom_sync_server_base_url_title" maxLength="41">Sync URL</string>
@@ -220,9 +220,9 @@
     <string name="deck_conf_general" maxLength="41" comment="Label of the submenu for the general options of new deck">Algemeen</string>
     <string name="deck_conf_cram_search" maxLength="41" comment="Label of a text field that contains a search query.">Zoeken</string>
     <!-- analytics options -->
-    <string name="analytics_dialog_title">Help AnkiDroid te verbeteren!</string>
+    <string name="analytics_dialog_title">Help SpeedyCAT te verbeteren!</string>
     <string name="analytics_title" maxLength="41">Gebruik van functies delen</string>
-    <string name="analytics_summ">Je kunt bijdragen aan AnkiDroid door het ontwikkelteam te laten zien welke functies mensen gebruiken</string>
+    <string name="analytics_summ">Je kunt bijdragen aan SpeedyCAT door het ontwikkelteam te laten zien welke functies mensen gebruiken</string>
     <string name="note_editor_replace_newlines" maxLength="41">Nieuwe lijnen vervangen door HTML</string>
     <string name="note_editor_replace_newlines_summ">Zet in de memobewerker alle instanties van &lt;br&gt; om in nieuwe lijnen bij het bewerken van een kaart.</string>
     <string name="type_in_answer_focus" maxLength="41">Focus op ‘type in antwoord’</string>
@@ -231,11 +231,11 @@
     <string name="open_changelog">Wijzigingslogboek openen</string>
     <string name="pref_cat_about_title" maxLength="41">Over</string>
     <string name="contributors_title">Bijdragers</string>
-    <string name="about_contributors_description"><![CDATA[Dit zijn onze geweldige <a href=\"%1$s\">medewerkers</a>. U kunt AnkiDroid ook helpen door te programmeren, te vertalen, te doneren en <a href=\"%2$s\">meer</a>!]]></string>
+    <string name="about_contributors_description"><![CDATA[Dit zijn onze geweldige <a href=\"%1$s\">medewerkers</a>. U kunt SpeedyCAT ook helpen door te programmeren, te vertalen, te doneren en <a href=\"%2$s\">meer</a>!]]></string>
     <string name="license">Licentie</string>
-    <string name="license_description"><![CDATA[AnkiDroid is vrijgegeven onder de <a href=\"%1$s\">GPL-3.0</a> en <a href=\"%2$s\">AGPL-3.0</a> licenties, met de broncode beschikbaar <a href=\"%3$s\">op GitHub</a>]]></string>
-    <string name="other_licenses"><![CDATA[AnkiDroid gebruikt ook bibliotheken en pictogrammen van derden, die zijn gelicentieerd onder verschillende open-source <a href=\"%1$s\">licenties</a>]]></string>
-    <string name="donate_description"><![CDATA[U kunt de ontwikkeling van AnkiDroid steunen door te <a href="%1$s">doneren</a>. Elk bedrag wordt zeer op prijs gesteld.]]></string>
+    <string name="license_description"><![CDATA[SpeedyCAT is vrijgegeven onder de <a href=\"%1$s\">GPL-3.0</a> en <a href=\"%2$s\">AGPL-3.0</a> licenties, met de broncode beschikbaar <a href=\"%3$s\">op GitHub</a>]]></string>
+    <string name="other_licenses"><![CDATA[SpeedyCAT gebruikt ook bibliotheken en pictogrammen van derden, die zijn gelicentieerd onder verschillende open-source <a href=\"%1$s\">licenties</a>]]></string>
+    <string name="donate_description"><![CDATA[U kunt de ontwikkeling van SpeedyCAT steunen door te <a href="%1$s">doneren</a>. Elk bedrag wordt zeer op prijs gesteld.]]></string>
     <!-- Controls -->
     <string name="binding_add_gesture">Gebaar toevoegen</string>
     <string name="binding_add_key">Sleutel toevoegen</string>
@@ -270,7 +270,7 @@
     <string name="bindings_already_bound">Reeds gekoppeld aan %s</string>
     <!-- Advanced -->
     <string name="pref_cat_experimental" maxLength="41" tools:ignore="UnusedResources">Experimenteel</string>
-    <string name="readtext_deprecation_warn">AnkiDroid heeft een beter TTS-mechanisme geïntroduceerd dat compatibel is met andere Anki-clients en meer stemmen en verbeteringen in het afspelen van talen bevat!nnUpgrade zo snel mogelijk, want deze instelling wordt binnenkort verwijderd</string>
+    <string name="readtext_deprecation_warn">SpeedyCAT heeft een beter TTS-mechanisme geïntroduceerd dat compatibel is met andere SpeedyCAT-clients en meer stemmen en verbeteringen in het afspelen van talen bevat!nnUpgrade zo snel mogelijk, want deze instelling wordt binnenkort verwijderd</string>
     <string name="readtext_reviewer_warn" tools:ignore="UnusedResources">Upgrade naar de nieuwe tekst-naar-spraak-indeling</string>
     <string name="pref_fixed_port_title" maxLength="41">localStorage in Study Screen</string>
     <string name="pref_fixed_port_summary">Enables JavaScript localStorage by using a fixed server port in the Study Screen</string>
@@ -282,9 +282,9 @@
     <!-- #######################################################################################
          #################################### Backup options ###################################
          ####################################################################################### -->
-    <string name="pref__backups_help__summary"><![CDATA[        AnkiDroid maakt periodiek een back-up van uw verzameling.
+    <string name="pref__backups_help__summary"><![CDATA[        SpeedyCAT maakt periodiek een back-up van uw verzameling.
         Nadat back-ups meer dan twee dagen oud zijn,
-        zal AnkiDroid beginnen met het verwijderen van een aantal van hen om schijfruimte vrij te maken.
+        zal SpeedyCAT beginnen met het verwijderen van een aantal van hen om schijfruimte vrij te maken.
         <br><br>
         Houd er rekening mee dat er geen back-up van mediabestanden wordt gemaakt.
         Synchroniseer voor de zekerheid regelmatig uw collectie of maak een back-up van de export ervan.

@@ -19,6 +19,9 @@ package com.ichi2.anki.cardviewer
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.ichi2.anki.RobolectricTest
 import com.ichi2.anki.cardviewer.TypeAnswer.Companion.contentForCloze
+import org.hamcrest.MatcherAssert.assertThat
+import org.hamcrest.Matchers.containsString
+import org.hamcrest.Matchers.not
 import org.intellij.lang.annotations.Language
 import org.junit.Assert.assertEquals
 import org.junit.Test
@@ -57,7 +60,7 @@ $!"""
  background-color: white;
 }
 </style>Type in hello
-<code id=typeans><span class=typeGood>hello</span></code>
+<div class="type-answer-result type-answer-correct"><code id=typeans><span class=typeGood>hello</span></code></div>
 
 <hr id=answer>
 
@@ -91,7 +94,7 @@ hello"""
  background-color: white;
 }
 </style>Type in hello
-<code id=typeans><span class=typeBad>hello</span><br><span id=typearrow>&darr;</span><br><span class=typeMissed>xyzzy$$$22</span></code>
+<div class="type-answer-result type-answer-incorrect"><code id=typeans><span class=typeBad>hello</span><br><span id=typearrow>&darr;</span><br><span class=typeMissed>xyzzy$$$22</span></code></div>
 
 <hr id=answer>
 
@@ -161,7 +164,7 @@ $!"""
  background-color: white;
 }
 </style>Type in $!
-<code id=typeans><span class=typeGood>$!</span></code>
+<div class="type-answer-result type-answer-correct"><code id=typeans><span class=typeGood>$!</span></code></div>
 
 <hr id=answer>
 
@@ -196,7 +199,7 @@ $!"""
  background-color: white;
 }
 </style>Type in $!
-<code id=typeans><span class=typeBad>$!</span><br><span id=typearrow>&darr;</span><br><span class=typeMissed>hello</span></code>
+<div class="type-answer-result type-answer-incorrect"><code id=typeans><span class=typeBad>$!</span><br><span id=typearrow>&darr;</span><br><span class=typeMissed>hello</span></code></div>
 
 <hr id=answer>
 
@@ -238,6 +241,15 @@ $!"""
 $!"""
         // Make sure $! as typed shows up as $!
         assertEquals(expectedOutput, typeAnsAnswerFilter(buf, "", "$!"))
+    }
+
+    @Test
+    fun testTypeAnsAnswerFilterCaseInsensitiveCorrect() {
+        // SpeedyCAT: typing the right answer in a different case counts as correct,
+        // and the case difference is not flagged as wrong.
+        val output = typeAnsAnswerFilter("[[type:Back]]", "hello", "HELLO")
+        assertThat(output, containsString("type-answer-correct"))
+        assertThat(output, not(containsString("type-answer-incorrect")))
     }
 
     @Test

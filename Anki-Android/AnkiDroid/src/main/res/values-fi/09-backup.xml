@@ -32,7 +32,7 @@
 Tämä nollaa edistymisesi ja poistaa kaikki kortit!</string>
     <string name="backup_one_way_sync_from_server">Yhdensuuntainen synkronointi palvelimelta</string>
     <string name="backup_use_default_folder">Use default collection folder</string>
-    <string name="backup_full_sync_from_server_question">Haluatko todella korvata kokoelmasi AnkiWebin kokoelmalla? Kaikki edellisen synkronoinnin jälkeen tapahtunyt opiskelu ja lisätyt tiedot unohdetaan!</string>
+    <string name="backup_full_sync_from_server_question">Haluatko todella korvata kokoelmasi SpeedyCATin kokoelmalla? Kaikki edellisen synkronoinnin jälkeen tapahtunyt opiskelu ja lisätyt tiedot unohdetaan!</string>
     <string name="error_handling_title">Virheiden käsittely</string>
     <string name="error_handling_options" comment="In a warning message, the label of the suggested action that the user should take">Asetukset</string>
     <string name="backup_retry_opening">Yritä uudelleen avaamista</string>
@@ -41,7 +41,7 @@ Tämä nollaa edistymisesi ja poistaa kaikki kortit!</string>
     <string name="backup_repair_deck_progress">Korjataan tietokantaa&#8230;</string>
     <string name="backup_invalid_file_error">Valittu varmuuskopio oli viallinen</string>
     <string name="backup_restore_select_title">Valitse palautettava varmuuskopio</string>
-    <string name="backup_restore_no_backups">Ei varmuuskopioita käytettävissä tälle kokoelmalle tällä laitteella. Jos sinulla on varmuuskopioita pöytätietokoneella, kopioi ne manuaalisesti AnkiDroid-kansioon</string>
+    <string name="backup_restore_no_backups">Ei varmuuskopioita käytettävissä tälle kokoelmalle tällä laitteella. Jos sinulla on varmuuskopioita pöytätietokoneella, kopioi ne manuaalisesti SpeedyCAT-kansioon</string>
     <string name="open_collection_failed_title">Kokoelman avaus epäonnistui</string>
     <string name="corrupt_db_message">Kokoelmasi on vioittunut.\n\n Valitse \"asetukset\" palauttaaksesi kokoelman varmuuskopiosta. Jos tämä ei toimi, katso ohjeet kokoelman korjaamiseksi:\n%1$s</string>
     <string name="access_collection_failed_message">Kokoelman hakemisessa tapahtui virhe. Syynä voi olla harmiton bugi tai kokoelmassa on ongelma. \n\n Kokeile tarkistaa tietokanta tai palauttaa kokoelma varmuuskopiosta, \"valinnat\" nappulan avulla. Jos virheilmoitus toistuu, raportoi bugista:\n%1$s . Kiitos.</string>

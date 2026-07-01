@@ -31,7 +31,7 @@
     <string name="backup_del_collection_question">Excluir a coleção e criar uma nova? Isto vai apagar todo seu progresso de aprendizado e excluir todos os cards.</string>
     <string name="backup_one_way_sync_from_server">Sincronizar com o servidor</string>
     <string name="backup_use_default_folder">Usar pasta de coleção padrão</string>
-    <string name="backup_full_sync_from_server_question">Deseja mesmo substituir sua coleção pela da AnkiWeb? Isso vai apagar todo o seu progreso de aprendizado e informações adicionadas desde sua ultima sincronização!</string>
+    <string name="backup_full_sync_from_server_question">Deseja mesmo substituir sua coleção pela da SpeedyCAT? Isso vai apagar todo o seu progreso de aprendizado e informações adicionadas desde sua ultima sincronização!</string>
     <string name="error_handling_title">Tratamento de erros</string>
     <string name="error_handling_options" comment="In a warning message, the label of the suggested action that the user should take">Opções</string>
     <string name="backup_retry_opening">Tentar abrir novamente</string>
@@ -40,7 +40,7 @@
     <string name="backup_repair_deck_progress">Consertando banco de dados&#8230;</string>
     <string name="backup_invalid_file_error">O arquivo de backup selecionado era inválido</string>
     <string name="backup_restore_select_title">Selecione o backup para restaurar</string>
-    <string name="backup_restore_no_backups">Sem backups disponíveis para esta coleção neste aparelho Se você tiver backups em seu computador, favor copia-los manualmente para a pasta do AnkiDroid</string>
+    <string name="backup_restore_no_backups">Sem backups disponíveis para esta coleção neste aparelho Se você tiver backups em seu computador, favor copia-los manualmente para a pasta do SpeedyCAT</string>
     <string name="open_collection_failed_title">Coleção não aberta</string>
     <string name="corrupt_db_message">Infelizmente sua coleção corrompeu-se.\n\nAperte em \'opções\' para restaurar a partir de uma cópia de segurança ou, se isto não funcionar, veja as seguintes instruções de como reparar manualmente um banco de dados:\n%1$s</string>
     <string name="access_collection_failed_message">Um erro ocorreu enquanto sua coleção estava sendo acessada. Isto pode ter sido causado por um bug inofensivo ou ela pode ter algum problema.\n\nTente rodar uma checagem no banco de dados ou restaure a partir de uma cópia de segurança apertando no botão de \'opções\'. Se você continuar a ver esta mensagem, por favor relate um bug:\n%1$s</string>

@@ -57,7 +57,10 @@ section ends. There is deliberately no way back into a section once it closes.
 
     onMount(async () => {
         try {
-            const all = await fetchQuestions({ section, includeFullLength: true });
+            const all = await fetchQuestions({
+                sections: [section],
+                includeFullLength: true,
+            });
             const sectionQuestions = all.filter((q) => q.testId === testId);
             ordered = groupIntoRunItems(sectionQuestions).flatMap(
                 (item) => item.questions,

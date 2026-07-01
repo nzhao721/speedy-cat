@@ -120,7 +120,7 @@
         <item quantity="one">%1$d daqiqa</item>
         <item quantity="other">%1$d daqiqa</item>
     </plurals>
-    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">AnkiDroid kartasi</string>
+    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">SpeedyCAT kartasi</string>
     <string name="note_editor_copy_note" maxLength="28">Qayddan nusxa olish</string>
     <string name="card_editor_reposition_card" comment="reposition a card in the new queue" maxLength="28">Oʻrnini oʻzgartirish</string>
     <string name="card_editor_reset_card" maxLength="28">Progressni oʻchirish</string>
@@ -132,31 +132,31 @@
     <string name="checks_action" maxLength="28">Tekshirish</string>
     <string name="unknown_type_field_warning">Kiritish javobi: nomaʼlum %s maydoni</string>
     <string name="delete_deck" comment="Message on a progress bar starting a deck is being deleted.">Dasta oʻchirilmoqda&#8230;</string>
-    <string name="info_rate">AnkiDroidʼga baho berish</string>
+    <string name="info_rate">SpeedyCATʼga baho berish</string>
     <string name="import_title">Import qilish</string>
     <string name="import_preparing_file">Fayl import uchun tayyorlanmoqda&#8230;</string>
     <string name="import_message_add" comment="Adding a new deck to the collection (import)">Qoʻshish</string>
     <string name="import_message_replace_confirm">Bu sizda mavjud boʻlgan kolleksiyangizni oʻchiradi va uni %s fayl maʼlumotlari bilan almashtiradi</string>
     <string name="import_dialog_message_add">“%s” kolleksiyaga qoʻshilsinmi? Bu koʻp vaqt olishi mumkin</string>
-    <string name="import_log_no_apkg">Bu yaroqli Anki paket fayli emas</string>
+    <string name="import_log_no_apkg">Bu yaroqli SpeedyCAT paket fayli emas</string>
     <string name="import_title_error" comment="Title of error dialog">Xatolik</string>
     <string name="import_error_handle_exception">Faylni import qilib boʻlmadi\n\n%s</string>
     <string name="import_error_not_apkg_extension">“%s” fayl nomida .apkg yoki .colpkg kengaytmasi yoʻq</string>
-    <string name="import_error_load_imported_database">Anki maʼlumotlar bazasini (.anki2) almashtirish hali qoʻllab-quvvatlanmaydi. Iltimos, almashtirish boʻyicha koʻrsatmalar uchun qoʻllanmaga murojaat qiling.</string>
-    <string name="import_error_content_provider">Tanlangan faylni AnkiDroid tomonidan avtomatik import qilib boʻlmadi. Anki fayllarni qoʻlda import qilish uchun foydalanuvchi qoʻllanmasiga murojaat qiling: \n%s</string>
+    <string name="import_error_load_imported_database">SpeedyCAT maʼlumotlar bazasini (.anki2) almashtirish hali qoʻllab-quvvatlanmaydi. Iltimos, almashtirish boʻyicha koʻrsatmalar uchun qoʻllanmaga murojaat qiling.</string>
+    <string name="import_error_content_provider">Tanlangan faylni SpeedyCAT tomonidan avtomatik import qilib boʻlmadi. SpeedyCAT fayllarni qoʻlda import qilish uchun foydalanuvchi qoʻllanmasiga murojaat qiling: \n%s</string>
     <string name="import_error_copy_to_cache_title">Faylni keshlash amalga oshmadi</string>
     <string name="import_error_copy_to_cache_explanation" comment="The substitution is a list of suggested fixes in bullet point form">Bu koʻpincha faylni tanlash uchun foydalangan ilovadagi xato tufayli yuzaga keladi. Quyidagi yechimlarni sinab koʻring:\n\n%s</string>
-    <string name="import_interrupted">Import uzuldi: AnkiDroid yopilgan</string>
+    <string name="import_interrupted">Import uzuldi: SpeedyCAT yopilgan</string>
     <string name="export_ready_title">Eksportga tayyor</string>
     <string name="export_send_no_handlers">apkg bilan ishlash uchun ilova mavjud emas. Saqlanmoqda&#8230;</string>
-    <string name="export_save_apkg_successful">Anki paket muvaffaqiyatli saqlandi</string>
-    <string name="export_save_apkg_unsuccessful">Anki paketini saqlab boʻlmadi</string>
-    <string name="export_share_title">Anki paketini quyidagi bilan yuboring</string>
-    <string name="export_email_subject">AnkiDroid kartalarni eksport qildi: %s</string>
+    <string name="export_save_apkg_successful">SpeedyCAT paket muvaffaqiyatli saqlandi</string>
+    <string name="export_save_apkg_unsuccessful">SpeedyCAT paketini saqlab boʻlmadi</string>
+    <string name="export_share_title">SpeedyCAT paketini quyidagi bilan yuboring</string>
+    <string name="export_email_subject">SpeedyCAT kartalarni eksport qildi: %s</string>
     <string name="export_email_text"><![CDATA[        Salom!
         <br/><br/>
-        Bu Ankidroidʼdan[1] yuborilgan kartalar dastasi.
-        Mavjud Anki distributivlaridan biri yordamida uni ochib koʻring[2] va oson va samarali o‘rganishdan bahramand boʻling!<br/><br/>
+        Bu SpeedyCATʼdan[1] yuborilgan kartalar dastasi.
+        Mavjud SpeedyCAT distributivlaridan biri yordamida uni ochib koʻring[2] va oson va samarali o‘rganishdan bahramand boʻling!<br/><br/>
         [1] %1$s<br/>
         [2] %2$s
         ]]></string>
@@ -192,18 +192,18 @@
     <string name="white_board_eraser_disabled">Oʻchirgʻich rejimi oʻchirildi</string>
     <string comment="Progress amount e.g. \'28 MB/141 MB\'. %1$s is the current amount, %2$s is the max." name="progress_amount_bytes">%1$s/%2$s</string>
     <string name="media_file_size_warning_title">Media fayl juda katta</string>
-    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">\"%1$s\" (%2$s) fayli AnkiWebʼning %3$s limitidan oshadi va uni sinxronlab boʻlmaydi. Baribir qoʻshmoqchimisiz?</string>
+    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">\"%1$s\" (%2$s) fayli SpeedyCATʼning %3$s limitidan oshadi va uni sinxronlab boʻlmaydi. Baribir qoʻshmoqchimisiz?</string>
     <string name="media_file_size_add_anyway">Baribir qoʻshish</string>
     <!-- Whiteboard save image message in the Study Screen -->
     <string name="white_board_image_save_failed">Yozuv taxtasi rasmini saqlab boʻlmadi. %s</string>
     <string name="white_board_image_saved">Yozuv taxtasi rasmi %s ga saqlandi</string>
     <string name="title_whiteboard_editor" maxLength="28">Yozuv taxtasi muharriri</string>
-    <string name="user_is_a_robot">Avtomatik test aniqlandi. Agar siz inson boʻlsangiz, AnkiDroid qoʻllab-quvvatlash guruhiga murojaat qiling.</string>
+    <string name="user_is_a_robot">Avtomatik test aniqlandi. Agar siz inson boʻlsangiz, SpeedyCAT qoʻllab-quvvatlash guruhiga murojaat qiling.</string>
     <!-- JS api -->
-    <string name="api_version_developer_contact">Bu karta AnkiDroid qoʻllab-quvvatlamagan funksiyalarni ishlatadi. %1$s dasturchi bilan bogʻlaning yoki vikiga murojaat qiling. %2$s</string>
+    <string name="api_version_developer_contact">Bu karta SpeedyCAT qoʻllab-quvvatlamagan funksiyalarni ishlatadi. %1$s dasturchi bilan bogʻlaning yoki vikiga murojaat qiling. %2$s</string>
     <string name="invalid_json_data">Karta yaroqsiz maʼlumot taqdim etdi. %s</string>
-    <string name="valid_js_api_version">Yaroqsiz AnkiDroid JS API versiyasi. %s dasturchi bilan bogʻlaning yoki vikiga murojaat qiling</string>
-    <string name="update_js_api_version">AnkiDroid JS API yangilanishi mavjud. %s dasturchi bilan bogʻlaning yoki vikiga murojaat qiling</string>
+    <string name="valid_js_api_version">Yaroqsiz SpeedyCAT JS API versiyasi. %s dasturchi bilan bogʻlaning yoki vikiga murojaat qiling</string>
+    <string name="update_js_api_version">SpeedyCAT JS API yangilanishi mavjud. %s dasturchi bilan bogʻlaning yoki vikiga murojaat qiling</string>
     <string name="reviewer_invalid_api_version_visit_documentation">Koʻrish</string>
     <string name="anki_js_error_code">(Error code: %d)</string>
     <!-- About AnkiDroid screen -->
@@ -214,8 +214,8 @@
     <!-- Deck Picker -->
     <string name="search_decks" maxLength="28">Dastalarni qidirish</string>
     <string name="ankidroid_init_failed_webview_title">Fatal error</string>
-    <string name="ankidroid_init_failed_webview">AnkiDroid hozirda mavjud boʻlmagan tizim WebViewʼga tayanadi. Bu tizim yangilanishlarni oʻrnatayotganda sodir boʻlishi mumkin. Bir necha daqiqadan soʻng qayta urinib koʻring.\n\n%s</string>
-    <string name="ankidroid_init_failed_storage">Android xatoligi sababli AnkiDroid diskka ruxsati yoʻq.\n\n%s</string>
+    <string name="ankidroid_init_failed_webview">SpeedyCAT hozirda mavjud boʻlmagan tizim WebViewʼga tayanadi. Bu tizim yangilanishlarni oʻrnatayotganda sodir boʻlishi mumkin. Bir necha daqiqadan soʻng qayta urinib koʻring.\n\n%s</string>
+    <string name="ankidroid_init_failed_storage">Android xatoligi sababli SpeedyCAT diskka ruxsati yoʻq.\n\n%s</string>
     <!-- A Menu item to change the Font Size (currently in the Note Editor) -->
     <string name="menu_font_size" maxLength="28">Shrift oʻlchami</string>
     <string name="menu_show_toolbar" comment="Checkable item stating whether the note editor toolbar should be shown" maxLength="28">Asboblar panelini koʻrsatish</string>
@@ -237,9 +237,9 @@
     <string name="note_editor_video_too_large">Video juda katta, videoni qoʻlda kiriting</string>
     <string name="note_editor_audio_too_large">Audio fayl juda katta, audio faylni qoʻlda kiriting</string>
     <string name="ankidroid_cannot_open_after_backup_try_again" comment="After an Android backup is restored, AnkiDroid opens and shows this message.         Opening AnkiDroid again will work correctly">Android zaxiralashi amalga oshmoqda. Iltimos, qayta urinib koʻring</string>
-    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">AnkiDroidʼga yorliqlar qoʻshishga ruxsat berish uchun iManagerʼdan foydalanishingiz kerak boʻlishi mumkin</string>
+    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">SpeedyCATʼga yorliqlar qoʻshishga ruxsat berish uchun iManagerʼdan foydalanishingiz kerak boʻlishi mumkin</string>
     <string name="create_shortcut_error_miui" comment="Keep the message as short, as this is shown in a toast. %s is the app name: \'AnkiDroid\'">Allow ‘Home screen shortcuts’ in system settings for %s to add shortcuts</string>
-    <string name="create_shortcut_failed" comment="home screen == launcher">Asosiy ekraningiz AnkiDroidʼga yorliqlar qoʻshishga ruxsat bermaydi</string>
+    <string name="create_shortcut_failed" comment="home screen == launcher">Asosiy ekraningiz SpeedyCATʼga yorliqlar qoʻshishga ruxsat bermaydi</string>
     <string name="create_shortcut_error">Yorliq qoʻshishda xatolik: %s</string>
     <string name="note_editor_capitalize" comment="This is for a switch with a checkbox - on: enabled" maxLength="28">Jumlalar bosh harf bilan</string>
     <string name="menu_scroll_toolbar" comment="Checkbox stating whether note editor toolbar is scrollable or stacked. Checked: Scroll" maxLength="28">Asboblar panelini aylantirish</string>
@@ -300,11 +300,11 @@
     <!-- App Intro -->
     <string name="intro_ankidroid_tagline_one">Kamroq oʻqi</string>
     <string name="intro_ankidroid_tagline_two">Koʻproq eslab qol</string>
-    <string name="intro_short_ankidroid_explanation">Anki karta rejalashtiruvchisi eng zaif xotiralaringizni mustahkamlab va eng kuchli xotiralaringizni saqlab qolish orqali vaqtni tejaydi</string>
+    <string name="intro_short_ankidroid_explanation">SpeedyCAT karta rejalashtiruvchisi eng zaif xotiralaringizni mustahkamlab va eng kuchli xotiralaringizni saqlab qolish orqali vaqtni tejaydi</string>
     <string name="intro_get_started" comment="Action to start AnkiDroid for the first time without syncing from AnkiWeb">Get started</string>
-    <string name="intro_sync_from_ankiweb">AnkiWebʼdan sinxronlash</string>
+    <string name="intro_sync_from_ankiweb">SpeedyCATʼdan sinxronlash</string>
     <!-- IntentHandler -->
-    <string name="app_not_initialized_new">AnkiDroid hali ishga tushirilmagan. AnkiDroidʼni oching va qayta urinib koʻring</string>
+    <string name="app_not_initialized_new">SpeedyCAT hali ishga tushirilmagan. SpeedyCATʼni oching va qayta urinib koʻring</string>
     <!-- Deck Creation -->
     <string name="deck_created">Dasta yaratildi</string>
     <string name="deck_renamed">Dasta nomi oʻzgartirildi</string>

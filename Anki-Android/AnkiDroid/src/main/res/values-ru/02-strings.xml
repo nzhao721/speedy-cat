@@ -126,7 +126,7 @@
         <item quantity="many">%1$d минут</item>
         <item quantity="other">%1$d минут</item>
     </plurals>
-    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">Карточка AnkiDroid</string>
+    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">Карточка SpeedyCAT</string>
     <string name="note_editor_copy_note" maxLength="28">Копировать запись</string>
     <string name="card_editor_reposition_card" comment="reposition a card in the new queue" maxLength="28">Переместить</string>
     <string name="card_editor_reset_card" maxLength="28">Сбросить прогресс</string>
@@ -138,31 +138,31 @@
     <string name="checks_action" maxLength="28">Проверить</string>
     <string name="unknown_type_field_warning">Неизвестный тип поля: %s</string>
     <string name="delete_deck" comment="Message on a progress bar starting a deck is being deleted.">Колода удаляется&#8230;</string>
-    <string name="info_rate">Оценить AnkiDroid</string>
+    <string name="info_rate">Оценить SpeedyCAT</string>
     <string name="import_title">Импорт</string>
     <string name="import_preparing_file">Подготовка файла для импорта&#8230;</string>
     <string name="import_message_add" comment="Adding a new deck to the collection (import)">Добавить</string>
     <string name="import_message_replace_confirm">Ваша коллекция будет удалена, и её заменят данные из файла %s</string>
     <string name="import_dialog_message_add">Добавить \"%s\" в коллекцию? Может потребоваться немало времени</string>
-    <string name="import_log_no_apkg">Это недопустимый пакет Anki</string>
+    <string name="import_log_no_apkg">Это недопустимый пакет SpeedyCAT</string>
     <string name="import_title_error" comment="Title of error dialog">Ошибка</string>
     <string name="import_error_handle_exception">Не удалось импортировать файл\n\n%s</string>
     <string name="import_error_not_apkg_extension">У файла “%s” должно быть расширение .apkg или .colpkg</string>
-    <string name="import_error_load_imported_database">Замена базы данных Anki (.anki2) пока не поддерживается. Смотрите руководство для инструкций по замене.</string>
-    <string name="import_error_content_provider">Этот файл не получится импортировать автоматически. См. руководство, чтобы импортировать Anki-файлы вручную: \n %s</string>
+    <string name="import_error_load_imported_database">Замена базы данных SpeedyCAT (.anki2) пока не поддерживается. Смотрите руководство для инструкций по замене.</string>
+    <string name="import_error_content_provider">Этот файл не получится импортировать автоматически. См. руководство, чтобы импортировать SpeedyCAT-файлы вручную: \n %s</string>
     <string name="import_error_copy_to_cache_title">Не удалось кэшировать файл</string>
     <string name="import_error_copy_to_cache_explanation" comment="The substitution is a list of suggested fixes in bullet point form">Часто это вызвано ошибкой в приложении, которое вы использовали для выбора файла. Пожалуйста, попробуйте следующие исправления:\n\n%s</string>
     <string name="import_interrupted">Импорт прерван</string>
     <string name="export_ready_title">Экспорт готов</string>
     <string name="export_send_no_handlers">Нет приложений для чтения файлов apkg. Сохраняется&#8230;</string>
-    <string name="export_save_apkg_successful">Пакет Anki успешно сохранён</string>
-    <string name="export_save_apkg_unsuccessful">Не удалось сохранить пакет Anki</string>
-    <string name="export_share_title">Отправить пакет Anki с помощью</string>
-    <string name="export_email_subject">AnkiDroid экспортировал колоды карточек: %s</string>
+    <string name="export_save_apkg_successful">Пакет SpeedyCAT успешно сохранён</string>
+    <string name="export_save_apkg_unsuccessful">Не удалось сохранить пакет SpeedyCAT</string>
+    <string name="export_share_title">Отправить пакет SpeedyCAT с помощью</string>
+    <string name="export_email_subject">SpeedyCAT экспортировал колоды карточек: %s</string>
     <string name="export_email_text"><![CDATA[        Привет!
         <br/><br/>
-        Это колода карточек Anki, отправленная из приложения AnkiDroid[1].
-        Её можно открыть в одной из совместимых с Anki программ[2] и наслаждаться легким и эффективным обучением!<br/><br/>
+        Это колода карточек SpeedyCAT, отправленная из приложения SpeedyCAT[1].
+        Её можно открыть в одной из совместимых с SpeedyCAT программ[2] и наслаждаться легким и эффективным обучением!<br/><br/>
         [1] %1$s<br/>
         [2] %2$s
         ]]></string>
@@ -198,18 +198,18 @@
     <string name="white_board_eraser_disabled">Режим ластика выключен</string>
     <string comment="Progress amount e.g. \'28 MB/141 MB\'. %1$s is the current amount, %2$s is the max." name="progress_amount_bytes">%1$s/%2$s</string>
     <string name="media_file_size_warning_title">Файл слишком большой</string>
-    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">Файл \"%1$s\" (%2$s) превышает AnkiWeb предел %3$s и не может быть синхронизирован. Добавить в любом случае?</string>
+    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">Файл \"%1$s\" (%2$s) превышает SpeedyCAT предел %3$s и не может быть синхронизирован. Добавить в любом случае?</string>
     <string name="media_file_size_add_anyway">Все равно добавить</string>
     <!-- Whiteboard save image message in the Study Screen -->
     <string name="white_board_image_save_failed">Не удалось сохранить изображение доски. %s</string>
     <string name="white_board_image_saved">Изображение доски сохранено в %s</string>
     <string name="title_whiteboard_editor" maxLength="28">Редактор доски</string>
-    <string name="user_is_a_robot">Обнаружен автоматический тест. Если вы человек, обратитесь в службу поддержки AnkiDroid</string>
+    <string name="user_is_a_robot">Обнаружен автоматический тест. Если вы человек, обратитесь в службу поддержки SpeedyCAT</string>
     <!-- JS api -->
-    <string name="api_version_developer_contact">Эта карточка использует неподдерживаемые в AnkiDroid функции. Свяжитесь с разработчиками %1$s или обратитесь к вики-справке. %2$s</string>
+    <string name="api_version_developer_contact">Эта карточка использует неподдерживаемые в SpeedyCAT функции. Свяжитесь с разработчиками %1$s или обратитесь к вики-справке. %2$s</string>
     <string name="invalid_json_data">В карточке недопустимые данные. %s</string>
-    <string name="valid_js_api_version">Недопустимый версия AnkiDroid JS API. Свяжитесь с разработчиками %s или обратитесь к вики-справке</string>
-    <string name="update_js_api_version">Доступна новая версия AnkiDroid JS API. Свяжитесь с разработчиками %s или обратитесь к вики-справке.</string>
+    <string name="valid_js_api_version">Недопустимый версия SpeedyCAT JS API. Свяжитесь с разработчиками %s или обратитесь к вики-справке</string>
+    <string name="update_js_api_version">Доступна новая версия SpeedyCAT JS API. Свяжитесь с разработчиками %s или обратитесь к вики-справке.</string>
     <string name="reviewer_invalid_api_version_visit_documentation">Вид</string>
     <string name="anki_js_error_code">(Error code: %d)</string>
     <!-- About AnkiDroid screen -->
@@ -220,8 +220,8 @@
     <!-- Deck Picker -->
     <string name="search_decks" maxLength="28">Найти колоду</string>
     <string name="ankidroid_init_failed_webview_title">Fatal error</string>
-    <string name="ankidroid_init_failed_webview">AnkiDroid использует системный WebView, который сейчас не доступен. Это может произойти, если система устанавливает обновления. Повторите попытку через несколько минут.\n\n%s</string>
-    <string name="ankidroid_init_failed_storage">AnkiDroid не может получить доступ к хранилищу из-за ошибки Android.\n\n%s</string>
+    <string name="ankidroid_init_failed_webview">SpeedyCAT использует системный WebView, который сейчас не доступен. Это может произойти, если система устанавливает обновления. Повторите попытку через несколько минут.\n\n%s</string>
+    <string name="ankidroid_init_failed_storage">SpeedyCAT не может получить доступ к хранилищу из-за ошибки Android.\n\n%s</string>
     <!-- A Menu item to change the Font Size (currently in the Note Editor) -->
     <string name="menu_font_size" maxLength="28">Размер шрифта</string>
     <string name="menu_show_toolbar" comment="Checkable item stating whether the note editor toolbar should be shown" maxLength="28">Показать панель инструментов</string>
@@ -243,9 +243,9 @@
     <string name="note_editor_video_too_large">Видео слишком большое. Вставьте видео вручную</string>
     <string name="note_editor_audio_too_large">Аудио слишком большое. Вставьте аудио вручную</string>
     <string name="ankidroid_cannot_open_after_backup_try_again" comment="After an Android backup is restored, AnkiDroid opens and shows this message.         Opening AnkiDroid again will work correctly">Выполняется резервное копирование Android. Попробуйте еще раз</string>
-    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Возможно, вам потребуется iManager, чтобы AnkiDroid мог добавлять ярлыки</string>
+    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Возможно, вам потребуется iManager, чтобы SpeedyCAT мог добавлять ярлыки</string>
     <string name="create_shortcut_error_miui" comment="Keep the message as short, as this is shown in a toast. %s is the app name: \'AnkiDroid\'">Разрешить ярлыки рабочего стола в системных настройках для %s</string>
-    <string name="create_shortcut_failed" comment="home screen == launcher">Ваш домашний экран не позволяет AnkiDroid добавлять ярлыки</string>
+    <string name="create_shortcut_failed" comment="home screen == launcher">Ваш домашний экран не позволяет SpeedyCAT добавлять ярлыки</string>
     <string name="create_shortcut_error">Ошибка при добавлении ярлыка: %s</string>
     <string name="note_editor_capitalize" comment="This is for a switch with a checkbox - on: enabled" maxLength="28">Предложение с заглавной буквы</string>
     <string name="menu_scroll_toolbar" comment="Checkbox stating whether note editor toolbar is scrollable or stacked. Checked: Scroll" maxLength="28">Прокрутка панели</string>
@@ -310,11 +310,11 @@
     <!-- App Intro -->
     <string name="intro_ankidroid_tagline_one">Учиться эффективнее</string>
     <string name="intro_ankidroid_tagline_two">Помнить больше</string>
-    <string name="intro_short_ankidroid_explanation">Планировщик Anki экономит ваше время, помогая запомнить сложное и не забыть простое</string>
+    <string name="intro_short_ankidroid_explanation">Планировщик SpeedyCAT экономит ваше время, помогая запомнить сложное и не забыть простое</string>
     <string name="intro_get_started" comment="Action to start AnkiDroid for the first time without syncing from AnkiWeb">Get started</string>
-    <string name="intro_sync_from_ankiweb">Скачать с AnkiWeb</string>
+    <string name="intro_sync_from_ankiweb">Скачать с SpeedyCAT</string>
     <!-- IntentHandler -->
-    <string name="app_not_initialized_new">AnkiDroid не запущен. Пожалуйста, откройте AnkiDroid и попробуйте снова</string>
+    <string name="app_not_initialized_new">SpeedyCAT не запущен. Пожалуйста, откройте SpeedyCAT и попробуйте снова</string>
     <!-- Deck Creation -->
     <string name="deck_created">Колода создана</string>
     <string name="deck_renamed">Колода переименована</string>

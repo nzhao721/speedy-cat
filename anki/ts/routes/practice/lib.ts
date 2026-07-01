@@ -129,7 +129,9 @@ export function formatDurationLong(totalSeconds: number): string {
 // ---- Filters ---------------------------------------------------------------
 
 export interface FilterOptions {
-    section?: McatSection;
+    /** Sections to include (matches ANY). Empty / omitted = all sections. */
+    sections?: McatSection[];
+    /** Topics to include (matches ANY, case-insensitive). Empty = all topics. */
     topics?: string[];
     missedOnly?: boolean;
     includeFullLength?: boolean;
@@ -138,23 +140,80 @@ export interface FilterOptions {
 
 /** Build a fully-populated QuestionFilter plain object from partial options. */
 export function buildFilter(opts: FilterOptions) {
-    const filter: {
-        section?: McatSection;
-        topics: string[];
-        missedOnly: boolean;
-        includeFullLength: boolean;
-        limit: number;
-    } = {
+    // Drop the UNSPECIFIED sentinel so an "all sections" pseudo-choice never
+    // narrows the query (empty list = all sections).
+    const sections = (opts.sections ?? []).filter(
+        (s) => s !== McatSection.UNSPECIFIED,
+    );
+    return {
+        sections,
         topics: opts.topics ?? [],
         missedOnly: opts.missedOnly ?? false,
         includeFullLength: opts.includeFullLength ?? false,
         limit: opts.limit ?? 0,
     };
-    // McatSection.UNSPECIFIED === 0 is falsy, so this also skips "all sections".
-    if (opts.section) {
-        filter.section = opts.section;
+}
+
+// ---- Setup input parsing ---------------------------------------------------
+
+export interface QuestionCountInput {
+    /** Limit to pass to the QuestionFilter (0 = all available). */
+    limit: number;
+    /** Whether the raw text is acceptable to start a session. */
+    valid: boolean;
+    /** True when the input means "all available" (blank / "max" / "all"). */
+    all: boolean;
+}
+
+/**
+ * Parse the free-text "number of questions" field. Blank, "max" or "all" mean
+ * all available (limit 0 — the backend then serves everything, rounding CARS
+ * down to whole passage sets). Otherwise the text must be a positive integer,
+ * which is clamped to `available` when that is known; anything else (0,
+ * negative, decimal, non-numeric) is invalid.
+ */
+export function parseQuestionCount(
+    raw: string,
+    available?: number,
+): QuestionCountInput {
+    const trimmed = raw.trim().toLowerCase();
+    if (trimmed === "" || trimmed === "max" || trimmed === "all") {
+        return { limit: 0, valid: true, all: true };
     }
-    return filter;
+    if (!/^\d+$/.test(trimmed)) {
+        return { limit: 0, valid: false, all: false };
+    }
+    const n = Number.parseInt(trimmed, 10);
+    if (n <= 0) {
+        return { limit: 0, valid: false, all: false };
+    }
+    const limit =
+        available !== undefined && available > 0 ? Math.min(n, available) : n;
+    return { limit, valid: true, all: false };
+}
+
+export interface TimerInput {
+    /** Session time limit in seconds (0 when invalid / untimed). */
+    seconds: number;
+    /** Whether the raw text is a usable positive whole-minute count. */
+    valid: boolean;
+}
+
+/**
+ * Parse the free-text timer field (whole minutes). Must be a positive integer;
+ * blank / non-numeric / non-positive is not valid. The caller only consults
+ * this when the session is timed (the "Untimed" toggle bypasses it entirely).
+ */
+export function parseTimerMinutes(raw: string): TimerInput {
+    const trimmed = raw.trim();
+    if (!/^\d+$/.test(trimmed)) {
+        return { seconds: 0, valid: false };
+    }
+    const mins = Number.parseInt(trimmed, 10);
+    if (mins <= 0) {
+        return { seconds: 0, valid: false };
+    }
+    return { seconds: mins * 60, valid: true };
 }
 
 // ---- Backend wrappers ------------------------------------------------------

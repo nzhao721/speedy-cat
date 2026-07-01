@@ -39,12 +39,12 @@
         <item quantity="other">%d کارڈز ری سیٹ ہو گئے۔</item>
     </plurals>
     <string name="answering_error_title">ڈیٹا بیس کی خرابی۔</string>
-    <string name="answering_error_message">مجموعہ پر لکھنا ناکام ہو گیا۔ ڈیٹا بیس کرپٹ ہو سکتا ہے یا ڈسک پر کافی جگہ خالی نہیں ہو سکتی۔\n\nاگر ایسا زیادہ ہوتا ہے تو ڈیٹا بیس کو چیک کرنے، جمع کو ٹھیک کرنے یا اسے بیک اپ سے بحال کرنے کی کوشش کریں۔ اس کے لیے \"اختیارات\" کو ٹچ کریں۔\n\یا یہ AnkiDroid بگ بھی ہو سکتا ہے۔ براہ کرم غلطی کی اطلاع دیں تاکہ ہم اسے چیک کر سکیں۔</string>
+    <string name="answering_error_message">مجموعہ پر لکھنا ناکام ہو گیا۔ ڈیٹا بیس کرپٹ ہو سکتا ہے یا ڈسک پر کافی جگہ خالی نہیں ہو سکتی۔\n\nاگر ایسا زیادہ ہوتا ہے تو ڈیٹا بیس کو چیک کرنے، جمع کو ٹھیک کرنے یا اسے بیک اپ سے بحال کرنے کی کوشش کریں۔ اس کے لیے \"اختیارات\" کو ٹچ کریں۔\n\یا یہ SpeedyCAT بگ بھی ہو سکتا ہے۔ براہ کرم غلطی کی اطلاع دیں تاکہ ہم اسے چیک کر سکیں۔</string>
     <string name="answering_error_report">غلطی کی اطلاع دیں۔</string>
-    <string name="storage_full_message">There is not enough free storage space to open AnkiDroid. Free up some space to continue.</string>
+    <string name="storage_full_message">There is not enough free storage space to open SpeedyCAT. Free up some space to continue.</string>
     <string name="repair_deck_dialog">کیا آپ واقعی ڈیٹا بیس کو ٹھیک کرنے کی کوشش کرنا چاہتے ہیں؟\n\nکوشش شروع کرنے سے پہلے، ذیلی فولڈر \"%s\" میں ایک کاپی بنائی جائے گی۔</string>
     <string name="intent_aedict_empty">زمرہ \"ڈیفالٹ\" خالی ہے۔</string>
-    <string name="intent_aedict_category">AnkiDroid میں کارڈز شامل کرنے کے لیے تمام نوٹ پیڈ کیٹیگریز کو ہٹا دیں یا \"ڈیفالٹ\" کے نام سے ایک شامل کریں۔</string>
+    <string name="intent_aedict_category">SpeedyCAT میں کارڈز شامل کرنے کے لیے تمام نوٹ پیڈ کیٹیگریز کو ہٹا دیں یا \"ڈیفالٹ\" کے نام سے ایک شامل کریں۔</string>
     <string name="custom_study_new_extend">آج کی نئی کارڈ کی حد (\"-3\") میں اضافہ/کم کریں۔</string>
     <string name="custom_study_rev_extend">آج کی نظرثانی کی حد میں اضافہ/کمی (\"-3\")</string>
     <string name="custom_study_forgotten">پچھلے دنوں میں بھولے گئے کارڈز کا جائزہ لیں:</string>
@@ -54,7 +54,7 @@
     <string name="storage_full_title">اسٹوریج بھرا ہوا ہے</string>
     <string name="storage_almost_full_title">اسٹوریج تقریباً بھر گیا ہے</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">کوئی جگہ نہیں</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">AnkiDroid کو جاری رکھنے کے لیے %s مفت اسٹوریج کی جگہ درکار ہے۔ براہ کرم کچھ جگہ خالی کریں</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">SpeedyCAT کو جاری رکھنے کے لیے %s مفت اسٹوریج کی جگہ درکار ہے۔ براہ کرم کچھ جگہ خالی کریں</string>
     <string name="restore_backup_title">بیک اپ بحال کریں؟</string>
     <string name="restore_backup">آپ کا مجموعہ ایک پرانی کاپی سے بدل دیا جائے گا۔ کوئی بھی غیر محفوظ شدہ پیش رفت ضائع ہو جائے گی</string>
     <string name="restore_backup_choose_another">دوسرا انتخاب کریں۔</string>
@@ -115,9 +115,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">ڈیٹا بیس مقفل</string>
-    <string name="database_locked_summary">AnkiDroid ڈیٹا بیس ایک اور ایپلیکیشن کے زیر استعمال ہے۔ براہ کرم دوسری ایپلیکیشن بند کریں پھر AnkiDroid کو دوبارہ کھولیں۔</string>
+    <string name="database_locked_summary">SpeedyCAT ڈیٹا بیس ایک اور ایپلیکیشن کے زیر استعمال ہے۔ براہ کرم دوسری ایپلیکیشن بند کریں پھر SpeedyCAT کو دوبارہ کھولیں۔</string>
     <string name="incompatible_database_version_title">غیر مطابقت پذیر ڈیٹا بیس ورژن</string>
-    <string name="incompatible_database_version_summary">ڈیٹا بیس AnkiDroid کے اس ورژن سے زیادہ جدید ورژن ہے جس کے ساتھ کام کیا جا سکتا ہے۔ AnkiDroid کو اپ گریڈ کریں یا اسے کھولنے کے لیے ڈیٹا بیس کو ڈاؤن گریڈ کریں\n\nتعاون یافتہ ورژن: %1$d\nڈیٹا بیس ورژن: %2$d\n\n درج ذیل بحالی کے اختیارات آپ کے موجودہ مجموعہ کو اوور رائٹ کر دیں گے، ممکنہ طور پر ایک مطابقت پذیر ڈیٹا بیس ورژن کے ساتھ:</string>
+    <string name="incompatible_database_version_summary">ڈیٹا بیس SpeedyCAT کے اس ورژن سے زیادہ جدید ورژن ہے جس کے ساتھ کام کیا جا سکتا ہے۔ SpeedyCAT کو اپ گریڈ کریں یا اسے کھولنے کے لیے ڈیٹا بیس کو ڈاؤن گریڈ کریں\n\nتعاون یافتہ ورژن: %1$d\nڈیٹا بیس ورژن: %2$d\n\n درج ذیل بحالی کے اختیارات آپ کے موجودہ مجموعہ کو اوور رائٹ کر دیں گے، ممکنہ طور پر ایک مطابقت پذیر ڈیٹا بیس ورژن کے ساتھ:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">پس منظر کی تصویر لاگو کر دی گئی</string>
     <string name="background_image_removed">پس منظر کی تصویر ہٹا دی گئی۔</string>
@@ -138,29 +138,29 @@
     <string name="locale_selection_dialog_title_new">زبان سیٹ کریں۔</string>
     <string name="locale_selection_dialog_summary">Some multilingual keyboards, such as GBoard support changing language when editing text\n\nPlease request the “setImeHintLocales” feature from your keyboard manufacturer if your keyboard does not change language.</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">AnkiDroid استعمال کرنا</string>
-    <string name="help_item_ankidroid_manual">AnkiDroid manual</string>
-    <string name="help_item_anki_manual">Anki manual</string>
-    <string name="help_item_ankidroid_faq">AnkiDroid FAQ</string>
+    <string name="help_title_using_ankidroid">SpeedyCAT استعمال کرنا</string>
+    <string name="help_item_ankidroid_manual">SpeedyCAT manual</string>
+    <string name="help_item_anki_manual">SpeedyCAT manual</string>
+    <string name="help_item_ankidroid_faq">SpeedyCAT FAQ</string>
     <string name="help_title_get_help">Get help</string>
     <string name="help_item_mailing_list">Mailing list</string>
     <string name="help_item_reddit">ریڈٹ</string>
     <string name="help_item_report_bug">Report a bug</string>
-    <string name="help_title_support_ankidroid" maxLength="28">AnkiDroid کو سپورٹ کریں</string>
+    <string name="help_title_support_ankidroid" maxLength="28">SpeedyCAT کو سپورٹ کریں</string>
     <string name="help_item_support_opencollective_donate">عطیہ کریں</string>
     <string name="help_item_support_develop_ankidroid">ترقی کرنا</string>
     <string name="help_item_support_rate_ankidroid">ریٹ کریں</string>
     <string name="help_item_support_other_ankidroid">دیگر</string>
     <string name="multimedia_editor_trans_translate">ترجمہ</string>
     <string name="help_title_community">برادری</string>
-    <string name="help_item_anki_forums">Anki forums</string>
+    <string name="help_item_anki_forums">SpeedyCAT forums</string>
     <string name="help_item_discord">ڈسکورڈ</string>
     <string name="help_item_facebook">فیس بک</string>
     <string name="help_item_twitter">ٹویٹر</string>
     <string name="help_title_privacy">رازداری</string>
-    <string name="help_item_ankidroid_privacy_policy">AnkiDroid privacy policy</string>
-    <string name="help_item_ankiweb_privacy_policy">AnkiWeb privacy policy</string>
-    <string name="help_item_ankiweb_terms_and_conditions">AnkiWeb terms and conditions</string>
+    <string name="help_item_ankidroid_privacy_policy">SpeedyCAT privacy policy</string>
+    <string name="help_item_ankiweb_privacy_policy">SpeedyCAT privacy policy</string>
+    <string name="help_item_ankiweb_terms_and_conditions">SpeedyCAT terms and conditions</string>
     <string name="help_title_send_exception">ٹربل شوٹنگ رپورٹ بھیجیں۔</string>
     <string name="help_dialog_exception_report_debounce">رپورٹ پہلے ہی جمع کرائی ہے۔</string>
     <string name="help_dialog_exception_report_sent">رپورٹ بھیج دی گئی!</string>

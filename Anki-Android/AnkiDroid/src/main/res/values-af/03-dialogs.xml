@@ -39,12 +39,12 @@
         <item quantity="other">%d kaarte herstel</item>
     </plurals>
     <string name="answering_error_title">Databasis fout</string>
-    <string name="answering_error_message">Skryf na die versameling het misluk. Die databasis kan korrup wees of daar mag nie genoeg leë spasie op die skyf wees nie.\n\nAs dit meer gereeld gebeur, probeer om die databasis na te gaan, die versameling te herstel of dit van \'n rugsteun te herstel. Raak “opsies” aan daarvoor.\n\Of dit kan ook \'n AnkiDroid-fout wees; rapporteer asseblief die fout sodat ons dit kan nagaan.</string>
+    <string name="answering_error_message">Skryf na die versameling het misluk. Die databasis kan korrup wees of daar mag nie genoeg leë spasie op die skyf wees nie.\n\nAs dit meer gereeld gebeur, probeer om die databasis na te gaan, die versameling te herstel of dit van \'n rugsteun te herstel. Raak “opsies” aan daarvoor.\n\Of dit kan ook \'n SpeedyCAT-fout wees; rapporteer asseblief die fout sodat ons dit kan nagaan.</string>
     <string name="answering_error_report">Rapporteer fout</string>
-    <string name="storage_full_message">There is not enough free storage space to open AnkiDroid. Free up some space to continue.</string>
+    <string name="storage_full_message">There is not enough free storage space to open SpeedyCAT. Free up some space to continue.</string>
     <string name="repair_deck_dialog">Wil jy regtig probeer om die databasis te herstel?\n\nVoor die poging begin, sal \'n kopie in subgids “%s” geskep word.</string>
     <string name="intent_aedict_empty">Kategorie “verstek” is leeg</string>
-    <string name="intent_aedict_category">Om kaarte by AnkiDroid te voeg, verwyder alle Notepad-kategorieë of voeg een by met die naam “verstek”</string>
+    <string name="intent_aedict_category">Om kaarte by SpeedyCAT te voeg, verwyder alle Notepad-kategorieë of voeg een by met die naam “verstek”</string>
     <string name="custom_study_new_extend">Verhoog/verlaag (“-3”) vandag se nuwe kaartlimiet met</string>
     <string name="custom_study_rev_extend">Verhoog/verlaag (“-3”) vandag se nuwe hersieningslimiet met</string>
     <string name="custom_study_forgotten">Hersien kaarte wat in die laaste x dae vergeet is</string>
@@ -54,7 +54,7 @@
     <string name="storage_full_title">Stoor is vol</string>
     <string name="storage_almost_full_title">Stoor is amper vol</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">Geen stoorplek</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">AnkiDroid benodig %s vrye stoorplek om voort te gaan. Maak asseblief plek skoon</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">SpeedyCAT benodig %s vrye stoorplek om voort te gaan. Maak asseblief plek skoon</string>
     <string name="restore_backup_title">Herstel rugsteun?</string>
     <string name="restore_backup">Jou versameling sal vervang word met \'n ouer kopie. Enige ongestoorde vordering sal verlore gaan.</string>
     <string name="restore_backup_choose_another">Kies \'n ander</string>
@@ -115,9 +115,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">Databasis Is Vergrendel</string>
-    <string name="database_locked_summary">Die AnkiDroid-databasis is in gebruik deur \'n ander toepassing. Maak asseblief die ander toepassing toe en heropen dan AnkiDroid.</string>
+    <string name="database_locked_summary">Die SpeedyCAT-databasis is in gebruik deur \'n ander toepassing. Maak asseblief die ander toepassing toe en heropen dan SpeedyCAT.</string>
     <string name="incompatible_database_version_title">Onversoenbare Databasis-Weergawe</string>
-    <string name="incompatible_database_version_summary">Die databasis is \'n meer gevorderde weergawe as wat hierdie weergawe van AnkiDroid mee kan werk. Opgradeer AnkiDroid of downgrade die databasis om dit oop te maak\n\nOndersteunde weergawe: %1$d\nDatabasis weergawe: %2$d\n\nDie volgende herstelopsies sal jou huidige versameling oorskryf, moontlik met \'n versoenbare databasisweergawe:</string>
+    <string name="incompatible_database_version_summary">Die databasis is \'n meer gevorderde weergawe as wat hierdie weergawe van SpeedyCAT mee kan werk. Opgradeer SpeedyCAT of downgrade die databasis om dit oop te maak\n\nOndersteunde weergawe: %1$d\nDatabasis weergawe: %2$d\n\nDie volgende herstelopsies sal jou huidige versameling oorskryf, moontlik met \'n versoenbare databasisweergawe:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">Agtergrondbeeld toegepas</string>
     <string name="background_image_removed">Agtergrondbeeld verwyder</string>
@@ -138,29 +138,29 @@
     <string name="locale_selection_dialog_title_new">Stel taal</string>
     <string name="locale_selection_dialog_summary">Some multilingual keyboards, such as GBoard support changing language when editing text\n\nPlease request the “setImeHintLocales” feature from your keyboard manufacturer if your keyboard does not change language.</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">Die Gebruik Van AnkiDroid</string>
-    <string name="help_item_ankidroid_manual">AnkiDroid Handleiding</string>
-    <string name="help_item_anki_manual">Anki Handleiding</string>
-    <string name="help_item_ankidroid_faq">AnkiDroid GV</string>
+    <string name="help_title_using_ankidroid">Die Gebruik Van SpeedyCAT</string>
+    <string name="help_item_ankidroid_manual">SpeedyCAT Handleiding</string>
+    <string name="help_item_anki_manual">SpeedyCAT Handleiding</string>
+    <string name="help_item_ankidroid_faq">SpeedyCAT GV</string>
     <string name="help_title_get_help">Kry Hulp</string>
     <string name="help_item_mailing_list">PosLys</string>
     <string name="help_item_reddit">Reddit</string>
     <string name="help_item_report_bug">Rapporteer \'n Fout</string>
-    <string name="help_title_support_ankidroid" maxLength="28">Ondersteun AnkiDroid</string>
+    <string name="help_title_support_ankidroid" maxLength="28">Ondersteun SpeedyCAT</string>
     <string name="help_item_support_opencollective_donate">Skenk</string>
     <string name="help_item_support_develop_ankidroid">Ontwikkel</string>
     <string name="help_item_support_rate_ankidroid">Beoordeel</string>
     <string name="help_item_support_other_ankidroid">Ander</string>
     <string name="multimedia_editor_trans_translate">Vertaal</string>
     <string name="help_title_community">Gemeenskap</string>
-    <string name="help_item_anki_forums">Anki Forums</string>
+    <string name="help_item_anki_forums">SpeedyCAT Forums</string>
     <string name="help_item_discord">Discord</string>
     <string name="help_item_facebook">Facebook</string>
     <string name="help_item_twitter">Twitter</string>
     <string name="help_title_privacy">Privaatheid</string>
-    <string name="help_item_ankidroid_privacy_policy">AnkiDroid Privaatheid-Sbeleid</string>
-    <string name="help_item_ankiweb_privacy_policy">AnkiWeb Privaatheid-Sbeleid</string>
-    <string name="help_item_ankiweb_terms_and_conditions">AnkiWeb terms and conditions</string>
+    <string name="help_item_ankidroid_privacy_policy">SpeedyCAT Privaatheid-Sbeleid</string>
+    <string name="help_item_ankiweb_privacy_policy">SpeedyCAT Privaatheid-Sbeleid</string>
+    <string name="help_item_ankiweb_terms_and_conditions">SpeedyCAT terms and conditions</string>
     <string name="help_title_send_exception">Stuur foutsporingsverslag</string>
     <string name="help_dialog_exception_report_debounce">Verslag reeds ingedien</string>
     <string name="help_dialog_exception_report_sent">Verslag is gestuur!</string>

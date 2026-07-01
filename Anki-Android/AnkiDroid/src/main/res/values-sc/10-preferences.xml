@@ -62,7 +62,7 @@
     <string name="card_browser_font_size" maxLength="41">Dimensionamentu de sos caràteres de su navigadore de cartas</string>
     <string name="card_browser_hide_media" maxLength="41">Ammustra sos nùmenes de sos documentos in su navigadore de cartas</string>
     <string name="card_browser_hide_media_summary">Display audio filenames in the card browser question/answer fields</string>
-    <string name="col_path" maxLength="41">Cartella de AnkiDroid</string>
+    <string name="col_path" maxLength="41">Cartella de SpeedyCAT</string>
     <string name="fullscreen_review" maxLength="41">Modalidade a ischermu intreu</string>
     <string name="full_screen_off">Istudadu</string>
     <string name="full_screen_system">Cua sas barras de sistema</string>
@@ -166,8 +166,8 @@
     </plurals>
     <string name="pref_keep_screen_on" maxLength="41">Mantene s\'ischermu allutu</string>
     <string name="pref_keep_screen_on_summ">Disabìlita s\'istudadura automàtica de s\'ischermu</string>
-    <string name="enable_api_title" maxLength="41">Abìlita s\'API de AnkiDroid</string>
-    <string name="enable_api_summary">Permite a àteras aplicatziones de si connètere a AnkiDroid e lèghere / iscrìere datos chene s\'interventu tuo</string>
+    <string name="enable_api_title" maxLength="41">Abìlita s\'API de SpeedyCAT</string>
+    <string name="enable_api_summary">Permite a àteras aplicatziones de si connètere a SpeedyCAT e lèghere / iscrìere datos chene s\'interventu tuo</string>
     <string name="custom_buttons" maxLength="41">Butones de sa barra de s\'aplicatzione</string>
     <string name="custom_buttons_summary">Personaliza sas atziones de sa barra de s\'aplicatzione</string>
     <string name="custom_buttons_setting_always_show">Ammustra semper</string>
@@ -177,7 +177,7 @@
     <string name="reset_settings_to_default">Riprìstina sas impostatziones predefinidas</string>
     <string name="reset">Reseta</string>
     <string name="thirdparty_apps_title" maxLength="41">Aplicatziones API esternas (de tertzas partes)</string>
-    <string name="thirdparty_apps_summary">Pòmpia·ti una lista de aplicatziones chi impreant s\'API de AnkiDroid che a ditzionàrios o àteras ainas.</string>
+    <string name="thirdparty_apps_summary">Pòmpia·ti una lista de aplicatziones chi impreant s\'API de SpeedyCAT che a ditzionàrios o àteras ainas.</string>
     <string name="pref_controls_reviews_tab" maxLength="41" comment="Name of the tab to configure controls for the reviews screen">Reviews</string>
     <string name="pref_controls_previews_tab" maxLength="41" comment="Name of the tab to configure controls for the previews screen">Previews</string>
     <string name="toggle_backside_only" maxLength="41" comment="Control setting that toggles \'Backside only\' in the previews screen">Toggle backside only</string>
@@ -193,9 +193,9 @@
     <!-- Custom sync server settings -->
     <string name="custom_sync_server_title" maxLength="41">Serbidore de sincronizatzione personalizadu</string>
     <string name="custom_sync_server_summary_none_of_the_two_servers_used" comment="This summary is shown when neither of the two custom sync servers are used,         which is the default.">No impreadu</string>
-    <string name="custom_sync_server_help2"><![CDATA[        Comente alternativa a sa sincronizatzione cun AnkiWeb,
+    <string name="custom_sync_server_help2"><![CDATA[        Comente alternativa a sa sincronizatzione cun SpeedyCAT,
         podes impreare su serbidore tuo pro sa sincronizatzione.
-        Si no est impostadu, in càmbiu s\'at a impreare su serbidore predefinidu de AnkiWeb.
+        Si no est impostadu, in càmbiu s\'at a impreare su serbidore predefinidu de SpeedyCAT.
         <a href="%s">Impara de prus</a>
         ]]></string>
     <string name="custom_sync_server_base_url_title" maxLength="41">Sync URL</string>
@@ -220,9 +220,9 @@
     <string name="deck_conf_general" maxLength="41" comment="Label of the submenu for the general options of new deck">Generale</string>
     <string name="deck_conf_cram_search" maxLength="41" comment="Label of a text field that contains a search query.">Chirca</string>
     <!-- analytics options -->
-    <string name="analytics_dialog_title">Agiuda·nos a megiorare AnkiDroid!</string>
+    <string name="analytics_dialog_title">Agiuda·nos a megiorare SpeedyCAT!</string>
     <string name="analytics_title" maxLength="41">Cumpartzi s\'impreu de sas funtzionalidades</string>
-    <string name="analytics_summ">Podes contribuire a AnkiDroid agiudende s\'iscuadra de isvilupu a bìdere ite funtzionalidades impreat sa gente</string>
+    <string name="analytics_summ">Podes contribuire a SpeedyCAT agiudende s\'iscuadra de isvilupu a bìdere ite funtzionalidades impreat sa gente</string>
     <string name="note_editor_replace_newlines" maxLength="41">Remplasa sas lìnias noas cun s\'HTML</string>
     <string name="note_editor_replace_newlines_summ">In s\'editore de notas cunverte cada istàntzia de &lt;br&gt; in lìnias noas cando ses modifichende una carta.</string>
     <string name="type_in_answer_focus" maxLength="41">Pone in evidèntzia ‘iscrie sa risposta’</string>
@@ -231,11 +231,11 @@
     <string name="open_changelog">Aberi su registru de sas modìficas</string>
     <string name="pref_cat_about_title" maxLength="41">Informatziones</string>
     <string name="contributors_title">Contribuidores</string>
-    <string name="about_contributors_description"><![CDATA[Custos sunt sos <a href=\"%1$s\">contribuidores</a> istravanados nostros. Fintzas tue podes agiudare AnkiDroid programmende, bortende, donende e  <a href=\"%2$s\">àteru galu</a>!]]></string>
+    <string name="about_contributors_description"><![CDATA[Custos sunt sos <a href=\"%1$s\">contribuidores</a> istravanados nostros. Fintzas tue podes agiudare SpeedyCAT programmende, bortende, donende e  <a href=\"%2$s\">àteru galu</a>!]]></string>
     <string name="license">Litzèntzia</string>
-    <string name="license_description"><![CDATA[AnkiDroid est publicadu suta de sas litzèntzias <a href=\"%1$s\">GPL-3.0</a> e <a href=\"%2$s\">AGPL-3.0</a>, cun su còdighe de orìgine a disponimentu <a href=\"%3$s\">in GitHub</a>]]></string>
-    <string name="other_licenses"><![CDATA[AnkiDroid also uses third-party libraries and icons, which are licensed under various open source <a href=\"%1$s\">licenses</a>]]></string>
-    <string name="donate_description"><![CDATA[Podes suportare s\'isvilupu de AnkiDroid <a href=\"%1$s\">cun una donatzione</a>. Cale si siat tantu est apretziadu meda.]]></string>
+    <string name="license_description"><![CDATA[SpeedyCAT est publicadu suta de sas litzèntzias <a href=\"%1$s\">GPL-3.0</a> e <a href=\"%2$s\">AGPL-3.0</a>, cun su còdighe de orìgine a disponimentu <a href=\"%3$s\">in GitHub</a>]]></string>
+    <string name="other_licenses"><![CDATA[SpeedyCAT also uses third-party libraries and icons, which are licensed under various open source <a href=\"%1$s\">licenses</a>]]></string>
+    <string name="donate_description"><![CDATA[Podes suportare s\'isvilupu de SpeedyCAT <a href=\"%1$s\">cun una donatzione</a>. Cale si siat tantu est apretziadu meda.]]></string>
     <!-- Controls -->
     <string name="binding_add_gesture">Annanghe unu gestu</string>
     <string name="binding_add_key">Annanghe una tecla</string>
@@ -270,7 +270,7 @@
     <string name="bindings_already_bound">Giai assotziadu a %s</string>
     <!-- Advanced -->
     <string name="pref_cat_experimental" maxLength="41" tools:ignore="UnusedResources">Isperimentale</string>
-    <string name="readtext_deprecation_warn">AnkiDroid at introduidu unu mecanismu de sìntesi vocale (TTS) megioradu chi est cumpatìbile cun àteros clientes de Anki e includet prus boghes e megioros a sa riprodutzione de limbas!\n\nAtualiza in su primu momentu chi podes, ca custa impostatzione at a èssere bogada luego</string>
+    <string name="readtext_deprecation_warn">SpeedyCAT at introduidu unu mecanismu de sìntesi vocale (TTS) megioradu chi est cumpatìbile cun àteros clientes de SpeedyCAT e includet prus boghes e megioros a sa riprodutzione de limbas!\n\nAtualiza in su primu momentu chi podes, ca custa impostatzione at a èssere bogada luego</string>
     <string name="readtext_reviewer_warn" tools:ignore="UnusedResources">Pro praghere atualiza a su formadu nou de sìntesi vocale</string>
     <string name="pref_fixed_port_title" maxLength="41">localStorage in Study Screen</string>
     <string name="pref_fixed_port_summary">Enables JavaScript localStorage by using a fixed server port in the Study Screen</string>
@@ -282,9 +282,9 @@
     <!-- #######################################################################################
          #################################### Backup options ###################################
          ####################################################################################### -->
-    <string name="pref__backups_help__summary"><![CDATA[        AnkiDroid creat còpias de seguresa periòdicas de sa colletzione tua.
+    <string name="pref__backups_help__summary"><![CDATA[        SpeedyCAT creat còpias de seguresa periòdicas de sa colletzione tua.
         Cando sas còpias tenent duas dies,
-        AnkiDroid at a incumintzare a nde bogare calicuna pro liberare ispàtziu in su discu.
+        SpeedyCAT at a incumintzare a nde bogare calicuna pro liberare ispàtziu in su discu.
         <br><br>
         Tene in contu chi sos documentos multimediales non benint sarvados in custas còpias.
         Pro abarrare seguru, sincroniza sa colletzione tua in manera periòdica o archìvia·ti·nde esportatziones.

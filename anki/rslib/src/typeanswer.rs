@@ -98,7 +98,9 @@ trait DiffTrait {
 
     // Entry Point
     fn to_html(&self) -> String {
-        if self.get_typed() == self.get_expected() {
+        // SpeedyCAT: an answer that is correct apart from letter case is treated
+        // as fully correct (shown all-good) rather than diffing the case change.
+        if casefold_chars(self.get_typed()) == casefold_chars(self.get_expected()) {
             format_typeans!(format!(
                 "<span class=typeGood>{}</span>",
                 htmlescape::encode_minimal(&self.get_expected_original())
@@ -115,13 +117,21 @@ trait DiffTrait {
     }
 
     fn to_tokens(&self) -> DiffTokens {
-        let mut matcher = SequenceMatcher::new(self.get_typed(), self.get_expected());
+        // SpeedyCAT: diff case-insensitively so a difference in letter case is
+        // never flagged as wrong. The case-folded copies (kept at a 1:1 length)
+        // drive the sequence matcher, while the original, cased chars are still
+        // sliced out for display.
+        let typed = self.get_typed();
+        let expected = self.get_expected();
+        let typed_folded = casefold_chars(typed);
+        let expected_folded = casefold_chars(expected);
+        let mut matcher = SequenceMatcher::new(&typed_folded, &expected_folded);
         let mut typed_tokens = Vec::new();
         let mut expected_tokens = Vec::new();
 
         for opcode in matcher.get_opcodes() {
-            let typed_slice = slice(self.get_typed(), opcode.first_start, opcode.first_end);
-            let expected_slice = slice(self.get_expected(), opcode.second_start, opcode.second_end);
+            let typed_slice = slice(typed, opcode.first_start, opcode.first_end);
+            let expected_slice = slice(expected, opcode.second_start, opcode.second_end);
 
             match opcode.tag.as_str() {
                 "equal" => {
@@ -154,6 +164,16 @@ trait DiffTrait {
 // Utility Functions
 fn normalize(string: &str) -> Vec<char> {
     normalize_to_nfc(string).chars().collect()
+}
+
+/// SpeedyCAT: case-fold a char slice for case-insensitive comparison. Each char
+/// maps to a single lowercase char so the folded copy keeps a 1:1 index mapping
+/// with the original (cased) chars that are used for display.
+fn casefold_chars(chars: &[char]) -> Vec<char> {
+    chars
+        .iter()
+        .map(|c| c.to_lowercase().next().unwrap_or(*c))
+        .collect()
 }
 
 fn slice(chars: &[char], start: usize, end: usize) -> String {
@@ -344,11 +364,14 @@ mod test {
     fn tokens() {
         let ctx = Diff::new("¿Y ahora qué vamos a hacer?", "y ahora qe vamosa hacer");
         let output = ctx.to_tokens();
+        // SpeedyCAT: matching is case-insensitive, so the typed "y" now aligns
+        // with the expected "Y" (each still displayed in its own original case)
+        // instead of being flagged; only genuinely different chars are marked.
         assert_eq!(
             output.typed_tokens,
             vec![
-                bad("y"),
-                good(" ahora q"),
+                missing("-"),
+                good("y ahora q"),
                 bad("e"),
                 good(" vamos"),
                 missing("-"),
@@ -359,8 +382,8 @@ mod test {
         assert_eq!(
             output.expected_tokens,
             vec![
-                missing("¿Y"),
-                good(" ahora q"),
+                missing("¿"),
+                good("Y ahora q"),
                 missing("ué"),
                 good(" vamos"),
                 missing(" "),
@@ -517,5 +540,35 @@ mod test {
         let r = match_typed_answer("anything", "   ", true);
         assert!(!r.matches);
         assert_eq!(r.provided_normalized, "");
+    }
+
+    // SpeedyCAT: the visual diff is also case-insensitive, so a difference in
+    // letter case is never highlighted as wrong.
+
+    #[test]
+    fn diff_ignores_case_for_correct_answer() {
+        // "ATP" typed as "atp" is fully correct: all-good, nothing flagged.
+        for combining in [true, false] {
+            let html = compare_answer("ATP", "atp", combining);
+            assert!(html.contains("typeGood"), "combining={combining}: {html}");
+            assert!(!html.contains("typeBad"), "combining={combining}: {html}");
+            assert!(!html.contains("typeMissed"), "combining={combining}: {html}");
+        }
+        // and the structured verdict agrees
+        assert!(match_typed_answer("ATP", "atp", true).matches);
+        assert!(match_typed_answer("ATP", "atp", false).matches);
+    }
+
+    #[test]
+    fn diff_does_not_flag_case_within_answer() {
+        // A case-only difference in part of the answer is not flagged as wrong.
+        let ctx = Diff::new("Krebs Cycle", "krebs cycle");
+        let tokens = ctx.to_tokens();
+        assert!(tokens
+            .typed_tokens
+            .iter()
+            .all(|t| t.kind == DiffTokenKind::Good));
+        // the expected line is still displayed in its original case
+        assert_eq!(tokens.expected_tokens, &[good("Krebs Cycle")]);
     }
 }

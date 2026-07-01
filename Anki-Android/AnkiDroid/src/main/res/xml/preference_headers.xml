@@ -112,27 +112,4 @@
         android:icon="@drawable/ic_backup_restore"
         app:summaryEntries="@array/backup_limits_summary_entries"
         tools:title="Backups"/>
-
-    <!-- Advanced Preferences -->
-    <com.ichi2.preferences.HeaderPreference
-        android:fragment="com.ichi2.anki.preferences.AdvancedSettingsFragment"
-        android:key="@string/pref_advanced_screen_key"
-        android:title="@string/pref_cat_advanced"
-        android:icon="@drawable/ic_tune_white"
-        app:summaryEntries="@array/advanced_summary_entries">
-    </com.ichi2.preferences.HeaderPreference>
-
-    <com.ichi2.preferences.HeaderPreference
-        android:key="@string/pref_developer_options_screen_key"
-        android:title="@string/pref_cat_dev_options"
-        android:icon="@drawable/ic_code"
-        android:fragment="com.ichi2.anki.preferences.DeveloperOptionsFragment"
-        app:isPreferenceVisible="false">
-    </com.ichi2.preferences.HeaderPreference>
-    <!-- About -->
-    <com.ichi2.preferences.HeaderPreference
-        android:key="@string/about_screen_key"
-        android:icon="@drawable/ic_outline_info_24"
-        android:title="@string/pref_cat_about_title"
-        android:fragment="com.ichi2.anki.preferences.AboutFragment"/>
 </PreferenceScreen>

@@ -1,0 +1,442 @@
+{
+  "meta": {
+    "section": "PSBB",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax Psychology 2e, Ch. 5 Review Questions (Sensation and Perception) and Ch. 6 Review Questions (Learning)",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/psychology-2e/pages/5-review-questions"
+      },
+      {
+        "sourceName": "OpenStax Psychology 2e Student Solutions Guide (answer key for odd-numbered review questions)",
+        "sourceLicense": "CC BY 4.0",
+        "sourceUrl": "https://dokumen.pub/psychology-2e-student-solutions-guide.html"
+      }
+    ],
+    "counts": {"total": 21, "byTopic": {"sensation and perception": 13, "learning": 8}},
+    "notes": "Psychology (PSBB) items scraped verbatim from OpenStax Psychology 2e Ch. 5 and Ch. 6 review-questions pages; correct answers from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), odd-numbered review questions only. Live OpenStax pages show CC BY-NC-SA 4.0 plus a no-LLM-training notice; SpeedyCAT use is human-facing/non-AI per PRD."
+  },
+  "questions": [
+    {
+      "id": "psbb-x034",
+      "section": "PSBB",
+      "stem": "________ refers to the minimum amount of stimulus energy required to be detected 50% of the time.",
+      "choices": [
+        {"label": "A", "text": "absolute threshold"},
+        {"label": "B", "text": "difference threshold"},
+        {"label": "C", "text": "just noticeable difference"},
+        {"label": "D", "text": "transduction"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The absolute threshold is the minimum stimulus energy needed for a person to detect a stimulus 50% of the time.",
+      "topicTags": ["psychology", "sensation and perception", "absolute threshold"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 5 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/5-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 5 Q1 = A."
+    },
+    {
+      "id": "psbb-x035",
+      "section": "PSBB",
+      "stem": "________ involves the conversion of sensory stimulus energy into neural impulses.",
+      "choices": [
+        {"label": "A", "text": "sensory adaptation"},
+        {"label": "B", "text": "inattentional blindness"},
+        {"label": "C", "text": "difference threshold"},
+        {"label": "D", "text": "transduction"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Transduction is the conversion of physical sensory stimulus energy into the electrochemical neural impulses the nervous system can process.",
+      "topicTags": ["psychology", "sensation and perception", "transduction"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 5 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/5-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 5 Q3 = D."
+    },
+    {
+      "id": "psbb-x036",
+      "section": "PSBB",
+      "stem": "Which of the following correctly matches the pattern in our perception of color as we move from short wavelengths to long wavelengths?",
+      "choices": [
+        {"label": "A", "text": "red to orange to yellow"},
+        {"label": "B", "text": "yellow to orange to red"},
+        {"label": "C", "text": "yellow to red to orange"},
+        {"label": "D", "text": "orange to yellow to red"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Wavelength increases from yellow (~570 nm) to orange (~600 nm) to red (~700 nm), so moving from shorter to longer wavelengths gives yellow to orange to red.",
+      "topicTags": ["psychology", "sensation and perception", "vision", "wavelength"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 5 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/5-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 5 Q5 = B."
+    },
+    {
+      "id": "psbb-x037",
+      "section": "PSBB",
+      "stem": "The electromagnetic spectrum includes ________.",
+      "choices": [
+        {"label": "A", "text": "radio waves"},
+        {"label": "B", "text": "x-rays"},
+        {"label": "C", "text": "infrared light"},
+        {"label": "D", "text": "all of the above"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The electromagnetic spectrum spans radio waves, infrared, visible light, ultraviolet, x-rays, and more, so all of the listed options are included.",
+      "topicTags": ["psychology", "sensation and perception", "vision", "electromagnetic spectrum"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 5 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/5-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 5 Q7 = D."
+    },
+    {
+      "id": "psbb-x038",
+      "section": "PSBB",
+      "stem": "The quality of a sound that is affected by frequency, amplitude, and timing of the sound wave is known as ________.",
+      "choices": [
+        {"label": "A", "text": "pitch"},
+        {"label": "B", "text": "tone"},
+        {"label": "C", "text": "electromagnetic"},
+        {"label": "D", "text": "timbre"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Timbre is the quality or 'color' of a sound that lets us distinguish sources; it depends on the combination of frequency, amplitude, and timing of the sound wave.",
+      "topicTags": ["psychology", "sensation and perception", "hearing", "timbre"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 5 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/5-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 5 Q9 = D."
+    },
+    {
+      "id": "psbb-x039",
+      "section": "PSBB",
+      "stem": "________ operate best under bright light conditions.",
+      "choices": [
+        {"label": "A", "text": "cones"},
+        {"label": "B", "text": "rods"},
+        {"label": "C", "text": "retinal ganglion cells"},
+        {"label": "D", "text": "striate cortex"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cones are the photoreceptors specialized for color and fine detail and operate best under bright (photopic) light; rods handle dim light.",
+      "topicTags": ["psychology", "sensation and perception", "vision", "photoreceptors"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 5 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/5-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 5 Q11 = A."
+    },
+    {
+      "id": "psbb-x040",
+      "section": "PSBB",
+      "stem": "If you were to stare at a green dot for a relatively long period of time and then shift your gaze to a blank white screen, you would see a ________ negative afterimage.",
+      "choices": [
+        {"label": "A", "text": "blue"},
+        {"label": "B", "text": "yellow"},
+        {"label": "C", "text": "black"},
+        {"label": "D", "text": "red"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Opponent-process theory predicts that fatiguing the green channel produces a red negative afterimage, because red and green are opponent colors.",
+      "topicTags": ["psychology", "sensation and perception", "vision", "opponent-process theory"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 5 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/5-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 5 Q13 = D."
+    },
+    {
+      "id": "psbb-x041",
+      "section": "PSBB",
+      "stem": "The three ossicles of the middle ear are known as ________.",
+      "choices": [
+        {"label": "A", "text": "malleus, incus, and stapes"},
+        {"label": "B", "text": "hammer, anvil, and stirrup"},
+        {"label": "C", "text": "pinna, cochlea, and utricle"},
+        {"label": "D", "text": "both a and b"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The three middle-ear ossicles are the malleus, incus, and stapes, also known by their common names hammer, anvil, and stirrup, so both A and B are correct.",
+      "topicTags": ["psychology", "sensation and perception", "hearing", "anatomy"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 5 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/5-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 5 Q15 = D."
+    },
+    {
+      "id": "psbb-x042",
+      "section": "PSBB",
+      "stem": "Cues that require two ears are referred to as ________ cues.",
+      "choices": [
+        {"label": "A", "text": "monocular"},
+        {"label": "B", "text": "monaural"},
+        {"label": "C", "text": "binocular"},
+        {"label": "D", "text": "binaural"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Binaural cues are localization cues that require both ears (for example, interaural time and intensity differences). Monaural cues require only one ear.",
+      "topicTags": ["psychology", "sensation and perception", "hearing", "sound localization"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 5 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/5-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 5 Q17 = D."
+    },
+    {
+      "id": "psbb-x043",
+      "section": "PSBB",
+      "stem": "Which taste is associated with monosodium glutamate?",
+      "choices": [
+        {"label": "A", "text": "sweet"},
+        {"label": "B", "text": "bitter"},
+        {"label": "C", "text": "umami"},
+        {"label": "D", "text": "sour"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Monosodium glutamate (MSG) elicits the savory taste known as umami, one of the five basic tastes.",
+      "topicTags": ["psychology", "sensation and perception", "taste"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 5 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/5-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 5 Q19 = C."
+    },
+    {
+      "id": "psbb-x044",
+      "section": "PSBB",
+      "stem": "Which of the following is involved in maintaining balance and body posture?",
+      "choices": [
+        {"label": "A", "text": "auditory nerve"},
+        {"label": "B", "text": "nociceptors"},
+        {"label": "C", "text": "olfactory bulb"},
+        {"label": "D", "text": "vestibular system"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The vestibular system of the inner ear senses head position and movement and is essential for balance and body posture.",
+      "topicTags": ["psychology", "sensation and perception", "vestibular sense"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 5 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/5-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 5 Q21 = D."
+    },
+    {
+      "id": "psbb-x045",
+      "section": "PSBB",
+      "stem": "Our tendency to perceive things as complete objects rather than as a series of parts is known as the principle of ________.",
+      "choices": [
+        {"label": "A", "text": "closure"},
+        {"label": "B", "text": "good continuation"},
+        {"label": "C", "text": "proximity"},
+        {"label": "D", "text": "similarity"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The Gestalt principle of closure is our tendency to fill in gaps and perceive incomplete figures as complete, whole objects.",
+      "topicTags": ["psychology", "sensation and perception", "Gestalt principles"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 5 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/5-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 5 Q23 = A."
+    },
+    {
+      "id": "psbb-x046",
+      "section": "PSBB",
+      "stem": "The main point of focus in a visual display is known as the ________.",
+      "choices": [
+        {"label": "A", "text": "closure"},
+        {"label": "B", "text": "perceptual set"},
+        {"label": "C", "text": "ground"},
+        {"label": "D", "text": "figure"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "In figure-ground organization, the figure is the main object of focus that stands out from the background (ground).",
+      "topicTags": ["psychology", "sensation and perception", "figure-ground"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 5 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/5-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 5 Q25 = D."
+    },
+    {
+      "id": "psbb-x047",
+      "section": "PSBB",
+      "stem": "Which of the following is an example of a reflex that occurs at some point in the development of a human being?",
+      "choices": [
+        {"label": "A", "text": "child riding a bike"},
+        {"label": "B", "text": "teen socializing"},
+        {"label": "C", "text": "infant sucking on a nipple"},
+        {"label": "D", "text": "toddler walking"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "A reflex is an unlearned, automatic response to a stimulus. An infant sucking on a nipple is a reflex, whereas the other options are learned behaviors.",
+      "topicTags": ["psychology", "learning", "reflexes"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 6 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/6-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 6 Q1 = C."
+    },
+    {
+      "id": "psbb-x048",
+      "section": "PSBB",
+      "stem": "Two forms of associative learning are ________ and ________.",
+      "choices": [
+        {"label": "A", "text": "classical conditioning; operant conditioning"},
+        {"label": "B", "text": "classical conditioning; Pavlovian conditioning"},
+        {"label": "C", "text": "operant conditioning; observational learning"},
+        {"label": "D", "text": "operant conditioning; learning conditioning"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The two major forms of associative learning are classical conditioning and operant conditioning. (Classical and Pavlovian conditioning are the same thing.)",
+      "topicTags": ["psychology", "learning", "associative learning"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 6 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/6-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 6 Q3 = A."
+    },
+    {
+      "id": "psbb-x049",
+      "section": "PSBB",
+      "stem": "A stimulus that does not initially elicit a response in an organism is a(n) ________.",
+      "choices": [
+        {"label": "A", "text": "unconditioned stimulus"},
+        {"label": "B", "text": "neutral stimulus"},
+        {"label": "C", "text": "conditioned stimulus"},
+        {"label": "D", "text": "unconditioned response"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "A neutral stimulus initially produces no relevant response; through classical conditioning it can become a conditioned stimulus.",
+      "topicTags": ["psychology", "learning", "classical conditioning"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 6 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/6-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 6 Q5 = B."
+    },
+    {
+      "id": "psbb-x050",
+      "section": "PSBB",
+      "stem": "Extinction occurs when ________.",
+      "choices": [
+        {"label": "A", "text": "the conditioned stimulus is presented repeatedly without being paired with an unconditioned stimulus"},
+        {"label": "B", "text": "the unconditioned stimulus is presented repeatedly without being paired with a conditioned stimulus"},
+        {"label": "C", "text": "the neutral stimulus is presented repeatedly without being paired with an unconditioned stimulus"},
+        {"label": "D", "text": "the neutral stimulus is presented repeatedly without being paired with a conditioned stimulus"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "In classical conditioning, extinction is the weakening of the conditioned response when the conditioned stimulus is repeatedly presented without the unconditioned stimulus.",
+      "topicTags": ["psychology", "learning", "classical conditioning", "extinction"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 6 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/6-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 6 Q7 = A."
+    },
+    {
+      "id": "psbb-x051",
+      "section": "PSBB",
+      "stem": "________ is when you take away a pleasant stimulus to stop a behavior.",
+      "choices": [
+        {"label": "A", "text": "positive reinforcement"},
+        {"label": "B", "text": "negative reinforcement"},
+        {"label": "C", "text": "positive punishment"},
+        {"label": "D", "text": "negative punishment"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Negative punishment removes a pleasant stimulus to decrease a behavior (for example, taking away a privilege). 'Negative' means something is removed; 'punishment' means the behavior decreases.",
+      "topicTags": ["psychology", "learning", "operant conditioning", "punishment"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 6 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/6-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 6 Q9 = D."
+    },
+    {
+      "id": "psbb-x052",
+      "section": "PSBB",
+      "stem": "Rewarding successive approximations toward a target behavior is ________.",
+      "choices": [
+        {"label": "A", "text": "shaping"},
+        {"label": "B", "text": "extinction"},
+        {"label": "C", "text": "positive reinforcement"},
+        {"label": "D", "text": "negative reinforcement"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Shaping is reinforcing successive approximations, that is, rewarding behaviors that get progressively closer to a desired target behavior.",
+      "topicTags": ["psychology", "learning", "operant conditioning", "shaping"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 6 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/6-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 6 Q11 = A."
+    },
+    {
+      "id": "psbb-x053",
+      "section": "PSBB",
+      "stem": "The person who performs a behavior that serves as an example is called a ________.",
+      "choices": [
+        {"label": "A", "text": "teacher"},
+        {"label": "B", "text": "model"},
+        {"label": "C", "text": "instructor"},
+        {"label": "D", "text": "coach"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "In observational learning, the individual who performs the behavior that is observed and imitated is the model.",
+      "topicTags": ["psychology", "learning", "observational learning", "modeling"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 6 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/6-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 6 Q13 = B."
+    },
+    {
+      "id": "psbb-x054",
+      "section": "PSBB",
+      "stem": "Which is the correct order of steps in the modeling process?",
+      "choices": [
+        {"label": "A", "text": "attention, retention, reproduction, motivation"},
+        {"label": "B", "text": "motivation, attention, reproduction, retention"},
+        {"label": "C", "text": "attention, motivation, retention, reproduction"},
+        {"label": "D", "text": "motivation, attention, retention, reproduction"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bandura's four steps of observational learning (modeling) occur in the order attention, retention, reproduction, and motivation.",
+      "topicTags": ["psychology", "learning", "observational learning", "Bandura"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 6 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/6-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 6 Q15 = A."
+    }
+  ]
+}

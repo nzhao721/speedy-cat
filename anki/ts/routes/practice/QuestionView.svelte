@@ -77,8 +77,10 @@ timing) lives in the parent; this component only renders and emits events.
                     class={choiceClass(choice.label)}
                     class:struck
                     disabled={disabled && !revealed}
+                    aria-pressed={choice.label === selected}
                     on:click={() => !disabled && dispatch("select", choice.label)}
                 >
+                    <span class="radio" aria-hidden="true"></span>
                     <span class="label">{choice.label}</span>
                     <span class="text">{choice.text}</span>
                     {#if revealed && choice.label === correctAnswer}
@@ -189,7 +191,7 @@ timing) lives in the parent; this component only renders and emits events.
     .choice {
         flex: 1;
         display: flex;
-        align-items: baseline;
+        align-items: center;
         gap: 0.6rem;
         text-align: left;
         padding: 0.7rem 0.9rem;
@@ -201,18 +203,30 @@ timing) lives in the parent; this component only renders and emits events.
         line-height: 1.4;
         transition:
             background 0.1s,
-            border-color 0.1s;
+            border-color 0.1s,
+            box-shadow 0.1s;
     }
     .choice:hover:not(:disabled) {
         border-color: var(--border-focus);
     }
+    .choice:focus-visible {
+        outline: 2px solid var(--border-focus);
+        outline-offset: 2px;
+    }
     .choice:disabled {
         cursor: default;
     }
+    // Pre-submit "picked" state — a distinct, clearly-tinted highlight (accent
+    // fill + 2px accent ring + filled radio). This is separate from the
+    // post-submit correct/incorrect colouring below, and is replaced by it once
+    // the answer is revealed (choiceClass drops `selected` when revealed).
     .choice.selected {
         border-color: var(--border-focus);
-        background: var(--selected-bg, rgba(80, 130, 240, 0.12));
-        box-shadow: inset 0 0 0 1px var(--border-focus);
+        background: var(--selected-bg, rgba(64, 120, 240, 0.18));
+        box-shadow: inset 0 0 0 2px var(--border-focus);
+    }
+    .choice.selected .label {
+        color: var(--border-focus);
     }
     .choice.correct {
         border-color: #2e9e4f;
@@ -225,6 +239,40 @@ timing) lives in the parent; this component only renders and emits events.
     .choice.struck .text {
         text-decoration: line-through;
         opacity: 0.5;
+    }
+    // Radio affordance: a hollow circle that fills to show the active state —
+    // accent (blue) when picked pre-submit, green/red once revealed.
+    .radio {
+        flex: 0 0 auto;
+        width: 1.15rem;
+        height: 1.15rem;
+        border-radius: 50%;
+        border: 2px solid var(--border-strong, var(--border));
+        background: transparent;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .choice.selected .radio {
+        border-color: var(--border-focus);
+        background: var(--border-focus);
+    }
+    .choice.correct .radio {
+        border-color: #2e9e4f;
+        background: #2e9e4f;
+    }
+    .choice.incorrect .radio {
+        border-color: #d1434b;
+        background: #d1434b;
+    }
+    .choice.selected .radio::after,
+    .choice.correct .radio::after,
+    .choice.incorrect .radio::after {
+        content: "";
+        width: 0.42rem;
+        height: 0.42rem;
+        border-radius: 50%;
+        background: #fff;
     }
     .label {
         font-weight: 700;

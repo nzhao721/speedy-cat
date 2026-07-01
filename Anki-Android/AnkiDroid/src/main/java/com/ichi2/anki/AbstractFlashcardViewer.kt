@@ -15,7 +15,6 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.graphics.Bitmap
-import android.graphics.Color
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Build
@@ -58,6 +57,7 @@ import androidx.annotation.IdRes
 import androidx.annotation.RequiresApi
 import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.ThemeUtils
 import androidx.core.net.toFile
 import androidx.core.net.toUri
 import androidx.core.view.WindowInsetsCompat
@@ -981,8 +981,15 @@ abstract class AbstractFlashcardViewer :
                 webChromeClient = AnkiDroidWebChromeClient()
                 isFocusableInTouchMode = typeAnswer!!.useInputTag
                 isScrollbarFadingEnabled = true
-                // Set transparent color to prevent flashing white when night mode enabled
-                setBackgroundColor(Color.argb(1, 0, 0, 0))
+                // Match the themed reviewer background so the WebView doesn't flash a
+                // hard-coded black/white while the card loads. The card body paints this
+                // same themed colour via flashcard.css (--reviewer-canvas).
+                setBackgroundColor(
+                    ThemeUtils.getThemeAttrColor(
+                        this@AbstractFlashcardViewer,
+                        R.attr.alternativeBackgroundColor,
+                    ),
+                )
                 CardViewerWebClient(resourceHandler, this@AbstractFlashcardViewer).apply {
                     webViewClient = this
                     this@AbstractFlashcardViewer.webViewClient = this
@@ -1089,19 +1096,35 @@ abstract class AbstractFlashcardViewer :
         val after = Runnable { actualHideEaseButtons() }
         val easeButtonsVisible = easeButtonsLayout?.visibility == View.VISIBLE
         flipCardLayout?.isClickable = true
-        flipCardLayout?.visibility = View.VISIBLE
-        if (animationDisabled() || !easeButtonsVisible) {
+        if (showAnswerButtonIsRedundant()) {
+            // SpeedyCAT: the type-answer input ("Check") is shown, so submitting the typed answer
+            // (IME "Done"/Enter) reveals the card; the separate "Show Answer" button is redundant.
+            flipCardLayout?.visibility = View.GONE
             after.run()
         } else {
-            flipCardLayout?.alpha = 0f
-            flipCardLayout
-                ?.animate()
-                ?.alpha(1f)
-                ?.setDuration(shortAnimDuration.toLong())
-                ?.withEndAction(after)
+            flipCardLayout?.visibility = View.VISIBLE
+            if (animationDisabled() || !easeButtonsVisible) {
+                after.run()
+            } else {
+                flipCardLayout?.alpha = 0f
+                flipCardLayout
+                    ?.animate()
+                    ?.alpha(1f)
+                    ?.setDuration(shortAnimDuration.toLong())
+                    ?.withEndAction(after)
+            }
         }
         focusAnswerCompletionField()
     }
+
+    /**
+     * SpeedyCAT: true when the type-answer input (the "Check" affordance) is visible on the
+     * question side, so submitting the typed answer (IME "Done"/Enter) reveals the card and the
+     * separate "Show Answer" button would be redundant. Returns false whenever the answer input is
+     * absent (e.g. plain/cloze cards, or forced active recall disabled), so those cards keep
+     * "Show Answer" as their only tap-to-reveal control. The keyboard reveal is unaffected either way.
+     */
+    private fun showAnswerButtonIsRedundant(): Boolean = !displayAnswer && answerField?.isVisible == true
 
     private fun actualHideEaseButtons() {
         easeButtonsLayout?.visibility = View.GONE
@@ -1246,6 +1269,11 @@ abstract class AbstractFlashcardViewer :
     override fun automaticShowAnswer() {
         if (flipCardLayout!!.isEnabled && flipCardLayout!!.isVisible) {
             flipCardLayout!!.performClick()
+        } else if (!displayAnswer && flipCardLayout!!.isEnabled) {
+            // SpeedyCAT: the "Show Answer" button is hidden while the type-answer input ("Check")
+            // is shown, so auto-advance reveals through the same path the flip button click uses.
+            automaticAnswer.onShowAnswer()
+            displayCardAnswer()
         }
     }
 

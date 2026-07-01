@@ -4,7 +4,9 @@ package com.ichi2.anki.cardviewer
 
 import android.content.Context
 import androidx.annotation.CheckResult
+import androidx.appcompat.widget.ThemeUtils
 import anki.config.ConfigKey
+import com.ichi2.anki.R
 import com.ichi2.anki.common.preferences.sharedPrefs
 import com.ichi2.anki.libanki.Card
 import com.ichi2.anki.libanki.CardOrdinal
@@ -13,6 +15,7 @@ import com.ichi2.anki.libanki.TemplateManager.TemplateRenderContext.TemplateRend
 import com.ichi2.anki.libanki.template.MathJax
 import com.ichi2.anki.multimedia.expandSounds
 import com.ichi2.anki.reviewer.ReviewerCustomFonts
+import com.ichi2.utils.toRGBHex
 import timber.log.Timber
 
 /**
@@ -25,6 +28,12 @@ class AndroidCardRenderContext(
     private val cardAppearance: CardAppearance,
     private val cardTemplate: CardTemplate,
     private val showAudioPlayButtons: Boolean,
+    /**
+     * CSS custom properties (injected into the card's `<style>`) that expose the
+     * app's current theme colours to `flashcard.css`, so the reviewer background
+     * and card box follow the app's light/dark theme.
+     */
+    private val themeColorsCss: String = "",
 ) {
     /**
      * Renders Android-specific functionality to produce a [RenderedCard]
@@ -58,7 +67,7 @@ class AndroidCardRenderContext(
     ): RenderedCard {
         val requiresMathjax = MathJax.textContainsMathjax(content)
 
-        val style = cardAppearance.style
+        val style = themeColorsCss + cardAppearance.style
         val script =
             when (requiresMathjax) {
                 false -> ""
@@ -126,7 +135,24 @@ class AndroidCardRenderContext(
                 cardAppearance,
                 cardHtmlTemplate,
                 showAudioPlayButtons,
+                themeColorsCss = buildThemeColorsCss(context),
             )
+        }
+
+        /**
+         * Builds CSS variables from the app's current theme so the reviewer's
+         * background, card box and text follow the app theme (light/dark).
+         *
+         * * `--reviewer-canvas`: screen background around the card box
+         *   ([R.attr.alternativeBackgroundColor], as used by the other screens)
+         * * `--reviewer-surface`: the card box background ([android.R.attr.colorBackground])
+         * * `--reviewer-fg`: default text colour ([android.R.attr.textColor])
+         */
+        private fun buildThemeColorsCss(context: Context): String {
+            val canvas = ThemeUtils.getThemeAttrColor(context, R.attr.alternativeBackgroundColor).toRGBHex()
+            val surface = ThemeUtils.getThemeAttrColor(context, android.R.attr.colorBackground).toRGBHex()
+            val fg = ThemeUtils.getThemeAttrColor(context, android.R.attr.textColor).toRGBHex()
+            return ":root { --reviewer-canvas: $canvas; --reviewer-surface: $surface; --reviewer-fg: $fg; }\n"
         }
     }
 }

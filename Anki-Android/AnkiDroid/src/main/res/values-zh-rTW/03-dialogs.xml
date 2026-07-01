@@ -37,12 +37,12 @@
         <item quantity="other">%d 卡片已重設</item>
     </plurals>
     <string name="answering_error_title">資料庫錯誤</string>
-    <string name="answering_error_message">寫入資料庫時發生錯誤。可能是資料庫毀損或是記憶卡空間不足。\n\n如果這經常發生的話，請嘗試檢查資料庫，修復你的集合或從備份中還原。\n當然這也可能是 AnkiDroid 的程式錯誤，請回報錯誤讓我們知道。</string>
+    <string name="answering_error_message">寫入資料庫時發生錯誤。可能是資料庫毀損或是記憶卡空間不足。\n\n如果這經常發生的話，請嘗試檢查資料庫，修復你的集合或從備份中還原。\n當然這也可能是 SpeedyCAT 的程式錯誤，請回報錯誤讓我們知道。</string>
     <string name="answering_error_report">回報錯誤</string>
-    <string name="storage_full_message">此設備沒用充足的容量以開啟 AnkiDroid 。請重新編排容量以繼續</string>
+    <string name="storage_full_message">此設備沒用充足的容量以開啟 SpeedyCAT 。請重新編排容量以繼續</string>
     <string name="repair_deck_dialog">你真的想要修復資料庫嗎？\n\n在開始修復之前，會先複製一份備份檔案放置於資料夾\'%s\'中。</string>
     <string name="intent_aedict_empty">\'default\'類別是空的</string>
-    <string name="intent_aedict_category">若要增加新卡片至 AnkiDroid，刪除所有的記事本類別或新增一個 \'default\' 牌組</string>
+    <string name="intent_aedict_category">若要增加新卡片至 SpeedyCAT，刪除所有的記事本類別或新增一個 \'default\' 牌組</string>
     <string name="custom_study_new_extend">將今天的新卡片上限新增/減少(“-3”)</string>
     <string name="custom_study_rev_extend">將今天的複習卡片上限新增/減少(“-3”)</string>
     <string name="custom_study_forgotten">過去 x 天內忘記的複習卡:</string>
@@ -52,7 +52,7 @@
     <string name="storage_full_title">存儲已滿</string>
     <string name="storage_almost_full_title">存儲空間幾乎滿了</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">沒有空間</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">AnkiDroid 需要%s可用儲存空間以繼續。請清除一些空間</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">SpeedyCAT 需要%s可用儲存空間以繼續。請清除一些空間</string>
     <string name="restore_backup_title">回復備份嗎？</string>
     <string name="restore_backup">你的集合將會被較舊的版本給覆蓋。任何尚未儲存的進度都會遺失。</string>
     <string name="restore_backup_choose_another">選擇其他時間</string>
@@ -112,9 +112,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">資料庫已鎖定</string>
-    <string name="database_locked_summary">AnkiDroid 的資料庫正在被其他應用程式使用中。請關閉其他程式再重新開啟 AnkiDroid。</string>
+    <string name="database_locked_summary">SpeedyCAT 的資料庫正在被其他應用程式使用中。請關閉其他程式再重新開啟 SpeedyCAT。</string>
     <string name="incompatible_database_version_title">不相容的資料庫版本</string>
-    <string name="incompatible_database_version_summary">該資料庫比此版本的 AnkiDroid 可以使用的更高。升級 AnkiDroid 或降級資料庫以開啟它\n\n支援的版本：%1$d\n資料庫版本：%2$d\n\n以下還原選項將覆蓋您當前的集合，通過使用可能相容的資料庫版本：</string>
+    <string name="incompatible_database_version_summary">該資料庫比此版本的 SpeedyCAT 可以使用的更高。升級 SpeedyCAT 或降級資料庫以開啟它\n\n支援的版本：%1$d\n資料庫版本：%2$d\n\n以下還原選項將覆蓋您當前的集合，通過使用可能相容的資料庫版本：</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">背景圖像已套用</string>
     <string name="background_image_removed">背景圖像已移除</string>
@@ -135,29 +135,29 @@
     <string name="locale_selection_dialog_title_new">語言</string>
     <string name="locale_selection_dialog_summary">有些多國語言鍵盤，想是GBoard支援編輯文字時切換語言。\n\n如果您的鍵盤不會切換語言，句請請求您的鍵盤開發人員提供「setImeHintLocales」功能。</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">使用 AnkiDroid</string>
-    <string name="help_item_ankidroid_manual">AnkiDroid 用戶手冊</string>
-    <string name="help_item_anki_manual">Anki 用戶手冊</string>
-    <string name="help_item_ankidroid_faq">AnkiDroid 常見問題集</string>
+    <string name="help_title_using_ankidroid">使用 SpeedyCAT</string>
+    <string name="help_item_ankidroid_manual">SpeedyCAT 用戶手冊</string>
+    <string name="help_item_anki_manual">SpeedyCAT 用戶手冊</string>
+    <string name="help_item_ankidroid_faq">SpeedyCAT 常見問題集</string>
     <string name="help_title_get_help">取得幫助</string>
     <string name="help_item_mailing_list">郵件清單</string>
     <string name="help_item_reddit">Reddit</string>
     <string name="help_item_report_bug">回報錯誤</string>
-    <string name="help_title_support_ankidroid" maxLength="28">支援 AnkiDroid</string>
+    <string name="help_title_support_ankidroid" maxLength="28">支援 SpeedyCAT</string>
     <string name="help_item_support_opencollective_donate">捐贈</string>
     <string name="help_item_support_develop_ankidroid">開發</string>
     <string name="help_item_support_rate_ankidroid">評分</string>
     <string name="help_item_support_other_ankidroid">其他</string>
     <string name="multimedia_editor_trans_translate">翻譯</string>
     <string name="help_title_community">社群</string>
-    <string name="help_item_anki_forums">Anki 論壇</string>
+    <string name="help_item_anki_forums">SpeedyCAT 論壇</string>
     <string name="help_item_discord">Discord</string>
     <string name="help_item_facebook">Facebook</string>
     <string name="help_item_twitter">Twitter</string>
     <string name="help_title_privacy">隱私權</string>
-    <string name="help_item_ankidroid_privacy_policy">AnkiDroid隱私政策</string>
-    <string name="help_item_ankiweb_privacy_policy">AnkiWeb 隱私政策</string>
-    <string name="help_item_ankiweb_terms_and_conditions">AnkiWeb 條款及細則</string>
+    <string name="help_item_ankidroid_privacy_policy">SpeedyCAT隱私政策</string>
+    <string name="help_item_ankiweb_privacy_policy">SpeedyCAT 隱私政策</string>
+    <string name="help_item_ankiweb_terms_and_conditions">SpeedyCAT 條款及細則</string>
     <string name="help_title_send_exception">發送除錯回報</string>
     <string name="help_dialog_exception_report_debounce">回報已經提交</string>
     <string name="help_dialog_exception_report_sent">已發送報告！</string>

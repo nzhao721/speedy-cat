@@ -61,7 +61,7 @@
     <string name="card_browser_font_size" maxLength="41">卡片浏览器字体缩放</string>
     <string name="card_browser_hide_media" maxLength="41">在卡牌浏览器中显示文件名</string>
     <string name="card_browser_hide_media_summary">在卡牌浏览器问题/回答字段中显示音频文件名</string>
-    <string name="col_path" maxLength="41">AnkiDroid 路径</string>
+    <string name="col_path" maxLength="41">SpeedyCAT 路径</string>
     <string name="fullscreen_review" maxLength="41">全屏显示</string>
     <string name="full_screen_off">关闭</string>
     <string name="full_screen_system">隐藏系统状态栏</string>
@@ -164,8 +164,8 @@
     </plurals>
     <string name="pref_keep_screen_on" maxLength="41">保持屏幕常亮</string>
     <string name="pref_keep_screen_on_summ">防止自动息屏</string>
-    <string name="enable_api_title" maxLength="41">启用 AnkiDroid API</string>
-    <string name="enable_api_summary">让其他的应用程序连接到 AnkiDroid 读写数据</string>
+    <string name="enable_api_title" maxLength="41">启用 SpeedyCAT API</string>
+    <string name="enable_api_summary">让其他的应用程序连接到 SpeedyCAT 读写数据</string>
     <string name="custom_buttons" maxLength="41">顶栏按钮</string>
     <string name="custom_buttons_summary">自定义顶栏按钮</string>
     <string name="custom_buttons_setting_always_show">总是显示</string>
@@ -175,7 +175,7 @@
     <string name="reset_settings_to_default">重置设置为默认</string>
     <string name="reset">重置</string>
     <string name="thirdparty_apps_title" maxLength="41">第三方 API 应用</string>
-    <string name="thirdparty_apps_summary">查看使用 AnkiDroid API 的应用程序清单，如字典、实用工具。</string>
+    <string name="thirdparty_apps_summary">查看使用 SpeedyCAT API 的应用程序清单，如字典、实用工具。</string>
     <string name="pref_controls_reviews_tab" maxLength="41" comment="Name of the tab to configure controls for the reviews screen">复习</string>
     <string name="pref_controls_previews_tab" maxLength="41" comment="Name of the tab to configure controls for the previews screen">预览</string>
     <string name="toggle_backside_only" maxLength="41" comment="Control setting that toggles \'Backside only\' in the previews screen">仅切换背面</string>
@@ -191,9 +191,9 @@
     <!-- Custom sync server settings -->
     <string name="custom_sync_server_title" maxLength="41">自定义同步服务器</string>
     <string name="custom_sync_server_summary_none_of_the_two_servers_used" comment="This summary is shown when neither of the two custom sync servers are used,         which is the default.">未使用</string>
-    <string name="custom_sync_server_help2"><![CDATA[        作为与AnkiWeb同步的替代方法，
+    <string name="custom_sync_server_help2"><![CDATA[        作为与SpeedyCAT同步的替代方法，
         您可以使用自己的服务器进行同步。
-        如果未设置，将使用默认AnkiWeb服务器。
+        如果未设置，将使用默认SpeedyCAT服务器。
         <a href="%s">了解更多</a>
         ]]></string>
     <string name="custom_sync_server_base_url_title" maxLength="41">同步 URL</string>
@@ -218,9 +218,9 @@
     <string name="deck_conf_general" maxLength="41" comment="Label of the submenu for the general options of new deck">常规</string>
     <string name="deck_conf_cram_search" maxLength="41" comment="Label of a text field that contains a search query.">搜索</string>
     <!-- analytics options -->
-    <string name="analytics_dialog_title">帮助改进 AnkiDroid！</string>
+    <string name="analytics_dialog_title">帮助改进 SpeedyCAT！</string>
     <string name="analytics_title" maxLength="41">分享软件使用情况</string>
-    <string name="analytics_summ">通过让开发人员了解您在使用哪些功能，您可用让 AnkiDroid 变得更好</string>
+    <string name="analytics_summ">通过让开发人员了解您在使用哪些功能，您可用让 SpeedyCAT 变得更好</string>
     <string name="note_editor_replace_newlines" maxLength="41">用 HTML 替换换行</string>
     <string name="note_editor_replace_newlines_summ">在笔记编辑器中，编辑卡片时将所有的&lt;br&gt;转换为换行符。</string>
     <string name="type_in_answer_focus" maxLength="41">定位答案输入框</string>
@@ -229,11 +229,11 @@
     <string name="open_changelog">打开更新日志</string>
     <string name="pref_cat_about_title" maxLength="41">关于</string>
     <string name="contributors_title">贡献者</string>
-    <string name="about_contributors_description"><![CDATA[这些是我们非常了不起的<a href=\"%1$s\">贡献者</a>。您也可以通过贡献代码、翻译、捐赠和<a href=\"%2$s\">更多方式</a>来帮助 AnkiDroid！]]></string>
+    <string name="about_contributors_description"><![CDATA[这些是我们非常了不起的<a href=\"%1$s\">贡献者</a>。您也可以通过贡献代码、翻译、捐赠和<a href=\"%2$s\">更多方式</a>来帮助 SpeedyCAT！]]></string>
     <string name="license">许可证</string>
-    <string name="license_description"><![CDATA[AnkiDroid 根据<a href=\"%1$s\">GPL-3.0</a>和<a href=\"%2$s\">AGPL-3.0</a>许可证发布，源代码可在 <a href=\"%3$s\">Github</a> 上获取]]></string>
-    <string name="other_licenses"><![CDATA[AnkiDroid 也使用第三方库和图标，它们按照多种开源<a href=\"%1$s\">许可证</a>许可]]></string>
-    <string name="donate_description"><![CDATA[您可以通过<a href=\"%1$s\">捐赠</a>支持 AnkiDroid 的开发。我们感谢任何数额的捐赠。]]></string>
+    <string name="license_description"><![CDATA[SpeedyCAT 根据<a href=\"%1$s\">GPL-3.0</a>和<a href=\"%2$s\">AGPL-3.0</a>许可证发布，源代码可在 <a href=\"%3$s\">Github</a> 上获取]]></string>
+    <string name="other_licenses"><![CDATA[SpeedyCAT 也使用第三方库和图标，它们按照多种开源<a href=\"%1$s\">许可证</a>许可]]></string>
+    <string name="donate_description"><![CDATA[您可以通过<a href=\"%1$s\">捐赠</a>支持 SpeedyCAT 的开发。我们感谢任何数额的捐赠。]]></string>
     <!-- Controls -->
     <string name="binding_add_gesture">添加手势</string>
     <string name="binding_add_key">添加按键</string>
@@ -268,7 +268,7 @@
     <string name="bindings_already_bound">已绑定到「%s」</string>
     <!-- Advanced -->
     <string name="pref_cat_experimental" maxLength="41" tools:ignore="UnusedResources">实验性功能</string>
-    <string name="readtext_deprecation_warn">AnkiDroid 引入了一个更好的 TTS 机制，它与其他 Anki 客户端兼容，并包含更多的声音和语言播放的改进！\n\n请尽快升级，因为此设置将很快被删除</string>
+    <string name="readtext_deprecation_warn">SpeedyCAT 引入了一个更好的 TTS 机制，它与其他 SpeedyCAT 客户端兼容，并包含更多的声音和语言播放的改进！\n\n请尽快升级，因为此设置将很快被删除</string>
     <string name="readtext_reviewer_warn" tools:ignore="UnusedResources">请升级到新文本到语音格式</string>
     <string name="pref_fixed_port_title" maxLength="41">学习屏中的本地存储</string>
     <string name="pref_fixed_port_summary">在学习屏上使用固定服务器端口启用JavaScript本地存储</string>
@@ -280,11 +280,11 @@
     <!-- #######################################################################################
          #################################### Backup options ###################################
          ####################################################################################### -->
-    <string name="pref__backups_help__summary"><![CDATA[        AnkiDroid 定期备份您的集合。
+    <string name="pref__backups_help__summary"><![CDATA[        SpeedyCAT 定期备份您的集合。
         在备份文件生成超过两天后，
-        AnkiDroid 会开始删除一些备份释放磁盘空间。
+        SpeedyCAT 会开始删除一些备份释放磁盘空间。
         <br><br>
-        请注意，AnkiDroid 不会备份媒体文件。
+        请注意，SpeedyCAT 不会备份媒体文件。
         为了安全起见，请定期同步您的集合，或备份集合的导出文件。
         <br><br>
         您可以通过牌组列表菜单恢复备份和导出您的集合。

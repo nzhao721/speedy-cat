@@ -7,6 +7,43 @@ img {
     max-height: 100%;
 }
 
+/*
+  Flatten the per-character type-answer diff for the study screen reviewer/previewer.
+  The backend `compare_answer` emits typeGood/typeBad/typeMissed spans; here the
+  per-letter red/green colouring is removed so the typed answer and correct answer
+  are shown plainly. A simple correct/incorrect indicator is added by TypeAnswer.
+  (Mirrors the classic reviewer styling in flashcard.css.)
+*/
+.typeGood,
+.typeBad,
+.typeMissed {
+    background-color: transparent !important;
+    color: inherit !important;
+}
+
+.type-answer-result::before {
+    font-weight: bold;
+    margin-right: 0.35em;
+}
+
+.type-answer-correct::before {
+    content: "\2713"; /* check mark */
+    color: #2e7d32;
+}
+
+.type-answer-incorrect::before {
+    content: "\2717"; /* ballot x */
+    color: #c62828;
+}
+
+[class*="night-mode"] .type-answer-correct::before {
+    color: #81c784;
+}
+
+[class*="night-mode"] .type-answer-incorrect::before {
+    color: #e57373;
+}
+
 @font-face {
     font-family: "Noto Sans Mono";
     src: url("file:///android_asset/fonts/noto/NotoSansMono.ttf")

@@ -3,11 +3,13 @@ Copyright: Ankitects Pty Ltd and contributors
 License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 -->
 <!--
-SpeedyCAT: the Practice Question Bank runner. One question at a time; A–D/E
-choices; optional elimination + flagging; the explanation is revealed only
-after the user submits (immediate feedback). CARS / passage-linked questions
-show the reading passage beside the question. Every answer is logged through
-record_practice_attempt; Finish ends the session and surfaces the summary.
+SpeedyCAT: the Practice Question Bank runner. Navigation is by run item: a
+discrete item is a single question, while a CARS passage set is one reading
+passage shown once beside ALL of its questions (answered independently). A–D/E
+choices; optional elimination + flagging; the explanation is revealed per
+question only after that question is submitted (immediate feedback). Every
+answer is logged through record_practice_attempt; Finish ends the session and
+surfaces the summary.
 -->
 <script lang="ts">
     import { createEventDispatcher, onDestroy, onMount } from "svelte";
@@ -24,6 +26,7 @@ record_practice_attempt; Finish ends the session and surfaces the summary.
         type CarsPassageSet,
         type PracticeQuestion,
         type PracticeSessionSummary,
+        type RunItem,
     } from "./lib";
 
     export let questions: PracticeQuestion[];
@@ -32,9 +35,16 @@ record_practice_attempt; Finish ends the session and surfaces the summary.
 
     const dispatch = createEventDispatcher<{ finished: PracticeSessionSummary }>();
 
-    // Keep passage-linked questions adjacent, then flatten to a linear order.
-    const ordered: PracticeQuestion[] = groupIntoRunItems(questions).flatMap(
-        (item) => item.questions,
+    // Group passage-linked questions into whole units (CARS passage sets); each
+    // discrete question is its own single-question item. Navigation is per item.
+    const runItems: RunItem[] = groupIntoRunItems(questions);
+    const allQuestions: PracticeQuestion[] = runItems.flatMap((item) => item.questions);
+    const questionNumber = new Map<string, number>(
+        allQuestions.map((q, i) => [q.id, i + 1]),
+    );
+    const itemOfQuestion = new Map<string, number>();
+    runItems.forEach((item, i) =>
+        item.questions.forEach((q) => itemOfQuestion.set(q.id, i)),
     );
 
     let index = 0;
@@ -48,13 +58,19 @@ record_practice_attempt; Finish ends the session and surfaces the summary.
     let finishing = false;
 
     let elapsed = 0;
-    let secondsOnCurrent = 0;
+    let secondsOnItem = 0;
     let ticker: ReturnType<typeof setInterval> | undefined;
 
-    $: current = ordered[index];
-    $: total = ordered.length;
+    $: current = runItems[index];
+    $: totalItems = runItems.length;
+    $: totalQuestions = allQuestions.length;
     $: remaining = timeLimitSeconds > 0 ? Math.max(0, timeLimitSeconds - elapsed) : 0;
-    $: answeredCount = ordered.filter((q) => submitted[q.id]).length;
+    $: answeredCount = allQuestions.filter((q) => submitted[q.id]).length;
+    $: firstNum = current ? (questionNumber.get(current.questions[0].id) ?? 1) : 0;
+    $: lastNum = current
+        ? (questionNumber.get(current.questions[current.questions.length - 1].id) ??
+          firstNum)
+        : 0;
 
     onMount(() => {
         void ensurePassage(current);
@@ -68,28 +84,37 @@ record_practice_attempt; Finish ends the session and surfaces the summary.
 
     function tick(): void {
         elapsed += 1;
-        secondsOnCurrent += 1;
+        secondsOnItem += 1;
         if (timeLimitSeconds > 0 && elapsed >= timeLimitSeconds) {
             void finish();
         }
     }
 
-    function flushTime(): void {
-        if (current) {
-            timeSpent[current.id] = (timeSpent[current.id] ?? 0) + secondsOnCurrent;
+    /** Distribute the time spent on the current item across the questions still
+     * being worked on (a shared passage is read for all of them). */
+    function flushItemTime(): void {
+        const item = runItems[index];
+        if (item && secondsOnItem > 0) {
+            const pending = item.questions.filter((q) => !submitted[q.id]);
+            const targets = pending.length > 0 ? pending : item.questions;
+            const per = secondsOnItem / targets.length;
+            for (const q of targets) {
+                timeSpent[q.id] = (timeSpent[q.id] ?? 0) + per;
+            }
         }
-        secondsOnCurrent = 0;
+        secondsOnItem = 0;
     }
 
-    async function ensurePassage(q: PracticeQuestion | undefined): Promise<void> {
-        if (!q || !q.passageId || passageCache[q.passageId]) {
+    async function ensurePassage(item: RunItem | undefined): Promise<void> {
+        const pid = item?.passageId;
+        if (!pid || passageCache[pid]) {
             return;
         }
         passageLoading = true;
         try {
             passageCache = {
                 ...passageCache,
-                [q.passageId]: await fetchPassageSet(q.passageId),
+                [pid]: await fetchPassageSet(pid),
             };
         } catch {
             // leave uncached; the panel shows a fallback
@@ -99,39 +124,38 @@ record_practice_attempt; Finish ends the session and surfaces the summary.
     }
 
     function goto(newIndex: number): void {
-        if (newIndex < 0 || newIndex >= total || newIndex === index) {
+        if (newIndex < 0 || newIndex >= totalItems || newIndex === index) {
             return;
         }
-        flushTime();
+        flushItemTime();
         index = newIndex;
-        void ensurePassage(ordered[index]);
+        void ensurePassage(runItems[index]);
     }
 
-    function onSelect(label: string): void {
-        if (submitted[current.id]) {
+    function onSelect(q: PracticeQuestion, label: string): void {
+        if (submitted[q.id]) {
             return;
         }
-        selected = { ...selected, [current.id]: label };
+        selected = { ...selected, [q.id]: label };
     }
 
-    function onEliminate(label: string): void {
-        const list = eliminated[current.id] ?? [];
+    function onEliminate(q: PracticeQuestion, label: string): void {
+        const list = eliminated[q.id] ?? [];
         const next = list.includes(label)
             ? list.filter((l) => l !== label)
             : [...list, label];
-        eliminated = { ...eliminated, [current.id]: next };
+        eliminated = { ...eliminated, [q.id]: next };
     }
 
-    function onToggleFlag(): void {
-        flagged = { ...flagged, [current.id]: !flagged[current.id] };
+    function onToggleFlag(q: PracticeQuestion): void {
+        flagged = { ...flagged, [q.id]: !flagged[q.id] };
     }
 
-    async function submit(): Promise<void> {
-        const q = current;
+    async function submitQuestion(q: PracticeQuestion): Promise<void> {
         if (!q || submitted[q.id]) {
             return;
         }
-        flushTime();
+        flushItemTime();
         const answer = selected[q.id] ?? "";
         const correct = answer !== "" && answer === q.correctAnswer;
         submitted = { ...submitted, [q.id]: true };
@@ -141,7 +165,7 @@ record_practice_attempt; Finish ends the session and surfaces the summary.
                 questionId: q.id,
                 selectedAnswer: answer,
                 correct,
-                timeOnQuestionSeconds: timeSpent[q.id] ?? 0,
+                timeOnQuestionSeconds: Math.round(timeSpent[q.id] ?? 0),
                 section: q.section,
                 topic: primaryTopic(q),
             });
@@ -159,10 +183,10 @@ record_practice_attempt; Finish ends the session and surfaces the summary.
             clearInterval(ticker);
             ticker = undefined;
         }
-        flushTime();
+        flushItemTime();
         // Record any served-but-unsubmitted question as skipped so the summary
         // and per-topic tracking reflect the whole session.
-        for (const q of ordered) {
+        for (const q of allQuestions) {
             if (!submitted[q.id]) {
                 submitted[q.id] = true;
                 try {
@@ -171,7 +195,7 @@ record_practice_attempt; Finish ends the session and surfaces the summary.
                         questionId: q.id,
                         selectedAnswer: "",
                         correct: false,
-                        timeOnQuestionSeconds: timeSpent[q.id] ?? 0,
+                        timeOnQuestionSeconds: Math.round(timeSpent[q.id] ?? 0),
                         section: q.section,
                         topic: primaryTopic(q),
                     });
@@ -202,7 +226,11 @@ record_practice_attempt; Finish ends the session and surfaces the summary.
 <div class="runner">
     <div class="topbar">
         <div class="progress">
-            Question {index + 1} of {total}
+            {#if current && current.questions.length > 1}
+                Passage set · Questions {firstNum}–{lastNum} of {totalQuestions}
+            {:else}
+                Question {firstNum} of {totalQuestions}
+            {/if}
             <span class="sub">({answeredCount} submitted)</span>
         </div>
         {#if timeLimitSeconds > 0}
@@ -212,19 +240,16 @@ record_practice_attempt; Finish ends the session and surfaces the summary.
         {:else}
             <div class="timer elapsed">{formatClock(elapsed)}</div>
         {/if}
-        <button class="finish" on:click={finish} disabled={finishing}>
-            Finish &amp; score
-        </button>
     </div>
 
     <div class="nav-strip">
-        {#each ordered as q, i (q.id)}
+        {#each allQuestions as q, i (q.id)}
             <button
                 class="nav-dot {navStatus(q)}"
-                class:current={i === index}
+                class:current={itemOfQuestion.get(q.id) === index}
                 class:flagged={flagged[q.id]}
                 title={`Question ${i + 1}`}
-                on:click={() => goto(i)}
+                on:click={() => goto(itemOfQuestion.get(q.id) ?? 0)}
             >
                 {i + 1}
             </button>
@@ -242,18 +267,36 @@ record_practice_attempt; Finish ends the session and surfaces the summary.
         {/if}
         <div class="question-col">
             {#if current}
-                <QuestionView
-                    question={current}
-                    number={index + 1}
-                    selected={selected[current.id] ?? ""}
-                    eliminated={eliminated[current.id] ?? []}
-                    flagged={flagged[current.id] ?? false}
-                    revealed={submitted[current.id] ?? false}
-                    disabled={submitted[current.id] ?? false}
-                    on:select={(e) => onSelect(e.detail)}
-                    on:eliminate={(e) => onEliminate(e.detail)}
-                    on:toggleFlag={onToggleFlag}
-                />
+                {#each current.questions as q, qi (q.id)}
+                    <div class="q-block">
+                        <QuestionView
+                            question={q}
+                            number={questionNumber.get(q.id) ?? qi + 1}
+                            selected={selected[q.id] ?? ""}
+                            eliminated={eliminated[q.id] ?? []}
+                            flagged={flagged[q.id] ?? false}
+                            revealed={submitted[q.id] ?? false}
+                            disabled={submitted[q.id] ?? false}
+                            on:select={(e) => onSelect(q, e.detail)}
+                            on:eliminate={(e) => onEliminate(q, e.detail)}
+                            on:toggleFlag={() => onToggleFlag(q)}
+                        />
+                        {#if !submitted[q.id]}
+                            <div class="q-actions">
+                                <button
+                                    class="primary"
+                                    on:click={() => submitQuestion(q)}
+                                    disabled={!selected[q.id]}
+                                >
+                                    Submit
+                                </button>
+                            </div>
+                        {/if}
+                    </div>
+                    {#if qi < current.questions.length - 1}
+                        <hr class="q-divider" />
+                    {/if}
+                {/each}
             {/if}
         </div>
     </div>
@@ -266,18 +309,16 @@ record_practice_attempt; Finish ends the session and surfaces the summary.
         >
             Previous
         </button>
-        {#if current && !submitted[current.id]}
-            <button class="primary" on:click={submit} disabled={!selected[current.id]}>
-                Submit
+        <span class="counter">{answeredCount} / {totalQuestions} answered</span>
+        {#if index >= totalItems - 1}
+            <button class="primary" on:click={finish} disabled={finishing}>
+                {finishing ? "Scoring…" : "Finish and Score"}
+            </button>
+        {:else}
+            <button class="secondary" on:click={() => goto(index + 1)}>
+                Next
             </button>
         {/if}
-        <button
-            class="secondary"
-            on:click={() => goto(index + 1)}
-            disabled={index >= total - 1}
-        >
-            Next
-        </button>
     </div>
 </div>
 
@@ -321,14 +362,6 @@ record_practice_attempt; Finish ends the session and surfaces the summary.
         color: var(--fg-subtle);
         font-weight: 600;
         font-size: 1rem;
-    }
-    .finish {
-        border: 1px solid var(--border);
-        background: var(--button-bg);
-        color: var(--fg);
-        border-radius: 6px;
-        padding: 0.4rem 0.8rem;
-        cursor: pointer;
     }
     .nav-strip {
         display: flex;
@@ -390,14 +423,35 @@ record_practice_attempt; Finish ends the session and surfaces the summary.
     .question-col {
         overflow-y: auto;
         padding: 1.25rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .q-block {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .q-actions {
+        display: flex;
+    }
+    .q-divider {
+        width: 100%;
+        border: none;
+        border-top: 1px solid var(--border-subtle);
+        margin: 1.5rem 0;
     }
     .footer {
         display: flex;
         gap: 0.75rem;
+        align-items: center;
         justify-content: center;
         padding: 0.75rem 1rem;
         border-top: 1px solid var(--border-subtle);
         background: var(--canvas-elevated);
+    }
+    .counter {
+        color: var(--fg-subtle);
+        font-size: 0.85rem;
     }
     button.primary,
     button.secondary {

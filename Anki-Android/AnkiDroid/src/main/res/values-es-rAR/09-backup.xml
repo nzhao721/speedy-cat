@@ -31,7 +31,7 @@
     <string name="backup_del_collection_question">¿Desea realmente eliminar la colección y crear una nueva? ¡Esto borrará todo su progreso de aprendizaje y eliminará todas sus tarjetas!</string>
     <string name="backup_one_way_sync_from_server">Sincronización unidireccional desde el servidor</string>
     <string name="backup_use_default_folder">Use default collection folder</string>
-    <string name="backup_full_sync_from_server_question">¿Desea realmente sobreescribir su colección con la de AnkiWeb? ¡Esto borrará todo su progreso de aprendizaje y la información añadida desde su última sincronización!</string>
+    <string name="backup_full_sync_from_server_question">¿Desea realmente sobreescribir su colección con la de SpeedyCAT? ¡Esto borrará todo su progreso de aprendizaje y la información añadida desde su última sincronización!</string>
     <string name="error_handling_title">Manejo de errores</string>
     <string name="error_handling_options" comment="In a warning message, the label of the suggested action that the user should take">Opciones</string>
     <string name="backup_retry_opening">Intente abrir nuevamente</string>
@@ -40,7 +40,7 @@
     <string name="backup_repair_deck_progress">Reparando base de datos.\nPor favor aguarde&#8230;</string>
     <string name="backup_invalid_file_error">El archivo de copia de seguridad seleccionado no es válido</string>
     <string name="backup_restore_select_title">Seleccione copia de seguridad para restaurar</string>
-    <string name="backup_restore_no_backups">No hay copias de seguridad para esta colección disponibles en este dispositivo. Si tiene copias de seguridad en su computadora de escritorio por favor cópielas manualmente al directorio de AnkiDroid</string>
+    <string name="backup_restore_no_backups">No hay copias de seguridad para esta colección disponibles en este dispositivo. Si tiene copias de seguridad en su computadora de escritorio por favor cópielas manualmente al directorio de SpeedyCAT</string>
     <string name="open_collection_failed_title">La colección no fue abierta</string>
     <string name="corrupt_db_message">Desafortunadamente su colección se ha corrompido.\n\nToque \'opciones\' para restaurarla desde una copia de seguridad, o si eso no funciona revisa las siguientes instrucciones para repararla manualmente:\n%1$s</string>
     <string name="access_collection_failed_message">Ocurrió un error al acceder a su colección. Pudo haber sido causado por un error inofensivo, o podría haber un problema con ella.\n\nIntente ejecutar la verificación de su base de datos o restaurarla desde una copia de seguridad presionando el botón \'opciones\'. Si continúa viendo este mensaje, por favor cree un informe de error:\n%1$s</string>

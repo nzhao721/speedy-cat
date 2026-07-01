@@ -45,10 +45,10 @@
     <string name="answering_error_title">Памылка базы даных</string>
     <string name="answering_error_message">Збой запісу ў калекцыю. Прычынаю можа быць пашкоджаная база даных або недахоп свабоднага месца на дыску.\n\nПаспрабуйце праверыць базу даных або аднавіць калекцыю з рэзервовай копіі. Для гэтага націсніце \"Параметры\". \n\Таксама гэта памылка можа быць выклікана самой праграмай; паведаміце пра гэта распрацоўшчыкам.</string>
     <string name="answering_error_report">Паведаміць пра памылку</string>
-    <string name="storage_full_message">Недастаткова свабоднага месца, каб адкрыць AnkiDroid. Вызваліце крыху месца на прыладзе, каб працягнуць.</string>
+    <string name="storage_full_message">Недастаткова свабоднага месца, каб адкрыць SpeedyCAT. Вызваліце крыху месца на прыладзе, каб працягнуць.</string>
     <string name="repair_deck_dialog">Вы сапраўды хочаце аднавіць базу даных?\n\nПерад спробай па яе аднаўленні, будзе створана копія ў  падпапцы \'%s\'.</string>
     <string name="intent_aedict_empty">Катэгорыя “default” нічога не змяшчае</string>
-    <string name="intent_aedict_category">Для таго, каб дадаць карткі ў AnkiDroid, выдаліце ўсе катэгорыі Notepad або дадайце катэгорыю з назвай \"default\"</string>
+    <string name="intent_aedict_category">Для таго, каб дадаць карткі ў SpeedyCAT, выдаліце ўсе катэгорыі Notepad або дадайце катэгорыю з назвай \"default\"</string>
     <string name="custom_study_new_extend">Павялічыць/паменшыць (“-3”) абмежаванні новых картак на сёння</string>
     <string name="custom_study_rev_extend">Павялічыць/паменшыць (“-3”) абмежаванні паўтарэння новых картак на сёння</string>
     <string name="custom_study_forgotten">Паўтарыць забытыя карткі за апошнія некалькі дзён:</string>
@@ -121,9 +121,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">База даных заблакаваная</string>
-    <string name="database_locked_summary">База даных AnkiDroid выкарыстоўваецца іншай праграмай. Закрыйце ўсе праграмы ўсе пабочныя праграмы і перазапусціце AnkiDroid.</string>
+    <string name="database_locked_summary">База даных SpeedyCAT выкарыстоўваецца іншай праграмай. Закрыйце ўсе праграмы ўсе пабочныя праграмы і перазапусціце SpeedyCAT.</string>
     <string name="incompatible_database_version_title">Несумяшчальная версія базы даных</string>
-    <string name="incompatible_database_version_summary">База даных была створана ў больш новай версіі праграмы і ў дадзены час з ёй немагчыма працаваць. Паспрабуйце абнавіць AnkiDroid або панізіць версію базы даных, каб адкрыць яе\n\nВерсія, якая падтрымліваецца: %1$d\nВерсія базы даных:%2$d\n\nНаступныя  параметры аднаўлення перазапішуць вашу бягучую калекцыю, магчыма з сумяшчальнай версіяй базы даных.</string>
+    <string name="incompatible_database_version_summary">База даных была створана ў больш новай версіі праграмы і ў дадзены час з ёй немагчыма працаваць. Паспрабуйце абнавіць SpeedyCAT або панізіць версію базы даных, каб адкрыць яе\n\nВерсія, якая падтрымліваецца: %1$d\nВерсія базы даных:%2$d\n\nНаступныя  параметры аднаўлення перазапішуць вашу бягучую калекцыю, магчыма з сумяшчальнай версіяй базы даных.</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">Фонавы відарыс ужыты</string>
     <string name="background_image_removed">Фонавы відарыс выдалены</string>
@@ -144,29 +144,29 @@
     <string name="locale_selection_dialog_title_new">Задаць мову</string>
     <string name="locale_selection_dialog_summary">Некаторыя шматмоўныя клавіятуры (напрыклад, GBoard) падтрымліваюць змену мовы падчас рэдагавання тэксту\n\nКалі ласка, запытайце функцыю “setImeHintLocales” ад распрацоўшчыка клавіятуры, калі яна не змяняе мову.</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">Выкарыстанне AnkiDroid</string>
-    <string name="help_item_ankidroid_manual">Даведнік па AnkiDroid</string>
-    <string name="help_item_anki_manual">Даведнік па Anki</string>
-    <string name="help_item_ankidroid_faq">Частыя пытанні AnkiDroid</string>
+    <string name="help_title_using_ankidroid">Выкарыстанне SpeedyCAT</string>
+    <string name="help_item_ankidroid_manual">Даведнік па SpeedyCAT</string>
+    <string name="help_item_anki_manual">Даведнік па SpeedyCAT</string>
+    <string name="help_item_ankidroid_faq">Частыя пытанні SpeedyCAT</string>
     <string name="help_title_get_help">Атрымаць даведку</string>
     <string name="help_item_mailing_list">Спіс рассылкі</string>
     <string name="help_item_reddit">Reddit</string>
     <string name="help_item_report_bug">Паведаміць пра памылку</string>
-    <string name="help_title_support_ankidroid" maxLength="28">Падтрымка AnkiDroid</string>
+    <string name="help_title_support_ankidroid" maxLength="28">Падтрымка SpeedyCAT</string>
     <string name="help_item_support_opencollective_donate">Ахвяраваць</string>
     <string name="help_item_support_develop_ankidroid">Распрацоўка</string>
     <string name="help_item_support_rate_ankidroid">Ацаніць</string>
     <string name="help_item_support_other_ankidroid">Іншае</string>
     <string name="multimedia_editor_trans_translate">Дапамагчы з перакладам</string>
     <string name="help_title_community">Супольнасць</string>
-    <string name="help_item_anki_forums">Форумы Anki</string>
+    <string name="help_item_anki_forums">Форумы SpeedyCAT</string>
     <string name="help_item_discord">Discord</string>
     <string name="help_item_facebook">Facebook</string>
     <string name="help_item_twitter">Twitter</string>
     <string name="help_title_privacy">Прыватнасць</string>
-    <string name="help_item_ankidroid_privacy_policy">Палітыка прыватнасці AnkiDroid</string>
-    <string name="help_item_ankiweb_privacy_policy">Палітыка прыватнасці AnkiWeb</string>
-    <string name="help_item_ankiweb_terms_and_conditions">Умовы і палажэнні AnkiWeb</string>
+    <string name="help_item_ankidroid_privacy_policy">Палітыка прыватнасці SpeedyCAT</string>
+    <string name="help_item_ankiweb_privacy_policy">Палітыка прыватнасці SpeedyCAT</string>
+    <string name="help_item_ankiweb_terms_and_conditions">Умовы і палажэнні SpeedyCAT</string>
     <string name="help_title_send_exception">Адправіць справаздачу пра няспраўнасць</string>
     <string name="help_dialog_exception_report_debounce">Справаздача ўжо адпраўлялася</string>
     <string name="help_dialog_exception_report_sent">Справаздача адпраўлена!</string>

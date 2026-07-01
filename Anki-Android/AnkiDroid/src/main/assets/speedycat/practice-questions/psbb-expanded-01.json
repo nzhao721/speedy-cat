@@ -1,0 +1,242 @@
+{
+  "meta": {
+    "section": "PSBB",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax Psychology 2e, Ch. 2 Review Questions (Psychological Research)",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/psychology-2e/pages/2-review-questions"
+      },
+      {
+        "sourceName": "OpenStax Psychology 2e Student Solutions Guide (answer key for odd-numbered review questions)",
+        "sourceLicense": "CC BY 4.0",
+        "sourceUrl": "https://dokumen.pub/psychology-2e-student-solutions-guide.html"
+      }
+    ],
+    "counts": {"total": 11, "byTopic": {"research methods": 11}},
+    "notes": "Psychology (PSBB) items scraped verbatim from OpenStax Psychology 2e Ch. 2 review-questions page; correct answers taken from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), which publishes answers to odd-numbered review questions only (so only odd-numbered items are included). The live OpenStax page shows a CC BY-NC-SA 4.0 license plus a no-LLM-training notice; per the SpeedyCAT PRD this content is used human-facing and non-AI, mirroring psbb-001 in questions.json. Q7 omitted: the Solutions Guide left its answer blank."
+  },
+  "questions": [
+    {
+      "id": "psbb-x001",
+      "section": "PSBB",
+      "stem": "Scientific hypotheses are ________ and falsifiable.",
+      "choices": [
+        {"label": "A", "text": "observable"},
+        {"label": "B", "text": "original"},
+        {"label": "C", "text": "provable"},
+        {"label": "D", "text": "testable"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "A scientific hypothesis must be both testable and falsifiable, meaning it can be supported or refuted by empirical evidence. 'Provable' overstates the case, because hypotheses are supported rather than definitively proven.",
+      "topicTags": ["psychology", "research methods", "scientific method", "hypothesis"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 2 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/2-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 2 Q1 = D."
+    },
+    {
+      "id": "psbb-x002",
+      "section": "PSBB",
+      "stem": "Scientific knowledge is ________.",
+      "choices": [
+        {"label": "A", "text": "intuitive"},
+        {"label": "B", "text": "empirical"},
+        {"label": "C", "text": "permanent"},
+        {"label": "D", "text": "subjective"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Scientific knowledge is empirical: it is grounded in objective, systematic observation and measurement rather than in intuition or subjective opinion.",
+      "topicTags": ["psychology", "research methods", "empiricism"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 2 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/2-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 2 Q3 = B."
+    },
+    {
+      "id": "psbb-x003",
+      "section": "PSBB",
+      "stem": "Sigmund Freud developed his theory of human personality by conducting in-depth interviews over an extended period of time with a few clients. This type of research approach is known as a(n): ________.",
+      "choices": [
+        {"label": "A", "text": "archival research"},
+        {"label": "B", "text": "case study"},
+        {"label": "C", "text": "naturalistic observation"},
+        {"label": "D", "text": "survey"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Studying a small number of individuals in great depth over an extended period is a case study. Freud built his personality theory from such intensive study of a few clients.",
+      "topicTags": ["psychology", "research methods", "case study"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 2 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/2-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 2 Q5 = B."
+    },
+    {
+      "id": "psbb-x004",
+      "section": "PSBB",
+      "stem": "Using existing records to try to answer a research question is known as ________.",
+      "choices": [
+        {"label": "A", "text": "naturalistic observation"},
+        {"label": "B", "text": "survey research"},
+        {"label": "C", "text": "longitudinal research"},
+        {"label": "D", "text": "archival research"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Archival research uses pre-existing records or data sets (such as historical documents or databases) to answer a research question.",
+      "topicTags": ["psychology", "research methods", "archival research"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 2 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/2-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 2 Q9 = D."
+    },
+    {
+      "id": "psbb-x005",
+      "section": "PSBB",
+      "stem": "A(n) ________ is a list of questions developed by a researcher that can be administered in paper form.",
+      "choices": [
+        {"label": "A", "text": "archive"},
+        {"label": "B", "text": "case Study"},
+        {"label": "C", "text": "naturalistic observation"},
+        {"label": "D", "text": "survey"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "A survey is a list of questions, administered on paper or electronically, used to gather self-report data from many respondents.",
+      "topicTags": ["psychology", "research methods", "survey"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 2 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/2-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax (option B casing 'case Study' as printed). correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 2 Q11 = D."
+    },
+    {
+      "id": "psbb-x006",
+      "section": "PSBB",
+      "stem": "Height and weight are positively correlated. This means that:",
+      "choices": [
+        {"label": "A", "text": "There is no relationship between height and weight."},
+        {"label": "B", "text": "Usually, the taller someone is, the thinner they are."},
+        {"label": "C", "text": "Usually, the shorter someone is, the heavier they are."},
+        {"label": "D", "text": "As height increases, typically weight increases."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "A positive correlation means two variables move in the same direction: as one increases, the other typically increases too. So taller people tend to weigh more.",
+      "topicTags": ["psychology", "research methods", "correlation"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 2 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/2-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 2 Q13 = D."
+    },
+    {
+      "id": "psbb-x007",
+      "section": "PSBB",
+      "stem": "Which statement best illustrates a negative correlation between the number of hours spent watching TV the week before an exam and the grade on that exam?",
+      "choices": [
+        {"label": "A", "text": "Watching too much television leads to poor exam performance."},
+        {"label": "B", "text": "Smart students watch less television."},
+        {"label": "C", "text": "Viewing television interferes with a student's ability to prepare for the upcoming exam."},
+        {"label": "D", "text": "Students who watch more television perform more poorly on their exams."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "A correlation describes a relationship without claiming causation. Only choice D simply states the inverse relationship; the other options imply that TV viewing causes poor performance, which a correlation cannot establish.",
+      "topicTags": ["psychology", "research methods", "correlation", "causation"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 2 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/2-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 2 Q15 = D."
+    },
+    {
+      "id": "psbb-x008",
+      "section": "PSBB",
+      "stem": "________ means that everyone in the population has the same likelihood of being asked to participate in the study.",
+      "choices": [
+        {"label": "A", "text": "operationalizing"},
+        {"label": "B", "text": "placebo effect"},
+        {"label": "C", "text": "random assignment"},
+        {"label": "D", "text": "random sampling"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Random sampling means every member of the population has an equal chance of being selected to participate, which supports generalizability. Random assignment, by contrast, sorts already-selected participants into groups.",
+      "topicTags": ["psychology", "research methods", "sampling"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 2 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/2-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 2 Q17 = D."
+    },
+    {
+      "id": "psbb-x009",
+      "section": "PSBB",
+      "stem": "Researchers must ________ important concepts in their studies so others would have a clear understanding of exactly how those concepts were defined.",
+      "choices": [
+        {"label": "A", "text": "randomly assign"},
+        {"label": "B", "text": "randomly select"},
+        {"label": "C", "text": "operationalize"},
+        {"label": "D", "text": "generalize"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "To operationalize a concept is to define it in terms of specific, measurable operations, so others know exactly how each variable was measured.",
+      "topicTags": ["psychology", "research methods", "operational definition"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 2 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/2-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 2 Q19 = C."
+    },
+    {
+      "id": "psbb-x010",
+      "section": "PSBB",
+      "stem": "________ is to animal research as ________ is to human research.",
+      "choices": [
+        {"label": "A", "text": "informed consent; deception"},
+        {"label": "B", "text": "IACUC; IRB"},
+        {"label": "C", "text": "IRB; IACUC"},
+        {"label": "D", "text": "deception; debriefing"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "An IACUC (Institutional Animal Care and Use Committee) reviews animal research, while an IRB (Institutional Review Board) reviews research involving human participants.",
+      "topicTags": ["psychology", "research methods", "research ethics"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 2 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/2-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 2 Q21 = B."
+    },
+    {
+      "id": "psbb-x011",
+      "section": "PSBB",
+      "stem": "A person's participation in a research project must be ________.",
+      "choices": [
+        {"label": "A", "text": "random"},
+        {"label": "B", "text": "rewarded"},
+        {"label": "C", "text": "voluntary"},
+        {"label": "D", "text": "public"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ethical research requires that participation be voluntary: people must freely choose to take part (and may withdraw at any time) without coercion.",
+      "topicTags": ["psychology", "research methods", "research ethics"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 2 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/2-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 2 Q23 = C."
+    }
+  ]
+}

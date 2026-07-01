@@ -61,7 +61,7 @@
     <string name="card_browser_font_size" maxLength="41">Skala fon pencari kad</string>
     <string name="card_browser_hide_media" maxLength="41">Papar nama fail dalam pencari kad</string>
     <string name="card_browser_hide_media_summary">Display audio filenames in the card browser question/answer fields</string>
-    <string name="col_path" maxLength="41">Direktori AnkiDroid</string>
+    <string name="col_path" maxLength="41">Direktori SpeedyCAT</string>
     <string name="fullscreen_review" maxLength="41">Mod skrin penuh</string>
     <string name="full_screen_off">Matikan</string>
     <string name="full_screen_system">Sembunyi bar sistem</string>
@@ -165,8 +165,8 @@
     </plurals>
     <string name="pref_keep_screen_on" maxLength="41">Terus hidupkan skrin</string>
     <string name="pref_keep_screen_on_summ">Lumpuhkan skrin tamat masa</string>
-    <string name="enable_api_title" maxLength="41">Dayakan API AnkiDroid</string>
-    <string name="enable_api_summary">Benarkan aplikasi lain sambung ke AnkiDroid dan baca / tulis data tanpa pengawasan anda</string>
+    <string name="enable_api_title" maxLength="41">Dayakan API SpeedyCAT</string>
+    <string name="enable_api_summary">Benarkan aplikasi lain sambung ke SpeedyCAT dan baca / tulis data tanpa pengawasan anda</string>
     <string name="custom_buttons" maxLength="41">Butang bar aplikasi</string>
     <string name="custom_buttons_summary">Suaikan tindakan mana muncul dalam bar aplikasi</string>
     <string name="custom_buttons_setting_always_show">Sentiasa tunjuk</string>
@@ -176,7 +176,7 @@
     <string name="reset_settings_to_default">Tetap semula tetapan kepada lalai</string>
     <string name="reset">Tetap semula</string>
     <string name="thirdparty_apps_title" maxLength="41">API aplikasi pihak ketiga</string>
-    <string name="thirdparty_apps_summary">Lihat senarai aplikasi yang menggunakan API AnkiDroid seperti kamus, utiliti.</string>
+    <string name="thirdparty_apps_summary">Lihat senarai aplikasi yang menggunakan API SpeedyCAT seperti kamus, utiliti.</string>
     <string name="pref_controls_reviews_tab" maxLength="41" comment="Name of the tab to configure controls for the reviews screen">Reviews</string>
     <string name="pref_controls_previews_tab" maxLength="41" comment="Name of the tab to configure controls for the previews screen">Previews</string>
     <string name="toggle_backside_only" maxLength="41" comment="Control setting that toggles \'Backside only\' in the previews screen">Toggle backside only</string>
@@ -192,9 +192,9 @@
     <!-- Custom sync server settings -->
     <string name="custom_sync_server_title" maxLength="41">Pelayan penyegerakan sendiri</string>
     <string name="custom_sync_server_summary_none_of_the_two_servers_used" comment="This summary is shown when neither of the two custom sync servers are used,         which is the default.">Tidak digunakan</string>
-    <string name="custom_sync_server_help2"><![CDATA[        Sebagai alternatif penyegerakan ke AnkiWeb,
+    <string name="custom_sync_server_help2"><![CDATA[        Sebagai alternatif penyegerakan ke SpeedyCAT,
         Anda boleh gunakan pelayan sendiri untuk penyegerakan.
-        Jika belum ditetapkan, pelayan AnkiWeb lalai akan digunakan.
+        Jika belum ditetapkan, pelayan SpeedyCAT lalai akan digunakan.
         <a href="%s">Ketahui lebih lanjut</a>
         ]]></string>
     <string name="custom_sync_server_base_url_title" maxLength="41">Sync URL</string>
@@ -219,9 +219,9 @@
     <string name="deck_conf_general" maxLength="41" comment="Label of the submenu for the general options of new deck">Umum</string>
     <string name="deck_conf_cram_search" maxLength="41" comment="Label of a text field that contains a search query.">Cari</string>
     <!-- analytics options -->
-    <string name="analytics_dialog_title">Bantu majukan AnkiDroid!</string>
+    <string name="analytics_dialog_title">Bantu majukan SpeedyCAT!</string>
     <string name="analytics_title" maxLength="41">Kongsi penggunaan ciri-ciri</string>
-    <string name="analytics_summ">Anda boleh sumbang kepada AnkiDroid dengan membantu para pembangun lihat ciri-ciri yang orang ramai guna</string>
+    <string name="analytics_summ">Anda boleh sumbang kepada SpeedyCAT dengan membantu para pembangun lihat ciri-ciri yang orang ramai guna</string>
     <string name="note_editor_replace_newlines" maxLength="41">Ganti baris baru dengan HTML</string>
     <string name="note_editor_replace_newlines_summ">Dalam Penyunting Nota, tukar mana-mana &lt;br&gt; kepada baris baru apabila sunting kad.</string>
     <string name="type_in_answer_focus" maxLength="41">Fokus ‘taip dalam jawapan’</string>
@@ -230,11 +230,11 @@
     <string name="open_changelog">Open changelog</string>
     <string name="pref_cat_about_title" maxLength="41">Perihal</string>
     <string name="contributors_title">Para Penyumbang</string>
-    <string name="about_contributors_description"><![CDATA[Mereka merupakan <a href=\"%1$s\">para penyumbang</a> hebat. Anda juga boleh bantu AnkiDroid melalui pengaturcaraan, penterjemahan, pendermaan dan <a href=\"%2$s\">banyak lagi</a>!]]></string>
+    <string name="about_contributors_description"><![CDATA[Mereka merupakan <a href=\"%1$s\">para penyumbang</a> hebat. Anda juga boleh bantu SpeedyCAT melalui pengaturcaraan, penterjemahan, pendermaan dan <a href=\"%2$s\">banyak lagi</a>!]]></string>
     <string name="license">Lesen</string>
-    <string name="license_description"><![CDATA[AnkiDroid dikeluarkan di bawah lesen <a href=\"%1$s\">GPL-3.0</a> dan <a href=\"%2$s\">AGPL-3.0</a>, dengan kod sumber tersedia <a href=\"%3$s\">di GitHub</a>]]></string>
-    <string name="other_licenses"><![CDATA[AnkiDroid also uses third-party libraries and icons, which are licensed under various open source <a href=\"%1$s\">licenses</a>]]></string>
-    <string name="donate_description"><![CDATA[Anda boleh menyokong pembangunan AnkiDroid dengan <a href=\"%1$s\">menderma</a>. Apa-apa jumlah sangat dihargai.]]></string>
+    <string name="license_description"><![CDATA[SpeedyCAT dikeluarkan di bawah lesen <a href=\"%1$s\">GPL-3.0</a> dan <a href=\"%2$s\">AGPL-3.0</a>, dengan kod sumber tersedia <a href=\"%3$s\">di GitHub</a>]]></string>
+    <string name="other_licenses"><![CDATA[SpeedyCAT also uses third-party libraries and icons, which are licensed under various open source <a href=\"%1$s\">licenses</a>]]></string>
+    <string name="donate_description"><![CDATA[Anda boleh menyokong pembangunan SpeedyCAT dengan <a href=\"%1$s\">menderma</a>. Apa-apa jumlah sangat dihargai.]]></string>
     <!-- Controls -->
     <string name="binding_add_gesture">Tambah gerak isyarat</string>
     <string name="binding_add_key">Tambah kekunci</string>
@@ -269,7 +269,7 @@
     <string name="bindings_already_bound">Telah dipetakan ke ‘%s’</string>
     <!-- Advanced -->
     <string name="pref_cat_experimental" maxLength="41" tools:ignore="UnusedResources">Percubaan</string>
-    <string name="readtext_deprecation_warn">AnkiDroid has introduced a better TTS mechanism which is compatible with other Anki clients and includes more voices and improvements to language playback!\n\nPlease upgrade as soon as possible, as this setting will be removed soon</string>
+    <string name="readtext_deprecation_warn">SpeedyCAT has introduced a better TTS mechanism which is compatible with other SpeedyCAT clients and includes more voices and improvements to language playback!\n\nPlease upgrade as soon as possible, as this setting will be removed soon</string>
     <string name="readtext_reviewer_warn" tools:ignore="UnusedResources">Please upgrade to the new text to speech format</string>
     <string name="pref_fixed_port_title" maxLength="41">localStorage in Study Screen</string>
     <string name="pref_fixed_port_summary">Enables JavaScript localStorage by using a fixed server port in the Study Screen</string>
@@ -281,9 +281,9 @@
     <!-- #######################################################################################
          #################################### Backup options ###################################
          ####################################################################################### -->
-    <string name="pref__backups_help__summary"><![CDATA[        AnkiDroid sandarkan koleksi anda secara berkala
+    <string name="pref__backups_help__summary"><![CDATA[        SpeedyCAT sandarkan koleksi anda secara berkala
         Setelah sandaran usianya lebih dua hari,
-        AnkiDroid akan mula membuang sebahagian daripada mereka untuk mengosongkan ruang cakera.
+        SpeedyCAT akan mula membuang sebahagian daripada mereka untuk mengosongkan ruang cakera.
         <br><br>
         Ambil perhatian bahawa fail media tidak disandarkan.
         Agar selamat, sila segerakkan koleksi anda secara berkala atau sandarkan yang dieksport.

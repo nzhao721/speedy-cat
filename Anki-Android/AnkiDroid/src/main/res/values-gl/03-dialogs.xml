@@ -39,12 +39,12 @@
         <item quantity="other">%d tarxetas esquecidas</item>
     </plurals>
     <string name="answering_error_title">Erro na base de datos</string>
-    <string name="answering_error_message">Fallou a escritura na colección. A base de datos podería estar corrupta ou pode que non haxa suficiente espazo libre no disco.\n\nSe isto ocorre con frecuencia, tenta comprobar a base de datos, reparar a colección ou restaurala dende unha copia de seguranza. Preme en \"opcións\" para facelo.\n\nTamén pode ser un erro de AnkiDroid, reportao para que o poidamos revisar.</string>
+    <string name="answering_error_message">Fallou a escritura na colección. A base de datos podería estar corrupta ou pode que non haxa suficiente espazo libre no disco.\n\nSe isto ocorre con frecuencia, tenta comprobar a base de datos, reparar a colección ou restaurala dende unha copia de seguranza. Preme en \"opcións\" para facelo.\n\nTamén pode ser un erro de SpeedyCAT, reportao para que o poidamos revisar.</string>
     <string name="answering_error_report">Informar de erros</string>
-    <string name="storage_full_message">Non hai espazo de almacenamento abondo para abrir AnkiDroid. Libera espazo para continuar.</string>
+    <string name="storage_full_message">Non hai espazo de almacenamento abondo para abrir SpeedyCAT. Libera espazo para continuar.</string>
     <string name="repair_deck_dialog">Tes a certeza de querer tentar reparar a base de datos?\n\nAntes de comezar, crearase unha copia no cartafol \"%s\".</string>
     <string name="intent_aedict_empty">A categoría \'predeterminado\' está baleira</string>
-    <string name="intent_aedict_category">Para engadir cartóns ao AnkiDroid elimina todas as categorías do caderno de notas ou engade unha chamada \"predefinido\"</string>
+    <string name="intent_aedict_category">Para engadir cartóns ao SpeedyCAT elimina todas as categorías do caderno de notas ou engade unha chamada \"predefinido\"</string>
     <string name="custom_study_new_extend">Aumentar/diminuír (“-3”) o límite de novas tarxetas en</string>
     <string name="custom_study_rev_extend">Aumentar/diminuír (\"-3\") o límite de repasos actual en</string>
     <string name="custom_study_forgotten">Repasar as tarxetas esquecidas nos últimos x días:</string>
@@ -54,7 +54,7 @@
     <string name="storage_full_title">Almacenamento cheo</string>
     <string name="storage_almost_full_title">Almacenamento case cheo</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">Sen espazo</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">AnkiDroid precisa %s de espazo de almacenamento para continuar. Libera algo de espazo</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">SpeedyCAT precisa %s de espazo de almacenamento para continuar. Libera algo de espazo</string>
     <string name="restore_backup_title">Restaurar copia?</string>
     <string name="restore_backup">A túa colección será substituída cunha copia antiga. Perderase calquera progreso non gardado.</string>
     <string name="restore_backup_choose_another">Escoller outro</string>
@@ -115,9 +115,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">Base de datos bloqueada</string>
-    <string name="database_locked_summary">Outra aplicación está utilizando a base de datos do AnkiDroid. Pecha a outra aplicación e reabre o AnkiDroid</string>
+    <string name="database_locked_summary">Outra aplicación está utilizando a base de datos do SpeedyCAT. Pecha a outra aplicación e reabre o SpeedyCAT</string>
     <string name="incompatible_database_version_title">Versión da base de datos incompatíbel</string>
-    <string name="incompatible_database_version_summary">A base de datos é dunha versión máis avanzada da que esta versión do AnkiDroid pode manexar. Actualiza o AnkiDroid ou reverte a versión da base de datos para abrila.\n\nVersión compatíbel: %1$d\nVersión da base de datos: %2$d\n\nAs seguintes opcións de restauración sobrescribirán a túa colección actual, posibelmente cunha versión compatible da base de datos:</string>
+    <string name="incompatible_database_version_summary">A base de datos é dunha versión máis avanzada da que esta versión do SpeedyCAT pode manexar. Actualiza o SpeedyCAT ou reverte a versión da base de datos para abrila.\n\nVersión compatíbel: %1$d\nVersión da base de datos: %2$d\n\nAs seguintes opcións de restauración sobrescribirán a túa colección actual, posibelmente cunha versión compatible da base de datos:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">Aplicouse a imaxe do fondo</string>
     <string name="background_image_removed">Retirouse a imaxe do fondo</string>
@@ -138,29 +138,29 @@
     <string name="locale_selection_dialog_title_new">Estabelecer Idioma</string>
     <string name="locale_selection_dialog_summary">Algúns teclados multilingües, como GBoard, permiten cambiar o idioma mentres se edita o texto.\n\nSe o teu teclado non cambia o idioma, solicita a función \"setImeHintLocales\" ao fabricante.</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">Empregar o AnkiDroid</string>
-    <string name="help_item_ankidroid_manual">Manual do AnkiDroid</string>
-    <string name="help_item_anki_manual">Manual do Anki</string>
-    <string name="help_item_ankidroid_faq">FAQ do AnkiDroid</string>
+    <string name="help_title_using_ankidroid">Empregar o SpeedyCAT</string>
+    <string name="help_item_ankidroid_manual">Manual do SpeedyCAT</string>
+    <string name="help_item_anki_manual">Manual do SpeedyCAT</string>
+    <string name="help_item_ankidroid_faq">FAQ do SpeedyCAT</string>
     <string name="help_title_get_help">Obter axuda</string>
     <string name="help_item_mailing_list">Lista de distribución</string>
     <string name="help_item_reddit">Reddit</string>
     <string name="help_item_report_bug">Informar dun erro</string>
-    <string name="help_title_support_ankidroid" maxLength="28">Apoiar o AnkiDroid</string>
+    <string name="help_title_support_ankidroid" maxLength="28">Apoiar o SpeedyCAT</string>
     <string name="help_item_support_opencollective_donate">Doazóns</string>
     <string name="help_item_support_develop_ankidroid">Desenvolver</string>
     <string name="help_item_support_rate_ankidroid">Avaliar</string>
     <string name="help_item_support_other_ankidroid">Outros</string>
     <string name="multimedia_editor_trans_translate">Traducir</string>
     <string name="help_title_community">Comunidade</string>
-    <string name="help_item_anki_forums">Foro do Anki</string>
+    <string name="help_item_anki_forums">Foro do SpeedyCAT</string>
     <string name="help_item_discord">Discord</string>
     <string name="help_item_facebook">Facebook</string>
     <string name="help_item_twitter">Twitter</string>
     <string name="help_title_privacy">Privacidade</string>
-    <string name="help_item_ankidroid_privacy_policy">Política de privacidade AnkiDroid</string>
-    <string name="help_item_ankiweb_privacy_policy">Política de privacidade AnkiWeb</string>
-    <string name="help_item_ankiweb_terms_and_conditions">Termos e condicións do AnkiDroid</string>
+    <string name="help_item_ankidroid_privacy_policy">Política de privacidade SpeedyCAT</string>
+    <string name="help_item_ankiweb_privacy_policy">Política de privacidade SpeedyCAT</string>
+    <string name="help_item_ankiweb_terms_and_conditions">Termos e condicións do SpeedyCAT</string>
     <string name="help_title_send_exception">Enviar informe de resolución de erros</string>
     <string name="help_dialog_exception_report_debounce">Informe xa enviado</string>
     <string name="help_dialog_exception_report_sent">Informe enviado!</string>

@@ -218,13 +218,43 @@ class TypeAnswer(
         ) = sb.append(html)
 
         val comparisonText = CollectionManager.compareAnswer(correctAnswer, userAnswer, combining)
-        append(Matcher.quoteReplacement(comparisonText))
+        append(Matcher.quoteReplacement(simpleTypeAnswerFeedback(comparisonText, userAnswer, correctAnswer)))
         return m.replaceAll(sb.toString())
     }
 
     companion object {
         /** Regular expression in card data for a 'type answer' after processing has occurred */
         val PATTERN: Pattern = Pattern.compile("\\[\\[type:(.+?)]]")
+
+        /**
+         * Wraps the backend answer comparison with a simple, whole-answer correct/incorrect
+         * indicator. The per-character red/green diff itself is flattened via CSS (see
+         * `flashcard.css`), so this only conveys overall correctness while still showing the
+         * typed answer and the correct answer.
+         *
+         * SpeedyCAT: correctness is decided by a case-insensitive native comparison of the
+         * typed and expected answers (see [ForcedRecall.matches]) rather than by scanning the
+         * backend's case-sensitive per-character diff, so a right answer typed in a different
+         * case counts as correct and case differences are not flagged as wrong.
+         *
+         * When nothing was typed (e.g. the answer was revealed without input) no indicator is
+         * shown and the correct answer is displayed as-is.
+         */
+        @Language("HTML")
+        fun simpleTypeAnswerFeedback(
+            comparison: String,
+            userAnswer: String,
+            correctAnswer: String,
+        ): String {
+            if (userAnswer.isBlank()) return comparison
+            val resultClass =
+                if (ForcedRecall.matches(userAnswer, correctAnswer)) {
+                    "type-answer-correct"
+                } else {
+                    "type-answer-incorrect"
+                }
+            return """<div class="type-answer-result $resultClass">$comparison</div>"""
+        }
 
         fun createInstance(preferences: SharedPreferences): TypeAnswer =
             TypeAnswer(

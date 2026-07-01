@@ -1,6 +1,18 @@
+/*
+  Themed reviewer chrome. `--reviewer-canvas`/`--reviewer-surface`/`--reviewer-fg`
+  are injected per-card from the Android theme (see AndroidCardRenderContext), so
+  the reviewer follows the app's light/dark theme instead of a hard-coded colour.
+  The fallbacks keep rendering sane if the variables are ever missing.
+*/
+html {
+  background-color: var(--reviewer-canvas, transparent);
+}
+
 body {
   margin: 0px;
-  padding: 0px;
+  /* padding forms the gap between the card box and the screen edges */
+  padding: 12px;
+  box-sizing: border-box;
 
   overflow-wrap: break-word;
   /* default background setting to fit with toolbar */
@@ -8,6 +20,12 @@ body {
   background-repeat: no-repeat;
   background-position: top;
   background-attachment: fixed;
+}
+
+/* The screen background follows the app theme, overriding the note's full-bleed
+   background so the card content can sit inside a themed card box. */
+body.card {
+  background-color: var(--reviewer-canvas, transparent) !important;
 }
 
 li {
@@ -28,15 +46,22 @@ video {
 
 body.night_mode {
   color: white;
-  background-color: black;
 }
 
-body.ankidroid_dark_mode {
-  background-color: #303030;
-}
-
+/* Card-shaped box that contains the question/answer, centered on the themed
+   background with rounded corners, padding and a subtle elevation. */
 #content {
-  margin: 0.5em;
+  box-sizing: border-box;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 18px;
+  background-color: var(--reviewer-surface, transparent);
+  border-radius: 16px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.18);
+}
+
+body.night_mode #content {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* For the typed/correct answer comparison. The typePrompt and typeOff
@@ -44,16 +69,45 @@ body.ankidroid_dark_mode {
   4.0) Android versions . typePrompt is a placeholder where the input
   box should be. typeOff is added when the user switched off entering
   the answer. */
-.typeGood {
-  background-color: #0f0;
-}
 
-.typeBad {
-  background-color: #f00;
-}
-
+/* The per-character red/green diff produced by the backend `compare_answer`
+   is intentionally flattened: the individual typeGood/typeBad/typeMissed
+   spans render as plain text so the typed answer and the correct answer are
+   shown cleanly, without a distracting per-letter comparison. A simple
+   correct/incorrect indicator is added instead (see .type-answer-result). */
+.typeGood,
+.typeBad,
 .typeMissed {
-  background-color: #ccc;
+  background-color: transparent;
+  color: inherit;
+}
+
+/* Simple, whole-answer correct/incorrect feedback (not per character). */
+.type-answer-result {
+  margin: 0 auto;
+}
+
+.type-answer-result::before {
+  font-weight: bold;
+  margin-right: 0.35em;
+}
+
+.type-answer-correct::before {
+  content: "\2713"; /* check mark */
+  color: #2e7d32;
+}
+
+.type-answer-incorrect::before {
+  content: "\2717"; /* ballot x */
+  color: #c62828;
+}
+
+.night_mode .type-answer-correct::before {
+  color: #81c784;
+}
+
+.night_mode .type-answer-incorrect::before {
+  color: #e57373;
 }
 
 @font-face {
@@ -87,12 +141,11 @@ code#typeans {
   background-color: black;
 }
 
-.night_mode .typeGood {
-  background-color: #508040;
-}
-
-.night_mode .typeBad {
-  background-color: #905050;
+.night_mode .typeGood,
+.night_mode .typeBad,
+.night_mode .typeMissed {
+  background-color: transparent;
+  color: inherit;
 }
 
 .ankidroid_dark_mode input#typeans {

@@ -122,17 +122,6 @@ class HelpDialog : DialogFragment() {
         const val ARG_MENU_TITLE = "arg_menu_title"
         private const val PAGE_TAG = "HelpMenuPage"
 
-        fun newHelpInstance(): HelpDialog {
-            UsageAnalytics.sendAnalyticsEvent(Category.LINK_CLICKED, Actions.OPENED_HELP_DIALOG)
-            return HelpDialog().apply {
-                arguments =
-                    Bundle().apply {
-                        putInt(ARG_MENU_TITLE, R.string.help)
-                        putParcelableArray(ARG_MENU_ITEMS, mainHelpMenuItems)
-                    }
-            }
-        }
-
         fun newPrivacyPolicyInstance(): HelpDialog {
             UsageAnalytics.sendAnalyticsEvent(Category.LINK_CLICKED, Actions.OPENED_PRIVACY)
             val privacyId = mainHelpMenuItems.single { it.analyticsId == Actions.OPENED_PRIVACY }.id
@@ -142,24 +131,6 @@ class HelpDialog : DialogFragment() {
                     Bundle().apply {
                         putInt(ARG_MENU_TITLE, R.string.help_title_privacy)
                         putParcelableArray(ARG_MENU_ITEMS, privacyItems.toTypedArray())
-                    }
-            }
-        }
-
-        /**
-         * @param canRateApp a boolean that indicates if the system has an app to open to rate AnkiDroid
-         */
-        fun newSupportInstance(canRateApp: Boolean): HelpDialog {
-            UsageAnalytics.sendAnalyticsEvent(
-                Category.LINK_CLICKED,
-                Actions.OPENED_SUPPORT_ANKIDROID,
-            )
-            val actualMenuItems = supportMenuItems.filterNot { it.action is Rate && !canRateApp }
-            return HelpDialog().apply {
-                arguments =
-                    Bundle().apply {
-                        putInt(ARG_MENU_TITLE, R.string.help_title_support_ankidroid)
-                        putParcelableArray(ARG_MENU_ITEMS, actualMenuItems.toTypedArray())
                     }
             }
         }
@@ -244,54 +215,6 @@ internal val mainHelpMenuItems =
             iconResId = R.drawable.ic_baseline_privacy_tip_24,
             analyticsId = Actions.OPENED_PRIVACY,
             id = 4,
-        ),
-    )
-
-/** The menu items that are shown in the support menu. */
-@VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
-internal val supportMenuItems =
-    arrayOf(
-        HelpItem(
-            titleResId = R.string.help_item_support_opencollective_donate,
-            iconResId = R.drawable.ic_round_favorite_24,
-            analyticsId = Actions.OPENED_DONATE,
-            id = 5,
-            action = OpenUrlResource(R.string.link_opencollective_donate),
-        ),
-        HelpItem(
-            titleResId = R.string.multimedia_editor_trans_translate,
-            iconResId = R.drawable.ic_language_black_24dp,
-            analyticsId = Actions.OPENED_TRANSLATE,
-            id = 6,
-            action = OpenUrlResource(R.string.link_translation),
-        ),
-        HelpItem(
-            titleResId = R.string.help_item_support_develop_ankidroid,
-            iconResId = R.drawable.ic_build_black_24,
-            analyticsId = Actions.OPENED_DEVELOP,
-            id = 7,
-            action = OpenUrlResource(R.string.link_ankidroid_development_guide),
-        ),
-        HelpItem(
-            titleResId = R.string.help_item_support_rate_ankidroid,
-            iconResId = R.drawable.ic_star_black_24,
-            analyticsId = Actions.OPENED_RATE,
-            id = 8,
-            action = Rate,
-        ),
-        HelpItem(
-            titleResId = R.string.help_item_support_other_ankidroid,
-            iconResId = R.drawable.ic_help_black_24dp,
-            analyticsId = Actions.OPENED_OTHER,
-            id = 9,
-            action = OpenUrlResource(R.string.link_contribution),
-        ),
-        HelpItem(
-            titleResId = R.string.send_feedback,
-            iconResId = R.drawable.ic_email_black_24dp,
-            analyticsId = Actions.OPENED_SEND_FEEDBACK,
-            id = 10,
-            action = OpenUrl(AnkiDroidApp.feedbackUrl),
         ),
     )
 

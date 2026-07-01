@@ -39,12 +39,12 @@
         <item quantity="other">%d ბარათი დაყენდა საწყის მდგომარეობაში</item>
     </plurals>
     <string name="answering_error_title">მონაცემთა ბაზის შეცდომა</string>
-    <string name="answering_error_message">Writing to the collection failed. The database could be corrupt or there may not to be enough empty space on disk.\n\nIf this happens more often, try checking the database, repairing the collection or restoring it from a backup. Touch “options” for that.\n\Or it could be an AnkiDroid bug as well; please report the error so that we can check this.</string>
+    <string name="answering_error_message">Writing to the collection failed. The database could be corrupt or there may not to be enough empty space on disk.\n\nIf this happens more often, try checking the database, repairing the collection or restoring it from a backup. Touch “options” for that.\n\Or it could be an SpeedyCAT bug as well; please report the error so that we can check this.</string>
     <string name="answering_error_report">შეცდომის შეტყობინება</string>
-    <string name="storage_full_message">There is not enough free storage space to open AnkiDroid. Free up some space to continue.</string>
+    <string name="storage_full_message">There is not enough free storage space to open SpeedyCAT. Free up some space to continue.</string>
     <string name="repair_deck_dialog">ნამდვილად გსურთ, სცადოთ მონაცემთა ბაზის შეკეთება?\n\nმცდელობის დაწყებამდე შეიქმნება ასლი ქვესაქაღალდეში: „%s“.</string>
     <string name="intent_aedict_empty">კატეგორია „ნაგულისხმევი“ ცარიელია</string>
-    <string name="intent_aedict_category">To add cards to AnkiDroid remove all Notepad categories or add one named “default”</string>
+    <string name="intent_aedict_category">To add cards to SpeedyCAT remove all Notepad categories or add one named “default”</string>
     <string name="custom_study_new_extend">დღევანდელი ახალი ბარათების ლიმიტის გაზრდა/შემცირება (\"-3\") ამდენით:</string>
     <string name="custom_study_rev_extend">დღევანდელი გადახედვების ლიმიტის გაზრდა/შემცირება (\"-3\") ამდენით:</string>
     <string name="custom_study_forgotten">გასულ x დღეში დავიწყებული ბარათების გადახედვა:</string>
@@ -54,7 +54,7 @@
     <string name="storage_full_title">მეხსიერება სავსეა</string>
     <string name="storage_almost_full_title">მეხსიერება თითქმის გავსებულია</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">მეხსიერების სივრცე არ არის</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">AnkiDroid needs %s free storage space to continue. Please clear some space</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">SpeedyCAT needs %s free storage space to continue. Please clear some space</string>
     <string name="restore_backup_title">რეზერვის აღდგენა?</string>
     <string name="restore_backup">Your collection will be replaced with an older copy. Any unsaved progress will be lost.</string>
     <string name="restore_backup_choose_another">აირჩიეთ სხვა</string>
@@ -115,9 +115,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">მონაცემთა ბაზა ჩაკეტილია</string>
-    <string name="database_locked_summary">სხვა აპლიკაცია იყენებს AnkiDroid-ის მონაცემთა ბაზას. გთხოვთ დახუროთ ეგ აპლიკაცია და ხელახლა გახსნათ AnkiDroid.</string>
+    <string name="database_locked_summary">სხვა აპლიკაცია იყენებს SpeedyCAT-ის მონაცემთა ბაზას. გთხოვთ დახუროთ ეგ აპლიკაცია და ხელახლა გახსნათ SpeedyCAT.</string>
     <string name="incompatible_database_version_title">მონაცემთა ბაზის შეუთავსებელი ვერსია</string>
-    <string name="incompatible_database_version_summary">The database is a more advanced version than this version of AnkiDroid can work with. Upgrade AnkiDroid or downgrade the database to open it\n\nSupported version: %1$d\nDatabase version: %2$d\n\nThe following restore options will overwrite your current collection, possibly with a compatible database version:</string>
+    <string name="incompatible_database_version_summary">The database is a more advanced version than this version of SpeedyCAT can work with. Upgrade SpeedyCAT or downgrade the database to open it\n\nSupported version: %1$d\nDatabase version: %2$d\n\nThe following restore options will overwrite your current collection, possibly with a compatible database version:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">სურათი დაყენდა ფონზე</string>
     <string name="background_image_removed">მოშორდა ფონის სურათი</string>
@@ -138,29 +138,29 @@
     <string name="locale_selection_dialog_title_new">ენის დაყენება</string>
     <string name="locale_selection_dialog_summary">ზოგ მრავალენოვან კლავიატურას, როგორც მაგალითად Gboard-ს, ტექსტის რედაქტირებისას ენის შეცვლის ფუნქცია აქვს\n\nთუკი თქვენი კლავიატურა ენას ვერ ცვლის, გთხოვთ კლავიატურის მწარმოებელს მიმართოთ და \"setImeHintLocales\" ფუნქციის დამატება მოსთხოვოთ</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">AnkiDroid-ის გამოყენება</string>
-    <string name="help_item_ankidroid_manual">AnkiDroid manual</string>
-    <string name="help_item_anki_manual">Anki manual</string>
-    <string name="help_item_ankidroid_faq">ხშირად დასმული კითხვები AnkiDroid-ზე</string>
+    <string name="help_title_using_ankidroid">SpeedyCAT-ის გამოყენება</string>
+    <string name="help_item_ankidroid_manual">SpeedyCAT manual</string>
+    <string name="help_item_anki_manual">SpeedyCAT manual</string>
+    <string name="help_item_ankidroid_faq">ხშირად დასმული კითხვები SpeedyCAT-ზე</string>
     <string name="help_title_get_help">Get help</string>
     <string name="help_item_mailing_list">Mailing list</string>
     <string name="help_item_reddit">Reddit</string>
     <string name="help_item_report_bug">Report a bug</string>
-    <string name="help_title_support_ankidroid" maxLength="28">AnkiDroid-ის მხარდაჭერა</string>
+    <string name="help_title_support_ankidroid" maxLength="28">SpeedyCAT-ის მხარდაჭერა</string>
     <string name="help_item_support_opencollective_donate">შემოწირულება</string>
     <string name="help_item_support_develop_ankidroid">განვითარება</string>
     <string name="help_item_support_rate_ankidroid">შეფასება</string>
     <string name="help_item_support_other_ankidroid">სხვა</string>
     <string name="multimedia_editor_trans_translate">თარგმნა</string>
     <string name="help_title_community">საზოგადოება</string>
-    <string name="help_item_anki_forums">Anki forums</string>
+    <string name="help_item_anki_forums">SpeedyCAT forums</string>
     <string name="help_item_discord">Discord</string>
     <string name="help_item_facebook">Facebook</string>
     <string name="help_item_twitter">Twitter</string>
     <string name="help_title_privacy">კონფიდენციალურობა</string>
-    <string name="help_item_ankidroid_privacy_policy">AnkiDroid privacy policy</string>
-    <string name="help_item_ankiweb_privacy_policy">AnkiWeb privacy policy</string>
-    <string name="help_item_ankiweb_terms_and_conditions">AnkiWeb terms and conditions</string>
+    <string name="help_item_ankidroid_privacy_policy">SpeedyCAT privacy policy</string>
+    <string name="help_item_ankiweb_privacy_policy">SpeedyCAT privacy policy</string>
+    <string name="help_item_ankiweb_terms_and_conditions">SpeedyCAT terms and conditions</string>
     <string name="help_title_send_exception">უწესივრობათა დიაგნოსტიკისა და აღმოფხვრის ანგარიშის გაგზავნა</string>
     <string name="help_dialog_exception_report_debounce">შეტყობინება უკვე გაგზავნილია</string>
     <string name="help_dialog_exception_report_sent">ანგარიში გაიგზავნა!</string>

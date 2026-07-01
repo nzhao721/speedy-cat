@@ -123,7 +123,7 @@
         <item quantity="few">%1$d minute</item>
         <item quantity="other">%1$d minuta</item>
     </plurals>
-    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">AnkiDroid kartica</string>
+    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">SpeedyCAT kartica</string>
     <string name="note_editor_copy_note" maxLength="28">Kopiraj bilješku</string>
     <string name="card_editor_reposition_card" comment="reposition a card in the new queue" maxLength="28">Promijeni poziciju</string>
     <string name="card_editor_reset_card" maxLength="28">Resetiraj napredak</string>
@@ -135,30 +135,30 @@
     <string name="checks_action" maxLength="28">Provjeri</string>
     <string name="unknown_type_field_warning">Upiši odgovor: nepoznato polje %s</string>
     <string name="delete_deck" comment="Message on a progress bar starting a deck is being deleted.">Brisanje špila&#8230;</string>
-    <string name="info_rate">Ocijeni AnkiDroid</string>
+    <string name="info_rate">Ocijeni SpeedyCAT</string>
     <string name="import_title">Uvoženje</string>
     <string name="import_preparing_file">Priprema datoteke za uvoz&#8230;</string>
     <string name="import_message_add" comment="Adding a new deck to the collection (import)">Dodaj</string>
     <string name="import_message_replace_confirm">Ovo će izbrisati Vašu postojeću kolekciju i zamijeniti je s podacima iz datoteke %s</string>
     <string name="import_dialog_message_add">Dodati “%s” u kolekciju? Ovo može dugo potrajati</string>
-    <string name="import_log_no_apkg">Neispravna datoteka Anki paketa</string>
+    <string name="import_log_no_apkg">Neispravna datoteka SpeedyCAT paketa</string>
     <string name="import_title_error" comment="Title of error dialog">Greška</string>
     <string name="import_error_handle_exception">Greška pri uvozu datoteke\n\n%s</string>
     <string name="import_error_not_apkg_extension">Naziv datoteke “%s” nema nastavak .apkg ili .colpkg</string>
-    <string name="import_error_load_imported_database">Zamjena Anki baze podataka (.anki2) još nije podržana. Pogledajte priručnik za upute o zamjeni.</string>
-    <string name="import_error_content_provider">Nije se moglo automatski uvesti odabranu datoteku u AnkiDroid. Pogledajte korisnički priručnik da biste vidjeli kako ručno uvesti Anki datoteke: \n%s</string>
+    <string name="import_error_load_imported_database">Zamjena SpeedyCAT baze podataka (.anki2) još nije podržana. Pogledajte priručnik za upute o zamjeni.</string>
+    <string name="import_error_content_provider">Nije se moglo automatski uvesti odabranu datoteku u SpeedyCAT. Pogledajte korisnički priručnik da biste vidjeli kako ručno uvesti SpeedyCAT datoteke: \n%s</string>
     <string name="import_error_copy_to_cache_title">Greška pri kopiranju datoteke u predmemoriju</string>
     <string name="import_error_copy_to_cache_explanation" comment="The substitution is a list of suggested fixes in bullet point form">Ovo je obično uzrokovano greškom u aplikaciji kojoj ste odabrali ovu datoteku. Pokušajte sljedeća rješenja:\n\n%s</string>
-    <string name="import_interrupted">Uvoz prekinut: AnkiDroid je zatvoren</string>
+    <string name="import_interrupted">Uvoz prekinut: SpeedyCAT je zatvoren</string>
     <string name="export_ready_title">Izvoz je spreman</string>
     <string name="export_send_no_handlers">Nijedna aplikacija nije dostupna da rukuje s apkg. Spremanje&#8230;</string>
-    <string name="export_save_apkg_successful">Anki paket uspješno spremljen</string>
-    <string name="export_save_apkg_unsuccessful">Anki paket nije uspješno spremljen</string>
-    <string name="export_share_title">Pošalji Anki paket koristeći</string>
-    <string name="export_email_subject">Izvezene AnkiDroid kartice: %s</string>
+    <string name="export_save_apkg_successful">SpeedyCAT paket uspješno spremljen</string>
+    <string name="export_save_apkg_unsuccessful">SpeedyCAT paket nije uspješno spremljen</string>
+    <string name="export_share_title">Pošalji SpeedyCAT paket koristeći</string>
+    <string name="export_email_subject">Izvezene SpeedyCAT kartice: %s</string>
     <string name="export_email_text"><![CDATA[        Bok!
         <br/><br/>
-        Ovo je Anki špil flash kartica poslan iz AnkiDroida[1].
+        Ovo je SpeedyCAT špil flash kartica poslan iz SpeedyCATa[1].
         Pokušaj ga otvoriti koristeći jednu od dostupnih distribucija[2] te uživaj u jednostavnom i efikasnom učenju!<br/><br/>
         [1] %1$s<br/>
         [2] %2$s
@@ -195,18 +195,18 @@
     <string name="white_board_eraser_disabled">Način rada gumice deaktiviran</string>
     <string comment="Progress amount e.g. \'28 MB/141 MB\'. %1$s is the current amount, %2$s is the max." name="progress_amount_bytes">%1$s/%2$s</string>
     <string name="media_file_size_warning_title">Media too large</string>
-    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the AnkiWeb limit of %3$s and cannot be synced. Add anyway?</string>
+    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the SpeedyCAT limit of %3$s and cannot be synced. Add anyway?</string>
     <string name="media_file_size_add_anyway">Add anyway</string>
     <!-- Whiteboard save image message in the Study Screen -->
     <string name="white_board_image_save_failed">Greška pri spremanju slike ploče. %s</string>
     <string name="white_board_image_saved">Slika ploče spremljena u %s</string>
     <string name="title_whiteboard_editor" maxLength="28">Uređivač ploče</string>
-    <string name="user_is_a_robot">Prepoznat je automatiziran test. Ako ste ljudska osoba, kontaktirajte AnkiDroid podršku</string>
+    <string name="user_is_a_robot">Prepoznat je automatiziran test. Ako ste ljudska osoba, kontaktirajte SpeedyCAT podršku</string>
     <!-- JS api -->
-    <string name="api_version_developer_contact">Ova kartica koristi nepodržane AnkiDroid značajke. Kontaktirajte razvijatelja %1$s ili pogledajte wiki. %2$s</string>
+    <string name="api_version_developer_contact">Ova kartica koristi nepodržane SpeedyCAT značajke. Kontaktirajte razvijatelja %1$s ili pogledajte wiki. %2$s</string>
     <string name="invalid_json_data">Kartica je pružila neispravne podatke. %s</string>
-    <string name="valid_js_api_version">Neispravna verzija AnkiDroid JS API. Kontaktirajte razvijatelja %s ili pogledajte wiki</string>
-    <string name="update_js_api_version">Dostupno ažuriranje za AnkiDroid JS API. Kontaktirajte razvijatelja %s, ili pogledajte wiki</string>
+    <string name="valid_js_api_version">Neispravna verzija SpeedyCAT JS API. Kontaktirajte razvijatelja %s ili pogledajte wiki</string>
+    <string name="update_js_api_version">Dostupno ažuriranje za SpeedyCAT JS API. Kontaktirajte razvijatelja %s, ili pogledajte wiki</string>
     <string name="reviewer_invalid_api_version_visit_documentation">Pogledaj</string>
     <string name="anki_js_error_code">(Error code: %d)</string>
     <!-- About AnkiDroid screen -->
@@ -218,7 +218,7 @@
     <string name="search_decks" maxLength="28">Pretraži špilove</string>
     <string name="ankidroid_init_failed_webview_title">Fatal error</string>
     <string name="ankidroid_init_failed_webview">Android se oslanja na System WebView koji nije dostupan. Ovo se može dogoditi pri ažuriranju sustava. Pokušajte ponovno za par minuta.\n\n%s</string>
-    <string name="ankidroid_init_failed_storage">AnkiDroid ne može pristupiti prostoru za pohranu zbog greške u Androidu:\n\n%s</string>
+    <string name="ankidroid_init_failed_storage">SpeedyCAT ne može pristupiti prostoru za pohranu zbog greške u Androidu:\n\n%s</string>
     <!-- A Menu item to change the Font Size (currently in the Note Editor) -->
     <string name="menu_font_size" maxLength="28">Veličina fonta</string>
     <string name="menu_show_toolbar" comment="Checkable item stating whether the note editor toolbar should be shown" maxLength="28">Pokaži alatnu traku</string>
@@ -240,9 +240,9 @@
     <string name="note_editor_video_too_large">Video datoteka je prevelika, umetnite video ručno</string>
     <string name="note_editor_audio_too_large">Zvučna datoteka je prevelika, umetnite zvuk ručno</string>
     <string name="ankidroid_cannot_open_after_backup_try_again" comment="After an Android backup is restored, AnkiDroid opens and shows this message.         Opening AnkiDroid again will work correctly">Sigurnosna kopija Androida u tijeku. Pokušajte ponovno</string>
-    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Možda ćete morati koristiti iManager kako biste dozvolili da AnkiDroid stvori prečace</string>
+    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Možda ćete morati koristiti iManager kako biste dozvolili da SpeedyCAT stvori prečace</string>
     <string name="create_shortcut_error_miui" comment="Keep the message as short, as this is shown in a toast. %s is the app name: \'AnkiDroid\'">Allow ‘Home screen shortcuts’ in system settings for %s to add shortcuts</string>
-    <string name="create_shortcut_failed" comment="home screen == launcher">Vaš kućni ekran ne dozvoljava da AnkiDroid stvara prečace</string>
+    <string name="create_shortcut_failed" comment="home screen == launcher">Vaš kućni ekran ne dozvoljava da SpeedyCAT stvara prečace</string>
     <string name="create_shortcut_error">Greška pri dodavanju prečaca: %s</string>
     <string name="note_editor_capitalize" comment="This is for a switch with a checkbox - on: enabled" maxLength="28">Veliko slovo na početku</string>
     <string name="menu_scroll_toolbar" comment="Checkbox stating whether note editor toolbar is scrollable or stacked. Checked: Scroll" maxLength="28">Scroll toolbar</string>
@@ -307,9 +307,9 @@
     <string name="intro_ankidroid_tagline_two">Zapamtite više</string>
     <string name="intro_short_ankidroid_explanation">Ankijev raspoređivač kartica štedi vrijeme tako što ojačava Vaša najslabija sjećanja i čuva Vaša najjača</string>
     <string name="intro_get_started" comment="Action to start AnkiDroid for the first time without syncing from AnkiWeb">Get started</string>
-    <string name="intro_sync_from_ankiweb">Sinkroniziraj s AnkiWeba</string>
+    <string name="intro_sync_from_ankiweb">Sinkroniziraj s SpeedyCATa</string>
     <!-- IntentHandler -->
-    <string name="app_not_initialized_new">AnkiDroid još nije inicijaliziran. Otvorite AnkiDroid te zatim pokušajte ponovno</string>
+    <string name="app_not_initialized_new">SpeedyCAT još nije inicijaliziran. Otvorite SpeedyCAT te zatim pokušajte ponovno</string>
     <!-- Deck Creation -->
     <string name="deck_created">Špil stvoren</string>
     <string name="deck_renamed">Špil preimenovan</string>

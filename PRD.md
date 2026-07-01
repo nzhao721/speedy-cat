@@ -275,10 +275,10 @@ A full-length practice exam that **mirrors the AAMC full-length structure** (fou
 - `disclaimer` — string, required. Proof-of-concept disclaimer (AI-generated; not official AAMC).
 - `totalQuestions` — integer, required. `230`.
 - `totalTestingSeconds` — integer, required. `22500` (6h 15m; equals the sum of section `durationSeconds`).
-- `totalBreakSeconds` — integer, required. Sum of `breaks[].durationSeconds` (e.g. `1800` for three ~10-min breaks). Computed from `breaks` on load.
+- `totalBreakSeconds` — integer, required. Sum of `breaks[].durationSeconds` — `3000` (50 min) for the standard AAMC schedule: a 10-min break, the 30-min mid-exam break, and a 10-min break. Computed from `breaks` on load.
 - `breaks` — array of break objects, required (may be empty). The real-MCAT scheduled breaks the UI enforces between sections. When the source bundle omits them, the backend **synthesizes** the standard breaks on import. Each break object:
   - `afterSection` — integer, required. 1-based `order` of the section this break follows. Standard breaks follow sections `1`, `2`, and `3`.
-  - `durationSeconds` — integer, required. Break length; `600` (~10 min) for each standard MCAT break (optional break after section 1, the mid-exam break after section 2, and the optional break after section 3).
+  - `durationSeconds` — integer, required. Break length, matching the real AAMC MCAT: `600` (10 min) for the break after section 1, `1800` (30 min) for the mid-exam break after section 2 (CARS), and `600` (10 min) for the break after section 3. Total scheduled break time is 50 min.
   - `optional` — boolean, required. Whether the student may skip/shorten the break (all standard breaks are optional).
   - `label` — string, required. Display label, e.g. `"Break"`, or `"Mid-exam break"` for the break after section 2.
 - `sections` — array of section objects, required. Exactly four, one per MCAT section. Each section object:

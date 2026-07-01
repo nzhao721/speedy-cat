@@ -166,8 +166,8 @@
     </plurals>
     <string name="pref_keep_screen_on" maxLength="41">ಪರದೆಯನ್ನು ಆನ್ ಮಾಡಿ</string>
     <string name="pref_keep_screen_on_summ">ಪರದೆಯ ಕಾಲಾವಧಿಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ</string>
-    <string name="enable_api_title" maxLength="41">AnkiDroid API ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
-    <string name="enable_api_summary">ಇತರ ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು AnkiDroid ಗೆ ಸಂಪರ್ಕಿಸಲು ಮತ್ತು ನಿಮ್ಮ ಹಸ್ತಕ್ಷೇಪವಿಲ್ಲದೆ ಡೇಟಾವನ್ನು ಓದಲು/ಬರೆಯಲು ಅನುಮತಿಸಿ</string>
+    <string name="enable_api_title" maxLength="41">SpeedyCAT API ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
+    <string name="enable_api_summary">ಇತರ ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು SpeedyCAT ಗೆ ಸಂಪರ್ಕಿಸಲು ಮತ್ತು ನಿಮ್ಮ ಹಸ್ತಕ್ಷೇಪವಿಲ್ಲದೆ ಡೇಟಾವನ್ನು ಓದಲು/ಬರೆಯಲು ಅನುಮತಿಸಿ</string>
     <string name="custom_buttons" maxLength="41">ಅಪ್ಲಿಕೇಶನ್ ಬಾರ್ ಬಟನ್‌ಗಳು</string>
     <string name="custom_buttons_summary">ಅಪ್ಲಿಕೇಶನ್ ಬಾರ್‌ನಲ್ಲಿ ಯಾವ ಕ್ರಿಯೆಗಳು ಗೋಚರಿಸುತ್ತವೆ ಎಂಬುದನ್ನು ಕಸ್ಟಮೈಸ್ ಮಾಡಿ</string>
     <string name="custom_buttons_setting_always_show">ಯಾವಾಗಲೂ ಕಾಣಿಸಿಕೊಳ್ಳಿ</string>
@@ -177,7 +177,7 @@
     <string name="reset_settings_to_default">ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಡೀಫಾಲ್ಟ್‌ಗೆ ಮರುಹೊಂದಿಸಿ</string>
     <string name="reset">ಮರುಹೊಂದಿಸಿ</string>
     <string name="thirdparty_apps_title" maxLength="41">ಮೂರನೇ ವ್ಯಕ್ತಿಯ API ಅಪ್ಲಿಕೇಶನ್‌ಗಳು</string>
-    <string name="thirdparty_apps_summary">ನಿಘಂಟುಗಳು, ಉಪಯುಕ್ತತೆಗಳಂತಹ AnkiDroid API ಅನ್ನು ಬಳಸುವ ಅಪ್ಲಿಕೇಶನ್‌ಗಳ ಪಟ್ಟಿಯನ್ನು ನೋಡಿ.</string>
+    <string name="thirdparty_apps_summary">ನಿಘಂಟುಗಳು, ಉಪಯುಕ್ತತೆಗಳಂತಹ SpeedyCAT API ಅನ್ನು ಬಳಸುವ ಅಪ್ಲಿಕೇಶನ್‌ಗಳ ಪಟ್ಟಿಯನ್ನು ನೋಡಿ.</string>
     <string name="pref_controls_reviews_tab" maxLength="41" comment="Name of the tab to configure controls for the reviews screen">Reviews</string>
     <string name="pref_controls_previews_tab" maxLength="41" comment="Name of the tab to configure controls for the previews screen">Previews</string>
     <string name="toggle_backside_only" maxLength="41" comment="Control setting that toggles \'Backside only\' in the previews screen">Toggle backside only</string>
@@ -193,9 +193,9 @@
     <!-- Custom sync server settings -->
     <string name="custom_sync_server_title" maxLength="41">ಕಸ್ಟಮ್ ಸಿಂಕ್ ಸರ್ವರ್</string>
     <string name="custom_sync_server_summary_none_of_the_two_servers_used" comment="This summary is shown when neither of the two custom sync servers are used,         which is the default.">ಬಳಸಲಾಗುವುದಿಲ್ಲ</string>
-    <string name="custom_sync_server_help2"><![CDATA[AnkiWeb ನೊಂದಿಗೆ ಸಿಂಕ್ರೊನೈಸ್ ಮಾಡಲು ಪರ್ಯಾಯವಾಗಿ,
+    <string name="custom_sync_server_help2"><![CDATA[SpeedyCAT ನೊಂದಿಗೆ ಸಿಂಕ್ರೊನೈಸ್ ಮಾಡಲು ಪರ್ಯಾಯವಾಗಿ,
         ಸಿಂಕ್ರೊನೈಸೇಶನ್ಗಾಗಿ ನೀವು ನಿಮ್ಮ ಸ್ವಂತ ಸರ್ವರ್ ಅನ್ನು ಬಳಸಬಹುದು.
-        ಹೊಂದಿಸದಿದ್ದರೆ, ಬದಲಿಗೆ ಡೀಫಾಲ್ಟ್ AnkiWeb ಸರ್ವರ್ ಅನ್ನು ಬಳಸಲಾಗುತ್ತದೆ.
+        ಹೊಂದಿಸದಿದ್ದರೆ, ಬದಲಿಗೆ ಡೀಫಾಲ್ಟ್ SpeedyCAT ಸರ್ವರ್ ಅನ್ನು ಬಳಸಲಾಗುತ್ತದೆ.
         <a href="%s">ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ</a>]]></string>
     <string name="custom_sync_server_base_url_title" maxLength="41">Sync URL</string>
     <string name="custom_sync_certificate_title" maxLength="41">Custom root certificate (PEM)</string>
@@ -219,9 +219,9 @@
     <string name="deck_conf_general" maxLength="41" comment="Label of the submenu for the general options of new deck">ಸಾಮಾನ್ಯ</string>
     <string name="deck_conf_cram_search" maxLength="41" comment="Label of a text field that contains a search query.">ಇದಕ್ಕಾಗಿ ಹುಡುಕು</string>
     <!-- analytics options -->
-    <string name="analytics_dialog_title">AnkiDroid ಅನ್ನು ಉತ್ತಮಗೊಳಿಸಲು ಸಹಾಯ ಮಾಡಿ!</string>
+    <string name="analytics_dialog_title">SpeedyCAT ಅನ್ನು ಉತ್ತಮಗೊಳಿಸಲು ಸಹಾಯ ಮಾಡಿ!</string>
     <string name="analytics_title" maxLength="41">ವೈಶಿಷ್ಟ್ಯದ ಬಳಕೆಯನ್ನು ಹಂಚಿಕೊಳ್ಳಿ</string>
-    <string name="analytics_summ">ಜನರು ಯಾವ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಬಳಸುತ್ತಾರೆ ಎಂಬುದನ್ನು ನೋಡಲು ಅಭಿವೃದ್ಧಿ ತಂಡಕ್ಕೆ ಸಹಾಯ ಮಾಡುವ ಮೂಲಕ ನೀವು AnkiDroid ಗೆ ಕೊಡುಗೆ ನೀಡಬಹುದು</string>
+    <string name="analytics_summ">ಜನರು ಯಾವ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಬಳಸುತ್ತಾರೆ ಎಂಬುದನ್ನು ನೋಡಲು ಅಭಿವೃದ್ಧಿ ತಂಡಕ್ಕೆ ಸಹಾಯ ಮಾಡುವ ಮೂಲಕ ನೀವು SpeedyCAT ಗೆ ಕೊಡುಗೆ ನೀಡಬಹುದು</string>
     <string name="note_editor_replace_newlines" maxLength="41">ಹೊಸ ಸಾಲುಗಳನ್ನು HTML ನೊಂದಿಗೆ ಬದಲಾಯಿಸಿ</string>
     <string name="note_editor_replace_newlines_summ">ಟಿಪ್ಪಣಿ ಸಂಪಾದಕದಲ್ಲಿ, &lt;br&gt; ಕಾರ್ಡ್ ಅನ್ನು ಸಂಪಾದಿಸುವಾಗ ಯಾವುದೇ ನಿದರ್ಶನಗಳನ್ನು ಹೊಸ ಲೈನ್‌ಗಳಿಗೆ ಪರಿವರ್ತಿಸಿ.</string>
     <string name="type_in_answer_focus" maxLength="41">\'ಉತ್ತರವನ್ನು ಟೈಪ್ ಮಾಡಿ\' ಮೇಲೆ ಕೇಂದ್ರೀಕರಿಸಿ</string>
@@ -230,11 +230,11 @@
     <string name="open_changelog">Open changelog</string>
     <string name="pref_cat_about_title" maxLength="41">ಸುಮಾರು</string>
     <string name="contributors_title">ಕೊಡುಗೆದಾರರು</string>
-    <string name="about_contributors_description"><![CDATA[ಇವರು ನಮ್ಮ ಅದ್ಭುತ <a href=\"%1$s\">ಕೊಡುಗೆದಾರರು</a>. ಪ್ರೋಗ್ರಾಮಿಂಗ್, ಅನುವಾದ, ದೇಣಿಗೆ ಮತ್ತು <a href=\"%2$s\">ಇನ್ನಷ್ಟು</a> ಮೂಲಕ ನೀವು AnkiDroid ಗೆ ಸಹಾಯ ಮಾಡಬಹುದು!]]></string>
+    <string name="about_contributors_description"><![CDATA[ಇವರು ನಮ್ಮ ಅದ್ಭುತ <a href=\"%1$s\">ಕೊಡುಗೆದಾರರು</a>. ಪ್ರೋಗ್ರಾಮಿಂಗ್, ಅನುವಾದ, ದೇಣಿಗೆ ಮತ್ತು <a href=\"%2$s\">ಇನ್ನಷ್ಟು</a> ಮೂಲಕ ನೀವು SpeedyCAT ಗೆ ಸಹಾಯ ಮಾಡಬಹುದು!]]></string>
     <string name="license">ಪರವಾನಗಿ</string>
-    <string name="license_description"><![CDATA[AnkiDroid ಅನ್ನು <a href=\"%1$s\">GPL-3.0</a> ಮತ್ತು <a href=\"%2$s\">AGPL-3.0</a> ಪರವಾನಗಿಗಳ ಮೂಲ ಕೋಡ್ ಅಡಿಯಲ್ಲಿ ಬಿಡುಗಡೆ ಮಾಡಲಾಗಿದೆ < href=\"%3$s\">GitHub</a> ನಲ್ಲಿ ಲಭ್ಯವಿದೆ]]></string>
-    <string name="other_licenses"><![CDATA[AnkiDroid also uses third-party libraries and icons, which are licensed under various open source <a href=\"%1$s\">licenses</a>]]></string>
-    <string name="donate_description"><![CDATA[<a href=\"%1$s\">ದಾನ ಮಾಡುವ ಮೂಲಕ</a> ನೀವು AnkiDroid ಅಭಿವೃದ್ಧಿಯನ್ನು ಬೆಂಬಲಿಸಬಹುದು. ಯಾವುದೇ ಮೊತ್ತವನ್ನು ಆಳವಾಗಿ ಪ್ರಶಂಸಿಸಲಾಗುತ್ತದೆ.]]></string>
+    <string name="license_description"><![CDATA[SpeedyCAT ಅನ್ನು <a href=\"%1$s\">GPL-3.0</a> ಮತ್ತು <a href=\"%2$s\">AGPL-3.0</a> ಪರವಾನಗಿಗಳ ಮೂಲ ಕೋಡ್ ಅಡಿಯಲ್ಲಿ ಬಿಡುಗಡೆ ಮಾಡಲಾಗಿದೆ < href=\"%3$s\">GitHub</a> ನಲ್ಲಿ ಲಭ್ಯವಿದೆ]]></string>
+    <string name="other_licenses"><![CDATA[SpeedyCAT also uses third-party libraries and icons, which are licensed under various open source <a href=\"%1$s\">licenses</a>]]></string>
+    <string name="donate_description"><![CDATA[<a href=\"%1$s\">ದಾನ ಮಾಡುವ ಮೂಲಕ</a> ನೀವು SpeedyCAT ಅಭಿವೃದ್ಧಿಯನ್ನು ಬೆಂಬಲಿಸಬಹುದು. ಯಾವುದೇ ಮೊತ್ತವನ್ನು ಆಳವಾಗಿ ಪ್ರಶಂಸಿಸಲಾಗುತ್ತದೆ.]]></string>
     <!-- Controls -->
     <string name="binding_add_gesture">ಗೆಸ್ಚರ್ ಸೇರಿಸಿ</string>
     <string name="binding_add_key">ಕೀ ಸೇರಿಸಿ</string>
@@ -269,7 +269,7 @@
     <string name="bindings_already_bound">ಈಗಾಗಲೇ \'%s\' ಗೆ ಬದ್ಧವಾಗಿದೆ</string>
     <!-- Advanced -->
     <string name="pref_cat_experimental" maxLength="41" tools:ignore="UnusedResources">Experimental</string>
-    <string name="readtext_deprecation_warn">AnkiDroid ಇತರ Anki ಕ್ಲೈಂಟ್‌ಗಳಿಗೆ ಹೊಂದಿಕೆಯಾಗುವ ಉತ್ತಮ TTS ಕಾರ್ಯವಿಧಾನವನ್ನು ಪರಿಚಯಿಸಿದೆ ಮತ್ತು ಭಾಷಾ ಪ್ಲೇಬ್ಯಾಕ್‌ಗೆ ಹೆಚ್ಚಿನ ಧ್ವನಿಗಳು ಮತ್ತು ಸುಧಾರಣೆಗಳನ್ನು ಒಳಗೊಂಡಿದೆ!\n\nದಯವಿಟ್ಟು ಸಾಧ್ಯವಾದಷ್ಟು ಬೇಗ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ, ಏಕೆಂದರೆ ಈ ಸೆಟ್ಟಿಂಗ್ ಅನ್ನು ಶೀಘ್ರದಲ್ಲೇ ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ.</string>
+    <string name="readtext_deprecation_warn">SpeedyCAT ಇತರ SpeedyCAT ಕ್ಲೈಂಟ್‌ಗಳಿಗೆ ಹೊಂದಿಕೆಯಾಗುವ ಉತ್ತಮ TTS ಕಾರ್ಯವಿಧಾನವನ್ನು ಪರಿಚಯಿಸಿದೆ ಮತ್ತು ಭಾಷಾ ಪ್ಲೇಬ್ಯಾಕ್‌ಗೆ ಹೆಚ್ಚಿನ ಧ್ವನಿಗಳು ಮತ್ತು ಸುಧಾರಣೆಗಳನ್ನು ಒಳಗೊಂಡಿದೆ!\n\nದಯವಿಟ್ಟು ಸಾಧ್ಯವಾದಷ್ಟು ಬೇಗ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ, ಏಕೆಂದರೆ ಈ ಸೆಟ್ಟಿಂಗ್ ಅನ್ನು ಶೀಘ್ರದಲ್ಲೇ ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ.</string>
     <string name="readtext_reviewer_warn" tools:ignore="UnusedResources">ದಯವಿಟ್ಟು ಹೊಸ ಪಠ್ಯವನ್ನು ಸ್ಪೀಚ್ ಫಾರ್ಮ್ಯಾಟ್‌ಗೆ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ</string>
     <string name="pref_fixed_port_title" maxLength="41">localStorage in Study Screen</string>
     <string name="pref_fixed_port_summary">Enables JavaScript localStorage by using a fixed server port in the Study Screen</string>
@@ -281,9 +281,9 @@
     <!-- #######################################################################################
          #################################### Backup options ###################################
          ####################################################################################### -->
-    <string name="pref__backups_help__summary"><![CDATA[AnkiDroid ನಿಯತಕಾಲಿಕವಾಗಿ ನಿಮ್ಮ ಸಂಗ್ರಹಣೆಯನ್ನು ಬ್ಯಾಕಪ್ ಮಾಡುತ್ತದೆ.
+    <string name="pref__backups_help__summary"><![CDATA[SpeedyCAT ನಿಯತಕಾಲಿಕವಾಗಿ ನಿಮ್ಮ ಸಂಗ್ರಹಣೆಯನ್ನು ಬ್ಯಾಕಪ್ ಮಾಡುತ್ತದೆ.
         ಬ್ಯಾಕಪ್‌ಗಳು ಎರಡು ದಿನಗಳಿಗಿಂತ ಹೆಚ್ಚು ಹಳೆಯದಾದ ನಂತರ,
-        ಡಿಸ್ಕ್ ಜಾಗವನ್ನು ಮುಕ್ತಗೊಳಿಸಲು AnkiDroid ಅವುಗಳಲ್ಲಿ ಕೆಲವನ್ನು ತೆಗೆದುಹಾಕಲು ಪ್ರಾರಂಭಿಸುತ್ತದೆ.
+        ಡಿಸ್ಕ್ ಜಾಗವನ್ನು ಮುಕ್ತಗೊಳಿಸಲು SpeedyCAT ಅವುಗಳಲ್ಲಿ ಕೆಲವನ್ನು ತೆಗೆದುಹಾಕಲು ಪ್ರಾರಂಭಿಸುತ್ತದೆ.
         <br><br>
         ಮಾಧ್ಯಮ ಫೈಲ್‌ಗಳನ್ನು ಬ್ಯಾಕಪ್ ಮಾಡಲಾಗಿಲ್ಲ ಎಂಬುದನ್ನು ಗಮನಿಸಿ.
         ಸುರಕ್ಷಿತವಾಗಿರಲು, ದಯವಿಟ್ಟು ನಿಯತಕಾಲಿಕವಾಗಿ ನಿಮ್ಮ ಸಂಗ್ರಹಣೆಯನ್ನು ಸಿಂಕ್ರೊನೈಸ್ ಮಾಡಿ ಅಥವಾ ಅದರ ರಫ್ತುಗಳನ್ನು ಬ್ಯಾಕಪ್ ಮಾಡಿ.

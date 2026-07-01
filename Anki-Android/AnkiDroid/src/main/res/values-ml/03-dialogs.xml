@@ -41,10 +41,10 @@
     <string name="answering_error_title">ഡാറ്റാബേസ് പിശക്</string>
     <string name="answering_error_message">ശേഖരത്തിലേക്ക് എഴുതുന്നത് പരാജയപ്പെട്ടു. ഡാറ്റാബേസ് കേടായതാകാം അല്ലെങ്കിൽ ഡിസ്കിൽ വേണ്ടത്ര ശൂന്യമായ ഇടം ഉണ്ടാകണമെന്നില്ല. \n\n ഇത് പലപ്പോഴും സംഭവിക്കുകയാണെങ്കിൽ, ഡാറ്റാബേസ് പരിശോധിക്കാനോ ശേഖരം നന്നാക്കാനോ ബാക്കപ്പിൽ നിന്ന് പുന സ്ഥാപിക്കാനോ ശ്രമിക്കുക. അതിനായി “ഓപ്ഷനുകൾ” സ്‌പർശിക്കുക. \n\ അല്ലെങ്കിൽ ഇത് ഒരു അങ്കിഡ്രോയിഡ് ബഗ് ആകാം; പിശക് റിപ്പോർട്ടുചെയ്യുക, അതുവഴി ഞങ്ങൾക്ക് ഇത് പരിശോധിക്കാൻ കഴിയും.</string>
     <string name="answering_error_report">റിപ്പോർട്ട് പിശക്</string>
-    <string name="storage_full_message">There is not enough free storage space to open AnkiDroid. Free up some space to continue.</string>
+    <string name="storage_full_message">There is not enough free storage space to open SpeedyCAT. Free up some space to continue.</string>
     <string name="repair_deck_dialog">ഡാറ്റാബേസ് നന്നാക്കാൻ നിങ്ങൾ ശരിക്കും ആഗ്രഹിക്കുന്നുണ്ടോ? \n\n ശ്രമം ആരംഭിക്കുന്നതിന് മുമ്പ്, “%s” എന്ന സബ്ഫോൾഡറിൽ ഒരു പകർപ്പ് സൃഷ്ടിക്കപ്പെടും.</string>
     <string name="intent_aedict_empty">വിഭാഗം “സ്ഥിരസ്ഥിതി” ശൂന്യമാണ്</string>
-    <string name="intent_aedict_category">AnkiDroid- ലേക്ക് കാർഡുകൾ ചേർക്കുന്നതിന് എല്ലാ നോട്ട്പാഡ് വിഭാഗങ്ങളും നീക്കംചെയ്യുക അല്ലെങ്കിൽ “സ്ഥിരസ്ഥിതി” എന്ന് പേരുള്ള ഒന്ന് ചേർക്കുക</string>
+    <string name="intent_aedict_category">SpeedyCAT- ലേക്ക് കാർഡുകൾ ചേർക്കുന്നതിന് എല്ലാ നോട്ട്പാഡ് വിഭാഗങ്ങളും നീക്കംചെയ്യുക അല്ലെങ്കിൽ “സ്ഥിരസ്ഥിതി” എന്ന് പേരുള്ള ഒന്ന് ചേർക്കുക</string>
     <string name="custom_study_new_extend">ഇന്നത്തെ പുതിയ കാർഡ് പരിധി വർദ്ധിപ്പിക്കുക / കുറയ്ക്കുക (“-3”)</string>
     <string name="custom_study_rev_extend">ഇന്നത്തെ അവലോകന പരിധി വർദ്ധിപ്പിക്കുക / കുറയ്ക്കുക (“-3”)</string>
     <string name="custom_study_forgotten">കഴിഞ്ഞ x ദിവസങ്ങളിൽ മറന്ന അവലോകന കാർഡുകൾ:</string>
@@ -54,7 +54,7 @@
     <string name="storage_full_title">സംഭരണം നിറഞ്ഞു</string>
     <string name="storage_almost_full_title">സംഭരണം ഏതാണ്ട് നിറഞ്ഞു</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">ഇടമില്ല</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">AnkiDroid needs %s free storage space to continue. Please clear some space</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">SpeedyCAT needs %s free storage space to continue. Please clear some space</string>
     <string name="restore_backup_title">ബാക്കപ്പ് പുന  സ്ഥാപിക്കണോ?</string>
     <string name="restore_backup">നിങ്ങളുടെ ശേഖരം പഴയ പകർപ്പ് ഉപയോഗിച്ച് മാറ്റിസ്ഥാപിക്കും. സംരക്ഷിക്കാത്ത ഏതെങ്കിലും പുരോഗതി നഷ്‌ടപ്പെടും.</string>
     <string name="restore_backup_choose_another">മറ്റൊന്ന് തിരഞ്ഞെടുക്കുക</string>
@@ -115,9 +115,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">ഡാറ്റാബേസ് ലോക്കുചെയ്തു</string>
-    <string name="database_locked_summary">മറ്റൊരു ആപ്ലിക്കേഷൻ AnkiDroid ഡാറ്റാബേസ് ഉപയോഗത്തിലാണ്. ദയവായി മറ്റ് ആപ്ലിക്കേഷൻ അടച്ച് അങ്കിഡ്രോയിഡ് വീണ്ടും തുറക്കുക.</string>
+    <string name="database_locked_summary">മറ്റൊരു ആപ്ലിക്കേഷൻ SpeedyCAT ഡാറ്റാബേസ് ഉപയോഗത്തിലാണ്. ദയവായി മറ്റ് ആപ്ലിക്കേഷൻ അടച്ച് അങ്കിഡ്രോയിഡ് വീണ്ടും തുറക്കുക.</string>
     <string name="incompatible_database_version_title">അനുയോജ്യമല്ലാത്ത ഡാറ്റാബേസ് പതിപ്പ്</string>
-    <string name="incompatible_database_version_summary">The database is a more advanced version than this version of AnkiDroid can work with. Upgrade AnkiDroid or downgrade the database to open it\n\nSupported version: %1$d\nDatabase version: %2$d\n\nThe following restore options will overwrite your current collection, possibly with a compatible database version:</string>
+    <string name="incompatible_database_version_summary">The database is a more advanced version than this version of SpeedyCAT can work with. Upgrade SpeedyCAT or downgrade the database to open it\n\nSupported version: %1$d\nDatabase version: %2$d\n\nThe following restore options will overwrite your current collection, possibly with a compatible database version:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">പശ്ചാത്തല ചിത്രം പ്രയോഗിച്ചു</string>
     <string name="background_image_removed">പശ്ചാത്തല ചിത്രം നീക്കംചെയ്‌തു</string>
@@ -138,29 +138,29 @@
     <string name="locale_selection_dialog_title_new">ഭാഷ സജ്ജമാക്കുക</string>
     <string name="locale_selection_dialog_summary">വാചകം എഡിറ്റുചെയ്യുമ്പോൾ ഭാഷ മാറ്റുന്നതിനെ GBoard പോലുള്ള ചില ബഹുഭാഷാ കീബോർഡുകൾ \n\n നിങ്ങളുടെ കീബോർഡ് ഭാഷ മാറ്റിയില്ലെങ്കിൽ കീബോർഡ് നിർമ്മാതാവിൽ നിന്ന് “setImeHintLocales” സവിശേഷത അഭ്യർത്ഥിക്കുക.</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">AnkiDroid ഉപയോഗിക്കുന്നു</string>
-    <string name="help_item_ankidroid_manual">AnkiDroid മാനുവൽ</string>
-    <string name="help_item_anki_manual">Anki മാനുവൽ</string>
-    <string name="help_item_ankidroid_faq">AnkiDroid FAQ</string>
+    <string name="help_title_using_ankidroid">SpeedyCAT ഉപയോഗിക്കുന്നു</string>
+    <string name="help_item_ankidroid_manual">SpeedyCAT മാനുവൽ</string>
+    <string name="help_item_anki_manual">SpeedyCAT മാനുവൽ</string>
+    <string name="help_item_ankidroid_faq">SpeedyCAT FAQ</string>
     <string name="help_title_get_help">സഹായം തേടു</string>
     <string name="help_item_mailing_list">അയക്കേണ്ട പട്ടിക</string>
     <string name="help_item_reddit">റെഡ്ഡിറ്റ്</string>
     <string name="help_item_report_bug">ഒരു ബഗ് റിപ്പോർട്ടുചെയ്യുക</string>
-    <string name="help_title_support_ankidroid" maxLength="28">AnkiDroid- നെ പിന്തുണയ്ക്കുക</string>
+    <string name="help_title_support_ankidroid" maxLength="28">SpeedyCAT- നെ പിന്തുണയ്ക്കുക</string>
     <string name="help_item_support_opencollective_donate">സംഭാവനചെയ്യുക</string>
     <string name="help_item_support_develop_ankidroid">വികസിപ്പിക്കുക</string>
     <string name="help_item_support_rate_ankidroid">നിരക്ക്</string>
     <string name="help_item_support_other_ankidroid">മറ്റുള്ളവ</string>
     <string name="multimedia_editor_trans_translate">വിവർത്തനം ചെയ്യുക</string>
     <string name="help_title_community">കമ്മ്യൂണിറ്റി</string>
-    <string name="help_item_anki_forums">Anki forums</string>
+    <string name="help_item_anki_forums">SpeedyCAT forums</string>
     <string name="help_item_discord">ഡിസ്കോർഡ്</string>
     <string name="help_item_facebook">ഫേസ്‌ബുക്ക്</string>
     <string name="help_item_twitter">ട്വിറ്റർ</string>
     <string name="help_title_privacy">സ്വകാര്യത</string>
-    <string name="help_item_ankidroid_privacy_policy">AnkiDroid സ്വകാര്യതാ നയം</string>
-    <string name="help_item_ankiweb_privacy_policy">AnkiWeb സ്വകാര്യതാ നയം</string>
-    <string name="help_item_ankiweb_terms_and_conditions">AnkiWeb നിബന്ധനകളും വ്യവസ്ഥകളും</string>
+    <string name="help_item_ankidroid_privacy_policy">SpeedyCAT സ്വകാര്യതാ നയം</string>
+    <string name="help_item_ankiweb_privacy_policy">SpeedyCAT സ്വകാര്യതാ നയം</string>
+    <string name="help_item_ankiweb_terms_and_conditions">SpeedyCAT നിബന്ധനകളും വ്യവസ്ഥകളും</string>
     <string name="help_title_send_exception">പ്രശ്‌നപരിഹാര റിപ്പോർട്ട് അയയ്‌ക്കുക</string>
     <string name="help_dialog_exception_report_debounce">റിപ്പോർട്ട് ഇതിനകം സമർപ്പിച്ചു</string>
     <string name="help_dialog_exception_report_sent">റിപ്പോർട്ട് അയച്ചു!</string>

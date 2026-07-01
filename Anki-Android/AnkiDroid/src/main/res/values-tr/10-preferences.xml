@@ -62,7 +62,7 @@
     <string name="card_browser_font_size" maxLength="41">Kart tarayıcısı font ölçeği</string>
     <string name="card_browser_hide_media" maxLength="41">Kart gözatıcısında dosya isimlerini göster</string>
     <string name="card_browser_hide_media_summary">Kart gözatıcısı soru/cevap alanlarında ses dosyası isimlerini göster</string>
-    <string name="col_path" maxLength="41">AnkiDroid dizini</string>
+    <string name="col_path" maxLength="41">SpeedyCAT dizini</string>
     <string name="fullscreen_review" maxLength="41">Tam ekran modu</string>
     <string name="full_screen_off">Kapalı</string>
     <string name="full_screen_system">Sistem çubuklarını gizle</string>
@@ -166,8 +166,8 @@
     </plurals>
     <string name="pref_keep_screen_on" maxLength="41">Ekranı açık tut</string>
     <string name="pref_keep_screen_on_summ">Ekran zaman aşımını devredışı bırak</string>
-    <string name="enable_api_title" maxLength="41">AnkiDroid API etkinleştir</string>
-    <string name="enable_api_summary">Diğer uygulamaların AnkiDroid\'e bağlanmasına ve müdahaleniz olmadan veriyi okuyup / yazmasına izin verir</string>
+    <string name="enable_api_title" maxLength="41">SpeedyCAT API etkinleştir</string>
+    <string name="enable_api_summary">Diğer uygulamaların SpeedyCAT\'e bağlanmasına ve müdahaleniz olmadan veriyi okuyup / yazmasına izin verir</string>
     <string name="custom_buttons" maxLength="41">Uygulama çubuğundaki düğmeler</string>
     <string name="custom_buttons_summary">Hangi eylemlerin uygulama çubuğunda gözüktüğünü seç</string>
     <string name="custom_buttons_setting_always_show">Hep göster</string>
@@ -177,7 +177,7 @@
     <string name="reset_settings_to_default">Ayarları varsayılana sıfırla</string>
     <string name="reset">Sıfırla</string>
     <string name="thirdparty_apps_title" maxLength="41">Üçüncü parti API uygulamaları</string>
-    <string name="thirdparty_apps_summary">AnkiDroid API\'ından faydalanan sözlük, araç gibi uygulamaların bir listesine bakın.</string>
+    <string name="thirdparty_apps_summary">SpeedyCAT API\'ından faydalanan sözlük, araç gibi uygulamaların bir listesine bakın.</string>
     <string name="pref_controls_reviews_tab" maxLength="41" comment="Name of the tab to configure controls for the reviews screen">Çalışmalar</string>
     <string name="pref_controls_previews_tab" maxLength="41" comment="Name of the tab to configure controls for the previews screen">Önçalışmalar</string>
     <string name="toggle_backside_only" maxLength="41" comment="Control setting that toggles \'Backside only\' in the previews screen">Sadece arka tarafı göster</string>
@@ -193,9 +193,9 @@
     <!-- Custom sync server settings -->
     <string name="custom_sync_server_title" maxLength="41">Özel senkronizasyon sunucusu</string>
     <string name="custom_sync_server_summary_none_of_the_two_servers_used" comment="This summary is shown when neither of the two custom sync servers are used,         which is the default.">Kullanılmıyor</string>
-    <string name="custom_sync_server_help2"><![CDATA[        AnkiWeb\'le senkronize etmeye alternatif olarak,
+    <string name="custom_sync_server_help2"><![CDATA[        SpeedyCAT\'le senkronize etmeye alternatif olarak,
         senkronizasyon için kendi sunucunuzu kullanabilirsiniz.
-        Ayarlanmazsa yerine varsayılan AnkiWeb sunucusu kullanılır.
+        Ayarlanmazsa yerine varsayılan SpeedyCAT sunucusu kullanılır.
         <a href="%s">Daha fazlasını öğren</a>
         ]]></string>
     <string name="custom_sync_server_base_url_title" maxLength="41">URL Senkronize et</string>
@@ -220,9 +220,9 @@
     <string name="deck_conf_general" maxLength="41" comment="Label of the submenu for the general options of new deck">Genel</string>
     <string name="deck_conf_cram_search" maxLength="41" comment="Label of a text field that contains a search query.">Arama</string>
     <!-- analytics options -->
-    <string name="analytics_dialog_title">AnkiDroid\'in iyileştirilmesine yardım et!</string>
+    <string name="analytics_dialog_title">SpeedyCAT\'in iyileştirilmesine yardım et!</string>
     <string name="analytics_title" maxLength="41">Özellik kullanımını paylaş</string>
-    <string name="analytics_summ">Geliştirme ekibinin insanların hangi özellikleri kullandığını görmesine yardım ederek AnkiDroid\'e katkıda bulunabilirsiniz.</string>
+    <string name="analytics_summ">Geliştirme ekibinin insanların hangi özellikleri kullandığını görmesine yardım ederek SpeedyCAT\'e katkıda bulunabilirsiniz.</string>
     <string name="note_editor_replace_newlines" maxLength="41">Satırbaşlarını HTML\'le değiştir</string>
     <string name="note_editor_replace_newlines_summ">Not Düzenleyicide kart değiştirirken, bütün &lt;br&gt;leri satırbaşına çevir</string>
     <string name="type_in_answer_focus" maxLength="41">\"Cevabı yaz\"a odaklan</string>
@@ -231,11 +231,11 @@
     <string name="open_changelog">Değişiklikler listesini aç</string>
     <string name="pref_cat_about_title" maxLength="41">Hakkında</string>
     <string name="contributors_title">Katkıda Bulunanlar</string>
-    <string name="about_contributors_description"><![CDATA[İşte uygulamamıza katkıda bulunan müthiş <a href=\"%1$s\">insanlar</a>. Siz de AnkiDroid\'e programlayarak, çevirerek, bağış yaparak ve <a href=\"%2$s\">daha fazla yolla</a> yardım edebilirsiniz!]]></string>
+    <string name="about_contributors_description"><![CDATA[İşte uygulamamıza katkıda bulunan müthiş <a href=\"%1$s\">insanlar</a>. Siz de SpeedyCAT\'e programlayarak, çevirerek, bağış yaparak ve <a href=\"%2$s\">daha fazla yolla</a> yardım edebilirsiniz!]]></string>
     <string name="license">Lisans</string>
-    <string name="license_description"><![CDATA[AnkiDroid <a href=\"%1$s\">GPL-3.0</a> ve <a href=\"%2$s\">AGPL-3.0</a> lisansları altında yayınlanmaktadır, kaynak kodu <a href=\"%3$s\">GitHub\'da</a> mevcuttur]]></string>
-    <string name="other_licenses"><![CDATA[AnkiDroid çeşitli açık kaynaklı <a href=\"%1$s\">lisanslar</a> altında üçüncü parti kütüphaneler ve simgeler de kullanır.]]></string>
-    <string name="donate_description"><![CDATA[AnkiDroid\'in geliştirilmesine <a href=\"%1$s\">bağış yaparak</a> destek olabilirsiniz. Miktarı ne olursa olsun içten teşekkürlerimizi kazanırsınız.]]></string>
+    <string name="license_description"><![CDATA[SpeedyCAT <a href=\"%1$s\">GPL-3.0</a> ve <a href=\"%2$s\">AGPL-3.0</a> lisansları altında yayınlanmaktadır, kaynak kodu <a href=\"%3$s\">GitHub\'da</a> mevcuttur]]></string>
+    <string name="other_licenses"><![CDATA[SpeedyCAT çeşitli açık kaynaklı <a href=\"%1$s\">lisanslar</a> altında üçüncü parti kütüphaneler ve simgeler de kullanır.]]></string>
+    <string name="donate_description"><![CDATA[SpeedyCAT\'in geliştirilmesine <a href=\"%1$s\">bağış yaparak</a> destek olabilirsiniz. Miktarı ne olursa olsun içten teşekkürlerimizi kazanırsınız.]]></string>
     <!-- Controls -->
     <string name="binding_add_gesture">Hareket ekle</string>
     <string name="binding_add_key">Anahtar ekle</string>
@@ -270,7 +270,7 @@
     <string name="bindings_already_bound">%s bileşenine bağlı zaten</string>
     <!-- Advanced -->
     <string name="pref_cat_experimental" maxLength="41" tools:ignore="UnusedResources">Deneysel</string>
-    <string name="readtext_deprecation_warn">AnkiDroid diğer Anki istemcileriyle uyumlu, daha fazla ses ve dil seslendirmesine geliştirmeler içeren daha iyi bir metin okuma mekanizması getirdi!\n\nLütfen mümkün olan en yakın zamanda yeni sisteme geçin, çünkü bu ayar yakında kaldırılacak.</string>
+    <string name="readtext_deprecation_warn">SpeedyCAT diğer SpeedyCAT istemcileriyle uyumlu, daha fazla ses ve dil seslendirmesine geliştirmeler içeren daha iyi bir metin okuma mekanizması getirdi!\n\nLütfen mümkün olan en yakın zamanda yeni sisteme geçin, çünkü bu ayar yakında kaldırılacak.</string>
     <string name="readtext_reviewer_warn" tools:ignore="UnusedResources">Lütfen yeni metin okuma formatına geçin</string>
     <string name="pref_fixed_port_title" maxLength="41">Çalışma Ekranında localStorage</string>
     <string name="pref_fixed_port_summary">Çalışma Ekranında sabit bir sunucu portu kullanarak JavaScript localStorage açar</string>
@@ -282,9 +282,9 @@
     <!-- #######################################################################################
          #################################### Backup options ###################################
          ####################################################################################### -->
-    <string name="pref__backups_help__summary"><![CDATA[        AnkiDroid düzenli aralıklarla koleksiyonunuzu yedekler.
+    <string name="pref__backups_help__summary"><![CDATA[        SpeedyCAT düzenli aralıklarla koleksiyonunuzu yedekler.
         Yedekler iki günden fazla eskidiğinde,
-        AnkiDroid disk alanı boşaltmak için bazılarını kaldırmaya başlar.
+        SpeedyCAT disk alanı boşaltmak için bazılarını kaldırmaya başlar.
         <br><br>
         Unutmayın ki medya dosyaları yedeklenmez.
         Emin olmak için, lütfen düzenli aralıklarla koleksiyonunuzu senkronize edin, ya da çıktılarını yedekleyin.

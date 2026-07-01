@@ -62,7 +62,7 @@
     <string name="card_browser_font_size" maxLength="41">Card browser font scaling</string>
     <string name="card_browser_hide_media" maxLength="41">Display filenames in card browser</string>
     <string name="card_browser_hide_media_summary">Display audio filenames in the card browser question/answer fields</string>
-    <string name="col_path" maxLength="41">Κατάλογος AnkiDroid</string>
+    <string name="col_path" maxLength="41">Κατάλογος SpeedyCAT</string>
     <string name="fullscreen_review" maxLength="41">Λειτουργία πλήρους οθόνης</string>
     <string name="full_screen_off">Ανενεργό</string>
     <string name="full_screen_system">Απόκρυψη γραμμών συστήματος</string>
@@ -167,8 +167,8 @@
     </plurals>
     <string name="pref_keep_screen_on" maxLength="41">Διατήρηση ενεργής οθόνης</string>
     <string name="pref_keep_screen_on_summ">Απενεργοποίηση χρονικού ορίου οθόνης</string>
-    <string name="enable_api_title" maxLength="41">Ενεργοποίηση AnkiDroid API</string>
-    <string name="enable_api_summary">Επιτρέψτε σε άλλες εφαρμογές να συνδεθούν στο AnkiDroid και να κάνουν ανάγνωση/εγγραφή δεδομένων χωρίς την παρέμβασή σας</string>
+    <string name="enable_api_title" maxLength="41">Ενεργοποίηση SpeedyCAT API</string>
+    <string name="enable_api_summary">Επιτρέψτε σε άλλες εφαρμογές να συνδεθούν στο SpeedyCAT και να κάνουν ανάγνωση/εγγραφή δεδομένων χωρίς την παρέμβασή σας</string>
     <string name="custom_buttons" maxLength="41">Κουμπιά γραμμής εφαρμογών</string>
     <string name="custom_buttons_summary">Customize which actions appear in the app bar</string>
     <string name="custom_buttons_setting_always_show">Εμφάνιση πάντα</string>
@@ -178,7 +178,7 @@
     <string name="reset_settings_to_default">Επαναφορά προκαθορισμένων ρυθμίσεων</string>
     <string name="reset">Επαναφορά</string>
     <string name="thirdparty_apps_title" maxLength="41">Εφαρμογές API τρίτων</string>
-    <string name="thirdparty_apps_summary">Δείτε μια λίστα με τις εφαρμογές που αξιοποιούν το AnkiDroid API, όπως λεξικά, βοηθητικά προγράμματα.</string>
+    <string name="thirdparty_apps_summary">Δείτε μια λίστα με τις εφαρμογές που αξιοποιούν το SpeedyCAT API, όπως λεξικά, βοηθητικά προγράμματα.</string>
     <string name="pref_controls_reviews_tab" maxLength="41" comment="Name of the tab to configure controls for the reviews screen">Κριτικές</string>
     <string name="pref_controls_previews_tab" maxLength="41" comment="Name of the tab to configure controls for the previews screen">Προεπισκοπήσεις</string>
     <string name="toggle_backside_only" maxLength="41" comment="Control setting that toggles \'Backside only\' in the previews screen">Toggle backside only</string>
@@ -194,9 +194,9 @@
     <!-- Custom sync server settings -->
     <string name="custom_sync_server_title" maxLength="41">Προσαρμοσμένος διακομιστής συγχρονισμού</string>
     <string name="custom_sync_server_summary_none_of_the_two_servers_used" comment="This summary is shown when neither of the two custom sync servers are used,         which is the default.">Δεν χρησιμοποιείται</string>
-    <string name="custom_sync_server_help2"><![CDATA[        As an alternative to synchronizing with AnkiWeb,
+    <string name="custom_sync_server_help2"><![CDATA[        As an alternative to synchronizing with SpeedyCAT,
         you may use your own server for synchronization.
-        If not set, the default AnkiWeb server will be used instead.
+        If not set, the default SpeedyCAT server will be used instead.
         <a href="%s">Learn more</a>
         ]]></string>
     <string name="custom_sync_server_base_url_title" maxLength="41">Sync URL</string>
@@ -221,9 +221,9 @@
     <string name="deck_conf_general" maxLength="41" comment="Label of the submenu for the general options of new deck">Γενικά</string>
     <string name="deck_conf_cram_search" maxLength="41" comment="Label of a text field that contains a search query.">Αναζήτηση</string>
     <!-- analytics options -->
-    <string name="analytics_dialog_title">Βοηθήστε μας να βελτιώσουμε το AnkiDroid!</string>
+    <string name="analytics_dialog_title">Βοηθήστε μας να βελτιώσουμε το SpeedyCAT!</string>
     <string name="analytics_title" maxLength="41">Share feature usage</string>
-    <string name="analytics_summ">Μπορείτε να συμβάλετε στο AnkiDroid βοηθώντας την ομάδα ανάπτυξης να δει ποια χαρακτηριστικά χρησιμοποιούν οι χρήστες</string>
+    <string name="analytics_summ">Μπορείτε να συμβάλετε στο SpeedyCAT βοηθώντας την ομάδα ανάπτυξης να δει ποια χαρακτηριστικά χρησιμοποιούν οι χρήστες</string>
     <string name="note_editor_replace_newlines" maxLength="41">Αντικατάσταση νέων γραμμών με HTML</string>
     <string name="note_editor_replace_newlines_summ">In the Note Editor, convert any instances of &lt;br&gt; to newlines when editing a card.</string>
     <string name="type_in_answer_focus" maxLength="41">Focus ‘type in answer’</string>
@@ -232,11 +232,11 @@
     <string name="open_changelog">Άνοιγμα Αρχείου Αλλαγών</string>
     <string name="pref_cat_about_title" maxLength="41">Σχετικά</string>
     <string name="contributors_title">Συνεισφέροντες</string>
-    <string name="about_contributors_description"><![CDATA[Αυτοί είναι οι φοβεροί <a href=\"%1$s\">εθελοντές</a> μας. Μπορείτε να συνεισφέρετε κι εσείς στο AnkiDroid προγραμματίζοντας, μεταφράζοντας, δωρίζοντας και <a href=\"%2$s\">πολλά άλλα</a>!]]></string>
+    <string name="about_contributors_description"><![CDATA[Αυτοί είναι οι φοβεροί <a href=\"%1$s\">εθελοντές</a> μας. Μπορείτε να συνεισφέρετε κι εσείς στο SpeedyCAT προγραμματίζοντας, μεταφράζοντας, δωρίζοντας και <a href=\"%2$s\">πολλά άλλα</a>!]]></string>
     <string name="license">Άδεια</string>
-    <string name="license_description"><![CDATA[Το AnkiDroid κυκλοφορεί υπό τις άδειες <a href=\"%1$s\">GPL-3.0</a> και <a href=\"%2$s\">AGPL-3.0</a>, ενώ ο πηγαίος κώδικάς του είναι διαθέσιμος <a href=\"%3$s\">στο GitHub</a>]]></string>
-    <string name="other_licenses"><![CDATA[AnkiDroid also uses third-party libraries and icons, which are licensed under various open source <a href=\"%1$s\">licenses</a>]]></string>
-    <string name="donate_description"><![CDATA[Μπορείτε να υποστηρίξετε την ανάπτυξη του AnkiDroid με μια <a href=\"%1$s\">δωρεά</a>. Οποιοδήποτε ποσό εκτιμάται ιδιαίτερα.]]></string>
+    <string name="license_description"><![CDATA[Το SpeedyCAT κυκλοφορεί υπό τις άδειες <a href=\"%1$s\">GPL-3.0</a> και <a href=\"%2$s\">AGPL-3.0</a>, ενώ ο πηγαίος κώδικάς του είναι διαθέσιμος <a href=\"%3$s\">στο GitHub</a>]]></string>
+    <string name="other_licenses"><![CDATA[SpeedyCAT also uses third-party libraries and icons, which are licensed under various open source <a href=\"%1$s\">licenses</a>]]></string>
+    <string name="donate_description"><![CDATA[Μπορείτε να υποστηρίξετε την ανάπτυξη του SpeedyCAT με μια <a href=\"%1$s\">δωρεά</a>. Οποιοδήποτε ποσό εκτιμάται ιδιαίτερα.]]></string>
     <!-- Controls -->
     <string name="binding_add_gesture">Προσθήκη χειρονομίας</string>
     <string name="binding_add_key">Προσθήκη κλειδιού</string>
@@ -271,7 +271,7 @@
     <string name="bindings_already_bound">Already bound to ‘%s’</string>
     <!-- Advanced -->
     <string name="pref_cat_experimental" maxLength="41" tools:ignore="UnusedResources">Πειραματικό</string>
-    <string name="readtext_deprecation_warn">AnkiDroid has introduced a better TTS mechanism which is compatible with other Anki clients and includes more voices and improvements to language playback!\n\nPlease upgrade as soon as possible, as this setting will be removed soon</string>
+    <string name="readtext_deprecation_warn">SpeedyCAT has introduced a better TTS mechanism which is compatible with other SpeedyCAT clients and includes more voices and improvements to language playback!\n\nPlease upgrade as soon as possible, as this setting will be removed soon</string>
     <string name="readtext_reviewer_warn" tools:ignore="UnusedResources">Please upgrade to the new text to speech format</string>
     <string name="pref_fixed_port_title" maxLength="41">localStorage in Study Screen</string>
     <string name="pref_fixed_port_summary">Enables JavaScript localStorage by using a fixed server port in the Study Screen</string>
@@ -283,9 +283,9 @@
     <!-- #######################################################################################
          #################################### Backup options ###################################
          ####################################################################################### -->
-    <string name="pref__backups_help__summary"><![CDATA[        Το AnkiDroid δημιουργεί περιοδικά αντίγραφα ασφαλείας της συλλογής σας.
+    <string name="pref__backups_help__summary"><![CDATA[        Το SpeedyCAT δημιουργεί περιοδικά αντίγραφα ασφαλείας της συλλογής σας.
         Εάν τα αντίγραφα ασφαλείας είναι παλαιότερα από δύο ημέρες,
-        το AnkiDroid θα αρχίσει να αφαιρεί μερικά από αυτά για να απελευθερώσει χώρο στο δίσκο.
+        το SpeedyCAT θα αρχίσει να αφαιρεί μερικά από αυτά για να απελευθερώσει χώρο στο δίσκο.
          <br><br>
         Σημειώστε ότι τα αρχεία πολυμέσων δεν δημιουργούνται αντίγραφα ασφαλείας.
         Για να είστε ασφαλείς, συγχρονίστε περιοδικά τη συλλογή σας ή δημιουργήστε αντίγραφα ασφαλείας των εξαγωγών της.

@@ -41,11 +41,8 @@ import com.ichi2.anki.common.destinations.StatisticsDestination
 import com.ichi2.anki.common.destinations.navigate
 import com.ichi2.anki.common.preferences.sharedPrefs
 import com.ichi2.anki.common.utils.android.HandlerUtils
-import com.ichi2.anki.dialogs.help.HelpDialog
 import com.ichi2.anki.libanki.CardId
-import com.ichi2.anki.utils.ext.showDialogFragment
 import com.ichi2.anki.workarounds.FullDraggableContainerFix
-import com.ichi2.utils.IntentUtil
 import timber.log.Timber
 import com.ichi2.anki.common.android.R as CommonR
 
@@ -357,20 +354,19 @@ abstract class NavigationDrawerActivity(
                         openStatistics()
                     }
 
+                    R.id.nav_practice -> {
+                        Timber.i("Navigating to practice questions")
+                        startActivity(Intent(this@NavigationDrawerActivity, com.ichi2.anki.practice.PracticeActivity::class.java))
+                    }
+
+                    R.id.nav_full_length -> {
+                        Timber.i("Navigating to full-length tests")
+                        startActivity(Intent(this@NavigationDrawerActivity, com.ichi2.anki.practice.FullLengthActivity::class.java))
+                    }
+
                     R.id.nav_settings -> {
                         Timber.i("Navigating to settings")
                         openSettings()
-                    }
-
-                    R.id.nav_help -> {
-                        Timber.i("Navigating to help")
-                        showDialogFragment(HelpDialog.newHelpInstance())
-                    }
-
-                    R.id.support_ankidroid -> {
-                        Timber.i("Navigating to support AnkiDroid")
-                        val canRateApp = IntentUtil.canOpenIntent(this, AnkiDroidApp.getMarketIntent(this))
-                        showDialogFragment(HelpDialog.newSupportInstance(canRateApp))
                     }
                 }
             }

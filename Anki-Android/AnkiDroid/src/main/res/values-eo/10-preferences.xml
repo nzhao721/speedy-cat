@@ -62,7 +62,7 @@
     <string name="card_browser_font_size" maxLength="41">Grando de tiparo de kart-foliumilo</string>
     <string name="card_browser_hide_media" maxLength="41">Vidigi dosiernomojn en kart‑foliumilo</string>
     <string name="card_browser_hide_media_summary">Vidigi dosiernomojn de sonoj en la kampoj “demando”/“respondo” de la kart‑foliumilo</string>
-    <string name="col_path" maxLength="41">Dosierujo de AnkiDroid</string>
+    <string name="col_path" maxLength="41">Dosierujo de SpeedyCAT</string>
     <string name="fullscreen_review" maxLength="41">Plenekrana reĝimo</string>
     <string name="full_screen_off">Malaktiva</string>
     <string name="full_screen_system">Kaŝi striojn de operaciumo</string>
@@ -166,8 +166,8 @@
     </plurals>
     <string name="pref_keep_screen_on" maxLength="41">Teni ekranon ŝaltita</string>
     <string name="pref_keep_screen_on_summ">Ne malŝalti ekranon</string>
-    <string name="enable_api_title" maxLength="41">Aktivigi AnkiDroid-API</string>
-    <string name="enable_api_summary">Ebligi al aliaj aplikaĵoj konekti al AnkiDroid kaj legi/skribi datumojn sen via ago</string>
+    <string name="enable_api_title" maxLength="41">Aktivigi SpeedyCAT-API</string>
+    <string name="enable_api_summary">Ebligi al aliaj aplikaĵoj konekti al SpeedyCAT kaj legi/skribi datumojn sen via ago</string>
     <string name="custom_buttons" maxLength="41">Butonoj sur ilarstrio</string>
     <string name="custom_buttons_summary">Alĝustigi agojn por vidigi en la aplikaĵa ilarstrio</string>
     <string name="custom_buttons_setting_always_show">Ĉiam montri</string>
@@ -177,7 +177,7 @@
     <string name="reset_settings_to_default">Restarigi agordojn al implicitaj valoroj</string>
     <string name="reset">Restarigi</string>
     <string name="thirdparty_apps_title" maxLength="41">Eksteraj aplikaĵoj uzantaj API</string>
-    <string name="thirdparty_apps_summary">Vidigi listojn de aplikaĵoj, kiuj uzas AnkiDroid API kiel vortaroj kaj iloj.</string>
+    <string name="thirdparty_apps_summary">Vidigi listojn de aplikaĵoj, kiuj uzas SpeedyCAT API kiel vortaroj kaj iloj.</string>
     <string name="pref_controls_reviews_tab" maxLength="41" comment="Name of the tab to configure controls for the reviews screen">Ripetado</string>
     <string name="pref_controls_previews_tab" maxLength="41" comment="Name of the tab to configure controls for the previews screen">Antaŭrigardo</string>
     <string name="toggle_backside_only" maxLength="41" comment="Control setting that toggles \'Backside only\' in the previews screen">Baskuligi montradon de nur dorso</string>
@@ -193,7 +193,7 @@
     <!-- Custom sync server settings -->
     <string name="custom_sync_server_title" maxLength="41">Propra servilo de samtempigo</string>
     <string name="custom_sync_server_summary_none_of_the_two_servers_used" comment="This summary is shown when neither of the two custom sync servers are used,         which is the default.">Ne uzata</string>
-    <string name="custom_sync_server_help2"><![CDATA[Alternative al samtempigi kun AnkiWeb, vi povas uzi vian propran samtempigan servilon. Se nenio estas agordita, la implicita servilo de AnkiWeb estos uzata.<a href="%s">Pliaj informoj</a>]]></string>
+    <string name="custom_sync_server_help2"><![CDATA[Alternative al samtempigi kun SpeedyCAT, vi povas uzi vian propran samtempigan servilon. Se nenio estas agordita, la implicita servilo de SpeedyCAT estos uzata.<a href="%s">Pliaj informoj</a>]]></string>
     <string name="custom_sync_server_base_url_title" maxLength="41">Sync URL</string>
     <string name="custom_sync_certificate_title" maxLength="41">Propra radika atestilo (PEM)</string>
     <!-- Key Bindings -->
@@ -216,9 +216,9 @@
     <string name="deck_conf_general" maxLength="41" comment="Label of the submenu for the general options of new deck">Ĝeneralaj</string>
     <string name="deck_conf_cram_search" maxLength="41" comment="Label of a text field that contains a search query.">Serĉi</string>
     <!-- analytics options -->
-    <string name="analytics_dialog_title">Helpu, ke AnkiDroid fariĝos pli bona!</string>
+    <string name="analytics_dialog_title">Helpu, ke SpeedyCAT fariĝos pli bona!</string>
     <string name="analytics_title" maxLength="41">Kunhavigi uzadon de eblaĵoj</string>
-    <string name="analytics_summ">Vi povas kontribui al AnkiDroid per helpi al la disvovla teamo scii kiujn funkciojn homoj uzas</string>
+    <string name="analytics_summ">Vi povas kontribui al SpeedyCAT per helpi al la disvovla teamo scii kiujn funkciojn homoj uzas</string>
     <string name="note_editor_replace_newlines" maxLength="41">Anstataŭigi novajn liniojn en HTML</string>
     <string name="note_editor_replace_newlines_summ">En la kart‑redaktilo, konverti ĉiujn &lt;br&gt; al novaj linioj dum redakti karton.</string>
     <string name="type_in_answer_focus" maxLength="41">Marki kampon “enigi respondon”</string>
@@ -227,11 +227,11 @@
     <string name="open_changelog">Montri ŝanĝ-protokolon</string>
     <string name="pref_cat_about_title" maxLength="41">Pri</string>
     <string name="contributors_title">Kontribuantoj</string>
-    <string name="about_contributors_description"><![CDATA[Jen listo de niaj karaj <a href=\"%1$s\">kontribuantoj</a>. Vi ankaŭ povas helpi al AnkiDroid per programi, traduki, donaci <a href=\"%2$s\">kaj pli</a>!]]></string>
+    <string name="about_contributors_description"><![CDATA[Jen listo de niaj karaj <a href=\"%1$s\">kontribuantoj</a>. Vi ankaŭ povas helpi al SpeedyCAT per programi, traduki, donaci <a href=\"%2$s\">kaj pli</a>!]]></string>
     <string name="license">Permesilo</string>
-    <string name="license_description"><![CDATA[AnkiDroid estas eldonita laŭ la permesiloj <a href=\"%1$s\">GPL-3.0</a> kaj <a href=\"%2$s\">AGPL-3.0</a>, ĝia fontkodo estas disponebla en <a href=\"%3$s\">GitHub</a>.]]></string>
-    <string name="other_licenses"><![CDATA[AnkiDroid uzas bibliotekojn kaj bildsimbolojn de eksteraj liverantoj, kiuj estas eldonitaj laŭ diversaj malfermkodaj <a href=\"%1$s\">permesiloj</a>.]]></string>
-    <string name="donate_description"><![CDATA[Vi povas subteni evoluigon de AnkiDroid per <a href=\"%1$s\">donaci monon</a>. Ĉiu monsumo estas dankinda.]]></string>
+    <string name="license_description"><![CDATA[SpeedyCAT estas eldonita laŭ la permesiloj <a href=\"%1$s\">GPL-3.0</a> kaj <a href=\"%2$s\">AGPL-3.0</a>, ĝia fontkodo estas disponebla en <a href=\"%3$s\">GitHub</a>.]]></string>
+    <string name="other_licenses"><![CDATA[SpeedyCAT uzas bibliotekojn kaj bildsimbolojn de eksteraj liverantoj, kiuj estas eldonitaj laŭ diversaj malfermkodaj <a href=\"%1$s\">permesiloj</a>.]]></string>
+    <string name="donate_description"><![CDATA[Vi povas subteni evoluigon de SpeedyCAT per <a href=\"%1$s\">donaci monon</a>. Ĉiu monsumo estas dankinda.]]></string>
     <!-- Controls -->
     <string name="binding_add_gesture">Aldoni geston</string>
     <string name="binding_add_key">Aldoni klavon</string>
@@ -266,7 +266,7 @@
     <string name="bindings_already_bound">Jam asignita al %s</string>
     <!-- Advanced -->
     <string name="pref_cat_experimental" maxLength="41" tools:ignore="UnusedResources">Eksperimenta</string>
-    <string name="readtext_deprecation_warn">AnkiDroid enkondukis pli bonan meĥanismon por parolsintezo, kiu kongruas kun aliaj klientoj Anki kaj liveras pliajn voĉojn kaj plibonigojn al son-ludado!\n\nĜisdatigu viajn kartojn kiel eble plej rapide, ĉar tiu ĉi agordo baldaŭ estos forigita.</string>
+    <string name="readtext_deprecation_warn">SpeedyCAT enkondukis pli bonan meĥanismon por parolsintezo, kiu kongruas kun aliaj klientoj SpeedyCAT kaj liveras pliajn voĉojn kaj plibonigojn al son-ludado!\n\nĜisdatigu viajn kartojn kiel eble plej rapide, ĉar tiu ĉi agordo baldaŭ estos forigita.</string>
     <string name="readtext_reviewer_warn" tools:ignore="UnusedResources">Ĝisdatigu al pli nova formo de parolsintezo</string>
     <string name="pref_fixed_port_title" maxLength="41">Aktivigi localStorage sur la lernada ekrano</string>
     <string name="pref_fixed_port_summary">Aktivigi JavaScript localStorage per uzi difinitan pordon de servilo sur la lernada ekrano</string>
@@ -278,7 +278,7 @@
     <!-- #######################################################################################
          #################################### Backup options ###################################
          ####################################################################################### -->
-    <string name="pref__backups_help__summary"><![CDATA[AnkiDroid periode sekurkopias vian kolekton. Sekurkopioj pli malnovaj ol du tagoj estas forigataj por konservi spacon.
+    <string name="pref__backups_help__summary"><![CDATA[SpeedyCAT periode sekurkopias vian kolekton. Sekurkopioj pli malnovaj ol du tagoj estas forigataj por konservi spacon.
 <br><br>
 Rimarko: aŭdvidaĵoj ne estas sekurkopiataj. Por esti sekura, regule samtempigu vian kolekton aŭ sekurkopiu elportaĵojn de la kolekto.
 <br><br>

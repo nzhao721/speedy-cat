@@ -1,0 +1,348 @@
+{
+  "meta": {
+    "section": "CPBS",
+    "subArea": "general chemistry",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "LibreTexts — GOB (Roosevelt University), Ch. 4 Chemical Bonding — Multiple Choice Questions",
+        "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+        "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/04%3A_Chemical_Bonding/4.E%3A_Exercises"
+      },
+      {
+        "sourceName": "LibreTexts — GOB (Roosevelt University), Ch. 7 Chemical Equations and Reactions — Multiple choice",
+        "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+        "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/07%3A_Chemical_Equations_and_Reactions/7.E%3A_Exercises"
+      },
+      {
+        "sourceName": "LibreTexts GOB (Roosevelt) — Ch. 16.7 Ch. 7 Odd Answers (answer key)",
+        "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+        "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/16%3A_Answers_to_Odd_Problems/16.07%3A_Ch._7_Odd_Answers"
+      }
+    ],
+    "counts": {"total": 16, "byTopic": {"bonding / Lewis / VSEPR / hybridization / polarity": 7, "balancing equations / stoichiometry": 4, "thermochemistry": 2, "equilibrium (Le Chatelier)": 2, "kinetics / catalysis": 1}},
+    "notes": "Ch. 4 MCQ are conceptual bonding items; the Ch. 16.4 answer-key page returned empty on fetch, so Ch. 4 answers are marked verified-from-source-text (each is unambiguous and independently checked). Ch. 7 MCQ answers come from the rendered Ch. 16.7 answer key (source-answer-key). SKIPPED: Ch. 4 MCQ #8 ('Which molecule is nonpolar?') because both SF6 and CS2 are nonpolar (flawed item); Ch. 7 MCQ #7 because the printed equation has a typo (shows 'O2 + NO2' but option text references SO2)."
+  },
+  "questions": [
+    {
+      "id": "cpbs-xc021",
+      "section": "CPBS",
+      "stem": "Which of the following is an ionic compound?",
+      "choices": [
+        {"label": "A", "text": "PCl5"},
+        {"label": "B", "text": "BaS"},
+        {"label": "C", "text": "NO2"},
+        {"label": "D", "text": "XeF4"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ionic compounds typically form between a metal and a nonmetal. BaS pairs the metal barium with the nonmetal sulfur. PCl5, NO2, and XeF4 are combinations of nonmetals, so they are covalent (molecular).",
+      "topicTags": ["general chemistry", "chemical bonding", "ionic vs covalent"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 4 Chemical Bonding",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/04%3A_Chemical_Bonding/4.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim from the chapter's Multiple Choice Questions. The Ch. 16.4 answer-key page returned empty, so this unambiguous answer is independently verified from the source text."
+    },
+    {
+      "id": "cpbs-xc022",
+      "section": "CPBS",
+      "stem": "How many valence electrons are present in phosphate (PO4^3-)?",
+      "choices": [
+        {"label": "A", "text": "5"},
+        {"label": "B", "text": "8"},
+        {"label": "C", "text": "26"},
+        {"label": "D", "text": "32"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "For the phosphate ion PO4^3-: phosphorus contributes 5 valence electrons, each of the 4 oxygens contributes 6 (= 24), and the 3- charge adds 3 more, giving 5 + 24 + 3 = 32 total valence electrons.",
+      "topicTags": ["general chemistry", "chemical bonding", "Lewis structures", "valence electrons"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 4 Chemical Bonding",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/04%3A_Chemical_Bonding/4.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.4 answer-key page returned empty; answer independently verified by valence-electron count."
+    },
+    {
+      "id": "cpbs-xc023",
+      "section": "CPBS",
+      "stem": "What is the formal charge on bromide?",
+      "choices": [
+        {"label": "A", "text": "-1"},
+        {"label": "B", "text": "0"},
+        {"label": "C", "text": "7"},
+        {"label": "D", "text": "8"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bromide is the Br- anion. A neutral Br atom has 7 valence electrons; gaining one electron gives 8 (a full octet of lone pairs). Formal charge = 7 - 8 = -1, equal to the ionic charge.",
+      "topicTags": ["general chemistry", "chemical bonding", "formal charge", "ions"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 4 Chemical Bonding",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/04%3A_Chemical_Bonding/4.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.4 answer-key page returned empty; answer independently verified."
+    },
+    {
+      "id": "cpbs-xc024",
+      "section": "CPBS",
+      "stem": "Which molecule requires octet expansion?",
+      "choices": [
+        {"label": "A", "text": "CO2"},
+        {"label": "B", "text": "NH3"},
+        {"label": "C", "text": "CBr4"},
+        {"label": "D", "text": "SF6"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "In SF6 the central sulfur is surrounded by 6 bonding pairs (12 electrons), which exceeds an octet. Such expanded octets are possible for period-3 and heavier central atoms. CO2, NH3, and CBr4 all satisfy the normal octet rule.",
+      "topicTags": ["general chemistry", "chemical bonding", "expanded octet", "Lewis structures"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 4 Chemical Bonding",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/04%3A_Chemical_Bonding/4.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.4 answer-key page returned empty; answer independently verified."
+    },
+    {
+      "id": "cpbs-xc025",
+      "section": "CPBS",
+      "stem": "Which central atom is sp2 hybridized?",
+      "choices": [
+        {"label": "A", "text": "BF3"},
+        {"label": "B", "text": "CH4"},
+        {"label": "C", "text": "NH3"},
+        {"label": "D", "text": "H2O"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Boron in BF3 has 3 bonding domains and no lone pairs (trigonal planar), which corresponds to sp2 hybridization. CH4, NH3, and H2O each have 4 electron domains around the central atom and are sp3.",
+      "topicTags": ["general chemistry", "chemical bonding", "hybridization", "VSEPR"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 4 Chemical Bonding",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/04%3A_Chemical_Bonding/4.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.4 answer-key page returned empty; answer independently verified."
+    },
+    {
+      "id": "cpbs-xc026",
+      "section": "CPBS",
+      "stem": "What is the hybridization of carbon in CH2O (formaldehyde)?",
+      "choices": [
+        {"label": "A", "text": "sp"},
+        {"label": "B", "text": "sp2"},
+        {"label": "C", "text": "sp3"},
+        {"label": "D", "text": "sp4"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "In formaldehyde the carbon has three sigma-bonding domains (two C-H bonds and one C=O bond) and no lone pairs, giving sp2 hybridization; the leftover unhybridized p orbital forms the C=O pi bond. (There is no sp4 hybridization.)",
+      "topicTags": ["general chemistry", "chemical bonding", "hybridization"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 4 Chemical Bonding",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/04%3A_Chemical_Bonding/4.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.4 answer-key page returned empty; answer independently verified."
+    },
+    {
+      "id": "cpbs-xc027",
+      "section": "CPBS",
+      "stem": "Which molecule is polar?",
+      "choices": [
+        {"label": "A", "text": "CO2"},
+        {"label": "B", "text": "SO2"},
+        {"label": "C", "text": "CH4"},
+        {"label": "D", "text": "PCl5"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "SO2 is bent (one lone pair on sulfur), so its bond dipoles do not cancel and the molecule has a net dipole (polar). CO2 (linear), CH4 (tetrahedral), and PCl5 (trigonal bipyramidal) are symmetric, so their dipoles cancel and they are nonpolar.",
+      "topicTags": ["general chemistry", "chemical bonding", "molecular polarity", "VSEPR"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 4 Chemical Bonding",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/04%3A_Chemical_Bonding/4.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.4 answer-key page returned empty; answer independently verified."
+    },
+    {
+      "id": "cpbs-xc028",
+      "section": "CPBS",
+      "stem": "Select the correct set of coefficients for the balanced chemical equation: ___ C6H10(l) + ___ O2(g) → ___ CO2(g) + ___ H2O(g)",
+      "choices": [
+        {"label": "A", "text": "1, 9, 6, 5"},
+        {"label": "B", "text": "1, 18, 12, 10"},
+        {"label": "C", "text": "2, 17, 6, 5"},
+        {"label": "D", "text": "2, 17, 12, 10"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Using 2 C6H10 gives 12 C (→ 12 CO2) and 20 H (→ 10 H2O). Oxygen required = (12×2) + (10×1) = 34 atoms = 17 O2. The balanced coefficients are 2, 17, 12, 10.",
+      "topicTags": ["general chemistry", "stoichiometry", "balancing equations", "combustion"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 7 Chemical Equations and Reactions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/07%3A_Chemical_Equations_and_Reactions/7.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.7 MCQ: Q1 = d)."
+    },
+    {
+      "id": "cpbs-xc029",
+      "section": "CPBS",
+      "stem": "Select the correct set of coefficients for the balanced chemical equation: ___ NH3(g) + ___ CuO(s) → ___ N2(g) + ___ Cu(s) + ___ H2O(l)",
+      "choices": [
+        {"label": "A", "text": "2, 3, 1, 3, 3"},
+        {"label": "B", "text": "3, 2, 3, 2, 2"},
+        {"label": "C", "text": "2, 3, 1, 3, 2"},
+        {"label": "D", "text": "2, 4, 2, 4, 4"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "2NH3 + 3CuO → N2 + 3Cu + 3H2O balances every element: N (2 = 2), H (6 = 3×2), Cu (3 = 3), and O (3 = 3). The coefficients are 2, 3, 1, 3, 3.",
+      "topicTags": ["general chemistry", "stoichiometry", "balancing equations", "redox"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 7 Chemical Equations and Reactions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/07%3A_Chemical_Equations_and_Reactions/7.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.7 MCQ: Q2 = a)."
+    },
+    {
+      "id": "cpbs-xc030",
+      "section": "CPBS",
+      "stem": "Which of the following is the correct, balanced molecular equation for the reaction of solid aluminum hydroxide with aqueous sulfuric acid to obtain aqueous aluminum sulfate and water?",
+      "choices": [
+        {"label": "A", "text": "2AlOH(s) + H2SO4(aq) → Al2SO4(aq) + 2H2O(l)"},
+        {"label": "B", "text": "Al(OH)2(s) + H2SO4(aq) → AlSO4(aq) + 2H2O(l)"},
+        {"label": "C", "text": "2Al(OH)3(s) + 3H2SO4(aq) → Al2(SO4)3(aq) + 6H2O(l)"},
+        {"label": "D", "text": "Al(OH)3(s) + 3HSO4(aq) → Al(SO4)3(aq) + 3H2O(l)"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Aluminum hydroxide is Al(OH)3 and aluminum sulfate is Al2(SO4)3. Balancing gives 2Al(OH)3 + 3H2SO4 → Al2(SO4)3 + 6H2O, which conserves Al (2), S (3), H, and O. Only option C uses the correct formulas and is balanced.",
+      "topicTags": ["general chemistry", "stoichiometry", "balancing equations", "acid-base reactions"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 7 Chemical Equations and Reactions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/07%3A_Chemical_Equations_and_Reactions/7.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.7 MCQ: Q3 = c)."
+    },
+    {
+      "id": "cpbs-xc031",
+      "section": "CPBS",
+      "stem": "Which of the following is the correct, balanced molecular equation for the reaction of aqueous sodium phosphate with aqueous silver nitrate to yield solid silver phosphate and aqueous sodium nitrate?",
+      "choices": [
+        {"label": "A", "text": "NaPO4(aq) + AgNO3(aq) → AgPO4(s) + NaNO3(aq)"},
+        {"label": "B", "text": "Na3PO4(aq) + AgNO3(aq) → AgPO4(s) + Na3NO3(aq)"},
+        {"label": "C", "text": "Na2PO4(aq) + 2AgNO3(aq) → Ag2PO4(s) + 2NaNO3(aq)"},
+        {"label": "D", "text": "Na3PO4(aq) + 3AgNO3(aq) → Ag3PO4(s) + 3NaNO3(aq)"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Sodium phosphate is Na3PO4 and silver is Ag+, so silver phosphate is Ag3PO4. Balancing: Na3PO4 + 3AgNO3 → Ag3PO4(s) + 3NaNO3. Only option D uses correct formulas and balances all atoms.",
+      "topicTags": ["general chemistry", "stoichiometry", "balancing equations", "precipitation"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 7 Chemical Equations and Reactions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/07%3A_Chemical_Equations_and_Reactions/7.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.7 MCQ: Q4 = d)."
+    },
+    {
+      "id": "cpbs-xc032",
+      "section": "CPBS",
+      "stem": "Choose the words that will correctly complete the following sentence: Heat is the transfer of ________ energy between two bodies at different ____________.",
+      "choices": [
+        {"label": "A", "text": "potential, positions"},
+        {"label": "B", "text": "potential, temperatures"},
+        {"label": "C", "text": "thermal, positions"},
+        {"label": "D", "text": "thermal, temperatures"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Heat is the transfer of thermal energy that occurs spontaneously between two bodies at different temperatures (from hotter to colder).",
+      "topicTags": ["general chemistry", "thermochemistry", "heat", "definitions"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 7 Chemical Equations and Reactions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/07%3A_Chemical_Equations_and_Reactions/7.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.7 MCQ: Q5 = d)."
+    },
+    {
+      "id": "cpbs-xc033",
+      "section": "CPBS",
+      "stem": "Select the correct choice for the following reaction: H2(g) → 2H(g).",
+      "choices": [
+        {"label": "A", "text": "This reaction requires energy and represents an endothermic process."},
+        {"label": "B", "text": "This reaction releases energy and represents an exothermic process."},
+        {"label": "C", "text": "This reaction requires energy and represents an exothermic process."},
+        {"label": "D", "text": "This reaction releases energy and represents an endothermic process."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Breaking a chemical bond always requires an input of energy. Dissociating H2 into two H atoms therefore absorbs energy, making it an endothermic process. (Options C and D pair the terms incorrectly.)",
+      "topicTags": ["general chemistry", "thermochemistry", "bond energy", "endothermic vs exothermic"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 7 Chemical Equations and Reactions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/07%3A_Chemical_Equations_and_Reactions/7.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.7 MCQ: Q6 = a)."
+    },
+    {
+      "id": "cpbs-xc034",
+      "section": "CPBS",
+      "stem": "Which of the following stresses would cause the equilibrium concentration of SO2Cl2 to increase for the following endothermic reaction: SO2Cl2(g) ⇌ SO2(g) + Cl2(g)?",
+      "choices": [
+        {"label": "A", "text": "Increasing the temperature"},
+        {"label": "B", "text": "Removing SO2"},
+        {"label": "C", "text": "Adding Cl2"},
+        {"label": "D", "text": "None of the above"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "By Le Chatelier's principle, adding the product Cl2 shifts the equilibrium toward the reactant side, increasing [SO2Cl2]. Raising the temperature (endothermic, so heat acts like a reactant) or removing SO2 would instead drive the reaction toward products.",
+      "topicTags": ["general chemistry", "equilibrium", "Le Chatelier's principle"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 7 Chemical Equations and Reactions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/07%3A_Chemical_Equations_and_Reactions/7.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.7 MCQ: Q8 = c)."
+    },
+    {
+      "id": "cpbs-xc035",
+      "section": "CPBS",
+      "stem": "Which of the following statements regarding a catalyst is true?",
+      "choices": [
+        {"label": "A", "text": "A catalyst is consumed in a chemical reaction."},
+        {"label": "B", "text": "A catalyst increases the thermal energy of the reactants."},
+        {"label": "C", "text": "A catalyst increases the stability of the product."},
+        {"label": "D", "text": "A catalyst lowers the activation energy for a reaction."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "A catalyst provides an alternative reaction pathway with a lower activation energy, speeding the reaction. It is regenerated (not consumed), does not raise the reactants' thermal energy, and does not change the stability (energy) of products.",
+      "topicTags": ["general chemistry", "kinetics", "catalysis", "activation energy"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 7 Chemical Equations and Reactions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/07%3A_Chemical_Equations_and_Reactions/7.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.7 MCQ: Q9 = d)."
+    },
+    {
+      "id": "cpbs-xc036",
+      "section": "CPBS",
+      "stem": "Nitrogen and oxygen react at high temperatures to form nitrogen monoxide. What will happen to the concentrations of N2, O2, and NO at equilibrium if a catalyst is added?",
+      "choices": [
+        {"label": "A", "text": "The equilibrium concentrations will increase."},
+        {"label": "B", "text": "The equilibrium concentrations will not change."},
+        {"label": "C", "text": "The equilibrium concentrations will decrease."},
+        {"label": "D", "text": "The N2 and O2 concentrations will decrease while the NO concentration will increase."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "A catalyst lowers the activation energy of the forward and reverse reactions equally. It speeds the approach to equilibrium but does not shift the equilibrium position, so the equilibrium concentrations are unchanged.",
+      "topicTags": ["general chemistry", "kinetics", "equilibrium", "catalysis"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 7 Chemical Equations and Reactions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/07%3A_Chemical_Equations_and_Reactions/7.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.7 MCQ: Q10 = b)."
+    }
+  ]
+}

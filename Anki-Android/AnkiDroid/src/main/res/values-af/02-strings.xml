@@ -120,7 +120,7 @@
         <item quantity="one">%1$d minuut</item>
         <item quantity="other">%1$d minute</item>
     </plurals>
-    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">AnkiDroid kaart</string>
+    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">SpeedyCAT kaart</string>
     <string name="note_editor_copy_note" maxLength="28">Kopieer nota</string>
     <string name="card_editor_reposition_card" comment="reposition a card in the new queue" maxLength="28">Herposisioneer</string>
     <string name="card_editor_reset_card" maxLength="28">Herstel vordering</string>
@@ -132,31 +132,31 @@
     <string name="checks_action" maxLength="28">Kontroleer</string>
     <string name="unknown_type_field_warning">Tik antwoord: onbekende veld %s</string>
     <string name="delete_deck" comment="Message on a progress bar starting a deck is being deleted.">Pak verwyder&#8230;</string>
-    <string name="info_rate">Beoordeel AnkiDroid</string>
+    <string name="info_rate">Beoordeel SpeedyCAT</string>
     <string name="import_title">Invoer</string>
     <string name="import_preparing_file">Lêer voorberei vir invoer&#8230;</string>
     <string name="import_message_add" comment="Adding a new deck to the collection (import)">Voeg by</string>
     <string name="import_message_replace_confirm">Dit sal jou bestaande versameling uitvee en dit vervang met die data van lêer %s</string>
     <string name="import_dialog_message_add">Voeg “%s” by versameling? Dit kan lank neem</string>
-    <string name="import_log_no_apkg">Dit is nie \'n geldige Anki-pakketlêer nie</string>
+    <string name="import_log_no_apkg">Dit is nie \'n geldige SpeedyCAT-pakketlêer nie</string>
     <string name="import_title_error" comment="Title of error dialog">Fout</string>
     <string name="import_error_handle_exception">Kon nie lêer invoer nie\n\n%s</string>
     <string name="import_error_not_apkg_extension">Lêernaam “%s” het nie .apkg of .colpkg uitbreiding nie</string>
-    <string name="import_error_load_imported_database">Anki-databasis (.anki2) vervangings word nog nie ondersteun nie. Raadpleeg asseblief die handleiding vir vervangingsinstruksies.</string>
-    <string name="import_error_content_provider">Die geselekteerde lêer kon nie outomaties deur AnkiDroid ingevoer word nie. Raadpleeg asseblief die gebruikershandleiding vir hoe om Anki-lêers handmatig in te voer: \n%s</string>
+    <string name="import_error_load_imported_database">SpeedyCAT-databasis (.anki2) vervangings word nog nie ondersteun nie. Raadpleeg asseblief die handleiding vir vervangingsinstruksies.</string>
+    <string name="import_error_content_provider">Die geselekteerde lêer kon nie outomaties deur SpeedyCAT ingevoer word nie. Raadpleeg asseblief die gebruikershandleiding vir hoe om SpeedyCAT-lêers handmatig in te voer: \n%s</string>
     <string name="import_error_copy_to_cache_title">Kon nie lêer kas nie</string>
     <string name="import_error_copy_to_cache_explanation" comment="The substitution is a list of suggested fixes in bullet point form">This is often caused by a bug in the app you used to select the file. Please try the following fixes:\n\n%s</string>
-    <string name="import_interrupted">Invoer onderbreek: AnkiDroid is gesluit</string>
+    <string name="import_interrupted">Invoer onderbreek: SpeedyCAT is gesluit</string>
     <string name="export_ready_title">Gereed vir uitvoer</string>
     <string name="export_send_no_handlers">Geen toepassings beskikbaar om .apkg te hanteer nie. Stoor&#8230;</string>
-    <string name="export_save_apkg_successful">Suksesvol Anki-pakket gestoor</string>
-    <string name="export_save_apkg_unsuccessful">Stoor Anki-pakket het misluk</string>
-    <string name="export_share_title">Stuur Anki-pakket met behulp van</string>
-    <string name="export_email_subject">AnkiDroid uitgevoerde flitskaarte: %s</string>
+    <string name="export_save_apkg_successful">Suksesvol SpeedyCAT-pakket gestoor</string>
+    <string name="export_save_apkg_unsuccessful">Stoor SpeedyCAT-pakket het misluk</string>
+    <string name="export_share_title">Stuur SpeedyCAT-pakket met behulp van</string>
+    <string name="export_email_subject">SpeedyCAT uitgevoerde flitskaarte: %s</string>
     <string name="export_email_text"><![CDATA[        Hi!
         <br/><br/>
-        Dit is \'n Anki-flitskaarte-dek wat vanaf AnkiDroid gestuur is[1].
-        Probeer om dit oop te maak met een van die beskikbare Anki-verspreidings[2] en geniet maklike en doeltreffende leer!<br/><br/>
+        Dit is \'n SpeedyCAT-flitskaarte-dek wat vanaf SpeedyCAT gestuur is[1].
+        Probeer om dit oop te maak met een van die beskikbare SpeedyCAT-verspreidings[2] en geniet maklike en doeltreffende leer!<br/><br/>
         [1]%1$s<br/>
         [2]%2$s
         ]]></string>
@@ -192,18 +192,18 @@
     <string name="white_board_eraser_disabled">Eraser mode deactivated</string>
     <string comment="Progress amount e.g. \'28 MB/141 MB\'. %1$s is the current amount, %2$s is the max." name="progress_amount_bytes">%1$s/%2$s</string>
     <string name="media_file_size_warning_title">Media too large</string>
-    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the AnkiWeb limit of %3$s and cannot be synced. Add anyway?</string>
+    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the SpeedyCAT limit of %3$s and cannot be synced. Add anyway?</string>
     <string name="media_file_size_add_anyway">Add anyway</string>
     <!-- Whiteboard save image message in the Study Screen -->
     <string name="white_board_image_save_failed">Kon nie witbordbeeld stoor nie. %s</string>
     <string name="white_board_image_saved">Witbordbeeld gestoor na %s</string>
     <string name="title_whiteboard_editor" maxLength="28">Witbordredakteur</string>
-    <string name="user_is_a_robot">Geoutomatiseerde toets opgespoor. As jy \'n mens is, kontak AnkiDroid-ondersteuning.</string>
+    <string name="user_is_a_robot">Geoutomatiseerde toets opgespoor. As jy \'n mens is, kontak SpeedyCAT-ondersteuning.</string>
     <!-- JS api -->
-    <string name="api_version_developer_contact">Hierdie kaart gebruik nie-ondersteunde AnkiDroid-funksies nie. Kontak ontwikkelaar %1$s, of kyk na die wiki. %2$s</string>
+    <string name="api_version_developer_contact">Hierdie kaart gebruik nie-ondersteunde SpeedyCAT-funksies nie. Kontak ontwikkelaar %1$s, of kyk na die wiki. %2$s</string>
     <string name="invalid_json_data">Kaart het ongeldige data verskaf. %s</string>
-    <string name="valid_js_api_version">Ongeldige AnkiDroid JS API-weergawe. Kontak ontwikkelaar %s, of sien wiki</string>
-    <string name="update_js_api_version">AnkiDroid JS API-opdatering beskikbaar. Kontak ontwikkelaar %s, of sien wiki</string>
+    <string name="valid_js_api_version">Ongeldige SpeedyCAT JS API-weergawe. Kontak ontwikkelaar %s, of sien wiki</string>
+    <string name="update_js_api_version">SpeedyCAT JS API-opdatering beskikbaar. Kontak ontwikkelaar %s, of sien wiki</string>
     <string name="reviewer_invalid_api_version_visit_documentation">Sien</string>
     <string name="anki_js_error_code">(Error code: %d)</string>
     <!-- About AnkiDroid screen -->
@@ -214,8 +214,8 @@
     <!-- Deck Picker -->
     <string name="search_decks" maxLength="28">Soek pakke</string>
     <string name="ankidroid_init_failed_webview_title">Fatal error</string>
-    <string name="ankidroid_init_failed_webview">AnkiDroid maak staat op die Stelsel WebView wat nie beskikbaar is nie. Dit kan gebeur as die stelsel opdaterings installeer. Probeer asseblief weer oor \'n paar minute.\n\n%s</string>
-    <string name="ankidroid_init_failed_storage">AnkiDroid cannot access storage due to an Android error.\n\n%s</string>
+    <string name="ankidroid_init_failed_webview">SpeedyCAT maak staat op die Stelsel WebView wat nie beskikbaar is nie. Dit kan gebeur as die stelsel opdaterings installeer. Probeer asseblief weer oor \'n paar minute.\n\n%s</string>
+    <string name="ankidroid_init_failed_storage">SpeedyCAT cannot access storage due to an Android error.\n\n%s</string>
     <!-- A Menu item to change the Font Size (currently in the Note Editor) -->
     <string name="menu_font_size" maxLength="28">Lettergrootte</string>
     <string name="menu_show_toolbar" comment="Checkable item stating whether the note editor toolbar should be shown" maxLength="28">Wys nutsbalk</string>
@@ -237,9 +237,9 @@
     <string name="note_editor_video_too_large">Die videolêer is te groot, voeg asseblief die video handmatig in</string>
     <string name="note_editor_audio_too_large">Die klanklêer is te groot, voeg asseblief die klank handmatig in</string>
     <string name="ankidroid_cannot_open_after_backup_try_again" comment="After an Android backup is restored, AnkiDroid opens and shows this message.         Opening AnkiDroid again will work correctly">Android backup in progress. Please try again</string>
-    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Jy sal dalk iManager moet gebruik om AnkiDroid toe te laat om kortpaaie by te voeg</string>
+    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Jy sal dalk iManager moet gebruik om SpeedyCAT toe te laat om kortpaaie by te voeg</string>
     <string name="create_shortcut_error_miui" comment="Keep the message as short, as this is shown in a toast. %s is the app name: \'AnkiDroid\'">Allow ‘Home screen shortcuts’ in system settings for %s to add shortcuts</string>
-    <string name="create_shortcut_failed" comment="home screen == launcher">Jou tuisskerm laat nie toe dat AnkiDroid kortpaaie byvoeg nie</string>
+    <string name="create_shortcut_failed" comment="home screen == launcher">Jou tuisskerm laat nie toe dat SpeedyCAT kortpaaie byvoeg nie</string>
     <string name="create_shortcut_error">Fout met byvoeging van kortpad: %s</string>
     <string name="note_editor_capitalize" comment="This is for a switch with a checkbox - on: enabled" maxLength="28">Hoofletters sinne</string>
     <string name="menu_scroll_toolbar" comment="Checkbox stating whether note editor toolbar is scrollable or stacked. Checked: Scroll" maxLength="28">Rol nutsbalk</string>
@@ -300,11 +300,11 @@
     <!-- App Intro -->
     <string name="intro_ankidroid_tagline_one">Minder studeer</string>
     <string name="intro_ankidroid_tagline_two">Onthou meer</string>
-    <string name="intro_short_ankidroid_explanation">Anki se kaartkeduler bespaar tyd deur jou swakste herinneringe te versterk en jou sterkste te bewaar</string>
+    <string name="intro_short_ankidroid_explanation">SpeedyCAT se kaartkeduler bespaar tyd deur jou swakste herinneringe te versterk en jou sterkste te bewaar</string>
     <string name="intro_get_started" comment="Action to start AnkiDroid for the first time without syncing from AnkiWeb">Get started</string>
-    <string name="intro_sync_from_ankiweb">Sinkroniseer Van AnkiWeb</string>
+    <string name="intro_sync_from_ankiweb">Sinkroniseer Van SpeedyCAT</string>
     <!-- IntentHandler -->
-    <string name="app_not_initialized_new">AnkiDroid Is Nog Nie Geïnisialiseer Nie. Maak Asseblief AnkiDroid Oop En Probeer Weer.</string>
+    <string name="app_not_initialized_new">SpeedyCAT Is Nog Nie Geïnisialiseer Nie. Maak Asseblief SpeedyCAT Oop En Probeer Weer.</string>
     <!-- Deck Creation -->
     <string name="deck_created">Pak geskep</string>
     <string name="deck_renamed">Pak hernoem</string>

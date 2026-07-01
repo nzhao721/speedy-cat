@@ -39,12 +39,12 @@
         <item quantity="other">%d ta karta qayta tiklandi</item>
     </plurals>
     <string name="answering_error_title">Maʼlumotlar bazasida xatolik</string>
-    <string name="answering_error_message">Kolleksiyaga yozib boʻlmadi. Maʼlumotlar bazasi buzilgan yoki diskda yetarlicha boʻsh joy boʻlmasligi mumkin.\n\nAgar bu tez-tez sodir boʻladigan boʻlsa, maʼlumotlar bazasini tekshirib koʻring, kolleksiyani tuzatib koʻring yoki zaxiradan tiklang. Buning uchun “Parametrlar” tugmasini bosing.\n\Yoki bu AnkiDroid bagi ham boʻlishi mumkin; Buni tekshirishimiz uchun xatolik haqida xabar bering.</string>
+    <string name="answering_error_message">Kolleksiyaga yozib boʻlmadi. Maʼlumotlar bazasi buzilgan yoki diskda yetarlicha boʻsh joy boʻlmasligi mumkin.\n\nAgar bu tez-tez sodir boʻladigan boʻlsa, maʼlumotlar bazasini tekshirib koʻring, kolleksiyani tuzatib koʻring yoki zaxiradan tiklang. Buning uchun “Parametrlar” tugmasini bosing.\n\Yoki bu SpeedyCAT bagi ham boʻlishi mumkin; Buni tekshirishimiz uchun xatolik haqida xabar bering.</string>
     <string name="answering_error_report">Xatolik haqida xabar berish</string>
-    <string name="storage_full_message">AnkiDroidʼni ochish uchun yetarlicha boʻsh joy mavjud emas. Davom etish uchun qurilmangizda biroz joy boʻshating.</string>
+    <string name="storage_full_message">SpeedyCATʼni ochish uchun yetarlicha boʻsh joy mavjud emas. Davom etish uchun qurilmangizda biroz joy boʻshating.</string>
     <string name="repair_deck_dialog">Rostdan ham maʼlumotlar bazasini tuzatmoqchimisiz?\n\nUrinishni boshlashdan oldin uni nusxasi “%s” ostjildiga koʻchiriladi.</string>
     <string name="intent_aedict_empty">“default” turkumi boʻsh</string>
-    <string name="intent_aedict_category">AnkiDroidʼga kartalar qoʻshish uchun barcha Bloknot turkumlarini olib tashlang yoki \"default\" deb nomlangan turkumni qoʻshing</string>
+    <string name="intent_aedict_category">SpeedyCATʼga kartalar qoʻshish uchun barcha Bloknot turkumlarini olib tashlang yoki \"default\" deb nomlangan turkumni qoʻshing</string>
     <string name="custom_study_new_extend">Bugungi yangi kartalar limitini oshirish/kamaytirish (“-3”)</string>
     <string name="custom_study_rev_extend">Bugungi takrorlanadigan kartalar limitini oshirish/kamaytirish (“-3”)</string>
     <string name="custom_study_forgotten">Oʻtgan x kun ichida unutilgan kartalarni takrorlash:</string>
@@ -54,7 +54,7 @@
     <string name="storage_full_title">Saqlash xotirasi toʻla</string>
     <string name="storage_almost_full_title">Saqlash xotirasi deyarli toʻla</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">Boʻsh joy yoʻq</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">AnkiDroid davom etishi uchun saqlash xotirasida %s boʻsh joy kerak. Iltimos, biroz joy boʻshating</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">SpeedyCAT davom etishi uchun saqlash xotirasida %s boʻsh joy kerak. Iltimos, biroz joy boʻshating</string>
     <string name="restore_backup_title">Zaxiradan tiklansinmi?</string>
     <string name="restore_backup">Kolleksiyangiz eski nusxa bilan almashtiriladi. Har qanday saqlanmagan progressingiz yoʻqoladi.</string>
     <string name="restore_backup_choose_another">Boshqasini tanlash</string>
@@ -115,9 +115,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">Maʼlumotlar bazasi qulflandi</string>
-    <string name="database_locked_summary">AnkiDroid maʼlumotlar bazasi boshqa dastur tomonidan foydalanilmoqda. Iltimos, oʻsha ilovani yoping va AnkiDroidʼni boshqatdan oching.</string>
+    <string name="database_locked_summary">SpeedyCAT maʼlumotlar bazasi boshqa dastur tomonidan foydalanilmoqda. Iltimos, oʻsha ilovani yoping va SpeedyCATʼni boshqatdan oching.</string>
     <string name="incompatible_database_version_title">Mos kelmaydigan maʼlumotlar bazasi versiyasi</string>
-    <string name="incompatible_database_version_summary">Maʼlumotlar bazasi versiyasi AnkiDroid ishlay oladigan versiyadan ancha yuqori. Ochish uchun AnkiDroidʼni yangilang yoki maʼlumotlar baza versiyasini tushiring\n\nQoʻllab-quvvatlanadigan versiya: %1$d\nMaʼlumotlar bazasi versiyasi: %2$d\n\nQuyidagi tiklash variantlar mavjud kolleksiyangizni mos keladigan maʼlumotlar bazasi versiyasi bilan qayta yozishi mumkin:</string>
+    <string name="incompatible_database_version_summary">Maʼlumotlar bazasi versiyasi SpeedyCAT ishlay oladigan versiyadan ancha yuqori. Ochish uchun SpeedyCATʼni yangilang yoki maʼlumotlar baza versiyasini tushiring\n\nQoʻllab-quvvatlanadigan versiya: %1$d\nMaʼlumotlar bazasi versiyasi: %2$d\n\nQuyidagi tiklash variantlar mavjud kolleksiyangizni mos keladigan maʼlumotlar bazasi versiyasi bilan qayta yozishi mumkin:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">Orqa fon rasmi qoʻllandi</string>
     <string name="background_image_removed">Orqa fon rasmi olib tashlandi</string>
@@ -138,29 +138,29 @@
     <string name="locale_selection_dialog_title_new">Tilni sozlash</string>
     <string name="locale_selection_dialog_summary">GBoard kabi baʻzi koʻp tilli klaviaturalar, matnni tahrirlaganda tilni oʻzgartirishni qoʻllab-quvvatlaydi\n\nAgar klaviaturangiz tilni oʻzgartirolmasa, klaviatura ishlab chiqaruvchisidan “setImeHintLocales” funksiyasini soʻrang.</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">AnkiDroidʼni ishlatish</string>
-    <string name="help_item_ankidroid_manual">AnkiDroid qoʻllanmasi</string>
-    <string name="help_item_anki_manual">Anki qoʻllanmasi</string>
-    <string name="help_item_ankidroid_faq">AnkiDroid koʻp soʻraladigan savollar</string>
+    <string name="help_title_using_ankidroid">SpeedyCATʼni ishlatish</string>
+    <string name="help_item_ankidroid_manual">SpeedyCAT qoʻllanmasi</string>
+    <string name="help_item_anki_manual">SpeedyCAT qoʻllanmasi</string>
+    <string name="help_item_ankidroid_faq">SpeedyCAT koʻp soʻraladigan savollar</string>
     <string name="help_title_get_help">Yordam olish</string>
     <string name="help_item_mailing_list">E-pochta roʻyxati</string>
     <string name="help_item_reddit">Reddit</string>
     <string name="help_item_report_bug">Bug haqida xabar berish</string>
-    <string name="help_title_support_ankidroid" maxLength="28">AnkiDroidʼga koʻmaklashish</string>
+    <string name="help_title_support_ankidroid" maxLength="28">SpeedyCATʼga koʻmaklashish</string>
     <string name="help_item_support_opencollective_donate">Xayriya qilish</string>
     <string name="help_item_support_develop_ankidroid">Dasturlash</string>
     <string name="help_item_support_rate_ankidroid">Baho berish</string>
     <string name="help_item_support_other_ankidroid">Boshqa</string>
     <string name="multimedia_editor_trans_translate">Tarjima qilish</string>
     <string name="help_title_community">Hamjamiyat</string>
-    <string name="help_item_anki_forums">Anki Forums</string>
+    <string name="help_item_anki_forums">SpeedyCAT Forums</string>
     <string name="help_item_discord">Discord</string>
     <string name="help_item_facebook">Facebook</string>
     <string name="help_item_twitter">Twitter</string>
     <string name="help_title_privacy">Maxfiylik</string>
-    <string name="help_item_ankidroid_privacy_policy">AnkiDroid maxfiylik siyosati</string>
-    <string name="help_item_ankiweb_privacy_policy">AnkiWeb maxfiylik siyosati</string>
-    <string name="help_item_ankiweb_terms_and_conditions">AnkiWeb talab va shartlari</string>
+    <string name="help_item_ankidroid_privacy_policy">SpeedyCAT maxfiylik siyosati</string>
+    <string name="help_item_ankiweb_privacy_policy">SpeedyCAT maxfiylik siyosati</string>
+    <string name="help_item_ankiweb_terms_and_conditions">SpeedyCAT talab va shartlari</string>
     <string name="help_title_send_exception">Nosozliklarni bartaraf etish haqida hisobotni joʻnatish</string>
     <string name="help_dialog_exception_report_debounce">Hisobot allaqachon joʻnatildi</string>
     <string name="help_dialog_exception_report_sent">Hisobot joʻnatildi!</string>

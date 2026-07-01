@@ -54,7 +54,7 @@
     <string name="storage_full_title">حافظه</string>
     <string name="storage_almost_full_title">اوکی</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">جای خالی وجود ندارد</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">AnkiDroid %s فضای خالی لازم دارد تا ادامه دهد. لطفا کمی جا خالی کنید</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">SpeedyCAT %s فضای خالی لازم دارد تا ادامه دهد. لطفا کمی جا خالی کنید</string>
     <string name="restore_backup_title">بازیابی نسخه پشتیبان؟</string>
     <string name="restore_backup">مجموعه شما با یک نسخه قدیمی تر جایگزین خواهد شد. موارد ذخیره نشده از بین خواهند رفت.</string>
     <string name="restore_backup_choose_another">انتخاب دیگری</string>
@@ -117,7 +117,7 @@
     <string name="database_locked_title">دیتابیس قفل است</string>
     <string name="database_locked_summary">نرم‌افزاری دیگر در حال استفاده از دیتابیس آنکی‌دروید است. لطفاً نرم افزار دیگر را ببندید سپس آنکی‌دروید را باز کنید.</string>
     <string name="incompatible_database_version_title">نسخه پایگاه داده ناسازگار است</string>
-    <string name="incompatible_database_version_summary">نسخه ی پایگاه داده پیشرفته‌تر از نسخه ای است که AnkiDroid توانایی کار کردن با آن را دارد. یا AnkiDroid را ارتقاء دهید یا درجه پایگاه داده را پایین آورید\n\nنسخه های همایت شده: %1$d\nنسخه پایگاه داده: %2$d\n\nگزینه های بازگرداندن زیر مجموعه شما را بازنویسی میکنند، ممکن تر با نسخه پایگاه داده سازگار:</string>
+    <string name="incompatible_database_version_summary">نسخه ی پایگاه داده پیشرفته‌تر از نسخه ای است که SpeedyCAT توانایی کار کردن با آن را دارد. یا SpeedyCAT را ارتقاء دهید یا درجه پایگاه داده را پایین آورید\n\nنسخه های همایت شده: %1$d\nنسخه پایگاه داده: %2$d\n\nگزینه های بازگرداندن زیر مجموعه شما را بازنویسی میکنند، ممکن تر با نسخه پایگاه داده سازگار:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">تصویر پس‌زمینه اعمال شد</string>
     <string name="background_image_removed">تصویر پس‌زمینه حذف شد</string>
@@ -138,29 +138,29 @@
     <string name="locale_selection_dialog_title_new">انتخاب زبان</string>
     <string name="locale_selection_dialog_summary">بعضی کیبورد‌های چند‌زبانه مثل GBoard توانایی این را دارند که هنگام تغییر نوشته زبانتان را تغییر دهند\n\nلطفا ویژگی “setImeHintLocales” را از سازنده‌ی کیبورد خود درخواست کنید اگر کیبوردتان توانایی تغییر زبان ندارد.</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">استفاده از AnkiDroid</string>
-    <string name="help_item_ankidroid_manual">دفترچه راهنما AnkiDroid</string>
-    <string name="help_item_anki_manual">دفتر راهنما Anki</string>
-    <string name="help_item_ankidroid_faq">سوالات متداول AnkiDroid</string>
+    <string name="help_title_using_ankidroid">استفاده از SpeedyCAT</string>
+    <string name="help_item_ankidroid_manual">دفترچه راهنما SpeedyCAT</string>
+    <string name="help_item_anki_manual">دفتر راهنما SpeedyCAT</string>
+    <string name="help_item_ankidroid_faq">سوالات متداول SpeedyCAT</string>
     <string name="help_title_get_help">کمک گرفتن</string>
     <string name="help_item_mailing_list">لیست ایمیل‌ها</string>
     <string name="help_item_reddit">ردیت</string>
     <string name="help_item_report_bug">گزارش مشکل</string>
-    <string name="help_title_support_ankidroid" maxLength="28">را حمایت کنید AnkiDroid</string>
+    <string name="help_title_support_ankidroid" maxLength="28">را حمایت کنید SpeedyCAT</string>
     <string name="help_item_support_opencollective_donate">کمک مالی</string>
     <string name="help_item_support_develop_ankidroid">توسعه</string>
     <string name="help_item_support_rate_ankidroid">امتیازدهی</string>
     <string name="help_item_support_other_ankidroid">دیگر</string>
     <string name="multimedia_editor_trans_translate">ترجمه</string>
     <string name="help_title_community">انجمن</string>
-    <string name="help_item_anki_forums">فوروم های Anki</string>
+    <string name="help_item_anki_forums">فوروم های SpeedyCAT</string>
     <string name="help_item_discord">دیسکورد</string>
     <string name="help_item_facebook">فیسبوک</string>
     <string name="help_item_twitter">توییتر</string>
     <string name="help_title_privacy">حریم خصوصی</string>
-    <string name="help_item_ankidroid_privacy_policy">قوانین حریم خصوصی AnkiDroid</string>
-    <string name="help_item_ankiweb_privacy_policy">قوانین حریم خصوصی AnkiWeb</string>
-    <string name="help_item_ankiweb_terms_and_conditions">شرایط و ضوابط AnkiWeb</string>
+    <string name="help_item_ankidroid_privacy_policy">قوانین حریم خصوصی SpeedyCAT</string>
+    <string name="help_item_ankiweb_privacy_policy">قوانین حریم خصوصی SpeedyCAT</string>
+    <string name="help_item_ankiweb_terms_and_conditions">شرایط و ضوابط SpeedyCAT</string>
     <string name="help_title_send_exception">ارسال گزارش عیب یابی</string>
     <string name="help_dialog_exception_report_debounce">گزارش قبلا ثبت شده است</string>
     <string name="help_dialog_exception_report_sent">گزارش ارسال شد!</string>

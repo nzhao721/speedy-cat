@@ -120,7 +120,7 @@
         <item quantity="one">%1$d ᱴᱤᱯᱤᱡ</item>
         <item quantity="other">%1$d ᱴᱤᱯᱤᱡ</item>
     </plurals>
-    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">AnkiDroid ᱠᱟᱰ</string>
+    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">SpeedyCAT ᱠᱟᱰ</string>
     <string name="note_editor_copy_note" maxLength="28">ᱠᱷᱟᱴᱚ ᱵᱤᱪᱟᱹᱨ ᱠᱚᱯᱤ ᱢᱮ</string>
     <string name="card_editor_reposition_card" comment="reposition a card in the new queue" maxLength="28">ᱥᱛᱷᱟᱱᱚᱱᱛᱚᱨ ᱢᱮ</string>
     <string name="card_editor_reset_card" maxLength="28">ᱯᱨᱚᱜᱨᱮᱥ ᱨᱤᱥᱮᱴ ᱢᱮ</string>
@@ -132,31 +132,31 @@
     <string name="checks_action" maxLength="28">ᱪᱟᱠᱷᱟ</string>
     <string name="unknown_type_field_warning">ᱨᱚᱲ ᱴᱟᱭᱤᱯ ᱢᱮᱺ ᱵᱚᱭ ᱵᱟᱰᱟᱭᱠᱟᱱ ᱡᱟᱭᱜᱟ %s</string>
     <string name="delete_deck" comment="Message on a progress bar starting a deck is being deleted.">ᱰᱮᱠ ᱢᱮᱴᱟᱣᱚᱜ ᱠᱟᱱᱟ&#8230;</string>
-    <string name="info_rate">AnkiDroid ᱜᱚᱬᱚᱰ ᱢᱮ</string>
+    <string name="info_rate">SpeedyCAT ᱜᱚᱬᱚᱰ ᱢᱮ</string>
     <string name="import_title">ᱟᱹᱜᱩᱭᱮᱛ ᱟ</string>
     <string name="import_preparing_file">ᱤᱱᱯᱷᱚᱨᱢᱮᱱᱴ ᱞᱟᱹᱜᱤᱫ ᱯᱷᱤᱞᱤᱯᱤ ᱛᱮᱭᱟᱨᱚᱜ ᱠᱟᱱᱟ&#8230;</string>
     <string name="import_message_add" comment="Adding a new deck to the collection (import)">ᱥᱮᱞᱮᱫ</string>
     <string name="import_message_replace_confirm">ᱱᱚᱶᱟ ᱫᱚ ᱴᱩᱢᱟᱞ ᱜᱮᱫ ᱜᱤᱰᱤᱟᱭ ᱟᱨ ᱚᱱᱟ ᱵᱚᱫᱚᱞ ᱛᱮ ᱚᱱᱟ ᱨᱮᱛ ᱨᱮ ᱥᱟᱹᱠᱷᱤᱭᱟᱹᱛ ᱚᱞᱟᱭ  %s</string>
     <string name="import_dialog_message_add">ᱥᱮᱞᱮᱫ ᱨᱮ  ⁇ %s ⁇  ᱥᱮᱞᱮᱫ ᱢᱮ? ᱱᱚᱶᱟ ᱟᱹᱰᱤ ᱫᱤᱱ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ</string>
-    <string name="import_log_no_apkg">ᱱᱚᱶᱟ ᱫᱚ ᱵᱦᱮᱞᱤᱰ Anki ᱯᱮᱠ ᱵᱟᱝ ᱠᱟᱱᱟ</string>
+    <string name="import_log_no_apkg">ᱱᱚᱶᱟ ᱫᱚ ᱵᱦᱮᱞᱤᱰ SpeedyCAT ᱯᱮᱠ ᱵᱟᱝ ᱠᱟᱱᱟ</string>
     <string name="import_title_error" comment="Title of error dialog">ᱵᱷᱩᱞ</string>
     <string name="import_error_handle_exception">Failed to import file\n\n%s</string>
     <string name="import_error_not_apkg_extension">ᱨᱮᱫᱧᱩᱛᱩᱢ “%s” ᱴᱷᱮᱱ .apkg or .colpkg extension ᱵᱟᱱᱩᱜᱽᱟ</string>
-    <string name="import_error_load_imported_database">Anki Database (.anki2) ᱵᱚᱫᱚᱞ ᱥᱟᱹᱯᱚᱴ ᱵᱟᱹᱱᱩᱜᱼᱟ ᱾ ᱨᱤᱯᱞᱮᱥᱢᱮᱴ ᱞᱟᱹᱜᱤᱫ ᱢᱮᱱᱩᱟᱞ ᱧᱮᱞᱯᱮ</string>
-    <string name="import_error_content_provider">ᱵᱟᱪᱷᱟᱣᱟᱠᱟᱱ ᱨᱮᱫ AnkiDroid ᱛᱮ ᱵᱟᱭ ᱞᱟᱫᱮᱜ ᱠᱟᱱᱟ ᱾ ᱫᱚᱭᱟᱠᱟᱛᱮ ᱨᱤᱯᱞᱮᱥᱢᱮᱴ ᱞᱟᱹᱜᱤᱫ ᱢᱮᱱᱩᱟᱞ ᱧᱮᱞᱯᱮ Anki ᱨᱮᱫ: \n%s</string>
+    <string name="import_error_load_imported_database">SpeedyCAT Database (.anki2) ᱵᱚᱫᱚᱞ ᱥᱟᱹᱯᱚᱴ ᱵᱟᱹᱱᱩᱜᱼᱟ ᱾ ᱨᱤᱯᱞᱮᱥᱢᱮᱴ ᱞᱟᱹᱜᱤᱫ ᱢᱮᱱᱩᱟᱞ ᱧᱮᱞᱯᱮ</string>
+    <string name="import_error_content_provider">ᱵᱟᱪᱷᱟᱣᱟᱠᱟᱱ ᱨᱮᱫ SpeedyCAT ᱛᱮ ᱵᱟᱭ ᱞᱟᱫᱮᱜ ᱠᱟᱱᱟ ᱾ ᱫᱚᱭᱟᱠᱟᱛᱮ ᱨᱤᱯᱞᱮᱥᱢᱮᱴ ᱞᱟᱹᱜᱤᱫ ᱢᱮᱱᱩᱟᱞ ᱧᱮᱞᱯᱮ SpeedyCAT ᱨᱮᱫ: \n%s</string>
     <string name="import_error_copy_to_cache_title">ᱯᱷᱤᱞ ᱠᱷᱟᱪ ᱨᱮ ᱵᱟᱭ ᱥᱮᱞᱮᱫ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ</string>
     <string name="import_error_copy_to_cache_explanation" comment="The substitution is a list of suggested fixes in bullet point form">This is often caused by a bug in the app you used to select the file. Please try the following fixes:\n\n%s</string>
     <string name="import_interrupted">ᱨᱮᱫ ᱟᱠᱚᱴ ᱮᱱᱟ</string>
     <string name="export_ready_title">ᱮᱠᱥᱯᱳᱨᱴ ᱞᱟᱹᱜᱤᱫ ᱥᱟᱹᱛ</string>
     <string name="export_send_no_handlers">ᱪᱚᱫ ᱮᱯᱞᱤᱠᱮᱥᱚᱱ ᱵᱟᱹᱱᱩᱜᱼᱟ apkg ᱦᱮᱱᱰᱮᱞ ᱞᱟᱹᱜᱤᱫ ᱾ ᱥᱟᱝᱪᱟᱣ ᱪᱟᱹᱞᱩ ᱟᱠᱟᱱᱟ&#8230;</string>
-    <string name="export_save_apkg_successful">Anki ᱯᱮᱠᱮᱡ ᱵᱮᱥ ᱪᱚᱨᱚᱠ ᱥᱟᱝᱪᱟᱣ ᱮᱱᱟ</string>
-    <string name="export_save_apkg_unsuccessful">Anki ᱯᱮᱠᱮᱡ ᱥᱟᱝᱪᱟᱣ ᱵᱷᱩᱞ</string>
-    <string name="export_share_title">Anki ᱵᱮᱵᱷᱟᱨ ᱠᱟᱛᱮ ᱯᱮᱠᱮᱡ ᱢᱮ</string>
-    <string name="export_email_subject">AnkiDroid ᱯᱷᱟᱥᱠᱟᱰ ᱵᱟᱡᱟᱠᱮᱜᱼᱟᱭ: %s</string>
+    <string name="export_save_apkg_successful">SpeedyCAT ᱯᱮᱠᱮᱡ ᱵᱮᱥ ᱪᱚᱨᱚᱠ ᱥᱟᱝᱪᱟᱣ ᱮᱱᱟ</string>
+    <string name="export_save_apkg_unsuccessful">SpeedyCAT ᱯᱮᱠᱮᱡ ᱥᱟᱝᱪᱟᱣ ᱵᱷᱩᱞ</string>
+    <string name="export_share_title">SpeedyCAT ᱵᱮᱵᱷᱟᱨ ᱠᱟᱛᱮ ᱯᱮᱠᱮᱡ ᱢᱮ</string>
+    <string name="export_email_subject">SpeedyCAT ᱯᱷᱟᱥᱠᱟᱰ ᱵᱟᱡᱟᱠᱮᱜᱼᱟᱭ: %s</string>
     <string name="export_email_text"><![CDATA[        ᱦᱤ!
         <br/><br/>
         ᱱᱚᱶᱟ ᱫᱚ ᱢᱤᱫ ᱟᱱᱠᱤ ᱯᱷᱞᱮᱥᱠᱟᱨᱰ ᱰᱮᱠ ᱠᱟᱱᱟ, ᱡᱟᱦᱟᱸ ᱫᱚ ᱟᱱᱠᱤᱰᱨᱚᱭᱮᱰ ᱠᱷᱚᱱ ᱦᱮᱡ ᱟᱠᱟᱱᱟ ᱾[᱑]
-        Anki ᱨᱮᱱᱟᱜ ᱢᱤᱫᱴᱮᱱ ᱦᱟᱹᱴᱤᱧ ᱵᱮᱵᱷᱟᱨ ᱠᱟᱛᱮ ᱱᱚᱶᱟ ᱮᱛᱦᱚᱵ ᱢᱮ[᱒] ᱟᱨ ᱟᱞᱜᱟ ᱟᱨ ᱠᱟᱹᱣᱰᱤᱟᱹᱨᱤ ᱛᱮ ᱥᱮᱪᱮᱫ ᱨᱮᱱᱟᱜ ᱥᱟᱨᱦᱟᱣ ᱮᱢ ᱢᱮ!<br/><br/>
+        SpeedyCAT ᱨᱮᱱᱟᱜ ᱢᱤᱫᱴᱮᱱ ᱦᱟᱹᱴᱤᱧ ᱵᱮᱵᱷᱟᱨ ᱠᱟᱛᱮ ᱱᱚᱶᱟ ᱮᱛᱦᱚᱵ ᱢᱮ[᱒] ᱟᱨ ᱟᱞᱜᱟ ᱟᱨ ᱠᱟᱹᱣᱰᱤᱟᱹᱨᱤ ᱛᱮ ᱥᱮᱪᱮᱫ ᱨᱮᱱᱟᱜ ᱥᱟᱨᱦᱟᱣ ᱮᱢ ᱢᱮ!<br/><br/>
         [1] %1$s<br/>
         [2] %2$s
         ]]></string>
@@ -192,18 +192,18 @@
     <string name="white_board_eraser_disabled">Eraser mode deactivated</string>
     <string comment="Progress amount e.g. \'28 MB/141 MB\'. %1$s is the current amount, %2$s is the max." name="progress_amount_bytes">%1$s/%2$s</string>
     <string name="media_file_size_warning_title">Media too large</string>
-    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the AnkiWeb limit of %3$s and cannot be synced. Add anyway?</string>
+    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the SpeedyCAT limit of %3$s and cannot be synced. Add anyway?</string>
     <string name="media_file_size_add_anyway">Add anyway</string>
     <!-- Whiteboard save image message in the Study Screen -->
     <string name="white_board_image_save_failed">ᱯᱩᱸᱰ ᱵᱚᱰ ᱪᱤᱛᱟᱹᱨ ᱥᱟᱱᱪᱟᱣ ᱵᱷᱩᱞ ᱾. %s</string>
     <string name="white_board_image_saved">ᱯᱩᱸᱰ ᱵᱚᱰ ᱪᱤᱛᱟᱹᱨ %s ᱛᱮ ᱥᱟᱱᱪᱟᱣ</string>
     <string name="title_whiteboard_editor" maxLength="28">ᱯᱩᱸᱰᱵᱚᱰ ᱮᱰᱤᱴᱚᱨ</string>
-    <string name="user_is_a_robot">ᱟᱹᱴᱚᱢᱮᱴᱮᱰ ᱴᱮᱥᱴ ᱯᱟᱱᱛᱮ ᱚᱲᱚᱠ ᱾ ᱡᱩᱫᱤ ᱟᱢ ᱦᱚᱲ ᱠᱟᱱᱟᱢ AnkiDroid ᱥᱚᱢᱯᱚᱨᱠ ᱠᱚᱢ</string>
+    <string name="user_is_a_robot">ᱟᱹᱴᱚᱢᱮᱴᱮᱰ ᱴᱮᱥᱴ ᱯᱟᱱᱛᱮ ᱚᱲᱚᱠ ᱾ ᱡᱩᱫᱤ ᱟᱢ ᱦᱚᱲ ᱠᱟᱱᱟᱢ SpeedyCAT ᱥᱚᱢᱯᱚᱨᱠ ᱠᱚᱢ</string>
     <!-- JS api -->
-    <string name="api_version_developer_contact">ᱱᱚᱶᱟ ᱠᱟᱰ ᱫᱚ ᱵᱟᱝ ᱥᱟᱯᱯᱚᱨᱴ AnkiDroid ᱯᱷᱤᱪᱚᱨ ᱠᱚ ᱵᱮᱵᱷᱟᱨ ᱮᱫ ᱟᱭ ᱾ %1$s ᱰᱮᱵᱷᱞᱚᱯᱟᱹᱨ ᱥᱚᱢᱯᱚᱨᱠ ᱠᱚᱢ, ᱟᱨ ᱵᱟᱝ ᱣᱤᱠᱤ ᱧᱮᱞ ᱢᱮ ᱾ %2$s</string>
+    <string name="api_version_developer_contact">ᱱᱚᱶᱟ ᱠᱟᱰ ᱫᱚ ᱵᱟᱝ ᱥᱟᱯᱯᱚᱨᱴ SpeedyCAT ᱯᱷᱤᱪᱚᱨ ᱠᱚ ᱵᱮᱵᱷᱟᱨ ᱮᱫ ᱟᱭ ᱾ %1$s ᱰᱮᱵᱷᱞᱚᱯᱟᱹᱨ ᱥᱚᱢᱯᱚᱨᱠ ᱠᱚᱢ, ᱟᱨ ᱵᱟᱝ ᱣᱤᱠᱤ ᱧᱮᱞ ᱢᱮ ᱾ %2$s</string>
     <string name="invalid_json_data">ᱠᱟᱰ ᱵᱷᱩᱞ ᱰᱟᱴᱟ ᱮᱢᱠᱮᱫ ᱟ ᱾ %s</string>
-    <string name="valid_js_api_version">ᱵᱷᱩᱯ AnkiDroid JS API ᱵᱷᱟᱹᱨᱥᱚᱱ ᱾%s ᱰᱮᱵᱷᱞᱚᱯᱟᱹᱨ ᱥᱚᱢᱯᱚᱨᱠ ᱠᱚᱢ, ᱟᱨ ᱵᱟᱝ ᱣᱤᱠᱤ ᱧᱮᱞ ᱢᱮ ᱾</string>
-    <string name="update_js_api_version">AnkiDroid JS API ᱟᱹᱯᱰᱮᱴ ᱢᱮᱱᱟᱜᱼᱟ ᱾ %s ᱰᱮᱵᱷᱞᱚᱯᱟᱹᱨ ᱥᱚᱢᱯᱚᱨᱠ ᱠᱚᱢ, ᱟᱨ ᱵᱟᱝ ᱣᱤᱠᱤ ᱧᱮᱞ ᱢᱮ ᱾</string>
+    <string name="valid_js_api_version">ᱵᱷᱩᱯ SpeedyCAT JS API ᱵᱷᱟᱹᱨᱥᱚᱱ ᱾%s ᱰᱮᱵᱷᱞᱚᱯᱟᱹᱨ ᱥᱚᱢᱯᱚᱨᱠ ᱠᱚᱢ, ᱟᱨ ᱵᱟᱝ ᱣᱤᱠᱤ ᱧᱮᱞ ᱢᱮ ᱾</string>
+    <string name="update_js_api_version">SpeedyCAT JS API ᱟᱹᱯᱰᱮᱴ ᱢᱮᱱᱟᱜᱼᱟ ᱾ %s ᱰᱮᱵᱷᱞᱚᱯᱟᱹᱨ ᱥᱚᱢᱯᱚᱨᱠ ᱠᱚᱢ, ᱟᱨ ᱵᱟᱝ ᱣᱤᱠᱤ ᱧᱮᱞ ᱢᱮ ᱾</string>
     <string name="reviewer_invalid_api_version_visit_documentation">ᱫᱮᱠᱷᱟᱣ</string>
     <string name="anki_js_error_code">(Error code: %d)</string>
     <!-- About AnkiDroid screen -->
@@ -214,8 +214,8 @@
     <!-- Deck Picker -->
     <string name="search_decks" maxLength="28">ᱰᱮᱠ ᱠᱚ ᱥᱮᱸᱫᱽᱨᱟ</string>
     <string name="ankidroid_init_failed_webview_title">Fatal error</string>
-    <string name="ankidroid_init_failed_webview">AnkiDroid ᱫᱚ ᱥᱭᱥᱴᱮᱢ ᱣᱮᱵᱼᱵᱷᱤᱭᱩ ᱪᱮᱛᱟᱱ ᱨᱮ ᱱᱤᱨᱵᱷᱚᱨᱚᱜ ᱠᱟᱱᱟᱭ ᱚᱠᱟ ᱫᱚ ᱱᱤᱛᱚᱜ ᱵᱟᱹᱱᱩᱜᱼᱟ ᱾ ᱱᱚᱶᱟ ᱫᱚ ᱛᱮᱵᱮ ᱦᱩᱭᱩᱜᱼᱟ ᱚᱠᱟ ᱡᱷᱚᱜ ᱥᱭᱥᱴᱟᱹᱢ ᱟᱹᱯᱰᱮᱴ ᱠᱚ ᱠᱚ ᱵᱚᱦᱟᱞ ᱮᱪᱟᱭ ᱾ ᱫᱚᱭᱟᱠᱟᱛᱮ ᱱᱟᱥᱮ ᱴᱤᱯᱤᱡ ᱜᱦᱟᱹᱬᱤᱡ ᱛᱟᱭᱚᱢ ᱫᱩᱦᱲᱟᱹ ᱪᱮᱥᱴᱟᱭ ᱢᱮ ᱾ \n\n%s</string>
-    <string name="ankidroid_init_failed_storage">AnkiDroid cannot access storage due to an Android error.\n\n%s</string>
+    <string name="ankidroid_init_failed_webview">SpeedyCAT ᱫᱚ ᱥᱭᱥᱴᱮᱢ ᱣᱮᱵᱼᱵᱷᱤᱭᱩ ᱪᱮᱛᱟᱱ ᱨᱮ ᱱᱤᱨᱵᱷᱚᱨᱚᱜ ᱠᱟᱱᱟᱭ ᱚᱠᱟ ᱫᱚ ᱱᱤᱛᱚᱜ ᱵᱟᱹᱱᱩᱜᱼᱟ ᱾ ᱱᱚᱶᱟ ᱫᱚ ᱛᱮᱵᱮ ᱦᱩᱭᱩᱜᱼᱟ ᱚᱠᱟ ᱡᱷᱚᱜ ᱥᱭᱥᱴᱟᱹᱢ ᱟᱹᱯᱰᱮᱴ ᱠᱚ ᱠᱚ ᱵᱚᱦᱟᱞ ᱮᱪᱟᱭ ᱾ ᱫᱚᱭᱟᱠᱟᱛᱮ ᱱᱟᱥᱮ ᱴᱤᱯᱤᱡ ᱜᱦᱟᱹᱬᱤᱡ ᱛᱟᱭᱚᱢ ᱫᱩᱦᱲᱟᱹ ᱪᱮᱥᱴᱟᱭ ᱢᱮ ᱾ \n\n%s</string>
+    <string name="ankidroid_init_failed_storage">SpeedyCAT cannot access storage due to an Android error.\n\n%s</string>
     <!-- A Menu item to change the Font Size (currently in the Note Editor) -->
     <string name="menu_font_size" maxLength="28">ᱪᱤᱠᱤ ᱢᱟᱯ</string>
     <string name="menu_show_toolbar" comment="Checkable item stating whether the note editor toolbar should be shown" maxLength="28">ᱴᱩᱞᱵᱟᱨ ᱫᱮᱠᱷᱟᱣᱢᱮ</string>
@@ -237,9 +237,9 @@
     <string name="note_editor_video_too_large">ᱵᱷᱤᱰᱤᱭᱳ ᱯᱷᱤᱞᱤᱢ ᱫᱚ ᱟᱹᱰᱤ ᱢᱟᱨᱟᱝ ᱠᱟᱱᱟ, ᱫᱟᱭᱟᱠᱟᱛᱮ ᱵᱷᱤᱰᱤᱭᱳ ᱥᱮᱞᱮᱫᱽ ᱢᱮ</string>
     <string name="note_editor_audio_too_large">ᱚᱰᱤᱭᱚ ᱯᱷᱤᱞ ᱫᱚ ᱟᱹᱰᱤ ᱢᱟᱨᱟᱝ ᱠᱟᱱᱟ, ᱫᱟᱭᱟ ᱠᱟᱛᱮ ᱚᱰᱤᱭᱚ ᱥᱮᱞᱮᱫ ᱢᱮ</string>
     <string name="ankidroid_cannot_open_after_backup_try_again" comment="After an Android backup is restored, AnkiDroid opens and shows this message.         Opening AnkiDroid again will work correctly">Android backup in progress. Please try again</string>
-    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">AnkiDroid ᱥᱚᱴᱠᱚᱴ ᱥᱮᱞᱮᱫ ᱪᱷᱚ ᱞᱟᱹᱜᱤᱫ ᱟᱢ iManager ᱵᱮᱵᱷᱟᱨ ᱫᱟᱲᱮᱭᱟᱜᱼᱟᱢ</string>
+    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">SpeedyCAT ᱥᱚᱴᱠᱚᱴ ᱥᱮᱞᱮᱫ ᱪᱷᱚ ᱞᱟᱹᱜᱤᱫ ᱟᱢ iManager ᱵᱮᱵᱷᱟᱨ ᱫᱟᱲᱮᱭᱟᱜᱼᱟᱢ</string>
     <string name="create_shortcut_error_miui" comment="Keep the message as short, as this is shown in a toast. %s is the app name: \'AnkiDroid\'">Allow ‘Home screen shortcuts’ in system settings for %s to add shortcuts</string>
-    <string name="create_shortcut_failed" comment="home screen == launcher">ᱟᱢᱟᱜ ᱚᱲᱟᱜ ᱥᱠᱨᱤᱱ AnkiDroid ᱥᱚᱴᱠᱚᱴ ᱵᱟᱝ ᱥᱮᱞᱮᱫ ᱪᱷᱚᱭᱟᱭ</string>
+    <string name="create_shortcut_failed" comment="home screen == launcher">ᱟᱢᱟᱜ ᱚᱲᱟᱜ ᱥᱠᱨᱤᱱ SpeedyCAT ᱥᱚᱴᱠᱚᱴ ᱵᱟᱝ ᱥᱮᱞᱮᱫ ᱪᱷᱚᱭᱟᱭ</string>
     <string name="create_shortcut_error">ᱥᱚᱴᱠᱚᱴ ᱥᱮᱞᱮᱫ ᱵᱷᱩᱞ: %s</string>
     <string name="note_editor_capitalize" comment="This is for a switch with a checkbox - on: enabled" maxLength="28">ᱟᱹᱭᱟᱹᱛ ᱢᱟᱨᱟᱝ ᱪᱷᱚᱭ ᱢᱮ</string>
     <string name="menu_scroll_toolbar" comment="Checkbox stating whether note editor toolbar is scrollable or stacked. Checked: Scroll" maxLength="28">ᱥᱠᱨᱚᱞ ᱴᱩᱞᱵᱟᱨ</string>
@@ -300,11 +300,11 @@
     <!-- App Intro -->
     <string name="intro_ankidroid_tagline_one">ᱠᱚᱢ ᱥᱮᱪᱮᱫ ᱢᱮ</string>
     <string name="intro_ankidroid_tagline_two">ᱰᱷᱮᱨ ᱵᱟᱧᱪᱟᱣ ᱢᱮ</string>
-    <string name="intro_short_ankidroid_explanation">Anki\'s card scheduler saves time by strengthening your weakest memories and preserving your strongest</string>
+    <string name="intro_short_ankidroid_explanation">SpeedyCAT\'s card scheduler saves time by strengthening your weakest memories and preserving your strongest</string>
     <string name="intro_get_started" comment="Action to start AnkiDroid for the first time without syncing from AnkiWeb">Get started</string>
-    <string name="intro_sync_from_ankiweb">AnkiWeb ᱠᱷᱚᱱ ᱥᱟᱸᱠᱨᱚᱱ ᱢᱮ</string>
+    <string name="intro_sync_from_ankiweb">SpeedyCAT ᱠᱷᱚᱱ ᱥᱟᱸᱠᱨᱚᱱ ᱢᱮ</string>
     <!-- IntentHandler -->
-    <string name="app_not_initialized_new">AnkiDroid ᱫᱚ ᱱᱤᱛ ᱦᱟᱵᱤᱡ ᱛᱮ ᱵᱟᱝ ᱮᱦᱚᱵ ᱟᱠᱟᱱᱟ. AnkiDroid ᱮᱛᱦᱚᱵ ᱢᱮ ᱟᱨ ᱟᱨᱦᱚᱸ ᱯᱨᱚᱵᱷᱟᱣ ᱢᱮ</string>
+    <string name="app_not_initialized_new">SpeedyCAT ᱫᱚ ᱱᱤᱛ ᱦᱟᱵᱤᱡ ᱛᱮ ᱵᱟᱝ ᱮᱦᱚᱵ ᱟᱠᱟᱱᱟ. SpeedyCAT ᱮᱛᱦᱚᱵ ᱢᱮ ᱟᱨ ᱟᱨᱦᱚᱸ ᱯᱨᱚᱵᱷᱟᱣ ᱢᱮ</string>
     <!-- Deck Creation -->
     <string name="deck_created">ᱰᱮᱠ ᱵᱮᱱᱟᱣ ᱟᱠᱟᱱᱟ</string>
     <string name="deck_renamed">ᱰᱮᱠ ᱧᱩᱛᱩᱢ ᱮᱱᱟ</string>

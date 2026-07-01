@@ -120,7 +120,7 @@
         <item quantity="one">%1$d minuto</item>
         <item quantity="other">%1$d minuto</item>
     </plurals>
-    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">AnkiDroid kard</string>
+    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">SpeedyCAT kard</string>
     <string name="note_editor_copy_note" maxLength="28">Kopyahin ang tala</string>
     <string name="card_editor_reposition_card" comment="reposition a card in the new queue" maxLength="28">Muling iposisyon</string>
     <string name="card_editor_reset_card" maxLength="28">I-reset ang pag-unlad</string>
@@ -132,31 +132,31 @@
     <string name="checks_action" maxLength="28">Suriin</string>
     <string name="unknown_type_field_warning">I-type ang sagot: hindi kilalang patlang %s</string>
     <string name="delete_deck" comment="Message on a progress bar starting a deck is being deleted.">Tinatanggal ang deck&#8230;</string>
-    <string name="info_rate">I-rate ang AnkiDroid</string>
+    <string name="info_rate">I-rate ang SpeedyCAT</string>
     <string name="import_title">Nag-aangkat</string>
     <string name="import_preparing_file">Preparing file for import&#8230;</string>
     <string name="import_message_add" comment="Adding a new deck to the collection (import)">Magdagdag</string>
     <string name="import_message_replace_confirm">Buburahin nito ang iyong umiiral na tipon at papalitan nito ng data mula sa file na %s</string>
     <string name="import_dialog_message_add">Idagdag ang \"%s\" sa tipon? Maaaring matagalan ito</string>
-    <string name="import_log_no_apkg">Hindi ito isang wastong Anki package file</string>
+    <string name="import_log_no_apkg">Hindi ito isang wastong SpeedyCAT package file</string>
     <string name="import_title_error" comment="Title of error dialog">Kamalian</string>
     <string name="import_error_handle_exception">Bigo sa pag-import sa file\n\n%s</string>
     <string name="import_error_not_apkg_extension">Ang filename na \"%s\" ay walang extension na .apkg o .colpkg</string>
-    <string name="import_error_load_imported_database">Hindi pa suportado ang mga pamalit na Anki Database (.anki2). Mangyaring tingnan ang manual para sa tagubilin sa pagpapalit.</string>
-    <string name="import_error_content_provider">Ang napiling file ay hindi awtomatikong ma-import ng AnkiDroid. Pakitingnan ang user manwal kung paano ang manwal na pag-import ng mga Anki file: \n%s</string>
+    <string name="import_error_load_imported_database">Hindi pa suportado ang mga pamalit na SpeedyCAT Database (.anki2). Mangyaring tingnan ang manual para sa tagubilin sa pagpapalit.</string>
+    <string name="import_error_content_provider">Ang napiling file ay hindi awtomatikong ma-import ng SpeedyCAT. Pakitingnan ang user manwal kung paano ang manwal na pag-import ng mga SpeedyCAT file: \n%s</string>
     <string name="import_error_copy_to_cache_title">Bigo sa pag-cache sa file</string>
     <string name="import_error_copy_to_cache_explanation" comment="The substitution is a list of suggested fixes in bullet point form">This is often caused by a bug in the app you used to select the file. Please try the following fixes:\n\n%s</string>
-    <string name="import_interrupted">Naudlot ang pag-angkat: Nasara ang AnkiDroid</string>
+    <string name="import_interrupted">Naudlot ang pag-angkat: Nasara ang SpeedyCAT</string>
     <string name="export_ready_title">Handa na ang pag-export</string>
     <string name="export_send_no_handlers">Walang magagamit na mga aplikasyon upang pangasiwaan ang apkg. Sini-save&#8230;</string>
-    <string name="export_save_apkg_successful">Matagumpay na na-isave ang Anki package</string>
-    <string name="export_save_apkg_unsuccessful">Bigo sa pag-save ng Anki package</string>
-    <string name="export_share_title">Ipadala ng Anki package gamit ang</string>
-    <string name="export_email_subject">Na-export ang AnkiDroid flashcards:%s</string>
+    <string name="export_save_apkg_successful">Matagumpay na na-isave ang SpeedyCAT package</string>
+    <string name="export_save_apkg_unsuccessful">Bigo sa pag-save ng SpeedyCAT package</string>
+    <string name="export_share_title">Ipadala ng SpeedyCAT package gamit ang</string>
+    <string name="export_email_subject">Na-export ang SpeedyCAT flashcards:%s</string>
     <string name="export_email_text"><![CDATA[        Kumusta!
         <br/><br/>
-        Ito ay isang deck ng Anki flashcards na ipinadala gamit ang AnkiDroid[1].
-        Subukang buksan ito gamit ang isa sa mga Anki distribtion[2] at tamasahin ang madali and mabisa na paraan ng pag-aaral!<br/><br/>
+        Ito ay isang deck ng SpeedyCAT flashcards na ipinadala gamit ang SpeedyCAT[1].
+        Subukang buksan ito gamit ang isa sa mga SpeedyCAT distribtion[2] at tamasahin ang madali and mabisa na paraan ng pag-aaral!<br/><br/>
         [1] %1$s<br/>
         [2] %2$s
         ]]></string>
@@ -192,18 +192,18 @@
     <string name="white_board_eraser_disabled">Eraser mode deactivated</string>
     <string comment="Progress amount e.g. \'28 MB/141 MB\'. %1$s is the current amount, %2$s is the max." name="progress_amount_bytes">%1$s/%2$s</string>
     <string name="media_file_size_warning_title">Media too large</string>
-    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the AnkiWeb limit of %3$s and cannot be synced. Add anyway?</string>
+    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the SpeedyCAT limit of %3$s and cannot be synced. Add anyway?</string>
     <string name="media_file_size_add_anyway">Add anyway</string>
     <!-- Whiteboard save image message in the Study Screen -->
     <string name="white_board_image_save_failed">Bigo sa pag-save ng litrato ng puting pisara. %s</string>
     <string name="white_board_image_saved">Isinave ang litrato ng puting pisara sa %s</string>
     <string name="title_whiteboard_editor" maxLength="28">Editor ng puting pisara</string>
-    <string name="user_is_a_robot">Natumbukan ang isang awtomatikong pagte-test. Kung ikaw ay isang tao, mangyaring kontakin ang AnkiDroid support.</string>
+    <string name="user_is_a_robot">Natumbukan ang isang awtomatikong pagte-test. Kung ikaw ay isang tao, mangyaring kontakin ang SpeedyCAT support.</string>
     <!-- JS api -->
-    <string name="api_version_developer_contact">Gumagamit ang card na ito ng mga feature na hindi suportado ng AnkiDroid. Mangyaring kontakin ang developer %1$s, o tingnan ang wiki. %2$s</string>
+    <string name="api_version_developer_contact">Gumagamit ang card na ito ng mga feature na hindi suportado ng SpeedyCAT. Mangyaring kontakin ang developer %1$s, o tingnan ang wiki. %2$s</string>
     <string name="invalid_json_data">Nagbigay ang card ng hindi wasto na dta. %s</string>
-    <string name="valid_js_api_version">Hindi wasto ang bersyon ng AnkiDroid JS API. Mangyaring kontakin ang developer %s, o tingnan ang wiki.</string>
-    <string name="update_js_api_version">May bagong update ang AnkiDroid JS API. Mangyaring kontakin ang developer %s, o tingnan ang wiki.</string>
+    <string name="valid_js_api_version">Hindi wasto ang bersyon ng SpeedyCAT JS API. Mangyaring kontakin ang developer %s, o tingnan ang wiki.</string>
+    <string name="update_js_api_version">May bagong update ang SpeedyCAT JS API. Mangyaring kontakin ang developer %s, o tingnan ang wiki.</string>
     <string name="reviewer_invalid_api_version_visit_documentation">Ipakita</string>
     <string name="anki_js_error_code">(Error code: %d)</string>
     <!-- About AnkiDroid screen -->
@@ -214,8 +214,8 @@
     <!-- Deck Picker -->
     <string name="search_decks" maxLength="28">Maghanap ng mga deck</string>
     <string name="ankidroid_init_failed_webview_title">Fatal error</string>
-    <string name="ankidroid_init_failed_webview">Umaasa ang AnkiDroid sa Pansistemang WebView kung saan ito ay hindi magamit. Nangyayari ito kung nag-iinstall ng update ang sistema. Mangyaring subukan muli makaraan ang ilang minuto.\n\n%s</string>
-    <string name="ankidroid_init_failed_storage">AnkiDroid cannot access storage due to an Android error.\n\n%s</string>
+    <string name="ankidroid_init_failed_webview">Umaasa ang SpeedyCAT sa Pansistemang WebView kung saan ito ay hindi magamit. Nangyayari ito kung nag-iinstall ng update ang sistema. Mangyaring subukan muli makaraan ang ilang minuto.\n\n%s</string>
+    <string name="ankidroid_init_failed_storage">SpeedyCAT cannot access storage due to an Android error.\n\n%s</string>
     <!-- A Menu item to change the Font Size (currently in the Note Editor) -->
     <string name="menu_font_size" maxLength="28">Laki ng font</string>
     <string name="menu_show_toolbar" comment="Checkable item stating whether the note editor toolbar should be shown" maxLength="28">Ipakita ang toolbar</string>
@@ -237,9 +237,9 @@
     <string name="note_editor_video_too_large">Ang video file ay masyadong malaki, pakilagay ang video nang mano-mano</string>
     <string name="note_editor_audio_too_large">Ang audio file ay masyadong malaki, pakilagay ang audio nang mano-mano</string>
     <string name="ankidroid_cannot_open_after_backup_try_again" comment="After an Android backup is restored, AnkiDroid opens and shows this message.         Opening AnkiDroid again will work correctly">Android backup in progress. Please try again</string>
-    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Maaring kailangang gumamit ng iManager upang payagan ang AnkiDroid na magdagdag ng mga gitis.</string>
+    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Maaring kailangang gumamit ng iManager upang payagan ang SpeedyCAT na magdagdag ng mga gitis.</string>
     <string name="create_shortcut_error_miui" comment="Keep the message as short, as this is shown in a toast. %s is the app name: \'AnkiDroid\'">Allow ‘Home screen shortcuts’ in system settings for %s to add shortcuts</string>
-    <string name="create_shortcut_failed" comment="home screen == launcher">Hindi pinpayagan ang AnkiDroid na maglagay ng gitis sa iyong home screen.</string>
+    <string name="create_shortcut_failed" comment="home screen == launcher">Hindi pinpayagan ang SpeedyCAT na maglagay ng gitis sa iyong home screen.</string>
     <string name="create_shortcut_error">Kamalian sa pagdagdag ng gitis: %s</string>
     <string name="note_editor_capitalize" comment="This is for a switch with a checkbox - on: enabled" maxLength="28">I-capitalize ang mga pangungusap</string>
     <string name="menu_scroll_toolbar" comment="Checkbox stating whether note editor toolbar is scrollable or stacked. Checked: Scroll" maxLength="28">Na-so-scroll ang toolbar</string>
@@ -300,11 +300,11 @@
     <!-- App Intro -->
     <string name="intro_ankidroid_tagline_one">Aralin ay Mabawasan</string>
     <string name="intro_ankidroid_tagline_two">Higitan pa ang Matandaan</string>
-    <string name="intro_short_ankidroid_explanation">Mas patitibaying ng card schedule ng Anki ang mga bagay na mahirap tandaan, at pananatilihin nito ang mga bagay na madali mong matandaan.</string>
+    <string name="intro_short_ankidroid_explanation">Mas patitibaying ng card schedule ng SpeedyCAT ang mga bagay na mahirap tandaan, at pananatilihin nito ang mga bagay na madali mong matandaan.</string>
     <string name="intro_get_started" comment="Action to start AnkiDroid for the first time without syncing from AnkiWeb">Get started</string>
-    <string name="intro_sync_from_ankiweb">Mag-sync mula sa AnkiWeb</string>
+    <string name="intro_sync_from_ankiweb">Mag-sync mula sa SpeedyCAT</string>
     <!-- IntentHandler -->
-    <string name="app_not_initialized_new">Hindi pa na-initialize ang AnkiDroid. Mangyaring buksan ulit ang AnkiDroid at subukan muli</string>
+    <string name="app_not_initialized_new">Hindi pa na-initialize ang SpeedyCAT. Mangyaring buksan ulit ang SpeedyCAT at subukan muli</string>
     <!-- Deck Creation -->
     <string name="deck_created">Nailikha ang deck</string>
     <string name="deck_renamed">Napangalanan muli ang deck</string>

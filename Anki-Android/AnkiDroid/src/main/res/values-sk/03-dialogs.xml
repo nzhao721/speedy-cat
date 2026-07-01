@@ -45,10 +45,10 @@
     <string name="answering_error_title">Chyba databázy</string>
     <string name="answering_error_message">Zápis zbierky zlyhal. Databáza môže byť poškodená alebo na úložisku nie je dostatok miesta.\n\nAk sa to stáva častejšie, skontrolujte databázu, opravte zbierku alebo ju obnovte zo zálohy. Ak to chcete urobiť, stlačte  „možnosti” .\n\Môže ísť aj o chybu aplikácie; prosím oznámte túto chybu aby sme to mohli skontrolovať.</string>
     <string name="answering_error_report">Nahlásiť chybu</string>
-    <string name="storage_full_message">There is not enough free storage space to open AnkiDroid. Free up some space to continue.</string>
+    <string name="storage_full_message">There is not enough free storage space to open SpeedyCAT. Free up some space to continue.</string>
     <string name="repair_deck_dialog">Naozaj chcete skúsiť opraviť databázu?\n\nPred začatím pokusu o opravenie bude vytvorená kópia v podpriečinku \"%s\".</string>
     <string name="intent_aedict_empty">Kategória \"predvolený\" je prázdna</string>
-    <string name="intent_aedict_category">Ak chcete pridať kartičky do AnkiDroid, odstráňte všetky kategórie poznámkového bloku alebo pridajte jednu s názvom \"predvolený\"</string>
+    <string name="intent_aedict_category">Ak chcete pridať kartičky do SpeedyCAT, odstráňte všetky kategórie poznámkového bloku alebo pridajte jednu s názvom \"predvolený\"</string>
     <string name="custom_study_new_extend">Zvýšiť/znížiť („-3”) dnešný limit nových kartičiek o</string>
     <string name="custom_study_rev_extend">Zvýšiť/znížiť („-3”) dnešný limit kartičiek na zopakovanie o</string>
     <string name="custom_study_forgotten">Zopakovať si kartičky zabudnuté za posledných x dní:</string>
@@ -58,7 +58,7 @@
     <string name="storage_full_title">Úložisko je plné</string>
     <string name="storage_almost_full_title">Úložisko je takmer plné</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">Nedostatok miesta</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">AnkiDroid potrebuje %s voľného ukladacieho priestoru na pokračovanie. Prosím, uvoľnite priestor</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">SpeedyCAT potrebuje %s voľného ukladacieho priestoru na pokračovanie. Prosím, uvoľnite priestor</string>
     <string name="restore_backup_title">Obnoviť zálohu?</string>
     <string name="restore_backup">Vaša kolekcia bude nahradená staršou kópiou. Všetky neuložené zmeny budú stratené.</string>
     <string name="restore_backup_choose_another">Ďalšie zálohy</string>
@@ -121,9 +121,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">Databáza uzamknutá</string>
-    <string name="database_locked_summary">Databázu AnkiDroid používa iná aplikácia. Zavrite, prosím, danú aplikáciu a potom znovu otvorte AnkiDroid.</string>
+    <string name="database_locked_summary">Databázu SpeedyCAT používa iná aplikácia. Zavrite, prosím, danú aplikáciu a potom znovu otvorte SpeedyCAT.</string>
     <string name="incompatible_database_version_title">Nekompatibilná verzia databázy</string>
-    <string name="incompatible_database_version_summary">Databáza je pokročilejšej verzie ako vie AnkiDroid pracovať. Aktualizujte AnkiDroid alebo zmeňte verziu databázy na nižšiu verziu\n\nPodporovaná verzia: %1$d\nVerzia databázy: %2$d\n\nNasledovné možnosti obnovenia prepíšu vašu aktuálnu zbierku, pravdepodobne kompatibilnou verziou databázy:</string>
+    <string name="incompatible_database_version_summary">Databáza je pokročilejšej verzie ako vie SpeedyCAT pracovať. Aktualizujte SpeedyCAT alebo zmeňte verziu databázy na nižšiu verziu\n\nPodporovaná verzia: %1$d\nVerzia databázy: %2$d\n\nNasledovné možnosti obnovenia prepíšu vašu aktuálnu zbierku, pravdepodobne kompatibilnou verziou databázy:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">Použil sa obrázok pozadia</string>
     <string name="background_image_removed">Obrázok pozadia bol odstránený</string>
@@ -144,29 +144,29 @@
     <string name="locale_selection_dialog_title_new">Nastaviť jazyk</string>
     <string name="locale_selection_dialog_summary">Niektoré multimediálne klávesnice, akými sú GBoard podporujú zmenu jazyka pri úprave textu\n\nProsím, vyžiadajte si od svojho výrobcu klávesnice prvok “setImeHintLocales”, ak vaša klávesnica nemení jazyk.</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">Používanie AnkiDroid-u</string>
-    <string name="help_item_ankidroid_manual">AnkiDroid manual</string>
-    <string name="help_item_anki_manual">Anki manual</string>
-    <string name="help_item_ankidroid_faq">AnkiDroid FAQ</string>
+    <string name="help_title_using_ankidroid">Používanie SpeedyCAT-u</string>
+    <string name="help_item_ankidroid_manual">SpeedyCAT manual</string>
+    <string name="help_item_anki_manual">SpeedyCAT manual</string>
+    <string name="help_item_ankidroid_faq">SpeedyCAT FAQ</string>
     <string name="help_title_get_help">Vyhľadať pomoc</string>
     <string name="help_item_mailing_list">Zoznam adries</string>
     <string name="help_item_reddit">Reddit</string>
     <string name="help_item_report_bug">Nahlásiť chybu</string>
-    <string name="help_title_support_ankidroid" maxLength="28">Podporte AnkiDroid</string>
+    <string name="help_title_support_ankidroid" maxLength="28">Podporte SpeedyCAT</string>
     <string name="help_item_support_opencollective_donate">Prispejte</string>
     <string name="help_item_support_develop_ankidroid">Developér</string>
     <string name="help_item_support_rate_ankidroid">Ohodnotiť</string>
     <string name="help_item_support_other_ankidroid">Ďalšie</string>
     <string name="multimedia_editor_trans_translate">Preložiť</string>
     <string name="help_title_community">Komunita</string>
-    <string name="help_item_anki_forums">Fórum Anki</string>
+    <string name="help_item_anki_forums">Fórum SpeedyCAT</string>
     <string name="help_item_discord">Discord</string>
     <string name="help_item_facebook">Facebook</string>
     <string name="help_item_twitter">Twitter</string>
     <string name="help_title_privacy">Súkromie</string>
-    <string name="help_item_ankidroid_privacy_policy">Zásady ochrany osobných údajov AnkiDroid</string>
-    <string name="help_item_ankiweb_privacy_policy">Zásady ochrany osobných údajov AnkiWeb</string>
-    <string name="help_item_ankiweb_terms_and_conditions">Podmienky AnkiWeb</string>
+    <string name="help_item_ankidroid_privacy_policy">Zásady ochrany osobných údajov SpeedyCAT</string>
+    <string name="help_item_ankiweb_privacy_policy">Zásady ochrany osobných údajov SpeedyCAT</string>
+    <string name="help_item_ankiweb_terms_and_conditions">Podmienky SpeedyCAT</string>
     <string name="help_title_send_exception">Odoslať správu o riešení problémov</string>
     <string name="help_dialog_exception_report_debounce">Správa bola odoslaná</string>
     <string name="help_dialog_exception_report_sent">Hlásenie odoslané.</string>

@@ -120,7 +120,7 @@
         <item quantity="one">%1$d minuutissa</item>
         <item quantity="other">%1$d minuutissa</item>
     </plurals>
-    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">AnkiDroid-kortti</string>
+    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">SpeedyCAT-kortti</string>
     <string name="note_editor_copy_note" maxLength="28">Kopioi muistiinpano</string>
     <string name="card_editor_reposition_card" comment="reposition a card in the new queue" maxLength="28">Uudelleenasettele</string>
     <string name="card_editor_reset_card" maxLength="28">Tyhjennä edistyminen</string>
@@ -132,31 +132,31 @@
     <string name="checks_action" maxLength="28">Tarkista</string>
     <string name="unknown_type_field_warning">Kirjoita vastaus: tuntematon kenttä %s</string>
     <string name="delete_deck" comment="Message on a progress bar starting a deck is being deleted.">Poistetaan pakka&#8230;</string>
-    <string name="info_rate">Arvostele AnkiDroid</string>
+    <string name="info_rate">Arvostele SpeedyCAT</string>
     <string name="import_title">Tuodaan</string>
     <string name="import_preparing_file">Valmistellaan tiedostoa tuontiin&#8230;</string>
     <string name="import_message_add" comment="Adding a new deck to the collection (import)">Lisää</string>
     <string name="import_message_replace_confirm">Poistetaan nykyinen kokoelma ja korvataan se tiedoston %s tiedoilla. Haluatko varmasti jatkaa?</string>
     <string name="import_dialog_message_add">Lisää “%s” kokoelmaan? Tässä voi kestää kauan</string>
-    <string name="import_log_no_apkg">Tämä ei ole salittu Anki-tiedosto</string>
+    <string name="import_log_no_apkg">Tämä ei ole salittu SpeedyCAT-tiedosto</string>
     <string name="import_title_error" comment="Title of error dialog">Virhe</string>
     <string name="import_error_handle_exception">Tiedoston tuonti epäonnistui\n\n%s</string>
     <string name="import_error_not_apkg_extension">Tiedostolla ”%s” ei ole .apkg tai .colpkg päätettä</string>
     <string name="import_error_load_imported_database">Ankin tietokannan (.anki2) korvaamista ei vielä tueta. Katso korvausohjeet käyttöoppaasta.</string>
-    <string name="import_error_content_provider">Valittua tiedostoa ei voitu tuoda automaattisesti AnkiDroidiin. Katso käyttöohjeesta, kuinka tuoda manuaalisesti Anki-tiedostoja: \n%s</string>
+    <string name="import_error_content_provider">Valittua tiedostoa ei voitu tuoda automaattisesti SpeedyCATiin. Katso käyttöohjeesta, kuinka tuoda manuaalisesti SpeedyCAT-tiedostoja: \n%s</string>
     <string name="import_error_copy_to_cache_title">Tiedoston tallentaminen välimuistiin epäonnistui</string>
     <string name="import_error_copy_to_cache_explanation" comment="The substitution is a list of suggested fixes in bullet point form">Tämä johtuu usein viasta sovelluksessa, jota käytit tiedoston valitsemiseen. Kokeile seuraavia korjauksia:\n\n%s</string>
-    <string name="import_interrupted">Tuonti keskeytyi: AnkiDroid suljettiin</string>
+    <string name="import_interrupted">Tuonti keskeytyi: SpeedyCAT suljettiin</string>
     <string name="export_ready_title">Vienti valmis</string>
     <string name="export_send_no_handlers">Sovellusta apkg:n käsittelyyn ei ole olemassa. Tallennetaan&#8230;</string>
-    <string name="export_save_apkg_successful">Anki-tiedosto tallennettu.</string>
-    <string name="export_save_apkg_unsuccessful">Anki-tiedoston tallennus epäonnistui.</string>
-    <string name="export_share_title">Lähetä Anki-pakkaus käyttäen</string>
-    <string name="export_email_subject">AnkiDroid toi kortit: %s</string>
+    <string name="export_save_apkg_successful">SpeedyCAT-tiedosto tallennettu.</string>
+    <string name="export_save_apkg_unsuccessful">SpeedyCAT-tiedoston tallennus epäonnistui.</string>
+    <string name="export_share_title">Lähetä SpeedyCAT-pakkaus käyttäen</string>
+    <string name="export_email_subject">SpeedyCAT toi kortit: %s</string>
     <string name="export_email_text"><![CDATA[        Hei!
         <br/><br/>
-        Tässä on Anki-opiskelukorttipakka, joka on lähetetty AnkiDroidista[1].
-        Kokeile avata se käyttämällä jotakin Anki-jakelua[2] ja opi uutta helposti ja tehokkaasti!<br/><br/>
+        Tässä on SpeedyCAT-opiskelukorttipakka, joka on lähetetty SpeedyCATista[1].
+        Kokeile avata se käyttämällä jotakin SpeedyCAT-jakelua[2] ja opi uutta helposti ja tehokkaasti!<br/><br/>
         [1] %1$s<br/>
         [2] %2$s
         ]]></string>
@@ -192,18 +192,18 @@
     <string name="white_board_eraser_disabled">Pyyhintila pois päältä</string>
     <string comment="Progress amount e.g. \'28 MB/141 MB\'. %1$s is the current amount, %2$s is the max." name="progress_amount_bytes">%1$s/%2$s</string>
     <string name="media_file_size_warning_title">Media too large</string>
-    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the AnkiWeb limit of %3$s and cannot be synced. Add anyway?</string>
+    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the SpeedyCAT limit of %3$s and cannot be synced. Add anyway?</string>
     <string name="media_file_size_add_anyway">Add anyway</string>
     <!-- Whiteboard save image message in the Study Screen -->
     <string name="white_board_image_save_failed">Kirjoitustaulun kuvan tallentaminen epäonnistui. %s</string>
     <string name="white_board_image_saved">Kirjoitustaulun kuva tallennettu sijaintiin %s</string>
     <string name="title_whiteboard_editor" maxLength="28">Valkotaulu editori</string>
-    <string name="user_is_a_robot">Automaattinen testi havaittu. Jos olet ihminen, ota yhteyttä AnkiDroidin tukeen.</string>
+    <string name="user_is_a_robot">Automaattinen testi havaittu. Jos olet ihminen, ota yhteyttä SpeedyCATin tukeen.</string>
     <!-- JS api -->
-    <string name="api_version_developer_contact">Tämä kortti käyttää AnkiDroidin ominaisuuksia, joita ei tueta. Ota yhteyttä kehittäjään %1$s, tai katso wiki. %2$s</string>
+    <string name="api_version_developer_contact">Tämä kortti käyttää SpeedyCATin ominaisuuksia, joita ei tueta. Ota yhteyttä kehittäjään %1$s, tai katso wiki. %2$s</string>
     <string name="invalid_json_data">Kortti antoi virheellisiä tietoja. %s</string>
-    <string name="valid_js_api_version">Virheellinen AnkiDroid JS API -versio. Ota yhteyttä kehittäjään %s, tai katso wiki.</string>
-    <string name="update_js_api_version">AnkiDroid JS API -päivitys saatavilla. Ota yhteyttä kehittäjään %s tai katso wiki</string>
+    <string name="valid_js_api_version">Virheellinen SpeedyCAT JS API -versio. Ota yhteyttä kehittäjään %s, tai katso wiki.</string>
+    <string name="update_js_api_version">SpeedyCAT JS API -päivitys saatavilla. Ota yhteyttä kehittäjään %s tai katso wiki</string>
     <string name="reviewer_invalid_api_version_visit_documentation">Näytä</string>
     <string name="anki_js_error_code">(Error code: %d)</string>
     <!-- About AnkiDroid screen -->
@@ -214,8 +214,8 @@
     <!-- Deck Picker -->
     <string name="search_decks" maxLength="28">Etsi pakkoja</string>
     <string name="ankidroid_init_failed_webview_title">Fatal error</string>
-    <string name="ankidroid_init_failed_webview">AnkiDroid vaatii toimiakseen System WebView -palvelun, joka ei ole käytettävissä. Näin voi käydä, jos järjestelmän päivitys on käynnissä. Yritä uudelleen muutaman minuutin kuluttua.\n\n%s</string>
-    <string name="ankidroid_init_failed_storage">AnkiDroid ei voi käyttää tallennustilaa Android-virheen vuoksi.\n\n%s</string>
+    <string name="ankidroid_init_failed_webview">SpeedyCAT vaatii toimiakseen System WebView -palvelun, joka ei ole käytettävissä. Näin voi käydä, jos järjestelmän päivitys on käynnissä. Yritä uudelleen muutaman minuutin kuluttua.\n\n%s</string>
+    <string name="ankidroid_init_failed_storage">SpeedyCAT ei voi käyttää tallennustilaa Android-virheen vuoksi.\n\n%s</string>
     <!-- A Menu item to change the Font Size (currently in the Note Editor) -->
     <string name="menu_font_size" maxLength="28">Fonttikoko</string>
     <string name="menu_show_toolbar" comment="Checkable item stating whether the note editor toolbar should be shown" maxLength="28">Näytä työkalupalkki</string>
@@ -237,9 +237,9 @@
     <string name="note_editor_video_too_large">Videotiedosto on liian suuri, aseta video käsin</string>
     <string name="note_editor_audio_too_large">Äänitiedosto on liian suuri, aseta ääni käsin</string>
     <string name="ankidroid_cannot_open_after_backup_try_again" comment="After an Android backup is restored, AnkiDroid opens and shows this message.         Opening AnkiDroid again will work correctly">Android varmuuskopiointi käynnissä. Yritä uudelleen</string>
-    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Saatat joutua käyttämään iManageria, jotta AnkiDroid voi lisätä pikanäppäimiä.</string>
+    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Saatat joutua käyttämään iManageria, jotta SpeedyCAT voi lisätä pikanäppäimiä.</string>
     <string name="create_shortcut_error_miui" comment="Keep the message as short, as this is shown in a toast. %s is the app name: \'AnkiDroid\'">Allow ‘Home screen shortcuts’ in system settings for %s to add shortcuts</string>
-    <string name="create_shortcut_failed" comment="home screen == launcher">Aloitusnäyttösi ei salli AnkiDroidin lisätä pikakuvakkeita</string>
+    <string name="create_shortcut_failed" comment="home screen == launcher">Aloitusnäyttösi ei salli SpeedyCATin lisätä pikakuvakkeita</string>
     <string name="create_shortcut_error">Virhe lisättäessä pikakuvaketta: %s</string>
     <string name="note_editor_capitalize" comment="This is for a switch with a checkbox - on: enabled" maxLength="28">Aloita lauseet isolla alkukirjaimella</string>
     <string name="menu_scroll_toolbar" comment="Checkbox stating whether note editor toolbar is scrollable or stacked. Checked: Scroll" maxLength="28">Vieritä työkalupalkkia</string>
@@ -300,11 +300,11 @@
     <!-- App Intro -->
     <string name="intro_ankidroid_tagline_one">Opiskele vähemmän</string>
     <string name="intro_ankidroid_tagline_two">Muista enemmän</string>
-    <string name="intro_short_ankidroid_explanation">Anki aikatauluttaa opettelukortit ja tehostaa opiskeluasi. Kertaa haastavia asioita unohtamatta jo hallitsemaasi.</string>
+    <string name="intro_short_ankidroid_explanation">SpeedyCAT aikatauluttaa opettelukortit ja tehostaa opiskeluasi. Kertaa haastavia asioita unohtamatta jo hallitsemaasi.</string>
     <string name="intro_get_started" comment="Action to start AnkiDroid for the first time without syncing from AnkiWeb">Get started</string>
-    <string name="intro_sync_from_ankiweb">Synkronoi AnkiWebistä</string>
+    <string name="intro_sync_from_ankiweb">Synkronoi SpeedyCATistä</string>
     <!-- IntentHandler -->
-    <string name="app_not_initialized_new">AnkiDroidia ei ole vielä alustettu. Avaa AnkiDroid ja yritä uudelleen</string>
+    <string name="app_not_initialized_new">SpeedyCATia ei ole vielä alustettu. Avaa SpeedyCAT ja yritä uudelleen</string>
     <!-- Deck Creation -->
     <string name="deck_created">Pakka luotu</string>
     <string name="deck_renamed">Pakka nimetty uudelleen</string>

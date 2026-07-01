@@ -120,7 +120,7 @@
         <item quantity="one">%1$d perc</item>
         <item quantity="other">%1$d perc</item>
     </plurals>
-    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">AnkiDroid Kártya</string>
+    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">SpeedyCAT Kártya</string>
     <string name="note_editor_copy_note" maxLength="28">Jegyzet másolása</string>
     <string name="card_editor_reposition_card" comment="reposition a card in the new queue" maxLength="28">Áthelyezés</string>
     <string name="card_editor_reset_card" maxLength="28">Folyamat visszaállítása</string>
@@ -132,31 +132,31 @@
     <string name="checks_action" maxLength="28">Ellenőrzés</string>
     <string name="unknown_type_field_warning">Válaszadás: ismeretlen mező: %s</string>
     <string name="delete_deck" comment="Message on a progress bar starting a deck is being deleted.">Pakli törlése&#8230;\nKérlek, várj&#8230;</string>
-    <string name="info_rate">AnkiDroid értékelése</string>
+    <string name="info_rate">SpeedyCAT értékelése</string>
     <string name="import_title">Importálás</string>
     <string name="import_preparing_file">Fájl előkészítése importálásra</string>
     <string name="import_message_add" comment="Adding a new deck to the collection (import)">Hozzáadás</string>
     <string name="import_message_replace_confirm">Ez a művelet törölni fogja a már meglévő gyűjteményed és lecseréli a %s fájl tartalmával. Biztos vagy benne?</string>
     <string name="import_dialog_message_add">“%s” hozzáadása a gyűjteményhez? Ez eltarthat egy ideig.</string>
-    <string name="import_log_no_apkg">Ez nem egy érvényes Anki csomag fájl</string>
+    <string name="import_log_no_apkg">Ez nem egy érvényes SpeedyCAT csomag fájl</string>
     <string name="import_title_error" comment="Title of error dialog">Hiba</string>
     <string name="import_error_handle_exception">Nem sikerült importálni a fájlt\n\n%s</string>
     <string name="import_error_not_apkg_extension">A \"%s\" fájlnévnek nincsen .apkg vagy .colpkg kiterjesztése</string>
-    <string name="import_error_load_imported_database">Az Anki Adatbázis (.anki2) csere még nem támogatott. Kérjük olvassa el az útmutatót az instrukciókhoz.</string>
-    <string name="import_error_content_provider">A kiválasztott fájl nem importálható automatikusan. Olvasd el a felhasználói kézikönyvet, hogy megtudd, hogyan importálhatsz manuálisan Anki fájlokat:\n%s</string>
+    <string name="import_error_load_imported_database">Az SpeedyCAT Adatbázis (.anki2) csere még nem támogatott. Kérjük olvassa el az útmutatót az instrukciókhoz.</string>
+    <string name="import_error_content_provider">A kiválasztott fájl nem importálható automatikusan. Olvasd el a felhasználói kézikönyvet, hogy megtudd, hogyan importálhatsz manuálisan SpeedyCAT fájlokat:\n%s</string>
     <string name="import_error_copy_to_cache_title">Nem sikerült gyorsítótárba helyezni a fájlt</string>
     <string name="import_error_copy_to_cache_explanation" comment="The substitution is a list of suggested fixes in bullet point form">This is often caused by a bug in the app you used to select the file. Please try the following fixes:\n\n%s</string>
     <string name="import_interrupted">Importálás megszakítva</string>
     <string name="export_ready_title">Exportálás kész</string>
     <string name="export_send_no_handlers">Nincs elérhető alkalmazás, ami kezelni tudja az apkg-t. Mentés&#8230;</string>
-    <string name="export_save_apkg_successful">Az Anki csomag sikeresen mentve</string>
-    <string name="export_save_apkg_unsuccessful">Az Anki csomag mentése sikertelen</string>
-    <string name="export_share_title">Anki csomag küldése</string>
-    <string name="export_email_subject">AnkiDroid exportált index kártyák: %s</string>
+    <string name="export_save_apkg_successful">Az SpeedyCAT csomag sikeresen mentve</string>
+    <string name="export_save_apkg_unsuccessful">Az SpeedyCAT csomag mentése sikertelen</string>
+    <string name="export_share_title">SpeedyCAT csomag küldése</string>
+    <string name="export_email_subject">SpeedyCAT exportált index kártyák: %s</string>
     <string name="export_email_text"><![CDATA[        Hi!
         <br/><br/>
-        Ez egy Anki pakli amit az AnkiDroid[1] küldött.
-        Próbáld megnyitni valamelyik Anki disztribúcióval[2] és élvezd a könnyű és hatékony tanulást!<br/><br/>
+        Ez egy SpeedyCAT pakli amit az SpeedyCAT[1] küldött.
+        Próbáld megnyitni valamelyik SpeedyCAT disztribúcióval[2] és élvezd a könnyű és hatékony tanulást!<br/><br/>
         [1] %1$s<br/>
         [2] %2$s
         ]]></string>
@@ -192,18 +192,18 @@
     <string name="white_board_eraser_disabled">Eraser mode deactivated</string>
     <string comment="Progress amount e.g. \'28 MB/141 MB\'. %1$s is the current amount, %2$s is the max." name="progress_amount_bytes">%1$s/%2$s</string>
     <string name="media_file_size_warning_title">Media too large</string>
-    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the AnkiWeb limit of %3$s and cannot be synced. Add anyway?</string>
+    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the SpeedyCAT limit of %3$s and cannot be synced. Add anyway?</string>
     <string name="media_file_size_add_anyway">Add anyway</string>
     <!-- Whiteboard save image message in the Study Screen -->
     <string name="white_board_image_save_failed">A rajztábla kép mentése sikertelen. %s</string>
     <string name="white_board_image_saved">A rajztábla kép elmentve %s-ba</string>
     <string name="title_whiteboard_editor" maxLength="28">Rajztábla szerkesztő</string>
-    <string name="user_is_a_robot">Felismert automatizált teszt. Ha te csináltad, vedd fel a kapcsolatot az AnkiDroid támogatással</string>
+    <string name="user_is_a_robot">Felismert automatizált teszt. Ha te csináltad, vedd fel a kapcsolatot az SpeedyCAT támogatással</string>
     <!-- JS api -->
-    <string name="api_version_developer_contact">Ez a kártya nem támogatott AnkiDroid funkciókat használ. Vegye fel a kapcsolatot a fejlesztővel %1$s, vagy tekintse meg a wikit . %2$s</string>
+    <string name="api_version_developer_contact">Ez a kártya nem támogatott SpeedyCAT funkciókat használ. Vegye fel a kapcsolatot a fejlesztővel %1$s, vagy tekintse meg a wikit . %2$s</string>
     <string name="invalid_json_data">Érvénytelen adatok a kártyákon. %s</string>
-    <string name="valid_js_api_version">Érvénytelen AnkiDroid JS API verzió. Vegye fel a kapcsolatot a fejlesztővel  %s, vagy a wiki megtekintése</string>
-    <string name="update_js_api_version">Az AnkiDroid JS API frissítés elérhető. Vegye fel a kapcsolatot a fejlesztővel %s, vagy a wiki megtekintése</string>
+    <string name="valid_js_api_version">Érvénytelen SpeedyCAT JS API verzió. Vegye fel a kapcsolatot a fejlesztővel  %s, vagy a wiki megtekintése</string>
+    <string name="update_js_api_version">Az SpeedyCAT JS API frissítés elérhető. Vegye fel a kapcsolatot a fejlesztővel %s, vagy a wiki megtekintése</string>
     <string name="reviewer_invalid_api_version_visit_documentation">Nézet</string>
     <string name="anki_js_error_code">(Error code: %d)</string>
     <!-- About AnkiDroid screen -->
@@ -214,8 +214,8 @@
     <!-- Deck Picker -->
     <string name="search_decks" maxLength="28">Keresés a paklikban</string>
     <string name="ankidroid_init_failed_webview_title">Fatal error</string>
-    <string name="ankidroid_init_failed_webview">Az AnkiDroid a System WebView-t használja, ami jelenleg nem elérhető. Lehetséges, hogy a rendszer frissítéseket telepít. Próbáld újra pár perc múlva.\n\n%s</string>
-    <string name="ankidroid_init_failed_storage">AnkiDroid cannot access storage due to an Android error.\n\n%s</string>
+    <string name="ankidroid_init_failed_webview">Az SpeedyCAT a System WebView-t használja, ami jelenleg nem elérhető. Lehetséges, hogy a rendszer frissítéseket telepít. Próbáld újra pár perc múlva.\n\n%s</string>
+    <string name="ankidroid_init_failed_storage">SpeedyCAT cannot access storage due to an Android error.\n\n%s</string>
     <!-- A Menu item to change the Font Size (currently in the Note Editor) -->
     <string name="menu_font_size" maxLength="28">Betűméret</string>
     <string name="menu_show_toolbar" comment="Checkable item stating whether the note editor toolbar should be shown" maxLength="28">Eszköztár megjelenítése</string>
@@ -237,9 +237,9 @@
     <string name="note_editor_video_too_large">The video file is too large, please insert the video manually</string>
     <string name="note_editor_audio_too_large">The audio file is too large, please insert the audio manually</string>
     <string name="ankidroid_cannot_open_after_backup_try_again" comment="After an Android backup is restored, AnkiDroid opens and shows this message.         Opening AnkiDroid again will work correctly">Android backup in progress. Please try again</string>
-    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Az AnkiDroidban rövidítések használatához szükséges lehet az iManager használata</string>
+    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Az SpeedyCATban rövidítések használatához szükséges lehet az iManager használata</string>
     <string name="create_shortcut_error_miui" comment="Keep the message as short, as this is shown in a toast. %s is the app name: \'AnkiDroid\'">Allow ‘Home screen shortcuts’ in system settings for %s to add shortcuts</string>
-    <string name="create_shortcut_failed" comment="home screen == launcher">A Kezdőképernyőd nem engedi AnkiDroid közvetlen elérések elhelyezését</string>
+    <string name="create_shortcut_failed" comment="home screen == launcher">A Kezdőképernyőd nem engedi SpeedyCAT közvetlen elérések elhelyezését</string>
     <string name="create_shortcut_error">Hiba történt a közvetlen elérés hozzáadásakor: %s</string>
     <string name="note_editor_capitalize" comment="This is for a switch with a checkbox - on: enabled" maxLength="28">Mondatok nagybetűsre</string>
     <string name="menu_scroll_toolbar" comment="Checkbox stating whether note editor toolbar is scrollable or stacked. Checked: Scroll" maxLength="28">görgethető eszközsor</string>
@@ -301,11 +301,11 @@
     <!-- App Intro -->
     <string name="intro_ankidroid_tagline_one">Tanulj kevesebbet</string>
     <string name="intro_ankidroid_tagline_two">Jegyezz meg többet</string>
-    <string name="intro_short_ankidroid_explanation">Az Anki kártyatervező időt spórol: megerősíti a leggyengébb emlékeidet, és megőrzi a legerősebbeket.</string>
+    <string name="intro_short_ankidroid_explanation">Az SpeedyCAT kártyatervező időt spórol: megerősíti a leggyengébb emlékeidet, és megőrzi a legerősebbeket.</string>
     <string name="intro_get_started" comment="Action to start AnkiDroid for the first time without syncing from AnkiWeb">Get started</string>
-    <string name="intro_sync_from_ankiweb">Szinkronizálás AnkiWebről</string>
+    <string name="intro_sync_from_ankiweb">Szinkronizálás SpeedyCATről</string>
     <!-- IntentHandler -->
-    <string name="app_not_initialized_new">AnkiDroid is not initialized yet. Please open AnkiDroid and try again</string>
+    <string name="app_not_initialized_new">SpeedyCAT is not initialized yet. Please open SpeedyCAT and try again</string>
     <!-- Deck Creation -->
     <string name="deck_created">Pakli elkészült</string>
     <string name="deck_renamed">Pakli átnevezve</string>

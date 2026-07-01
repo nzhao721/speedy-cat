@@ -39,12 +39,12 @@
         <item quantity="other">%d 𐌺𐌰𐍂𐍄𐍉𐍃 𐌰𐍆𐍄𐍂𐌰𐌻𐌰𐌲𐌹𐌳𐍉𐍃</item>
     </plurals>
     <string name="answering_error_title">𐌰𐌹𐍂𐌶𐌴𐌹 𐌳𐌰𐍄𐌰𐌷𐌿𐌶𐌳𐌹𐍃</string>
-    <string name="answering_error_message">Writing to the collection failed. The database could be corrupt or there may not to be enough empty space on disk.\n\nIf this happens more often, try checking the database, repairing the collection or restoring it from a backup. Touch “options” for that.\n\Or it could be an AnkiDroid bug as well; please report the error so that we can check this.</string>
+    <string name="answering_error_message">Writing to the collection failed. The database could be corrupt or there may not to be enough empty space on disk.\n\nIf this happens more often, try checking the database, repairing the collection or restoring it from a backup. Touch “options” for that.\n\Or it could be an SpeedyCAT bug as well; please report the error so that we can check this.</string>
     <string name="answering_error_report">𐌰𐌹𐍂𐌶𐌴𐌹𐌽 𐌼𐌴𐍂𐌾𐌰𐌽</string>
     <string name="storage_full_message">𐌽𐌹𐍃𐍄 𐌲𐌰𐌽𐍉𐌷 𐍂𐌿𐌼𐌹𐍃 𐌹𐌽 𐍃𐍄𐌰𐌳𐌰 𐌳𐌿 𐌿𐍃𐌻𐌿𐌺𐌰𐌽 𐌰𐌽𐌺𐌴𐌹𐌳𐍂𐌰𐌿𐌳. 𐌿𐍆𐌰𐍂𐌸𐌴𐌹𐌷𐌰𐌹 𐍂𐌿𐌼 𐌳𐌿 𐌸𐌰𐌹𐍂𐌷𐍅𐌹𐍃𐌰𐌽.</string>
     <string name="repair_deck_dialog">𐍅𐌹𐌻𐌴𐌹𐌶𐌿 𐌱𐌹 𐍃𐌿𐌽𐌾𐌰𐌹 𐌳𐌰𐍄𐌰𐌷𐌿𐌶𐌳 𐌲𐌰𐌱𐍉𐍄𐌾𐌰𐌽?\n\n𐍆𐌰𐌿𐍂𐌸𐌹𐌶𐌴𐌹 𐌳𐌿𐌲𐌹𐌽𐌽𐌰𐌹𐍃 𐍃𐍉𐌺𐌽, 𐌲𐌰𐌲𐌰𐌻𐌴𐌹𐌺𐍉𐌸 𐌹𐌽 𐌿𐍆𐍃𐍄𐌰𐌳𐌰 “%s”.</string>
     <string name="intent_aedict_empty">𐌺𐌿𐌽𐌹 “𐌱𐌹𐌿𐌷𐍄” 𐌻𐌰𐌿𐍃 𐌹𐍃𐍄</string>
-    <string name="intent_aedict_category">To add cards to AnkiDroid remove all Notepad categories or add one named “default”</string>
+    <string name="intent_aedict_category">To add cards to SpeedyCAT remove all Notepad categories or add one named “default”</string>
     <string name="custom_study_new_extend">Increase/decrease (“-3”) today’s new card limit by</string>
     <string name="custom_study_rev_extend">Increase/decrease (“-3”) today’s review limit by</string>
     <string name="custom_study_forgotten">Review cards forgotten in last x days:</string>
@@ -115,9 +115,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">𐌳𐌰𐍄𐌰𐌷𐌿𐌶𐌳 𐌻𐌿𐌺𐌰𐌽</string>
-    <string name="database_locked_summary">The AnkiDroid database is in use by another application. Please close the other application then reopen AnkiDroid.</string>
+    <string name="database_locked_summary">The SpeedyCAT database is in use by another application. Please close the other application then reopen SpeedyCAT.</string>
     <string name="incompatible_database_version_title">𐌿𐌽𐌲𐌰𐍄𐌹𐌻 𐌳𐌰𐍄𐌰𐌷𐌿𐌶𐌳𐌹𐍃 𐌿𐍃𐌼𐌴𐍂𐌹</string>
-    <string name="incompatible_database_version_summary">The database is a more advanced version than this version of AnkiDroid can work with. Upgrade AnkiDroid or downgrade the database to open it\n\nSupported version: %1$d\nDatabase version: %2$d\n\nThe following restore options will overwrite your current collection, possibly with a compatible database version:</string>
+    <string name="incompatible_database_version_summary">The database is a more advanced version than this version of SpeedyCAT can work with. Upgrade SpeedyCAT or downgrade the database to open it\n\nSupported version: %1$d\nDatabase version: %2$d\n\nThe following restore options will overwrite your current collection, possibly with a compatible database version:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">𐌷𐌹𐌽𐌳𐌰𐍂𐌲𐍂𐌿𐌽𐌳𐌰𐌿𐍃 𐍆𐍂𐌹𐍃𐌰𐌷𐍄𐍃 𐌱𐍂𐌿𐌷𐍄𐌰</string>
     <string name="background_image_removed">𐌷𐌹𐌽𐌳𐌰𐍂𐌲𐍂𐌿𐌽𐌳𐌰𐌿𐍃 𐍆𐍂𐌹𐍃𐌰𐌷𐍄𐍃 𐌿𐍃𐌽𐌿𐌼𐌰𐌽𐌰</string>
@@ -160,7 +160,7 @@
     <string name="help_title_privacy">𐍃𐌿𐌽𐌳𐍂𐌰𐌻𐌴𐌹𐌺𐌴𐌹</string>
     <string name="help_item_ankidroid_privacy_policy">𐌰𐌽𐌺𐌴𐌹𐌳𐍂𐌰𐌿𐌳𐍃 𐌲𐌰𐍂𐌴𐌳𐌴𐌹𐌽𐍃 𐍃𐌿𐌽𐌳𐍂𐌰𐌻𐌴𐌹𐌺𐌴𐌹𐌽𐍃</string>
     <string name="help_item_ankiweb_privacy_policy">𐌰𐌽𐌺𐌴𐌹𐌳𐍂𐌰𐌿𐌳𐍃 𐌲𐌰𐍂𐌴𐌳𐌴𐌹𐌽𐍃 𐍃𐌿𐌽𐌳𐍂𐌰𐌻𐌴𐌹𐌺𐌴𐌹𐌽𐍃</string>
-    <string name="help_item_ankiweb_terms_and_conditions">AnkiWeb terms and conditions</string>
+    <string name="help_item_ankiweb_terms_and_conditions">SpeedyCAT terms and conditions</string>
     <string name="help_title_send_exception">Send troubleshooting report</string>
     <string name="help_dialog_exception_report_debounce">𐌼𐌴𐍂𐌹𐌸𐌰 𐌾𐌿 𐌹𐌽𐍃𐌰𐌽𐌳𐌹𐌳𐌰 𐌹𐍃𐍄</string>
     <string name="help_dialog_exception_report_sent">𐌼𐌴𐍂𐌹𐌸𐌰 𐌹𐌽𐍃𐌰𐌽𐌳𐌹𐌳𐌰!</string>

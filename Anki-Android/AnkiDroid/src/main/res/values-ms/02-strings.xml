@@ -117,7 +117,7 @@
     <plurals name="in_minutes">
         <item quantity="other">%1$d minit</item>
     </plurals>
-    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">Kad AnkiDroid</string>
+    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">Kad SpeedyCAT</string>
     <string name="note_editor_copy_note" maxLength="28">Salin nota</string>
     <string name="card_editor_reposition_card" comment="reposition a card in the new queue" maxLength="28">Alih posisi</string>
     <string name="card_editor_reset_card" maxLength="28">Tetap semula kemajuan</string>
@@ -129,31 +129,31 @@
     <string name="checks_action" maxLength="28">Check</string>
     <string name="unknown_type_field_warning">Taip jawapan: medan %s tidak diketahui</string>
     <string name="delete_deck" comment="Message on a progress bar starting a deck is being deleted.">Memadam dek&#8230;</string>
-    <string name="info_rate">Nilaikan AnkiDroid</string>
+    <string name="info_rate">Nilaikan SpeedyCAT</string>
     <string name="import_title">Mengimport</string>
     <string name="import_preparing_file">Preparing file for import&#8230;</string>
     <string name="import_message_add" comment="Adding a new deck to the collection (import)">Tambah</string>
     <string name="import_message_replace_confirm">Ini akan membuang koleksi sedia ada anda dan menggantikannya dengan data fail %s</string>
     <string name="import_dialog_message_add">Add “%s” to collection? This may take a long time</string>
-    <string name="import_log_no_apkg">Bukan fail pakej Anki yang sah</string>
+    <string name="import_log_no_apkg">Bukan fail pakej SpeedyCAT yang sah</string>
     <string name="import_title_error" comment="Title of error dialog">Ralat</string>
     <string name="import_error_handle_exception">Gagal mengimport fail\n\n%s</string>
     <string name="import_error_not_apkg_extension">Nama fail “%s” tiada sambungan .apkg atau .colpkg</string>
-    <string name="import_error_load_imported_database">Penggantian pangkalan data Anki (.anki2) belum disokong lagi. Sila lihat panduan bagi langkah penggantian.</string>
-    <string name="import_error_content_provider">AnkiDroid tidak boleh mengimport fail pilihan secara automatik. Sila lihat manual pengguna bagi cara import fail Anki secara manual: \n%s</string>
+    <string name="import_error_load_imported_database">Penggantian pangkalan data SpeedyCAT (.anki2) belum disokong lagi. Sila lihat panduan bagi langkah penggantian.</string>
+    <string name="import_error_content_provider">SpeedyCAT tidak boleh mengimport fail pilihan secara automatik. Sila lihat manual pengguna bagi cara import fail SpeedyCAT secara manual: \n%s</string>
     <string name="import_error_copy_to_cache_title">Gagal memcachekan fail</string>
     <string name="import_error_copy_to_cache_explanation" comment="The substitution is a list of suggested fixes in bullet point form">This is often caused by a bug in the app you used to select the file. Please try the following fixes:\n\n%s</string>
-    <string name="import_interrupted">Import tergendala: AnkiDroid telah ditutup</string>
+    <string name="import_interrupted">Import tergendala: SpeedyCAT telah ditutup</string>
     <string name="export_ready_title">Eksport sedia</string>
     <string name="export_send_no_handlers">Tiada aplikasi tersedia mengendalikan apkg. Menyimpan&#8230;</string>
-    <string name="export_save_apkg_successful">Berjaya simpan pakej Anki</string>
-    <string name="export_save_apkg_unsuccessful">Gagal simpan pakej Anki</string>
-    <string name="export_share_title">Hantar pakej Anki menggunakan</string>
-    <string name="export_email_subject">Kad imbasan dieksport AnkiDroid: %s</string>
+    <string name="export_save_apkg_successful">Berjaya simpan pakej SpeedyCAT</string>
+    <string name="export_save_apkg_unsuccessful">Gagal simpan pakej SpeedyCAT</string>
+    <string name="export_share_title">Hantar pakej SpeedyCAT menggunakan</string>
+    <string name="export_email_subject">Kad imbasan dieksport SpeedyCAT: %s</string>
     <string name="export_email_text"><![CDATA[        Hi!
         <br/><br/>
-        Ini merupakan dek kad imbasan Anki dihantar dari AnkiDroid[1].
-        Cuba buka dek ini menggunakan salah satu pengedaran Anki tersedia[2] dan nikmati pembelajaran senang dan cekap!<br/><br/>
+        Ini merupakan dek kad imbasan SpeedyCAT dihantar dari SpeedyCAT[1].
+        Cuba buka dek ini menggunakan salah satu pengedaran SpeedyCAT tersedia[2] dan nikmati pembelajaran senang dan cekap!<br/><br/>
         [1] %1$s<br/>
         [2] %2$s
         ]]></string>
@@ -189,18 +189,18 @@
     <string name="white_board_eraser_disabled">Eraser mode deactivated</string>
     <string comment="Progress amount e.g. \'28 MB/141 MB\'. %1$s is the current amount, %2$s is the max." name="progress_amount_bytes">%1$s/%2$s</string>
     <string name="media_file_size_warning_title">Media too large</string>
-    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the AnkiWeb limit of %3$s and cannot be synced. Add anyway?</string>
+    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the SpeedyCAT limit of %3$s and cannot be synced. Add anyway?</string>
     <string name="media_file_size_add_anyway">Add anyway</string>
     <!-- Whiteboard save image message in the Study Screen -->
     <string name="white_board_image_save_failed">Gagal menyimpan gambar papan putih. %s</string>
     <string name="white_board_image_saved">Gambar papan putih simpan di %s</string>
     <string name="title_whiteboard_editor" maxLength="28">Penyunting papan putih</string>
-    <string name="user_is_a_robot">Ujian automatik dikesan. Jika anda manusia, hubungi sokongan AnkiDroid</string>
+    <string name="user_is_a_robot">Ujian automatik dikesan. Jika anda manusia, hubungi sokongan SpeedyCAT</string>
     <!-- JS api -->
-    <string name="api_version_developer_contact">Kad menggunakan ciri-ciri AnkiDroid yang tidak disokong. Hubungi pembangun %1$s, atau layari wiki. %2$s</string>
+    <string name="api_version_developer_contact">Kad menggunakan ciri-ciri SpeedyCAT yang tidak disokong. Hubungi pembangun %1$s, atau layari wiki. %2$s</string>
     <string name="invalid_json_data">Kad sediakan data tidak sah. %s</string>
-    <string name="valid_js_api_version">Versi AnkiDroid JS API tidak sah. Hubungi pembangun %s, atau layari wiki</string>
-    <string name="update_js_api_version">Tersedia pembaruan AnkiDroid JS API. Hubungi pembangun %s, atau layari wiki</string>
+    <string name="valid_js_api_version">Versi SpeedyCAT JS API tidak sah. Hubungi pembangun %s, atau layari wiki</string>
+    <string name="update_js_api_version">Tersedia pembaruan SpeedyCAT JS API. Hubungi pembangun %s, atau layari wiki</string>
     <string name="reviewer_invalid_api_version_visit_documentation">Lihat</string>
     <string name="anki_js_error_code">(Error code: %d)</string>
     <!-- About AnkiDroid screen -->
@@ -211,8 +211,8 @@
     <!-- Deck Picker -->
     <string name="search_decks" maxLength="28">Cari dek</string>
     <string name="ankidroid_init_failed_webview_title">Fatal error</string>
-    <string name="ankidroid_init_failed_webview">AnkiDroid bergantung kepada WebView Sistem yang tidak tersedia. Ini boleh berlaku jika sistem sedang kemas kini. Sila cuba lagi dalam beberapa minit.\n\n%s</string>
-    <string name="ankidroid_init_failed_storage">AnkiDroid cannot access storage due to an Android error.\n\n%s</string>
+    <string name="ankidroid_init_failed_webview">SpeedyCAT bergantung kepada WebView Sistem yang tidak tersedia. Ini boleh berlaku jika sistem sedang kemas kini. Sila cuba lagi dalam beberapa minit.\n\n%s</string>
+    <string name="ankidroid_init_failed_storage">SpeedyCAT cannot access storage due to an Android error.\n\n%s</string>
     <!-- A Menu item to change the Font Size (currently in the Note Editor) -->
     <string name="menu_font_size" maxLength="28">Saiz tulisan</string>
     <string name="menu_show_toolbar" comment="Checkable item stating whether the note editor toolbar should be shown" maxLength="28">Lihat Bar Alat</string>
@@ -234,9 +234,9 @@
     <string name="note_editor_video_too_large">The video file is too large, please insert the video manually</string>
     <string name="note_editor_audio_too_large">The audio file is too large, please insert the audio manually</string>
     <string name="ankidroid_cannot_open_after_backup_try_again" comment="After an Android backup is restored, AnkiDroid opens and shows this message.         Opening AnkiDroid again will work correctly">Android backup in progress. Please try again</string>
-    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Anda mungkin perlu menggunakan iManager untuk membenarkan AnkiDroid tambah pintasan</string>
+    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Anda mungkin perlu menggunakan iManager untuk membenarkan SpeedyCAT tambah pintasan</string>
     <string name="create_shortcut_error_miui" comment="Keep the message as short, as this is shown in a toast. %s is the app name: \'AnkiDroid\'">Allow ‘Home screen shortcuts’ in system settings for %s to add shortcuts</string>
-    <string name="create_shortcut_failed" comment="home screen == launcher">Skrin laman utama anda melarang AnkiDroid menambah pintasan</string>
+    <string name="create_shortcut_failed" comment="home screen == launcher">Skrin laman utama anda melarang SpeedyCAT menambah pintasan</string>
     <string name="create_shortcut_error">Ralat menambah pintasan: %s</string>
     <string name="note_editor_capitalize" comment="This is for a switch with a checkbox - on: enabled" maxLength="28">Guna huruf besar awal kata dalam ayat</string>
     <string name="menu_scroll_toolbar" comment="Checkbox stating whether note editor toolbar is scrollable or stacked. Checked: Scroll" maxLength="28">Tatal bar alat</string>
@@ -295,11 +295,11 @@
     <!-- App Intro -->
     <string name="intro_ankidroid_tagline_one">Kurangkan ulang kaji</string>
     <string name="intro_ankidroid_tagline_two">Ingat lebih</string>
-    <string name="intro_short_ankidroid_explanation">Penjadual kad Anki jimat masa dengan memperkasakan memori paling lemah dan memelihara memori paling kuat</string>
+    <string name="intro_short_ankidroid_explanation">Penjadual kad SpeedyCAT jimat masa dengan memperkasakan memori paling lemah dan memelihara memori paling kuat</string>
     <string name="intro_get_started" comment="Action to start AnkiDroid for the first time without syncing from AnkiWeb">Get started</string>
-    <string name="intro_sync_from_ankiweb">Segerakkan dari AnkiWeb</string>
+    <string name="intro_sync_from_ankiweb">Segerakkan dari SpeedyCAT</string>
     <!-- IntentHandler -->
-    <string name="app_not_initialized_new">AnkiDroid is not initialized yet. Please open AnkiDroid and try again</string>
+    <string name="app_not_initialized_new">SpeedyCAT is not initialized yet. Please open SpeedyCAT and try again</string>
     <!-- Deck Creation -->
     <string name="deck_created">Dek dicipta</string>
     <string name="deck_renamed">Dek dinamakan semula</string>

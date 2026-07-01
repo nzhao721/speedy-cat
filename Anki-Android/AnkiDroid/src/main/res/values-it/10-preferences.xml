@@ -62,7 +62,7 @@
     <string name="card_browser_font_size" maxLength="41">Ridimensionamento carattere nel browser</string>
     <string name="card_browser_hide_media" maxLength="41">Mostra i nomi dei file nel browser delle carte</string>
     <string name="card_browser_hide_media_summary">Mostra i nomi dei file multimediali nei campi domanda/risposta del browser delle carte</string>
-    <string name="col_path" maxLength="41">Cartella AnkiDroid</string>
+    <string name="col_path" maxLength="41">Cartella SpeedyCAT</string>
     <string name="fullscreen_review" maxLength="41">Modalità a schermo intero</string>
     <string name="full_screen_off">Disabilitato</string>
     <string name="full_screen_system">Nascondi le barre di sistema</string>
@@ -166,8 +166,8 @@
     </plurals>
     <string name="pref_keep_screen_on" maxLength="41">Mantieni schermo acceso</string>
     <string name="pref_keep_screen_on_summ">Disabilita il timeout dello schermo</string>
-    <string name="enable_api_title" maxLength="41">Attiva API AnkiDroid</string>
-    <string name="enable_api_summary">Permetti ad altre applicazioni di connettersi ad AnkiDroid e di leggere / scrivere dati senza il tuo intervento</string>
+    <string name="enable_api_title" maxLength="41">Attiva API SpeedyCAT</string>
+    <string name="enable_api_summary">Permetti ad altre applicazioni di connettersi ad SpeedyCAT e di leggere / scrivere dati senza il tuo intervento</string>
     <string name="custom_buttons" maxLength="41">Pulsanti della barra dell\'app</string>
     <string name="custom_buttons_summary">Personalizza le azioni che appaiono nella barra dell\'app</string>
     <string name="custom_buttons_setting_always_show">Mostra sempre</string>
@@ -177,7 +177,7 @@
     <string name="reset_settings_to_default">Ripristina impostazioni predefinite</string>
     <string name="reset">Reimposta</string>
     <string name="thirdparty_apps_title" maxLength="41">Applicazioni API di terze parti</string>
-    <string name="thirdparty_apps_summary">Vedi un elenco di applicazioni che utilizzano l\'API AnkiDroid come dizionari, utilities.</string>
+    <string name="thirdparty_apps_summary">Vedi un elenco di applicazioni che utilizzano l\'API SpeedyCAT come dizionari, utilities.</string>
     <string name="pref_controls_reviews_tab" maxLength="41" comment="Name of the tab to configure controls for the reviews screen">Reviews</string>
     <string name="pref_controls_previews_tab" maxLength="41" comment="Name of the tab to configure controls for the previews screen">Anteprime</string>
     <string name="toggle_backside_only" maxLength="41" comment="Control setting that toggles \'Backside only\' in the previews screen">Toggle backside only</string>
@@ -193,9 +193,9 @@
     <!-- Custom sync server settings -->
     <string name="custom_sync_server_title" maxLength="41">Server di sincronizzazione personalizzato</string>
     <string name="custom_sync_server_summary_none_of_the_two_servers_used" comment="This summary is shown when neither of the two custom sync servers are used,         which is the default.">Non utilizzato</string>
-    <string name="custom_sync_server_help2"><![CDATA[        In alternativa alla sincronizzazione con AnkiWeb,
+    <string name="custom_sync_server_help2"><![CDATA[        In alternativa alla sincronizzazione con SpeedyCAT,
         è possibile utilizzare il proprio server per la sincronizzazione.
-        Se non impostato, verrà utilizzato il server AnkiWeb predefinito.
+        Se non impostato, verrà utilizzato il server SpeedyCAT predefinito.
         <a href="%s">Scopri di più</a>
         ]]></string>
     <string name="custom_sync_server_base_url_title" maxLength="41">Sync URL</string>
@@ -220,9 +220,9 @@
     <string name="deck_conf_general" maxLength="41" comment="Label of the submenu for the general options of new deck">Generale</string>
     <string name="deck_conf_cram_search" maxLength="41" comment="Label of a text field that contains a search query.">Cerca</string>
     <!-- analytics options -->
-    <string name="analytics_dialog_title">Aiuta a migliorare AnkiDroid!</string>
+    <string name="analytics_dialog_title">Aiuta a migliorare SpeedyCAT!</string>
     <string name="analytics_title" maxLength="41">Condividi l\'utilizzo delle funzionalità</string>
-    <string name="analytics_summ">Puoi contribuire ad AnkiDroid aiutando il team di sviluppo a vedere quali funzioni usano le persone</string>
+    <string name="analytics_summ">Puoi contribuire ad SpeedyCAT aiutando il team di sviluppo a vedere quali funzioni usano le persone</string>
     <string name="note_editor_replace_newlines" maxLength="41">Sostituisci le nuove righe con HTML</string>
     <string name="note_editor_replace_newlines_summ">Nell\'Editor delle Note, converti ogni istanza di &lt;br&gt; in newline quando modifichi una carta.</string>
     <string name="type_in_answer_focus" maxLength="41">Focalizza «digita la risposta»</string>
@@ -231,11 +231,11 @@
     <string name="open_changelog">Apri il registro dei cambiamenti</string>
     <string name="pref_cat_about_title" maxLength="41">Informazioni</string>
     <string name="contributors_title">Contributori</string>
-    <string name="about_contributors_description"><![CDATA[Questi sono i nostri fantastici <a href=\"%1$s\">contributori</a>. Anche tu puoi aiutare AnkiDroid programmando, traducendo e  <a href=\"%2$s\">altro</a>!]]></string>
+    <string name="about_contributors_description"><![CDATA[Questi sono i nostri fantastici <a href=\"%1$s\">contributori</a>. Anche tu puoi aiutare SpeedyCAT programmando, traducendo e  <a href=\"%2$s\">altro</a>!]]></string>
     <string name="license">Licenza</string>
-    <string name="license_description"><![CDATA[AnkiDroid è rilasciato sotto le licenze <a href=\"%1$s\">GPL-3.0</a> e <a href=\"%2$s\">AGPL-3.0</a> , con il codice sorgente disponibile <a href=\"%3$s\">su GitHub</a>]]></string>
-    <string name="other_licenses"><![CDATA[AnkiDroid utilizza anche librerie e icone di terze parti,  concesse sotto varie licenze <a href=\"%1$s\">licenses</a>]]></string>
-    <string name="donate_description"><![CDATA[Puoi supportare lo sviluppo di AnkiDroid <a href=\"%1$s\">donando</a>. Qualsiasi importo è profondamente apprezzato.]]></string>
+    <string name="license_description"><![CDATA[SpeedyCAT è rilasciato sotto le licenze <a href=\"%1$s\">GPL-3.0</a> e <a href=\"%2$s\">AGPL-3.0</a> , con il codice sorgente disponibile <a href=\"%3$s\">su GitHub</a>]]></string>
+    <string name="other_licenses"><![CDATA[SpeedyCAT utilizza anche librerie e icone di terze parti,  concesse sotto varie licenze <a href=\"%1$s\">licenses</a>]]></string>
+    <string name="donate_description"><![CDATA[Puoi supportare lo sviluppo di SpeedyCAT <a href=\"%1$s\">donando</a>. Qualsiasi importo è profondamente apprezzato.]]></string>
     <!-- Controls -->
     <string name="binding_add_gesture">Aggiungi un gesto</string>
     <string name="binding_add_key">Aggiungi un tasto</string>
@@ -270,7 +270,7 @@
     <string name="bindings_already_bound">Già associato a %s</string>
     <!-- Advanced -->
     <string name="pref_cat_experimental" maxLength="41" tools:ignore="UnusedResources">Sperimentale</string>
-    <string name="readtext_deprecation_warn">In AnkiDroid è stato introdotto un meccanismo di TTS migliore e compatibile con gli altri client Anki che include più voci e migliora la riproduzione delle lingue!\n\nÈ consigliato effettuare l\'aggiornamento il prima possibile, in quanto questa impostazione verrà presto rimossa</string>
+    <string name="readtext_deprecation_warn">In SpeedyCAT è stato introdotto un meccanismo di TTS migliore e compatibile con gli altri client SpeedyCAT che include più voci e migliora la riproduzione delle lingue!\n\nÈ consigliato effettuare l\'aggiornamento il prima possibile, in quanto questa impostazione verrà presto rimossa</string>
     <string name="readtext_reviewer_warn" tools:ignore="UnusedResources">È consigliato effettuare l\'upgrade al nuovo formato di sintesi vocale</string>
     <string name="pref_fixed_port_title" maxLength="41">localStorage nella schermata di studio</string>
     <string name="pref_fixed_port_summary">Abilita il localStorage JavaScript utilizzando una porta server fissa nella schermata di studio</string>
@@ -282,9 +282,9 @@
     <!-- #######################################################################################
          #################################### Backup options ###################################
          ####################################################################################### -->
-    <string name="pref__backups_help__summary"><![CDATA[        AnkiDroid esegue periodicamente il backup della tua collezione.
+    <string name="pref__backups_help__summary"><![CDATA[        SpeedyCAT esegue periodicamente il backup della tua collezione.
         Se i backup hanno più di due giorni,
-        AnkiDroid inizierà a rimuoverne alcuni per liberare spazio su disco.
+        SpeedyCAT inizierà a rimuoverne alcuni per liberare spazio su disco.
         <br><br>
         Nota che i file multimediali non sono sottoposti a backup.
         Per essere al sicuro, sincronizza periodicamente la tua collezione o esegui il backup delle esportazioni.

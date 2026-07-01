@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ SPDX-License-Identifier: GPL-3.0-or-later
+  ~ SPDX-FileCopyrightText: 2026 SpeedyCAT contributors
+  ~
+  ~ User-visible strings for the SpeedyCAT MCAT study modes (Practice Questions
+  ~ and Full-Length Tests). Marked translatable="false": these are fork-specific
+  ~ and are not sent through the upstream translation pipeline.
+  -->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="speedycat_practice_questions" translatable="false">Practice Questions</string>
+    <string name="speedycat_full_length_tests" translatable="false">Full-Length Tests</string>
+</resources>

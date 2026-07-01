@@ -8,10 +8,8 @@ import android.view.View
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.preference.Preference
 import com.bytehamster.lib.preferencesearch.SearchConfiguration
 import com.bytehamster.lib.preferencesearch.SearchPreference
-import com.ichi2.anki.BuildConfig
 import com.ichi2.anki.CollectionManager.TR
 import com.ichi2.anki.R
 import com.ichi2.anki.common.android.AdaptionUtil
@@ -36,15 +34,6 @@ class HeaderFragment : SettingsFragment() {
     override fun initSubscreen() {
         requirePreference<HeaderPreference>(R.string.pref_backup_limits_screen_key)
             .title = TR.preferencesBackups()
-
-        requirePreference<Preference>(R.string.pref_advanced_screen_key).apply {
-            if (AdaptionUtil.isXiaomiRestrictedLearningDevice) {
-                isVisible = false
-            }
-        }
-
-        requirePreference<Preference>(R.string.pref_developer_options_screen_key)
-            .isVisible = Prefs.isDeveloperOptionsEnabled
 
         requirePreference<HeaderPreference>(R.string.pref_review_reminders_screen_key)
             .setOnPreferenceClickListener {
@@ -185,20 +174,6 @@ class HeaderFragment : SettingsFragment() {
 
             // Some preferences and categories are only shown conditionally,
             // so they should be searchable based on the same conditions
-
-            // From [HeaderFragment.onCreatePreferences]
-            if (Prefs.isDeveloperOptionsEnabled) {
-                searchConfiguration.index(R.xml.preferences_developer_options)
-                // From [DeveloperOptionsFragment.initSubscreen]
-                if (BuildConfig.DEBUG) {
-                    searchConfiguration.ignorePreference(activity.getString(R.string.developer_options_enabled_by_user_key))
-                }
-            }
-
-            // From [HeaderFragment.onCreatePreferences]
-            if (!AdaptionUtil.isXiaomiRestrictedLearningDevice) {
-                searchConfiguration.index(R.xml.preferences_advanced)
-            }
 
             // From [NotificationsSettingsFragment.initSubscreen]
             if (AdaptionUtil.isXiaomiRestrictedLearningDevice) {

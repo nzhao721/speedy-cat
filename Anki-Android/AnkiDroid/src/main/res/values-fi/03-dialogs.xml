@@ -39,12 +39,12 @@
         <item quantity="other">%d alusta kortit</item>
     </plurals>
     <string name="answering_error_title">Tietokantavirhe</string>
-    <string name="answering_error_message">Kirjoittaminen kokoelmaan epäonnistui. Tietokanta voi olla vioittunut tai levyllä ei ole tarpeeksi tyhjää tilaa.\n\nJos näin tapahtuu useammin, tarkista tietokanta, korjaa kokoelma tai palauta se varmuuskopiosta. Löydät tämän asetuksista.\n\Mahdollisesti kyseessä voi olla myös AnkiDroidin virhe; ilmoita virheestä, jotta voimme tarkistaa sen.</string>
+    <string name="answering_error_message">Kirjoittaminen kokoelmaan epäonnistui. Tietokanta voi olla vioittunut tai levyllä ei ole tarpeeksi tyhjää tilaa.\n\nJos näin tapahtuu useammin, tarkista tietokanta, korjaa kokoelma tai palauta se varmuuskopiosta. Löydät tämän asetuksista.\n\Mahdollisesti kyseessä voi olla myös SpeedyCATin virhe; ilmoita virheestä, jotta voimme tarkistaa sen.</string>
     <string name="answering_error_report">Ilmoita viasta</string>
-    <string name="storage_full_message">AnkiDroidin avaamiseen ei ole riittävästi vapaata tallennustilaa. Vapauta tilaa jatkaaksesi.</string>
+    <string name="storage_full_message">SpeedyCATin avaamiseen ei ole riittävästi vapaata tallennustilaa. Vapauta tilaa jatkaaksesi.</string>
     <string name="repair_deck_dialog">Haluatko varmasti yrittää korjata tietokannan?\n\nEnnen yritystä kopio tietokannasta luodaan alihakemistoon ”%s”.</string>
     <string name="intent_aedict_empty">Oletus-luokka on tyhjä</string>
-    <string name="intent_aedict_category">Lisätäksesi kortteja AnkiDroidiin poista kaikki Notepad-kategoriat tai lisää uusi nimellä ”default”</string>
+    <string name="intent_aedict_category">Lisätäksesi kortteja SpeedyCATiin poista kaikki Notepad-kategoriat tai lisää uusi nimellä ”default”</string>
     <string name="custom_study_new_extend">Korota/alenna (\"-3\") tämän päivän uusien kortien rajaa arvolla</string>
     <string name="custom_study_rev_extend">Korota/alenna (\"-3\") tämän päivän kerrattavien kortien rajaa arvolla</string>
     <string name="custom_study_forgotten">Kortteja unohdettu edellisenä x päivänä:</string>
@@ -54,7 +54,7 @@
     <string name="storage_full_title">Tallennustila on täynnä</string>
     <string name="storage_almost_full_title">Tallennustila on melkein täynnä</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">Ei tilaa</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">AnkiDroid tarvitsee %s vapaata tallennustilaa jatkaakseen. Vapauta tilaa ennen kuin jatkat</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">SpeedyCAT tarvitsee %s vapaata tallennustilaa jatkaakseen. Vapauta tilaa ennen kuin jatkat</string>
     <string name="restore_backup_title">Palauta varmuuskopio?</string>
     <string name="restore_backup">Kokoelmasi korvataan vanhemmalla kopiolla. Mahdolliset tallentamattomat tiedot menetetään.</string>
     <string name="restore_backup_choose_another">Valitse toinen</string>
@@ -115,9 +115,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">Tietokanta lukittu</string>
-    <string name="database_locked_summary">AnkiDroidin tietokanta on toisen sovelluksen käytössä. Sulje toinen sovellus ja avaa AnkiDroid uudelleen.</string>
+    <string name="database_locked_summary">SpeedyCATin tietokanta on toisen sovelluksen käytössä. Sulje toinen sovellus ja avaa SpeedyCAT uudelleen.</string>
     <string name="incompatible_database_version_title">Yhteensopimaton tietokannan versio</string>
-    <string name="incompatible_database_version_summary">Tietokanta on edistyneempi versio kuin mitä tämä AnkiDroid-versio voi käyttää. Päivitä AnkiDroid tai siirry vanhempaan tietokantaversioon avataksesi sen\n\nTuettu versio: %1$d\nTietokannan versio: %2$d\n\n\nSeuraavat palautusvaihtoehdot korvaavat nykyisen kokoelmasi, mahdollisesti yhteensopivalla tietokannan versiolla:</string>
+    <string name="incompatible_database_version_summary">Tietokanta on edistyneempi versio kuin mitä tämä SpeedyCAT-versio voi käyttää. Päivitä SpeedyCAT tai siirry vanhempaan tietokantaversioon avataksesi sen\n\nTuettu versio: %1$d\nTietokannan versio: %2$d\n\n\nSeuraavat palautusvaihtoehdot korvaavat nykyisen kokoelmasi, mahdollisesti yhteensopivalla tietokannan versiolla:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">Taustakuva asetettu</string>
     <string name="background_image_removed">Taustakuva poistettu</string>
@@ -138,29 +138,29 @@
     <string name="locale_selection_dialog_title_new">Aseta kieli</string>
     <string name="locale_selection_dialog_summary">Jotkin monikieliset näppäimistöt, kuten Gboard, tukevat kielen vaihtamista tekstiä muokattaessa\n\nPyydä käyttämäsi näppäimistön tekijältä tukea \"setImeHintLocales\"-ominaisuudelle, jos näppäimistösi ei vaihda kieltä.</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">AnkiDroidin käyttäminen</string>
-    <string name="help_item_ankidroid_manual">AnkiDroidin käyttöopas</string>
+    <string name="help_title_using_ankidroid">SpeedyCATin käyttäminen</string>
+    <string name="help_item_ankidroid_manual">SpeedyCATin käyttöopas</string>
     <string name="help_item_anki_manual">Ankin käyttöopas</string>
-    <string name="help_item_ankidroid_faq">AnkiDroidin FAQ</string>
+    <string name="help_item_ankidroid_faq">SpeedyCATin FAQ</string>
     <string name="help_title_get_help">Ohjeita</string>
     <string name="help_item_mailing_list">Sähköpostilista</string>
     <string name="help_item_reddit">Reddit</string>
     <string name="help_item_report_bug">Ilmoita virheestä</string>
-    <string name="help_title_support_ankidroid" maxLength="28">Tue AnkiDroidia</string>
+    <string name="help_title_support_ankidroid" maxLength="28">Tue SpeedyCATia</string>
     <string name="help_item_support_opencollective_donate">Lahjoita</string>
     <string name="help_item_support_develop_ankidroid">Kehitä</string>
     <string name="help_item_support_rate_ankidroid">Arvioi</string>
     <string name="help_item_support_other_ankidroid">Muita tapoja</string>
     <string name="multimedia_editor_trans_translate">Auta kääntämisessä</string>
     <string name="help_title_community">Yhteisö</string>
-    <string name="help_item_anki_forums">Anki-foorumit</string>
+    <string name="help_item_anki_forums">SpeedyCAT-foorumit</string>
     <string name="help_item_discord">Discord</string>
     <string name="help_item_facebook">Facebook</string>
     <string name="help_item_twitter">Twitter</string>
     <string name="help_title_privacy">Yksityisyys</string>
-    <string name="help_item_ankidroid_privacy_policy">AnkiDroidin tietosuojakäytäntö</string>
-    <string name="help_item_ankiweb_privacy_policy">AnkiWebin tietosuojakäytäntö</string>
-    <string name="help_item_ankiweb_terms_and_conditions">AnkiWebin käyttöehdot</string>
+    <string name="help_item_ankidroid_privacy_policy">SpeedyCATin tietosuojakäytäntö</string>
+    <string name="help_item_ankiweb_privacy_policy">SpeedyCATin tietosuojakäytäntö</string>
+    <string name="help_item_ankiweb_terms_and_conditions">SpeedyCATin käyttöehdot</string>
     <string name="help_title_send_exception">Lähetä vianmääritysraportti</string>
     <string name="help_dialog_exception_report_debounce">Raportti on jo lähetetty</string>
     <string name="help_dialog_exception_report_sent">Raportti lähetetty!</string>
@@ -177,8 +177,8 @@
     sched V2. For V1, it was counting the number of repetitions of cards in learning. This approximation is acceptable
     for the sake of simplicity and because V1 will leave.-->
     <string name="deck_picker_counts">Avaa pakan yleiskatsaussivu, joka sisältää tänään näytettävien korttien määrän.</string>
-    <string name="import_deck_package">Pakattu Anki-pakka (.apkg)</string>
-    <string name="import_collection_package">Pakattu Anki-kokoelma (.colpkg)</string>
+    <string name="import_deck_package">Pakattu SpeedyCAT-pakka (.apkg)</string>
+    <string name="import_collection_package">Pakattu SpeedyCAT-kokoelma (.colpkg)</string>
     <string name="import_csv">Tekstitiedosto (.txt, .csv)</string>
     <!-- scoped storage -->
     <string name="backup_your_collection">Varmuuskopioi kokoelmasi</string>

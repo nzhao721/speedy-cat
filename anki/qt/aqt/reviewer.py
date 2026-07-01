@@ -960,17 +960,32 @@ timerStopped = false;
         )
 
     def _showAnswerButton(self) -> None:
-        middle = """
+        if self._forced_recall_active:
+            # SpeedyCAT: forced active recall injects an inline "Check" button in
+            # the card body that reveals the answer, so the bottom-bar "Show
+            # Answer" button is redundant and dropped (only the remaining-cards
+            # counter is kept). Cards without a Check button keep "Show Answer"
+            # (see the else branch). The Space/Enter shortcut reveals either way.
+            counts = self._remaining()
+            if counts.strip():
+                middle = (
+                    "<table cellpadding=0><tr><td class=stat2 align=center>"
+                    f"<span class=stattxt>{counts}</span></td></tr></table>"
+                )
+            else:
+                middle = ""
+        else:
+            middle = """
 <button title="{}" id="ansbut" onclick='pycmd("ans");'>{}<span class=stattxt>{}</span></button>""".format(
-            tr.actions_shortcut_key(val=tr.studying_space()),
-            tr.studying_show_answer(),
-            self._remaining(),
-        )
-        # wrap it in a table so it has the same top margin as the ease buttons
-        middle = (
-            "<table cellpadding=0><tr><td class=stat2 align=center>%s</td></tr></table>"
-            % middle
-        )
+                tr.actions_shortcut_key(val=tr.studying_space()),
+                tr.studying_show_answer(),
+                self._remaining(),
+            )
+            # wrap it in a table so it has the same top margin as the ease buttons
+            middle = (
+                "<table cellpadding=0><tr><td class=stat2 align=center>%s</td></tr></table>"
+                % middle
+            )
         if self.card.should_show_timer():
             maxTime = self.card.time_limit() / 1000
         else:

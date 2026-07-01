@@ -64,6 +64,18 @@ pub(crate) fn new_full_length_attempt_id() -> String {
     format!("fla-{}", crate::notes::base91_u64())
 }
 
+/// Derive a stable u64 RNG seed from a string (FNV-1a). Deterministic and
+/// portable, so a session's shuffles are reproducible within the session (same
+/// key -> same seed) while differing across sessions (session ids are random).
+pub(crate) fn seed_from_str(s: &str) -> u64 {
+    let mut hash: u64 = 0xcbf2_9ce4_8422_2325;
+    for b in s.as_bytes() {
+        hash ^= *b as u64;
+        hash = hash.wrapping_mul(0x0000_0100_0000_01b3);
+    }
+    hash
+}
+
 // ---- Section (proto enum <-> canonical DB string) --------------------------
 
 /// Canonical DB representation of a section proto enum value.

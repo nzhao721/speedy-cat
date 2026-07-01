@@ -126,7 +126,7 @@
         <item quantity="many">%1$d minut</item>
         <item quantity="other">%1$d minut</item>
     </plurals>
-    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">Karta AnkiDroid</string>
+    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">Karta SpeedyCAT</string>
     <string name="note_editor_copy_note" maxLength="28">Kopiuj notatkę</string>
     <string name="card_editor_reposition_card" comment="reposition a card in the new queue" maxLength="28">Przestaw</string>
     <string name="card_editor_reset_card" maxLength="28">Resetuj postępy</string>
@@ -138,31 +138,31 @@
     <string name="checks_action" maxLength="28">Sprawdź</string>
     <string name="unknown_type_field_warning">Wpisz odpowiedź: nieznane pole %s</string>
     <string name="delete_deck" comment="Message on a progress bar starting a deck is being deleted.">Usuwanie talii&#8230;\nProszę czekać&#8230;</string>
-    <string name="info_rate">Oceń AnkiDroid</string>
+    <string name="info_rate">Oceń SpeedyCAT</string>
     <string name="import_title">Importowanie</string>
     <string name="import_preparing_file">Przygotowywanie pliku do importu&#8230;</string>
     <string name="import_message_add" comment="Adding a new deck to the collection (import)">Dodaj</string>
     <string name="import_message_replace_confirm">Istniejąca kolekcja zostanie usunięta i zastąpiona danymi z pliku %s</string>
     <string name="import_dialog_message_add">Dodać \"%s\" do kolekcji? Może to zająć dłuższą chwilę</string>
-    <string name="import_log_no_apkg">To nie jest prawidłowy plik pakietu Anki</string>
+    <string name="import_log_no_apkg">To nie jest prawidłowy plik pakietu SpeedyCAT</string>
     <string name="import_title_error" comment="Title of error dialog">Błąd</string>
     <string name="import_error_handle_exception">Nie udało się zaimportować pliku\n\n%s</string>
     <string name="import_error_not_apkg_extension">Nazwa pliku \"%s\" nie ma rozszerzenia .apkg lub .colpkg</string>
-    <string name="import_error_load_imported_database">Pliki bazy danych Anki (.anki2) nie są jeszcze obsługiwane. W instrukcji możesz przeczytać o alternatywnych możliwościach importu</string>
-    <string name="import_error_content_provider">Wybrany plik nie mógł zostać automatycznie zaimportowany przez AnkiDroid. Zapoznaj się z podręcznikiem użytkownika na temat ręcznego importowania plików Anki: \n%s</string>
+    <string name="import_error_load_imported_database">Pliki bazy danych SpeedyCAT (.anki2) nie są jeszcze obsługiwane. W instrukcji możesz przeczytać o alternatywnych możliwościach importu</string>
+    <string name="import_error_content_provider">Wybrany plik nie mógł zostać automatycznie zaimportowany przez SpeedyCAT. Zapoznaj się z podręcznikiem użytkownika na temat ręcznego importowania plików SpeedyCAT: \n%s</string>
     <string name="import_error_copy_to_cache_title">Nie udało się zapisać pliku w pamięci podręcznej</string>
     <string name="import_error_copy_to_cache_explanation" comment="The substitution is a list of suggested fixes in bullet point form">Jest to często spowodowane błędem w aplikacji, której użyłeś do wybrania pliku. Spróbuj następujących rozwiązań:\n\n%s</string>
-    <string name="import_interrupted">Import przerwany: AnkiDroid zostało zamknięte</string>
+    <string name="import_interrupted">Import przerwany: SpeedyCAT zostało zamknięte</string>
     <string name="export_ready_title">Eksportowanie zakończone</string>
     <string name="export_send_no_handlers">Nie znaleziono aplikacji, która obsługuje apkg. Zapisywanie&#8230;</string>
-    <string name="export_save_apkg_successful">Pakiet Anki zapisany pomyślnie</string>
-    <string name="export_save_apkg_unsuccessful">Zapis pakietu Anki nieudany</string>
-    <string name="export_share_title">Wyślij pakiet Anki używając</string>
-    <string name="export_email_subject">AnkiDroid wyeksportował fiszki: %s</string>
+    <string name="export_save_apkg_successful">Pakiet SpeedyCAT zapisany pomyślnie</string>
+    <string name="export_save_apkg_unsuccessful">Zapis pakietu SpeedyCAT nieudany</string>
+    <string name="export_share_title">Wyślij pakiet SpeedyCAT używając</string>
+    <string name="export_email_subject">SpeedyCAT wyeksportował fiszki: %s</string>
     <string name="export_email_text"><![CDATA[        Cześć!
         <br/><br/>
-        To jest talia fiszek programu Anki wysłana z AnkiDroid[1].
-        Spróbuj ją otworzyć używając jednej z dostępnych wersji Anki[2] i ciesz się łatwą i efektywną nauką!<br/><br/>
+        To jest talia fiszek programu SpeedyCAT wysłana z SpeedyCAT[1].
+        Spróbuj ją otworzyć używając jednej z dostępnych wersji SpeedyCAT[2] i ciesz się łatwą i efektywną nauką!<br/><br/>
         [1] %1$s<br/>
         [2] %2$s
         ]]></string>
@@ -198,18 +198,18 @@
     <string name="white_board_eraser_disabled">Tryb gumkowania zdezaktywowany</string>
     <string comment="Progress amount e.g. \'28 MB/141 MB\'. %1$s is the current amount, %2$s is the max." name="progress_amount_bytes">%1$s/%2$s</string>
     <string name="media_file_size_warning_title">Wybrane media są za duże</string>
-    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">Plik \"%1$s\" (%2$s) przekracza limit AnkiWeb %3$s i nie może być zsynchronizowany. Dodać mimo to?</string>
+    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">Plik \"%1$s\" (%2$s) przekracza limit SpeedyCAT %3$s i nie może być zsynchronizowany. Dodać mimo to?</string>
     <string name="media_file_size_add_anyway">Dodaj mimo to</string>
     <!-- Whiteboard save image message in the Study Screen -->
     <string name="white_board_image_save_failed">Nie udało się zapisać obrazu tablicy. %s</string>
     <string name="white_board_image_saved">Obraz tablicy zapisany w %s</string>
     <string name="title_whiteboard_editor" maxLength="28">Edytor tablicy</string>
-    <string name="user_is_a_robot">Wykryto automatyczny test. Jeśli jesteś człowiekiem, skontaktuj się z pomocą techniczną AnkiDroid</string>
+    <string name="user_is_a_robot">Wykryto automatyczny test. Jeśli jesteś człowiekiem, skontaktuj się z pomocą techniczną SpeedyCAT</string>
     <!-- JS api -->
-    <string name="api_version_developer_contact">Ta karta używa funkcji nieobsługiwanych przez AnkiDroid. Skontaktuj się z deweloperem %1$s lub sprawdź wiki. %2$s</string>
+    <string name="api_version_developer_contact">Ta karta używa funkcji nieobsługiwanych przez SpeedyCAT. Skontaktuj się z deweloperem %1$s lub sprawdź wiki. %2$s</string>
     <string name="invalid_json_data">Karta zawiera nieprawidłowe dane. %s</string>
-    <string name="valid_js_api_version">Nieprawidłowa wersja AnkiDroid JS API. Skontaktuj się z deweloperem %s lub sprawdź wiki</string>
-    <string name="update_js_api_version">Dostępna aktualizacja AnkiDroid JS API. Skontaktuj się z deweloperem %s lub sprawdź wiki</string>
+    <string name="valid_js_api_version">Nieprawidłowa wersja SpeedyCAT JS API. Skontaktuj się z deweloperem %s lub sprawdź wiki</string>
+    <string name="update_js_api_version">Dostępna aktualizacja SpeedyCAT JS API. Skontaktuj się z deweloperem %s lub sprawdź wiki</string>
     <string name="reviewer_invalid_api_version_visit_documentation">Pokaż</string>
     <string name="anki_js_error_code">(Error code: %d)</string>
     <!-- About AnkiDroid screen -->
@@ -220,8 +220,8 @@
     <!-- Deck Picker -->
     <string name="search_decks" maxLength="28">Szukaj talii</string>
     <string name="ankidroid_init_failed_webview_title">Fatal error</string>
-    <string name="ankidroid_init_failed_webview">AnkiDroid do działania wymaga System WebView, który jest teraz niedostępny. Może być to spowodowane trwającą teraz instalacją aktualizacji przez system. Spróbuj ponownie za kilka minut.\n\n%s</string>
-    <string name="ankidroid_init_failed_storage">AnkiDroid nie może uzyskać dostępu do pamięci z powodu błędu Androida.\n\n%s</string>
+    <string name="ankidroid_init_failed_webview">SpeedyCAT do działania wymaga System WebView, który jest teraz niedostępny. Może być to spowodowane trwającą teraz instalacją aktualizacji przez system. Spróbuj ponownie za kilka minut.\n\n%s</string>
+    <string name="ankidroid_init_failed_storage">SpeedyCAT nie może uzyskać dostępu do pamięci z powodu błędu Androida.\n\n%s</string>
     <!-- A Menu item to change the Font Size (currently in the Note Editor) -->
     <string name="menu_font_size" maxLength="28">Rozmiar czcionki</string>
     <string name="menu_show_toolbar" comment="Checkable item stating whether the note editor toolbar should be shown" maxLength="28">Pokaż pasek narzędzi</string>
@@ -243,9 +243,9 @@
     <string name="note_editor_video_too_large">Plik wideo jest za duży, wstaw go ręcznie</string>
     <string name="note_editor_audio_too_large">Plik audio jest za duży, wstaw go ręcznie</string>
     <string name="ankidroid_cannot_open_after_backup_try_again" comment="After an Android backup is restored, AnkiDroid opens and shows this message.         Opening AnkiDroid again will work correctly">Kopia zapasowa Androida w toku. Spróbuj ponownie.</string>
-    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Może być konieczne użycie iManager, by umożliwić AnkiDroid dodawanie skrótów</string>
+    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">Może być konieczne użycie iManager, by umożliwić SpeedyCAT dodawanie skrótów</string>
     <string name="create_shortcut_error_miui" comment="Keep the message as short, as this is shown in a toast. %s is the app name: \'AnkiDroid\'">Pozwól skrótom ekranu głównego w ustawieniach systemowych dla %s dodawać skróty</string>
-    <string name="create_shortcut_failed" comment="home screen == launcher">Twój launcher nie pozwala AnkiDroid dodawać skrótów</string>
+    <string name="create_shortcut_failed" comment="home screen == launcher">Twój launcher nie pozwala SpeedyCAT dodawać skrótów</string>
     <string name="create_shortcut_error">Błąd dodawania skrótu: %s</string>
     <string name="note_editor_capitalize" comment="This is for a switch with a checkbox - on: enabled" maxLength="28">Zaczynaj zdania dużą literą</string>
     <string name="menu_scroll_toolbar" comment="Checkbox stating whether note editor toolbar is scrollable or stacked. Checked: Scroll" maxLength="28">Przewijany pasek narzędzi</string>
@@ -310,11 +310,11 @@
     <!-- App Intro -->
     <string name="intro_ankidroid_tagline_one">Ucz się mniej</string>
     <string name="intro_ankidroid_tagline_two">Pamiętaj więcej</string>
-    <string name="intro_short_ankidroid_explanation">Algorytm powtórek Anki oszczędza Twój czas, wzmacniając to, co pamiętasz najsłabiej, i utrwalając to, co pamiętasz najlepiej</string>
+    <string name="intro_short_ankidroid_explanation">Algorytm powtórek SpeedyCAT oszczędza Twój czas, wzmacniając to, co pamiętasz najsłabiej, i utrwalając to, co pamiętasz najlepiej</string>
     <string name="intro_get_started" comment="Action to start AnkiDroid for the first time without syncing from AnkiWeb">Get started</string>
-    <string name="intro_sync_from_ankiweb">Synchronizuj z AnkiWeb</string>
+    <string name="intro_sync_from_ankiweb">Synchronizuj z SpeedyCAT</string>
     <!-- IntentHandler -->
-    <string name="app_not_initialized_new">AnkiDroid nie został jeszcze zainicjowany. Otwórz AnkiDroid i spróbuj ponownie</string>
+    <string name="app_not_initialized_new">SpeedyCAT nie został jeszcze zainicjowany. Otwórz SpeedyCAT i spróbuj ponownie</string>
     <!-- Deck Creation -->
     <string name="deck_created">Utworzono talię</string>
     <string name="deck_renamed">Zmieniono nazwę talii</string>

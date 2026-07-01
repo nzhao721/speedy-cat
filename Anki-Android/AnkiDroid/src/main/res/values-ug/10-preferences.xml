@@ -62,7 +62,7 @@
     <string name="card_browser_font_size" maxLength="41">كارتا كۆرگۈچ خەت ئۆلچىمى</string>
     <string name="card_browser_hide_media" maxLength="41">كارتا كۆرگۈچتە ھۆججەت ئاتىنى كۆرسىتىدۇ</string>
     <string name="card_browser_hide_media_summary">كارتا كۆرگۈچتىكى سوئال/جاۋاب بۆلىكىدە ئاۋاز ھۆججەت ئاتىنى كۆرسىتىدۇ</string>
-    <string name="col_path" maxLength="41">AnkiDroid مۇندەرىجىسى</string>
+    <string name="col_path" maxLength="41">SpeedyCAT مۇندەرىجىسى</string>
     <string name="fullscreen_review" maxLength="41">پۈتۈن ئېكران ھالىتى</string>
     <string name="full_screen_off">تاقاق</string>
     <string name="full_screen_system">سىستېما بالداقنى يوشۇر</string>
@@ -167,8 +167,8 @@
     </plurals>
     <string name="pref_keep_screen_on" maxLength="41">ئېكراننى ئويغاق تۇت</string>
     <string name="pref_keep_screen_on_summ">ئېكران مۆھلىتىنى چەكلە</string>
-    <string name="enable_api_title" maxLength="41">AnkiDroid API نى قوزغات</string>
-    <string name="enable_api_summary">سىزنى ئارىلاشتۇرمايلا باشقا ئەپنىڭ AnkiDroid قا باغلىنىپ سانلىق مەلۇماتنى ئوقۇپ/يېزىشىغا يول قويىدۇ</string>
+    <string name="enable_api_title" maxLength="41">SpeedyCAT API نى قوزغات</string>
+    <string name="enable_api_summary">سىزنى ئارىلاشتۇرمايلا باشقا ئەپنىڭ SpeedyCAT قا باغلىنىپ سانلىق مەلۇماتنى ئوقۇپ/يېزىشىغا يول قويىدۇ</string>
     <string name="custom_buttons" maxLength="41">ئەپ بالداق توپچىسى</string>
     <string name="custom_buttons_summary">ئەپ بالداقتا قايسى مەشغۇلاتنىڭ كۆرۈنىدىغانلىقىنى خاسلاشتۇرىدۇ</string>
     <string name="custom_buttons_setting_always_show">ھەمىشە كۆرسەت</string>
@@ -178,7 +178,7 @@
     <string name="reset_settings_to_default">تەڭشەكنى كۆڭۈلدىكىگە قايتۇرىدۇ</string>
     <string name="reset">ئەسلىگە قايتۇر</string>
     <string name="thirdparty_apps_title" maxLength="41">ئۈچىنچى تەرەپ API ئەپلىرى</string>
-    <string name="thirdparty_apps_summary">لۇغەت، ئاممىۋى مۇلازىمەتكە ئوخشاش AnkiDroid API نى ئىشلىتىدىغان پىروگراممىلارنىڭ تىزىملىكىنى كۆرسىتىدۇ.</string>
+    <string name="thirdparty_apps_summary">لۇغەت، ئاممىۋى مۇلازىمەتكە ئوخشاش SpeedyCAT API نى ئىشلىتىدىغان پىروگراممىلارنىڭ تىزىملىكىنى كۆرسىتىدۇ.</string>
     <string name="pref_controls_reviews_tab" maxLength="41" comment="Name of the tab to configure controls for the reviews screen">تەكرارلاش</string>
     <string name="pref_controls_previews_tab" maxLength="41" comment="Name of the tab to configure controls for the previews screen">ئالدىن كۆزىتىش</string>
     <string name="toggle_backside_only" maxLength="41" comment="Control setting that toggles \'Backside only\' in the previews screen">ئارقا تەرىپىنىلا ئالماشتۇر</string>
@@ -194,9 +194,9 @@
     <!-- Custom sync server settings -->
     <string name="custom_sync_server_title" maxLength="41">ئىختىيارى قەدەمداش مۇلازىمېتىر</string>
     <string name="custom_sync_server_summary_none_of_the_two_servers_used" comment="This summary is shown when neither of the two custom sync servers are used,         which is the default.">ئىشلىتىلمىگەن</string>
-    <string name="custom_sync_server_help2"><![CDATA[        As an alternative to synchronizing with AnkiWeb,
+    <string name="custom_sync_server_help2"><![CDATA[        As an alternative to synchronizing with SpeedyCAT,
         you may use your own server for synchronization.
-        If not set, the default AnkiWeb server will be used instead.
+        If not set, the default SpeedyCAT server will be used instead.
         <a href="%s">تەپسىلاتى</a>
         ]]></string>
     <string name="custom_sync_server_base_url_title" maxLength="41">Sync URL</string>
@@ -221,9 +221,9 @@
     <string name="deck_conf_general" maxLength="41" comment="Label of the submenu for the general options of new deck">ئادەتتىكى</string>
     <string name="deck_conf_cram_search" maxLength="41" comment="Label of a text field that contains a search query.">ئىزدە</string>
     <!-- analytics options -->
-    <string name="analytics_dialog_title">AnkiDroid نى ياخشىلاشقا ياردەملىشىڭ!</string>
+    <string name="analytics_dialog_title">SpeedyCAT نى ياخشىلاشقا ياردەملىشىڭ!</string>
     <string name="analytics_title" maxLength="41">ئىقتىدار ئىشلىتىشنى ھەمبەھىرلەيدۇ</string>
-    <string name="analytics_summ">ئىشلەتكۈچىلەرنىڭ قايسى ئىقتىدارلارنى ئىشلىتىدىغانلىقىنى ئىگىلەش ئارقىلى ئىجادكارلارغا ياردەم بېرىپ  AnkiDroid قا تۆھپە قوشالايسىز</string>
+    <string name="analytics_summ">ئىشلەتكۈچىلەرنىڭ قايسى ئىقتىدارلارنى ئىشلىتىدىغانلىقىنى ئىگىلەش ئارقىلى ئىجادكارلارغا ياردەم بېرىپ  SpeedyCAT قا تۆھپە قوشالايسىز</string>
     <string name="note_editor_replace_newlines" maxLength="41">يېڭى قۇرنى HTML بىلەن ئالماشتۇرىدۇ</string>
     <string name="note_editor_replace_newlines_summ">خاتىرە تەھرىرلىگۈچتە، كارتا تەھرىرلىگەندە &lt;br&gt; ھەر قاندىغى قۇر ئالماشتۇرۇشقا ئايلاندۇرۇلىدۇ.</string>
     <string name="type_in_answer_focus" maxLength="41">(جاۋاب كىرگۈزۈش) كە مەركەزلىشىدۇ</string>
@@ -232,11 +232,11 @@
     <string name="open_changelog">ئۆزگىرىش خاتىرىسىنى ئاچىدۇ</string>
     <string name="pref_cat_about_title" maxLength="41">ھەققىدە</string>
     <string name="contributors_title">تۆھپىكار</string>
-    <string name="about_contributors_description"><![CDATA[بۇلار بىزنىڭ قالتىس <a href=\"%1$s\">تۆھپىكارلىرىمىز</a>. پىروگرامما تۈزۈش، تەرجىمە قىلىش، ئىئانە قىلىش ۋە  <a href=\"%2$s\">تېخىمۇ كۆپ</a> ئۇسۇللار ئارقىلىق AnkiDroid غا ياردەم قىلالايسىز!]]></string>
+    <string name="about_contributors_description"><![CDATA[بۇلار بىزنىڭ قالتىس <a href=\"%1$s\">تۆھپىكارلىرىمىز</a>. پىروگرامما تۈزۈش، تەرجىمە قىلىش، ئىئانە قىلىش ۋە  <a href=\"%2$s\">تېخىمۇ كۆپ</a> ئۇسۇللار ئارقىلىق SpeedyCAT غا ياردەم قىلالايسىز!]]></string>
     <string name="license">ئىجازەتنامە</string>
-    <string name="license_description"><![CDATA[AnkiDroid نى <a href=\"%1$s\">GPL-3.0</a> ۋە <a href=\"%2$s\">AGPL-3.0</a> ئىجازىتىدە تارقىتىدۇ، ئەسلى مەنبە كودى <a href=\"%3$s\">GitHub</a> تا بار]]></string>
-    <string name="other_licenses"><![CDATA[AnkiDroid نۇرغۇن ئوچۇق كودلۇق <a href=\"%1$s\">ئىجازەت</a>تە تارقىتىلىدىغان ئۈچىنچى تەرەپ ئامبار ۋە سىنبەلگىنىمۇ ئىشلىتىدۇ]]></string>
-    <string name="donate_description"><![CDATA[سىز AnkiDroid ئىجادىيىتىگە <a href=\"%1$s\">ئىئانە</a> قىلىش ئارقىلىق قوللىيالايسىز. ھەر قانداق مىقداردىكى ئىئانە چوڭقۇر ئالقىشلىنىدۇ.]]></string>
+    <string name="license_description"><![CDATA[SpeedyCAT نى <a href=\"%1$s\">GPL-3.0</a> ۋە <a href=\"%2$s\">AGPL-3.0</a> ئىجازىتىدە تارقىتىدۇ، ئەسلى مەنبە كودى <a href=\"%3$s\">GitHub</a> تا بار]]></string>
+    <string name="other_licenses"><![CDATA[SpeedyCAT نۇرغۇن ئوچۇق كودلۇق <a href=\"%1$s\">ئىجازەت</a>تە تارقىتىلىدىغان ئۈچىنچى تەرەپ ئامبار ۋە سىنبەلگىنىمۇ ئىشلىتىدۇ]]></string>
+    <string name="donate_description"><![CDATA[سىز SpeedyCAT ئىجادىيىتىگە <a href=\"%1$s\">ئىئانە</a> قىلىش ئارقىلىق قوللىيالايسىز. ھەر قانداق مىقداردىكى ئىئانە چوڭقۇر ئالقىشلىنىدۇ.]]></string>
     <!-- Controls -->
     <string name="binding_add_gesture">قول ئىشارەت قوش</string>
     <string name="binding_add_key">توپچە قوش</string>
@@ -271,7 +271,7 @@
     <string name="bindings_already_bound">«%s» غا باغلانغان</string>
     <!-- Advanced -->
     <string name="pref_cat_experimental" maxLength="41" tools:ignore="UnusedResources">تەجرىبە</string>
-    <string name="readtext_deprecation_warn">AnkiDroid تېخىمۇ ياخشى تېكىستتىن ئاۋازغا مېخانىزمىنى كىرگۈزدى، ئۇ باشقا Anki خېرىدار پىروگراممىسى بىلەن ماسلىشىدۇ ھەمدە تېخىمۇ كۆپ ئاۋاز ۋە تىلدا قويۇشنى قوللايدۇ!\n\nئامالنىڭ بارىچە تېزراق يۈكسەلتىڭ، چۈنكى بۇ تەڭشەك پات ئارىدا چىقىرىۋېتىلىدۇ</string>
+    <string name="readtext_deprecation_warn">SpeedyCAT تېخىمۇ ياخشى تېكىستتىن ئاۋازغا مېخانىزمىنى كىرگۈزدى، ئۇ باشقا SpeedyCAT خېرىدار پىروگراممىسى بىلەن ماسلىشىدۇ ھەمدە تېخىمۇ كۆپ ئاۋاز ۋە تىلدا قويۇشنى قوللايدۇ!\n\nئامالنىڭ بارىچە تېزراق يۈكسەلتىڭ، چۈنكى بۇ تەڭشەك پات ئارىدا چىقىرىۋېتىلىدۇ</string>
     <string name="readtext_reviewer_warn" tools:ignore="UnusedResources">يېڭى تېكىستتىن ئاۋازغا پىچىمىغا يۈكسەلتىڭ</string>
     <string name="pref_fixed_port_title" maxLength="41">ئۆگىنىش ئېكرانىدىكى يەرلىك ساقلىغۇچ</string>
     <string name="pref_fixed_port_summary">ئۆگىنىش ئېكرانىدا مۇقىم مۇلازىمېتىر ئېغىزىنى ئىشلىتىپ JavaScript يەرلىك ساقلىغۇچنى قوزغىتىدۇ</string>
@@ -283,9 +283,9 @@
     <!-- #######################################################################################
          #################################### Backup options ###################################
          ####################################################################################### -->
-    <string name="pref__backups_help__summary"><![CDATA[        AnkiDroid توپلىمىڭىزنى قەرەللىك زاپاسلايدۇ.
+    <string name="pref__backups_help__summary"><![CDATA[        SpeedyCAT توپلىمىڭىزنى قەرەللىك زاپاسلايدۇ.
         زاپاس ئىككى كۈندىن ئاشقاندىن كېيىن،
-        AnkiDroid ئۇلارنىڭ بىر قىسمىنى چىقىرىۋېتىپ دىسكا بوشلۇقىنى بىكارلايدۇ.
+        SpeedyCAT ئۇلارنىڭ بىر قىسمىنى چىقىرىۋېتىپ دىسكا بوشلۇقىنى بىكارلايدۇ.
         <br><br>
         ئەسكەرتىش ۋاسىتە ھۆججىتى زاپاسلانمىغان.
         بىخەتەرلىك ئۈچۈن، توپلىمىڭىزنى قەرەللىك قەدەمداشلاڭ ياكى ئۇلارنى زاپاسلاپ چىقىرىڭ.

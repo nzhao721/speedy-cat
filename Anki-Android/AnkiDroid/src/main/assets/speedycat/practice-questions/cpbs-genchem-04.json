@@ -1,0 +1,328 @@
+{
+  "meta": {
+    "section": "CPBS",
+    "subArea": "general chemistry",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "LibreTexts — GOB (Roosevelt University), Ch. 9 Acids and Bases — Multiple-choice problems",
+        "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+        "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/09%3A_Acids_and_Bases/9.E%3A_Exercises"
+      },
+      {
+        "sourceName": "LibreTexts — GOB (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements — Multiple-Choice Questions",
+        "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+        "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/01%3A_Scientific_Method_Matter_and_Measurements/1.E%3A_Exercises"
+      },
+      {
+        "sourceName": "LibreTexts GOB (Roosevelt) — Ch. 16.1 Ch. 1 Odd Answers (answer key)",
+        "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+        "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/16%3A_Answers_to_Odd_Problems/16.01%3A_Ch._1_Odd_Answers"
+      }
+    ],
+    "counts": {"total": 15, "byTopic": {"acids and bases (definitions, pH/pOH)": 6, "matter / classification of mixtures": 3, "measurement / SI units / significant figures / accuracy": 6}},
+    "notes": "Ch. 9 acids/bases MCQ: the Ch. 16.9 answer-key page returned empty (consistent with the note on cpbs-001 in questions.json), so these are marked verified-from-source-text and were checked by definition/calculation. DEDUPED against questions.json cpbs-001..004 (Bronsted-Lowry acid definition, conjugate base of HF, acidic pH<7, and pH of 4.1e-5) — those four Ch. 9 MCQ are intentionally NOT repeated here. Ch. 1 MCQ answers come from the rendered Ch. 16.1 answer key (source-answer-key). SKIPPED: Ch. 1 MCQ #6 (read the volume from the graduated-cylinder image) because it requires an un-capturable figure."
+  },
+  "questions": [
+    {
+      "id": "cpbs-xc056",
+      "section": "CPBS",
+      "stem": "Which of the following molecules is a base?",
+      "choices": [
+        {"label": "A", "text": "HCl"},
+        {"label": "B", "text": "H2SO4"},
+        {"label": "C", "text": "NH3"},
+        {"label": "D", "text": "CH3COOH"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "A Brønsted-Lowry base is a proton acceptor. Ammonia (NH3) accepts a proton to become NH4+, so it is a base. HCl, H2SO4, and CH3COOH (acetic acid) are all proton donors (acids).",
+      "topicTags": ["general chemistry", "acids and bases", "Bronsted-Lowry", "bases"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 9 Acids and Bases",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/09%3A_Acids_and_Bases/9.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.9 answer-key page returned empty; answer independently verified (definitional)."
+    },
+    {
+      "id": "cpbs-xc057",
+      "section": "CPBS",
+      "stem": "What is the conjugate acid of NH3?",
+      "choices": [
+        {"label": "A", "text": "NH4+"},
+        {"label": "B", "text": "NH3"},
+        {"label": "C", "text": "NH2-"},
+        {"label": "D", "text": "OH-"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "A conjugate acid is formed by adding a proton (H+). Adding H+ to NH3 gives the ammonium ion, NH4+.",
+      "topicTags": ["general chemistry", "acids and bases", "conjugate pairs"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 9 Acids and Bases",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/09%3A_Acids_and_Bases/9.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.9 answer-key page returned empty; answer independently verified (definitional)."
+    },
+    {
+      "id": "cpbs-xc058",
+      "section": "CPBS",
+      "stem": "What is an example of an everyday base?",
+      "choices": [
+        {"label": "A", "text": "Vinegar"},
+        {"label": "B", "text": "Coffee"},
+        {"label": "C", "text": "Blood"},
+        {"label": "D", "text": "Gastric juice"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Blood has a pH of about 7.4, which is slightly basic (above 7). Vinegar, coffee, and gastric juice are all acidic (pH below 7).",
+      "topicTags": ["general chemistry", "acids and bases", "pH scale", "everyday chemistry"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 9 Acids and Bases",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/09%3A_Acids_and_Bases/9.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.9 answer-key page returned empty; answer independently verified (blood pH ~7.4 is basic)."
+    },
+    {
+      "id": "cpbs-xc059",
+      "section": "CPBS",
+      "stem": "What is the pOH of a solution with [H3O+] = 1.6 × 10^-8 M?",
+      "choices": [
+        {"label": "A", "text": "1.60"},
+        {"label": "B", "text": "6.20"},
+        {"label": "C", "text": "7.80"},
+        {"label": "D", "text": "8.00"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "First find pH = -log(1.6 × 10^-8) = 7.80. Then pOH = 14.00 - pH = 14.00 - 7.80 = 6.20. (Choice C, 7.80, is the pH itself—a trap.)",
+      "topicTags": ["general chemistry", "acids and bases", "pH and pOH", "calculation"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 9 Acids and Bases",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/09%3A_Acids_and_Bases/9.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim (exponent rendered with ^). The Ch. 16.9 answer-key page returned empty; answer independently verified by calculation."
+    },
+    {
+      "id": "cpbs-xc060",
+      "section": "CPBS",
+      "stem": "What is the hydronium concentration in a solution whose pH is 4.82?",
+      "choices": [
+        {"label": "A", "text": "6.6 × 10^5 M"},
+        {"label": "B", "text": "4.82 M"},
+        {"label": "C", "text": "1.5 × 10^-5 M"},
+        {"label": "D", "text": "6.6 × 10^-10 M"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "[H3O+] = 10^-pH = 10^-4.82 = 1.5 × 10^-5 M. (Choice D, 6.6 × 10^-10 M, is the hydroxide concentration.)",
+      "topicTags": ["general chemistry", "acids and bases", "pH", "calculation"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 9 Acids and Bases",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/09%3A_Acids_and_Bases/9.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim (exponents rendered with ^; distractor A exponent inferred from lost-superscript text). The Ch. 16.9 answer-key page returned empty; answer independently verified by calculation."
+    },
+    {
+      "id": "cpbs-xc061",
+      "section": "CPBS",
+      "stem": "What is the hydroxide concentration in a solution whose pOH is 1.75?",
+      "choices": [
+        {"label": "A", "text": "56 M"},
+        {"label": "B", "text": "1.75 M"},
+        {"label": "C", "text": "1.8 × 10^-2 M"},
+        {"label": "D", "text": "5.6 × 10^-13 M"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "[OH-] = 10^-pOH = 10^-1.75 = 1.8 × 10^-2 M. (Choice D is [H3O+], obtained from pH = 14 - 1.75 = 12.25.)",
+      "topicTags": ["general chemistry", "acids and bases", "pOH", "calculation"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 9 Acids and Bases",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/09%3A_Acids_and_Bases/9.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim (exponents rendered with ^). The Ch. 16.9 answer-key page returned empty; answer independently verified by calculation."
+    },
+    {
+      "id": "cpbs-xc062",
+      "section": "CPBS",
+      "stem": "Which of the following statements is false?",
+      "choices": [
+        {"label": "A", "text": "A law explains why something is true."},
+        {"label": "B", "text": "A law describes a series of experimental observations."},
+        {"label": "C", "text": "A theory can be refuted by new experimental results."},
+        {"label": "D", "text": "Unlike a hypothesis, experimental data is required to formulate a theory."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "A scientific law describes a consistent pattern of observations but does not explain why it occurs; explaining 'why' is the role of a theory. The other three statements are true.",
+      "topicTags": ["general chemistry", "scientific method", "law vs theory"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/01%3A_Scientific_Method_Matter_and_Measurements/1.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.1 MCQ: Q1 = a)."
+    },
+    {
+      "id": "cpbs-xc063",
+      "section": "CPBS",
+      "stem": "Which is a base unit of the SI system?",
+      "choices": [
+        {"label": "A", "text": "Gram"},
+        {"label": "B", "text": "Liter"},
+        {"label": "C", "text": "Cubic centimeter"},
+        {"label": "D", "text": "Second"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The second is one of the seven SI base units. The SI base unit for mass is the kilogram (not the gram), while the liter and cubic centimeter are units of volume (derived from length).",
+      "topicTags": ["general chemistry", "measurement", "SI units"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/01%3A_Scientific_Method_Matter_and_Measurements/1.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.1 MCQ: Q2 = d)."
+    },
+    {
+      "id": "cpbs-xc064",
+      "section": "CPBS",
+      "stem": "Which is a derived unit of the SI system?",
+      "choices": [
+        {"label": "A", "text": "Kelvin"},
+        {"label": "B", "text": "Meter"},
+        {"label": "C", "text": "Milliliter"},
+        {"label": "D", "text": "Kilogram"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "A derived unit is constructed from base units. The milliliter is a volume (length cubed), so it is derived. Kelvin, meter, and kilogram are all SI base units.",
+      "topicTags": ["general chemistry", "measurement", "SI units", "derived units"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/01%3A_Scientific_Method_Matter_and_Measurements/1.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.1 MCQ: Q3 = c)."
+    },
+    {
+      "id": "cpbs-xc065",
+      "section": "CPBS",
+      "stem": "You measure the mass of a 1 kg object five times: 0.978 kg, 0.979 kg, 0.979 kg, 0.976 kg, 0.977 kg. Are your results...?",
+      "choices": [
+        {"label": "A", "text": "Accurate, but not precise"},
+        {"label": "B", "text": "Precise, but not accurate"},
+        {"label": "C", "text": "Both accurate and precise"},
+        {"label": "D", "text": "Neither accurate nor precise"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The five readings agree closely with one another (all 0.976-0.979 kg), so they are precise. But they are consistently about 0.02 kg below the true value of 1 kg, so they are not accurate.",
+      "topicTags": ["general chemistry", "measurement", "accuracy vs precision"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/01%3A_Scientific_Method_Matter_and_Measurements/1.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.1 MCQ: Q4 = b)."
+    },
+    {
+      "id": "cpbs-xc066",
+      "section": "CPBS",
+      "stem": "Which quantity is exact?",
+      "choices": [
+        {"label": "A", "text": "The number of eggs in a dozen"},
+        {"label": "B", "text": "The height of a person"},
+        {"label": "C", "text": "The mass of a dog"},
+        {"label": "D", "text": "The length of a table"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "A counted or defined quantity—such as exactly 12 eggs in a dozen—is exact and has infinite significant figures. Measured quantities (height, mass, length) always carry some uncertainty.",
+      "topicTags": ["general chemistry", "measurement", "exact numbers", "significant figures"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/01%3A_Scientific_Method_Matter_and_Measurements/1.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.1 MCQ: Q5 = a)."
+    },
+    {
+      "id": "cpbs-xc067",
+      "section": "CPBS",
+      "stem": "Which number has only 2 significant figures?",
+      "choices": [
+        {"label": "A", "text": "1082"},
+        {"label": "B", "text": "0.94"},
+        {"label": "C", "text": "0.207"},
+        {"label": "D", "text": "6.23"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Leading zeros are not significant, so 0.94 has 2 significant figures. 0.207 has 3, 6.23 has 3, and 1082 has 4.",
+      "topicTags": ["general chemistry", "measurement", "significant figures"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/01%3A_Scientific_Method_Matter_and_Measurements/1.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.1 MCQ: Q7 = b)."
+    },
+    {
+      "id": "cpbs-xc068",
+      "section": "CPBS",
+      "stem": "What is the assumed uncertainty in the value 7.934 g?",
+      "choices": [
+        {"label": "A", "text": "±1 g"},
+        {"label": "B", "text": "±0.1 g"},
+        {"label": "C", "text": "±0.01 g"},
+        {"label": "D", "text": "±0.001 g"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "By convention the uncertainty lies in the last reported digit. The last digit of 7.934 g is in the thousandths place, so the assumed uncertainty is ±0.001 g.",
+      "topicTags": ["general chemistry", "measurement", "uncertainty", "significant figures"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/01%3A_Scientific_Method_Matter_and_Measurements/1.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.1 MCQ: Q8 = d)."
+    },
+    {
+      "id": "cpbs-xc069",
+      "section": "CPBS",
+      "stem": "Which of the following is an example of a homogeneous mixture?",
+      "choices": [
+        {"label": "A", "text": "Air"},
+        {"label": "B", "text": "Chocolate chip ice cream"},
+        {"label": "C", "text": "Dirt"},
+        {"label": "D", "text": "Concrete"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Air is a homogeneous mixture of gases with uniform composition throughout. Chocolate chip ice cream, dirt, and concrete are heterogeneous mixtures with visibly non-uniform composition.",
+      "topicTags": ["general chemistry", "matter", "mixtures", "homogeneous vs heterogeneous"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/01%3A_Scientific_Method_Matter_and_Measurements/1.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.1 MCQ: Q9 = a)."
+    },
+    {
+      "id": "cpbs-xc070",
+      "section": "CPBS",
+      "stem": "Which of the following is a mixture?",
+      "choices": [
+        {"label": "A", "text": "Helium"},
+        {"label": "B", "text": "Copper"},
+        {"label": "C", "text": "Brass"},
+        {"label": "D", "text": "Iron"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Brass is a mixture (an alloy of copper and zinc). Helium, copper, and iron are pure substances (each is a single element).",
+      "topicTags": ["general chemistry", "matter", "mixtures vs pure substances", "alloys"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/01%3A_Scientific_Method_Matter_and_Measurements/1.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.1 MCQ: Q10 = c)."
+    }
+  ]
+}

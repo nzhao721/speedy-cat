@@ -39,12 +39,12 @@
         <item quantity="other">Επαναφορά %d καρτών</item>
     </plurals>
     <string name="answering_error_title">Σφάλμα βάσης δεδομένων</string>
-    <string name="answering_error_message">Παρουσιάστηκε σφάλμα κατά την εγγραφή στη συλλογή. Αυτό θα μπορεί να σχετίζεται με κατεστραμμένη βάση δεδομένων ή ανεπαρκή αποθηκευτικό χώρο.\n\nΑν συμβαίνει συχνά, προσπαθήστε να ελέγξετε τη βάση δεδομένων, να επιδιορθώσετε τη συλλογή ή να την επαναφέρετε από ένα αντίγραφο. Κάντε κλικ στις σχετικές «επιλογές».\n\nΕκτός αυτού, μπορεί να είναι και σφάλμα του AnkiDroid· παρακαλούμε αναφέρετε το σφάλμα ώστε να το ελέγξουμε.</string>
+    <string name="answering_error_message">Παρουσιάστηκε σφάλμα κατά την εγγραφή στη συλλογή. Αυτό θα μπορεί να σχετίζεται με κατεστραμμένη βάση δεδομένων ή ανεπαρκή αποθηκευτικό χώρο.\n\nΑν συμβαίνει συχνά, προσπαθήστε να ελέγξετε τη βάση δεδομένων, να επιδιορθώσετε τη συλλογή ή να την επαναφέρετε από ένα αντίγραφο. Κάντε κλικ στις σχετικές «επιλογές».\n\nΕκτός αυτού, μπορεί να είναι και σφάλμα του SpeedyCAT· παρακαλούμε αναφέρετε το σφάλμα ώστε να το ελέγξουμε.</string>
     <string name="answering_error_report">Αναφορά σφάλματος</string>
-    <string name="storage_full_message">There is not enough free storage space to open AnkiDroid. Free up some space to continue.</string>
+    <string name="storage_full_message">There is not enough free storage space to open SpeedyCAT. Free up some space to continue.</string>
     <string name="repair_deck_dialog">Είστε βέβαιοι ότι θέλετε να επιδιορθώσετε τη βάση δεδομένων;\n\nΠριν να ξεκινήσει η απόπειρα, θα δημιουργηθεί ένα αντίγραφο στον υποφάκελο \'%s\'.</string>
     <string name="intent_aedict_empty">Η κατηγορία «προεπιλεγμένο» είναι κενή</string>
-    <string name="intent_aedict_category">Για να προσθέσετε κάρτες στο AnkiDroid, καταργήστε όλες τις κατηγορίες σημειωματάριου (Notepad) ή προσθέστε μία με το όνομα «default»</string>
+    <string name="intent_aedict_category">Για να προσθέσετε κάρτες στο SpeedyCAT, καταργήστε όλες τις κατηγορίες σημειωματάριου (Notepad) ή προσθέστε μία με το όνομα «default»</string>
     <string name="custom_study_new_extend">Αύξηση / μείωση (“-3”) σημερινού ορίου νέων καρτών κατά</string>
     <string name="custom_study_rev_extend">Αύξηση / μείωση (“-3”) σημερινού ορίου επαναλήψεων κατά</string>
     <string name="custom_study_forgotten">Επανάληψη ξεχασμένων καρτών στις τελευταίες x μέρες:</string>
@@ -54,7 +54,7 @@
     <string name="storage_full_title">Γεμάτος χώρος αποθήκευσης</string>
     <string name="storage_almost_full_title">Χώρος αποθήκευσης σχεδόν πλήρης</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">Χωρίς αποθηκευτικό χώρο</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">Το AnkiDroid χρειάζεται %s ελεύθερου αποθηκευτικού χώρου για να συνεχίσει. Απελευθερώστε μερικό χώρο</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">Το SpeedyCAT χρειάζεται %s ελεύθερου αποθηκευτικού χώρου για να συνεχίσει. Απελευθερώστε μερικό χώρο</string>
     <string name="restore_backup_title">Επαναφορά αντιγράφου ασφαλείας;</string>
     <string name="restore_backup">Η συλλογή σας θα αντικατασταθεί με παλαιότερο αντίγραφο. Οποιαδήποτε μη αποθηκευμένη πρόοδος θα χαθεί.</string>
     <string name="restore_backup_choose_another">Επιλέξτε ένα άλλο</string>
@@ -115,9 +115,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">Βάση Δεδομένων Κλειδωμένη</string>
-    <string name="database_locked_summary">Η βάση δεδομένων του AnkiDroid χρησιμοποιείται από κάποια άλλη εφαρμογή. Κλείστε την άλλη εφαρμογή και στη συνέχεια, ανοίξτε ξανά το AnkiDroid.</string>
+    <string name="database_locked_summary">Η βάση δεδομένων του SpeedyCAT χρησιμοποιείται από κάποια άλλη εφαρμογή. Κλείστε την άλλη εφαρμογή και στη συνέχεια, ανοίξτε ξανά το SpeedyCAT.</string>
     <string name="incompatible_database_version_title">Ασύμβατη έκδοση βάσης δεδομένων.</string>
-    <string name="incompatible_database_version_summary">Η βάση δεδομένων είναι μια πιο προηγμένη έκδοση από αυτή με την οποία το AnkiDroid μπορεί να λειτουργήσει. Αναβάθμιση του AnkiDroid ή υποβάθμιση της βάσης δεδομένων για να την ανοίξετε\n\nΥποστηριζόμενη έκδοση: %1$d\nΈκδοση Βάσης Δεδομένων: %2$d\n\nΟι παρακάτω επιλογές επαναφοράς θα αντικαταστήσουν την τρέχουσα συλλογή σας, ενδεχομένως με συμβατή έκδοση βάσης δεδομένων:</string>
+    <string name="incompatible_database_version_summary">Η βάση δεδομένων είναι μια πιο προηγμένη έκδοση από αυτή με την οποία το SpeedyCAT μπορεί να λειτουργήσει. Αναβάθμιση του SpeedyCAT ή υποβάθμιση της βάσης δεδομένων για να την ανοίξετε\n\nΥποστηριζόμενη έκδοση: %1$d\nΈκδοση Βάσης Δεδομένων: %2$d\n\nΟι παρακάτω επιλογές επαναφοράς θα αντικαταστήσουν την τρέχουσα συλλογή σας, ενδεχομένως με συμβατή έκδοση βάσης δεδομένων:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">Η εικόνα φόντου εφαρμόστηκε</string>
     <string name="background_image_removed">Η εικόνα φόντου αφαιρέθηκε</string>
@@ -138,29 +138,29 @@
     <string name="locale_selection_dialog_title_new">Ορισμός γλώσσας</string>
     <string name="locale_selection_dialog_summary">Ορισμένα πολύγλωσσα πληκτρολόγια, όπως το Gboard, υποστηρίζουν την αλλαγή γλώσσας κατά την επεξεργασία κειμένου\n\nΖητήστε τη δυνατότητα «setImeHintLocales» από τον κατασκευαστή του πληκτρολογίου σας εάν το πληκτρολόγιό σας δεν αλλάζει τη γλώσσα.</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">Χρήση του AnkiDroid</string>
-    <string name="help_item_ankidroid_manual">Εγχειρίδιο AnkiDroid</string>
-    <string name="help_item_anki_manual">Εγχειρίδιο Anki</string>
-    <string name="help_item_ankidroid_faq">AnkiDroid FAQ</string>
+    <string name="help_title_using_ankidroid">Χρήση του SpeedyCAT</string>
+    <string name="help_item_ankidroid_manual">Εγχειρίδιο SpeedyCAT</string>
+    <string name="help_item_anki_manual">Εγχειρίδιο SpeedyCAT</string>
+    <string name="help_item_ankidroid_faq">SpeedyCAT FAQ</string>
     <string name="help_title_get_help">Λήψη βοήθειας</string>
     <string name="help_item_mailing_list">Λίστα αλληλογραφίας</string>
     <string name="help_item_reddit">Reddit</string>
     <string name="help_item_report_bug">Αναφορά σφαλμάτων</string>
-    <string name="help_title_support_ankidroid" maxLength="28">Υποστήριξη του AnkiDroid</string>
+    <string name="help_title_support_ankidroid" maxLength="28">Υποστήριξη του SpeedyCAT</string>
     <string name="help_item_support_opencollective_donate">Δωρεά</string>
     <string name="help_item_support_develop_ankidroid">Ανάπτυξη</string>
     <string name="help_item_support_rate_ankidroid">Αξιολόγηση</string>
     <string name="help_item_support_other_ankidroid">Άλλο</string>
     <string name="multimedia_editor_trans_translate">Μετάφραση</string>
     <string name="help_title_community">Κοινότητα</string>
-    <string name="help_item_anki_forums">Φόρουμ Anki</string>
+    <string name="help_item_anki_forums">Φόρουμ SpeedyCAT</string>
     <string name="help_item_discord">Discord</string>
     <string name="help_item_facebook">Facebook</string>
     <string name="help_item_twitter">Twitter</string>
     <string name="help_title_privacy">Απόρρητο</string>
-    <string name="help_item_ankidroid_privacy_policy">Πολιτική απορρήτου AnkiDroid</string>
-    <string name="help_item_ankiweb_privacy_policy">Πολιτική απορρήτου AnkiWeb</string>
-    <string name="help_item_ankiweb_terms_and_conditions">Όροι και προϋποθέσεις του AnkiWeb</string>
+    <string name="help_item_ankidroid_privacy_policy">Πολιτική απορρήτου SpeedyCAT</string>
+    <string name="help_item_ankiweb_privacy_policy">Πολιτική απορρήτου SpeedyCAT</string>
+    <string name="help_item_ankiweb_terms_and_conditions">Όροι και προϋποθέσεις του SpeedyCAT</string>
     <string name="help_title_send_exception">Αποστολή αναφοράς αντιμετώπισης προβλημάτων</string>
     <string name="help_dialog_exception_report_debounce">Η αναφορά έχει ήδη υποβληθεί</string>
     <string name="help_dialog_exception_report_sent">Η αναφορά εστάλη!</string>

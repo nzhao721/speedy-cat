@@ -43,12 +43,12 @@
         <item quantity="other">%d kort. atkūrimas</item>
     </plurals>
     <string name="answering_error_title">Duomenų bazės klaida</string>
-    <string name="answering_error_message">Įrašymas į kolekciją nepavyko. Duomenų bazė gali būti sugadinta arba diske gali būti nepakankamai tuščios vietos.Jei taip nutinka dažniau, pabandykite patikrinti duomenų bazę, pataisyti kolekciją arba atkurti ją iš atsarginės kopijos. Tam palieskite \"parinktis\".\n\Nors tai gali būti ir AnkiDroid klaida; praneškite apie klaidą, kad galėtume tai patikrinti.</string>
+    <string name="answering_error_message">Įrašymas į kolekciją nepavyko. Duomenų bazė gali būti sugadinta arba diske gali būti nepakankamai tuščios vietos.Jei taip nutinka dažniau, pabandykite patikrinti duomenų bazę, pataisyti kolekciją arba atkurti ją iš atsarginės kopijos. Tam palieskite \"parinktis\".\n\Nors tai gali būti ir SpeedyCAT klaida; praneškite apie klaidą, kad galėtume tai patikrinti.</string>
     <string name="answering_error_report">Pranešti apie klaidą</string>
-    <string name="storage_full_message">Nėra pakankamai laisvos vietos, kad galėtumėte atidaryti \"AnkiDroid\". Atlaisvinkite šiek tiek vietos, kad galėtumėte tęsti.</string>
+    <string name="storage_full_message">Nėra pakankamai laisvos vietos, kad galėtumėte atidaryti \"SpeedyCAT\". Atlaisvinkite šiek tiek vietos, kad galėtumėte tęsti.</string>
     <string name="repair_deck_dialog">Ar tikrai norite taisyti duomenų bazę?\n\nPrieš tai atliekant, poaplankyje „%s“ bus sukurta kopija.</string>
     <string name="intent_aedict_empty">Kategorija „numatytieji“ yra tuščia</string>
-    <string name="intent_aedict_category">Norėdami „AnkiDroid“ programoje pridėti kortelių, pašalinkite visas „Notepad“ kategorijas arba pridėkite vieną, kuri vadintųsi „numatytoji“</string>
+    <string name="intent_aedict_category">Norėdami „SpeedyCAT“ programoje pridėti kortelių, pašalinkite visas „Notepad“ kategorijas arba pridėkite vieną, kuri vadintųsi „numatytoji“</string>
     <string name="custom_study_new_extend">Padidinti/sumažinti (\"-3\") šiandienos naują kortelės limitą</string>
     <string name="custom_study_rev_extend">Padidinti / sumažinti (\"-3\") šiandienos peržiūros ribą</string>
     <string name="custom_study_forgotten">Peržiūrėti korteles, kurios buvo pamirštos per paskutines x dienų:</string>
@@ -58,7 +58,7 @@
     <string name="storage_full_title">Saugykla pilna</string>
     <string name="storage_almost_full_title">Saugykla beveik užpildyta</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">Nėra vietos</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">Norint tęsti \"AnkiDroid\" reikia %s laisvos vietos saugykloje. Prašome išvalyti šiek tiek vietos</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">Norint tęsti \"SpeedyCAT\" reikia %s laisvos vietos saugykloje. Prašome išvalyti šiek tiek vietos</string>
     <string name="restore_backup_title">Atkurti atsarginę kopiją?</string>
     <string name="restore_backup">Jūsų rinkinys bus pakeistas senesne kopija. Bus prarasta bet kokia neišsaugota pažanga.</string>
     <string name="restore_backup_choose_another">Pasirinkite kitą</string>
@@ -121,9 +121,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">Duomenų bazė užrakinta</string>
-    <string name="database_locked_summary">\"AnkiDroid\" duomenų bazę naudoja kita programa. Uždarykite kitą programą ir vėl atidarykite \"AnkiDroid\".</string>
+    <string name="database_locked_summary">\"SpeedyCAT\" duomenų bazę naudoja kita programa. Uždarykite kitą programą ir vėl atidarykite \"SpeedyCAT\".</string>
     <string name="incompatible_database_version_title">Nesuderinama duomenų bazės versija</string>
-    <string name="incompatible_database_version_summary">Duomenų bazė yra pažangesnė versija, nei su kuria gali dirbti ši \"AnkiDroid\" versija. Atnaujinkite \"AnkiDroid\" arba sumažinkite duomenų bazės lygį, kad ją atidarytumėte\n\nPalaikoma versija: %1$d\nDomenų bazės versija: %2$d\n\nNurodytos atkūrimo parinktys perrašys jūsų dabartinę kolekciją, galbūt su suderinama duomenų bazės versija:</string>
+    <string name="incompatible_database_version_summary">Duomenų bazė yra pažangesnė versija, nei su kuria gali dirbti ši \"SpeedyCAT\" versija. Atnaujinkite \"SpeedyCAT\" arba sumažinkite duomenų bazės lygį, kad ją atidarytumėte\n\nPalaikoma versija: %1$d\nDomenų bazės versija: %2$d\n\nNurodytos atkūrimo parinktys perrašys jūsų dabartinę kolekciją, galbūt su suderinama duomenų bazės versija:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">Pritaikytas fono paveikslėlis</string>
     <string name="background_image_removed">Pašalintas fono paveikslėlis</string>
@@ -144,29 +144,29 @@
     <string name="locale_selection_dialog_title_new">Nustatyti kalbą</string>
     <string name="locale_selection_dialog_summary">Kai kurios daugiakalbės klaviatūros, pvz., GBoard, palaiko kalbos keitimą redaguojant tekstą\n\nJei jūsų klaviatūra nekeičia kalbos, prašykite klaviatūros gamintojo įdiegti funkciją \"setImeHintLocales\".</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">Naudojimasis \"AnkiDroid</string>
-    <string name="help_item_ankidroid_manual">AnkiDroid vadovas</string>
-    <string name="help_item_anki_manual">Anki vadovas</string>
-    <string name="help_item_ankidroid_faq">\"AnkiDroid\" DUK</string>
+    <string name="help_title_using_ankidroid">Naudojimasis \"SpeedyCAT</string>
+    <string name="help_item_ankidroid_manual">SpeedyCAT vadovas</string>
+    <string name="help_item_anki_manual">SpeedyCAT vadovas</string>
+    <string name="help_item_ankidroid_faq">\"SpeedyCAT\" DUK</string>
     <string name="help_title_get_help">Gaukite pagalbą</string>
     <string name="help_item_mailing_list">Pašto adresatų sąrašas</string>
     <string name="help_item_reddit">Pagalbos elementų sąrašas</string>
     <string name="help_item_report_bug">Pranešti apie klaidą</string>
-    <string name="help_title_support_ankidroid" maxLength="28">Parama AnkiDroid</string>
+    <string name="help_title_support_ankidroid" maxLength="28">Parama SpeedyCAT</string>
     <string name="help_item_support_opencollective_donate">Paaukoti</string>
     <string name="help_item_support_develop_ankidroid">Kurti</string>
     <string name="help_item_support_rate_ankidroid">Įvertinkite</string>
     <string name="help_item_support_other_ankidroid">Kitas</string>
     <string name="multimedia_editor_trans_translate">Vertimas</string>
     <string name="help_title_community">Bendruomenė</string>
-    <string name="help_item_anki_forums">\"Anki\" forumas</string>
+    <string name="help_item_anki_forums">\"SpeedyCAT\" forumas</string>
     <string name="help_item_discord">Diskusija</string>
     <string name="help_item_facebook">Facebook</string>
     <string name="help_item_twitter">Twitter</string>
     <string name="help_title_privacy">Privatumas</string>
-    <string name="help_item_ankidroid_privacy_policy">\"AnkiDroid\" privatumo politika</string>
-    <string name="help_item_ankiweb_privacy_policy">\"AnkiWeb\" privatumo politika</string>
-    <string name="help_item_ankiweb_terms_and_conditions">\"AnkiWeb\" terminai ir sąlygos</string>
+    <string name="help_item_ankidroid_privacy_policy">\"SpeedyCAT\" privatumo politika</string>
+    <string name="help_item_ankiweb_privacy_policy">\"SpeedyCAT\" privatumo politika</string>
+    <string name="help_item_ankiweb_terms_and_conditions">\"SpeedyCAT\" terminai ir sąlygos</string>
     <string name="help_title_send_exception">Siųsti trikčių šalinimo ataskaitą</string>
     <string name="help_dialog_exception_report_debounce">Jau pateikta ataskaita</string>
     <string name="help_dialog_exception_report_sent">Ataskaita išsiųsta!</string>

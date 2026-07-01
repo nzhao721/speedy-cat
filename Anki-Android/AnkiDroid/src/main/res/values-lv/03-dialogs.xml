@@ -41,12 +41,12 @@
         <item quantity="other">Atiestatītas %d kartītes</item>
     </plurals>
     <string name="answering_error_title">Datubāzes kļūda</string>
-    <string name="answering_error_message">Rakstīšana krājumā neizdevās. Datubāze varētu būt bojāta vai diskā vārētu nebūt pietiekami daudz brīvas vietas.\n\nJa tas notiek biežāk, jāmēģina pārbaudīt datubāzi, labot krājumu vai atjaunot to no rezerves kopijas. Jāpiesit \"Iespējas\", lai to izdarītu.\n\nVai arī tā varētu būt AnkiDroid nepilnība; lūgums ziņot par kļūdu, lai mēs varētu to pārbaudīt.</string>
+    <string name="answering_error_message">Rakstīšana krājumā neizdevās. Datubāze varētu būt bojāta vai diskā vārētu nebūt pietiekami daudz brīvas vietas.\n\nJa tas notiek biežāk, jāmēģina pārbaudīt datubāzi, labot krājumu vai atjaunot to no rezerves kopijas. Jāpiesit \"Iespējas\", lai to izdarītu.\n\nVai arī tā varētu būt SpeedyCAT nepilnība; lūgums ziņot par kļūdu, lai mēs varētu to pārbaudīt.</string>
     <string name="answering_error_report">Ziņot par kļūdu</string>
-    <string name="storage_full_message">Nav pietiekami daudz brīvas krātuves vietas, lai atvērtu AnkiDroid. Jāatbrīvo mazliet vietas, lai varētu turpināt.</string>
+    <string name="storage_full_message">Nav pietiekami daudz brīvas krātuves vietas, lai atvērtu SpeedyCAT. Jāatbrīvo mazliet vietas, lai varētu turpināt.</string>
     <string name="repair_deck_dialog">Vai tiešām mēģināt salabot datubāzi?\n\nPirms mēģinājuna uzsākšanas apakšmapē \"%s\" tiks izveidota kopija.</string>
     <string name="intent_aedict_empty">Kategorija \"noklusējums\" ir tukša</string>
-    <string name="intent_aedict_category">Lai AnkiDroid pievienotu kartītes, jānoņem visas piezīmju grāmatiņu kategorijas vai jāpievieno viena ar nosaukumu \"default\"</string>
+    <string name="intent_aedict_category">Lai SpeedyCAT pievienotu kartītes, jānoņem visas piezīmju grāmatiņu kategorijas vai jāpievieno viena ar nosaukumu \"default\"</string>
     <string name="custom_study_new_extend">Palielināt/samazināt (\"-3\") šodienas jauno kartīšu skaitu par</string>
     <string name="custom_study_rev_extend">Palielināt/samazināt (\"-3\") šodienas izskatīšanas ierobežojumu par</string>
     <string name="custom_study_forgotten">Parskatīt kartītes, kas ir aizmirstas pēdējās x dienās:</string>
@@ -56,7 +56,7 @@
     <string name="storage_full_title">Krātuve pilna</string>
     <string name="storage_almost_full_title">Krātuve gandrīz pilna</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">Nav vietas</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">AnkiDroid ir nepieciešama %s brīva krātuves vieta, lai turpinātu. Lūgums atbrīvot vietu</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">SpeedyCAT ir nepieciešama %s brīva krātuves vieta, lai turpinātu. Lūgums atbrīvot vietu</string>
     <string name="restore_backup_title">Atjaunot rezerves kopiju?</string>
     <string name="restore_backup">Krājums tiks aizvietots ar vecāku kopiju. Jebkāda nesaglabāta virzība tiks zaudēta.</string>
     <string name="restore_backup_choose_another">Izvēlēties citu</string>
@@ -118,9 +118,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">Datubāze slēgta</string>
-    <string name="database_locked_summary">Cita lietotne izmanto AnkiDroid datubāzi. Lūgums aizvērt to lietotni un no jauna atvērt AnkiDroid.</string>
+    <string name="database_locked_summary">Cita lietotne izmanto SpeedyCAT datubāzi. Lūgums aizvērt to lietotni un no jauna atvērt SpeedyCAT.</string>
     <string name="incompatible_database_version_title">Nesaderīga datubāzes versija</string>
-    <string name="incompatible_database_version_summary">Datubāzei ir jaunāka versija nekā tā, ar ko šī AnkiDroid versija var darboties. Jāuzlabo AnkiDroid vai jāpazemina databāze, lai atvērtu to\n\nAtbalstītā versija: %1$d\nDatubāzes versija: %2$d\n\nŠīs atjaunošanas iespējas aizstās pašreizējo krājumu, iespējams ar saderīgu datubāzes versiju:</string>
+    <string name="incompatible_database_version_summary">Datubāzei ir jaunāka versija nekā tā, ar ko šī SpeedyCAT versija var darboties. Jāuzlabo SpeedyCAT vai jāpazemina databāze, lai atvērtu to\n\nAtbalstītā versija: %1$d\nDatubāzes versija: %2$d\n\nŠīs atjaunošanas iespējas aizstās pašreizējo krājumu, iespējams ar saderīgu datubāzes versiju:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">Fona attēls iestatīts</string>
     <string name="background_image_removed">Fona attēls noņemts</string>
@@ -141,29 +141,29 @@
     <string name="locale_selection_dialog_title_new">Iestatīt valodu</string>
     <string name="locale_selection_dialog_summary">Dažas daudzvalodu tastatūras, piemēram, Gboard, atbalsta valodas nomainīšanu teksta labošānas laikā\n\nLūgums pieprasīt iespēju \"setImeHintLocales\" no savas tastatūras izstrādātāja, ja tā nemaina valodu.</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">AnkiDroid izmantošana</string>
-    <string name="help_item_ankidroid_manual">AnkiDroid rokasgrāmata</string>
-    <string name="help_item_anki_manual">Anki rokasgrāmata</string>
-    <string name="help_item_ankidroid_faq">AnkiDroid BUJ</string>
+    <string name="help_title_using_ankidroid">SpeedyCAT izmantošana</string>
+    <string name="help_item_ankidroid_manual">SpeedyCAT rokasgrāmata</string>
+    <string name="help_item_anki_manual">SpeedyCAT rokasgrāmata</string>
+    <string name="help_item_ankidroid_faq">SpeedyCAT BUJ</string>
     <string name="help_title_get_help">Iegūt palīdzību</string>
     <string name="help_item_mailing_list">Adresātu saraksts</string>
     <string name="help_item_reddit">Reddit</string>
     <string name="help_item_report_bug">Paziņot par kļūdu</string>
-    <string name="help_title_support_ankidroid" maxLength="28">Atbalstīt AnkiDroid</string>
+    <string name="help_title_support_ankidroid" maxLength="28">Atbalstīt SpeedyCAT</string>
     <string name="help_item_support_opencollective_donate">Ziedot</string>
     <string name="help_item_support_develop_ankidroid">Izstrādāt</string>
     <string name="help_item_support_rate_ankidroid">Novērtēt</string>
     <string name="help_item_support_other_ankidroid">Cits</string>
     <string name="multimedia_editor_trans_translate">Tulkot</string>
     <string name="help_title_community">Kopiena</string>
-    <string name="help_item_anki_forums">Anki forumi</string>
+    <string name="help_item_anki_forums">SpeedyCAT forumi</string>
     <string name="help_item_discord">Discord</string>
     <string name="help_item_facebook">Facebook</string>
     <string name="help_item_twitter">X</string>
     <string name="help_title_privacy">Privātums</string>
-    <string name="help_item_ankidroid_privacy_policy">AnkiDroid privātuma pamatnostādnes</string>
-    <string name="help_item_ankiweb_privacy_policy">AnkiWeb privātuma pamatnostādnes</string>
-    <string name="help_item_ankiweb_terms_and_conditions">AnkiWeb nosacījumi un prasības</string>
+    <string name="help_item_ankidroid_privacy_policy">SpeedyCAT privātuma pamatnostādnes</string>
+    <string name="help_item_ankiweb_privacy_policy">SpeedyCAT privātuma pamatnostādnes</string>
+    <string name="help_item_ankiweb_terms_and_conditions">SpeedyCAT nosacījumi un prasības</string>
     <string name="help_title_send_exception">Nosūtīt traucējummeklēšanas ziņojumu</string>
     <string name="help_dialog_exception_report_debounce">Ziņojums jau ir iesniegts</string>
     <string name="help_dialog_exception_report_sent">Ziņojums tika nosūtīts.</string>

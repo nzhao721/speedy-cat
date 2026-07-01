@@ -17,6 +17,7 @@ package com.ichi2.anki.previewer
 
 import android.os.LocaleList
 import com.ichi2.anki.CollectionManager.withCol
+import com.ichi2.anki.cardviewer.ForcedRecall
 import com.ichi2.anki.common.annotations.NeedsTest
 import com.ichi2.anki.libanki.Card
 import com.ichi2.anki.libanki.Field
@@ -52,15 +53,43 @@ class TypeAnswer private constructor(
 
     suspend fun answerFilter(typedAnswer: String = ""): String {
         val answerComparison = withCol { compareAnswer(expectedAnswer, provided = typedAnswer, combining = combining) }
+        val feedback = simpleTypeAnswerFeedback(answerComparison, typedAnswer, expectedAnswer)
 
         @Language("HTML")
-        val repl = """<div style="font-family: '$font'; font-size: ${fontSize}px">$answerComparison</div>"""
+        val repl = """<div style="font-family: '$font'; font-size: ${fontSize}px">$feedback</div>"""
         return typeAnsRe.replace(text, Regex.escapeReplacement(repl))
     }
 
     companion object {
         /** removes `[[type:]]` tags from the given [text] */
         fun removeTags(text: String): String = typeAnsRe.replace(text, "")
+
+        /**
+         * Wraps the backend answer comparison with a simple, whole-answer correct/incorrect
+         * indicator. The per-character red/green diff is flattened via CSS (`ankidroid.css`),
+         * so this only conveys overall correctness while still showing the typed and correct
+         * answers. When nothing was typed, the comparison is returned unchanged.
+         *
+         * SpeedyCAT: correctness is decided by a case-insensitive native comparison of the
+         * typed and expected answers (see [ForcedRecall.matches]) rather than by scanning the
+         * backend's case-sensitive per-character diff, so a right answer typed in a different
+         * case counts as correct and case differences are not flagged as wrong.
+         */
+        @Language("HTML")
+        fun simpleTypeAnswerFeedback(
+            comparison: String,
+            typedAnswer: String,
+            expectedAnswer: String,
+        ): String {
+            if (typedAnswer.isBlank()) return comparison
+            val resultClass =
+                if (ForcedRecall.matches(typedAnswer, expectedAnswer)) {
+                    "type-answer-correct"
+                } else {
+                    "type-answer-incorrect"
+                }
+            return """<div class="type-answer-result $resultClass">$comparison</div>"""
+        }
 
         /**
          * @return a [TypeAnswer] instance if [text] contains a `[[type:Field]]` tag

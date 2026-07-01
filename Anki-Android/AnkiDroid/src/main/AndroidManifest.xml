@@ -293,6 +293,22 @@
             android:exported="false"
             android:configChanges="keyboardHidden|orientation|screenSize"
             />
+        <!-- SpeedyCAT MCAT study modes. configChanges keeps an in-progress timed
+             session/exam alive across rotation. -->
+        <activity
+            android:name=".practice.PracticeActivity"
+            android:label="@string/speedycat_practice_questions"
+            android:exported="false"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".DeckPicker"
+            />
+        <activity
+            android:name=".practice.FullLengthActivity"
+            android:label="@string/speedycat_full_length_tests"
+            android:exported="false"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".DeckPicker"
+            />
         <activity
             android:name="com.ichi2.anki.StudyOptionsActivity"
             android:exported="false"

@@ -120,7 +120,7 @@
         <item quantity="one">%1$d dakika</item>
         <item quantity="other">%1$d dakika</item>
     </plurals>
-    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">AnkiDroid kartı</string>
+    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">SpeedyCAT kartı</string>
     <string name="note_editor_copy_note" maxLength="28">Notu kopyala</string>
     <string name="card_editor_reposition_card" comment="reposition a card in the new queue" maxLength="28">Yerini değiştir</string>
     <string name="card_editor_reset_card" maxLength="28">İlerlemeyi sıfırla</string>
@@ -132,31 +132,31 @@
     <string name="checks_action" maxLength="28">Kontrol et</string>
     <string name="unknown_type_field_warning">Cevabı yaz: bilinmeyen alan %s</string>
     <string name="delete_deck" comment="Message on a progress bar starting a deck is being deleted.">Deste siliniyor&#8230;</string>
-    <string name="info_rate">AnkiDroid\'e oy ver</string>
+    <string name="info_rate">SpeedyCAT\'e oy ver</string>
     <string name="import_title">İçeri Aktarılıyor</string>
     <string name="import_preparing_file">Dosya içeri aktarma için hazırlanıyor&#8230;</string>
     <string name="import_message_add" comment="Adding a new deck to the collection (import)">Ekle</string>
     <string name="import_message_replace_confirm">Bu, varolan koleksiyonu silecek ve şu dosyanın verileriyle değiştirecek: %s</string>
     <string name="import_dialog_message_add">\"%s\" koleksiyona eklensin mi? Bu uzun sürebilir</string>
-    <string name="import_log_no_apkg">Bu geçerli bir Anki paketi dosyası değil</string>
+    <string name="import_log_no_apkg">Bu geçerli bir SpeedyCAT paketi dosyası değil</string>
     <string name="import_title_error" comment="Title of error dialog">Hata</string>
     <string name="import_error_handle_exception">Dosya içeri aktarılamadı\n\n%s</string>
     <string name="import_error_not_apkg_extension">\"%s\" adlı dosyanın uzantısı .apkg veya .colpkg değil</string>
-    <string name="import_error_load_imported_database">Anki Veritabanı (.anki2) değiştirmeleri henüz desteklenmiyor. Lütfen değiştirme yönergeleri için kılavuza bakın.</string>
-    <string name="import_error_content_provider">Seçilen dosya AnkiDroid tarafından otomatik olarak içeri aktarılamadı. Lütfen Anki dosyalarının nasıl elle içeri aktarıldığı hakkında kullanıcı kılavuzuna bakın:\n %s</string>
+    <string name="import_error_load_imported_database">SpeedyCAT Veritabanı (.anki2) değiştirmeleri henüz desteklenmiyor. Lütfen değiştirme yönergeleri için kılavuza bakın.</string>
+    <string name="import_error_content_provider">Seçilen dosya SpeedyCAT tarafından otomatik olarak içeri aktarılamadı. Lütfen SpeedyCAT dosyalarının nasıl elle içeri aktarıldığı hakkında kullanıcı kılavuzuna bakın:\n %s</string>
     <string name="import_error_copy_to_cache_title">Dosya belleğe alınamadı</string>
     <string name="import_error_copy_to_cache_explanation" comment="The substitution is a list of suggested fixes in bullet point form">Bu genellikle dosyayı seçmek için kullandığınız uygulamadaki bir bugdan kaynaklanır. Lütfen şu düzeltmeleri deneyin:\n\n%s</string>
-    <string name="import_interrupted">Aktarım yarıda kesildi: AnkiDroid kapatıldı</string>
+    <string name="import_interrupted">Aktarım yarıda kesildi: SpeedyCAT kapatıldı</string>
     <string name="export_ready_title">Dışa aktarım hazır</string>
     <string name="export_send_no_handlers">Apkg işleyecek uygulama yok. Kaydediliyor&#8230;</string>
-    <string name="export_save_apkg_successful">Anki paketi başarıyla kaydedildi</string>
-    <string name="export_save_apkg_unsuccessful">Anki paketi kaydı başarısız oldu</string>
-    <string name="export_share_title">Anki paketini göndermek için kullan</string>
-    <string name="export_email_subject">AnkiDroid\'den dışa aktarılan bilgi kartları: %s</string>
+    <string name="export_save_apkg_successful">SpeedyCAT paketi başarıyla kaydedildi</string>
+    <string name="export_save_apkg_unsuccessful">SpeedyCAT paketi kaydı başarısız oldu</string>
+    <string name="export_share_title">SpeedyCAT paketini göndermek için kullan</string>
+    <string name="export_email_subject">SpeedyCAT\'den dışa aktarılan bilgi kartları: %s</string>
     <string name="export_email_text"><![CDATA[        Selam!
         <br/><br/>
-        Bu, AnkiDroid\'den[1] gönderilmiş bir Anki bilgi kartı destesi.
-        Mevcut Anki dağıtımlarından[2] biriyle açmayı deneyin ve kolay ve verimli öğrenmenin tadını çıkarın!<br/><br/>
+        Bu, SpeedyCAT\'den[1] gönderilmiş bir SpeedyCAT bilgi kartı destesi.
+        Mevcut SpeedyCAT dağıtımlarından[2] biriyle açmayı deneyin ve kolay ve verimli öğrenmenin tadını çıkarın!<br/><br/>
         [1] %1$s<br/>
         [2] %2$s
         ]]></string>
@@ -192,18 +192,18 @@
     <string name="white_board_eraser_disabled">Silgi modu devre dışı bırakıldı</string>
     <string comment="Progress amount e.g. \'28 MB/141 MB\'. %1$s is the current amount, %2$s is the max." name="progress_amount_bytes">%1$s /%2$s</string>
     <string name="media_file_size_warning_title">Dosya çok büyük</string>
-    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">Dosya \"%1$s\" (%2$s) AnkiWeb\'in limitini %3$s  aşıyor ve senkronize olamıyor. Yine de ekle?</string>
+    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">Dosya \"%1$s\" (%2$s) SpeedyCAT\'in limitini %3$s  aşıyor ve senkronize olamıyor. Yine de ekle?</string>
     <string name="media_file_size_add_anyway">Yine de ekle</string>
     <!-- Whiteboard save image message in the Study Screen -->
     <string name="white_board_image_save_failed">Yazı tahtası resmi kaydedilemedi. %s</string>
     <string name="white_board_image_saved">Yazı tahtası resmi bu adrese kaydedildi: %s</string>
     <string name="title_whiteboard_editor" maxLength="28">Yazı tahtası düzenleyici</string>
-    <string name="user_is_a_robot">Otomatik test saptandı. Eğer insansanız, AnkiDroid desteğiyle iletişime geçin</string>
+    <string name="user_is_a_robot">Otomatik test saptandı. Eğer insansanız, SpeedyCAT desteğiyle iletişime geçin</string>
     <!-- JS api -->
-    <string name="api_version_developer_contact">Bu kart desteklenmeyen AnkiDroid özellikleri kullanıyor. Geliştiriciyle iletişime geçin (%1$s), veya vikiye bakın. %2$s</string>
+    <string name="api_version_developer_contact">Bu kart desteklenmeyen SpeedyCAT özellikleri kullanıyor. Geliştiriciyle iletişime geçin (%1$s), veya vikiye bakın. %2$s</string>
     <string name="invalid_json_data">Kart geçersiz veri sağladı. %s</string>
-    <string name="valid_js_api_version">Geçersiz AnkiDroid JS API sürümü. Geliştiriciyle iletişime geçin(%s), veya vikiye bakın.</string>
-    <string name="update_js_api_version">AnkiDroid JS API güncellemesi mevcut.  Geliştiriciyle iletişime geçin(%s), veya vikiye bakın.</string>
+    <string name="valid_js_api_version">Geçersiz SpeedyCAT JS API sürümü. Geliştiriciyle iletişime geçin(%s), veya vikiye bakın.</string>
+    <string name="update_js_api_version">SpeedyCAT JS API güncellemesi mevcut.  Geliştiriciyle iletişime geçin(%s), veya vikiye bakın.</string>
     <string name="reviewer_invalid_api_version_visit_documentation">Görüntüle</string>
     <string name="anki_js_error_code">(Error code: %d)</string>
     <!-- About AnkiDroid screen -->
@@ -214,8 +214,8 @@
     <!-- Deck Picker -->
     <string name="search_decks" maxLength="28">Deste ara</string>
     <string name="ankidroid_init_failed_webview_title">Fatal error</string>
-    <string name="ankidroid_init_failed_webview">AnkiDroid şu an ulaşılamayan System WebView\'a dayanır. Bu sistem güncelleme yüklerken olabilir. Lütfen birkaç dakika sonra tekrar deneyin.\n\n%s</string>
-    <string name="ankidroid_init_failed_storage">AnkiDroid bir Android hatasından dolayı depolamaya erişemiyor.\n\n%s</string>
+    <string name="ankidroid_init_failed_webview">SpeedyCAT şu an ulaşılamayan System WebView\'a dayanır. Bu sistem güncelleme yüklerken olabilir. Lütfen birkaç dakika sonra tekrar deneyin.\n\n%s</string>
+    <string name="ankidroid_init_failed_storage">SpeedyCAT bir Android hatasından dolayı depolamaya erişemiyor.\n\n%s</string>
     <!-- A Menu item to change the Font Size (currently in the Note Editor) -->
     <string name="menu_font_size" maxLength="28">Yazı tipi boyutu</string>
     <string name="menu_show_toolbar" comment="Checkable item stating whether the note editor toolbar should be shown" maxLength="28">Araç çubuğunu göster</string>
@@ -237,9 +237,9 @@
     <string name="note_editor_video_too_large">Bu video dosyası fazla büyük, lütfen videoyu elle ekleyin</string>
     <string name="note_editor_audio_too_large">Bu ses dosyası fazla büyük, lütfen sesi elle ekleyin</string>
     <string name="ankidroid_cannot_open_after_backup_try_again" comment="After an Android backup is restored, AnkiDroid opens and shows this message.         Opening AnkiDroid again will work correctly">Android yedeklemesi gerçekleştiriliyor. Lütfen yeniden deneyin</string>
-    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">AnkiDroid\'in kısayol eklemesine izin vermek için iManager kullanmanız gerekebilir</string>
+    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">SpeedyCAT\'in kısayol eklemesine izin vermek için iManager kullanmanız gerekebilir</string>
     <string name="create_shortcut_error_miui" comment="Keep the message as short, as this is shown in a toast. %s is the app name: \'AnkiDroid\'">%s kısayol  ekleyebilmesi için \'Ana ekran kısayolları\'na sistem ayarlarından izin ver</string>
-    <string name="create_shortcut_failed" comment="home screen == launcher">Ana ekranın, kısayol ekleyebilmesi için AnkiDroid\'e izin vermiyor</string>
+    <string name="create_shortcut_failed" comment="home screen == launcher">Ana ekranın, kısayol ekleyebilmesi için SpeedyCAT\'e izin vermiyor</string>
     <string name="create_shortcut_error">Kısayolu eklerken hata: %s</string>
     <string name="note_editor_capitalize" comment="This is for a switch with a checkbox - on: enabled" maxLength="28">Cümlelerin baş harflerini büyült</string>
     <string name="menu_scroll_toolbar" comment="Checkbox stating whether note editor toolbar is scrollable or stacked. Checked: Scroll" maxLength="28">Araç çubuğunu kaydır</string>
@@ -300,11 +300,11 @@
     <!-- App Intro -->
     <string name="intro_ankidroid_tagline_one">Daha az ders çalış</string>
     <string name="intro_ankidroid_tagline_two">Daha çok hatırla</string>
-    <string name="intro_short_ankidroid_explanation">Anki\'nin kart zamanlayıcısı en zayıf anılarınızı güçlendirip en güçlülerinizi muhafaza ederek zaman kazandırır</string>
+    <string name="intro_short_ankidroid_explanation">SpeedyCAT\'nin kart zamanlayıcısı en zayıf anılarınızı güçlendirip en güçlülerinizi muhafaza ederek zaman kazandırır</string>
     <string name="intro_get_started" comment="Action to start AnkiDroid for the first time without syncing from AnkiWeb">Get started</string>
-    <string name="intro_sync_from_ankiweb">AnkiWeb\'den senkronize et</string>
+    <string name="intro_sync_from_ankiweb">SpeedyCAT\'den senkronize et</string>
     <!-- IntentHandler -->
-    <string name="app_not_initialized_new">AnkiDroid henüz açılmadı. Lütfen AnkiDroid\'i açıp tekrar deneyin</string>
+    <string name="app_not_initialized_new">SpeedyCAT henüz açılmadı. Lütfen SpeedyCAT\'i açıp tekrar deneyin</string>
     <!-- Deck Creation -->
     <string name="deck_created">Deste oluşturuldu</string>
     <string name="deck_renamed">Deste yeniden adlandırıldı</string>

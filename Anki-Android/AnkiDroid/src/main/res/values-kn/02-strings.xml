@@ -143,7 +143,7 @@
     <string name="import_error_handle_exception">ಫೈಲ್\n\n%s ಆಮದು ಮಾಡಲು ವಿಫಲವಾಗಿದೆ</string>
     <string name="import_error_not_apkg_extension">“%s” ಫೈಲ್ ಹೆಸರು .apkg ಅಥವಾ .colpkg ವಿಸ್ತರಣೆಯನ್ನು ಹೊಂದಿಲ್ಲ</string>
     <string name="import_error_load_imported_database">ಅಂಕಿ ಡೇಟಾಬೇಸ್ (.anki2) ಬದಲಿಗಳನ್ನು ಇನ್ನೂ ಬೆಂಬಲಿಸುವುದಿಲ್ಲ. ಬದಲಿ ಸೂಚನೆಗಳಿಗಾಗಿ ದಯವಿಟ್ಟು ಕೈಪಿಡಿಯನ್ನು ನೋಡಿ.</string>
-    <string name="import_error_content_provider">The selected file couldn’t be imported automatically by AnkiDroid. Please see the user manual for how to manually import Anki files: \n%s</string>
+    <string name="import_error_content_provider">The selected file couldn’t be imported automatically by SpeedyCAT. Please see the user manual for how to manually import SpeedyCAT files: \n%s</string>
     <string name="import_error_copy_to_cache_title">ಫೈಲ್ ಸಂಗ್ರಹಿಸಲು ವಿಫಲವಾಗಿದೆ</string>
     <string name="import_error_copy_to_cache_explanation" comment="The substitution is a list of suggested fixes in bullet point form">This is often caused by a bug in the app you used to select the file. Please try the following fixes:\n\n%s</string>
     <string name="import_interrupted">ಆಮದು ಅಡ್ಡಿಪಡಿಸಲಾಗಿದೆ: ಆಂಕಿಡ್ರಾಯ್ಡ್ ಅನ್ನು ಮುಚ್ಚಲಾಗಿದೆ</string>
@@ -155,7 +155,7 @@
     <string name="export_email_subject">ಆಂಕಿಡ್ರಾಯ್ಡ್ ರಫ್ತು ಮಾಡಿದ ಫ್ಲ್ಯಾಷ್‌ಕಾರ್ಡ್‌ಗಳು:%s</string>
     <string name="export_email_text"><![CDATA[        ನಮಸ್ತೆ!
         <br/><br/>
-        ಇದು AnkiDroid[1] ನಿಂದ ಕಳುಹಿಸಲಾದ ಅಂಕಿ ಫ್ಲಾಶ್‌ಕಾರ್ಡ್‌ಗಳ ಡೆಕ್ ಆಗಿದೆ.
+        ಇದು SpeedyCAT[1] ನಿಂದ ಕಳುಹಿಸಲಾದ ಅಂಕಿ ಫ್ಲಾಶ್‌ಕಾರ್ಡ್‌ಗಳ ಡೆಕ್ ಆಗಿದೆ.
         ಲಭ್ಯವಿರುವ ಅಂಕಿ ವಿತರಣೆಗಳಲ್ಲಿ[2] ಒಂದನ್ನು ಬಳಸಿಕೊಂಡು ಅದನ್ನು ತೆರೆಯಲು ಪ್ರಯತ್ನಿಸಿ ಮತ್ತು ಸುಲಭ ಮತ್ತು ಪರಿಣಾಮಕಾರಿ ಕಲಿಕೆಯನ್ನು ಆನಂದಿಸಿ!<br/><br/>
         [1] %1$s<br/>
         [2] %2$s
@@ -192,7 +192,7 @@
     <string name="white_board_eraser_disabled">Eraser mode deactivated</string>
     <string comment="Progress amount e.g. \'28 MB/141 MB\'. %1$s is the current amount, %2$s is the max." name="progress_amount_bytes">%1$s/%2$s</string>
     <string name="media_file_size_warning_title">Media too large</string>
-    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the AnkiWeb limit of %3$s and cannot be synced. Add anyway?</string>
+    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the SpeedyCAT limit of %3$s and cannot be synced. Add anyway?</string>
     <string name="media_file_size_add_anyway">Add anyway</string>
     <!-- Whiteboard save image message in the Study Screen -->
     <string name="white_board_image_save_failed">ವೈಟ್‌ಬೋರ್ಡ್ ಚಿತ್ರವನ್ನು ಉಳಿಸುವಲ್ಲಿ ವಿಫಲವಾಗಿದೆ. %s</string>
@@ -215,7 +215,7 @@
     <string name="search_decks" maxLength="28">ಹುಡುಕಾಟ ಡೆಕ್‌ಗಳು</string>
     <string name="ankidroid_init_failed_webview_title">Fatal error</string>
     <string name="ankidroid_init_failed_webview">ಆಂಕಿಡ್ರಾಯ್ಡ್ ಸಿಸ್ಟಮ್ ವೆಬ್‌ವೀಕ್ಷಣೆಯನ್ನು ಅವಲಂಬಿಸಿದೆ, ಅದು ಲಭ್ಯವಿಲ್ಲ. ಸಿಸ್ಟಮ್ ನವೀಕರಣಗಳನ್ನು ಸ್ಥಾಪಿಸುತ್ತಿದ್ದರೆ ಇದು ಸಂಭವಿಸಬಹುದು. ದಯವಿಟ್ಟು ಕೆಲವು ನಿಮಿಷಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ. \n\n%s</string>
-    <string name="ankidroid_init_failed_storage">AnkiDroid cannot access storage due to an Android error.\n\n%s</string>
+    <string name="ankidroid_init_failed_storage">SpeedyCAT cannot access storage due to an Android error.\n\n%s</string>
     <!-- A Menu item to change the Font Size (currently in the Note Editor) -->
     <string name="menu_font_size" maxLength="28">ಫಾಂಟ್ ಗಾತ್ರ</string>
     <string name="menu_show_toolbar" comment="Checkable item stating whether the note editor toolbar should be shown" maxLength="28">ಉಪಕರಣಪಟ್ಟಿ ಪ್ರದರ್ಶಿಸಿ</string>
@@ -237,7 +237,7 @@
     <string name="note_editor_video_too_large">The video file is too large, please insert the video manually</string>
     <string name="note_editor_audio_too_large">The audio file is too large, please insert the audio manually</string>
     <string name="ankidroid_cannot_open_after_backup_try_again" comment="After an Android backup is restored, AnkiDroid opens and shows this message.         Opening AnkiDroid again will work correctly">Android backup in progress. Please try again</string>
-    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">ಶಾರ್ಟ್‌ಕಟ್‌ಗಳನ್ನು ಸೇರಿಸಲು AnkiDroid ಅನ್ನು ಅನುಮತಿಸಲು ನೀವು iManager ಅನ್ನು ಬಳಸಬೇಕಾಗಬಹುದು</string>
+    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">ಶಾರ್ಟ್‌ಕಟ್‌ಗಳನ್ನು ಸೇರಿಸಲು SpeedyCAT ಅನ್ನು ಅನುಮತಿಸಲು ನೀವು iManager ಅನ್ನು ಬಳಸಬೇಕಾಗಬಹುದು</string>
     <string name="create_shortcut_error_miui" comment="Keep the message as short, as this is shown in a toast. %s is the app name: \'AnkiDroid\'">Allow ‘Home screen shortcuts’ in system settings for %s to add shortcuts</string>
     <string name="create_shortcut_failed" comment="home screen == launcher">ಶಾರ್ಟ್‌ಕಟ್‌ಗಳನ್ನು ಸೇರಿಸಲು ನಿಮ್ಮ ಮುಖಪುಟವು ಆಂಕಿಡ್ರಾಯ್ಡ್‌ಗೆ ಅನುಮತಿಸುವುದಿಲ್ಲ</string>
     <string name="create_shortcut_error">ಶಾರ್ಟ್‌ಕಟ್ ಸೇರಿಸುವಲ್ಲಿ ದೋಷ:%s</string>
@@ -302,9 +302,9 @@
     <string name="intro_ankidroid_tagline_two">ಹೆಚ್ಚು ನೆನಪಿಡಿ</string>
     <string name="intro_short_ankidroid_explanation">ಅಂಕಿಯ ಕಾರ್ಡ್ ಶೆಡ್ಯೂಲರ್ ನಿಮ್ಮ ದುರ್ಬಲ ನೆನಪುಗಳನ್ನು ಬಲಪಡಿಸುವ ಮೂಲಕ ಮತ್ತು ನಿಮ್ಮ ಬಲವಾದ ನೆನಪುಗಳನ್ನು ಸಂರಕ್ಷಿಸುವ ಮೂಲಕ ಸಮಯವನ್ನು ಉಳಿಸುತ್ತದೆ</string>
     <string name="intro_get_started" comment="Action to start AnkiDroid for the first time without syncing from AnkiWeb">Get started</string>
-    <string name="intro_sync_from_ankiweb">AnkiWeb ನಿಂದ ಸಿಂಕ್ ಮಾಡಿ</string>
+    <string name="intro_sync_from_ankiweb">SpeedyCAT ನಿಂದ ಸಿಂಕ್ ಮಾಡಿ</string>
     <!-- IntentHandler -->
-    <string name="app_not_initialized_new">AnkiDroid ಅನ್ನು ಇನ್ನೂ ಪ್ರಾರಂಭಿಸಲಾಗಿಲ್ಲ. ದಯವಿಟ್ಟು AnkiDroid ತೆರೆಯಿರಿ ಹಾಗೂ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
+    <string name="app_not_initialized_new">SpeedyCAT ಅನ್ನು ಇನ್ನೂ ಪ್ರಾರಂಭಿಸಲಾಗಿಲ್ಲ. ದಯವಿಟ್ಟು SpeedyCAT ತೆರೆಯಿರಿ ಹಾಗೂ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
     <!-- Deck Creation -->
     <string name="deck_created">ಡೆಕ್ ಅನ್ನು ರಚಿಸಲಾಗಿದೆ</string>
     <string name="deck_renamed">ಡೆಕ್ ಅನ್ನು ಮರುನಾಮಕರಣ ಮಾಡಲಾಗಿದೆ</string>

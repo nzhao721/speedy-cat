@@ -183,11 +183,13 @@ impl SqliteStorage {
         Ok(())
     }
 
-    /// Questions matching the structural filters (topic filtering + limit are
-    /// applied by the caller). Ordered by id for stable serving order.
+    /// Questions matching the structural filters (topic filtering, passage-set
+    /// grouping and limit are applied by the caller). Ordered by id for stable
+    /// serving order. `sections_db` matches ANY of the given sections; an empty
+    /// slice means all sections.
     pub(crate) fn get_questions_filtered(
         &self,
-        section_db: Option<&str>,
+        sections_db: &[String],
         difficulty_db: Option<&str>,
         passage_id: Option<&str>,
         include_full_length: bool,
@@ -196,9 +198,12 @@ impl SqliteStorage {
         let mut sql = String::from(QUESTION_COLS);
         sql.push_str(" where 1=1");
         let mut args: Vec<Value> = Vec::new();
-        if let Some(s) = section_db {
-            sql.push_str(" and section = ?");
-            args.push(Value::Text(s.to_string()));
+        if !sections_db.is_empty() {
+            let placeholders = vec!["?"; sections_db.len()].join(",");
+            sql.push_str(&format!(" and section in ({placeholders})"));
+            for s in sections_db {
+                args.push(Value::Text(s.clone()));
+            }
         }
         if let Some(d) = difficulty_db {
             sql.push_str(" and difficulty = ?");

@@ -37,12 +37,12 @@
         <item quantity="other">đặt lại thẻ %d</item>
     </plurals>
     <string name="answering_error_title">Lỗi cơ sở dữ liệu</string>
-    <string name="answering_error_message">Ghi vào bộ sưu tập không thành công. Cơ sở dữ liệu có thể bị hỏng hoặc có thể không có đủ dung lượng trống.\n\nNếu điều này xảy ra thường xuyên hơn, hãy thử kiểm tra cơ sở dữ liệu, sửa chữa bộ sưu tập hoặc khôi phục nó từ bản sao lưu. Chạm vào “tùy chọn” cho điều đó. \n\Hoặc nó cũng có thể là lỗi AnkiDroid; vui lòng thông báo lỗi để chúng tôi có thể kiểm tra điều này.</string>
+    <string name="answering_error_message">Ghi vào bộ sưu tập không thành công. Cơ sở dữ liệu có thể bị hỏng hoặc có thể không có đủ dung lượng trống.\n\nNếu điều này xảy ra thường xuyên hơn, hãy thử kiểm tra cơ sở dữ liệu, sửa chữa bộ sưu tập hoặc khôi phục nó từ bản sao lưu. Chạm vào “tùy chọn” cho điều đó. \n\Hoặc nó cũng có thể là lỗi SpeedyCAT; vui lòng thông báo lỗi để chúng tôi có thể kiểm tra điều này.</string>
     <string name="answering_error_report">Báo cáo lỗi</string>
-    <string name="storage_full_message">Không đủ dung lượng trống để mở AnkiDroid. Hãy giải phóng thêm bộ nhớ để tiếp tục.</string>
+    <string name="storage_full_message">Không đủ dung lượng trống để mở SpeedyCAT. Hãy giải phóng thêm bộ nhớ để tiếp tục.</string>
     <string name="repair_deck_dialog">Bạn có thực sự muốn sửa chữa cơ sở dữ liệu? \n\nTrước khi bắt đầu, một bản sao sẽ được tạo trong thư mục con \"%s\".</string>
     <string name="intent_aedict_empty">Danh mục \"mặc định\" rỗng</string>
-    <string name="intent_aedict_category">Để thêm thẻ vào AnkiDroid, hãy xoá toàn bộ danh mục Notepad hoặc thêm danh mục tên \"mặc định\"</string>
+    <string name="intent_aedict_category">Để thêm thẻ vào SpeedyCAT, hãy xoá toàn bộ danh mục Notepad hoặc thêm danh mục tên \"mặc định\"</string>
     <string name="custom_study_new_extend">Tăng / giảm (“-3”) hạn mức thẻ mới của ngày hôm nay lên</string>
     <string name="custom_study_rev_extend">Tăng / giảm (“-3”) giới hạn ôn tập của ngày hôm nay lên</string>
     <string name="custom_study_forgotten">Ôn lại các thẻ đã quên trong x ngày trước:</string>
@@ -52,7 +52,7 @@
     <string name="storage_full_title">Bộ nhớ đầy</string>
     <string name="storage_almost_full_title">Bộ nhớ gần đầy</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">Không có không gian</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">AnkiDroid needs %s free storage space to continue. Please clear some space</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">SpeedyCAT needs %s free storage space to continue. Please clear some space</string>
     <string name="restore_backup_title">Khôi phục sao lưu?</string>
     <string name="restore_backup">Bộ sưu tập sẽ được thay bằng bản sao cũ hơn. Bất kỳ tiến trình nào chưa lưu sẽ bị mất.</string>
     <string name="restore_backup_choose_another">Chọn cái khác</string>
@@ -112,9 +112,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">Cơ sở dữ liệu đã khóa</string>
-    <string name="database_locked_summary">Cơ sở dữ liệu AnkiDroid đang được một ứng dụng khác sử dụng. Vui lòng đóng ứng dụng khác sau đó mở lại AnkiDroid.</string>
+    <string name="database_locked_summary">Cơ sở dữ liệu SpeedyCAT đang được một ứng dụng khác sử dụng. Vui lòng đóng ứng dụng khác sau đó mở lại SpeedyCAT.</string>
     <string name="incompatible_database_version_title">Phiên bản Database không tương thích</string>
-    <string name="incompatible_database_version_summary">Cơ sở dữ liệu là phiên bản nâng cao hơn phiên bản AnkiDroid này có thể hoạt động. Nâng cấp AnkiDroid hoặc hạ cấp cơ sở dữ liệu để mở nó\n\nPhiên bản được hỗ trợ:%1$d%1$d\nPhiên bản cơ sở dữ liệu:%2$d%2$d\n\nCác tùy chọn khôi phục sau sẽ ghi đè bộ sưu tập hiện tại của bạn, có thể với phiên bản cơ sở dữ liệu tương thích:</string>
+    <string name="incompatible_database_version_summary">Cơ sở dữ liệu là phiên bản nâng cao hơn phiên bản SpeedyCAT này có thể hoạt động. Nâng cấp SpeedyCAT hoặc hạ cấp cơ sở dữ liệu để mở nó\n\nPhiên bản được hỗ trợ:%1$d%1$d\nPhiên bản cơ sở dữ liệu:%2$d%2$d\n\nCác tùy chọn khôi phục sau sẽ ghi đè bộ sưu tập hiện tại của bạn, có thể với phiên bản cơ sở dữ liệu tương thích:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">Đã áp dụng hình nền</string>
     <string name="background_image_removed">Đã xóa hình nền</string>
@@ -135,10 +135,10 @@
     <string name="locale_selection_dialog_title_new">Cài ngôn ngữ</string>
     <string name="locale_selection_dialog_summary">Một số bàn phím đa ngôn ngữ, chẳng hạn như GBoard hỗ trợ thay đổi ngôn ngữ khi soạn thảo văn bản\n\nVui lòng yêu cầu tính năng “setImeHintLocales” từ nhà sản xuất bàn phím nếu bàn phím của bạn không thay đổi ngôn ngữ.</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">Sử dụng AnkiDroid</string>
-    <string name="help_item_ankidroid_manual">Hướng dẫn sử dụng AnkiDroid</string>
-    <string name="help_item_anki_manual">Hướng dẫn sử dụng Anki</string>
-    <string name="help_item_ankidroid_faq">AnkiDroid FAQ</string>
+    <string name="help_title_using_ankidroid">Sử dụng SpeedyCAT</string>
+    <string name="help_item_ankidroid_manual">Hướng dẫn sử dụng SpeedyCAT</string>
+    <string name="help_item_anki_manual">Hướng dẫn sử dụng SpeedyCAT</string>
+    <string name="help_item_ankidroid_faq">SpeedyCAT FAQ</string>
     <string name="help_title_get_help">Trợ giúp</string>
     <string name="help_item_mailing_list">Danh sách gửi thư</string>
     <string name="help_item_reddit">Reddit</string>
@@ -150,14 +150,14 @@
     <string name="help_item_support_other_ankidroid">Khác</string>
     <string name="multimedia_editor_trans_translate">Dịch</string>
     <string name="help_title_community">Cộng đồng</string>
-    <string name="help_item_anki_forums">Diễn đàn Anki</string>
+    <string name="help_item_anki_forums">Diễn đàn SpeedyCAT</string>
     <string name="help_item_discord">Discord</string>
     <string name="help_item_facebook">Facebook</string>
     <string name="help_item_twitter">Twitter</string>
     <string name="help_title_privacy">Privacy</string>
-    <string name="help_item_ankidroid_privacy_policy">Chính sách quyền riêng tư của AnkiDroid</string>
-    <string name="help_item_ankiweb_privacy_policy">Chính sách quyền riêng tư của AnkiWeb</string>
-    <string name="help_item_ankiweb_terms_and_conditions">Điều khoản và điều kiện của AnkiWeb</string>
+    <string name="help_item_ankidroid_privacy_policy">Chính sách quyền riêng tư của SpeedyCAT</string>
+    <string name="help_item_ankiweb_privacy_policy">Chính sách quyền riêng tư của SpeedyCAT</string>
+    <string name="help_item_ankiweb_terms_and_conditions">Điều khoản và điều kiện của SpeedyCAT</string>
     <string name="help_title_send_exception">Gửi báo cáo khắc phục sự cố</string>
     <string name="help_dialog_exception_report_debounce">Báo cáo đã được gửi</string>
     <string name="help_dialog_exception_report_sent">Báo cáo đã được gửi!</string>

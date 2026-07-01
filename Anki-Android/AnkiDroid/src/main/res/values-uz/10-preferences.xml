@@ -62,7 +62,7 @@
     <string name="card_browser_font_size" maxLength="41">Karta brauzeri shrift masshtabi</string>
     <string name="card_browser_hide_media" maxLength="41">Karta brauzerda fayl nomlarini koʻrsatish</string>
     <string name="card_browser_hide_media_summary">Audio fayl nomlarini karta brauzeri savol/javob maydonlarida ko\'rsatish</string>
-    <string name="col_path" maxLength="41">AnkiDroid katalogi</string>
+    <string name="col_path" maxLength="41">SpeedyCAT katalogi</string>
     <string name="fullscreen_review" maxLength="41">Butun ekran rejimi</string>
     <string name="full_screen_off">Oʻchiq</string>
     <string name="full_screen_system">Tizim panellarini yashirish</string>
@@ -166,8 +166,8 @@
     </plurals>
     <string name="pref_keep_screen_on" maxLength="41">Ekran yoniq qolsin</string>
     <string name="pref_keep_screen_on_summ">Ekran taym-autini oʻchirish</string>
-    <string name="enable_api_title" maxLength="41">AnkiDroid APIʼni yoqish</string>
-    <string name="enable_api_summary">Boshqa ilovalarga AnkiDroidʼga ulanishib sizning aralashuvingizsiz maʼlumotlarni oʻqish/yozishga ruxsat berish</string>
+    <string name="enable_api_title" maxLength="41">SpeedyCAT APIʼni yoqish</string>
+    <string name="enable_api_summary">Boshqa ilovalarga SpeedyCATʼga ulanishib sizning aralashuvingizsiz maʼlumotlarni oʻqish/yozishga ruxsat berish</string>
     <string name="custom_buttons" maxLength="41">Ilova paneli tugmalari</string>
     <string name="custom_buttons_summary">Ilova panelida qaysi amallar koʻrsatilishini moslashtiring</string>
     <string name="custom_buttons_setting_always_show">Har doim koʻrsatiladi</string>
@@ -177,7 +177,7 @@
     <string name="reset_settings_to_default">Sozlamalarni birlamchiga qaytarish</string>
     <string name="reset">Qayta tiklash</string>
     <string name="thirdparty_apps_title" maxLength="41">Uchinchi tomon API ilovalari</string>
-    <string name="thirdparty_apps_summary">Lugʻatlar, yordamchi dasturlar kabi AnkiDroid APIʼdan foydalanadigan ilovalar roʻyxatini koʻrish.</string>
+    <string name="thirdparty_apps_summary">Lugʻatlar, yordamchi dasturlar kabi SpeedyCAT APIʼdan foydalanadigan ilovalar roʻyxatini koʻrish.</string>
     <string name="pref_controls_reviews_tab" maxLength="41" comment="Name of the tab to configure controls for the reviews screen">Takrorlashlar</string>
     <string name="pref_controls_previews_tab" maxLength="41" comment="Name of the tab to configure controls for the previews screen">Oldindan koʻrish</string>
     <string name="toggle_backside_only" maxLength="41" comment="Control setting that toggles \'Backside only\' in the previews screen">Faqat orqa tarafini koʻrsatish</string>
@@ -193,9 +193,9 @@
     <!-- Custom sync server settings -->
     <string name="custom_sync_server_title" maxLength="41">Moslashtirilgan sinxronizatsiya serveri</string>
     <string name="custom_sync_server_summary_none_of_the_two_servers_used" comment="This summary is shown when neither of the two custom sync servers are used,         which is the default.">Ishlatilmaydi</string>
-    <string name="custom_sync_server_help2"><![CDATA[        AnkiWeb bilan sinxronlashga muqobil sifatida,
+    <string name="custom_sync_server_help2"><![CDATA[        SpeedyCAT bilan sinxronlashga muqobil sifatida,
         sinxronlash uchun oʻz serveringizdan foydalanishingiz mumkin.
-        Agar sozlanmagan boʻlsa, oʻrniga birlamchi AnkiWeb serveri ishlatiladi.
+        Agar sozlanmagan boʻlsa, oʻrniga birlamchi SpeedyCAT serveri ishlatiladi.
         <a href="%s">Batafsil maʼlumot</a>
         ]]></string>
     <string name="custom_sync_server_base_url_title" maxLength="41">Sinxronlash URLʼi</string>
@@ -220,22 +220,22 @@
     <string name="deck_conf_general" maxLength="41" comment="Label of the submenu for the general options of new deck">Umumiy</string>
     <string name="deck_conf_cram_search" maxLength="41" comment="Label of a text field that contains a search query.">Qidirish</string>
     <!-- analytics options -->
-    <string name="analytics_dialog_title">AnkiDroidʼni yaxshilashga yordamlashing!</string>
+    <string name="analytics_dialog_title">SpeedyCATʼni yaxshilashga yordamlashing!</string>
     <string name="analytics_title" maxLength="41">Funksiyalarni ishlatishimni ulashish</string>
-    <string name="analytics_summ">Dasturchilarga odamlar qaysi funksiyalardan foydalanayotganligini koʻrishga yordam berish orqali AnkiDroidʼga hissa qoʻshishingiz mumkin</string>
+    <string name="analytics_summ">Dasturchilarga odamlar qaysi funksiyalardan foydalanayotganligini koʻrishga yordam berish orqali SpeedyCATʼga hissa qoʻshishingiz mumkin</string>
     <string name="note_editor_replace_newlines" maxLength="41">Yangi qatorlarni HTML bilan almashtirish</string>
     <string name="note_editor_replace_newlines_summ">Qayd muharririda &lt;br&gt; belgilari kartani tahrirlayotganda yangi qatorlarga oʻgiriladi.</string>
     <string name="type_in_answer_focus" maxLength="41">‘Javobni kiritish’ maydoniga oʻtish</string>
     <string name="type_in_answer_focus_summ">Oʻrganish ekranida ‘javobni kiritish’ maydoniga avtomatik tarzda oʻtish</string>
     <!-- About -->
     <string name="open_changelog">Oʻzgarishlar roʻyxatini ochish</string>
-    <string name="pref_cat_about_title" maxLength="41">AnkiDroid haqida</string>
+    <string name="pref_cat_about_title" maxLength="41">SpeedyCAT haqida</string>
     <string name="contributors_title">Hissa qoʻshganlar</string>
-    <string name="about_contributors_description"><![CDATA[Bular bizning ajoyib <a href=\"%1$s\">hissa qoʻshuvchilarimiz</a>. Siz ham dasturlash, tarjima qilish, xayriya qilish va <a href=\"%2$s\">boshqa yoʻllar</a> orqali AnkiDroidʼga yordam berishingiz mumkin!]]></string>
+    <string name="about_contributors_description"><![CDATA[Bular bizning ajoyib <a href=\"%1$s\">hissa qoʻshuvchilarimiz</a>. Siz ham dasturlash, tarjima qilish, xayriya qilish va <a href=\"%2$s\">boshqa yoʻllar</a> orqali SpeedyCATʼga yordam berishingiz mumkin!]]></string>
     <string name="license">Litsenziya</string>
-    <string name="license_description"><![CDATA[AnkiDroid <a href=\"%1$s\">GPL-3.0</a> va <a href=\"%2$s\">AGPL-3.0</a> litsenziyalari ostida chiqarilgan, dastur kodi <a href=\"%3$s\">GitHubda</a> mavjud]]></string>
-    <string name="other_licenses"><![CDATA[AnkiDroid, shuningdek, turli ochiq kodli <a href=\"%1$s\">litsenziyalar</a> asosida tarqatilgan uchinchi tomon kutubxonalari va piktogrammalaridan foydalanadi.]]></string>
-    <string name="donate_description"><![CDATA[<a href=\"%1$s\">Xayriya qilish</a> orqali AnkiDroid rivojini qoʻllab-quvvatlashingiz mumkin. Har qanday miqdordagi yordam yuksak qadrlanadi.]]></string>
+    <string name="license_description"><![CDATA[SpeedyCAT <a href=\"%1$s\">GPL-3.0</a> va <a href=\"%2$s\">AGPL-3.0</a> litsenziyalari ostida chiqarilgan, dastur kodi <a href=\"%3$s\">GitHubda</a> mavjud]]></string>
+    <string name="other_licenses"><![CDATA[SpeedyCAT, shuningdek, turli ochiq kodli <a href=\"%1$s\">litsenziyalar</a> asosida tarqatilgan uchinchi tomon kutubxonalari va piktogrammalaridan foydalanadi.]]></string>
+    <string name="donate_description"><![CDATA[<a href=\"%1$s\">Xayriya qilish</a> orqali SpeedyCAT rivojini qoʻllab-quvvatlashingiz mumkin. Har qanday miqdordagi yordam yuksak qadrlanadi.]]></string>
     <!-- Controls -->
     <string name="binding_add_gesture">Qoʻl ishorasini qoʻshish</string>
     <string name="binding_add_key">Tugma qoʻshish</string>
@@ -270,7 +270,7 @@
     <string name="bindings_already_bound">Allaqachon ‘%s’ga bogʻlangan</string>
     <!-- Advanced -->
     <string name="pref_cat_experimental" maxLength="41" tools:ignore="UnusedResources">Tajribaviy</string>
-    <string name="readtext_deprecation_warn">AnkiDroid boshqa Anki mijozlari bilan mos tushadigan va koʻproq ovozlar va tilni ijro etish uchun takomillashtirishlarni oʻz ichiga olgan yaxshiroq nutq sintezatori mexanizmini taqdim etdi!\n\nImkon qadar tezroq yangilang, chunki bu sozlama tez orada oʻchiriladi.</string>
+    <string name="readtext_deprecation_warn">SpeedyCAT boshqa SpeedyCAT mijozlari bilan mos tushadigan va koʻproq ovozlar va tilni ijro etish uchun takomillashtirishlarni oʻz ichiga olgan yaxshiroq nutq sintezatori mexanizmini taqdim etdi!\n\nImkon qadar tezroq yangilang, chunki bu sozlama tez orada oʻchiriladi.</string>
     <string name="readtext_reviewer_warn" tools:ignore="UnusedResources">Iltimos, yangi nutq sintezatori formatiga yangilang</string>
     <string name="pref_fixed_port_title" maxLength="41">Oʻrganish ekranida localStorage</string>
     <string name="pref_fixed_port_summary">Oʻrganish ekranida belgilangan server portidan foydalangan JavaScript localStorage funksiyasini yoqadi</string>
@@ -282,9 +282,9 @@
     <!-- #######################################################################################
          #################################### Backup options ###################################
          ####################################################################################### -->
-    <string name="pref__backups_help__summary"><![CDATA[        AnkiDroid vaqti-vaqti bilana kolleksiyangizni zaxiralaydi.
+    <string name="pref__backups_help__summary"><![CDATA[        SpeedyCAT vaqti-vaqti bilana kolleksiyangizni zaxiralaydi.
         Agar zaxira nusxalari ikki kundan oshgan boʻlsa,
-        AnkiDroid diskda boʻsh joy boʻshatish uchun ularni baʻzilarini oʻchirib tashlaydi.
+        SpeedyCAT diskda boʻsh joy boʻshatish uchun ularni baʻzilarini oʻchirib tashlaydi.
         <br><br>
         Eʼtibor bering, media fayllar zaxiralanmaydi.
         Amin boʻlish uchun kolleksiyangizni vaqti-vaqti bilan sinxronlang yoki uni zaxira nusxalarini eksport qiling.

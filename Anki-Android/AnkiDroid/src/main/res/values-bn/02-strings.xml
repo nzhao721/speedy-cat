@@ -142,21 +142,21 @@
     <string name="import_title_error" comment="Title of error dialog">ত্রুটি</string>
     <string name="import_error_handle_exception">ফাইল আমদানিতে ব্যর্থ\n\n%s</string>
     <string name="import_error_not_apkg_extension">\"%s\" ফাইলে .apkg বা .colpkg এক্সটেনশন নেই</string>
-    <string name="import_error_load_imported_database">Anki ডাটাবেস (.anki2) প্রতিস্থাপন এখনও সমর্থিত নয়। প্রতিস্থাপন নির্দেশাবলীর জন্য ম্যানুয়াল দেখুন।</string>
-    <string name="import_error_content_provider">The selected file couldn’t be imported automatically by AnkiDroid. Please see the user manual for how to manually import Anki files: \n%s</string>
+    <string name="import_error_load_imported_database">SpeedyCAT ডাটাবেস (.anki2) প্রতিস্থাপন এখনও সমর্থিত নয়। প্রতিস্থাপন নির্দেশাবলীর জন্য ম্যানুয়াল দেখুন।</string>
+    <string name="import_error_content_provider">The selected file couldn’t be imported automatically by SpeedyCAT. Please see the user manual for how to manually import SpeedyCAT files: \n%s</string>
     <string name="import_error_copy_to_cache_title">ফাইল ক্যাশে করতে ব্যর্থ হয়েছে</string>
     <string name="import_error_copy_to_cache_explanation" comment="The substitution is a list of suggested fixes in bullet point form">This is often caused by a bug in the app you used to select the file. Please try the following fixes:\n\n%s</string>
-    <string name="import_interrupted">আমদানি ব্যাধিত: AnkiDroid বন্ধ করা হয়েছে</string>
+    <string name="import_interrupted">আমদানি ব্যাধিত: SpeedyCAT বন্ধ করা হয়েছে</string>
     <string name="export_ready_title">রপ্তানি প্রস্তুতি সমাপ্ত</string>
     <string name="export_send_no_handlers">apkg সামলানোর জন্য কোনো অ্যাপ নেই। সেভ করা হচ্ছে&#8230;</string>
-    <string name="export_save_apkg_successful">সফলতাপূর্বক Anki প্যাকেজ সেভ হয়েছে</string>
+    <string name="export_save_apkg_successful">সফলতাপূর্বক SpeedyCAT প্যাকেজ সেভ হয়েছে</string>
     <string name="export_save_apkg_unsuccessful">আনকি প্যাকেজ সেভ করা ব্যর্থ</string>
-    <string name="export_share_title">Anki প্যাকেজ পাঠান:</string>
-    <string name="export_email_subject">AnkiDroid এর রপ্তানি করা ফ্ল্যাশকার্ড: %s</string>
+    <string name="export_share_title">SpeedyCAT প্যাকেজ পাঠান:</string>
+    <string name="export_email_subject">SpeedyCAT এর রপ্তানি করা ফ্ল্যাশকার্ড: %s</string>
     <string name="export_email_text"><![CDATA[        Hi!
         <br/><br/>
-        This is an Anki flashcards deck sent from AnkiDroid[1].
-        Try to open it using one of the available Anki distributions[2] and enjoy easy and efficient learning!<br/><br/>
+        This is an SpeedyCAT flashcards deck sent from SpeedyCAT[1].
+        Try to open it using one of the available SpeedyCAT distributions[2] and enjoy easy and efficient learning!<br/><br/>
         [1] %1$s<br/>
         [2] %2$s
         ]]></string>
@@ -192,18 +192,18 @@
     <string name="white_board_eraser_disabled">Eraser mode deactivated</string>
     <string comment="Progress amount e.g. \'28 MB/141 MB\'. %1$s is the current amount, %2$s is the max." name="progress_amount_bytes">%1$s/%2$s</string>
     <string name="media_file_size_warning_title">Media too large</string>
-    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the AnkiWeb limit of %3$s and cannot be synced. Add anyway?</string>
+    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the SpeedyCAT limit of %3$s and cannot be synced. Add anyway?</string>
     <string name="media_file_size_add_anyway">Add anyway</string>
     <!-- Whiteboard save image message in the Study Screen -->
     <string name="white_board_image_save_failed">হোয়াইটবোর্ড ছবি সংরক্ষণ করতে ব্যর্থ হয়েছে. %s</string>
     <string name="white_board_image_saved">হোয়াইটবোর্ড ছবি %s-এ সংরক্ষিত হয়েছে</string>
     <string name="title_whiteboard_editor" maxLength="28">হোয়াইটবোর্ড সম্পাদক</string>
-    <string name="user_is_a_robot">স্বয়ংক্রিয় পরীক্ষা সনাক্ত করা হয়েছে. আপনি যদি একজন মানুষ হন তবে AnkiDroid সহায়তার সাথে যোগাযোগ করুন</string>
+    <string name="user_is_a_robot">স্বয়ংক্রিয় পরীক্ষা সনাক্ত করা হয়েছে. আপনি যদি একজন মানুষ হন তবে SpeedyCAT সহায়তার সাথে যোগাযোগ করুন</string>
     <!-- JS api -->
-    <string name="api_version_developer_contact">এই কার্ডটি অসমর্থিত AnkiDroid বৈশিষ্ট্য ব্যবহার করে। বিকাশকারী %1$s এর সাথে যোগাযোগ করুন বা উইকি %2$s দেখুন৷</string>
+    <string name="api_version_developer_contact">এই কার্ডটি অসমর্থিত SpeedyCAT বৈশিষ্ট্য ব্যবহার করে। বিকাশকারী %1$s এর সাথে যোগাযোগ করুন বা উইকি %2$s দেখুন৷</string>
     <string name="invalid_json_data">কার্ড অবৈধ তথ্য প্রদান করা হয়েছে. %s</string>
-    <string name="valid_js_api_version">অবৈধ AnkiDroid JS API সংস্করণ। বিকাশকারী %s-এর সাথে যোগাযোগ করুন বা উইকিতে যান</string>
-    <string name="update_js_api_version">AnkiDroid JS API update available. Contact developer %s, or view wiki</string>
+    <string name="valid_js_api_version">অবৈধ SpeedyCAT JS API সংস্করণ। বিকাশকারী %s-এর সাথে যোগাযোগ করুন বা উইকিতে যান</string>
+    <string name="update_js_api_version">SpeedyCAT JS API update available. Contact developer %s, or view wiki</string>
     <string name="reviewer_invalid_api_version_visit_documentation">View</string>
     <string name="anki_js_error_code">(Error code: %d)</string>
     <!-- About AnkiDroid screen -->
@@ -214,8 +214,8 @@
     <!-- Deck Picker -->
     <string name="search_decks" maxLength="28">অনুসন্ধান ডেক</string>
     <string name="ankidroid_init_failed_webview_title">Fatal error</string>
-    <string name="ankidroid_init_failed_webview">AnkiDroid relies on the System WebView which is unavailable. This can happen if the system is installing updates. Please try again in a few minutes.\n\n%s</string>
-    <string name="ankidroid_init_failed_storage">AnkiDroid cannot access storage due to an Android error.\n\n%s</string>
+    <string name="ankidroid_init_failed_webview">SpeedyCAT relies on the System WebView which is unavailable. This can happen if the system is installing updates. Please try again in a few minutes.\n\n%s</string>
+    <string name="ankidroid_init_failed_storage">SpeedyCAT cannot access storage due to an Android error.\n\n%s</string>
     <!-- A Menu item to change the Font Size (currently in the Note Editor) -->
     <string name="menu_font_size" maxLength="28">ফন্টের আকার</string>
     <string name="menu_show_toolbar" comment="Checkable item stating whether the note editor toolbar should be shown" maxLength="28">টুলবার দেখান</string>
@@ -237,9 +237,9 @@
     <string name="note_editor_video_too_large">ভিডিও ফাইলটি খুব বড়, দয়া করে ভিডিওটি ম্যানুয়ালি ঢোকান৷</string>
     <string name="note_editor_audio_too_large">অডিও ফাইলটি খুব বড়, অনুগ্রহ করে ম্যানুয়ালি অডিও ঢোকান৷</string>
     <string name="ankidroid_cannot_open_after_backup_try_again" comment="After an Android backup is restored, AnkiDroid opens and shows this message.         Opening AnkiDroid again will work correctly">Android backup in progress. Please try again</string>
-    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">AnkiDroid-কে শর্টকাট যোগ করার অনুমতি দিতে আপনাকে iManager ব্যবহার করতে হতে পারে</string>
+    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">SpeedyCAT-কে শর্টকাট যোগ করার অনুমতি দিতে আপনাকে iManager ব্যবহার করতে হতে পারে</string>
     <string name="create_shortcut_error_miui" comment="Keep the message as short, as this is shown in a toast. %s is the app name: \'AnkiDroid\'">Allow ‘Home screen shortcuts’ in system settings for %s to add shortcuts</string>
-    <string name="create_shortcut_failed" comment="home screen == launcher">আপনার হোম স্ক্রীন AnkiDroid-কে শর্টকাট যোগ করার অনুমতি দেয় না</string>
+    <string name="create_shortcut_failed" comment="home screen == launcher">আপনার হোম স্ক্রীন SpeedyCAT-কে শর্টকাট যোগ করার অনুমতি দেয় না</string>
     <string name="create_shortcut_error">শর্টকাট যোগ করার সময় ত্রুটি: %s</string>
     <string name="note_editor_capitalize" comment="This is for a switch with a checkbox - on: enabled" maxLength="28">Capitalize sentences</string>
     <string name="menu_scroll_toolbar" comment="Checkbox stating whether note editor toolbar is scrollable or stacked. Checked: Scroll" maxLength="28">টুলবার স্ক্রোল করুন</string>
@@ -302,9 +302,9 @@
     <string name="intro_ankidroid_tagline_two">আরও মনে রাখবেন</string>
     <string name="intro_short_ankidroid_explanation">আঙ্কির কার্ড শিডিউলার আপনার দুর্বলতম স্মৃতিগুলিকে শক্তিশালী করে এবং আপনার সবচেয়ে শক্তিশালী সংরক্ষণ করে সময় বাঁচায়</string>
     <string name="intro_get_started" comment="Action to start AnkiDroid for the first time without syncing from AnkiWeb">Get started</string>
-    <string name="intro_sync_from_ankiweb">AnkiWeb থেকে সিঙ্ক</string>
+    <string name="intro_sync_from_ankiweb">SpeedyCAT থেকে সিঙ্ক</string>
     <!-- IntentHandler -->
-    <string name="app_not_initialized_new">AnkiDroid এখনও চালু হয়নি। অনুগ্রহ করে AnkiDroid খুলুন এবং আবার চেষ্টা করুন</string>
+    <string name="app_not_initialized_new">SpeedyCAT এখনও চালু হয়নি। অনুগ্রহ করে SpeedyCAT খুলুন এবং আবার চেষ্টা করুন</string>
     <!-- Deck Creation -->
     <string name="deck_created">ডেক নির্মিত হয়</string>
     <string name="deck_renamed">ডেকের নাম পরিবর্তন করা হয়েছে</string>

@@ -18,18 +18,20 @@
             android:icon="@drawable/ic_bar_chart_black"
             android:title="@string/statistics"/>
     </group>
+    <group android:id="@+id/group_speedycat">
+        <item
+            android:id="@+id/nav_practice"
+            android:icon="@drawable/ic_round_assignment_24"
+            android:title="@string/speedycat_practice_questions"/>
+        <item
+            android:id="@+id/nav_full_length"
+            android:icon="@drawable/ic_running_clock"
+            android:title="@string/speedycat_full_length_tests"/>
+    </group>
     <group  android:id="@+id/group2">
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_settings_black"
             android:title="@string/settings"/>
-        <item
-            android:id="@+id/nav_help"
-            android:icon="@drawable/ic_help_black"
-            android:title="@string/help"/>
-        <item
-            android:id="@+id/support_ankidroid"
-            android:icon="@drawable/ic_support_ankidroid"
-            android:title="@string/help_title_support_ankidroid"/>
     </group>
 </menu>

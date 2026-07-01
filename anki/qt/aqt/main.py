@@ -171,6 +171,29 @@ class MainWebView(AnkiWebView):
         return False
 
 
+# SpeedyCAT: labels shown for the account when we can't (or shouldn't) show a
+# real AnkiWeb identity. We never surface the internal profile name ("User 1").
+ACCOUNT_SIGNED_OUT_LABEL = "Not signed in"
+# Signed in, but the profile has no stored email/username (older logins didn't
+# record one). Falls back to a neutral "signed in" hint rather than a blank.
+ACCOUNT_SIGNED_IN_FALLBACK = "Signed in"
+
+
+def _signed_in_account_name(pm: ProfileManagerType) -> str | None:
+    """The signed-in AnkiWeb/SpeedyCAT identity to display, or None.
+
+    The identity is the sync username (the AnkiWeb email) that
+    ``ProfileManager.set_sync_username()`` stores in the profile at login.
+    Returns None when no profile is open, the user is signed out, or no
+    username was recorded — callers substitute a neutral label in that case.
+    """
+    # pm.profile is None until a profile is opened; sync_auth() dereferences it,
+    # so the None check must short-circuit first (see test_view_toolbar_account).
+    if pm.profile is None or not pm.sync_auth():
+        return None
+    return pm.profile.get("syncUser") or None
+
+
 class AnkiQt(QMainWindow):
     col: Collection
     pm: ProfileManagerType
@@ -303,6 +326,11 @@ class AnkiQt(QMainWindow):
             self.closeFires = True
 
     def setupProfile(self) -> None:
+        # SpeedyCAT: rebrand a legacy single "User 1" default profile to
+        # "SpeedyCAT" before any auto-load/chooser decision, so the profile
+        # chooser never shows the upstream default name. No-op on fresh installs
+        # (already branded) and once migrated (see maybe_rebrand_default_profile).
+        self.pm.maybe_rebrand_default_profile()
         if self.pm.meta["firstRun"]:
             # load the new deck user profile
             self.pm.load(self.pm.profiles()[0])
@@ -496,7 +524,9 @@ class AnkiQt(QMainWindow):
             self.progress.finish()
             problems = future.result()
             if not problems:
-                showInfo("Profiles can now be opened with an older version of SpeedyCAT.")
+                showInfo(
+                    "Profiles can now be opened with an older version of SpeedyCAT."
+                )
             else:
                 showWarning(
                     "The following profiles could not be downgraded: {}".format(
@@ -517,8 +547,8 @@ class AnkiQt(QMainWindow):
         # show main window
         restoreGeom(self, "mainWindow")
         restoreState(self, "mainWindow")
-        # titlebar
-        self.setWindowTitle(f"{self.pm.name} - SpeedyCAT")
+        # titlebar: show the signed-in account, not the internal profile name.
+        self._update_window_title()
         # show and raise window for osx
         self.show()
         self.activateWindow()
@@ -822,7 +852,9 @@ class AnkiQt(QMainWindow):
             self.toolbarWeb.show()
             self.bottomWeb.show()
 
-    def _speedycatState(self, oldState: MainWindowState, mode: str = "practice") -> None:
+    def _speedycatState(
+        self, oldState: MainWindowState, mode: str = "practice"
+    ) -> None:
         # SpeedyCAT: render an MCAT study mode INSIDE the main window. Hide the
         # normal deck-browser content (`web` + bottom bar) and reveal the
         # dedicated API-enabled `speedycatWeb` navigated to the mode's route.
@@ -1152,6 +1184,9 @@ title="{}" {}>{}</button>""".format(
     def _refresh_after_sync(self) -> None:
         self.toolbar.redraw()
         self.flags.require_refresh()
+        # SpeedyCAT: a successful login stores the account email during the
+        # follow-up sync, so refresh the account label/title now (no restart).
+        self._refresh_account_menu()
 
     def _sync_collection_and_media(self, after_sync: Callable[[], None]) -> None:
         "Caller should ensure auth available."
@@ -1593,6 +1628,11 @@ title="{}" {}>{}</button>""".format(
         self.accountButton.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonIconOnly)
         self.accountButton.setToolTip("Account")
         account_menu = QMenu(self.accountButton)
+        # Non-clickable header showing the signed-in account (or neutral label).
+        self.accountIdentityAction = QAction(self)
+        self.accountIdentityAction.setEnabled(False)
+        account_menu.addAction(self.accountIdentityAction)
+        account_menu.addSeparator()
         self.accountAuthAction = QAction(self)
         qconnect(self.accountAuthAction.triggered, self._toggle_ankiweb_login)
         account_menu.addAction(self.accountAuthAction)
@@ -1610,7 +1650,7 @@ title="{}" {}>{}</button>""".format(
         gui_hooks.theme_did_change.append(self._update_view_icons)
 
     def _refresh_account_menu(self) -> None:
-        "Set the account menu's toggle label from the current AnkiWeb auth state."
+        "Show the signed-in AnkiWeb identity (or a neutral label) on the account UI."
         # This runs during setupMenus() (before any profile is opened) as well as
         # after login/logout/profile changes. When no profile is loaded yet
         # self.pm.profile is None, so guard sync_auth() and treat that as
@@ -1619,6 +1659,22 @@ title="{}" {}>{}</button>""".format(
         self.accountAuthAction.setText(
             tr.sync_log_out_button() if signed_in else tr.sync_log_in_button()
         )
+        # Surface the account identity (email/username) — never "User 1". When
+        # signed in without a stored username, fall back to a neutral hint.
+        if signed_in:
+            name = _signed_in_account_name(self.pm)
+            label = name or ACCOUNT_SIGNED_IN_FALLBACK
+            tooltip = f"Signed in as {name}" if name else ACCOUNT_SIGNED_IN_FALLBACK
+        else:
+            label = tooltip = ACCOUNT_SIGNED_OUT_LABEL
+        self.accountIdentityAction.setText(label)
+        self.accountButton.setToolTip(tooltip)
+        self._update_window_title()
+
+    def _update_window_title(self) -> None:
+        "Title shows the signed-in account, or neutral branding when signed out."
+        account = _signed_in_account_name(self.pm)
+        self.setWindowTitle(f"{account} - SpeedyCAT" if account else "SpeedyCAT")
 
     def _toggle_ankiweb_login(self) -> None:
         """Toggle AnkiWeb auth from the account menu.
@@ -1705,7 +1761,7 @@ title="{}" {}>{}</button>""".format(
         return QIcon(pixmap)
 
     def updateTitleBar(self) -> None:
-        self.setWindowTitle("SpeedyCAT")
+        self._update_window_title()
 
     # View
     ##########################################################################

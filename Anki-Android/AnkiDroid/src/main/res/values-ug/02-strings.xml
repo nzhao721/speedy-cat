@@ -120,7 +120,7 @@
         <item quantity="one">%1$d مىنۇت</item>
         <item quantity="other">%1$d مىنۇت</item>
     </plurals>
-    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">AnkiDroid كارتا</string>
+    <string name="fact_adder_intent_title" comment="Label of the \'Add Note\' window. This title can\'t be seen in AnkiDroid directly.">SpeedyCAT كارتا</string>
     <string name="note_editor_copy_note" maxLength="28">خاتىرە كۆچۈر</string>
     <string name="card_editor_reposition_card" comment="reposition a card in the new queue" maxLength="28">قايتا تەرتىپلە</string>
     <string name="card_editor_reset_card" maxLength="28">ئىلگىرىلەشنى ئەسلىگە قايتۇر</string>
@@ -132,31 +132,31 @@
     <string name="checks_action" maxLength="28">تەكشۈر</string>
     <string name="unknown_type_field_warning">جاۋاب كىرگۈزۈلىدۇ: يوچۇن بۆلەك %s</string>
     <string name="delete_deck" comment="Message on a progress bar starting a deck is being deleted.">دەستە ئۆچۈرۈۋاتىدۇ&#8230;</string>
-    <string name="info_rate">AnkiDroid كە باھا بېرىڭ</string>
+    <string name="info_rate">SpeedyCAT كە باھا بېرىڭ</string>
     <string name="import_title">ئەكىرىۋاتىدۇ</string>
     <string name="import_preparing_file">ئەكىرىدىغان ھۆججەتنى تەييارلاۋاتىدۇ&#8230;</string>
     <string name="import_message_add" comment="Adding a new deck to the collection (import)">قوش</string>
     <string name="import_message_replace_confirm">مەۋجۇت توپلامنى ئۆچۈرۈپ ئۇنىڭ ئورنىغا ئەكىرگەن %s ھۆججەتتىكى سانلىق مەلۇماتنى ئالماشتۇرىدۇ</string>
     <string name="import_dialog_message_add">«%s» نى توپلامغا قوشامدۇ؟ بۇنىڭغا ئۇزۇن ۋاقىت كېتىشى مۇمكىن</string>
-    <string name="import_log_no_apkg">بۇ ئىناۋەتلىك Anki بوغچا ھۆججىتى ئەمەس</string>
+    <string name="import_log_no_apkg">بۇ ئىناۋەتلىك SpeedyCAT بوغچا ھۆججىتى ئەمەس</string>
     <string name="import_title_error" comment="Title of error dialog">خاتالىق</string>
     <string name="import_error_handle_exception">ھۆججەتنى ئەكىرەلمىدى\n\n%s</string>
     <string name="import_error_not_apkg_extension">ھۆججەت «%s» نىڭ .apkg ياكى .colpkg كېڭەيتىلگەن نامى يوق</string>
-    <string name="import_error_load_imported_database">Anki سانداق (.anki2) ئالماشتۇرۇشنى تېخى قوللىمايدۇ. ئالماشتۇرۇش كۆرسەتمىسىنى قوللانمىدىن كۆرۈڭ.</string>
-    <string name="import_error_content_provider">تاللانغان ھۆججەتنى AnkiDroid ئۆزلۈكىدىن ئەكىرەلمەيدۇ. ئىشلەتكۈچى قوللانمىسىدىن Anki ھۆججەتنى قانداق ئەكىرىشنى كۆرۈڭ: \n%s</string>
+    <string name="import_error_load_imported_database">SpeedyCAT سانداق (.anki2) ئالماشتۇرۇشنى تېخى قوللىمايدۇ. ئالماشتۇرۇش كۆرسەتمىسىنى قوللانمىدىن كۆرۈڭ.</string>
+    <string name="import_error_content_provider">تاللانغان ھۆججەتنى SpeedyCAT ئۆزلۈكىدىن ئەكىرەلمەيدۇ. ئىشلەتكۈچى قوللانمىسىدىن SpeedyCAT ھۆججەتنى قانداق ئەكىرىشنى كۆرۈڭ: \n%s</string>
     <string name="import_error_copy_to_cache_title">ھۆججەتنى غەملىيەلمىدى</string>
     <string name="import_error_copy_to_cache_explanation" comment="The substitution is a list of suggested fixes in bullet point form">بۇ ئادەتتە سىز ھۆججەت تاللاشقا ئىشلىتىۋاتقان ئەپتىكى خاتالىق سەۋەبىدىن كېلىپ چىقىدۇ. تۆۋەندىكى ئوڭشاشنى سىناڭ:\n\n%s</string>
-    <string name="import_interrupted">ئەكىرىش ئۈزۈلدى: AnkiDroid تاقالغان</string>
+    <string name="import_interrupted">ئەكىرىش ئۈزۈلدى: SpeedyCAT تاقالغان</string>
     <string name="export_ready_title">چىقىرىشقا تەييار</string>
     <string name="export_send_no_handlers">apkg نى بىر تەرەپ قىلىدىغان ئەپ يوق. ساقلاۋاتىدۇ&#8230;</string>
-    <string name="export_save_apkg_successful">Anki بولىقى مۇۋەپپەقىيەتلىك ساقلاندى</string>
-    <string name="export_save_apkg_unsuccessful">Anki بولىقىنى ساقلىيالمىدى</string>
-    <string name="export_share_title">Anki بولىقى يوللاش تاللىنىدۇ</string>
-    <string name="export_email_subject">AnkiDroid چىقارغان كارتا: %s</string>
+    <string name="export_save_apkg_successful">SpeedyCAT بولىقى مۇۋەپپەقىيەتلىك ساقلاندى</string>
+    <string name="export_save_apkg_unsuccessful">SpeedyCAT بولىقىنى ساقلىيالمىدى</string>
+    <string name="export_share_title">SpeedyCAT بولىقى يوللاش تاللىنىدۇ</string>
+    <string name="export_email_subject">SpeedyCAT چىقارغان كارتا: %s</string>
     <string name="export_email_text"><![CDATA[        سالام!
         <br/><br/>
-        بۇ AnkiDroid[1] دىن ئەۋەتىلگەن Anki چاقماق كارتا دەستىسى.
-        ئىشلەتكىلى بولىدىغان Anki تارقىتىلغان نەشرى[2]دىن بىرىنى ئىشلىتىپ ئېچىپ ئاسان ۋە ئۈنۈملۈك ئۆگىنىشتىن ھۇزۇرلىنىڭ! <br/><br/>
+        بۇ SpeedyCAT[1] دىن ئەۋەتىلگەن SpeedyCAT چاقماق كارتا دەستىسى.
+        ئىشلەتكىلى بولىدىغان SpeedyCAT تارقىتىلغان نەشرى[2]دىن بىرىنى ئىشلىتىپ ئېچىپ ئاسان ۋە ئۈنۈملۈك ئۆگىنىشتىن ھۇزۇرلىنىڭ! <br/><br/>
         [1] %1$s<br/>
         [2] %2$s
         ]]></string>
@@ -192,18 +192,18 @@
     <string name="white_board_eraser_disabled">ئۆچۈرگۈچ ھالىتى توختىتىلدى</string>
     <string comment="Progress amount e.g. \'28 MB/141 MB\'. %1$s is the current amount, %2$s is the max." name="progress_amount_bytes">%1$s/%2$s</string>
     <string name="media_file_size_warning_title">Media too large</string>
-    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the AnkiWeb limit of %3$s and cannot be synced. Add anyway?</string>
+    <string name="media_file_size_warning_message" comment="1$s: File name, 2$s: File size, 3$s: The size limit (e.g. 100MB)">The file \"%1$s\" (%2$s) exceeds the SpeedyCAT limit of %3$s and cannot be synced. Add anyway?</string>
     <string name="media_file_size_add_anyway">Add anyway</string>
     <!-- Whiteboard save image message in the Study Screen -->
     <string name="white_board_image_save_failed">ئاق دوسكا سۈرىتىنى ساقلىيالمىدى %s</string>
     <string name="white_board_image_saved">ئاق دوسكا سۈرىتى %s غا ساقلاندى</string>
     <string name="title_whiteboard_editor" maxLength="28">ئاق دوسكا تەھرىرلىگۈچ</string>
-    <string name="user_is_a_robot">ئاپتوماتلاشقان سىناق بايقالدى. ئەگەر ئىنسان بولسىڭىز، AnkiDroid قوللىغۇچىلىرى بىلەن ئالاقىلىشىڭ</string>
+    <string name="user_is_a_robot">ئاپتوماتلاشقان سىناق بايقالدى. ئەگەر ئىنسان بولسىڭىز، SpeedyCAT قوللىغۇچىلىرى بىلەن ئالاقىلىشىڭ</string>
     <!-- JS api -->
-    <string name="api_version_developer_contact">بۇ كارتىدا AnkiDroid قوللىمايدىغان ئىقتىدار ئىشلىتىلگەن. ئىجادكار %1$s بىلەن ئالاقىلىشىڭ ياكى ۋىكىنى زىيارەت قىلىڭ. %2$s</string>
+    <string name="api_version_developer_contact">بۇ كارتىدا SpeedyCAT قوللىمايدىغان ئىقتىدار ئىشلىتىلگەن. ئىجادكار %1$s بىلەن ئالاقىلىشىڭ ياكى ۋىكىنى زىيارەت قىلىڭ. %2$s</string>
     <string name="invalid_json_data">كارتا ئىناۋەتسىز سانلىق مەلۇمات بىلەن تەمىنلىدى. %s</string>
-    <string name="valid_js_api_version">ئىناۋەتسىز AnkiDroid JS API نەشرى. ئىجادكار %s بىلەن ئالاقىلىشىڭ ياكى ۋىكىنى زىيارەت قىلىڭ</string>
-    <string name="update_js_api_version">AnkiDroid JS API يېڭىلانمىسى بار. ئىجادكار %s بىلەن ئالاقىلىشىڭ ياكى ۋىكىنى زىيارەت قىلىڭ</string>
+    <string name="valid_js_api_version">ئىناۋەتسىز SpeedyCAT JS API نەشرى. ئىجادكار %s بىلەن ئالاقىلىشىڭ ياكى ۋىكىنى زىيارەت قىلىڭ</string>
+    <string name="update_js_api_version">SpeedyCAT JS API يېڭىلانمىسى بار. ئىجادكار %s بىلەن ئالاقىلىشىڭ ياكى ۋىكىنى زىيارەت قىلىڭ</string>
     <string name="reviewer_invalid_api_version_visit_documentation">كۆرۈنۈش</string>
     <string name="anki_js_error_code">(Error code: %d)</string>
     <!-- About AnkiDroid screen -->
@@ -214,8 +214,8 @@
     <!-- Deck Picker -->
     <string name="search_decks" maxLength="28">دەستە ئىزدە</string>
     <string name="ankidroid_init_failed_webview_title">Fatal error</string>
-    <string name="ankidroid_init_failed_webview">AnkiDroid سىستېمىدىكى WebView غا تايىنىدۇ ئەمما ئۇنى ئىشلەتكىلى بولمايدۇ. بۇ سىستېما يېڭىلانمىنى ئورنىتىۋاتقاندا يۈز بېرىشى مۇمكىن. بىر قانچە مىنۇتتىن كېيىن قايتا سىناڭ.\n\n%s</string>
-    <string name="ankidroid_init_failed_storage">Android خاتالىقى سەۋەبىدىن AnkiDroid ساقلىغۇچنى زىيارەت قىلالمايدۇ.\n\n%s</string>
+    <string name="ankidroid_init_failed_webview">SpeedyCAT سىستېمىدىكى WebView غا تايىنىدۇ ئەمما ئۇنى ئىشلەتكىلى بولمايدۇ. بۇ سىستېما يېڭىلانمىنى ئورنىتىۋاتقاندا يۈز بېرىشى مۇمكىن. بىر قانچە مىنۇتتىن كېيىن قايتا سىناڭ.\n\n%s</string>
+    <string name="ankidroid_init_failed_storage">Android خاتالىقى سەۋەبىدىن SpeedyCAT ساقلىغۇچنى زىيارەت قىلالمايدۇ.\n\n%s</string>
     <!-- A Menu item to change the Font Size (currently in the Note Editor) -->
     <string name="menu_font_size" maxLength="28">خەت چوڭلۇقى</string>
     <string name="menu_show_toolbar" comment="Checkable item stating whether the note editor toolbar should be shown" maxLength="28">قورال بالداقنى كۆرسەت</string>
@@ -237,9 +237,9 @@
     <string name="note_editor_video_too_large">سىن ھۆججىتى بەك چوڭ، سىننى قولدا قىستۇرۇڭ</string>
     <string name="note_editor_audio_too_large">ئۈن ھۆججىتى بەك چوڭ، ئۈننى قولدا قىستۇرۇڭ</string>
     <string name="ankidroid_cannot_open_after_backup_try_again" comment="After an Android backup is restored, AnkiDroid opens and shows this message.         Opening AnkiDroid again will work correctly">Android زاپاسلاش ئىجرا قىلىنىۋاتىدۇ. قايتا سىناڭ</string>
-    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">iManager نى ئىشلىتىپ AnkiDroid نىڭ تېزلەتمە قوشۇشىغا يول قويۇڭ</string>
+    <string name="create_shortcut_error_vivo" comment="iManager is an app on Vivo phones">iManager نى ئىشلىتىپ SpeedyCAT نىڭ تېزلەتمە قوشۇشىغا يول قويۇڭ</string>
     <string name="create_shortcut_error_miui" comment="Keep the message as short, as this is shown in a toast. %s is the app name: \'AnkiDroid\'">Allow ‘Home screen shortcuts’ in system settings for %s to add shortcuts</string>
-    <string name="create_shortcut_failed" comment="home screen == launcher">باش ئېكرانىڭىز AnkiDroid نىڭ تېزلەتمە قوشۇشىغا يول قويمايدۇ</string>
+    <string name="create_shortcut_failed" comment="home screen == launcher">باش ئېكرانىڭىز SpeedyCAT نىڭ تېزلەتمە قوشۇشىغا يول قويمايدۇ</string>
     <string name="create_shortcut_error">تېزلەتمە قوشۇش خاتالىقى: %s</string>
     <string name="note_editor_capitalize" comment="This is for a switch with a checkbox - on: enabled" maxLength="28">چوڭ ھەرپلىك جۈملە</string>
     <string name="menu_scroll_toolbar" comment="Checkbox stating whether note editor toolbar is scrollable or stacked. Checked: Scroll" maxLength="28">قورال بالداقنى دومىلات</string>
@@ -300,11 +300,11 @@
     <!-- App Intro -->
     <string name="intro_ankidroid_tagline_one">ئازراق ئۆگىنىدۇ</string>
     <string name="intro_ankidroid_tagline_two">تېخىمۇ كۆپ ئەستە تۇتىدۇ</string>
-    <string name="intro_short_ankidroid_explanation">Anki نىڭ كارتا كۈنتەرتىپلىگۈچىسى ئەستە تۇتۇشتىكى ئاجىز ھالقىڭىزنى كۈچەيتىپ ۋە كۈچلۈك ئەستە تۇتۇشىڭىزنى ساقلاپ ۋاقتىڭىزنى تېجەيدۇ</string>
+    <string name="intro_short_ankidroid_explanation">SpeedyCAT نىڭ كارتا كۈنتەرتىپلىگۈچىسى ئەستە تۇتۇشتىكى ئاجىز ھالقىڭىزنى كۈچەيتىپ ۋە كۈچلۈك ئەستە تۇتۇشىڭىزنى ساقلاپ ۋاقتىڭىزنى تېجەيدۇ</string>
     <string name="intro_get_started" comment="Action to start AnkiDroid for the first time without syncing from AnkiWeb">Get started</string>
-    <string name="intro_sync_from_ankiweb">AnkiWeb دىن قەدەمداشلا</string>
+    <string name="intro_sync_from_ankiweb">SpeedyCAT دىن قەدەمداشلا</string>
     <!-- IntentHandler -->
-    <string name="app_not_initialized_new">AnkiDroid تېخى دەسلەپلەشتۈرۈلمىدى. AnkiDroid نى ئېچىپ قايتا سىناڭ</string>
+    <string name="app_not_initialized_new">SpeedyCAT تېخى دەسلەپلەشتۈرۈلمىدى. SpeedyCAT نى ئېچىپ قايتا سىناڭ</string>
     <!-- Deck Creation -->
     <string name="deck_created">دەستە قۇرۇلدى</string>
     <string name="deck_renamed">دەستە ئىسمى ئۆزگەرتىلدى</string>

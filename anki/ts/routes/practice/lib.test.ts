@@ -11,6 +11,8 @@ import {
     formatDurationLong,
     groupIntoRunItems,
     McatSection,
+    parseQuestionCount,
+    parseTimerMinutes,
     primaryTopic,
     sectionLong,
     sectionShort,
@@ -57,31 +59,74 @@ test("formatDurationLong drops trailing units sensibly", () => {
     expect(formatDurationLong(3600)).toBe("1h");
 });
 
-test("buildFilter fills defaults and treats the unspecified section as all", () => {
+test("buildFilter fills defaults and drops the unspecified section sentinel", () => {
     const empty = buildFilter({});
     expect(empty).toEqual({
+        sections: [],
         topics: [],
         missedOnly: false,
         includeFullLength: false,
         limit: 0,
     });
-    expect("section" in empty).toBe(false);
 
     const populated = buildFilter({
-        section: McatSection.CARS,
-        topics: ["ethics"],
+        sections: [McatSection.CARS, McatSection.CPBS],
+        topics: ["ethics", "kinetics"],
         missedOnly: true,
         includeFullLength: true,
         limit: 5,
     });
-    expect(populated.section).toBe(McatSection.CARS);
+    expect(populated.sections).toEqual([McatSection.CARS, McatSection.CPBS]);
+    expect(populated.topics).toEqual(["ethics", "kinetics"]);
     expect(populated.missedOnly).toBe(true);
     expect(populated.limit).toBe(5);
 
-    // UNSPECIFIED (0) is falsy, so no section is set ("all sections").
+    // UNSPECIFIED (0) is a pseudo "all sections" sentinel and is filtered out,
+    // so an "all" pick never narrows the query.
+    expect(buildFilter({ sections: [McatSection.UNSPECIFIED] }).sections).toEqual(
+        [],
+    );
     expect(
-        "section" in buildFilter({ section: McatSection.UNSPECIFIED }),
-    ).toBe(false);
+        buildFilter({ sections: [McatSection.UNSPECIFIED, McatSection.BBLS] })
+            .sections,
+    ).toEqual([McatSection.BBLS]);
+});
+
+test("parseQuestionCount treats blank/max/all as everything and validates positives", () => {
+    // blank / keywords => all available (limit 0, still valid to start)
+    for (const raw of ["", "   ", "max", "MAX", "all", "All"]) {
+        expect(parseQuestionCount(raw)).toEqual({
+            limit: 0,
+            valid: true,
+            all: true,
+        });
+    }
+
+    // a positive integer passes through, clamped to what's available
+    expect(parseQuestionCount("15")).toEqual({
+        limit: 15,
+        valid: true,
+        all: false,
+    });
+    expect(parseQuestionCount("15", 40).limit).toBe(15);
+    expect(parseQuestionCount("100", 40).limit).toBe(40); // clamped to available
+    expect(parseQuestionCount("15", 0).limit).toBe(15); // 0 available => no clamp
+
+    // invalid: zero, negative, decimal, junk, embedded space
+    for (const bad of ["0", "-3", "3.5", "abc", "1a", "1 2"]) {
+        const p = parseQuestionCount(bad);
+        expect(p.valid).toBe(false);
+        expect(p.limit).toBe(0);
+        expect(p.all).toBe(false);
+    }
+});
+
+test("parseTimerMinutes accepts positive whole minutes only", () => {
+    expect(parseTimerMinutes("20")).toEqual({ seconds: 1200, valid: true });
+    expect(parseTimerMinutes(" 5 ")).toEqual({ seconds: 300, valid: true });
+    for (const bad of ["", "0", "-1", "1.5", "abc", "10m"]) {
+        expect(parseTimerMinutes(bad)).toEqual({ seconds: 0, valid: false });
+    }
 });
 
 test("primaryTopic prefers the first tag, else the section label", () => {

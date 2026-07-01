@@ -168,7 +168,7 @@
     <string name="pref_keep_screen_on" maxLength="41">𐌼𐌹𐌸 𐍃𐌺𐌰𐌹𐍂𐌼𐌰 𐍃𐌺𐌴𐌹𐌽𐌰𐌽𐌳𐌹𐌽 𐌸𐌰𐌹𐍂𐌷𐍅𐌹𐍃𐌰𐌽</string>
     <string name="pref_keep_screen_on_summ">𐍃𐌺𐌰𐌹𐍂𐌼𐌹𐍃 𐌿𐍄𐌰𐌼𐌴𐌻 𐌿𐌽𐌲𐌰𐍄𐌰𐌿𐌾𐌰𐌽</string>
     <string name="enable_api_title" maxLength="41">𐌰𐌽𐌺𐌴𐌹𐌳𐍂𐌰𐌿𐌳 𐌰𐍀𐌹 𐌲𐌰𐍅𐌰𐌿𐍂𐌺𐌾𐌰𐌽</string>
-    <string name="enable_api_summary">Let other apps connect to AnkiDroid and read / write data without your intervention</string>
+    <string name="enable_api_summary">Let other apps connect to SpeedyCAT and read / write data without your intervention</string>
     <string name="custom_buttons" maxLength="41">App bar buttons</string>
     <string name="custom_buttons_summary">Customize which actions appear in the app bar</string>
     <string name="custom_buttons_setting_always_show">𐍃𐌹𐌽𐍄𐌴𐌹𐌽𐍉 𐌱𐌰𐌽𐌳𐍅𐌾𐌰𐌽</string>
@@ -194,9 +194,9 @@
     <!-- Custom sync server settings -->
     <string name="custom_sync_server_title" maxLength="41">Custom sync server</string>
     <string name="custom_sync_server_summary_none_of_the_two_servers_used" comment="This summary is shown when neither of the two custom sync servers are used,         which is the default.">𐌽𐌹 𐌱𐍂𐌿𐌷𐍄</string>
-    <string name="custom_sync_server_help2"><![CDATA[        As an alternative to synchronizing with AnkiWeb,
+    <string name="custom_sync_server_help2"><![CDATA[        As an alternative to synchronizing with SpeedyCAT,
         you may use your own server for synchronization.
-        If not set, the default AnkiWeb server will be used instead.
+        If not set, the default SpeedyCAT server will be used instead.
         <a href="%s">Learn more</a>
         ]]></string>
     <string name="custom_sync_server_base_url_title" maxLength="41">Sync URL</string>
@@ -223,7 +223,7 @@
     <!-- analytics options -->
     <string name="analytics_dialog_title">𐌷𐌹𐌻𐍀 𐌰𐌽𐌺𐌴𐌹𐌳𐍂𐌰𐌿𐌳𐍃 𐌲𐌰𐌱𐍉𐍄𐌾𐌰𐌽!</string>
     <string name="analytics_title" maxLength="41">Share feature usage</string>
-    <string name="analytics_summ">You can contribute to AnkiDroid by helping the development team see which features people use</string>
+    <string name="analytics_summ">You can contribute to SpeedyCAT by helping the development team see which features people use</string>
     <string name="note_editor_replace_newlines" maxLength="41">𐌽𐌹𐌿𐌾𐌰𐍃𐍄𐍂𐌹𐌺𐌰𐌽𐍃 𐌼𐌹𐌸𐍃𐌰𐍄𐌾𐌰𐌽 𐌼𐌹𐌸 𐌷𐍄𐌼𐌻</string>
     <string name="note_editor_replace_newlines_summ">In the Note Editor, convert any instances of &lt;br&gt; to newlines when editing a card.</string>
     <string name="type_in_answer_focus" maxLength="41">Focus ‘type in answer’</string>
@@ -272,7 +272,7 @@
     <string name="bindings_already_bound">𐌳𐌿 ’%s’ 𐌾𐌿 𐌱𐌿𐌽𐌳𐌰𐌽 𐌹𐍃𐍄</string>
     <!-- Advanced -->
     <string name="pref_cat_experimental" maxLength="41" tools:ignore="UnusedResources">Experimental</string>
-    <string name="readtext_deprecation_warn">AnkiDroid has introduced a better TTS mechanism which is compatible with other Anki clients and includes more voices and improvements to language playback!\n\nPlease upgrade as soon as possible, as this setting will be removed soon</string>
+    <string name="readtext_deprecation_warn">SpeedyCAT has introduced a better TTS mechanism which is compatible with other SpeedyCAT clients and includes more voices and improvements to language playback!\n\nPlease upgrade as soon as possible, as this setting will be removed soon</string>
     <string name="readtext_reviewer_warn" tools:ignore="UnusedResources">Please upgrade to the new text to speech format</string>
     <string name="pref_fixed_port_title" maxLength="41">localStorage 𐌹𐌽 𐍃𐌺𐌰𐌹𐍂𐌼𐌰 𐌻𐌰𐌹𐍃𐌴𐌹𐌽𐌰𐌹𐍃</string>
     <string name="pref_fixed_port_summary">Enables JavaScript localStorage by using a fixed server port in the Study Screen</string>
@@ -284,9 +284,9 @@
     <!-- #######################################################################################
          #################################### Backup options ###################################
          ####################################################################################### -->
-    <string name="pref__backups_help__summary"><![CDATA[        AnkiDroid periodically backs up your collection.
+    <string name="pref__backups_help__summary"><![CDATA[        SpeedyCAT periodically backs up your collection.
         After backups are more than two days old,
-        AnkiDroid will start removing some of them to free up disk space.
+        SpeedyCAT will start removing some of them to free up disk space.
         <br><br>
         Note that media files are not backed up.
         To be safe, please periodically synchronize your collection, or back up exports of it.

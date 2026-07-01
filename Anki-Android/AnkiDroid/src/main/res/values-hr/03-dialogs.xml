@@ -41,12 +41,12 @@
         <item quantity="other">%d kartica resetirano</item>
     </plurals>
     <string name="answering_error_title">Greška baze podataka</string>
-    <string name="answering_error_message">Pisanje u kolekciju nije uspjelo. Baza podataka mogla bi biti neispravna ili možda nema dovoljno slobodnog prostora na disku.\n\nAko se ovo češće događa, provjerite bazu podataka, popravite kolekciju ili je obnovite iz sigurnosne kopije. Pritisnite \"opcije\" za to.\n\Ili bi mogla biti programska greška u AnkiDroidu; prijavite grešku kako bismo je mogli provjeriti.</string>
+    <string name="answering_error_message">Pisanje u kolekciju nije uspjelo. Baza podataka mogla bi biti neispravna ili možda nema dovoljno slobodnog prostora na disku.\n\nAko se ovo češće događa, provjerite bazu podataka, popravite kolekciju ili je obnovite iz sigurnosne kopije. Pritisnite \"opcije\" za to.\n\Ili bi mogla biti programska greška u SpeedyCATu; prijavite grešku kako bismo je mogli provjeriti.</string>
     <string name="answering_error_report">Prijavi grešku</string>
-    <string name="storage_full_message">Nema dovoljno slobodnog prostora za pohranu da se otvori AnkiDroid. Oslobodite prostora kako biste nastavili.</string>
+    <string name="storage_full_message">Nema dovoljno slobodnog prostora za pohranu da se otvori SpeedyCAT. Oslobodite prostora kako biste nastavili.</string>
     <string name="repair_deck_dialog">Želite li zaista opraviti bazu podataka?\n\nPrije započinjanja pokušaja, kopija će biti stvorena u podmapi “%s”.</string>
     <string name="intent_aedict_empty">Kategorija “zadano” je prazna</string>
-    <string name="intent_aedict_category">Uklonite sve kategorije notesa kako biste dodali kartice u AnkiDroid ili dodajte jednu s nazivom “default”</string>
+    <string name="intent_aedict_category">Uklonite sve kategorije notesa kako biste dodali kartice u SpeedyCAT ili dodajte jednu s nazivom “default”</string>
     <string name="custom_study_new_extend">Povećaj/umanji (“-3”) današnji limit novih kartica za</string>
     <string name="custom_study_rev_extend">Povećaj/umanji (“-3”) današnji limit kartica ponavljanja za</string>
     <string name="custom_study_forgotten">Kartice ponavljanja zaboravljene u zadnjih x dana:</string>
@@ -56,7 +56,7 @@
     <string name="storage_full_title">Pohrana je puna</string>
     <string name="storage_almost_full_title">Pohrana je skoro puna</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">Nema mjesta</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">AnkiDroid zahtijeva %s slobodnog prostora za pohranu kako bi nastavio. Očistite malo prostora</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">SpeedyCAT zahtijeva %s slobodnog prostora za pohranu kako bi nastavio. Očistite malo prostora</string>
     <string name="restore_backup_title">Obnoviti sigurnosnu kopiju?</string>
     <string name="restore_backup">Vaša kolekcija će biti zamijenjena starijom kopijom. Izgubit ćete sav napredak koji nije spremljen.</string>
     <string name="restore_backup_choose_another">Odaberi drugi</string>
@@ -118,9 +118,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">Baza podataka zaključana</string>
-    <string name="database_locked_summary">Druga aplikacija koristi AnkiDroid bazu podataka. Zatvorite drugu aplikaciju ze zatim ponovno otvorite AnkiDroid.</string>
+    <string name="database_locked_summary">Druga aplikacija koristi SpeedyCAT bazu podataka. Zatvorite drugu aplikaciju ze zatim ponovno otvorite SpeedyCAT.</string>
     <string name="incompatible_database_version_title">Nekompatibilna verzija baze podataka</string>
-    <string name="incompatible_database_version_summary">Verzija baze podataka je naprednija od one s kojom trenutna verzija AnkiDroida može rukovati. Ažurirajte AnkiDroid ili smanjite verziju baze podataka kako biste je otvorili\n\nPodržana verzija:%1$d\nVerzija baze podataka: %2$d\n\nSljedeće postavke za obnovu će pregaziti vašu trenutnu kolekciju, potencijalno s kompatibilnom verzijom baze podatka:</string>
+    <string name="incompatible_database_version_summary">Verzija baze podataka je naprednija od one s kojom trenutna verzija SpeedyCATa može rukovati. Ažurirajte SpeedyCAT ili smanjite verziju baze podataka kako biste je otvorili\n\nPodržana verzija:%1$d\nVerzija baze podataka: %2$d\n\nSljedeće postavke za obnovu će pregaziti vašu trenutnu kolekciju, potencijalno s kompatibilnom verzijom baze podatka:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">Pozadinska slika primijenjena</string>
     <string name="background_image_removed">Pozadinska slika uklonjena</string>
@@ -141,29 +141,29 @@
     <string name="locale_selection_dialog_title_new">Postavi jezik</string>
     <string name="locale_selection_dialog_summary">Some multilingual keyboards, such as GBoard support changing language when editing text\n\nPlease request the “setImeHintLocales” feature from your keyboard manufacturer if your keyboard does not change language.</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">Korištenje AnkiDroida</string>
-    <string name="help_item_ankidroid_manual">AnkiDroid priručnik</string>
-    <string name="help_item_anki_manual">Anki priručnik</string>
-    <string name="help_item_ankidroid_faq">AnkiDroid FAQ</string>
+    <string name="help_title_using_ankidroid">Korištenje SpeedyCATa</string>
+    <string name="help_item_ankidroid_manual">SpeedyCAT priručnik</string>
+    <string name="help_item_anki_manual">SpeedyCAT priručnik</string>
+    <string name="help_item_ankidroid_faq">SpeedyCAT FAQ</string>
     <string name="help_title_get_help">Zatraži pomoć</string>
     <string name="help_item_mailing_list">Mailing lista</string>
     <string name="help_item_reddit">Reddit</string>
     <string name="help_item_report_bug">Prijavi grešku</string>
-    <string name="help_title_support_ankidroid" maxLength="28">Podrži AnkiDroid</string>
+    <string name="help_title_support_ankidroid" maxLength="28">Podrži SpeedyCAT</string>
     <string name="help_item_support_opencollective_donate">Doniraj</string>
     <string name="help_item_support_develop_ankidroid">Razvijaj</string>
     <string name="help_item_support_rate_ankidroid">Ocijeni</string>
     <string name="help_item_support_other_ankidroid">Ostalo</string>
     <string name="multimedia_editor_trans_translate">Prevedi</string>
     <string name="help_title_community">Zajednica</string>
-    <string name="help_item_anki_forums">Anki forumi</string>
+    <string name="help_item_anki_forums">SpeedyCAT forumi</string>
     <string name="help_item_discord">Discord</string>
     <string name="help_item_facebook">Facebook</string>
     <string name="help_item_twitter">Twitter</string>
     <string name="help_title_privacy">Privatnost</string>
-    <string name="help_item_ankidroid_privacy_policy">AnkiDroid polica privatnosti</string>
-    <string name="help_item_ankiweb_privacy_policy">AnkiWeb polica privatnosti</string>
-    <string name="help_item_ankiweb_terms_and_conditions">AnkiWeb uvjeti i odredbe</string>
+    <string name="help_item_ankidroid_privacy_policy">SpeedyCAT polica privatnosti</string>
+    <string name="help_item_ankiweb_privacy_policy">SpeedyCAT polica privatnosti</string>
+    <string name="help_item_ankiweb_terms_and_conditions">SpeedyCAT uvjeti i odredbe</string>
     <string name="help_title_send_exception">Pošalji izvješće o otklanjanju poteškoća</string>
     <string name="help_dialog_exception_report_debounce">Izvješće već predano</string>
     <string name="help_dialog_exception_report_sent">Izvješće poslano!</string>

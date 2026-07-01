@@ -8,15 +8,18 @@ SpeedyCAT: Practice Question Bank page. Orchestrates the three phases — setup
 and the post-session summary.
 -->
 <script lang="ts">
+    import Dropdown from "./Dropdown.svelte";
     import PracticeRunner from "./PracticeRunner.svelte";
     import SessionSummary from "./SessionSummary.svelte";
     import {
         beginPracticeSession,
         fetchQuestions,
-        McatSection,
+        parseQuestionCount,
+        parseTimerMinutes,
         SECTIONS,
         sectionLong,
         type FilterOptions,
+        type McatSection,
         type PracticeQuestion,
         type PracticeSessionSummary,
     } from "./lib";
@@ -29,54 +32,73 @@ and the post-session summary.
     let starting = false;
     let noMatch = false;
 
-    // filter state
-    let sectionFilter: McatSection = McatSection.UNSPECIFIED;
-    let topic = "";
+    // filter state — sections/topics are multi-select; empty = all.
+    let selectedSections: McatSection[] = [];
+    let selectedTopics: string[] = [];
     let missedOnly = false;
-    let limit = 20;
-    let timeLimit = 0;
+    // Free-text inputs: how many questions (blank / "max" = all available) and
+    // an optional timer in minutes gated by the Untimed toggle.
+    let countInput = "20";
+    let untimed = true;
+    let timerInput = "20";
 
     // running state
     let sessionQuestions: PracticeQuestion[] = [];
     let sessionId = "";
     let summary: PracticeSessionSummary | undefined;
 
-    const TIME_LIMITS: { label: string; value: number }[] = [
-        { label: "Untimed", value: 0 },
-        { label: "10 min", value: 600 },
-        { label: "20 min", value: 1200 },
-        { label: "30 min", value: 1800 },
-        { label: "60 min", value: 3600 },
-    ];
-    const COUNTS: { label: string; value: number }[] = [
-        { label: "5", value: 5 },
-        { label: "10", value: 10 },
-        { label: "20", value: 20 },
-        { label: "40", value: 40 },
-        { label: "All", value: 0 },
-    ];
+    $: sectionOptions = SECTIONS.map((s) => ({
+        value: s as number,
+        label: sectionLong(s),
+    }));
 
     $: topicOptions = Array.from(
         new Set(
             bank
                 .filter(
                     (q) =>
-                        sectionFilter === McatSection.UNSPECIFIED ||
-                        q.section === sectionFilter,
+                        selectedSections.length === 0 ||
+                        selectedSections.includes(q.section),
                 )
                 .flatMap((q) => q.topicTags),
         ),
     ).sort((a, b) => a.localeCompare(b));
+
+    $: topicDropdownOptions = topicOptions.map((t) => ({ value: t, label: t }));
 
     $: sectionCounts = SECTIONS.map((s) => ({
         section: s,
         count: bank.filter((q) => q.section === s).length,
     }));
 
-    // reset topic if it no longer applies to the chosen section
-    $: if (topic && !topicOptions.includes(topic)) {
-        topic = "";
+    // drop any chosen topics that no longer apply to the selected sections
+    $: {
+        const stillValid = selectedTopics.filter((t) => topicOptions.includes(t));
+        if (stillValid.length !== selectedTopics.length) {
+            selectedTopics = stillValid;
+        }
     }
+
+    // Questions available for the current section + topic selection, used to
+    // clamp the typed count and show the "all available" hint. missed-only is
+    // resolved server-side, so it isn't reflected in this client-side count.
+    $: availableForFilter = bank.filter(
+        (q) =>
+            (selectedSections.length === 0 ||
+                selectedSections.includes(q.section)) &&
+            (selectedTopics.length === 0 ||
+                q.topicTags.some((t) => selectedTopics.includes(t))),
+    ).length;
+
+    $: countParse = parseQuestionCount(countInput, availableForFilter);
+    $: timerParse = parseTimerMinutes(timerInput);
+    $: limit = countParse.limit;
+    $: timeLimit = untimed ? 0 : timerParse.seconds;
+    $: canStart =
+        !starting &&
+        bank.length > 0 &&
+        countParse.valid &&
+        (untimed || timerParse.valid);
 
     async function loadBank(): Promise<void> {
         phase = "loading";
@@ -94,9 +116,8 @@ and the post-session summary.
 
     function currentOptions(): FilterOptions {
         return {
-            section:
-                sectionFilter === McatSection.UNSPECIFIED ? undefined : sectionFilter,
-            topics: topic ? [topic] : [],
+            sections: selectedSections,
+            topics: selectedTopics,
             missedOnly,
             includeFullLength: false,
             limit,
@@ -108,13 +129,15 @@ and the post-session summary.
         noMatch = false;
         try {
             const opts = currentOptions();
-            const qs = await fetchQuestions(opts);
-            if (qs.length === 0) {
+            // The session owns the exact questions to serve — a per-session
+            // shuffled selection with shuffled answer choices — so we use those
+            // directly (they stay stable for this session, differ across ones).
+            const session = await beginPracticeSession(opts, timeLimit);
+            if (session.questions.length === 0) {
                 noMatch = true;
                 return;
             }
-            const session = await beginPracticeSession(opts, timeLimit);
-            sessionQuestions = qs;
+            sessionQuestions = session.questions;
             sessionId = session.sessionId;
             phase = "running";
         } catch {
@@ -175,43 +198,83 @@ and the post-session summary.
             </div>
 
             <div class="form">
-                <label>
-                    <span>Section</span>
-                    <select bind:value={sectionFilter}>
-                        <option value={McatSection.UNSPECIFIED}>All sections</option>
-                        {#each SECTIONS as s (s)}
-                            <option value={s}>{sectionLong(s)}</option>
-                        {/each}
-                    </select>
-                </label>
+                <div class="field">
+                    <span class="field-label">Section</span>
+                    <Dropdown
+                        multiple
+                        options={sectionOptions}
+                        selected={selectedSections}
+                        placeholder="All sections"
+                        ariaLabel="Section filter"
+                        on:change={(e) =>
+                            (selectedSections = e.detail.selected as McatSection[])}
+                    />
+                </div>
 
-                <label>
-                    <span>Topic</span>
-                    <select bind:value={topic}>
-                        <option value="">All topics</option>
-                        {#each topicOptions as t (t)}
-                            <option value={t}>{t}</option>
-                        {/each}
-                    </select>
-                </label>
+                <div class="field">
+                    <span class="field-label">Topic</span>
+                    <Dropdown
+                        multiple
+                        options={topicDropdownOptions}
+                        selected={selectedTopics}
+                        placeholder="All topics"
+                        ariaLabel="Topic filter"
+                        on:change={(e) =>
+                            (selectedTopics = e.detail.selected as string[])}
+                    />
+                </div>
 
-                <label>
-                    <span>Number of questions</span>
-                    <select bind:value={limit}>
-                        {#each COUNTS as c (c.value)}
-                            <option value={c.value}>{c.label}</option>
-                        {/each}
-                    </select>
-                </label>
+                <div class="field">
+                    <span class="field-label">Number of questions</span>
+                    <input
+                        class="text-input"
+                        class:invalid={!countParse.valid}
+                        type="text"
+                        inputmode="numeric"
+                        bind:value={countInput}
+                        placeholder="e.g. 20"
+                        aria-label="Number of questions"
+                        aria-invalid={!countParse.valid}
+                    />
+                    {#if !countParse.valid}
+                        <span class="hint error">
+                            Enter a positive number, or leave blank / “max” for all.
+                        </span>
+                    {:else}
+                        <span class="hint">
+                            Blank or “max” = all available ({availableForFilter}).
+                        </span>
+                    {/if}
+                </div>
 
-                <label>
-                    <span>Timer</span>
-                    <select bind:value={timeLimit}>
-                        {#each TIME_LIMITS as t (t.value)}
-                            <option value={t.value}>{t.label}</option>
-                        {/each}
-                    </select>
-                </label>
+                <div class="field">
+                    <span class="field-label">Timer</span>
+                    <div class="timer-controls">
+                        <label class="inline-check">
+                            <input type="checkbox" bind:checked={untimed} />
+                            <span>Untimed</span>
+                        </label>
+                        <div class="minutes">
+                            <input
+                                class="text-input"
+                                class:invalid={!untimed && !timerParse.valid}
+                                type="text"
+                                inputmode="numeric"
+                                bind:value={timerInput}
+                                placeholder="20"
+                                aria-label="Timer minutes"
+                                disabled={untimed}
+                                aria-invalid={!untimed && !timerParse.valid}
+                            />
+                            <span class="unit">min</span>
+                        </div>
+                    </div>
+                    {#if !untimed && !timerParse.valid}
+                        <span class="hint error">
+                            Enter a positive number of minutes.
+                        </span>
+                    {/if}
+                </div>
 
                 <label class="check">
                     <input type="checkbox" bind:checked={missedOnly} />
@@ -225,7 +288,7 @@ and the post-session summary.
                 </div>
             {/if}
 
-            <button class="primary start" on:click={start} disabled={starting}>
+            <button class="primary start" on:click={start} disabled={!canStart}>
                 {starting ? "Starting…" : "Start practice"}
             </button>
         {/if}
@@ -275,12 +338,14 @@ and the post-session summary.
         border-radius: 12px;
         padding: 1.25rem;
     }
+    .field,
     label {
         display: flex;
         flex-direction: column;
         gap: 0.35rem;
         font-size: 0.9rem;
     }
+    .field-label,
     label > span {
         color: var(--fg-subtle);
     }
@@ -290,12 +355,50 @@ and the post-session summary.
         align-items: center;
         gap: 0.5rem;
     }
-    select {
+    .text-input {
+        width: 100%;
         padding: 0.5rem;
         border-radius: 6px;
         border: 1px solid var(--border);
         background: var(--canvas-inset);
         color: var(--fg);
+        font-size: 0.9rem;
+    }
+    .text-input:disabled {
+        opacity: 0.55;
+        cursor: default;
+    }
+    .text-input.invalid {
+        border-color: #d1434b;
+    }
+    .hint {
+        font-size: 0.78rem;
+        color: var(--fg-subtle);
+    }
+    .hint.error {
+        color: #d1434b;
+    }
+    .timer-controls {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .inline-check {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+    .minutes {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        flex: 1;
+    }
+    .unit {
+        color: var(--fg-subtle);
+        font-size: 0.85rem;
     }
     .notice {
         background: var(--canvas-elevated);

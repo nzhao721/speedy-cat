@@ -64,7 +64,7 @@
     <string name="card_browser_font_size" maxLength="41">Kortelių naršyklės šrifto dydis</string>
     <string name="card_browser_hide_media" maxLength="41">Rodyti failų pavadinimus kortelių naršyklėje</string>
     <string name="card_browser_hide_media_summary">Display audio filenames in the card browser question/answer fields</string>
-    <string name="col_path" maxLength="41">„AnkiDroid“ katalogas</string>
+    <string name="col_path" maxLength="41">„SpeedyCAT“ katalogas</string>
     <string name="fullscreen_review" maxLength="41">Viso ekrano režimas</string>
     <string name="full_screen_off">Išjungta</string>
     <string name="full_screen_system">Slėpti sistemines juostas</string>
@@ -171,8 +171,8 @@
     </plurals>
     <string name="pref_keep_screen_on" maxLength="41">Laikyti ekraną įjungtą</string>
     <string name="pref_keep_screen_on_summ">Išjungti ekrano užgesimui skirtą laiką</string>
-    <string name="enable_api_title" maxLength="41">Įjungti „AnkiDroid“ programų sąsają</string>
-    <string name="enable_api_summary">Leisti kitoms programoms jungtis prie „AnkiDroid“ ir nuskaityti/įrašyti duomenis be jūsų leidimo</string>
+    <string name="enable_api_title" maxLength="41">Įjungti „SpeedyCAT“ programų sąsają</string>
+    <string name="enable_api_summary">Leisti kitoms programoms jungtis prie „SpeedyCAT“ ir nuskaityti/įrašyti duomenis be jūsų leidimo</string>
     <string name="custom_buttons" maxLength="41">Programos juostos mygtukai</string>
     <string name="custom_buttons_summary">Nurodykite, kokius veiksmus bus leidžiama atlikti programos juostoje</string>
     <string name="custom_buttons_setting_always_show">Visada rodyti</string>
@@ -182,7 +182,7 @@
     <string name="reset_settings_to_default">Iš naujo nustatyti numatytuosius nustatymus</string>
     <string name="reset">Atstatyti</string>
     <string name="thirdparty_apps_title" maxLength="41">Trečiųjų šalių API programos</string>
-    <string name="thirdparty_apps_summary">Peržiūrėkite programų, kurios naudoja \"AnkiDroid\" API, pvz., žodynus, pagalbines programas, sąrašą.</string>
+    <string name="thirdparty_apps_summary">Peržiūrėkite programų, kurios naudoja \"SpeedyCAT\" API, pvz., žodynus, pagalbines programas, sąrašą.</string>
     <string name="pref_controls_reviews_tab" maxLength="41" comment="Name of the tab to configure controls for the reviews screen">Apžvalga</string>
     <string name="pref_controls_previews_tab" maxLength="41" comment="Name of the tab to configure controls for the previews screen">Peržiūrėti</string>
     <string name="toggle_backside_only" maxLength="41" comment="Control setting that toggles \'Backside only\' in the previews screen">Perjungti tik galinę pusę</string>
@@ -198,9 +198,9 @@
     <!-- Custom sync server settings -->
     <string name="custom_sync_server_title" maxLength="41">Individualus sinchroniz. serveris</string>
     <string name="custom_sync_server_summary_none_of_the_two_servers_used" comment="This summary is shown when neither of the two custom sync servers are used,         which is the default.">Nenaudojama</string>
-    <string name="custom_sync_server_help2"><![CDATA[        sinchronizavimo su "AnkiWeb" alternatyva,
+    <string name="custom_sync_server_help2"><![CDATA[        sinchronizavimo su "SpeedyCAT" alternatyva,
         sinchronizavimui galite naudoti savo serverį.
-        Jei nenustatyta, bus naudojamas numatytasis "AnkiWeb" serveris.
+        Jei nenustatyta, bus naudojamas numatytasis "SpeedyCAT" serveris.
         <a href=„%s“>Sužinokite daugiau</a>
         ]]></string>
     <string name="custom_sync_server_base_url_title" maxLength="41">Sync URL</string>
@@ -225,9 +225,9 @@
     <string name="deck_conf_general" maxLength="41" comment="Label of the submenu for the general options of new deck">Bendra</string>
     <string name="deck_conf_cram_search" maxLength="41" comment="Label of a text field that contains a search query.">Ieškoti</string>
     <!-- analytics options -->
-    <string name="analytics_dialog_title">Padėkite tobulinti „AnkiDroid“!</string>
+    <string name="analytics_dialog_title">Padėkite tobulinti „SpeedyCAT“!</string>
     <string name="analytics_title" maxLength="41">Dalintis funkcijų naudojimu</string>
-    <string name="analytics_summ">Galite prisidėti prie „AnkiDroid“ tobulinimo, padėdami kūrėjų komandai suprasti, kokiomis funkcijomis žmonės naudojasi</string>
+    <string name="analytics_summ">Galite prisidėti prie „SpeedyCAT“ tobulinimo, padėdami kūrėjų komandai suprasti, kokiomis funkcijomis žmonės naudojasi</string>
     <string name="note_editor_replace_newlines" maxLength="41">Naujų eilučių pakeitimas HTML</string>
     <string name="note_editor_replace_newlines_summ">Pastabų redaktoriuje redaguodami kortelę visus &lt;br&gt; atvejus paverskite naujomis eilutėmis.</string>
     <string name="type_in_answer_focus" maxLength="41">Dėmesio centre \"įveskite atsakymą</string>
@@ -236,11 +236,11 @@
     <string name="open_changelog">Atviras pakeitimų sąrašas</string>
     <string name="pref_cat_about_title" maxLength="41">Apie</string>
     <string name="contributors_title">Bendraautoriai</string>
-    <string name="about_contributors_description"><![CDATA[These are our awesome <a href=\"%1$s\">contributors</a>. You can help AnkiDroid too by programming, translating, donating and <a href=\"%2$s\">more</a>!]]></string>
+    <string name="about_contributors_description"><![CDATA[These are our awesome <a href=\"%1$s\">contributors</a>. You can help SpeedyCAT too by programming, translating, donating and <a href=\"%2$s\">more</a>!]]></string>
     <string name="license">Licencija</string>
-    <string name="license_description"><![CDATA[AnkiDroid is released under the <a href=\"%1$s\">GPL-3.0</a> and <a href=\"%2$s\">AGPL-3.0</a> licenses, with the source code available <a href=\"%3$s\">on GitHub</a>]]></string>
-    <string name="other_licenses"><![CDATA["AnkiDroid" taip pat naudoja trečiųjų šalių bibliotekas ir piktogramas, kurios licencijuojamos pagal įvairias atvirojo kodo <a href=\"%1$s\">licencijas</a>.]]></string>
-    <string name="donate_description"><![CDATA[Galite paremti AnkiDroid plėtrą <a href=\"%1$s\">aukodami</a>. Bet kokia suma yra labai vertinama.]]></string>
+    <string name="license_description"><![CDATA[SpeedyCAT is released under the <a href=\"%1$s\">GPL-3.0</a> and <a href=\"%2$s\">AGPL-3.0</a> licenses, with the source code available <a href=\"%3$s\">on GitHub</a>]]></string>
+    <string name="other_licenses"><![CDATA["SpeedyCAT" taip pat naudoja trečiųjų šalių bibliotekas ir piktogramas, kurios licencijuojamos pagal įvairias atvirojo kodo <a href=\"%1$s\">licencijas</a>.]]></string>
+    <string name="donate_description"><![CDATA[Galite paremti SpeedyCAT plėtrą <a href=\"%1$s\">aukodami</a>. Bet kokia suma yra labai vertinama.]]></string>
     <!-- Controls -->
     <string name="binding_add_gesture">Pridėti gestą</string>
     <string name="binding_add_key">Pridėti raktą</string>
@@ -275,7 +275,7 @@
     <string name="bindings_already_bound">Already bound to ‘%s’</string>
     <!-- Advanced -->
     <string name="pref_cat_experimental" maxLength="41" tools:ignore="UnusedResources">Eksperimentinis</string>
-    <string name="readtext_deprecation_warn">\"AnkiDroid\" įdiegtas geresnis TTS mechanizmas, suderinamas su kitais \"Anki\" klientais, jame yra daugiau balsų ir patobulintas kalbų atkūrimas!\n\nPrašome kuo greičiau atnaujinti, nes šis nustatymas netrukus bus pašalintas.</string>
+    <string name="readtext_deprecation_warn">\"SpeedyCAT\" įdiegtas geresnis TTS mechanizmas, suderinamas su kitais \"SpeedyCAT\" klientais, jame yra daugiau balsų ir patobulintas kalbų atkūrimas!\n\nPrašome kuo greičiau atnaujinti, nes šis nustatymas netrukus bus pašalintas.</string>
     <string name="readtext_reviewer_warn" tools:ignore="UnusedResources">Atnaujinkite naują teksto į kalbą formatą</string>
     <string name="pref_fixed_port_title" maxLength="41">localStorage in Study Screen</string>
     <string name="pref_fixed_port_summary">Enables JavaScript localStorage by using a fixed server port in the Study Screen</string>
@@ -287,9 +287,9 @@
     <!-- #######################################################################################
          #################################### Backup options ###################################
          ####################################################################################### -->
-    <string name="pref__backups_help__summary"><![CDATA[        "AnkiDroid" periodiškai daro atsargines kolekcijos kopijas.
+    <string name="pref__backups_help__summary"><![CDATA[        "SpeedyCAT" periodiškai daro atsargines kolekcijos kopijas.
         Po to, kai atsarginės kopijos yra daugiau nei dviejų dienų senumo,
-        "AnkiDroid" pradės šalinti kai kurias iš jų, kad atlaisvintų vietą diske.
+        "SpeedyCAT" pradės šalinti kai kurias iš jų, kad atlaisvintų vietą diske.
         <br><br>
         Atkreipkite dėmesį, kad medijos failų atsarginės kopijos nedaromos.
         Norėdami būti saugūs, periodiškai sinchronizuokite savo kolekciją arba darykite atsargines jos eksporto kopijas.

@@ -39,12 +39,12 @@
         <item quantity="other">%d kartoj estas nuligitaj</item>
     </plurals>
     <string name="answering_error_title">Eraro pri datumbazo</string>
-    <string name="answering_error_message">Malsukcesis skribi al la kolekto. La datumbazo povas esti difektita aŭ eble mankas spaco en la konservejo.\n\nSe tio ĉi okazos pli ofte, provu kontroli la datumbazon, ripari la kolekton aŭ restarigi ĝin el sekurkopio. Frapetu “agordojn” por fari tion.\nAŭ tio ĉi povas esti eraro en AnkiDroid, do bonvolu raporti ĝin por ke ni povu ĝin ripari.</string>
+    <string name="answering_error_message">Malsukcesis skribi al la kolekto. La datumbazo povas esti difektita aŭ eble mankas spaco en la konservejo.\n\nSe tio ĉi okazos pli ofte, provu kontroli la datumbazon, ripari la kolekton aŭ restarigi ĝin el sekurkopio. Frapetu “agordojn” por fari tion.\nAŭ tio ĉi povas esti eraro en SpeedyCAT, do bonvolu raporti ĝin por ke ni povu ĝin ripari.</string>
     <string name="answering_error_report">Raporti eraron</string>
-    <string name="storage_full_message">Mankas spaco en la konservejo por malfermi AnkiDroid. Liberigu iom da spaco por pluigi.</string>
+    <string name="storage_full_message">Mankas spaco en la konservejo por malfermi SpeedyCAT. Liberigu iom da spaco por pluigi.</string>
     <string name="repair_deck_dialog">Ĉu vi certe volas ripari la datumbazon?\n\nAntaŭ ol komenci, kopio estos kreita en subdosierujo “%s”.</string>
     <string name="intent_aedict_empty">La ĉefa kategorio estas malplena</string>
-    <string name="intent_aedict_category">Por aldoni kartojn al AnkiDroid, forigu ĉiujn kategoriojn de kajero kaj aldonu unu nomitan «default»</string>
+    <string name="intent_aedict_category">Por aldoni kartojn al SpeedyCAT, forigu ĉiujn kategoriojn de kajero kaj aldonu unu nomitan «default»</string>
     <string name="custom_study_new_extend">(Mal)pliigi (“-3”) hodiaŭan limigon de novaj kartoj je</string>
     <string name="custom_study_rev_extend">(Mal)pliigi (“-3”) hodiaŭan limigon de kartoj por ripeti je</string>
     <string name="custom_study_forgotten">Ripeti kartojn forgesitajn dum tiom da antaŭaj tagoj:</string>
@@ -54,7 +54,7 @@
     <string name="storage_full_title">Konservejo plena</string>
     <string name="storage_almost_full_title">Konservejo preskaŭ plena</string>
     <string name="no_space_to_downgrade_title" tools:ignore="UnusedResources">Mankas spaco</string>
-    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">AnkiDroid postulas %s da libera spaco por pluigi. Liberigu iom da spaco.</string>
+    <string name="no_space_to_downgrade_content" tools:ignore="UnusedResources">SpeedyCAT postulas %s da libera spaco por pluigi. Liberigu iom da spaco.</string>
     <string name="restore_backup_title">Ĉu restarigi sekurkopion?</string>
     <string name="restore_backup">Via kolekto estos anstataŭigita per eksa kopio. Ĉiu nekonservita progreso perdiĝos.</string>
     <string name="restore_backup_choose_another">Elekti alian</string>
@@ -115,9 +115,9 @@
     <!-- Deck Options -->
     <!-- Database Errors-->
     <string name="database_locked_title">Datumbazo ŝlosita</string>
-    <string name="database_locked_summary">La datumbazo de AnkiDroid estas uzata de alia aplikaĵo. Bonvolu fermi la alian aplikaĵon kaj remalfermi AnkiDroid.</string>
+    <string name="database_locked_summary">La datumbazo de SpeedyCAT estas uzata de alia aplikaĵo. Bonvolu fermi la alian aplikaĵon kaj remalfermi SpeedyCAT.</string>
     <string name="incompatible_database_version_title">Nekongrua versio de datumbazo</string>
-    <string name="incompatible_database_version_summary">La datumbazo estas en pli nova versio ol tiu subtenata de tiu ĉi versio de AnkiDroid. Aktualigu la aplikaĵon AnkiDroid aŭ malpromociu la datumbazon por malfermi ĝin.\n\nSubtenata versio: %1$d\nVersio de datumbazo:%2$d\n\nLa jenaj restarigaj elektebloj ebligos al vi superskribi vian nunan kolekton, probable per kongrua versio de datumbazo:</string>
+    <string name="incompatible_database_version_summary">La datumbazo estas en pli nova versio ol tiu subtenata de tiu ĉi versio de SpeedyCAT. Aktualigu la aplikaĵon SpeedyCAT aŭ malpromociu la datumbazon por malfermi ĝin.\n\nSubtenata versio: %1$d\nVersio de datumbazo:%2$d\n\nLa jenaj restarigaj elektebloj ebligos al vi superskribi vian nunan kolekton, probable per kongrua versio de datumbazo:</string>
     <!-- Deck Picker Background-->
     <string name="background_image_applied">Aplikis fonan bildon</string>
     <string name="background_image_removed">Forigis fonan bildon</string>
@@ -138,29 +138,29 @@
     <string name="locale_selection_dialog_title_new">Difini lingvon</string>
     <string name="locale_selection_dialog_summary">Iuj plurlingvaj klavaroj – ekzemple GBoard – ebligas ŝanĝi lingvon dum enigi tekston\n\nSe via klavaro aŭtomate ne ŝanĝas lingvon, provu peti ĝiajn programistojn pri aldoni la eblaĵon “setImeHintLocales”.</string>
     <!-- Help Dialog -->
-    <string name="help_title_using_ankidroid">Uzado de AnkiDroid</string>
-    <string name="help_item_ankidroid_manual">AnkiDroid: manlibro</string>
-    <string name="help_item_anki_manual">Manlibro pri Anki</string>
-    <string name="help_item_ankidroid_faq">AnkiDroid: oftaj demandoj</string>
+    <string name="help_title_using_ankidroid">Uzado de SpeedyCAT</string>
+    <string name="help_item_ankidroid_manual">SpeedyCAT: manlibro</string>
+    <string name="help_item_anki_manual">Manlibro pri SpeedyCAT</string>
+    <string name="help_item_ankidroid_faq">SpeedyCAT: oftaj demandoj</string>
     <string name="help_title_get_help">Akiri helpon</string>
     <string name="help_item_mailing_list">Dissendolisto</string>
     <string name="help_item_reddit">Reddit</string>
     <string name="help_item_report_bug">Raporti eraron</string>
-    <string name="help_title_support_ankidroid" maxLength="28">Subteni AnkiDroid</string>
+    <string name="help_title_support_ankidroid" maxLength="28">Subteni SpeedyCAT</string>
     <string name="help_item_support_opencollective_donate">Donaci</string>
     <string name="help_item_support_develop_ankidroid">Programi</string>
     <string name="help_item_support_rate_ankidroid">Taksi</string>
     <string name="help_item_support_other_ankidroid">Aliaj</string>
     <string name="multimedia_editor_trans_translate">Traduki</string>
     <string name="help_title_community">Komunumo</string>
-    <string name="help_item_anki_forums">Forumo Anki</string>
+    <string name="help_item_anki_forums">Forumo SpeedyCAT</string>
     <string name="help_item_discord">Discord</string>
     <string name="help_item_facebook">Facebook</string>
     <string name="help_item_twitter">Twitter</string>
     <string name="help_title_privacy">Privateco</string>
-    <string name="help_item_ankidroid_privacy_policy">AnkiDroid: privateca politiko</string>
-    <string name="help_item_ankiweb_privacy_policy">AnkiWeb: privateca politiko</string>
-    <string name="help_item_ankiweb_terms_and_conditions">AnkiWeb: kondiĉoj de uzado</string>
+    <string name="help_item_ankidroid_privacy_policy">SpeedyCAT: privateca politiko</string>
+    <string name="help_item_ankiweb_privacy_policy">SpeedyCAT: privateca politiko</string>
+    <string name="help_item_ankiweb_terms_and_conditions">SpeedyCAT: kondiĉoj de uzado</string>
     <string name="help_title_send_exception">Sendi raporton pri problemo</string>
     <string name="help_dialog_exception_report_debounce">Raporto sendita</string>
     <string name="help_dialog_exception_report_sent">Raporto estas sendita!</string>

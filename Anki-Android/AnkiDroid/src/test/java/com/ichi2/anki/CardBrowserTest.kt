@@ -1664,7 +1664,6 @@ class CardBrowserTest : RobolectricTest() {
                     R.id.action_grade_now to true,
                     R.id.action_reset_cards_progress to true,
                     R.id.action_preview_many to true,
-                    R.id.action_export_selected to true,
                     R.id.action_find_replace to true,
                     R.id.action_undo to true,
                 )
@@ -1701,7 +1700,6 @@ class CardBrowserTest : RobolectricTest() {
                     R.id.action_grade_now to false,
                     R.id.action_reset_cards_progress to false,
                     R.id.action_preview_many to true,
-                    R.id.action_export_selected to false,
                     R.id.action_find_replace to true,
                     R.id.action_undo to true,
                 )
@@ -1774,7 +1772,6 @@ class CardBrowserTest : RobolectricTest() {
                     R.id.action_grade_now to true,
                     R.id.action_reset_cards_progress to true,
                     R.id.action_preview_many to false,
-                    R.id.action_export_selected to true,
                     R.id.action_find_replace to true,
                     R.id.action_undo to true,
                     // Note Editor

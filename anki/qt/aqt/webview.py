@@ -145,6 +145,11 @@ class AnkiWebPage(QWebEnginePage):
             AnkiWebViewKind.IMPORT_ANKI_PACKAGE,
             AnkiWebViewKind.IMPORT_CSV,
             AnkiWebViewKind.IMPORT_LOG,
+            # SpeedyCAT: the MCAT study-mode pages load their question bank /
+            # test list through the /_anki PracticeService POST endpoints, so
+            # they need the Authorization header injected (as deck-options etc).
+            AnkiWebViewKind.PRACTICE_QUESTIONS,
+            AnkiWebViewKind.FULL_LENGTH_TESTS,
         )
 
         global _profile_with_api_access, _profile_without_api_access

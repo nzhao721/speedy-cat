@@ -68,15 +68,54 @@ def setup(mw: aqt.main.AnkiQt) -> None:
 
 
 def _auto_import_on_first_run() -> None:
-    """Silently import the bundled deck the first time a collection is opened."""
+    """First-run import of the bundled deck, plus a deck-tree repair on reopen.
+
+    On the very first open (marker unset) the bundled deck is imported, which
+    also flattens the tree into top-level themes. On every later open (marker
+    set) we still re-run the flattening: collections imported by an older build
+    keep their cards nested under the ``SpeedyCAT MCAT`` parent, which the Browse
+    "Topic" column (the card's top-level deck) then reports as ``SpeedyCAT MCAT``
+    for every card. The repair is idempotent and lossless, so re-running it is a
+    no-op once the tree is already flat.
+    """
     mw = aqt.mw
     if mw is None or mw.col is None:
         return
     # idempotent: the backend marker is set after a successful import and syncs
-    # with the collection, so this only ever runs once per collection.
+    # with the collection, so the import itself only ever runs once per
+    # collection. Already-imported collections still get the theme repair below.
     if mw.col.get_config(_CONFIG_MARKER, False):
+        _repair_themes_on_open(mw)
         return
     import_deck(mw)
+
+
+def _repair_themes_on_open(mw: aqt.main.AnkiQt) -> None:
+    """Promote an already-imported deck tree to top-level thematic decks.
+
+    A collection imported under an older build keeps every card nested beneath
+    the ``SpeedyCAT MCAT`` parent, so the Browse Topic column (the card's
+    top-level deck) reads ``SpeedyCAT MCAT`` for all of them. Re-running the
+    reorg flattens the tree and deletes the parent, restoring per-card topics.
+
+    We only launch the background op when the legacy parent is still present, so
+    a healthy (already-flat) collection costs a single deck lookup on open and
+    nothing more.
+    """
+    if mw.col is None or mw.col.decks.id_for_name(PARENT_DECK) is None:
+        return
+
+    def op(col: Collection) -> int:
+        return reorganize_into_themes(col).moved
+
+    def on_success(moved: int) -> None:
+        # only refresh the UI when the repair actually re-homed cards
+        if moved:
+            mw.reset()
+
+    QueryOp(parent=mw, op=op, success=on_success).with_progress(
+        "Updating flashcard topics"
+    ).run_in_background()
 
 
 def import_deck(

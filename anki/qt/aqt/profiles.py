@@ -487,7 +487,7 @@ create table if not exists profiles
         name = obj[0]
         r = QMessageBox.question(
             None,
-            "Anki",
+            "SpeedyCAT",
             tr.profiles_confirm_lang_choice(lang=name),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
             QMessageBox.StandardButton.No,  # type: ignore

@@ -18,7 +18,6 @@ use tokio_util::io::ReaderStream;
 use crate::collection::CollectionBuilder;
 use crate::error::SyncErrorKind;
 use crate::prelude::*;
-use crate::storage::SchemaVersion;
 use crate::sync::error::HttpResult;
 use crate::sync::error::OrHttpErr;
 use crate::sync::http_client::HttpSyncClient;
@@ -43,8 +42,24 @@ impl Collection {
         self.before_upload()?;
         let col_path = self.col_path.clone();
         let progress = self.new_progress_handler();
-        self.close(Some(SchemaVersion::V18))?;
-        let col_data = fs::read(&col_path)?;
+
+        // SpeedyCAT: our collection is at schema 19 with additive, local-only
+        // practice tables that upstream Anki (and therefore AnkiWeb) cannot
+        // open, so uploading it verbatim is rejected with "Your upload was
+        // corrupt". Close the live collection *without* downgrading — preserving
+        // its schema-19 practice data and the "content loaded" marker — then
+        // upload a throwaway copy that has been reduced to the stock schema 18.
+        // Practice history is local-only and intentionally not synced to
+        // AnkiWeb.
+        self.close(None)?;
+        let upload_file = new_tempfile_in_parent_of(&col_path)?;
+        fs::copy(&col_path, upload_file.path())?;
+        {
+            let stock_copy = CollectionBuilder::new(upload_file.path()).build()?;
+            stock_copy.storage.strip_practice_tables_for_upload()?;
+            stock_copy.close(None)?;
+        }
+        let col_data = fs::read(upload_file.path())?;
 
         let total_bytes = col_data.len();
         if server.endpoint.as_str().contains("ankiweb") {

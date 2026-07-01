@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<!-- SpeedyCAT debug overlay: drop LeakCanary's extra home-screen entry so only SpeedyCAT
+     remains. Rationale in com.ichi2.anki.LeakCanaryConfiguration. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application>
+        <activity-alias
+            android:name="leakcanary.internal.activity.LeakLauncherActivity"
+            tools:node="remove" />
+    </application>
+
+</manifest>

@@ -149,11 +149,9 @@ class BackupPromptDialog private constructor(
             val isLoggedIn = isLoggedIn()
             backupPrompt.apply {
                 build(isLoggedIn) {
-                    if (isLoggedIn) {
-                        deckPicker.sync(conflict = null)
-                    } else {
-                        deckPicker.exportCollection()
-                    }
+                    // SpeedyCAT: local export was removed, so the backup nudge routes to sync.
+                    // sync() shows the "log in to sync" prompt when the user is not signed in.
+                    deckPicker.sync(conflict = null)
                 }
                 alertDialog.show()
             }

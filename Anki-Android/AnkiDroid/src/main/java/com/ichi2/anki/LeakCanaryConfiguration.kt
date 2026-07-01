@@ -19,7 +19,6 @@ import android.app.Application
 import leakcanary.AppWatcher.isInstalled
 import leakcanary.AppWatcher.manualInstall
 import leakcanary.LeakCanary.config
-import leakcanary.LeakCanary.showLeakDisplayActivityLauncherIcon
 import shark.AndroidReferenceMatchers
 import shark.ReferenceMatcher
 
@@ -51,7 +50,10 @@ object LeakCanaryConfiguration {
         if (!isInstalled) {
             manualInstall(application)
         }
-        // Show 'Leaks' app launcher. It has been removed by default via constants.xml.
-        showLeakDisplayActivityLauncherIcon(true)
+        // Intentionally do NOT show the 'Leaks' launcher icon: it registers a second
+        // launcher activity that appears as a separate "Leaks" app next to SpeedyCAT.
+        // Heap analysis still works; leaks are surfaced via notification (LeakActivity).
+        // The launcher alias is additionally removed from debug builds via
+        // src/debug/AndroidManifest.xml (tools:node="remove").
     }
 }

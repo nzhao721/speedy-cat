@@ -1,7 +1,7 @@
 # Copyright: Ankitects Pty Ltd and contributors
 # License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 
-"""SpeedyCAT: the two MCAT study-mode windows that sit alongside flashcards.
+"""SpeedyCAT: the two MCAT study modes that sit alongside flashcards.
 
 * **Practice Questions** - a UWorld-like multiple-choice question bank, with
   discrete items and CARS passage-sets (a reading passage shown alongside all
@@ -10,10 +10,14 @@
 * **Full-Length Tests** - AAMC-style four-section practice exams with enforced
   per-section countdowns, scheduled breaks, and a per-section score report.
 
-Both windows are Anki web pages (SvelteKit routes ``practice`` / ``full-length``
-served by mediasrv) hosted in a plain ``QDialog``; they talk to the Rust
-``PracticeService`` through the ``/_anki`` POST endpoints exposed in
-``aqt/mediasrv.py``.
+Both modes are Anki web pages (SvelteKit routes ``practice`` / ``full-length``
+served by mediasrv) rendered *inside the main application window*: the toolbar
+tabs switch the main window into the ``speedycat`` state, which swaps the
+central content from the deck browser to a dedicated, API-enabled webview
+navigated to the mode's route (see ``aqt/main.py``). One webview is reused for
+both modes, so switching modes just navigates it and no separate window is ever
+opened. They talk to the Rust ``PracticeService`` through the ``/_anki`` POST
+endpoints exposed in ``aqt/mediasrv.py``.
 
 Content (questions, passages, full-length definitions) ships as structured JSON
 bundles inside the app data folder (``<data>/speedycat/practice-questions/*.json``
@@ -28,29 +32,14 @@ which lets a developer or installer swap in an alternate content set.
 from __future__ import annotations
 
 import os
-from collections.abc import Callable
 
 import aqt
 import aqt.gui_hooks
 import aqt.main
 from anki.collection import Collection
 from aqt.operations import QueryOp
-from aqt.qt import (
-    QAction,
-    QDialog,
-    Qt,
-    QVBoxLayout,
-    qconnect,
-)
-from aqt.utils import (
-    aqt_data_folder,
-    disable_help_button,
-    restoreGeom,
-    saveGeom,
-    showWarning,
-    tooltip,
-)
-from aqt.webview import AnkiWebView, AnkiWebViewKind
+from aqt.qt import QAction, qconnect
+from aqt.utils import aqt_data_folder, showWarning, tooltip
 
 _CONTENT_DIR_ENV = "SPEEDYCAT_CONTENT_DIR"
 _PRACTICE_SUBDIR = "practice-questions"
@@ -176,78 +165,24 @@ def _auto_load_on_open() -> None:
         ensure_content_loaded(aqt.mw)
 
 
-# Windows
+# Embedded study modes
 ######################################################################
+#
+# The two MCAT study modes render *inside* the main application window (the same
+# window that shows the deck browser): the toolbar tabs switch the main window
+# into the ``speedycat`` state, which hides the normal deck-browser content and
+# reveals a dedicated, API-enabled webview (``mw.speedycatWeb``) navigated to
+# the route below -- so no separate window is ever opened. The main-window
+# wiring lives in ``aqt/main.py`` (``setupMainWindow`` builds ``speedycatWeb``;
+# ``_speedycatState`` / ``_speedycatCleanup`` swap the central content). This
+# module just owns the mode -> route mapping and the content import.
 
-
-class _PracticePageDialog(QDialog):
-    """Base class for the two SvelteKit-backed study-mode windows."""
-
-    #: subclasses set these
-    _kind: AnkiWebViewKind
-    _page: str
-    _geom_key: str
-    _title: str
-    _registry_name: str
-    #: allow aqt.dialogs.closeAll() to close us immediately
-    silentlyClose = True
-
-    def __init__(self, mw: aqt.main.AnkiQt) -> None:
-        QDialog.__init__(self, mw, Qt.WindowType.Window)
-        self.mw = mw
-        mw.garbage_collect_on_dialog_finish(self)
-        # ensure content is present even if the profile hook was skipped (e.g.
-        # a dev profile opened before this build shipped).
-        ensure_content_loaded(mw)
-        self.setMinimumSize(800, 600)
-        disable_help_button(self)
-        restoreGeom(self, self._geom_key, default_size=(1000, 800))
-        self.setWindowTitle(self._title)
-
-        self.web = AnkiWebView(mw, kind=self._kind)
-        self.web.load_sveltekit_page(self._page)
-        layout = QVBoxLayout()
-        layout.setContentsMargins(0, 0, 0, 0)
-        layout.addWidget(self.web)
-        self.setLayout(layout)
-        self.show()
-        self.web.hide_while_preserving_layout()
-
-    def reopen(self, mw: aqt.main.AnkiQt) -> None:
-        self.show()
-        self.raise_()
-        self.activateWindow()
-
-    def _cleanup(self) -> None:
-        if self.web is not None:
-            self.web.cleanup()
-            self.web = None  # type: ignore[assignment]
-        saveGeom(self, self._geom_key)
-
-    def reject(self) -> None:
-        self._cleanup()
-        aqt.dialogs.markClosed(self._registry_name)
-        QDialog.reject(self)
-
-    def closeWithCallback(self, callback: Callable[[], None]) -> None:
-        self.reject()
-        callback()
-
-
-class PracticeQuestionsDialog(_PracticePageDialog):
-    _kind = AnkiWebViewKind.PRACTICE_QUESTIONS
-    _page = "practice"
-    _geom_key = "speedycatPractice"
-    _title = "Practice Questions"
-    _registry_name = "PracticeQuestions"
-
-
-class FullLengthTestsDialog(_PracticePageDialog):
-    _kind = AnkiWebViewKind.FULL_LENGTH_TESTS
-    _page = "full-length"
-    _geom_key = "speedycatFullLength"
-    _title = "Full-Length Tests"
-    _registry_name = "FullLengthTests"
+#: study mode key -> SvelteKit route served by mediasrv
+STUDY_ROUTES: dict[str, str] = {
+    "practice": "practice",
+    "full-length": "full-length",
+}
+DEFAULT_STUDY_MODE = "practice"
 
 
 # Registration

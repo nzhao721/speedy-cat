@@ -108,7 +108,6 @@ import com.ichi2.anki.dialogs.startDeckSelection
 import com.ichi2.anki.dialogs.tags.TagsDialog
 import com.ichi2.anki.dialogs.tags.TagsDialogFactory
 import com.ichi2.anki.dialogs.tags.TagsDialogListener
-import com.ichi2.anki.export.ExportDialogFragment
 import com.ichi2.anki.formatCardCount
 import com.ichi2.anki.launchCatchingTask
 import com.ichi2.anki.libanki.DeckId
@@ -663,7 +662,6 @@ class CardBrowserFragment :
                     menu.findItem(R.id.action_reschedule_cards)?.isVisible = false
                     menu.findItem(R.id.action_edit_tags)?.isVisible = false
                     menu.findItem(R.id.action_reset_cards_progress)?.isVisible = false
-                    menu.findItem(R.id.action_export_selected)?.isVisible = false
                     menu.findItem(R.id.action_edit_note)?.isVisible = false
 
                     menu.findItem(R.id.action_view_card_info).isVisible = canPerformCardInfo()
@@ -717,10 +715,6 @@ class CardBrowserFragment :
                         }
                         R.id.action_edit_tags -> {
                             showEditTagsDialog()
-                            return true
-                        }
-                        R.id.action_export_selected -> {
-                            exportSelected()
                             return true
                         }
                         R.id.action_find_replace -> {
@@ -1333,16 +1327,6 @@ class CardBrowserFragment :
             )
         }
         showDialogFragment(ForgetCardsDialog())
-    }
-
-    fun exportSelected() {
-        val (type, selectedIds) = activityViewModel.querySelectionExportData() ?: return
-        ExportDialogFragment
-            .newInstance(
-                requireContext().externalCacheDir ?: requireContext().cacheDir,
-                type,
-                selectedIds,
-            ).show(parentFragmentManager, "exportDialog")
     }
 
     fun showOptionsDialog() {

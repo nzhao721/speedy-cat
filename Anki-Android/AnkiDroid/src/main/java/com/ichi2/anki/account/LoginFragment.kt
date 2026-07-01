@@ -82,7 +82,8 @@ class LoginFragment : Fragment(R.layout.fragment_my_account) {
         activity.setSupportActionBar(toolbar)
 
         activity.supportActionBar?.apply {
-            title = TR.sentenceCase.ankiWebAccount
+            // SpeedyCAT de-brand: show "SpeedyCAT account" instead of the backend's "AnkiWeb account"
+            title = getString(R.string.speedycat_account)
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }

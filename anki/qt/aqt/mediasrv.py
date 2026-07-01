@@ -832,7 +832,7 @@ def _check_dynamic_request_permissions():
 
     def warn() -> None:
         show_warning(
-            "Unexpected API access. Please report this message on the Anki forums."
+            "Unexpected API access. Please report this message on the SpeedyCAT forums."
         )
 
     # check content type header to ensure this isn't an opaque request from another origin

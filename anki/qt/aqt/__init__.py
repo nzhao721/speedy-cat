@@ -21,13 +21,13 @@ except ModuleNotFoundError:
     )
 
 if sys.version_info[0] < 3 or sys.version_info[1] < 9:
-    raise Exception("Anki requires Python 3.9+")
+    raise Exception("SpeedyCAT requires Python 3.9+")
 
 # ensure unicode filenames are supported
 try:
     "テスト".encode(sys.getfilesystemencoding())
 except UnicodeEncodeError:
-    print("Anki requires a UTF-8 locale.")
+    print("SpeedyCAT requires a UTF-8 locale.")
     print("Please Google 'how to change locale on [your Linux distro]'")
     sys.exit(1)
 
@@ -111,7 +111,7 @@ import aqt.forms
 
 
 from aqt import addcards, addons, browser, editcurrent, filtered_deck  # isort:skip
-from aqt import stats, about, preferences, mediasync, practice  # isort:skip
+from aqt import stats, about, preferences, mediasync  # isort:skip
 
 
 class DialogManager:
@@ -126,9 +126,6 @@ class DialogManager:
         "About": [about.show, None],
         "Preferences": [preferences.Preferences, None],
         "sync_log": [mediasync.MediaSyncDialog, None],
-        # SpeedyCAT: the two MCAT study-mode windows.
-        "PracticeQuestions": [practice.PracticeQuestionsDialog, None],
-        "FullLengthTests": [practice.FullLengthTestsDialog, None],
     }
 
     def open(self, name: str, *args: Any, **kwargs: Any) -> Any:
@@ -454,13 +451,13 @@ def parseArgs(argv: list[str]) -> tuple[argparse.Namespace, list[str]]:
     # as there's no such profile
     if is_mac and len(argv) > 1 and argv[1].startswith("-psn"):
         argv = [argv[0]]
-    parser = argparse.ArgumentParser(description=f"Anki {appVersion}")
+    parser = argparse.ArgumentParser(description=f"SpeedyCAT {appVersion}")
     parser.usage = "%(prog)s [OPTIONS] [file to import/add-on to install]"
     parser.add_argument("-b", "--base", help="path to base folder", default="")
     parser.add_argument("-p", "--profile", help="profile name to load", default="")
     parser.add_argument("-l", "--lang", help="interface language (en, de, etc)")
     parser.add_argument(
-        "-v", "--version", help="print the Anki version and exit", action="store_true"
+        "-v", "--version", help="print the SpeedyCAT version and exit", action="store_true"
     )
     parser.add_argument(
         "--safemode", help="disable add-ons and automatic syncing", action="store_true"
@@ -574,7 +571,7 @@ def write_profile_results() -> None:
 
 
 def run() -> None:
-    print(f"Starting Anki {_version}...")
+    print(f"Starting SpeedyCAT {_version}...")
     try:
         _run()
     except Exception:
@@ -606,7 +603,7 @@ def _run(argv: list[str] | None = None, exec: bool = True) -> AnkiApp | None:
     opts, args = parseArgs(argv)
 
     if opts.version:
-        print(f"Anki {appVersion}")
+        print(f"SpeedyCAT {appVersion}")
         return None
 
     if PROFILE_CODE:
@@ -680,7 +677,7 @@ def _run(argv: list[str] | None = None, exec: bool = True) -> AnkiApp | None:
         os.environ["QT_QPA_PLATFORM"] = "windows:altgr"
 
     # create the app
-    QCoreApplication.setApplicationName("Anki")
+    QCoreApplication.setApplicationName("SpeedyCAT")
     QGuiApplication.setDesktopFileName("anki")
     app = AnkiApp(argv)
     if app.secondInstance():

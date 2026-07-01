@@ -455,10 +455,12 @@ class Toolbar:
         self.mw.onBrowse()
 
     def _practiceLinkHandler(self) -> None:
-        aqt.dialogs.open("PracticeQuestions", self.mw)
+        # SpeedyCAT: study modes render inside the main window (no pop-up);
+        # switching tabs swaps the central content in place.
+        self.mw.moveToState("speedycat", "practice")
 
     def _fullLengthLinkHandler(self) -> None:
-        aqt.dialogs.open("FullLengthTests", self.mw)
+        self.mw.moveToState("speedycat", "full-length")
 
     def _statsLinkHandler(self) -> None:
         self.mw.onStats()

@@ -134,7 +134,6 @@ import com.ichi2.anki.dialogs.customstudy.CustomStudyDialog
 import com.ichi2.anki.dialogs.customstudy.CustomStudyDialog.CustomStudyAction
 import com.ichi2.anki.dialogs.customstudy.CustomStudyDialog.CustomStudyAction.Companion.REQUEST_KEY
 import com.ichi2.anki.dialogs.setDeckPickerContextMenuResultListener
-import com.ichi2.anki.export.ExportDialogFragment
 import com.ichi2.anki.introduction.CollectionPermissionScreenLauncher
 import com.ichi2.anki.introduction.hasCollectionStoragePermissions
 import com.ichi2.anki.libanki.DeckId
@@ -993,7 +992,6 @@ open class DeckPicker :
         }
         toolbarSearchView?.maxWidth = Integer.MAX_VALUE
 
-        menu.findItem(R.id.action_export_collection)?.title = TR.actionsExport()
         menu.findItem(R.id.action_check_database)?.title = TR.sentenceCase.checkDatabase
         menu.findItem(R.id.action_check_media)?.title = TR.sentenceCase.checkMediaAction
         menu.findItem(R.id.action_empty_cards)?.title = TR.sentenceCase.emptyCards
@@ -1211,11 +1209,6 @@ open class DeckPicker :
                 showDatabaseErrorDialog(DatabaseErrorDialogType.DIALOG_CONFIRM_RESTORE_BACKUP)
                 return true
             }
-            R.id.action_export_collection -> {
-                Timber.i("DeckPicker:: Export menu item selected")
-                ExportDialogFragment.newInstance().show(supportFragmentManager, "exportDialog")
-                return true
-            }
             R.id.action_create_backup -> {
                 Timber.i("DeckPicker::Create backup")
                 createBackup()
@@ -1245,10 +1238,6 @@ open class DeckPicker :
             }
             negativeButton(R.string.dialog_cancel)
         }
-    }
-
-    fun exportCollection() {
-        ExportDialogFragment.newInstance().show(supportFragmentManager, "exportDialog")
     }
 
     private fun processReviewResults(resultCode: Int) {
@@ -1445,14 +1434,6 @@ open class DeckPicker :
                 Timber.i("Check media from keypress")
                 showMediaCheckDialog()
                 return true
-            }
-            KeyEvent.KEYCODE_E -> {
-                if (event.isCtrlPressed) {
-                    // Shortcut: CTRL + E
-                    Timber.i("Show export dialog from keypress")
-                    exportCollection()
-                    return true
-                }
             }
             KeyEvent.KEYCODE_I -> {
                 if (event.isCtrlPressed && event.isShiftPressed) {
@@ -1950,7 +1931,6 @@ open class DeckPicker :
                     shortcut("C") { this.sentenceCase.checkDatabase },
                     shortcut("P", R.string.open_settings),
                     shortcut("M") { this.sentenceCase.checkMediaAction },
-                    shortcut("Ctrl+E", R.string.export_collection),
                     shortcut("Ctrl+Shift+I", R.string.menu_import),
                     shortcut("Ctrl+Shift+N", R.string.model_browser_label),
                 ),

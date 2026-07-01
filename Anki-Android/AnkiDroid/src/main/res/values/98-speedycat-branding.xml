@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ SPDX-License-Identifier: GPL-3.0-or-later
+  ~ SpeedyCAT de-brand overrides: user-visible product-name strings that would otherwise
+  ~ come from the shared prebuilt backend (via CollectionManager.TR) and still read "AnkiWeb".
+  ~ Kept in a dedicated file so the intent is explicit and easy to grep. English-only by design;
+  ~ other locales fall back to this value (brand name is not translated).
+  -->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!-- Shown as the title of the account screens (Login / Logged-in / Sync settings) in place of
+         the backend's "AnkiWeb account". Endpoints and sync behaviour are unchanged. -->
+    <string name="speedycat_account">SpeedyCAT account</string>
+</resources>

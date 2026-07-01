@@ -83,6 +83,28 @@ impl SqliteStorage {
 
         Ok(())
     }
+
+    /// SpeedyCAT: reduce the collection to the stock schema 18 by dropping the
+    /// additive, local-only practice tables (schema 19) and stamping `col.ver`
+    /// back to 18.
+    ///
+    /// Upstream Anki (and therefore AnkiWeb) only understands schema <= 18, so a
+    /// verbatim upload/open of our schema-19 collection is rejected as corrupt.
+    /// The full-sync upload path runs this on a throwaway COPY of the collection
+    /// (see `sync::collection::upload`), leaving the live collection at schema
+    /// 19 with its practice questions/attempts intact. Practice data is
+    /// local-only and intentionally not synced.
+    ///
+    /// This deliberately does not route through `downgrade_to`, so colpkg/apkg
+    /// export behaviour (which downgrades to V18 as well) is left unchanged.
+    pub(crate) fn strip_practice_tables_for_upload(&self) -> Result<()> {
+        self.begin_trx()?;
+        self.db
+            .execute_batch(include_str!("schema19_downgrade.sql"))?;
+        self.commit_trx()?;
+
+        Ok(())
+    }
 }
 
 #[cfg(test)]
@@ -98,8 +120,10 @@ mod test {
     fn assert_19_is_latest_schema_version() {
         // SpeedyCAT: schema 19 adds additive, local-only practice tables on top
         // of the modern (V18) format. Downgrade-to-V11 drops them
-        // (schema19_downgrade.sql); the modern V18 downgrade target intentionally
-        // keeps them, so sync/package "latest" semantics are unchanged.
+        // (schema19_downgrade.sql). The V18 downgrade target still keeps them,
+        // so the full-sync upload strips them from a throwaway copy via
+        // SqliteStorage::strip_practice_tables_for_upload (see
+        // sync::collection::upload) to stay compatible with stock AnkiWeb.
         assert_eq!(
             19, SCHEMA_MAX_VERSION,
             "must implement SqliteStorage::downgrade_to(SchemaVersion::V11) drop for new tables"
@@ -124,6 +148,87 @@ mod test {
             .build()?;
         let card = &col.storage.get_all_cards()[0];
         assert_eq!(card.ease_factor, 1400);
+        Ok(())
+    }
+
+    /// The full-sync upload uploads a copy that has been reduced to the stock
+    /// schema 18 (openable by AnkiWeb), while the live collection keeps its
+    /// schema-19 practice data. See `sync::collection::upload`.
+    #[test]
+    fn upload_copy_is_stock_v18_and_live_practice_is_preserved() -> Result<()> {
+        use rusqlite::Connection;
+
+        // Build a collection through the normal pipeline: it lands at the latest
+        // schema (19) with the practice tables, plus a practice attempt standing
+        // in for real user history.
+        let live = new_tempfile()?;
+        {
+            let col = CollectionBuilder::default()
+                .set_collection_path(live.path())
+                .build()?;
+            assert_eq!(col.storage.db_scalar::<u8>("select ver from col")?, 19);
+            col.storage.db.execute_batch(
+                "insert into practice_attempts \
+                 (id, question_id, selected_answer, correct, time_on_question_seconds, \
+                  section, topic, answered_at) \
+                 values ('a1', 'q1', 'A', 1, 12, 'CP', 'thermo', 1000)",
+            )?;
+            col.close(None)?;
+        }
+
+        // Reproduce what the full-sync upload does: copy the live file, then
+        // reduce the copy to the stock schema 18.
+        let upload = new_tempfile()?;
+        std::fs::copy(live.path(), upload.path())?;
+        {
+            let stock_copy = CollectionBuilder::default()
+                .set_collection_path(upload.path())
+                .build()?;
+            stock_copy.storage.strip_practice_tables_for_upload()?;
+            stock_copy.close(None)?;
+        }
+
+        // The uploaded copy must look like a stock collection: schema 18, no
+        // practice/full-length tables, passes an integrity check, keeps core
+        // tables. Read it raw so no schema upgrade is applied.
+        let reader = Connection::open(upload.path())?;
+        // Opened raw so no schema upgrade runs; register the `unicase` collation
+        // that Anki's schema declares on several columns (notetypes/decks/tags/…)
+        // so PRAGMA integrity_check can verify their indexes, just like a real
+        // Anki connection does (see storage::sqlite::open_or_create).
+        reader.create_collation("unicase", |s1: &str, s2: &str| {
+            unicase::UniCase::new(s1).cmp(&unicase::UniCase::new(s2))
+        })?;
+        let ver: u8 = reader.query_row("select ver from col", [], |r| r.get(0))?;
+        assert_eq!(ver, 18, "upload must be stamped at the stock schema version");
+        let custom_tables: i64 = reader.query_row(
+            "select count(*) from sqlite_master where type = 'table' \
+             and (name like 'practice_%' or name like 'full_length_%')",
+            [],
+            |r| r.get(0),
+        )?;
+        assert_eq!(custom_tables, 0, "custom tables must be stripped from upload");
+        let integrity: String =
+            reader.pragma_query_value(None, "integrity_check", |r| r.get(0))?;
+        assert_eq!(integrity, "ok", "upload must pass integrity_check");
+        let has_cards: bool = reader
+            .prepare("select 1 from sqlite_master where type='table' and name='cards'")?
+            .exists([])?;
+        assert!(has_cards, "core stock tables must survive the downgrade");
+        drop(reader);
+
+        // The live collection must be untouched: still schema 19 with the
+        // practice attempt intact.
+        let col = CollectionBuilder::default()
+            .set_collection_path(live.path())
+            .build()?;
+        assert_eq!(col.storage.db_scalar::<u8>("select ver from col")?, 19);
+        assert_eq!(
+            col.storage
+                .db_scalar::<i64>("select count(*) from practice_attempts")?,
+            1,
+            "live practice history must be preserved by the upload"
+        );
         Ok(())
     }
 }

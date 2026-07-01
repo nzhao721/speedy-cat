@@ -83,7 +83,15 @@ from aqt.webview import AnkiWebView, AnkiWebViewKind
 install_pylib_legacy()
 
 MainWindowState = Literal[
-    "startup", "deckBrowser", "overview", "review", "resetRequired", "profileManager"
+    "startup",
+    "deckBrowser",
+    "overview",
+    "review",
+    "resetRequired",
+    "profileManager",
+    # SpeedyCAT: the embedded MCAT study modes (Practice / Full-Length) render
+    # in the main window under this single state; the mode is passed as an arg.
+    "speedycat",
 ]
 
 
@@ -168,6 +176,10 @@ class AnkiQt(QMainWindow):
     pm: ProfileManagerType
     web: MainWebView
     bottomWeb: BottomWebView
+    # SpeedyCAT: dedicated webview for the embedded MCAT study modes, plus the
+    # mode currently shown in it (None until a study tab is first opened).
+    speedycatWeb: AnkiWebView
+    _speedycat_mode: str | None = None
 
     def __init__(
         self,
@@ -484,7 +496,7 @@ class AnkiQt(QMainWindow):
             self.progress.finish()
             problems = future.result()
             if not problems:
-                showInfo("Profiles can now be opened with an older version of Anki.")
+                showInfo("Profiles can now be opened with an older version of SpeedyCAT.")
             else:
                 showWarning(
                     "The following profiles could not be downgraded: {}".format(
@@ -506,7 +518,7 @@ class AnkiQt(QMainWindow):
         restoreGeom(self, "mainWindow")
         restoreState(self, "mainWindow")
         # titlebar
-        self.setWindowTitle(f"{self.pm.name} - Anki")
+        self.setWindowTitle(f"{self.pm.name} - SpeedyCAT")
         # show and raise window for osx
         self.show()
         self.activateWindow()
@@ -554,6 +566,10 @@ class AnkiQt(QMainWindow):
 
         refresh_reviewer_on_day_rollover_change()
         gui_hooks.profile_did_open()
+        # SpeedyCAT: profile is now loaded, so the account toolbar can show the
+        # real AnkiWeb login/logout state (it defaulted to signed-out during
+        # setupMenus() when no profile was open yet).
+        self._refresh_account_menu()
         self.maybe_auto_sync_on_open_close(_onsuccess)
 
     def unloadProfile(self, onsuccess: Callable) -> None:
@@ -570,6 +586,9 @@ class AnkiQt(QMainWindow):
         saveState(self, "mainWindow")
         self.pm.save()
         self.hide()
+        # SpeedyCAT: keep the account toolbar label in sync as the profile closes
+        # (e.g. when switching profiles) rather than leaving a stale state.
+        self._refresh_account_menu()
 
         self.restoring_backup = False
 
@@ -639,7 +658,7 @@ class AnkiQt(QMainWindow):
         except Exception as e:
             if "FileTooNew" in str(e):
                 showWarning(
-                    "This profile requires a newer version of Anki to open. Did you forget to use the Downgrade button prior to switching Anki versions?"
+                    "This profile requires a newer version of SpeedyCAT to open. Did you forget to use the Downgrade button prior to switching SpeedyCAT versions?"
                 )
             else:
                 showWarning(
@@ -803,6 +822,30 @@ class AnkiQt(QMainWindow):
             self.toolbarWeb.show()
             self.bottomWeb.show()
 
+    def _speedycatState(self, oldState: MainWindowState, mode: str = "practice") -> None:
+        # SpeedyCAT: render an MCAT study mode INSIDE the main window. Hide the
+        # normal deck-browser content (`web` + bottom bar) and reveal the
+        # dedicated API-enabled `speedycatWeb` navigated to the mode's route.
+        # The one webview is reused across modes -- only navigate when the mode
+        # actually changes -- so switching tabs never opens a separate window.
+        import aqt.practice
+
+        if mode not in aqt.practice.STUDY_ROUTES:
+            mode = aqt.practice.DEFAULT_STUDY_MODE
+        aqt.practice.ensure_content_loaded(self)
+        self.web.hide()
+        self.bottomWeb.hide()
+        if self._speedycat_mode != mode:
+            self._speedycat_mode = mode
+            self.speedycatWeb.load_sveltekit_page(aqt.practice.STUDY_ROUTES[mode])
+        self.speedycatWeb.show()
+
+    def _speedycatCleanup(self, newState: MainWindowState) -> None:
+        # Leaving a study mode: hide the embedded webview. The next state's
+        # setter re-renders (and re-shows) the normal content via stdHtml().
+        if newState != "speedycat":
+            self.speedycatWeb.hide()
+
     # Resetting state
     ##########################################################################
 
@@ -943,6 +986,16 @@ title="{}" {}>{}</button>""".format(
         self.toolbar = Toolbar(self, tweb)
         # main area
         self.web = MainWebView(self)
+        # SpeedyCAT: dedicated, API-enabled webview for the embedded MCAT study
+        # modes. It lives in the main window and is shown in place of `web`
+        # (+ bottom bar) while a study tab is active, so the study pages never
+        # open a separate window -- while `web` (MAIN kind) stays WITHOUT API
+        # access. Hidden until a study mode is entered.
+        self.speedycatWeb = AnkiWebView(self, kind=AnkiWebViewKind.PRACTICE_QUESTIONS)
+        self.speedycatWeb.setFocusPolicy(Qt.FocusPolicy.WheelFocus)
+        self.speedycatWeb.setMinimumWidth(400)
+        self.speedycatWeb.hide()
+        self._speedycat_mode = None
         # bottom area
         sweb = self.bottomWeb = BottomWebView(self)
         sweb.setFocusPolicy(Qt.FocusPolicy.WheelFocus)
@@ -953,12 +1006,13 @@ title="{}" {}>{}</button>""".format(
         self.mainLayout.setSpacing(0)
         self.mainLayout.addWidget(tweb)
         self.mainLayout.addWidget(self.web)
+        self.mainLayout.addWidget(self.speedycatWeb)
         self.mainLayout.addWidget(sweb)
         self.form.centralwidget.setLayout(self.mainLayout)
 
         # force webengine processes to load before cwd is changed
         if is_win:
-            for webview in self.web, self.bottomWeb:
+            for webview in self.web, self.speedycatWeb, self.bottomWeb:
                 webview.force_load_hack()
 
         gui_hooks.card_review_webview_did_init(self.web, AnkiWebViewKind.MAIN)
@@ -1557,7 +1611,11 @@ title="{}" {}>{}</button>""".format(
 
     def _refresh_account_menu(self) -> None:
         "Set the account menu's toggle label from the current AnkiWeb auth state."
-        signed_in = bool(self.pm.sync_auth())
+        # This runs during setupMenus() (before any profile is opened) as well as
+        # after login/logout/profile changes. When no profile is loaded yet
+        # self.pm.profile is None, so guard sync_auth() and treat that as
+        # signed-out; loadProfile() re-runs this once a profile is available.
+        signed_in = bool(self.pm.profile is not None and self.pm.sync_auth())
         self.accountAuthAction.setText(
             tr.sync_log_out_button() if signed_in else tr.sync_log_in_button()
         )
@@ -1647,7 +1705,7 @@ title="{}" {}>{}</button>""".format(
         return QIcon(pixmap)
 
     def updateTitleBar(self) -> None:
-        self.setWindowTitle("Anki")
+        self.setWindowTitle("SpeedyCAT")
 
     # View
     ##########################################################################

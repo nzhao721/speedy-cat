@@ -131,7 +131,7 @@ class MessageBox(QMessageBox):
         parent: QWidget | None = None,
         icon: QMessageBox.Icon = QMessageBox.Icon.NoIcon,
         help: HelpPageArgument | None = None,
-        title: str = "Anki",
+        title: str = "SpeedyCAT",
         buttons: (
             Sequence[
                 str | QMessageBox.StandardButton | tuple[str, QMessageBox.ButtonRole]
@@ -206,7 +206,7 @@ def ask_user_dialog(
     ) = None,
     default_button: int = 1,
     parent: QWidget | None = None,
-    title: str = "Anki",
+    title: str = "SpeedyCAT",
     **kwargs: Any,
 ) -> MessageBox:
     "Shows a question to the user, passes the index of the button clicked to the callback."
@@ -269,7 +269,7 @@ def showWarning(
     text: str,
     parent: QWidget | None = None,
     help: HelpPageArgument | None = None,
-    title: str = "Anki",
+    title: str = "SpeedyCAT",
     textFormat: TextFormat | None = None,
 ) -> int:
     "Show a small warning with an OK button."
@@ -280,7 +280,7 @@ def showCritical(
     text: str,
     parent: QDialog | None = None,
     help: str = "",
-    title: str = "Anki",
+    title: str = "SpeedyCAT",
     textFormat: TextFormat | None = None,
 ) -> int:
     "Show a small critical error with an OK button."
@@ -292,7 +292,7 @@ def showInfo(
     parent: QWidget | None = None,
     help: HelpPageArgument | None = None,
     type: str = "info",
-    title: str = "Anki",
+    title: str = "SpeedyCAT",
     textFormat: TextFormat | None = None,
     customBtns: list[QMessageBox.StandardButton] | None = None,
 ) -> int:
@@ -347,7 +347,7 @@ def showText(
     geomKey: str | None = None,
     minWidth: int = 500,
     minHeight: int = 400,
-    title: str = "Anki",
+    title: str = "SpeedyCAT",
     copyBtn: bool = False,
     plain_text_edit: bool = False,
 ) -> tuple[QDialog, QDialogButtonBox] | None:
@@ -415,7 +415,7 @@ def askUser(
     help: HelpPageArgument | None = None,
     defaultno: bool = False,
     msgfunc: Callable | None = None,
-    title: str = "Anki",
+    title: str = "SpeedyCAT",
 ) -> bool:
     "Show a yes/no question. Return true if yes."
     if not parent:
@@ -446,7 +446,7 @@ class ButtonedDialog(QMessageBox):
         buttons: list[str],
         parent: QWidget | None = None,
         help: HelpPageArgument | None = None,
-        title: str = "Anki",
+        title: str = "SpeedyCAT",
     ):
         QMessageBox.__init__(self, parent)
         self._buttons: list[QPushButton | None] = []
@@ -481,7 +481,7 @@ def askUserDialog(
     buttons: list[str],
     parent: QWidget | None = None,
     help: HelpPageArgument | None = None,
-    title: str = "Anki",
+    title: str = "SpeedyCAT",
 ) -> ButtonedDialog:
     if not parent:
         parent = aqt.mw
@@ -497,7 +497,7 @@ class GetTextDialog(QDialog):
         help: HelpPageArgument | None = None,
         edit: QLineEdit | None = None,
         default: str = "",
-        title: str = "Anki",
+        title: str = "SpeedyCAT",
         minWidth: int = 400,
     ) -> None:
         QDialog.__init__(self, parent)
@@ -555,7 +555,7 @@ def getText(
     help: HelpPageArgument | None = None,
     edit: QLineEdit | None = None,
     default: str = "",
-    title: str = "Anki",
+    title: str = "SpeedyCAT",
     geomKey: str | None = None,
     **kwargs: Any,
 ) -> tuple[str, int]:

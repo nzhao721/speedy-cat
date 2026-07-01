@@ -1,0 +1,778 @@
+{
+  "meta": {
+    "section": "BBLS",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax Microbiology (Parker, Schneegurt, Tu, Lister, Forster)",
+        "sourceLicense": "CC BY-NC-SA 4.0",
+        "baseUrl": "https://openstax.org/books/microbiology/",
+        "note": "Multiple-choice Review Questions scraped verbatim; correctAnswer taken from OpenStax published Answer Key pages (pages/chapter-N). OpenStax posts a 'no LLM training' notice; SpeedyCAT use is human-facing per PRD, with attribution and non-commercial/share-alike compliance."
+      }
+    ],
+    "counts": {"total": 38, "byTopic": {"biochemistry": 15, "metabolism": 13, "microbiology": 5, "photosynthesis": 4, "biology": 1}},
+    "notes": "File 02: OpenStax Microbiology Ch. 7 (Microbial Biochemistry) and Ch. 8 (Microbial Metabolism). One 5-option 'all of the above' item (Ch.7 Q5) and microbe-identification-method items (Ch.7 Q10,Q12-14) were skipped to keep MCAT relevance and clean A-D mapping. Options 1-4 map to A-D; correctAnswer letters verified against the chapter answer keys."
+  },
+  "questions": [
+    {
+      "id": "bbls-x017",
+      "section": "BBLS",
+      "stem": "Which of these elements is not a micronutrient?",
+      "choices": [
+        {"label": "A", "text": "C"},
+        {"label": "B", "text": "Ca"},
+        {"label": "C", "text": "Co"},
+        {"label": "D", "text": "Cu"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Carbon (C) is a macronutrient, needed in large amounts as the backbone of all organic molecules. Calcium, cobalt, and copper are micronutrients (trace elements) required only in small quantities.",
+      "topicTags": ["biochemistry", "nutrients", "macronutrients"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 7 Microbial Biochemistry — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/7-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-7), Ch.7 MC Q1 = A."
+    },
+    {
+      "id": "bbls-x018",
+      "section": "BBLS",
+      "stem": "Which of the following is the name for molecules whose structures are nonsuperimposable mirror images?",
+      "choices": [
+        {"label": "A", "text": "structural isomers"},
+        {"label": "B", "text": "monomers"},
+        {"label": "C", "text": "polymers"},
+        {"label": "D", "text": "enantiomers"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Enantiomers are chiral molecules that are nonsuperimposable mirror images of each other. Structural isomers differ in connectivity, not handedness.",
+      "topicTags": ["biochemistry", "organic chemistry", "stereochemistry", "enantiomers"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 7 Microbial Biochemistry — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/7-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-7), Ch.7 MC Q2 = D."
+    },
+    {
+      "id": "bbls-x019",
+      "section": "BBLS",
+      "stem": "By definition, carbohydrates contain which elements?",
+      "choices": [
+        {"label": "A", "text": "carbon and hydrogen"},
+        {"label": "B", "text": "carbon, hydrogen, and nitrogen"},
+        {"label": "C", "text": "carbon, hydrogen, and oxygen"},
+        {"label": "D", "text": "carbon and oxygen"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Carbohydrates are made of carbon, hydrogen, and oxygen, typically in the ratio (CH2O)n.",
+      "topicTags": ["biochemistry", "carbohydrates"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 7 Microbial Biochemistry — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/7-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-7), Ch.7 MC Q3 = C."
+    },
+    {
+      "id": "bbls-x020",
+      "section": "BBLS",
+      "stem": "Monosaccharides may link together to form polysaccharides by forming which type of bond?",
+      "choices": [
+        {"label": "A", "text": "hydrogen"},
+        {"label": "B", "text": "peptide"},
+        {"label": "C", "text": "ionic"},
+        {"label": "D", "text": "glycosidic"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Monosaccharides are joined by glycosidic bonds formed through dehydration (condensation) reactions to build di- and polysaccharides.",
+      "topicTags": ["biochemistry", "carbohydrates", "glycosidic bond"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 7 Microbial Biochemistry — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/7-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-7), Ch.7 MC Q4 = D."
+    },
+    {
+      "id": "bbls-x021",
+      "section": "BBLS",
+      "stem": "Molecules bearing both polar and nonpolar groups are said to be which of the following?",
+      "choices": [
+        {"label": "A", "text": "hydrophilic"},
+        {"label": "B", "text": "amphipathic"},
+        {"label": "C", "text": "hydrophobic"},
+        {"label": "D", "text": "polyfunctional"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Amphipathic molecules (e.g., phospholipids) have both a polar/hydrophilic region and a nonpolar/hydrophobic region.",
+      "topicTags": ["biochemistry", "lipids", "amphipathic"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 7 Microbial Biochemistry — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/7-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-7), Ch.7 MC Q6 = B."
+    },
+    {
+      "id": "bbls-x022",
+      "section": "BBLS",
+      "stem": "Which of the following groups varies among different amino acids?",
+      "choices": [
+        {"label": "A", "text": "hydrogen atom"},
+        {"label": "B", "text": "carboxyl group"},
+        {"label": "C", "text": "R group"},
+        {"label": "D", "text": "amino group"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "All amino acids share an amino group, a carboxyl group, and an alpha-hydrogen; only the R group (side chain) differs among the 20 standard amino acids.",
+      "topicTags": ["biochemistry", "amino acids", "protein structure"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 7 Microbial Biochemistry — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/7-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-7), Ch.7 MC Q7 = C."
+    },
+    {
+      "id": "bbls-x023",
+      "section": "BBLS",
+      "stem": "The amino acids present in proteins differ in which of the following?",
+      "choices": [
+        {"label": "A", "text": "size"},
+        {"label": "B", "text": "shape"},
+        {"label": "C", "text": "side groups"},
+        {"label": "D", "text": "all of the above"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Because their R groups differ, amino acids vary in size, shape, and chemical properties of their side groups — all of the above.",
+      "topicTags": ["biochemistry", "amino acids"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 7 Microbial Biochemistry — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/7-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-7), Ch.7 MC Q8 = D."
+    },
+    {
+      "id": "bbls-x024",
+      "section": "BBLS",
+      "stem": "Which of the following bonds are not involved in tertiary structure?",
+      "choices": [
+        {"label": "A", "text": "peptide bonds"},
+        {"label": "B", "text": "ionic bonds"},
+        {"label": "C", "text": "hydrophobic interactions"},
+        {"label": "D", "text": "hydrogen bonds"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Peptide bonds link amino acids in the primary structure backbone. Tertiary structure is stabilized by ionic bonds, hydrophobic interactions, hydrogen bonds, and disulfide bridges among side chains.",
+      "topicTags": ["biochemistry", "protein structure", "tertiary structure"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 7 Microbial Biochemistry — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/7-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-7), Ch.7 MC Q9 = A."
+    },
+    {
+      "id": "bbls-x025",
+      "section": "BBLS",
+      "stem": "Proteomic analysis is a methodology that deals with which of the following?",
+      "choices": [
+        {"label": "A", "text": "the analysis of proteins functioning as enzymes within the cell"},
+        {"label": "B", "text": "analysis of transport proteins in the cell"},
+        {"label": "C", "text": "the analysis of integral proteins of the cell membrane"},
+        {"label": "D", "text": "the study of all accumulated proteins of an organism"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Proteomics is the large-scale study of the proteome — all of the proteins expressed/accumulated by an organism.",
+      "topicTags": ["biochemistry", "proteomics", "molecular biology"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 7 Microbial Biochemistry — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/7-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-7), Ch.7 MC Q11 = D."
+    },
+    {
+      "id": "bbls-x026",
+      "section": "BBLS",
+      "stem": "Which of the following is an organism that obtains its energy from the transfer of electrons originating from chemical compounds and its carbon from an inorganic source?",
+      "choices": [
+        {"label": "A", "text": "chemoautotroph"},
+        {"label": "B", "text": "chemoheterotroph"},
+        {"label": "C", "text": "photoheterotroph"},
+        {"label": "D", "text": "photoautotroph"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "A chemoautotroph (chemolithoautotroph) derives energy from chemical compounds (electron transfer) and carbon from an inorganic source such as CO2.",
+      "topicTags": ["microbiology", "metabolism", "nutritional classification"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q1 = A."
+    },
+    {
+      "id": "bbls-x027",
+      "section": "BBLS",
+      "stem": "Which of the following molecules is reduced?",
+      "choices": [
+        {"label": "A", "text": "NAD+"},
+        {"label": "B", "text": "FAD"},
+        {"label": "C", "text": "O2"},
+        {"label": "D", "text": "NADPH"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "NADPH is the reduced (electron-carrying) form. NAD+, FAD, and O2 are oxidized forms that can accept electrons.",
+      "topicTags": ["biochemistry", "redox reactions", "electron carriers"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q2 = D."
+    },
+    {
+      "id": "bbls-x028",
+      "section": "BBLS",
+      "stem": "Enzymes work by which of the following?",
+      "choices": [
+        {"label": "A", "text": "increasing the activation energy"},
+        {"label": "B", "text": "reducing the activation energy"},
+        {"label": "C", "text": "making exergonic reactions endergonic"},
+        {"label": "D", "text": "making endergonic reactions exergonic"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Enzymes are catalysts that speed reactions by lowering the activation energy; they do not change whether a reaction is exergonic or endergonic.",
+      "topicTags": ["biochemistry", "enzymes", "activation energy"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q3 = B."
+    },
+    {
+      "id": "bbls-x029",
+      "section": "BBLS",
+      "stem": "To which of the following does a competitive inhibitor most structurally resemble?",
+      "choices": [
+        {"label": "A", "text": "the active site"},
+        {"label": "B", "text": "the allosteric site"},
+        {"label": "C", "text": "the substrate"},
+        {"label": "D", "text": "a coenzyme"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "A competitive inhibitor resembles the substrate and competes with it for binding at the active site.",
+      "topicTags": ["biochemistry", "enzymes", "enzyme inhibition"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q4 = C."
+    },
+    {
+      "id": "bbls-x030",
+      "section": "BBLS",
+      "stem": "Which of the following are organic molecules that help enzymes work correctly?",
+      "choices": [
+        {"label": "A", "text": "cofactors"},
+        {"label": "B", "text": "coenzymes"},
+        {"label": "C", "text": "holoenzymes"},
+        {"label": "D", "text": "apoenzymes"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Coenzymes are organic helper molecules (often vitamin-derived). Cofactors may be inorganic ions; a holoenzyme is the active enzyme plus its cofactor, and an apoenzyme is the protein lacking its cofactor.",
+      "topicTags": ["biochemistry", "enzymes", "coenzymes"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q5 = B."
+    },
+    {
+      "id": "bbls-x031",
+      "section": "BBLS",
+      "stem": "During which of the following is ATP not made by substrate-level phosphorylation?",
+      "choices": [
+        {"label": "A", "text": "Embden-Meyerhof pathway"},
+        {"label": "B", "text": "Transition reaction"},
+        {"label": "C", "text": "Krebs cycle"},
+        {"label": "D", "text": "Entner-Doudoroff pathway"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The transition reaction (pyruvate to acetyl-CoA) yields NADH and CO2 but no ATP. Glycolysis, the Krebs cycle, and the Entner-Doudoroff pathway each make ATP by substrate-level phosphorylation.",
+      "topicTags": ["biochemistry", "metabolism", "substrate-level phosphorylation"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q6 = B."
+    },
+    {
+      "id": "bbls-x032",
+      "section": "BBLS",
+      "stem": "Which of the following products is made during Embden-Meyerhof glycolysis?",
+      "choices": [
+        {"label": "A", "text": "NAD+"},
+        {"label": "B", "text": "pyruvate"},
+        {"label": "C", "text": "CO2"},
+        {"label": "D", "text": "two-carbon acetyl"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Glycolysis (the Embden-Meyerhof pathway) splits glucose into two molecules of pyruvate, while also producing ATP and NADH.",
+      "topicTags": ["biochemistry", "glycolysis", "metabolism"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q7 = B."
+    },
+    {
+      "id": "bbls-x033",
+      "section": "BBLS",
+      "stem": "During the catabolism of glucose, which of the following is produced only in the Krebs cycle?",
+      "choices": [
+        {"label": "A", "text": "ATP"},
+        {"label": "B", "text": "NADH"},
+        {"label": "C", "text": "NADPH"},
+        {"label": "D", "text": "FADH2"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "FADH2 is generated in the Krebs (citric acid) cycle but not during glycolysis. ATP and NADH are produced in both glycolysis and the Krebs cycle.",
+      "topicTags": ["biochemistry", "Krebs cycle", "metabolism"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q8 = D."
+    },
+    {
+      "id": "bbls-x034",
+      "section": "BBLS",
+      "stem": "Which of the following is not a name for the cycle resulting in the conversion of a two-carbon acetyl to one ATP, two CO2, one FADH2, and three NADH molecules?",
+      "choices": [
+        {"label": "A", "text": "Krebs cycle"},
+        {"label": "B", "text": "tricarboxylic acid cycle"},
+        {"label": "C", "text": "Calvin cycle"},
+        {"label": "D", "text": "citric acid cycle"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The Krebs cycle is also called the tricarboxylic acid (TCA) cycle and the citric acid cycle. The Calvin cycle is the carbon-fixation phase of photosynthesis, not a name for the Krebs cycle.",
+      "topicTags": ["biochemistry", "Krebs cycle", "Calvin cycle"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q9 = C."
+    },
+    {
+      "id": "bbls-x035",
+      "section": "BBLS",
+      "stem": "Which is the location of electron transport systems in prokaryotes?",
+      "choices": [
+        {"label": "A", "text": "the outer mitochondrial membrane"},
+        {"label": "B", "text": "the cytoplasm"},
+        {"label": "C", "text": "the inner mitochondrial membrane"},
+        {"label": "D", "text": "the cytoplasmic membrane"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Prokaryotes lack mitochondria, so their electron transport systems are located in the cytoplasmic (plasma) membrane.",
+      "topicTags": ["microbiology", "electron transport chain", "metabolism"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q10 = D."
+    },
+    {
+      "id": "bbls-x036",
+      "section": "BBLS",
+      "stem": "Which is the source of the energy used to make ATP by oxidative phosphorylation?",
+      "choices": [
+        {"label": "A", "text": "oxygen"},
+        {"label": "B", "text": "high-energy phosphate bonds"},
+        {"label": "C", "text": "the proton motive force"},
+        {"label": "D", "text": "Pi"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Oxidative phosphorylation uses the proton motive force (the electrochemical H+ gradient built by the electron transport chain) to drive ATP synthase.",
+      "topicTags": ["biochemistry", "oxidative phosphorylation", "proton motive force"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q11 = C."
+    },
+    {
+      "id": "bbls-x037",
+      "section": "BBLS",
+      "stem": "A cell might perform anaerobic respiration for which of the following reasons?",
+      "choices": [
+        {"label": "A", "text": "It lacks glucose for degradation."},
+        {"label": "B", "text": "It lacks the transition reaction to convert pyruvate to acetyl-CoA."},
+        {"label": "C", "text": "It lacks Krebs cycle enzymes for processing acetyl-CoA to CO2."},
+        {"label": "D", "text": "It lacks a cytochrome oxidase for passing electrons to oxygen."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Anaerobic respiration uses a final electron acceptor other than oxygen. A cell relies on it when it cannot pass electrons to O2 (e.g., it lacks cytochrome oxidase) or when oxygen is unavailable.",
+      "topicTags": ["microbiology", "anaerobic respiration", "metabolism"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q12 = D."
+    },
+    {
+      "id": "bbls-x038",
+      "section": "BBLS",
+      "stem": "In prokaryotes, which of the following is true?",
+      "choices": [
+        {"label": "A", "text": "As electrons are transferred through an ETS, H+ is pumped out of the cell."},
+        {"label": "B", "text": "As electrons are transferred through an ETS, H+ is pumped into the cell."},
+        {"label": "C", "text": "As protons are transferred through an ETS, electrons are pumped out of the cell."},
+        {"label": "D", "text": "As protons are transferred through an ETS, electrons are pumped into the cell."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "In prokaryotes the electron transport system pumps H+ out across the plasma membrane as electrons move down the chain, establishing the proton motive force.",
+      "topicTags": ["microbiology", "electron transport chain", "proton motive force"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q13 = A."
+    },
+    {
+      "id": "bbls-x039",
+      "section": "BBLS",
+      "stem": "Which of the following is not an electron carrier within an electron transport system?",
+      "choices": [
+        {"label": "A", "text": "flavoprotein"},
+        {"label": "B", "text": "ATP synthase"},
+        {"label": "C", "text": "ubiquinone"},
+        {"label": "D", "text": "cytochrome oxidase"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "ATP synthase uses the proton gradient to make ATP; it is not an electron carrier. Flavoproteins, ubiquinone, and cytochrome oxidase all transfer electrons within the ETS.",
+      "topicTags": ["biochemistry", "electron transport chain", "ATP synthase"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q14 = B."
+    },
+    {
+      "id": "bbls-x040",
+      "section": "BBLS",
+      "stem": "Which of the following is the purpose of fermentation?",
+      "choices": [
+        {"label": "A", "text": "to make ATP"},
+        {"label": "B", "text": "to make carbon molecule intermediates for anabolism"},
+        {"label": "C", "text": "to make NADH"},
+        {"label": "D", "text": "to make NAD+"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Fermentation regenerates NAD+ by oxidizing the NADH made in glycolysis, allowing glycolysis (and its small ATP yield) to continue when respiration is not possible.",
+      "topicTags": ["biochemistry", "fermentation", "metabolism"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q15 = D."
+    },
+    {
+      "id": "bbls-x041",
+      "section": "BBLS",
+      "stem": "Which molecule typically serves as the final electron acceptor during fermentation?",
+      "choices": [
+        {"label": "A", "text": "oxygen"},
+        {"label": "B", "text": "NAD+"},
+        {"label": "C", "text": "pyruvate"},
+        {"label": "D", "text": "CO2"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "In fermentation an organic molecule such as pyruvate (or a derivative of it) serves as the final electron acceptor, regenerating NAD+.",
+      "topicTags": ["biochemistry", "fermentation", "metabolism"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q16 = C."
+    },
+    {
+      "id": "bbls-x042",
+      "section": "BBLS",
+      "stem": "Which fermentation product is important for making bread rise?",
+      "choices": [
+        {"label": "A", "text": "ethanol"},
+        {"label": "B", "text": "CO2"},
+        {"label": "C", "text": "lactic acid"},
+        {"label": "D", "text": "hydrogen gas"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Carbon dioxide (CO2) released by yeast during alcoholic fermentation forms gas bubbles that make bread dough rise.",
+      "topicTags": ["microbiology", "fermentation", "metabolism"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q17 = B."
+    },
+    {
+      "id": "bbls-x043",
+      "section": "BBLS",
+      "stem": "Which of the following is not a commercially important fermentation product?",
+      "choices": [
+        {"label": "A", "text": "ethanol"},
+        {"label": "B", "text": "pyruvate"},
+        {"label": "C", "text": "butanol"},
+        {"label": "D", "text": "penicillin"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Pyruvate is a central metabolic intermediate, not a commercial fermentation end product. Ethanol, butanol, and penicillin are all commercially produced via microbial fermentation.",
+      "topicTags": ["microbiology", "fermentation", "industrial microbiology"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q18 = B."
+    },
+    {
+      "id": "bbls-x044",
+      "section": "BBLS",
+      "stem": "Which of the following molecules is not produced during the breakdown of phospholipids?",
+      "choices": [
+        {"label": "A", "text": "glucose"},
+        {"label": "B", "text": "glycerol"},
+        {"label": "C", "text": "acetyl groups"},
+        {"label": "D", "text": "fatty acids"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Phospholipid degradation releases glycerol, fatty acids, and (after further catabolism) acetyl groups. Glucose is not a product of phospholipid breakdown.",
+      "topicTags": ["biochemistry", "lipid catabolism", "metabolism"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q19 = A."
+    },
+    {
+      "id": "bbls-x045",
+      "section": "BBLS",
+      "stem": "Caseinase is which type of enzyme?",
+      "choices": [
+        {"label": "A", "text": "phospholipase"},
+        {"label": "B", "text": "lipase"},
+        {"label": "C", "text": "extracellular protease"},
+        {"label": "D", "text": "intracellular protease"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Caseinase is secreted from the cell to break down casein (a milk protein) in the environment, making it an extracellular protease.",
+      "topicTags": ["microbiology", "enzymes", "proteases"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q20 = C."
+    },
+    {
+      "id": "bbls-x046",
+      "section": "BBLS",
+      "stem": "Which of the following is the first step in triglyceride degradation?",
+      "choices": [
+        {"label": "A", "text": "removal of fatty acids"},
+        {"label": "B", "text": "β-oxidation"},
+        {"label": "C", "text": "breakage of fused rings"},
+        {"label": "D", "text": "formation of smaller peptides"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Triglyceride catabolism begins when lipases hydrolyze and remove the fatty acids from the glycerol backbone; the freed fatty acids are then degraded by β-oxidation.",
+      "topicTags": ["biochemistry", "lipid catabolism", "metabolism"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q21 = A."
+    },
+    {
+      "id": "bbls-x047",
+      "section": "BBLS",
+      "stem": "During the light-dependent reactions, which molecule loses an electron?",
+      "choices": [
+        {"label": "A", "text": "a light-harvesting pigment molecule"},
+        {"label": "B", "text": "a reaction center pigment molecule"},
+        {"label": "C", "text": "NADPH"},
+        {"label": "D", "text": "3-phosphoglycerate"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Light energy funneled to the reaction-center pigment excites it enough that it loses (donates) an electron to the electron transport chain, beginning the light-dependent reactions.",
+      "topicTags": ["photosynthesis", "light-dependent reactions", "biology"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q22 = B."
+    },
+    {
+      "id": "bbls-x048",
+      "section": "BBLS",
+      "stem": "In prokaryotes, in which direction are hydrogen ions pumped by the electron transport system of photosynthetic membranes?",
+      "choices": [
+        {"label": "A", "text": "to the outside of the plasma membrane"},
+        {"label": "B", "text": "to the inside (cytoplasm) of the cell"},
+        {"label": "C", "text": "to the stroma"},
+        {"label": "D", "text": "to the intermembrane space of the chloroplast"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Photosynthetic prokaryotes lack chloroplasts; their photosynthetic electron transport pumps H+ to the outside of the plasma membrane, establishing the proton motive force used to make ATP.",
+      "topicTags": ["photosynthesis", "microbiology", "proton gradient"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q23 = A."
+    },
+    {
+      "id": "bbls-x049",
+      "section": "BBLS",
+      "stem": "Which of the following does not occur during cyclic photophosphorylation in cyanobacteria?",
+      "choices": [
+        {"label": "A", "text": "electron transport through an ETS"},
+        {"label": "B", "text": "photosystem I use"},
+        {"label": "C", "text": "ATP synthesis"},
+        {"label": "D", "text": "NADPH formation"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cyclic photophosphorylation recycles electrons through photosystem I and the ETS to make ATP, but it does not reduce NADP+, so no NADPH is formed.",
+      "topicTags": ["photosynthesis", "cyclic photophosphorylation", "biology"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q24 = D."
+    },
+    {
+      "id": "bbls-x050",
+      "section": "BBLS",
+      "stem": "Which of the following are two products of the light-dependent reactions?",
+      "choices": [
+        {"label": "A", "text": "glucose and NADPH"},
+        {"label": "B", "text": "NADPH and ATP"},
+        {"label": "C", "text": "glyceraldehyde 3-phosphate and CO2"},
+        {"label": "D", "text": "glucose and oxygen"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The light-dependent reactions produce ATP and NADPH (and release O2 from water); these energy carriers then drive carbon fixation in the Calvin cycle.",
+      "topicTags": ["photosynthesis", "light-dependent reactions", "biology"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q25 = B."
+    },
+    {
+      "id": "bbls-x051",
+      "section": "BBLS",
+      "stem": "Which of the following is the group of archaea that can use CO2 as their final electron acceptor during anaerobic respiration, producing CH4?",
+      "choices": [
+        {"label": "A", "text": "methylotrophs"},
+        {"label": "B", "text": "methanotrophs"},
+        {"label": "C", "text": "methanogens"},
+        {"label": "D", "text": "anoxygenic photosynthesizers"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Methanogens are archaea that reduce CO2 (using it as the terminal electron acceptor in anaerobic respiration) to produce methane (CH4).",
+      "topicTags": ["microbiology", "archaea", "methanogens"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q26 = C."
+    },
+    {
+      "id": "bbls-x052",
+      "section": "BBLS",
+      "stem": "Which of the following processes is not involved in the conversion of organic nitrogen to nitrogen gas?",
+      "choices": [
+        {"label": "A", "text": "nitrogen fixation"},
+        {"label": "B", "text": "ammonification"},
+        {"label": "C", "text": "nitrification"},
+        {"label": "D", "text": "denitrification"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Nitrogen fixation converts atmospheric N2 into ammonia (the reverse direction). Ammonification, nitrification, and denitrification act in sequence to convert organic nitrogen back to N2 gas.",
+      "topicTags": ["microbiology", "nitrogen cycle", "biogeochemical cycles"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q27 = A."
+    },
+    {
+      "id": "bbls-x053",
+      "section": "BBLS",
+      "stem": "Which of the following processes produces hydrogen sulfide?",
+      "choices": [
+        {"label": "A", "text": "anoxygenic photosynthesis"},
+        {"label": "B", "text": "oxygenic photosynthesis"},
+        {"label": "C", "text": "anaerobic respiration"},
+        {"label": "D", "text": "chemoautotrophy"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Sulfate-reducing microbes carry out anaerobic respiration using sulfate as the terminal electron acceptor, producing hydrogen sulfide (H2S).",
+      "topicTags": ["microbiology", "sulfur cycle", "anaerobic respiration"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q28 = C."
+    },
+    {
+      "id": "bbls-x054",
+      "section": "BBLS",
+      "stem": "The biogeochemical cycle of which of the following elements is based on changes in solubility rather than redox chemistry?",
+      "choices": [
+        {"label": "A", "text": "carbon"},
+        {"label": "B", "text": "sulfur"},
+        {"label": "C", "text": "nitrogen"},
+        {"label": "D", "text": "phosphorus"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The phosphorus cycle has no significant gaseous phase and is driven by changes in solubility (weathering and precipitation), unlike the redox-driven carbon, nitrogen, and sulfur cycles.",
+      "topicTags": ["biology", "biogeochemical cycles", "phosphorus cycle"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/8-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-8), Ch.8 MC Q29 = D."
+    }
+  ]
+}

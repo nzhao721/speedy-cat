@@ -36,14 +36,14 @@ class ThemeTest {
     @Test
     fun `light theme bridges colorPrimary to scheme primary`() {
         val scheme = themed(R.style.Theme_Light).toMaterial3ColorScheme()
-        val expected = ContextCompat.getColor(appContext, CommonR.color.material_light_blue_500)
+        val expected = ContextCompat.getColor(appContext, CommonR.color.brand_orange)
         assertEquals(expected, scheme.primary.toArgb())
     }
 
     @Test
     fun `dark theme bridges colorPrimary to scheme primary`() {
         val scheme = themed(R.style.Theme_Dark).toMaterial3ColorScheme()
-        val expected = ContextCompat.getColor(appContext, CommonR.color.material_blue_400)
+        val expected = ContextCompat.getColor(appContext, CommonR.color.brand_orange_night)
         assertEquals(expected, scheme.primary.toArgb())
     }
 

@@ -64,15 +64,10 @@ class DeckPickerContextMenu : AnalyticsDialogFragment() {
         )
 
     enum class DeckPickerContextMenuOption {
-        RENAME_DECK,
-        DECK_OPTIONS,
         CUSTOM_STUDY,
-        DELETE_DECK,
-        EXPORT_DECK,
         UNBURY,
         CUSTOM_STUDY_REBUILD,
         CUSTOM_STUDY_EMPTY,
-        CREATE_SUBDECK,
         CREATE_SHORTCUT,
         BROWSE_CARDS,
         EDIT_DESCRIPTION,
@@ -83,15 +78,10 @@ class DeckPickerContextMenu : AnalyticsDialogFragment() {
         fun label(context: Context): String =
             with(context) {
                 when (this@DeckPickerContextMenuOption) {
-                    RENAME_DECK -> TR.sentenceCase.renameDeck
-                    DECK_OPTIONS -> TR.sentenceCase.deckOptions
                     CUSTOM_STUDY -> TR.sentenceCase.customStudy
-                    DELETE_DECK -> TR.sentenceCase.deleteDeck
-                    EXPORT_DECK -> getString(R.string.export_deck)
                     UNBURY -> TR.studyingUnbury()
                     CUSTOM_STUDY_REBUILD -> TR.actionsRebuild()
                     CUSTOM_STUDY_EMPTY -> getString(R.string.empty_cram_label)
-                    CREATE_SUBDECK -> getString(R.string.create_subdeck)
                     CREATE_SHORTCUT -> getString(R.string.create_shortcut)
                     BROWSE_CARDS -> getString(R.string.browse_cards)
                     EDIT_DESCRIPTION -> getString(R.string.edit_deck_description)

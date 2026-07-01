@@ -9,7 +9,6 @@ import androidx.preference.ListPreference
 import androidx.preference.SwitchPreferenceCompat
 import anki.config.ConfigKey
 import com.ichi2.anki.CollectionManager
-import com.ichi2.anki.CollectionManager.TR
 import com.ichi2.anki.CollectionManager.withCol
 import com.ichi2.anki.R
 import com.ichi2.anki.common.crashreporting.CrashReportService
@@ -42,16 +41,6 @@ class GeneralSettingsFragment : SettingsFragment() {
             }
             setOnPreferenceChangeListener { newValue ->
                 launchCatchingTask { withCol { config.setBool(ConfigKey.Bool.ADDING_DEFAULTS_TO_CURRENT_DECK, "0" == newValue) } }
-            }
-        }
-        // Paste PNG
-        // Represents in the collection's pref "pastePNG" , i.e.
-        // whether to convert clipboard uri to png format or not.
-        requirePreference<SwitchPreferenceCompat>(R.string.paste_png_key).apply {
-            title = TR.preferencesPasteClipboardImagesAsPng()
-            launchCatchingTask { isChecked = withCol { config.getBool(ConfigKey.Bool.PASTE_IMAGES_AS_PNG) } }
-            setOnPreferenceChangeListener { newValue ->
-                launchCatchingTask { withCol { config.setBool(ConfigKey.Bool.PASTE_IMAGES_AS_PNG, newValue) } }
             }
         }
         // Error reporting mode

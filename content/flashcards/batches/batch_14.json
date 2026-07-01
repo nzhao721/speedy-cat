@@ -1,0 +1,3874 @@
+{
+  "meta": {
+    "batch": 14,
+    "file": "batch_14.json",
+    "card_count": 257,
+    "note_count": 217,
+    "card_id_range": [
+      1582913479270,
+      1590368913821
+    ],
+    "eval_checks": [
+      "(a) question/answer correspond: the rendered answer actually answers/fills the question (for cloze, the revealed deletion fits the blank); flag empty answers, answer==question, or clear non-correspondence.",
+      "(b) text well-formed: question_text/answer_text non-empty and readable; no unrendered template artifacts ('{{', '}}', 'FrontSide', '{{c1::'), no obviously garbled/broken text; note image-only cards (no usable text).",
+      "(c) regex/LaTeX/cloze markup valid & balanced in the raw `fields`: cloze {{cN::...}} well-formed & balanced; MathJax/LaTeX delimiters balanced ( \\(..\\), \\[..\\], [$]..[/$], [$$]..[/$$], $$..$$ ); HTML tags reasonably balanced."
+    ]
+  },
+  "cards": [
+    {
+      "card_id": 1582913479270,
+      "note_id": 1582913454358,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is Haptic perception? [...]",
+      "answer_text": "What is Haptic perception? The exploration of objects through touch",
+      "fields": {
+        "Text": "What is <b>Haptic perception?</b><div><b><br></b></div><div>{{c1::The exploration of <b>objects through touch</b>}}<b><br></b></div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582913501817,
+      "note_id": 1582913479309,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is Active Touch? [...]",
+      "answer_text": "What is Active Touch? Uses haptic perception to actively inspect an object pick something up to feel it",
+      "fields": {
+        "Text": "What is <b>Active Touch?</b><div><b><br></b></div><div>{{c1::Uses haptic perception to actively inspect an object}}<b><br></b></div>",
+        "Extra": "pick something up to feel it"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582913531270,
+      "note_id": 1582913501834,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is Phantom pain? [...]",
+      "answer_text": "What is Phantom pain? Perception of pain in a removed area of the body Lost cock, feel cock pain",
+      "fields": {
+        "Text": "What is <b>Phantom pain?</b><div><b><br></b></div><div>{{c1::Perception of pain in a removed area of the body}}<b><br></b></div>",
+        "Extra": "Lost cock, feel cock pain"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582913558149,
+      "note_id": 1582913531274,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Tonotopy is the special mapping of [...] that are process by the brain",
+      "answer_text": "Tonotopy is the special mapping of sound frequencies that are process by the brain",
+      "fields": {
+        "Text": "<b>Tonotopy </b>is the special mapping of {{c1::sound frequencies}} that are process by the brain",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582913598070,
+      "note_id": 1582913558155,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is a Dermatome? [...]",
+      "answer_text": "What is a Dermatome? Skin with sensory nerve fibers from a single posterior spinal root ganglion",
+      "fields": {
+        "Text": "What is a <b>Dermatome?</b><div><b><br></b></div><div>{{c1::Skin with sensory nerve fibers from a single posterior spinal root ganglion}}<b><br></b></div>",
+        "Extra": "<img src=\"paste-609060021bfbb24be93c207e39da3011df278f54.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582913622570,
+      "note_id": 1582913598078,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is the Connectome? [...]",
+      "answer_text": "What is the Connectome? Neural map of the connections within the brain",
+      "fields": {
+        "Text": "What is the <b>Connectome?</b><div><b><br></b></div><div>{{c1::Neural map of the connections within the brain}}<b><br></b></div>",
+        "Extra": "<img src=\"paste-ff8eccafacf3d9919c204117445139b9179331f9.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582913665295,
+      "note_id": 1582913622575,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "When participants take longer to read a word because it is emotionally charged: [...]",
+      "answer_text": "When participants take longer to read a word because it is emotionally charged: Interference I am emotionally scarred from a hard Anki card so it takes me a while to answer it",
+      "fields": {
+        "Text": "When participants take longer to read a word because it is emotionally charged:<div><br></div><div>{{c1::Interference}}<br></div>",
+        "Extra": "I am emotionally scarred from a hard Anki card so it takes me a while to answer it"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582913699244,
+      "note_id": 1582913665311,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is Agoraphobia? [...]",
+      "answer_text": "What is Agoraphobia? Fear of open spaces/crowds",
+      "fields": {
+        "Text": "What is <b>Agoraphobia?</b><div><b><br></b></div><div>{{c1::Fear of open spaces/crowds}}<b><br></b></div>",
+        "Extra": "<img src=\"paste-29a191627bb676a6a372e9203bffab2f6f65c66f.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582913802765,
+      "note_id": 1582913787676,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "LSD - [...] neurotransmission",
+      "answer_text": "LSD - serotonin neurotransmission",
+      "fields": {
+        "Text": "LSD - {{c1::serotonin}} neurotransmission",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582913821659,
+      "note_id": 1582913802776,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Nicotine - CNS stimulant by working as a [...] agonist",
+      "answer_text": "Nicotine - CNS stimulant by working as a Acetylcholine agonist",
+      "fields": {
+        "Text": "Nicotine - CNS stimulant by working as a {{c1::Acetylcholine}} agonist",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582913830998,
+      "note_id": 1582913821666,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Amphetamine [...] reuptake blocked",
+      "answer_text": "Amphetamine Dopamine reuptake blocked",
+      "fields": {
+        "Text": "<b>Amphetamine</b><div><br></div><div>{{c1::Dopamine}} reuptake blocked</div>",
+        "Extra": "<img src=\"paste-61db1e73ca16402f7699c654215089f3772b1289.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582913842885,
+      "note_id": 1582913831004,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Alcohol - CNS [...]",
+      "answer_text": "Alcohol - CNS depressant",
+      "fields": {
+        "Text": "Alcohol - CNS {{c1::depressant}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582914061028,
+      "note_id": 1582913906878,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Schizophrenia: Mesolimbic - [...] effects Mesocortical - [...] effects",
+      "answer_text": "Schizophrenia: Mesolimbic - Positive effects Mesocortical - Negative effects Mesolimbic = Affect = ↓ in Schizo = Negative effect? I would've guessed Mesolimbic involves Amygdala and is associated with negative sx, but what do I know hahaha!!...",
+      "fields": {
+        "Text": "Schizophrenia:<div><br></div><div>{{c2::Mesolimbic::Pathway}} - {{c1::<font color=\"#21ff06\">Positive</font>}} effects</div><div>{{c2::Mesocortical::Pathway}} - {{c1::<font color=\"#fc0107\">Negative</font>}} effects</div>",
+        "Extra": "<div>Mesolimbic = Affect = ↓ in Schizo = Negative effect?</div><div><br></div><div>I would've guessed Mesolimbic involves Amygdala and is associated with negative sx, but what do I know hahaha!!...</div><img src=\"paste-6f98a237556f238f5ab87f1cbf55732857a3fd96.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582914061029,
+      "note_id": 1582913906878,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Schizophrenia: [Pathway] - Positive effects [Pathway] - Negative effects",
+      "answer_text": "Schizophrenia: Mesolimbic - Positive effects Mesocortical - Negative effects Mesolimbic = Affect = ↓ in Schizo = Negative effect? I would've guessed Mesolimbic involves Amygdala and is associated with negative sx, but what do I know hahaha!!...",
+      "fields": {
+        "Text": "Schizophrenia:<div><br></div><div>{{c2::Mesolimbic::Pathway}} - {{c1::<font color=\"#21ff06\">Positive</font>}} effects</div><div>{{c2::Mesocortical::Pathway}} - {{c1::<font color=\"#fc0107\">Negative</font>}} effects</div>",
+        "Extra": "<div>Mesolimbic = Affect = ↓ in Schizo = Negative effect?</div><div><br></div><div>I would've guessed Mesolimbic involves Amygdala and is associated with negative sx, but what do I know hahaha!!...</div><img src=\"paste-6f98a237556f238f5ab87f1cbf55732857a3fd96.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582914106919,
+      "note_id": 1582914061039,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is a Hypochondriac? [...]",
+      "answer_text": "What is a Hypochondriac? A person who is abnormally anxious about their health",
+      "fields": {
+        "Text": "What is a <b>Hypochondriac?</b><div><b><br></b></div><div>{{c1::A person who is <b>abnormally anxious about their health</b>}}<b><br></b></div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582914156749,
+      "note_id": 1582914106961,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Dopamine release in the tuberoinfundibular pathway inhibits [...] release in the [...]",
+      "answer_text": "Dopamine release in the tuberoinfundibular pathway inhibits prolactin release in the pituitary",
+      "fields": {
+        "Text": "{{c2::Dopamine}} release in the {{c2::tuberoinfundibular}}&nbsp;pathway inhibits {{c1::prolactin}} release in the {{c1::pituitary}}",
+        "Extra": "<img src=\"paste-71e0f242bc73e9a87de99549a7ef142552fea0e8.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582914156750,
+      "note_id": 1582914106961,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "[...] release in the [...] pathway inhibits prolactin release in the pituitary",
+      "answer_text": "Dopamine release in the tuberoinfundibular pathway inhibits prolactin release in the pituitary",
+      "fields": {
+        "Text": "{{c2::Dopamine}} release in the {{c2::tuberoinfundibular}}&nbsp;pathway inhibits {{c1::prolactin}} release in the {{c1::pituitary}}",
+        "Extra": "<img src=\"paste-71e0f242bc73e9a87de99549a7ef142552fea0e8.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582914194296,
+      "note_id": 1582914156756,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "The [...] pathway is associated with motor planning and purposeful movement",
+      "answer_text": "The nigrostriatal pathway is associated with motor planning and purposeful movement The Nigros purposefully planned their motor movement",
+      "fields": {
+        "Text": "The {{c1::nigrostriatal}} pathway is associated with <b>motor planning</b> and <b>purposeful movement</b>",
+        "Extra": "<div>The <b>Nigros</b>&nbsp;<b><u>purposefully planned their motor movement</u></b></div><img src=\"paste-6f2d17d4293fc8a0b896229b0bad952030c3513b.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582914236317,
+      "note_id": 1582914194312,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is Illness anxiety disorder? [...]",
+      "answer_text": "What is Illness anxiety disorder? Pt's focus more on being ill than actual somatic symptoms",
+      "fields": {
+        "Text": "What is <b>Illness anxiety disorder?</b><div><b><br></b></div><div>{{c1::Pt's focus more on being ill than actual somatic symptoms}}<b><br></b></div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582925581116,
+      "note_id": 1582925525476,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is a Teratogen? [...]",
+      "answer_text": "What is a Teratogen? Agent or factor that causes malformation of an embryo",
+      "fields": {
+        "Text": "What is a <b>Teratogen?</b><div><b><br></b></div><div>{{c1::Agent or factor that causes malformation of an embryo}}<b><br></b></div>",
+        "Extra": "<img src=\"teratogen-pop-quiz.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582925617495,
+      "note_id": 1582925581148,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Phenylketonuria is a [...] problem",
+      "answer_text": "Phenylketonuria is a genetic problem",
+      "fields": {
+        "Text": "<b>Phenylketonuria</b> is a {{c1::genetic}} problem",
+        "Extra": "<img src=\"paste-75ed820fff22f28e4be1567b732109eb048cf937.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582925637928,
+      "note_id": 1582925617499,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Polycystic kidney disease is a [...] problem",
+      "answer_text": "Polycystic kidney disease is a genetic problem",
+      "fields": {
+        "Text": "<b>Polycystic kidney disease</b> is a {{c1::genetic}} problem",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582925653595,
+      "note_id": 1582925637932,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Austism spectrum disorder is not a [...]",
+      "answer_text": "Austism spectrum disorder is not a birth defect",
+      "fields": {
+        "Text": "Austism spectrum disorder is not a&nbsp;{{c1::birth defect}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582925708544,
+      "note_id": 1582925653600,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Neuropeptide Y in humans Inhibits the [...] circuit Blocking [...]",
+      "answer_text": "Neuropeptide Y in humans Inhibits the Feeding circuit Blocking Satiety",
+      "fields": {
+        "Text": "<font color=\"#00f400\">Neuropeptide Y</font> in humans<div><font color=\"#fc0107\"><br></font></div><div><font color=\"#fc0107\">Inhibits</font> the {{c1::Feeding}} circuit</div><div><font color=\"#fc0107\">Blocking</font> {{c1::Satiety}}</div>",
+        "Extra": "<img src=\"paste-259b7e270dbfdb2f618e9881faef2423f3cd60f3.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582925801362,
+      "note_id": 1582925708562,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Neuropeptide Y inhibition causes the inhibition of CCK, which limits meal size by: [...]",
+      "answer_text": "Neuropeptide Y inhibition causes the inhibition of CCK, which limits meal size by: Sensing the distention of the duodenum Sense Chyme",
+      "fields": {
+        "Text": "Neuropeptide Y inhibition causes the inhibition of CCK, which limits meal size by:<div><br></div><div>{{c1::Sensing the distention of the duodenum}}<br></div>",
+        "Extra": "<div><b><u>Sense Chyme</u></b></div><img src=\"paste-3539ab5af7e995f05f7d62cf4d0e1bf91bece93f.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582925846584,
+      "note_id": 1582925801378,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Inhibition of CCK may lead to: [...]",
+      "answer_text": "Inhibition of CCK may lead to: Eating without feeling full CCK = Satiety",
+      "fields": {
+        "Text": "Inhibition of CCK may lead to:<div><br></div><div>{{c1::Eating without feeling full}}<br></div>",
+        "Extra": "<div>CCK = Satiety</div><img src=\"paste-3539ab5af7e995f05f7d62cf4d0e1bf91bece93f.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582925893973,
+      "note_id": 1582925846589,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "The Paraventricular Nucleus (PVN) is a neuronal nucleus in the [...] Which are involved with the production of: [x2]",
+      "answer_text": "The Paraventricular Nucleus (PVN) is a neuronal nucleus in the Hypothalamus Which are involved with the production of: ADH & Oxytocin",
+      "fields": {
+        "Text": "The Paraventricular Nucleus (PVN) is a neuronal nucleus in the&nbsp;{{c1::Hypothalamus}}<div><br></div><div>Which are involved with the production of:</div><div><br></div><div>{{c1::ADH &amp; Oxytocin::x2}}<br></div>",
+        "Extra": "<img src=\"paste-5d57f2548ed65452af6131088c0cd3c81c25f058.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582925922473,
+      "note_id": 1582925893998,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "When are PVN neurons activated? [...]",
+      "answer_text": "When are PVN neurons activated? Stressful changes",
+      "fields": {
+        "Text": "When are PVN neurons activated?<div><br></div><div>{{c1::Stressful changes}}<br></div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582925995961,
+      "note_id": 1582925922478,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "PVN neurons project directly to the: [...] And release: [x2]",
+      "answer_text": "PVN neurons project directly to the: Posterior pituitary And release: Oxytocin or Vasopressin Pituitary Stalk",
+      "fields": {
+        "Text": "PVN neurons project directly to the:<div><br></div><div>{{c1::Posterior pituitary}}</div><div><br></div><div>And release:<div><br></div><div>{{c1::Oxytocin</div><div>or</div><div>Vasopressin::x2}}</div></div>",
+        "Extra": "<b><u>Pituitary Stalk</u></b>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582927065875,
+      "note_id": 1582926727745,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is Methods of Limits? 2 Types: [...] What are they? [...]",
+      "answer_text": "What is Methods of Limits? 2 Types: Ascending & Descending What are they? Start too ↓ and work your way ↑ & Vice Versa E.g. using minimum sound threshold; start too quiet and gradually get louder until pt hears it",
+      "fields": {
+        "Text": "What is <b>Methods of Limits?</b><div><b><br></b></div><div><b>2 Types:</b></div><div><b><br></b></div><div>{{c1::Ascending &amp; Descending}}</div><div><br></div><div>What are they?</div><div><br></div><div>{{c1::Start too ↓ and work your way ↑ &amp; Vice Versa}}<br></div>",
+        "Extra": "E.g. using minimum sound threshold; start too quiet and gradually get louder until pt hears it"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582927123591,
+      "note_id": 1582927065916,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Method of Constant Stimulation [Explain]",
+      "answer_text": "Method of Constant Stimulation Everything is constant, except the timing to prevent prediction of stimuli Same volume of beeps, but at different times",
+      "fields": {
+        "Text": "<b>Method of Constant Stimulation</b><div><b><br></b></div><div>{{c1::Everything is constant, except the timing to prevent prediction of stimuli::Explain}}<b><br></b></div>",
+        "Extra": "Same volume of beeps, but at different times"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582927257606,
+      "note_id": 1582927123595,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is Method of Adjustment- method of average error? [...] Then: [...]",
+      "answer_text": "What is Method of Adjustment- method of average error? Pt's have control of the stimulus and alter it to be barely noticeable Then: Compare the variable stimuli and the standard stimuli to measure sensitivity",
+      "fields": {
+        "Text": "What is <b>Method of Adjustment- method of average error?</b><div><b><br></b></div><div>{{c1::Pt's have control of the stimulus and alter it to be barely noticeable}}</div><div><br></div><div>Then:</div><div><br></div><div>{{c1::Compare the variable stimuli and the standard stimuli to measure sensitivity}}<br></div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582927362454,
+      "note_id": 1582927257610,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is Practice effect? [...] Also: [...]",
+      "answer_text": "What is Practice effect? Despite initial practice, participants tend to initially do poorly in the real deal because they're still not properly warmed up Also: Performance tends to ↓ with time due to boredom / fatigue",
+      "fields": {
+        "Text": "What is <b>Practice effect?</b><div><b><br></b></div><div>{{c1::Despite initial practice, participants tend to initially do poorly in the real deal because they're still not properly warmed up}}<b><br></b></div><div><br></div><div>Also:</div><div><br></div><div>{{c1::Performance tends to ↓ with time due to boredom / fatigue}}<br></div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582927603365,
+      "note_id": 1582927362459,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is the Interaural time difference? [...]",
+      "answer_text": "What is the Interaural time difference? Time it takes for sound to reach the L vs. R ear",
+      "fields": {
+        "Text": "What is the <b>Interaural time difference?</b><div><b><br></b></div><div>{{c1::Time it takes for sound to reach the L vs. R ear}}<b><br></b></div>",
+        "Extra": "<img src=\"paste-2105c04c94879ebcb8e0afb7996880c1d829db6a.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582927666684,
+      "note_id": 1582927603392,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "All of the points on the [...] have the same interaural level difference and interaural time difference",
+      "answer_text": "All of the points on the cone of confusion have the same interaural level difference and interaural time difference",
+      "fields": {
+        "Text": "All of the points on the&nbsp;{{c1::cone of confusion}} have the same interaural level difference and interaural time difference",
+        "Extra": "<img src=\"paste-249f5c33b74e9ca78cecb9981349d502c0a42453.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582927723148,
+      "note_id": 1582927666711,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Primary role of Hypocritin? [...] Also known as: [...]",
+      "answer_text": "Primary role of Hypocritin? Control Sleep & Arousal Also known as: Orexin z z Z",
+      "fields": {
+        "Text": "Primary role of <b>Hypocritin?</b><div><b><br></b></div><div>{{c1::Control Sleep &amp; Arousal}}<b><br></b></div><div><br></div><div>Also known as:</div><div>{{c1::Orexin</div><div><sub>z</sub>z<sup>Z</sup>}}<br></div>",
+        "Extra": "<div><img src=\"paste-adc50e13c2b345b35372393207abba839f37737f.jpg\"><br></div><img src=\"paste-618fcf8d684d1c832f15a2c673812315d8c2238f.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582928554203,
+      "note_id": 1582928486675,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is Temporal Monotocity? [...]",
+      "answer_text": "What is Temporal Monotocity? Adding pain at the end of a painful experience will worsen the retrospective evaluation of the experienced pain Breaking your leg after walking across Antarctica will be worsely remembered than eating delicious cake after",
+      "fields": {
+        "Text": "What is <b>Temporal Monotocity?</b><div><b><br></b></div><div>{{c1::Adding pain at the end of a painful experience will worsen the retrospective evaluation of the experienced pain}}<b><br></b></div>",
+        "Extra": "Breaking your leg after walking across Antarctica will be worsely remembered than eating delicious cake after"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582928617885,
+      "note_id": 1582928554209,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Posner and Snyder described an action as automatic if: [...]",
+      "answer_text": "Posner and Snyder described an action as automatic if: The action did not affect other mental activities",
+      "fields": {
+        "Text": "Posner and Snyder described an action as automatic if:<div><br></div><div>{{c1::The action did not affect other mental activities}}<br></div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582928665823,
+      "note_id": 1582928617890,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "The buildup of [...] causes sx such as nausea, HA, flushing of the face, and internal organ damage",
+      "answer_text": "The buildup of Acetaldehyde causes sx such as nausea, HA, flushing of the face, and internal organ damage",
+      "fields": {
+        "Text": "The buildup of {{c1::Acetaldehyde}} causes sx such as nausea, HA, flushing of the face, and internal organ damage",
+        "Extra": "<img src=\"paste-834f9a279c707af378fd2fcbd7c6b418e0ec256a.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582928722950,
+      "note_id": 1582928665857,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "[NT] is associated with ↑ cortical arousal",
+      "answer_text": "Glutamate is associated with ↑ cortical arousal",
+      "fields": {
+        "Text": "{{c1::Glutamate::NT}} is associated with ↑ cortical arousal<br>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582928764682,
+      "note_id": 1582928722955,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Phosphodiesterase decomposes [...] → [...]",
+      "answer_text": "Phosphodiesterase decomposes cAMP → AMP",
+      "fields": {
+        "Text": "{{c2::Phosphodiesterase}} decomposes {{c1::cAMP}} → {{c1::AMP}}",
+        "Extra": "<img src=\"paste-e5432c66d89a3eb15eb82d4de796118df08742a1.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1582928764683,
+      "note_id": 1582928722955,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "[...] decomposes cAMP → AMP",
+      "answer_text": "Phosphodiesterase decomposes cAMP → AMP",
+      "fields": {
+        "Text": "{{c2::Phosphodiesterase}} decomposes {{c1::cAMP}} → {{c1::AMP}}",
+        "Extra": "<img src=\"paste-e5432c66d89a3eb15eb82d4de796118df08742a1.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583001154009,
+      "note_id": 1583001137930,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What does Caffeine do in regards to cAMP ? [...] So: [...]",
+      "answer_text": "What does Caffeine do in regards to cAMP ? Inhibits Phosphodiesterase (enzyme) that breaks down cAMP So: Caffeine leads to more cAMP activity",
+      "fields": {
+        "Text": "<div>What does <b>Caffeine</b> do in regards to <b>cAMP</b>?</div><div><br></div><div>{{c1::Inhibits Phosphodiesterase (enzyme) that breaks down cAMP}}<br></div><div><br></div><div>So:</div><div><br></div><div>{{c1::Caffeine leads to more cAMP activity}}</div>",
+        "Extra": "<img src=\"tmpiv0jmcn7.png\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583001182058,
+      "note_id": 1583001154016,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Caffeine inhibiting the breakdown of cAMP leads to ↑ [...] production",
+      "answer_text": "Caffeine inhibiting the breakdown of cAMP leads to ↑ Glutamate production cAMP pretty much leads to more activity and energy production",
+      "fields": {
+        "Text": "Caffeine inhibiting the breakdown of cAMP leads to ↑ {{c1::Glutamate}} production",
+        "Extra": "cAMP pretty much leads to more activity and energy production"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583001218772,
+      "note_id": 1583001182064,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Most perception of warmth occurs in the [...]",
+      "answer_text": "Most perception of warmth occurs in the Insula",
+      "fields": {
+        "Text": "Most perception of warmth occurs in the&nbsp;{{c1::Insula}}",
+        "Extra": "<img src=\"paste-ac2fc6e32972427d7e8d53f12d2b2576700c0819.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583001245245,
+      "note_id": 1583001218782,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Perception of Annoyance [Brain area]",
+      "answer_text": "Perception of Annoyance Cingulate Cortex",
+      "fields": {
+        "Text": "<div><b>Perception of Annoyance</b></div><div><br></div><div>{{c1::Cingulate Cortex::Brain area}}<br></div>",
+        "Extra": "<img src=\"paste-091c560af2ed6a91c95c9cdb61ddec05e8b1598f.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583001301868,
+      "note_id": 1583001245253,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "[...] in spreading activation occurs because of STDP (Spike Time Dependent Plasticity)",
+      "answer_text": "Asymmetry in spreading activation occurs because of STDP (Spike Time Dependent Plasticity)",
+      "fields": {
+        "Text": "{{c1::Asymmetry}} in spreading activation occurs because of STDP (Spike Time Dependent Plasticity)<br>",
+        "Extra": "<img src=\"paste-2d5bd0f8c0b88ed00121cbe7a1f48a5e78a8d6d6.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583001524895,
+      "note_id": 1583001301885,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is the McGurk effect? [...]",
+      "answer_text": "What is the McGurk effect? Mouth movements influencing our hearing Auditory perception does not match with speech perception",
+      "fields": {
+        "Text": "What is the <b>McGurk effect?</b><div><b><br></b></div><div>{{c1::Mouth movements influencing our hearing}}</div>",
+        "Extra": "Auditory perception does not match with speech perception<div><img src=\"mcgurk-hero.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583001590436,
+      "note_id": 1583001524932,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Melodic Intonation Therapy works best with [...]",
+      "answer_text": "Melodic Intonation Therapy works best with Non-fluent aphasia",
+      "fields": {
+        "Text": "Melodic Intonation Therapy works best with&nbsp;{{c1::Non-fluent aphasia}}",
+        "Extra": "<img src=\"paste-c41968e6ed670eeb3332acb8d08c95669cc28dc3.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583001627497,
+      "note_id": 1583001590443,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Receptive aphasia is a [...] aphasia",
+      "answer_text": "Receptive aphasia is a fluent aphasia",
+      "fields": {
+        "Text": "Receptive aphasia is a {{c1::fluent}} aphasia",
+        "Extra": "<img src=\"paste-13ac59fb04d152353ac9bdd5259e64f79708bbbb.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583001679315,
+      "note_id": 1583001627503,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Broca's aphasia is a [Fluent or Non-Fluent] form of aphasia",
+      "answer_text": "Broca's aphasia is a non-fluent form of aphasia",
+      "fields": {
+        "Text": "Broca's aphasia is a {{c1::non-fluent::Fluent or Non-Fluent}} form of aphasia",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583001774638,
+      "note_id": 1583001679321,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "A Mediating variable explains: [...]",
+      "answer_text": "A Mediating variable explains: Why 2 things are related Example: If someone makes the statement: \"Whenever I watch tv at night, I feel tired the next morning\" The mediating variable in this case would be that the person didn't get enough sleep because they were watching tv last night. So not getting enough sleep mediates the relationship between tv watching and being tired.",
+      "fields": {
+        "Text": "A <b>Mediating variable </b>explains:<div><br></div><div>{{c1::Why 2 things are related}}<br></div>",
+        "Extra": "<div>Example: If someone makes the statement: \"Whenever I watch tv at night, I feel tired the next morning\"</div><div><br></div><div>The mediating variable in this case would be that the person didn't get enough sleep because they were watching tv last night. So not getting enough sleep mediates the relationship between tv watching and being tired.</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583001820258,
+      "note_id": 1583001774644,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "A Moderating variable affects: [...]",
+      "answer_text": "A Moderating variable affects: The strength of the relationship between 2 variables For example, if a study is done to see how likely a person will be to cry by watching a series of sad videos on youtube, a moderating variable could be the gender of the person being tested. So perhaps one gender is more likely to cry compared to the other gender so the strength of the relation between crying and watching sad videos will change. Moderating variables can include all sorts of things like location, gender, race, religion, etc.",
+      "fields": {
+        "Text": "A <b>Moderating variable </b>affects:<div><br></div><div>{{c1::The strength of the relationship between 2 variables}}<br></div>",
+        "Extra": "<div>For example, if a study is done to see how likely a person will be to cry by watching a series of sad videos on youtube, a moderating variable could be the gender of the person being tested. So perhaps one gender is more likely to cry compared to the other gender so the strength of the relation between crying and watching sad videos will change.</div><div><br></div><div>Moderating variables can include all sorts of things like location, gender, race, religion, etc.</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583001873217,
+      "note_id": 1583001820264,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "A Confounding variable correlates and explains: [...]",
+      "answer_text": "A Confounding variable correlates and explains: BOTH the IV & DV For example, if someone says: \"Whenever I'm driving on nice roads I see clean sidewalks, they will make the assumption that nice roads correlates to clean sidewalks. But perhaps whenever the person is driving on a nice road they are in a nice and rich neighborhood. So the status of the neighborhood is the confounding variable that explains both why the roads are nice and why the sidewalks are clean.",
+      "fields": {
+        "Text": "A <b>Confounding variable </b>correlates and explains:<div><br></div><div>{{c1::BOTH the IV &amp; DV}}<br></div>",
+        "Extra": "For example, if someone says: \"Whenever I'm driving on nice roads I see clean sidewalks, they will make the assumption that nice roads correlates to clean sidewalks. But perhaps whenever the person is driving on a nice road they are in a nice and rich neighborhood. So the status of the neighborhood is the confounding variable that explains&nbsp;<em>both</em>&nbsp;why the roads are nice and why the sidewalks are clean."
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583001938309,
+      "note_id": 1583001873253,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "The [...] are golf ball shaped groups of nuclei located within the temporal lobes of the brain. They serve to assist in the processing of memory, decision-making, and emotional reactions.",
+      "answer_text": "The amygdalae are golf ball shaped groups of nuclei located within the temporal lobes of the brain. They serve to assist in the processing of memory, decision-making, and emotional reactions.",
+      "fields": {
+        "Text": "<div> <div> <div> <div>The {{c1::amygdalae}} are golf ball shaped groups of nuclei located within the temporal lobes of the brain.&nbsp;</div><div><br></div><div>They serve to assist in the processing of memory, decision-making, and emotional reactions.<br> </div> </div> </div></div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583002929748,
+      "note_id": 1583002852753,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is Cognitive Therapy? (CT) [...]",
+      "answer_text": "What is Cognitive Therapy? (CT) Identify and change unhealthy thinking, problematic behavior, and distressing emotional responses",
+      "fields": {
+        "Text": "What is Cognitive Therapy? (CT)<div><br></div><div>{{c1::<font color=\"#e7ff00\">Identify</font> and <font color=\"#e7ff00\">change</font> unhealthy thinking, problematic behavior, and distressing emotional responses}}<br></div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583002987559,
+      "note_id": 1583002929782,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is the Opponent process model? [...]",
+      "answer_text": "What is the Opponent process model? Accounts for a wide range of behavior What goes up must come down",
+      "fields": {
+        "Text": "What is the Opponent process model?<div><br></div><div>{{c1::Accounts for a wide range of behavior</div><div>What goes up must come down}}<br></div>",
+        "Extra": "<img src=\"paste-2a296667a38202af14faf351d9a084938a213f97.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583003111355,
+      "note_id": 1583002987570,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is the Diathesis-Stress model? [...] However: [...]",
+      "answer_text": "What is the Diathesis-Stress model? Some people are predisposed to having a specific mental illness However: Many illnesses will never manifest bc of their positive environment",
+      "fields": {
+        "Text": "What is the <b>Diathesis-Stress model?</b><div><b><br></b></div><div>{{c1::Some people are <font color=\"#ff0000\">predisposed</font> to having a <font color=\"#ff0000\">specific mental illness</font>}}</div><div><br></div><div>However:</div><div><br></div><div>{{c1::Many illnesses will <font color=\"#00f600\">never</font> <font color=\"#00f600\">manifest</font> bc of their <font color=\"#00f600\">positive environment</font>}}</div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583003210283,
+      "note_id": 1583003111361,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "[...] Studies aim to make comparisons across different countries or cultures",
+      "answer_text": "Comparative Studies aim to make comparisons across different countries or cultures",
+      "fields": {
+        "Text": "{{c1::<b>Comparative</b>}}<b>&nbsp;Studies </b>aim to make comparisons across different countries or cultures",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583003262083,
+      "note_id": 1583003210290,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is the Flynn effect? [...]",
+      "answer_text": "What is the Flynn effect? The growth of IQ in each generation Each generation is getting smarter",
+      "fields": {
+        "Text": "What is the <b>Flynn effect?</b><div><b><br></b></div><div>{{c1::The growth of IQ in each generation}}<b><br></b></div>",
+        "Extra": "Each generation is getting smarter<div><img src=\"the-flynn-effect-gains-in-mean-iq-intelligence-quotient-for-world-regions-1909-2013.svg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583003298216,
+      "note_id": 1583003262119,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is Egoism? [...]",
+      "answer_text": "What is Egoism? People act based on their own self-interest and welfare Selfish",
+      "fields": {
+        "Text": "What is <b>Egoism?</b><div><b><br></b></div><div>{{c1::People act based on their own self-interest and welfare}}<b><br></b></div>",
+        "Extra": "Selfish"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583003334337,
+      "note_id": 1583003298221,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is etiology? [...]",
+      "answer_text": "What is etiology? The manner of causation biiiig scribe word",
+      "fields": {
+        "Text": "What is <b>etiology?</b><div><b><br></b></div><div>{{c1::The manner of causation}}<b><br></b></div>",
+        "Extra": "biiiig scribe word"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583003436423,
+      "note_id": 1583003334343,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is the Nigrescence model? [...]",
+      "answer_text": "What is the Nigrescence model? The process of becoming Black Journey toward an integrated racial identity I'm shocked this is a real model",
+      "fields": {
+        "Text": "What is the <b>Nigrescence model?</b><div><b><br></b></div><div>{{c1::The process of becoming Black}}<b><br></b></div>",
+        "Extra": "Journey toward an integrated racial identity<div><img src=\"paste-3fc9c707d4a0adf719df84afde2be690d546e3bb.jpg\"><br></div><div>I'm shocked this is a real model</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583003477364,
+      "note_id": 1583003436433,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is Conditioned memory? [...]",
+      "answer_text": "What is Conditioned memory? Memory formed based on association between 2 things",
+      "fields": {
+        "Text": "What is <b>Conditioned memory?</b><div><b><br></b></div><div>{{c1::Memory formed based on association between 2 things}}<b><br></b></div>",
+        "Extra": "<img src=\"paste-a8f3bb1b285f804a29d00ec384c27f829cc60f70.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583003577485,
+      "note_id": 1583003542780,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is Minority influence? [...]",
+      "answer_text": "What is Minority influence? Smaller group persuades majority to join their side \"Hey, maybe we should legalize all drugs\" -Portugal to the Rest of the World",
+      "fields": {
+        "Text": "What is <b>Minority influence?</b><div><b><br></b></div><div>{{c1::Smaller group persuades majority to join their side}}<b><br></b></div>",
+        "Extra": "<div>\"Hey,<b> </b>maybe we should legalize all drugs\" <b><u>-Portugal to the Rest of the World</u></b></div><div><br></div><img src=\"paste-5fb10d88f61de3d49700ff1c5f6eb5e7f857b4d2.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583003651203,
+      "note_id": 1583003577517,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "Multiple Approach-Avoidance [...]",
+      "answer_text": "Multiple Approach-Avoidance Internal mental debate Weighs Pros and Cons for situations",
+      "fields": {
+        "Text": "<b>Multiple Approach-Avoidance</b><div><b><br></b></div><div>{{c1::Internal mental debate</div><div><br></div><div>Weighs Pros and Cons for situations}}<br></div>",
+        "Extra": "<img src=\"paste-7e98d17e3c173ed5c401d543348d2f11a7b79ace.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583003697719,
+      "note_id": 1583003651220,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is the Approach-Approach conflict? [...]",
+      "answer_text": "What is the Approach-Approach conflict? 2 options and both are appealing Do I want to take shrooms or acid?",
+      "fields": {
+        "Text": "What is the <b>Approach-Approach conflict?</b><div><b><br></b></div><div>{{c1::2 options and both are <font color=\"#00f600\">appealing</font>}}<b><br></b></div>",
+        "Extra": "<img src=\"paste-9065c405389f8c937d22ef494f94bc85620dbce3.jpg\"><div>Do I want to take shrooms or acid?</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583003746444,
+      "note_id": 1583003697725,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is Avoidant-Avoidant conflict? [...]",
+      "answer_text": "What is Avoidant-Avoidant conflict? 2 options and both are unappealing Do I want to practice Physics or CARS....",
+      "fields": {
+        "Text": "What is <b>Avoidant-Avoidant conflict?</b><div><b><br></b></div><div>{{c1::2 options and both are <font color=\"#ff0000\">unappealing</font>}}<b><br></b></div>",
+        "Extra": "<img src=\"Info-Conflict-AvAv-border-661x1024.jpg\"><div>Do I want to practice Physics or CARS....</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583003838115,
+      "note_id": 1583003746450,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is Approach-Avoidance conflict? [...]",
+      "answer_text": "What is Approach-Avoidance conflict? An action has both undesirable and desireable outcomes Proposing to your GF",
+      "fields": {
+        "Text": "What is <b>Approach-Avoidance conflict?</b><div><b><br></b></div><div>{{c1::An action has both <font color=\"#ff0000\">undesirable</font> and <font color=\"#00f600\">desireable outcomes</font>}}<b><br></b></div>",
+        "Extra": "Proposing to your GF"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583003895604,
+      "note_id": 1583003838121,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is the Double Approach-Avoidant conflicts? [...]",
+      "answer_text": "What is the Double Approach-Avoidant conflicts? 2 options, both appealing and unappealing Do I want to study for school or the MCAT",
+      "fields": {
+        "Text": "What is the <b>Double Approach-Avoidant conflicts?</b><div><b><br></b></div><div>{{c1::2 options, both <font color=\"#00f600\">appealing</font> and <font color=\"#ff0000\">unappealing</font>}}<b><br></b></div>",
+        "Extra": "Do I want to study for school or the MCAT"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583004067266,
+      "note_id": 1583003895645,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is the Cialidini's Reciprocity principle of influence? [...]",
+      "answer_text": "What is the Cialidini's Reciprocity principle of influence? People tend to return a favor",
+      "fields": {
+        "Text": "What is the <b>Cialidini's <font color=\"#ff00f1\">Reciprocity</font> principle of influence?</b><div><b><br></b></div><div>{{c1::People tend to return a favor}}<b><br></b></div>",
+        "Extra": "<img src=\"paste-744cc19f1264ed68f87c969189247b6068c32782.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583004344331,
+      "note_id": 1583004067283,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is the Cialidini's Commitment and Consistency principle of influence? [...]",
+      "answer_text": "What is the Cialidini's Commitment and Consistency principle of influence? If people commit to something, they relate it to their self-image and tend to follow through",
+      "fields": {
+        "Text": "What is the <b>Cialidini's <font color=\"#ff00f1\">Commitment and Consistency</font> principle of influence?</b><div><b><br></b></div><div>{{c1::If people commit to something, they relate it to their <b>self-image </b>and tend to follow through}}<b><br></b></div>",
+        "Extra": "<img src=\"paste-744cc19f1264ed68f87c969189247b6068c32782.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583004422828,
+      "note_id": 1583004344367,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is the Cialidini's Social Proof principle of influence? [...]",
+      "answer_text": "What is the Cialidini's Social Proof principle of influence? People will do things that they see other people are doing",
+      "fields": {
+        "Text": "What is the <b>Cialidini's <font color=\"#ff00f1\">Social Proof</font> principle of influence?</b><div><b><br></b></div><div>{{c1::People will do things that they see other people are doing}}<b><br></b></div>",
+        "Extra": "<img src=\"paste-744cc19f1264ed68f87c969189247b6068c32782.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583004450789,
+      "note_id": 1583004422833,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is the Cialidini's Authority principle of influence? [...]",
+      "answer_text": "What is the Cialidini's Authority principle of influence? People will tend to obey authority figures But fuck 12 tho",
+      "fields": {
+        "Text": "What is the <b>Cialidini's <font color=\"#ff00f1\">Authority</font> principle of influence?</b><div><b><br></b></div><div>{{c1::People will tend to obey authority figures}}<b><br></b></div>",
+        "Extra": "<div>But fuck 12 tho</div><img src=\"paste-744cc19f1264ed68f87c969189247b6068c32782.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583004476402,
+      "note_id": 1583004450795,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is the Cialidini's Liking principle of influence? [...]",
+      "answer_text": "What is the Cialidini's Liking principle of influence? People are easily persuaded by other people that they like",
+      "fields": {
+        "Text": "What is the <b>Cialidini's <font color=\"#ff00f1\">Liking</font> principle of influence?</b><div><b><br></b></div><div>{{c1::People are easily persuaded by other people that they like}}<b><br></b></div>",
+        "Extra": "<div><br></div><img src=\"paste-744cc19f1264ed68f87c969189247b6068c32782.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583004508010,
+      "note_id": 1583004476409,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is the Cialidini's Scarcity principle of influence? [...]",
+      "answer_text": "What is the Cialidini's Scarcity principle of influence? Perceived scarcity will generate demand For a limited time only, there is a 20% discount!! Buy now!",
+      "fields": {
+        "Text": "What is the <b>Cialidini's <font color=\"#ff00f1\">Scarcity</font> principle of influence?</b><div><b><br></b></div><div>{{c1::Perceived scarcity will generate demand}}<b><br></b></div>",
+        "Extra": "<div>For a limited time only, there is a 20% discount!! Buy now!</div><img src=\"paste-744cc19f1264ed68f87c969189247b6068c32782.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1583004566378,
+      "note_id": 1583004508016,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Research Methods & Statistics",
+      "notetype": "Cloze-8d4a6",
+      "question_text": "What is Spatial discrimination? [...]",
+      "answer_text": "What is Spatial discrimination? The ability to perceive 2 individual presses on your skin Like that neuro lab ya yeet",
+      "fields": {
+        "Text": "What is <b>Spatial discrimination?</b><div><b><br></b></div><div>{{c1::The ability to perceive 2 individual presses on your skin}}<b><br></b></div>",
+        "Extra": "Like that neuro lab ya yeet"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590296988008,
+      "note_id": 1590296936763,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Visual cues allow us to [...]",
+      "answer_text": "Visual cues allow us to perceptually organize",
+      "fields": {
+        "Text": "{{c2::<font color=\"#00ffff\">Visual cues</font>}} allow us to {{c1::<font color=\"#00ffff\">perceptually</font><font color=\"#ff0004\"> </font><font color=\"#00ffff\">organize</font>}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590296988009,
+      "note_id": 1590296936763,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] allow us to perceptually organize",
+      "answer_text": "Visual cues allow us to perceptually organize",
+      "fields": {
+        "Text": "{{c2::<font color=\"#00ffff\">Visual cues</font>}} allow us to {{c1::<font color=\"#00ffff\">perceptually</font><font color=\"#ff0004\"> </font><font color=\"#00ffff\">organize</font>}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590297041691,
+      "note_id": 1590296988180,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Visual cues include [...] , [...] , [...] , and [...]",
+      "answer_text": "Visual cues include depth , form , motion , and constancy",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">Visual cues</font> include {{c1::depth}}, {{c1::form}}, {{c1::motion}}, and {{c1::constancy}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590297092387,
+      "note_id": 1590297041769,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Visual cues that are a result of humans having two eyes are called [...]",
+      "answer_text": "Visual cues that are a result of humans having two eyes are called binocular cues",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">Visual cues</font> that are a result of humans having<font color=\"#ff0004\"> two eyes</font> are called&nbsp;{{c1::binocular cues}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590297264357,
+      "note_id": 1590297092458,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Binocular cues give humans a sense of [...]",
+      "answer_text": "Binocular cues give humans a sense of depth This is a result of retinal disparity, which is the fact that each of your eyeballs has a different perspective on the world.",
+      "fields": {
+        "Text": "<b><font color=\"#ff0004\">Binocular cues</font></b> give humans a sense of {{c1::depth}}",
+        "Extra": "<div><i><font color=\"#ff0004\"><br></font></i></div><i><font color=\"#00ffff\">This is a result of retinal disparity, which is the fact that each of your eyeballs has a different perspective on the world.</font></i><div><i><font color=\"#00ffff\"><br></font></i></div><div><font color=\"#00ffff\"><img src=\"paste-a2a62c2fa70f135d31e5798460de1f056c0fdc1f.jpg\"></font><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590297348226,
+      "note_id": 1590297320780,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] gives humans an idea of depth based on how much the eyeballs are turned .",
+      "answer_text": "Convergence gives humans an idea of depth based on how much the eyeballs are turned . Things far away have less retinal disparity Things close up have more retinal disparity",
+      "fields": {
+        "Text": "{{c1::Convergence}} gives humans an idea of <font color=\"#ff0004\">depth</font> based on how much the <font color=\"#ff0004\">eyeballs are turned</font>.",
+        "Extra": "<div><i><font color=\"#ff0004\"><br></font></i></div><i><font color=\"#ff0004\">Things far away have less retinal disparity</font></i><div><i><font color=\"#ff0004\">Things close up have more retinal disparity</font></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590297489757,
+      "note_id": 1590297348326,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Visual cues that involve only one eyeball are called [...]",
+      "answer_text": "Visual cues that involve only one eyeball are called monocular cues",
+      "fields": {
+        "Text": "Visual cues that involve only <font color=\"#ff0004\">one eyeball</font> are called&nbsp;{{c1::monocular cues}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590297513990,
+      "note_id": 1590297489830,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Monocular cues include: [...] [...] [...] [...] [...] [...]",
+      "answer_text": "Monocular cues include: relative size interposition relative height shading and contour motion parallax constancy",
+      "fields": {
+        "Text": "Monocular cues include:<div><br><div><div>{{c1::relative size}}</div><div>{{c1::interposition}}</div><div>{{c1::relative height}}</div><div>{{c1::shading and contour}}</div><div>{{c1::motion parallax}}</div><div>{{c1::constancy}}</div></div></div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590297562552,
+      "note_id": 1590297514052,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is a monocular cue where closer objects are percieved as being bigger",
+      "answer_text": "Relative Size is a monocular cue where closer objects are percieved as being bigger",
+      "fields": {
+        "Text": "{{c1::Relative Size}} is a <font color=\"#ff0004\">monocular cue</font> where closer objects are percieved as being bigger<br>",
+        "Extra": "<img src=\"paste-47fcc8116d4850f98e6c5d7ab9c1c1f0a75c6f49.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590297617850,
+      "note_id": 1590297562634,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is a monocular cue where objects are percieved as being closer when they are infront of something",
+      "answer_text": "Interposition is a monocular cue where objects are percieved as being closer when they are infront of something",
+      "fields": {
+        "Text": "{{c1::Interposition}} is a <font color=\"#00ffff\">monocular cue</font> where objects are percieved as being closer when they are infront of something<br>",
+        "Extra": "<img src=\"paste-cf5ff70f9fb0a564326492a546ee9f22dacf395b.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590297653428,
+      "note_id": 1590297617888,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is a monocular cue where an object is percieved as being further away when it is higher in the visual field",
+      "answer_text": "Relative height is a monocular cue where an object is percieved as being further away when it is higher in the visual field",
+      "fields": {
+        "Text": "{{c1::Relative height}} is a <font color=\"#00ffff\">monocular cue</font> where an object is percieved as being further away when it is higher in the visual field<br>",
+        "Extra": "<img src=\"paste-21cd656fa4051c1c67c063d418f94323a13cf736.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590297875646,
+      "note_id": 1590297653581,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is a monocular cue that uses light and shadows to perceive form/depth/contours",
+      "answer_text": "Shading and contour is a monocular cue that uses light and shadows to perceive form/depth/contours Common example is a crater/mountain as depicted below",
+      "fields": {
+        "Text": "{{c1::Shading and contour}} is a monocular cue that uses <font color=\"#ff0004\">light</font> and <font color=\"#ff0004\">shadows</font> to perceive form/depth/contours<br>",
+        "Extra": "<font color=\"#ff0004\">Common example is a crater/mountain as depicted below</font><div><font color=\"#ff0004\"><br></font></div><div><font color=\"#ff0004\"><img src=\"paste-31e544aa8906f2a4c919e2c5421b76e9822f41c8.jpg\"></font><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590297966616,
+      "note_id": 1590297875734,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is a monocular cue that can give a sense of depth through motion. It states that things farther away move slower and things closer to you move faster",
+      "answer_text": "Motion parallax is a monocular cue that can give a sense of depth through motion. It states that things farther away move slower and things closer to you move faster",
+      "fields": {
+        "Text": "{{c1::<b style=\"\"><font color=\"#ffc0fe\">Motion parallax</font></b>}} is a <b style=\"\"><font color=\"#ffc0fe\">monocular cue</font></b> that can give a sense of depth through motion. It states that things farther away move {{c2::<b style=\"\"><font color=\"#ffc0fe\">slower</font></b>}} and things closer to you move {{c2::<b style=\"\"><font color=\"#ffc0fe\">faster</font></b>}}<br>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590297966617,
+      "note_id": 1590297875734,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Motion parallax is a monocular cue that can give a sense of depth through motion. It states that things farther away move [...] and things closer to you move [...]",
+      "answer_text": "Motion parallax is a monocular cue that can give a sense of depth through motion. It states that things farther away move slower and things closer to you move faster",
+      "fields": {
+        "Text": "{{c1::<b style=\"\"><font color=\"#ffc0fe\">Motion parallax</font></b>}} is a <b style=\"\"><font color=\"#ffc0fe\">monocular cue</font></b> that can give a sense of depth through motion. It states that things farther away move {{c2::<b style=\"\"><font color=\"#ffc0fe\">slower</font></b>}} and things closer to you move {{c2::<b style=\"\"><font color=\"#ffc0fe\">faster</font></b>}}<br>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590298045663,
+      "note_id": 1590297966757,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is a monocular cue that states our perception of an object doesn't change even if the image cast on the retina is different.",
+      "answer_text": "Constancy is a monocular cue that states our perception of an object doesn't change even if the image cast on the retina is different. The three types include size constancy , shape constancy , and color constancy",
+      "fields": {
+        "Text": "{{c1::Constancy}} is a <font color=\"#ff0004\">monocular cue</font> that states our perception of an object doesn't change even if the image cast on the retina is different.<br>",
+        "Extra": "<div><font color=\"#ff0004\"><br></font></div><font color=\"#ff0004\">The three types include </font><font color=\"#cc00ff\">size constancy</font><font color=\"#ff0004\">, </font><font color=\"#cc00ff\">shape constancy</font><font color=\"#ff0004\">, and</font> <font color=\"#df25ff\">color constancy</font><div><img src=\"500px-Shape_constancy.gif\"><font color=\"#ff0004\"><br></font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590298338449,
+      "note_id": 1590298244872,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] states that our senses are adaptable and that they can change their sensitivity over time",
+      "answer_text": "Sensory adaptation states that our senses are adaptable and that they can change their sensitivity over time",
+      "fields": {
+        "Text": "{{c1::Sensory adaptation}} states that our senses are <font color=\"#ff0004\">adaptable</font> and that they can <font color=\"#ff0004\">change their sensitivity</font> over time<br>",
+        "Extra": "<div><br></div><div><img src=\"screen_shot_2014-06-26_at_12.11.19_pm_126751.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590298444962,
+      "note_id": 1590298338609,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] involves contracting our inner ear muscle to dampen vibrations and protect the tympanic membrane",
+      "answer_text": "Hearing adaptation involves contracting our inner ear muscle to dampen vibrations and protect the tympanic membrane",
+      "fields": {
+        "Text": "{{c1::Hearing adaptation}} involves&nbsp;{{c2::contracting our inner ear muscle to <font color=\"#ff0004\">dampen vibrations </font>and <font color=\"#ff0004\">protect the tympanic membrane</font>}}<br>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591238490441,
+      "note_id": 1590298338609,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Hearing adaptation involves [...]",
+      "answer_text": "Hearing adaptation involves contracting our inner ear muscle to dampen vibrations and protect the tympanic membrane",
+      "fields": {
+        "Text": "{{c1::Hearing adaptation}} involves&nbsp;{{c2::contracting our inner ear muscle to <font color=\"#ff0004\">dampen vibrations </font>and <font color=\"#ff0004\">protect the tympanic membrane</font>}}<br>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590298613706,
+      "note_id": 1590298445052,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "In down-regulation of sight, when it is bright outside our pupils [...] and our rods and cones become [...] to light",
+      "answer_text": "In down-regulation of sight, when it is bright outside our pupils constrict and our rods and cones become desensitized to light",
+      "fields": {
+        "Text": "In <font color=\"#ff0004\">down-regulation</font> of sight, when it is <font color=\"#ff0004\">bright</font> outside our pupils&nbsp;{{c1::constrict}} and our rods and cones become&nbsp;{{c1::desensitized}} to light",
+        "Extra": "<img src=\"IllfatedWelcomeHawk-max-1mb.gif\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590298686871,
+      "note_id": 1590298613748,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "In up-regulation of sight, our pupils [...] and our rods and cones begin to synthesize [...]",
+      "answer_text": "In up-regulation of sight, our pupils dilate and our rods and cones begin to synthesize light sensitive molecules",
+      "fields": {
+        "Text": "In&nbsp;<font color=\"#ffc0fe\"><b>up-regulation</b></font> of sight, our pupils {{c1::dilate}} and our rods and cones begin to synthesize {{c1::light sensitive molecules}}",
+        "Extra": "<br><div><img src=\"200.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590298777837,
+      "note_id": 1590298687049,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is the sense of the position of the body in space",
+      "answer_text": "Proprioception is the sense of the position of the body in space AKA: the sense of balance/where you are in space",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">Proprioception</font>}} is the sense of the {{c2::<font color=\"#ff0004\">position of the body in space</font>}}<br>",
+        "Extra": "<i><br></i><div><i>AKA: the sense of balance/where you are in space</i></div><div><img src=\"Image-4.png\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590298777838,
+      "note_id": 1590298687049,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Proprioception is the sense of the [...]",
+      "answer_text": "Proprioception is the sense of the position of the body in space AKA: the sense of balance/where you are in space",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">Proprioception</font>}} is the sense of the {{c2::<font color=\"#ff0004\">position of the body in space</font>}}<br>",
+        "Extra": "<i><br></i><div><i>AKA: the sense of balance/where you are in space</i></div><div><img src=\"Image-4.png\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590298916152,
+      "note_id": 1590298777926,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The [...] is the threshold at which you're able to notice a change in sensation",
+      "answer_text": "The just noticeable difference is the threshold at which you're able to notice a change in sensation",
+      "fields": {
+        "Text": "The {{c1::just noticeable difference}} is the threshold at which you're able to {{c2::notice a change in sensation}}",
+        "Extra": "<br><div><img src=\"8909447-big-and-small-weights-isolated-on-white.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590298916153,
+      "note_id": 1590298777926,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The just noticeable difference is the threshold at which you're able to [...]",
+      "answer_text": "The just noticeable difference is the threshold at which you're able to notice a change in sensation",
+      "fields": {
+        "Text": "The {{c1::just noticeable difference}} is the threshold at which you're able to {{c2::notice a change in sensation}}",
+        "Extra": "<br><div><img src=\"8909447-big-and-small-weights-isolated-on-white.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590299100443,
+      "note_id": 1590298916236,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Weber's Law states that [...]",
+      "answer_text": "Weber's Law states that The JND (delta I) / Initial Intensity (I) = k (constant) This pretty much means that their is a linear relationship between the JND and the intial intensity So, you might be able to differentiate between 2 an 2.2 lbs but you can't between 5 and 5.2 lbs. However, you could differentiate between 5 and 5.5 lbs.",
+      "fields": {
+        "Text": "Weber's Law states that&nbsp;{{c1:: The JND (delta I) / Initial Intensity (I) = k (constant)}}",
+        "Extra": "<div><i><br></i></div><div><i>This pretty much means that their is a linear relationship between the JND and the intial intensity</i></div><div><i><br></i></div><div><i>So, you might be able to differentiate between 2 an 2.2 lbs but you can't between 5 and 5.2 lbs. However, you could differentiate between 5 and 5.5 lbs.</i></div><i><br></i><div><i><img src=\"Webers-law-log-log-scale-Difference-threshold-increases-with-stimulus-intensity.png\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590299217634,
+      "note_id": 1590299100606,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is the minimum intensity of stimulus needed to detect a particular stimulus 50% of the time",
+      "answer_text": "The absolute threshold of sensation is the minimum intensity of stimulus needed to detect a particular stimulus 50% of the time",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">The absolute threshold of sensation</font>}} is the {{c2::<font color=\"#ff0004\">minimum intensity</font> of stimulus needed to detect a particular stimulus <font color=\"#ff0004\">50%</font> of the time}}",
+        "Extra": "<br><div><br></div><div><img src=\"200258527-003-56a793363df78cf7729749df.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590299217635,
+      "note_id": 1590299100606,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The absolute threshold of sensation is the [...]",
+      "answer_text": "The absolute threshold of sensation is the minimum intensity of stimulus needed to detect a particular stimulus 50% of the time",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">The absolute threshold of sensation</font>}} is the {{c2::<font color=\"#ff0004\">minimum intensity</font> of stimulus needed to detect a particular stimulus <font color=\"#ff0004\">50%</font> of the time}}",
+        "Extra": "<br><div><br></div><div><img src=\"200258527-003-56a793363df78cf7729749df.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590299333676,
+      "note_id": 1590299217698,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The absolute threshold of sensation can be influenced by the following: [...] [...] [...] [...]",
+      "answer_text": "The absolute threshold of sensation can be influenced by the following: Expectations Experience Motivation Alertness",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">The absolute threshold of sensation</font> can be influenced by the following:<div><br></div><div>{{c1::Expectations}}</div><div>{{c1::Experience}}</div><div>{{c1::Motivation}}</div><div>{{c1::Alertness}}</div>",
+        "Extra": "<br><div><img src=\"paste-90d3a71a444eb65bb8f29ea4652fad2feb517812.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590299359634,
+      "note_id": 1590299333756,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is a stimuli below the absolute threshold of sensation",
+      "answer_text": "A subliminal stimuli is a stimuli below the absolute threshold of sensation",
+      "fields": {
+        "Text": "{{c1::A subliminal stimuli}} is a stimuli<font color=\"#ff0004\"> below</font> the absolute threshold of sensation",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590299796302,
+      "note_id": 1590299531624,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Somatosensation of temperature is called [...]",
+      "answer_text": "Somatosensation of temperature is called thermoception",
+      "fields": {
+        "Text": "Somatosensation of temperature is called&nbsp;{{c1::thermoception}}",
+        "Extra": "<br><div><img src=\"avatar_zuko.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590299853604,
+      "note_id": 1590299796385,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Somatosensation of pressure is called [...]",
+      "answer_text": "Somatosensation of pressure is called mechanoception",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">Somatosensation</font> of pressure is called&nbsp;{{c1::mechanoception}}",
+        "Extra": "<br><div><img src=\"giphy (2).gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590300118726,
+      "note_id": 1590299853774,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Somatosensation of pain is called [...]",
+      "answer_text": "Somatosensation of pain is called nociception",
+      "fields": {
+        "Text": "Somatosensation of <font color=\"#ff0004\">pain</font> is called {{c1::nociception}}",
+        "Extra": "<br><div><img src=\"Existence-is-Pain_800x800_SEPS-1000x1000.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590300185740,
+      "note_id": 1590300118812,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Somatosensation of position is called [...]",
+      "answer_text": "Somatosensation of position is called proprioception",
+      "fields": {
+        "Text": "Somatosensation of <font color=\"#ff0004\">position</font> is called&nbsp;{{c1::proprioception}}",
+        "Extra": "<div><br></div><div><img src=\"proprioceptors-bicep-reflex.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590300283945,
+      "note_id": 1590300251165,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] neuron's fire at a constant rate",
+      "answer_text": "Non-adapting neuron's fire at a constant rate",
+      "fields": {
+        "Text": "{{c1::Non-adapting}} neuron's fire at a <font color=\"#ff0004\">constant rate</font><br>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590300327851,
+      "note_id": 1590300284025,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[type of neuron] fire at the beginning of a stimulus and calm down after a while",
+      "answer_text": "Slow-adapting neurons fire at the beginning of a stimulus and calm down after a while",
+      "fields": {
+        "Text": "{{c1::Slow-adapting neurons::type of neuron}} fire at the {{c2::beginning of a stimulus and calm down after a while}}<br>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590300327852,
+      "note_id": 1590300284025,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Slow-adapting neurons fire at the [...]",
+      "answer_text": "Slow-adapting neurons fire at the beginning of a stimulus and calm down after a while",
+      "fields": {
+        "Text": "{{c1::Slow-adapting neurons::type of neuron}} fire at the {{c2::beginning of a stimulus and calm down after a while}}<br>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590300367928,
+      "note_id": 1590300327925,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[type of neuron] fires as soon as a stimulus starts, then stops firing, then starts again when stimulus stops",
+      "answer_text": "Fast-adapting neuron fires as soon as a stimulus starts, then stops firing, then starts again when stimulus stops",
+      "fields": {
+        "Text": "{{c1::Fast-adapting neuron::type of neuron}} fires {{c2::as soon as a stimulus starts, then stops firing, then starts again when stimulus stops}}<br>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590300380835,
+      "note_id": 1590300327925,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Fast-adapting neuron fires [...]",
+      "answer_text": "Fast-adapting neuron fires as soon as a stimulus starts, then stops firing, then starts again when stimulus stops",
+      "fields": {
+        "Text": "{{c1::Fast-adapting neuron::type of neuron}} fires {{c2::as soon as a stimulus starts, then stops firing, then starts again when stimulus stops}}<br>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590300448590,
+      "note_id": 1590300382311,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[ System ] provides the sense of balance and spatial orientation",
+      "answer_text": "The vestibular system provides the sense of balance and spatial orientation It comes from both the inner ear and the limbs",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ffc0fe\">The vestibular system</font><font color=\"#ff0004\">::</font><font color=\"#a0ff23\">System</font>}} <font color=\"#ffffff\">provides the sense of</font> {{c2::<font color=\"#a0ff23\">balance</font>}} <font color=\"#ffffff\">and&nbsp;</font>{{c2::<font color=\"#a0ff23\">spatial orientation</font>}}",
+        "Extra": "<div><br></div><i><font color=\"#ffffff\">It comes from both the inner ear and the limbs</font></i><br><div><img src=\"vestibular-system-labyrinth-balance-organs-cristae-maculae.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590300448591,
+      "note_id": 1590300382311,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The vestibular system provides the sense of [...] and [...]",
+      "answer_text": "The vestibular system provides the sense of balance and spatial orientation It comes from both the inner ear and the limbs",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ffc0fe\">The vestibular system</font><font color=\"#ff0004\">::</font><font color=\"#a0ff23\">System</font>}} <font color=\"#ffffff\">provides the sense of</font> {{c2::<font color=\"#a0ff23\">balance</font>}} <font color=\"#ffffff\">and&nbsp;</font>{{c2::<font color=\"#a0ff23\">spatial orientation</font>}}",
+        "Extra": "<div><br></div><i><font color=\"#ffffff\">It comes from both the inner ear and the limbs</font></i><br><div><img src=\"vestibular-system-labyrinth-balance-organs-cristae-maculae.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590300672556,
+      "note_id": 1590300485012,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] are filled with endolymph , which is a fluid that shifts to help detect what direction our head is moving in",
+      "answer_text": "The semicircular canals are filled with endolymph , which is a fluid that shifts to help detect what direction our head is moving in Also, since we can determine how quickly the endolymph moves, we can also detect the strength of rotation",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">The semicircular canals</font>}} are filled with {{c2::<font color=\"#ff0004\">endolymph</font>}}, which is a fluid that shifts to help detect what direction our head is moving in",
+        "Extra": "<br><div><i>Also, since we can determine how quickly the endolymph moves, we can also detect the strength of rotation</i></div><div><i><br></i></div><div><img src=\"806854_827107_ans_0db7c6c52bb04635bd4b6784d42c724f.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590300672557,
+      "note_id": 1590300485012,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The semicircular canals are filled with [...] , which is a fluid that shifts to help detect what direction our head is moving in",
+      "answer_text": "The semicircular canals are filled with endolymph , which is a fluid that shifts to help detect what direction our head is moving in Also, since we can determine how quickly the endolymph moves, we can also detect the strength of rotation",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">The semicircular canals</font>}} are filled with {{c2::<font color=\"#ff0004\">endolymph</font>}}, which is a fluid that shifts to help detect what direction our head is moving in",
+        "Extra": "<br><div><i>Also, since we can determine how quickly the endolymph moves, we can also detect the strength of rotation</i></div><div><i><br></i></div><div><img src=\"806854_827107_ans_0db7c6c52bb04635bd4b6784d42c724f.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590300702413,
+      "note_id": 1590300672693,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The otolithic organs include the [...] and [...]",
+      "answer_text": "The otolithic organs include the utricle and saccule",
+      "fields": {
+        "Text": "{{c2::<font color=\"#ff0004\">The otolithic organs</font>}} include the {{c1::<font color=\"#ff0004\">utricle</font>}} and {{c1::<font color=\"#ff0004\">saccule</font>}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590300702414,
+      "note_id": 1590300672693,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] include the utricle and saccule",
+      "answer_text": "The otolithic organs include the utricle and saccule",
+      "fields": {
+        "Text": "{{c2::<font color=\"#ff0004\">The otolithic organs</font>}} include the {{c1::<font color=\"#ff0004\">utricle</font>}} and {{c1::<font color=\"#ff0004\">saccule</font>}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590300748427,
+      "note_id": 1590300702482,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The otolithic organs help detect [...] and [...]",
+      "answer_text": "The otolithic organs help detect linear acceleration and head positioning",
+      "fields": {
+        "Text": "The otolithic organs help detect {{c1::linear acceleration}} and {{c1::head positioning}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590300888726,
+      "note_id": 1590300748510,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The otolithic organs contain [structure] , which attach to [cell type] to trigger action potentials to help determine which way is up/down",
+      "answer_text": "The otolithic organs contain calcium carbonate crystals , which attach to hair cells to trigger action potentials to help determine which way is up/down Gravity is essential to this as well Buoyancy can also have an effect, as this takes place in a viscous gel",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">The otolithic organs</font> contain {{c1::calcium carbonate crystals::structure}}, which attach to {{c1::hair cells::cell type}} to trigger action potentials to help determine which way is up/down",
+        "Extra": "<br><div><i>Gravity is essential to this as well</i></div><div><i>Buoyancy can also have an effect, as this takes place in a viscous gel</i></div><div><i><br></i></div><div><img src=\"Utricle-function20151103-6623-13w7685.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301075491,
+      "note_id": 1590300941764,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Otolithic organs contribute to the phenomena of [...] and [...]",
+      "answer_text": "Otolithic organs contribute to the phenomena of dizziness and vertigo Endolymph doesn't stop moving at the same time we do, so it continues to move and our brain thinks we are still moving even if we are stopped",
+      "fields": {
+        "Text": "<b><i><u>Otolithic organs</u></i></b> contribute to the phenomena of {{c1::dizziness}} and {{c1::vertigo}}",
+        "Extra": "<div><i><br></i></div><div><i>Endolymph doesn't stop moving at the same time we do, so it continues to move and our brain thinks we are still moving even if we are stopped</i></div><div><img src=\"krabs_rag3do.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301142444,
+      "note_id": 1590301075667,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] looks at how humans make decisions under conditions of uncertainty .",
+      "answer_text": "Signal Detection Theory looks at how humans make decisions under conditions of uncertainty . This is used to discern between important and unimportant stimuli",
+      "fields": {
+        "Text": "{{c1::Signal Detection Theory}} looks at how humans <font color=\"#ff0004\">make decisions</font> under conditions of {{c2::<font color=\"#ff0004\">uncertainty</font>}}.",
+        "Extra": "<br><div><i>This is used to discern between important and unimportant stimuli</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301142446,
+      "note_id": 1590301075667,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Signal Detection Theory looks at how humans make decisions under conditions of [...] .",
+      "answer_text": "Signal Detection Theory looks at how humans make decisions under conditions of uncertainty . This is used to discern between important and unimportant stimuli",
+      "fields": {
+        "Text": "{{c1::Signal Detection Theory}} looks at how humans <font color=\"#ff0004\">make decisions</font> under conditions of {{c2::<font color=\"#ff0004\">uncertainty</font>}}.",
+        "Extra": "<br><div><i>This is used to discern between important and unimportant stimuli</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301185742,
+      "note_id": 1590301142529,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Unimportant stimuli can also be called [...]",
+      "answer_text": "Unimportant stimuli can also be called noise",
+      "fields": {
+        "Text": "<font color=\"#ffc0fe\">Unimportant stimuli</font> can also be called&nbsp;{{c1::noise}}",
+        "Extra": "<br><div><img src=\"shutterstock_320741366.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301251805,
+      "note_id": 1590301185822,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is when a subject responded affirmative when a signal was present",
+      "answer_text": "Hit is when a subject responded affirmative when a signal was present",
+      "fields": {
+        "Text": "{{c1::Hit}} is when a subject responded <font color=\"#ff0004\">affirmative</font> when a <font color=\"#ff0004\">signal was present</font>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301274490,
+      "note_id": 1590301251884,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is when the subject perceived a signal when there was none present",
+      "answer_text": "False Alarm is when the subject perceived a signal when there was none present",
+      "fields": {
+        "Text": "{{c1::False Alarm}} is when the subject&nbsp;<span style=\"color: rgb(0, 255, 255);\">perceived&nbsp;</span><font color=\"#00ffff\">a signal </font>when there was <font color=\"#00ffff\">none</font><font color=\"#ff0004\"> </font><font color=\"#00ffff\">present</font>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301295240,
+      "note_id": 1590301274569,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is when a subject gives a negative answer for no signal",
+      "answer_text": "Correct Rejection is when a subject gives a negative answer for no signal",
+      "fields": {
+        "Text": "{{c1::Correct Rejection}} is when a subject gives a <font color=\"#ff0004\">negative answer</font> for <font color=\"#ff0004\">no signal</font>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301407039,
+      "note_id": 1590301295321,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is when a subject gives a negative response to a present signal",
+      "answer_text": "Miss is when a subject gives a negative response to a present signal",
+      "fields": {
+        "Text": "{{c1::Miss}} is when a subject gives a <font color=\"#ff0004\">negative response</font> to a <font color=\"#ff0004\">present signal</font><br>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301457803,
+      "note_id": 1590301407186,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is the symbol for strength of a signal",
+      "answer_text": "d' is the symbol for strength of a signal hit > miss (when signal is strong) miss > hit (when signal is weak)",
+      "fields": {
+        "Text": "{{c1::d'}} is the symbol for <font color=\"#ff0004\">strength of a signal</font>",
+        "Extra": "<div><i><br></i></div><i><font color=\"#ff0004\">hit &gt; miss (when signal is strong)</font></i><div><i><font color=\"#ff0004\">miss &gt; hit (when signal is weak)</font></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301490402,
+      "note_id": 1590301457886,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is the symbol for the strategy used in signal detection",
+      "answer_text": "c is the symbol for the strategy used in signal detection",
+      "fields": {
+        "Text": "{{c1::c}} is the symbol for the <font color=\"#ff0004\">strategy used</font> in signal detection<br>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301682413,
+      "note_id": 1590301490489,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is to always say no unless 100% sure signal is present. This strategy might result in some misses but you will get all correct rejections",
+      "answer_text": "The conservative strategy is to always say no unless 100% sure signal is present. This strategy might result in some misses but you will get all correct rejections",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">The conservative strategy</font>}} is to always say {{c2::<font color=\"#ff0004\">no</font> unless 100% sure signal is present.}}<div><br></div><div>This strategy might result in some {{c3::<font color=\"#ff0004\">misses</font>}} but you will get all {{c3::<font color=\"#ff0004\">correct rejections</font>}}</div>",
+        "Extra": "<br><div><img src=\"0x0.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301682414,
+      "note_id": 1590301490489,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The conservative strategy is to always say [...] This strategy might result in some misses but you will get all correct rejections",
+      "answer_text": "The conservative strategy is to always say no unless 100% sure signal is present. This strategy might result in some misses but you will get all correct rejections",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">The conservative strategy</font>}} is to always say {{c2::<font color=\"#ff0004\">no</font> unless 100% sure signal is present.}}<div><br></div><div>This strategy might result in some {{c3::<font color=\"#ff0004\">misses</font>}} but you will get all {{c3::<font color=\"#ff0004\">correct rejections</font>}}</div>",
+        "Extra": "<br><div><img src=\"0x0.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301682415,
+      "note_id": 1590301490489,
+      "ord": 2,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The conservative strategy is to always say no unless 100% sure signal is present. This strategy might result in some [...] but you will get all [...]",
+      "answer_text": "The conservative strategy is to always say no unless 100% sure signal is present. This strategy might result in some misses but you will get all correct rejections",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">The conservative strategy</font>}} is to always say {{c2::<font color=\"#ff0004\">no</font> unless 100% sure signal is present.}}<div><br></div><div>This strategy might result in some {{c3::<font color=\"#ff0004\">misses</font>}} but you will get all {{c3::<font color=\"#ff0004\">correct rejections</font>}}</div>",
+        "Extra": "<br><div><img src=\"0x0.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301806771,
+      "note_id": 1590301682497,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[strategy] is to always say Yes . This strategy might result in some false alarms but you will get all hits",
+      "answer_text": "The liberal strategy is to always say Yes . This strategy might result in some false alarms but you will get all hits",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">The liberal strategy</font>::strategy}} is to always {{c2::<font color=\"#ff0004\">say Yes</font>}}.<div><br></div><div>This strategy might result in some {{c3::<font color=\"#ff0004\">false alarms</font>}} but you will get all {{c3::<font color=\"#ff0004\">hits</font>}}</div>",
+        "Extra": "<br><div><img src=\"16virus-obama-hbcu-transcrip-promo-superJumbo.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301806772,
+      "note_id": 1590301682497,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The liberal strategy is to always [...] . This strategy might result in some false alarms but you will get all hits",
+      "answer_text": "The liberal strategy is to always say Yes . This strategy might result in some false alarms but you will get all hits",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">The liberal strategy</font>::strategy}} is to always {{c2::<font color=\"#ff0004\">say Yes</font>}}.<div><br></div><div>This strategy might result in some {{c3::<font color=\"#ff0004\">false alarms</font>}} but you will get all {{c3::<font color=\"#ff0004\">hits</font>}}</div>",
+        "Extra": "<br><div><img src=\"16virus-obama-hbcu-transcrip-promo-superJumbo.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301806773,
+      "note_id": 1590301682497,
+      "ord": 2,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The liberal strategy is to always say Yes . This strategy might result in some [...] but you will get all [...]",
+      "answer_text": "The liberal strategy is to always say Yes . This strategy might result in some false alarms but you will get all hits",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">The liberal strategy</font>::strategy}} is to always {{c2::<font color=\"#ff0004\">say Yes</font>}}.<div><br></div><div>This strategy might result in some {{c3::<font color=\"#ff0004\">false alarms</font>}} but you will get all {{c3::<font color=\"#ff0004\">hits</font>}}</div>",
+        "Extra": "<br><div><img src=\"16virus-obama-hbcu-transcrip-promo-superJumbo.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301970243,
+      "note_id": 1590301806910,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[type of processing] begins with the stimulus which influences our perception.",
+      "answer_text": "Bottom up processing begins with the stimulus which influences our perception.",
+      "fields": {
+        "Text": "{{c1::Bottom up processing::type of processing}} begins with the {{c2::stimulus}} which influences our perception.",
+        "Extra": "<br><div><img src=\"DNeuOJ2VAAAI4-8.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590301970245,
+      "note_id": 1590301806910,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Bottom up processing begins with the [...] which influences our perception.",
+      "answer_text": "Bottom up processing begins with the stimulus which influences our perception.",
+      "fields": {
+        "Text": "{{c1::Bottom up processing::type of processing}} begins with the {{c2::stimulus}} which influences our perception.",
+        "Extra": "<br><div><img src=\"DNeuOJ2VAAAI4-8.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590302034695,
+      "note_id": 1590301970325,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Bottom up processing uses [type of reasoning] and is always [correct or incorrect]",
+      "answer_text": "Bottom up processing uses inductive reasoning and is always correct",
+      "fields": {
+        "Text": "Bottom up processing uses {{c1::inductive reasoning::type of reasoning}} and is always {{c1::correct::correct or incorrect}}",
+        "Extra": "<img src=\"DNeuOJ2VAAAI4-8.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590302076521,
+      "note_id": 1590302063470,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Bottom up processing is driven by [...]",
+      "answer_text": "Bottom up processing is driven by data",
+      "fields": {
+        "Text": "Bottom up processing is driven by&nbsp;{{c1::data}}",
+        "Extra": "<img src=\"DNeuOJ2VAAAI4-8.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590302166070,
+      "note_id": 1590302076608,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Top-down processing uses [...] , which influences perception. It is also driven by [...] rather than data.",
+      "answer_text": "Top-down processing uses background knowledge , which influences perception. It is also driven by theory rather than data.",
+      "fields": {
+        "Text": "Top-down processing uses {{c1::background knowledge}}, which influences perception. It is also driven by&nbsp;{{c1::theory}} rather than data.",
+        "Extra": "<img src=\"DNeuOJ2VAAAI4-8.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590302223493,
+      "note_id": 1590302207573,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Top-down processing uses [type of reasoning]",
+      "answer_text": "Top-down processing uses deductive reasoning",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">Top-down processing</font> uses {{c1::deductive reasoning::type of reasoning}}",
+        "Extra": "<img src=\"DNeuOJ2VAAAI4-8.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590302388068,
+      "note_id": 1590302223585,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[concept] try to explain how we percieve things the way we do.",
+      "answer_text": "Gestalt Principles try to explain how we percieve things the way we do.",
+      "fields": {
+        "Text": "{{c1::Gestalt Principles::concept}} try to explain how we {{c2::percieve things the way we do.}}",
+        "Extra": "<div><br></div><div><img src=\"0xAunMZs52Y3AnILg.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590302388069,
+      "note_id": 1590302223585,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Gestalt Principles try to explain how we [...]",
+      "answer_text": "Gestalt Principles try to explain how we percieve things the way we do.",
+      "fields": {
+        "Text": "{{c1::Gestalt Principles::concept}} try to explain how we {{c2::percieve things the way we do.}}",
+        "Extra": "<div><br></div><div><img src=\"0xAunMZs52Y3AnILg.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590302487207,
+      "note_id": 1590302388141,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Gestalt Principle] states that items similar to one another are grouped together by the brain",
+      "answer_text": "Similarity states that items similar to one another are grouped together by the brain Our brain organizes these as columns and not rows",
+      "fields": {
+        "Text": "{{c1::Similarity::Gestalt Principle}} states that items similar to one another are grouped together by the brain<br>",
+        "Extra": "<div><br></div><div><i>Our brain organizes these as columns and not rows</i></div><img src=\"paste-8500e8938b11229bd47c82f630080c864d3f7793.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590302585838,
+      "note_id": 1590302545829,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Gestalt Principle] states that our brains organize and reduce reality to its simplest form possible",
+      "answer_text": "Pragnanz states that our brains organize and reduce reality to its simplest form possible Our brain sees rings rather than all these weird ass shapes",
+      "fields": {
+        "Text": "{{c1::Pragnanz::Gestalt Principle}} states that our brains organize and reduce reality to its <font color=\"#ff0004\">simplest form possible</font>",
+        "Extra": "<div><br></div><div><i><font color=\"#ff0004\">Our brain sees rings rather than all these weird ass shapes</font></i></div><img src=\"paste-cb316d84ea79934aa8f58f6a26a5f06eaf360991.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590302763598,
+      "note_id": 1590302585926,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Gestalt Principle] states that objects that are close together are grouped together.",
+      "answer_text": "Proximity states that objects that are close together are grouped together.",
+      "fields": {
+        "Text": "{{c1::Proximity::Gestalt Principle}} states that objects that are <font color=\"#ff0004\">close together</font> are grouped together.",
+        "Extra": "<br><div><img src=\"paste-92901b9c32220d31f799a68296e7c3797bd16a10.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590302864617,
+      "note_id": 1590302763680,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Gestalt Principle] states that lines are seen as following the smoothest path",
+      "answer_text": "Continuity states that lines are seen as following the smoothest path You can see the smooth line here",
+      "fields": {
+        "Text": "{{c1::Continuity::Gestalt Principle}} states that lines are seen as following the <font color=\"#ff0004\">smoothest path</font>",
+        "Extra": "<div><br></div><i><font color=\"#ff0004\">You can see the smooth line here</font></i><div><div><img src=\"paste-8e8bfb480eec8326f1cb25cf2c53295b0a9574b7.jpg\"><br></div></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590302940413,
+      "note_id": 1590302878650,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Gestalt Principle] states that objects grouped together are seen as a whole and the mind fills in missing information.",
+      "answer_text": "Closure states that objects grouped together are seen as a whole and the mind fills in missing information. You're stupid human mind fills in this triangle even though its not actually there",
+      "fields": {
+        "Text": "{{c1::Closure::Gestalt Principle}} states that objects <font color=\"#00ffff\">grouped together</font> are seen as a whole and the mind fills in missing information.",
+        "Extra": "<div><br></div><i><font color=\"#00ffff\">You're stupid human mind fills in this triangle even though its not actually there</font></i><br><div><img src=\"paste-4d75f91cf722002832de6f8aaa2b7e8ee7978675.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590303028583,
+      "note_id": 1590302950464,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Gestalt Principle] states that the mind percieves objects as being symmetrical and forming around a center point",
+      "answer_text": "Symmetry states that the mind percieves objects as being symmetrical and forming around a center point peep the symmetry",
+      "fields": {
+        "Text": "{{c1::Symmetry::Gestalt Principle}} states that the mind percieves objects as being symmetrical and forming around a center point",
+        "Extra": "<div><br></div><div><i>peep the symmetry</i></div><div><img src=\"paste-e268c1455fdf53337d1cbbbe00bb97a88648dd4d.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590303139992,
+      "note_id": 1590303087907,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Gestalt Principle] states that humans perceive visual elements that move in the same speed and/or direction as parts of a single stimulus",
+      "answer_text": "Law of Common Fate states that humans perceive visual elements that move in the same speed and/or direction as parts of a single stimulus",
+      "fields": {
+        "Text": "{{c1::Law of Common Fate::Gestalt Principle}} states that humans perceive visual elements that <font color=\"#ff0004\">move in the same speed and/or direction</font> as parts of a <b><u>single stimulus</u></b>",
+        "Extra": "<br><div><img src=\"Gestalt-B2B-Web-Design-Principles–Common-Fate-featured.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590303240680,
+      "note_id": 1590303140079,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Gestalt Principle] states that under some circumstances visual stimuli are categorized according to past experience Give an example",
+      "answer_text": "Law of Past Experiences states that under some circumstances visual stimuli are categorized according to past experience Give an example For example, the English language contains 26 letters that are grouped to form words using a set of rules. If an individual reads an English word they have never seen, they use the law of past experience to interpret the letters \"L\" and \"I\" as two letters beside each other, rather than using the law of closure to combine the letters and interpret the object as an uppercase U",
+      "fields": {
+        "Text": "{{c1::Law of Past Experiences::Gestalt Principle}} states that under some circumstances visual stimuli are <font color=\"#ff0004\">categorized according to past experience</font><div><font color=\"#ff0004\"><br></font></div><div><font color=\"#ff0004\"><i><b><u>Give an example</u></b></i></font></div>",
+        "Extra": "<i><br></i><div><i>For example, the English language contains 26 letters that are grouped to form words using a set of rules. If an individual reads an English word they have never seen, they use the law of past experience to interpret the letters \"L\" and \"I\" as two letters beside each other, rather than using the law of closure to combine the letters and interpret the object as an uppercase U</i><br></div><div><i><br></i></div><div><img src=\"Group_12_1024x1024.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590303434058,
+      "note_id": 1590303240763,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] states that the context in which stimuli are presented and the processes of perceptual organization contribute to how people perceive those stimuli",
+      "answer_text": "Contextual effects states that the context in which stimuli are presented and the processes of perceptual organization contribute to how people perceive those stimuli See how the H and A are the same symbol but your dumb ass percieved them as H and A??? Its all about CONTEXT",
+      "fields": {
+        "Text": "{{c1::Contextual effects}} states that the context in which stimuli are presented and the processes of perceptual organization contribute to how people perceive those stimuli",
+        "Extra": "<img src=\"TheCat.png\"><div><br></div><div><i>See how the H and A are the same symbol but your dumb ass percieved them as H and A???</i></div><div><i>Its all about CONTEXT</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590303486618,
+      "note_id": 1590303434224,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is the thin layer of cells that lines the inside of your eyelids.",
+      "answer_text": "Conjunctiva is the thin layer of cells that lines the inside of your eyelids.",
+      "fields": {
+        "Text": "{{c1::Conjunctiva}} is the {{c2::thin layer of cells that lines the inside of your eyelids.}}",
+        "Extra": "<br><div><img src=\"conjunctiva-1200x630.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590303486619,
+      "note_id": 1590303434224,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Conjunctiva is the [...]",
+      "answer_text": "Conjunctiva is the thin layer of cells that lines the inside of your eyelids.",
+      "fields": {
+        "Text": "{{c1::Conjunctiva}} is the {{c2::thin layer of cells that lines the inside of your eyelids.}}",
+        "Extra": "<br><div><img src=\"conjunctiva-1200x630.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590303561208,
+      "note_id": 1590303489478,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is a transparent thick sheet of fibrous tissue that primarily bends light in the eye",
+      "answer_text": "Cornea is a transparent thick sheet of fibrous tissue that primarily bends light in the eye anterior 1/6th of the eyeball",
+      "fields": {
+        "Text": "{{c1::Cornea}} is a {{c2::transparent thick sheet of fibrous tissue that primarily bends light in the eye}}",
+        "Extra": "<div><font color=\"#ff0004\"><br></font></div><font color=\"#ff0004\">anterior 1/6th of the eyeball</font>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590303561209,
+      "note_id": 1590303489478,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Cornea is a [...]",
+      "answer_text": "Cornea is a transparent thick sheet of fibrous tissue that primarily bends light in the eye anterior 1/6th of the eyeball",
+      "fields": {
+        "Text": "{{c1::Cornea}} is a {{c2::transparent thick sheet of fibrous tissue that primarily bends light in the eye}}",
+        "Extra": "<div><font color=\"#ff0004\"><br></font></div><font color=\"#ff0004\">anterior 1/6th of the eyeball</font>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590303582928,
+      "note_id": 1590303561302,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Light first hits the eye at the [...]",
+      "answer_text": "Light first hits the eye at the Cornea",
+      "fields": {
+        "Text": "Light first hits the eye at the&nbsp;{{c1::Cornea}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590303689374,
+      "note_id": 1590303582992,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Light is initially bent at the [...]",
+      "answer_text": "Light is initially bent at the cornea",
+      "fields": {
+        "Text": "Light is initially bent at the&nbsp;{{c1::cornea}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590303771709,
+      "note_id": 1590303689451,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is a space filled with aqueous humour in the front of the eye",
+      "answer_text": "Anterior chamber is a space filled with aqueous humour in the front of the eye",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">Anterior chamber</font>}} is a space filled with {{c2::<font color=\"#ff0004\">aqueous humour</font>}} in the front of the eye",
+        "Extra": "<br><div><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590303771710,
+      "note_id": 1590303689451,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Anterior chamber is a space filled with [...] in the front of the eye",
+      "answer_text": "Anterior chamber is a space filled with aqueous humour in the front of the eye",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">Anterior chamber</font>}} is a space filled with {{c2::<font color=\"#ff0004\">aqueous humour</font>}} in the front of the eye",
+        "Extra": "<br><div><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590304034945,
+      "note_id": 1590303821590,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Aqueous humor functions in anterior chamber: [...] [...]",
+      "answer_text": "Aqueous humor functions in anterior chamber: applies pressure to maintain shape of the eyeball allows nutrients and minerals to supply the cells of the cornea/iris",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">Aqueous humor</font> functions in anterior chamber:<div><br><div>{{c1::applies pressure to maintain shape of the eyeball}}</div><div>{{c1::allows nutrients and minerals to supply the cells of the cornea/iris}}</div></div>",
+        "Extra": "<br><div><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590304092879,
+      "note_id": 1590304035037,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is the opening in the middle of the iris.",
+      "answer_text": "The pupil is the opening in the middle of the iris.",
+      "fields": {
+        "Text": "{{c1::The pupil}} is the opening in the middle of the iris.<br>",
+        "Extra": "<br><div><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590304116113,
+      "note_id": 1590304093023,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The pupils main function is to [...]",
+      "answer_text": "The pupils main function is to contract and dilate to modulate the amount of light able to enter the eyeball",
+      "fields": {
+        "Text": "The pupils main function is to&nbsp;{{c1::contract and dilate to modulate the amount of light able to enter the eyeball}}",
+        "Extra": "<br><div><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"><br><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590304166664,
+      "note_id": 1590304116184,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] gives the eye color and is the muscle used to modulate the size of the pupil",
+      "answer_text": "The iris gives the eye color and is the muscle used to modulate the size of the pupil",
+      "fields": {
+        "Text": "{{c1::The iris}}&nbsp; gives the <font color=\"#00ffff\">eye color </font>and is the muscle used to modulate the <font color=\"#00ffff\">size of the pupil</font>",
+        "Extra": "<img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590304196434,
+      "note_id": 1590304166740,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The iris' main function is to [...]",
+      "answer_text": "The iris' main function is to contract and dilate to change the size of the pupil",
+      "fields": {
+        "Text": "The iris' main function is to&nbsp;{{c1::contract and dilate to change the size of the pupil}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590304442416,
+      "note_id": 1590304196497,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The iris is a [...]",
+      "answer_text": "The iris is a muscle",
+      "fields": {
+        "Text": "The iris is a&nbsp;{{c1::muscle}}",
+        "Extra": "<br><div><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590304525628,
+      "note_id": 1590304466109,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] bends light so it goes to the back of the eyeball. It focuses light specifically on the fovea .",
+      "answer_text": "The Lens bends light so it goes to the back of the eyeball. It focuses light specifically on the fovea .",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">The Lens</font>}} bends light so it goes to the back of the eyeball. It focuses light specifically on the {{c2::<font color=\"#ff0004\">fovea</font>}}.",
+        "Extra": "<br><div><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590304525630,
+      "note_id": 1590304466109,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The Lens bends light so it goes to the back of the eyeball. It focuses light specifically on the [...] .",
+      "answer_text": "The Lens bends light so it goes to the back of the eyeball. It focuses light specifically on the fovea .",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">The Lens</font>}} bends light so it goes to the back of the eyeball. It focuses light specifically on the {{c2::<font color=\"#ff0004\">fovea</font>}}.",
+        "Extra": "<br><div><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590304622944,
+      "note_id": 1590304532186,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The lens can change shape with the assistance of [...]",
+      "answer_text": "The lens can change shape with the assistance of suspensory ligaments",
+      "fields": {
+        "Text": "The lens can <font color=\"#ff0004\">change shape</font> with the assistance of {{c1::suspensory ligaments}}",
+        "Extra": "<div><br></div><div><img src=\"1.29.35 Diagram showing a bulged and thin lens (1).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590304736991,
+      "note_id": 1590304623032,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is a combination of the suspensory ligaments and ciliary muscle",
+      "answer_text": "The ciliary body is a combination of the suspensory ligaments and ciliary muscle",
+      "fields": {
+        "Text": "{{c1::The ciliary body}} is a combination of the <font color=\"#ff0004\">suspensory ligaments</font> and <font color=\"#ff0004\">ciliary muscle</font>",
+        "Extra": "<br><div><img src=\"1.29.35 Diagram showing a bulged and thin lens (1).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590304765745,
+      "note_id": 1590304737028,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] pulls on suspensory ligaments to change the shape of the lens",
+      "answer_text": "The ciliary muscle pulls on suspensory ligaments to change the shape of the lens",
+      "fields": {
+        "Text": "{{c1::The ciliary muscle}} pulls on suspensory ligaments to change the shape of the lens",
+        "Extra": "<br><div><img src=\"1.29.35 Diagram showing a bulged and thin lens (1).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590304846239,
+      "note_id": 1590304765904,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] secretes aqueous humor",
+      "answer_text": "The ciliary body secretes aqueous humor peep the little ciliary muscle and suspensory ligaments dope",
+      "fields": {
+        "Text": "{{c1::The ciliary body}} secretes aqueous humor",
+        "Extra": "<div><br></div><i>peep the little ciliary muscle and suspensory ligaments</i><div><i>dope<br></i><div><img src=\"EyeDiagram.jpg\"><br></div></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590304915027,
+      "note_id": 1590304846323,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is the area behind the iris to the back of the lens",
+      "answer_text": "The posterior chamber is the area behind the iris to the back of the lens",
+      "fields": {
+        "Text": "{{c1::The posterior chamber}} is the area behind the iris to the back of the lens",
+        "Extra": "<div><br></div><br><div><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590304958820,
+      "note_id": 1590304915100,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The posterior chamber is filled with [...]",
+      "answer_text": "The posterior chamber is filled with aqueous humor",
+      "fields": {
+        "Text": "The <font color=\"#ff0004\">posterior chamber</font> is filled with {{c1::aqueous humor}}",
+        "Extra": "<br><div><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590305056300,
+      "note_id": 1590304958897,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is filled with vitreous humour , which is a jelly-like substance",
+      "answer_text": "The vitreous chamber is filled with vitreous humour , which is a jelly-like substance",
+      "fields": {
+        "Text": "{{c1::The vitreous chamber}} is filled with <font color=\"#ff0004\">vitreous humour</font>, which is a jelly-like substance",
+        "Extra": "<br><div><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590305152083,
+      "note_id": 1590305056372,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Vitreous humor has two functions: [...] [...]",
+      "answer_text": "Vitreous humor has two functions: provide pressure to the eyeball give nutrients to inside of the eyeball",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">Vitreous humor</font> has two functions:<div><br></div><div>{{c1::provide pressure to the eyeball}}</div><div>{{c1::give nutrients to inside of the eyeball}}</div>",
+        "Extra": "<br><div><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590305204554,
+      "note_id": 1590305152234,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is the inside, back area of the eye filled with photoreceptors .",
+      "answer_text": "The retina is the inside, back area of the eye filled with photoreceptors .",
+      "fields": {
+        "Text": "{{c1::<b style=\"\"><font color=\"#ffc0fe\">The retina</font></b>}} is the inside, back area of the eye filled with {{c2::<b style=\"\"><font color=\"#ffc0fe\">photoreceptors</font></b>}}.",
+        "Extra": "<br><div><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590305204555,
+      "note_id": 1590305152234,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The retina is the inside, back area of the eye filled with [...] .",
+      "answer_text": "The retina is the inside, back area of the eye filled with photoreceptors .",
+      "fields": {
+        "Text": "{{c1::<b style=\"\"><font color=\"#ffc0fe\">The retina</font></b>}} is the inside, back area of the eye filled with {{c2::<b style=\"\"><font color=\"#ffc0fe\">photoreceptors</font></b>}}.",
+        "Extra": "<br><div><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590305305195,
+      "note_id": 1590305204641,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is the special part of the retina rich in cones",
+      "answer_text": "The macula is the special part of the retina rich in cones MACULA STILL HAS RODS THOUGH, JUST LOTS OF CONES COMPARED TO THE REST OF THE RETINA",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ffc0fe\">The macula</font>}} is the special part of the retina rich in {{c2::cones}}",
+        "Extra": "<div><i><font color=\"#ff0004\"><br></font></i></div><i style=\"\"><font color=\"#ffc0fe\">MACULA STILL HAS RODS THOUGH, JUST LOTS OF CONES COMPARED TO THE REST OF THE RETINA</font></i><br><div><font color=\"#ff0004\"><br></font></div><div><font color=\"#ff0004\"><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"></font><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590305305196,
+      "note_id": 1590305204641,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The macula is the special part of the retina rich in [...]",
+      "answer_text": "The macula is the special part of the retina rich in cones MACULA STILL HAS RODS THOUGH, JUST LOTS OF CONES COMPARED TO THE REST OF THE RETINA",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ffc0fe\">The macula</font>}} is the special part of the retina rich in {{c2::cones}}",
+        "Extra": "<div><i><font color=\"#ff0004\"><br></font></i></div><i style=\"\"><font color=\"#ffc0fe\">MACULA STILL HAS RODS THOUGH, JUST LOTS OF CONES COMPARED TO THE REST OF THE RETINA</font></i><br><div><font color=\"#ff0004\"><br></font></div><div><font color=\"#ff0004\"><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"></font><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590305354538,
+      "note_id": 1590305305277,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is a special part of the macula that is completely covered in cones",
+      "answer_text": "The fovea is a special part of the macula that is completely covered in cones",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ffc0fe\">The fovea</font>}} is a special part of the {{c3::<font color=\"#ffc0fe\">macula</font>}} that is completely covered in {{c2::<font color=\"#ffc0fe\">cones</font>}}",
+        "Extra": "<br><div><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590305354539,
+      "note_id": 1590305305277,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The fovea is a special part of the macula that is completely covered in [...]",
+      "answer_text": "The fovea is a special part of the macula that is completely covered in cones",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ffc0fe\">The fovea</font>}} is a special part of the {{c3::<font color=\"#ffc0fe\">macula</font>}} that is completely covered in {{c2::<font color=\"#ffc0fe\">cones</font>}}",
+        "Extra": "<br><div><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590305354540,
+      "note_id": 1590305305277,
+      "ord": 2,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The fovea is a special part of the [...] that is completely covered in cones",
+      "answer_text": "The fovea is a special part of the macula that is completely covered in cones",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ffc0fe\">The fovea</font>}} is a special part of the {{c3::<font color=\"#ffc0fe\">macula</font>}} that is completely covered in {{c2::<font color=\"#ffc0fe\">cones</font>}}",
+        "Extra": "<br><div><img src=\"2000px-Schematic_diagram_of_the_human_eye_en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590305481077,
+      "note_id": 1590305475569,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[photoreceptor] detect color and discern high levels of detail",
+      "answer_text": "Cones detect color and discern high levels of detail",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">Cones</font>::photoreceptor}} detect {{c2::<font color=\"#ff0004\">color</font>}} and discern {{c2::<font color=\"#ff0004\">high</font>}} levels of detail",
+        "Extra": "<br><div><img src=\"Human-Eye-Cones-Structure.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590305481078,
+      "note_id": 1590305475569,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Cones detect [...] and discern [...] levels of detail",
+      "answer_text": "Cones detect color and discern high levels of detail",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">Cones</font>::photoreceptor}} detect {{c2::<font color=\"#ff0004\">color</font>}} and discern {{c2::<font color=\"#ff0004\">high</font>}} levels of detail",
+        "Extra": "<br><div><img src=\"Human-Eye-Cones-Structure.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590305513620,
+      "note_id": 1590305481162,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[photoreceptor] detect light and discern low levels of detail",
+      "answer_text": "Rods detect light and discern low levels of detail",
+      "fields": {
+        "Text": "{{c1::<font color=\"#00ffff\">Rods</font>::photoreceptor}} detect {{c2::<font color=\"#00ffff\">light</font>}} and discern {{c2::<font color=\"#00ffff\">low</font>}} levels of detail",
+        "Extra": "<br><div><img src=\"Human-Eye-Cones-Structure.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590305513622,
+      "note_id": 1590305481162,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Rods detect [...] and discern [...] levels of detail",
+      "answer_text": "Rods detect light and discern low levels of detail",
+      "fields": {
+        "Text": "{{c1::<font color=\"#00ffff\">Rods</font>::photoreceptor}} detect {{c2::<font color=\"#00ffff\">light</font>}} and discern {{c2::<font color=\"#00ffff\">low</font>}} levels of detail",
+        "Extra": "<br><div><img src=\"Human-Eye-Cones-Structure.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590305642007,
+      "note_id": 1590305513708,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is a black, pigmented network of blood vessels that help nourish the retina.",
+      "answer_text": "The choroid is a black, pigmented network of blood vessels that help nourish the retina.",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">The choroid</font>}} is a black, pigmented network of {{c2::<font color=\"#ff0004\">blood vessels</font>}} that help nourish the retina.",
+        "Extra": "<br><div><img src=\"Blausen_0388_EyeAnatomy_01.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590305642008,
+      "note_id": 1590305513708,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The choroid is a black, pigmented network of [...] that help nourish the retina.",
+      "answer_text": "The choroid is a black, pigmented network of blood vessels that help nourish the retina.",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">The choroid</font>}} is a black, pigmented network of {{c2::<font color=\"#ff0004\">blood vessels</font>}} that help nourish the retina.",
+        "Extra": "<br><div><img src=\"Blausen_0388_EyeAnatomy_01.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590305729443,
+      "note_id": 1590305642094,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is the white of the eye and made of thick fibrous tissue .",
+      "answer_text": "The sclera is the white of the eye and made of thick fibrous tissue .",
+      "fields": {
+        "Text": "{{c1::The sclera}} is the <font color=\"#ff0004\">white of the eye</font> and made of <font color=\"#ff0004\">thick fibrous tissue</font>.&nbsp;",
+        "Extra": "<br><div><img src=\"sclera-500x500.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590305778710,
+      "note_id": 1590305729522,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The sclera's main functions include: [...] [...]",
+      "answer_text": "The sclera's main functions include: Muscle attachment point Extra layer of protection to eyeball",
+      "fields": {
+        "Text": "The sclera's <font color=\"#ff0004\">main functions</font> include:<div><br></div><div>{{c1::Muscle attachment point}}</div><div>{{c1::Extra layer of protection to eyeball}}</div>",
+        "Extra": "<br><div><img src=\"sclera-500x500.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590306136934,
+      "note_id": 1590305778854,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is the electrical activation of one neuron by another neuron",
+      "answer_text": "Transmission is the electrical activation of one neuron by another neuron",
+      "fields": {
+        "Text": "{{c1::Transmission}} is the <font color=\"#ff0004\">electrical activation</font> of one neuron by another neuron",
+        "Extra": "<br><div><img src=\"500_F_268373586_RFFUeOVgMJ5KtLLgQdSN5b2ZOGw1OpXg.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590306233364,
+      "note_id": 1590306137093,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is the conscious sensory experience of neural processing",
+      "answer_text": "Perception is the conscious sensory experience of neural processing",
+      "fields": {
+        "Text": "{{c1::Perception}} is the conscious <font color=\"#00ffff\">sensory experience</font> of neural processing",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590306271071,
+      "note_id": 1590306233440,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is the neural transformation of multiple neural signals into a perception",
+      "answer_text": "Processing is the neural transformation of multiple neural signals into a perception",
+      "fields": {
+        "Text": "{{c1::Processing}} is the <font color=\"#ff0004\">neural transformation</font> of multiple neural signals into a {{c2::<font color=\"#ff0004\">perception</font>}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590306271073,
+      "note_id": 1590306233440,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Processing is the neural transformation of multiple neural signals into a [...]",
+      "answer_text": "Processing is the neural transformation of multiple neural signals into a perception",
+      "fields": {
+        "Text": "{{c1::Processing}} is the <font color=\"#ff0004\">neural transformation</font> of multiple neural signals into a {{c2::<font color=\"#ff0004\">perception</font>}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590306370213,
+      "note_id": 1590306271151,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] occurs whenever energy is transformed from one form to another",
+      "answer_text": "Transduction occurs whenever energy is transformed from one form to another",
+      "fields": {
+        "Text": "{{c1::Transduction}} occurs whenever energy is transformed from one form to another",
+        "Extra": "<br><div><img src=\"Schematic-outline-of-the-phototransduction-cascade-in-a-vertebrate-cone-All-of-the.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590306421620,
+      "note_id": 1590306370298,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] requires a physical stimulus to be converted into a neural impulse",
+      "answer_text": "Sensation requires a physical stimulus to be converted into a neural impulse",
+      "fields": {
+        "Text": "{{c1::Sensation}} requires a {{c2::physical stimulus}} to be converted into a {{c3::neural impulse}}",
+        "Extra": "<br><div><img src=\"iinm6jpbdd.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590306421622,
+      "note_id": 1590306370298,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Sensation requires a [...] to be converted into a neural impulse",
+      "answer_text": "Sensation requires a physical stimulus to be converted into a neural impulse",
+      "fields": {
+        "Text": "{{c1::Sensation}} requires a {{c2::physical stimulus}} to be converted into a {{c3::neural impulse}}",
+        "Extra": "<br><div><img src=\"iinm6jpbdd.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590306421623,
+      "note_id": 1590306370298,
+      "ord": 2,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Sensation requires a physical stimulus to be converted into a [...]",
+      "answer_text": "Sensation requires a physical stimulus to be converted into a neural impulse",
+      "fields": {
+        "Text": "{{c1::Sensation}} requires a {{c2::physical stimulus}} to be converted into a {{c3::neural impulse}}",
+        "Extra": "<br><div><img src=\"iinm6jpbdd.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590306463339,
+      "note_id": 1590306421708,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[cell type] convert light to neural impulses",
+      "answer_text": "Photoreceptors convert light to neural impulses",
+      "fields": {
+        "Text": "{{c1::Photoreceptors::cell type}} convert <b><font color=\"#00ffff\">light </font></b>to neural impulses",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590306495739,
+      "note_id": 1590306463478,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Light is an [...]",
+      "answer_text": "Light is an electromagnetic wave",
+      "fields": {
+        "Text": "Light is an {{c1::electromagnetic wave}}",
+        "Extra": "<br><div><img src=\"5-newmethodfor.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590306560617,
+      "note_id": 1590306495809,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "There are [more or less] rods than cones",
+      "answer_text": "There are way more rods than cones",
+      "fields": {
+        "Text": "There are {{c1::way more::more or less}} rods than cones",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590306799007,
+      "note_id": 1590306742511,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "When light hits a rod , the rod is turned off , which then turns on a [...] , which then turns on a [...] , which goes into the [...] and enters the [...]",
+      "answer_text": "When light hits a rod , the rod is turned off , which then turns on a bipolar cell , which then turns on a retinal ganglion cell , which goes into the optic nerve and enters the brain",
+      "fields": {
+        "Text": "<b><font color=\"#ff0004\">When light hits a rod</font></b>, the rod is turned {{c2::off::on/off}}, which then turns {{c2::on::on/off}} a {{c1::bipolar cell}}, which then turns {{c2::on::on/off}} a {{c1::retinal ganglion cell}}, which goes into the {{c1::optic nerve}} and enters the {{c1::brain}}",
+        "Extra": "<div><br></div><br><div><img src=\"ce4cdcf72bb855e4518723e15306b6fb5f395106\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590306799009,
+      "note_id": 1590306742511,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "When light hits a rod , the rod is turned [on/off] , which then turns [on/off] a bipolar cell , which then turns [on/off] a retinal ganglion cell , which goes into the optic nerve and enters the brain",
+      "answer_text": "When light hits a rod , the rod is turned off , which then turns on a bipolar cell , which then turns on a retinal ganglion cell , which goes into the optic nerve and enters the brain",
+      "fields": {
+        "Text": "<b><font color=\"#ff0004\">When light hits a rod</font></b>, the rod is turned {{c2::off::on/off}}, which then turns {{c2::on::on/off}} a {{c1::bipolar cell}}, which then turns {{c2::on::on/off}} a {{c1::retinal ganglion cell}}, which goes into the {{c1::optic nerve}} and enters the {{c1::brain}}",
+        "Extra": "<div><br></div><br><div><img src=\"ce4cdcf72bb855e4518723e15306b6fb5f395106\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590307025837,
+      "note_id": 1590306844365,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The steps from light hitting a rod to a signal getting sent to the brain include: light hits rod [...] [...] [...] [...] signal travels to brain",
+      "answer_text": "The steps from light hitting a rod to a signal getting sent to the brain include: light hits rod rod turns off bipolar cell turns on retinal ganglion cell turns on signal travels to optic nerve signal travels to brain",
+      "fields": {
+        "Text": "The steps from <font color=\"#ff0004\">light hitting a rod</font> to a signal getting <font color=\"#ff0004\">sent to the brain</font> include:<div><br><div>light hits rod</div><div>{{c1::rod turns off}}</div><div>{{c1::bipolar cell turns on}}</div><div>{{c1::retinal ganglion cell turns on}}</div><div>{{c1::signal travels to optic nerve}}</div><div>signal travels to brain</div></div>",
+        "Extra": "<img src=\"ce4cdcf72bb855e4518723e15306b6fb5f395106\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590307080550,
+      "note_id": 1590307025998,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is the process of turning a rod cell off",
+      "answer_text": "The phototransduction cascade is the process of turning a rod cell off",
+      "fields": {
+        "Text": "{{c1::The phototransduction cascade}} is the process of turning a rod cell <b><u><font color=\"#ff0004\">off</font></u></b>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590307447334,
+      "note_id": 1590307305731,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The steps to the phototransduction cascade include: [...] [...] [...] [...] [...] [...] [...]",
+      "answer_text": "The steps to the phototransduction cascade include: light hits cis-retinal and converts it to trans-retinal rhodopsin changes shape transducin gets released from rhodopsin transducin binds to a phosphodiesterase phosphodiesterase converts cGMP to GMP Na+ channels close as a result of low cGMP rod cell becomes hyperpolarized and turned OFF",
+      "fields": {
+        "Text": "The steps to the phototransduction cascade include:<div><br></div><div>{{c1::light hits cis-retinal and converts it to trans-retinal}}</div><div><br></div><div>{{c1::rhodopsin changes shape}}</div><div><br></div><div>{{c1::transducin gets released from rhodopsin}}</div><div><br></div><div>{{c1::transducin binds to a phosphodiesterase}}</div><div><br></div><div>{{c1::phosphodiesterase converts cGMP to GMP}}</div><div><br></div><div>{{c1::Na+ channels close as a result of low cGMP}}</div><div><br></div><div>{{c1::rod cell becomes hyperpolarized and turned <b><u>OFF</u></b>}}<br></div>",
+        "Extra": "<br><div><br></div><div><img src=\"7-Figure16.4-1.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590307529083,
+      "note_id": 1590307447406,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "When light hits a rod , [...] bipolar cells are active and [...] bipolar cells are inactive",
+      "answer_text": "When light hits a rod , on center bipolar cells are active and off center bipolar cells are inactive",
+      "fields": {
+        "Text": "When <b><u>light hits a rod</u></b>, {{c1::on center}} bipolar cells are active and {{c1::off center}} bipolar cells are inactive",
+        "Extra": "<br><div><img src=\"paste-515d700430d215e0ee01817ef710bb10a64dcf11.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590307734169,
+      "note_id": 1590307715536,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "When ON CENTER bipolar cells are turned on, this activates [...] , which send signals to the optic nerve.",
+      "answer_text": "When ON CENTER bipolar cells are turned on, this activates ON CENTER retinal ganglion cells , which send signals to the optic nerve.",
+      "fields": {
+        "Text": "When <u style=\"font-weight: bold;\">ON CENTER&nbsp;</u>&nbsp;bipolar cells are turned on, this activates {{c1::<b><u>ON CENTER</u></b>&nbsp;retinal ganglion cells}}, which send signals to the optic nerve.",
+        "Extra": "<br><div><img src=\"paste-515d700430d215e0ee01817ef710bb10a64dcf11.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590307825141,
+      "note_id": 1590307734254,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "When it is dark, rod cells are turned [off or on] . This inactivates on center bipolar cells and activates off center bipolar cells .",
+      "answer_text": "When it is dark, rod cells are turned on . This inactivates on center bipolar cells and activates off center bipolar cells .",
+      "fields": {
+        "Text": "When it is dark, <b><u>rod cells</u></b> are turned {{c1::on::off or on}}. This {{c2::inactivates::activates or inactivates}} <i>on center bipolar cells</i> and {{c2::activates::activates or inactivates}} <i>off center bipolar cells</i>.",
+        "Extra": "<br><div><img src=\"paste-fa960ebd9c0bc5dc91620426970a3a6cf8aee27f.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590307825143,
+      "note_id": 1590307734254,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "When it is dark, rod cells are turned on . This [activates or inactivates] on center bipolar cells and [activates or inactivates] off center bipolar cells .",
+      "answer_text": "When it is dark, rod cells are turned on . This inactivates on center bipolar cells and activates off center bipolar cells .",
+      "fields": {
+        "Text": "When it is dark, <b><u>rod cells</u></b> are turned {{c1::on::off or on}}. This {{c2::inactivates::activates or inactivates}} <i>on center bipolar cells</i> and {{c2::activates::activates or inactivates}} <i>off center bipolar cells</i>.",
+        "Extra": "<br><div><img src=\"paste-fa960ebd9c0bc5dc91620426970a3a6cf8aee27f.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590308058850,
+      "note_id": 1590307941074,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "When off center bipolar cells are turned on , this activates [cell type] , which send signals to optic nerve and to the brain.",
+      "answer_text": "When off center bipolar cells are turned on , this activates off center retinal ganglion cells , which send signals to optic nerve and to the brain.",
+      "fields": {
+        "Text": "When <font color=\"#00ffff\"><b>off center</b> </font>bipolar cells are turned {{c2::on::on/off}}, this activates {{c1::off center retinal ganglion cells::cell type}}, which send signals to optic nerve and to the brain.",
+        "Extra": "<br><div><img src=\"paste-fa960ebd9c0bc5dc91620426970a3a6cf8aee27f.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590308058851,
+      "note_id": 1590307941074,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "When off center bipolar cells are turned [on/off] , this activates off center retinal ganglion cells , which send signals to optic nerve and to the brain.",
+      "answer_text": "When off center bipolar cells are turned on , this activates off center retinal ganglion cells , which send signals to optic nerve and to the brain.",
+      "fields": {
+        "Text": "When <font color=\"#00ffff\"><b>off center</b> </font>bipolar cells are turned {{c2::on::on/off}}, this activates {{c1::off center retinal ganglion cells::cell type}}, which send signals to optic nerve and to the brain.",
+        "Extra": "<br><div><img src=\"paste-fa960ebd9c0bc5dc91620426970a3a6cf8aee27f.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590308090550,
+      "note_id": 1590308058999,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[type of vision] occurs at high light levels",
+      "answer_text": "Photopic vision occurs at high light levels",
+      "fields": {
+        "Text": "{{c1::Photopic vision::type of vision}} occurs at <font color=\"#ff0004\">high light levels</font>",
+        "Extra": "<br><div><img src=\"Y9nRpDqhnFzLfNtMMtg4FsBSnfHeWuqbN52iKH6owA-Hpj07B05sLxnDLjpYWmpsPqY7JMtaF1ucbxwYQVkHYt1xEyTxOxep4DJAU2zg.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590308105898,
+      "note_id": 1590308090630,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[type of vision] occurs at dawn or dusk and involves both rods and cones",
+      "answer_text": "Mesopic vision occurs at dawn or dusk and involves both rods and cones",
+      "fields": {
+        "Text": "{{c1::Mesopic vision::type of vision}} occurs at <font color=\"#ffc0fe\">dawn </font>or <font color=\"#ffc0fe\">dusk </font>and involves both rods and cones",
+        "Extra": "<img src=\"Cryptic_Signal-at-Dusk-3_Credit-Nichon-Glerum-864x576.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590308128115,
+      "note_id": 1590308105978,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[type of vision] occurs at levels of very low light",
+      "answer_text": "Scotopic vision occurs at levels of very low light",
+      "fields": {
+        "Text": "{{c1::Scotopic vision::type of vision}} occurs at levels of <font color=\"#ff0004\">very low light</font>",
+        "Extra": "<br><div><img src=\"night-time-driving-eye-vision-Igor Alecsander-iStock.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590308212840,
+      "note_id": 1590308128198,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] are large membrane bound structures that contain proteins that fire APs to the brain",
+      "answer_text": "Optic discs are large membrane bound structures that contain proteins that fire APs to the brain Optic disc is also a term for the blind spot",
+      "fields": {
+        "Text": "{{c1::Optic discs}} are <font color=\"#00ffff\">large membrane bound structures </font>that contain proteins that fire APs to the brain",
+        "Extra": "<i><u><b><br></b></u></i><div><i><u><b><font color=\"#00ffff\">Optic disc is also a term for the blind spot</font></b></u></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590308300696,
+      "note_id": 1590308212926,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Rods have a [speed] recovery time while cones have a [speed] recovery time",
+      "answer_text": "Rods have a slow recovery time while cones have a fast recovery time this is why it takes time to adjust to the dark - rods need to be reactivated it also explains why those fucking annoying kids in highschool would scream when the lights turned on in class",
+      "fields": {
+        "Text": "Rods have a {{c1::slow::speed}} recovery time while cones have a {{c1::fast::speed}} recovery time",
+        "Extra": "<i style=\"\"><br></i><div><i style=\"\"><font color=\"#ff0004\">this is why it takes time to adjust to the dark - rods need to be reactivated</font></i></div><div><i style=\"\"><font color=\"#ff0004\"><br></font></i></div><div><i style=\"\"><font color=\"#ff0004\">it also explains why those fucking annoying kids in highschool would scream when the lights turned on in class</font></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590308385975,
+      "note_id": 1590308300780,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is where the optic nerve connects to the eyeball",
+      "answer_text": "The blind spot is where the optic nerve connects to the eyeball",
+      "fields": {
+        "Text": "{{c1::The blind spot}} is where the <b><u><font color=\"#ffc0fe\">optic nerve</font></u></b> connects to the <b style=\"\"><font color=\"#ffc0fe\">eyeball</font></b>",
+        "Extra": "<div><br></div><div><img src=\"37189BDF-F127-4FA6-98BFA5C06647E857_source.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590308415913,
+      "note_id": 1590308386131,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "There are no photoreceptors in the [eye region]",
+      "answer_text": "There are no photoreceptors in the blind spot",
+      "fields": {
+        "Text": "There are <font color=\"#ffc0fe\"><b>no photoreceptors </b></font>in the {{c1::blind spot::eye region}}",
+        "Extra": "<div><br></div><br><div><img src=\"37189BDF-F127-4FA6-98BFA5C06647E857_source.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590308503973,
+      "note_id": 1590308415997,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "There is higher resolution in the fovea because [...]",
+      "answer_text": "There is higher resolution in the fovea because there are no axons in the way of light entering the cell this is why the fovea dimples in",
+      "fields": {
+        "Text": "There is <font color=\"#ff0004\">higher resolution</font> in the fovea because {{c1::there are no axons in the way of light entering the cell}}",
+        "Extra": "<div><br></div><i>this is why the fovea dimples in</i><br><div><img src=\"CNX_Psych_05_03_Eye.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590367071511,
+      "note_id": 1590366953547,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Light from the right visual field goes to the [...] side of the brain Light from the left visual field goes to the [...] side of the brain",
+      "answer_text": "Light from the right visual field goes to the left side of the brain Light from the left visual field goes to the right side of the brain",
+      "fields": {
+        "Text": "Light from the <font color=\"#ffc0fe\"><b>right </b></font>visual field goes to the {{c1::left}} side of the brain<div><br></div><div>Light from the <font color=\"#ffc0fe\"><b>left </b></font>visual field goes to the {{c1::right}} side of the brain</div>",
+        "Extra": "<br><div><img src=\"Screen Shot 2018-02-09 at 10.14.19 AM.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590367174347,
+      "note_id": 1590367074036,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Light from the left side of the visual field hits the [retina region] and [retina region]",
+      "answer_text": "Light from the left side of the visual field hits the left nasal retina and right temporal retina",
+      "fields": {
+        "Text": "Light from the <font color=\"#ff0004\">left side</font> of the visual field hits the {{c1::left nasal retina::retina region}} and {{c1::right temporal retina::retina region}}",
+        "Extra": "<br><div><img src=\"Screen Shot 2018-02-09 at 10.14.19 AM.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590367212230,
+      "note_id": 1590367174537,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Light from the right side of the visual field hits [retina region] and the [retina region]",
+      "answer_text": "Light from the right side of the visual field hits right nasal retina and the left temporal retina",
+      "fields": {
+        "Text": "Light from the <b style=\"\"><font color=\"#ffc0fe\">right side</font></b> of the visual field hits {{c1::right nasal retina::retina region}} and the {{c1::left temporal retina::retina region}}",
+        "Extra": "<br><div><img src=\"Screen Shot 2018-02-09 at 10.14.19 AM.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590367258257,
+      "note_id": 1590367212317,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The optic nerves from each eyeball cross over at the [...]",
+      "answer_text": "The optic nerves from each eyeball cross over at the optic chiasm",
+      "fields": {
+        "Text": "The optic nerves from each eyeball <font color=\"#ff0004\">cross over</font> at the {{c1::optic chiasm}}",
+        "Extra": "<br><div><img src=\"Screen Shot 2018-02-09 at 10.14.19 AM.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590367364217,
+      "note_id": 1590367258339,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Axons leaving from the temporal region of the retina [do/do not] cross over at the optic chiasm",
+      "answer_text": "Axons leaving from the temporal region of the retina do not cross over at the optic chiasm This is to make sure stuff from the right visual field gets processed on the left side of the brain and vice versa",
+      "fields": {
+        "Text": "Axons leaving from the <font color=\"#ff0004\">temporal region</font> of the retina {{c1::do not::do/do not}} cross over at the optic chiasm",
+        "Extra": "<div><br></div><font color=\"#ff0004\">This is to make sure stuff from the right visual field gets processed on the left side of the brain and vice versa</font><br><div><img src=\"Screen Shot 2018-02-09 at 10.14.19 AM.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590367432400,
+      "note_id": 1590367364298,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is breaking down an object into its component features",
+      "answer_text": "Feature detection is breaking down an object into its component features this helps you make sense of what you are looking at",
+      "fields": {
+        "Text": "{{c1::Feature detection}} is breaking down an object into its <font color=\"#ff0004\">component features</font>",
+        "Extra": "<br><div><font color=\"#ff0004\">this helps you make sense of what you are looking at</font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590367482379,
+      "note_id": 1590367432483,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The three components of feature detection include [...] , [...] , and [...]",
+      "answer_text": "The three components of feature detection include color , form , and motion",
+      "fields": {
+        "Text": "The three components of <font color=\"#ff0004\">feature detection</font> include {{c1::color}}, {{c1::form}}, and {{c1::motion}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590367598668,
+      "note_id": 1590367482515,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Theory] of color vision states that there are three types of cones that make up color vision",
+      "answer_text": "The trichromatic theory of color vision states that there are three types of cones that make up color vision Red(60%) Green(30%) Blue(10%)",
+      "fields": {
+        "Text": "{{c1::The trichromatic theory::Theory}} of color vision states that there are three types of cones that make up color vision",
+        "Extra": "<br><div><font color=\"#ff0004\">Red(60%)</font>&nbsp;<font color=\"#2bff39\">Green(30%)</font>&nbsp;<font color=\"#132aff\">Blue(10%)</font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590367641236,
+      "note_id": 1590367598752,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is the shape and boundaries of an object",
+      "answer_text": "Form is the shape and boundaries of an object",
+      "fields": {
+        "Text": "{{c1::Form}} is the <font color=\"#ff0004\">shape</font> and <font color=\"#ff0004\">boundaries</font> of an object",
+        "Extra": "<br><div><img src=\"1564644832_area-of-shape-1.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590367790839,
+      "note_id": 1590367641302,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Feature detection pathway] is good at spatial resolution , determining form , high levels of detail, and color",
+      "answer_text": "The parvocellular pathway is good at spatial resolution , determining form , high levels of detail, and color mnemonic: Pink Pyramid (form/shape) = Parvocellular Pathway",
+      "fields": {
+        "Text": "{{c1::The parvocellular pathway::Feature detection pathway}} is good at {{c2::spatial resolution}}, {{c2::determining form}}, {{c2::high}} levels of detail, and {{c2::color}}",
+        "Extra": "<div><br></div><font color=\"#00ffff\">mnemonic: Pink Pyramid (form/shape) = Parvocellular Pathway</font><br><div><img src=\"1564644832_area-of-shape-1.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590367790841,
+      "note_id": 1590367641302,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The parvocellular pathway is good at [...] , [...] , [...] levels of detail, and [...]",
+      "answer_text": "The parvocellular pathway is good at spatial resolution , determining form , high levels of detail, and color mnemonic: Pink Pyramid (form/shape) = Parvocellular Pathway",
+      "fields": {
+        "Text": "{{c1::The parvocellular pathway::Feature detection pathway}} is good at {{c2::spatial resolution}}, {{c2::determining form}}, {{c2::high}} levels of detail, and {{c2::color}}",
+        "Extra": "<div><br></div><font color=\"#00ffff\">mnemonic: Pink Pyramid (form/shape) = Parvocellular Pathway</font><br><div><img src=\"1564644832_area-of-shape-1.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590367826191,
+      "note_id": 1590367790994,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The parvocellular pathway has good [...] resolution but poor [...] resolution",
+      "answer_text": "The parvocellular pathway has good spatial resolution but poor temporal resolution",
+      "fields": {
+        "Text": "The <font color=\"#ff3b30\">parvocellular</font> pathway has good {{c1::spatial}} resolution but poor {{c1::temporal}} resolution",
+        "Extra": "<br><div><img src=\"1564644832_area-of-shape-1.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590367841377,
+      "note_id": 1590367826250,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The parvocellular pathway relies on [photoreceptor]",
+      "answer_text": "The parvocellular pathway relies on cones",
+      "fields": {
+        "Text": "The parvocellular pathway relies on {{c1::cones::photoreceptor}}",
+        "Extra": "<br><div><img src=\"1564644832_area-of-shape-1.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590367975865,
+      "note_id": 1590367841444,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The magnocellular pathway is good at determining [...] and [...]",
+      "answer_text": "The magnocellular pathway is good at determining motion and depth picture magneto(magnocellular) moving shit shoutout to cubene",
+      "fields": {
+        "Text": "{{c2::<font color=\"#00ffff\">The magnocellular pathway</font>::Feature detection pathway}} is good at determining {{c1::<font color=\"#00ffff\">motion</font>}} and {{c1::<font color=\"#00ffff\">depth</font>}}",
+        "Extra": "<div><font color=\"#00ffff\"><br></font></div><font color=\"#00ffff\">picture magneto(magnocellular) moving shit</font><div><div><img src=\"5208258-magneto 1.gif\"><br></div></div><div>shoutout to cubene</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590367975866,
+      "note_id": 1590367841444,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Feature detection pathway] is good at determining motion and depth",
+      "answer_text": "The magnocellular pathway is good at determining motion and depth picture magneto(magnocellular) moving shit shoutout to cubene",
+      "fields": {
+        "Text": "{{c2::<font color=\"#00ffff\">The magnocellular pathway</font>::Feature detection pathway}} is good at determining {{c1::<font color=\"#00ffff\">motion</font>}} and {{c1::<font color=\"#00ffff\">depth</font>}}",
+        "Extra": "<div><font color=\"#00ffff\"><br></font></div><font color=\"#00ffff\">picture magneto(magnocellular) moving shit</font><div><div><img src=\"5208258-magneto 1.gif\"><br></div></div><div>shoutout to cubene</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368018746,
+      "note_id": 1590367975943,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The magnocellular pathway has good [...] resolution and poor [...] resolution",
+      "answer_text": "The magnocellular pathway has good temporal resolution and poor spatial resolution",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">The magnocellular pathway</font> has good {{c1::temporal}} resolution and poor {{c1::spatial}} resolution",
+        "Extra": "<br><div><img src=\"5208258-magneto 1.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368041963,
+      "note_id": 1590368018813,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The magnocellular pathway relies on [photoreceptor]",
+      "answer_text": "The magnocellular pathway relies on rods",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">The magnocellular pathway</font> relies on {{c1::rods::photoreceptor}}",
+        "Extra": "<br><div><img src=\"5208258-magneto 1.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368113598,
+      "note_id": 1590368042032,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is focusing on all information (color, form, motion) at the same time",
+      "answer_text": "Parallel processing is focusing on all information (color, form, motion) at the same time",
+      "fields": {
+        "Text": "{{c1::Parallel processing}} is focusing on <b><u>all information</u></b> (color, form, motion) at the <font color=\"#ff0004\">same time</font>",
+        "Extra": "<br><div><img src=\"2019ParallelProcessing-FeaturedImage2.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368181294,
+      "note_id": 1590368113742,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is our sense of sound",
+      "answer_text": "Audition is our sense of sound",
+      "fields": {
+        "Text": "{{c1::Audition}} is our <font color=\"#ff0004\">sense of sound</font>",
+        "Extra": "<br><div><img src=\"_112324241_9987c904-c1ee-46f3-8594-2a8a6a13f893.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368238682,
+      "note_id": 1590368181378,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "To hear a sound, you need [...] and [...]",
+      "answer_text": "To hear a sound, you need a pressurized sound wave and hair cells",
+      "fields": {
+        "Text": "To hear a sound, you need {{c1::a pressurized sound wave}} and {{c1::hair cells}}",
+        "Extra": "<br><div><img src=\"structures-outer-ear.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368332287,
+      "note_id": 1590368238768,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[High/Low] wavelength sound waves penetrate deeper into the cochlea",
+      "answer_text": "High wavelength sound waves penetrate deeper into the cochlea",
+      "fields": {
+        "Text": "{{c1::High::High/Low}} wavelength sound waves penetrate <font color=\"#ff0004\">deeper</font> into the cochlea",
+        "Extra": "<br><div><img src=\"structures-outer-ear.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368398705,
+      "note_id": 1590368332367,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Structure] is the outer part of the ear",
+      "answer_text": "The pinna is the outer part of the ear",
+      "fields": {
+        "Text": "{{c1::The pinna::Structure}} is the <font color=\"#ff0004\">outer</font> part of the ear",
+        "Extra": "<div><br></div><div><img src=\"9528.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368460398,
+      "note_id": 1590368398773,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Sound waves from the pinna get funelled into the [...] AKA [...]",
+      "answer_text": "Sound waves from the pinna get funelled into the auditory canal AKA external auditory meatus",
+      "fields": {
+        "Text": "Sound waves from <font color=\"#00ffff\">the pinna</font> get funelled into the {{c1::auditory canal}} AKA {{c1::external auditory meatus}}",
+        "Extra": "<br><div><img src=\"ear.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368504032,
+      "note_id": 1590368460561,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Sound waves that pass through the auditory canal will hit the [...] AKA [...]",
+      "answer_text": "Sound waves that pass through the auditory canal will hit the tympanic membrane AKA eardrum",
+      "fields": {
+        "Text": "Sound waves that pass through the <font color=\"#ff0004\">auditory canal</font> will hit the {{c1::tympanic membrane}} AKA {{c1::eardrum}}",
+        "Extra": "<br><div><img src=\"ear.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368604003,
+      "note_id": 1590368504119,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The eardrums vibrations will cause [...] to vibrate",
+      "answer_text": "The eardrums vibrations will cause the ossicles to vibrate",
+      "fields": {
+        "Text": "The <font color=\"#ff0004\">eardrums</font> vibrations will cause {{c1::the ossicles}} to vibrate",
+        "Extra": "<div><br></div><div><img src=\"300px-Auditory_ossicles-en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368661359,
+      "note_id": 1590368604048,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "In order of vibration, the ossicles include the [...] , [...] and [...]",
+      "answer_text": "In order of vibration, the ossicles include the malleus(hammer) , incus(anvil) and stapes(stirrup)",
+      "fields": {
+        "Text": "In order of vibration, <font color=\"#00ffff\">the ossicles </font>include the {{c1::malleus(hammer)}}, {{c1::incus(anvil)}} and {{c1::stapes(stirrup)}}",
+        "Extra": "<br><div><img src=\"300px-Auditory_ossicles-en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368675934,
+      "note_id": 1590368661440,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The malleus = [...]",
+      "answer_text": "The malleus = the hammer",
+      "fields": {
+        "Text": "The malleus = {{c1::the hammer}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368683979,
+      "note_id": 1590368676018,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The incus = [...]",
+      "answer_text": "The incus = the anvil",
+      "fields": {
+        "Text": "The incus = {{c1::the anvil}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368691491,
+      "note_id": 1590368684061,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The stapes = [...]",
+      "answer_text": "The stapes = the stirrup",
+      "fields": {
+        "Text": "The stapes = {{c1::the stirrup}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368754087,
+      "note_id": 1590368691578,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The stapes is attached to the [...]",
+      "answer_text": "The stapes is attached to the oval window aka the elliptical window",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">The stapes</font> is attached to the {{c1::oval window}}",
+        "Extra": "<div><br></div><font color=\"#ff0004\">aka the elliptical window</font><br><div><img src=\"Sound-waves-mechanism-hearing-ear-canal-membrane.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368832499,
+      "note_id": 1590368754153,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The purpose of the oval window is to [...]",
+      "answer_text": "The purpose of the oval window is to push fluid through the cochlea this allows fluid to pass over the hair cells and stimulate the sensation of hearing",
+      "fields": {
+        "Text": "The purpose of the <font color=\"#ff0004\">oval window</font> is to {{c1::push fluid through the cochlea}}",
+        "Extra": "<div><br></div><font color=\"#ff0004\">this allows fluid to pass over the hair cells and stimulate the sensation of hearing</font><br><div><img src=\"Sound-waves-mechanism-hearing-ear-canal-membrane.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368913821,
+      "note_id": 1590368832598,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The purpose of the round window is to [...]",
+      "answer_text": "The purpose of the round window is to bulge out as fluid flows through the cochlea",
+      "fields": {
+        "Text": "The purpose of the <font color=\"#ffc0fe\">round window</font> is to {{c1::bulge out as fluid flows through the cochlea}}",
+        "Extra": "<br><div><img src=\"Sound-waves-mechanism-hearing-ear-canal-membrane.jpg\"><br></div>"
+      },
+      "tags": []
+    }
+  ]
+}

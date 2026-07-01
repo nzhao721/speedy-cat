@@ -1,0 +1,448 @@
+{
+  "meta": {
+    "section": "CPBS",
+    "subArea": "physics",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 24 (Electromagnetic Waves) — Test Prep for AP® Courses",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/24-test-prep-for-ap-r-courses"
+      },
+      {
+        "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 25 (Geometric Optics) — Test Prep for AP® Courses",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses"
+      },
+      {
+        "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 27 (Wave Optics) — Test Prep for AP® Courses",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/27-test-prep-for-ap-r-courses"
+      }
+    ],
+    "counts": {"total": 21, "byTopic": {"electromagnetic waves": 4, "geometric optics (reflection/refraction/lenses/mirrors)": 9, "wave optics (interference/diffraction/polarization)": 8}},
+    "notes": "Physics (CPBS) light items: electromagnetic waves, geometric optics, and wave optics. Stems and four options scraped verbatim from OpenStax College Physics for AP Courses 2e Ch. 24/25/27 'Test Prep for AP Courses' single-best-answer multiple-choice items. OpenStax publishes the answer key to instructors only, so each correctAnswer was independently verified from the same CC BY-NC-SA source text or by calculation (answerProvenance = verified-from-source-text). 'Select two answers', figure-dependent (specific waveform/figure), and free-response items were skipped. c = 3.0 × 10⁸ m/s used where needed."
+  },
+  "questions": [
+    {
+      "id": "cpbs-xp142",
+      "section": "CPBS",
+      "stem": "If an electromagnetic wave is described as having a frequency of 3 GHz, what are its period and wavelength (in a vacuum)?",
+      "choices": [
+        {"label": "A", "text": "3.0 × 10⁹ s, 10 cm"},
+        {"label": "B", "text": "3.3 × 10⁻¹⁰ s, 10 cm"},
+        {"label": "C", "text": "3.3 × 10⁻¹⁰ s, 10 m"},
+        {"label": "D", "text": "3.0 × 10⁹ s, 10 m"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Period T = 1/f = 1/(3×10⁹ Hz) ≈ 3.3×10⁻¹⁰ s. Wavelength λ = c/f = (3×10⁸ m/s)/(3×10⁹ Hz) = 0.10 m = 10 cm.",
+      "topicTags": ["physics", "electromagnetic waves", "frequency and wavelength"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 24 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/24-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (T = 1/f; λ = c/f)."
+    },
+    {
+      "id": "cpbs-xp143",
+      "section": "CPBS",
+      "stem": "A wave is traveling through a medium until it hits the end of the medium, with nothing but vacuum beyond. What happens to a mechanical wave, and what happens to an electromagnetic wave?",
+      "choices": [
+        {"label": "A", "text": "Mechanical wave reflects backward; electromagnetic wave continues on."},
+        {"label": "B", "text": "Mechanical wave reflects backward; electromagnetic wave reflects backward."},
+        {"label": "C", "text": "Mechanical wave continues on; electromagnetic wave continues on."},
+        {"label": "D", "text": "Mechanical wave stops; electromagnetic wave continues on."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "A mechanical wave requires a medium, so it cannot enter the vacuum and is reflected back at the boundary. An electromagnetic wave needs no medium, so it propagates onward into the vacuum.",
+      "topicTags": ["physics", "electromagnetic waves", "wave propagation"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 24 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/24-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (mechanical waves need a medium; EM waves do not)."
+    },
+    {
+      "id": "cpbs-xp144",
+      "section": "CPBS",
+      "stem": "Which of the following correctly orders these from least to greatest wavelength?",
+      "choices": [
+        {"label": "A", "text": "ELF, FM radio, microwaves, infrared, red, green, ultraviolet, x-ray, gamma ray"},
+        {"label": "B", "text": "ELF, FM radio, microwaves, infrared, green, red, ultraviolet, x-ray, gamma ray"},
+        {"label": "C", "text": "gamma ray, x-ray, ultraviolet, red, green, infrared, microwaves, FM radio, ELF"},
+        {"label": "D", "text": "gamma ray, x-ray, ultraviolet, green, red, infrared, microwaves, FM radio, ELF"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Least to greatest wavelength runs from gamma rays (shortest) up to ELF radio (longest). Within the visible band, green (~550 nm) has a shorter wavelength than red (~700 nm). Only option D begins with gamma rays and places green before red.",
+      "topicTags": ["physics", "electromagnetic waves", "electromagnetic spectrum"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 24 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/24-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (spectrum order; green wavelength < red)."
+    },
+    {
+      "id": "cpbs-xp145",
+      "section": "CPBS",
+      "stem": "An old microwave oven outputs only half the electric field it used to. How much longer does it take to cook things in this microwave oven?",
+      "choices": [
+        {"label": "A", "text": "Four times as long"},
+        {"label": "B", "text": "Twice as long"},
+        {"label": "C", "text": "Half the time"},
+        {"label": "D", "text": "One fourth the time"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The intensity (power delivered) of an electromagnetic wave is proportional to the square of the electric field. Halving the field reduces the power to one-fourth, so delivering the same cooking energy takes four times as long.",
+      "topicTags": ["physics", "electromagnetic waves", "intensity"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 24 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/24-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (intensity ∝ E²)."
+    },
+    {
+      "id": "cpbs-xp146",
+      "section": "CPBS",
+      "stem": "When light from a distant object reflects off a concave mirror and comes to a focus some distance in front of the mirror, we model light as a _____ to explain and predict the behavior of light and the formation of an image.",
+      "choices": [
+        {"label": "A", "text": "wave"},
+        {"label": "B", "text": "particle"},
+        {"label": "C", "text": "ray"},
+        {"label": "D", "text": "all of the above"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Image formation by mirrors and lenses is described by geometric optics, which models light as straight-line rays that reflect and refract. (The wave and particle models address other phenomena like interference and the photoelectric effect.)",
+      "topicTags": ["physics", "geometric optics", "ray model"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 25 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (ray model of geometric optics)."
+    },
+    {
+      "id": "cpbs-xp147",
+      "section": "CPBS",
+      "stem": "An object is 2 meters in front of a flat mirror. At what distance behind the mirror does the image appear to form?",
+      "choices": [
+        {"label": "A", "text": "0.2 m"},
+        {"label": "B", "text": "0.5 m"},
+        {"label": "C", "text": "2 m"},
+        {"label": "D", "text": "4 m"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "A flat (plane) mirror forms a virtual image located as far behind the mirror as the object is in front of it. So the image is 2 m behind the mirror.",
+      "topicTags": ["physics", "geometric optics", "plane mirror"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 25 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim (the source's ray-angle detail omitted; a plane-mirror image is at the object's distance behind the mirror). OpenStax withholds the public answer key; answer independently verified."
+    },
+    {
+      "id": "cpbs-xp148",
+      "section": "CPBS",
+      "stem": "When light travels from air into water, which of the following statements is accurate?",
+      "choices": [
+        {"label": "A", "text": "The wavelength decreases, and the speed decreases."},
+        {"label": "B", "text": "The wavelength decreases, and the speed increases."},
+        {"label": "C", "text": "The wavelength increases, and the speed decreases."},
+        {"label": "D", "text": "The wavelength increases, and the speed increases."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Water has a higher index of refraction than air, so light slows down. Since frequency is unchanged and v = fλ, a smaller speed means a smaller wavelength. Both decrease.",
+      "topicTags": ["physics", "geometric optics", "refraction"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 25 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (higher n ⇒ slower speed, shorter wavelength; f constant)."
+    },
+    {
+      "id": "cpbs-xp149",
+      "section": "CPBS",
+      "stem": "When a light ray travels from air into glass, which of the following is accurate after the light enters the glass?",
+      "choices": [
+        {"label": "A", "text": "The ray bends away from the normal, and the speed decreases."},
+        {"label": "B", "text": "The ray bends away from the normal, and the speed increases."},
+        {"label": "C", "text": "The ray bends toward the normal, and the speed increases."},
+        {"label": "D", "text": "The ray bends toward the normal, and the speed decreases."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Glass has a higher index of refraction than air, so the light slows down. When light enters a slower (denser) medium, it bends toward the normal.",
+      "topicTags": ["physics", "geometric optics", "refraction", "Snell's law"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 25 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (entering higher-n medium: slows, bends toward normal)."
+    },
+    {
+      "id": "cpbs-xp150",
+      "section": "CPBS",
+      "stem": "Light travels through water and crosses a boundary at a non-normal angle into a different fluid with an unknown index of refraction. Which of the following is true about the path of the light after crossing the boundary?",
+      "choices": [
+        {"label": "A", "text": "If the index of refraction of the fluid is higher than that of water, the light will speed up and turn toward the normal."},
+        {"label": "B", "text": "If the index of refraction of the fluid is higher than that of water, the light will slow down and turn away from the normal."},
+        {"label": "C", "text": "If the index of refraction of the fluid is lower than that of water, the light will speed up and turn away from the normal."},
+        {"label": "D", "text": "If the index of refraction of the fluid is lower than that of water, the light will slow down and turn toward the normal."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Light speed is inversely related to the index of refraction. Entering a lower-index fluid, the light speeds up and bends away from the normal. (A higher-index fluid would slow the light and bend it toward the normal—so options A and B are internally inconsistent.)",
+      "topicTags": ["physics", "geometric optics", "refraction", "Snell's law"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 25 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (lower n ⇒ faster, bends away from normal)."
+    },
+    {
+      "id": "cpbs-xp151",
+      "section": "CPBS",
+      "stem": "An object is 25 cm in front of a converging lens with a focal length of 25 cm. Where will the resulting image be located?",
+      "choices": [
+        {"label": "A", "text": "25 cm in front of the lens"},
+        {"label": "B", "text": "25 cm behind the lens"},
+        {"label": "C", "text": "50 cm behind the lens"},
+        {"label": "D", "text": "at infinity (either in front of or behind the lens)"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Using the thin-lens equation 1/f = 1/do + 1/di with do = f = 25 cm gives 1/di = 1/25 - 1/25 = 0, so di = infinity. An object at the focal point produces rays that emerge parallel, forming an image at infinity.",
+      "topicTags": ["physics", "geometric optics", "lenses", "thin-lens equation"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 25 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (object at focal point ⇒ image at infinity)."
+    },
+    {
+      "id": "cpbs-xp152",
+      "section": "CPBS",
+      "stem": "A student wishes to predict the magnification of an image for any object distance from a converging lens of unknown focal length. What data must the student collect in order to make such a prediction?",
+      "choices": [
+        {"label": "A", "text": "A specific object distance and the image distance associated with that object distance."},
+        {"label": "B", "text": "A specific image distance and a determination of whether the image formed is upright or inverted."},
+        {"label": "C", "text": "The diameter and index of refraction of the lens."},
+        {"label": "D", "text": "The radius of curvature of each side of the lens."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "From one matched pair of object distance and image distance, the lens's focal length can be found via 1/f = 1/do + 1/di. Once f is known, the magnification (m = -di/do) can be predicted for any object distance.",
+      "topicTags": ["physics", "geometric optics", "lenses", "magnification"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 25 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (one do-di pair determines f, hence magnification for any do)."
+    },
+    {
+      "id": "cpbs-xp153",
+      "section": "CPBS",
+      "stem": "A student tests a mirror of unknown radius of curvature and notices that no matter how far an object is placed from the mirror, the image is always upright and smaller than the object. What can the student deduce about this mirror?",
+      "choices": [
+        {"label": "A", "text": "The mirror is convex."},
+        {"label": "B", "text": "The mirror is flat."},
+        {"label": "C", "text": "The mirror is concave."},
+        {"label": "D", "text": "More information is required to deduce the shape of the mirror."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "A convex mirror always produces an upright, reduced (smaller), virtual image for any object distance. A flat mirror gives a same-size image, and a concave mirror can produce enlarged or inverted images, so the behavior described identifies a convex mirror.",
+      "topicTags": ["physics", "geometric optics", "convex mirror"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 25 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (convex mirror always gives upright, reduced images)."
+    },
+    {
+      "id": "cpbs-xp154",
+      "section": "CPBS",
+      "stem": "A mirror shows an upright image twice as large as the object when the object is 10 cm away from the mirror. What is the focal length of the mirror?",
+      "choices": [
+        {"label": "A", "text": "-10 cm"},
+        {"label": "B", "text": "10 cm"},
+        {"label": "C", "text": "20 cm"},
+        {"label": "D", "text": "40 cm"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "An upright, enlarged image is virtual, so the magnification is m = +2 = -di/do, giving di = -2(10) = -20 cm. Then 1/f = 1/do + 1/di = 1/10 - 1/20 = 1/20, so f = +20 cm (a concave mirror).",
+      "topicTags": ["physics", "geometric optics", "concave mirror", "mirror equation"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 25 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (m = +2 ⇒ di = -20 cm; 1/f = 1/do + 1/di)."
+    },
+    {
+      "id": "cpbs-xp155",
+      "section": "CPBS",
+      "stem": "Which of the following statements is true about Huygens's principle of secondary wavelets?",
+      "choices": [
+        {"label": "A", "text": "It can be used to explain the particle behavior of waves."},
+        {"label": "B", "text": "It states that each point on a wavefront can be considered a new wave source."},
+        {"label": "C", "text": "It can be used to find the velocity of a wave."},
+        {"label": "D", "text": "All of the above."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Huygens's principle states that every point on a wavefront acts as a source of secondary spherical wavelets, and the new wavefront is the envelope of these wavelets. It explains wave phenomena such as diffraction, not particle behavior.",
+      "topicTags": ["physics", "wave optics", "Huygens's principle", "diffraction"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 27 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/27-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (Huygens: each wavefront point is a new source)."
+    },
+    {
+      "id": "cpbs-xp156",
+      "section": "CPBS",
+      "stem": "In a double-slit experiment with two waves of equal amplitude, a student measures the maximum and minimum fringe intensities, then doubles the amplitudes of both waves and measures again. Which of the following will remain unchanged?",
+      "choices": [
+        {"label": "A", "text": "The intensity of the bright fringe"},
+        {"label": "B", "text": "The intensity of the dark fringe"},
+        {"label": "C", "text": "The difference in the intensities of consecutive bright and dark fringes"},
+        {"label": "D", "text": "None of the above"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "With equal amplitudes, the dark fringes are completely destructive, giving zero intensity. Doubling both (still-equal) amplitudes keeps the dark fringes at zero. The bright-fringe intensity, however, scales with amplitude squared and increases, so the difference also changes.",
+      "topicTags": ["physics", "wave optics", "interference", "double slit"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 27 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/27-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (equal-amplitude dark fringe stays at zero intensity)."
+    },
+    {
+      "id": "cpbs-xp157",
+      "section": "CPBS",
+      "stem": "What will be the amplitude of the central fringe if the amplitudes of the two waves in a double-slit experiment are a and 3a?",
+      "choices": [
+        {"label": "A", "text": "2a"},
+        {"label": "B", "text": "4a"},
+        {"label": "C", "text": "8a²"},
+        {"label": "D", "text": "16a²"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "At the central (zeroth-order) fringe the two waves arrive in phase, so their amplitudes add directly: a + 3a = 4a. (Options with a² are dimensionally intensities, not amplitudes.)",
+      "topicTags": ["physics", "wave optics", "interference", "double slit"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 27 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/27-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (in-phase amplitudes add: a + 3a = 4a)."
+    },
+    {
+      "id": "cpbs-xp158",
+      "section": "CPBS",
+      "stem": "Which of the following cannot be a possible outcome of passing white light through several evenly spaced parallel slits (a diffraction grating)?",
+      "choices": [
+        {"label": "A", "text": "The central maximum will be white but the higher-order maxima will disperse into a rainbow of colors."},
+        {"label": "B", "text": "The central maximum and higher-order maxima will be of equal widths."},
+        {"label": "C", "text": "The shorter-wavelength components of light will diffract less than the longer-wavelength components for all maxima except the central one."},
+        {"label": "D", "text": "None of the above."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Because diffraction angle depends on wavelength, the higher-order maxima spread white light into spectra and become broader and dispersed, while the central maximum stays narrow and white. So the maxima are not all of equal width—that outcome cannot occur.",
+      "topicTags": ["physics", "wave optics", "diffraction grating"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 27 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/27-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (wavelength-dependent dispersion makes equal widths impossible)."
+    },
+    {
+      "id": "cpbs-xp159",
+      "section": "CPBS",
+      "stem": "A diffraction pattern is formed on a screen when light of wavelength 410 nm passes through a single slit of width 1 μm. If the source light is replaced by light of wavelength 700 nm, what slit width produces a pattern with the same spacing?",
+      "choices": [
+        {"label": "A", "text": "0.6 μm"},
+        {"label": "B", "text": "1 μm"},
+        {"label": "C", "text": "1.4 μm"},
+        {"label": "D", "text": "1.7 μm"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Single-slit fringe spacing is proportional to λ/W. To keep the spacing constant, λ/W must be constant: W₂ = W₁(λ₂/λ₁) = (1 μm)(700/410) ≈ 1.7 μm.",
+      "topicTags": ["physics", "wave optics", "single-slit diffraction"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 27 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/27-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (spacing ∝ λ/W ⇒ W₂ = W₁·λ₂/λ₁)."
+    },
+    {
+      "id": "cpbs-xp160",
+      "section": "CPBS",
+      "stem": "What is the relationship between the width (W) of the central diffraction maximum formed through a circular aperture and the size (S) of the aperture?",
+      "choices": [
+        {"label": "A", "text": "W increases as S increases."},
+        {"label": "B", "text": "W decreases as S increases."},
+        {"label": "C", "text": "W can increase or decrease as S decreases."},
+        {"label": "D", "text": "W can neither increase nor decrease as S decreases."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Diffraction spreading is inversely related to aperture size (the spread angle ∝ λ/S). A larger aperture produces a narrower central maximum, so W decreases as S increases.",
+      "topicTags": ["physics", "wave optics", "diffraction", "resolution"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 27 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/27-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (spread ∝ λ/S, so larger S ⇒ narrower maximum)."
+    },
+    {
+      "id": "cpbs-xp161",
+      "section": "CPBS",
+      "stem": "Which of the following best describes the cause of thin-film interference?",
+      "choices": [
+        {"label": "A", "text": "Light reflecting from a medium having an index of refraction less than that of the medium in which it is traveling."},
+        {"label": "B", "text": "Light reflecting from a medium having an index of refraction greater than that of the medium in which it is traveling."},
+        {"label": "C", "text": "Light changing its wavelength and speed after reflection."},
+        {"label": "D", "text": "Light reflecting from the top and bottom surfaces of a film."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Thin-film interference arises when light reflected from the top surface of the film interferes with light reflected from the bottom surface. The path-length difference (and any reflection phase shifts) determines whether the interference is constructive or destructive.",
+      "topicTags": ["physics", "wave optics", "thin-film interference"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 27 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/27-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (interference between reflections off the two film surfaces)."
+    },
+    {
+      "id": "cpbs-xp162",
+      "section": "CPBS",
+      "stem": "Which of the following is true regarding the direction of polarization for a polarized light wave?",
+      "choices": [
+        {"label": "A", "text": "It is parallel to the direction of propagation and perpendicular to the direction of the electric field."},
+        {"label": "B", "text": "It is perpendicular to the direction of propagation and parallel to the direction of the electric field."},
+        {"label": "C", "text": "It is parallel to the directions of both propagation and the electric field."},
+        {"label": "D", "text": "It is perpendicular to the directions of both propagation and the electric field."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The direction of polarization is defined by the direction of the wave's electric field, which oscillates perpendicular to the direction of propagation (light is a transverse wave). So polarization is perpendicular to propagation and parallel to the electric field.",
+      "topicTags": ["physics", "wave optics", "polarization"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 27 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/27-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (polarization = E-field direction, perpendicular to propagation)."
+    }
+  ]
+}

@@ -44,10 +44,8 @@ enum class ViewerAction(
     REDO(R.id.action_redo, R.drawable.ic_redo, MENU_ONLY),
     FLAG_MENU(R.id.action_flag, R.drawable.ic_flag_transparent, MENU_ONLY),
     MARK(R.id.action_mark, R.drawable.ic_star, MENU_ONLY),
-    EDIT(R.id.action_edit_note, R.drawable.ic_mode_edit_white, MENU_ONLY),
     BURY_MENU(R.id.action_bury, R.drawable.ic_flip_to_back_white, MENU_ONLY),
     SUSPEND_MENU(R.id.action_suspend, R.drawable.ic_suspend, MENU_ONLY),
-    DELETE(R.id.action_delete, R.drawable.ic_delete_white, MENU_ONLY),
     TOGGLE_WHITEBOARD(R.id.action_toggle_whiteboard, R.drawable.ic_enable_whiteboard, MENU_ONLY),
 
     // Disabled
@@ -120,7 +118,6 @@ enum class ViewerAction(
             UNDO -> listOf(keycode(KeyEvent.KEYCODE_Z, ctrl()))
             REDO -> listOf(keycode(KeyEvent.KEYCODE_Z, ModifierKeys(shift = true, ctrl = true, alt = false)))
             MARK -> listOf(unicode('*'))
-            EDIT -> listOf(keycode(KeyEvent.KEYCODE_E))
             ADD_NOTE -> listOf(keycode(KeyEvent.KEYCODE_A))
             BURY_NOTE -> listOf(unicode('='))
             BURY_CARD -> listOf(unicode('-'))
@@ -207,7 +204,6 @@ enum class ViewerAction(
                 )
             }
             // No default gestures
-            DELETE,
             CARD_INFO,
             TAG,
             EXIT,
@@ -254,10 +250,8 @@ enum class ViewerAction(
                 REDO -> getString(R.string.redo)
                 FLAG_MENU -> TR.browsingFlag()
                 MARK -> TR.sentenceCase.markNote
-                EDIT -> getString(R.string.cardeditor_title_edit_card)
                 BURY_MENU -> TR.studyingBury()
                 SUSPEND_MENU -> TR.studyingSuspend()
-                DELETE -> TR.sentenceCase.deleteNote
                 TOGGLE_WHITEBOARD -> getString(R.string.gesture_toggle_whiteboard)
                 DECK_OPTIONS -> TR.sentenceCase.deckOptions
                 CARD_INFO -> TR.sentenceCase.cardInfo

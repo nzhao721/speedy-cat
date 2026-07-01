@@ -99,26 +99,9 @@ class SidebarModel(QAbstractItemModel):
             return QVariant(item.tooltip)
         return QVariant(theme_manager.icon_from_resources(item.icon))
 
-    def setData(
-        self, index: QModelIndex, text: str, _role: int = Qt.ItemDataRole.EditRole
-    ) -> bool:
-        return self.sidebar._on_rename(index.internalPointer(), text)
-
-    def supportedDropActions(self) -> Qt.DropAction:
-        return Qt.DropAction.MoveAction
-
     def flags(self, index: QModelIndex) -> Qt.ItemFlag:
         if not index.isValid():
             return Qt.ItemFlag.ItemIsEnabled
-        flags = (
-            Qt.ItemFlag.ItemIsEnabled
-            | Qt.ItemFlag.ItemIsSelectable
-            | Qt.ItemFlag.ItemIsDragEnabled
-        )
-        item: SidebarItem = index.internalPointer()
-        if item.item_type in self.sidebar.valid_drop_types:
-            flags |= Qt.ItemFlag.ItemIsDropEnabled
-        if item.item_type.is_editable():
-            flags |= Qt.ItemFlag.ItemIsEditable
-
-        return flags
+        # The sidebar is a read-only filter/view: items can be selected (to
+        # search by them) but not edited, dragged or used as drop targets.
+        return Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable

@@ -226,7 +226,7 @@ class NotificationService : AnkiBroadcastReceiver() {
                     .Builder(context, Channel.REVIEW_REMINDERS.id)
                     .setCategory(NotificationCompat.CATEGORY_REMINDER)
                     .setSmallIcon(R.drawable.ic_star_notify)
-                    .setColor(context.getColor(CommonR.color.material_light_blue_700))
+                    .setColor(context.getColor(CommonR.color.brand_orange))
                     .setContentTitle(title)
                     .setContentText(description)
                     .setContentIntent(pendingIntent)
@@ -352,7 +352,7 @@ class NotificationService : AnkiBroadcastReceiver() {
                             Channel.GENERAL.id,
                         ).setCategory(NotificationCompat.CATEGORY_REMINDER)
                         .setSmallIcon(R.drawable.ic_star_notify)
-                        .setColor(context.getColor(CommonR.color.material_light_blue_700))
+                        .setColor(context.getColor(CommonR.color.brand_orange))
                         .setContentTitle(cardsDueText)
                         .setTicker(cardsDueText)
                 // Enable vibrate and blink if set in preferences

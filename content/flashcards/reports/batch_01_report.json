@@ -1,0 +1,193 @@
+{
+  "batch": 1,
+  "file": "batch_01.json",
+  "cards_evaluated": 258,
+  "summary": {
+    "ok": 241,
+    "cards_with_issues": 17,
+    "by_check": {
+      "qa_correspondence": 12,
+      "wellformed": 0,
+      "markup": 5
+    },
+    "by_severity": {
+      "error": 0,
+      "warning": 5,
+      "info": 12
+    }
+  },
+  "issue_type_counts": {
+    "image_cloze_no_text_reveal": 12,
+    "malformed_href": 3,
+    "malformed_cloze_html": 1,
+    "empty_href": 1
+  },
+  "flagged": [
+    {
+      "card_id": 1554051916385,
+      "note_id": 1554051588722,
+      "check": "markup",
+      "type": "malformed_cloze_html",
+      "severity": "warning",
+      "detail": "The cloze deletion contains a stray opening <div> with no matching close inside it, so the cloze boundary splits a <div> pair; the field still renders and the answer ('SEVE(N) UP mnemonic') corresponds, but the cloze markup is malformed.",
+      "evidence": "Text: '...{{c1::<div>SEVE(N) UP mnemonic</div><div>}}</div></div>'"
+    },
+    {
+      "card_id": 1553874633716,
+      "note_id": 1553874592034,
+      "check": "markup",
+      "type": "malformed_href",
+      "severity": "warning",
+      "detail": "The Extra-field Khan Academy link href begins with a stray 'a' ('ahttps://...'), producing a dead reference link (the cloze Q/A on Hund's Rule studies fine).",
+      "evidence": "<a href=\"ahttps://www.khanacademy.org/.../electron-configurations-for-the-first-period\">Khan Academy Link</a>"
+    },
+    {
+      "card_id": 1553874733589,
+      "note_id": 1553874633734,
+      "check": "markup",
+      "type": "malformed_href",
+      "severity": "warning",
+      "detail": "The Extra-field Khan Academy link href begins with a stray 'a' ('ahttps://...'), producing a dead reference link (the Pauli Exclusion Principle cloze studies fine).",
+      "evidence": "<a href=\"ahttps://www.khanacademy.org/.../electron-configurations-for-the-first-period\">Khan Academy Link</a>"
+    },
+    {
+      "card_id": 1553878274080,
+      "note_id": 1553878184250,
+      "check": "markup",
+      "type": "malformed_href",
+      "severity": "warning",
+      "detail": "The Extra-field Khan Academy link href begins with a stray 'a' ('ahttps://...'), producing a dead reference link (the Aufbau Principle cloze studies fine).",
+      "evidence": "<a href=\"ahttps://www.khanacademy.org/.../electron-configurations-for-the-first-period\">Khan Academy Link</a>"
+    },
+    {
+      "card_id": 1554010418556,
+      "note_id": 1554010329182,
+      "check": "markup",
+      "type": "empty_href",
+      "severity": "warning",
+      "detail": "The Extra-field 'Khan Academy Link' anchor has an empty href (href=\"\"), so the reference link is dead; the G1-checkpoint cloze Q/A is unaffected.",
+      "evidence": "<a href=\"\">Khan Academy Link</a>"
+    },
+    {
+      "card_id": 1553880637189,
+      "note_id": 1553880551306,
+      "check": "qa_correspondence",
+      "type": "image_cloze_no_text_reveal",
+      "severity": "info",
+      "detail": "Cloze deletion is an image only, so answer_text mirrors question_text with no textual reveal; the effective-nuclear-charge trend appears solely in the image.",
+      "evidence": "{{c1::<img src=\"Zeff Periodic Trend Complete.png\">}}; answer adds only 'YouTube Link'"
+    },
+    {
+      "card_id": 1553880733158,
+      "note_id": 1553880666251,
+      "check": "qa_correspondence",
+      "type": "image_cloze_no_text_reveal",
+      "severity": "info",
+      "detail": "Cloze deletion is an image only, so answer_text mirrors question_text with no textual reveal; the ionization-energy trend appears solely in the image.",
+      "evidence": "{{c1::<img src=\"Ionization Energy Trend Complete.png\">}}; answer adds only 'Khan Academy Link'"
+    },
+    {
+      "card_id": 1553880892660,
+      "note_id": 1553880780041,
+      "check": "qa_correspondence",
+      "type": "image_cloze_no_text_reveal",
+      "severity": "info",
+      "detail": "Cloze deletion is an image only, so answer_text mirrors question_text with no textual reveal; the electron-affinity trend appears solely in the image.",
+      "evidence": "{{c1::<img src=\"Electron Affinity Trend Complete.png\">}}; answer == question + link"
+    },
+    {
+      "card_id": 1553881104139,
+      "note_id": 1553881009166,
+      "check": "qa_correspondence",
+      "type": "image_cloze_no_text_reveal",
+      "severity": "info",
+      "detail": "Cloze deletion is an image only, so answer_text mirrors question_text with no textual reveal; the electronegativity trend appears solely in the image.",
+      "evidence": "{{c1::<img src=\"Electronegativity Trend Complete.png\">}}; answer == question + link"
+    },
+    {
+      "card_id": 1553881134622,
+      "note_id": 1553881104155,
+      "check": "qa_correspondence",
+      "type": "image_cloze_no_text_reveal",
+      "severity": "info",
+      "detail": "Cloze deletion is an image only, so answer_text mirrors question_text with no textual reveal; the atomic-size trend appears solely in the image.",
+      "evidence": "{{c1::<img src=\"Atomic Size Periodic Trend Complete.png\">}}; answer == question + link"
+    },
+    {
+      "card_id": 1553881178370,
+      "note_id": 1553881134635,
+      "check": "qa_correspondence",
+      "type": "image_cloze_no_text_reveal",
+      "severity": "info",
+      "detail": "Cloze deletion is an image only, so answer_text mirrors question_text with no textual reveal; the H/C/N/O/F electronegativity values appear solely in the image.",
+      "evidence": "{{c1::<img src=\"Common Electronegativities Complete.png\" />}}; answer == question + link"
+    },
+    {
+      "card_id": 1553887042522,
+      "note_id": 1553886960846,
+      "check": "qa_correspondence",
+      "type": "image_cloze_no_text_reveal",
+      "severity": "info",
+      "detail": "Cloze deletion is an image only, so answer_text mirrors question_text with no textual reveal; the intermolecular-force strength ranking appears solely in the image.",
+      "evidence": "{{c1::<img src=\"Screenshot 2019-03-29 12.16.19.png\" />}}; answer == question + link"
+    },
+    {
+      "card_id": 1554074519400,
+      "note_id": 1554074168499,
+      "check": "qa_correspondence",
+      "type": "image_cloze_no_text_reveal",
+      "severity": "info",
+      "detail": "Cloze deletion is an image only (pI formula, no side chain), so answer_text mirrors question_text with no textual reveal.",
+      "evidence": "{{c1::<img src=\"pI No Side Chain.png\">}}; answer adds only 'YouTube Link'"
+    },
+    {
+      "card_id": 1554074541255,
+      "note_id": 1554074519575,
+      "check": "qa_correspondence",
+      "type": "image_cloze_no_text_reveal",
+      "severity": "info",
+      "detail": "Cloze deletion is an image only (pI formula, neutral side chain), so answer_text mirrors question_text with no textual reveal.",
+      "evidence": "{{c1::<img src=\"pI Neutral Side Chain.png\">}}; answer == question + link"
+    },
+    {
+      "card_id": 1554074557704,
+      "note_id": 1554074541271,
+      "check": "qa_correspondence",
+      "type": "image_cloze_no_text_reveal",
+      "severity": "info",
+      "detail": "Cloze deletion is an image only (pI formula, basic side chain), so answer_text mirrors question_text with no textual reveal.",
+      "evidence": "{{c1::<img src=\"pI Basic Side Chain.png\">}}; answer == question + link"
+    },
+    {
+      "card_id": 1554074574307,
+      "note_id": 1554074557717,
+      "check": "qa_correspondence",
+      "type": "image_cloze_no_text_reveal",
+      "severity": "info",
+      "detail": "Cloze deletion is an image only (pI formula, acidic side chain), so answer_text mirrors question_text with no textual reveal.",
+      "evidence": "{{c1::<img src=\"pI Acidic Side Chain.png\">}}; answer == question + link"
+    },
+    {
+      "card_id": 1554089537524,
+      "note_id": 1554089291465,
+      "check": "qa_correspondence",
+      "type": "image_cloze_no_text_reveal",
+      "severity": "info",
+      "detail": "Cloze deletion is an image only (the equation), so answer_text mirrors question_text with no textual reveal; the Michaelis-Menten equation appears solely in the image.",
+      "evidence": "{{c1::<img src=\"Michalis Menten Equation.png\">}}; answer adds only 'Khan Academy Link'"
+    }
+  ],
+  "worst_offenders": [
+    1554051916385,
+    1553874633716,
+    1553874733589,
+    1553878274080,
+    1554010418556,
+    1553880637189,
+    1553880733158,
+    1553887042522,
+    1554089537524,
+    1554074519400
+  ],
+  "notes": "Batch 01 is a clean, uniform set of 258 MileDown cloze cards (General Chemistry, Biology, Biochemistry); the tag breadcrumb prefixing every question/answer is the expected template element and was not treated as an error. No card-breaking errors were found: every {{cN::...}} cloze is well-formed and balanced, HTML tags are reasonably balanced, there are no unrendered template artifacts, and no LaTeX/MathJax is used (math is shown via images and <sub>/<sup>). Findings are minor: 12 image-occlusion clozes whose deletion is an image so the answer mirrors the question with no textual reveal (info), plus 5 warnings in supplementary content that does not block studying (one cloze wrapping a stray <div>, three Extra reference links with an 'ahttps://' typo, and one empty href); three further image-cloze cards (photon-energy equation, periodic-table orbital labels, egg pathway) were not flagged because their Extra fields reveal real explanatory text."
+}

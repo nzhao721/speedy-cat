@@ -99,15 +99,9 @@ class DeckPickerMenuContentProvider(
                     add(DeckPickerContextMenu.DeckPickerContextMenuOption.CUSTOM_STUDY_REBUILD)
                     add(DeckPickerContextMenu.DeckPickerContextMenuOption.CUSTOM_STUDY_EMPTY)
                 }
-                add(DeckPickerContextMenu.DeckPickerContextMenuOption.RENAME_DECK)
-                if (!isDynamic) {
-                    add(DeckPickerContextMenu.DeckPickerContextMenuOption.CREATE_SUBDECK)
-                }
-                add(DeckPickerContextMenu.DeckPickerContextMenuOption.DECK_OPTIONS)
                 if (!isDynamic) {
                     add(DeckPickerContextMenu.DeckPickerContextMenuOption.CUSTOM_STUDY)
                 }
-                add(DeckPickerContextMenu.DeckPickerContextMenuOption.EXPORT_DECK)
                 if (hasBuriedInDeck) {
                     add(DeckPickerContextMenu.DeckPickerContextMenuOption.UNBURY)
                 }
@@ -118,7 +112,6 @@ class DeckPickerMenuContentProvider(
                 if (Prefs.newReviewRemindersEnabled) {
                     add(DeckPickerContextMenu.DeckPickerContextMenuOption.SCHEDULE_REMINDERS)
                 }
-                add(DeckPickerContextMenu.DeckPickerContextMenuOption.DELETE_DECK)
             }
     }
 }

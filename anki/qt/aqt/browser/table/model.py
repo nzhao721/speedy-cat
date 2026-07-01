@@ -119,10 +119,21 @@ class DataModel(QAbstractTableModel):
             self._block_updates = True
             return CellRow.generic(self.len_columns(), "error")
 
+        self._show_topic_instead_of_deck(row)
         gui_hooks.browser_did_fetch_row(
             item, self._state.is_notes_mode(), row, self._state.active_columns
         )
         return row
+
+    def _show_topic_instead_of_deck(self, row: CellRow) -> None:
+        """Reduce the "deck" cell to its top-level deck, shown as the Topic."""
+        try:
+            index = self._state.active_columns.index("deck")
+        except ValueError:
+            return
+        if index < len(row.cells):
+            cell = row.cells[index]
+            cell.text = cell.text.split("::", 1)[0]
 
     def get_cached_row(self, index: QModelIndex) -> CellRow | None:
         """Get row if it is cached, regardless of staleness."""

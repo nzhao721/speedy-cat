@@ -1,0 +1,23 @@
+{
+  "batch": 14,
+  "file": "batch_14.json",
+  "cards_evaluated": 257,
+  "summary": {
+    "ok": 257,
+    "cards_with_issues": 0,
+    "by_check": {
+      "qa_correspondence": 0,
+      "wellformed": 0,
+      "markup": 0
+    },
+    "by_severity": {
+      "error": 0,
+      "warning": 0,
+      "info": 0
+    }
+  },
+  "issue_type_counts": {},
+  "flagged": [],
+  "worst_offenders": [],
+  "notes": "Batch 14 is a single hand-authored Pankow P/S (psych/sociology + sensation/perception) cloze deck, split between Cloze-8d4a6 and AACloze notetypes, and is of very high structural quality. All 257 cards passed the three checks: Q/A correspondence is clean (every cloze deletion reveals text that fits the blank or its [hint]; no empty answers and no answer==question), text is well-formed and readable with no unrendered template artifacts ('{{', '{{c1::', 'FrontSide'), and the raw fields have balanced {{cN::...}} markup plus balanced HTML (b/u/i/sub/sup/div/font) tags, with no LaTeX/MathJax present. Notably, every cloze deletion contains real text and all images live in the Extra field, so there are no image-only deletions or image-only cards to flag. The only imperfections are out-of-scope content issues (spelling typos like 'percieve'/'Austism'/'Hypocritin', informal/crude mnemonics, and one card whose author-noted mesolimbic/mesocortical mapping is self-questioned), none of which break studying."
+}

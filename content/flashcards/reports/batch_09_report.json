@@ -1,0 +1,201 @@
+{
+  "batch": 9,
+  "file": "batch_09.json",
+  "cards_evaluated": 257,
+  "summary": {
+    "ok": 239,
+    "cards_with_issues": 18,
+    "by_check": {
+      "qa_correspondence": 0,
+      "wellformed": 18,
+      "markup": 0
+    },
+    "by_severity": {
+      "error": 0,
+      "warning": 1,
+      "info": 17
+    }
+  },
+  "issue_type_counts": {
+    "image_only_answer": 16,
+    "incomplete_sentence": 1,
+    "spacing_artifact": 1
+  },
+  "flagged": [
+    {
+      "card_id": 1560089607449,
+      "note_id": 1560089607774,
+      "check": "wellformed",
+      "type": "incomplete_sentence",
+      "severity": "warning",
+      "detail": "Card text is truncated with a dangling conjunction; the sentence ends on 'while' with nothing following, so the statement is grammatically incomplete (cloze Q/A still corresponds).",
+      "evidence": "Postprandial means after eating a meal while"
+    },
+    {
+      "card_id": 1560013101612,
+      "note_id": 1560012155809,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "Cloze deletion is an image (balanced REDOX reaction) and Extra holds only a link, so answer_text reveals no text for the blank; renders fine in-app.",
+      "evidence": "{{c1::<img src='Balancing Acidic Reactions.png'>}}"
+    },
+    {
+      "card_id": 1560014516389,
+      "note_id": 1560013102018,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "Cloze deletion is an image (balanced REDOX reaction) and Extra holds only a link, so answer_text reveals no text for the blank; renders fine in-app.",
+      "evidence": "{{c1::<img src='Balancing REDOX Reactions in Basic Solution.png'>}}"
+    },
+    {
+      "card_id": 1560020733549,
+      "note_id": 1560018526696,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "Cloze deletion is an image (completed +/-/0 table) and Extra holds only a link, so answer_text reveals no text for the blank; renders fine in-app.",
+      "evidence": "{{c1::<img src='Electrochemical Cells EMF and G.png'>}}"
+    },
+    {
+      "card_id": 1560029331983,
+      "note_id": 1560027991688,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "Cloze deletion is an image (EMF equation) and Extra is image+link only, so answer_text reveals no text for the blank; renders fine in-app.",
+      "evidence": "{{c1::<img src='Eletromotive Force Equation.png'>}}"
+    },
+    {
+      "card_id": 1560030338593,
+      "note_id": 1560030169358,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "Cloze deletion is an image (delta-G non-standard equation) and Extra is image+link only, so answer_text reveals no text for the blank; renders fine in-app.",
+      "evidence": "{{c1::<img src='Delta G in Nonstandard Conditions.png'>}}"
+    },
+    {
+      "card_id": 1559620569053,
+      "note_id": 1559620306538,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "Cloze deletion (worked scientific-notation result) is an image; answer_text shows only the Extra method tip, not the actual answer; renders fine in-app.",
+      "evidence": "{{c1::<img src='Subtraction (1).png'>}}"
+    },
+    {
+      "card_id": 1559620783157,
+      "note_id": 1559620569281,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "Cloze deletion (worked scientific-notation result) is an image; answer_text shows only the Extra method tip, not the actual answer; renders fine in-app.",
+      "evidence": "{{c1::<img src='Multiplication.png'>}}"
+    },
+    {
+      "card_id": 1559620886144,
+      "note_id": 1559620783168,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "Cloze deletion (worked scientific-notation result) is an image; answer_text shows only the Extra method tip, not the actual answer; renders fine in-app.",
+      "evidence": "{{c1::<img src='Division.png'>}}"
+    },
+    {
+      "card_id": 1559621323906,
+      "note_id": 1559620886439,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "Cloze deletion (worked scientific-notation result) is an image; answer_text shows only the Extra method tip, not the actual answer; renders fine in-app.",
+      "evidence": "{{c1::<img src='Exponents.png'>}}"
+    },
+    {
+      "card_id": 1559621535943,
+      "note_id": 1559621324041,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "Cloze deletion (worked scientific-notation result) is an image; answer_text shows only the Extra method tip, not the actual answer; renders fine in-app.",
+      "evidence": "{{c1::<img src='Square Root.png'>}}"
+    },
+    {
+      "card_id": 1559622300166,
+      "note_id": 1559622017837,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "Cloze deletion (adjusted-coefficient result) is an image; answer_text shows only the LARS mnemonic from Extra, not the actual answer; renders fine in-app.",
+      "evidence": "{{c1::<img src='LARS 1.png'>}}"
+    },
+    {
+      "card_id": 1559622371239,
+      "note_id": 1559622300461,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "Cloze deletion (adjusted-coefficient result) is an image; answer_text shows only the LARS mnemonic from Extra, not the actual answer; renders fine in-app.",
+      "evidence": "{{c1::<img src='LARS 2.png'>}}"
+    },
+    {
+      "card_id": 1560029793298,
+      "note_id": 1560029331994,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "Cloze deletion (the equation) is an image; answer_text only shows the Extra variable definitions, not the equation itself; renders fine in-app.",
+      "evidence": "{{c1::<img src='Delta G for REDOX Reaction.png'>}}"
+    },
+    {
+      "card_id": 1560030169350,
+      "note_id": 1560029793312,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "Cloze deletion (the equation) is an image; answer_text only shows the Extra variable definitions, not the equation itself; renders fine in-app.",
+      "evidence": "{{c1::<img src='Delta G as Function of Equil Constant.png'>}}"
+    },
+    {
+      "card_id": 1560031457997,
+      "note_id": 1560030338601,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "Cloze deletion (Nernst equation) is an image; answer_text only shows the Extra variable definitions, not the equation itself; renders fine in-app.",
+      "evidence": "{{c1::<img src='Nernst Equation 1.png'>}}"
+    },
+    {
+      "card_id": 1560031711482,
+      "note_id": 1560031458120,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "Cloze deletion (simplified Nernst equation) is an image; answer_text only shows the Extra variable definitions, not the equation itself; renders fine in-app.",
+      "evidence": "{{c1::<img src='Nernst Equation 2.png'>}}"
+    },
+    {
+      "card_id": 1560039897151,
+      "note_id": 1560035434628,
+      "check": "wellformed",
+      "type": "spacing_artifact",
+      "severity": "info",
+      "detail": "Extracted text reads 'a rachidonic acid pathway' due to an <em>a</em> wrapping on the first letter; the raw field renders correctly as 'arachidonic' in-app, so this is a minor readability artifact.",
+      "evidence": "The a rachidonic acid pathway"
+    }
+  ],
+  "worst_offenders": [
+    1560089607449,
+    1560013101612,
+    1560014516389,
+    1560020733549,
+    1560029331983,
+    1560030338593,
+    1560039897151,
+    1559620569053,
+    1560031457997,
+    1560029793298
+  ],
+  "notes": "Batch 9 is high-quality MileDown MCAT cloze content; 239/257 cards are clean with balanced cloze/LaTeX/HTML markup and correct question/answer correspondence, and no markup-balance or empty-answer errors were found. The dominant issue (16 cards, all in the Physics/Math scientific-notation, REDOX-balancing, and electrochemistry-equation sections) is image-only cloze answers where the deleted answer is rendered as an image and therefore absent from the extracted answer_text; these study correctly in-app and are recorded at info severity. The only non-image defects are one truncated sentence ('...after eating a meal while', warning) and one spacing artifact ('a rachidonic', info)."
+}

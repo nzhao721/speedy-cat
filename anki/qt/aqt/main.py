@@ -696,10 +696,8 @@ class AnkiQt(QMainWindow):
         if not self.col:
             return
 
-        label = (
-            tr.qt_misc_closing() if self.restoring_backup else tr.qt_misc_backing_up()
-        )
-        self.progress.start(label=label)
+        # SpeedyCAT: no backup happens on close anymore, so this is a plain close.
+        self.progress.start(label=tr.qt_misc_closing())
 
         corrupt = False
 
@@ -711,16 +709,8 @@ class AnkiQt(QMainWindow):
             corrupt = True
 
         try:
-            if not corrupt and not dev_mode and not self.restoring_backup:
-                try:
-                    # default 5 minute throttle
-                    self.col.create_backup(
-                        backup_folder=self.pm.backupFolder(),
-                        force=False,
-                        wait_for_completion=False,
-                    )
-                except Exception:
-                    print("backup on close failed")
+            # SpeedyCAT: automatic backups are disabled (read-only content), so
+            # the stock backup-on-close is skipped; we just close the collection.
             self.col.close(downgrade=False)
         except Exception as e:
             print(e)
@@ -947,6 +937,7 @@ title="{}" {}>{}</button>""".format(
         # main window
         self.form = aqt.forms.main.Ui_MainWindow()
         self.form.setupUi(self)
+        self._apply_app_icon()
         # toolbar
         tweb = self.toolbarWeb = TopWebView(self)
         self.toolbar = Toolbar(self, tweb)
@@ -971,6 +962,22 @@ title="{}" {}>{}</button>""".format(
                 webview.force_load_hack()
 
         gui_hooks.card_review_webview_did_init(self.web, AnkiWebViewKind.MAIN)
+
+    def _apply_app_icon(self) -> None:
+        """SpeedyCAT: apply the bundled icon to the app and the main window.
+
+        The Qt Designer form (main.ui) assigns the icon only to this window
+        instance and never sets one on the QApplication, so the desktop/taskbar
+        icon could appear blank. Loading it explicitly here (via the ``icons:``
+        search path registered during startup) guarantees the SpeedyCAT icon is
+        shown for the application itself and any window without its own icon.
+        """
+        icon = QIcon()
+        icon.addPixmap(QPixmap("icons:anki.png"))
+        if icon.isNull():
+            return
+        self.app.setWindowIcon(icon)
+        self.setWindowIcon(icon)
 
     def closeAllWindows(self, onsuccess: Callable) -> None:
         aqt.dialogs.closeAll(onsuccess)
@@ -1295,9 +1302,6 @@ title="{}" {}>{}</button>""".format(
     def onBrowse(self) -> None:
         aqt.dialogs.open("Browser", self, card=self.reviewer.card)
 
-    def onEditCurrent(self) -> None:
-        aqt.dialogs.open("EditCurrent", self)
-
     def onOverview(self) -> None:
         self.moveToState("overview")
 
@@ -1406,12 +1410,6 @@ title="{}" {}>{}</button>""".format(
             force_enable=True,
         )
 
-    # Cramming
-    ##########################################################################
-
-    def onCram(self) -> None:
-        aqt.dialogs.open("FilteredDeckConfigDialog", self)
-
     # Menu, title bar & status
     ##########################################################################
 
@@ -1422,10 +1420,6 @@ title="{}" {}>{}</button>""".format(
         qconnect(
             m.actionSwitchProfile.triggered, self.unloadProfileAndShowProfileManager
         )
-        qconnect(m.actionImport.triggered, self.onImport)
-        qconnect(m.actionExport.triggered, self.onExport)
-        qconnect(m.action_create_backup.triggered, self.on_create_backup_now)
-        qconnect(m.action_open_backup.triggered, self.onOpenBackup)
         qconnect(m.actionExit.triggered, self.close)
 
         # Help
@@ -1442,7 +1436,6 @@ title="{}" {}>{}</button>""".format(
         qconnect(m.actionFullDatabaseCheck.triggered, self.onCheckDB)
         qconnect(m.actionCheckMediaDatabase.triggered, self.on_check_media_db)
         qconnect(m.actionStudyDeck.triggered, self.onStudyDeck)
-        qconnect(m.actionCreateFiltered.triggered, self.onCram)
         qconnect(m.actionEmptyCards.triggered, self.onEmptyCards)
         qconnect(m.actionNoteTypes.triggered, self.onNoteTypes)
         qconnect(m.action_check_for_updates.triggered, self.on_check_for_updates)
@@ -1464,6 +1457,194 @@ title="{}" {}>{}</button>""".format(
             QKeySequence("F11") if is_lin else QKeySequence.StandardKey.FullScreen
         )
         m.actionFullScreen.setShortcutContext(Qt.ShortcutContext.ApplicationShortcut)
+
+        # SpeedyCAT: remove the native menu bar entirely and surface the actions
+        # we keep (zoom, full screen, preferences, account/login, switch profile)
+        # in a small top toolbar instead.
+        self._remove_menu_bar()
+        self._setup_view_toolbar()
+
+        # SpeedyCAT: built-in MCAT deck (Tools menu action + first-run offer)
+        import aqt.speedycat
+
+        aqt.speedycat.setup(self)
+
+        # SpeedyCAT: MCAT Practice Questions + Full-Length Tests content import
+        import aqt.practice
+
+        aqt.practice.setup(self)
+
+    def _remove_menu_bar(self) -> None:
+        """SpeedyCAT: remove the native menu bar from the main window entirely.
+
+        File/Edit/View/Tools/Help are all dropped from the bar and the bar is
+        hidden, so no native menu shows on the main window; SpeedyCAT exposes
+        the few actions it keeps (zoom, full screen, preferences, AnkiWeb
+        login, switch profile) through the top QToolBar instead.
+
+        The underlying QAction/QMenu objects are intentionally kept alive: the
+        QMenus stay children of the menu bar so their keyboard shortcuts and
+        macOS app-menu roles keep working, add-ons referencing e.g.
+        ``mw.form.menuHelp`` don't hit a dangling reference, and
+        ``speedycat.setup`` can still add its deck action to ``menuTools`` (it
+        simply won't be visible). Shortcuts for features removed from the UI
+        (Import/Export/backup) are cleared so stray key combos can't resurrect
+        them.
+        """
+        m = self.form
+        for action in (
+            m.actionImport,
+            m.actionExport,
+            m.action_create_backup,
+            m.action_open_backup,
+        ):
+            action.setShortcut(QKeySequence())
+        for menu_action in list(m.menubar.actions()):
+            m.menubar.removeAction(menu_action)
+        m.menubar.hide()
+        m.menubar.setFixedHeight(0)
+
+    def _setup_view_toolbar(self) -> None:
+        """SpeedyCAT: top QToolBar that replaces the removed native menu bar.
+
+        Holds zoom + full-screen (reusing the View QActions kept alive after
+        the menu bar was removed), a Settings button that opens Preferences,
+        and an account button whose menu toggles AnkiWeb login/logout and
+        switches profile. Icons are painted to match the current theme and are
+        repainted when the light/dark theme changes.
+        """
+        m = self.form
+        toolbar = self.viewToolBar = QToolBar(tr.qt_accel_view(), self)
+        toolbar.setObjectName("viewToolBar")
+        toolbar.setMovable(False)
+        toolbar.setFloatable(False)
+        toolbar.setIconSize(QSize(18, 18))
+        toolbar.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonIconOnly)
+        for action in (m.actionZoomIn, m.actionZoomOut, m.actionFullScreen):
+            toolbar.addAction(action)
+        toolbar.addSeparator()
+
+        # Settings (gear) -> Preferences. A dedicated action (wired to the
+        # existing opener) avoids the macOS PreferencesRole relocating the
+        # button off the toolbar; the original actionPreferences stays alive
+        # for its keyboard shortcut / app-menu role.
+        self.settingsAction = QAction(self)
+        self.settingsAction.setToolTip(m.actionPreferences.text().replace("&", ""))
+        qconnect(self.settingsAction.triggered, self.onPrefs)
+        toolbar.addAction(self.settingsAction)
+
+        # Account: AnkiWeb login/logout toggle + Switch Profile.
+        self.accountButton = QToolButton(self)
+        self.accountButton.setPopupMode(QToolButton.ToolButtonPopupMode.InstantPopup)
+        self.accountButton.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonIconOnly)
+        self.accountButton.setToolTip("Account")
+        account_menu = QMenu(self.accountButton)
+        self.accountAuthAction = QAction(self)
+        qconnect(self.accountAuthAction.triggered, self._toggle_ankiweb_login)
+        account_menu.addAction(self.accountAuthAction)
+        account_menu.addSeparator()
+        # reuse the existing Switch Profile action (kept alive from the menu bar)
+        account_menu.addAction(m.actionSwitchProfile)
+        qconnect(account_menu.aboutToShow, self._refresh_account_menu)
+        self.accountButton.setMenu(account_menu)
+        self._refresh_account_menu()
+        toolbar.addWidget(self.accountButton)
+
+        self.addToolBar(Qt.ToolBarArea.TopToolBarArea, toolbar)
+        self._update_view_icons()
+        # repaint icons when the light/dark theme changes
+        gui_hooks.theme_did_change.append(self._update_view_icons)
+
+    def _refresh_account_menu(self) -> None:
+        "Set the account menu's toggle label from the current AnkiWeb auth state."
+        signed_in = bool(self.pm.sync_auth())
+        self.accountAuthAction.setText(
+            tr.sync_log_out_button() if signed_in else tr.sync_log_in_button()
+        )
+
+    def _toggle_ankiweb_login(self) -> None:
+        """Toggle AnkiWeb auth from the account menu.
+
+        Signed out -> run the normal sync/login flow (prompts for credentials
+        and performs the initial sync). Signed in -> clear the stored auth.
+        """
+        if not self.pm.sync_auth():
+            self.on_sync_button_clicked()
+            return
+        if self.media_syncer.is_syncing():
+            showWarning("Can't log out while a sync is in progress.")
+            return
+        self.pm.clear_sync_auth()
+        if self.col is not None:
+            self.col.media.force_resync()
+        self.toolbar.redraw()
+        self._refresh_account_menu()
+
+    def _update_view_icons(self) -> None:
+        m = self.form
+        m.actionZoomIn.setIcon(self._make_view_icon("in"))
+        m.actionZoomOut.setIcon(self._make_view_icon("out"))
+        m.actionFullScreen.setIcon(self._make_view_icon("full"))
+        self.settingsAction.setIcon(self._make_view_icon("settings"))
+        self.accountButton.setIcon(self._make_view_icon("account"))
+
+    def _make_view_icon(self, kind: str) -> QIcon:
+        "Paint a simple, theme-coloured toolbar icon (no extra asset files)."
+        base = 18
+        dpr = self.devicePixelRatioF()
+        pixmap = QPixmap(round(base * dpr), round(base * dpr))
+        pixmap.setDevicePixelRatio(dpr)
+        pixmap.fill(Qt.GlobalColor.transparent)
+        painter = QPainter(pixmap)
+        painter.setRenderHint(QPainter.RenderHint.Antialiasing, True)
+        pen = QPen(self.palette().color(QPalette.ColorRole.WindowText))
+        pen.setWidthF(1.8)
+        pen.setCapStyle(Qt.PenCapStyle.RoundCap)
+        pen.setJoinStyle(Qt.PenJoinStyle.RoundJoin)
+        painter.setPen(pen)
+        if kind in ("in", "out"):
+            center = QPointF(7.0, 7.0)
+            painter.drawEllipse(center, 4.5, 4.5)
+            painter.drawLine(QPointF(10.4, 10.4), QPointF(15.5, 15.5))
+            painter.drawLine(QPointF(4.5, 7.0), QPointF(9.5, 7.0))
+            if kind == "in":
+                painter.drawLine(QPointF(7.0, 4.5), QPointF(7.0, 9.5))
+        elif kind == "full":
+            margin = 2.5
+            length = 4.5
+            far = base - margin
+            for x, y, dx, dy in (
+                (margin, margin, 1.0, 1.0),
+                (far, margin, -1.0, 1.0),
+                (margin, far, 1.0, -1.0),
+                (far, far, -1.0, -1.0),
+            ):
+                painter.drawLine(QPointF(x, y), QPointF(x + dx * length, y))
+                painter.drawLine(QPointF(x, y), QPointF(x, y + dy * length))
+        elif kind == "settings":
+            # gear: eight teeth around a ring, with a hollow centre
+            center = QPointF(9.0, 9.0)
+            for dx, dy in (
+                (0.0, -1.0),
+                (0.7071, -0.7071),
+                (1.0, 0.0),
+                (0.7071, 0.7071),
+                (0.0, 1.0),
+                (-0.7071, 0.7071),
+                (-1.0, 0.0),
+                (-0.7071, -0.7071),
+            ):
+                painter.drawLine(
+                    QPointF(9.0 + dx * 5.1, 9.0 + dy * 5.1),
+                    QPointF(9.0 + dx * 7.3, 9.0 + dy * 7.3),
+                )
+            painter.drawEllipse(center, 4.9, 4.9)
+            painter.drawEllipse(center, 2.0, 2.0)
+        else:  # "account": a head above rounded shoulders
+            painter.drawEllipse(QPointF(9.0, 5.8), 2.7, 2.7)
+            painter.drawArc(QRectF(3.6, 10.2, 10.8, 9.6), 0, 180 * 16)
+        painter.end()
+        return QIcon(pixmap)
 
     def updateTitleBar(self) -> None:
         self.setWindowTitle("Anki")
@@ -1498,11 +1679,13 @@ title="{}" {}>{}</button>""".format(
         self.bottomWeb.hide_if_allowed()
 
     def hide_menubar(self) -> None:
-        self.form.menubar.setFixedHeight(0)
+        # SpeedyCAT: the native menu bar has been removed; keep it hidden.
+        self.form.menubar.hide()
 
     def show_menubar(self) -> None:
-        self.form.menubar.setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX)
-        self.form.menubar.setMinimumSize(0, 0)
+        # SpeedyCAT: the native menu bar has been removed, so there is nothing
+        # to reveal here (the full-screen menu-reveal behaviour is now a no-op).
+        pass
 
     # Auto update
     ##########################################################################
@@ -1530,13 +1713,8 @@ title="{}" {}>{}</button>""".format(
         # ensure Python interpreter runs at least once per second, so that
         # SIGINT/SIGTERM is processed without a long delay
         self.progress.timer(1000, lambda: None, True, False, parent=self)
-        # periodic backups are checked every 5 minutes
-        self.progress.timer(
-            5 * 60 * 1000,
-            self.on_periodic_backup_timer,
-            True,
-            parent=self,
-        )
+        # SpeedyCAT: automatic/periodic backups are disabled (read-only content),
+        # so the periodic-backup timer is intentionally not scheduled.
 
     def onRefreshTimer(self) -> None:
         if self.state == "deckBrowser":
@@ -1559,11 +1737,14 @@ title="{}" {}>{}</button>""".format(
     ##########################################################################
 
     def on_periodic_backup_timer(self) -> None:
-        """Create a backup if enough time has elapsed and collection changed."""
-        self._create_backup_with_progress(user_initiated=False)
+        """SpeedyCAT: automatic backups are disabled, so this is a no-op.
 
-    def on_create_backup_now(self) -> None:
-        self._create_backup_with_progress(user_initiated=True)
+        The periodic-backup timer is no longer scheduled (see ``setup_timers``);
+        this method is kept as an intentional no-op so that any external caller
+        (e.g. tests or add-ons) does not create a backup either. The low-level
+        ``create_backup_now`` helper is left intact for the sync / DB-check /
+        import flows that still call it directly.
+        """
 
     def create_backup_now(self) -> None:
         """Create a backup immediately, regardless of when the last one was created.

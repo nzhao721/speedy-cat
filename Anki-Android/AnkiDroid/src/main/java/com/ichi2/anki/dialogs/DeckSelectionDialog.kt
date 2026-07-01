@@ -43,7 +43,6 @@ import com.ichi2.anki.AnkiActivity
 import com.ichi2.anki.CardTemplateEditor
 import com.ichi2.anki.CollectionManager.TR
 import com.ichi2.anki.CollectionManager.withCol
-import com.ichi2.anki.OnContextAndLongClickListener.Companion.setOnContextAndLongClickListener
 import com.ichi2.anki.R
 import com.ichi2.anki.analytics.AnalyticsDialogFragment
 import com.ichi2.anki.common.ALL_DECKS_ID
@@ -147,51 +146,6 @@ class DeckSelectionDialog : AnalyticsDialogFragment() {
                 }
             },
         )
-        val addDecks = toolbar.menu.findItem(R.id.action_add_deck)
-        addDecks?.setOnMenuItemClickListener {
-            // creating new deck without any parent deck
-            showDeckDialog()
-            true
-        }
-    }
-
-    /**
-     * Displays a dialog to create a subdeck under the specified parent deck.
-     *
-     * @param parentDeck The parent deck under which the subdeck will be created
-     */
-    private fun showSubDeckDialog(parentDeck: SelectableDeck.Deck) {
-        val createDeckDialog =
-            CreateDeckDialog(
-                context = requireActivity(),
-                title = getString(R.string.create_subdeck),
-                deckDialogType = CreateDeckDialog.DeckDialogType.SUB_DECK,
-                parentId = parentDeck.deckId,
-            )
-        createDeckDialog.onNewDeckCreated = { did: DeckId -> onNewDeckCreated(did) }
-        createDeckDialog.showDialog()
-    }
-
-    private fun showDeckDialog() {
-        val createDeckDialog =
-            CreateDeckDialog(
-                context = requireActivity(),
-                title = TR.sentenceCase.createDeck,
-                deckDialogType = CreateDeckDialog.DeckDialogType.DECK,
-                parentId = null,
-            )
-        createDeckDialog.onNewDeckCreated = { did: DeckId -> onNewDeckCreated(did) }
-        createDeckDialog.showDialog()
-    }
-
-    /** Updates the list and simulates a click on the newly created deck */
-    private fun onNewDeckCreated(id: DeckId) {
-        // a deck/subdeck was created
-        launchCatchingTask {
-            val name = withCol { decks.name(id) }
-            val deck = SelectableDeck.Deck(id, name)
-            selectDeckAndClose(deck)
-        }
     }
 
     private fun onDeckSelected(deck: SelectableDeck?) {
@@ -257,16 +211,6 @@ class DeckSelectionDialog : AnalyticsDialogFragment() {
                 }
                 expander.setOnClickListener {
                     currentDeck?.let { toggleExpansion(it) }
-                }
-                binding.root.setOnContextAndLongClickListener {
-                    // creating sub deck with parent deck path
-                    currentDeck?.let { deck ->
-                        if (deck is SelectableDeck.Deck) {
-                            showSubDeckDialog(deck)
-                        }
-                    }
-
-                    true
                 }
             }
 

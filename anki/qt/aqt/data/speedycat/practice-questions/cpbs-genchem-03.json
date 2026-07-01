@@ -1,0 +1,408 @@
+{
+  "meta": {
+    "section": "CPBS",
+    "subArea": "general chemistry",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "LibreTexts — GOB (Roosevelt University), Ch. 8 Gases, Liquids, and Solids — Multiple-Choice Questions",
+        "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+        "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/08%3A_Gases_Liquids_and_Solids/8.E%3A_Exercises"
+      },
+      {
+        "sourceName": "LibreTexts — GOB (Roosevelt University), Ch. 6 Moles — Multiple Choice Questions",
+        "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+        "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/06%3A_Moles/6.E%3A_Exercises"
+      },
+      {
+        "sourceName": "LibreTexts GOB (Roosevelt) — Ch. 16.6 Ch. 6 Odd Answers (answer key)",
+        "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+        "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/16%3A_Answers_to_Odd_Problems/16.06%3A_Ch._6_Odd_Answers"
+      }
+    ],
+    "counts": {"total": 19, "byTopic": {"gases (KMT, pressure, Boyle's law)": 4, "intermolecular forces / phases": 1, "solutions / electrolytes / molarity / tonicity": 5, "mole concept / Avogadro / formula mass": 5, "stoichiometry (mass-mole-number)": 4}},
+    "notes": "Ch. 8 MCQ answers are marked verified-from-source-text because the Ch. 16.8 answer-key page returned empty on fetch; each Ch. 8 answer is a standard, unambiguous concept or calculation and was independently checked. Ch. 6 MCQ answers come from the rendered Ch. 16.6 answer key (source-answer-key) and were re-derived. SKIPPED: Ch. 6 MCQ #4 (diamond carbon-atom count) because the scraped answer-option exponents (e.g. '1.00 x 10^23') are inconsistent with the keyed answer 'b' and the physically correct value (~1.00 x 10^22), indicating a lost-superscript scraping artifact."
+  },
+  "questions": [
+    {
+      "id": "cpbs-xc037",
+      "section": "CPBS",
+      "stem": "Which of the following is not a postulate of the kinetic molecular theory of gases?",
+      "choices": [
+        {"label": "A", "text": "The average kinetic energy of the gas molecules is proportional to the absolute temperature."},
+        {"label": "B", "text": "Gas particles attract and repel one another."},
+        {"label": "C", "text": "The size of the gas particles is negligible compared to the distances between them."},
+        {"label": "D", "text": "Pressure arises due to the collisions between gas particles and the walls of the container."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The kinetic molecular theory assumes gas particles exert negligible attractive or repulsive forces on one another and undergo perfectly elastic collisions. The other three statements are genuine postulates, so 'gas particles attract and repel one another' is the one that is NOT a postulate.",
+      "topicTags": ["general chemistry", "gases", "kinetic molecular theory"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/08%3A_Gases_Liquids_and_Solids/8.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.8 answer-key page returned empty; answer independently verified from the source text."
+    },
+    {
+      "id": "cpbs-xc038",
+      "section": "CPBS",
+      "stem": "What is the SI unit for pressure?",
+      "choices": [
+        {"label": "A", "text": "Atmosphere"},
+        {"label": "B", "text": "Pounds per square inch"},
+        {"label": "C", "text": "Bar"},
+        {"label": "D", "text": "Pascal"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The SI derived unit of pressure is the pascal (Pa = N/m^2). Atmosphere, pounds per square inch (psi), and bar are common non-SI pressure units.",
+      "topicTags": ["general chemistry", "gases", "pressure", "units"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/08%3A_Gases_Liquids_and_Solids/8.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.8 answer-key page returned empty; answer independently verified."
+    },
+    {
+      "id": "cpbs-xc039",
+      "section": "CPBS",
+      "stem": "Boyle's law relates which two variables?",
+      "choices": [
+        {"label": "A", "text": "Volume and pressure"},
+        {"label": "B", "text": "Volume and temperature"},
+        {"label": "C", "text": "Pressure and temperature"},
+        {"label": "D", "text": "Moles and temperature"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Boyle's law states that, at constant temperature and amount of gas, the pressure and volume of a gas are inversely proportional (PV = constant). Volume-temperature is Charles's law.",
+      "topicTags": ["general chemistry", "gases", "Boyle's law", "gas laws"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/08%3A_Gases_Liquids_and_Solids/8.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.8 answer-key page returned empty; answer independently verified."
+    },
+    {
+      "id": "cpbs-xc040",
+      "section": "CPBS",
+      "stem": "If a 2.0 L sample of a gas at 25 °C has a pressure of 2.4 atm, what is the pressure of this gas if its volume is decreased to 0.50 L at 25 °C?",
+      "choices": [
+        {"label": "A", "text": "0.60 atm"},
+        {"label": "B", "text": "2.4 atm"},
+        {"label": "C", "text": "7.2 atm"},
+        {"label": "D", "text": "9.6 atm"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Temperature is constant, so apply Boyle's law P1V1 = P2V2: (2.4 atm)(2.0 L) = P2(0.50 L), giving P2 = 4.8/0.50 = 9.6 atm. Compressing the gas raises its pressure.",
+      "topicTags": ["general chemistry", "gases", "Boyle's law", "calculation"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/08%3A_Gases_Liquids_and_Solids/8.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.8 answer-key page returned empty; answer independently verified by calculation."
+    },
+    {
+      "id": "cpbs-xc041",
+      "section": "CPBS",
+      "stem": "Which of the following is the weakest intermolecular force?",
+      "choices": [
+        {"label": "A", "text": "Dipole-dipole attractions"},
+        {"label": "B", "text": "Ion-dipole interactions"},
+        {"label": "C", "text": "Dispersion forces"},
+        {"label": "D", "text": "Hydrogen bonding"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "London dispersion forces (induced-dipole attractions) are generally the weakest intermolecular force. Ion-dipole and hydrogen bonding are the strongest, and permanent dipole-dipole forces are stronger than pure dispersion forces of comparable size.",
+      "topicTags": ["general chemistry", "intermolecular forces", "dispersion forces"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/08%3A_Gases_Liquids_and_Solids/8.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.8 answer-key page returned empty; answer independently verified."
+    },
+    {
+      "id": "cpbs-xc042",
+      "section": "CPBS",
+      "stem": "You dissolve a solid in a glass of water and feel the glass heat up. What do you know about the dissolution process?",
+      "choices": [
+        {"label": "A", "text": "The process is exothermic."},
+        {"label": "B", "text": "The process is endothermic."},
+        {"label": "C", "text": "The water molecules slow down on average."},
+        {"label": "D", "text": "Weaker bonds were formed compared to the bonds that were broken."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "If the surroundings (the glass and water) get warmer, the dissolution is releasing heat, so it is exothermic (negative enthalpy of solution). In an exothermic dissolution, the energy released forming solute-solvent interactions exceeds the energy needed to break the original attractions.",
+      "topicTags": ["general chemistry", "thermochemistry", "solutions", "enthalpy of solution"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/08%3A_Gases_Liquids_and_Solids/8.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.8 answer-key page returned empty; answer independently verified."
+    },
+    {
+      "id": "cpbs-xc043",
+      "section": "CPBS",
+      "stem": "Which of the following compounds is a strong electrolyte?",
+      "choices": [
+        {"label": "A", "text": "Sucrose"},
+        {"label": "B", "text": "Ethanol"},
+        {"label": "C", "text": "Hydrochloric acid"},
+        {"label": "D", "text": "Ammonia"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Hydrochloric acid is a strong acid that ionizes completely in water, making it a strong electrolyte. Sucrose and ethanol are molecular nonelectrolytes, and ammonia is a weak base (weak electrolyte).",
+      "topicTags": ["general chemistry", "solutions", "electrolytes"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/08%3A_Gases_Liquids_and_Solids/8.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.8 answer-key page returned empty; answer independently verified."
+    },
+    {
+      "id": "cpbs-xc044",
+      "section": "CPBS",
+      "stem": "Molarity is defined as moles of solute divided by what?",
+      "choices": [
+        {"label": "A", "text": "Mass of solution"},
+        {"label": "B", "text": "Mass of solvent"},
+        {"label": "C", "text": "Liters of solvent"},
+        {"label": "D", "text": "Liters of solution"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Molarity (M) is moles of solute per liter of total solution. (Moles of solute per kilogram of solvent defines molality, a different concentration unit.)",
+      "topicTags": ["general chemistry", "solutions", "molarity", "concentration"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/08%3A_Gases_Liquids_and_Solids/8.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.8 answer-key page returned empty; answer independently verified."
+    },
+    {
+      "id": "cpbs-xc045",
+      "section": "CPBS",
+      "stem": "A 0.200 L solution contains 0.0200 moles of sodium chloride. What is the molarity of sodium chloride in this solution?",
+      "choices": [
+        {"label": "A", "text": "0.00400 M"},
+        {"label": "B", "text": "0.100 M"},
+        {"label": "C", "text": "0.220 M"},
+        {"label": "D", "text": "10.0 M"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Molarity = moles of solute / liters of solution = 0.0200 mol / 0.200 L = 0.100 M.",
+      "topicTags": ["general chemistry", "solutions", "molarity", "calculation"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/08%3A_Gases_Liquids_and_Solids/8.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The Ch. 16.8 answer-key page returned empty; answer independently verified by calculation."
+    },
+    {
+      "id": "cpbs-xc046",
+      "section": "CPBS",
+      "stem": "If a hypotonic solution is injected into the bloodstream, which of the following will occur?",
+      "choices": [
+        {"label": "A", "text": "Red blood cells will shrivel"},
+        {"label": "B", "text": "Hemolysis"},
+        {"label": "C", "text": "Both A and B"},
+        {"label": "D", "text": "Neither A nor B"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "A hypotonic solution has a lower solute concentration than the inside of the red blood cells, so water moves into the cells by osmosis, causing them to swell and burst (hemolysis). Shriveling (crenation) occurs in a hypertonic solution.",
+      "topicTags": ["general chemistry", "solutions", "osmosis", "tonicity"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/08%3A_Gases_Liquids_and_Solids/8.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim (original options c/d read 'Both a and b'/'Neither a nor b'; relabeled to A-D). The Ch. 16.8 answer-key page returned empty; answer independently verified."
+    },
+    {
+      "id": "cpbs-xc047",
+      "section": "CPBS",
+      "stem": "What quantity gives the number of atoms in a mole?",
+      "choices": [
+        {"label": "A", "text": "Avogadro's number"},
+        {"label": "B", "text": "Formula mass"},
+        {"label": "C", "text": "Molar mass"},
+        {"label": "D", "text": "Gas constant"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Avogadro's number, 6.022 × 10^23, is the number of particles (atoms, molecules, ions, etc.) in exactly one mole of a substance.",
+      "topicTags": ["general chemistry", "mole concept", "Avogadro's number"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/06%3A_Moles/6.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.6 MCQ: Q1 = a)."
+    },
+    {
+      "id": "cpbs-xc048",
+      "section": "CPBS",
+      "stem": "What is the formula mass of MgCl2?",
+      "choices": [
+        {"label": "A", "text": "59.76 amu"},
+        {"label": "B", "text": "95.21 amu"},
+        {"label": "C", "text": "119.5 amu"},
+        {"label": "D", "text": "125.8 amu"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Formula mass of MgCl2 = 24.31 (Mg) + 2 × 35.45 (Cl) = 24.31 + 70.90 = 95.21 amu.",
+      "topicTags": ["general chemistry", "mole concept", "formula mass", "calculation"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/06%3A_Moles/6.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.6 MCQ: Q2 = b)."
+    },
+    {
+      "id": "cpbs-xc049",
+      "section": "CPBS",
+      "stem": "What is the formula mass of potassium sulfide?",
+      "choices": [
+        {"label": "A", "text": "39.10 amu"},
+        {"label": "B", "text": "71.16 amu"},
+        {"label": "C", "text": "103.2 amu"},
+        {"label": "D", "text": "110.3 amu"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Potassium sulfide is K2S (K+ is +1, S^2- is -2). Formula mass = 2 × 39.10 (K) + 32.06 (S) = 78.20 + 32.06 = 110.3 amu.",
+      "topicTags": ["general chemistry", "mole concept", "formula mass", "ionic formula"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/06%3A_Moles/6.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.6 MCQ: Q3 = d)."
+    },
+    {
+      "id": "cpbs-xc050",
+      "section": "CPBS",
+      "stem": "How many moles of oxygen are present in 3 moles of sodium sulfate?",
+      "choices": [
+        {"label": "A", "text": "3"},
+        {"label": "B", "text": "4"},
+        {"label": "C", "text": "9"},
+        {"label": "D", "text": "12"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Sodium sulfate is Na2SO4, which contains 4 oxygen atoms per formula unit. Therefore 3 mol Na2SO4 contains 3 × 4 = 12 mol of oxygen atoms.",
+      "topicTags": ["general chemistry", "mole concept", "stoichiometry"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/06%3A_Moles/6.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.6 MCQ: Q5 = d)."
+    },
+    {
+      "id": "cpbs-xc051",
+      "section": "CPBS",
+      "stem": "How many moles of CCl4 are present in a 7.82 g sample of this substance?",
+      "choices": [
+        {"label": "A", "text": "0.0102 mol"},
+        {"label": "B", "text": "0.0508 mol"},
+        {"label": "C", "text": "0.106 mol"},
+        {"label": "D", "text": "0.254 mol"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Molar mass of CCl4 = 12.01 + 4 × 35.45 = 153.81 g/mol. Moles = 7.82 g / 153.81 g/mol = 0.0508 mol.",
+      "topicTags": ["general chemistry", "mole concept", "molar mass", "calculation"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/06%3A_Moles/6.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.6 MCQ: Q6 = b)."
+    },
+    {
+      "id": "cpbs-xc052",
+      "section": "CPBS",
+      "stem": "Which of the following gives the correct mass (in amu) of F in the compound boron trifluoride?",
+      "choices": [
+        {"label": "A", "text": "19.00 amu"},
+        {"label": "B", "text": "38.00 amu"},
+        {"label": "C", "text": "57.00 amu"},
+        {"label": "D", "text": "114.0 amu"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Boron trifluoride is BF3, which contains 3 fluorine atoms. Total mass of fluorine = 3 × 19.00 = 57.00 amu.",
+      "topicTags": ["general chemistry", "mole concept", "formula mass", "composition"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/06%3A_Moles/6.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.6 MCQ: Q7 = c)."
+    },
+    {
+      "id": "cpbs-xc053",
+      "section": "CPBS",
+      "stem": "What mass of Fe contains 2.60 × 10^24 atoms of Fe?",
+      "choices": [
+        {"label": "A", "text": "241 g"},
+        {"label": "B", "text": "77.3 mg"},
+        {"label": "C", "text": "2.41 kg"},
+        {"label": "D", "text": "4.32 × 10^46 g"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Moles of Fe = (2.60 × 10^24 atoms) / (6.022 × 10^23 atoms/mol) = 4.317 mol. Mass = 4.317 mol × 55.85 g/mol ≈ 241 g.",
+      "topicTags": ["general chemistry", "mole concept", "Avogadro's number", "calculation"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/06%3A_Moles/6.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim (exponents rendered with ^). correctAnswer from the course's Chapter 16 answer key (16.6 MCQ: Q8 = a)."
+    },
+    {
+      "id": "cpbs-xc054",
+      "section": "CPBS",
+      "stem": "A saline solution used for an intravenous drip contains 9.0 g of sodium chloride per liter of solution. How many sodium ions are present in a 150 mL quantity of saline solution?",
+      "choices": [
+        {"label": "A", "text": "1.7 × 10^20"},
+        {"label": "B", "text": "1.4 × 10^22"},
+        {"label": "C", "text": "3.4 × 10^23"},
+        {"label": "D", "text": "5.9 × 10^23"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "NaCl in 150 mL = 9.0 g/L × 0.150 L = 1.35 g. Moles NaCl = 1.35 / 58.44 = 0.0231 mol, giving 0.0231 mol Na+. Number of Na+ ions = 0.0231 × 6.022 × 10^23 ≈ 1.4 × 10^22.",
+      "topicTags": ["general chemistry", "mole concept", "solutions", "Avogadro's number"],
+      "difficulty": "hard",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/06%3A_Moles/6.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim (exponents rendered with ^). correctAnswer from the course's Chapter 16 answer key (16.6 MCQ: Q9 = b)."
+    },
+    {
+      "id": "cpbs-xc055",
+      "section": "CPBS",
+      "stem": "The chemical formula for the medication IMBRUVICA is C25H24N6O2. How many atoms of C are present in a 422 mg sample of this medication?",
+      "choices": [
+        {"label": "A", "text": "5.77 × 10^20"},
+        {"label": "B", "text": "1.44 × 10^22"},
+        {"label": "C", "text": "3.29 × 10^22"},
+        {"label": "D", "text": "2.80 × 10^27"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Molar mass of C25H24N6O2 ≈ 440.5 g/mol. Moles of compound = 0.422 g / 440.5 g/mol = 9.58 × 10^-4 mol. Carbon atoms = 9.58 × 10^-4 mol × 25 × 6.022 × 10^23 ≈ 1.44 × 10^22.",
+      "topicTags": ["general chemistry", "mole concept", "molar mass", "Avogadro's number"],
+      "difficulty": "hard",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/06%3A_Moles/6.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim (exponents rendered with ^; trademark symbol omitted). correctAnswer from the course's Chapter 16 answer key (16.6 MCQ: Q10 = b)."
+    }
+  ]
+}

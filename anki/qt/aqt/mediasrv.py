@@ -422,6 +422,9 @@ def is_sveltekit_page(path: str) -> bool:
         "import-csv",
         "import-page",
         "image-occlusion",
+        # SpeedyCAT: the two MCAT study-mode pages.
+        "practice",
+        "full-length",
     ]
 
 
@@ -765,6 +768,21 @@ exposed_backend_list = [
     # DeckConfigService
     "get_ignored_before_count",
     "get_retention_workload",
+    # SpeedyCAT PracticeService: the Practice Question Bank + Full-Length
+    # Practice Tests pages talk to the backend through these (bundle loading is
+    # driven Python-side from aqt/practice.py, so it is intentionally omitted).
+    "get_practice_questions",
+    "get_cars_passage_set",
+    "list_passages",
+    "start_practice_session",
+    "record_practice_attempt",
+    "end_practice_session",
+    "list_full_length_tests",
+    "get_full_length_test",
+    "start_full_length_attempt",
+    "record_full_length_answer",
+    "submit_full_length_attempt",
+    "get_topic_stats",
 ]
 
 

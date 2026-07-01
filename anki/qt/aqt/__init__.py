@@ -111,7 +111,7 @@ import aqt.forms
 
 
 from aqt import addcards, addons, browser, editcurrent, filtered_deck  # isort:skip
-from aqt import stats, about, preferences, mediasync  # isort:skip
+from aqt import stats, about, preferences, mediasync, practice  # isort:skip
 
 
 class DialogManager:
@@ -126,6 +126,9 @@ class DialogManager:
         "About": [about.show, None],
         "Preferences": [preferences.Preferences, None],
         "sync_log": [mediasync.MediaSyncDialog, None],
+        # SpeedyCAT: the two MCAT study-mode windows.
+        "PracticeQuestions": [practice.PracticeQuestionsDialog, None],
+        "FullLengthTests": [practice.FullLengthTestsDialog, None],
     }
 
     def open(self, name: str, *args: Any, **kwargs: Any) -> Any:

@@ -378,9 +378,7 @@ class Table:
         hh.setHighlightSections(False)
         hh.setMinimumSectionSize(50)
         hh.setSectionsMovable(True)
-        hh.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self._restore_header()
-        qconnect(hh.customContextMenuRequested, self._on_header_context)
         qconnect(hh.sortIndicatorChanged, self._on_sort_column_changed)
         qconnect(hh.sectionMoved, self._on_column_moved)
 
@@ -439,57 +437,17 @@ class Table:
         self._model.dataChanged.emit(top_left, bottom_right)  # type: ignore
 
     def _on_context_menu(self, _point: QPoint) -> None:
+        # The browser is a read-only viewer, so the context menu only exposes
+        # the non-mutating card actions (e.g. Info).
         menu = QMenu()
-        if self.is_notes_mode():
-            main = self.browser.form.menu_Notes
-            other = self.browser.form.menu_Cards
-            other_name = tr.qt_accel_cards()
-        else:
-            main = self.browser.form.menu_Cards
-            other = self.browser.form.menu_Notes
-            other_name = tr.qt_accel_notes()
-        for action in main.actions():
+        for action in self.browser.form.menu_Cards.actions():
             menu.addAction(action)
-        menu.addSeparator()
-        sub_menu = menu.addMenu(other_name)
-        assert sub_menu is not None
-        for action in other.actions():
-            sub_menu.addAction(action)
         gui_hooks.browser_will_show_context_menu(self.browser, menu)
         qtMenuShortcutWorkaround(menu)
         menu.exec(QCursor.pos())
 
-    def _on_header_context(self, pos: QPoint) -> None:
-        assert self._view is not None
-        gpos = self._view.mapToGlobal(pos)
-        m = QMenu()
-        m.setToolTipsVisible(True)
-        for key, column in self._model.columns.items():
-            a = m.addAction(self._state.column_label(column))
-            assert a is not None
-            a.setCheckable(True)
-            a.setChecked(self._model.active_column_index(key) is not None)
-            a.setToolTip(self._state.column_tooltip(column))
-            qconnect(
-                a.toggled,
-                lambda checked, key=key: self._on_column_toggled(checked, key),
-            )
-        gui_hooks.browser_header_will_show_context_menu(self.browser, m)
-        m.exec(gpos)
-
     def _on_column_moved(self, *_args: Any) -> None:
         self._set_column_sizes()
-
-    def _on_column_toggled(self, checked: bool, column: str) -> None:
-        if not checked and self._model.len_columns() < 2:
-            showInfo(tr.browsing_you_must_have_at_least_one())
-            return
-        self._model.toggle_column(column)
-        self._set_column_sizes()
-        # sorted field may have been hidden or revealed
-        self._set_sort_indicator()
-        if checked:
-            self._scroll_to_column(self._model.len_columns() - 1)
 
     def _on_sort_column_changed(self, section: int, order: Qt.SortOrder) -> None:
         column = self._model.column_at_section(section)
@@ -595,23 +553,6 @@ class Table:
                 self._model.index(row, 0), QAbstractItemView.ScrollHint.PositionAtTop
             )
             horizontal_scroll_bar.setValue(horizontal)
-
-    def _scroll_to_column(self, column: int) -> None:
-        """Scroll horizontally to column."""
-        assert self._view is not None
-        position = self._view.columnViewportPosition(column)
-        viewport = self._view.viewport()
-        assert viewport is not None
-        visible = 0 <= position < viewport.width()
-        if not visible:
-            vertical_scroll_bar = self._view.verticalScrollBar()
-            assert vertical_scroll_bar is not None
-            vertical = vertical_scroll_bar.value()
-            self._view.scrollTo(
-                self._model.index(0, column),
-                QAbstractItemView.ScrollHint.PositionAtCenter,
-            )
-            vertical_scroll_bar.setValue(vertical)
 
     def _move_current_to_index(self, index: QModelIndex) -> None:
         if not self.has_current():

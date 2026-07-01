@@ -23,9 +23,7 @@ import com.ichi2.anki.CardBrowser
 import com.ichi2.anki.libanki.BrowserConfig
 import com.ichi2.anki.libanki.BrowserConfig.ACTIVE_CARD_COLUMNS_KEY
 import com.ichi2.anki.libanki.BrowserConfig.ACTIVE_NOTE_COLUMNS_KEY
-import com.ichi2.anki.libanki.BrowserDefaults
 import com.ichi2.anki.model.CardsOrNotes
-import com.ichi2.anki.model.CardsOrNotes.CARDS
 import com.ichi2.anki.model.CardsOrNotes.NOTES
 import timber.log.Timber
 
@@ -50,25 +48,28 @@ class BrowserColumnCollection(
     companion object {
         private const val SEPARATOR_CHAR = '|'
 
+        /**
+         * SpeedyCAT: the Card Browser is a simplified, read-only view. It always shows
+         * exactly Front (question), Back (answer) and Topic (tags), regardless of mode or
+         * any stored column configuration, so the browser can't expose technical columns
+         * (deck, due, interval, ids, notetype, etc.) or be reorganized by deck.
+         */
+        val FIXED_COLUMNS =
+            listOf(
+                CardBrowserColumn.QUESTION,
+                CardBrowserColumn.ANSWER,
+                // Topic: the card's deck (top-level decks are the SpeedyCAT topics).
+                // Deck is populated for every card, unlike tags. This is display-only;
+                // deck-based grouping/filtering stays removed.
+                CardBrowserColumn.DECK,
+            )
+
+        @Suppress("UNUSED_PARAMETER")
         @CheckResult
         fun load(
             prefs: SharedPreferences,
             mode: CardsOrNotes,
-        ): BrowserColumnCollection {
-            val key = mode.toPreferenceKey()
-            val columns =
-                try {
-                    val value = prefs.getString(key, mode.defaultColumns())!!
-                    value.split(SEPARATOR_CHAR).map { CardBrowserColumn.fromColumnKey(it) }
-                } catch (e: Exception) {
-                    Timber.w(e, "error loading columns, returning default")
-                    val value = mode.defaultColumns()
-                    value.split(SEPARATOR_CHAR).map { CardBrowserColumn.fromColumnKey(it) }
-                }
-            // shared preferences had duplicate columns for unknown reasons
-            // this removes duplicates on load, any saves will be de-duplicated
-            return BrowserColumnCollection(columns.distinct())
-        }
+        ): BrowserColumnCollection = BrowserColumnCollection(FIXED_COLUMNS)
 
         class ColumnReplacement(
             val newColumns: BrowserColumnCollection,
@@ -135,9 +136,5 @@ class BrowserColumnCollection(
         }
 
         private fun CardsOrNotes.toPreferenceKey() = BrowserConfig.activeColumnsKey(isNotesMode = this == NOTES)
-
-        private fun CardsOrNotes.defaultColumns() =
-            (if (this == CARDS) BrowserDefaults.CARD_COLUMNS else BrowserDefaults.NOTE_COLUMNS)
-                .joinToString(separator = SEPARATOR_CHAR.toString())
     }
 }

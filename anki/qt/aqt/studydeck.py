@@ -8,10 +8,7 @@ from collections.abc import Callable
 import aqt
 import aqt.forms
 import aqt.operations
-from anki.collection import OpChangesWithId
-from anki.decks import DeckId
 from aqt import gui_hooks
-from aqt.operations.deck import add_deck_dialog
 from aqt.qt import *
 from aqt.utils import (
     HelpPage,
@@ -20,7 +17,6 @@ from aqt.utils import (
     openHelp,
     restoreGeom,
     saveGeom,
-    shortcut,
     showInfo,
     tr,
 )
@@ -62,12 +58,6 @@ class StudyDeck(QDialog):
                 self.form.buttonBox.addButton(
                     button_or_label, QDialogButtonBox.ButtonRole.ActionRole
                 )
-        else:
-            b = QPushButton(tr.actions_add())
-            b.setShortcut(QKeySequence("Ctrl+N"))
-            b.setToolTip(shortcut(tr.decks_add_new_deck_ctrlandn()))
-            self.form.buttonBox.addButton(b, QDialogButtonBox.ButtonRole.ActionRole)
-            qconnect(b.clicked, self.onAddDeck)
         if title:
             self.setWindowTitle(title)
         if not names:
@@ -168,22 +158,6 @@ class StudyDeck(QDialog):
         if self.callback:
             self.callback(self)
         super().accept()
-
-    def onAddDeck(self) -> None:
-        row = self.form.list.currentRow()
-        if row < 0:
-            default = self.form.filter.text()
-        else:
-            default = self.names[self.form.list.currentRow()]
-
-        def success(out: OpChangesWithId) -> None:
-            deck = self.mw.col.decks.get(DeckId(out.id))
-            assert deck is not None
-            self.name = deck["name"]
-            self.accept_with_callback()
-
-        if diag := add_deck_dialog(parent=self, default_text=default):
-            diag.success(success).run_in_background()
 
     def on_finished(self) -> None:
         saveGeom(self, self.geomKey)

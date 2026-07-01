@@ -9,7 +9,7 @@ import { localizedDate, weekdayLabel } from "@tslib/i18n";
 import type { CountableTimeInterval } from "d3";
 import { timeHour } from "d3";
 import {
-    interpolateBlues,
+    interpolateOranges,
     pointer,
     scaleLinear,
     scaleSequentialSqrt,
@@ -139,7 +139,7 @@ export function renderCalendar(
     const cappedRange = scaleLinear().range([0.2, nightMode ? 0.8 : 1]);
     const blues = scaleSequentialSqrt()
         .domain([0, maxCount])
-        .interpolator((n) => interpolateBlues(cappedRange(n)!));
+        .interpolator((n) => interpolateOranges(cappedRange(n)!));
 
     function tooltipText(d: DayDatum): string {
         const date = localizedDate(d.date, {

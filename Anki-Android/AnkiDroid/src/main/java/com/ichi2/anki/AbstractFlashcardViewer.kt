@@ -90,6 +90,7 @@ import com.ichi2.anki.cardviewer.OnRenderProcessGoneDelegate
 import com.ichi2.anki.cardviewer.RenderedCard
 import com.ichi2.anki.cardviewer.SingleCardSide
 import com.ichi2.anki.cardviewer.TTS
+import com.ichi2.anki.cardviewer.ForcedRecall
 import com.ichi2.anki.cardviewer.TypeAnswer
 import com.ichi2.anki.cardviewer.TypeAnswer.Companion.createInstance
 import com.ichi2.anki.cardviewer.ViewerCommand
@@ -211,6 +212,15 @@ abstract class AbstractFlashcardViewer :
     @VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
     internal var typeAnswer: TypeAnswer? = null
 
+    /**
+     * SpeedyCAT "forced active recall": when enabled, the learner must type a non-empty answer
+     * and submit it before the back of the card can be revealed. Controlled by the
+     * `forceActiveRecall` preference ([R.string.force_active_recall_preference]); defaults to ON
+     * (SpeedyCAT's signature behaviour) and can be turned off via Settings → Reviewing → Advanced.
+     */
+    @VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
+    internal var forceActiveRecall = false
+
     /** Generates HTML content  */
     private var cardRenderContext: AndroidCardRenderContext? = null
 
@@ -315,20 +325,6 @@ abstract class AbstractFlashcardViewer :
      */
     @VisibleForTesting
     internal var refreshRequired: ViewerRefresh? = null
-
-    private val editCurrentCardLauncher =
-        registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult(),
-            FlashCardViewerResultCallback { result, reloadRequired ->
-                if (result.resultCode == RESULT_OK) {
-                    Timber.i("AbstractFlashcardViewer:: card edited...")
-                    onEditedNoteChanged()
-                } else if (result.resultCode == RESULT_CANCELED && !reloadRequired) {
-                    // nothing was changed by the note editor so just redraw the card
-                    redrawCard()
-                }
-            },
-        )
 
     private val defaultOnBackCallback =
         object : OnBackPressedCallback(enabled = true) {
@@ -779,63 +775,6 @@ abstract class AbstractFlashcardViewer :
         finish()
     }
 
-    protected open fun editCard(fromGesture: Gesture? = null) {
-        if (currentCard == null) {
-            // This should never occurs. It means the review button was pressed while there is no more card in the reviewer.
-            return
-        }
-        val animation = fromGesture.toAnimationTransition().invert()
-        Timber.i("Launching 'edit card'")
-        val editCardIntent = NoteEditorLauncher.EditSelection(listOf(currentCard!!.id), animation).toIntent(this)
-        editCurrentCardLauncher.launch(editCardIntent)
-    }
-
-    protected fun showDeleteNoteDialog() {
-        Timber.i("Displaying 'delete note' dialog")
-        AlertDialog.Builder(this).show {
-            title(R.string.delete_card_title)
-            setIcon(R.drawable.ic_warning)
-            message(
-                text =
-                    resources.getString(
-                        R.string.delete_note_message,
-                        stripHTMLAndSpecialFields(currentCard!!.question(getColUnsafe, true)).trim(),
-                    ),
-            )
-            positiveButton(R.string.dialog_positive_delete) {
-                Timber.i(
-                    "AbstractFlashcardViewer:: OK button pressed to delete note %d",
-                    currentCard!!.nid,
-                )
-                launchCatchingTask { stopCardMediaPlayer() }
-                deleteNoteWithoutConfirmation()
-            }
-            negativeButton(R.string.dialog_cancel)
-        }
-    }
-
-    /** Consumers should use [.showDeleteNoteDialog]   */
-    private fun deleteNoteWithoutConfirmation() {
-        val cardId = currentCard!!.id
-        launchCatchingTask {
-            val noteCount =
-                withProgress {
-                    undoableOp {
-                        removeNotes(cardIds = listOf(cardId))
-                    }.count
-                }
-            val deletedMessage =
-                resources.getQuantityString(
-                    R.plurals.card_browser_cards_deleted,
-                    noteCount,
-                    noteCount,
-                )
-            showSnackbar(deletedMessage, Snackbar.LENGTH_LONG) {
-                setAction(R.string.undo) { launchCatchingTask { undoAndShowSnackbar() } }
-            }
-        }
-    }
-
     open fun answerCard(rating: Rating) =
         preventSimultaneousExecutions(ANSWER_CARD) {
             launchCatchingTask {
@@ -1180,7 +1119,9 @@ abstract class AbstractFlashcardViewer :
         runOnUiThread {
             // This does not handle mUseInputTag (the WebView contains an input field with a typable answer).
             // In this case, the user can use touch to focus the field if necessary.
-            if (typeAnswer?.autoFocusEditText() == true) {
+            if (typeAnswer?.autoFocusEditText() == true ||
+                (forceActiveRecall && !hasWebViewTypeInput() && answerField?.isVisible == true)
+            ) {
                 answerField?.focusWithKeyboard()
             } else {
                 flipCardLayout?.requestFocus()
@@ -1217,6 +1158,7 @@ abstract class AbstractFlashcardViewer :
     protected open fun restorePreferences(): SharedPreferences {
         val preferences = baseContext.sharedPrefs()
         typeAnswer = createInstance(preferences)
+        forceActiveRecall = preferences.getBoolean("forceActiveRecall", true)
         // mDeckFilename = preferences.getString("deckFilename", "");
         minimalClickSpeed = preferences.getInt("showCardAnswerButtonTime", 0)
         fullscreenMode = fromPreference(preferences)
@@ -1277,7 +1219,7 @@ abstract class AbstractFlashcardViewer :
         updateActionBar()
 
         // Clean answer field
-        if (typeAnswer!!.validForEditText()) {
+        if (typeAnswer!!.validForEditText() || forceActiveRecall) {
             answerField!!.setText("")
         }
     }
@@ -1333,6 +1275,7 @@ abstract class AbstractFlashcardViewer :
         } else {
             answerField?.visibility = View.GONE
         }
+        applyForcedRecallInput()
         val content = cardRenderContext!!.renderCard(getColUnsafe, currentCard!!, SingleCardSide.FRONT)
         automaticAnswer.onDisplayQuestion()
         launchCatchingTask {
@@ -1351,6 +1294,12 @@ abstract class AbstractFlashcardViewer :
 
     @VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
     open fun displayCardAnswer() {
+        // SpeedyCAT forced active recall: refuse to reveal the back until a non-empty answer
+        // has been typed and submitted. This is the single choke-point all reveal paths use.
+        if (blockAnswerRevealIfRequired()) {
+            return
+        }
+        val wasDisplayingAnswer = displayAnswer
         // #7294 Required in case the animation end action does not fire:
         actualHideEaseButtons()
         Timber.d("displayCardAnswer()")
@@ -1388,6 +1337,105 @@ abstract class AbstractFlashcardViewer :
         }
         updateCard(answerContent)
         displayAnswerBottomBar()
+
+        // SpeedyCAT: once the back is revealed, tell the learner whether they recalled it.
+        if (!wasDisplayingAnswer && forceActiveRecall) {
+            showForcedRecallFeedback()
+        }
+    }
+
+    // ----------------------------------------------------------------------------
+    // SpeedyCAT: forced active recall
+    // ----------------------------------------------------------------------------
+
+    /** True when forced active recall is enabled and a card is being shown. */
+    private fun forcedRecallActive(): Boolean = forceActiveRecall && currentCard != null
+
+    /**
+     * True when the current card already injects a typed-answer `<input>` into the WebView
+     * (i.e. a `{{type:}}` template with the "use HTML input" preference enabled). In that case
+     * the typed text arrives via the `typechangetext:`/`typeentertext:` URLs rather than the
+     * native [answerField].
+     */
+    private fun hasWebViewTypeInput(): Boolean =
+        typeAnswer?.useInputTag == true && typeAnswer?.validForEditText() == true
+
+    /** The answer the learner has typed so far, read from whichever input is active. */
+    @VisibleForTesting
+    internal fun currentTypedAnswer(): String =
+        if (hasWebViewTypeInput()) {
+            typeAnswer?.input.orEmpty()
+        } else {
+            answerField?.text?.toString().orEmpty()
+        }
+
+    /**
+     * Forced active recall: make sure every card shows a typed-answer box on the question side,
+     * even when the template has no `{{type:}}` field. Does nothing when the card already provides
+     * an in-WebView input, or when the feature is disabled (preserving the normal flow).
+     */
+    private fun applyForcedRecallInput() {
+        if (forceActiveRecall && !hasWebViewTypeInput()) {
+            answerField?.visibility = View.VISIBLE
+            answerField?.applyLanguageHint(typeAnswer?.languageHint)
+        }
+    }
+
+    /**
+     * If forced active recall should block revealing the answer right now, notify the learner and
+     * return true. The block applies only before the answer is shown and only when nothing has
+     * been typed yet, so a normal submit (non-empty answer) passes straight through.
+     */
+    protected fun blockAnswerRevealIfRequired(): Boolean {
+        if (!forcedRecallActive() || displayAnswer || currentTypedAnswer().isNotBlank()) {
+            return false
+        }
+        Timber.i("displayCardAnswer() blocked: forced active recall requires a typed answer")
+        showSnackbar(R.string.force_active_recall_type_first)
+        focusAnswerCompletionField()
+        return true
+    }
+
+    /**
+     * The expected answer used for forced-recall match feedback. Preference order:
+     * 1. the `{{type:Field}}` field, when the template defines one (matches Anki's native typed answer);
+     * 2. the note's "Back" field, when present (case-insensitive);
+     * 3. otherwise the note's last field;
+     * 4. as a final fallback, the rendered answer side.
+     */
+    @VisibleForTesting
+    internal fun expectedAnswerForForcedRecall(): String {
+        typeAnswer?.correct?.takeIf { it.isNotBlank() }?.let { return it }
+        val card = currentCard ?: return ""
+        val col = getColUnsafe
+        val note = card.note(col)
+        val fieldNames = card.noteType(col).fieldsNames
+        fieldNames.firstOrNull { it.equals("Back", ignoreCase = true) }?.let { name ->
+            note.getItem(name).takeIf { it.isNotBlank() }?.let { return it }
+        }
+        fieldNames.lastOrNull()?.let { name ->
+            note.getItem(name).takeIf { it.isNotBlank() }?.let { return it }
+        }
+        return card.answer(col)
+    }
+
+    /** Shows whether the learner's typed answer matched the card's expected answer. */
+    private fun showForcedRecallFeedback() {
+        val matched = ForcedRecall.matches(currentTypedAnswer(), expectedAnswerForForcedRecall())
+        val messageRes =
+            if (matched) R.string.force_active_recall_correct else R.string.force_active_recall_incorrect
+        showSnackbar(messageRes)
+    }
+
+    /**
+     * Test-only: simulate the learner typing [text] into the answer box, so a forced-active-recall
+     * reveal is no longer gated. Writes both the native input field and [TypeAnswer.input] so it
+     * works regardless of which input path is active.
+     */
+    @VisibleForTesting
+    fun typeAnswerForTesting(text: String) {
+        answerField?.setText(text)
+        typeAnswer?.input = text
     }
 
     override fun scrollCurrentCardBy(dy: Int) {
@@ -1680,11 +1728,6 @@ abstract class AbstractFlashcardViewer :
                 true
             }
 
-            ViewerCommand.EDIT -> {
-                editCard(fromGesture)
-                true
-            }
-
             ViewerCommand.TAG -> {
                 showTagsDialog()
                 true
@@ -1694,11 +1737,6 @@ abstract class AbstractFlashcardViewer :
             ViewerCommand.BURY_NOTE -> buryNote()
             ViewerCommand.SUSPEND_CARD -> suspendCard()
             ViewerCommand.SUSPEND_NOTE -> suspendNote()
-            ViewerCommand.DELETE -> {
-                showDeleteNoteDialog()
-                true
-            }
-
             ViewerCommand.PLAY_MEDIA -> {
                 playMedia(true)
                 true
@@ -1972,6 +2010,7 @@ abstract class AbstractFlashcardViewer :
             } else {
                 answerField?.visibility = View.GONE
             }
+            applyForcedRecallInput()
             val content = cardRenderContext!!.renderCard(getColUnsafe, currentCard!!, SingleCardSide.FRONT)
             automaticAnswer.onDisplayQuestion()
             updateCard(content)

@@ -1,0 +1,486 @@
+{
+  "meta": {
+    "section": "CARS",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "name": "Excelsior University Online Writing Lab (OWL) — Online Reading Comprehension Lab (instructional video transcripts: Inferencing, Evaluating an Author's Intent, Evaluating an Argument)",
+        "license": "CC BY 4.0 (Excelsior OWL is site-wide licensed Creative Commons Attribution 4.0 International)",
+        "url": "https://owl.excelsior.edu/orc/",
+        "status": "clean"
+      },
+      {
+        "name": "Official ASVAB (U.S. Department of Defense) — Paragraph Comprehension (PC) sample questions",
+        "license": "Public domain (work of the U.S. Government)",
+        "url": "https://www.officialasvab.com/paragraph-comprehension-pc/",
+        "status": "clean"
+      }
+    ],
+    "counts": {"total": 21, "clean": 21, "licenseUncertain": 0},
+    "notes": "CARS is by far the hardest MCAT section to source openly, and this set deliberately prioritizes honesty over volume. Authentic MCAT-style CARS = long (~500-600 word) humanities/social-science passages with 5-7 dependent questions and an official answer key. That material exists essentially only in (a) proprietary prep-company sets (e.g., BeMo, already flagged LICENSE-UNCERTAIN in questions.json) and (b) the AAMC/Khan Academy CARS collection, which is license-uncertain (AAMC collaboration) AND sign-in/bot-gated on Khan and its mirrors (e.g., Jack Westin) — so it was NOT reproduced here, because the exact passages/answers could not be verified and reproducing license-uncertain full passages risks fabrication and rights violations. Genuinely open-licensed sources do NOT provide long, multi-question CARS passages. They provide short reading-comprehension SKILL items. Every item below is drawn from such clean sources, and the passage text, the question concept, and the correct answer all come from the cited source. Choice provenance: where the source explicitly printed the four options (the Inferencing item) or enumerated the answer categories (author's purpose taxonomy; fact/opinion/argument; the logical-fallacy taxonomy), the A-D choices are the source's own. For the point-of-view, tone, and intended-audience items, the source states the correct answer and the distractors were assembled from the source's own discussed categories/vocabulary (flagged per item). No passages and no correct answers were authored. LIMITATIONS (read before shipping): these items are much shorter and easier than real MCAT CARS, and each is a single-question prompt (so every passageId is unique rather than shared across 5-7 questions). They drill CARS sub-skills (inference, author's purpose, tone/attitude, point of view, intended audience, fact vs. opinion vs. argument, logical-fallacy identification, detail/implication) but are not full-length CARS passages. A real CARS bank would require licensing AAMC/Khan/commercial passages, or commissioning original ~600-word passages with question sets written by trained CARS item writers and validated against a held-out answer key."
+  },
+  "questions": [
+    {
+      "id": "cars-x001",
+      "section": "CARS",
+      "passageId": "owl-infer-miranda",
+      "passage": "Miranda was physically and mentally exhausted. She had scrubbed the floors, bathed the children, and baked the casserole, but her husband, Ferdinand, who had once been the sunshine of her life, now remained distant and unimpressed. Dark thoughts clouded her mind.",
+      "stem": "Based on this passage, which of the following conclusions is the most logical inference you can make about the last sentence?",
+      "choices": [
+        {"label": "A", "text": "Miranda is confused."},
+        {"label": "B", "text": "Miranda is upset with herself."},
+        {"label": "C", "text": "Miranda is worried Ferdinand might be sick."},
+        {"label": "D", "text": "Miranda is unhappy in her marriage."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The passage describes how hard Miranda has worked to keep up the home for a husband who is now distant and unimpressed. The OWL video concludes that the most logical inference about her 'dark thoughts' is that they concern her marriage, so the best answer is that Miranda is unhappy in her marriage.",
+      "topicTags": ["CARS", "humanities", "literature", "inference"],
+      "difficulty": "medium",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Inferencing (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-while-reading/inferencing/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). Passage, question, all four choices, and the correct answer are stated verbatim in the OWL Inferencing video/transcript. Strongest item in this file (the source itself poses the 4-choice question and gives the answer)."
+    },
+    {
+      "id": "cars-x002",
+      "section": "CARS",
+      "passageId": "owl-intent-columbus",
+      "passage": "Columbus Day is a controversial holiday because of its tacit endorsement of colonization, slavery, and the genocide of indigenous peoples.",
+      "stem": "What is the author's primary purpose in this statement?",
+      "choices": [
+        {"label": "A", "text": "To inform the reader"},
+        {"label": "B", "text": "To explain or instruct"},
+        {"label": "C", "text": "To entertain the reader"},
+        {"label": "D", "text": "To persuade the reader"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The OWL video classifies this statement as persuasive because it tries to convince the reader to agree with the author's point of view about Columbus Day.",
+      "topicTags": ["CARS", "humanities", "history", "author purpose"],
+      "difficulty": "easy",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Author's Intent (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-authors-intent/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). Passage and the 'persuasive' classification are stated in the source. The four choices are the source's own enumerated purposes (inform / explain or instruct / entertain / persuade)."
+    },
+    {
+      "id": "cars-x003",
+      "section": "CARS",
+      "passageId": "owl-intent-dowjones",
+      "passage": "The Dow Jones Industrial dropped five hundred points today after the President announced the latest unemployment statistics.",
+      "stem": "What is the author's primary purpose in this statement?",
+      "choices": [
+        {"label": "A", "text": "To inform the reader"},
+        {"label": "B", "text": "To explain or instruct"},
+        {"label": "C", "text": "To entertain the reader"},
+        {"label": "D", "text": "To persuade the reader"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The OWL video classifies this statement as informative because it updates the reader on what happened with the stock market today.",
+      "topicTags": ["CARS", "social science", "economics", "author purpose"],
+      "difficulty": "easy",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Author's Intent (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-authors-intent/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). Passage and the 'informative' classification are stated in the source. Choices are the source's own enumerated purposes."
+    },
+    {
+      "id": "cars-x004",
+      "section": "CARS",
+      "passageId": "owl-intent-zombie",
+      "passage": "The zombie horde shambled up the hill in pursuit of its prey, an injured pony whose frightened whinnies incited a virtual zombie stampede!",
+      "stem": "What is the author's primary purpose in this statement?",
+      "choices": [
+        {"label": "A", "text": "To inform the reader"},
+        {"label": "B", "text": "To explain or instruct"},
+        {"label": "C", "text": "To entertain the reader"},
+        {"label": "D", "text": "To persuade the reader"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The OWL video classifies this statement as intended to entertain the reader by describing a fictitious zombie encounter.",
+      "topicTags": ["CARS", "humanities", "literature", "author purpose"],
+      "difficulty": "easy",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Author's Intent (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-authors-intent/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). Passage and the 'entertain' classification are stated in the source. Choices are the source's own enumerated purposes."
+    },
+    {
+      "id": "cars-x005",
+      "section": "CARS",
+      "passageId": "owl-intent-guncontrol-pov",
+      "passage": "Stricter gun control laws would benefit the public by keeping guns off the streets and out of the hands of dangerous or unstable individuals.",
+      "stem": "Based on the author's word choice, what is the author's point of view on stricter gun control laws?",
+      "choices": [
+        {"label": "A", "text": "In favor of stricter gun control laws"},
+        {"label": "B", "text": "Opposed to stricter gun control laws"},
+        {"label": "C", "text": "Neutral or undecided about gun control"},
+        {"label": "D", "text": "The author's point of view cannot be determined"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The OWL video identifies the key word 'benefit' as a clue to the author's point of view and concludes that the author is in favor of stricter gun control laws.",
+      "topicTags": ["CARS", "social science", "politics", "author point of view"],
+      "difficulty": "easy",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Author's Intent (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-authors-intent/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). Passage and the correct answer ('in favor', via the keyword 'benefit') are stated in the source. The opposed/neutral/indeterminate distractors were assembled as standard complements to format a 4-choice item; no answer was authored."
+    },
+    {
+      "id": "cars-x006",
+      "section": "CARS",
+      "passageId": "owl-intent-grinch-tone",
+      "passage": "A newspaper headline reads: \"President Grinch to Steal Halloween, Too.\"",
+      "stem": "The author's tone in this headline is best described as:",
+      "choices": [
+        {"label": "A", "text": "Sarcastic"},
+        {"label": "B", "text": "Sympathetic"},
+        {"label": "C", "text": "Nostalgic"},
+        {"label": "D", "text": "Objective"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The OWL video states that the author's tone is sarcastic and that the tone signals the author is not in favor of the President.",
+      "topicTags": ["CARS", "humanities", "rhetoric", "author tone"],
+      "difficulty": "medium",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Author's Intent (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-authors-intent/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). The headline and the correct tone ('sarcastic') are stated in the source. The distractor tone words (sympathetic, nostalgic, objective) are drawn from the same OWL video's own enumerated list of tone words; no answer was authored."
+    },
+    {
+      "id": "cars-x007",
+      "section": "CARS",
+      "passageId": "owl-intent-candidate-audience",
+      "passage": "The presidential candidate is a rabid proponent of the big government, tax-the-rich, entitlement policies that have bankrupted the European Union.",
+      "stem": "For which intended audience is the author most likely writing?",
+      "choices": [
+        {"label": "A", "text": "A politically conservative audience"},
+        {"label": "B", "text": "A politically progressive audience"},
+        {"label": "C", "text": "An audience of nonpartisan economists"},
+        {"label": "D", "text": "A general audience with no political leanings"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The OWL video infers a conservative intended audience: the author assumes the audience is familiar with and comfortable using phrases such as 'big government,' 'tax-the-rich,' and 'entitlements' as derogatory terms, and the word 'rabid' signals the audience will not agree with the candidate's policies.",
+      "topicTags": ["CARS", "social science", "politics", "intended audience"],
+      "difficulty": "medium",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Author's Intent (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-authors-intent/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). The statement and the correct answer ('conservative audience') are stated in the source. The alternative-audience distractors were assembled to format a 4-choice item; no answer was authored."
+    },
+    {
+      "id": "cars-x008",
+      "section": "CARS",
+      "passageId": "owl-arg-congress-fact",
+      "passage": "50% of politicians in the U.S. Congress are millionaires while only 1% of U.S. citizens are millionaires.",
+      "stem": "According to the distinctions drawn in the source, this statement is best classified as:",
+      "choices": [
+        {"label": "A", "text": "A fact"},
+        {"label": "B", "text": "An opinion"},
+        {"label": "C", "text": "An argument"},
+        {"label": "D", "text": "An assumption"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The OWL video defines a fact as information that can be proven or disproven and gives this statement as its example of a fact.",
+      "topicTags": ["CARS", "social science", "critical reasoning", "fact vs opinion"],
+      "difficulty": "easy",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Argument (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-argument/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). Passage and the 'fact' classification are stated in the source. The fact/opinion/argument categories are the source's own; 'assumption' (also defined in the same video) is used as the fourth option."
+    },
+    {
+      "id": "cars-x009",
+      "section": "CARS",
+      "passageId": "owl-arg-biggov-opinion",
+      "passage": "Big government is horribly inefficient.",
+      "stem": "According to the distinctions drawn in the source, this statement is best classified as:",
+      "choices": [
+        {"label": "A", "text": "A fact"},
+        {"label": "B", "text": "An opinion"},
+        {"label": "C", "text": "An argument"},
+        {"label": "D", "text": "Supporting evidence"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The OWL video classifies this as an opinion because it is a claim made without supporting facts or evidence and relies on the unstated assumption that readers will know what 'big government' means and agree that it is inefficient.",
+      "topicTags": ["CARS", "social science", "critical reasoning", "fact vs opinion"],
+      "difficulty": "easy",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Argument (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-argument/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). Passage and the 'opinion' classification are stated in the source. Categories are the source's own (fact/opinion/argument/evidence)."
+    },
+    {
+      "id": "cars-x010",
+      "section": "CARS",
+      "passageId": "owl-arg-yankees-opinion",
+      "passage": "The New York Yankees is the best team in the history of Major League Baseball.",
+      "stem": "According to the distinctions drawn in the source, this statement is best classified as:",
+      "choices": [
+        {"label": "A", "text": "A fact"},
+        {"label": "B", "text": "An opinion"},
+        {"label": "C", "text": "An argument"},
+        {"label": "D", "text": "A logical fallacy"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The OWL video uses this statement as an example of an opinion: the claim has no supporting evidence and relies on an assumption to make its point.",
+      "topicTags": ["CARS", "social science", "critical reasoning", "opinion vs argument"],
+      "difficulty": "easy",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Argument (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-argument/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). Passage and the 'opinion' classification are stated in the source; pairs with cars-x011 (the same claim plus evidence, which the source then classifies as an argument)."
+    },
+    {
+      "id": "cars-x011",
+      "section": "CARS",
+      "passageId": "owl-arg-yankees-argument",
+      "passage": "The New York Yankees is the best team in the history of Major League Baseball because it has won more World Series titles than any other team.",
+      "stem": "According to the distinctions drawn in the source, this statement is best classified as:",
+      "choices": [
+        {"label": "A", "text": "A fact"},
+        {"label": "B", "text": "An opinion"},
+        {"label": "C", "text": "An argument"},
+        {"label": "D", "text": "An assumption"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The OWL video explains that adding evidence (most World Series titles won) converts the earlier opinion into an argument, which it defines as a claim that is supported with evidence.",
+      "topicTags": ["CARS", "social science", "critical reasoning", "opinion vs argument"],
+      "difficulty": "medium",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Argument (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-argument/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). Passage and the 'argument' classification are stated in the source. Categories are the source's own."
+    },
+    {
+      "id": "cars-x012",
+      "section": "CARS",
+      "passageId": "owl-fallacy-falsedilemma",
+      "passage": "Person 1: You're either for the war or against the troops. Person 2: Actually, I do not want our troops sent into a dangerous war.",
+      "stem": "Which logical fallacy does Person 1 commit?",
+      "choices": [
+        {"label": "A", "text": "False dilemma"},
+        {"label": "B", "text": "Ad hominem"},
+        {"label": "C", "text": "Bandwagon"},
+        {"label": "D", "text": "Slippery slope"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The OWL video labels this a false dilemma fallacy, which involves presenting only two options or sides when there are actually many.",
+      "topicTags": ["CARS", "social science", "logical fallacies", "critical reasoning"],
+      "difficulty": "medium",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Argument (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-argument/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). Example and the 'false dilemma' label are stated in the source. All four choices are fallacy names from the source's own enumerated list of logical fallacies."
+    },
+    {
+      "id": "cars-x013",
+      "section": "CARS",
+      "passageId": "owl-fallacy-hastygen",
+      "passage": "Some teenagers in our community recently vandalized the park downtown. Teenagers are so irresponsible and destructive.",
+      "stem": "Which logical fallacy does this statement commit?",
+      "choices": [
+        {"label": "A", "text": "Appeal to fear"},
+        {"label": "B", "text": "Hasty generalization"},
+        {"label": "C", "text": "Guilt by association"},
+        {"label": "D", "text": "Straw man"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The OWL video labels this a hasty generalization fallacy, which involves making a claim based on evidence that is too small.",
+      "topicTags": ["CARS", "social science", "logical fallacies", "critical reasoning"],
+      "difficulty": "medium",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Argument (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-argument/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). Example and the 'hasty generalization' label are stated in the source. Choices are fallacy names from the source's own enumerated list."
+    },
+    {
+      "id": "cars-x014",
+      "section": "CARS",
+      "passageId": "owl-fallacy-appealfear",
+      "passage": "Elizabeth Smith doesn't understand foreign policy. If you elect Elizabeth Smith as president, we will be attacked by terrorists.",
+      "stem": "Which logical fallacy does this statement commit?",
+      "choices": [
+        {"label": "A", "text": "Slippery slope"},
+        {"label": "B", "text": "Bandwagon"},
+        {"label": "C", "text": "Appeal to fear"},
+        {"label": "D", "text": "Ad hominem"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The OWL video labels this an appeal to fear fallacy, which involves appealing to people's fears by presenting a scary future if a certain decision is made today.",
+      "topicTags": ["CARS", "social science", "logical fallacies", "critical reasoning"],
+      "difficulty": "medium",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Argument (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-argument/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). Example and the 'appeal to fear' label are stated in the source. Choices are fallacy names from the source's own enumerated list."
+    },
+    {
+      "id": "cars-x015",
+      "section": "CARS",
+      "passageId": "owl-fallacy-adhominem",
+      "passage": "Person 1: I am for raising the minimum wage in our state. Person 2: She is for raising the minimum wage, but she is not smart enough to even run a business.",
+      "stem": "Which logical fallacy does Person 2 commit?",
+      "choices": [
+        {"label": "A", "text": "Ad hominem"},
+        {"label": "B", "text": "False dilemma"},
+        {"label": "C", "text": "Hasty generalization"},
+        {"label": "D", "text": "Appeal to fear"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The OWL video labels this an ad hominem fallacy ('against the man'), which occurs when someone attacks the person instead of his or her argument.",
+      "topicTags": ["CARS", "social science", "logical fallacies", "critical reasoning"],
+      "difficulty": "medium",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Argument (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-argument/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). Example and the 'ad hominem' label are stated in the source. Choices are fallacy names from the source's own enumerated list."
+    },
+    {
+      "id": "cars-x016",
+      "section": "CARS",
+      "passageId": "owl-fallacy-slipperyslope",
+      "passage": "If we enact any kind of gun control laws, the next thing you know, we won't be allowed to have any guns at all. When that happens, we won't be able to defend ourselves against terrorist attacks, and when that happens terrorists will take over our country. Therefore, gun control laws will cause us to lose our country to terrorists.",
+      "stem": "Which logical fallacy does this statement commit?",
+      "choices": [
+        {"label": "A", "text": "Straw man"},
+        {"label": "B", "text": "Slippery slope"},
+        {"label": "C", "text": "Bandwagon"},
+        {"label": "D", "text": "Guilt by association"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The OWL video labels this a slippery slope fallacy, which involves claiming that an action or decision will lead to other terrible events that build up to an awful conclusion.",
+      "topicTags": ["CARS", "social science", "logical fallacies", "critical reasoning"],
+      "difficulty": "medium",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Argument (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-argument/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). Example and the 'slippery slope' label are stated in the source. Choices are fallacy names from the source's own enumerated list."
+    },
+    {
+      "id": "cars-x017",
+      "section": "CARS",
+      "passageId": "owl-fallacy-guiltassoc",
+      "passage": "We cannot have the educational reform that my opponent calls for because Dr. Crazy has also mentioned this kind of educational reform.",
+      "stem": "Which logical fallacy does this statement commit?",
+      "choices": [
+        {"label": "A", "text": "Bandwagon"},
+        {"label": "B", "text": "Appeal to fear"},
+        {"label": "C", "text": "Guilt by association"},
+        {"label": "D", "text": "Hasty generalization"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The OWL video labels this a guilt by association fallacy, which involves connecting an opponent to a demonized group or bad person in order to discredit his or her argument.",
+      "topicTags": ["CARS", "social science", "logical fallacies", "critical reasoning"],
+      "difficulty": "medium",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Argument (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-argument/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). Example and the 'guilt by association' label are stated in the source. Choices are fallacy names from the source's own enumerated list."
+    },
+    {
+      "id": "cars-x018",
+      "section": "CARS",
+      "passageId": "owl-fallacy-strawman",
+      "passage": "Person 1: I think pollution from humans contributes to climate change. Person 2: So, you think humans are directly responsible for extreme weather, like hurricanes, and have caused the droughts in the southwestern U.S.? If that's the case, maybe we just need to go to the southwest and perform a \"rain dance.\"",
+      "stem": "Which logical fallacy does Person 2 commit?",
+      "choices": [
+        {"label": "A", "text": "Straw man"},
+        {"label": "B", "text": "False dilemma"},
+        {"label": "C", "text": "Ad hominem"},
+        {"label": "D", "text": "Bandwagon"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The OWL video labels this a straw man fallacy, which involves taking someone's argument and distorting or exaggerating it, then attacking the distortion as if it were the original claim.",
+      "topicTags": ["CARS", "social science", "logical fallacies", "rhetoric"],
+      "difficulty": "medium",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Argument (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-argument/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). Example and the 'straw man' label are stated in the source. The exchange references a climate-policy debate but the item tests reasoning/rhetoric, not natural-science content. Choices are fallacy names from the source's own enumerated list."
+    },
+    {
+      "id": "cars-x019",
+      "section": "CARS",
+      "passageId": "owl-fallacy-bandwagon",
+      "passage": "Everyone is going to get the new smart phone when it comes out this weekend. Why aren't you?",
+      "stem": "Which logical fallacy does this statement commit?",
+      "choices": [
+        {"label": "A", "text": "Slippery slope"},
+        {"label": "B", "text": "Bandwagon"},
+        {"label": "C", "text": "Guilt by association"},
+        {"label": "D", "text": "Appeal to fear"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The OWL video labels this a bandwagon fallacy, which involves convincing people to do or think something because everyone else does.",
+      "topicTags": ["CARS", "social science", "logical fallacies", "critical reasoning"],
+      "difficulty": "easy",
+      "sourceName": "Excelsior University OWL — Online Reading Comprehension Lab: Evaluating an Argument (instructional video transcript)",
+      "sourceLicense": "CC BY 4.0 (Excelsior OWL; site-wide Creative Commons Attribution 4.0 International)",
+      "sourceUrl": "https://owl.excelsior.edu/orc/what-to-do-after-reading/analyzing/evaluating-an-argument/",
+      "answerProvenance": "source-solution-guide",
+      "notes": "CLEAN (CC BY 4.0). Example and the 'bandwagon' label are stated in the source. Choices are fallacy names from the source's own enumerated list."
+    },
+    {
+      "id": "cars-x020",
+      "section": "CARS",
+      "passageId": "asvab-pc-east-texas",
+      "passage": "The eastern part of Texas will ambush the senses of all who enter it with preconceptions of sand and cacti around every bend. It has a look and atmosphere that does not fit the boots-and-saddle image of the state.",
+      "stem": "The author implies that the look and atmosphere of east Texas does NOT resemble that of the",
+      "choices": [
+        {"label": "A", "text": "marshlands."},
+        {"label": "B", "text": "mountains."},
+        {"label": "C", "text": "seashore."},
+        {"label": "D", "text": "desert."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The passage says east Texas defies the visitor's 'preconceptions of sand and cacti' — i.e., the desert imagery associated with the state — so its look and atmosphere do NOT resemble that of a desert.",
+      "topicTags": ["CARS", "social science", "geography and culture", "inference"],
+      "difficulty": "medium",
+      "sourceName": "Official ASVAB (U.S. Department of Defense) — Paragraph Comprehension (PC) sample questions",
+      "sourceLicense": "Public domain (work of the U.S. Government — Official ASVAB, U.S. Department of Defense)",
+      "sourceUrl": "https://www.officialasvab.com/paragraph-comprehension-pc/",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "CLEAN (public domain). Passage, stem, and four choices are verbatim from the official DoD ASVAB site. The official key is revealed interactively on the page (not scraped); the correct answer (desert) is verified directly from the passage text. Single short passage — far below MCAT CARS length."
+    },
+    {
+      "id": "cars-x021",
+      "section": "CARS",
+      "passageId": "asvab-pc-deception",
+      "passage": "They returned to the beach, where blankets spotted the slope to the water. An advancing wall of clouds, black and gray, darkening the expanse of ground beneath, approached from the west. To the east and above them, the sky remained clear, the sun warm, as if collaborating in the deception.",
+      "stem": "The \"deception\" referred to in the passage is that",
+      "choices": [
+        {"label": "A", "text": "there is no storm approaching."},
+        {"label": "B", "text": "the sky is clear in the east."},
+        {"label": "C", "text": "it is too cold to swim."},
+        {"label": "D", "text": "the sun is warm."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "A wall of storm clouds is advancing from the west, but the clear sky and warm sun to the east create a false impression that the weather is fine. The 'deception' is therefore that no storm is approaching.",
+      "topicTags": ["CARS", "humanities", "literature", "detail and inference"],
+      "difficulty": "medium",
+      "sourceName": "Official ASVAB (U.S. Department of Defense) — Paragraph Comprehension (PC) sample questions",
+      "sourceLicense": "Public domain (work of the U.S. Government — Official ASVAB, U.S. Department of Defense)",
+      "sourceUrl": "https://www.officialasvab.com/paragraph-comprehension-pc/",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "CLEAN (public domain). Passage, stem, and four choices are verbatim from the official DoD ASVAB site. The official key is revealed interactively (not scraped); the answer is verified from the passage text. This literary excerpt is presented as an official DoD ASVAB sample; its ultimate literary origin is unverified. Single short passage — far below MCAT CARS length."
+    }
+  ]
+}

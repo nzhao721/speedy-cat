@@ -1,0 +1,578 @@
+{
+  "meta": {
+    "section": "BBLS",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax Biology 2e (Clark, Douglas, Choi)",
+        "sourceLicense": "CC BY-NC-SA 4.0",
+        "baseUrl": "https://openstax.org/books/biology-2e/",
+        "note": "Stems/options scraped verbatim from OpenStax Biology 2e Review Questions. OpenStax does NOT publish the Biology 2e review-question answer key publicly, so correctAnswer is verified-from-source-text (bedrock factual/computational genetics & evolution items cross-checked against the Biology 2e chapter text). License recorded as the current official CC BY-NC-SA 4.0 (originally released CC BY 4.0). OpenStax posts a 'no LLM training' notice; SpeedyCAT use is human-facing per PRD."
+      }
+    ],
+    "counts": {"total": 28, "byTopic": {"genetics": 17, "evolution": 11}},
+    "notes": "File 07: OpenStax Biology 2e Ch. 12 (Mendel's Experiments and Heredity) and Ch. 19 (The Evolution of Populations). One Hardy-Weinberg item (Ch.19 Q6) was skipped because two options are simultaneously out of equilibrium (ambiguous). Options 1-4 map to A-D. answerProvenance is verified-from-source-text for all items (no public OpenStax key)."
+  },
+  "questions": [
+    {
+      "id": "bbls-x230",
+      "section": "BBLS",
+      "stem": "Mendel performed hybridizations by transferring pollen from the _______ of the male plant to the female ova.",
+      "choices": [
+        {"label": "A", "text": "anther"},
+        {"label": "B", "text": "pistil"},
+        {"label": "C", "text": "stigma"},
+        {"label": "D", "text": "seed"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Pollen is produced in the anther (the male part). Mendel transferred pollen from the anther of one plant to the carpel of another to make controlled crosses.",
+      "topicTags": ["genetics", "Mendelian genetics", "plant reproduction"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 12 Mendel's Experiments and Heredity — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q5). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x231",
+      "section": "BBLS",
+      "stem": "Which is one of the seven characteristics that Mendel observed in pea plants?",
+      "choices": [
+        {"label": "A", "text": "flower size"},
+        {"label": "B", "text": "seed texture"},
+        {"label": "C", "text": "leaf shape"},
+        {"label": "D", "text": "stem color"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Seed texture (round vs. wrinkled) is one of Mendel's seven characters. Flower size, leaf shape, and stem color were not among them.",
+      "topicTags": ["genetics", "Mendelian genetics", "pea plants"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Biology 2e, Ch. 12 Mendel's Experiments and Heredity — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q6). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x232",
+      "section": "BBLS",
+      "stem": "Imagine you are performing a cross involving seed color in garden pea plants. What F1 offspring would you expect if you cross true-breeding parents with green seeds and yellow seeds? Yellow seed color is dominant over green.",
+      "choices": [
+        {"label": "A", "text": "100 percent yellow-green seeds"},
+        {"label": "B", "text": "100 percent yellow seeds"},
+        {"label": "C", "text": "50 percent yellow, 50 percent green seeds"},
+        {"label": "D", "text": "25 percent green, 75 percent yellow seeds"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Crossing true-breeding YY (yellow) x yy (green) yields all Yy offspring. Because yellow is dominant, 100% of the F1 are yellow.",
+      "topicTags": ["genetics", "Mendelian genetics", "monohybrid cross"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Biology 2e, Ch. 12 Mendel's Experiments and Heredity — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q7). No public OpenStax answer key; answer verified by Mendelian reasoning."
+    },
+    {
+      "id": "bbls-x233",
+      "section": "BBLS",
+      "stem": "Consider a cross to investigate the pea pod texture trait, involving constricted or inflated pods. Mendel found that the traits behave according to a dominant/recessive pattern in which inflated pods were dominant. If you performed this cross and obtained 650 inflated-pod plants in the F2 generation, approximately how many constricted-pod plants would you expect to have?",
+      "choices": [
+        {"label": "A", "text": "600"},
+        {"label": "B", "text": "165"},
+        {"label": "C", "text": "217"},
+        {"label": "D", "text": "468"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "An F2 monohybrid cross gives a 3:1 ratio (inflated:constricted). If inflated = 650 (three parts), one part = 650/3 ≈ 217 constricted plants.",
+      "topicTags": ["genetics", "Mendelian genetics", "monohybrid cross"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 12 Mendel's Experiments and Heredity — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q8). No public OpenStax answer key; answer verified by calculation (650/3 ≈ 217)."
+    },
+    {
+      "id": "bbls-x234",
+      "section": "BBLS",
+      "stem": "A scientist pollinates a true-breeding pea plant with violet, terminal flowers with pollen from a true-breeding pea plant with white, axial flowers. Which of the following observations would most accurately describe the F2 generation?",
+      "choices": [
+        {"label": "A", "text": "75% violet flowers; 75% terminal flowers"},
+        {"label": "B", "text": "75% white flowers in a terminal position"},
+        {"label": "C", "text": "75% violet flowers; 75% axial flowers"},
+        {"label": "D", "text": "75% violet flowers in an axial position"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Violet is dominant to white and axial is dominant to terminal. The F1 are all violet and axial, and each trait independently gives a 3:1 F2 ratio, so about 75% are violet and about 75% are axial.",
+      "topicTags": ["genetics", "Mendelian genetics", "dihybrid cross"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Biology 2e, Ch. 12 Mendel's Experiments and Heredity — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q9). No public OpenStax answer key; answer verified by Mendelian reasoning (violet and axial are the dominant pea traits)."
+    },
+    {
+      "id": "bbls-x235",
+      "section": "BBLS",
+      "stem": "The observable traits expressed by an organism are described as its ________.",
+      "choices": [
+        {"label": "A", "text": "phenotype"},
+        {"label": "B", "text": "genotype"},
+        {"label": "C", "text": "alleles"},
+        {"label": "D", "text": "zygote"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The phenotype is the set of observable characteristics; the genotype is the underlying genetic makeup.",
+      "topicTags": ["genetics", "phenotype", "genotype"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Biology 2e, Ch. 12 Mendel's Experiments and Heredity — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q10). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x236",
+      "section": "BBLS",
+      "stem": "A recessive trait will be observed in individuals that are ________ for that trait.",
+      "choices": [
+        {"label": "A", "text": "heterozygous"},
+        {"label": "B", "text": "homozygous or heterozygous"},
+        {"label": "C", "text": "homozygous"},
+        {"label": "D", "text": "diploid"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "A recessive phenotype appears only when the individual is homozygous recessive; a heterozygote shows the dominant phenotype.",
+      "topicTags": ["genetics", "Mendelian genetics", "recessive traits"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Biology 2e, Ch. 12 Mendel's Experiments and Heredity — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q11). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x237",
+      "section": "BBLS",
+      "stem": "If black and white true-breeding mice are mated and the result is all gray offspring, what inheritance pattern would this be indicative of?",
+      "choices": [
+        {"label": "A", "text": "dominance"},
+        {"label": "B", "text": "codominance"},
+        {"label": "C", "text": "multiple alleles"},
+        {"label": "D", "text": "incomplete dominance"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "An intermediate (blended) gray phenotype from black x white parents indicates incomplete dominance, where the heterozygote is a blend of the two homozygous phenotypes.",
+      "topicTags": ["genetics", "incomplete dominance", "inheritance patterns"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 12 Mendel's Experiments and Heredity — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q12). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x238",
+      "section": "BBLS",
+      "stem": "The ABO blood groups in humans are expressed as the IA, IB, and i alleles. The IA allele encodes the A blood group antigen, IB encodes B, and i encodes O. Both A and B are dominant to O. If a heterozygous blood type A parent (IAi) and a heterozygous blood type B parent (IBi) mate, one quarter of their offspring will have AB blood type (IAIB) in which both antigens are expressed equally. Therefore, ABO blood groups are an example of:",
+      "choices": [
+        {"label": "A", "text": "multiple alleles and incomplete dominance"},
+        {"label": "B", "text": "codominance and incomplete dominance"},
+        {"label": "C", "text": "incomplete dominance only"},
+        {"label": "D", "text": "multiple alleles and codominance"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "There are three alleles (multiple alleles), and IA and IB are codominant (both antigens expressed in AB individuals), so ABO illustrates multiple alleles and codominance.",
+      "topicTags": ["genetics", "codominance", "multiple alleles"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 12 Mendel's Experiments and Heredity — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q13). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x239",
+      "section": "BBLS",
+      "stem": "In a mating between two individuals that are heterozygous for a recessive lethal allele that is expressed in utero, what genotypic ratio (homozygous dominant:heterozygous:homozygous recessive) would you expect to observe in the offspring?",
+      "choices": [
+        {"label": "A", "text": "1:2:1"},
+        {"label": "B", "text": "3:1:1"},
+        {"label": "C", "text": "1:2:0"},
+        {"label": "D", "text": "0:2:1"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "An Aa x Aa cross gives a 1:2:1 genotypic ratio, but the homozygous recessive (aa) die in utero, so among observed offspring the ratio is 1:2:0.",
+      "topicTags": ["genetics", "lethal alleles", "monohybrid cross"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Biology 2e, Ch. 12 Mendel's Experiments and Heredity — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q14). No public OpenStax answer key; answer verified by Mendelian reasoning (aa lethal removes the homozygous recessive class)."
+    },
+    {
+      "id": "bbls-x240",
+      "section": "BBLS",
+      "stem": "If the allele encoding polydactyly (six fingers) is dominant why do most people have five fingers?",
+      "choices": [
+        {"label": "A", "text": "Genetic elements suppress the polydactyl gene."},
+        {"label": "B", "text": "Polydactyly is embryonic lethal."},
+        {"label": "C", "text": "The sixth finger is removed at birth."},
+        {"label": "D", "text": "The polydactyl allele is very rare in the human population."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Dominance refers to how an allele is expressed, not how common it is. The polydactyly allele is rare, so most people simply do not carry it.",
+      "topicTags": ["genetics", "dominance", "allele frequency"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 12 Mendel's Experiments and Heredity — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q15). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x241",
+      "section": "BBLS",
+      "stem": "A farmer raises black and white chickens. To his surprise, when the first generation of eggs hatch all the chickens are black with white speckles throughout their feathers. What should the farmer expect when the eggs laid after interbreeding the speckled chickens hatch?",
+      "choices": [
+        {"label": "A", "text": "All the offspring will be speckled."},
+        {"label": "B", "text": "75% of the offspring will be speckled, and 25% will be black."},
+        {"label": "C", "text": "50% of the offspring will be speckled, 25% will be black, and 25% will be white."},
+        {"label": "D", "text": "50% of the offspring will be black and 50% of the offspring will be white."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Speckled F1 indicates codominance (both black and white expressed). Interbreeding heterozygous speckled birds gives a 1:2:1 genotypic ratio: 25% black, 50% speckled, 25% white.",
+      "topicTags": ["genetics", "codominance", "inheritance patterns"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Biology 2e, Ch. 12 Mendel's Experiments and Heredity — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q16). No public OpenStax answer key; answer verified by Mendelian reasoning (codominant 1:2:1)."
+    },
+    {
+      "id": "bbls-x242",
+      "section": "BBLS",
+      "stem": "Assuming no gene linkage, in a dihybrid cross of AABB x aabb with AaBb F1 heterozygotes, what is the ratio of the F1 gametes (AB, aB, Ab, ab) that will give rise to the F2 offspring?",
+      "choices": [
+        {"label": "A", "text": "1:1:1:1"},
+        {"label": "B", "text": "1:3:3:1"},
+        {"label": "C", "text": "1:2:2:1"},
+        {"label": "D", "text": "4:3:2:1"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "By independent assortment, an AaBb individual produces the four gamete types AB, aB, Ab, and ab in equal proportions, a 1:1:1:1 ratio.",
+      "topicTags": ["genetics", "dihybrid cross", "independent assortment"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 12 Mendel's Experiments and Heredity — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q17). No public OpenStax answer key; answer verified by Mendelian reasoning."
+    },
+    {
+      "id": "bbls-x243",
+      "section": "BBLS",
+      "stem": "The forked line and probability methods make use of what probability rule?",
+      "choices": [
+        {"label": "A", "text": "test cross"},
+        {"label": "B", "text": "product rule"},
+        {"label": "C", "text": "monohybrid rule"},
+        {"label": "D", "text": "sum rule"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "These methods multiply the independent probabilities of each trait, applying the product rule of probability.",
+      "topicTags": ["genetics", "probability", "dihybrid cross"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 12 Mendel's Experiments and Heredity — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q18). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x244",
+      "section": "BBLS",
+      "stem": "How many different offspring genotypes are expected in a trihybrid cross between parents heterozygous for all three traits when the traits behave in a dominant and recessive pattern? How many phenotypes?",
+      "choices": [
+        {"label": "A", "text": "64 genotypes; 16 phenotypes"},
+        {"label": "B", "text": "16 genotypes; 64 phenotypes"},
+        {"label": "C", "text": "8 genotypes; 27 phenotypes"},
+        {"label": "D", "text": "27 genotypes; 8 phenotypes"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "For n heterozygous gene pairs there are 3^n genotypes and 2^n phenotypes. With n = 3: 3^3 = 27 genotypes and 2^3 = 8 phenotypes.",
+      "topicTags": ["genetics", "trihybrid cross", "probability"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Biology 2e, Ch. 12 Mendel's Experiments and Heredity — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q19). No public OpenStax answer key; answer verified by calculation (3^3 genotypes, 2^3 phenotypes)."
+    },
+    {
+      "id": "bbls-x245",
+      "section": "BBLS",
+      "stem": "Labrador retrievers' fur color is controlled by two alleles, E and B. Any dog with the ee__ genotype develops into a yellow lab, while B_E_ dogs become black labs and bbE_ dogs become chocolate labs. This is an example of _____.",
+      "choices": [
+        {"label": "A", "text": "epistasis"},
+        {"label": "B", "text": "codominance"},
+        {"label": "C", "text": "incomplete dominance"},
+        {"label": "D", "text": "linkage"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The ee genotype masks the B gene (yellow regardless of B/b), so one gene's alleles hide the expression of another gene — this is epistasis.",
+      "topicTags": ["genetics", "epistasis", "gene interaction"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Biology 2e, Ch. 12 Mendel's Experiments and Heredity — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q20). No public OpenStax answer key; answer verified from the Biology 2e source text (recessive epistasis)."
+    },
+    {
+      "id": "bbls-x246",
+      "section": "BBLS",
+      "stem": "Which of the following situations does not follow the Law of Independent Assortment?",
+      "choices": [
+        {"label": "A", "text": "A blond person and a brown-haired person produce three offspring over time, all of who have blond hair."},
+        {"label": "B", "text": "A white cow crossed with a brown bull produces roan cattle."},
+        {"label": "C", "text": "Mating a hog with a sow produces six female piglets."},
+        {"label": "D", "text": "Men are more likely to experience hemophilia than women."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Hemophilia is X-linked, so it is inherited with the sex chromosomes rather than assorting independently — a violation of independent assortment due to linkage.",
+      "topicTags": ["genetics", "independent assortment", "sex linkage"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Biology 2e, Ch. 12 Mendel's Experiments and Heredity — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q21). No public OpenStax answer key; answer verified from the Biology 2e source text (sex-linked inheritance is an exception to independent assortment)."
+    },
+    {
+      "id": "bbls-x247",
+      "section": "BBLS",
+      "stem": "What is the difference between micro- and macroevolution?",
+      "choices": [
+        {"label": "A", "text": "Microevolution describes the evolution of small organisms, such as insects, while macroevolution describes the evolution of large organisms, like people and elephants."},
+        {"label": "B", "text": "Microevolution describes the evolution of microscopic entities, such as molecules and proteins, while macroevolution describes the evolution of whole organisms."},
+        {"label": "C", "text": "Microevolution describes the evolution of organisms in populations, while macroevolution describes the evolution of species over long periods of time."},
+        {"label": "D", "text": "Microevolution describes the evolution of organisms over their lifetimes, while macroevolution describes the evolution of organisms over multiple generations."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Microevolution is change in allele frequencies within populations; macroevolution refers to larger-scale patterns such as speciation over long timescales.",
+      "topicTags": ["evolution", "microevolution", "macroevolution"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 19 The Evolution of Populations — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q4). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x248",
+      "section": "BBLS",
+      "stem": "Population genetics is the study of:",
+      "choices": [
+        {"label": "A", "text": "how selective forces change the allele frequencies in a population over time"},
+        {"label": "B", "text": "the genetic basis of population-wide traits"},
+        {"label": "C", "text": "whether traits have a genetic basis"},
+        {"label": "D", "text": "the degree of inbreeding in a population"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Population genetics studies how evolutionary forces, including selection, change allele frequencies in populations over time.",
+      "topicTags": ["evolution", "population genetics", "allele frequency"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 19 The Evolution of Populations — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q5). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x249",
+      "section": "BBLS",
+      "stem": "One of the original Amish colonies rose from a ship of colonists that came from Europe. The ship's captain, who had polydactyly, a rare dominant trait, was one of the original colonists. Today, we see a much higher frequency of polydactyly in the Amish population. This is an example of:",
+      "choices": [
+        {"label": "A", "text": "natural selection"},
+        {"label": "B", "text": "genetic drift"},
+        {"label": "C", "text": "founder effect"},
+        {"label": "D", "text": "b and c"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The founder effect is a form of genetic drift that occurs when a small group establishes a new population, so both 'genetic drift' and 'founder effect' apply.",
+      "topicTags": ["evolution", "genetic drift", "founder effect"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 19 The Evolution of Populations — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q7). No public OpenStax answer key; answer verified from the Biology 2e source text (founder effect is a type of genetic drift)."
+    },
+    {
+      "id": "bbls-x250",
+      "section": "BBLS",
+      "stem": "When male lions reach sexual maturity, they leave their group in search of a new pride. This can alter the allele frequencies of the population through which of the following mechanisms?",
+      "choices": [
+        {"label": "A", "text": "natural selection"},
+        {"label": "B", "text": "genetic drift"},
+        {"label": "C", "text": "gene flow"},
+        {"label": "D", "text": "random mating"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Migration of individuals between populations moves alleles from one to another, which is gene flow.",
+      "topicTags": ["evolution", "gene flow", "migration"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 19 The Evolution of Populations — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q8). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x251",
+      "section": "BBLS",
+      "stem": "Which of the following evolutionary forces can introduce new genetic variation into a population?",
+      "choices": [
+        {"label": "A", "text": "natural selection and genetic drift"},
+        {"label": "B", "text": "mutation and gene flow"},
+        {"label": "C", "text": "natural selection and nonrandom mating"},
+        {"label": "D", "text": "mutation and genetic drift"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mutation creates new alleles, and gene flow brings in alleles from other populations; both add new genetic variation. Selection and drift act on existing variation.",
+      "topicTags": ["evolution", "genetic variation", "mutation"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Biology 2e, Ch. 19 The Evolution of Populations — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q9). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x252",
+      "section": "BBLS",
+      "stem": "What is assortative mating?",
+      "choices": [
+        {"label": "A", "text": "when individuals mate with those who are similar to themselves"},
+        {"label": "B", "text": "when individuals mate with those who are dissimilar to themselves"},
+        {"label": "C", "text": "when individuals mate with those who are the most fit in the population"},
+        {"label": "D", "text": "when individuals mate with those who are least fit in the population"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Assortative mating is nonrandom mating in which individuals preferentially mate with phenotypically similar partners.",
+      "topicTags": ["evolution", "nonrandom mating", "assortative mating"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 19 The Evolution of Populations — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q10). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x253",
+      "section": "BBLS",
+      "stem": "When closely related individuals mate with each other, or inbreed, the offspring are often not as fit as the offspring of two unrelated individuals. Why?",
+      "choices": [
+        {"label": "A", "text": "Close relatives are genetically incompatible."},
+        {"label": "B", "text": "The DNA of close relatives reacts negatively in the offspring."},
+        {"label": "C", "text": "Inbreeding can bring together rare, deleterious mutations that lead to harmful phenotypes."},
+        {"label": "D", "text": "Inbreeding causes normally silent alleles to be expressed."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Inbreeding increases homozygosity, making it more likely that rare recessive deleterious alleles pair up and produce harmful phenotypes (inbreeding depression).",
+      "topicTags": ["evolution", "inbreeding", "genetic load"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 19 The Evolution of Populations — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q11). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x254",
+      "section": "BBLS",
+      "stem": "What is a cline?",
+      "choices": [
+        {"label": "A", "text": "the slope of a mountain where a population lives"},
+        {"label": "B", "text": "the degree to which a mutation helps an individual survive"},
+        {"label": "C", "text": "the number of individuals in the population"},
+        {"label": "D", "text": "gradual geographic variation across an ecological gradient"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "A cline is a gradual change in a trait or allele frequency across a geographic or ecological gradient.",
+      "topicTags": ["evolution", "cline", "geographic variation"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 19 The Evolution of Populations — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q12). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x255",
+      "section": "BBLS",
+      "stem": "Which type of selection results in greater genetic variability in a population?",
+      "choices": [
+        {"label": "A", "text": "stabilizing selection"},
+        {"label": "B", "text": "directional selection"},
+        {"label": "C", "text": "diversifying selection"},
+        {"label": "D", "text": "positive frequency-dependent selection"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Diversifying (disruptive) selection favors both extremes over intermediate phenotypes, increasing genetic variability in the population.",
+      "topicTags": ["evolution", "natural selection", "diversifying selection"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 19 The Evolution of Populations — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q13). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x256",
+      "section": "BBLS",
+      "stem": "When males and females of a population look or act differently, it is referred to as ________.",
+      "choices": [
+        {"label": "A", "text": "sexual dimorphism"},
+        {"label": "B", "text": "sexual selection"},
+        {"label": "C", "text": "diversifying selection"},
+        {"label": "D", "text": "a cline"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Sexual dimorphism is the difference in appearance or behavior between males and females of the same species.",
+      "topicTags": ["evolution", "sexual dimorphism", "sexual selection"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Biology 2e, Ch. 19 The Evolution of Populations — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q14). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x257",
+      "section": "BBLS",
+      "stem": "The good genes hypothesis is a theory that explains what?",
+      "choices": [
+        {"label": "A", "text": "why more fit individuals are more likely to have more offspring"},
+        {"label": "B", "text": "why alleles that confer beneficial traits or behaviors are selected for by natural selection"},
+        {"label": "C", "text": "why some deleterious mutations are maintained in the population"},
+        {"label": "D", "text": "why individuals of one sex develop impressive ornamental traits"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The good genes hypothesis proposes that elaborate ornaments are honest signals of genetic quality, explaining why one sex evolves impressive ornamental traits that the other sex prefers.",
+      "topicTags": ["evolution", "sexual selection", "good genes hypothesis"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Biology 2e, Ch. 19 The Evolution of Populations — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q15). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    }
+  ]
+}

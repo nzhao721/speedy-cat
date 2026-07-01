@@ -1,0 +1,400 @@
+// Copyright: Ankitects Pty Ltd and contributors
+// License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package anki.practice;
+
+// SpeedyCAT: backend foundation for the two new MCAT study modes that sit
+// alongside Anki flashcards — the UWorld-like Practice Question Bank and the
+// AAMC-style Full-Length Practice Tests — plus per-topic time/accuracy
+// tracking.
+//
+// Content (questions, CARS passage sets, full-length definitions) is loaded
+// into the collection DB from the structured JSON bundles under
+// content/practice-questions/*.json and content/full-length-tests/*.json.
+// Sessions and attempts are user-generated. See PRD.md "## Data Model" and
+// rslib/src/practice/.
+service PracticeService {
+  // ---- Content import (bundle -> collection DB) ----
+
+  // Load a Practice Question Bank bundle. Accepts both the discrete-item
+  // format ({meta, questions:[...]}, incl. inline passage/passageId CARS
+  // items) and the CARS passage-set format ({meta, passageSets:[...]}).
+  rpc LoadPracticeQuestionBundle(LoadBundleRequest) returns (LoadBundleResponse);
+  // Load a Full-Length Test definition bundle
+  // ({testId,title,...,sections:[...]}). Scheduled MCAT breaks are synthesized
+  // when the bundle omits them.
+  rpc LoadFullLengthTestBundle(LoadBundleRequest) returns (LoadBundleResponse);
+
+  // ---- Querying content ----
+
+  // Query the question bank by section/topic/difficulty/passage, optionally
+  // restricted to previously-missed items. Passage text is not included here;
+  // fetch it via GetCarsPassageSet.
+  rpc GetPracticeQuestions(GetPracticeQuestionsRequest)
+      returns (GetPracticeQuestionsResponse);
+  // Fetch a CARS (or full-length) passage together with all of its questions.
+  rpc GetCarsPassageSet(GetCarsPassageSetRequest) returns (CarsPassageSet);
+  // List passage summaries (for building a passage picker).
+  rpc ListPassages(ListPassagesRequest) returns (ListPassagesResponse);
+
+  // ---- Practice sessions ----
+
+  rpc StartPracticeSession(StartPracticeSessionRequest)
+      returns (StartPracticeSessionResponse);
+  rpc RecordPracticeAttempt(RecordPracticeAttemptRequest)
+      returns (RecordAttemptResponse);
+  rpc EndPracticeSession(EndPracticeSessionRequest)
+      returns (PracticeSessionSummary);
+
+  // ---- Full-length practice tests ----
+
+  rpc ListFullLengthTests(ListFullLengthTestsRequest)
+      returns (ListFullLengthTestsResponse);
+  rpc GetFullLengthTest(GetFullLengthTestRequest) returns (FullLengthTest);
+  rpc StartFullLengthAttempt(StartFullLengthAttemptRequest)
+      returns (StartFullLengthAttemptResponse);
+  rpc RecordFullLengthAnswer(RecordFullLengthAnswerRequest)
+      returns (RecordAttemptResponse);
+  rpc SubmitFullLengthAttempt(SubmitFullLengthAttemptRequest)
+      returns (FullLengthReport);
+
+  // ---- Per-topic tracking ----
+
+  // Aggregate time-spent + accuracy per topic (and per section) across
+  // recorded attempts.
+  rpc GetTopicStats(GetTopicStatsRequest) returns (GetTopicStatsResponse);
+}
+
+// Empty: every PracticeService method is auto-delegated to the open
+// Collection.
+service BackendPracticeService {}
+
+// ---- Enums -----------------------------------------------------------------
+
+enum McatSection {
+  MCAT_SECTION_UNSPECIFIED = 0;
+  MCAT_SECTION_CPBS = 1; // Chemical & Physical foundations of Biological Systems
+  MCAT_SECTION_CARS = 2; // Critical Analysis & Reasoning Skills
+  MCAT_SECTION_BBLS = 3; // Biological & Biochemical foundations of Living Systems
+  MCAT_SECTION_PSBB = 4; // Psychological, Social & Biological foundations of Behavior
+}
+
+enum Difficulty {
+  DIFFICULTY_UNSPECIFIED = 0;
+  DIFFICULTY_EASY = 1;
+  DIFFICULTY_MEDIUM = 2;
+  DIFFICULTY_HARD = 3;
+}
+
+// Which attempts to include in tracking aggregates.
+enum AttemptSource {
+  ATTEMPT_SOURCE_ALL = 0;
+  ATTEMPT_SOURCE_PRACTICE_SESSION = 1;
+  ATTEMPT_SOURCE_FULL_LENGTH = 2;
+}
+
+// ---- Content messages ------------------------------------------------------
+
+message AnswerChoice {
+  string label = 1; // "A".."E"; unique within a question
+  string text = 2;
+}
+
+// A single multiple-choice item — discrete (passage_id unset) or
+// passage-linked (passage_id -> a Passage). Mirrors PRD `PracticeQuestion`.
+message PracticeQuestion {
+  string id = 1;
+  McatSection section = 2;
+  optional string passage_id = 3;
+  string stem = 4;
+  repeated AnswerChoice choices = 5;
+  string correct_answer = 6; // matching AnswerChoice.label
+  string explanation = 7; // shown only after submit
+  optional string question_type = 8;
+  repeated string topic_tags = 9;
+  Difficulty difficulty = 10;
+  string source_name = 11;
+  string source_license = 12;
+  optional string source_url = 13;
+  optional string answer_provenance = 14;
+  optional string notes = 15;
+  // Set when this question belongs to a FullLengthTest section.
+  optional string test_id = 16;
+}
+
+// A reading passage (CARS passage-set passage or a full-length section
+// passage). Mirrors PRD `CarsPassageSet` passage fields.
+message Passage {
+  string passage_id = 1;
+  McatSection section = 2;
+  string title = 3;
+  string passage = 4; // full text
+  optional string discipline = 5; // "humanities" | "social sciences" (CARS)
+  optional uint32 word_count = 6;
+  repeated string topic_tags = 7;
+  Difficulty difficulty = 8;
+  optional string source_name = 9;
+  optional string source_license = 10;
+  // Set when this passage belongs to a FullLengthTest section.
+  optional string test_id = 11;
+}
+
+message PassageSummary {
+  string passage_id = 1;
+  McatSection section = 2;
+  string title = 3;
+  optional string discipline = 4;
+  Difficulty difficulty = 5;
+  uint32 question_count = 6;
+  optional string test_id = 7;
+}
+
+// A passage grouped with the questions that hang off it. Mirrors PRD
+// `CarsPassageSet`.
+message CarsPassageSet {
+  Passage passage = 1;
+  repeated PracticeQuestion questions = 2;
+}
+
+// ---- Import ----------------------------------------------------------------
+
+message LoadBundleRequest {
+  // Filesystem path to the JSON bundle. Used when non-empty.
+  string path = 1;
+  // Raw JSON contents. Used when path is empty.
+  string json = 2;
+  // Overwrite rows that already exist with the same id (upsert). Defaults to
+  // true; set explicitly for clarity.
+  bool replace = 3;
+}
+
+message LoadBundleResponse {
+  uint32 questions_imported = 1;
+  uint32 passages_imported = 2;
+  uint32 tests_imported = 3;
+  repeated string warnings = 4;
+}
+
+// ---- Query -----------------------------------------------------------------
+
+// Filter over the question bank. All fields are ANDed; `topics` matches ANY
+// (case-insensitive) tag.
+message QuestionFilter {
+  optional McatSection section = 1;
+  repeated string topics = 2;
+  optional Difficulty difficulty = 3;
+  optional string passage_id = 4;
+  // Restrict to questions the user previously answered incorrectly.
+  bool missed_only = 5;
+  // Include questions that belong to a full-length test. Default false =
+  // free-standing question bank only.
+  bool include_full_length = 6;
+  // Cap the number of returned questions. 0 = no limit.
+  uint32 limit = 7;
+}
+
+message GetPracticeQuestionsRequest {
+  QuestionFilter filter = 1;
+}
+
+message GetPracticeQuestionsResponse {
+  repeated PracticeQuestion questions = 1;
+}
+
+message GetCarsPassageSetRequest {
+  string passage_id = 1;
+}
+
+message ListPassagesRequest {
+  optional McatSection section = 1;
+  optional string test_id = 2;
+}
+
+message ListPassagesResponse {
+  repeated PassageSummary passages = 1;
+}
+
+// ---- Practice sessions -----------------------------------------------------
+
+message StartPracticeSessionRequest {
+  QuestionFilter filter = 1;
+  // Optional session time limit; 0 = untimed (enforced by the UI).
+  uint32 time_limit_seconds = 2;
+}
+
+message StartPracticeSessionResponse {
+  string session_id = 1;
+  // Question ids matched by the filter, in serving order.
+  repeated string question_ids = 2;
+}
+
+message RecordPracticeAttemptRequest {
+  string session_id = 1;
+  string question_id = 2;
+  // Empty = skipped / unanswered.
+  string selected_answer = 3;
+  bool correct = 4;
+  uint32 time_on_question_seconds = 5;
+  McatSection section = 6;
+  // Topic this attempt is attributed to for per-topic tracking.
+  string topic = 7;
+}
+
+message RecordAttemptResponse {
+  string attempt_id = 1;
+}
+
+message EndPracticeSessionRequest {
+  string session_id = 1;
+}
+
+message SectionCount {
+  McatSection section = 1;
+  uint32 correct = 2;
+  uint32 total = 3;
+}
+
+message PracticeSessionSummary {
+  string session_id = 1;
+  uint32 total = 2;
+  uint32 correct = 3;
+  uint32 incorrect = 4;
+  uint32 unanswered = 5;
+  uint32 total_time_seconds = 6;
+  repeated SectionCount section_breakdown = 7;
+}
+
+// ---- Full-length practice tests --------------------------------------------
+
+// A scheduled break in a full-length test, occurring AFTER a given section.
+// Mirrors the real MCAT: optional ~10-min breaks after sections 1 and 3, and
+// a ~10-min mid-exam break after section 2.
+message FullLengthBreak {
+  uint32 after_section = 1; // 1-based section order this break follows
+  uint32 duration_seconds = 2;
+  bool optional = 3; // student may skip it
+  string label = 4; // e.g. "Break", "Mid-exam break"
+}
+
+message FullLengthSection {
+  McatSection section = 1;
+  uint32 order = 2; // 1-based
+  uint32 duration_seconds = 3;
+  uint32 question_count = 4;
+}
+
+// A full-length practice exam mirroring the AAMC structure (four sections,
+// 230 questions, 22,500 s testing time). Mirrors PRD `FullLengthTest`.
+message FullLengthTest {
+  string test_id = 1;
+  string title = 2;
+  string source = 3;
+  string format = 4;
+  string disclaimer = 5;
+  uint32 total_questions = 6;
+  uint32 total_testing_seconds = 7; // sum of section duration_seconds
+  repeated FullLengthSection sections = 8;
+  repeated FullLengthBreak breaks = 9;
+  uint32 total_break_seconds = 10; // sum of break duration_seconds
+}
+
+message FullLengthTestSummary {
+  string test_id = 1;
+  string title = 2;
+  uint32 total_questions = 3;
+  uint32 total_testing_seconds = 4;
+  uint32 total_break_seconds = 5;
+}
+
+message ListFullLengthTestsRequest {}
+
+message ListFullLengthTestsResponse {
+  repeated FullLengthTestSummary tests = 1;
+}
+
+message GetFullLengthTestRequest {
+  string test_id = 1;
+}
+
+message StartFullLengthAttemptRequest {
+  string test_id = 1;
+  // Official AAMC exam id when a licensed form is used; unset for the
+  // AI-generated proof-of-concept forms.
+  optional string aamc_exam_id = 2;
+}
+
+message StartFullLengthAttemptResponse {
+  string attempt_id = 1;
+  // The full definition (timers + breaks) so the UI can drive the exam.
+  FullLengthTest test = 2;
+}
+
+message RecordFullLengthAnswerRequest {
+  string attempt_id = 1;
+  McatSection section = 2;
+  string question_id = 3;
+  string selected_answer = 4; // empty = unanswered
+  bool correct = 5;
+  uint32 time_on_question_seconds = 6;
+  string topic = 7;
+}
+
+message SectionResult {
+  McatSection section = 1;
+  uint32 correct = 2;
+  uint32 total = 3;
+  uint32 time_seconds = 4;
+  // Scaled score (118-132) when scoring rules / licensed content provide it.
+  optional uint32 scaled_score = 5;
+}
+
+message SubmitFullLengthAttemptRequest {
+  string attempt_id = 1;
+}
+
+message FullLengthReport {
+  string attempt_id = 1;
+  string test_id = 2;
+  repeated SectionResult section_results = 3;
+  // Overall scaled score (472-528) when available.
+  optional uint32 overall_scaled_score = 4;
+  uint32 total_correct = 5;
+  uint32 total_questions = 6;
+}
+
+// ---- Tracking --------------------------------------------------------------
+
+message GetTopicStatsRequest {
+  // Restrict aggregation to a single section.
+  optional McatSection section = 1;
+  // Which attempts to include (default ALL).
+  AttemptSource source = 2;
+}
+
+message TopicStat {
+  string topic = 1;
+  McatSection section = 2;
+  uint32 attempts = 3;
+  uint32 correct = 4;
+  uint32 total_time_seconds = 5;
+  double accuracy = 6; // correct / attempts, 0..1
+  double avg_time_seconds = 7;
+}
+
+message SectionStat {
+  McatSection section = 1;
+  uint32 attempts = 2;
+  uint32 correct = 3;
+  uint32 total_time_seconds = 4;
+  double accuracy = 5;
+  double avg_time_seconds = 6;
+}
+
+message GetTopicStatsResponse {
+  repeated TopicStat topics = 1;
+  repeated SectionStat sections = 2;
+}

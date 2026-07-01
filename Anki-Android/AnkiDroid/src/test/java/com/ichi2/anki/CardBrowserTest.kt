@@ -1603,7 +1603,6 @@ class CardBrowserTest : RobolectricTest() {
                     R.id.action_preview_many to true,
                     R.id.action_select_all to true,
                     R.id.action_open_options to true,
-                    R.id.action_create_filtered_deck to true,
                     R.id.action_find_replace to true,
                 )
 
@@ -1635,7 +1634,6 @@ class CardBrowserTest : RobolectricTest() {
                     R.id.action_preview_many to true,
                     R.id.action_select_all to true,
                     R.id.action_open_options to true,
-                    R.id.action_create_filtered_deck to true,
                     R.id.action_find_replace to true,
                 )
 
@@ -1668,7 +1666,6 @@ class CardBrowserTest : RobolectricTest() {
                     R.id.action_preview_many to true,
                     R.id.action_export_selected to true,
                     R.id.action_find_replace to true,
-                    R.id.action_delete_card to true,
                     R.id.action_undo to true,
                 )
 
@@ -1706,7 +1703,6 @@ class CardBrowserTest : RobolectricTest() {
                     R.id.action_preview_many to true,
                     R.id.action_export_selected to false,
                     R.id.action_find_replace to true,
-                    R.id.action_delete_card to false,
                     R.id.action_undo to true,
                 )
 
@@ -1738,7 +1734,6 @@ class CardBrowserTest : RobolectricTest() {
                     R.id.action_preview_many to false,
                     R.id.action_select_all to true,
                     R.id.action_open_options to true,
-                    R.id.action_create_filtered_deck to true,
                     R.id.action_find_replace to true,
                     // Note Editor
                     R.id.action_save to true,
@@ -1781,7 +1776,6 @@ class CardBrowserTest : RobolectricTest() {
                     R.id.action_preview_many to false,
                     R.id.action_export_selected to true,
                     R.id.action_find_replace to true,
-                    R.id.action_delete_card to true,
                     R.id.action_undo to true,
                     // Note Editor
                     R.id.action_save to true,
@@ -1841,7 +1835,6 @@ class CardBrowserTest : RobolectricTest() {
                     R.id.action_preview_many to false,
                     R.id.action_select_all to false,
                     R.id.action_open_options to true,
-                    R.id.action_create_filtered_deck to true,
                     R.id.action_find_replace to true,
                 )
 

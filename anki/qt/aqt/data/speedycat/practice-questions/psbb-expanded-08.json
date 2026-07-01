@@ -1,0 +1,382 @@
+{
+  "meta": {
+    "section": "PSBB",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax Psychology 2e, Ch. 15 Review Questions (Psychological Disorders) and Ch. 16 Review Questions (Therapy and Treatment)",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/psychology-2e/pages/15-review-questions"
+      },
+      {
+        "sourceName": "OpenStax Psychology 2e Student Solutions Guide (answer key for odd-numbered review questions)",
+        "sourceLicense": "CC BY 4.0",
+        "sourceUrl": "https://dokumen.pub/psychology-2e-student-solutions-guide.html"
+      }
+    ],
+    "counts": {"total": 18, "byTopic": {"psychological disorders": 11, "treatment": 7}},
+    "notes": "Psychology (PSBB) items scraped verbatim from OpenStax Psychology 2e Ch. 15 and Ch. 16 review-questions pages; correct answers from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), odd-numbered review questions only. Ch. 15 Q7 (psbb-x131): the Solutions Guide left this answer blank, so its answer (generalized anxiety disorder) is marked verified-from-source-text (definitionally unambiguous). Live OpenStax pages show CC BY-NC-SA 4.0 plus a no-LLM-training notice; SpeedyCAT use is human-facing/non-AI per PRD."
+  },
+  "questions": [
+    {
+      "id": "psbb-x128",
+      "section": "PSBB",
+      "stem": "In the harmful dysfunction definition of psychological disorders, dysfunction involves ________.",
+      "choices": [
+        {"label": "A", "text": "the inability of a psychological mechanism to perform its function"},
+        {"label": "B", "text": "the breakdown of social order in one's community"},
+        {"label": "C", "text": "communication problems in one's immediate family"},
+        {"label": "D", "text": "all the above"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "In Wakefield's harmful dysfunction model, dysfunction means an internal psychological mechanism is unable to perform the function it evolved to perform.",
+      "topicTags": ["psychology", "psychological disorders", "definition", "harmful dysfunction"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 15 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/15-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax (option A printed as 'a psychological mechanism'). correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 15 Q1 = A."
+    },
+    {
+      "id": "psbb-x129",
+      "section": "PSBB",
+      "stem": "The letters in the abbreviation DSM-5 stand for ________.",
+      "choices": [
+        {"label": "A", "text": "Diseases and Statistics Manual of Medicine"},
+        {"label": "B", "text": "Diagnosable Standards Manual of Mental Disorders"},
+        {"label": "C", "text": "Diseases and Symptoms Manual of Mental Disorders"},
+        {"label": "D", "text": "Diagnostic and Statistical Manual of Mental Disorders"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "DSM-5 stands for the Diagnostic and Statistical Manual of Mental Disorders, fifth edition, the standard U.S. classification of mental disorders.",
+      "topicTags": ["psychology", "psychological disorders", "DSM-5", "diagnosis"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 15 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/15-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 15 Q3 = D."
+    },
+    {
+      "id": "psbb-x130",
+      "section": "PSBB",
+      "stem": "The diathesis-stress model presumes that psychopathology results from ________.",
+      "choices": [
+        {"label": "A", "text": "vulnerability and adverse experiences"},
+        {"label": "B", "text": "biochemical factors"},
+        {"label": "C", "text": "chemical imbalances and structural abnormalities in the brain"},
+        {"label": "D", "text": "adverse childhood experiences"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The diathesis-stress model holds that psychopathology arises from the interaction of a predisposing vulnerability (diathesis) and stressful or adverse experiences.",
+      "topicTags": ["psychology", "psychological disorders", "diathesis-stress model"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 15 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/15-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 15 Q5 = A."
+    },
+    {
+      "id": "psbb-x131",
+      "section": "PSBB",
+      "stem": "In which of the following anxiety disorders is the person in a continuous state of excessive, pointless worry and apprehension?",
+      "choices": [
+        {"label": "A", "text": "panic disorder"},
+        {"label": "B", "text": "generalized anxiety disorder"},
+        {"label": "C", "text": "agoraphobia"},
+        {"label": "D", "text": "social anxiety disorder"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Generalized anxiety disorder is characterized by continuous, excessive, and uncontrollable worry and apprehension that is not tied to a specific object or situation.",
+      "topicTags": ["psychology", "psychological disorders", "anxiety disorders", "generalized anxiety disorder"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 15 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/15-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim from OpenStax. The OpenStax Psychology 2e Student Solutions Guide left the Ch. 15 Q7 answer blank; answer (B = generalized anxiety disorder) independently verified from the definitional OpenStax source text, hence marked verified-from-source-text."
+    },
+    {
+      "id": "psbb-x132",
+      "section": "PSBB",
+      "stem": "Which of the following best illustrates a compulsion?",
+      "choices": [
+        {"label": "A", "text": "mentally counting backward from 1,000"},
+        {"label": "B", "text": "persistent fear of germs"},
+        {"label": "C", "text": "thoughts of harming a neighbor"},
+        {"label": "D", "text": "falsely believing that a spouse has been cheating"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "A compulsion is a repetitive behavior or mental act performed to reduce anxiety. Mentally counting backward is a mental compulsion; the other options describe obsessions or delusions.",
+      "topicTags": ["psychology", "psychological disorders", "OCD", "compulsion"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 15 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/15-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 15 Q9 = A."
+    },
+    {
+      "id": "psbb-x133",
+      "section": "PSBB",
+      "stem": "Symptoms of PTSD include all of the following except ________.",
+      "choices": [
+        {"label": "A", "text": "intrusive thoughts or memories of a traumatic event"},
+        {"label": "B", "text": "avoidance of things that remind one of a traumatic event"},
+        {"label": "C", "text": "jumpiness"},
+        {"label": "D", "text": "physical complaints that cannot be explained medically"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "PTSD symptoms include intrusive memories, avoidance, and heightened arousal (jumpiness). Medically unexplained physical complaints are not a core PTSD symptom.",
+      "topicTags": ["psychology", "psychological disorders", "PTSD"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 15 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/15-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 15 Q11 = D."
+    },
+    {
+      "id": "psbb-x134",
+      "section": "PSBB",
+      "stem": "Common symptoms of major depressive disorder include all of the following except ________.",
+      "choices": [
+        {"label": "A", "text": "periods of extreme elation and euphoria"},
+        {"label": "B", "text": "difficulty concentrating and making decisions"},
+        {"label": "C", "text": "loss of interest or pleasure in usual activities"},
+        {"label": "D", "text": "psychomotor agitation and retardation"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Periods of extreme elation and euphoria are characteristic of mania (bipolar disorder), not major depressive disorder. The other options are common depressive symptoms.",
+      "topicTags": ["psychology", "psychological disorders", "major depressive disorder", "mood disorders"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 15 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/15-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 15 Q13 = A."
+    },
+    {
+      "id": "psbb-x135",
+      "section": "PSBB",
+      "stem": "Clifford falsely believes that the police have planted secret cameras in his home to monitor his every movement. Clifford's belief is an example of ________.",
+      "choices": [
+        {"label": "A", "text": "a delusion"},
+        {"label": "B", "text": "a hallucination"},
+        {"label": "C", "text": "tangentiality"},
+        {"label": "D", "text": "a negative symptom"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "A fixed, false belief held despite contrary evidence (here, a paranoid belief about surveillance) is a delusion, a positive symptom of psychosis.",
+      "topicTags": ["psychology", "psychological disorders", "schizophrenia", "delusion"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 15 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/15-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 15 Q15 = A."
+    },
+    {
+      "id": "psbb-x136",
+      "section": "PSBB",
+      "stem": "Dissociative amnesia involves ________.",
+      "choices": [
+        {"label": "A", "text": "memory loss following head trauma"},
+        {"label": "B", "text": "memory loss following stress"},
+        {"label": "C", "text": "feeling detached from the self"},
+        {"label": "D", "text": "feeling detached from the world"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Dissociative amnesia is an inability to recall important personal information, usually following a stressful or traumatic event, that is too extensive to be ordinary forgetting and is not due to physical injury.",
+      "topicTags": ["psychology", "psychological disorders", "dissociative disorders"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 15 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/15-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 15 Q17 = B."
+    },
+    {
+      "id": "psbb-x137",
+      "section": "PSBB",
+      "stem": "Which of the following is not a primary characteristic of ADHD?",
+      "choices": [
+        {"label": "A", "text": "short attention span"},
+        {"label": "B", "text": "difficulty concentrating and distractibility"},
+        {"label": "C", "text": "restricted and fixated interest"},
+        {"label": "D", "text": "excessive fidgeting and squirming"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Restricted and fixated interests are characteristic of autism spectrum disorder, not ADHD. ADHD is defined by inattention, hyperactivity, and impulsivity.",
+      "topicTags": ["psychology", "psychological disorders", "ADHD", "neurodevelopmental disorders"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 15 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/15-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 15 Q19 = C."
+    },
+    {
+      "id": "psbb-x138",
+      "section": "PSBB",
+      "stem": "People with borderline personality disorder often ________.",
+      "choices": [
+        {"label": "A", "text": "try to be the center of attention"},
+        {"label": "B", "text": "are shy and withdrawn"},
+        {"label": "C", "text": "are impulsive and unpredictable"},
+        {"label": "D", "text": "tend to accomplish goals through cruelty"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Borderline personality disorder is characterized by instability in mood, self-image, and relationships, along with marked impulsivity and unpredictability.",
+      "topicTags": ["psychology", "psychological disorders", "personality disorders", "borderline personality disorder"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 15 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/15-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 15 Q21 = C."
+    },
+    {
+      "id": "psbb-x139",
+      "section": "PSBB",
+      "stem": "Who of the following does not support the humane and improved treatment of people with mental illness?",
+      "choices": [
+        {"label": "A", "text": "Philippe Pinel"},
+        {"label": "B", "text": "medieval priests"},
+        {"label": "C", "text": "Dorothea Dix"},
+        {"label": "D", "text": "All of the above"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Pinel and Dix were reformers who advocated humane treatment of people with mental illness. Medieval priests, who often attributed mental illness to demonic possession, did not.",
+      "topicTags": ["psychology", "treatment", "history of treatment"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 16 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/16-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 16 Q1 = B."
+    },
+    {
+      "id": "psbb-x140",
+      "section": "PSBB",
+      "stem": "Joey was convicted of domestic violence. As part of his sentence, the judge has ordered that he attend therapy for anger management. This is considered ________ treatment.",
+      "choices": [
+        {"label": "A", "text": "involuntary"},
+        {"label": "B", "text": "voluntary"},
+        {"label": "C", "text": "forced"},
+        {"label": "D", "text": "mandatory"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Court-ordered treatment that a person does not choose for themselves is classified as involuntary treatment.",
+      "topicTags": ["psychology", "treatment", "involuntary treatment"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 16 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/16-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 16 Q3 = A."
+    },
+    {
+      "id": "psbb-x141",
+      "section": "PSBB",
+      "stem": "The idea behind ________ is that how you think determines how you feel and act.",
+      "choices": [
+        {"label": "A", "text": "cognitive therapy"},
+        {"label": "B", "text": "cognitive-behavioral therapy"},
+        {"label": "C", "text": "behavior therapy"},
+        {"label": "D", "text": "client-centered therapy"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cognitive therapy is based on the premise that thoughts shape feelings and behavior, so changing maladaptive thinking changes how a person feels and acts.",
+      "topicTags": ["psychology", "treatment", "cognitive therapy"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 16 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/16-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 16 Q5 = A."
+    },
+    {
+      "id": "psbb-x142",
+      "section": "PSBB",
+      "stem": "Clay is in a therapy session. The therapist asks him to relax and say whatever comes to his mind at the moment. This therapist is using ________, which is a technique of ________.",
+      "choices": [
+        {"label": "A", "text": "active listening; client-centered therapy"},
+        {"label": "B", "text": "systematic desensitization; behavior therapy"},
+        {"label": "C", "text": "transference; psychoanalysis"},
+        {"label": "D", "text": "free association; psychoanalysis"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Asking a client to relax and say whatever comes to mind is free association, a core technique of psychoanalysis.",
+      "topicTags": ["psychology", "treatment", "psychoanalysis", "free association"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 16 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/16-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 16 Q7 = D."
+    },
+    {
+      "id": "psbb-x143",
+      "section": "PSBB",
+      "stem": "What happens during an intake?",
+      "choices": [
+        {"label": "A", "text": "The therapist gathers specific information to address the client's immediate needs such as the presenting problem, the client's support system, and insurance status. The therapist informs the client about confidentiality, fees, and what to expect in a therapy session."},
+        {"label": "B", "text": "The therapist guides what happens in the therapy session and designs a detailed approach to resolving each member's presenting problem."},
+        {"label": "C", "text": "The therapist meets with a couple to help them see how their individual backgrounds, beliefs, and actions are affecting their relationship."},
+        {"label": "D", "text": "The therapist examines and discusses with the family the boundaries and structure of the family: For example, who makes the rules, who sleeps in the bed with whom, and how decisions are made."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "An intake is the therapist's first meeting with a client to gather information about presenting problems, support systems, and logistics (confidentiality, fees, expectations).",
+      "topicTags": ["psychology", "treatment", "intake", "clinical practice"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 16 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/16-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 16 Q9 = A."
+    },
+    {
+      "id": "psbb-x144",
+      "section": "PSBB",
+      "stem": "When an individual has two or more diagnoses, which often includes a substance-related diagnosis and another psychiatric diagnosis, this is known as ________.",
+      "choices": [
+        {"label": "A", "text": "bipolar disorder"},
+        {"label": "B", "text": "comorbid disorder"},
+        {"label": "C", "text": "codependency"},
+        {"label": "D", "text": "bi-morbid disorder"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "When two or more disorders occur together in the same person, they are described as comorbid disorders (comorbidity).",
+      "topicTags": ["psychology", "treatment", "comorbidity"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 16 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/16-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 16 Q11 = B."
+    },
+    {
+      "id": "psbb-x145",
+      "section": "PSBB",
+      "stem": "The sociocultural perspective looks at you, your behaviors, and your symptoms in the context of your ________.",
+      "choices": [
+        {"label": "A", "text": "education"},
+        {"label": "B", "text": "socioeconomic status"},
+        {"label": "C", "text": "culture and background"},
+        {"label": "D", "text": "age"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The sociocultural perspective interprets a person's behavior and symptoms within the context of their culture and background.",
+      "topicTags": ["psychology", "treatment", "sociocultural perspective"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 16 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/16-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 16 Q13 = C."
+    }
+  ]
+}

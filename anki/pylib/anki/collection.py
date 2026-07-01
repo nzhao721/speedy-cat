@@ -17,6 +17,7 @@ from anki import (
     import_export_pb2,
     links_pb2,
     notes_pb2,
+    practice_pb2,
     scheduler_pb2,
     search_pb2,
     stats_pb2,
@@ -45,6 +46,7 @@ StripHtmlMode = card_rendering_pb2.StripHtmlRequest
 ImportLogWithChanges = import_export_pb2.ImportResponse
 ImportAnkiPackageRequest = import_export_pb2.ImportAnkiPackageRequest
 ImportAnkiPackageOptions = import_export_pb2.ImportAnkiPackageOptions
+ImportBuiltinDeckResponse = import_export_pb2.ImportBuiltinDeckResponse
 ExportAnkiPackageOptions = import_export_pb2.ExportAnkiPackageOptions
 ImportCsvRequest = import_export_pb2.ImportCsvRequest
 CsvMetadata = import_export_pb2.CsvMetadata
@@ -60,6 +62,26 @@ MediaSyncStatus = sync_pb2.MediaSyncStatusResponse
 FsrsItem = scheduler_pb2.FsrsItem
 FsrsReview = scheduler_pb2.FsrsReview
 GithubRelease = github_pb2.GithubRelease
+# SpeedyCAT: Practice Question Bank + Full-Length Practice Tests (see
+# proto/anki/practice.proto and rslib/src/practice/).
+McatSection = practice_pb2.McatSection
+Difficulty = practice_pb2.Difficulty
+AttemptSource = practice_pb2.AttemptSource
+QuestionFilter = practice_pb2.QuestionFilter
+PracticeQuestion = practice_pb2.PracticeQuestion
+Passage = practice_pb2.Passage
+CarsPassageSet = practice_pb2.CarsPassageSet
+LoadBundleResponse = practice_pb2.LoadBundleResponse
+GetPracticeQuestionsResponse = practice_pb2.GetPracticeQuestionsResponse
+ListPassagesResponse = practice_pb2.ListPassagesResponse
+StartPracticeSessionResponse = practice_pb2.StartPracticeSessionResponse
+RecordAttemptResponse = practice_pb2.RecordAttemptResponse
+PracticeSessionSummary = practice_pb2.PracticeSessionSummary
+FullLengthTest = practice_pb2.FullLengthTest
+ListFullLengthTestsResponse = practice_pb2.ListFullLengthTestsResponse
+StartFullLengthAttemptResponse = practice_pb2.StartFullLengthAttemptResponse
+FullLengthReport = practice_pb2.FullLengthReport
+GetTopicStatsResponse = practice_pb2.GetTopicStatsResponse
 
 import logging
 import os
@@ -365,6 +387,26 @@ class Collection(DeprecatedNamesMixin):
         log = self._backend.import_anki_package_raw(request.SerializeToString())
         return ImportLogWithChanges.FromString(log)
 
+    def import_builtin_deck(
+        self,
+        *,
+        package_path: str,
+        deck_key: str,
+        parent_deck: str = "",
+        force: bool = False,
+    ) -> ImportBuiltinDeckResponse:
+        """SpeedyCAT: import a bundled deck package under an optional parent deck.
+
+        Idempotent: a second call for the same ``deck_key`` is a no-op unless
+        ``force`` is set. See ``rslib/src/import_export/builtin.rs``.
+        """
+        return self._backend.import_builtin_deck(
+            package_path=package_path,
+            deck_key=deck_key,
+            parent_deck=parent_deck,
+            force=force,
+        )
+
     def export_anki_package(
         self, *, out_path: str, options: ExportAnkiPackageOptions, limit: ExportLimit
     ) -> int:
@@ -372,6 +414,169 @@ class Collection(DeprecatedNamesMixin):
             out_path=out_path,
             options=options,
             limit=pb_export_limit(limit),
+        )
+
+    # SpeedyCAT: Practice Question Bank + Full-Length Practice Tests.
+    # Backend implemented in rslib/src/practice/; proto in
+    # proto/anki/practice.proto. The _raw pattern is used so these wrappers are
+    # independent of the generated argument-destructuring rules.
+
+    def load_practice_question_bundle(
+        self, *, path: str = "", json: str = "", replace: bool = True
+    ) -> LoadBundleResponse:
+        """Import a Practice Question Bank bundle (discrete-item or CARS
+        passage-set format) from a file ``path`` or a raw ``json`` string."""
+        req = practice_pb2.LoadBundleRequest(path=path, json=json, replace=replace)
+        return LoadBundleResponse.FromString(
+            self._backend.load_practice_question_bundle_raw(req.SerializeToString())
+        )
+
+    def load_full_length_test_bundle(
+        self, *, path: str = "", json: str = "", replace: bool = True
+    ) -> LoadBundleResponse:
+        """Import a Full-Length Test definition bundle from a file ``path`` or a
+        raw ``json`` string. Scheduled MCAT breaks are synthesized if absent."""
+        req = practice_pb2.LoadBundleRequest(path=path, json=json, replace=replace)
+        return LoadBundleResponse.FromString(
+            self._backend.load_full_length_test_bundle_raw(req.SerializeToString())
+        )
+
+    def get_practice_questions(
+        self, filter: QuestionFilter | None = None
+    ) -> GetPracticeQuestionsResponse:
+        """Query the question bank by section/topic/difficulty/passage."""
+        req = practice_pb2.GetPracticeQuestionsRequest()
+        if filter is not None:
+            req.filter.CopyFrom(filter)
+        return GetPracticeQuestionsResponse.FromString(
+            self._backend.get_practice_questions_raw(req.SerializeToString())
+        )
+
+    def get_cars_passage_set(self, passage_id: str) -> CarsPassageSet:
+        """Fetch a passage together with all of its questions."""
+        req = practice_pb2.GetCarsPassageSetRequest(passage_id=passage_id)
+        return CarsPassageSet.FromString(
+            self._backend.get_cars_passage_set_raw(req.SerializeToString())
+        )
+
+    def list_passages(
+        self, *, section: McatSection.V | None = None, test_id: str | None = None
+    ) -> ListPassagesResponse:
+        req = practice_pb2.ListPassagesRequest()
+        if section is not None:
+            req.section = section
+        if test_id is not None:
+            req.test_id = test_id
+        return ListPassagesResponse.FromString(
+            self._backend.list_passages_raw(req.SerializeToString())
+        )
+
+    def start_practice_session(
+        self, *, filter: QuestionFilter | None = None, time_limit_seconds: int = 0
+    ) -> StartPracticeSessionResponse:
+        req = practice_pb2.StartPracticeSessionRequest(
+            time_limit_seconds=time_limit_seconds
+        )
+        if filter is not None:
+            req.filter.CopyFrom(filter)
+        return StartPracticeSessionResponse.FromString(
+            self._backend.start_practice_session_raw(req.SerializeToString())
+        )
+
+    def record_practice_attempt(
+        self,
+        *,
+        session_id: str,
+        question_id: str,
+        correct: bool,
+        time_on_question_seconds: int,
+        section: McatSection.V,
+        topic: str,
+        selected_answer: str = "",
+    ) -> RecordAttemptResponse:
+        req = practice_pb2.RecordPracticeAttemptRequest(
+            session_id=session_id,
+            question_id=question_id,
+            selected_answer=selected_answer,
+            correct=correct,
+            time_on_question_seconds=time_on_question_seconds,
+            section=section,
+            topic=topic,
+        )
+        return RecordAttemptResponse.FromString(
+            self._backend.record_practice_attempt_raw(req.SerializeToString())
+        )
+
+    def end_practice_session(self, session_id: str) -> PracticeSessionSummary:
+        req = practice_pb2.EndPracticeSessionRequest(session_id=session_id)
+        return PracticeSessionSummary.FromString(
+            self._backend.end_practice_session_raw(req.SerializeToString())
+        )
+
+    def list_full_length_tests(self) -> ListFullLengthTestsResponse:
+        req = practice_pb2.ListFullLengthTestsRequest()
+        return ListFullLengthTestsResponse.FromString(
+            self._backend.list_full_length_tests_raw(req.SerializeToString())
+        )
+
+    def get_full_length_test(self, test_id: str) -> FullLengthTest:
+        req = practice_pb2.GetFullLengthTestRequest(test_id=test_id)
+        return FullLengthTest.FromString(
+            self._backend.get_full_length_test_raw(req.SerializeToString())
+        )
+
+    def start_full_length_attempt(
+        self, *, test_id: str, aamc_exam_id: str | None = None
+    ) -> StartFullLengthAttemptResponse:
+        req = practice_pb2.StartFullLengthAttemptRequest(test_id=test_id)
+        if aamc_exam_id is not None:
+            req.aamc_exam_id = aamc_exam_id
+        return StartFullLengthAttemptResponse.FromString(
+            self._backend.start_full_length_attempt_raw(req.SerializeToString())
+        )
+
+    def record_full_length_answer(
+        self,
+        *,
+        attempt_id: str,
+        section: McatSection.V,
+        question_id: str,
+        correct: bool,
+        time_on_question_seconds: int,
+        topic: str,
+        selected_answer: str = "",
+    ) -> RecordAttemptResponse:
+        req = practice_pb2.RecordFullLengthAnswerRequest(
+            attempt_id=attempt_id,
+            section=section,
+            question_id=question_id,
+            selected_answer=selected_answer,
+            correct=correct,
+            time_on_question_seconds=time_on_question_seconds,
+            topic=topic,
+        )
+        return RecordAttemptResponse.FromString(
+            self._backend.record_full_length_answer_raw(req.SerializeToString())
+        )
+
+    def submit_full_length_attempt(self, attempt_id: str) -> FullLengthReport:
+        req = practice_pb2.SubmitFullLengthAttemptRequest(attempt_id=attempt_id)
+        return FullLengthReport.FromString(
+            self._backend.submit_full_length_attempt_raw(req.SerializeToString())
+        )
+
+    def get_topic_stats(
+        self,
+        *,
+        section: McatSection.V | None = None,
+        source: AttemptSource.V = practice_pb2.ATTEMPT_SOURCE_ALL,
+    ) -> GetTopicStatsResponse:
+        """Per-topic (and per-section) time-spent + accuracy aggregates."""
+        req = practice_pb2.GetTopicStatsRequest(source=source)
+        if section is not None:
+            req.section = section
+        return GetTopicStatsResponse.FromString(
+            self._backend.get_topic_stats_raw(req.SerializeToString())
         )
 
     def get_csv_metadata(self, path: str, delimiter: Delimiter.V | None) -> CsvMetadata:
@@ -1177,6 +1382,18 @@ class Collection(DeprecatedNamesMixin):
         self, expected: str, provided: str, combining: bool = True
     ) -> str:
         return self._backend.compare_answer(
+            expected=expected, provided=provided, combining=combining
+        )
+
+    def match_answer(
+        self, expected: str, provided: str, combining: bool = True
+    ) -> card_rendering_pb2.MatchAnswerResponse:
+        """SpeedyCAT: structured typed-answer matching for forced active recall.
+
+        Returns whether the provided answer matches the expected one, the
+        normalized strings used, and the diff HTML (see CompareAnswer). The
+        matching itself is implemented in rslib (see typeanswer.rs)."""
+        return self._backend.match_answer(
             expected=expected, provided=provided, combining=combining
         )
 

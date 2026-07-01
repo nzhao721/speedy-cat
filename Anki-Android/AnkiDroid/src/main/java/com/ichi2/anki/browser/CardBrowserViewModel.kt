@@ -457,7 +457,13 @@ class CardBrowserViewModel(
             Timber.d("updated headings for %d columns", activeColumns.count)
             activeColumns.columns.map {
                 ColumnHeading(
-                    label = allColumns[it.ankiColumnKey]!!.getLabel(cardsOrNotes),
+                    // SpeedyCAT: the deck column is shown as the card's "Topic"
+                    label =
+                        if (it == CardBrowserColumn.DECK) {
+                            "Topic"
+                        } else {
+                            allColumns[it.ankiColumnKey]!!.getLabel(cardsOrNotes)
+                        },
                     ankiColumnKey = it.ankiColumnKey,
                 )
             }
@@ -663,15 +669,11 @@ class CardBrowserViewModel(
         launchCatchingIO(errorMessageHandler = { /* only log */ }) {
             val id = rowSelection.rowId
             if (isInMultiSelectMode) {
-                val wasSelected = id in selectedRows
                 toggleRowSelection(rowSelection)
-                // when in mutliselect, only deselecting should cause a change in focus
-                if (wasSelected && isFragmented) {
-                    focusedRow = id
-                    editNoteLauncher()?.let { flowOfNoteEditorCommand.emit(NoteEditorCommand.LoadInPane(it)) }
-                }
             } else {
-                setNoteEditorRow(id)
+                // SpeedyCAT: read-only browser — tapping a row focuses it but never opens
+                // the note editor.
+                focusedRow = id
             }
         }
 
@@ -759,25 +761,6 @@ class CardBrowserViewModel(
             }
         }
         flowOfCardStateChanged.emit(Unit)
-    }
-
-    /**
-     * Deletes the selected notes,
-     * @return the number of deleted notes
-     */
-    @NeedsTest("Deleting the focused row is properly handled;#18639")
-    suspend fun deleteSelectedNotes(): Int {
-        val cardIds = queryAllSelectedCardIds()
-        // reset focused row if that row is about to be deleted
-        if (focusedRow?.cardOrNoteId in cardIds) {
-            focusedRow = null
-        }
-        return undoableOp(this@CardBrowserViewModel) { removeNotes(cardIds = cardIds) }
-            .count
-            .also {
-                endMultiSelectMode(SingleSelectCause.Other)
-                refreshSearch()
-            }
     }
 
     fun setCardsOrNotes(newValue: CardsOrNotes) =

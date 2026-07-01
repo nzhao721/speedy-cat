@@ -4,21 +4,14 @@
 from __future__ import annotations
 
 import html
-from copy import deepcopy
 from dataclasses import dataclass
 from typing import Any
 
-import aqt
-import aqt.operations
 from anki.collection import Collection, OpChanges
 from anki.decks import DeckCollapseScope, DeckId, DeckTreeNode
 from aqt import AnkiQt, gui_hooks
-from aqt.deckoptions import display_options_for_deck_id
 from aqt.operations import QueryOp
 from aqt.operations.deck import (
-    add_deck_dialog,
-    remove_decks,
-    rename_deck,
     reparent_decks,
     set_current_deck,
     set_deck_collapsed,
@@ -26,7 +19,7 @@ from aqt.operations.deck import (
 from aqt.qt import *
 from aqt.sound import av_player
 from aqt.toolbar import BottomBar
-from aqt.utils import getOnlyText, openLink, shortcut, showInfo, tr
+from aqt.utils import openLink, showInfo, tr
 
 
 class DeckBrowserBottomBar:
@@ -110,14 +103,6 @@ class DeckBrowser:
             arg = ""
         if cmd == "open":
             self.set_current_deck(DeckId(int(arg)))
-        elif cmd == "opts":
-            self._showOptions(arg)
-        elif cmd == "shared":
-            self._onShared()
-        elif cmd == "import":
-            self.mw.onImport()
-        elif cmd == "create":
-            self._on_create()
         elif cmd == "drag":
             source, target = arg.split(",")
             self._handle_drag_and_drop(DeckId(int(source)), DeckId(int(target or 0)))
@@ -214,8 +199,7 @@ class DeckBrowser:
 <tr><th colspan=5 align=start>{}</th>
 <th class=count>{}</th>
 <th class=count>{}</th>
-<th class=count>{}</th>
-<th class=optscol></th></tr>""".format(
+<th class=count>{}</th></tr>""".format(
             tr.decks_deck(),
             tr.actions_new(),
             tr.decks_learn_header(),
@@ -289,11 +273,7 @@ class DeckBrowser:
             learn,
             review,
         )
-        # options
-        buf += (
-            "<td align=center class=opts><a onclick='return pycmd(\"opts:%d\");'>"
-            "<img src='/_anki/imgs/gears.svg' class=gears></a></td></tr>" % node.deck_id
-        )
+        buf += "</tr>"
         # children
         if not node.collapsed:
             for child in node.children:
@@ -303,47 +283,8 @@ class DeckBrowser:
     def _topLevelDragRow(self) -> str:
         return "<tr class='top-level-drag-row'><td colspan='6'>&nbsp;</td></tr>"
 
-    # Options
+    # Deck tree actions
     ##########################################################################
-
-    def _showOptions(self, did: str) -> None:
-        m = QMenu(self.mw)
-        a = m.addAction(tr.actions_rename())
-        assert a is not None
-        qconnect(a.triggered, lambda b, did=did: self._rename(DeckId(int(did))))
-        a = m.addAction(tr.actions_options())
-        assert a is not None
-        qconnect(a.triggered, lambda b, did=did: self._options(DeckId(int(did))))
-        a = m.addAction(tr.actions_export())
-        assert a is not None
-        qconnect(a.triggered, lambda b, did=did: self._export(DeckId(int(did))))
-        a = m.addAction(tr.actions_delete())
-        assert a is not None
-        qconnect(a.triggered, lambda b, did=did: self._delete(DeckId(int(did))))
-        gui_hooks.deck_browser_will_show_options_menu(m, int(did))
-        m.popup(QCursor.pos())
-
-    def _export(self, did: DeckId) -> None:
-        self.mw.onExport(did=did)
-
-    def _rename(self, did: DeckId) -> None:
-        def prompt(name: str) -> None:
-            new_name = getOnlyText(
-                tr.decks_new_deck_name(), default=name, title=tr.actions_rename()
-            )
-            if not new_name or new_name == name:
-                return
-            else:
-                rename_deck(
-                    parent=self.mw, deck_id=did, new_name=new_name
-                ).run_in_background()
-
-        QueryOp(
-            parent=self.mw, op=lambda col: col.decks.name(did), success=prompt
-        ).run_in_background()
-
-    def _options(self, did: DeckId) -> None:
-        display_options_for_deck_id(did)
 
     def _collapse(self, did: DeckId) -> None:
         node = self.mw.col.decks.find_deck_in_tree(self._render_data.tree, did)
@@ -362,45 +303,15 @@ class DeckBrowser:
             parent=self.mw, deck_ids=[source], new_parent=target
         ).run_in_background()
 
-    def _delete(self, did: DeckId) -> None:
-        deck = self.mw.col.decks.find_deck_in_tree(self._render_data.tree, did)
-        assert deck is not None
-        deck_name = deck.name
-        remove_decks(
-            parent=self.mw, deck_ids=[did], deck_name=deck_name
-        ).run_in_background()
-
-    # Top buttons
+    # Bottom bar
     ######################################################################
 
-    drawLinks = [
-        ["", "shared", tr.decks_get_shared()],
-        ["", "create", tr.decks_create_deck()],
-        ["Ctrl+Shift+I", "import", tr.decks_import_file()],
-    ]
-
     def _drawButtons(self) -> None:
-        buf = ""
-        drawLinks = deepcopy(self.drawLinks)
-        for b in drawLinks:
-            if b[0]:
-                b[0] = tr.actions_shortcut_key(val=shortcut(b[0]))
-            buf += """
-<button title='%s' onclick='pycmd(\"%s\");'>%s</button>""" % tuple(b)
         self.bottom.draw(
-            buf=buf,
+            buf="",
             link_handler=self._linkHandler,
             web_context=DeckBrowserBottomBar(self),
         )
-
-    def _onShared(self) -> None:
-        openLink(f"{aqt.appShared}decks/")
-
-    def _on_create(self) -> None:
-        if op := add_deck_dialog(
-            parent=self.mw, default_text=self.mw.col.decks.current()["name"]
-        ):
-            op.run_in_background()
 
     ######################################################################
 

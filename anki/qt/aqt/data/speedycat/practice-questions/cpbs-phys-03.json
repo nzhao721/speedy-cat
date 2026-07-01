@@ -1,0 +1,358 @@
+{
+  "meta": {
+    "section": "CPBS",
+    "subArea": "physics",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 (Work, Energy, and Energy Resources) — Test Prep for AP® Courses",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses"
+      }
+    ],
+    "counts": {"total": 17, "byTopic": {"work and the work-energy theorem": 6, "kinetic and potential energy": 6, "conservation of energy and nonconservative forces": 5}},
+    "notes": "Physics (CPBS) work/energy items. Stems and four options scraped verbatim from OpenStax College Physics for AP Courses 2e Ch. 7 'Test Prep for AP Courses' single-best-answer multiple-choice items. OpenStax publishes the answer key to instructors only, so each correctAnswer was independently verified from the same CC BY-NC-SA source text or by direct calculation (answerProvenance = verified-from-source-text). Two items (cpbs-xp040, cpbs-xp041) reference figures whose content (a force-vs-distance profile; spring compression) is fully described in the question text, so no image is needed. Ambiguous items, items needing an un-capturable data table/graph, and free-response items were skipped. Where g was needed, calculations used 9.8 m/s² except where the source's own answer choices imply g = 10 m/s² (noted per item)."
+  },
+  "questions": [
+    {
+      "id": "cpbs-xp040",
+      "section": "CPBS",
+      "stem": "A crane lifts construction materials from the ground to an elevation of 60 m. Over the first 10 m, the motor linearly increases the force it exerts from 0 to 10 kN. It exerts that constant 10 kN force for the next 40 m, and then winds the force down to 0 N again over the last 10 m. What is the total work done on the construction materials?",
+      "choices": [
+        {"label": "A", "text": "500 kJ"},
+        {"label": "B", "text": "600 kJ"},
+        {"label": "C", "text": "300 kJ"},
+        {"label": "D", "text": "18 MJ"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Work is the area under the force-vs-distance graph: a triangle for the first 10 m (½ × 10 m × 10 kN = 50 kJ), a rectangle for the middle 40 m (40 m × 10 kN = 400 kJ), and a triangle for the last 10 m (50 kJ). Total = 50 + 400 + 50 = 500 kJ.",
+      "topicTags": ["physics", "work", "work as area under force-distance"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Based on OpenStax Figure 7.45; the force profile is fully described in the question text (no image needed). OpenStax withholds the public answer key; answer independently verified by computing the area under the force-distance graph."
+    },
+    {
+      "id": "cpbs-xp041",
+      "section": "CPBS",
+      "stem": "You compress a spring by a distance x, and then release it. Next you compress the same spring by 2x. How much work did you do the second time compared with the first?",
+      "choices": [
+        {"label": "A", "text": "Half as much"},
+        {"label": "B", "text": "The same"},
+        {"label": "C", "text": "Twice as much"},
+        {"label": "D", "text": "Four times as much"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The work to compress a spring (its stored elastic potential energy) is ½kx², which is proportional to the square of the compression. Doubling the compression multiplies the work by 2² = 4.",
+      "topicTags": ["physics", "work", "spring potential energy"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem references Figure 7.10(c); rephrased to be self-contained since the answer follows from the spring energy relation ½kx². OpenStax withholds the public answer key; answer independently verified."
+    },
+    {
+      "id": "cpbs-xp042",
+      "section": "CPBS",
+      "stem": "A toy car is going around a loop-the-loop. Gravity ____ the kinetic energy on the upward side of the loop, ____ the kinetic energy at the very top, and ____ the kinetic energy on the downward side of the loop.",
+      "choices": [
+        {"label": "A", "text": "increases, decreases, has no effect on"},
+        {"label": "B", "text": "decreases, has no effect on, increases"},
+        {"label": "C", "text": "increases, has no effect on, decreases"},
+        {"label": "D", "text": "decreases, increases, has no effect on"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Gravity does negative work while the car climbs (KE decreases), zero work at the very top where the velocity is horizontal and gravity is perpendicular to the motion (no effect), and positive work as the car descends (KE increases).",
+      "topicTags": ["physics", "work-energy theorem", "kinetic energy"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the sign of the work done by gravity."
+    },
+    {
+      "id": "cpbs-xp043",
+      "section": "CPBS",
+      "stem": "A model drag car is accelerated along its track from rest by a motor with a force of 75 N, but there is a drag force of 30 N due to the track. What is the kinetic energy after 2 m of travel?",
+      "choices": [
+        {"label": "A", "text": "90 J"},
+        {"label": "B", "text": "150 J"},
+        {"label": "C", "text": "210 J"},
+        {"label": "D", "text": "60 J"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "By the work-energy theorem, the change in kinetic energy equals the net work. The net force is 75 - 30 = 45 N, so over 2 m the net work is 45 N × 2 m = 90 J. Starting from rest, the kinetic energy is 90 J.",
+      "topicTags": ["physics", "work-energy theorem", "kinetic energy"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by the work-energy theorem (net force × distance)."
+    },
+    {
+      "id": "cpbs-xp044",
+      "section": "CPBS",
+      "stem": "When the force acting on an object is parallel to the direction of motion of the center of mass, the mechanical energy ____. When the force acting on an object is antiparallel to the direction of motion of the center of mass, the mechanical energy ____.",
+      "choices": [
+        {"label": "A", "text": "increases, increases"},
+        {"label": "B", "text": "increases, decreases"},
+        {"label": "C", "text": "decreases, increases"},
+        {"label": "D", "text": "decreases, decreases"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "A force parallel to the motion does positive work, adding mechanical energy; a force antiparallel to the motion does negative work, removing mechanical energy.",
+      "topicTags": ["physics", "work", "mechanical energy"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the sign of work done by parallel vs antiparallel forces."
+    },
+    {
+      "id": "cpbs-xp045",
+      "section": "CPBS",
+      "stem": "A child is pulling two red wagons, with the second one tied to the first by a non-stretching rope. Each wagon has a mass of 10 kg. If the child exerts a force of 30 N for 5.0 m (ignore friction), how much has the kinetic energy of the two-wagon system changed?",
+      "choices": [
+        {"label": "A", "text": "300 J"},
+        {"label": "B", "text": "150 J"},
+        {"label": "C", "text": "75 J"},
+        {"label": "D", "text": "60 J"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The net external work on the two-wagon system equals the applied force times the distance: 30 N × 5.0 m = 150 J. By the work-energy theorem, the system's kinetic energy increases by 150 J (the internal rope tension does no net work on the system).",
+      "topicTags": ["physics", "work-energy theorem", "systems"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by the work-energy theorem."
+    },
+    {
+      "id": "cpbs-xp046",
+      "section": "CPBS",
+      "stem": "A 1.0 kg baseball is flying at 10 m/s. How much kinetic energy does it have, and how much gravitational potential energy?",
+      "choices": [
+        {"label": "A", "text": "10 J, 20 J"},
+        {"label": "B", "text": "50 J, 20 J"},
+        {"label": "C", "text": "unknown, 50 J"},
+        {"label": "D", "text": "50 J, unknown"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Kinetic energy is ½mv² = ½(1.0)(10)² = 50 J. Gravitational potential energy depends on the chosen reference height, which is not given, so it cannot be determined from the information provided.",
+      "topicTags": ["physics", "kinetic energy", "potential energy"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (PE needs a reference height)."
+    },
+    {
+      "id": "cpbs-xp047",
+      "section": "CPBS",
+      "stem": "A 0.305-kg potato has been launched out of a potato cannon at 15.8 m/s. What is its kinetic energy? If you then learn that it is 4.00 m above the ground, what is the total mechanical energy relative to the ground? (Take g = 9.8 m/s².)",
+      "choices": [
+        {"label": "A", "text": "12.0 J, 50.1 J"},
+        {"label": "B", "text": "2.41 J, 14.4 J"},
+        {"label": "C", "text": "38.1 J, 50.1 J"},
+        {"label": "D", "text": "12.0 J, 14.4 J"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Kinetic energy = ½mv² = ½(0.305)(15.8)² ≈ 38.1 J. Potential energy = mgh = 0.305 × 9.8 × 4.00 ≈ 12.0 J. Total mechanical energy = 38.1 + 12.0 ≈ 50.1 J.",
+      "topicTags": ["physics", "mechanical energy", "potential energy"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation."
+    },
+    {
+      "id": "cpbs-xp048",
+      "section": "CPBS",
+      "stem": "Two 4.0 kg masses are connected to each other by a spring with a force constant of 25 N/m and a rest length of 1.0 m. If the spring has been compressed to 0.80 m in length and the masses are traveling toward each other at 0.50 m/s each, what is the total energy in the system?",
+      "choices": [
+        {"label": "A", "text": "1.0 J"},
+        {"label": "B", "text": "1.5 J"},
+        {"label": "C", "text": "9.0 J"},
+        {"label": "D", "text": "8.0 J"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Spring compression is 1.0 - 0.80 = 0.20 m, so elastic PE = ½k(Δx)² = ½(25)(0.20)² = 0.50 J. Kinetic energy = 2 × ½mv² = 2 × ½(4.0)(0.50)² = 1.0 J. Total = 1.0 + 0.5 = 1.5 J.",
+      "topicTags": ["physics", "conservation of energy", "spring potential energy"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation."
+    },
+    {
+      "id": "cpbs-xp049",
+      "section": "CPBS",
+      "stem": "You are loading a toy dart gun, which has two settings; the more powerful setting compresses the spring twice as far as the lower setting. If it takes 5.0 J of work to compress the dart gun to the lower setting, how much work does it take for the higher setting?",
+      "choices": [
+        {"label": "A", "text": "20 J"},
+        {"label": "B", "text": "10 J"},
+        {"label": "C", "text": "2.5 J"},
+        {"label": "D", "text": "40 J"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The work stored in a spring is ½kx², proportional to the square of the compression. Doubling the compression multiplies the work by 4, so 5.0 J × 4 = 20 J.",
+      "topicTags": ["physics", "spring potential energy", "work"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (spring energy ∝ compression²)."
+    },
+    {
+      "id": "cpbs-xp050",
+      "section": "CPBS",
+      "stem": "Old-fashioned pendulum clocks are powered by masses that are wound back to the top of the clock about once a week. One particular clock has three masses: 4.0 kg, 4.0 kg, and 6.0 kg, which can drop 1.3 meters. About how much energy does the clock use in a week? (Take g = 9.8 m/s².)",
+      "choices": [
+        {"label": "A", "text": "51 J"},
+        {"label": "B", "text": "76 J"},
+        {"label": "C", "text": "127 J"},
+        {"label": "D", "text": "178 J"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The energy is the total gravitational potential energy released as the masses drop: PE = mgh = (4.0 + 4.0 + 6.0) kg × 9.8 m/s² × 1.3 m = 14 × 9.8 × 1.3 ≈ 178 J.",
+      "topicTags": ["physics", "gravitational potential energy", "conservation of energy"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (total mgh)."
+    },
+    {
+      "id": "cpbs-xp051",
+      "section": "CPBS",
+      "stem": "Old-fashioned pocket watches needed to be wound daily. Winding required a large number of turns of the key but not much force per turn, and it was possible to overwind and break the watch. How was the energy stored?",
+      "choices": [
+        {"label": "A", "text": "A small mass raised a long distance"},
+        {"label": "B", "text": "A large mass raised a short distance"},
+        {"label": "C", "text": "A weak spring deformed a long way"},
+        {"label": "D", "text": "A strong spring deformed a short way"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "A watch stores energy in a coiled mainspring. The many turns required correspond to a large deformation, and the small force per turn indicates a relatively weak spring—so the energy is stored as a weak spring deformed a long way.",
+      "topicTags": ["physics", "elastic potential energy", "energy storage"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the description (many low-force turns = weak spring, large deformation)."
+    },
+    {
+      "id": "cpbs-xp052",
+      "section": "CPBS",
+      "stem": "You are in a basement with a smooth concrete floor (friction force 40 N) and a rug (friction force 55 N) that is 3 m by 4 m. You must push a very heavy box from one corner of the rug to the opposite corner. Will you do more work against friction going around the edge on the floor or straight across the rug, and how much extra?",
+      "choices": [
+        {"label": "A", "text": "Across the rug is 275 J extra"},
+        {"label": "B", "text": "Around the floor is 5 J extra"},
+        {"label": "C", "text": "Across the rug is 5 J extra"},
+        {"label": "D", "text": "Around the floor is 280 J extra"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Across the rug (the diagonal) the distance is √(3² + 4²) = 5 m, so work = 55 N × 5 m = 275 J. Around the floor along two edges is 3 + 4 = 7 m, so work = 40 N × 7 m = 280 J. Going around the floor takes 280 - 275 = 5 J more.",
+      "topicTags": ["physics", "nonconservative forces", "work against friction"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (path length × friction force)."
+    },
+    {
+      "id": "cpbs-xp053",
+      "section": "CPBS",
+      "stem": "You do 30 J of work to load a toy dart gun. However, the dart is 10 cm long and feels a frictional force of 10 N while going through the dart gun's barrel. What is the kinetic energy of the fired dart?",
+      "choices": [
+        {"label": "A", "text": "30 J"},
+        {"label": "B", "text": "29 J"},
+        {"label": "C", "text": "28 J"},
+        {"label": "D", "text": "27 J"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Friction does negative work over the barrel length: W_friction = 10 N × 0.10 m = 1 J. By energy conservation, KE = 30 J - 1 J = 29 J.",
+      "topicTags": ["physics", "conservation of energy", "friction"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (work in minus friction work)."
+    },
+    {
+      "id": "cpbs-xp054",
+      "section": "CPBS",
+      "stem": "A child has two red wagons, with the rear one tied to the front by a stretchy rope (which acts like a spring). If the child pulls on the front wagon, the ____ increases.",
+      "choices": [
+        {"label": "A", "text": "kinetic energy of the wagons"},
+        {"label": "B", "text": "potential energy stored in the spring"},
+        {"label": "C", "text": "both A and B"},
+        {"label": "D", "text": "not enough information"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Pulling the front wagon speeds the wagons up (kinetic energy increases) and stretches the elastic rope as the front wagon pulls ahead of the rear one (elastic potential energy increases). Both forms of energy increase.",
+      "topicTags": ["physics", "conservation of energy", "elastic potential energy"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified."
+    },
+    {
+      "id": "cpbs-xp055",
+      "section": "CPBS",
+      "stem": "A 5.0-kg rock falls off of a 10 m cliff. If air resistance exerts an average force of 10 N opposing the motion, what is the kinetic energy when the rock hits the ground? (Use g = 10 m/s².)",
+      "choices": [
+        {"label": "A", "text": "400 J"},
+        {"label": "B", "text": "12.6 m/s"},
+        {"label": "C", "text": "100 J"},
+        {"label": "D", "text": "500 J"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Energy released by gravity = mgh = 5.0 × 10 × 10 = 500 J. Air resistance removes W = 10 N × 10 m = 100 J. So KE at the ground = 500 - 100 = 400 J. (Option B is wrong because it is a speed, not an energy.)",
+      "topicTags": ["physics", "conservation of energy", "nonconservative forces"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation. The answer choices imply g = 10 m/s² (mgh - friction work = 500 - 100 = 400 J exactly)."
+    },
+    {
+      "id": "cpbs-xp056",
+      "section": "CPBS",
+      "stem": "Before railroads, goods often traveled along canals, with mules pulling barges from the bank. If a mule exerts a 1200 N force for 10 km, and the rope connecting the mule to the barge is at a 20 degree angle from the direction of travel, how much work did the mule do on the barge?",
+      "choices": [
+        {"label": "A", "text": "12 MJ"},
+        {"label": "B", "text": "11 MJ"},
+        {"label": "C", "text": "4.1 MJ"},
+        {"label": "D", "text": "6 MJ"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Work = F·d·cosθ = 1200 N × 10,000 m × cos(20°) = 1.2 × 10⁷ × 0.940 ≈ 1.1 × 10⁷ J ≈ 11 MJ. Only the component of force along the direction of travel does work.",
+      "topicTags": ["physics", "work", "work as F d cos theta"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 7 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (W = F d cosθ)."
+    }
+  ]
+}

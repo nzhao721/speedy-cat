@@ -36,6 +36,19 @@ export function getTypedAnswer(): string | null {
     return typeans?.value ?? null;
 }
 
+// SpeedyCAT forced active recall: re-focus (and select) the typed-answer box.
+// Called from the Python reviewer when a reveal is blocked because the box was
+// left empty, so the learner can immediately type their answer.
+export function focusTypeBox(): void {
+    const box = (typeans ?? document.getElementById("typeans")) as
+        | HTMLInputElement
+        | null;
+    if (box) {
+        box.focus();
+        box.select();
+    }
+}
+
 function _runHook(
     hooks: Array<Callback>,
 ): Promise<PromiseSettledResult<void | Promise<void>>[]> {

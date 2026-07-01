@@ -22,6 +22,10 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 
 suspend fun performBackupInBackground(force: Boolean = false) {
+    // SpeedyCAT: the collection is read-only bundled content, so automatic
+    // backups are disabled to save space. Only explicit, user-requested
+    // backups (force == true) are performed.
+    if (!force) return
     // Wait a second to allow the deck list to finish loading first, or it
     // will hang until the first stage of the backup completes.
     delay(1000)

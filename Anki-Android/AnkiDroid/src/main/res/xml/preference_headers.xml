@@ -54,15 +54,6 @@
         app:summaryEntries="@array/reviewing_summary_entries">
     </com.ichi2.preferences.HeaderPreference>
 
-    <!-- Sync Preferences -->
-    <com.ichi2.preferences.HeaderPreference
-        android:fragment="com.ichi2.anki.preferences.SyncSettingsFragment"
-        android:key="@string/pref_sync_screen_key"
-        android:title="@string/pref_cat_sync"
-        android:icon="@drawable/ic_sync"
-        app:summaryEntries="@array/sync_summary_entries">
-    </com.ichi2.preferences.HeaderPreference>
-
     <!-- Notifications -->
     <com.ichi2.preferences.HeaderPreference
         android:fragment="com.ichi2.anki.preferences.NotificationsSettingsFragment"

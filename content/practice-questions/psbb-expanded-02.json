@@ -1,0 +1,462 @@
+{
+  "meta": {
+    "section": "PSBB",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax Psychology 2e, Ch. 3 Review Questions (Biopsychology) and Ch. 4 Review Questions (States of Consciousness)",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/psychology-2e/pages/3-review-questions"
+      },
+      {
+        "sourceName": "OpenStax Psychology 2e Student Solutions Guide (answer key for odd-numbered review questions)",
+        "sourceLicense": "CC BY 4.0",
+        "sourceUrl": "https://dokumen.pub/psychology-2e-student-solutions-guide.html"
+      }
+    ],
+    "counts": {"total": 22, "byTopic": {"biological bases of behavior": 10, "consciousness": 12}},
+    "notes": "Psychology (PSBB) items scraped verbatim from OpenStax Psychology 2e Ch. 3 and Ch. 4 review-questions pages; correct answers from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), odd-numbered review questions only. Live OpenStax pages show CC BY-NC-SA 4.0 plus a no-LLM-training notice; SpeedyCAT use is human-facing/non-AI per PRD (mirrors psbb-001)."
+  },
+  "questions": [
+    {
+      "id": "psbb-x012",
+      "section": "PSBB",
+      "stem": "A(n) ________ is a sudden, permanent change in a sequence of DNA.",
+      "choices": [
+        {"label": "A", "text": "allele"},
+        {"label": "B", "text": "chromosome"},
+        {"label": "C", "text": "epigenetic"},
+        {"label": "D", "text": "mutation"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "A mutation is a sudden, permanent change in a DNA sequence; mutations are an important source of genetic variation.",
+      "topicTags": ["psychology", "biological bases of behavior", "genetics"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 3 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/3-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 3 Q1 = D."
+    },
+    {
+      "id": "psbb-x013",
+      "section": "PSBB",
+      "stem": "________ is the field of study that focuses on genes and their expression.",
+      "choices": [
+        {"label": "A", "text": "Social psychology"},
+        {"label": "B", "text": "Evolutionary psychology"},
+        {"label": "C", "text": "Epigenetics"},
+        {"label": "D", "text": "Behavioral neuroscience"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Epigenetics studies gene expression: how genes are turned on or off, often in response to environmental factors, without altering the underlying DNA sequence.",
+      "topicTags": ["psychology", "biological bases of behavior", "epigenetics"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 3 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/3-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 3 Q3 = C."
+    },
+    {
+      "id": "psbb-x014",
+      "section": "PSBB",
+      "stem": "The ________ receive(s) incoming signals from other neurons.",
+      "choices": [
+        {"label": "A", "text": "soma"},
+        {"label": "B", "text": "terminal buttons"},
+        {"label": "C", "text": "myelin sheath"},
+        {"label": "D", "text": "dendrites"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Dendrites are the branchlike extensions of a neuron that receive incoming signals from other neurons.",
+      "topicTags": ["psychology", "biological bases of behavior", "neuron"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 3 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/3-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 3 Q5 = D."
+    },
+    {
+      "id": "psbb-x015",
+      "section": "PSBB",
+      "stem": "Multiple sclerosis involves a breakdown of the ________.",
+      "choices": [
+        {"label": "A", "text": "soma"},
+        {"label": "B", "text": "myelin sheath"},
+        {"label": "C", "text": "synaptic vesicles"},
+        {"label": "D", "text": "dendrites"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Multiple sclerosis involves the breakdown of the myelin sheath, the fatty insulating layer around axons that speeds neural conduction.",
+      "topicTags": ["psychology", "biological bases of behavior", "myelin", "neuron"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 3 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/3-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 3 Q7 = B."
+    },
+    {
+      "id": "psbb-x016",
+      "section": "PSBB",
+      "stem": "Our ability to make our legs move as we walk across the room is controlled by the ________ nervous system.",
+      "choices": [
+        {"label": "A", "text": "autonomic"},
+        {"label": "B", "text": "somatic"},
+        {"label": "C", "text": "sympathetic"},
+        {"label": "D", "text": "parasympathetic"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Voluntary control of skeletal muscles, such as moving your legs to walk, is governed by the somatic nervous system.",
+      "topicTags": ["psychology", "biological bases of behavior", "nervous system"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 3 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/3-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 3 Q9 = B."
+    },
+    {
+      "id": "psbb-x017",
+      "section": "PSBB",
+      "stem": "The central nervous system is comprised of ________.",
+      "choices": [
+        {"label": "A", "text": "sympathetic and parasympathetic nervous systems"},
+        {"label": "B", "text": "organs and glands"},
+        {"label": "C", "text": "somatic and autonomic nervous systems"},
+        {"label": "D", "text": "brain and spinal cord"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The central nervous system (CNS) consists of the brain and the spinal cord; everything else is part of the peripheral nervous system.",
+      "topicTags": ["psychology", "biological bases of behavior", "central nervous system"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 3 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/3-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 3 Q11 = D."
+    },
+    {
+      "id": "psbb-x018",
+      "section": "PSBB",
+      "stem": "The ________ is a sensory relay station where all sensory information, except for smell, goes before being sent to other areas of the brain for further processing.",
+      "choices": [
+        {"label": "A", "text": "amygdala"},
+        {"label": "B", "text": "hippocampus"},
+        {"label": "C", "text": "hypothalamus"},
+        {"label": "D", "text": "thalamus"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The thalamus is the brain's sensory relay station; all sensory information except smell passes through it before being routed to the cortex.",
+      "topicTags": ["psychology", "biological bases of behavior", "thalamus", "brain"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 3 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/3-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 3 Q13 = D."
+    },
+    {
+      "id": "psbb-x019",
+      "section": "PSBB",
+      "stem": "A(n) ________ uses magnetic fields to create pictures of a given tissue.",
+      "choices": [
+        {"label": "A", "text": "EEG"},
+        {"label": "B", "text": "MRI"},
+        {"label": "C", "text": "PET scan"},
+        {"label": "D", "text": "CT scan"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Magnetic resonance imaging (MRI) uses strong magnetic fields to produce detailed images of body tissues, including the brain.",
+      "topicTags": ["psychology", "biological bases of behavior", "neuroimaging"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 3 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/3-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 3 Q15 = B."
+    },
+    {
+      "id": "psbb-x020",
+      "section": "PSBB",
+      "stem": "The two major hormones secreted from the pancreas are:",
+      "choices": [
+        {"label": "A", "text": "estrogen and progesterone"},
+        {"label": "B", "text": "norepinephrine and epinephrine"},
+        {"label": "C", "text": "thyroxine and oxytocin"},
+        {"label": "D", "text": "glucagon and insulin"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The pancreas secretes glucagon and insulin, the two major hormones that regulate blood glucose levels.",
+      "topicTags": ["psychology", "biological bases of behavior", "endocrine system"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 3 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/3-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 3 Q17 = D."
+    },
+    {
+      "id": "psbb-x021",
+      "section": "PSBB",
+      "stem": "The ________ gland secretes epinephrine.",
+      "choices": [
+        {"label": "A", "text": "adrenal"},
+        {"label": "B", "text": "thyroid"},
+        {"label": "C", "text": "pituitary"},
+        {"label": "D", "text": "master"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The adrenal glands, located atop the kidneys, secrete epinephrine (adrenaline) as part of the body's stress (fight-or-flight) response.",
+      "topicTags": ["psychology", "biological bases of behavior", "endocrine system"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 3 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/3-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 3 Q19 = A."
+    },
+    {
+      "id": "psbb-x022",
+      "section": "PSBB",
+      "stem": "The body's biological clock is located in the ________.",
+      "choices": [
+        {"label": "A", "text": "hippocampus"},
+        {"label": "B", "text": "thalamus"},
+        {"label": "C", "text": "hypothalamus"},
+        {"label": "D", "text": "pituitary gland"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The body's biological clock, the suprachiasmatic nucleus, is located in the hypothalamus and regulates circadian rhythms.",
+      "topicTags": ["psychology", "consciousness", "circadian rhythm"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 4 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/4-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 4 Q1 = C."
+    },
+    {
+      "id": "psbb-x023",
+      "section": "PSBB",
+      "stem": "________ cycles occur roughly once every 24 hours.",
+      "choices": [
+        {"label": "A", "text": "biological"},
+        {"label": "B", "text": "circadian"},
+        {"label": "C", "text": "rotating"},
+        {"label": "D", "text": "conscious"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Circadian cycles are biological rhythms that recur on a roughly 24-hour cycle, such as the sleep-wake cycle.",
+      "topicTags": ["psychology", "consciousness", "circadian rhythm"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 4 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/4-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 4 Q3 = B."
+    },
+    {
+      "id": "psbb-x024",
+      "section": "PSBB",
+      "stem": "Growth hormone is secreted by the ________ while we sleep.",
+      "choices": [
+        {"label": "A", "text": "pineal gland"},
+        {"label": "B", "text": "thyroid"},
+        {"label": "C", "text": "pituitary gland"},
+        {"label": "D", "text": "pancreas"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Growth hormone is secreted by the pituitary gland, with much of its release occurring during deep sleep.",
+      "topicTags": ["psychology", "consciousness", "sleep", "endocrine system"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 4 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/4-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 4 Q5 = C."
+    },
+    {
+      "id": "psbb-x025",
+      "section": "PSBB",
+      "stem": "________ is a hormone secreted by the pineal gland that plays a role in regulating biological rhythms and immune function.",
+      "choices": [
+        {"label": "A", "text": "growth hormone"},
+        {"label": "B", "text": "melatonin"},
+        {"label": "C", "text": "LH"},
+        {"label": "D", "text": "FSH"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Melatonin, secreted by the pineal gland, helps regulate biological rhythms (including the sleep-wake cycle) and immune function.",
+      "topicTags": ["psychology", "consciousness", "sleep", "melatonin"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 4 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/4-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 4 Q7 = B."
+    },
+    {
+      "id": "psbb-x026",
+      "section": "PSBB",
+      "stem": "________ is(are) described as slow-wave sleep.",
+      "choices": [
+        {"label": "A", "text": "NREM stage 1 sleep"},
+        {"label": "B", "text": "NREM stage 2 sleep"},
+        {"label": "C", "text": "NREM stage 3 sleep"},
+        {"label": "D", "text": "REM sleep"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Slow-wave sleep, dominated by low-frequency, high-amplitude delta waves, corresponds to NREM stage 3 (which in older schemes was split into stages 3 and 4).",
+      "topicTags": ["psychology", "consciousness", "sleep stages"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 4 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/4-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 4 Q9 = C (Guide answer text 'stage 3 and stage 4' reflects the older staging; option C is the current 2e wording)."
+    },
+    {
+      "id": "psbb-x027",
+      "section": "PSBB",
+      "stem": "Symptoms of ________ may be improved by REM rebound.",
+      "choices": [
+        {"label": "A", "text": "schizophrenia"},
+        {"label": "B", "text": "Parkinson's disease"},
+        {"label": "C", "text": "depression"},
+        {"label": "D", "text": "generalized anxiety disorder"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Per the source, symptoms of depression may be affected by manipulations of REM sleep. The keyed answer is depression.",
+      "topicTags": ["psychology", "consciousness", "sleep", "depression"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Psychology 2e, Ch. 4 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/4-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from the live OpenStax page (stem reads 'REM rebound'); the Student Solutions Guide prints the stem as 'REM deprivation'. Both editions key the answer to C = depression. Flagged for the stem-wording discrepancy."
+    },
+    {
+      "id": "psbb-x028",
+      "section": "PSBB",
+      "stem": "________ is loss of muscle tone or control that is often associated with narcolepsy.",
+      "choices": [
+        {"label": "A", "text": "RBD"},
+        {"label": "B", "text": "CPAP"},
+        {"label": "C", "text": "cataplexy"},
+        {"label": "D", "text": "insomnia"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cataplexy is a sudden loss of muscle tone or control, often triggered by strong emotion, and is commonly associated with narcolepsy.",
+      "topicTags": ["psychology", "consciousness", "narcolepsy"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 4 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/4-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 4 Q13 = C."
+    },
+    {
+      "id": "psbb-x029",
+      "section": "PSBB",
+      "stem": "The most common treatment for ________ involves the use of amphetamine-like medications.",
+      "choices": [
+        {"label": "A", "text": "sleep apnea"},
+        {"label": "B", "text": "RBD"},
+        {"label": "C", "text": "SIDS"},
+        {"label": "D", "text": "narcolepsy"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Narcolepsy is most commonly treated with amphetamine-like stimulant medications that promote wakefulness.",
+      "topicTags": ["psychology", "consciousness", "narcolepsy", "treatment"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 4 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/4-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 4 Q15 = D."
+    },
+    {
+      "id": "psbb-x030",
+      "section": "PSBB",
+      "stem": "________ occurs when a drug user requires more and more of a given drug in order to experience the same effects of the drug.",
+      "choices": [
+        {"label": "A", "text": "withdrawal"},
+        {"label": "B", "text": "psychological dependence"},
+        {"label": "C", "text": "tolerance"},
+        {"label": "D", "text": "reuptake"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tolerance occurs when a person needs increasing amounts of a drug to achieve the same effect that smaller doses once produced.",
+      "topicTags": ["psychology", "consciousness", "substance use", "tolerance"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 4 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/4-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 4 Q17 = C."
+    },
+    {
+      "id": "psbb-x031",
+      "section": "PSBB",
+      "stem": "________ refers to drug craving.",
+      "choices": [
+        {"label": "A", "text": "psychological dependence"},
+        {"label": "B", "text": "antagonism"},
+        {"label": "C", "text": "agonism"},
+        {"label": "D", "text": "physical dependence"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Psychological dependence is characterized by an emotional, motivational craving for a drug, distinct from the physical symptoms of physical dependence.",
+      "topicTags": ["psychology", "consciousness", "substance use", "dependence"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 4 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/4-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 4 Q19 = A."
+    },
+    {
+      "id": "psbb-x032",
+      "section": "PSBB",
+      "stem": "________ is most effective in individuals that are very open to the power of suggestion.",
+      "choices": [
+        {"label": "A", "text": "hypnosis"},
+        {"label": "B", "text": "meditation"},
+        {"label": "C", "text": "mindful awareness"},
+        {"label": "D", "text": "cognitive therapy"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Hypnosis is most effective for people who are highly open to suggestion (high in hypnotic suggestibility).",
+      "topicTags": ["psychology", "consciousness", "hypnosis"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 4 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/4-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 4 Q21 = A."
+    },
+    {
+      "id": "psbb-x033",
+      "section": "PSBB",
+      "stem": "Meditation may be helpful in ________.",
+      "choices": [
+        {"label": "A", "text": "pain management"},
+        {"label": "B", "text": "stress control"},
+        {"label": "C", "text": "treating the flu"},
+        {"label": "D", "text": "both a and b"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Meditation has been linked to benefits for both pain management and stress control, so 'both a and b' is correct.",
+      "topicTags": ["psychology", "consciousness", "meditation"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 4 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/4-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 4 Q23 = D."
+    }
+  ]
+}

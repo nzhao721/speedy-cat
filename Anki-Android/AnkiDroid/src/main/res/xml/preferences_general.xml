@@ -49,13 +49,6 @@
             android:key="@string/nav_drawer_gesture_key"
             android:summary="@string/gestures_fullscreen_nav_drawer_summary"
             android:title="@string/gestures_full_screen_nav_drawer" />
-    <PreferenceCategory android:title="@string/pref_cat_editing">
-        <SwitchPreferenceCompat
-            android:defaultValue="true"
-            tools:title="Paste clipboard images as PNG"
-            android:maxLength="41"
-            android:key="@string/paste_png_key"/>
-    </PreferenceCategory>
         <PreferenceCategory android:title="@string/pref_cat_studying">
             <ListPreference
                 android:entries="@array/add_to_cur_labels"

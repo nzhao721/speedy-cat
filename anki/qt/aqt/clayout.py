@@ -282,7 +282,7 @@ class CardLayout(QDialog):
         palette.setColor(
             QPalette.ColorGroup.Inactive,
             QPalette.ColorRole.Highlight,
-            QColor("#4169e1" if theme_manager.night_mode else "#FFFF80"),
+            QColor("#a85613" if theme_manager.night_mode else "#FFFF80"),
         )
         palette.setColor(
             QPalette.ColorGroup.Inactive,

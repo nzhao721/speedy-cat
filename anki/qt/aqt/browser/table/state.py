@@ -14,6 +14,10 @@ from anki.notes import Note, NoteId
 from anki.utils import ids2str
 from aqt.browser.table import Column, ItemId, ItemList
 
+# The read-only browser only surfaces the flashcard's front (question), back
+# (answer) and topic (its top-level deck, shown via the "deck" column).
+BROWSER_VIEWER_COLUMNS = ["question", "answer", "deck"]
+
 
 class ItemState(ABC):
     GEOMETRY_KEY_PREFIX: str
@@ -46,14 +50,18 @@ class ItemState(ABC):
         return self._active_columns[index]
 
     def column_label(self, column: Column) -> str:
+        # the read-only viewer surfaces only the flashcard's front, back and
+        # topic, so relabel the underlying columns accordingly
+        if column.key == "question":
+            return "Front"
+        if column.key == "answer":
+            return "Back"
+        if column.key == "deck":
+            # the card's topic is its top-level deck
+            return "Topic"
         return (
             column.notes_mode_label if self.is_notes_mode() else column.cards_mode_label
         )
-
-    def column_tooltip(self, column: Column) -> str:
-        if self.is_notes_mode():
-            return column.notes_mode_tooltip
-        return column.cards_mode_tooltip
 
     # Columns and sorting
 
@@ -134,18 +142,18 @@ class CardState(ItemState):
 
     def __init__(self, col: Collection) -> None:
         super().__init__(col)
-        self._active_columns = self.col.load_browser_card_columns()
+        self._active_columns = list(BROWSER_VIEWER_COLUMNS)
+        # sync the backend's render columns without persisting to the config,
+        # so browser_row_for_id() returns cells matching our fixed columns
+        self.col._backend.set_active_browser_columns(self._active_columns)
 
     @property
     def active_columns(self) -> list[str]:
         return self._active_columns
 
     def toggle_active_column(self, column: str) -> None:
-        if column in self._active_columns:
-            self._active_columns.remove(column)
-        else:
-            self._active_columns.append(column)
-        self.col.set_browser_card_columns(self._active_columns)
+        # columns are fixed to front/back/topic in the read-only viewer
+        pass
 
     def get_card(self, item: ItemId) -> Card:
         return self.col.get_card(CardId(item))
@@ -181,18 +189,18 @@ class NoteState(ItemState):
 
     def __init__(self, col: Collection) -> None:
         super().__init__(col)
-        self._active_columns = self.col.load_browser_note_columns()
+        self._active_columns = list(BROWSER_VIEWER_COLUMNS)
+        # sync the backend's render columns without persisting to the config,
+        # so browser_row_for_id() returns cells matching our fixed columns
+        self.col._backend.set_active_browser_columns(self._active_columns)
 
     @property
     def active_columns(self) -> list[str]:
         return self._active_columns
 
     def toggle_active_column(self, column: str) -> None:
-        if column in self._active_columns:
-            self._active_columns.remove(column)
-        else:
-            self._active_columns.append(column)
-        self.col.set_browser_note_columns(self._active_columns)
+        # columns are fixed to front/back/topic in the read-only viewer
+        pass
 
     def get_card(self, item: ItemId) -> Card:
         if cards := self.get_note(item).cards():

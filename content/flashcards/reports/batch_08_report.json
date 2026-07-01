@@ -1,0 +1,69 @@
+{
+  "batch": 8,
+  "file": "batch_08.json",
+  "cards_evaluated": 257,
+  "summary": {
+    "ok": 253,
+    "cards_with_issues": 4,
+    "by_check": {
+      "qa_correspondence": 0,
+      "wellformed": 4,
+      "markup": 0
+    },
+    "by_severity": {
+      "error": 0,
+      "warning": 0,
+      "info": 4
+    }
+  },
+  "issue_type_counts": {
+    "spelling_typo": 1,
+    "split_word_markup": 1,
+    "grammar_missing_word": 2
+  },
+  "flagged": [
+    {
+      "card_id": 1559496478800,
+      "note_id": 1559496428891,
+      "check": "wellformed",
+      "type": "spelling_typo",
+      "severity": "info",
+      "detail": "The clozed answer term is misspelled 'uninucelated' instead of 'uninucleated' (other cards in the batch spell it correctly).",
+      "evidence": "Cardiac muscle is {{c1::uninucelated::nucleation}}"
+    },
+    {
+      "card_id": 1556917438718,
+      "note_id": 1556917340893,
+      "check": "wellformed",
+      "type": "split_word_markup",
+      "severity": "info",
+      "detail": "An inline <b> tag opens in the middle of the word 'pyruvate', so the extracted answer_text reads 'p yruvate dehydrogenase phosphatase' (renders fine in Anki, but markup is malformed).",
+      "evidence": "removes a phosphate is p<b>yruvate dehydrogenase phosphatase</b>"
+    },
+    {
+      "card_id": 1559529270463,
+      "note_id": 1559498251379,
+      "check": "wellformed",
+      "type": "grammar_missing_word",
+      "severity": "info",
+      "detail": "Stem is missing the connective word 'as' ('Bone tissue is also known [as] osseous tissue'); present identically in question and answer, so correspondence is unaffected.",
+      "evidence": "Bone tissue is also known osseous tissue"
+    },
+    {
+      "card_id": 1559407519219,
+      "note_id": 1559399504875,
+      "check": "wellformed",
+      "type": "grammar_missing_word",
+      "severity": "info",
+      "detail": "Stem is missing the word 'to' ('reflexive response [to] cold'); inherited from the source deck and present in both question and answer.",
+      "evidence": "occurs as a reflexive response cold"
+    }
+  ],
+  "worst_offenders": [
+    1559496478800,
+    1556917438718,
+    1559529270463,
+    1559407519219
+  ],
+  "notes": "Batch 8 (257 MileDown cloze cards, all notetype Cloze-MileDown-b279e) is exceptionally clean: every card has balanced {{cN::}} cloze markup, reasonably balanced HTML, and no LaTeX/MathJax delimiters (the deck encodes formulas with HTML sub/sup and Unicode), with no unrendered template artifacts, empty answers, or Q/A correspondence failures. The only findings are four low-severity (info) text-quality nits: one spelling typo ('uninucelated'), one word split mid-string by an inline <b> tag, and two stems missing a small connective word. No error- or warning-level issues were found, and all cards are fully studyable with AI off."
+}

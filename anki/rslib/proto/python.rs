@@ -243,6 +243,7 @@ import anki.links_pb2
 import anki.media_pb2
 import anki.notes_pb2
 import anki.notetypes_pb2
+import anki.practice_pb2
 import anki.scheduler_pb2
 import anki.search_pb2
 import anki.stats_pb2

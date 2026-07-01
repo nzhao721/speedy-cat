@@ -1,0 +1,67 @@
+{
+  "batch": 18,
+  "file": "batch_18.json",
+  "cards_evaluated": 257,
+  "summary": {
+    "ok": 253,
+    "cards_with_issues": 4,
+    "by_check": {
+      "qa_correspondence": 0,
+      "wellformed": 4,
+      "markup": 0
+    },
+    "by_severity": {
+      "error": 0,
+      "warning": 0,
+      "info": 4
+    }
+  },
+  "issue_type_counts": {
+    "mnemonic_word_split": 4
+  },
+  "flagged": [
+    {
+      "card_id": 1591229643680,
+      "note_id": 1591229480129,
+      "check": "wellformed",
+      "type": "mnemonic_word_split",
+      "severity": "info",
+      "detail": "The OCEAN mnemonic bolds each leading letter (<b>O</b>penness, etc.) in the Extra field, so the flattened answer renders split words ('O penness, C onscientiousness...'); benign cosmetic artifact, card remains readable.",
+      "evidence": "OCEAN O penness, C onscientiousness, E xtroversion, A greeableness, N euroticism"
+    },
+    {
+      "card_id": 1591229643681,
+      "note_id": 1591229480129,
+      "check": "wellformed",
+      "type": "mnemonic_word_split",
+      "severity": "info",
+      "detail": "Same note as ord 0 (c2 reveal of the 5-factor model); the individually bolded OCEAN letters render as 'O penness, C onscientiousness...'; benign cosmetic artifact.",
+      "evidence": "OCEAN O penness, C onscientiousness, E xtroversion, A greeableness, N euroticism"
+    },
+    {
+      "card_id": 1591415836504,
+      "note_id": 1591415685539,
+      "check": "wellformed",
+      "type": "mnemonic_word_split",
+      "severity": "info",
+      "detail": "The 'AM I Motivated' mnemonic bolds 'AM I M', so the flattened answer reads 'AM I M otivated'; benign cosmetic artifact that does not affect studying.",
+      "evidence": "mnemonic: AM I M otivated"
+    },
+    {
+      "card_id": 1591862175304,
+      "note_id": 1591415685539,
+      "check": "wellformed",
+      "type": "mnemonic_word_split",
+      "severity": "info",
+      "detail": "Same note as ord 0 (c2 reveal of knowledge-acquisition aspects); the bolded 'AM I M' renders as 'AM I M otivated'; benign cosmetic artifact.",
+      "evidence": "mnemonic: AM I M otivated"
+    }
+  ],
+  "worst_offenders": [
+    1591229643680,
+    1591229643681,
+    1591415836504,
+    1591862175304
+  ],
+  "notes": "Batch 18 is a uniformly high-quality set of 257 single/dual cloze cards (all AACloze from one source deck, MrPankow P/S Deck 7A); cloze {{c1}}/{{c2}} braces are well-formed and balanced (including the ::hint syntax that renders as [Theory], [Dude], [hormone], etc.), HTML tags (font/b/i/u/div/img/br) are balanced even in the multi-deletion id/ego/superego and defense-mechanism notes, and no LaTeX/MathJax delimiters are used (figures live as images in the Extra field). Q/A correspondence is correct throughout both ords with no empty answers, no answer==question, no unrendered template artifacts, and no image-only cards. The only flags are 4 info-level cosmetic artifacts where mnemonics bold individual leading letters (OCEAN and 'AM I Motivated'), splitting words in the rendered answer; unrelated source spelling typos (e.g., 'reservour', 'plateu', 'immitation', 'fullfilment') and crude/informal notes exist but fall outside the three structural checks and do not break studying, so they were not flagged."
+}

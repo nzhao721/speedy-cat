@@ -179,9 +179,12 @@ class AbstractFlashcardViewerTest : RobolectricTest() {
             addBasicWithTypingNote("Hello", "World")
 
             val viewer: NonAbstractFlashcardViewer = getViewer(true)
+            // forced active recall is on by default: type the answer before revealing
+            viewer.forceActiveRecall = true
 
             assertThat(viewer.correctTypedAnswer, equalTo("World"))
 
+            viewer.typeAnswerForTesting("World")
             viewer.displayCardAnswer()
 
             assertThat(viewer.cardContent, containsString("World"))
@@ -198,6 +201,24 @@ class AbstractFlashcardViewerTest : RobolectricTest() {
             assertThat(viewer.cardContent, not(containsString("World")))
             // the saving will have caused the screen to switch back to question side
             assertThat(viewer.cardContent, containsString("Hello"))
+        }
+
+    @Test
+    fun forcedActiveRecallGatesRevealUntilAnswerTyped() =
+        runTest {
+            addBasicWithTypingNote("Hello", "World")
+            val viewer: NonAbstractFlashcardViewer = getViewer(false)
+            // SpeedyCAT default; explicit here since the shared test harness disables it
+            viewer.forceActiveRecall = true
+
+            // Nothing typed yet: the back must stay hidden (active recall is forced)
+            viewer.displayCardAnswer()
+            assertThat("answer is gated until typed", viewer.isDisplayingAnswer, equalTo(false))
+
+            // After typing a non-empty answer, the reveal goes through
+            viewer.typeAnswerForTesting("World")
+            viewer.displayCardAnswer()
+            assertThat("answer revealed once typed", viewer.isDisplayingAnswer, equalTo(true))
         }
 
     @Test
@@ -235,8 +256,11 @@ class AbstractFlashcardViewerTest : RobolectricTest() {
         // Note: Couldn't get a spy working, so overriding the method
 
         val viewer: NonAbstractFlashcardViewer = getViewer(true)
+        // forced active recall is on by default: type the answer before flipping
+        viewer.forceActiveRecall = true
 
         assertThat("Displaying question", viewer.isDisplayingAnswer, equalTo(false))
+        viewer.typeAnswerForTesting("typed")
         viewer.executeCommand(ViewerCommand.ANSWER_EASY)
 
         assertThat("Displaying answer", viewer.isDisplayingAnswer, equalTo(true))
@@ -294,6 +318,9 @@ class AbstractFlashcardViewerTest : RobolectricTest() {
             viewer.automaticAnswer = AutomaticAnswer(viewer, AutomaticAnswerSettings(AutomaticAnswerAction.BURY_CARD, 5.0, 5.0))
             viewer.lifecycle.addObserver(viewer.automaticAnswer)
             viewer.automaticAnswer.enable()
+            // forced active recall is on by default: type the answer before flipping
+            viewer.forceActiveRecall = true
+            viewer.typeAnswerForTesting("typed")
             viewer.executeCommand(ViewerCommand.SHOW_ANSWER)
             assertThat("messages after flipping card", viewer.hasAutomaticAnswerQueued(), equalTo(true))
             controller.pause()
@@ -386,6 +413,9 @@ class AbstractFlashcardViewerTest : RobolectricTest() {
                 .visible()
         saveControllerForCleanup(multimediaController)
         val viewer = multimediaController.get()
+        // Forced active recall ships ON by default; disable it here so the shared reviewer tests
+        // exercise the normal reveal/answer flow. Tests that target the feature opt back in.
+        viewer.forceActiveRecall = false
         viewer.onCollectionLoaded(col)
         viewer.loadInitialCard()
         // Without this, AbstractFlashcardViewer.mCard is still null, and RobolectricTest.tearDown executes before

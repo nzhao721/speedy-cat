@@ -1,0 +1,398 @@
+{
+  "meta": {
+    "section": "CPBS",
+    "subArea": "physics",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 (Linear Momentum and Collisions) — Test Prep for AP® Courses",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; the live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per the PRD, mirroring the OpenStax-sourced items already in questions.json)",
+        "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses"
+      }
+    ],
+    "counts": {"total": 19, "byTopic": {"momentum and impulse": 6, "collisions": 13}},
+    "notes": "Physics (CPBS) momentum/collision items. Question stems and the four answer options were scraped verbatim from the OpenStax College Physics for AP Courses 2e 'Test Prep for AP Courses' multiple-choice items (single-best-answer, four options each). OpenStax publishes the answer key only to instructors, so each correctAnswer was independently verified from the same CC BY-NC-SA source text (Newton's third law, conservation of momentum, equal-mass elastic exchange) or by direct calculation; answerProvenance = verified-from-source-text. Figure-dependent items, 'select two answers' items, and free-response items on the page were skipped. A few numeric stems were lightly trimmed of their data tables where the answer follows from conservation alone; wording is otherwise verbatim."
+  },
+  "questions": [
+    {
+      "id": "cpbs-xp001",
+      "section": "CPBS",
+      "stem": "A boy standing on a frictionless ice rink is initially at rest. He throws a snowball in the +x-direction, and it travels on a ballistic trajectory, hitting the ground some distance away. Which of the following is true about the boy while he is in the act of throwing the snowball?",
+      "choices": [
+        {"label": "A", "text": "He feels an upward force to compensate for the downward trajectory of the snowball."},
+        {"label": "B", "text": "He feels a backward force exerted by the snowball he is throwing."},
+        {"label": "C", "text": "He feels no net force."},
+        {"label": "D", "text": "He feels a forward force, the same force that propels the snowball."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "By Newton's third law, as the boy exerts a forward force on the snowball, the snowball exerts an equal and opposite (backward) force on the boy. That backward reaction force is what pushes the boy in the -x-direction (conservation of momentum on the frictionless rink).",
+      "topicTags": ["physics", "momentum", "Newton's third law"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim from OpenStax AP test-prep. OpenStax withholds the public answer key (instructor-only); answer independently verified from Newton's third law."
+    },
+    {
+      "id": "cpbs-xp002",
+      "section": "CPBS",
+      "stem": "A student sets up an experiment with two air cars, A and B, of equal mass, moving on a linear, frictionless track. Before the collision, car A has a certain speed, and car B is at rest. Which of the following will be true about the total momentum of the two cars?",
+      "choices": [
+        {"label": "A", "text": "It will be greater before the collision."},
+        {"label": "B", "text": "It will be equal before and after the collision."},
+        {"label": "C", "text": "It will be greater after the collision."},
+        {"label": "D", "text": "The answer depends on whether the collision is elastic or inelastic."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "On a frictionless track there is no net external horizontal force, so the system is isolated and total linear momentum is conserved. The total momentum is therefore the same before and after the collision, regardless of whether the collision is elastic or inelastic.",
+      "topicTags": ["physics", "momentum", "conservation of momentum"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from conservation of momentum for an isolated system."
+    },
+    {
+      "id": "cpbs-xp003",
+      "section": "CPBS",
+      "stem": "A test car is driving toward a solid crash-test barrier and is still moving when it hits the wall, after which it crumples and comes to a complete stop. In order to estimate the average force exerted by the wall on the car, what information would you need to collect?",
+      "choices": [
+        {"label": "A", "text": "The (negative) acceleration of the car before it hits the wall and the distance the car travels while braking."},
+        {"label": "B", "text": "The (negative) acceleration of the car before it hits the wall and the velocity of the car just before impact."},
+        {"label": "C", "text": "The velocity of the car just before impact and the duration of the collision with the wall."},
+        {"label": "D", "text": "The duration of the collision with the wall and the distance the car travels while braking."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The average force during impact follows from the impulse-momentum theorem: F_avg = Δp/Δt = m·v_impact / t_collision (final velocity is zero). With the car's mass known, you need the velocity just before impact and the duration of the collision. The pre-impact braking distance/acceleration are irrelevant to the wall's impact force.",
+      "topicTags": ["physics", "impulse", "impulse-momentum theorem"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the impulse-momentum theorem."
+    },
+    {
+      "id": "cpbs-xp004",
+      "section": "CPBS",
+      "stem": "Cart A is moving with an initial velocity +v (in the positive direction) toward cart B, initially at rest. Both carts have equal mass and are on a frictionless surface. Which of the following correctly characterizes the velocity of the center of mass of the system before and after the collision?",
+      "choices": [
+        {"label": "A", "text": "+v/2 before, -v/2 after"},
+        {"label": "B", "text": "+v/2 before, 0 after"},
+        {"label": "C", "text": "+v/2 before, +v/2 after"},
+        {"label": "D", "text": "0 before, 0 after"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The center-of-mass velocity is v_cm = (m·v + m·0)/(2m) = v/2. Because no net external force acts on the isolated system, the center-of-mass velocity is unchanged by the collision: it is +v/2 both before and after.",
+      "topicTags": ["physics", "momentum", "center of mass"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (center-of-mass velocity is conserved for an isolated system)."
+    },
+    {
+      "id": "cpbs-xp005",
+      "section": "CPBS",
+      "stem": "Two cars (A and B) of mass 1.5 kg collide. Car A is initially moving at 12 m/s, and car B is initially moving in the same direction with a speed of 6 m/s. The two cars are moving along a straight line before and after the collision. What will be the change in momentum of this system after the collision?",
+      "choices": [
+        {"label": "A", "text": "-27 kg·m/s"},
+        {"label": "B", "text": "zero"},
+        {"label": "C", "text": "+27 kg·m/s"},
+        {"label": "D", "text": "It depends on whether the collision is elastic or inelastic."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "During a collision the only significant forces are the internal forces between the two cars, so the system is isolated and total momentum is conserved. The change in the system's total momentum is therefore zero, independent of whether the collision is elastic or inelastic.",
+      "topicTags": ["physics", "momentum", "conservation of momentum"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from conservation of momentum."
+    },
+    {
+      "id": "cpbs-xp006",
+      "section": "CPBS",
+      "stem": "Puck A (200 g) slides across a frictionless surface and collides with puck B (800 g), which is initially at rest. What is the change in momentum of the center of mass of the two-puck system as a result of the collision?",
+      "choices": [
+        {"label": "A", "text": "+1.6 kg·m/s"},
+        {"label": "B", "text": "+0.8 kg·m/s"},
+        {"label": "C", "text": "0"},
+        {"label": "D", "text": "-1.6 kg·m/s"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The surface is frictionless and the collision forces are internal, so no net external force acts on the system. The total (center-of-mass) momentum is conserved, so its change as a result of the collision is zero.",
+      "topicTags": ["physics", "momentum", "conservation of momentum"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim; the original stem referenced an experimental data table, trimmed here because the answer follows from conservation of momentum alone. OpenStax withholds the public answer key; answer independently verified."
+    },
+    {
+      "id": "cpbs-xp007",
+      "section": "CPBS",
+      "stem": "Two cars (A and B) of equal mass have an elastic collision. Prior to the collision, car A is moving at 15 m/s in the +x-direction, and car B is moving at 10 m/s in the -x-direction. Assuming both cars continue moving along the x-axis after the collision, what will be the velocity of car A after the collision?",
+      "choices": [
+        {"label": "A", "text": "the same as the original 15 m/s speed, opposite direction"},
+        {"label": "B", "text": "equal to car B's velocity prior to the collision"},
+        {"label": "C", "text": "equal to the average of the two velocities, in its original direction"},
+        {"label": "D", "text": "equal to the average of the two velocities, in the opposite direction"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "In a one-dimensional elastic collision between objects of equal mass, the two objects simply exchange velocities. Car A therefore leaves with car B's initial velocity (10 m/s in the -x-direction).",
+      "topicTags": ["physics", "collisions", "elastic collision"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (equal-mass 1-D elastic collisions exchange velocities)."
+    },
+    {
+      "id": "cpbs-xp008",
+      "section": "CPBS",
+      "stem": "A rubber ball is dropped from rest at a fixed height. It bounces off a hard floor and rebounds upward, but it only reaches 90% of its original height. What is the best way to explain the loss of kinetic energy of the ball during the collision?",
+      "choices": [
+        {"label": "A", "text": "Energy was required to deform the ball's shape during the collision with the floor."},
+        {"label": "B", "text": "Energy was lost due to work done by the ball pushing on the floor during the collision."},
+        {"label": "C", "text": "Energy was lost due to friction between the ball and the floor."},
+        {"label": "D", "text": "Energy was lost due to the work done by gravity during the motion."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The bounce is inelastic: some kinetic energy is converted to internal energy (heat/sound) as the ball deforms and only partially restores its shape. This deformation accounts for the lost kinetic energy. Friction and gravity do not explain the energy 'lost' from the bounce itself.",
+      "topicTags": ["physics", "collisions", "inelastic collision", "energy"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the source text's treatment of inelastic collisions."
+    },
+    {
+      "id": "cpbs-xp009",
+      "section": "CPBS",
+      "stem": "Two objects, A and B, have equal mass. Prior to the collision, mass A is moving 10 m/s in the +x-direction, and mass B is moving 4 m/s in the +x-direction. Which of the following results represents an inelastic collision between A and B?",
+      "choices": [
+        {"label": "A", "text": "After the collision, mass A is at rest, and mass B moves 14 m/s in the +x-direction."},
+        {"label": "B", "text": "After the collision, mass A moves 4 m/s in the -x-direction, and mass B moves 18 m/s in the +x-direction."},
+        {"label": "C", "text": "After the collision, the two masses stick together and move 7 m/s in the +x-direction."},
+        {"label": "D", "text": "After the collision, mass A moves 4 m/s in the +x-direction, and mass B moves 10 m/s in the +x-direction."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "All listed outcomes must conserve total momentum (10+4 = 14, in units of m·v). Option C (stick together at 7 m/s: 7+7 = 14) conserves momentum and loses kinetic energy (final ∝ 49+49 = 98 vs initial ∝ 100+16 = 116), which defines an inelastic collision. Options A and B would increase kinetic energy (impossible), and D conserves kinetic energy (elastic).",
+      "topicTags": ["physics", "collisions", "inelastic collision"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by checking momentum and kinetic-energy conservation for each option."
+    },
+    {
+      "id": "cpbs-xp010",
+      "section": "CPBS",
+      "stem": "Two objects (A and B) of equal mass collide elastically. Mass A is initially moving 5.0 m/s in the +x-direction, and mass B is initially moving 3.0 m/s in the -x-direction. After the collision, mass A is moving with a velocity of 3.0 m/s in the -x-direction. What will be the velocity of mass B after the collision?",
+      "choices": [
+        {"label": "A", "text": "3.0 m/s in the +x-direction"},
+        {"label": "B", "text": "5.0 m/s in the +x-direction"},
+        {"label": "C", "text": "3.0 m/s in the -x-direction"},
+        {"label": "D", "text": "5.0 m/s in the -x-direction"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Equal-mass objects in a 1-D elastic collision exchange velocities. A starts at +5.0 and ends at -3.0 (B's initial velocity), and B starts at -3.0 and ends at +5.0 m/s. You can confirm with momentum conservation: 5.0 + (-3.0) = (-3.0) + v_B gives v_B = +5.0 m/s.",
+      "topicTags": ["physics", "collisions", "elastic collision"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by velocity exchange and momentum conservation."
+    },
+    {
+      "id": "cpbs-xp011",
+      "section": "CPBS",
+      "stem": "Two objects of equal mass collide. Object A is initially moving in the +x-direction with a speed of 12 m/s, and object B is initially at rest. After the collision, object A is at rest, and object B is moving away with some unknown velocity. There are no external forces acting on the system of two masses. What statement can we make about this collision?",
+      "choices": [
+        {"label": "A", "text": "Both momentum and kinetic energy are conserved."},
+        {"label": "B", "text": "Momentum is conserved, but kinetic energy is not conserved."},
+        {"label": "C", "text": "Neither momentum nor kinetic energy is conserved."},
+        {"label": "D", "text": "More information is needed in order to determine which is conserved."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "With no external forces, momentum is conserved, so object B must move at 12 m/s (since A stops). Substituting back, the total kinetic energy before equals the total after (½m·12² in each case), so kinetic energy is also conserved — the collision is elastic.",
+      "topicTags": ["physics", "collisions", "conservation laws"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from momentum and kinetic-energy conservation."
+    },
+    {
+      "id": "cpbs-xp012",
+      "section": "CPBS",
+      "stem": "Which of the following statements is true about an inelastic collision?",
+      "choices": [
+        {"label": "A", "text": "Momentum is conserved, and kinetic energy is conserved."},
+        {"label": "B", "text": "Momentum is conserved, and kinetic energy is not conserved."},
+        {"label": "C", "text": "Momentum is not conserved, and kinetic energy is conserved."},
+        {"label": "D", "text": "Momentum is not conserved, and kinetic energy is not conserved."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "In any collision of an isolated system momentum is conserved. An inelastic collision is defined by a loss of kinetic energy (converted to heat, sound, or deformation). So momentum is conserved while kinetic energy is not.",
+      "topicTags": ["physics", "collisions", "inelastic collision"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the definition of an inelastic collision."
+    },
+    {
+      "id": "cpbs-xp013",
+      "section": "CPBS",
+      "stem": "Mass A (2.0 kg) has an initial velocity of 4 m/s in the +x-direction. Mass B (2.0 kg) has an initial velocity of 5 m/s in the -x-direction. If the two masses have an elastic collision, what will be the final velocities of the masses after the collision?",
+      "choices": [
+        {"label": "A", "text": "Both will move 0.5 m/s in the -x-direction."},
+        {"label": "B", "text": "Mass A will stop; mass B will move 9 m/s in the +x-direction."},
+        {"label": "C", "text": "Mass B will stop; mass A will move 9 m/s in the -x-direction."},
+        {"label": "D", "text": "Mass A will move 5 m/s in the -x-direction; mass B will move 4 m/s in the +x-direction."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The masses are equal, so the 1-D elastic collision exchanges their velocities. A (+4 m/s) takes B's velocity (5 m/s in -x), and B (-5 m/s) takes A's velocity (4 m/s in +x).",
+      "topicTags": ["physics", "collisions", "elastic collision"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (equal-mass elastic collisions exchange velocities)."
+    },
+    {
+      "id": "cpbs-xp014",
+      "section": "CPBS",
+      "stem": "Mass A (2.0 kg) is moving with an initial velocity of 15 m/s in the +x-direction, and it collides with mass B (5.0 kg), initially at rest. After the collision, the two objects stick together and move as one. What is the change in kinetic energy of the system as a result of the collision?",
+      "choices": [
+        {"label": "A", "text": "no change"},
+        {"label": "B", "text": "decrease by 225 J"},
+        {"label": "C", "text": "decrease by 161 J"},
+        {"label": "D", "text": "decrease by 64 J"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Momentum conservation gives the common final velocity: v = (2.0·15)/(2.0+5.0) = 30/7 ≈ 4.29 m/s. Initial KE = ½·2.0·15² = 225 J; final KE = ½·7.0·(4.29)² ≈ 64 J. The change is about -161 J (a decrease of 161 J), typical of a perfectly inelastic collision.",
+      "topicTags": ["physics", "collisions", "inelastic collision", "kinetic energy"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation."
+    },
+    {
+      "id": "cpbs-xp015",
+      "section": "CPBS",
+      "stem": "Mass A slides across a rough table with an initial velocity of 12 m/s in the +x-direction. By the time mass A collides with mass B (a stationary object with equal mass), mass A has slowed to 10 m/s. After the collision, the two objects stick together, the velocity of the system is measured to be 5 m/s in the +x-direction, and the system eventually slides to a stop. Which of the following statements is true about this motion?",
+      "choices": [
+        {"label": "A", "text": "Momentum is conserved during the collision, but it is not conserved during the motion before and after the collision."},
+        {"label": "B", "text": "Momentum is not conserved at any time during this analysis."},
+        {"label": "C", "text": "Momentum is conserved at all times during this analysis."},
+        {"label": "D", "text": "Momentum is not conserved during the collision, but it is conserved during the motion before and after the collision."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "During the brief collision the large internal contact forces dominate friction, so momentum is essentially conserved (10 m/s for one mass ≈ 5 m/s for the combined double mass). Before and after the collision, friction is an external force that steadily removes momentum (A slows 12→10, and the stuck pair slides to a stop), so momentum is not conserved during those phases.",
+      "topicTags": ["physics", "collisions", "conservation of momentum", "friction"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (collision forces >> friction during impact; friction is an external force otherwise)."
+    },
+    {
+      "id": "cpbs-xp016",
+      "section": "CPBS",
+      "stem": "Mass A is initially moving with a velocity of 24 m/s in the +x-direction. Mass B is twice as massive as mass A and is initially at rest. The two objects experience a totally inelastic collision. What is the final speed of both objects after the collision?",
+      "choices": [
+        {"label": "A", "text": "A is not moving; B is moving 24 m/s in the +x-direction."},
+        {"label": "B", "text": "Neither A nor B is moving."},
+        {"label": "C", "text": "A is moving 24 m/s in the -x-direction; B is not moving."},
+        {"label": "D", "text": "Both A and B are moving together 8 m/s in the +x-direction."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "In a totally inelastic collision the objects move together. Momentum conservation: m·24 = (m + 2m)·v, so v = 24/3 = 8 m/s in the +x-direction.",
+      "topicTags": ["physics", "collisions", "inelastic collision"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation."
+    },
+    {
+      "id": "cpbs-xp017",
+      "section": "CPBS",
+      "stem": "Mass A is initially moving with a velocity of 2 m/s in the +x-direction. Mass B is initially moving with a velocity of 6 m/s in the -x-direction. The two objects have equal masses. After they collide, mass A moves with a speed of 4 m/s in the -x-direction. What is the final velocity of mass B after the collision?",
+      "choices": [
+        {"label": "A", "text": "6 m/s in the +x-direction"},
+        {"label": "B", "text": "4 m/s in the +x-direction"},
+        {"label": "C", "text": "zero"},
+        {"label": "D", "text": "4 m/s in the -x-direction"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Equal masses, so momentum conservation reads (per unit mass): 2 + (-6) = (-4) + v_B, i.e. -4 = -4 + v_B, giving v_B = 0. Mass B is at rest after the collision.",
+      "topicTags": ["physics", "collisions", "conservation of momentum"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by momentum conservation."
+    },
+    {
+      "id": "cpbs-xp018",
+      "section": "CPBS",
+      "stem": "Mass A (1.0 kg) slides across a frictionless surface with a velocity of 8 m/s in the positive direction. Mass B (3.0 kg) is initially at rest. The two objects collide and stick together. What will be the change in the center-of-mass velocity of the system as a result of the collision?",
+      "choices": [
+        {"label": "A", "text": "There will be no change in the center-of-mass velocity."},
+        {"label": "B", "text": "The center-of-mass velocity will decrease by 2 m/s."},
+        {"label": "C", "text": "The center-of-mass velocity will decrease by 6 m/s."},
+        {"label": "D", "text": "The center-of-mass velocity will decrease by 8 m/s."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "With no external force, the center-of-mass velocity cannot change. (Its value is v_cm = (1.0·8)/(1.0+3.0) = 2 m/s both before and after, which also happens to be the common final velocity once they stick.)",
+      "topicTags": ["physics", "collisions", "center of mass"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (center-of-mass velocity is conserved with no external force)."
+    },
+    {
+      "id": "cpbs-xp019",
+      "section": "CPBS",
+      "stem": "Two cars of equal mass approach an intersection. Car A is moving east at 45 m/s and car B is moving south at 35 m/s. They collide inelastically and stick together, moving as one object. Which of the following is true about the center-of-mass velocity of this system?",
+      "choices": [
+        {"label": "A", "text": "The center-of-mass velocity will decrease after the collision as a result of lost energy (but not drop to zero)."},
+        {"label": "B", "text": "The center-of-mass velocity will remain the same after the collision since momentum is conserved."},
+        {"label": "C", "text": "The center-of-mass velocity will drop to zero since the two objects stick together."},
+        {"label": "D", "text": "The magnitude of the center-of-mass velocity will remain the same, but the direction of the velocity will change."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Center-of-mass velocity depends only on total momentum, which is conserved when no net external force acts. Even though kinetic energy is lost in the inelastic collision, the center-of-mass velocity (magnitude and direction) is unchanged.",
+      "topicTags": ["physics", "collisions", "center of mass", "two-dimensional"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 8 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from conservation of momentum (center-of-mass motion)."
+    }
+  ]
+}

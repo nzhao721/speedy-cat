@@ -84,7 +84,6 @@
      <string>qt_accel_tools</string>
     </property>
     <addaction name="actionStudyDeck"/>
-    <addaction name="actionCreateFiltered"/>
     <addaction name="separator"/>
     <addaction name="actionFullDatabaseCheck"/>
     <addaction name="actionCheckMediaDatabase"/>
@@ -214,14 +213,6 @@
   <action name="actionEmptyCards">
    <property name="text">
     <string>qt_misc_empty_cards</string>
-   </property>
-  </action>
-  <action name="actionCreateFiltered">
-   <property name="text">
-    <string>qt_misc_create_filtered_deck</string>
-   </property>
-   <property name="shortcut">
-    <string notr="true">F</string>
    </property>
   </action>
   <action name="actionNoteTypes">

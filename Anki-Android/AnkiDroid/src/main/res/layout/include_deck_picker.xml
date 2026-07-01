@@ -98,7 +98,4 @@
     </LinearLayout>
 
     <include layout="@layout/include_anki_progress"/>
-    <include
-        android:id="@+id/floating_action_button"
-        layout="@layout/include_floating_add_button"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

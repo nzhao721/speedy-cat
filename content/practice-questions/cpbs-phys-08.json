@@ -1,0 +1,368 @@
+{
+  "meta": {
+    "section": "CPBS",
+    "subArea": "physics",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 20 (Electric Current, Resistance, and Ohm's Law) — Test Prep for AP® Courses",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/20-test-prep-for-ap-r-courses"
+      },
+      {
+        "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 21 (Circuits, Bioelectricity, and DC Instruments) — Test Prep for AP® Courses",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/21-test-prep-for-ap-r-courses"
+      },
+      {
+        "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 22 (Magnetism) — Test Prep for AP® Courses",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/22-test-prep-for-ap-r-courses"
+      }
+    ],
+    "counts": {"total": 17, "byTopic": {"current and Ohm's law": 5, "circuits": 6, "magnetism": 6}},
+    "notes": "Physics (CPBS) circuits + magnetism items. Stems and four options scraped verbatim from OpenStax College Physics for AP Courses 2e Ch. 20-22 'Test Prep for AP Courses' single-best-answer multiple-choice items. OpenStax publishes the answer key to instructors only, so each correctAnswer was independently verified from the same CC BY-NC-SA source text or by direct calculation (answerProvenance = verified-from-source-text). 'Select two answers', five-option, figure-dependent, and free-response items were skipped. cpbs-xp132 states the resistor configuration (parallel) explicitly, consistent with the source figure and the only physically consistent answer choice."
+  },
+  "questions": [
+    {
+      "id": "cpbs-xp125",
+      "section": "CPBS",
+      "stem": "Which of the following can be explained on the basis of conservation of charge in a closed circuit consisting of a battery, resistor, and metal wires?",
+      "choices": [
+        {"label": "A", "text": "The number of electrons leaving the battery will be equal to the number of electrons entering the battery."},
+        {"label": "B", "text": "The number of electrons leaving the battery will be less than the number of electrons entering the battery."},
+        {"label": "C", "text": "The number of protons leaving the battery will be equal to the number of protons entering the battery."},
+        {"label": "D", "text": "The number of protons leaving the battery will be less than the number of protons entering the battery."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Charge is conserved and the conduction charges are electrons (protons don't move through wires). In a closed loop, electrons are not created or consumed, so the number leaving the battery equals the number returning to it.",
+      "topicTags": ["physics", "electric current", "conservation of charge"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 20 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/20-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (charge conservation; electrons carry current)."
+    },
+    {
+      "id": "cpbs-xp126",
+      "section": "CPBS",
+      "stem": "When a battery is connected to a bulb, there is 2.5 A of current in the circuit. What amount of charge will flow through the circuit in a time of 0.5 s?",
+      "choices": [
+        {"label": "A", "text": "0.5 C"},
+        {"label": "B", "text": "1 C"},
+        {"label": "C", "text": "1.25 C"},
+        {"label": "D", "text": "1.5 C"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Current is charge per unit time, I = Q/t, so Q = It = (2.5 A)(0.5 s) = 1.25 C.",
+      "topicTags": ["physics", "electric current", "charge"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 20 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/20-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (Q = It)."
+    },
+    {
+      "id": "cpbs-xp127",
+      "section": "CPBS",
+      "stem": "If the voltage across a fixed resistance is doubled, what happens to the current?",
+      "choices": [
+        {"label": "A", "text": "It doubles."},
+        {"label": "B", "text": "It halves."},
+        {"label": "C", "text": "It stays the same."},
+        {"label": "D", "text": "The current cannot be determined."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "By Ohm's law, I = V/R. With R fixed, current is directly proportional to voltage, so doubling the voltage doubles the current.",
+      "topicTags": ["physics", "Ohm's law", "current"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 20 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/20-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (Ohm's law, I = V/R)."
+    },
+    {
+      "id": "cpbs-xp128",
+      "section": "CPBS",
+      "stem": "Which of the following affects the resistivity of a wire?",
+      "choices": [
+        {"label": "A", "text": "length"},
+        {"label": "B", "text": "area of cross section"},
+        {"label": "C", "text": "material"},
+        {"label": "D", "text": "all of the above"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Resistivity is an intrinsic property of the material (and temperature) only. Length and cross-sectional area affect the resistance (R = ρL/A) but not the resistivity ρ itself.",
+      "topicTags": ["physics", "resistivity", "resistance"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 20 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/20-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (resistivity is a material property)."
+    },
+    {
+      "id": "cpbs-xp129",
+      "section": "CPBS",
+      "stem": "Suppose the resistance of a wire is R. What will be the resistance of another wire of the same material with the same length but double the diameter?",
+      "choices": [
+        {"label": "A", "text": "R/2"},
+        {"label": "B", "text": "2R"},
+        {"label": "C", "text": "R/4"},
+        {"label": "D", "text": "4R"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Resistance is R = ρL/A, and cross-sectional area A is proportional to diameter squared. Doubling the diameter quadruples the area, so the resistance drops to one-fourth: R/4.",
+      "topicTags": ["physics", "resistance", "resistivity"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 20 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/20-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (R = ρL/A; A ∝ diameter²)."
+    },
+    {
+      "id": "cpbs-xp130",
+      "section": "CPBS",
+      "stem": "In a circuit, a parallel combination of six 1.6-kΩ resistors is connected in series with a parallel combination of four 2.4-kΩ resistors. If the source voltage is 24 V, what percentage of the total current flows in any one of the 2.4-kΩ resistors?",
+      "choices": [
+        {"label": "A", "text": "10%"},
+        {"label": "B", "text": "12%"},
+        {"label": "C", "text": "20%"},
+        {"label": "D", "text": "25%"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The total current must pass through the four-resistor parallel section. Because those four 2.4-kΩ resistors are identical, the current divides equally among them, so each carries one-fourth (25%) of the total current.",
+      "topicTags": ["physics", "circuits", "parallel resistors"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 21 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/21-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (equal split among 4 identical parallel resistors)."
+    },
+    {
+      "id": "cpbs-xp131",
+      "section": "CPBS",
+      "stem": "A parallel combination of six 1.6-kΩ resistors is in series with a parallel combination of four 2.4-kΩ resistors, with a 24-V source. If the circuit is modified by removing some of the 1.6-kΩ resistors so that the total current becomes 24 mA, how many 1.6-kΩ resistors were removed?",
+      "choices": [
+        {"label": "A", "text": "1"},
+        {"label": "B", "text": "2"},
+        {"label": "C", "text": "3"},
+        {"label": "D", "text": "4"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "For a total current of 24 mA at 24 V, the total resistance must be 24 V / 0.024 A = 1000 Ω. The four 2.4-kΩ resistors in parallel give 600 Ω, so the 1.6-kΩ parallel section must be 1000 - 600 = 400 Ω. Since 1600/n = 400 Ω, n = 4 resistors remain, meaning 6 - 4 = 2 were removed.",
+      "topicTags": ["physics", "circuits", "parallel resistors"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 21 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/21-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem made self-contained (restates the setup from the source's previous question). OpenStax withholds the public answer key; answer independently verified by calculation."
+    },
+    {
+      "id": "cpbs-xp132",
+      "section": "CPBS",
+      "stem": "Two resistors, with resistances R and 2R, are connected in parallel to a voltage source. If the power dissipated in R is 10 W, what is the power dissipated in 2R?",
+      "choices": [
+        {"label": "A", "text": "1 W"},
+        {"label": "B", "text": "2.5 W"},
+        {"label": "C", "text": "5 W"},
+        {"label": "D", "text": "10 W"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "In parallel, both resistors have the same voltage V across them, and P = V²/R. Since the 2R resistor has twice the resistance, it dissipates half the power: 10 W / 2 = 5 W.",
+      "topicTags": ["physics", "circuits", "electric power"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 21 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/21-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem states the parallel configuration explicitly (consistent with the source figure and the only answer choice that is physically consistent). OpenStax withholds the public answer key; answer independently verified (parallel: P = V²/R)."
+    },
+    {
+      "id": "cpbs-xp133",
+      "section": "CPBS",
+      "stem": "Two voltage sources, A and B, have the same emf but different internal resistances—source A's internal resistance is lower than source B's. If they both supply the same current in their circuits, which of the following is true?",
+      "choices": [
+        {"label": "A", "text": "External resistance in source A's circuit is more than in source B's circuit."},
+        {"label": "B", "text": "External resistance in source A's circuit is less than in source B's circuit."},
+        {"label": "C", "text": "External resistance in source A's circuit is the same as in source B's circuit."},
+        {"label": "D", "text": "The relationship between external resistances in the two circuits can't be determined."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "For each source, emf = I(R_external + r). With equal emf and equal current, the total (R_external + r) must be equal for both. Since source A has the smaller internal resistance r, it must have the larger external resistance to keep the sum the same.",
+      "topicTags": ["physics", "circuits", "emf and internal resistance"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 21 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/21-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (emf = I(R + r) with equal emf and I)."
+    },
+    {
+      "id": "cpbs-xp134",
+      "section": "CPBS",
+      "stem": "A battery is connected to a resistor and an initially uncharged capacitor in series. The switch is closed at t = 0. While the capacitor is being charged, which of the following is true?",
+      "choices": [
+        {"label": "A", "text": "Current through and voltage across the resistor increase."},
+        {"label": "B", "text": "Current through and voltage across the resistor decrease."},
+        {"label": "C", "text": "Current through and voltage across the resistor first increase and then decrease."},
+        {"label": "D", "text": "Current through and voltage across the resistor first decrease and then increase."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "In an RC charging circuit the current is largest immediately after the switch closes and then decays exponentially toward zero as the capacitor charges. Since the resistor voltage equals IR, it decreases along with the current.",
+      "topicTags": ["physics", "circuits", "RC circuits"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 21 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/21-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (RC charging current decays exponentially)."
+    },
+    {
+      "id": "cpbs-xp135",
+      "section": "CPBS",
+      "stem": "A battery, resistor, and initially uncharged capacitor are connected in series and the switch is closed. When the capacitor is fully charged, which of the following is NOT zero?",
+      "choices": [
+        {"label": "A", "text": "Current in the resistor."},
+        {"label": "B", "text": "Voltage across the resistor."},
+        {"label": "C", "text": "Current in the capacitor."},
+        {"label": "D", "text": "None of the above (all of those are zero)."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Once the capacitor is fully charged, no current flows, so the current in the resistor and capacitor is zero, and the resistor voltage (IR) is also zero. The only nonzero quantity is the voltage across the capacitor, which is not listed—so none of the listed quantities is nonzero.",
+      "topicTags": ["physics", "circuits", "RC circuits"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 21 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/21-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (at full charge, current = 0 ⇒ resistor V = 0; capacitor voltage, not listed, is nonzero)."
+    },
+    {
+      "id": "cpbs-xp136",
+      "section": "CPBS",
+      "stem": "A bar magnet is oriented so that the north pole of the bar magnet points north. A compass needle is placed to the north of the bar magnet. In which direction does the north pole of the compass needle point?",
+      "choices": [
+        {"label": "A", "text": "North"},
+        {"label": "B", "text": "East"},
+        {"label": "C", "text": "South"},
+        {"label": "D", "text": "West"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Just beyond the bar magnet's north pole, the magnet's field points outward (away from that pole), i.e., toward the north. A compass needle aligns its north pole with the local field, so it points north (the needle's north pole is also pushed away from the magnet's like north pole).",
+      "topicTags": ["physics", "magnetism", "magnetic field"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 22 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/22-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (field beyond the N pole points outward; like poles repel)."
+    },
+    {
+      "id": "cpbs-xp137",
+      "section": "CPBS",
+      "stem": "How will the magnetic domains in an unmagnetized iron rod respond to the presence of a strong external magnetic field?",
+      "choices": [
+        {"label": "A", "text": "The domains will split into monopoles."},
+        {"label": "B", "text": "The domains will tend to align with the external field."},
+        {"label": "C", "text": "The domains will tend to orient themselves perpendicular to the external field."},
+        {"label": "D", "text": "The domains will tend to align so as to cancel out the external field."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "In a ferromagnet, an external field causes the magnetic domains (and the dipoles within them) to rotate and grow so that they align with the field, reinforcing it. (Magnetic monopoles do not exist.)",
+      "topicTags": ["physics", "magnetism", "ferromagnetism", "domains"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 22 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/22-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (domains align with the applied field)."
+    },
+    {
+      "id": "cpbs-xp138",
+      "section": "CPBS",
+      "stem": "A proton moves in the -x-direction and encounters a uniform magnetic field pointing in the +x-direction. In what direction is the resulting magnetic force on the proton?",
+      "choices": [
+        {"label": "A", "text": "The proton experiences no magnetic force."},
+        {"label": "B", "text": "+x-direction"},
+        {"label": "C", "text": "-y-direction"},
+        {"label": "D", "text": "+y-direction"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The magnetic force is F = qv × B. Here the velocity (-x) and field (+x) are antiparallel, so their cross product is zero. A charge moving parallel or antiparallel to the field feels no magnetic force.",
+      "topicTags": ["physics", "magnetism", "magnetic force"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 22 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/22-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (v parallel/antiparallel to B ⇒ zero force)."
+    },
+    {
+      "id": "cpbs-xp139",
+      "section": "CPBS",
+      "stem": "A straight wire oriented north-south carries current toward the south. The wire is in the Earth's magnetic field, which has a horizontal component pointing north and a vertical component pointing down. What is the direction of the magnetic force felt by the wire?",
+      "choices": [
+        {"label": "A", "text": "West"},
+        {"label": "B", "text": "East"},
+        {"label": "C", "text": "Up"},
+        {"label": "D", "text": "North"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The force on a current-carrying wire is F = IL × B. The horizontal (north) field component is antiparallel to the southward current and contributes no force. The downward field component, crossed with the southward current, gives a force toward the east (south × down = east).",
+      "topicTags": ["physics", "magnetism", "force on current-carrying wire"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 22 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/22-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified via F = IL × B (only the vertical field component contributes)."
+    },
+    {
+      "id": "cpbs-xp140",
+      "section": "CPBS",
+      "stem": "A long straight wire along the y-axis carries current in the +y-direction. Taking the xy-plane as the plane of the page (x to the right, y up, z out of the page), in what direction is the magnetic field at a point on the +x-axis near the wire?",
+      "choices": [
+        {"label": "A", "text": "away from the wire"},
+        {"label": "B", "text": "vertically upward"},
+        {"label": "C", "text": "into the page"},
+        {"label": "D", "text": "out of the page"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "By the right-hand rule for a straight current (grasp the wire with the right thumb along +y), the field circles the wire. On the +x side it points in the -z direction—into the page. (Equivalently, B ∝ Î × r̂ = ŷ × x̂ = -ẑ.)",
+      "topicTags": ["physics", "magnetism", "magnetic field of a wire"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 22 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/22-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim (coordinate convention from the source preserved). OpenStax withholds the public answer key; answer independently verified by the right-hand rule."
+    },
+    {
+      "id": "cpbs-xp141",
+      "section": "CPBS",
+      "stem": "Two parallel wires carry equal currents in the same direction and are separated by a small distance. What is the direction of the magnetic force the two wires exert on each other?",
+      "choices": [
+        {"label": "A", "text": "No force, since the wires are parallel."},
+        {"label": "B", "text": "No force, since the currents are in the same direction."},
+        {"label": "C", "text": "The force is attractive."},
+        {"label": "D", "text": "The force is repulsive."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Parallel wires carrying currents in the same direction attract each other. (Antiparallel currents repel.) Each wire sits in the magnetic field of the other, and applying F = IL × B gives a mutual attractive force.",
+      "topicTags": ["physics", "magnetism", "parallel currents"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 22 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/22-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (same-direction parallel currents attract)."
+    }
+  ]
+}

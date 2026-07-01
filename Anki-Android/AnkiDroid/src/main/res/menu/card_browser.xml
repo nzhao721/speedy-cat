@@ -71,13 +71,6 @@
         ankidroid:showAsAction="never"/>
 
     <item
-        android:id="@+id/action_create_filtered_deck"
-        android:icon="@drawable/ic_add_filtered_deck"
-        ankidroid:showAsAction="never"
-        tools:title="Create filtered deck..."
-        />
-
-    <item
         android:id="@+id/action_find_replace"
         app:showAsAction="never"
         android:icon="@drawable/ic_find_replace"

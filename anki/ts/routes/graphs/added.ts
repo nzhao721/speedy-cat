@@ -9,7 +9,7 @@ import type { GraphsResponse } from "@generated/anki/stats_pb";
 import * as tr from "@generated/ftl";
 import { dayLabel } from "@tslib/time";
 import type { Bin } from "d3";
-import { bin, interpolateBlues, min, scaleLinear, scaleSequential, sum } from "d3";
+import { bin, interpolateOranges, min, scaleLinear, scaleSequential, sum } from "d3";
 
 import type { SearchDispatch, TableDatum } from "./graph-helpers";
 import { getNumericMapBinValue, GraphRange, numericMap } from "./graph-helpers";
@@ -81,7 +81,7 @@ export function buildHistogram(
     }
 
     const adjustedRange = scaleLinear().range([0.7, 0.3]);
-    const colourScale = scaleSequential((n) => interpolateBlues(adjustedRange(n)!)).domain([xMax!, xMin!]);
+    const colourScale = scaleSequential((n) => interpolateOranges(adjustedRange(n)!)).domain([xMax!, xMin!]);
 
     const totalInPeriod = sum(bins, accessor);
     const periodDays = Math.abs(xMin!);

@@ -244,7 +244,7 @@ class DeckAdapter(
         reviewCountColor = ta.getColor(3, context.getColor(R.color.black))
         rowCurrentDrawable = ta.getResourceId(4, 0)
         deckNameDefaultColor = ta.getColor(5, context.getColor(R.color.black))
-        deckNameDynColor = ta.getColor(6, context.getColor(CommonR.color.material_blue_A700))
+        deckNameDynColor = ta.getColor(6, context.getColor(CommonR.color.brand_orange))
         expandImage = ta.getDrawableOrThrow(7)
         expandImage.isAutoMirrored = true
         collapseImage = ta.getDrawableOrThrow(8)

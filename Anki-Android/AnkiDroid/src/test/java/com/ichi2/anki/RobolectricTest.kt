@@ -176,6 +176,14 @@ open class RobolectricTest :
 
         // https://github.com/ankidroid/Anki-Android/pull/19004#discussion_r2739833965
         grantPermissions(Manifest.permission.INTERNET)
+
+        // SpeedyCAT ships an MCAT deck that is auto-imported exactly once on first
+        // run via [SpeedyCatBundledDeck] during DeckPicker startup. The vast
+        // majority of tests assume a controlled or empty collection, so opt out of
+        // that one-time import here by marking it already done. Tests that need the
+        // real first-run behaviour (e.g. SpeedyCatBundledDeckTest) clear this flag
+        // again in their own @Before, which runs after this superclass setUp().
+        targetContext.sharedPrefs().edit { putBoolean(SpeedyCatBundledDeck.IMPORTED_PREF_KEY, true) }
     }
 
     @After

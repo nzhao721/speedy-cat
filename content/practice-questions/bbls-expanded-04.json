@@ -1,0 +1,978 @@
+{
+  "meta": {
+    "section": "BBLS",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax Microbiology (Parker, Schneegurt, Tu, Lister, Forster)",
+        "sourceLicense": "CC BY-NC-SA 4.0",
+        "baseUrl": "https://openstax.org/books/microbiology/",
+        "note": "Multiple-choice Review Questions scraped verbatim; correctAnswer taken from OpenStax published Answer Key pages (pages/chapter-N). OpenStax posts a 'no LLM training' notice; SpeedyCAT use is human-facing per PRD, with attribution and non-commercial/share-alike compliance."
+      }
+    ],
+    "counts": {"total": 48, "byTopic": {"virology": 14, "immunology": 34}},
+    "notes": "File 04: OpenStax Microbiology Ch. 6 (Viruses), Ch. 17 (Innate Nonspecific Host Defenses), and Ch. 18 (Adaptive Specific Host Defenses). One 'select all that apply' item (Ch.6 Q2) and matching/ordering items (Ch.17 Q17-18, Ch.18 Q19-20) were skipped. Options 1-4 map to A-D; correctAnswer letters verified against the chapter answer keys."
+  },
+  "questions": [
+    {
+      "id": "bbls-x102",
+      "section": "BBLS",
+      "stem": "The component(s) of a virus that is/are extended from the envelope for attachment is/are the:",
+      "choices": [
+        {"label": "A", "text": "capsomeres"},
+        {"label": "B", "text": "spikes"},
+        {"label": "C", "text": "nucleic acid"},
+        {"label": "D", "text": "viral whiskers"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Glycoprotein spikes project from the viral envelope and mediate attachment to host-cell receptors.",
+      "topicTags": ["virology", "viral structure"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 6 Viruses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/6-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-6), Ch.6 MC Q1 = B."
+    },
+    {
+      "id": "bbls-x103",
+      "section": "BBLS",
+      "stem": "The envelope of a virus is derived from the host's",
+      "choices": [
+        {"label": "A", "text": "nucleic acids"},
+        {"label": "B", "text": "membrane structures"},
+        {"label": "C", "text": "cytoplasm"},
+        {"label": "D", "text": "genome"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Enveloped viruses acquire their lipid envelope from host membrane structures (such as the plasma membrane) as they bud from the cell.",
+      "topicTags": ["virology", "viral envelope"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 6 Viruses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/6-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-6), Ch.6 MC Q3 = B."
+    },
+    {
+      "id": "bbls-x104",
+      "section": "BBLS",
+      "stem": "In naming viruses, the family name ends with ________ and genus name ends with _________.",
+      "choices": [
+        {"label": "A", "text": "-virus; -viridae"},
+        {"label": "B", "text": "-viridae; -virus"},
+        {"label": "C", "text": "-virion; virus"},
+        {"label": "D", "text": "-virus; virion"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "In virus taxonomy, family names end in -viridae and genus names end in -virus.",
+      "topicTags": ["virology", "viral taxonomy"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 6 Viruses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/6-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax (en-dashes normalized to hyphens). correctAnswer from OpenStax Answer Key (pages/chapter-6), Ch.6 MC Q4 = B."
+    },
+    {
+      "id": "bbls-x105",
+      "section": "BBLS",
+      "stem": "What is another name for a nonenveloped virus?",
+      "choices": [
+        {"label": "A", "text": "enveloped virus"},
+        {"label": "B", "text": "provirus"},
+        {"label": "C", "text": "naked virus"},
+        {"label": "D", "text": "latent virus"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "A virus lacking a lipid envelope (only a capsid around its genome) is called a naked virus.",
+      "topicTags": ["virology", "viral structure"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 6 Viruses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/6-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-6), Ch.6 MC Q5 = C."
+    },
+    {
+      "id": "bbls-x106",
+      "section": "BBLS",
+      "stem": "Which of the following leads to the destruction of the host cells?",
+      "choices": [
+        {"label": "A", "text": "lysogenic cycle"},
+        {"label": "B", "text": "lytic cycle"},
+        {"label": "C", "text": "prophage"},
+        {"label": "D", "text": "temperate phage"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The lytic cycle ends with assembly of new virions and lysis (rupture) of the host cell. The lysogenic cycle integrates the phage genome without immediately killing the cell.",
+      "topicTags": ["virology", "lytic cycle", "bacteriophage"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 6 Viruses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/6-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-6), Ch.6 MC Q6 = B."
+    },
+    {
+      "id": "bbls-x107",
+      "section": "BBLS",
+      "stem": "A virus obtains its envelope during which of the following phases?",
+      "choices": [
+        {"label": "A", "text": "attachment"},
+        {"label": "B", "text": "penetration"},
+        {"label": "C", "text": "assembly"},
+        {"label": "D", "text": "release"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Enveloped viruses typically gain their envelope by budding through a host membrane during the release phase.",
+      "topicTags": ["virology", "viral replication"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 6 Viruses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/6-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-6), Ch.6 MC Q7 = D."
+    },
+    {
+      "id": "bbls-x108",
+      "section": "BBLS",
+      "stem": "Which of the following components is brought into a cell by HIV?",
+      "choices": [
+        {"label": "A", "text": "a DNA-dependent DNA polymerase"},
+        {"label": "B", "text": "RNA polymerase"},
+        {"label": "C", "text": "ribosome"},
+        {"label": "D", "text": "reverse transcriptase"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "HIV is a retrovirus that carries reverse transcriptase, which synthesizes DNA from its RNA genome inside the host cell.",
+      "topicTags": ["virology", "HIV", "reverse transcriptase"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 6 Viruses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/6-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-6), Ch.6 MC Q8 = D."
+    },
+    {
+      "id": "bbls-x109",
+      "section": "BBLS",
+      "stem": "A positive-strand RNA virus:",
+      "choices": [
+        {"label": "A", "text": "must first be converted to a mRNA before it can be translated."},
+        {"label": "B", "text": "can be used directly to translate viral proteins."},
+        {"label": "C", "text": "will be degraded by host enzymes."},
+        {"label": "D", "text": "is not recognized by host ribosomes."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "A positive-sense (+) RNA genome reads like mRNA, so host ribosomes can translate it directly into viral proteins.",
+      "topicTags": ["virology", "RNA virus", "translation"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 6 Viruses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/6-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-6), Ch.6 MC Q9 = B."
+    },
+    {
+      "id": "bbls-x110",
+      "section": "BBLS",
+      "stem": "What is the name for the transfer of genetic information from one bacterium to another bacterium by a phage?",
+      "choices": [
+        {"label": "A", "text": "transduction"},
+        {"label": "B", "text": "penetration"},
+        {"label": "C", "text": "excision"},
+        {"label": "D", "text": "translation"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Transduction is the bacteriophage-mediated transfer of bacterial DNA from one cell to another.",
+      "topicTags": ["virology", "transduction", "horizontal gene transfer"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 6 Viruses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/6-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-6), Ch.6 MC Q10 = A."
+    },
+    {
+      "id": "bbls-x111",
+      "section": "BBLS",
+      "stem": "Which of the followings cannot be used to culture viruses?",
+      "choices": [
+        {"label": "A", "text": "tissue culture"},
+        {"label": "B", "text": "liquid medium only"},
+        {"label": "C", "text": "embryo"},
+        {"label": "D", "text": "animal host"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Viruses are obligate intracellular parasites and require living host cells; they cannot be grown in a cell-free liquid medium alone.",
+      "topicTags": ["virology", "culturing viruses"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 6 Viruses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/6-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-6), Ch.6 MC Q11 = B."
+    },
+    {
+      "id": "bbls-x112",
+      "section": "BBLS",
+      "stem": "Which of the following tests can be used to detect the presence of a specific virus?",
+      "choices": [
+        {"label": "A", "text": "EIA"},
+        {"label": "B", "text": "RT-PCR"},
+        {"label": "C", "text": "PCR"},
+        {"label": "D", "text": "all of the above"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Enzyme immunoassay (EIA), RT-PCR, and PCR can all be used to detect specific viruses, so all of the above is correct.",
+      "topicTags": ["virology", "diagnostics"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 6 Viruses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/6-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-6), Ch.6 MC Q12 = D."
+    },
+    {
+      "id": "bbls-x113",
+      "section": "BBLS",
+      "stem": "Which of the following is NOT a cytopathic effect?",
+      "choices": [
+        {"label": "A", "text": "transformation"},
+        {"label": "B", "text": "cell fusion"},
+        {"label": "C", "text": "mononucleated cell"},
+        {"label": "D", "text": "inclusion bodies"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "A normal mononucleated cell is not a sign of viral damage. Transformation, cell fusion (syncytia), and inclusion bodies are all cytopathic effects.",
+      "topicTags": ["virology", "cytopathic effects"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 6 Viruses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/6-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-6), Ch.6 MC Q13 = C."
+    },
+    {
+      "id": "bbls-x114",
+      "section": "BBLS",
+      "stem": "Which of these infectious agents do not have nucleic acid?",
+      "choices": [
+        {"label": "A", "text": "viroids"},
+        {"label": "B", "text": "viruses"},
+        {"label": "C", "text": "bacteria"},
+        {"label": "D", "text": "prions"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Prions are infectious proteins and contain no nucleic acid. Viroids (RNA), viruses, and bacteria all contain nucleic acid.",
+      "topicTags": ["virology", "prions"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 6 Viruses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/6-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-6), Ch.6 MC Q14 = D."
+    },
+    {
+      "id": "bbls-x115",
+      "section": "BBLS",
+      "stem": "Which of the following is true of prions?",
+      "choices": [
+        {"label": "A", "text": "They can be inactivated by boiling at 100 °C."},
+        {"label": "B", "text": "They contain a capsid."},
+        {"label": "C", "text": "They are a rogue form of protein, PrP."},
+        {"label": "D", "text": "They can be reliably inactivated by an autoclave."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Prions are a misfolded (rogue) form of the normal prion protein PrP. They are remarkably resistant to boiling and standard autoclaving and have no capsid.",
+      "topicTags": ["virology", "prions", "protein misfolding"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 6 Viruses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/6-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-6), Ch.6 MC Q15 = C."
+    },
+    {
+      "id": "bbls-x116",
+      "section": "BBLS",
+      "stem": "Which of the following best describes the innate nonspecific immune system?",
+      "choices": [
+        {"label": "A", "text": "a targeted and highly specific response to a single pathogen or molecule"},
+        {"label": "B", "text": "a generalized and nonspecific set of defenses against a class or group of pathogens"},
+        {"label": "C", "text": "a set of barrier mechanisms that adapts to specific pathogens after repeated exposure"},
+        {"label": "D", "text": "the production of antibody molecules against pathogens"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Innate immunity provides rapid, generalized, nonspecific defense against broad classes of pathogens, without the antigen-specific memory of adaptive immunity.",
+      "topicTags": ["immunology", "innate immunity"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 17 Innate Nonspecific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/17-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-17), Ch.17 MC Q1 = B."
+    },
+    {
+      "id": "bbls-x117",
+      "section": "BBLS",
+      "stem": "Which of the following constantly sheds dead cells along with any microbes that may be attached to those cells?",
+      "choices": [
+        {"label": "A", "text": "epidermis"},
+        {"label": "B", "text": "dermis"},
+        {"label": "C", "text": "hypodermis"},
+        {"label": "D", "text": "mucous membrane"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The epidermis continually sheds its outermost dead keratinized cells, carrying away attached microbes as a physical defense.",
+      "topicTags": ["immunology", "physical barriers", "skin"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 17 Innate Nonspecific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/17-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-17), Ch.17 MC Q2 = A."
+    },
+    {
+      "id": "bbls-x118",
+      "section": "BBLS",
+      "stem": "Which of the following uses a particularly dense suite of tight junctions to prevent microbes from entering the underlying tissue?",
+      "choices": [
+        {"label": "A", "text": "the mucociliary escalator"},
+        {"label": "B", "text": "the epidermis"},
+        {"label": "C", "text": "the blood-brain barrier"},
+        {"label": "D", "text": "the urethra"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The blood-brain barrier relies on especially tight junctions between capillary endothelial cells to exclude microbes and many molecules from the central nervous system.",
+      "topicTags": ["immunology", "physical barriers", "blood-brain barrier"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 17 Innate Nonspecific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/17-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-17), Ch.17 MC Q3 = C."
+    },
+    {
+      "id": "bbls-x119",
+      "section": "BBLS",
+      "stem": "Which of the following serve as chemical signals between cells and stimulate a wide range of nonspecific defenses?",
+      "choices": [
+        {"label": "A", "text": "cytokines"},
+        {"label": "B", "text": "antimicrobial peptides"},
+        {"label": "C", "text": "complement proteins"},
+        {"label": "D", "text": "antibodies"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cytokines are signaling proteins released by cells that coordinate and stimulate many nonspecific (and specific) immune defenses.",
+      "topicTags": ["immunology", "cytokines", "innate immunity"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 17 Innate Nonspecific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/17-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-17), Ch.17 MC Q4 = A."
+    },
+    {
+      "id": "bbls-x120",
+      "section": "BBLS",
+      "stem": "Bacteriocins and defensins are types of which of the following?",
+      "choices": [
+        {"label": "A", "text": "leukotrienes"},
+        {"label": "B", "text": "cytokines"},
+        {"label": "C", "text": "inflammation-eliciting mediators"},
+        {"label": "D", "text": "antimicrobial peptides"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Bacteriocins and defensins are antimicrobial peptides that kill or inhibit microbes.",
+      "topicTags": ["immunology", "antimicrobial peptides"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 17 Innate Nonspecific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/17-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-17), Ch.17 MC Q5 = D."
+    },
+    {
+      "id": "bbls-x121",
+      "section": "BBLS",
+      "stem": "Which of the following chemical mediators is secreted onto the surface of the skin?",
+      "choices": [
+        {"label": "A", "text": "cerumen"},
+        {"label": "B", "text": "sebum"},
+        {"label": "C", "text": "gastric acid"},
+        {"label": "D", "text": "prostaglandin"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Sebum, an oily secretion of the sebaceous glands, is released onto the skin surface and helps inhibit microbial growth. Cerumen (earwax) is in the ear canal, and gastric acid is in the stomach.",
+      "topicTags": ["immunology", "skin", "chemical defenses"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 17 Innate Nonspecific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/17-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-17), Ch.17 MC Q6 = B."
+    },
+    {
+      "id": "bbls-x122",
+      "section": "BBLS",
+      "stem": "Identify the complement activation pathway that is triggered by the binding of an acute-phase protein to a pathogen.",
+      "choices": [
+        {"label": "A", "text": "classical"},
+        {"label": "B", "text": "alternate"},
+        {"label": "C", "text": "lectin"},
+        {"label": "D", "text": "cathelicidin"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The lectin pathway is initiated when mannose-binding lectin (an acute-phase protein) binds carbohydrates on a pathogen surface.",
+      "topicTags": ["immunology", "complement system", "lectin pathway"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 17 Innate Nonspecific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/17-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-17), Ch.17 MC Q7 = C."
+    },
+    {
+      "id": "bbls-x123",
+      "section": "BBLS",
+      "stem": "Histamine, leukotrienes, prostaglandins, and bradykinin are examples of which of the following?",
+      "choices": [
+        {"label": "A", "text": "chemical mediators primarily found in the digestive system"},
+        {"label": "B", "text": "chemical mediators that promote inflammation"},
+        {"label": "C", "text": "antimicrobial peptides found on the skin"},
+        {"label": "D", "text": "complement proteins that form MACs"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Histamine, leukotrienes, prostaglandins, and bradykinin are inflammatory mediators that drive vasodilation, increased permeability, and other signs of inflammation.",
+      "topicTags": ["immunology", "inflammation", "chemical mediators"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 17 Innate Nonspecific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/17-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-17), Ch.17 MC Q8 = B."
+    },
+    {
+      "id": "bbls-x124",
+      "section": "BBLS",
+      "stem": "White blood cells are also referred to as which of the following?",
+      "choices": [
+        {"label": "A", "text": "platelets"},
+        {"label": "B", "text": "erythrocytes"},
+        {"label": "C", "text": "leukocytes"},
+        {"label": "D", "text": "megakaryocytes"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "White blood cells are called leukocytes. Erythrocytes are red blood cells, and platelets (from megakaryocytes) are involved in clotting.",
+      "topicTags": ["immunology", "leukocytes", "blood cells"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 17 Innate Nonspecific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/17-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-17), Ch.17 MC Q9 = C."
+    },
+    {
+      "id": "bbls-x125",
+      "section": "BBLS",
+      "stem": "Hematopoiesis occurs in which of the following?",
+      "choices": [
+        {"label": "A", "text": "liver"},
+        {"label": "B", "text": "bone marrow"},
+        {"label": "C", "text": "kidneys"},
+        {"label": "D", "text": "central nervous system"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "In adults, hematopoiesis (the formation of blood cells from stem cells) occurs primarily in the red bone marrow.",
+      "topicTags": ["immunology", "hematopoiesis", "bone marrow"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 17 Innate Nonspecific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/17-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-17), Ch.17 MC Q10 = B."
+    },
+    {
+      "id": "bbls-x126",
+      "section": "BBLS",
+      "stem": "Granulocytes are which type of cell?",
+      "choices": [
+        {"label": "A", "text": "lymphocyte"},
+        {"label": "B", "text": "erythrocyte"},
+        {"label": "C", "text": "megakaryocyte"},
+        {"label": "D", "text": "leukocyte"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Granulocytes (neutrophils, eosinophils, basophils) are a class of leukocyte (white blood cell) characterized by cytoplasmic granules.",
+      "topicTags": ["immunology", "granulocytes", "leukocytes"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 17 Innate Nonspecific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/17-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-17), Ch.17 MC Q11 = D."
+    },
+    {
+      "id": "bbls-x127",
+      "section": "BBLS",
+      "stem": "PAMPs would be found on the surface of which of the following?",
+      "choices": [
+        {"label": "A", "text": "pathogen"},
+        {"label": "B", "text": "phagocyte"},
+        {"label": "C", "text": "skin cell"},
+        {"label": "D", "text": "blood vessel wall"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Pathogen-associated molecular patterns (PAMPs) are conserved microbial molecules found on the surface of pathogens and recognized by host pattern-recognition receptors.",
+      "topicTags": ["immunology", "PAMPs", "innate immunity"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 17 Innate Nonspecific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/17-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-17), Ch.17 MC Q12 = A."
+    },
+    {
+      "id": "bbls-x128",
+      "section": "BBLS",
+      "stem": "________ on phagocytes bind to PAMPs on bacteria, which triggers the uptake and destruction of the bacterial pathogens?",
+      "choices": [
+        {"label": "A", "text": "PRRs"},
+        {"label": "B", "text": "AMPs"},
+        {"label": "C", "text": "PAMPs"},
+        {"label": "D", "text": "PMNs"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Pattern-recognition receptors (PRRs) on phagocytes bind PAMPs on microbes, triggering phagocytosis and destruction of the pathogen.",
+      "topicTags": ["immunology", "pattern recognition receptors", "phagocytosis"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 17 Innate Nonspecific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/17-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-17), Ch.17 MC Q13 = A."
+    },
+    {
+      "id": "bbls-x129",
+      "section": "BBLS",
+      "stem": "Which of the following best characterizes the mode of pathogen recognition for opsonin-dependent phagocytosis?",
+      "choices": [
+        {"label": "A", "text": "Opsonins produced by a pathogen attract phagocytes through chemotaxis."},
+        {"label": "B", "text": "A PAMP on the pathogen's surface is recognized by a phagocyte's toll-like receptors."},
+        {"label": "C", "text": "A pathogen is first coated with a molecule such as a complement protein, which allows it to be recognized by phagocytes."},
+        {"label": "D", "text": "A pathogen is coated with a molecule such as a complement protein that immediately lyses the cell."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "In opsonization, the pathogen is coated with opsonins (such as complement proteins or antibodies), which phagocytes then recognize, enhancing uptake.",
+      "topicTags": ["immunology", "opsonization", "phagocytosis"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 17 Innate Nonspecific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/17-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-17), Ch.17 MC Q14 = C."
+    },
+    {
+      "id": "bbls-x130",
+      "section": "BBLS",
+      "stem": "Which refers to swelling as a result of inflammation?",
+      "choices": [
+        {"label": "A", "text": "erythema"},
+        {"label": "B", "text": "edema"},
+        {"label": "C", "text": "granuloma"},
+        {"label": "D", "text": "vasodilation"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Edema is the swelling caused by fluid accumulation in tissues during inflammation. Erythema is redness, and vasodilation is the widening of blood vessels.",
+      "topicTags": ["immunology", "inflammation", "edema"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 17 Innate Nonspecific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/17-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-17), Ch.17 MC Q15 = B."
+    },
+    {
+      "id": "bbls-x131",
+      "section": "BBLS",
+      "stem": "Which type of inflammation occurs at the site of an injury or infection?",
+      "choices": [
+        {"label": "A", "text": "acute"},
+        {"label": "B", "text": "chronic"},
+        {"label": "C", "text": "endogenous"},
+        {"label": "D", "text": "exogenous"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Acute inflammation is the immediate, localized response at the site of injury or infection; chronic inflammation is prolonged and can cause tissue damage.",
+      "topicTags": ["immunology", "inflammation", "acute inflammation"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 17 Innate Nonspecific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/17-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-17), Ch.17 MC Q16 = A."
+    },
+    {
+      "id": "bbls-x132",
+      "section": "BBLS",
+      "stem": "Antibodies are produced by ________.",
+      "choices": [
+        {"label": "A", "text": "plasma cells"},
+        {"label": "B", "text": "T cells"},
+        {"label": "C", "text": "bone marrow"},
+        {"label": "D", "text": "Macrophages"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Antibodies are secreted by plasma cells, which are the effector cells that differentiate from activated B lymphocytes.",
+      "topicTags": ["immunology", "antibodies", "plasma cells"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q1 = A."
+    },
+    {
+      "id": "bbls-x133",
+      "section": "BBLS",
+      "stem": "Cellular adaptive immunity is carried out by ________.",
+      "choices": [
+        {"label": "A", "text": "B cells"},
+        {"label": "B", "text": "T cells"},
+        {"label": "C", "text": "bone marrow"},
+        {"label": "D", "text": "neutrophils"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cell-mediated (cellular) adaptive immunity is carried out by T cells, whereas B cells mediate humoral (antibody) immunity.",
+      "topicTags": ["immunology", "cell-mediated immunity", "T cells"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q2 = B."
+    },
+    {
+      "id": "bbls-x134",
+      "section": "BBLS",
+      "stem": "A single antigen molecule may be composed of many individual ________.",
+      "choices": [
+        {"label": "A", "text": "T-cell receptors"},
+        {"label": "B", "text": "B-cell receptors"},
+        {"label": "C", "text": "MHC II"},
+        {"label": "D", "text": "epitopes"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "An epitope (antigenic determinant) is the specific portion of an antigen recognized by a receptor or antibody; a single antigen can carry many different epitopes.",
+      "topicTags": ["immunology", "antigens", "epitopes"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q3 = D."
+    },
+    {
+      "id": "bbls-x135",
+      "section": "BBLS",
+      "stem": "Which class of molecules is the most antigenic?",
+      "choices": [
+        {"label": "A", "text": "polysaccharides"},
+        {"label": "B", "text": "lipids"},
+        {"label": "C", "text": "proteins"},
+        {"label": "D", "text": "carbohydrates"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Proteins are the most antigenic class of molecules because their large size and structural complexity provide many distinct epitopes.",
+      "topicTags": ["immunology", "antigens", "antigenicity"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q4 = C."
+    },
+    {
+      "id": "bbls-x136",
+      "section": "BBLS",
+      "stem": "MHC I molecules present",
+      "choices": [
+        {"label": "A", "text": "processed self-antigens from proteasomes."},
+        {"label": "B", "text": "processed foreign antigens from phagolysosome."},
+        {"label": "C", "text": "antibodies."},
+        {"label": "D", "text": "T cell antigens."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "MHC class I molecules display endogenous (intracellular) peptides degraded by proteasomes, allowing cytotoxic T cells to monitor for infected or abnormal self cells.",
+      "topicTags": ["immunology", "MHC class I", "antigen presentation"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q5 = A."
+    },
+    {
+      "id": "bbls-x137",
+      "section": "BBLS",
+      "stem": "MHC II molecules present",
+      "choices": [
+        {"label": "A", "text": "processed self-antigens from proteasomes."},
+        {"label": "B", "text": "processed foreign antigens from phagolysosomes."},
+        {"label": "C", "text": "antibodies."},
+        {"label": "D", "text": "T cell receptors."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "MHC class II molecules display exogenous antigens that were internalized and degraded in phagolysosomes, presenting them to helper T cells.",
+      "topicTags": ["immunology", "MHC class II", "antigen presentation"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q6 = B."
+    },
+    {
+      "id": "bbls-x138",
+      "section": "BBLS",
+      "stem": "Which type of antigen-presenting molecule is found on all nucleated cells?",
+      "choices": [
+        {"label": "A", "text": "MHC II"},
+        {"label": "B", "text": "MHC I"},
+        {"label": "C", "text": "antibodies"},
+        {"label": "D", "text": "B-cell receptors"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "MHC class I molecules are expressed on essentially all nucleated cells, allowing cytotoxic T cells to survey them.",
+      "topicTags": ["immunology", "MHC class I", "antigen presentation"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q7 = B."
+    },
+    {
+      "id": "bbls-x139",
+      "section": "BBLS",
+      "stem": "Which type of antigen-presenting molecule is found only on macrophages, dendritic cells, and B cells?",
+      "choices": [
+        {"label": "A", "text": "MHC I"},
+        {"label": "B", "text": "MHC II"},
+        {"label": "C", "text": "T-cell receptors"},
+        {"label": "D", "text": "B-cell receptors"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "MHC class II molecules are restricted to professional antigen-presenting cells: macrophages, dendritic cells, and B cells.",
+      "topicTags": ["immunology", "MHC class II", "antigen-presenting cells"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q8 = B."
+    },
+    {
+      "id": "bbls-x140",
+      "section": "BBLS",
+      "stem": "What is a superantigen?",
+      "choices": [
+        {"label": "A", "text": "a protein that is highly efficient at stimulating a single type of productive and specific T cell response"},
+        {"label": "B", "text": "a protein produced by antigen-presenting cells to enhance their presentation capabilities"},
+        {"label": "C", "text": "a protein produced by T cells as a way of increasing the antigen activation they receive from antigen-presenting cells"},
+        {"label": "D", "text": "a protein that activates T cells in a nonspecific and uncontrolled manner"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "A superantigen cross-links MHC II and T-cell receptors outside the normal antigen groove, activating large numbers of T cells nonspecifically and triggering a massive, harmful cytokine release.",
+      "topicTags": ["immunology", "superantigens", "T cells"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q9 = D."
+    },
+    {
+      "id": "bbls-x141",
+      "section": "BBLS",
+      "stem": "To what does the TCR of a helper T cell bind?",
+      "choices": [
+        {"label": "A", "text": "antigens presented with MHC I molecules"},
+        {"label": "B", "text": "antigens presented with MHC II molecules"},
+        {"label": "C", "text": "free antigen in a soluble form"},
+        {"label": "D", "text": "haptens only"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Helper T cells (CD4+) recognize antigens presented on MHC class II molecules by antigen-presenting cells.",
+      "topicTags": ["immunology", "helper T cells", "MHC class II"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q10 = B."
+    },
+    {
+      "id": "bbls-x142",
+      "section": "BBLS",
+      "stem": "Cytotoxic T cells will bind with their TCR to which of the following?",
+      "choices": [
+        {"label": "A", "text": "antigens presented with MHC I molecules"},
+        {"label": "B", "text": "antigens presented with MHC II molecules"},
+        {"label": "C", "text": "free antigen in a soluble form"},
+        {"label": "D", "text": "haptens only"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cytotoxic T cells (CD8+) recognize antigens presented on MHC class I molecules, enabling them to kill infected or abnormal cells.",
+      "topicTags": ["immunology", "cytotoxic T cells", "MHC class I"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q11 = A."
+    },
+    {
+      "id": "bbls-x143",
+      "section": "BBLS",
+      "stem": "A ________ molecule is a glycoprotein used to identify and distinguish white blood cells.",
+      "choices": [
+        {"label": "A", "text": "T-cell receptor"},
+        {"label": "B", "text": "B-cell receptor"},
+        {"label": "C", "text": "MHC I"},
+        {"label": "D", "text": "cluster of differentiation"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cluster of differentiation (CD) molecules are cell-surface glycoproteins used as markers to identify and distinguish types of white blood cells (e.g., CD4, CD8).",
+      "topicTags": ["immunology", "CD markers", "leukocytes"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q12 = D."
+    },
+    {
+      "id": "bbls-x144",
+      "section": "BBLS",
+      "stem": "Name the T helper cell subset involved in antibody production.",
+      "choices": [
+        {"label": "A", "text": "TH1"},
+        {"label": "B", "text": "TH2"},
+        {"label": "C", "text": "TH17"},
+        {"label": "D", "text": "CTL"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "TH2 helper T cells secrete cytokines that drive B-cell activation and antibody production (humoral immunity), whereas TH1 cells favor cell-mediated responses.",
+      "topicTags": ["immunology", "helper T cells", "humoral immunity"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q13 = B."
+    },
+    {
+      "id": "bbls-x145",
+      "section": "BBLS",
+      "stem": "Which of the following would be a T-dependent antigen?",
+      "choices": [
+        {"label": "A", "text": "lipopolysaccharide"},
+        {"label": "B", "text": "glycolipid"},
+        {"label": "C", "text": "protein"},
+        {"label": "D", "text": "carbohydrate"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "T-dependent antigens are typically proteins, which can be processed and presented on MHC II to recruit helper T-cell assistance for B-cell responses.",
+      "topicTags": ["immunology", "T-dependent antigens", "B cells"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q14 = C."
+    },
+    {
+      "id": "bbls-x146",
+      "section": "BBLS",
+      "stem": "Which of the following would be a BCR?",
+      "choices": [
+        {"label": "A", "text": "CD4"},
+        {"label": "B", "text": "MHC II"},
+        {"label": "C", "text": "MHC I"},
+        {"label": "D", "text": "IgD"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The B-cell receptor (BCR) is a membrane-bound immunoglobulin; naive B cells display membrane IgM and IgD as their BCR.",
+      "topicTags": ["immunology", "B-cell receptor", "immunoglobulins"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q15 = D."
+    },
+    {
+      "id": "bbls-x147",
+      "section": "BBLS",
+      "stem": "Which of the following does not occur during the lag period of the primary antibody response?",
+      "choices": [
+        {"label": "A", "text": "activation of helper T cells"},
+        {"label": "B", "text": "class switching to IgG"},
+        {"label": "C", "text": "presentation of antigen with MHC II"},
+        {"label": "D", "text": "binding of antigen to BCRs"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "During the lag phase, antigen is recognized and presented and T cells are activated, but class switching to IgG occurs later; the initial antibody made is IgM.",
+      "topicTags": ["immunology", "primary immune response", "class switching"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q16 = B."
+    },
+    {
+      "id": "bbls-x148",
+      "section": "BBLS",
+      "stem": "A patient is bitten by a dog with confirmed rabies infection. After treating the bite wound, the physician injects the patient with antibodies that are specific for the rabies virus to prevent the development of an active infection. This is an example of:",
+      "choices": [
+        {"label": "A", "text": "Natural active immunity"},
+        {"label": "B", "text": "Artificial active immunity"},
+        {"label": "C", "text": "Natural passive immunity"},
+        {"label": "D", "text": "Artificial passive immunity"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Receiving pre-formed antibodies by injection is passive immunity, and because it is delivered medically it is artificial — hence artificial passive immunity.",
+      "topicTags": ["immunology", "passive immunity", "immunization"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q17 = D."
+    },
+    {
+      "id": "bbls-x149",
+      "section": "BBLS",
+      "stem": "A patient gets a cold, and recovers a few days later. The patient's classmates come down with the same cold roughly a week later, but the original patient does not get the same cold again. This is an example of:",
+      "choices": [
+        {"label": "A", "text": "Natural active immunity"},
+        {"label": "B", "text": "Artificial active immunity"},
+        {"label": "C", "text": "Natural passive immunity"},
+        {"label": "D", "text": "Artificial passive immunity"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mounting one's own immune response after a natural infection produces natural active immunity, including memory that protects against reinfection.",
+      "topicTags": ["immunology", "active immunity", "immunological memory"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 18 Adaptive Specific Host Defenses — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/18-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-18), Ch.18 MC Q18 = A."
+    }
+  ]
+}

@@ -15,25 +15,25 @@ use super::LogNote;
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 #[serde(default)]
 pub struct ForeignData {
-    dupe_resolution: DupeResolution,
-    match_scope: MatchScope,
-    default_deck: NameOrId,
-    default_notetype: NameOrId,
-    notes: Vec<ForeignNote>,
-    notetypes: Vec<ForeignNotetype>,
-    global_tags: Vec<String>,
-    updated_tags: Vec<String>,
+    pub(crate) dupe_resolution: DupeResolution,
+    pub(crate) match_scope: MatchScope,
+    pub(crate) default_deck: NameOrId,
+    pub(crate) default_notetype: NameOrId,
+    pub(crate) notes: Vec<ForeignNote>,
+    pub(crate) notetypes: Vec<ForeignNotetype>,
+    pub(crate) global_tags: Vec<String>,
+    pub(crate) updated_tags: Vec<String>,
 }
 
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
 #[serde(default)]
 pub struct ForeignNote {
-    guid: String,
-    fields: Vec<Option<String>>,
-    tags: Option<Vec<String>>,
-    notetype: NameOrId,
-    deck: NameOrId,
-    cards: Vec<ForeignCard>,
+    pub(crate) guid: String,
+    pub(crate) fields: Vec<Option<String>>,
+    pub(crate) tags: Option<Vec<String>>,
+    pub(crate) notetype: NameOrId,
+    pub(crate) deck: NameOrId,
+    pub(crate) cards: Vec<ForeignCard>,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Default, Serialize, Deserialize)]
@@ -50,18 +50,18 @@ pub struct ForeignCard {
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct ForeignNotetype {
-    name: String,
-    fields: Vec<String>,
-    templates: Vec<ForeignTemplate>,
+    pub(crate) name: String,
+    pub(crate) fields: Vec<String>,
+    pub(crate) templates: Vec<ForeignTemplate>,
     #[serde(default)]
-    is_cloze: bool,
+    pub(crate) is_cloze: bool,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct ForeignTemplate {
-    name: String,
-    qfmt: String,
-    afmt: String,
+    pub(crate) name: String,
+    pub(crate) qfmt: String,
+    pub(crate) afmt: String,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]

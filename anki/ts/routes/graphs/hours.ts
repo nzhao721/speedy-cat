@@ -15,7 +15,7 @@ import {
     axisLeft,
     axisRight,
     curveBasis,
-    interpolateBlues,
+    interpolateOranges,
     pointer,
     scaleBand,
     scaleLinear,
@@ -84,7 +84,7 @@ export function renderHours(
         .attr("direction", "ltr");
 
     const cappedRange = scaleLinear().range([0.1, 0.8]);
-    const colour = scaleSequential((n) => interpolateBlues(cappedRange(n)!)).domain([
+    const colour = scaleSequential((n) => interpolateOranges(cappedRange(n)!)).domain([
         0,
         yMax,
     ]);

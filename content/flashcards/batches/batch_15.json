@@ -1,0 +1,3874 @@
+{
+  "meta": {
+    "batch": 15,
+    "file": "batch_15.json",
+    "card_count": 257,
+    "note_count": 200,
+    "card_id_range": [
+      1590368949256,
+      1590572115741
+    ],
+    "eval_checks": [
+      "(a) question/answer correspond: the rendered answer actually answers/fills the question (for cloze, the revealed deletion fits the blank); flag empty answers, answer==question, or clear non-correspondence.",
+      "(b) text well-formed: question_text/answer_text non-empty and readable; no unrendered template artifacts ('{{', '}}', 'FrontSide', '{{c1::'), no obviously garbled/broken text; note image-only cards (no usable text).",
+      "(c) regex/LaTeX/cloze markup valid & balanced in the raw `fields`: cloze {{cN::...}} well-formed & balanced; MathJax/LaTeX delimiters balanced ( \\(..\\), \\[..\\], [$]..[/$], [$$]..[/$$], $$..$$ ); HTML tags reasonably balanced."
+    ]
+  },
+  "cards": [
+    {
+      "card_id": 1590368949256,
+      "note_id": 1590368913883,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] prevents backflow of fluid into the oval window by seperating the cochlea",
+      "answer_text": "The organ of corti prevents backflow of fluid into the oval window by seperating the cochlea",
+      "fields": {
+        "Text": "{{c1::The organ of corti}} prevents backflow of fluid into the oval window by seperating the cochlea",
+        "Extra": "<br><div><img src=\"Sound-waves-mechanism-hearing-ear-canal-membrane.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590368980220,
+      "note_id": 1590368949330,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The organ of corti includes the [...] membrane and the [...] membrane",
+      "answer_text": "The organ of corti includes the basilar membrane and the tectorial membrane",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">The organ of corti</font> includes the {{c1::basilar}} membrane and the {{c1::tectorial}} membrane",
+        "Extra": "<br><div><img src=\"Sound-waves-mechanism-hearing-ear-canal-membrane.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590369154601,
+      "note_id": 1590368980291,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Theory] states that our perception of sound depends on where each component frequency produces vibrations along the basilar membrane",
+      "answer_text": "Place theory states that our perception of sound depends on where each component frequency produces vibrations along the basilar membrane Larger wavelength travels further into cochlea Smaller wavelength does not travel far into cochlea",
+      "fields": {
+        "Text": "{{c1::Place theory::Theory}} states that our perception of sound depends on <font color=\"#ff0004\">where</font> each component frequency produces vibrations along the basilar membrane",
+        "Extra": "<div><br></div><div><font color=\"#ff0004\">Larger wavelength travels further into cochlea</font></div><div><font color=\"#ff0004\">Smaller wavelength does not travel far into cochlea</font></div><div><img src=\"place.gif\"><br></div><div><img src=\"place2.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590369205333,
+      "note_id": 1590369154758,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The External/Outer ear is [...]",
+      "answer_text": "The External/Outer ear is from the pinna to the tympanic membrane",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">The External/Outer ear</font> is {{c1::from the pinna to the tympanic membrane}}",
+        "Extra": "<br><div><img src=\"Sound-waves-mechanism-hearing-ear-canal-membrane.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590369243203,
+      "note_id": 1590369205394,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The middle ear is [...]",
+      "answer_text": "The middle ear is the region with the three ossicles",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">The middle ear</font> is {{c1::the region with the three ossicles}}",
+        "Extra": "<br><div><img src=\"Sound-waves-mechanism-hearing-ear-canal-membrane.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590369268553,
+      "note_id": 1590369243303,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The inner ear includes [...] and [...]",
+      "answer_text": "The inner ear includes the cochlea and semicircular canals",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">The inner ear</font> includes {{c1::the cochlea}} and {{c1::semicircular canals}}",
+        "Extra": "<br><div><img src=\"Sound-waves-mechanism-hearing-ear-canal-membrane.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590369420063,
+      "note_id": 1590369358305,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The cilia in the ear are called [...]",
+      "answer_text": "The cilia in the ear are called hair bundles",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">The cilia </font>in the ear are called {{c1::hair bundles}}",
+        "Extra": "<br><div><img src=\"paste-5062e8333b9765307d3c63ac179fc6a2cc2715ae.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590369440579,
+      "note_id": 1590369420108,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The tip of a hair cell is called the [...]",
+      "answer_text": "The tip of a hair cell is called the kinocilium",
+      "fields": {
+        "Text": "The tip of a hair cell is called the {{c1::kinocilium}}",
+        "Extra": "<br><div><img src=\"paste-5062e8333b9765307d3c63ac179fc6a2cc2715ae.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590369459398,
+      "note_id": 1590369440658,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Kinocilium are connected by [...]",
+      "answer_text": "Kinocilium are connected by tip links",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">Kinocilium</font> are connected by {{c1::tip links}}",
+        "Extra": "<div><br></div><img src=\"paste-5062e8333b9765307d3c63ac179fc6a2cc2715ae.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590369657372,
+      "note_id": 1590369459565,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "When tip links are pushed back by endolymph movement, the following cascade occurs: [...] [...] [...] [...] [...] [...]",
+      "answer_text": "When tip links are pushed back by endolymph movement, the following cascade occurs: K+ channels open Ca+2 channels open Action Potential Fires Spiral ganglion cells activated Auditory nerve activated Signal sent to brain",
+      "fields": {
+        "Text": "When <font color=\"#ff0004\">tip links</font> are pushed back by endolymph movement, the following cascade occurs:<div><br></div><div>{{c1::K+ channels open}}</div><div><br></div><div>{{c1::Ca+2 channels open}}</div><div><br></div><div>{{c1::Action Potential Fires}}</div><div><br></div><div>{{c1::Spiral ganglion cells activated}}</div><div><br></div><div>{{c1::Auditory nerve activated}}</div><div><br></div><div>{{c1::Signal sent to brain}}</div>",
+        "Extra": "<br><div><img src=\"paste-5062e8333b9765307d3c63ac179fc6a2cc2715ae.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590369700133,
+      "note_id": 1590369657411,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Humans can hear frequencies between [...] and [...]",
+      "answer_text": "Humans can hear frequencies between 20Hz and 20kHz",
+      "fields": {
+        "Text": "Humans can <font color=\"#ff0004\">hear frequencies</font> between {{c1::20Hz}} and {{c1::20kHz}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590369747005,
+      "note_id": 1590369700202,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] enables the cochlea to differentiate between sounds of varying frequencies",
+      "answer_text": "Basilar tuning enables the cochlea to differentiate between sounds of varying frequencies",
+      "fields": {
+        "Text": "{{c1::Basilar tuning}} enables the cochlea to <font color=\"#ff0004\">differentiate</font> between sounds of varying frequencies",
+        "Extra": "<br><div><img src=\"Slide4.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590369786402,
+      "note_id": 1590369747081,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Hair cells at the base of the cochlea are activated by [...] frequency sounds",
+      "answer_text": "Hair cells at the base of the cochlea are activated by high frequency sounds",
+      "fields": {
+        "Text": "Hair cells at the <font color=\"#00ffff\">base </font>of the cochlea are activated by {{c1::high}} frequency sounds",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590369826589,
+      "note_id": 1590369786621,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Hair cells at the apex of the cochlea are activated by [...] frequency sounds",
+      "answer_text": "Hair cells at the apex of the cochlea are activated by low frequency sounds",
+      "fields": {
+        "Text": "Hair cells at the <font color=\"#ff0004\">apex</font> of the cochlea are activated by {{c1::low}} frequency sounds",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590369876226,
+      "note_id": 1590369826654,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Brain Region] recieves all information from the cochlea and it is part of the [...] lobe",
+      "answer_text": "The primary auditory cortex recieves all information from the cochlea and it is part of the temporal lobe",
+      "fields": {
+        "Text": "{{c1::The primary auditory cortex::Brain Region}} recieves all information from the cochlea and it is part of the {{c1::temporal}} lobe",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590369952882,
+      "note_id": 1590369876305,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Cochlear implants are a surgical procedure that attempts to restore [...] AKA nerve deafness",
+      "answer_text": "Cochlear implants are a surgical procedure that attempts to restore sensorineural narrow hearing loss AKA nerve deafness",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">Cochlear implants</font> are a surgical procedure that attempts to restore {{c1::sensorineural narrow hearing loss}} AKA nerve deafness",
+        "Extra": "<br><div><img src=\"paste-d875c21a95fd2187cefd91aa9fa4691e7e0d1da9.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590370010286,
+      "note_id": 1590369952968,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is the change over time of receptor to a constant stimulus",
+      "answer_text": "Sensory adaptation is the change over time of receptor to a constant stimulus",
+      "fields": {
+        "Text": "{{c1::Sensory adaptation}} is the <font color=\"#ff0004\">change over time</font> of receptor to a constant stimulus",
+        "Extra": "<br><div><img src=\"Sensory_Adaptation.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590370069196,
+      "note_id": 1590370010365,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "To deal with constant stimulus , the body will [Up/Down] regulate sensory receptors",
+      "answer_text": "To deal with constant stimulus , the body will down regulate sensory receptors",
+      "fields": {
+        "Text": "To deal with <font color=\"#00ffff\">constant stimulus</font>, the body will {{c1::down::Up/Down}} regulate sensory receptors",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590370099398,
+      "note_id": 1590370069273,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The opposite of sensory adaptation is [...]",
+      "answer_text": "The opposite of sensory adaptation is amplification This is UP regulation",
+      "fields": {
+        "Text": "The <font color=\"#ff0004\">opposite</font> of sensory adaptation is {{c1::amplification}}",
+        "Extra": "<font color=\"#ff0004\"><br></font><div><font color=\"#ff0004\">This is UP regulation</font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590370210636,
+      "note_id": 1590370099548,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is a map of your body in your brain",
+      "answer_text": "The somatosensory homunculus is a map of your body in your brain It is a topological map of your entire body in the sensory cortex",
+      "fields": {
+        "Text": "{{c1::The somatosensory homunculus}} is a {{c2::map of your body in your brain}}",
+        "Extra": "<div><br></div><font color=\"#ff0004\">It is a topological map of your entire body in the sensory cortex</font><br><div><img src=\"Front_of_Sensory_Homunculus.gif\"><br></div><div><img src=\"Sensory_Homunculus-en.svg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590457678756,
+      "note_id": 1590370099548,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The somatosensory homunculus is a [...]",
+      "answer_text": "The somatosensory homunculus is a map of your body in your brain It is a topological map of your entire body in the sensory cortex",
+      "fields": {
+        "Text": "{{c1::The somatosensory homunculus}} is a {{c2::map of your body in your brain}}",
+        "Extra": "<div><br></div><font color=\"#ff0004\">It is a topological map of your entire body in the sensory cortex</font><br><div><img src=\"Front_of_Sensory_Homunculus.gif\"><br></div><div><img src=\"Sensory_Homunculus-en.svg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590370282249,
+      "note_id": 1590370210713,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] located in the muscles send signals to the brain in response to stretching . This allows for proprioception .",
+      "answer_text": "Spindles located in the muscles send signals to the brain in response to stretching . This allows for proprioception .",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">Spindles</font>}} located in the muscles send signals to the brain in response to <font color=\"#ff0004\">stretching</font>. This allows for {{c2::<font color=\"#ff0004\">proprioception</font>}}.",
+        "Extra": "<br><div><img src=\"musclespindles-19.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590370282250,
+      "note_id": 1590370210713,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Spindles located in the muscles send signals to the brain in response to stretching . This allows for [...] .",
+      "answer_text": "Spindles located in the muscles send signals to the brain in response to stretching . This allows for proprioception .",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">Spindles</font>}} located in the muscles send signals to the brain in response to <font color=\"#ff0004\">stretching</font>. This allows for {{c2::<font color=\"#ff0004\">proprioception</font>}}.",
+        "Extra": "<br><div><img src=\"musclespindles-19.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590370381858,
+      "note_id": 1590370282332,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is our awareness of the movement of the body.",
+      "answer_text": "Kinaesthesia is our awareness of the movement of the body.",
+      "fields": {
+        "Text": "{{c1::Kinaesthesia}} is our awareness of the <font color=\"#ff0004\">movement</font> of the body.",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590370475929,
+      "note_id": 1590370381896,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Unlike proprioception, kinaesthesia is [...] example?",
+      "answer_text": "Unlike proprioception, kinaesthesia is behavioral/conscious example? \"If I move like this I will hit the baseball\"",
+      "fields": {
+        "Text": "Unlike proprioception, <font color=\"#00ffff\">kinaesthesia </font>is {{c1::behavioral/conscious}}<div><br></div><div>example?</div>",
+        "Extra": "<div><br></div><div>\"If I move like this I will hit the baseball\"</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590370581741,
+      "note_id": 1590370476069,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The [...] receptor allows us to sense pain and temperature",
+      "answer_text": "The TrpV1 receptor allows us to sense pain and temperature",
+      "fields": {
+        "Text": "The {{c1::<font color=\"#ff0004\">TrpV1</font>}} receptor allows us to sense {{c2::<font color=\"#ff0004\">pain</font>}}&nbsp;and {{c2::<font color=\"#ff0004\">temperature</font>}}",
+        "Extra": "<br><div><img src=\"Figure 7G_Cropped_0.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590370581742,
+      "note_id": 1590370476069,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The TrpV1 receptor allows us to sense [...] and [...]",
+      "answer_text": "The TrpV1 receptor allows us to sense pain and temperature",
+      "fields": {
+        "Text": "The {{c1::<font color=\"#ff0004\">TrpV1</font>}} receptor allows us to sense {{c2::<font color=\"#ff0004\">pain</font>}}&nbsp;and {{c2::<font color=\"#ff0004\">temperature</font>}}",
+        "Extra": "<br><div><img src=\"Figure 7G_Cropped_0.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590370677132,
+      "note_id": 1590370581812,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "In response to pain/temperature inducing molecules being released, the TRPV1 receptor will [...] and [...]",
+      "answer_text": "In response to pain/temperature inducing molecules being released, the TRPV1 receptor will change conformation and eventually lead to an AP signal",
+      "fields": {
+        "Text": "In response to <font color=\"#ff0004\">pain/temperature </font>inducing molecules being released, the <font color=\"#ff0004\">TRPV1</font> receptor will {{c1::change conformation}} and {{c1::eventually lead to an AP signal}}",
+        "Extra": "<br><div><img src=\"Figure 7G_Cropped_0.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590395800708,
+      "note_id": 1590395655237,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The three types of nerve fibers are [...] fibres, [...] fibres, and [...] fibres",
+      "answer_text": "The three types of nerve fibers are A-beta fibres, A-delta fibres, and C fibres",
+      "fields": {
+        "Text": "The three types of <font color=\"#ff0004\">nerve fibers</font> are {{c1::A-beta}} fibres, {{c1::A-delta}} fibres, and {{c1::C}} fibres",
+        "Extra": "<div><br></div><div><img src=\"paste-a1c3cfc0e1b64a3d37fbe272146ca635d4e10923.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590395908230,
+      "note_id": 1590395800889,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Type of nerve fiber] are fast , thick , and covered in myelin",
+      "answer_text": "A-beta fibers are fast , thick , and covered in myelin",
+      "fields": {
+        "Text": "{{c1::A-beta fibers::Type of nerve fiber}} are <font color=\"#ff0004\">fast</font>, <font color=\"#ff0004\">thick</font>, and covered in <font color=\"#ff0004\">myelin</font>",
+        "Extra": "<br><div><img src=\"paste-a1c3cfc0e1b64a3d37fbe272146ca635d4e10923.jpg\"></div><div><img src=\"tenor.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590395995125,
+      "note_id": 1590395917428,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Type of nerve fibre] are small in diameter with less myelin",
+      "answer_text": "A-delta fibres are small in diameter with less myelin",
+      "fields": {
+        "Text": "{{c1::A-delta fibres::Type of nerve fibre}} are <font color=\"#ff0004\">small in diameter</font> with <font color=\"#ff0004\">less myelin</font>",
+        "Extra": "<br><div><img src=\"paste-0df76fe4d7f9af9dd24dbe8a7622318455194308.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590396039812,
+      "note_id": 1590395995211,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Type of nerve fibre] are unmyelinated and very small in diameter.",
+      "answer_text": "C fibers are unmyelinated and very small in diameter.",
+      "fields": {
+        "Text": "{{c1::C fibers::Type of nerve fibre}} are <font color=\"#ff0004\">unmyelinated</font> and <font color=\"#ff0004\">very small</font> in diameter.",
+        "Extra": "<br><div><img src=\"paste-0df76fe4d7f9af9dd24dbe8a7622318455194308.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590396070478,
+      "note_id": 1590396039885,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Type of nerve fiber] cause a lingering sense of pain",
+      "answer_text": "C fibres cause a lingering sense of pain",
+      "fields": {
+        "Text": "{{c1::C fibres::Type of nerve fiber}} cause a lingering sense of pain",
+        "Extra": "<br><div><img src=\"paste-0df76fe4d7f9af9dd24dbe8a7622318455194308.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590396181775,
+      "note_id": 1590396070549,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Theory] states that non-painful inputs close the 'gates' to painful inputs, preventing pain sensation",
+      "answer_text": "Gate control theory states that non-painful inputs close the 'gates' to painful inputs, preventing pain sensation",
+      "fields": {
+        "Text": "{{c1::Gate control theory::Theory}} states that <font color=\"#ffc0fe\">non-painful inputs</font> close the 'gates' to painful inputs, <font color=\"#ffc0fe\">preventing pain sensation</font>",
+        "Extra": "<br><div><img src=\"maxresdefault (2).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590396390840,
+      "note_id": 1590396181940,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] are chemical signals released by a species to trigger an innate response in another member of the species",
+      "answer_text": "Pheromones are chemical signals released by a species to trigger an innate response in another member of the species often linked to mating, fighting, and communication",
+      "fields": {
+        "Text": "{{c1::Pheromones}} are <font color=\"#00ffff\">chemical signals</font> released by a species to trigger an {{c2::innate response::type of response}} in another member of the species",
+        "Extra": "<div><br></div><i style=\"\"><font color=\"#00ffff\">often linked to mating, fighting, and communication</font></i><br><div><img src=\"animalpheromones.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590396390843,
+      "note_id": 1590396181940,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Pheromones are chemical signals released by a species to trigger an [type of response] in another member of the species",
+      "answer_text": "Pheromones are chemical signals released by a species to trigger an innate response in another member of the species often linked to mating, fighting, and communication",
+      "fields": {
+        "Text": "{{c1::Pheromones}} are <font color=\"#00ffff\">chemical signals</font> released by a species to trigger an {{c2::innate response::type of response}} in another member of the species",
+        "Extra": "<div><br></div><i style=\"\"><font color=\"#00ffff\">often linked to mating, fighting, and communication</font></i><br><div><img src=\"animalpheromones.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590397911704,
+      "note_id": 1590397811243,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] are not present in humans but allows animals to rely more heavily on pheromones",
+      "answer_text": "The accessory olfactory bulbs are not present in humans but allows animals to rely more heavily on pheromones",
+      "fields": {
+        "Text": "{{c1::The accessory olfactory bulbs}} are&nbsp;<font color=\"#ff0004\">not present in humans</font> but allows animals to rely more heavily on <font color=\"#ff0004\">pheromones</font>",
+        "Extra": "<br><div><img src=\"mousemap.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590397987654,
+      "note_id": 1590397911771,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is your sense of smell",
+      "answer_text": "Olfaction is your sense of smell",
+      "fields": {
+        "Text": "{{c1::Olfaction}} is your sense of <font color=\"#ff0004\">smell</font>",
+        "Extra": "<br><div><img src=\"images.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590398078836,
+      "note_id": 1590397987714,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The area in the nostril responsible for olfaction is the [...] AKA [...]",
+      "answer_text": "The area in the nostril responsible for olfaction is the olfactory epithelium AKA olfactory sensory cells",
+      "fields": {
+        "Text": "The area in the <font color=\"#ff0004\">nostril</font> responsible for <font color=\"#ff0004\">olfaction</font> is the {{c1::olfactory epithelium}} AKA {{c1::olfactory sensory cells}}",
+        "Extra": "<br><div><img src=\"smell-olfaction-epithelium-cilia-olfactory-sensory-neurons-and-basal-cells.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590398186392,
+      "note_id": 1590398176818,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The [...] seperates the olfactory epithilium from the brain",
+      "answer_text": "The cribriform plate seperates the olfactory epithilium from the brain",
+      "fields": {
+        "Text": "The {{c1::cribriform plate}} seperates the {{c2::olfactory epithilium}} from the {{c2::brain}}",
+        "Extra": "<div><br></div><div><img src=\"smell-olfaction-epithelium-cilia-olfactory-sensory-neurons-and-basal-cells.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590398186393,
+      "note_id": 1590398176818,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The cribriform plate seperates the [...] from the [...]",
+      "answer_text": "The cribriform plate seperates the olfactory epithilium from the brain",
+      "fields": {
+        "Text": "The {{c1::cribriform plate}} seperates the {{c2::olfactory epithilium}} from the {{c2::brain}}",
+        "Extra": "<div><br></div><div><img src=\"smell-olfaction-epithelium-cilia-olfactory-sensory-neurons-and-basal-cells.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590398291692,
+      "note_id": 1590398186474,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Directly above the cribriform plate is the [...]",
+      "answer_text": "Directly above the cribriform plate is the olfactory bulb",
+      "fields": {
+        "Text": "Directly <font color=\"#00ffff\">above </font>the<font color=\"#00ffff\"> cribriform plate</font> is the {{c1::olfactory bulb}}",
+        "Extra": "<br><div><img src=\"smell-olfaction-epithelium-cilia-olfactory-sensory-neurons-and-basal-cells.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590398360127,
+      "note_id": 1590398291767,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is an extension from the brain that consists of a bundle of nerves that send little projections through the cribriform plate into the olfactory epithelium",
+      "answer_text": "The olfactory bulb is an extension from the brain that consists of a bundle of nerves that send little projections through the cribriform plate into the olfactory epithelium",
+      "fields": {
+        "Text": "{{c1::The olfactory bulb}} is {{c2::an extension from the brain that consists of a bundle of nerves that send little projections through the cribriform plate into the olfactory epithelium}}",
+        "Extra": "<br><div><img src=\"smell-olfaction-epithelium-cilia-olfactory-sensory-neurons-and-basal-cells.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590398360128,
+      "note_id": 1590398291767,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The olfactory bulb is [...]",
+      "answer_text": "The olfactory bulb is an extension from the brain that consists of a bundle of nerves that send little projections through the cribriform plate into the olfactory epithelium",
+      "fields": {
+        "Text": "{{c1::The olfactory bulb}} is {{c2::an extension from the brain that consists of a bundle of nerves that send little projections through the cribriform plate into the olfactory epithelium}}",
+        "Extra": "<br><div><img src=\"smell-olfaction-epithelium-cilia-olfactory-sensory-neurons-and-basal-cells.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590398453516,
+      "note_id": 1590398360202,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "At the end of the neurons projecting from the olfactory bulb are [...]",
+      "answer_text": "At the end of the neurons projecting from the olfactory bulb are olfactory chemoreceptors",
+      "fields": {
+        "Text": "At the end of the <font color=\"#ff0004\">neurons</font> projecting from the <font color=\"#ff0004\">olfactory bulb</font> are {{c1::olfactory chemoreceptors}}",
+        "Extra": "<br><div><img src=\"smell-olfaction-epithelium-cilia-olfactory-sensory-neurons-and-basal-cells.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590398681213,
+      "note_id": 1590398453591,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "A [...] is a designation point for various olfactory cells sensitive to the same molecule",
+      "answer_text": "A glomerulus is a designation point for various olfactory cells sensitive to the same molecule",
+      "fields": {
+        "Text": "A {{c1::glomerulus}} is a designation point for various olfactory cells <font color=\"#ff0004\">sensitive to the same molecule</font>",
+        "Extra": "<br><div><img src=\"dd175501cec941a4c247a44590dadc3d.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590398908491,
+      "note_id": 1590398865816,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] sends sensory signals to mitral/tufted cells",
+      "answer_text": "Olfactory glomeruli sends sensory signals to mitral/tufted cells",
+      "fields": {
+        "Text": "{{c1::Olfactory glomeruli}} sends <font color=\"#00ffff\">sensory signals</font> to {{c2::mitral/tufted cells}}",
+        "Extra": "<br><div><img src=\"dd175501cec941a4c247a44590dadc3d.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590398908493,
+      "note_id": 1590398865816,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Olfactory glomeruli sends sensory signals to [...]",
+      "answer_text": "Olfactory glomeruli sends sensory signals to mitral/tufted cells",
+      "fields": {
+        "Text": "{{c1::Olfactory glomeruli}} sends <font color=\"#00ffff\">sensory signals</font> to {{c2::mitral/tufted cells}}",
+        "Extra": "<br><div><img src=\"dd175501cec941a4c247a44590dadc3d.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590398976859,
+      "note_id": 1590398908586,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Olfactory epithelia rely on [receptor type]",
+      "answer_text": "Olfactory epithelia rely on G-Protein Coupled Receptors",
+      "fields": {
+        "Text": "Olfactory epithelia rely on {{c1::G-Protein Coupled Receptors::receptor type}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590399127041,
+      "note_id": 1590398976930,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The steps to olfaction include: [...] [...] [...] [...] [...] [...] [...]",
+      "answer_text": "The steps to olfaction include: molecule binds to GPCR on olfactory epithelia G-protein binds to ion channels ion channels open and trigger AP AP goes through cribriform plate AP reaches glomerulus AP activates mitral/tufted cells AP synapses in brain",
+      "fields": {
+        "Text": "The steps to <font color=\"#00ffff\">olfaction </font>include:<div>{{c1::molecule binds to GPCR on olfactory epithelia}}</div><div>{{c1::G-protein binds to ion channels}}</div><div>{{c1::ion channels open and trigger AP}}</div><div>{{c1::AP goes through cribriform plate}}</div><div>{{c1::AP reaches glomerulus}}</div><div>{{c1::AP activates mitral/tufted cells}}</div><div>{{c1::AP synapses in brain}}</div>",
+        "Extra": "<div><br></div><div><img src=\"dd175501cec941a4c247a44590dadc3d.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590399280653,
+      "note_id": 1590399127197,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The sense that doesn't synapse on to the thalamus is [...]",
+      "answer_text": "The sense that doesn't synapse on to the thalamus is olfaction",
+      "fields": {
+        "Text": "The sense that doesn't synapse on to the thalamus is {{c1::olfaction}}",
+        "Extra": "<br><div><img src=\"The-Thalamus.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590399420138,
+      "note_id": 1590399280713,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Theory] states that each sensory receptor binds to a specific stimuli and is directly linked to the brain",
+      "answer_text": "The labeled-line theory states that each sensory receptor binds to a specific stimuli and is directly linked to the brain",
+      "fields": {
+        "Text": "{{c1::The labeled-line theory::Theory}} states that each <font color=\"#ff3b30\">sensory</font>&nbsp;<font color=\"#ff0004\">receptor</font> binds to a <font color=\"#ff0004\">specific stimuli</font> and is <font color=\"#ff0004\">directly linked</font> to the brain",
+        "Extra": "<br><div><img src=\"taste.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590399483949,
+      "note_id": 1590399420175,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] states that vibrational frequency of a molecule gives that molecule a specific odor .",
+      "answer_text": "The vibrational theory of olfaction states that vibrational frequency of a molecule gives that molecule a specific odor .",
+      "fields": {
+        "Text": "{{c1::The vibrational theory of olfaction}} states that <font color=\"#00ffff\">vibrational frequency </font>of a molecule gives that molecule a <font color=\"#00ffff\">specific odor</font>.",
+        "Extra": "<br><div><img src=\"thevibration.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590399534234,
+      "note_id": 1590399484126,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] AKA [...] states that odors fit into receptors like a lock-and-key",
+      "answer_text": "Steric theory of olfaction AKA shape theory states that odors fit into receptors like a lock-and-key",
+      "fields": {
+        "Text": "{{c1::Steric theory of olfaction}} AKA {{c1::shape theory}} states that odors fit into receptors like a lock-and-key",
+        "Extra": "<br><div><br></div><div><img src=\"maxresdefault (8).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590399567727,
+      "note_id": 1590399534314,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is the inability to percieve odor",
+      "answer_text": "Anosmia is the inability to percieve odor",
+      "fields": {
+        "Text": "{{c1::Anosmia}} is the inability to percieve odor",
+        "Extra": "<br><div><img src=\"dc-Cover-mhk3afd7uqfevth32tcte0dtn5-20160907064750.Medi.jpeg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590476636721,
+      "note_id": 1590476466605,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The 5 main tastes are [...] , [...] , [...] , [...] , and [...]",
+      "answer_text": "The 5 main tastes are bitter , salty , sweet , sour , and umami",
+      "fields": {
+        "Text": "The 5 <font color=\"#ff0004\">main tastes</font> are {{c1::bitter}}, {{c1::salty}}, {{c1::sweet}}, {{c1::sour}}, and {{c1::umami}}",
+        "Extra": "<br><div><img src=\"neon-sign-of-tongue.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590476695875,
+      "note_id": 1590476636874,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Umami is the ability to taste [...]",
+      "answer_text": "Umami is the ability to taste glutamate",
+      "fields": {
+        "Text": "<font color=\"#ffc0fe\">Umami </font>is the ability to taste {{c1::glutamate}}",
+        "Extra": "<br><div><img src=\"MSG-810x608.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590476797757,
+      "note_id": 1590476695945,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The three types of taste buds are [...] , [...] , and [...]",
+      "answer_text": "The three types of taste buds are fungiform , foliate , and circumvallate",
+      "fields": {
+        "Text": "The three types of <font color=\"#00ffff\">taste buds</font> are {{c1::fungiform}}, {{c1::foliate}}, and {{c1::circumvallate}}",
+        "Extra": "<br><div><img src=\"paste-560fce63d091406cf629207689d9a79830f36ddc.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590476883068,
+      "note_id": 1590476797787,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Fungiform papillae are located at the [...] of the tongue",
+      "answer_text": "Fungiform papillae are located at the front/anterior of the tongue",
+      "fields": {
+        "Text": "{{c2::<font color=\"#00ffff\">Fungiform papillae</font>::Papillae}}&nbsp;are located at the {{c1::<font color=\"#00ffff\">front/anterior</font>}} of the tongue",
+        "Extra": "<br><div><img src=\"paste-560fce63d091406cf629207689d9a79830f36ddc.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590476883069,
+      "note_id": 1590476797787,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Papillae] are located at the front/anterior of the tongue",
+      "answer_text": "Fungiform papillae are located at the front/anterior of the tongue",
+      "fields": {
+        "Text": "{{c2::<font color=\"#00ffff\">Fungiform papillae</font>::Papillae}}&nbsp;are located at the {{c1::<font color=\"#00ffff\">front/anterior</font>}} of the tongue",
+        "Extra": "<br><div><img src=\"paste-560fce63d091406cf629207689d9a79830f36ddc.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590476913709,
+      "note_id": 1590476883139,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Papillae] are located at the side of the tongue",
+      "answer_text": "Foliate papillae are located at the side of the tongue",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">Foliate papillae</font>::Papillae}} are located at the {{c2::<font color=\"#ff0004\">side</font>}} of the tongue<br>",
+        "Extra": "<br><div><img src=\"paste-560fce63d091406cf629207689d9a79830f36ddc.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590476913710,
+      "note_id": 1590476883139,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Foliate papillae are located at the [...] of the tongue",
+      "answer_text": "Foliate papillae are located at the side of the tongue",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">Foliate papillae</font>::Papillae}} are located at the {{c2::<font color=\"#ff0004\">side</font>}} of the tongue<br>",
+        "Extra": "<br><div><img src=\"paste-560fce63d091406cf629207689d9a79830f36ddc.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590476938974,
+      "note_id": 1590476913780,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Papillae] are located at the back of the tongue",
+      "answer_text": "Circumvallate papillae are located at the back of the tongue",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">Circumvallate papillae</font>::Papillae}} are located at the {{c2::<font color=\"#ff0004\">back</font>}} of the tongue<br>",
+        "Extra": "<br><div><img src=\"paste-560fce63d091406cf629207689d9a79830f36ddc.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590476938975,
+      "note_id": 1590476913780,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Circumvallate papillae are located at the [...] of the tongue",
+      "answer_text": "Circumvallate papillae are located at the back of the tongue",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">Circumvallate papillae</font>::Papillae}} are located at the {{c2::<font color=\"#ff0004\">back</font>}} of the tongue<br>",
+        "Extra": "<br><div><img src=\"paste-560fce63d091406cf629207689d9a79830f36ddc.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590477052028,
+      "note_id": 1590476939097,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] are located at the center of the tongue and do not contain taste buds",
+      "answer_text": "Filiform papillae are located at the center of the tongue and do not contain taste buds",
+      "fields": {
+        "Text": "{{c1::Filiform papillae}} are located at the center of the tongue and <b><font color=\"#00ffff\">do not</font></b><font color=\"#00ffff\"> </font>contain taste buds",
+        "Extra": "<br><div><img src=\"paste-560fce63d091406cf629207689d9a79830f36ddc.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590477089090,
+      "note_id": 1590477052088,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is a substance that simulates the sense of taste",
+      "answer_text": "Tastant is a substance that simulates the sense of taste",
+      "fields": {
+        "Text": "{{c1::Tastant}}&nbsp;is a substance that simulates the sense of <font color=\"#ff0004\">taste</font>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590477111317,
+      "note_id": 1590477089120,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] is a protein associated with the sensation of taste",
+      "answer_text": "Gustducin is a protein associated with the sensation of taste",
+      "fields": {
+        "Text": "{{c1::Gustducin}} is a <font color=\"#ff0004\">protein</font> associated with the sensation of <font color=\"#ff0004\">taste</font>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590477288652,
+      "note_id": 1590477111382,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[...] states that each taste bud has 5 axons for each type of taste and sends its signals to the gustatory cortex",
+      "answer_text": "The labelled lines model states that each taste bud has 5 axons for each type of taste and sends its signals to the gustatory cortex",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">The labelled lines model</font>}} states that each taste bud has <font color=\"#ff0004\">5 axons</font> for each type of taste and sends its signals to the {{c2::<font color=\"#ff0004\">gustatory cortex</font>}}",
+        "Extra": "<br><div><img src=\"41586_2006_Article_BFnature05401_Fig2_HTML.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590477288653,
+      "note_id": 1590477111382,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "The labelled lines model states that each taste bud has 5 axons for each type of taste and sends its signals to the [...]",
+      "answer_text": "The labelled lines model states that each taste bud has 5 axons for each type of taste and sends its signals to the gustatory cortex",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">The labelled lines model</font>}} states that each taste bud has <font color=\"#ff0004\">5 axons</font> for each type of taste and sends its signals to the {{c2::<font color=\"#ff0004\">gustatory cortex</font>}}",
+        "Extra": "<br><div><img src=\"41586_2006_Article_BFnature05401_Fig2_HTML.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590477406090,
+      "note_id": 1590477395776,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Taste] , [Taste] , and [Taste] cells rely on G-Protein Coupled Receptors",
+      "answer_text": "Sweet , Umami , and Bitter cells rely on G-Protein Coupled Receptors",
+      "fields": {
+        "Text": "{{c1::Sweet::Taste}}, {{c1::Umami::Taste}}, and {{c1::Bitter::Taste}} cells rely on {{c2::G-Protein Coupled Receptors}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590477406091,
+      "note_id": 1590477395776,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Sweet , Umami , and Bitter cells rely on [...]",
+      "answer_text": "Sweet , Umami , and Bitter cells rely on G-Protein Coupled Receptors",
+      "fields": {
+        "Text": "{{c1::Sweet::Taste}}, {{c1::Umami::Taste}}, and {{c1::Bitter::Taste}} cells rely on {{c2::G-Protein Coupled Receptors}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590477446445,
+      "note_id": 1590477435150,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Sour and Salty rely on [...]",
+      "answer_text": "Sour and Salty rely on ion channels",
+      "fields": {
+        "Text": "{{c2::Sour::Taste}} and {{c2::Salty::Taste}} rely on {{c1::ion channels}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590477446446,
+      "note_id": 1590477435150,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "[Taste] and [Taste] rely on ion channels",
+      "answer_text": "Sour and Salty rely on ion channels",
+      "fields": {
+        "Text": "{{c2::Sour::Taste}} and {{c2::Salty::Taste}} rely on {{c1::ion channels}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590477552630,
+      "note_id": 1590477446513,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Sensation & Perception",
+      "notetype": "AACloze",
+      "question_text": "Smell synapses at the [...]",
+      "answer_text": "Smell synapses at the oribofrontal cortex NOT the thalamus",
+      "fields": {
+        "Text": "Smell synapses at the {{c1::oribofrontal cortex}}",
+        "Extra": "<div><br></div><font color=\"#ff0004\">NOT the thalamus</font><br><div><img src=\"Orbitofrontal-Cortex.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590477689373,
+      "note_id": 1590477580732,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Consciousness is the awareness of our [...] and [...]",
+      "answer_text": "Consciousness is the awareness of our self and environment",
+      "fields": {
+        "Text": "{{c2::<font color=\"#00ffff\">Consciousness</font>}} is the awareness of our {{c1::<font color=\"#00ffff\">self</font>}} and {{c1::<font color=\"#00ffff\">environment</font>}}",
+        "Extra": "<br><div><img src=\"1483445636048.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590477689374,
+      "note_id": 1590477580732,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is the awareness of our self and environment",
+      "answer_text": "Consciousness is the awareness of our self and environment",
+      "fields": {
+        "Text": "{{c2::<font color=\"#00ffff\">Consciousness</font>}} is the awareness of our {{c1::<font color=\"#00ffff\">self</font>}} and {{c1::<font color=\"#00ffff\">environment</font>}}",
+        "Extra": "<br><div><img src=\"1483445636048.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590477714976,
+      "note_id": 1590477689452,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Consciousness ranges from [...] to [...]",
+      "answer_text": "Consciousness ranges from alertness to sleep",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">Consciousness</font> ranges from {{c1::alertness}} to {{c1::sleep}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590477783927,
+      "note_id": 1590477715041,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is the state of being awake , but more relaxed and not as focused.",
+      "answer_text": "Daydreaming is the state of being awake , but more relaxed and not as focused.",
+      "fields": {
+        "Text": "{{c1::Daydreaming}} is the state of being <font color=\"#ff0004\">awake</font>, but more <font color=\"#ff0004\">relaxed</font> and not as focused.",
+        "Extra": "<br><div><img src=\"Image-from-iOS-7.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590477834508,
+      "note_id": 1590477784085,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is the state just before falling asleep or after waking up .",
+      "answer_text": "Drowsiness is the state just before falling asleep or after waking up .",
+      "fields": {
+        "Text": "{{c1::Drowsiness}} is the state <font color=\"#ff0004\">just before falling asleep</font> or <font color=\"#ff0004\">after waking up</font>.",
+        "Extra": "<br><div><img src=\"ESS-JDS-Dr-Murray-Johns.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590477951861,
+      "note_id": 1590477907365,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is the state of not being aware of yourself or the world around you",
+      "answer_text": "Sleep is the state of not being aware of yourself or the world around you",
+      "fields": {
+        "Text": "{{c1::Sleep}} is the state of not being aware of yourself or the world around you",
+        "Extra": "<br><div><img src=\"2rfd59.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590478101140,
+      "note_id": 1590477951915,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] can measure brain waves",
+      "answer_text": "Electroencephalograms (EEGs) can measure brain waves",
+      "fields": {
+        "Text": "{{c1::Electroencephalograms (EEGs)}} can measure <font color=\"#ff0004\">brain waves</font>",
+        "Extra": "<br><div><img src=\"419678_1_En_1_Fig1_HTML.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590478137383,
+      "note_id": 1590478101267,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The 4 main types of brain waves are [...] , [...] , [...] , and [...]",
+      "answer_text": "The 4 main types of brain waves are alpha , beta , delta , and theta",
+      "fields": {
+        "Text": "The 4 main types of <font color=\"#ffc0fe\">brain waves</font> are {{c1::alpha}}, {{c1::beta}}, {{c1::delta}}, and {{c1::theta}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590478201772,
+      "note_id": 1590478137443,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Brain Wave] are associated with alertness/concentration",
+      "answer_text": "Beta waves are associated with alertness/concentration",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">Beta waves</font>::Brain Wave}} are associated with {{c2::<font color=\"#ff0004\">alertness/concentration</font>}}",
+        "Extra": "<br><div><img src=\"How-to-meditate-for-better-concentration.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590478201773,
+      "note_id": 1590478137443,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Beta waves are associated with [...]",
+      "answer_text": "Beta waves are associated with alertness/concentration",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">Beta waves</font>::Brain Wave}} are associated with {{c2::<font color=\"#ff0004\">alertness/concentration</font>}}",
+        "Extra": "<br><div><img src=\"How-to-meditate-for-better-concentration.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590478253805,
+      "note_id": 1590478201835,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Alpha waves are associated with [...]",
+      "answer_text": "Alpha waves are associated with daydreaming",
+      "fields": {
+        "Text": "{{c2::<font color=\"#ff0004\">Alpha waves</font>::Brain wave}} are associated with {{c1::<font color=\"#ff0004\">daydreaming</font>}}",
+        "Extra": "<br><div><img src=\"htCqa6jYJnEShpo8htHVDd-320-80.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590478253806,
+      "note_id": 1590478201835,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Brain wave] are associated with daydreaming",
+      "answer_text": "Alpha waves are associated with daydreaming",
+      "fields": {
+        "Text": "{{c2::<font color=\"#ff0004\">Alpha waves</font>::Brain wave}} are associated with {{c1::<font color=\"#ff0004\">daydreaming</font>}}",
+        "Extra": "<br><div><img src=\"htCqa6jYJnEShpo8htHVDd-320-80.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590478330935,
+      "note_id": 1590478253874,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Theta waves are slower/lower frequency waves that are associated with [...] and [...]",
+      "answer_text": "Theta waves are slower/lower frequency waves that are associated with drowsiness and right after falling asleep",
+      "fields": {
+        "Text": "{{c2::<font color=\"#ff0004\">Theta waves</font>::Brain wave}} are slower/lower frequency waves that are associated with {{c1::<font color=\"#ff0004\">drowsiness</font>}} and {{c1::<font color=\"#ff0004\">right after falling asleep</font>}}",
+        "Extra": "<br><div><img src=\"5198987.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590478330936,
+      "note_id": 1590478253874,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Brain wave] are slower/lower frequency waves that are associated with drowsiness and right after falling asleep",
+      "answer_text": "Theta waves are slower/lower frequency waves that are associated with drowsiness and right after falling asleep",
+      "fields": {
+        "Text": "{{c2::<font color=\"#ff0004\">Theta waves</font>::Brain wave}} are slower/lower frequency waves that are associated with {{c1::<font color=\"#ff0004\">drowsiness</font>}} and {{c1::<font color=\"#ff0004\">right after falling asleep</font>}}",
+        "Extra": "<br><div><img src=\"5198987.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590478401837,
+      "note_id": 1590478331005,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Brain wave] are associated with deep sleep and comas",
+      "answer_text": "Delta waves are associated with deep sleep and comas",
+      "fields": {
+        "Text": "{{c1::<font color=\"#00ffff\">Delta waves</font>::Brain wave}} are associated with {{c2::<font color=\"#00ffff\">deep sleep</font>}} and {{c2::<font color=\"#00ffff\">comas</font>}}",
+        "Extra": "<br><div><img src=\"326926_1100.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590478401838,
+      "note_id": 1590478331005,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Delta waves are associated with [...] and [...]",
+      "answer_text": "Delta waves are associated with deep sleep and comas",
+      "fields": {
+        "Text": "{{c1::<font color=\"#00ffff\">Delta waves</font>::Brain wave}} are associated with {{c2::<font color=\"#00ffff\">deep sleep</font>}} and {{c2::<font color=\"#00ffff\">comas</font>}}",
+        "Extra": "<br><div><img src=\"326926_1100.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590478433708,
+      "note_id": 1590478401929,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "One sleep cycle typically lasts [Time]",
+      "answer_text": "One sleep cycle typically lasts 90 minutes",
+      "fields": {
+        "Text": "One <font color=\"#ff0004\">sleep cycle</font> typically lasts {{c1::90 minutes::Time}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590478488282,
+      "note_id": 1590478433769,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The first three stages of the sleep cycle are called [...] , while the fourth stage is called [...]",
+      "answer_text": "The first three stages of the sleep cycle are called non-rapid eye movement sleep , while the fourth stage is called rapid-eye movement sleep (REM)",
+      "fields": {
+        "Text": "The <font color=\"#00ffff\">first three stages </font>of the sleep cycle are called {{c1::non-rapid eye movement sleep}}, while the&nbsp;<font color=\"#00ffff\">fourth stage&nbsp;</font>is called {{c1::rapid-eye movement sleep (REM)}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590478531854,
+      "note_id": 1590478488341,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The N1 stage of sleep is dominated by [Brain waves]",
+      "answer_text": "The N1 stage of sleep is dominated by theta waves",
+      "fields": {
+        "Text": "The <font color=\"#ff0004\">N1 stage</font> of sleep is dominated by {{c1::theta waves::Brain waves}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590478661922,
+      "note_id": 1590478531916,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Three phenomena that can occur during N1 sleep are [...] , [...] , and [...]",
+      "answer_text": "Three phenomena that can occur during N1 sleep are hypnagonic hallucinations , the tetris effect , and hypnic jerks",
+      "fields": {
+        "Text": "Three phenomena that can occur during&nbsp;{{c2::N1 sleep::Sleep stage}}&nbsp;are {{c1::hypnagonic hallucinations}}, {{c1::the tetris effect}}, and {{c1::hypnic jerks}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590551682348,
+      "note_id": 1590478531916,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Three phenomena that can occur during [Sleep stage] are hypnagonic hallucinations , the tetris effect , and hypnic jerks",
+      "answer_text": "Three phenomena that can occur during N1 sleep are hypnagonic hallucinations , the tetris effect , and hypnic jerks",
+      "fields": {
+        "Text": "Three phenomena that can occur during&nbsp;{{c2::N1 sleep::Sleep stage}}&nbsp;are {{c1::hypnagonic hallucinations}}, {{c1::the tetris effect}}, and {{c1::hypnic jerks}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590478759005,
+      "note_id": 1590478661990,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] are hearing/seeing things that aren't there during N1 sleep",
+      "answer_text": "Hypnagogic hallucinations are hearing/seeing things that aren't there during N1 sleep they typically can be very frightening",
+      "fields": {
+        "Text": "{{c1::Hypnagogic hallucinations}} are <font color=\"#ff0004\">hearing/seeing things</font> that aren't there during <font color=\"#ff0004\">N1 sleep</font>",
+        "Extra": "<br><div><font color=\"#ff0004\">they typically can be very frightening</font></div><div><img src=\"maxresdefault (11).jpg\"><font color=\"#ff0004\"><br></font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590478898115,
+      "note_id": 1590478759140,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when you devote so much time to an activity during the day that it begins to pattern your thoughts , mental images , and dreams .",
+      "answer_text": "The tetris effect is when you devote so much time to an activity during the day that it begins to pattern your thoughts , mental images , and dreams . This is why when you fall asleep after a day at the amusement park you may feel as though you are still riding the rides as you fall asleep",
+      "fields": {
+        "Text": "{{c1::The tetris effect}} is when you devote so much time to an activity during the day that it begins to <font color=\"#ff0004\">pattern your thoughts</font>, <font color=\"#ff0004\">mental images</font>, and <font color=\"#ff0004\">dreams</font>.",
+        "Extra": "<div><br></div><font color=\"#ff0004\">This is why when you fall asleep after a day at the amusement park you may feel as though you are still riding the rides as you fall asleep</font><br><div><img src=\"file-20180711-27021-x73mii.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590478950958,
+      "note_id": 1590478898172,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] are muscle twitches you sometimes experience as you fall asleep",
+      "answer_text": "Hypnic jerks are muscle twitches you sometimes experience as you fall asleep its the feeling of falling during sleep that everyone fuckin hates",
+      "fields": {
+        "Text": "{{c1::Hypnic jerks}} are <font color=\"#ff0004\">muscle twitches</font> you sometimes experience as you fall asleep",
+        "Extra": "<div><br></div><font color=\"#ff0004\">its the feeling of falling during sleep that everyone fuckin hates</font><br><div><img src=\"tumblr_oqya3aQWmw1ririjeo1_400.gifv\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590479031251,
+      "note_id": 1590479029841,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Sleep stage] is associated with theta waves , sleep spindles , and K-complexes",
+      "answer_text": "N2 stage sleep is associated with theta waves , sleep spindles , and K-complexes",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ffc0fe\">N2 stage sleep</font>::Sleep stage}} is associated with {{c2::<font color=\"#ffc0fe\">theta waves</font>}}, {{c2::<font color=\"#ffc0fe\">sleep spindles</font>}}, and {{c2::<font color=\"#ffc0fe\">K-complexes</font>}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590479031252,
+      "note_id": 1590479029841,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "N2 stage sleep is associated with [...] , [...] , and [...]",
+      "answer_text": "N2 stage sleep is associated with theta waves , sleep spindles , and K-complexes",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ffc0fe\">N2 stage sleep</font>::Sleep stage}} is associated with {{c2::<font color=\"#ffc0fe\">theta waves</font>}}, {{c2::<font color=\"#ffc0fe\">sleep spindles</font>}}, and {{c2::<font color=\"#ffc0fe\">K-complexes</font>}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590479372983,
+      "note_id": 1590479264278,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] are bursts of brain activity during sleep to inhibit certain perceptions and to maintain a tranquil state",
+      "answer_text": "Sleep spindles are bursts of brain activity during sleep to inhibit certain perceptions and to maintain a tranquil state",
+      "fields": {
+        "Text": "{{c1::<font color=\"#00ffff\">Sleep spindles</font>}} are {{c3::<font color=\"#00ffff\">bursts of brain activity</font>}}&nbsp;during sleep to {{c2::<font color=\"#00ffff\">inhibit certain perceptions</font>}} and to {{c2::<font color=\"#00ffff\">maintain a tranquil state</font>}}",
+        "Extra": "<br><div><img src=\"59030-52071.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590479372984,
+      "note_id": 1590479264278,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Sleep spindles are bursts of brain activity during sleep to [...] and to [...]",
+      "answer_text": "Sleep spindles are bursts of brain activity during sleep to inhibit certain perceptions and to maintain a tranquil state",
+      "fields": {
+        "Text": "{{c1::<font color=\"#00ffff\">Sleep spindles</font>}} are {{c3::<font color=\"#00ffff\">bursts of brain activity</font>}}&nbsp;during sleep to {{c2::<font color=\"#00ffff\">inhibit certain perceptions</font>}} and to {{c2::<font color=\"#00ffff\">maintain a tranquil state</font>}}",
+        "Extra": "<br><div><img src=\"59030-52071.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590556198845,
+      "note_id": 1590479264278,
+      "ord": 2,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Sleep spindles are [...] during sleep to inhibit certain perceptions and to maintain a tranquil state",
+      "answer_text": "Sleep spindles are bursts of brain activity during sleep to inhibit certain perceptions and to maintain a tranquil state",
+      "fields": {
+        "Text": "{{c1::<font color=\"#00ffff\">Sleep spindles</font>}} are {{c3::<font color=\"#00ffff\">bursts of brain activity</font>}}&nbsp;during sleep to {{c2::<font color=\"#00ffff\">inhibit certain perceptions</font>}} and to {{c2::<font color=\"#00ffff\">maintain a tranquil state</font>}}",
+        "Extra": "<br><div><img src=\"59030-52071.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590479505133,
+      "note_id": 1590479373056,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] supress cortical arousal to keep you asleep and aid in encoding declerative/explicit memories",
+      "answer_text": "K-complexes supress cortical arousal to keep you asleep and aid in encoding declerative/explicit memories They are the reason you won't wake up if someone lightly touches you. Your brain recognizes the touch as non-threatening and keeps you asleep",
+      "fields": {
+        "Text": "{{c1::<font color=\"#00ffff\">K-complexes</font>}} {{c2::supress cortical arousal to keep you asleep}} and {{c2::aid in encoding declerative/explicit memories}}",
+        "Extra": "<div><font color=\"#00ffff\"><br></font></div><div><font color=\"#00ffff\">They are the reason you won't wake up if someone lightly touches you. Your brain recognizes the touch as non-threatening and keeps you asleep</font></div><br><div><img src=\"59030-52071.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590479505134,
+      "note_id": 1590479373056,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "K-complexes [...] and [...]",
+      "answer_text": "K-complexes supress cortical arousal to keep you asleep and aid in encoding declerative/explicit memories They are the reason you won't wake up if someone lightly touches you. Your brain recognizes the touch as non-threatening and keeps you asleep",
+      "fields": {
+        "Text": "{{c1::<font color=\"#00ffff\">K-complexes</font>}} {{c2::supress cortical arousal to keep you asleep}} and {{c2::aid in encoding declerative/explicit memories}}",
+        "Extra": "<div><font color=\"#00ffff\"><br></font></div><div><font color=\"#00ffff\">They are the reason you won't wake up if someone lightly touches you. Your brain recognizes the touch as non-threatening and keeps you asleep</font></div><br><div><img src=\"59030-52071.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590479636186,
+      "note_id": 1590479505165,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is associated with slow wave sleep , declerative memory storage , delta waves, and sleepwalking/sleeptalking",
+      "answer_text": "N3 stage of sleep is associated with slow wave sleep , declerative memory storage , delta waves, and sleepwalking/sleeptalking",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">N3 stage of sleep</font>}}&nbsp;is associated with {{c2::slow wave sleep}}, {{c2::declerative memory storage}}, {{c2::delta}} waves, and {{c2::sleepwalking/sleeptalking}}",
+        "Extra": "<br><div><img src=\"mature-man-pajamas-sleepwalking-vector-illustration-mature-man-pajamas-sleepwalking-vector-illustration-134822777.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590479636188,
+      "note_id": 1590479505165,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "N3 stage of sleep is associated with [...] , [...] , [...] waves, and [...]",
+      "answer_text": "N3 stage of sleep is associated with slow wave sleep , declerative memory storage , delta waves, and sleepwalking/sleeptalking",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">N3 stage of sleep</font>}}&nbsp;is associated with {{c2::slow wave sleep}}, {{c2::declerative memory storage}}, {{c2::delta}} waves, and {{c2::sleepwalking/sleeptalking}}",
+        "Extra": "<br><div><img src=\"mature-man-pajamas-sleepwalking-vector-illustration-mature-man-pajamas-sleepwalking-vector-illustration-134822777.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590479689066,
+      "note_id": 1590479636344,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Most dreaming occurs during [sleep stage]",
+      "answer_text": "Most dreaming occurs during REM sleep",
+      "fields": {
+        "Text": "Most <font color=\"#ff0004\">dreaming</font> occurs during {{c1::REM sleep::sleep stage}}",
+        "Extra": "<br><div><img src=\"lucid-dreaming.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590479766534,
+      "note_id": 1590479689133,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "REM sleep is important for [...] and [...]",
+      "answer_text": "REM sleep is important for memory consolidation and forming episodic memories",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">REM sleep</font> is important for {{c1::memory consolidation}} and {{c1::forming episodic memories}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590479794398,
+      "note_id": 1590479766593,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "REM sleep contains [Brain Waves]",
+      "answer_text": "REM sleep contains alpha, beta, and dyssynchronous (similar to beta) waves",
+      "fields": {
+        "Text": "<font color=\"#ffc0fe\">REM sleep</font> contains {{c1::alpha, beta, and dyssynchronous (similar to beta) waves::Brain Waves}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590479834020,
+      "note_id": 1590479794428,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "REM sleep is also called [...] because it has brain activity similar to being awake",
+      "answer_text": "REM sleep is also called paradoxical sleep because it has brain activity similar to being awake",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">REM sleep</font> is also called {{c1::paradoxical sleep}} because {{c2::it has brain activity similar to being awake}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590479834021,
+      "note_id": 1590479794428,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "REM sleep is also called paradoxical sleep because [...]",
+      "answer_text": "REM sleep is also called paradoxical sleep because it has brain activity similar to being awake",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">REM sleep</font> is also called {{c1::paradoxical sleep}} because {{c2::it has brain activity similar to being awake}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590479949916,
+      "note_id": 1590479834080,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The order within a sleep cycle goes from [...]",
+      "answer_text": "The order within a sleep cycle goes from N1 --> N2 --> N3 --> N2 --> REM --> N1",
+      "fields": {
+        "Text": "The order within a sleep cycle goes from {{c1::N1 --&gt; N2 --&gt; N3 --&gt; N2 --&gt; REM --&gt; N1}}",
+        "Extra": "<br><div><img src=\"sleepcycle_regular_sleep.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590480000178,
+      "note_id": 1590479950047,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] are regular body rhythms across a 24-hour period",
+      "answer_text": "Circadian rhythms are regular body rhythms across a 24-hour period",
+      "fields": {
+        "Text": "{{c1::Circadian rhythms}} are regular body rhythms across a <font color=\"#ff0004\">24-hour period</font>",
+        "Extra": "<br><div><img src=\"shutterstock_1302129112.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590480023041,
+      "note_id": 1590480000209,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Circadian rhythms are controlled by [hormone]",
+      "answer_text": "Circadian rhythms are controlled by melatonin",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">Circadian rhythms</font> are controlled by {{c1::melatonin::hormone}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590480053829,
+      "note_id": 1590480023106,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Melatonin is secreted by the [...]",
+      "answer_text": "Melatonin is secreted by the pineal gland",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">Melatonin</font> is secreted by the {{c1::pineal gland}}",
+        "Extra": "<br><div><img src=\"pineal-gland.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590480128553,
+      "note_id": 1590480053888,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Activity in the [Brain region] is decreased during REM sleep",
+      "answer_text": "Activity in the prefrontal cortex is decreased during REM sleep This explains why dreams can defy logic, as the prefrontal cortex is responsible for logical thinking",
+      "fields": {
+        "Text": "Activity in the {{c1::prefrontal cortex::Brain region}} is decreased during <font color=\"#ffc0fe\">REM sleep</font>",
+        "Extra": "<font color=\"#ffc0fe\"><br></font><div><font color=\"#ffc0fe\">This explains why dreams can defy logic, as the prefrontal cortex is responsible for logical thinking</font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590480188967,
+      "note_id": 1590480145229,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Sigmund Freud stated that dreams are [...]",
+      "answer_text": "Sigmund Freud stated that dreams are unconscious thoughts and desires that need to be interpreted",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">Sigmund Freud</font> stated that dreams are {{c1::unconscious thoughts and desires that need to be interpreted}}",
+        "Extra": "<br><div><img src=\"Sigmund_Freud,_by_Max_Halberstadt_(cropped).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590480230427,
+      "note_id": 1590480189048,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Evolutionary biologists believe dreams are [...]",
+      "answer_text": "Evolutionary biologists believe dreams are a threat simulation to prepare for the real world",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">Evolutionary biologists</font> believe dreams are {{c1::a threat simulation to prepare for the real world}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590480313661,
+      "note_id": 1590480230491,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "According to Freud, the literal meaning of our dream is known as [...]",
+      "answer_text": "According to Freud, the literal meaning of our dream is known as Manifest content Ex: a monster is chasing you",
+      "fields": {
+        "Text": "According to Freud, the <font color=\"#ff0004\">literal meaning</font> of our dream is known as {{c1::Manifest content}}",
+        "Extra": "<font color=\"#ff0004\"><br></font><div><font color=\"#ff0004\">Ex: a monster is chasing you</font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590480511896,
+      "note_id": 1590480313797,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "According to Freud, the hidden meaning of our dream is known as [...]",
+      "answer_text": "According to Freud, the hidden meaning of our dream is known as Latent content Ex: Monster chasing you could represent your job pushing you out",
+      "fields": {
+        "Text": "According to Freud, the <font color=\"#fe0000\">hidden&nbsp;</font><font color=\"#ff0004\">meaning</font>&nbsp;of our dream is known as {{c1::Latent content}}",
+        "Extra": "<font color=\"#ff0004\"><br></font><div><font color=\"#ff0004\">Ex: Monster chasing you could represent your job pushing you out</font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590480968290,
+      "note_id": 1590480531905,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] states that dreams are just our brain interpreting random neural impulses from the brainstem (pons)",
+      "answer_text": "The activation synthesis hypothesis states that dreams are just our brain interpreting random neural impulses from the brainstem (pons) since the impulses are random, dreams might not have any meaning",
+      "fields": {
+        "Text": "{{c1::The activation synthesis hypothesis}} states that dreams are {{c2::just our brain <font color=\"#00ffff\">interpreting&nbsp;<b><u>random</u></b> neural impulses </font>from the<font color=\"#ff0004\"> </font><font color=\"#00ffff\">brainstem (pons)</font>}}",
+        "Extra": "<div><font color=\"#fe0000\"><br></font></div><font color=\"#00ffff\">since the impulses are random, dreams might not have any meaning</font><br><div><font color=\"#fe0000\"><img src=\"activation-synthesis.jpg\"></font><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590480968291,
+      "note_id": 1590480531905,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The activation synthesis hypothesis states that dreams are [...]",
+      "answer_text": "The activation synthesis hypothesis states that dreams are just our brain interpreting random neural impulses from the brainstem (pons) since the impulses are random, dreams might not have any meaning",
+      "fields": {
+        "Text": "{{c1::The activation synthesis hypothesis}} states that dreams are {{c2::just our brain <font color=\"#00ffff\">interpreting&nbsp;<b><u>random</u></b> neural impulses </font>from the<font color=\"#ff0004\"> </font><font color=\"#00ffff\">brainstem (pons)</font>}}",
+        "Extra": "<div><font color=\"#fe0000\"><br></font></div><font color=\"#00ffff\">since the impulses are random, dreams might not have any meaning</font><br><div><font color=\"#fe0000\"><img src=\"activation-synthesis.jpg\"></font><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590481069634,
+      "note_id": 1590480968444,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "People with sleep deprivation are more susceptible to [...] , [...] , [...] , and [...]",
+      "answer_text": "People with sleep deprivation are more susceptible to poor memory , poor attention , obesity , and depression",
+      "fields": {
+        "Text": "People with <font color=\"#00ffff\">sleep deprivation</font> are more susceptible to {{c1::poor memory}}, {{c1::poor attention}}, {{c1::obesity}}, and {{c1::depression}}",
+        "Extra": "<br><div><img src=\"Sleep-Deprivation-GQ-June-2018-060718-3x2.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590481216167,
+      "note_id": 1590481069664,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Babies need [more or less] sleep than adults",
+      "answer_text": "Babies need more sleep than adults",
+      "fields": {
+        "Text": "Babies need {{c1::more::more or less}} sleep than adults",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590481316489,
+      "note_id": 1590481216219,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is persistent trouble falling asleep or staying asleep",
+      "answer_text": "Insomnia is persistent trouble falling asleep or staying asleep",
+      "fields": {
+        "Text": "{{c1::Insomnia}} is persistent trouble falling asleep or staying asleep",
+        "Extra": "<div><br></div><img src=\"TtZOKnQdlyhIqL_BgzmCR-oI_C3uyQMnqVa8MTYODu3QpUSzEaHgjoDLNrHVN6ltHjzrEPdHxmUlJUjAt8swrSx5i9IBONebzd6FiQ5G-3CmJwsEs5g.jpg\"><br>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590481435043,
+      "note_id": 1590481316634,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Treatments for insomnia include [...] , [...] , and [...]",
+      "answer_text": "Treatments for insomnia include medication , psychological training , and lifestyle changes",
+      "fields": {
+        "Text": "Treatments for <font color=\"#fe0000\">insomnia</font> include {{c1::medication}}, {{c1::psychological training}}, and {{c1::lifestyle changes}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590481487363,
+      "note_id": 1590481435101,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when individuals can't help themselves from falling asleep",
+      "answer_text": "Narcolepsy is when individuals can't help themselves from falling asleep",
+      "fields": {
+        "Text": "{{c1::Narcolepsy}} is when individuals can't help themselves from <font color=\"#fe0000\">falling asleep</font>",
+        "Extra": "<br><div><img src=\"nejmra1500587_f1.jpeg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590481606092,
+      "note_id": 1590481487428,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when you stop breathing while sleeping and your body realizes this and wakes up just long enough to gasp for air , then fall back asleep without realizing",
+      "answer_text": "Sleep apnea is when you stop breathing while sleeping and your body realizes this and wakes up just long enough to gasp for air , then fall back asleep without realizing",
+      "fields": {
+        "Text": "{{c1::Sleep apnea}} is when you <font color=\"#fe0000\">stop breathing</font> while sleeping and your body realizes this and wakes up just long enough to<font color=\"#fe0000\"> gasp for air</font>, then fall back asleep without realizing",
+        "Extra": "<br><div><img src=\"sleep.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590481643848,
+      "note_id": 1590481606163,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Indications of sleep apnea include [...] and [...]",
+      "answer_text": "Indications of sleep apnea include snoring and morning fatigue after full night sleep",
+      "fields": {
+        "Text": "Indications of <font color=\"#fe0000\">sleep apnea</font> include {{c1::snoring}} and {{c1::morning fatigue after full night sleep}}",
+        "Extra": "<br><div><img src=\"sleep.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590481735368,
+      "note_id": 1590481643994,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Hypnosis is an example of an [...]",
+      "answer_text": "Hypnosis is an example of an induced state of consciousness",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">Hypnosis&nbsp;</font>is an example of an {{c1::induced state of consciousness}}",
+        "Extra": "<br><div><img src=\"hypnosis (1).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590481810701,
+      "note_id": 1590481735404,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "People that undergo hypnotism are typically [...] and exhibit [brain waves]",
+      "answer_text": "People that undergo hypnotism are typically more susceptible to suggestion and exhibit alpha waves",
+      "fields": {
+        "Text": "People that undergo <font color=\"#fe0000\">hypnotism</font> are typically {{c1::more susceptible to suggestion}}&nbsp;and exhibit {{c1::alpha waves::brain waves}}",
+        "Extra": "<br><div><img src=\"hypnosis (1).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590481877415,
+      "note_id": 1590481810768,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "During hypnotism , [...] are memories that incorporate hypnotizers expectations even when not intended",
+      "answer_text": "During hypnotism , false memories are memories that incorporate hypnotizers expectations even when not intended",
+      "fields": {
+        "Text": "During <font color=\"#00ffff\">hypnotism</font>, {{c1::false memories}} are memories that {{c2::incorporate hypnotizers expectations even when not intended}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590481877417,
+      "note_id": 1590481810768,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "During hypnotism , false memories are memories that [...]",
+      "answer_text": "During hypnotism , false memories are memories that incorporate hypnotizers expectations even when not intended",
+      "fields": {
+        "Text": "During <font color=\"#00ffff\">hypnotism</font>, {{c1::false memories}} are memories that {{c2::incorporate hypnotizers expectations even when not intended}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590481922868,
+      "note_id": 1590481877473,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is training to self-regulate your attention and awareness",
+      "answer_text": "Meditation is training to self-regulate your attention and awareness",
+      "fields": {
+        "Text": "{{c1::Meditation}} is training to <font color=\"#ffff00\">self-regulate</font> your <font color=\"#ffff00\">attention and awareness</font>",
+        "Extra": "<br><div><img src=\"meditate-12.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590481992417,
+      "note_id": 1590481922933,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "People who regularly meditate [effect of regular meditation]",
+      "answer_text": "People who regularly meditate have more control over their attention",
+      "fields": {
+        "Text": "People who regularly <font color=\"#00ffff\">meditate </font>{{c1::have more control over their attention::effect of regular meditation}}",
+        "Extra": "<br><div><img src=\"meditate-12.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590482059808,
+      "note_id": 1590481992564,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Psychoactive drugs can alter our [...] and [...]",
+      "answer_text": "Psychoactive drugs can alter our consciousness and perception",
+      "fields": {
+        "Text": "{{c2::Psychoactive}} drugs can alter our {{c1::consciousness}} and {{c1::perception}}",
+        "Extra": "<br><div><img src=\"elfmy2ji2bhgrbbugsta.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590482059809,
+      "note_id": 1590481992564,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] drugs can alter our consciousness and perception",
+      "answer_text": "Psychoactive drugs can alter our consciousness and perception",
+      "fields": {
+        "Text": "{{c2::Psychoactive}} drugs can alter our {{c1::consciousness}} and {{c1::perception}}",
+        "Extra": "<br><div><img src=\"elfmy2ji2bhgrbbugsta.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590482236307,
+      "note_id": 1590482059880,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The four classes of psychoactive drugs include [...] , [...] , [...] , and [...]",
+      "answer_text": "The four classes of psychoactive drugs include depressants , stimulants , hallucinogens , and opiates/opiods",
+      "fields": {
+        "Text": "The four classes of <font color=\"#fe0000\">psychoactive drugs</font> include {{c1::depressants}}, {{c1::stimulants}}, {{c1::hallucinogens}}, and {{c1::opiates/opiods}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590482326982,
+      "note_id": 1590482236374,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The common depressant drugs are [...] , [...] , and [...]",
+      "answer_text": "The common depressant drugs are alcohol , barbiturates , and benzodiazepines",
+      "fields": {
+        "Text": "The common <font color=\"#00ffff\">depressant drugs </font>are {{c1::alcohol}}, {{c1::barbiturates}}, and {{c1::benzodiazepines}}",
+        "Extra": "<br><div><img src=\"alcohol-pouring-into-glass.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590482428861,
+      "note_id": 1590482327120,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Common effects of depressants include [...] , [...] , [...] , [...] , and [...]",
+      "answer_text": "Common effects of depressants include decreasing CNS activity , decreased HR , decreased BP , decreased processing speed , and vasodilation at low concentrations/vasoconstriction at high concentrations",
+      "fields": {
+        "Text": "Common effects of <font color=\"#fe0000\">depressants</font> include {{c1::decreasing CNS activity}}, {{c1::decreased HR}}, {{c1::decreased BP}}, {{c1::decreased processing speed}}, and {{c1::vasodilation at low concentrations/vasoconstriction at high concentrations}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590482652489,
+      "note_id": 1590482428923,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Drug] are used to induce sleep and reduce anxiety",
+      "answer_text": "Barbiturates are used to induce sleep and reduce anxiety",
+      "fields": {
+        "Text": "{{c1::<font color=\"#fe0000\">Barbiturates</font>::Drug}} are used to {{c2::<font color=\"#fe0000\">induce sleep</font>}} and {{c2::<font color=\"#fe0000\">reduce anxiety</font>}}",
+        "Extra": "<br><div><img src=\"Pills_1296x728-header-1296x728.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590482652490,
+      "note_id": 1590482428923,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Barbiturates are used to [...] and [...]",
+      "answer_text": "Barbiturates are used to induce sleep and reduce anxiety",
+      "fields": {
+        "Text": "{{c1::<font color=\"#fe0000\">Barbiturates</font>::Drug}} are used to {{c2::<font color=\"#fe0000\">induce sleep</font>}} and {{c2::<font color=\"#fe0000\">reduce anxiety</font>}}",
+        "Extra": "<br><div><img src=\"Pills_1296x728-header-1296x728.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590482815900,
+      "note_id": 1590482652598,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Benzodiazepine effects: [...] , [...] , and [...]",
+      "answer_text": "Benzodiazepine effects: enhance the brains response to GABA , induce sleep , and reduce anxiety",
+      "fields": {
+        "Text": "{{c2::<font color=\"#fe0000\">Benzodiazepine</font>::Drug}} effects: {{c1::enhance the brains response to GABA}}, {{c1::induce sleep}}, and {{c1::reduce anxiety}}",
+        "Extra": "<br><div><img src=\"Pills_1296x728-header-1296x728.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590482815901,
+      "note_id": 1590482652598,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Drug] effects: enhance the brains response to GABA , induce sleep , and reduce anxiety",
+      "answer_text": "Benzodiazepine effects: enhance the brains response to GABA , induce sleep , and reduce anxiety",
+      "fields": {
+        "Text": "{{c2::<font color=\"#fe0000\">Benzodiazepine</font>::Drug}} effects: {{c1::enhance the brains response to GABA}}, {{c1::induce sleep}}, and {{c1::reduce anxiety}}",
+        "Extra": "<br><div><img src=\"Pills_1296x728-header-1296x728.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590482949000,
+      "note_id": 1590482815970,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] are drugs that excite the CNS , increase HR , increase BP , and vasodilate",
+      "answer_text": "Stimulants are drugs that excite the CNS , increase HR , increase BP , and vasodilate",
+      "fields": {
+        "Text": "{{c1::<font color=\"#00ffff\">Stimulants</font>}} are drugs that {{c2::excite the CNS}}, {{c2::increase HR}}, {{c2::increase BP}}, and {{c2::vasodilate}}",
+        "Extra": "<br><div><br></div><div><img src=\"College-Stimulant-Abuse.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590482949001,
+      "note_id": 1590482815970,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Stimulants are drugs that [...] , [...] , [...] , and [...]",
+      "answer_text": "Stimulants are drugs that excite the CNS , increase HR , increase BP , and vasodilate",
+      "fields": {
+        "Text": "{{c1::<font color=\"#00ffff\">Stimulants</font>}} are drugs that {{c2::excite the CNS}}, {{c2::increase HR}}, {{c2::increase BP}}, and {{c2::vasodilate}}",
+        "Extra": "<br><div><br></div><div><img src=\"College-Stimulant-Abuse.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590483067453,
+      "note_id": 1590482949061,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The common stimulants include [...] , [...] , [...] , [...] , [...] , and [...]",
+      "answer_text": "The common stimulants include caffeine , amphetamines , methamphetamines , MDMA , cocaine , and nicotine",
+      "fields": {
+        "Text": "The <font color=\"#fe0000\">common stimulants</font> include {{c1::caffeine}}, {{c1::amphetamines}}, {{c1::methamphetamines}}, {{c1::MDMA}}, {{c1::cocaine}}, and {{c1::nicotine}}",
+        "Extra": "<br><div><img src=\"paste-fa3576c0ee7cc60bb5d8f858bc500ac23a1f0e71.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590483161800,
+      "note_id": 1590483067584,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Hallucinogens are drugs that [...] , [...] , [...] , [...] , and [...]",
+      "answer_text": "Hallucinogens are drugs that distort perceptions , dilate pupils , heighten sensations , increase connectedness , and cause moodswings",
+      "fields": {
+        "Text": "{{c2::<font color=\"#00ffff\">Hallucinogens</font>}} are drugs that {{c1::distort perceptions}}, {{c1::dilate pupils}}, {{c1::heighten sensations}}, {{c1::increase connectedness}}, and {{c1::cause moodswings}}",
+        "Extra": "<br><div><img src=\"Man-woman-substance-hallucination-psychosis-mental-disorder.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590483161801,
+      "note_id": 1590483067584,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] are drugs that distort perceptions , dilate pupils , heighten sensations , increase connectedness , and cause moodswings",
+      "answer_text": "Hallucinogens are drugs that distort perceptions , dilate pupils , heighten sensations , increase connectedness , and cause moodswings",
+      "fields": {
+        "Text": "{{c2::<font color=\"#00ffff\">Hallucinogens</font>}} are drugs that {{c1::distort perceptions}}, {{c1::dilate pupils}}, {{c1::heighten sensations}}, {{c1::increase connectedness}}, and {{c1::cause moodswings}}",
+        "Extra": "<br><div><img src=\"Man-woman-substance-hallucination-psychosis-mental-disorder.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590483240302,
+      "note_id": 1590483161876,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Opiods are [Natural/Synthetic] Opiates are [Natural/Synthetic]",
+      "answer_text": "Opiods are synthetic Opiates are natural",
+      "fields": {
+        "Text": "Opiods are {{c1::synthetic::Natural/Synthetic}}<div>Opiates are {{c1::natural::Natural/Synthetic}}</div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590483372067,
+      "note_id": 1590483240329,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Drug class] effects: decrease CNS function , decrease HR , decrease BP , act as analgesics , and vasodilate",
+      "answer_text": "Opiods effects: decrease CNS function , decrease HR , decrease BP , act as analgesics , and vasodilate",
+      "fields": {
+        "Text": "{{c1::<font color=\"#fe0000\">Opiods</font>::Drug class}} effects: {{c2::decrease CNS function}}, {{c2::decrease HR}}, {{c2::decrease BP}}, {{c2::act as analgesics}}, and {{c2::vasodilate}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590483372068,
+      "note_id": 1590483240329,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Opiods effects: [...] , [...] , [...] , [...] , and [...]",
+      "answer_text": "Opiods effects: decrease CNS function , decrease HR , decrease BP , act as analgesics , and vasodilate",
+      "fields": {
+        "Text": "{{c1::<font color=\"#fe0000\">Opiods</font>::Drug class}} effects: {{c2::decrease CNS function}}, {{c2::decrease HR}}, {{c2::decrease BP}}, {{c2::act as analgesics}}, and {{c2::vasodilate}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590483408341,
+      "note_id": 1590483372159,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Drug class] can act like an analgesic to reduce perception of pain",
+      "answer_text": "Opiods can act like an analgesic to reduce perception of pain",
+      "fields": {
+        "Text": "{{c1::Opiods::Drug class}} can act like an <font color=\"#fe0000\">analgesic</font> to reduce perception of pain",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590483481158,
+      "note_id": 1590483408407,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Cannabis(Marijuana) can act as a [...] , [...] , or [...]",
+      "answer_text": "Cannabis(Marijuana) can act as a hallucinogen , depressant , or stimulant",
+      "fields": {
+        "Text": "<font color=\"#fe0000\">Cannabis(Marijuana)</font> can act as a {{c1::hallucinogen}}, {{c1::depressant}}, or {{c1::stimulant}}",
+        "Extra": "<br><div><img src=\"tumblr_o665gukMSC1qjsuako1_r1_400.gifv\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590483524507,
+      "note_id": 1590483481185,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "MDMA can act as a [...] or [...]",
+      "answer_text": "MDMA can act as a stimulant or hallucinogen",
+      "fields": {
+        "Text": "<font color=\"#fe0000\">MDMA</font> can act as a {{c1::stimulant}} or {{c1::hallucinogen}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590483612613,
+      "note_id": 1590483524562,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Adverse side effects of barbiturates include reduced [...] , [...] , and [...]",
+      "answer_text": "Adverse side effects of barbiturates include reduced memory , judgement , and concentration",
+      "fields": {
+        "Text": "<b><u>Adverse</u></b> side effects of {{c2::<font color=\"#00ffff\">barbiturates</font>}}<font color=\"#fe0000\">&nbsp;</font>include reduced {{c1::memory}}, {{c1::judgement}}, and {{c1::concentration}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590554571812,
+      "note_id": 1590483524562,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Adverse side effects of [...] include reduced memory , judgement , and concentration",
+      "answer_text": "Adverse side effects of barbiturates include reduced memory , judgement , and concentration",
+      "fields": {
+        "Text": "<b><u>Adverse</u></b> side effects of {{c2::<font color=\"#00ffff\">barbiturates</font>}}<font color=\"#fe0000\">&nbsp;</font>include reduced {{c1::memory}}, {{c1::judgement}}, and {{c1::concentration}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590483749182,
+      "note_id": 1590483612672,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is a synthetic opiod used to help in addiction and getting individuals off opiods",
+      "answer_text": "Methadone is a synthetic opiod used to help in addiction and getting individuals off opiods",
+      "fields": {
+        "Text": "{{c1::Methadone}} is a synthetic opiod used to {{c2::<font color=\"#fe0000\">help in addiction</font>&nbsp;and getting individuals off opiods}}",
+        "Extra": "<br><div><img src=\"paste-6f527df5e72ee99cbd665d99a61cbb734bccb3a1.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590553825769,
+      "note_id": 1590483612672,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Methadone is a synthetic opiod used to [...]",
+      "answer_text": "Methadone is a synthetic opiod used to help in addiction and getting individuals off opiods",
+      "fields": {
+        "Text": "{{c1::Methadone}} is a synthetic opiod used to {{c2::<font color=\"#fe0000\">help in addiction</font>&nbsp;and getting individuals off opiods}}",
+        "Extra": "<br><div><img src=\"paste-6f527df5e72ee99cbd665d99a61cbb734bccb3a1.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590483807147,
+      "note_id": 1590483749337,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Drug] effects: inhibits adenosine receptors and can disrupt sleep",
+      "answer_text": "Caffeine effects: inhibits adenosine receptors and can disrupt sleep",
+      "fields": {
+        "Text": "{{c1::<font color=\"#fe0000\">Caffeine</font>::Drug}} effects: {{c2::inhibits adenosine receptors}} and can {{c2::disrupt sleep}}",
+        "Extra": "<br><div><img src=\"1200px-A_small_cup_of_coffee.JPG\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590483807148,
+      "note_id": 1590483749337,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Caffeine effects: [...] and can [...]",
+      "answer_text": "Caffeine effects: inhibits adenosine receptors and can disrupt sleep",
+      "fields": {
+        "Text": "{{c1::<font color=\"#fe0000\">Caffeine</font>::Drug}} effects: {{c2::inhibits adenosine receptors}} and can {{c2::disrupt sleep}}",
+        "Extra": "<br><div><img src=\"1200px-A_small_cup_of_coffee.JPG\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590483913527,
+      "note_id": 1590483809973,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Drug] effects: increase HR , increase BP , acetylcholine receptor agonist , disrupt sleep , and surpress appetite",
+      "answer_text": "Nicotine effects: increase HR , increase BP , acetylcholine receptor agonist , disrupt sleep , and surpress appetite",
+      "fields": {
+        "Text": "{{c1::<font color=\"#fe0000\">Nicotine</font>::Drug}} effects: {{c2::increase HR}}, {{c2::increase BP}}, {{c2::acetylcholine receptor agonist}}, {{c2::disrupt sleep}}, and {{c2::surpress appetite}}",
+        "Extra": "<br><div><img src=\"giphy (8).gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590483913528,
+      "note_id": 1590483809973,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Nicotine effects: [...] , [...] , [...] , [...] , and [...]",
+      "answer_text": "Nicotine effects: increase HR , increase BP , acetylcholine receptor agonist , disrupt sleep , and surpress appetite",
+      "fields": {
+        "Text": "{{c1::<font color=\"#fe0000\">Nicotine</font>::Drug}} effects: {{c2::increase HR}}, {{c2::increase BP}}, {{c2::acetylcholine receptor agonist}}, {{c2::disrupt sleep}}, and {{c2::surpress appetite}}",
+        "Extra": "<br><div><img src=\"giphy (8).gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590483932020,
+      "note_id": 1590483913605,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Nicotine is a CNS [stimulant or depressant]",
+      "answer_text": "Nicotine is a CNS stimulant",
+      "fields": {
+        "Text": "<font color=\"#fe0000\">Nicotine </font>is a CNS {{c1::stimulant::stimulant or depressant}}",
+        "Extra": "<br><div><img src=\"giphy (8).gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590483979360,
+      "note_id": 1590483932093,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Nicotine acts in the nervous system as [where it binds]",
+      "answer_text": "Nicotine acts in the nervous system as an acetylcholine receptor agonist",
+      "fields": {
+        "Text": "<font color=\"#fe0000\">Nicotine </font>acts in the nervous system as {{c1::an acetylcholine receptor agonist::where it binds}}",
+        "Extra": "<br><div><img src=\"giphy (8).gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590484052679,
+      "note_id": 1590483979419,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Cocaine causes the brain to release [...] , [...] , and [...] .",
+      "answer_text": "Cocaine causes the brain to release dopamine , serotonin , and norepinephrine .",
+      "fields": {
+        "Text": "{{c2::<font color=\"#00ffff\">Cocaine</font>}} causes the brain to release {{c1::dopamine}}, {{c1::serotonin}}, and {{c1::norepinephrine}}.",
+        "Extra": "<br><div><img src=\"snorting_cocaine.jpeg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590484052680,
+      "note_id": 1590483979419,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] causes the brain to release dopamine , serotonin , and norepinephrine .",
+      "answer_text": "Cocaine causes the brain to release dopamine , serotonin , and norepinephrine .",
+      "fields": {
+        "Text": "{{c2::<font color=\"#00ffff\">Cocaine</font>}} causes the brain to release {{c1::dopamine}}, {{c1::serotonin}}, and {{c1::norepinephrine}}.",
+        "Extra": "<br><div><img src=\"snorting_cocaine.jpeg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590484147282,
+      "note_id": 1590484052818,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Cocaine user typically experience [...] after use",
+      "answer_text": "Cocaine user typically experience a crash after use",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">Cocaine </font>user typically experience {{c1::a crash}} after use",
+        "Extra": "<br><div><img src=\"snorting_cocaine.jpeg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590484266351,
+      "note_id": 1590484147347,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] effects: release dopamine , block dopamine reuptake , and cause feelings of euphoria",
+      "answer_text": "Amphetamines/Methamphetamines effects: release dopamine , block dopamine reuptake , and cause feelings of euphoria",
+      "fields": {
+        "Text": "{{c1::Amphetamines/Methamphetamines}} effects: {{c2::release dopamine}}, {{c2::block dopamine reuptake}}, and {{c2::cause feelings of euphoria}}",
+        "Extra": "<br><div><img src=\"5d7f91ed6f24eb3d3e33cc05.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590484266352,
+      "note_id": 1590484147347,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Amphetamines/Methamphetamines effects: [...] , [...] , and [...]",
+      "answer_text": "Amphetamines/Methamphetamines effects: release dopamine , block dopamine reuptake , and cause feelings of euphoria",
+      "fields": {
+        "Text": "{{c1::Amphetamines/Methamphetamines}} effects: {{c2::release dopamine}}, {{c2::block dopamine reuptake}}, and {{c2::cause feelings of euphoria}}",
+        "Extra": "<br><div><img src=\"5d7f91ed6f24eb3d3e33cc05.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590484309961,
+      "note_id": 1590484266415,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "MDMA a.k.a [...] a.k.a [...]",
+      "answer_text": "MDMA a.k.a Ecstasy a.k.a Molly",
+      "fields": {
+        "Text": "MDMA a.k.a {{c1::Ecstasy}} a.k.a {{c1::Molly}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590484426394,
+      "note_id": 1590484310018,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "MDMA is associated with [...] [...] [...] [...]",
+      "answer_text": "MDMA is associated with increased dopamine, serotonin, and euphoria high BP and body temperature hallucinations damaging serotonin releasing neurons",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">MDMA </font>is associated with&nbsp;<div><br></div><div>{{c1::increased dopamine, serotonin, and euphoria}}</div><div>{{c1::high BP and body temperature}}</div><div>{{c1::hallucinations}}</div><div>{{c1::damaging serotonin releasing neurons}}</div>",
+        "Extra": "<br><div><img src=\"mdmahand.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590484503136,
+      "note_id": 1590484426527,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "MDMA can damage [...]",
+      "answer_text": "MDMA can damage neurons that produce serotonin",
+      "fields": {
+        "Text": "{{c2::<font color=\"#fe0000\">MDMA</font>}} can damage {{c1::neurons that produce <font color=\"#fe0000\">serotonin</font>}}",
+        "Extra": "<br><div><img src=\"mdmahand.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590484503137,
+      "note_id": 1590484426527,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] can damage neurons that produce serotonin",
+      "answer_text": "MDMA can damage neurons that produce serotonin",
+      "fields": {
+        "Text": "{{c2::<font color=\"#fe0000\">MDMA</font>}} can damage {{c1::neurons that produce <font color=\"#fe0000\">serotonin</font>}}",
+        "Extra": "<br><div><img src=\"mdmahand.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590484622602,
+      "note_id": 1590484503202,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "LSD effects: [...] and [...]",
+      "answer_text": "LSD effects: causes hallucinations and interfere with serotonin",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">LSD effects:</font>&nbsp;{{c1::causes hallucinations}} and {{c1::interfere with serotonin}}",
+        "Extra": "<br><div><img src=\"lsdindex-1551743035.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590484641696,
+      "note_id": 1590484622664,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Active chemical in marijuana is [...]",
+      "answer_text": "Active chemical in marijuana is THC",
+      "fields": {
+        "Text": "Active chemical in <font color=\"#fe0000\">marijuana </font>is {{c1::THC}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590484743800,
+      "note_id": 1590484641742,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Marijuana effects : [...] , [...] , [...] , and [...]",
+      "answer_text": "Marijuana effects : Impair motor functions , heighten sensations , disrupt memory , and reduces pain",
+      "fields": {
+        "Text": "<font color=\"#fe0000\">Marijuana effects</font>: {{c1::Impair motor functions}}, {{c1::heighten sensations}}, {{c1::disrupt memory}}, and {{c1::reduces pain}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590484782226,
+      "note_id": 1590484743893,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Drug Class] can be used to help in PTSD treatment",
+      "answer_text": "Hallucinogens can be used to help in PTSD treatment This can allow individuals to visualize and come to terms with painful memories",
+      "fields": {
+        "Text": "{{c1::Hallucinogens::Drug Class}} can be used to help in {{c2::PTSD}} treatment",
+        "Extra": "<br><div><font color=\"#fe0000\">This can allow individuals to visualize and come to terms with painful memories</font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590551929532,
+      "note_id": 1590484743893,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Hallucinogens can be used to help in [...] treatment",
+      "answer_text": "Hallucinogens can be used to help in PTSD treatment This can allow individuals to visualize and come to terms with painful memories",
+      "fields": {
+        "Text": "{{c1::Hallucinogens::Drug Class}} can be used to help in {{c2::PTSD}} treatment",
+        "Extra": "<br><div><font color=\"#fe0000\">This can allow individuals to visualize and come to terms with painful memories</font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590484877135,
+      "note_id": 1590484782258,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is the bodys maintanence of temperature , heartbeat , metabolism , etc",
+      "answer_text": "Homeostasis is the bodys maintanence of temperature , heartbeat , metabolism , etc",
+      "fields": {
+        "Text": "{{c1::Homeostasis}} is the bodys maintanence of <font color=\"#fe0000\">temperature</font>, <font color=\"#fe0000\">heartbeat</font>, <font color=\"#fe0000\">metabolism</font>, etc",
+        "Extra": "<br><div><img src=\"Untitled-design-9.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590484946677,
+      "note_id": 1590484945450,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The brain maintains homeostasis when taking drugs by [...]",
+      "answer_text": "The brain maintains homeostasis when taking drugs by attempting to counteract their effects Example: If amphetamines increase HR, your brain will try to decrease your HR",
+      "fields": {
+        "Text": "The brain maintains <font color=\"#fe0000\">homeostasis </font>when taking drugs by {{c1::attempting to counteract their effects}}",
+        "Extra": "<br><div><font color=\"#fe0000\">Example: If amphetamines increase HR, your brain will try to decrease your HR</font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485050568,
+      "note_id": 1590484946748,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when your brain preemptively prepares for a drug that isn't administered",
+      "answer_text": "A crash is when your brain preemptively prepares for a drug that isn't administered Your body is BELOW homeostasis Ex: You take cocaine at 9 a.m everyday. If you missed a 9 am snort-sesh, your brain already lowered homeostatic levels to account for the early morning blow. Now you fuckin crash.",
+      "fields": {
+        "Text": "{{c1::A crash}} is when your brain preemptively prepares for a drug that isn't administered",
+        "Extra": "<br><div><font color=\"#fe0000\">Your body is BELOW homeostasis</font></div><div><font color=\"#fe0000\">Ex: You take cocaine at 9 a.m everyday. If you missed a 9 am snort-sesh, your brain already lowered homeostatic levels to account for the early morning blow. Now you fuckin crash.</font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485136315,
+      "note_id": 1590485050637,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] can occur when you take your normal level of drugs under new conditions without your body preparing",
+      "answer_text": "An Overdose can occur when you take your normal level of drugs under new conditions without your body preparing",
+      "fields": {
+        "Text": "{{c1::An Overdose}} can occur when you take your <font color=\"#fe0000\">normal level</font> of drugs under <font color=\"#fe0000\">new conditions</font> <u>without</u> your body preparing",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485254117,
+      "note_id": 1590485136372,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The three routes of drug entry include [...] , [...] , and [...]",
+      "answer_text": "The three routes of drug entry include oral , injection , and inhalation",
+      "fields": {
+        "Text": "The three routes of <font color=\"#ffc0fe\"><u>drug entry</u> </font>include {{c1::oral}}, {{c1::injection}}, and {{c1::inhalation}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485285851,
+      "note_id": 1590485254252,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Method of drug entry] is ingesting something",
+      "answer_text": "Oral drug entry is ingesting something",
+      "fields": {
+        "Text": "{{c1::Oral drug entry::Method of drug entry}} is <font color=\"#fe0000\">ingesting</font> something<br>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485317040,
+      "note_id": 1590485285902,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Slowest method of drug entry is through [Method of drug entry]",
+      "answer_text": "Slowest method of drug entry is through oral methods",
+      "fields": {
+        "Text": "<font color=\"#ffc0fe\"><b>Slowest </b></font>method of drug entry is through&nbsp;{{c1::oral methods::Method of drug entry}}",
+        "Extra": "<br><div><img src=\"woman-taking-pill-tease-today-161012_6d7a2049b683505eee241c79577d1031.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485349616,
+      "note_id": 1590485327289,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Method of drug entry] is breathing or snorting or smoking",
+      "answer_text": "Inhalation is breathing or snorting or smoking",
+      "fields": {
+        "Text": "{{c1::Inhalation::Method of drug entry}} is breathing or snorting or smoking",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485367253,
+      "note_id": 1590485349651,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Method of drug entry] is intravenous entry",
+      "answer_text": "Injection is intravenous entry",
+      "fields": {
+        "Text": "{{c1::Injection::Method of drug entry}} is <font color=\"#fe0000\">intravenous </font>entry",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485398568,
+      "note_id": 1590485367322,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Method of drug entry] is when a drug is absorbed through the skin",
+      "answer_text": "Transdermal entry is when a drug is absorbed through the skin",
+      "fields": {
+        "Text": "{{c1::Transdermal entry::Method of drug entry}} is when a drug is <font color=\"#fe0000\">absorbed </font>through the <font color=\"#fe0000\">skin</font>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485439938,
+      "note_id": 1590485398636,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Method of drug entry] is when a drug is delivered through a needle in the muscle",
+      "answer_text": "Intramuscular is when a drug is delivered through a needle in the muscle",
+      "fields": {
+        "Text": "{{c1::Intramuscular::Method of drug entry}} is when a drug is delivered through a needle in the <font color=\"#fe0000\">muscle</font>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485451526,
+      "note_id": 1590485439997,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The fastest route of drug entry is [...]",
+      "answer_text": "The fastest route of drug entry is intramuscular",
+      "fields": {
+        "Text": "The <font color=\"#fe0000\">fastest </font>route of drug entry is {{c1::intramuscular}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485469637,
+      "note_id": 1590485451584,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Faster route of drug entry = [effect]",
+      "answer_text": "Faster route of drug entry = more addictive potential",
+      "fields": {
+        "Text": "Faster route of drug entry = {{c1::more addictive potential::effect}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485515334,
+      "note_id": 1590485469694,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The neurotransmitter associated with the reward pathway is [...]",
+      "answer_text": "The neurotransmitter associated with the reward pathway is dopamine",
+      "fields": {
+        "Text": "The <font color=\"#fe0000\">neurotransmitter </font>associated with the <font color=\"#fe0000\">reward pathway </font>is {{c1::dopamine}}",
+        "Extra": "<br><div><img src=\"2913.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485578653,
+      "note_id": 1590485515404,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is produced in the ventral tegmental area in the midbrain for use in the mesolimbic system",
+      "answer_text": "Dopamine is produced in the ventral tegmental area in the midbrain for use in the mesolimbic system",
+      "fields": {
+        "Text": "{{c1::Dopamine}} is produced in the {{c2::ventral tegmental area::brain region}} in the midbrain for use in the mesolimbic system",
+        "Extra": "<br><div><img src=\"c4250bda07f98d68c5e5487af6a17df0.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485578655,
+      "note_id": 1590485515404,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Dopamine is produced in the [brain region] in the midbrain for use in the mesolimbic system",
+      "answer_text": "Dopamine is produced in the ventral tegmental area in the midbrain for use in the mesolimbic system",
+      "fields": {
+        "Text": "{{c1::Dopamine}} is produced in the {{c2::ventral tegmental area::brain region}} in the midbrain for use in the mesolimbic system",
+        "Extra": "<br><div><img src=\"c4250bda07f98d68c5e5487af6a17df0.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485659868,
+      "note_id": 1590485578797,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "In the reward pathway, dopamine acts on the [...] , [...] , [...] , and [...]",
+      "answer_text": "In the reward pathway, dopamine acts on the amygdala , nucleus accumbens , prefrontal cortex , and hippocampus Mnemonic: We are all PHAN s of dopamine",
+      "fields": {
+        "Text": "In the reward pathway,&nbsp;{{c2::<font color=\"#ff3b30\">dopamine</font>}}<font color=\"#fe0000\">&nbsp;</font>acts on the {{c1::amygdala}}, {{c1::nucleus accumbens}}, {{c1::prefrontal cortex}}, and {{c1::hippocampus}}",
+        "Extra": "<div><br></div><font color=\"#ff3b30\">Mnemonic: We are all <b>PHAN</b>s of dopamine<br></font><div><font color=\"#ff3b30\"><img src=\"c4250bda07f98d68c5e5487af6a17df0.jpg\"></font><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590552106964,
+      "note_id": 1590485578797,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "In the reward pathway, [...] acts on the amygdala , nucleus accumbens , prefrontal cortex , and hippocampus",
+      "answer_text": "In the reward pathway, dopamine acts on the amygdala , nucleus accumbens , prefrontal cortex , and hippocampus Mnemonic: We are all PHAN s of dopamine",
+      "fields": {
+        "Text": "In the reward pathway,&nbsp;{{c2::<font color=\"#ff3b30\">dopamine</font>}}<font color=\"#fe0000\">&nbsp;</font>acts on the {{c1::amygdala}}, {{c1::nucleus accumbens}}, {{c1::prefrontal cortex}}, and {{c1::hippocampus}}",
+        "Extra": "<div><br></div><font color=\"#ff3b30\">Mnemonic: We are all <b>PHAN</b>s of dopamine<br></font><div><font color=\"#ff3b30\"><img src=\"c4250bda07f98d68c5e5487af6a17df0.jpg\"></font><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485702568,
+      "note_id": 1590485659937,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The mesolimbic pathway includes the [...] , [...] , and [...]",
+      "answer_text": "The mesolimbic pathway includes the nucleus accumbens , amygdala , and hippocampus",
+      "fields": {
+        "Text": "<font color=\"#fe0000\">The mesolimbic pathway</font> includes the {{c1::nucleus accumbens}}, {{c1::amygdala}}, and {{c1::hippocampus}}",
+        "Extra": "<br><div><img src=\"c4250bda07f98d68c5e5487af6a17df0.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485755574,
+      "note_id": 1590485702624,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "In the reward pathway, the amygdala controls [...]",
+      "answer_text": "In the reward pathway, the amygdala controls emotion ex: I love this cake. I am happy eating this cake.",
+      "fields": {
+        "Text": "In the reward pathway, the <font color=\"#fe0000\">amygdala </font>controls {{c1::emotion}}",
+        "Extra": "<br><div><font color=\"#fe0000\">ex: I love this cake. I am happy eating this cake.</font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485789509,
+      "note_id": 1590485755605,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "In the reward pathway, the hippocampus controls [...]",
+      "answer_text": "In the reward pathway, the hippocampus controls memory ex. Where am I right now eating this cake? Who am I with? Lets remember this dope ass time",
+      "fields": {
+        "Text": "In the reward pathway, the <font color=\"#fe0000\">hippocampus&nbsp;</font>controls {{c1::memory}}",
+        "Extra": "<font color=\"#fe0000\"><br></font><div><font color=\"#fe0000\">ex. Where am I right now eating this cake? Who am I with? Lets remember this dope ass time</font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485811294,
+      "note_id": 1590485789573,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "In the reward pathway, the nucleus accumbens controls [...]",
+      "answer_text": "In the reward pathway, the nucleus accumbens controls motor function ex: let's move our hand and take another bite of this bomb ass cake",
+      "fields": {
+        "Text": "In the reward pathway, the <font color=\"#fe0000\">nucleus accumbens&nbsp;</font>controls {{c1::motor function}}",
+        "Extra": "<font color=\"#fe0000\"><br></font><div><font color=\"#fe0000\">ex: let's move our hand and take another bite of this bomb ass cake</font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485837129,
+      "note_id": 1590485811358,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "In the reward pathway, the prefrontal cortex controls [...]",
+      "answer_text": "In the reward pathway, the prefrontal cortex controls attention ex: I am putting attention on this bomb ass cake im eating",
+      "fields": {
+        "Text": "In the reward pathway, the <font color=\"#fe0000\">prefrontal cortex&nbsp;</font>controls {{c1::attention}}",
+        "Extra": "<font color=\"#fe0000\"><br></font><div><font color=\"#fe0000\">ex: I am putting attention on this bomb ass cake im eating</font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485864837,
+      "note_id": 1590485837185,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "In the reward pathway, when dopamine [increases/decreases] , serotonin [increases/decreases]",
+      "answer_text": "In the reward pathway, when dopamine increases , serotonin decreases",
+      "fields": {
+        "Text": "In the reward pathway, when dopamine {{c1::increases::increases/decreases}}, serotonin {{c1::decreases::increases/decreases}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485939308,
+      "note_id": 1590485864893,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Serotonin is associated with [...]",
+      "answer_text": "Serotonin is associated with feelings of satiation hence why serotonin goes down in the reward pathway YOU ALWAYS BE WANTING MORE REWARD NEVER SATISFIED",
+      "fields": {
+        "Text": "<font color=\"#fe0000\">Serotonin </font>is associated with {{c1::feelings of satiation}}",
+        "Extra": "<font color=\"#fe0000\"><br></font><div><font color=\"#fe0000\">hence why serotonin goes down in the reward pathway</font></div><div><font color=\"#fe0000\">YOU ALWAYS BE WANTING MORE REWARD</font></div><div><font color=\"#fe0000\">NEVER SATISFIED</font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485956012,
+      "note_id": 1590485939459,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Addiction can be explained by both [...] and [...] factors",
+      "answer_text": "Addiction can be explained by both genetic and environmental factors",
+      "fields": {
+        "Text": "<b style=\"\"><font color=\"#ffc0fe\">Addiction </font></b>can be explained by both {{c1::genetic}} and {{c1::environmental}} factors",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590485996445,
+      "note_id": 1590485956043,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when you get used to a drug so you need more of it to achieve the same effect",
+      "answer_text": "Tolerance is when you get used to a drug so you need more of it to achieve the same effect",
+      "fields": {
+        "Text": "{{c1::Tolerance}} is when you get used to a drug so you need more of it to achieve the same effect",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590486020458,
+      "note_id": 1590485996513,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when you are tolerant to a novel drug because of a similar CNS pathway to a drug you are already tolerant for",
+      "answer_text": "Cross tolerance is when you are tolerant to a novel drug because of a similar CNS pathway to a drug you are already tolerant for",
+      "fields": {
+        "Text": "{{c1::Cross tolerance}} is when&nbsp;{{c2::you are <font color=\"#00ffff\">tolerant </font>to a novel drug because of a similar CNS pathway to a drug you are already tolerant for}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590551821508,
+      "note_id": 1590485996513,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Cross tolerance is when [...]",
+      "answer_text": "Cross tolerance is when you are tolerant to a novel drug because of a similar CNS pathway to a drug you are already tolerant for",
+      "fields": {
+        "Text": "{{c1::Cross tolerance}} is when&nbsp;{{c2::you are <font color=\"#00ffff\">tolerant </font>to a novel drug because of a similar CNS pathway to a drug you are already tolerant for}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590486106344,
+      "note_id": 1590486020505,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "If you go through a period of not having a drug , you experience [...]",
+      "answer_text": "If you go through a period of not having a drug , you experience withdrawal",
+      "fields": {
+        "Text": "If you go through a period of <font color=\"#fe0000\">not having a drug</font>, you experience {{c1::withdrawal}}",
+        "Extra": "<br><div><img src=\"heroin-withdrawal.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590486307273,
+      "note_id": 1590486106407,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Signs of drug addiction include [...] and [...]",
+      "answer_text": "Signs of drug addiction include tolerance and needing drug to feel normal",
+      "fields": {
+        "Text": "Signs of <font color=\"#fe0000\">drug addiction</font> include {{c1::tolerance}} and {{c1::needing drug to feel normal}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590567906971,
+      "note_id": 1590567878148,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when a drug enters the body and exerts its effects",
+      "answer_text": "Intoxication is when a drug enters the body and exerts its effects Intoxication is specific to the drug type alcohol = drunk weed = high",
+      "fields": {
+        "Text": "{{c1::Intoxication}} is when a drug enters the body and exerts its effects",
+        "Extra": "<div><i><br></i></div><i>Intoxication is specific to the drug type</i><div><i>alcohol = drunk</i></div><div><i>weed = high</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590568029638,
+      "note_id": 1590567950969,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The two stages to withdrawal are [...] and [...]",
+      "answer_text": "The two stages to withdrawal are acute and post-acute",
+      "fields": {
+        "Text": "The two stages to <font color=\"#ff0004\">withdrawal</font><font color=\"#fe0004\"> </font>are {{c1::acute}} and {{c1::post-acute}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590568109349,
+      "note_id": 1590568029695,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] withdrawal lasts a few weeks and has many physical withdrawal symptoms",
+      "answer_text": "Acute withdrawal lasts a few weeks and has many physical withdrawal symptoms",
+      "fields": {
+        "Text": "{{c1::<font color=\"#00ffff\">Acute</font>}} withdrawal lasts {{c2::a few weeks}} and has {{c2::many physical withdrawal symptoms}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590568109350,
+      "note_id": 1590568029695,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Acute withdrawal lasts [...] and has [...]",
+      "answer_text": "Acute withdrawal lasts a few weeks and has many physical withdrawal symptoms",
+      "fields": {
+        "Text": "{{c1::<font color=\"#00ffff\">Acute</font>}} withdrawal lasts {{c2::a few weeks}} and has {{c2::many physical withdrawal symptoms}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590568156109,
+      "note_id": 1590568109414,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] withdrawal has less physical symptoms and more emotional/psychological symptoms",
+      "answer_text": "Post-acute withdrawal has less physical symptoms and more emotional/psychological symptoms",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">Post-acute</font>}} withdrawal has {{c2::less physical symptoms}} and {{c2::more emotional/psychological symptoms}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590568156110,
+      "note_id": 1590568109414,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Post-acute withdrawal has [...] and [...]",
+      "answer_text": "Post-acute withdrawal has less physical symptoms and more emotional/psychological symptoms",
+      "fields": {
+        "Text": "{{c1::<font color=\"#ff0004\">Post-acute</font>}} withdrawal has {{c2::less physical symptoms}} and {{c2::more emotional/psychological symptoms}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590568231755,
+      "note_id": 1590568156250,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Post-acute withdrawal usually lasts [time frame]",
+      "answer_text": "Post-acute withdrawal usually lasts two years",
+      "fields": {
+        "Text": "Post-acute withdrawal usually lasts {{c1::two years::time frame}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590568283442,
+      "note_id": 1590568231809,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Disorder] are conditions that are caused by substances .",
+      "answer_text": "Substance-induced disorders are conditions that are caused by substances .",
+      "fields": {
+        "Text": "{{c1::Substance-induced disorders::Disorder}} are conditions that are caused by <font color=\"#ff0004\">substances</font>.",
+        "Extra": "<br><div><img src=\"substance-induced-mood-disorder-1200x600.jpeg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590568374310,
+      "note_id": 1590568355104,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Disorder] occur when using a drug causes serious impairment of functioning in life, work, school, home, etc.",
+      "answer_text": "Substance-use-disorders occur when using a drug causes serious impairment of functioning in life, work, school, home, etc.",
+      "fields": {
+        "Text": "{{c1::Substance-use-disorders::Disorder}} occur when using a drug causes {{c2::<font color=\"#ffc0fe\">serious impairment of functioning</font> in life, work, school, home, etc.}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590568374311,
+      "note_id": 1590568355104,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Substance-use-disorders occur when using a drug causes [...]",
+      "answer_text": "Substance-use-disorders occur when using a drug causes serious impairment of functioning in life, work, school, home, etc.",
+      "fields": {
+        "Text": "{{c1::Substance-use-disorders::Disorder}} occur when using a drug causes {{c2::<font color=\"#ffc0fe\">serious impairment of functioning</font> in life, work, school, home, etc.}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590568527850,
+      "note_id": 1590568380281,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Signs of a substance-use-disorder [...] [...] [...] [...]",
+      "answer_text": "Signs of a substance-use-disorder Using increasingly large amounts Stronger Cravings Failing life obligations Withdrawal",
+      "fields": {
+        "Text": "Signs of a <font color=\"#00ffff\">substance-use-disorder</font><div>{{c1::Using increasingly large amounts}}</div><div>{{c1::Stronger Cravings}}</div><div>{{c1::Failing life obligations}}</div><div>{{c1::Withdrawal}}</div>",
+        "Extra": "<br><div><img src=\"substance.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590568551212,
+      "note_id": 1590568527922,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is the only drug we can't develop substance-use disorder for",
+      "answer_text": "Caffeine is the only drug we can't develop substance-use disorder for",
+      "fields": {
+        "Text": "{{c1::Caffeine}} is the only drug we can't develop substance-use disorder for",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590568655816,
+      "note_id": 1590568551282,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] activates opiate receptors slowly and dampens the high to aid in addiction treatment",
+      "answer_text": "Methadone activates opiate receptors slowly and dampens the high to aid in addiction treatment",
+      "fields": {
+        "Text": "{{c1::Methadone}} activates opiate receptors slowly and dampens the high to aid in addiction treatment",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590568728694,
+      "note_id": 1590568699618,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] treatments requires residence at a hospital or treatment facility",
+      "answer_text": "Inpatient treatments requires residence at a hospital or treatment facility",
+      "fields": {
+        "Text": "{{c1::Inpatient}} treatments requires residence at a <font color=\"#ff0004\">hospital </font>or <font color=\"#ff0004\">treatment facility</font>",
+        "Extra": "<br><div><img src=\"latest (2).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590568771629,
+      "note_id": 1590568728753,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] treatments allow patients to live at home and come in for treatment",
+      "answer_text": "Outpatient treatments allow patients to live at home and come in for treatment",
+      "fields": {
+        "Text": "{{c1::Outpatient}} treatments allow patients to <font color=\"#ff0004\">live at home</font> and come in for treatment",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590568839443,
+      "note_id": 1590568771696,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Treatment method] is psychological treatment for drug addiction .",
+      "answer_text": "Cognitive behavioral therapy (CBT) is psychological treatment for drug addiction .",
+      "fields": {
+        "Text": "{{c1::Cognitive behavioral therapy (CBT)::Treatment method}} is <font color=\"#ffc0fe\">psychological treatment </font>for <u>drug addiction</u>.",
+        "Extra": "<br><div><img src=\"what-is-cognitive-behavior-therapy-2795747_FINAL3-c2628ba79a6c4434b6b2583085228541.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590568964944,
+      "note_id": 1590568839494,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Cognitive behavioral therapy addresses [...] and [...] components to addiction. Benefits of CBT: [...] [...] [...]",
+      "answer_text": "Cognitive behavioral therapy addresses cognitive and behavioral components to addiction. Benefits of CBT: more positive thoughts coping mechanisms long lasting results",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">Cognitive behavioral therapy</font> addresses {{c1::cognitive}} and {{c1::behavioral}} components to addiction.<div><br></div><div>Benefits of CBT:</div><div>{{c1::more positive thoughts}}</div><div>{{c1::coping mechanisms}}</div><div>{{c1::long lasting results}}</div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590569039588,
+      "note_id": 1590568965015,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] involves working with patients to find intrinsic motivation to change .",
+      "answer_text": "Motivational interviewing involves working with patients to find intrinsic motivation to change . Very focused and goal directed therapy.",
+      "fields": {
+        "Text": "{{c1::Motivational interviewing}} involves working with patients to {{c2::find intrinsic motivation to change}}.",
+        "Extra": "<br><div><i>Very focused and goal directed therapy.</i></div><div><img src=\"mi2017-banner.png\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590569039589,
+      "note_id": 1590568965015,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Motivational interviewing involves working with patients to [...] .",
+      "answer_text": "Motivational interviewing involves working with patients to find intrinsic motivation to change . Very focused and goal directed therapy.",
+      "fields": {
+        "Text": "{{c1::Motivational interviewing}} involves working with patients to {{c2::find intrinsic motivation to change}}.",
+        "Extra": "<br><div><i>Very focused and goal directed therapy.</i></div><div><img src=\"mi2017-banner.png\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590569194537,
+      "note_id": 1590569039746,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Group meetings can be categorized into three main steps: [...] [...] [...]",
+      "answer_text": "Group meetings can be categorized into three main steps: Acceptance Surrender Active involvement 1. acknowledge addiction is a problem that you cant control on your own 2. give yourself up to a higher power and accept help offered through that power and group 3. Involve youreself in meetings and activities to help yourself and other addicts",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">Group meetings</font> can be categorized into three main steps:<div>{{c1::Acceptance}}</div><div>{{c1::Surrender}}</div><div>{{c1::Active involvement}}</div>",
+        "Extra": "<br><div><i>1. acknowledge addiction is a problem that you cant control on your own</i></div><div><i>2. give yourself up to a higher power and accept help offered through that power and group</i></div><div><i>3. Involve youreself in meetings and activities to help yourself and other addicts</i></div><div><img src=\"mp1bprjhth30gxs9iudr.png\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590569258269,
+      "note_id": 1590569194606,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when a patient slips back and returns to a drug they were addicted to",
+      "answer_text": "Repalse is when a patient slips back and returns to a drug they were addicted to",
+      "fields": {
+        "Text": "{{c1::Repalse}} is when a patient slips back and returns to a drug they were addicted to",
+        "Extra": "<br><div><img src=\"eminem_relapse_wallpaper_02.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590569337989,
+      "note_id": 1590569258321,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Relapse is more likely to occur when [...] and [...] .",
+      "answer_text": "Relapse is more likely to occur when the substance is more addictive and patients encounter things that they associate with the drug .",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">Relapse </font>is more likely to occur when {{c1::the substance is more addictive}} and {{c1::patients encounter things that they associate with the drug}}.",
+        "Extra": "<div><br></div><div><img src=\"top-reasons-relapse-happens-and-how-to-aviod-them.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590570402091,
+      "note_id": 1590569338050,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] occurs when an individual must perform two tasks which require attention simultaneously This theory also states that attention is a limited resource , so you switch between tasks rather than multitasking",
+      "answer_text": "Divided attention occurs when an individual must perform two tasks which require attention simultaneously This theory also states that attention is a limited resource , so you switch between tasks rather than multitasking",
+      "fields": {
+        "Text": "{{c1::Divided attention}} occurs when {{c2::an individual must perform two tasks which require attention simultaneously}}<div><br></div><div>This theory also states that attention is a {{c3::limited resource}}, so you switch between tasks rather than multitasking</div>",
+        "Extra": "<br><div><img src=\"7e25b4385765a674f061de1cb4eee3da.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590570402092,
+      "note_id": 1590569338050,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Divided attention occurs when [...] This theory also states that attention is a limited resource , so you switch between tasks rather than multitasking",
+      "answer_text": "Divided attention occurs when an individual must perform two tasks which require attention simultaneously This theory also states that attention is a limited resource , so you switch between tasks rather than multitasking",
+      "fields": {
+        "Text": "{{c1::Divided attention}} occurs when {{c2::an individual must perform two tasks which require attention simultaneously}}<div><br></div><div>This theory also states that attention is a {{c3::limited resource}}, so you switch between tasks rather than multitasking</div>",
+        "Extra": "<br><div><img src=\"7e25b4385765a674f061de1cb4eee3da.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590570441624,
+      "note_id": 1590569338050,
+      "ord": 2,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Divided attention occurs when an individual must perform two tasks which require attention simultaneously This theory also states that attention is a [...] , so you switch between tasks rather than multitasking",
+      "answer_text": "Divided attention occurs when an individual must perform two tasks which require attention simultaneously This theory also states that attention is a limited resource , so you switch between tasks rather than multitasking",
+      "fields": {
+        "Text": "{{c1::Divided attention}} occurs when {{c2::an individual must perform two tasks which require attention simultaneously}}<div><br></div><div>This theory also states that attention is a {{c3::limited resource}}, so you switch between tasks rather than multitasking</div>",
+        "Extra": "<br><div><img src=\"7e25b4385765a674f061de1cb4eee3da.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590570530400,
+      "note_id": 1590570484868,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is the focusing of attention on an object by two seperate individuals",
+      "answer_text": "Joint attention is the focusing of attention on an object by two seperate individuals",
+      "fields": {
+        "Text": "{{c1::Joint attention}} is the focusing of attention on an object by two seperate individuals",
+        "Extra": "<br><div><img src=\"JointAttention1.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590570617914,
+      "note_id": 1590570530476,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when attention is focused sustainably on a single task",
+      "answer_text": "Directed attention is when attention is focused sustainably on a single task",
+      "fields": {
+        "Text": "{{c1::Directed attention}} is when attention is focused sustainably on a <font color=\"#ff0004\">single task</font>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590570747538,
+      "note_id": 1590570617984,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when you focus/concentrate on something at the exclusion of other stimuli in the environment",
+      "answer_text": "Attention is when you focus/concentrate on something at the exclusion of other stimuli in the environment",
+      "fields": {
+        "Text": "{{c1::Attention}} is when you {{c2::focus/concentrate on something at the exclusion of other stimuli in the environment}}",
+        "Extra": "<div><br></div><img src=\"paste-0f07f29b1c6b3bf2ecc128acb49ec2797a46588e.jpg\"><div><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590570747539,
+      "note_id": 1590570617984,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Attention is when you [...]",
+      "answer_text": "Attention is when you focus/concentrate on something at the exclusion of other stimuli in the environment",
+      "fields": {
+        "Text": "{{c1::Attention}} is when you {{c2::focus/concentrate on something at the exclusion of other stimuli in the environment}}",
+        "Extra": "<div><br></div><img src=\"paste-0f07f29b1c6b3bf2ecc128acb49ec2797a46588e.jpg\"><div><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590570836417,
+      "note_id": 1590570747682,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is the ability to maintain attention while being presented with interfering stimuli",
+      "answer_text": "Selective attention is the ability to maintain attention while being presented with interfering stimuli",
+      "fields": {
+        "Text": "{{c1::Selective attention}} is the ability to {{c2::maintain attention while being presented with <font color=\"#00ffff\">interfering stimuli</font>}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590570836419,
+      "note_id": 1590570747682,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Selective attention is the ability to [...]",
+      "answer_text": "Selective attention is the ability to maintain attention while being presented with interfering stimuli",
+      "fields": {
+        "Text": "{{c1::Selective attention}} is the ability to {{c2::maintain attention while being presented with <font color=\"#00ffff\">interfering stimuli</font>}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590570866754,
+      "note_id": 1590570836482,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The two types of cues that direct our attention are [...] and [...] cues.",
+      "answer_text": "The two types of cues that direct our attention are exogenous and endogenous cues. exogeneous = external endogenous = internal",
+      "fields": {
+        "Text": "The two types of <font color=\"#ff0004\">cues</font> that direct our attention are {{c1::exogenous}} and {{c1::endogenous}} cues.",
+        "Extra": "<br><div><i>exogeneous = external</i></div><div><i>endogenous = internal</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590571042727,
+      "note_id": 1590570904012,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] are cues that we don't have to tell ourself to look for in order to capture attention .",
+      "answer_text": "Exogenous cues are cues that we don't have to tell ourself to look for in order to capture attention . includes things like bright colors, loud noises, etc",
+      "fields": {
+        "Text": "{{c1::Exogenous cues}} are cues that {{c2::we don't have to tell ourself to look for in order to capture attention}}.",
+        "Extra": "<br><div><i>includes things like bright colors, loud noises, etc</i></div><div><img src=\"Hearing.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590571042728,
+      "note_id": 1590570904012,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Exogenous cues are cues that [...] .",
+      "answer_text": "Exogenous cues are cues that we don't have to tell ourself to look for in order to capture attention . includes things like bright colors, loud noises, etc",
+      "fields": {
+        "Text": "{{c1::Exogenous cues}} are cues that {{c2::we don't have to tell ourself to look for in order to capture attention}}.",
+        "Extra": "<br><div><i>includes things like bright colors, loud noises, etc</i></div><div><img src=\"Hearing.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590571110256,
+      "note_id": 1590571042807,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Exogenous cues are driven by [...] processing Endogenous cues are driven by [...] processing",
+      "answer_text": "Exogenous cues are driven by bottom-up processing Endogenous cues are driven by top-down processing",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">Exogenous </font>cues are driven by {{c1::bottom-up}} processing<div><font color=\"#ff0004\">Endogenous </font>cues are driven by {{c1::top-down}} processing<br></div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590571214839,
+      "note_id": 1590571110409,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Type of cue] require internal knowledge to understand the cue.",
+      "answer_text": "Endogenous cues require internal knowledge to understand the cue.",
+      "fields": {
+        "Text": "{{c1::Endogenous cues::Type of cue}} require {{c2::internal knowledge to understand the cue.}}",
+        "Extra": "<br><div><img src=\"The-cocktail-party-effect-20190527.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590571214840,
+      "note_id": 1590571110409,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Endogenous cues require [...]",
+      "answer_text": "Endogenous cues require internal knowledge to understand the cue.",
+      "fields": {
+        "Text": "{{c1::Endogenous cues::Type of cue}} require {{c2::internal knowledge to understand the cue.}}",
+        "Extra": "<br><div><img src=\"The-cocktail-party-effect-20190527.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590571297645,
+      "note_id": 1590571214868,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The cocktail party effect is an example of an [...] cue. It is the ability to [...]",
+      "answer_text": "The cocktail party effect is an example of an endogenous cue. It is the ability to concentrate on our name when it is called, even in crowds",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">The cocktail party effect</font> is an example of an {{c1::endogenous}} cue.<div>It is the ability to {{c1::concentrate on our name when it is called, even in crowds}}</div>",
+        "Extra": "<br><div><img src=\"The-cocktail-party-effect-20190527.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590571679460,
+      "note_id": 1590571297705,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when we aren't aware of things in our visual field when our attention is directed elsewhere in that field",
+      "answer_text": "In-attentional blindness is when we aren't aware of things in our visual field when our attention is directed elsewhere in that field example: that old \"count the passes\" video where you miss the gorilla strolling through",
+      "fields": {
+        "Text": "{{c1::In-attentional blindness}} is when {{c2::we aren't aware of things in our visual field when our attention is directed elsewhere in that field}}",
+        "Extra": "<div><br></div><i>example: that old \"count the passes\" video where you miss the gorilla strolling through</i><br><div><img src=\"Phenom-Gorilla-spotting-631 (1).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590571679462,
+      "note_id": 1590571297705,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "In-attentional blindness is when [...]",
+      "answer_text": "In-attentional blindness is when we aren't aware of things in our visual field when our attention is directed elsewhere in that field example: that old \"count the passes\" video where you miss the gorilla strolling through",
+      "fields": {
+        "Text": "{{c1::In-attentional blindness}} is when {{c2::we aren't aware of things in our visual field when our attention is directed elsewhere in that field}}",
+        "Extra": "<div><br></div><i>example: that old \"count the passes\" video where you miss the gorilla strolling through</i><br><div><img src=\"Phenom-Gorilla-spotting-631 (1).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590571870322,
+      "note_id": 1590571679605,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is failing to notice a change in the environment as a result of selective attention",
+      "answer_text": "Change-blindness is failing to notice a change in the environment as a result of selective attention example of change-blindness experiment",
+      "fields": {
+        "Text": "{{c1::Change-blindness}} is {{c2::failing to notice a change in the environment as a result of selective attention}}",
+        "Extra": "<div><i><br></i></div><div><i>example of change-blindness experiment</i></div><div><i><img src=\"DecisiveAmpleBull-size_restricted.gif\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590571870323,
+      "note_id": 1590571679605,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Change-blindness is [...]",
+      "answer_text": "Change-blindness is failing to notice a change in the environment as a result of selective attention example of change-blindness experiment",
+      "fields": {
+        "Text": "{{c1::Change-blindness}} is {{c2::failing to notice a change in the environment as a result of selective attention}}",
+        "Extra": "<div><i><br></i></div><div><i>example of change-blindness experiment</i></div><div><i><img src=\"DecisiveAmpleBull-size_restricted.gif\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590571945039,
+      "note_id": 1590571870382,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Type of stimuli] are objects and events out in the world around you",
+      "answer_text": "Distal stimuli are objects and events out in the world around you",
+      "fields": {
+        "Text": "{{c1::Distal stimuli::Type of stimuli}} are {{c2::objects and events out in the world around you}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590611162676,
+      "note_id": 1590571870382,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Distal stimuli are [...]",
+      "answer_text": "Distal stimuli are objects and events out in the world around you",
+      "fields": {
+        "Text": "{{c1::Distal stimuli::Type of stimuli}} are {{c2::objects and events out in the world around you}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590572020414,
+      "note_id": 1590571945099,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Type of stimuli] are the patterns of stimuli from objects and events that reach your senses",
+      "answer_text": "Proximal stimuli are the patterns of stimuli from objects and events that reach your senses example: the light that hits your retina",
+      "fields": {
+        "Text": "{{c1::Proximal stimuli::Type of stimuli}} are the patterns of stimuli from objects and events that <font color=\"#ff0004\">reach your senses</font>",
+        "Extra": "<i><br></i><div><i>example: the light that hits your retina</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590572115741,
+      "note_id": 1590572020553,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is the act of bringing the spotlight of attention on an object or event without body or eye movement",
+      "answer_text": "Covert orienting is the act of bringing the spotlight of attention on an object or event without body or eye movement",
+      "fields": {
+        "Text": "{{c1::Covert orienting}} is the act of bringing the spotlight of attention on an object or event without body or eye movement",
+        "Extra": "<br><div><img src=\"200px-Wikipedia-spotlight.jpg\"><br></div>"
+      },
+      "tags": []
+    }
+  ]
+}

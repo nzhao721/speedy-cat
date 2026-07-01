@@ -102,11 +102,6 @@
         </menu>
     </item>
     <item
-        android:id="@+id/action_edit"
-        android:icon="@drawable/ic_mode_edit_white"
-        android:title="@string/cardeditor_title_edit_card"
-        ankidroid:showAsAction="ifRoom"/>
-    <item
         android:id="@+id/action_add_note_reviewer"
         android:title="@string/menu_add_note"
         android:icon="@drawable/ic_add"
@@ -164,10 +159,6 @@
         </menu>
     </item>
 
-    <item
-        android:id="@+id/action_delete"
-        tools:title="Delete note"
-        android:icon="@drawable/ic_delete_white"/>
     <item
         android:id="@+id/action_mark_card"
         android:icon="@drawable/ic_star_border_white"

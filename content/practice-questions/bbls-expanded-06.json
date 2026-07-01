@@ -1,0 +1,818 @@
+{
+  "meta": {
+    "section": "BBLS",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax Biology 2e (Clark, Douglas, Choi)",
+        "sourceLicense": "CC BY-NC-SA 4.0",
+        "baseUrl": "https://openstax.org/books/biology-2e/",
+        "note": "Stems/options scraped verbatim from OpenStax Biology 2e Review Questions. OpenStax does NOT publish the Biology 2e review-question answer key publicly, so correctAnswer is verified-from-source-text (bedrock factual/computational items cross-checked against the Biology 2e chapter text). NOTE on license: Biology 2e was originally released as CC BY 4.0 (still cited that way by some mirrors and by this repo's seed questions.json); OpenStax's current official listing for Biology 2e is CC BY-NC-SA 4.0, recorded here as the conservative/authoritative value. OpenStax also posts a 'no LLM training' notice; SpeedyCAT use is human-facing per PRD."
+      }
+    ],
+    "counts": {"total": 40, "byTopic": {"cell biology": 24, "genetics": 16}},
+    "notes": "File 06: OpenStax Biology 2e Ch. 10 (Cell Reproduction / cell cycle & mitosis) and Ch. 11 (Meiosis & Sexual Reproduction). One figure-referencing item (Ch.10 Q15, 'Figure 10.6') was skipped. Options 1-4 map to A-D. answerProvenance is verified-from-source-text for all items (no public OpenStax key)."
+  },
+  "questions": [
+    {
+      "id": "bbls-x190",
+      "section": "BBLS",
+      "stem": "A diploid cell has _______ the number of chromosomes as a haploid cell.",
+      "choices": [
+        {"label": "A", "text": "one-fourth"},
+        {"label": "B", "text": "half"},
+        {"label": "C", "text": "twice"},
+        {"label": "D", "text": "four times"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "A diploid cell (2n) contains two sets of chromosomes, which is twice the number found in a haploid cell (n).",
+      "topicTags": ["cell biology", "ploidy", "chromosomes"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q3). No public OpenStax answer key; answer verified from the Biology 2e source text (definition of diploid vs haploid)."
+    },
+    {
+      "id": "bbls-x191",
+      "section": "BBLS",
+      "stem": "An organism's traits are determined by the specific combination of inherited _____.",
+      "choices": [
+        {"label": "A", "text": "cells."},
+        {"label": "B", "text": "genes."},
+        {"label": "C", "text": "proteins."},
+        {"label": "D", "text": "chromatids."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Heritable traits are determined by the combination of genes (alleles) an organism inherits from its parents.",
+      "topicTags": ["genetics", "heredity", "genes"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q4). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x192",
+      "section": "BBLS",
+      "stem": "The first level of DNA organization in a eukaryotic cell is maintained by which molecule?",
+      "choices": [
+        {"label": "A", "text": "cohesin"},
+        {"label": "B", "text": "condensin"},
+        {"label": "C", "text": "chromatin"},
+        {"label": "D", "text": "histone"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The first level of DNA packing is the wrapping of DNA around histone proteins to form nucleosomes.",
+      "topicTags": ["cell biology", "chromatin", "histones"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q5). No public OpenStax answer key; answer verified from the Biology 2e source text (DNA winds around histones as the first packing level)."
+    },
+    {
+      "id": "bbls-x193",
+      "section": "BBLS",
+      "stem": "Identical copies of chromatin held together by cohesin at the centromere are called _____.",
+      "choices": [
+        {"label": "A", "text": "histones."},
+        {"label": "B", "text": "nucleosomes."},
+        {"label": "C", "text": "chromatin."},
+        {"label": "D", "text": "sister chromatids."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "After DNA replication, the two identical copies of a chromosome held together at the centromere by cohesin are sister chromatids.",
+      "topicTags": ["cell biology", "chromosomes", "sister chromatids"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q6). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x194",
+      "section": "BBLS",
+      "stem": "Chromosomes are duplicated during what stage of the cell cycle?",
+      "choices": [
+        {"label": "A", "text": "G1 phase"},
+        {"label": "B", "text": "S phase"},
+        {"label": "C", "text": "prophase"},
+        {"label": "D", "text": "prometaphase"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "DNA replication, which duplicates the chromosomes, occurs during the S (synthesis) phase of interphase.",
+      "topicTags": ["cell biology", "cell cycle", "DNA replication"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q7). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x195",
+      "section": "BBLS",
+      "stem": "Which of the following events does not occur during some stages of interphase?",
+      "choices": [
+        {"label": "A", "text": "DNA duplication"},
+        {"label": "B", "text": "organelle duplication"},
+        {"label": "C", "text": "increase in cell size"},
+        {"label": "D", "text": "separation of sister chromatids"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Sister chromatids separate during mitosis (anaphase), not interphase. DNA and organelle duplication and cell growth all occur during interphase.",
+      "topicTags": ["cell biology", "cell cycle", "interphase"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q8). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x196",
+      "section": "BBLS",
+      "stem": "The mitotic spindles arise from which cell structure?",
+      "choices": [
+        {"label": "A", "text": "centromere"},
+        {"label": "B", "text": "centrosome"},
+        {"label": "C", "text": "kinetochore"},
+        {"label": "D", "text": "cleavage furrow"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The centrosome is the microtubule-organizing center from which the mitotic spindle fibers emanate.",
+      "topicTags": ["cell biology", "mitosis", "centrosome"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q9). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x197",
+      "section": "BBLS",
+      "stem": "Attachment of the mitotic spindle fibers to the kinetochores is a characteristic of which stage of mitosis?",
+      "choices": [
+        {"label": "A", "text": "prophase"},
+        {"label": "B", "text": "prometaphase"},
+        {"label": "C", "text": "metaphase"},
+        {"label": "D", "text": "anaphase"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "During prometaphase the nuclear envelope breaks down and spindle microtubules attach to the kinetochores of the chromosomes.",
+      "topicTags": ["cell biology", "mitosis", "prometaphase"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q10). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x198",
+      "section": "BBLS",
+      "stem": "Unpacking of chromosomes and the formation of a new nuclear envelope is a characteristic of which stage of mitosis?",
+      "choices": [
+        {"label": "A", "text": "prometaphase"},
+        {"label": "B", "text": "metaphase"},
+        {"label": "C", "text": "anaphase"},
+        {"label": "D", "text": "telophase"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "During telophase the chromosomes decondense (unpack) and a new nuclear envelope forms around each set of chromosomes.",
+      "topicTags": ["cell biology", "mitosis", "telophase"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q11). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x199",
+      "section": "BBLS",
+      "stem": "Separation of the sister chromatids is a characteristic of which stage of mitosis?",
+      "choices": [
+        {"label": "A", "text": "prometaphase"},
+        {"label": "B", "text": "metaphase"},
+        {"label": "C", "text": "anaphase"},
+        {"label": "D", "text": "telophase"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Sister chromatids are pulled apart toward opposite poles during anaphase.",
+      "topicTags": ["cell biology", "mitosis", "anaphase"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q12). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x200",
+      "section": "BBLS",
+      "stem": "The chromosomes become visible under a light microscope during which stage of mitosis?",
+      "choices": [
+        {"label": "A", "text": "prophase"},
+        {"label": "B", "text": "prometaphase"},
+        {"label": "C", "text": "metaphase"},
+        {"label": "D", "text": "anaphase"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "During prophase the chromatin condenses into discrete chromosomes that become visible under a light microscope.",
+      "topicTags": ["cell biology", "mitosis", "prophase"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q13). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x201",
+      "section": "BBLS",
+      "stem": "The fusing of Golgi vesicles at the metaphase plate of dividing plant cells forms what structure?",
+      "choices": [
+        {"label": "A", "text": "cell plate"},
+        {"label": "B", "text": "actin ring"},
+        {"label": "C", "text": "cleavage furrow"},
+        {"label": "D", "text": "mitotic spindle"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "In plant cytokinesis, Golgi-derived vesicles fuse at the center of the cell to form the cell plate, which becomes the new cell wall.",
+      "topicTags": ["cell biology", "cytokinesis", "plant cells"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q14). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x202",
+      "section": "BBLS",
+      "stem": "At which of the cell-cycle checkpoints do external forces have the greatest influence?",
+      "choices": [
+        {"label": "A", "text": "G1 checkpoint"},
+        {"label": "B", "text": "G2 checkpoint"},
+        {"label": "C", "text": "M checkpoint"},
+        {"label": "D", "text": "G0 checkpoint"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The G1 checkpoint (restriction point) is where external signals such as growth factors most strongly influence whether the cell commits to division.",
+      "topicTags": ["cell biology", "cell cycle", "checkpoints"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q16). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x203",
+      "section": "BBLS",
+      "stem": "What is the main prerequisite for clearance at the G2 checkpoint?",
+      "choices": [
+        {"label": "A", "text": "cell has reached a sufficient size"},
+        {"label": "B", "text": "an adequate stockpile of nucleotides"},
+        {"label": "C", "text": "accurate and complete DNA replication"},
+        {"label": "D", "text": "proper attachment of mitotic spindle fibers to kinetochores"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The G2 checkpoint verifies that DNA has been accurately and completely replicated (and any damage repaired) before mitosis begins.",
+      "topicTags": ["cell biology", "cell cycle", "checkpoints"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q17). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x204",
+      "section": "BBLS",
+      "stem": "If the M checkpoint is not cleared, what stage of mitosis will be blocked?",
+      "choices": [
+        {"label": "A", "text": "prophase"},
+        {"label": "B", "text": "prometaphase"},
+        {"label": "C", "text": "metaphase"},
+        {"label": "D", "text": "anaphase"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The M (spindle) checkpoint, at the metaphase-to-anaphase transition, blocks entry into anaphase until all kinetochores are properly attached to the spindle.",
+      "topicTags": ["cell biology", "cell cycle", "spindle checkpoint"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q18). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x205",
+      "section": "BBLS",
+      "stem": "Which protein is a positive regulator that phosphorylates other proteins when activated?",
+      "choices": [
+        {"label": "A", "text": "p53"},
+        {"label": "B", "text": "retinoblastoma protein (Rb)"},
+        {"label": "C", "text": "cyclin"},
+        {"label": "D", "text": "cyclin-dependent kinase (Cdk)"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cyclin-dependent kinases (Cdks) are positive regulators that, when activated by binding cyclin, phosphorylate target proteins to drive the cell cycle forward.",
+      "topicTags": ["cell biology", "cell cycle", "Cdk"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q19). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x206",
+      "section": "BBLS",
+      "stem": "Many of the negative regulator proteins of the cell cycle were discovered in what type of cells?",
+      "choices": [
+        {"label": "A", "text": "gametes"},
+        {"label": "B", "text": "cells in G0"},
+        {"label": "C", "text": "cancer cells"},
+        {"label": "D", "text": "stem cells"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Negative cell-cycle regulators (tumor suppressors) were largely identified through studying cancer cells, in which these brakes are defective.",
+      "topicTags": ["cell biology", "cell cycle", "tumor suppressors"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q20). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x207",
+      "section": "BBLS",
+      "stem": "Which negative regulatory molecule can trigger cell suicide (apoptosis) if vital cell cycle events do not occur?",
+      "choices": [
+        {"label": "A", "text": "p53"},
+        {"label": "B", "text": "p21"},
+        {"label": "C", "text": "retinoblastoma protein (Rb)"},
+        {"label": "D", "text": "cyclin-dependent kinase (Cdk)"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "p53 halts the cell cycle for repair and can trigger apoptosis if DNA damage is too severe to fix.",
+      "topicTags": ["cell biology", "cell cycle", "p53"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q21). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x208",
+      "section": "BBLS",
+      "stem": "___________ are changes to the order of nucleotides in a segment of DNA that codes for a protein.",
+      "choices": [
+        {"label": "A", "text": "Proto-oncogenes"},
+        {"label": "B", "text": "Tumor suppressor genes"},
+        {"label": "C", "text": "Gene mutations"},
+        {"label": "D", "text": "Negative regulators"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Gene mutations are changes in the nucleotide sequence of a DNA segment that codes for a protein.",
+      "topicTags": ["genetics", "mutations", "DNA"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q22). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x209",
+      "section": "BBLS",
+      "stem": "A gene that codes for a positive cell-cycle regulator is called a(n) _____.",
+      "choices": [
+        {"label": "A", "text": "kinase inhibitor."},
+        {"label": "B", "text": "tumor suppressor gene."},
+        {"label": "C", "text": "proto-oncogene."},
+        {"label": "D", "text": "oncogene."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "A normal gene encoding a positive cell-cycle regulator is a proto-oncogene; a cancer-promoting mutated version is an oncogene.",
+      "topicTags": ["genetics", "cancer", "proto-oncogenes"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q23). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x210",
+      "section": "BBLS",
+      "stem": "A mutated gene that codes for an altered version of Cdk that is active in the absence of cyclin is a(n) _____.",
+      "choices": [
+        {"label": "A", "text": "kinase inhibitor."},
+        {"label": "B", "text": "tumor suppressor gene."},
+        {"label": "C", "text": "proto-oncogene."},
+        {"label": "D", "text": "oncogene."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "A mutation that makes Cdk constitutively active (independent of cyclin) drives uncontrolled division; such a cancer-promoting mutant gene is an oncogene.",
+      "topicTags": ["genetics", "cancer", "oncogenes"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q24). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x211",
+      "section": "BBLS",
+      "stem": "Which molecule is a Cdk inhibitor that is controlled by p53?",
+      "choices": [
+        {"label": "A", "text": "cyclin"},
+        {"label": "B", "text": "anti-kinase"},
+        {"label": "C", "text": "Rb"},
+        {"label": "D", "text": "p21"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "p53 induces expression of p21, which inhibits Cdk activity and halts cell-cycle progression.",
+      "topicTags": ["cell biology", "cell cycle", "p21"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q25). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x212",
+      "section": "BBLS",
+      "stem": "Which eukaryotic cell-cycle event is missing in binary fission?",
+      "choices": [
+        {"label": "A", "text": "cell growth"},
+        {"label": "B", "text": "DNA duplication"},
+        {"label": "C", "text": "karyokinesis"},
+        {"label": "D", "text": "cytokinesis"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Prokaryotes lack a nucleus and a mitotic apparatus, so binary fission has no karyokinesis (nuclear division). They still grow, replicate DNA, and divide the cytoplasm.",
+      "topicTags": ["cell biology", "binary fission", "prokaryotes"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q26). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x213",
+      "section": "BBLS",
+      "stem": "FtsZ proteins direct the formation of a _______ that will eventually form the new cell walls of the daughter cells.",
+      "choices": [
+        {"label": "A", "text": "contractile ring"},
+        {"label": "B", "text": "cell plate"},
+        {"label": "C", "text": "cytoskeleton"},
+        {"label": "D", "text": "septum"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "In bacterial binary fission, FtsZ proteins assemble at midcell and direct formation of the septum, which becomes the new cell walls separating the daughter cells.",
+      "topicTags": ["cell biology", "binary fission", "FtsZ"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 10 Cell Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q27). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x214",
+      "section": "BBLS",
+      "stem": "Meiosis usually produces ________ daughter cells.",
+      "choices": [
+        {"label": "A", "text": "two haploid"},
+        {"label": "B", "text": "two diploid"},
+        {"label": "C", "text": "four haploid"},
+        {"label": "D", "text": "four diploid"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Meiosis comprises two divisions and typically yields four haploid daughter cells from one diploid cell.",
+      "topicTags": ["genetics", "meiosis", "gametes"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Biology 2e, Ch. 11 Meiosis and Sexual Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q2). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x215",
+      "section": "BBLS",
+      "stem": "What structure is most important in forming the tetrads?",
+      "choices": [
+        {"label": "A", "text": "centromere"},
+        {"label": "B", "text": "synaptonemal complex"},
+        {"label": "C", "text": "chiasma"},
+        {"label": "D", "text": "kinetochore"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The synaptonemal complex holds homologous chromosomes together during synapsis in prophase I, forming the tetrad (bivalent).",
+      "topicTags": ["genetics", "meiosis", "synaptonemal complex"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 11 Meiosis and Sexual Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q3). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x216",
+      "section": "BBLS",
+      "stem": "At which stage of meiosis are sister chromatids separated from each other?",
+      "choices": [
+        {"label": "A", "text": "prophase I"},
+        {"label": "B", "text": "prophase II"},
+        {"label": "C", "text": "anaphase I"},
+        {"label": "D", "text": "anaphase II"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Homologous chromosomes separate in anaphase I; sister chromatids are not separated until anaphase II.",
+      "topicTags": ["genetics", "meiosis", "anaphase II"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 11 Meiosis and Sexual Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q4). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x217",
+      "section": "BBLS",
+      "stem": "At metaphase I, homologous chromosomes are connected only at what structures?",
+      "choices": [
+        {"label": "A", "text": "chiasmata"},
+        {"label": "B", "text": "recombination nodules"},
+        {"label": "C", "text": "microtubules"},
+        {"label": "D", "text": "kinetochores"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "By metaphase I the synaptonemal complex has dissolved, and homologous chromosomes are held together only at the chiasmata (crossover points).",
+      "topicTags": ["genetics", "meiosis", "chiasmata"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Biology 2e, Ch. 11 Meiosis and Sexual Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q5). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x218",
+      "section": "BBLS",
+      "stem": "Which of the following is not true in regard to crossover?",
+      "choices": [
+        {"label": "A", "text": "Spindle microtubules guide the transfer of DNA across the synaptonemal complex."},
+        {"label": "B", "text": "Nonsister chromatids exchange genetic material."},
+        {"label": "C", "text": "Chiasmata are formed."},
+        {"label": "D", "text": "Recombination nodules mark the crossover point."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Crossover is mediated by recombination machinery at the synaptonemal complex, not by spindle microtubules. The other statements correctly describe crossing over.",
+      "topicTags": ["genetics", "meiosis", "crossing over"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Biology 2e, Ch. 11 Meiosis and Sexual Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q6). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x219",
+      "section": "BBLS",
+      "stem": "What phase of mitotic interphase is missing from meiotic interkinesis?",
+      "choices": [
+        {"label": "A", "text": "G0 phase"},
+        {"label": "B", "text": "G1 phase"},
+        {"label": "C", "text": "S phase"},
+        {"label": "D", "text": "G2 phase"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Interkinesis (between meiosis I and II) lacks an S phase, so DNA is not replicated again before the second meiotic division.",
+      "topicTags": ["genetics", "meiosis", "interkinesis"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 11 Meiosis and Sexual Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q7). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x220",
+      "section": "BBLS",
+      "stem": "The part of meiosis that is similar to mitosis is ________.",
+      "choices": [
+        {"label": "A", "text": "meiosis I"},
+        {"label": "B", "text": "anaphase I"},
+        {"label": "C", "text": "meiosis II"},
+        {"label": "D", "text": "interkinesis"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Meiosis II resembles mitosis: sister chromatids of haploid cells separate, just as in a mitotic division.",
+      "topicTags": ["genetics", "meiosis", "mitosis"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 11 Meiosis and Sexual Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q8). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x221",
+      "section": "BBLS",
+      "stem": "If a muscle cell of a typical organism has 32 chromosomes, how many chromosomes will be in a gamete of that same organism?",
+      "choices": [
+        {"label": "A", "text": "8"},
+        {"label": "B", "text": "16"},
+        {"label": "C", "text": "32"},
+        {"label": "D", "text": "64"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Gametes are haploid, containing half the somatic chromosome number: 32 / 2 = 16.",
+      "topicTags": ["genetics", "meiosis", "ploidy"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Biology 2e, Ch. 11 Meiosis and Sexual Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q9). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x222",
+      "section": "BBLS",
+      "stem": "Which statement best describes the genetic content of the two daughter cells in prophase II of meiosis?",
+      "choices": [
+        {"label": "A", "text": "haploid with one copy of each gene"},
+        {"label": "B", "text": "haploid with two copies of each gene"},
+        {"label": "C", "text": "diploid with two copies of each gene"},
+        {"label": "D", "text": "diploid with four copies of each gene"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "After meiosis I the cells are haploid, but each chromosome still consists of two sister chromatids, so each gene is present in two copies until anaphase II.",
+      "topicTags": ["genetics", "meiosis", "ploidy"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Biology 2e, Ch. 11 Meiosis and Sexual Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q10). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x223",
+      "section": "BBLS",
+      "stem": "The pea plants used in Mendel's genetic inheritance studies were diploid, with 14 chromosomes in somatic cells. Assuming no crossing over events occur, how many unique gametes could one pea plant produce?",
+      "choices": [
+        {"label": "A", "text": "28"},
+        {"label": "B", "text": "128"},
+        {"label": "C", "text": "196"},
+        {"label": "D", "text": "16,384"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "With 14 chromosomes, the haploid number is n = 7. Independent assortment gives 2^n = 2^7 = 128 genetically unique gametes (ignoring crossing over).",
+      "topicTags": ["genetics", "meiosis", "independent assortment"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Biology 2e, Ch. 11 Meiosis and Sexual Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q11). No public OpenStax answer key; answer verified by calculation (2^7 = 128)."
+    },
+    {
+      "id": "bbls-x224",
+      "section": "BBLS",
+      "stem": "How do telophase I and telophase II differ during meiosis in animal cells?",
+      "choices": [
+        {"label": "A", "text": "Cells remain diploid at the end of telophase I, but are haploid at the end of telophase II."},
+        {"label": "B", "text": "Daughter cells form a cell plate to divide during telophase I, but divide by cytokinesis during telophase II."},
+        {"label": "C", "text": "Cells enter interphase after telophase I, but not after telophase II."},
+        {"label": "D", "text": "Chromosomes can remain condensed at the end of telophase I, but decondense after telophase II."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "In many organisms the chromosomes stay condensed through telophase I (and brief interkinesis) and only fully decondense after telophase II. Cells are already haploid after telophase I, and animal cells divide by cytokinesis (cleavage furrow), not a cell plate.",
+      "topicTags": ["genetics", "meiosis", "telophase"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Biology 2e, Ch. 11 Meiosis and Sexual Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q12). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x225",
+      "section": "BBLS",
+      "stem": "What is a likely evolutionary advantage of sexual reproduction over asexual reproduction?",
+      "choices": [
+        {"label": "A", "text": "Sexual reproduction involves fewer steps."},
+        {"label": "B", "text": "There is a lower chance of using up the resources in a given environment."},
+        {"label": "C", "text": "Sexual reproduction results in variation in the offspring."},
+        {"label": "D", "text": "Sexual reproduction is more cost-effective."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Sexual reproduction shuffles alleles (via independent assortment, crossing over, and fertilization), producing genetic variation that can aid adaptation.",
+      "topicTags": ["genetics", "sexual reproduction", "genetic variation"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Biology 2e, Ch. 11 Meiosis and Sexual Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q13). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x226",
+      "section": "BBLS",
+      "stem": "Which type of life cycle has both a haploid and diploid multicellular stage?",
+      "choices": [
+        {"label": "A", "text": "asexual life cycles"},
+        {"label": "B", "text": "most animal life cycles"},
+        {"label": "C", "text": "most fungal life cycles"},
+        {"label": "D", "text": "alternation of generations"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Alternation of generations (seen in plants and some algae) includes both a multicellular haploid (gametophyte) stage and a multicellular diploid (sporophyte) stage.",
+      "topicTags": ["genetics", "life cycles", "alternation of generations"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 11 Meiosis and Sexual Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q14). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x227",
+      "section": "BBLS",
+      "stem": "What is the ploidy of the most conspicuous form of most fungi?",
+      "choices": [
+        {"label": "A", "text": "diploid"},
+        {"label": "B", "text": "haploid"},
+        {"label": "C", "text": "alternation of generations"},
+        {"label": "D", "text": "asexual"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Most fungi spend the majority of their life cycle in the haploid state; the conspicuous body is typically haploid.",
+      "topicTags": ["genetics", "fungi", "life cycles"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 11 Meiosis and Sexual Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q15). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x228",
+      "section": "BBLS",
+      "stem": "A diploid, multicellular life-cycle stage that gives rise to haploid cells by meiosis is called a ________.",
+      "choices": [
+        {"label": "A", "text": "sporophyte"},
+        {"label": "B", "text": "gametophyte"},
+        {"label": "C", "text": "spore"},
+        {"label": "D", "text": "gamete"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The sporophyte is the diploid, multicellular stage that produces haploid spores via meiosis in organisms with alternation of generations.",
+      "topicTags": ["genetics", "life cycles", "sporophyte"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 11 Meiosis and Sexual Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q16). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    },
+    {
+      "id": "bbls-x229",
+      "section": "BBLS",
+      "stem": "Many farmers are worried about the decreasing genetic diversity of plants associated with generations of artificial selection and inbreeding. Why is limiting random sexual reproduction of food crops concerning?",
+      "choices": [
+        {"label": "A", "text": "Mutations during asexual reproduction decrease plant fitness."},
+        {"label": "B", "text": "Consumers do not trust identical-appearing produce."},
+        {"label": "C", "text": "Larger portions of the plant populations are susceptible to the same diseases."},
+        {"label": "D", "text": "Spores are not viable in an agricultural setting."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Low genetic diversity means many plants share the same vulnerabilities, so a single disease can devastate a large fraction of the crop.",
+      "topicTags": ["genetics", "genetic diversity", "agriculture"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e, Ch. 11 Meiosis and Sexual Reproduction — Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q18). No public OpenStax answer key; answer verified from the Biology 2e source text."
+    }
+  ]
+}

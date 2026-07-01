@@ -6,7 +6,9 @@ pub(super) const SCHEMA_MIN_VERSION: u8 = 11;
 /// The version new files are initially created with.
 pub(super) const SCHEMA_STARTING_VERSION: u8 = 11;
 /// The maximum schema version we can open.
-pub(super) const SCHEMA_MAX_VERSION: u8 = 18;
+/// SpeedyCAT: bumped to 19 to add the practice-question / full-length-test
+/// tables (see schema19_upgrade.sql and rslib/src/storage/practice/).
+pub(super) const SCHEMA_MAX_VERSION: u8 = 19;
 
 use super::SchemaVersion;
 use super::SqliteStorage;
@@ -40,6 +42,11 @@ impl SqliteStorage {
             self.db
                 .execute_batch(include_str!("schema18_upgrade.sql"))?;
         }
+        if ver < 19 {
+            // SpeedyCAT: create the practice-question / full-length-test tables.
+            self.db
+                .execute_batch(include_str!("schema19_upgrade.sql"))?;
+        }
 
         // in some future schema upgrade, we may want to change
         // _collapsed to _expanded in DeckCommon and invert existing values, so
@@ -59,6 +66,9 @@ impl SqliteStorage {
     fn downgrade_to_schema_11(&self) -> Result<()> {
         self.begin_trx()?;
 
+        // SpeedyCAT: drop the additive, local-only practice tables first.
+        self.db
+            .execute_batch(include_str!("schema19_downgrade.sql"))?;
         self.db
             .execute_batch(include_str!("schema18_downgrade.sql"))?;
         self.downgrade_deck_conf_from_schema16()?;
@@ -85,10 +95,14 @@ mod test {
 
     #[test]
     #[allow(clippy::assertions_on_constants)]
-    fn assert_18_is_latest_schema_version() {
+    fn assert_19_is_latest_schema_version() {
+        // SpeedyCAT: schema 19 adds additive, local-only practice tables on top
+        // of the modern (V18) format. Downgrade-to-V11 drops them
+        // (schema19_downgrade.sql); the modern V18 downgrade target intentionally
+        // keeps them, so sync/package "latest" semantics are unchanged.
         assert_eq!(
-            18, SCHEMA_MAX_VERSION,
-            "must implement SqliteStorage::downgrade_to(SchemaVersion::V18)"
+            19, SCHEMA_MAX_VERSION,
+            "must implement SqliteStorage::downgrade_to(SchemaVersion::V11) drop for new tables"
         );
     }
 

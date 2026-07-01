@@ -29,12 +29,10 @@ from anki.scheduler.v3 import (
 from anki.scheduler.v3 import Scheduler as V3Scheduler
 from anki.tags import MARKED_TAG
 from anki.types import assert_exhaustive
-from anki.utils import is_mac
 from aqt import AnkiQt, gui_hooks
 from aqt.browser.card_info import PreviousReviewerCardInfo, ReviewerCardInfo
 from aqt.deckoptions import confirm_deck_then_display_options
 from aqt.operations.card import set_card_flag
-from aqt.operations.note import remove_notes
 from aqt.operations.scheduling import (
     answer_card,
     bury_cards,
@@ -156,6 +154,11 @@ class Reviewer:
         self._recordedAudio: str | None = None
         self._combining: bool = True
         self.typeCorrect: str | None = None  # web init happens before this is set
+        # SpeedyCAT forced active recall: `_force_active_recall` mirrors the
+        # `forceActiveRecall` config (default on); `_forced_recall_active` is set
+        # per card in the type-answer filter once we have an answer to check.
+        self._force_active_recall: bool = False
+        self._forced_recall_active: bool = False
         self.state: Literal["question", "answer", "transition"] | None = None
         self._refresh_needed: RefreshNeeded | None = None
         self._v3: V3CardInfo | None = None
@@ -373,6 +376,12 @@ class Reviewer:
         self._reps += 1
         self.state = "question"
         self.typedAnswer: str | None = None
+        # SpeedyCAT: forced active recall is config-gated (default on) and reset
+        # per card. `_forced_recall_active` is decided in the type-answer filter.
+        self._force_active_recall = bool(
+            self.mw.col.conf.get("forceActiveRecall", True)
+        )
+        self._forced_recall_active = False
         c = self.card
         # grab the question and play audio
         q = c.question()
@@ -462,6 +471,16 @@ class Reviewer:
     def _showAnswer(self) -> None:
         if self.mw.state != "review":
             # showing resetRequired screen; ignore space
+            return
+        # SpeedyCAT forced active recall: never reveal until a non-empty typed
+        # answer has been submitted. This guards direct callers too (e.g.
+        # auto-advance), routing them through the typed-answer fetch first.
+        if (
+            self._forced_recall_active
+            and self.state == "question"
+            and not (self.typedAnswer or "").strip()
+        ):
+            self._getTypedAnswer()
             return
         self.state = "answer"
         c = self.card
@@ -577,7 +596,6 @@ class Reviewer:
         self,
     ) -> Sequence[tuple[str, Callable] | tuple[Qt.Key, Callable]]:
         return [
-            ("ㄷ", self.mw.onEditCurrent),
             ("ㅡ", self.showContextMenu),
             ("ㄱ", self.replayAudio),
             ("Ctrl+Alt+ㅜ", self.forget_current_card),
@@ -608,7 +626,6 @@ class Reviewer:
                 yield (key, answer_card_according_to_pressed_key)
 
         return [
-            ("e", self.mw.onEditCurrent),
             (" ", self.onEnterKey),
             (Qt.Key.Key_Return, self.onEnterKey),
             (Qt.Key.Key_Enter, self.onEnterKey),
@@ -626,7 +643,6 @@ class Reviewer:
             ("@", self.suspend_current_card),
             ("Ctrl+Alt+N", self.forget_current_card),
             ("Ctrl+Alt+E", self.on_create_copy),
-            ("Ctrl+Backspace" if is_mac else "Ctrl+Delete", self.delete_current_note),
             ("Ctrl+Shift+D", self.on_set_due),
             ("v", self.onReplayRecorded),
             ("Shift+v", self.onRecordVoice),
@@ -678,8 +694,6 @@ class Reviewer:
         elif url.startswith("ease"):
             val: Literal[1, 2, 3, 4] = int(url[4:])  # type: ignore
             self._answerCard(val)
-        elif url == "edit":
-            self.mw.onEditCurrent()
         elif url == "more":
             self.showContextMenu()
         elif url.startswith("play:"):
@@ -711,7 +725,10 @@ class Reviewer:
         clozeIdx = None
         m = re.search(self.typeAnsPat, buf)
         if not m:
-            return buf
+            # SpeedyCAT: no {{type:...}} on this template. In forced active
+            # recall mode we still require a typed answer, so inject an input
+            # box and compare against the note's answer field.
+            return self._maybe_inject_forced_recall_input(buf)
         fld = m.group(1)
         # if it's a cloze, extract data
         if fld.startswith("cloze:"):
@@ -741,50 +758,114 @@ class Reviewer:
             else:
                 # empty field, remove type answer pattern
                 return re.sub(self.typeAnsPat, "", buf)
+        # SpeedyCAT: gate the reveal when forced active recall is enabled.
+        self._forced_recall_active = self._force_active_recall
         return re.sub(
             self.typeAnsPat,
-            f"""
-<center>
-<input type=text id=typeans onkeypress="_typeAnsPress();"
-   style="font-family: '{self.typeFont}'; font-size: {self.typeSize}px;">
-</center>
-""",
+            lambda _m: self._type_answer_input_html(required=self._force_active_recall),
             buf,
         )
+
+    def _maybe_inject_forced_recall_input(self, buf: str) -> str:
+        """SpeedyCAT: when forced active recall is on and the template has no
+        {{type:...}} field, append a required answer box to the question and set
+        up the expected answer (the note's Back/answer field) for comparison."""
+        if not self._force_active_recall:
+            return buf
+        expected = self._forced_recall_expected()
+        if not expected or not expected.strip():
+            # No usable answer to check against; don't lock the learner out.
+            return buf
+        self.typeCorrect = expected
+        self._forced_recall_active = True
+        return buf + self._type_answer_input_html(required=True)
+
+    def _forced_recall_expected(self) -> str | None:
+        """Expected answer for forced active recall without a {{type:...}} field.
+
+        Default source: a note field named "Back" (case-insensitive) if present
+        and non-empty; otherwise the rendered answer with the front side removed
+        (the portion after ``<hr id=answer>``). The text may contain HTML; the
+        rslib matcher strips it before comparing."""
+        self.typeFont = "Arial"
+        self.typeSize = 20
+        note = self.card.note()
+        for f in self.card.note_type()["flds"]:
+            if f["name"].lower() == "back":
+                val = note[f["name"]]
+                if val and val.strip():
+                    self.typeFont = f.get("font", self.typeFont)
+                    self.typeSize = f.get("size", self.typeSize)
+                    return val
+        answer = self.card.answer()
+        if "<hr id=answer>" in answer:
+            answer = answer.split("<hr id=answer>", 1)[1]
+        return answer
+
+    def _type_answer_input_html(self, required: bool) -> str:
+        """Markup for the typed-answer box. When ``required`` (forced active
+        recall) a hint and Check button are added so the learner knows a typed
+        answer is needed before the back is revealed."""
+        hint = ""
+        button = ""
+        if required:
+            hint = (
+                '<div id="typeans-hint" style="opacity:0.7;margin-bottom:6px">'
+                "Type your answer, then press Enter or Check to reveal.</div>"
+            )
+            button = (
+                '<div style="margin-top:6px"><button type="button" id="typeans-check" '
+                "onclick=\"pycmd('ans');\">Check</button></div>"
+            )
+        return f"""
+<center>
+{hint}<input type=text id=typeans onkeypress="_typeAnsPress();"
+   style="font-family: '{self.typeFont}'; font-size: {self.typeSize}px;">{button}
+</center>
+"""
 
     def typeAnsAnswerFilter(self, buf: str) -> str:
         if not self.typeCorrect:
             return re.sub(self.typeAnsPat, "", buf)
         m = re.search(self.typeAnsPat, buf)
         type_pattern = m.group(1) if m else ""
-        orig = buf
-        origSize = len(buf)
-        buf = buf.replace("<hr id=answer>", "")
-        hadHR = len(buf) != origSize
         initial_expected = self.typeCorrect
-        initial_provided = self.typedAnswer
+        initial_provided = self.typedAnswer or ""
         expected, provided = gui_hooks.reviewer_will_compare_answer(
             (initial_expected, initial_provided), type_pattern
         )
 
-        output = self.mw.col.compare_answer(expected, provided, self._combining)
-        output = gui_hooks.reviewer_will_render_compared_answer(
-            output,
+        # SpeedyCAT: structured match result from the new rslib RPC (with a
+        # diff-only fallback for before the bindings are regenerated).
+        diff_html, matched = self._compare_typed_answer(expected, provided)
+        diff_html = gui_hooks.reviewer_will_render_compared_answer(
+            diff_html,
             initial_expected,
             initial_provided,
             type_pattern,
         )
+        inner = self._format_match_feedback(matched) + diff_html
+        comparison = """
+<div style="font-family: '{}'; font-size: {}px">{}</div>""".format(
+            self.typeFont,
+            self.typeSize,
+            inner,
+        )
 
-        # and update the type answer area
+        if not m:
+            # SpeedyCAT forced-recall input was injected (no {{type:...}} on the
+            # template), so append the comparison after the rendered answer.
+            return f"{buf}<hr>{comparison}"
+
+        orig = buf
+        origSize = len(buf)
+        buf = buf.replace("<hr id=answer>", "")
+        hadHR = len(buf) != origSize
+
         def repl(match: Match) -> str:
             # can't pass a string in directly, and can't use re.escape as it
             # escapes too much
-            s = """
-<div style="font-family: '{}'; font-size: {}px">{}</div>""".format(
-                self.typeFont,
-                self.typeSize,
-                output,
-            )
+            s = comparison
             if hadHR:
                 # a hack to ensure the q/a separator falls before the answer
                 # comparison when user is using {{FrontSide}}
@@ -796,6 +877,39 @@ class Reviewer:
 
         return re.sub(self.typeAnsPat, repl, buf)
 
+    def _compare_typed_answer(self, expected: str, provided: str) -> tuple[str, bool | None]:
+        """Returns (diff_html, matched). ``matched`` is True/False from the new
+        rslib match RPC, or None when that binding isn't available yet (before a
+        full proto/pylib regen), in which case feedback is simply omitted and we
+        fall back to the diff-only compare_answer."""
+        match_fn = getattr(self.mw.col, "match_answer", None)
+        if match_fn is not None:
+            try:
+                result = match_fn(expected, provided, self._combining)
+                return result.diff_html, result.matches
+            except Exception:
+                # bindings not regenerated yet; fall back to diff-only output
+                pass
+        return (
+            self.mw.col.compare_answer(expected, provided, self._combining),
+            None,
+        )
+
+    def _format_match_feedback(self, matched: bool | None) -> str:
+        """SpeedyCAT: small banner shown above the diff indicating whether the
+        typed answer matched. Empty when the structured matcher is unavailable."""
+        if matched is None:
+            return ""
+        if matched:
+            return (
+                '<div id="type-result" style="color:#1b873b;font-weight:bold;'
+                'margin-bottom:6px">&#x2714; Correct</div>'
+            )
+        return (
+            '<div id="type-result" style="color:#c0392b;font-weight:bold;'
+            'margin-bottom:6px">&#x2718; Incorrect</div>'
+        )
+
     def _contentForCloze(self, txt: str, idx: int) -> str | None:
         return self.mw.col.extract_cloze_for_typing(txt, idx) or None
 
@@ -804,6 +918,13 @@ class Reviewer:
 
     def _onTypedAnswer(self, val: None) -> None:
         self.typedAnswer = val or ""
+        # SpeedyCAT forced active recall: block the reveal until the learner has
+        # actually typed something. Re-focus the box so they can try again.
+        if self._forced_recall_active and not self.typedAnswer.strip():
+            # Literal (not ftl) to avoid a translation-API regen dependency.
+            tooltip("Type your answer before revealing the card.")
+            self.web.eval("if (typeof focusTypeBox === 'function') { focusTypeBox(); }")
+            return
         self._showAnswer()
 
     # Bottom bar
@@ -815,7 +936,7 @@ class Reviewer:
 <table id=innertable width=100%% cellspacing=0 cellpadding=0>
 <tr>
 <td align=start valign=top class=stat>
-<button title="%(editkey)s" onclick="pycmd('edit');">%(edit)s</button></td>
+</td>
 <td align=center valign=top id=middle>
 </td>
 <td align=end valign=top class=stat>
@@ -832,8 +953,6 @@ time = %(time)d;
 timerStopped = false;
 </script>
 """ % dict(
-            edit=tr.studying_edit(),
-            editkey=tr.actions_shortcut_key(val="E"),
             more=tr.studying_more(),
             morekey=tr.actions_shortcut_key(val="M"),
             downArrow=downArrow(),
@@ -1029,11 +1148,6 @@ timerStopped = false;
                 "Ctrl+Alt+E",
                 self.on_create_copy,
             ],
-            [
-                tr.studying_delete_note(),
-                "Ctrl+Backspace" if is_mac else "Ctrl+Delete",
-                self.delete_current_note,
-            ],
             None,
             [tr.actions_replay_audio(), "R", self.replayAudio],
             [tr.studying_pause_audio(), "5", self.on_pause_audio],
@@ -1179,14 +1293,6 @@ timerStopped = false;
                 self.card.note(), self.card.current_deck_id()
             )
 
-    def delete_current_note(self) -> None:
-        # need to check state because the shortcut is global to the main
-        # window
-        if self.mw.state != "review" or not self.card:
-            return
-
-        remove_notes(parent=self.mw, note_ids=[self.card.nid]).run_in_background()
-
     def onRecordVoice(self) -> None:
         def after_record(path: str) -> None:
             self._recordedAudio = path
@@ -1231,7 +1337,6 @@ timerStopped = false;
     onBuryNote = bury_current_note
     onSuspend = suspend_current_note
     onSuspendCard = suspend_current_card
-    onDelete = delete_current_note
     onMark = toggle_mark_on_current_note
     setFlag = set_flag_on_current_card
 

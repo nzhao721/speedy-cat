@@ -128,7 +128,6 @@ audio = (
 class EditorMode(Enum):
     ADD_CARDS = 0
     EDIT_CURRENT = 1
-    BROWSER = 2
 
 
 class EditorState(Enum):
@@ -208,8 +207,6 @@ class Editor:
     def setupWeb(self) -> None:
         if self.editorMode == EditorMode.ADD_CARDS:
             mode = "add"
-        elif self.editorMode == EditorMode.BROWSER:
-            mode = "browse"
         else:
             mode = "review"
 

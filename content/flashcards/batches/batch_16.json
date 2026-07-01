@@ -1,0 +1,3874 @@
+{
+  "meta": {
+    "batch": 16,
+    "file": "batch_16.json",
+    "card_count": 257,
+    "note_count": 185,
+    "card_id_range": [
+      1590572142723,
+      1590820957185
+    ],
+    "eval_checks": [
+      "(a) question/answer correspond: the rendered answer actually answers/fills the question (for cloze, the revealed deletion fits the blank); flag empty answers, answer==question, or clear non-correspondence.",
+      "(b) text well-formed: question_text/answer_text non-empty and readable; no unrendered template artifacts ('{{', '}}', 'FrontSide', '{{c1::'), no obviously garbled/broken text; note image-only cards (no usable text).",
+      "(c) regex/LaTeX/cloze markup valid & balanced in the raw `fields`: cloze {{cN::...}} well-formed & balanced; MathJax/LaTeX delimiters balanced ( \\(..\\), \\[..\\], [$]..[/$], [$$]..[/$$], $$..$$ ); HTML tags reasonably balanced."
+    ]
+  },
+  "cards": [
+    {
+      "card_id": 1590572142723,
+      "note_id": 1590572115793,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is the act of bringing the spotlight of attention on an object or event by moving the body to maximize sensory impact",
+      "answer_text": "Overt orienting is the act of bringing the spotlight of attention on an object or event by moving the body to maximize sensory impact mnemonic: You have to move your body OVER (overt)",
+      "fields": {
+        "Text": "{{c1::Overt orienting}} is the act of bringing the spotlight of attention on an object or event by moving the body to maximize sensory impact",
+        "Extra": "<i><br></i><div><i>mnemonic: You have to move your body <b>OVER</b> (overt)</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590572204323,
+      "note_id": 1590572142781,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] occurs when attention is attracted by the motion of an object or stimulus",
+      "answer_text": "Attentional capture occurs when attention is attracted by the motion of an object or stimulus",
+      "fields": {
+        "Text": "{{c1::Attentional capture}} occurs when attention is attracted by the motion of an object or stimulus",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590572275556,
+      "note_id": 1590572204354,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] occurs when damage to the brain causes a patient to fail to be aware of items to one side of space .",
+      "answer_text": "Neglect syndrome occurs when damage to the brain causes a patient to fail to be aware of items to one side of space .",
+      "fields": {
+        "Text": "{{c1::Neglect syndrome}} occurs when damage to the brain causes a patient to {{c2::fail to be aware of items to one side of space}}.",
+        "Extra": "<br><div><img src=\"copying-spontaneous-drawing.png\"><br></div><div><img src=\"EF47AD68-95C3-432A-A5D2-5646444B7093.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590621215515,
+      "note_id": 1590572204354,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Neglect syndrome occurs when damage to the brain causes a patient to [...] .",
+      "answer_text": "Neglect syndrome occurs when damage to the brain causes a patient to fail to be aware of items to one side of space .",
+      "fields": {
+        "Text": "{{c1::Neglect syndrome}} occurs when damage to the brain causes a patient to {{c2::fail to be aware of items to one side of space}}.",
+        "Extra": "<br><div><img src=\"copying-spontaneous-drawing.png\"><br></div><div><img src=\"EF47AD68-95C3-432A-A5D2-5646444B7093.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590572466414,
+      "note_id": 1590572275618,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Brain structure] is the main cholinergic (acetylcholine) output of the central nervous system",
+      "answer_text": "The basal forebrain is the main cholinergic (acetylcholine) output of the central nervous system",
+      "fields": {
+        "Text": "{{c1::The basal forebrain::Brain structure}} is {{c2::the main cholinergic (acetylcholine) output of the central nervous system}}",
+        "Extra": "<br><div><img src=\"basal-forebrain.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590572466415,
+      "note_id": 1590572275618,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The basal forebrain is [...]",
+      "answer_text": "The basal forebrain is the main cholinergic (acetylcholine) output of the central nervous system",
+      "fields": {
+        "Text": "{{c1::The basal forebrain::Brain structure}} is {{c2::the main cholinergic (acetylcholine) output of the central nervous system}}",
+        "Extra": "<br><div><img src=\"basal-forebrain.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590572649275,
+      "note_id": 1590572466557,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is attention involved in goal directed behavior , monitoring internal conflicts , and anticipating the effects of behavior .",
+      "answer_text": "Executive attention is attention involved in goal directed behavior , monitoring internal conflicts , and anticipating the effects of behavior .",
+      "fields": {
+        "Text": "{{c1::Executive attention}} is attention involved in {{c2::goal directed behavior}}, {{c2::monitoring internal conflicts}}, and {{c2::anticipating the effects of behavior}}.",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590572649276,
+      "note_id": 1590572466557,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Executive attention is attention involved in [...] , [...] , and [...] .",
+      "answer_text": "Executive attention is attention involved in goal directed behavior , monitoring internal conflicts , and anticipating the effects of behavior .",
+      "fields": {
+        "Text": "{{c1::Executive attention}} is attention involved in {{c2::goal directed behavior}}, {{c2::monitoring internal conflicts}}, and {{c2::anticipating the effects of behavior}}.",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590572814854,
+      "note_id": 1590572649326,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is an experiment where people are told to repeat everything said in one ear and ignore the other .",
+      "answer_text": "Shadowing task is an experiment where people are told to repeat everything said in one ear and ignore the other .",
+      "fields": {
+        "Text": "{{c1::Shadowing task}} is an experiment where {{c2::people are told to repeat everything said in one ear and ignore the other}}.",
+        "Extra": "<br><div><img src=\"bDb0S884AxKpUeIP3hCafQ.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590572814855,
+      "note_id": 1590572649326,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Shadowing task is an experiment where [...] .",
+      "answer_text": "Shadowing task is an experiment where people are told to repeat everything said in one ear and ignore the other .",
+      "fields": {
+        "Text": "{{c1::Shadowing task}} is an experiment where {{c2::people are told to repeat everything said in one ear and ignore the other}}.",
+        "Extra": "<br><div><img src=\"bDb0S884AxKpUeIP3hCafQ.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590573050365,
+      "note_id": 1590572815009,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] proposed that stimuli go into a sensory register --> selective filter --> perceptually processed --> conscious",
+      "answer_text": "Broadbent's early selection theory proposed that stimuli go into a sensory register --> selective filter --> perceptually processed --> conscious Problem is that you shouldn't be able to hear your name like you do in the cocktail party effect if non-important stuff gets filtered out",
+      "fields": {
+        "Text": "{{c1::Broadbent's early selection theory}} proposed that stimuli {{c2::go into a sensory register}} --&gt; {{c2::selective filter}} --&gt; {{c2::perceptually processed}} --&gt; {{c2::conscious}}",
+        "Extra": "<br><div><i>Problem is that you shouldn't be able to hear your name like you do in the cocktail party effect if non-important stuff gets filtered out</i></div><div><img src=\"2397966f096e4296f9f9b9ef8eafe5b7.png\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590573050366,
+      "note_id": 1590572815009,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Broadbent's early selection theory proposed that stimuli [...] --> [...] --> [...] --> [...]",
+      "answer_text": "Broadbent's early selection theory proposed that stimuli go into a sensory register --> selective filter --> perceptually processed --> conscious Problem is that you shouldn't be able to hear your name like you do in the cocktail party effect if non-important stuff gets filtered out",
+      "fields": {
+        "Text": "{{c1::Broadbent's early selection theory}} proposed that stimuli {{c2::go into a sensory register}} --&gt; {{c2::selective filter}} --&gt; {{c2::perceptually processed}} --&gt; {{c2::conscious}}",
+        "Extra": "<br><div><i>Problem is that you shouldn't be able to hear your name like you do in the cocktail party effect if non-important stuff gets filtered out</i></div><div><img src=\"2397966f096e4296f9f9b9ef8eafe5b7.png\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590573267520,
+      "note_id": 1590573050427,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Theory] state that stimuli enters the sensory register --> perceptual process --> selective filter --> conscious",
+      "answer_text": "Deutch and Deutch's Late Selection Theory state that stimuli enters the sensory register --> perceptual process --> selective filter --> conscious The problem with this is that it would take too much energy to process all the information that we recieve before filtering it MNEMONIC: The Dutch Pay Attention To Everything !!! so everything is perceptually processed",
+      "fields": {
+        "Text": "{{c1::Deutch and Deutch's Late Selection Theory::Theory}} state that stimuli {{c2::enters the sensory register}} --&gt; {{c2::perceptual process}} --&gt; {{c2::selective filter}} --&gt; {{c2::conscious}}",
+        "Extra": "<br><div><i>The problem with this is that it would take too much energy to process all the information that we recieve before filtering it</i></div><div><i><br></i></div><div><i>MNEMONIC: The <b><u>Dutch</u></b> Pay Attention To <b><u>Everything</u></b>!!! so everything is perceptually processed</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590573267521,
+      "note_id": 1590573050427,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Deutch and Deutch's Late Selection Theory state that stimuli [...] --> [...] --> [...] --> [...]",
+      "answer_text": "Deutch and Deutch's Late Selection Theory state that stimuli enters the sensory register --> perceptual process --> selective filter --> conscious The problem with this is that it would take too much energy to process all the information that we recieve before filtering it MNEMONIC: The Dutch Pay Attention To Everything !!! so everything is perceptually processed",
+      "fields": {
+        "Text": "{{c1::Deutch and Deutch's Late Selection Theory::Theory}} state that stimuli {{c2::enters the sensory register}} --&gt; {{c2::perceptual process}} --&gt; {{c2::selective filter}} --&gt; {{c2::conscious}}",
+        "Extra": "<br><div><i>The problem with this is that it would take too much energy to process all the information that we recieve before filtering it</i></div><div><i><br></i></div><div><i>MNEMONIC: The <b><u>Dutch</u></b> Pay Attention To <b><u>Everything</u></b>!!! so everything is perceptually processed</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590573458366,
+      "note_id": 1590573267676,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] states that stimuli enter the sensory register --> attenuator --> perceptual process --> conscious",
+      "answer_text": "Treisman's Attenuation Theory states that stimuli enter the sensory register --> attenuator --> perceptual process --> conscious the attenuator replaces the selective filter and allows the ATTENDED message to be processed to a greater extent than the UNATTENDED message Mnemonic: T reisman a TT enuates",
+      "fields": {
+        "Text": "{{c1::Treisman's Attenuation Theory}} states that stimuli {{c2::enter the sensory register}} --&gt; {{c2::attenuator}} --&gt; {{c2::perceptual process}} --&gt; {{c2::conscious}}",
+        "Extra": "<br><div><i>the attenuator replaces the selective filter and allows the ATTENDED message to be processed to a greater extent than the UNATTENDED message</i></div><div><i><br></i></div><div><i>Mnemonic: <b><u>T</u></b>reisman a<b><u>TT</u></b>enuates</i></div><div><img src=\"Information-processing-model-of-Treismans-Attenuation-theory-Psynso.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590573458367,
+      "note_id": 1590573267676,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Treisman's Attenuation Theory states that stimuli [...] --> [...] --> [...] --> [...]",
+      "answer_text": "Treisman's Attenuation Theory states that stimuli enter the sensory register --> attenuator --> perceptual process --> conscious the attenuator replaces the selective filter and allows the ATTENDED message to be processed to a greater extent than the UNATTENDED message Mnemonic: T reisman a TT enuates",
+      "fields": {
+        "Text": "{{c1::Treisman's Attenuation Theory}} states that stimuli {{c2::enter the sensory register}} --&gt; {{c2::attenuator}} --&gt; {{c2::perceptual process}} --&gt; {{c2::conscious}}",
+        "Extra": "<br><div><i>the attenuator replaces the selective filter and allows the ATTENDED message to be processed to a greater extent than the UNATTENDED message</i></div><div><i><br></i></div><div><i>Mnemonic: <b><u>T</u></b>reisman a<b><u>TT</u></b>enuates</i></div><div><img src=\"Information-processing-model-of-Treismans-Attenuation-theory-Psynso.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590573621966,
+      "note_id": 1590573458429,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Model] states that we take info from 5 senses but don't pay attention to everything",
+      "answer_text": "The spotlight model of attention states that we take info from 5 senses but don't pay attention to everything",
+      "fields": {
+        "Text": "{{c1::The spotlight model of attention::Model}} states that {{c2::we take info from 5 senses but don't pay attention to everything}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590713852868,
+      "note_id": 1590573458429,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The spotlight model of attention states that [...]",
+      "answer_text": "The spotlight model of attention states that we take info from 5 senses but don't pay attention to everything",
+      "fields": {
+        "Text": "{{c1::The spotlight model of attention::Model}} states that {{c2::we take info from 5 senses but don't pay attention to everything}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590573805634,
+      "note_id": 1590573624701,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is where exposure to one stimulus affects our response to a future stimulus .",
+      "answer_text": "Priming is where exposure to one stimulus affects our response to a future stimulus . example: we are primed to respond to our name",
+      "fields": {
+        "Text": "{{c1::Priming}} is where {{c2::exposure to one stimulus affects our response to a future stimulus}}.",
+        "Extra": "<i><br></i><div><i>example: we are primed to respond to our name&nbsp;</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590573805636,
+      "note_id": 1590573624701,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Priming is where [...] .",
+      "answer_text": "Priming is where exposure to one stimulus affects our response to a future stimulus . example: we are primed to respond to our name",
+      "fields": {
+        "Text": "{{c1::Priming}} is where {{c2::exposure to one stimulus affects our response to a future stimulus}}.",
+        "Extra": "<i><br></i><div><i>example: we are primed to respond to our name&nbsp;</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590573866976,
+      "note_id": 1590573805704,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] states that attention is a limited resource and humans are bad at multitasking",
+      "answer_text": "The resource model of attention states that attention is a limited resource and humans are bad at multitasking",
+      "fields": {
+        "Text": "{{c1::The resource model of attention}} states that {{c2::attention is a limited resource}} and {{c2::humans are bad at multitasking}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590573866977,
+      "note_id": 1590573805704,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The resource model of attention states that [...] and [...]",
+      "answer_text": "The resource model of attention states that attention is a limited resource and humans are bad at multitasking",
+      "fields": {
+        "Text": "{{c1::The resource model of attention}} states that {{c2::attention is a limited resource}} and {{c2::humans are bad at multitasking}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590573943555,
+      "note_id": 1590573867034,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The three things that influence our ability to multitask : [...] [...] [...]",
+      "answer_text": "The three things that influence our ability to multitask : Task similarity Task difficulty Practice more similar the tasks, the harder it is more difficult the tasks, the harder it is more practice doing the tasks, the easier it is",
+      "fields": {
+        "Text": "The three things that influence our ability to <font color=\"#ff0004\">multitask</font>:<div>{{c1::Task similarity}}</div><div>{{c1::Task difficulty}}</div><div>{{c1::Practice}}</div>",
+        "Extra": "<br><div><i>more similar the tasks, the harder it is</i></div><div><i>more difficult the tasks, the harder it is</i></div><div><i>more practice doing the tasks, the easier it is</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590573987838,
+      "note_id": 1590573943700,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Multitasking is [more/less] efficient than working on a single task",
+      "answer_text": "Multitasking is less efficient than working on a single task",
+      "fields": {
+        "Text": "Multitasking is {{c1::less::more/less}} efficient than working on a single task",
+        "Extra": "<br><div><img src=\"2-multitasking.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590574097225,
+      "note_id": 1590573987894,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The information processing model states that we [...] , [...] , and [...] .",
+      "answer_text": "The information processing model states that we get inputs from environment , process the inputs , and output decisions . our mind works like a computer",
+      "fields": {
+        "Text": "{{c2::The information processing model::Model}} states that we {{c1::get inputs from environment}}, {{c1::process the inputs}}, and {{c1::output decisions}}.",
+        "Extra": "<div><br></div><i>our mind works like a computer</i><br><div><img src=\"Information+Processing-+Computer+Analogy+.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590574097226,
+      "note_id": 1590573987894,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Model] states that we get inputs from environment , process the inputs , and output decisions .",
+      "answer_text": "The information processing model states that we get inputs from environment , process the inputs , and output decisions . our mind works like a computer",
+      "fields": {
+        "Text": "{{c2::The information processing model::Model}} states that we {{c1::get inputs from environment}}, {{c1::process the inputs}}, and {{c1::output decisions}}.",
+        "Extra": "<div><br></div><i>our mind works like a computer</i><br><div><img src=\"Information+Processing-+Computer+Analogy+.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590574156773,
+      "note_id": 1590574097305,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The information processing model is driven by [Top-down or Bottom-up] processing",
+      "answer_text": "The information processing model is driven by bottom-up processing it is stimulus driven! THINK ABOUT IT, it requires an input from the environment",
+      "fields": {
+        "Text": "The information processing model is driven by {{c1::bottom-up::Top-down or Bottom-up}} processing",
+        "Extra": "<br><div><i>it is stimulus driven! THINK ABOUT IT, it requires an input from the environment</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590574208132,
+      "note_id": 1590574156835,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is a temporary register of all information your senses are taking in",
+      "answer_text": "The sensory register is a temporary register of all information your senses are taking in",
+      "fields": {
+        "Text": "{{c1::The sensory register}} is a temporary register of all information your senses are taking in",
+        "Extra": "<div><br></div><img src=\"screen_shot_2015-07-20_at_1.57.14_pm_111990.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590574225303,
+      "note_id": 1590574208185,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The sensory register includes [...] and [...] memory",
+      "answer_text": "The sensory register includes iconic and echoic memory",
+      "fields": {
+        "Text": "The sensory register includes {{c1::iconic}} and {{c1::echoic}} memory",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590574294803,
+      "note_id": 1590574225365,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Iconic memory is [...] and lasts [...] Echoic memory is [...] and lasts [...]",
+      "answer_text": "Iconic memory is what you see and lasts half a second Echoic memory is what you hear and lasts a few seconds",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">Iconic</font> memory is {{c1::what you see}} and lasts {{c1::half a second}}<div><font color=\"#ff0004\">Echoic</font> memory is {{c1::what you hear}} and lasts {{c1::a few seconds}}</div>",
+        "Extra": "<br><div><img src=\"1200-603809-difference-iconic-memory-and-echoic-memory.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590574338445,
+      "note_id": 1590574294941,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Working memory AKA [...]",
+      "answer_text": "Working memory AKA short-term memory",
+      "fields": {
+        "Text": "Working memory AKA {{c1::short-term memory}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590574421099,
+      "note_id": 1590574338497,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Working memory includes [...] and consists of [...] .",
+      "answer_text": "Working memory includes sensory information you actually process and consists of what you are thinking about in the moment .",
+      "fields": {
+        "Text": "{{c2::Working memory::Type of memory}} includes {{c1::sensory information you actually process}} and consists of {{c1::what you are thinking about in the moment}}.",
+        "Extra": "<br><div><img src=\"1576684394037.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590574421100,
+      "note_id": 1590574338497,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Type of memory] includes sensory information you actually process and consists of what you are thinking about in the moment .",
+      "answer_text": "Working memory includes sensory information you actually process and consists of what you are thinking about in the moment .",
+      "fields": {
+        "Text": "{{c2::Working memory::Type of memory}} includes {{c1::sensory information you actually process}} and consists of {{c1::what you are thinking about in the moment}}.",
+        "Extra": "<br><div><img src=\"1576684394037.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590574502010,
+      "note_id": 1590574421160,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] states that we are better at remembering things at the beginning and end of a list",
+      "answer_text": "The serial position effect states that we are better at remembering things at the beginning and end of a list primacy and recency effects",
+      "fields": {
+        "Text": "{{c1::The serial position effect}} states that {{c2::we are better at remembering things at the beginning and end of a list}}",
+        "Extra": "<div><i><br></i></div><i>primacy and recency effects</i><br><div><img src=\"978-0-387-79948-3_19_Part_Fig1-2232_HTML.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590574502011,
+      "note_id": 1590574421160,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The serial position effect states that [...]",
+      "answer_text": "The serial position effect states that we are better at remembering things at the beginning and end of a list primacy and recency effects",
+      "fields": {
+        "Text": "{{c1::The serial position effect}} states that {{c2::we are better at remembering things at the beginning and end of a list}}",
+        "Extra": "<div><i><br></i></div><i>primacy and recency effects</i><br><div><img src=\"978-0-387-79948-3_19_Part_Fig1-2232_HTML.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590574563569,
+      "note_id": 1590574502052,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Visuo-spatial sketchpad is where [...] and [...] info are processed",
+      "answer_text": "Visuo-spatial sketchpad is where visual and spatial info are processed",
+      "fields": {
+        "Text": "Visuo-spatial sketchpad is where {{c1::visual}} and {{c1::spatial}} info are processed",
+        "Extra": "<br><div><img src=\"original.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590574676570,
+      "note_id": 1590574563620,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The phonological loop is where [...] is processed, including [...]",
+      "answer_text": "The phonological loop is where verbal information is processed, including any words or numbers",
+      "fields": {
+        "Text": "The phonological loop is where {{c1::verbal information}} is processed, including {{c1::any words or numbers}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590574871617,
+      "note_id": 1590574676718,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The central executive is used to [...]",
+      "answer_text": "The central executive is used to coordinate the visuo-spatial sketchpad and the phonological loop",
+      "fields": {
+        "Text": "The <font color=\"#ff0004\">central executive</font> is used to&nbsp;{{c1::coordinate the visuo-spatial sketchpad and the phonological loop}}",
+        "Extra": "<br><div><img src=\"original.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590574894582,
+      "note_id": 1590574871678,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] acts as a connecter for information to be stored in long-term memory",
+      "answer_text": "The episodic buffer acts as a connecter for information to be stored in long-term memory",
+      "fields": {
+        "Text": "{{c1::The episodic buffer}} acts as a connecter for information to be stored in long-term memory",
+        "Extra": "<br><div><img src=\"original.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590574924036,
+      "note_id": 1590574894644,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] states its easier to remember words associated with images.",
+      "answer_text": "The duel coding hypothesis states its easier to remember words associated with images.",
+      "fields": {
+        "Text": "{{c1::The duel coding hypothesis}} states its easier to remember words associated with images.",
+        "Extra": "<br><div><img src=\"500x300_047_myssblog-Header-Dual-Coding-Theory_06-feb-18.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590574991553,
+      "note_id": 1590574924108,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is imagining moving through an imaginary place with visual representations of topics to be remembered",
+      "answer_text": "The method of loci is imagining moving through an imaginary place with visual representations of topics to be remembered",
+      "fields": {
+        "Text": "{{c1::The method of loci}} is imagining moving through an imaginary place with visual representations of topics to be remembered",
+        "Extra": "<br><div><img src=\"mariel-oulu-lecture-learning-and-remembering-32-728.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575110866,
+      "note_id": 1590574991697,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Long-term memory includes [...] AKA [...] and [...] AKA [...] memory",
+      "answer_text": "Long-term memory includes explicit AKA declerative and implicit AKA non-declarative memory",
+      "fields": {
+        "Text": "Long-term memory includes {{c1::explicit}} AKA {{c1::declerative}} and {{c1::implicit}} AKA {{c1::non-declarative}} memory",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575162838,
+      "note_id": 1590575110922,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] memories are facts/events you can clearly describe",
+      "answer_text": "Explicit memories are facts/events you can clearly describe",
+      "fields": {
+        "Text": "{{c1::Explicit}} memories are {{c2::facts/events you can clearly describe}}",
+        "Extra": "<br><div><img src=\"Implicit-and-explicit-memory-2795346-5b84184146e0fb0050444414.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575162839,
+      "note_id": 1590575110922,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Explicit memories are [...]",
+      "answer_text": "Explicit memories are facts/events you can clearly describe",
+      "fields": {
+        "Text": "{{c1::Explicit}} memories are {{c2::facts/events you can clearly describe}}",
+        "Extra": "<br><div><img src=\"Implicit-and-explicit-memory-2795346-5b84184146e0fb0050444414.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575198261,
+      "note_id": 1590575162903,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] memory is remembering simple facts like meanings of words",
+      "answer_text": "Semantic memory is remembering simple facts like meanings of words",
+      "fields": {
+        "Text": "{{c1::Semantic}} memory is remembering simple facts like meanings of words",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575234366,
+      "note_id": 1590575198328,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] memory is event-related memories",
+      "answer_text": "Episodic memory is event-related memories think like birthdays and holidays and shit",
+      "fields": {
+        "Text": "{{c1::Episodic}} memory is {{c2::event-related}} memories",
+        "Extra": "<br><div><i>think like birthdays and holidays and shit</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575234367,
+      "note_id": 1590575198328,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Episodic memory is [...] memories",
+      "answer_text": "Episodic memory is event-related memories think like birthdays and holidays and shit",
+      "fields": {
+        "Text": "{{c1::Episodic}} memory is {{c2::event-related}} memories",
+        "Extra": "<br><div><i>think like birthdays and holidays and shit</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575258898,
+      "note_id": 1590575234398,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Explicit memory includes both [...] and [...] memory",
+      "answer_text": "Explicit memory includes both semantic and episodic memory",
+      "fields": {
+        "Text": "Explicit memory includes both {{c1::semantic}} and {{c1::episodic}} memory",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575437820,
+      "note_id": 1590575258963,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] memory is when previous experiences aid the performance of a task without conscious awareness of previous experiences.",
+      "answer_text": "Implicit memory is when previous experiences aid the performance of a task without conscious awareness of previous experiences. example: riding a bike",
+      "fields": {
+        "Text": "{{c1::Implicit}} memory is when previous experiences aid the performance of a task without conscious awareness of previous experiences.",
+        "Extra": "<i><br></i><div><i>example: riding a bike</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575465775,
+      "note_id": 1590575437977,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Implicit memory includes [...] , [...] , and [...]",
+      "answer_text": "Implicit memory includes priming , procedural memory , and habits",
+      "fields": {
+        "Text": "Implicit memory includes {{c1::priming}}, {{c1::procedural memory}}, and {{c1::habits}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575483270,
+      "note_id": 1590575465840,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Implicit memory is [conscious or unconscious]",
+      "answer_text": "Implicit memory is unconscious",
+      "fields": {
+        "Text": "Implicit memory is&nbsp;{{c1::unconscious::conscious or unconscious}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575577600,
+      "note_id": 1590575483330,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is long-term memory for actions or habits (riding a bike)",
+      "answer_text": "Procedural memory is long-term memory for actions or habits (riding a bike)",
+      "fields": {
+        "Text": "{{c1::Procedural memory}} is long-term memory for actions or habits (riding a bike)",
+        "Extra": "<br><div><img src=\"koaSQUw.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575615521,
+      "note_id": 1590575577650,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when exposure to one stimulus influences the response to another stimulus",
+      "answer_text": "Priming is when exposure to one stimulus influences the response to another stimulus",
+      "fields": {
+        "Text": "{{c1::Priming}} is when exposure to one stimulus influences the response to another stimulus",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575638218,
+      "note_id": 1590575615580,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when prior exposure to a stimulus unfavorably influences the response to the same stimulus",
+      "answer_text": "Negative priming is when prior exposure to a stimulus unfavorably influences the response to the same stimulus",
+      "fields": {
+        "Text": "{{c1::Negative priming}} is when prior exposure to a stimulus unfavorably influences the response to the same stimulus",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575665667,
+      "note_id": 1590575638279,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when prior exposure to a stimulus speeds of processing by simply experiencing the stimulus",
+      "answer_text": "Positive priming is when prior exposure to a stimulus speeds of processing by simply experiencing the stimulus",
+      "fields": {
+        "Text": "{{c1::Positive priming}} is when prior exposure to a stimulus speeds of processing by simply experiencing the stimulus",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575714651,
+      "note_id": 1590575665730,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is a memory system consisting of episodes recollected from an individuals life",
+      "answer_text": "Autobiographical memory is a memory system consisting of episodes recollected from an individuals life includes episodic and semantic memory",
+      "fields": {
+        "Text": "{{c1::Autobiographical memory}} is a memory system consisting of episodes recollected from an individuals life",
+        "Extra": "<i><br></i><div><i>includes episodic and semantic memory</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575767208,
+      "note_id": 1590575714716,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is transferring information from the working memory to long-term memory",
+      "answer_text": "Encoding is transferring information from the working memory to long-term memory",
+      "fields": {
+        "Text": "{{c1::Encoding}} is {{c2::transferring information from the working memory to long-term memory}}",
+        "Extra": "<br><div><img src=\"dont-forget.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575767209,
+      "note_id": 1590575714716,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Encoding is [...]",
+      "answer_text": "Encoding is transferring information from the working memory to long-term memory",
+      "fields": {
+        "Text": "{{c1::Encoding}} is {{c2::transferring information from the working memory to long-term memory}}",
+        "Extra": "<br><div><img src=\"dont-forget.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575842538,
+      "note_id": 1590575767337,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is enhanced memory when recalling information takes place under same conditions as learning",
+      "answer_text": "Encoding specificity is enhanced memory when recalling information takes place under same conditions as learning do better taking test drunk if you studied drunk",
+      "fields": {
+        "Text": "{{c1::Encoding specificity}} is enhanced memory when {{c2::recalling information takes place under same conditions as learning}}",
+        "Extra": "<br><div><i>do better taking test drunk if you studied drunk</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590621425291,
+      "note_id": 1590575767337,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Encoding specificity is enhanced memory when [...]",
+      "answer_text": "Encoding specificity is enhanced memory when recalling information takes place under same conditions as learning do better taking test drunk if you studied drunk",
+      "fields": {
+        "Text": "{{c1::Encoding specificity}} is enhanced memory when {{c2::recalling information takes place under same conditions as learning}}",
+        "Extra": "<br><div><i>do better taking test drunk if you studied drunk</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575868400,
+      "note_id": 1590575842606,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is saying the same thing over and over to remember it better",
+      "answer_text": "Rote rehearsal is saying the same thing over and over to remember it better",
+      "fields": {
+        "Text": "{{c1::Rote rehearsal}} is saying the same thing over and over to remember it better",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575880136,
+      "note_id": 1590575868465,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The least effective encoding strategy is [...]",
+      "answer_text": "The least effective encoding strategy is rote rehearsal",
+      "fields": {
+        "Text": "The least effective encoding strategy is {{c1::rote rehearsal}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590575952258,
+      "note_id": 1590575882959,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is grouping information into categories to remember it better",
+      "answer_text": "Chunking is grouping information into categories to remember it better example: group your shopping list into categories",
+      "fields": {
+        "Text": "{{c1::Chunking}} is grouping information into categories to remember it better",
+        "Extra": "<i><br></i><div><i>example: group your shopping list into categories</i></div><div><img src=\"paste-7deb8b7a0d45ed631ad068a7e60f56e2f330afff.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590576028792,
+      "note_id": 1590575952332,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is verbal anchors linking words that rhyme with the number they rhyme with to encode better",
+      "answer_text": "Pegword system is verbal anchors linking words that rhyme with the number they rhyme with to encode better",
+      "fields": {
+        "Text": "{{c1::Pegword system}} is verbal anchors linking words that rhyme with the number they rhyme with to encode better",
+        "Extra": "<br><div><img src=\"main-qimg-6b8c7bf832b19d690b4280b1338dc8c4.webp\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590576111041,
+      "note_id": 1590576028851,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is an encoding technique where each letter of a word you know stands for something",
+      "answer_text": "Acronym is an encoding technique where each letter of a word you know stands for something ex: SNoW DRoP for blotting techniques",
+      "fields": {
+        "Text": "{{c1::Acronym}} is an encoding technique where each letter of a word you know stands for something",
+        "Extra": "<i><br></i><div><i>ex: SNoW DRoP for blotting techniques</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590576137790,
+      "note_id": 1590576111199,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is tying new information to yourself to remember it better",
+      "answer_text": "Self-referencing is tying new information to yourself to remember it better",
+      "fields": {
+        "Text": "{{c1::Self-referencing}} is tying new information to yourself to remember it better",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590576189287,
+      "note_id": 1590576137817,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is spreading out study sessions instead of cramming to encode information better",
+      "answer_text": "Spacing is spreading out study sessions instead of cramming to encode information better",
+      "fields": {
+        "Text": "{{c1::Spacing}} is spreading out study sessions instead of cramming to encode information better",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590623646826,
+      "note_id": 1590623517046,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is pulling something out of long-term memory and bring it into conscious memory",
+      "answer_text": "Retrieval is pulling something out of long-term memory and bring it into conscious memory",
+      "fields": {
+        "Text": "{{c1::Retrieval}} is {{c2::pulling something out of long-term memory and bring it into conscious memory}}",
+        "Extra": "<br><div><img src=\"CR_-y5HI.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590624119255,
+      "note_id": 1590623517046,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Retrieval is [...]",
+      "answer_text": "Retrieval is pulling something out of long-term memory and bring it into conscious memory",
+      "fields": {
+        "Text": "{{c1::Retrieval}} is {{c2::pulling something out of long-term memory and bring it into conscious memory}}",
+        "Extra": "<br><div><img src=\"CR_-y5HI.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590623680479,
+      "note_id": 1590623646986,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The three most important retrieval cues are [...] , [...] , and [...]",
+      "answer_text": "The three most important retrieval cues are priming , context , and state-dependency",
+      "fields": {
+        "Text": "The three most important <font color=\"#00ffff\">retrieval cues </font>are {{c1::priming}}, {{c1::context}}, and {{c1::state-dependency}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590623764898,
+      "note_id": 1590623680527,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The retrieval cue of priming is [...]",
+      "answer_text": "The retrieval cue of priming is prior activation of nodes/associations without our awareness example: reading a story about rabbits, then someone mentions the word HAIR. You are more likely to think HARE.",
+      "fields": {
+        "Text": "The retrieval cue of <font color=\"#ffc0fe\">priming </font>is {{c1::prior activation of nodes/associations without our awareness}}",
+        "Extra": "<i><br></i><div><i>example: reading a story about rabbits, then someone mentions the word HAIR. You are more likely to think HARE.</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590623828598,
+      "note_id": 1590623764956,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The retrieval cue of context states that [...]",
+      "answer_text": "The retrieval cue of context states that it is easier to remember something if you are in the same environment you encoded it in example: studying in the same room you take a test can improve recall",
+      "fields": {
+        "Text": "The retrieval cue of <font color=\"#ff0004\">context </font>states that {{c1::it is easier to remember something if you are in the same environment you encoded it in}}",
+        "Extra": "<i><br></i><div><i>example: studying in the same room you take a test can improve recall</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590623882445,
+      "note_id": 1590623828666,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The retrieval cue of state-dependency states that [...]",
+      "answer_text": "The retrieval cue of state-dependency states that you can remember things better when you are in the same mood you encoded the information ex: If you learn something drunk, you will remember it better drunk",
+      "fields": {
+        "Text": "The retrieval cue of <font color=\"#ff0004\">state-dependency</font> states that {{c1::you can remember things better when you are in the same mood you encoded the information}}",
+        "Extra": "<i><br></i><div><i>ex: If you learn something drunk, you will remember it better drunk</i></div><div><img src=\"dejwn.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590624175913,
+      "note_id": 1590624120481,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] involves no cues in recalling",
+      "answer_text": "Free recall involves no cues in recalling",
+      "fields": {
+        "Text": "{{c1::Free recall}} involves no cues in recalling",
+        "Extra": "<br><div><img src=\"ef28a24bcda92f1b7d85c6e3245ff880.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590624199492,
+      "note_id": 1590624175988,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] involves extra clues to help in recall",
+      "answer_text": "Cued recall involves extra clues to help in recall",
+      "fields": {
+        "Text": "{{c1::Cued recall}} involves extra clues to help in recall",
+        "Extra": "<br><div><img src=\"ef28a24bcda92f1b7d85c6e3245ff880.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590624313087,
+      "note_id": 1590624199547,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is a type of recall involved in remembering something you just saw",
+      "answer_text": "Recognition is a type of recall involved in remembering something you just saw Recognition is also the EASIEST way to recall information Example: I show you a list and say \"was bacon or peanut butter on the list\" and you say bacon. EASY SHIT",
+      "fields": {
+        "Text": "{{c1::Recognition}} is a type of recall involved in remembering something you just saw",
+        "Extra": "<div><i><br></i></div><i><div><i>Recognition is also the EASIEST way to recall information</i></div><br></i><div><i>Example: I show you a list and say \"was bacon or peanut butter on the list\" and you say bacon. EASY SHIT</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590624453651,
+      "note_id": 1590624313148,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] causes inaccurate recollections of an event",
+      "answer_text": "False information causes inaccurate recollections of an event Ex: Experiment done where participants watched a car stop at a yield sign. After the video, participants were given a written description on what happened, and some of the descriptions included false information about the car stopping saying that the car stopped at a stop sign instead of a yield sign. Those who got the false information, more likely claimed the car stopped at a stop sign than the yield sign.",
+      "fields": {
+        "Text": "{{c1::False information}} causes inaccurate recollections of an event",
+        "Extra": "<div><i><br></i></div><div><i>Ex: Experiment done where participants watched a car stop at a yield sign. After the video, participants were given a written description on what happened, and some of the descriptions included false information about the car stopping saying that the car stopped at a stop sign instead of a yield sign. Those who got the false information, more likely claimed the car stopped at a stop sign than the yield sign.</i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590624754643,
+      "note_id": 1590624453782,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is phrasing things in such a way that it leads your recall in a certain direction",
+      "answer_text": "Misleading information is phrasing things in such a way that it leads your recall in a certain direction Ex: Participants watched a traffic safety video in which they observed a car crash, and then then participants were asked questions on what happened and the key question was “how fast cars were the cars going when they hit each other” “Some people got the question with the word “hit” and some got “smash”. Those participants who received the question with the word “smashed”, they were more likely to say there was glass on the ground in the video (even though there was not any glass on the ground)",
+      "fields": {
+        "Text": "{{c1::Misleading information}} is phrasing things in such a way that it leads your recall in a certain direction",
+        "Extra": "<div><br></div><div><br></div><div><i>Ex: Participants watched a traffic safety video in which they observed a car crash, and then then participants were asked questions on what happened and the key question was “how fast cars were the cars going when they hit each other” “Some people got the question with the word “hit” and some got “smash”. Those participants who received the question with the word “smashed”, they were more likely to say there was glass on the ground in the video (even though there was not any glass on the ground)</i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590624844752,
+      "note_id": 1590624754801,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is being able to recall the source of a piece of information",
+      "answer_text": "Source monitoring is being able to recall the source of a piece of information",
+      "fields": {
+        "Text": "{{c1::Source monitoring}} is being able to {{c2::recall the source of a piece of information}}",
+        "Extra": "<br><div><img src=\"source-monitoring-l.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590624844754,
+      "note_id": 1590624754801,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Source monitoring is being able to [...]",
+      "answer_text": "Source monitoring is being able to recall the source of a piece of information",
+      "fields": {
+        "Text": "{{c1::Source monitoring}} is being able to {{c2::recall the source of a piece of information}}",
+        "Extra": "<br><div><img src=\"source-monitoring-l.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590624888523,
+      "note_id": 1590624844828,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] are when you can recall a piece of information but attribute it to the wrong source by mistake",
+      "answer_text": "Source monitoring errors are when you can recall a piece of information but attribute it to the wrong source by mistake",
+      "fields": {
+        "Text": "{{c1::Source monitoring errors}} are when you can recall a piece of information but attribute it to the wrong source by mistake",
+        "Extra": "<br><div><img src=\"source-monitoring-l.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590624953618,
+      "note_id": 1590624888567,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when you can remember a piece of information but can't remember where it came from",
+      "answer_text": "Source amnesia is when you can remember a piece of information but can't remember where it came from",
+      "fields": {
+        "Text": "{{c1::Source amnesia}} is when you can remember a piece of information but can't remember where it came from",
+        "Extra": "<br><div><img src=\"headscratcher.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590625024458,
+      "note_id": 1590624953684,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] are very vivid memories formed during an emotionally arousing event",
+      "answer_text": "Flashbulb memories are very vivid memories formed during an emotionally arousing event",
+      "fields": {
+        "Text": "{{c1::Flashbulb memories}} are {{c2::very vivid memories formed during an emotionally arousing event}}",
+        "Extra": "<br><div><img src=\"pic2.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590625024459,
+      "note_id": 1590624953684,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Flashbulb memories are [...]",
+      "answer_text": "Flashbulb memories are very vivid memories formed during an emotionally arousing event",
+      "fields": {
+        "Text": "{{c1::Flashbulb memories}} are {{c2::very vivid memories formed during an emotionally arousing event}}",
+        "Extra": "<br><div><img src=\"pic2.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590625218409,
+      "note_id": 1590625024527,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Inattention is [good/bad] for memory",
+      "answer_text": "Inattention is bad for memory Inattention is bad. This is why you have trouble recalling stuff from boring ass lectures",
+      "fields": {
+        "Text": "Inattention is {{c1::bad::good/bad}} for memory",
+        "Extra": "<i><br></i><div><i>Inattention is bad. This is why you have trouble recalling stuff from boring ass lectures</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590625341299,
+      "note_id": 1590625218549,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when connections between neurons strengthen to improve recall/memory",
+      "answer_text": "Long-term potentiation (LTP) is when connections between neurons strengthen to improve recall/memory",
+      "fields": {
+        "Text": "{{c1::Long-term potentiation (LTP)}} is when {{c2::connections between neurons strengthen to improve recall/memory}}",
+        "Extra": "<br><div><img src=\"potentiation_med.jpeg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590625341301,
+      "note_id": 1590625218549,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Long-term potentiation (LTP) is when [...]",
+      "answer_text": "Long-term potentiation (LTP) is when connections between neurons strengthen to improve recall/memory",
+      "fields": {
+        "Text": "{{c1::Long-term potentiation (LTP)}} is when {{c2::connections between neurons strengthen to improve recall/memory}}",
+        "Extra": "<br><div><img src=\"potentiation_med.jpeg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590625449394,
+      "note_id": 1590625341355,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when we can't recall a piece of information anymore",
+      "answer_text": "Decay is when we can't recall a piece of information anymore",
+      "fields": {
+        "Text": "{{c1::Decay}} is when we can't recall a piece of information anymore",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590625509978,
+      "note_id": 1590625449424,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Memory decay can be caused by [...] or [...]",
+      "answer_text": "Memory decay can be caused by not encoding the memory well enough or not retrieving it for a while",
+      "fields": {
+        "Text": "<font color=\"#ff0004\">Memory decay</font> can be caused by {{c1::not encoding the memory well enough}} or {{c1::not retrieving it for a while}}",
+        "Extra": "<br><div><img src=\"575x360-v-as-114918009.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590626013847,
+      "note_id": 1590625510009,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Psychologist] was the first person to look at decay in human memory",
+      "answer_text": "Ebbinghaus was the first person to look at decay in human memory",
+      "fields": {
+        "Text": "{{c1::Ebbinghaus::Psychologist}} was the first person to look at decay in human memory",
+        "Extra": "<br><div><img src=\"978-1-4419-1428-6_5_Part_Fig1-360_HTML.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590626124045,
+      "note_id": 1590626013987,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "You can tell if someone has learnt something before after memory decay based on how quickly they [...] .",
+      "answer_text": "You can tell if someone has learnt something before after memory decay based on how quickly they relearn the information . This memory foundation is known as Savings. This means there was a foundation of memory that existed even if the individual couldn't produce it",
+      "fields": {
+        "Text": "You can tell if someone has&nbsp;<u>learnt something <b>before</b></u><b>&nbsp;</b>after memory decay based on how quickly they {{c1::relearn the information}}.",
+        "Extra": "<i><br></i><div><i>This memory foundation is known as <font color=\"#ff0004\">Savings.</font></i></div><div><font color=\"#090000\"><i>This means there was a foundation of memory that existed even if the individual couldn't produce it</i></font></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590626184630,
+      "note_id": 1590626124071,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The two types of memory interference are [...] and [...]",
+      "answer_text": "The two types of memory interference are retroactive and proactive",
+      "fields": {
+        "Text": "The two types of <font color=\"#ffc0fe\">memory interference </font>are {{c1::retroactive}} and {{c1::proactive}}",
+        "Extra": "<br><div><img src=\"image25.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590626238534,
+      "note_id": 1590626184695,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Retroactive interference is when [...]",
+      "answer_text": "Retroactive interference is when new learning impairs old information example: writing your new address a bunch makes it harder to remember your old address",
+      "fields": {
+        "Text": "{{c2::Retroactive}} interference is when {{c1::new learning impairs old information}}",
+        "Extra": "<i><br></i><div><i>example: writing your new address a bunch makes it harder to remember your old address</i></div><div><img src=\"image25.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590626238535,
+      "note_id": 1590626184695,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] interference is when new learning impairs old information",
+      "answer_text": "Retroactive interference is when new learning impairs old information example: writing your new address a bunch makes it harder to remember your old address",
+      "fields": {
+        "Text": "{{c2::Retroactive}} interference is when {{c1::new learning impairs old information}}",
+        "Extra": "<i><br></i><div><i>example: writing your new address a bunch makes it harder to remember your old address</i></div><div><img src=\"image25.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590626302019,
+      "note_id": 1590626269465,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Proactive interference is when [...]",
+      "answer_text": "Proactive interference is when old information impairs new learning example: harder to learn new password after using an old one for a long time",
+      "fields": {
+        "Text": "{{c2::Proactive}} interference is when {{c1::old information impairs new learning}}",
+        "Extra": "<div><i><br></i></div><div><i>example: harder to learn new password after using an old one for a long time</i></div><div><i><img src=\"image25.jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590626302020,
+      "note_id": 1590626269465,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] interference is when old information impairs new learning",
+      "answer_text": "Proactive interference is when old information impairs new learning example: harder to learn new password after using an old one for a long time",
+      "fields": {
+        "Text": "{{c2::Proactive}} interference is when {{c1::old information impairs new learning}}",
+        "Extra": "<div><i><br></i></div><div><i>example: harder to learn new password after using an old one for a long time</i></div><div><i><img src=\"image25.jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590635718131,
+      "note_id": 1590626302089,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The cognitive abilities that are stable with age include [...] and [...]",
+      "answer_text": "The cognitive abilities that are stable with age include implicit memory and recognition",
+      "fields": {
+        "Text": "The cognitive abilities that are <font color=\"#ff060a\" style=\"\">stable </font>with age include {{c1::implicit memory}} and {{c1::recognition}}",
+        "Extra": "<br><div><img src=\"paste-ca08f510b69f8241adf4cdb71a8cb44591bd91f1.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590635760485,
+      "note_id": 1590635718364,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The cognitive abilities that improve with age are [...] , [...] , and [...]",
+      "answer_text": "The cognitive abilities that improve with age are semantic memory , crystallized IQ , and emotional reasoning",
+      "fields": {
+        "Text": "The cognitive abilities that <font color=\"#ff060a\">improve </font>with age are {{c1::semantic memory}}, {{c1::crystallized IQ}}, and {{c1::emotional reasoning}}",
+        "Extra": "<br><div><img src=\"paste-ca08f510b69f8241adf4cdb71a8cb44591bd91f1.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590635808165,
+      "note_id": 1590635760515,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The cognitive abilities that decline with age are [...] , [...] , [...] , [...] and [...]",
+      "answer_text": "The cognitive abilities that decline with age are recall , episodic memory , processing speed , divided attention and prospective memory mnemonic: You will DECLINE if you arent PREP'D",
+      "fields": {
+        "Text": "The cognitive abilities that <font color=\"#ff060a\">decline </font>with age are {{c1::recall}}, {{c1::episodic memory}}, {{c1::processing speed}}, {{c1::divided attention}} and {{c1::prospective memory}}",
+        "Extra": "<div><br></div>mnemonic: You will <b>DECLINE </b>if you arent <b>PREP'D</b><br><div><img src=\"paste-ca08f510b69f8241adf4cdb71a8cb44591bd91f1.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590635977692,
+      "note_id": 1590635816297,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is the ability to use acquired knowledge and experience",
+      "answer_text": "Crystallized IQ is the ability to use acquired knowledge and experience",
+      "fields": {
+        "Text": "{{c1::Crystallized IQ}} is the ability to use {{c2::acquired knowledge}} and {{c2::experience}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590635977693,
+      "note_id": 1590635816297,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Crystallized IQ is the ability to use [...] and [...]",
+      "answer_text": "Crystallized IQ is the ability to use acquired knowledge and experience",
+      "fields": {
+        "Text": "{{c1::Crystallized IQ}} is the ability to use {{c2::acquired knowledge}} and {{c2::experience}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590636019466,
+      "note_id": 1590635977741,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Prospective memory is [...]",
+      "answer_text": "Prospective memory is remembering to do things in the future Heres a picture of the prospector Enjoy",
+      "fields": {
+        "Text": "Prospective memory is {{c1::remembering to do things in the future}}",
+        "Extra": "<div><br></div><i>Heres a picture of the prospector</i><div><i>Enjoy<br></i><div><img src=\"latest.png\"><br></div></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590636186029,
+      "note_id": 1590636105695,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is a term for decline in memory and cognitive functions to the point of interfering with daily life",
+      "answer_text": "Dementia is a term for decline in memory and cognitive functions to the point of interfering with daily life",
+      "fields": {
+        "Text": "{{c1::Dementia}} is a term for decline in {{c2::memory}} and {{c2::cognitive functions}} to the point of interfering with daily life",
+        "Extra": "<br><div><img src=\"Dementia-Stages-ALV.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590636186031,
+      "note_id": 1590636105695,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Dementia is a term for decline in [...] and [...] to the point of interfering with daily life",
+      "answer_text": "Dementia is a term for decline in memory and cognitive functions to the point of interfering with daily life",
+      "fields": {
+        "Text": "{{c1::Dementia}} is a term for decline in {{c2::memory}} and {{c2::cognitive functions}} to the point of interfering with daily life",
+        "Extra": "<br><div><img src=\"Dementia-Stages-ALV.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590636240537,
+      "note_id": 1590636186091,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The most common form of dementia is [disease]",
+      "answer_text": "The most common form of dementia is Alzheimer's Disease",
+      "fields": {
+        "Text": "The most common form of <font color=\"#ff060a\">dementia </font>is {{c1::Alzheimer's Disease::disease}}",
+        "Extra": "<div><br></div><br><div><img src=\"Alzheimer's_disease_brain_comparison.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590636317089,
+      "note_id": 1590636244185,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Alzheimer's is associated with [cause]",
+      "answer_text": "Alzheimer's is associated with a buildup of amyloid plaques in the brain",
+      "fields": {
+        "Text": "Alzheimer's is associated with {{c1::a buildup of amyloid plaques in the brain::cause}}",
+        "Extra": "<br><div><img src=\"d_08_cl_alz_1a.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590636508852,
+      "note_id": 1590636317162,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Alzheimer's patients initially begin with [...] that progresses into [...]",
+      "answer_text": "Alzheimer's patients initially begin with trouble with short term memory that progresses into problems with long-term memory",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Alzheimer's </font>patients initially begin with {{c1::trouble with short term memory}} that progresses into {{c1::problems with long-term memory}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590636704013,
+      "note_id": 1590636509007,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Disease] is caused by a lack of vitamin B1 (thiamine)",
+      "answer_text": "Korsakoff's syndrome is caused by a lack of vitamin B1 (thiamine)",
+      "fields": {
+        "Text": "{{c1::<b>Korsakoff's syndrome</b>::Disease}}&nbsp;is caused by {{c2::a <u>lack of vitamin B1</u> (thiamine)}}",
+        "Extra": "<br><div><img src=\"tumblr_ncpbx2plen1sbfl86o1_1280.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590636704015,
+      "note_id": 1590636509007,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Korsakoff's syndrome is caused by [...]",
+      "answer_text": "Korsakoff's syndrome is caused by a lack of vitamin B1 (thiamine)",
+      "fields": {
+        "Text": "{{c1::<b>Korsakoff's syndrome</b>::Disease}}&nbsp;is caused by {{c2::a <u>lack of vitamin B1</u> (thiamine)}}",
+        "Extra": "<br><div><img src=\"tumblr_ncpbx2plen1sbfl86o1_1280.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590636825381,
+      "note_id": 1590636704078,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Korsakoff's syndrome is associated with individuals who are [...] or [...]",
+      "answer_text": "Korsakoff's syndrome is associated with individuals who are malnourished or alcoholics",
+      "fields": {
+        "Text": "<b>Korsakoff's syndrome</b> is associated with individuals who are {{c1::malnourished}} or {{c1::alcoholics}}",
+        "Extra": "<br><div><img src=\"tumblr_ncpbx2plen1sbfl86o1_1280.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590636921814,
+      "note_id": 1590636825450,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is a precursor to Korsakoff's syndrome",
+      "answer_text": "Wernicke's encephalopathy is a precursor to Korsakoff's syndrome",
+      "fields": {
+        "Text": "{{c1::Wernicke's encephalopathy}} is a precursor to <u>Korsakoff's syndrome</u>",
+        "Extra": "<br><div><img src=\"tumblr_ncpbx2plen1sbfl86o1_1280.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590637026119,
+      "note_id": 1590636921857,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Symptoms of wernicke's encephalopathy : [...] [...] [...] [...]",
+      "answer_text": "Symptoms of wernicke's encephalopathy : poor balance abnormal eye movements mild confusion memory loss mnemonic: I want a B acon E gg and C heese, M om (balance, eye movements, confusion, memory)",
+      "fields": {
+        "Text": "Symptoms of <b>wernicke's encephalopathy</b>:<div>{{c1::poor balance}}</div><div><br></div><div>{{c1::abnormal eye movements}}</div><div><br></div><div>{{c1::mild confusion}}</div><div><br></div><div>{{c1::memory loss}}</div>",
+        "Extra": "<br><div>mnemonic: I want a <b>B</b>acon <b>E</b>gg and <b>C</b>heese, <b>M</b>om</div><div>(balance, eye movements, confusion, memory)</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590637077600,
+      "note_id": 1590637026147,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Common symptoms of Korsakoff's syndrome include [...] and [...]",
+      "answer_text": "Common symptoms of Korsakoff's syndrome include severe memory loss and confabulation Confabulations are when patients make up stories to fill in memory gaps",
+      "fields": {
+        "Text": "Common symptoms of<b> Korsakoff's syndrome</b> include {{c1::severe memory loss}} and {{c1::confabulation}}",
+        "Extra": "<div><br></div><div><i>Confabulations are when patients make up stories to fill in memory gaps</i></div><br><div><img src=\"tumblr_ncpbx2plen1sbfl86o1_1280.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590637184884,
+      "note_id": 1590637077626,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Korsakoff's Syndrome and Wernicke's encephalopathy are NOT [...]",
+      "answer_text": "Korsakoff's Syndrome and Wernicke's encephalopathy are NOT progressive this means that if people are diagnosed and treated, they can get better.",
+      "fields": {
+        "Text": "<b>Korsakoff's Syndrome</b> and <b>Wernicke's encephalopathy</b> are <b><u>NOT</u></b> {{c1::progressive}}",
+        "Extra": "<br><div><i>this means that if people are diagnosed and treated, they can get better.</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590637212271,
+      "note_id": 1590637185046,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Retrograde amnesia is [...]",
+      "answer_text": "Retrograde amnesia is inability to recall previously encoded information",
+      "fields": {
+        "Text": "<b>Retrograde amnesia</b> is {{c1::inability to recall previously encoded information}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590637228913,
+      "note_id": 1590637212338,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Anterograde amnesia is [...]",
+      "answer_text": "Anterograde amnesia is inability to encode new memories",
+      "fields": {
+        "Text": "Anterograde amnesia is {{c1::inability to encode new memories}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590637554237,
+      "note_id": 1590637228959,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] are concepts organized in your mind as connected ideas",
+      "answer_text": "Semantic networks are concepts organized in your mind as connected ideas closely related ideas are closer together while less closely related ideas are further apart",
+      "fields": {
+        "Text": "{{c1::<b>Semantic networks</b>}} are {{c2::concepts organized in your mind as connected ideas}}",
+        "Extra": "<br><div><i>closely related ideas are closer together while less closely related ideas are further apart</i></div><div><img src=\"paste-848faa55416e021830382dca9c28e95a3f2e85e1.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590637554239,
+      "note_id": 1590637228959,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Semantic networks are [...]",
+      "answer_text": "Semantic networks are concepts organized in your mind as connected ideas closely related ideas are closer together while less closely related ideas are further apart",
+      "fields": {
+        "Text": "{{c1::<b>Semantic networks</b>}} are {{c2::concepts organized in your mind as connected ideas}}",
+        "Extra": "<br><div><i>closely related ideas are closer together while less closely related ideas are further apart</i></div><div><img src=\"paste-848faa55416e021830382dca9c28e95a3f2e85e1.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590637651882,
+      "note_id": 1590637554395,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is the idea that we store concepts from broad categories to lower order categories",
+      "answer_text": "Hierarchical semantic network is the idea that we store concepts from broad categories to lower order categories",
+      "fields": {
+        "Text": "{{c1::Hierarchical semantic network}} is the idea that we store concepts from <u>broad categories</u> to <u>lower order categories</u>",
+        "Extra": "<br><div><img src=\"paste-848faa55416e021830382dca9c28e95a3f2e85e1.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590637714201,
+      "note_id": 1590637651938,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is the idea that concepts in differing individuals semantic networks are linked differently",
+      "answer_text": "Modified semantic network is the idea that concepts in differing individuals semantic networks are linked differently",
+      "fields": {
+        "Text": "{{c1::Modified semantic network}} is the idea that concepts in differing individuals semantic networks are linked differently",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590637796700,
+      "note_id": 1590637714270,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] says that all ideas in the brain are connected and that pulling up one memory can also activate similar memories",
+      "answer_text": "Spreading activation says that all ideas in the brain are connected and that pulling up one memory can also activate similar memories Example: saying animal activates mammal and bird, etc. This makes it easier to retrieve other information related to animal",
+      "fields": {
+        "Text": "{{c1::Spreading activation}} says that all ideas in the brain {{c2::are connected and that pulling up one memory can also activate similar memories}}",
+        "Extra": "<div><i><br></i></div><i>Example: saying animal activates mammal and bird, etc.</i><div><i>This makes it easier to retrieve other information related to animal<br></i><div><i><img src=\"paste-848faa55416e021830382dca9c28e95a3f2e85e1.jpg\"><br></i></div></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590637796701,
+      "note_id": 1590637714270,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Spreading activation says that all ideas in the brain [...]",
+      "answer_text": "Spreading activation says that all ideas in the brain are connected and that pulling up one memory can also activate similar memories Example: saying animal activates mammal and bird, etc. This makes it easier to retrieve other information related to animal",
+      "fields": {
+        "Text": "{{c1::Spreading activation}} says that all ideas in the brain {{c2::are connected and that pulling up one memory can also activate similar memories}}",
+        "Extra": "<div><i><br></i></div><i>Example: saying animal activates mammal and bird, etc.</i><div><i>This makes it easier to retrieve other information related to animal<br></i><div><i><img src=\"paste-848faa55416e021830382dca9c28e95a3f2e85e1.jpg\"><br></i></div></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590637881811,
+      "note_id": 1590637796752,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The order of Piagets stages of development are [...] , [...] , [...] , [...]",
+      "answer_text": "The order of Piagets stages of development are sensorimotor , preoperational , concrete operational , formal operational mnemonic: S ome P ussy C ats F art",
+      "fields": {
+        "Text": "The order of <b>Piagets stages of development</b> are {{c1::sensorimotor}}, {{c1::preoperational}}, {{c1::concrete operational}}, {{c1::formal operational}}",
+        "Extra": "<div><br></div>mnemonic: <b>S</b>ome <b>P</b>ussy <b>C</b>ats <b>F</b>art<br><div><img src=\"2795457-article-piagets-stages-of-cognitive-development-5a95c43aa9d4f900370bf112.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590637994013,
+      "note_id": 1590637881962,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Sensorimotor stage characteristics: between ages [...] associated with [...] and [...]",
+      "answer_text": "Sensorimotor stage characteristics: between ages 0-2 associated with object permanence and stranger anxiety object permanence is when infants realize object still exist when they cant see them",
+      "fields": {
+        "Text": "<b>Sensorimotor stage</b> characteristics:<div>between ages {{c1::0-2}}</div><div>associated with {{c1::object permanence}} and {{c1::stranger anxiety}}</div>",
+        "Extra": "<div><br></div><div><i>object permanence is when infants realize object still exist when they cant see them</i></div><br><div><img src=\"2795457-article-piagets-stages-of-cognitive-development-5a95c43aa9d4f900370bf112.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590638261102,
+      "note_id": 1590637994080,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Infant's in the sensorimotor stage gather information through [...] and [...]",
+      "answer_text": "Infant's in the sensorimotor stage gather information through senses (sight, smell, taste, touch) and motor function (learn how to move your body around)",
+      "fields": {
+        "Text": "Infant's in the <b>sensorimotor stage</b> gather information through {{c1::senses (sight, smell, taste, touch)}} and {{c1::motor function (learn how to move your body around)}}",
+        "Extra": "<br><div><img src=\"2795457-article-piagets-stages-of-cognitive-development-5a95c43aa9d4f900370bf112.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590638404713,
+      "note_id": 1590638261267,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Preoperational stage characteristics Occurs between ages [...] Associated with [...] , [...] , [...] , and [...]",
+      "answer_text": "Preoperational stage characteristics Occurs between ages 2-6/7 Associated with pretend play , egocentrism , beginning to understand symbols , and beginning to talk egocentrism is when children can only understand things from their own point of view. ex: kid sits in front of you watching TV and doesn't understand that you cant see it because they can",
+      "fields": {
+        "Text": "<b>Preoperational stage</b> characteristics<div>Occurs between ages {{c1::2-6/7}}</div><div>Associated with {{c1::pretend play}}, {{c1::egocentrism}}, {{c1::beginning to understand symbols}}, and {{c1::beginning to talk}}</div>",
+        "Extra": "<i><br></i><div><i>egocentrism is when children can only understand things from their own point of view. ex: kid sits in front of you watching TV and doesn't understand that you cant see it because they can</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590638574868,
+      "note_id": 1590638428526,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Concrete operational stage occurs between ages [...] associated with [...] , [...] , and [...]",
+      "answer_text": "Concrete operational stage occurs between ages 7-11 associated with conservation , empathy , and math skills conservation is when kids can tell that a short glass and a tall glass can have the same amount of water despite different heights.",
+      "fields": {
+        "Text": "<b>Concrete operational stage</b><div>occurs between ages {{c1::7-11}}</div><div>associated with {{c1::conservation}}, {{c1::empathy}}, and {{c1::math skills}}</div>",
+        "Extra": "<div><br></div><div><i>conservation is when kids can tell that a short glass and a tall glass can have the same amount of water despite different heights.</i></div><br><div><img src=\"2795457-article-piagets-stages-of-cognitive-development-5a95c43aa9d4f900370bf112.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590638650780,
+      "note_id": 1590638574945,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Formal operational stage occurs between ages [...] associated with [...] , [...] , and [...]",
+      "answer_text": "Formal operational stage occurs between ages 12+ associated with abstract thinking , reasoning through consequences , and moral reasoning children begin to think like adults at this stage and continue to develop that overtime",
+      "fields": {
+        "Text": "<b>Formal operational stage</b><div>occurs between ages {{c1::12+}}</div><div>associated with {{c1::abstract thinking}}, {{c1::reasoning through consequences}}, and {{c1::moral reasoning}}</div>",
+        "Extra": "<div><i><br></i></div><i>children begin to think like adults at this stage and continue to develop that overtime<br></i><div><i><img src=\"2795457-article-piagets-stages-of-cognitive-development-5a95c43aa9d4f900370bf112.png\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590638806446,
+      "note_id": 1590638650845,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] are mental-models/frameworks used to organize and interpret new information",
+      "answer_text": "Schemas are mental-models/frameworks used to organize and interpret new information",
+      "fields": {
+        "Text": "{{c1::Schemas}} are {{c2::mental-models/frameworks used to organize and interpret new information}}",
+        "Extra": "<br><div><img src=\"assimilation.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590638806448,
+      "note_id": 1590638650845,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Schemas are [...]",
+      "answer_text": "Schemas are mental-models/frameworks used to organize and interpret new information",
+      "fields": {
+        "Text": "{{c1::Schemas}} are {{c2::mental-models/frameworks used to organize and interpret new information}}",
+        "Extra": "<br><div><img src=\"assimilation.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590638882589,
+      "note_id": 1590638827914,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when we incorporate new information into an existing schema",
+      "answer_text": "Assimilation is when we incorporate new information into an existing schema mnemonic: a SS imilation = S ame S chema",
+      "fields": {
+        "Text": "{{c1::Assimilation}} is when we {{c2::incorporate new information into an existing schema}}",
+        "Extra": "<div><br></div>mnemonic: a<b>SS</b>imilation = <b>S</b>ame <b>S</b>chema<br><div><img src=\"assimilation.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590638882591,
+      "note_id": 1590638827914,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Assimilation is when we [...]",
+      "answer_text": "Assimilation is when we incorporate new information into an existing schema mnemonic: a SS imilation = S ame S chema",
+      "fields": {
+        "Text": "{{c1::Assimilation}} is when we {{c2::incorporate new information into an existing schema}}",
+        "Extra": "<div><br></div>mnemonic: a<b>SS</b>imilation = <b>S</b>ame <b>S</b>chema<br><div><img src=\"assimilation.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590638977883,
+      "note_id": 1590638882765,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when we create new schemas or adjust our schema's to incorporate new information",
+      "answer_text": "Accomodation is when we create new schemas or adjust our schema's to incorporate new information mnemonic: a CC omodation = C hange or C reate schema",
+      "fields": {
+        "Text": "{{c1::Accomodation}} is when we {{c2::create new schemas or adjust our schema's to incorporate new information}}",
+        "Extra": "<div><br></div>mnemonic: a<b>CC</b>omodation = <b>C</b>hange or <b>C</b>reate schema<br><div><img src=\"https://01a4b5.medialib.edu.glogster.com/vo5oDJjzOvrBFVGLuUYF/media/c9/c90733dcf64ec3555f3723e05a95a60b2b61baa9/assimilation.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590638977884,
+      "note_id": 1590638882765,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Accomodation is when we [...]",
+      "answer_text": "Accomodation is when we create new schemas or adjust our schema's to incorporate new information mnemonic: a CC omodation = C hange or C reate schema",
+      "fields": {
+        "Text": "{{c1::Accomodation}} is when we {{c2::create new schemas or adjust our schema's to incorporate new information}}",
+        "Extra": "<div><br></div>mnemonic: a<b>CC</b>omodation = <b>C</b>hange or <b>C</b>reate schema<br><div><img src=\"https://01a4b5.medialib.edu.glogster.com/vo5oDJjzOvrBFVGLuUYF/media/c9/c90733dcf64ec3555f3723e05a95a60b2b61baa9/assimilation.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639062303,
+      "note_id": 1590638980708,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when we move from a current state to a goal state",
+      "answer_text": "Problem solving is when we move from a current state to a goal state",
+      "fields": {
+        "Text": "{{c1::Problem solving}} is when we move from a <font color=\"#ff060a\">current state</font> to a <font color=\"#ff060a\">goal state</font>",
+        "Extra": "<br><div><img src=\"problem-solving-660x400.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639143077,
+      "note_id": 1590639062333,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Well-defined problems are problems with [...]",
+      "answer_text": "Well-defined problems are problems with a clear starting and end point",
+      "fields": {
+        "Text": "{{c2::Well-defined}} problems are problems with {{c1::a clear starting and end point}}",
+        "Extra": "<br><div><img src=\"psychology-101-chapter-9-24-728.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639143078,
+      "note_id": 1590639062333,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] problems are problems with a clear starting and end point",
+      "answer_text": "Well-defined problems are problems with a clear starting and end point",
+      "fields": {
+        "Text": "{{c2::Well-defined}} problems are problems with {{c1::a clear starting and end point}}",
+        "Extra": "<br><div><img src=\"psychology-101-chapter-9-24-728.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639170661,
+      "note_id": 1590639143144,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Ill-defined problems are problems with [...]",
+      "answer_text": "Ill-defined problems are problems with an ambiguous starting and end point",
+      "fields": {
+        "Text": "{{c2::Ill-defined}} problems are problems with {{c1::an ambiguous starting and end point}}",
+        "Extra": "<div><br></div><div><img src=\"psychology-101-chapter-9-24-728.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639170662,
+      "note_id": 1590639143144,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] problems are problems with an ambiguous starting and end point",
+      "answer_text": "Ill-defined problems are problems with an ambiguous starting and end point",
+      "fields": {
+        "Text": "{{c2::Ill-defined}} problems are problems with {{c1::an ambiguous starting and end point}}",
+        "Extra": "<div><br></div><div><img src=\"psychology-101-chapter-9-24-728.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639246511,
+      "note_id": 1590639170713,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The [...] method of problem solving is taking random guesses until something works",
+      "answer_text": "The trial + error method of problem solving is taking random guesses until something works",
+      "fields": {
+        "Text": "The {{c1::trial + error}} method of problem solving is {{c2::taking random guesses until something works}}",
+        "Extra": "<br><div><img src=\"Try-Fail-Success.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639246512,
+      "note_id": 1590639170713,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The trial + error method of problem solving is [...]",
+      "answer_text": "The trial + error method of problem solving is taking random guesses until something works",
+      "fields": {
+        "Text": "The {{c1::trial + error}} method of problem solving is {{c2::taking random guesses until something works}}",
+        "Extra": "<br><div><img src=\"Try-Fail-Success.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639361350,
+      "note_id": 1590639246689,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] are a problem solving method that includes a logical step-by-step approach that is guaranteed to find the correct solution eventually",
+      "answer_text": "Algorithms are a problem solving method that includes a logical step-by-step approach that is guaranteed to find the correct solution eventually Not the quickest way to solve problems!!!!!! but youll always find the correct solution example: rubiks cube algorithms. theoretically you could solve the cube in less turns, but algorithms will always get you to a solved state",
+      "fields": {
+        "Text": "{{c1::Algorithms}} are a problem solving method that includes a {{c2::logical <b>step-by-step</b> approach that is <b>guaranteed</b> to find the correct solution eventually}}",
+        "Extra": "<div><br></div><i>Not the quickest way to solve problems!!!!!!</i><div><i>but youll always find the correct solution</i></div><div><i>example: rubiks cube algorithms. theoretically you could solve the cube in less turns, but algorithms will always get you to a solved state<br></i><div><img src=\"What-is-Algorithm_.jpg\"><br></div></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639361351,
+      "note_id": 1590639246689,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Algorithms are a problem solving method that includes a [...]",
+      "answer_text": "Algorithms are a problem solving method that includes a logical step-by-step approach that is guaranteed to find the correct solution eventually Not the quickest way to solve problems!!!!!! but youll always find the correct solution example: rubiks cube algorithms. theoretically you could solve the cube in less turns, but algorithms will always get you to a solved state",
+      "fields": {
+        "Text": "{{c1::Algorithms}} are a problem solving method that includes a {{c2::logical <b>step-by-step</b> approach that is <b>guaranteed</b> to find the correct solution eventually}}",
+        "Extra": "<div><br></div><i>Not the quickest way to solve problems!!!!!!</i><div><i>but youll always find the correct solution</i></div><div><i>example: rubiks cube algorithms. theoretically you could solve the cube in less turns, but algorithms will always get you to a solved state<br></i><div><img src=\"What-is-Algorithm_.jpg\"><br></div></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639742411,
+      "note_id": 1590639361408,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] are mental shortcuts to find solutions to problems faster",
+      "answer_text": "Heuristics are mental shortcuts to find solutions to problems faster example: when guessing a password you guess someones birthday to cut down on random guesses",
+      "fields": {
+        "Text": "{{c1::<b>Heuristics</b>}} are {{c2::<b>mental shortcuts</b> to find solutions to problems faster}}",
+        "Extra": "<i><br></i><div><i>example: when guessing a password you guess someones birthday to cut down on random guesses</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639742413,
+      "note_id": 1590639361408,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Heuristics are [...]",
+      "answer_text": "Heuristics are mental shortcuts to find solutions to problems faster example: when guessing a password you guess someones birthday to cut down on random guesses",
+      "fields": {
+        "Text": "{{c1::<b>Heuristics</b>}} are {{c2::<b>mental shortcuts</b> to find solutions to problems faster}}",
+        "Extra": "<i><br></i><div><i>example: when guessing a password you guess someones birthday to cut down on random guesses</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639828317,
+      "note_id": 1590639742558,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when we break down large problems into smaller problems and tackle the problem that has the most difference between the current state and goal state",
+      "answer_text": "The means-end analysis is when we break down large problems into smaller problems and tackle the problem that has the most difference between the current state and goal state Ex. Planning a trip to a new country, biggest problem would be to get to the new country – so you book a plane ticket to a new country.",
+      "fields": {
+        "Text": "{{c1::The means-end analysis}} is when we {{c2::break down large problems into smaller problems}} and {{c2::tackle the problem that has the most difference between the current state and goal state}}",
+        "Extra": "<i><br></i><div><i>Ex. Planning a trip to a new country, biggest problem would be to get to the new country – so you book a plane ticket to a new country.</i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639828318,
+      "note_id": 1590639742558,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The means-end analysis is when we [...] and [...]",
+      "answer_text": "The means-end analysis is when we break down large problems into smaller problems and tackle the problem that has the most difference between the current state and goal state Ex. Planning a trip to a new country, biggest problem would be to get to the new country – so you book a plane ticket to a new country.",
+      "fields": {
+        "Text": "{{c1::The means-end analysis}} is when we {{c2::break down large problems into smaller problems}} and {{c2::tackle the problem that has the most difference between the current state and goal state}}",
+        "Extra": "<i><br></i><div><i>Ex. Planning a trip to a new country, biggest problem would be to get to the new country – so you book a plane ticket to a new country.</i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639865097,
+      "note_id": 1590639828392,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when we start with a goal and use it to suggest connections back to the current state",
+      "answer_text": "Working backwards is when we start with a goal and use it to suggest connections back to the current state",
+      "fields": {
+        "Text": "{{c1::Working backwards}} is when we start with a goal and use it to suggest connections back to the current state",
+        "Extra": "<br><div><img src=\"giphy (7).gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639923893,
+      "note_id": 1590639865166,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is relying on instinct to solve problems",
+      "answer_text": "Intuition is relying on instinct to solve problems",
+      "fields": {
+        "Text": "{{c1::Intuition}} is {{c2::relying on instinct to solve problems}}",
+        "Extra": "<br><div><img src=\"1cZT-uOPM67iOus-BZoyQbQ.jpeg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639923894,
+      "note_id": 1590639865166,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Intuition is [...]",
+      "answer_text": "Intuition is relying on instinct to solve problems",
+      "fields": {
+        "Text": "{{c1::Intuition}} is {{c2::relying on instinct to solve problems}}",
+        "Extra": "<br><div><img src=\"1cZT-uOPM67iOus-BZoyQbQ.jpeg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639955348,
+      "note_id": 1590639923960,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The problem solving method with the highest chance of error is [...]",
+      "answer_text": "The problem solving method with the highest chance of error is intuition",
+      "fields": {
+        "Text": "The problem solving method with the highest chance of error is {{c1::intuition}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639985658,
+      "note_id": 1590639955406,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is getting stuck on a wrong approach to a problem",
+      "answer_text": "Fixation is getting stuck on a wrong approach to a problem",
+      "fields": {
+        "Text": "{{c1::Fixation}} is {{c2::getting stuck on a wrong approach to a problem::problem solving definition}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590639985659,
+      "note_id": 1590639955406,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Fixation is [problem solving definition]",
+      "answer_text": "Fixation is getting stuck on a wrong approach to a problem",
+      "fields": {
+        "Text": "{{c1::Fixation}} is {{c2::getting stuck on a wrong approach to a problem::problem solving definition}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590640055179,
+      "note_id": 1590639985724,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is the \"aha moment\" of problem solving",
+      "answer_text": "Insight is the \"aha moment\" of problem solving",
+      "fields": {
+        "Text": "{{c1::Insight}} is the \"aha moment\" of problem solving",
+        "Extra": "<br><div><img src=\"7D8AF0EA-C201-496F-A9E4AA1236DD3C71_source.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590640089758,
+      "note_id": 1590640055323,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Insight about a problem can often by achieved through [...]",
+      "answer_text": "Insight about a problem can often by achieved through incubation this is sitting on a problem for a while until you comprehend it kinda like if you sleep on something you might understand or see a solution the next day",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Insight </font>about a problem can often by achieved through {{c1::incubation}}",
+        "Extra": "<br><div><i>this is sitting on a problem for a while until you comprehend it</i></div><div><i><br></i></div><div><i>kinda like if you sleep on something you might understand or see a solution the next day</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590640128151,
+      "note_id": 1590640089814,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Type I error = false [...] Type II error = false [...]",
+      "answer_text": "Type I error = false positive Type II error = false negative",
+      "fields": {
+        "Text": "Type I error = false {{c1::positive}}<div>Type II error = false {{c1::negative}}</div>",
+        "Extra": "<br><div><img src=\"j6jaz9v4d2x41.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590640181292,
+      "note_id": 1590640128221,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when we make a judgement of the desirability/probability of a certain outcome",
+      "answer_text": "Decision making is when we make a judgement of the desirability/probability of a certain outcome",
+      "fields": {
+        "Text": "{{c1::Decision making}} is when we make a <font color=\"#ff060a\">judgement </font>of the <u>desirability/probability</u> of a <font color=\"#ff060a\">certain outcome</font>",
+        "Extra": "<br><div><img src=\"Emotions-and-Decision-Making-Five-Steps-to-Improve-Your-Process.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590640282921,
+      "note_id": 1590640181347,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "We use heuristics in decision making to [...]",
+      "answer_text": "We use heuristics in decision making to make quick decisions based on prior knowledge example: if you are asked what has the higher risk SHARK ATTACK or FIREWORK ACCIDENT you will probably say shark attack since shark attacks are popularized in media and JAWS and shit and they are scary and its easy (shortcut) to recall this information its actually firework accidents though",
+      "fields": {
+        "Text": "We use <b>heuristics </b>in decision making to {{c1::make quick decisions based on prior knowledge}}",
+        "Extra": "<i><br></i><div><i>example: if you are asked what has the higher risk SHARK ATTACK or FIREWORK ACCIDENT you will probably say shark attack since shark attacks are popularized in media and JAWS and shit and they are scary and its easy (shortcut) to recall this information</i></div><div><i><br></i></div><div><i>its actually firework accidents though</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590640392505,
+      "note_id": 1590640282965,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is a decision making heuristic where choices are based on quick, easily accessible examples",
+      "answer_text": "The availability heuristic is a decision making heuristic where choices are based on quick, easily accessible examples",
+      "fields": {
+        "Text": "{{c1::The availability heuristic}} is a decision making heuristic where choices are based on {{c2::quick, easily accessible examples}}",
+        "Extra": "<br><div><img src=\"23a2qyskns031.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590640392507,
+      "note_id": 1590640282965,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The availability heuristic is a decision making heuristic where choices are based on [...]",
+      "answer_text": "The availability heuristic is a decision making heuristic where choices are based on quick, easily accessible examples",
+      "fields": {
+        "Text": "{{c1::The availability heuristic}} is a decision making heuristic where choices are based on {{c2::quick, easily accessible examples}}",
+        "Extra": "<br><div><img src=\"23a2qyskns031.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590640477383,
+      "note_id": 1590640392647,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is a decision making heuristic where choices are based on the most representative answer based on prototypes",
+      "answer_text": "Representativeness heuristic is a decision making heuristic where choices are based on the most representative answer based on prototypes",
+      "fields": {
+        "Text": "{{c1::Representativeness heuristic}} is a {{c2::decision making heuristic where choices are based on the most representative answer based on prototypes}}",
+        "Extra": "<br><div><img src=\"b9a52f26a8a9f0e225f982f4c3887830 (1).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590640477384,
+      "note_id": 1590640392647,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Representativeness heuristic is a [...]",
+      "answer_text": "Representativeness heuristic is a decision making heuristic where choices are based on the most representative answer based on prototypes",
+      "fields": {
+        "Text": "{{c1::Representativeness heuristic}} is a {{c2::decision making heuristic where choices are based on the most representative answer based on prototypes}}",
+        "Extra": "<br><div><img src=\"b9a52f26a8a9f0e225f982f4c3887830 (1).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590640599453,
+      "note_id": 1590640477449,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is when people tend to think the probability of two events occuring together is higher than just one",
+      "answer_text": "Conjuction fallacy is when people tend to think the probability of two events occuring together is higher than just one example below: more likely for one of the two things to occur",
+      "fields": {
+        "Text": "{{c1::Conjuction fallacy}} is when {{c2::people tend to think the probability of two events occuring together is higher than just one}}",
+        "Extra": "<div><i><br></i></div><i>example below: more likely for one of the two things to occur<br></i><div><img src=\"conjunction-fallacy-l.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590640599454,
+      "note_id": 1590640477449,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Conjuction fallacy is when [...]",
+      "answer_text": "Conjuction fallacy is when people tend to think the probability of two events occuring together is higher than just one example below: more likely for one of the two things to occur",
+      "fields": {
+        "Text": "{{c1::Conjuction fallacy}} is when {{c2::people tend to think the probability of two events occuring together is higher than just one}}",
+        "Extra": "<div><i><br></i></div><i>example below: more likely for one of the two things to occur<br></i><div><img src=\"conjunction-fallacy-l.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590640890946,
+      "note_id": 1590640601732,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is maintaining a belief despite new information that firmly contradicts it",
+      "answer_text": "Belief perseverance is maintaining a belief despite new information that firmly contradicts it ex: believing evolution is false despite overwhelming evidence",
+      "fields": {
+        "Text": "{{c1::Belief perseverance}} is {{c2::maintaining a belief despite new information that firmly contradicts it}}",
+        "Extra": "<div><i><br></i></div><i>ex: believing evolution is false despite overwhelming evidence<br></i><div><i><img src=\"1200-607988-19592216.jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590640890947,
+      "note_id": 1590640601732,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Belief perseverance is [...]",
+      "answer_text": "Belief perseverance is maintaining a belief despite new information that firmly contradicts it ex: believing evolution is false despite overwhelming evidence",
+      "fields": {
+        "Text": "{{c1::Belief perseverance}} is {{c2::maintaining a belief despite new information that firmly contradicts it}}",
+        "Extra": "<div><i><br></i></div><i>ex: believing evolution is false despite overwhelming evidence<br></i><div><i><img src=\"1200-607988-19592216.jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590641017813,
+      "note_id": 1590640898520,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is actively seeking out information that supports one's own beliefs",
+      "answer_text": "Confirmation bias is actively seeking out information that supports one's own beliefs",
+      "fields": {
+        "Text": "{{c1::Confirmation bias}} is {{c2::actively seeking out information that supports one's own beliefs}}",
+        "Extra": "<div><br></div><div><img src=\"confirmation.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590641017814,
+      "note_id": 1590640898520,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Confirmation bias is [...]",
+      "answer_text": "Confirmation bias is actively seeking out information that supports one's own beliefs",
+      "fields": {
+        "Text": "{{c1::Confirmation bias}} is {{c2::actively seeking out information that supports one's own beliefs}}",
+        "Extra": "<div><br></div><div><img src=\"confirmation.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590641088851,
+      "note_id": 1590641017865,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is where people decide on options based on whether they are presented with positive or negative connotations",
+      "answer_text": "The framing effect is where people decide on options based on whether they are presented with positive or negative connotations",
+      "fields": {
+        "Text": "{{c1::The framing effect}} is {{c2::where people decide on options based on whether they are presented with positive or negative connotations}}",
+        "Extra": "<br><div><img src=\"Framing-effect-g.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590641088853,
+      "note_id": 1590641017865,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The framing effect is [...]",
+      "answer_text": "The framing effect is where people decide on options based on whether they are presented with positive or negative connotations",
+      "fields": {
+        "Text": "{{c1::The framing effect}} is {{c2::where people decide on options based on whether they are presented with positive or negative connotations}}",
+        "Extra": "<br><div><img src=\"Framing-effect-g.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590813104841,
+      "note_id": 1590813079769,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "IQ stands for [...]",
+      "answer_text": "IQ stands for intelligence quotient",
+      "fields": {
+        "Text": "<b>IQ</b>&nbsp;stands for {{c1::intelligence quotient}}",
+        "Extra": "<br><div><img src=\"_82399978_75952740.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590813142527,
+      "note_id": 1590813104927,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is a mental quality that allows us to learn from experience, solve problems, and use knowledge to adapt to new situations",
+      "answer_text": "Intelligence is a mental quality that allows us to learn from experience, solve problems, and use knowledge to adapt to new situations",
+      "fields": {
+        "Text": "{{c1::Intelligence}} is a mental quality that allows us to learn from experience, solve problems, and use knowledge to adapt to new situations",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590813761788,
+      "note_id": 1590813142579,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "IQ scores are scaled so the average person scores [...]",
+      "answer_text": "IQ scores are scaled so the average person scores 100",
+      "fields": {
+        "Text": "IQ scores are scaled so the average person scores {{c1::100}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590813828416,
+      "note_id": 1590813761942,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is the ability to perceive, understand, and manage and use emotions in interactions with others",
+      "answer_text": "Emotional intelligence is the ability to perceive, understand, and manage and use emotions in interactions with others",
+      "fields": {
+        "Text": "{{c1::Emotional intelligence}} is the ability to perceive, understand, and manage and use emotions in interactions with others",
+        "Extra": "<br><div><img src=\"signs-of-low-emotional-intelligence-2795958_FINAL-5bd9d9fec9e77c0026409a53.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590814099569,
+      "note_id": 1590813828446,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] is the ability to reason quickly and abstractly, such as when solving novel logic problems",
+      "answer_text": "Fluid intelligence is the ability to reason quickly and abstractly, such as when solving novel logic problems",
+      "fields": {
+        "Text": "{{c1::Fluid intelligence}} is the ability to {{c2::reason quickly and abstractly, such as when solving novel logic problems}}",
+        "Extra": "<br><div><img src=\"fluid-intelligence-vs-crystallized-intelligence-2795004_color2-5b69d275c9e77c0050ba7290.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590814099570,
+      "note_id": 1590813828446,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Fluid intelligence is the ability to [...]",
+      "answer_text": "Fluid intelligence is the ability to reason quickly and abstractly, such as when solving novel logic problems",
+      "fields": {
+        "Text": "{{c1::Fluid intelligence}} is the ability to {{c2::reason quickly and abstractly, such as when solving novel logic problems}}",
+        "Extra": "<br><div><img src=\"fluid-intelligence-vs-crystallized-intelligence-2795004_color2-5b69d275c9e77c0050ba7290.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590814160589,
+      "note_id": 1590814099658,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] involves using acquired knowledge and skills",
+      "answer_text": "Crystallized intelligence involves using acquired knowledge and skills",
+      "fields": {
+        "Text": "{{c1::Crystallized intelligence}} involves using acquired knowledge and skills",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590814400369,
+      "note_id": 1590814160620,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Intelligence is dependent on both [...] and [...]",
+      "answer_text": "Intelligence is dependent on both genetics and environment",
+      "fields": {
+        "Text": "Intelligence is dependent on both {{c1::genetics}} and {{c1::environment}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590814551619,
+      "note_id": 1590814400457,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Heritability of intelligence is studied through [...]",
+      "answer_text": "Heritability of intelligence is studied through twin studies do identical twins have same intelligence raised together vs apart? what about fraternal twins raised together vs apart?",
+      "fields": {
+        "Text": "Heritability of intelligence is studied through {{c1::twin studies}}",
+        "Extra": "<div><i><br></i></div><i>do identical twins have same intelligence raised together vs apart?</i><div><i>what about fraternal twins raised together vs apart?<br></i><div><i><img src=\"4262544.jpg\"></i><br></div></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590814624508,
+      "note_id": 1590814551646,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The [...] attitude towards intelligence states that intelligence is biologically set and unchanging",
+      "answer_text": "The fixed mindset attitude towards intelligence states that intelligence is biologically set and unchanging",
+      "fields": {
+        "Text": "The {{c1::fixed mindset}} attitude towards intelligence states that {{c2::intelligence is biologically set and unchanging}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590814624509,
+      "note_id": 1590814551646,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The fixed mindset attitude towards intelligence states that [...]",
+      "answer_text": "The fixed mindset attitude towards intelligence states that intelligence is biologically set and unchanging",
+      "fields": {
+        "Text": "The {{c1::fixed mindset}} attitude towards intelligence states that {{c2::intelligence is biologically set and unchanging}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590814698258,
+      "note_id": 1590814624539,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The [...] attitude towards intelligence states that intelligence is changeable if you learn more",
+      "answer_text": "The growth mindset attitude towards intelligence states that intelligence is changeable if you learn more this mindset praises effort, perseverance, improvement, and strategies",
+      "fields": {
+        "Text": "The {{c1::growth mindset}} attitude towards intelligence states that {{c2::intelligence is changeable if you learn more}}",
+        "Extra": "<i><br></i><div><i>this mindset praises effort, perseverance, improvement, and strategies</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590814698259,
+      "note_id": 1590814624539,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The growth mindset attitude towards intelligence states that [...]",
+      "answer_text": "The growth mindset attitude towards intelligence states that intelligence is changeable if you learn more this mindset praises effort, perseverance, improvement, and strategies",
+      "fields": {
+        "Text": "The {{c1::growth mindset}} attitude towards intelligence states that {{c2::intelligence is changeable if you learn more}}",
+        "Extra": "<i><br></i><div><i>this mindset praises effort, perseverance, improvement, and strategies</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590814759087,
+      "note_id": 1590814698286,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Idea] states that human ability is hereditary",
+      "answer_text": "Galton's idea of hereditary genius states that human ability is hereditary",
+      "fields": {
+        "Text": "{{c1::Galton's idea of hereditary genius::Idea}} states that {{c2::human ability is hereditary}}",
+        "Extra": "<br><div><img src=\"Sir+Francis+Galton+Hereditary+Genius+(1869).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590814769125,
+      "note_id": 1590814698286,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Galton's idea of hereditary genius states that [...]",
+      "answer_text": "Galton's idea of hereditary genius states that human ability is hereditary",
+      "fields": {
+        "Text": "{{c1::Galton's idea of hereditary genius::Idea}} states that {{c2::human ability is hereditary}}",
+        "Extra": "<br><div><img src=\"Sir+Francis+Galton+Hereditary+Genius+(1869).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590814823432,
+      "note_id": 1590814771660,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Idea] compares how children perform at a specific age compared to the average intelligence performance for that age",
+      "answer_text": "Binet's idea of mental age compares how children perform at a specific age compared to the average intelligence performance for that age",
+      "fields": {
+        "Text": "{{c1::Binet's idea of mental age::Idea}} compares how children perform at a specific age compared to the average intelligence performance for that age",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590815129211,
+      "note_id": 1590814823489,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[...] states that there is one general intelligence that depends on a g-factor",
+      "answer_text": "Spearman's Theory of General Intelligence states that there is one general intelligence that depends on a g-factor g factor stands for general intelligence believes that people who are intelligent in one area are intelligent in other areas",
+      "fields": {
+        "Text": "{{c1::Spearman's Theory of General Intelligence}} states that {{c2::there is one general intelligence that depends on a g-factor}}",
+        "Extra": "<br><div>g factor stands for general intelligence</div><div>believes that people who are intelligent in one area are intelligent in other areas</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590815129212,
+      "note_id": 1590814823489,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Spearman's Theory of General Intelligence states that [...]",
+      "answer_text": "Spearman's Theory of General Intelligence states that there is one general intelligence that depends on a g-factor g factor stands for general intelligence believes that people who are intelligent in one area are intelligent in other areas",
+      "fields": {
+        "Text": "{{c1::Spearman's Theory of General Intelligence}} states that {{c2::there is one general intelligence that depends on a g-factor}}",
+        "Extra": "<br><div>g factor stands for general intelligence</div><div>believes that people who are intelligent in one area are intelligent in other areas</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590815383604,
+      "note_id": 1590815129333,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Theory] states that their are 7 factors to intelligence that depend on eachother",
+      "answer_text": "LL. Thurnstone's Theory of Primary Mental Abilities states that their are 7 factors to intelligence that depend on eachother mnemonic: LL Cool J (thurstone) depends on his 7 bitches (of intelligence)",
+      "fields": {
+        "Text": "{{c1::LL. Thurnstone's Theory of Primary Mental Abilities::Theory}} states that {{c2::their are 7 factors to intelligence that depend on eachother}}",
+        "Extra": "<i><br></i><div><i>mnemonic: LL Cool J (thurstone) depends on his 7 bitches (of intelligence)</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590815383606,
+      "note_id": 1590815129333,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "LL. Thurnstone's Theory of Primary Mental Abilities states that [...]",
+      "answer_text": "LL. Thurnstone's Theory of Primary Mental Abilities states that their are 7 factors to intelligence that depend on eachother mnemonic: LL Cool J (thurstone) depends on his 7 bitches (of intelligence)",
+      "fields": {
+        "Text": "{{c1::LL. Thurnstone's Theory of Primary Mental Abilities::Theory}} states that {{c2::their are 7 factors to intelligence that depend on eachother}}",
+        "Extra": "<i><br></i><div><i>mnemonic: LL Cool J (thurstone) depends on his 7 bitches (of intelligence)</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590815554194,
+      "note_id": 1590815383656,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Gardner's Theory of Multiple Intelligence states that [...]",
+      "answer_text": "Gardner's Theory of Multiple Intelligence states that their are 7-9 independent intelligences mnemonic: Picture 7-9 spaced out stones in a Garden hence gardner and his independent (spaced out) theories",
+      "fields": {
+        "Text": "{{c2::Gardner's Theory of Multiple Intelligence::Theory}} states that {{c1::their are 7-9 independent intelligences}}",
+        "Extra": "&nbsp;<div>mnemonic: Picture 7-9 spaced out stones in a <b>Garden</b></div><div>hence gardner and his independent (spaced out) theories</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590815554196,
+      "note_id": 1590815383656,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Theory] states that their are 7-9 independent intelligences",
+      "answer_text": "Gardner's Theory of Multiple Intelligence states that their are 7-9 independent intelligences mnemonic: Picture 7-9 spaced out stones in a Garden hence gardner and his independent (spaced out) theories",
+      "fields": {
+        "Text": "{{c2::Gardner's Theory of Multiple Intelligence::Theory}} states that {{c1::their are 7-9 independent intelligences}}",
+        "Extra": "&nbsp;<div>mnemonic: Picture 7-9 spaced out stones in a <b>Garden</b></div><div>hence gardner and his independent (spaced out) theories</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590815925248,
+      "note_id": 1590815554350,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "[Theory] states that there are 3 independent intelligences (creative, analytical, and practical) that are based on real world success",
+      "answer_text": "Sternberg's Triarchic Theory of Intelligence states that there are 3 independent intelligences (creative, analytical, and practical) that are based on real world success mnemonic: The CPA was STERN towards the orphan",
+      "fields": {
+        "Text": "{{c1::Sternberg's Triarchic Theory of Intelligence::Theory}} states that {{c2::there are 3 independent intelligences (creative, analytical, and practical) that are based on real world success}}",
+        "Extra": "<div><br></div><div>mnemonic: The CPA was STERN towards the orphan</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590815925250,
+      "note_id": 1590815554350,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Sternberg's Triarchic Theory of Intelligence states that [...]",
+      "answer_text": "Sternberg's Triarchic Theory of Intelligence states that there are 3 independent intelligences (creative, analytical, and practical) that are based on real world success mnemonic: The CPA was STERN towards the orphan",
+      "fields": {
+        "Text": "{{c1::Sternberg's Triarchic Theory of Intelligence::Theory}} states that {{c2::there are 3 independent intelligences (creative, analytical, and practical) that are based on real world success}}",
+        "Extra": "<div><br></div><div>mnemonic: The CPA was STERN towards the orphan</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590815986532,
+      "note_id": 1590815925389,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "The intelligence theory most heavily backed by research is [...]",
+      "answer_text": "The intelligence theory most heavily backed by research is Spearman's Theory of General Intelligence",
+      "fields": {
+        "Text": "The intelligence theory most heavily backed by <font color=\"#ff060a\">research </font>is {{c1::Spearman's Theory of General Intelligence}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590816106823,
+      "note_id": 1590816017775,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The [Right or Left] hemisphere of the brain is involved in language",
+      "answer_text": "The left hemisphere of the brain is involved in language",
+      "fields": {
+        "Text": "The {{c1::left::Right or Left}} hemisphere of the brain is involved in language",
+        "Extra": "<br><div><img src=\"9115abeb286d851d4327c75107f86e1a.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590816213502,
+      "note_id": 1590816202014,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[Brain region] is involved in speech production and is located in the frontal lobe",
+      "answer_text": "Broca's area is involved in speech production and is located in the frontal lobe",
+      "fields": {
+        "Text": "{{c1::Broca's area::Brain region}} is involved in {{c2::speech production}} and is located in the {{c2::frontal}} lobe",
+        "Extra": "<br><div><img src=\"areas-human-brain.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590816213503,
+      "note_id": 1590816202014,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Broca's area is involved in [...] and is located in the [...] lobe",
+      "answer_text": "Broca's area is involved in speech production and is located in the frontal lobe",
+      "fields": {
+        "Text": "{{c1::Broca's area::Brain region}} is involved in {{c2::speech production}} and is located in the {{c2::frontal}} lobe",
+        "Extra": "<br><div><img src=\"areas-human-brain.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590816250713,
+      "note_id": 1590816213549,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[Brain region] is involved in sound processing and is located in the temporal lobe",
+      "answer_text": "Wernicke's area is involved in sound processing and is located in the temporal lobe",
+      "fields": {
+        "Text": "{{c1::Wernicke's area::Brain region}} is involved in {{c2::sound processing}} and is located in the {{c2::temporal}} lobe",
+        "Extra": "<br><div><img src=\"areas-human-brain.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590816250714,
+      "note_id": 1590816213549,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Wernicke's area is involved in [...] and is located in the [...] lobe",
+      "answer_text": "Wernicke's area is involved in sound processing and is located in the temporal lobe",
+      "fields": {
+        "Text": "{{c1::Wernicke's area::Brain region}} is involved in {{c2::sound processing}} and is located in the {{c2::temporal}} lobe",
+        "Extra": "<br><div><img src=\"areas-human-brain.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590816306303,
+      "note_id": 1590816250777,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Aphasia is [...]",
+      "answer_text": "Aphasia is any disorder that involves language",
+      "fields": {
+        "Text": "<b><font color=\"#ff060a\">Aphasia </font></b>is {{c1::any disorder that involves language}}",
+        "Extra": "<br><div><img src=\"what-is-expressive-aphasia-treatment-e1535152373170.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590816384036,
+      "note_id": 1590816306356,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[Disorder] is when people have trouble producing speech as a result of damage to the language production centers of the brain",
+      "answer_text": "Broca's aphasia is when people have trouble producing speech as a result of damage to the language production centers of the brain",
+      "fields": {
+        "Text": "{{c1::Broca's aphasia::Disorder}} is when people {{c2::have trouble producing speech as a result of damage to the language production centers of the brain}}",
+        "Extra": "<br><div><img src=\"paste-97ff203ccf77124029b59f0e09da3e36ef04582f.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590816384037,
+      "note_id": 1590816306356,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Broca's aphasia is when people [...]",
+      "answer_text": "Broca's aphasia is when people have trouble producing speech as a result of damage to the language production centers of the brain",
+      "fields": {
+        "Text": "{{c1::Broca's aphasia::Disorder}} is when people {{c2::have trouble producing speech as a result of damage to the language production centers of the brain}}",
+        "Extra": "<br><div><img src=\"paste-97ff203ccf77124029b59f0e09da3e36ef04582f.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590816542295,
+      "note_id": 1590816384086,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "People with broca's aphasia can [...] but have trouble [...]",
+      "answer_text": "People with broca's aphasia can understand language but have trouble producing language",
+      "fields": {
+        "Text": "People with <b>broca's aphasia</b> <u>can</u><i>&nbsp;</i>{{c1::understand language}} but <u>have trouble</u> {{c1::producing language}}",
+        "Extra": "<br><div><img src=\"paste-97ff203ccf77124029b59f0e09da3e36ef04582f.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590816592174,
+      "note_id": 1590816587227,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[Disorder] is when people have trouble comprehending language as a result of temporal lobe damage but are still able to speak",
+      "answer_text": "Wernicke's aphasia is when people have trouble comprehending language as a result of temporal lobe damage but are still able to speak",
+      "fields": {
+        "Text": "{{c1::Wernicke's aphasia::Disorder}} is when people {{c2::have trouble comprehending language as a result of temporal lobe damage but are still able to speak}}",
+        "Extra": "<br><div><img src=\"paste-47da292928911b207d56b1fa68c6f6c88fa4e1fc.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590816592175,
+      "note_id": 1590816587227,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Wernicke's aphasia is when people [...]",
+      "answer_text": "Wernicke's aphasia is when people have trouble comprehending language as a result of temporal lobe damage but are still able to speak",
+      "fields": {
+        "Text": "{{c1::Wernicke's aphasia::Disorder}} is when people {{c2::have trouble comprehending language as a result of temporal lobe damage but are still able to speak}}",
+        "Extra": "<br><div><img src=\"paste-47da292928911b207d56b1fa68c6f6c88fa4e1fc.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590816715568,
+      "note_id": 1590816709389,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "People with wernicke's aphasia can [...] but have trouble [...]",
+      "answer_text": "People with wernicke's aphasia can produce language but have trouble comprehending language",
+      "fields": {
+        "Text": "People with <b>wernicke's aphasia</b> <u>can</u>&nbsp;{{c1::produce language}} but <u>have trouble</u> {{c1::comprehending language}}",
+        "Extra": "<img src=\"paste-47da292928911b207d56b1fa68c6f6c88fa4e1fc.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590817086455,
+      "note_id": 1590816715646,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is a term used for speech produced by individuals with wernicke's aphasia that lacks meaning",
+      "answer_text": "Word Salad is a term used for speech produced by individuals with wernicke's aphasia that lacks meaning",
+      "fields": {
+        "Text": "{{c1::Word Salad}} is a term used for speech produced by individuals with wernicke's aphasia that lacks meaning",
+        "Extra": "<br><div><img src=\"browern.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590817179322,
+      "note_id": 1590817086630,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Global aphasia is when an individual [...]",
+      "answer_text": "Global aphasia is when an individual has a damaged broca's and wernicke's area combo of wernicke's aphasia and broca's aphasia",
+      "fields": {
+        "Text": "{{c2::Global aphasia}} is when an individual {{c1::has a damaged broca's and wernicke's area}}",
+        "Extra": "<i><br></i><div><i>combo of wernicke's aphasia and broca's aphasia</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590817179323,
+      "note_id": 1590817086630,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is when an individual has a damaged broca's and wernicke's area",
+      "answer_text": "Global aphasia is when an individual has a damaged broca's and wernicke's area combo of wernicke's aphasia and broca's aphasia",
+      "fields": {
+        "Text": "{{c2::Global aphasia}} is when an individual {{c1::has a damaged broca's and wernicke's area}}",
+        "Extra": "<i><br></i><div><i>combo of wernicke's aphasia and broca's aphasia</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590817259509,
+      "note_id": 1590817179390,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Wernicke's and Broca's area are connected by a bundle of nerve fibers called the [...]",
+      "answer_text": "Wernicke's and Broca's area are connected by a bundle of nerve fibers called the arcuate fasciculus",
+      "fields": {
+        "Text": "<b>Wernicke's </b>and <b>Broca's </b>area are connected by a <u>bundle of nerve fibers </u>called the {{c1::arcuate fasciculus}}",
+        "Extra": "<img src=\"Classical-representation-of-the-arcuate-fasciculus-connecting-Brocas-and-Wernickes.ppm\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590817290156,
+      "note_id": 1590817259571,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "When the arcuate fasciculus is damaged, an individual has [...]",
+      "answer_text": "When the arcuate fasciculus is damaged, an individual has conduction aphasia",
+      "fields": {
+        "Text": "When the {{c2::arcuate fasciculus}} is damaged, an individual has {{c1::conduction aphasia}}",
+        "Extra": "<br><div><img src=\"Classical-representation-of-the-arcuate-fasciculus-connecting-Brocas-and-Wernickes.ppm\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590817290158,
+      "note_id": 1590817259571,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "When the [...] is damaged, an individual has conduction aphasia",
+      "answer_text": "When the arcuate fasciculus is damaged, an individual has conduction aphasia",
+      "fields": {
+        "Text": "When the {{c2::arcuate fasciculus}} is damaged, an individual has {{c1::conduction aphasia}}",
+        "Extra": "<br><div><img src=\"Classical-representation-of-the-arcuate-fasciculus-connecting-Brocas-and-Wernickes.ppm\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590817456572,
+      "note_id": 1590817290222,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Conduction aphasia is associated with [...] but [...]",
+      "answer_text": "Conduction aphasia is associated with normal function of broca's and wernicke's area independently but problems when they have to work together important: this means that they can speak and compreh end independently, but have a lot of trouble when told something and asked to repeat it",
+      "fields": {
+        "Text": "{{c2::Conduction aphasia}} is associated with {{c1::normal function of broca's and wernicke's area independently}} <b><u>but</u><i>&nbsp;</i></b>{{c1::problems when they have to work together}}",
+        "Extra": "<i><br></i><div><i>important: this means that they can speak and compreh</i><i>end independently, but <b style=\"\"><u style=\"\"><font color=\"#ffc0fe\">have a lot of trouble when told something and asked to repeat it</font></u></b></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590817456574,
+      "note_id": 1590817290222,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is associated with normal function of broca's and wernicke's area independently but problems when they have to work together",
+      "answer_text": "Conduction aphasia is associated with normal function of broca's and wernicke's area independently but problems when they have to work together important: this means that they can speak and compreh end independently, but have a lot of trouble when told something and asked to repeat it",
+      "fields": {
+        "Text": "{{c2::Conduction aphasia}} is associated with {{c1::normal function of broca's and wernicke's area independently}} <b><u>but</u><i>&nbsp;</i></b>{{c1::problems when they have to work together}}",
+        "Extra": "<i><br></i><div><i>important: this means that they can speak and compreh</i><i>end independently, but <b style=\"\"><u style=\"\"><font color=\"#ffc0fe\">have a lot of trouble when told something and asked to repeat it</font></u></b></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590817529917,
+      "note_id": 1590817456716,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Agraphia is the [...]",
+      "answer_text": "Agraphia is the inability to write",
+      "fields": {
+        "Text": "Agraphia is the {{c1::inability to write}}",
+        "Extra": "<br><div><img src=\"1-s2.0-S0072975208021374-gr4.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590817592225,
+      "note_id": 1590817529977,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Anomia is the [...]",
+      "answer_text": "Anomia is the inability to name things",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Anomia </font>is the {{c1::inability to name things}}",
+        "Extra": "<br><div><img src=\"f28f693b8a85b49a9159205d6b52910d.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590817735373,
+      "note_id": 1590817592290,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "If the corpus callosum is severed, the individual is considered [...]",
+      "answer_text": "If the corpus callosum is severed, the individual is considered split-brained",
+      "fields": {
+        "Text": "If the <font color=\"#ff060a\">corpus callosum</font> is severed, the individual is considered {{c1::split-brained}}",
+        "Extra": "<br><div><img src=\"Two-minds (1).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590817925804,
+      "note_id": 1590817735412,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "In split-brain individuals, if an image is on their left , they can [...] but they cannot [...]",
+      "answer_text": "In split-brain individuals, if an image is on their left , they can pick up the object/draw it but they cannot name the object",
+      "fields": {
+        "Text": "In <font color=\"#00ffff\">split-brain</font><font color=\"#ff060a\"> </font>individuals, if an image is on their <b><u>left</u></b>, they can {{c1::pick up the object/draw it}} but they cannot {{c1::name the object}}",
+        "Extra": "<br><div><img src=\"Two-minds (1).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590817973539,
+      "note_id": 1590817925944,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "In split-brain individuals, if an image is on their right , they can [...] but they cannot [...]",
+      "answer_text": "In split-brain individuals, if an image is on their right , they can name the object but they cannot pick up the object/draw it",
+      "fields": {
+        "Text": "In&nbsp;<font color=\"#ff060a\">split-brain&nbsp;</font>individuals, if an image is on their&nbsp;<b><u>right</u></b>, they can {{c1::name the object}} but they cannot {{c1::pick up the object/draw it}}",
+        "Extra": "<div><br></div><div><img src=\"Two-minds (1).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818179460,
+      "note_id": 1590817973607,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is concerned with how the way something is said influences its meaning",
+      "answer_text": "Prosody is concerned with how the way something is said influences its meaning irony, sarcasm, emphasis, etc",
+      "fields": {
+        "Text": "{{c1::Prosody}} is concerned with how the way something is said influences its meaning",
+        "Extra": "<div><i><br></i></div><i>irony, sarcasm, emphasis, etc<br></i><div><i><img src=\"What+is+prosody..jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818242763,
+      "note_id": 1590818179490,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Behaviorists believe language is [...]",
+      "answer_text": "Behaviorists believe language is just conditioned behavior",
+      "fields": {
+        "Text": "<font color=\"#ff060a\"><b>Behaviorists </b></font>believe language is {{c1::just conditioned behavior}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818267939,
+      "note_id": 1590818242924,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Nativists believe language is [...]",
+      "answer_text": "Nativists believe language is innate",
+      "fields": {
+        "Text": "<b><font color=\"#ff060a\">Nativists </font></b>believe language is {{c1::innate}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818350770,
+      "note_id": 1590818267973,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Materialist's observe [...]",
+      "answer_text": "Materialist's observe what happens in the brain when people think/speak/write",
+      "fields": {
+        "Text": "<b><font color=\"#ff060a\">Materialist's </font></b>observe {{c1::what happens in the brain when people think/speak/write}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818394680,
+      "note_id": 1590818350824,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Interactionists place heavy emphasis on [...]",
+      "answer_text": "Interactionists place heavy emphasis on interconnection of environmental cues and innate biology in regards to language",
+      "fields": {
+        "Text": "<b><font color=\"#00ffff\">Interactionists </font></b>place heavy emphasis on {{c1::interconnection of environmental cues and innate biology in regards to language}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818549634,
+      "note_id": 1590818394743,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Universalism is the idea that [...]",
+      "answer_text": "Universalism is the idea that thoughts determine language completely example: new guinea people who only think about dark/light so they only have 2 words for colors",
+      "fields": {
+        "Text": "{{c2::Universalism}} is the idea that {{c1::thoughts determine language completely}}",
+        "Extra": "<div><i><br></i></div><i>example: new guinea people who only think about dark/light so they only have 2 words for colors<br></i><div><i><img src=\"paste-98f97dfb7b1066321380ff032891b0299e0e887d.jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818549636,
+      "note_id": 1590818394743,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is the idea that thoughts determine language completely",
+      "answer_text": "Universalism is the idea that thoughts determine language completely example: new guinea people who only think about dark/light so they only have 2 words for colors",
+      "fields": {
+        "Text": "{{c2::Universalism}} is the idea that {{c1::thoughts determine language completely}}",
+        "Extra": "<div><i><br></i></div><i>example: new guinea people who only think about dark/light so they only have 2 words for colors<br></i><div><i><img src=\"paste-98f97dfb7b1066321380ff032891b0299e0e887d.jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818646156,
+      "note_id": 1590818549774,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[Dude] believed that once children could think a certain way, they developed language to describe those thoughts",
+      "answer_text": "Piaget believed that once children could think a certain way, they developed language to describe those thoughts example: kids in pre-operational stage will develop words like \"gone\" or \"away\" to reflect object permanence",
+      "fields": {
+        "Text": "{{c1::Piaget::Dude}} believed that {{c2::once children could think a certain way, they developed language to describe those thoughts::what he thought about LANGUAGE}}",
+        "Extra": "<div><i><br></i></div><i>example: kids in pre-operational stage will develop words like \"gone\" or \"away\" to reflect object permanence<br></i><div><i><img src=\"paste-98f97dfb7b1066321380ff032891b0299e0e887d.jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818646158,
+      "note_id": 1590818549774,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Piaget believed that [what he thought about LANGUAGE]",
+      "answer_text": "Piaget believed that once children could think a certain way, they developed language to describe those thoughts example: kids in pre-operational stage will develop words like \"gone\" or \"away\" to reflect object permanence",
+      "fields": {
+        "Text": "{{c1::Piaget::Dude}} believed that {{c2::once children could think a certain way, they developed language to describe those thoughts::what he thought about LANGUAGE}}",
+        "Extra": "<div><i><br></i></div><i>example: kids in pre-operational stage will develop words like \"gone\" or \"away\" to reflect object permanence<br></i><div><i><img src=\"paste-98f97dfb7b1066321380ff032891b0299e0e887d.jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818734540,
+      "note_id": 1590818646228,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[Dude] believed that language and thought are independent but converge through development.",
+      "answer_text": "Vygotsky believed that language and thought are independent but converge through development.",
+      "fields": {
+        "Text": "{{c1::Vygotsky::Dude}} believed that {{c2::language and thought are independent but converge through development.::in terms of language}}",
+        "Extra": "<br><div><img src=\"paste-98f97dfb7b1066321380ff032891b0299e0e887d.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818734542,
+      "note_id": 1590818646228,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Vygotsky believed that [in terms of language]",
+      "answer_text": "Vygotsky believed that language and thought are independent but converge through development.",
+      "fields": {
+        "Text": "{{c1::Vygotsky::Dude}} believed that {{c2::language and thought are independent but converge through development.::in terms of language}}",
+        "Extra": "<br><div><img src=\"paste-98f97dfb7b1066321380ff032891b0299e0e887d.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818795634,
+      "note_id": 1590818734601,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Vygotsky believed in the idea that children develop language [...] . This is called socialization",
+      "answer_text": "Vygotsky believed in the idea that children develop language by interacting with adults who already know the language . This is called socialization",
+      "fields": {
+        "Text": "{{c3::Vygotsky}} believed in the idea that children develop language {{c1::by interacting with adults who already know the language}}. This is called {{c2::socialization}}",
+        "Extra": "<br><div><img src=\"paste-98f97dfb7b1066321380ff032891b0299e0e887d.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818795636,
+      "note_id": 1590818734601,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Vygotsky believed in the idea that children develop language by interacting with adults who already know the language . This is called [...]",
+      "answer_text": "Vygotsky believed in the idea that children develop language by interacting with adults who already know the language . This is called socialization",
+      "fields": {
+        "Text": "{{c3::Vygotsky}} believed in the idea that children develop language {{c1::by interacting with adults who already know the language}}. This is called {{c2::socialization}}",
+        "Extra": "<br><div><img src=\"paste-98f97dfb7b1066321380ff032891b0299e0e887d.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818795637,
+      "note_id": 1590818734601,
+      "ord": 2,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] believed in the idea that children develop language by interacting with adults who already know the language . This is called socialization",
+      "answer_text": "Vygotsky believed in the idea that children develop language by interacting with adults who already know the language . This is called socialization",
+      "fields": {
+        "Text": "{{c3::Vygotsky}} believed in the idea that children develop language {{c1::by interacting with adults who already know the language}}. This is called {{c2::socialization}}",
+        "Extra": "<br><div><img src=\"paste-98f97dfb7b1066321380ff032891b0299e0e887d.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818815522,
+      "note_id": 1590818795706,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is the idea that language has influence on thoughts",
+      "answer_text": "Linguistic determinism is the idea that language has influence on thoughts",
+      "fields": {
+        "Text": "{{c1::Linguistic determinism}} is the idea that {{c2::language has influence on thoughts}}",
+        "Extra": "<br><div><img src=\"paste-98f97dfb7b1066321380ff032891b0299e0e887d.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818815523,
+      "note_id": 1590818795706,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Linguistic determinism is the idea that [...]",
+      "answer_text": "Linguistic determinism is the idea that language has influence on thoughts",
+      "fields": {
+        "Text": "{{c1::Linguistic determinism}} is the idea that {{c2::language has influence on thoughts}}",
+        "Extra": "<br><div><img src=\"paste-98f97dfb7b1066321380ff032891b0299e0e887d.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818991931,
+      "note_id": 1590818815577,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] AKA [...] states that language influences thoughts and we think in ways based on how our language is structured",
+      "answer_text": "Weak linguistic determinism AKA relativism states that language influences thoughts and we think in ways based on how our language is structured example: If you read the statement \"the girl pushed the boy\" and you pictured the girl on the left and the boy on the right, then your language likely reads left to right. However, ,when people who speak hebrew are told this sentence, they picture it backwards as their language reads right to left",
+      "fields": {
+        "Text": "{{c1::Weak linguistic determinism}} AKA {{c1::relativism}} states that {{c2::language influences thoughts}} and {{c2::we think in ways based on how our language is structured}}",
+        "Extra": "<div><i><br></i></div><i>example: If you read the statement \"the girl pushed the boy\" and you pictured the girl on the left and the boy on the right, then your language likely reads left to right. However, ,when people who speak hebrew are told this sentence, they picture it backwards as their language reads right to left<br></i><div><i><img src=\"paste-98f97dfb7b1066321380ff032891b0299e0e887d.jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590818991932,
+      "note_id": 1590818815577,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Weak linguistic determinism AKA relativism states that [...] and [...]",
+      "answer_text": "Weak linguistic determinism AKA relativism states that language influences thoughts and we think in ways based on how our language is structured example: If you read the statement \"the girl pushed the boy\" and you pictured the girl on the left and the boy on the right, then your language likely reads left to right. However, ,when people who speak hebrew are told this sentence, they picture it backwards as their language reads right to left",
+      "fields": {
+        "Text": "{{c1::Weak linguistic determinism}} AKA {{c1::relativism}} states that {{c2::language influences thoughts}} and {{c2::we think in ways based on how our language is structured}}",
+        "Extra": "<div><i><br></i></div><i>example: If you read the statement \"the girl pushed the boy\" and you pictured the girl on the left and the boy on the right, then your language likely reads left to right. However, ,when people who speak hebrew are told this sentence, they picture it backwards as their language reads right to left<br></i><div><i><img src=\"paste-98f97dfb7b1066321380ff032891b0299e0e887d.jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590819087597,
+      "note_id": 1590818992078,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] AKA [...] states that language completely determines thoughts",
+      "answer_text": "Strong Linguistic Determinism AKA Sapir-Whorfian Hypothesis states that language completely determines thoughts example: Hopi tribe in Brazil doesn't have grammatical tense so they don't think about time in the same way we do",
+      "fields": {
+        "Text": "{{c1::Strong Linguistic Determinism}} AKA {{c1::Sapir-Whorfian Hypothesis}} states that {{c2::language completely determines thoughts}}",
+        "Extra": "<i><br></i><div><i>example: Hopi tribe in Brazil doesn't have grammatical tense so they don't think about time in the same way we do</i></div><div><img src=\"paste-98f97dfb7b1066321380ff032891b0299e0e887d.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590819087598,
+      "note_id": 1590818992078,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Strong Linguistic Determinism AKA Sapir-Whorfian Hypothesis states that [...]",
+      "answer_text": "Strong Linguistic Determinism AKA Sapir-Whorfian Hypothesis states that language completely determines thoughts example: Hopi tribe in Brazil doesn't have grammatical tense so they don't think about time in the same way we do",
+      "fields": {
+        "Text": "{{c1::Strong Linguistic Determinism}} AKA {{c1::Sapir-Whorfian Hypothesis}} states that {{c2::language completely determines thoughts}}",
+        "Extra": "<i><br></i><div><i>example: Hopi tribe in Brazil doesn't have grammatical tense so they don't think about time in the same way we do</i></div><div><img src=\"paste-98f97dfb7b1066321380ff032891b0299e0e887d.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590819599275,
+      "note_id": 1590819087664,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[Idea] associated with [...] believed that children are born with an innate ability to learn langage because we all have a language acquisition device",
+      "answer_text": "The Nativist perspective associated with Noam Chomsky believed that children are born with an innate ability to learn langage because we all have a language acquisition device",
+      "fields": {
+        "Text": "{{c1::The Nativist perspective::Idea}} associated with {{c1::Noam Chomsky}} believed that {{c2::children are born with an innate ability to learn langage because we all have a language acquisition device}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590819599276,
+      "note_id": 1590819087664,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The Nativist perspective associated with Noam Chomsky believed that [...]",
+      "answer_text": "The Nativist perspective associated with Noam Chomsky believed that children are born with an innate ability to learn langage because we all have a language acquisition device",
+      "fields": {
+        "Text": "{{c1::The Nativist perspective::Idea}} associated with {{c1::Noam Chomsky}} believed that {{c2::children are born with an innate ability to learn langage because we all have a language acquisition device}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590819698340,
+      "note_id": 1590819599365,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The Nativist perspective (language) believes that during development [...]",
+      "answer_text": "The Nativist perspective (language) believes that during development there is a critical period where the language acquisition device is most active between birth to age 8-9",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">The Nativist perspective (language)&nbsp;</font>believes that during development {{c1::there is a critical period where the language acquisition device is most active between birth to age 8-9}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590819744086,
+      "note_id": 1590819698369,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The Nativist perspective is supported by the fact that [...]",
+      "answer_text": "The Nativist perspective is supported by the fact that all languages share universal grammar Since all languages share same grammar (verb,noun,adj) then language must be innate",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">The Nativist perspective</font> is supported by the fact that {{c1::all languages share universal grammar}}",
+        "Extra": "<i><br></i><div><i>Since all languages share same grammar (verb,noun,adj) then language must be innate</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590819839185,
+      "note_id": 1590819744114,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[Theory] , associated with [...] , states that language is acquired through operant conditioning",
+      "answer_text": "The Learning (behaviorist) theory , associated with BF Skinner , states that language is acquired through operant conditioning example: child only says \"mama\" because everytime they say it their moms praise them (reinforce)",
+      "fields": {
+        "Text": "{{c1::The Learning (behaviorist) theory::Theory}}, associated with {{c1::BF Skinner}}, states that language {{c2::is acquired through operant conditioning}}",
+        "Extra": "<i><br></i><div><i>example: child only says \"mama\" because everytime they say it their moms praise them (reinforce)</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590819839186,
+      "note_id": 1590819744114,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The Learning (behaviorist) theory , associated with BF Skinner , states that language [...]",
+      "answer_text": "The Learning (behaviorist) theory , associated with BF Skinner , states that language is acquired through operant conditioning example: child only says \"mama\" because everytime they say it their moms praise them (reinforce)",
+      "fields": {
+        "Text": "{{c1::The Learning (behaviorist) theory::Theory}}, associated with {{c1::BF Skinner}}, states that language {{c2::is acquired through operant conditioning}}",
+        "Extra": "<i><br></i><div><i>example: child only says \"mama\" because everytime they say it their moms praise them (reinforce)</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590820262234,
+      "note_id": 1590819892845,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The Interactionist approach , associated with Vygotsky , believes that [...]",
+      "answer_text": "The Interactionist approach , associated with Vygotsky , believes that biological and social factors must interact for children to learn language children WANT to communicate with adults, so it motivates them to learn language",
+      "fields": {
+        "Text": "{{c2::The Interactionist approach::Theory}}, associated with {{c2::Vygotsky}}, believes that {{c1::biological and social factors must interact for children to learn language}}",
+        "Extra": "<i><br></i><div><i>children WANT to communicate with adults, so it motivates them to learn language</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590820262235,
+      "note_id": 1590819892845,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[Theory] , associated with [...] , believes that biological and social factors must interact for children to learn language",
+      "answer_text": "The Interactionist approach , associated with Vygotsky , believes that biological and social factors must interact for children to learn language children WANT to communicate with adults, so it motivates them to learn language",
+      "fields": {
+        "Text": "{{c2::The Interactionist approach::Theory}}, associated with {{c2::Vygotsky}}, believes that {{c1::biological and social factors must interact for children to learn language}}",
+        "Extra": "<i><br></i><div><i>children WANT to communicate with adults, so it motivates them to learn language</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590820286518,
+      "note_id": 1590820262390,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is the complete set of meaningful units in a language",
+      "answer_text": "Lexicon is the complete set of meaningful units in a language",
+      "fields": {
+        "Text": "{{c1::Lexicon}} is the complete set of meaningful units in a language",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590820325441,
+      "note_id": 1590820286572,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is the actual sound of a language",
+      "answer_text": "Phonology is the actual sound of a language",
+      "fields": {
+        "Text": "{{c1::Phonology}} is the actual sound of a language",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590820351957,
+      "note_id": 1590820325473,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is the structure of words in a language",
+      "answer_text": "Morphology is the structure of words in a language",
+      "fields": {
+        "Text": "{{c1::Morphology}} is the structure of words in a language",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590820363732,
+      "note_id": 1590820352020,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is the association of meaning with a word",
+      "answer_text": "Semantics is the association of meaning with a word",
+      "fields": {
+        "Text": "{{c1::Semantics}} is the association of meaning with a word",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590820379069,
+      "note_id": 1590820363804,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is how words are put together in sentences",
+      "answer_text": "Syntax is how words are put together in sentences",
+      "fields": {
+        "Text": "{{c1::Syntax}} is how words are put together in sentences",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590820586471,
+      "note_id": 1590820379133,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is the branch of linguistics that deals with the context in which language is used",
+      "answer_text": "Pragmatics is the branch of linguistics that deals with the context in which language is used",
+      "fields": {
+        "Text": "{{c1::Pragmatics}} is the branch of linguistics that deals with the <b><font color=\"#00ffff\">context </font></b>in which language is used",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590820823922,
+      "note_id": 1590820586619,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is a set of structures in the brain that play an important role in regulating emotions",
+      "answer_text": "The Limbic System is a set of structures in the brain that play an important role in regulating emotions",
+      "fields": {
+        "Text": "{{c1::The Limbic System}} is a set of structures in the brain that {{c2::play an important role in regulating emotions}}",
+        "Extra": "<br><div><img src=\"paste-ec2d24974f5c7b0a449635d528dcc4a75da00394.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590820823924,
+      "note_id": 1590820586619,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The Limbic System is a set of structures in the brain that [...]",
+      "answer_text": "The Limbic System is a set of structures in the brain that play an important role in regulating emotions",
+      "fields": {
+        "Text": "{{c1::The Limbic System}} is a set of structures in the brain that {{c2::play an important role in regulating emotions}}",
+        "Extra": "<br><div><img src=\"paste-ec2d24974f5c7b0a449635d528dcc4a75da00394.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590820957185,
+      "note_id": 1590820823997,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The limbic system is composed of the [...] , [...] , [...] , and [...]",
+      "answer_text": "The limbic system is composed of the hypothalamus , amygdala , thalamus , and hippocampus mnemonic: Hippo wearing a HAT",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">The limbic system</font> is composed of the {{c1::hypothalamus}}, {{c1::amygdala}}, {{c1::thalamus}}, and {{c1::hippocampus}}",
+        "Extra": "<br><div>mnemonic: Hippo wearing a HAT</div><div><img src=\"paste-ec2d24974f5c7b0a449635d528dcc4a75da00394.jpg\"><br></div>"
+      },
+      "tags": []
+    }
+  ]
+}

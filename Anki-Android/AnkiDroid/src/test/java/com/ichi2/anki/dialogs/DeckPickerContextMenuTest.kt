@@ -155,16 +155,6 @@ class DeckPickerContextMenuTest {
     }
 
     @Test
-    fun `Shows option to create subdeck when deck is not dynamic`() {
-        launch(withArguments()).onFragment { fragment ->
-            assertTrue(
-                fragment.foundOptions().contains(fragment.getString(R.string.create_subdeck)),
-                "'Create subdeck' should be present when deck is not dynamic",
-            )
-        }
-    }
-
-    @Test
     fun `Shows option to unbury if deck has buried cards`() {
         launch(withArguments(hasBuriedCards = true)).onFragment { fragment ->
             assertTrue(

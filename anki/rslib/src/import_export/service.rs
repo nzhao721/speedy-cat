@@ -96,6 +96,18 @@ impl crate::services::ImportExportService for Collection {
     ) -> Result<anki_proto::import_export::ImportResponse> {
         self.import_json_string(&input.val).map(Into::into)
     }
+
+    fn import_builtin_deck(
+        &mut self,
+        input: anki_proto::import_export::ImportBuiltinDeckRequest,
+    ) -> Result<anki_proto::import_export::ImportBuiltinDeckResponse> {
+        self.add_builtin_deck(
+            &input.package_path,
+            &input.deck_key,
+            &input.parent_deck,
+            input.force,
+        )
+    }
 }
 
 impl From<OpOutput<NoteLog>> for anki_proto::import_export::ImportResponse {

@@ -1,0 +1,37 @@
+{
+  "batch": 13,
+  "file": "batch_13.json",
+  "cards_evaluated": 257,
+  "summary": {
+    "ok": 256,
+    "cards_with_issues": 1,
+    "by_check": {
+      "qa_correspondence": 0,
+      "wellformed": 1,
+      "markup": 0
+    },
+    "by_severity": {
+      "error": 0,
+      "warning": 0,
+      "info": 1
+    }
+  },
+  "issue_type_counts": {
+    "image_only_cloze_deletion": 1
+  },
+  "flagged": [
+    {
+      "card_id": 1582507853930,
+      "note_id": 1582507694242,
+      "check": "wellformed",
+      "type": "image_only_cloze_deletion",
+      "severity": "info",
+      "detail": "The c1 cloze deletion contains only an image (no text), so the recalled/blanked content is image-only; the readable answer text comes entirely from the Extra field.",
+      "evidence": "{{c1::<img src=\"paste-3f68a578392724778359a267ad21a0267e8fd25e.jpg\">}}"
+    }
+  ],
+  "worst_offenders": [
+    1582507853930
+  ],
+  "notes": "This batch is a single hand-authored Pankow P/S (psych/sociology) cloze deck and is of very high quality: all 257 cards are Cloze-8d4a6 with balanced {{cN::...}} markup, balanced HTML (b/u/div/font) tags, no LaTeX/MathJax, and clean Q/A correspondence where the revealed deletion fits the blank. No errors or warnings were found. The only flag is one info-level card (1582507853930) whose c1 deletion is an image with no text, making the tested content image-only even though the Extra field still provides readable answer text."
+}

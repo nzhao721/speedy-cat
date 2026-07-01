@@ -22,7 +22,6 @@ import com.ichi2.anki.InitialActivity
 import com.ichi2.anki.OnErrorListener
 import com.ichi2.anki.PermissionSet
 import com.ichi2.anki.common.destinations.BrowserDestination
-import com.ichi2.anki.common.destinations.DeckOptionsDestination
 import com.ichi2.anki.configureRenderingMode
 import com.ichi2.anki.launchCatchingIO
 import com.ichi2.anki.libanki.CardId
@@ -115,16 +114,10 @@ class DeckPickerViewModel :
             )
         }.stateIn(viewModelScope, SharingStarted.Eagerly, initialValue = FlattenedDeckList.empty)
 
-    /**
-     * @see deleteDeck
-     * @see DeckDeletionResult
-     */
-    val deckDeletedNotification = MutableSharedFlow<DeckDeletionResult>(extraBufferCapacity = 1)
     val emptyCardsNotification = MutableSharedFlow<EmptyCardsResult>(extraBufferCapacity = 1)
     val flowOfDestination = MutableSharedFlow<Destination>(extraBufferCapacity = 1)
     val flowOfNavigate = MutableSharedFlow<NavigateDestination>(extraBufferCapacity = 1)
     override val onError = MutableSharedFlow<String>(extraBufferCapacity = 1)
-    val flowOfExportDeck = MutableSharedFlow<DeckId>()
     val flowOfCreateShortcut = MutableSharedFlow<ShortcutData>()
     val flowOfDisableShortcuts = MutableSharedFlow<List<String>>()
 
@@ -182,39 +175,6 @@ class DeckPickerViewModel :
 
     // TODO: Use a sensible default rather than null
     val flowOfOptionsMenuState = MutableStateFlow<OptionsMenuState?>(null)
-
-    /**
-     * Deletes the provided deck, child decks. and all cards inside.
-     *
-     * This is a slow operation and should be inside `withProgress`
-     *
-     * @param did ID of the deck to delete
-     */
-    @CheckResult // This is a slow operation and should be inside `withProgress`
-    fun deleteDeck(did: DeckId) =
-        viewModelScope.launch {
-            val deckName = withCol { decks.getLegacy(did)!!.name }
-            val changes = undoableOp { decks.remove(listOf(did)) }
-            // After deletion: decks.current() reverts to Default, necessitating `focusedDeck`
-            // to match and avoid unnecessary scrolls in `renderPage()`.
-            focusedDeck = Consts.DEFAULT_DECK_ID
-
-            deckDeletedNotification.emit(
-                DeckDeletionResult(deckName = deckName, cardsDeleted = changes.count),
-            )
-        }
-
-    /**
-     * Deletes the currently selected deck
-     *
-     * This is a slow operation and should be inside `withProgress`
-     */
-    @CheckResult
-    fun deleteSelectedDeck() =
-        viewModelScope.launch {
-            val targetDeckId = withCol { decks.selected() }
-            deleteDeck(targetDeckId).join()
-        }
 
     /**
      * Removes cards in [report] from the collection.
@@ -322,21 +282,6 @@ class DeckPickerViewModel :
      */
     fun openManageNoteTypes() = launchCatchingIO { flowOfDestination.emit(ManageNoteTypesDestination()) }
 
-    /**
-     * Opens study options for the provided deck
-     *
-     * @param deckId Deck to open options for
-     * @param isFiltered (optional) optimization for when we know the deck is filtered
-     */
-    fun openDeckOptions(
-        deckId: DeckId,
-        isFiltered: Boolean? = null,
-    ) = launchCatchingIO {
-        // open cram options if filtered deck, otherwise open regular options
-        val filtered = isFiltered ?: withCol { decks.isFiltered(deckId) }
-        flowOfNavigate.emit(DeckOptionsDestination(deckId = deckId, isFiltered = filtered))
-    }
-
     fun unburyDeck(deckId: DeckId) =
         launchCatchingIO {
             undoableOp<OpChanges> { sched.unburyDeck(deckId) }
@@ -433,14 +378,6 @@ class DeckPickerViewModel :
                 }
             }
             flowOfRefreshDeckList.emit(Unit)
-        }
-
-    /**
-     * Requests export for the specified deck
-     */
-    fun exportDeck(deckId: DeckId) =
-        launchCatchingIO {
-            flowOfExportDeck.emit(deckId)
         }
 
     /**
@@ -658,23 +595,6 @@ class DeckPickerViewModel :
     companion object {
         const val UPGRADE_VERSION_KEY = "lastUpgradeVersion"
     }
-}
-
-/** Result of [DeckPickerViewModel.deleteDeck] */
-data class DeckDeletionResult(
-    val deckName: String,
-    val cardsDeleted: Int,
-) {
-    /**
-     * @see GeneratedTranslations.browsingCardsDeletedWithDeckname
-     */
-    // TODO: Somewhat questionable meaning: {count} cards deleted from {deck_name}.
-    @CheckResult
-    fun toHumanReadableString() =
-        TR.browsingCardsDeletedWithDeckname(
-            count = cardsDeleted,
-            deckName = deckName,
-        )
 }
 
 /** Result of [DeckPickerViewModel.deleteEmptyCards] */

@@ -73,7 +73,6 @@ private fun handleNavigationItemSelected(
             fragmentContainer.isVisible = false
             deckPicker.supportFragmentManager.commit { hideBottomNavFragments() }
             contentWrapper.isVisible = true
-            deckPicker.floatingActionMenu.showFloatingActionButton()
             backCallback.isEnabled = false
             true
         }
@@ -127,7 +126,6 @@ private fun showBottomNavFragment(
     fragmentContainer: View,
 ) {
     contentWrapper.isVisible = false
-    deckPicker.floatingActionMenu.hideFloatingActionButton()
     val bottomNav = deckPicker.findViewById<View>(R.id.bottom_navigation)
     (fragmentContainer.layoutParams as? CoordinatorLayout.LayoutParams)?.let { lp ->
         lp.topMargin = 0

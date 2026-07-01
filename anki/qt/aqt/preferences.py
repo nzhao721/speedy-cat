@@ -14,7 +14,6 @@ import aqt.operations
 from anki.collection import OpChanges
 from anki.utils import is_mac
 from aqt import AnkiQt
-from aqt.ankihub import ankihub_login, ankihub_logout
 from aqt.operations.collection import set_preferences
 from aqt.profiles import VideoDriver
 from aqt.qt import *
@@ -66,7 +65,23 @@ class Preferences(QDialog):
         self.setup_profile()
         self.setup_global()
         self.setup_configurable_answer_keys()
+        self.remove_disabled_tabs()
         self.show()
+
+    def remove_disabled_tabs(self) -> None:
+        """SpeedyCAT: drop the stock Editing and Third-party services tabs.
+
+        ``tab_1`` is the Editing page and ``tab_3`` is the Third-party
+        services (AnkiHub) page. Note the bundled form reuses the object name
+        ``tab_3`` for both the Review and Third-party pages, so ``self.form.tab_3``
+        resolves to the last-created widget, which is the Third-party page; the
+        Review page is a distinct widget and is left untouched. We remove the
+        pages from the tab widget rather than editing the .ui form.
+        """
+        for tab in (self.form.tab_1, self.form.tab_3):
+            index = self.form.tabWidget.indexOf(tab)
+            if index != -1:
+                self.form.tabWidget.removeTab(index)
 
     def setup_configurable_answer_keys(self):
         """
@@ -137,15 +152,10 @@ class Preferences(QDialog):
         form.showPlayButtons.setChecked(not reviewing.hide_audio_play_buttons)
         form.interrupt_audio.setChecked(reviewing.interrupt_audio_when_answering)
 
+        # The render_latex option lives on the Review tab; the remaining
+        # editing fields belong to the removed Editing tab.
         editing = self.prefs.editing
-        form.useCurrent.setCurrentIndex(
-            0 if editing.adding_defaults_to_current_deck else 1
-        )
-        form.paste_strips_formatting.setChecked(editing.paste_strips_formatting)
-        form.ignore_accents_in_search.setChecked(editing.ignore_accents_in_search)
-        form.pastePNG.setChecked(editing.paste_images_as_png)
         form.render_latex.setChecked(editing.render_latex)
-        form.default_search_text.setText(editing.default_search_text)
 
         form.backup_explanation.setText(
             anki.lang.with_collapsed_whitespace(tr.preferences_backup_explanation())
@@ -173,14 +183,7 @@ class Preferences(QDialog):
         reviewing.interrupt_audio_when_answering = self.form.interrupt_audio.isChecked()
 
         editing = self.prefs.editing
-        editing.adding_defaults_to_current_deck = not form.useCurrent.currentIndex()
-        editing.paste_images_as_png = self.form.pastePNG.isChecked()
-        editing.paste_strips_formatting = self.form.paste_strips_formatting.isChecked()
         editing.render_latex = self.form.render_latex.isChecked()
-        editing.default_search_text = self.form.default_search_text.text()
-        editing.ignore_accents_in_search = (
-            self.form.ignore_accents_in_search.isChecked()
-        )
 
         self.prefs.backups.daily = form.daily_backups.value()
         self.prefs.backups.weekly = form.weekly_backups.value()
@@ -233,8 +236,6 @@ class Preferences(QDialog):
         self.update_login_status()
         qconnect(self.form.syncLogout.clicked, self.sync_logout)
         qconnect(self.form.syncLogin.clicked, self.sync_login)
-        qconnect(self.form.syncAnkiHubLogout.clicked, self.ankihub_sync_logout)
-        qconnect(self.form.syncAnkiHubLogin.clicked, self.ankihub_sync_login)
 
     def update_login_status(self) -> None:
         assert self.prof is not None
@@ -246,15 +247,6 @@ class Preferences(QDialog):
             self.form.syncUser.setText(self.prof.get("syncUser", ""))
             self.form.syncLogin.setVisible(False)
             self.form.syncLogout.setVisible(True)
-
-        if not self.mw.pm.ankihub_token():
-            self.form.syncAnkiHubUser.setText(tr.preferences_ankihub_intro())
-            self.form.syncAnkiHubLogin.setVisible(True)
-            self.form.syncAnkiHubLogout.setVisible(False)
-        else:
-            self.form.syncAnkiHubUser.setText(self.mw.pm.ankihub_username())
-            self.form.syncAnkiHubLogin.setVisible(False)
-            self.form.syncAnkiHubLogout.setVisible(True)
 
     def on_media_log(self) -> None:
         self.mw.media_syncer.show_sync_log()
@@ -277,19 +269,6 @@ class Preferences(QDialog):
         self.prof["syncKey"] = None
         self.mw.col.media.force_resync()
         self.update_login_status()
-
-    def ankihub_sync_login(self) -> None:
-        def on_success():
-            if self.mw.pm.ankihub_token():
-                self.update_login_status()
-
-        ankihub_login(self.mw, on_success)
-
-    def ankihub_sync_logout(self) -> None:
-        ankihub_token = self.mw.pm.ankihub_token()
-        if ankihub_token is None:
-            return
-        ankihub_logout(self.mw, self.update_login_status, ankihub_token)
 
     def confirm_sync_after_login(self) -> None:
         from aqt import mw

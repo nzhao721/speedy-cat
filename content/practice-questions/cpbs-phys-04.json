@@ -1,0 +1,373 @@
+{
+  "meta": {
+    "section": "CPBS",
+    "subArea": "physics",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 12 (Fluid Dynamics and Its Biological and Medical Applications) — Test Prep for AP® Courses",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/12-test-prep-for-ap-r-courses"
+      },
+      {
+        "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 13 (Temperature, Kinetic Theory, and the Gas Laws) — Test Prep for AP® Courses",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/13-test-prep-for-ap-r-courses"
+      },
+      {
+        "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 14 (Heat and Heat Transfer Methods) — Test Prep for AP® Courses",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/14-test-prep-for-ap-r-courses"
+      },
+      {
+        "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 15 (Thermodynamics) — Test Prep for AP® Courses",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/15-test-prep-for-ap-r-courses"
+      }
+    ],
+    "counts": {"total": 17, "byTopic": {"fluid dynamics": 5, "kinetic theory and gas laws": 2, "heat transfer": 5, "thermodynamics and entropy": 5}},
+    "notes": "Physics (CPBS) fluids + thermodynamics items. Stems and four options scraped verbatim from OpenStax College Physics for AP Courses 2e 'Test Prep for AP Courses' single-best-answer multiple-choice items (Ch. 12 fluid dynamics; Ch. 13-15 thermal physics). OpenStax publishes the answer key to instructors only, so each correctAnswer was independently verified from the same CC BY-NC-SA source text or by direct calculation (answerProvenance = verified-from-source-text). Ch. 11 (Fluid Statics) was checked but yielded no usable items (its multiple-choice questions have five options, and the rest are free-response). Figure-dependent items (PV diagrams, Maxwell-Boltzmann graphs), 'select two' items, and free-response items were skipped. One Ch. 13 item was reformatted from a 4-row answer table into A-D choices without changing the wording."
+  },
+  "questions": [
+    {
+      "id": "cpbs-xp057",
+      "section": "CPBS",
+      "stem": "Water flows through a small horizontal pipe with a speed of 12 m/s into a larger part of the pipe for which the diameter of the pipe is doubled. What is the speed of the water in the larger part of the pipe?",
+      "choices": [
+        {"label": "A", "text": "0.75 m/s"},
+        {"label": "B", "text": "3.0 m/s"},
+        {"label": "C", "text": "6.0 m/s"},
+        {"label": "D", "text": "12 m/s"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The continuity equation A₁v₁ = A₂v₂ applies to an incompressible fluid. Cross-sectional area is proportional to diameter squared, so doubling the diameter increases the area by a factor of 4. The speed therefore drops to one-fourth: 12/4 = 3.0 m/s.",
+      "topicTags": ["physics", "fluids", "continuity equation"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 12 (Fluid Dynamics) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/12-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the continuity equation (area ∝ diameter²)."
+    },
+    {
+      "id": "cpbs-xp058",
+      "section": "CPBS",
+      "stem": "At approximately what depth beneath the surface of a lake is the (absolute) pressure in the water equal to twice atmospheric pressure? (Take atmospheric pressure ≈ 1.0 × 10⁵ Pa, water density 1000 kg/m³, g = 9.8 m/s².)",
+      "choices": [
+        {"label": "A", "text": "10 m"},
+        {"label": "B", "text": "100 m"},
+        {"label": "C", "text": "1000 m"},
+        {"label": "D", "text": "10,000 m"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Absolute pressure = atmospheric + ρgh. For the total to be twice atmospheric, the water column must contribute one atmosphere: ρgh = 1.0 × 10⁵ Pa, so h = 1.0 × 10⁵ / (1000 × 9.8) ≈ 10 m.",
+      "topicTags": ["physics", "fluids", "hydrostatic pressure"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 12 (Fluid Dynamics) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/12-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (ρgh = 1 atm)."
+    },
+    {
+      "id": "cpbs-xp059",
+      "section": "CPBS",
+      "stem": "According to Bernoulli's equation, if the pressure in a given fluid is constant and the kinetic energy per unit volume of the fluid increases, which of the following is true?",
+      "choices": [
+        {"label": "A", "text": "The potential energy per unit volume of the fluid decreases."},
+        {"label": "B", "text": "The potential energy per unit volume of the fluid increases."},
+        {"label": "C", "text": "The fluid must no longer be considered incompressible."},
+        {"label": "D", "text": "The flow rate of the fluid increases."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bernoulli's equation states P + ½ρv² + ρgh = constant. If P is constant and the kinetic-energy term ½ρv² increases, the gravitational potential-energy term ρgh must decrease to keep the sum constant.",
+      "topicTags": ["physics", "fluids", "Bernoulli's equation"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 12 (Fluid Dynamics) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/12-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from Bernoulli's equation."
+    },
+    {
+      "id": "cpbs-xp060",
+      "section": "CPBS",
+      "stem": "A horizontally oriented pipe has a diameter of 5.6 cm and is filled with water. The pipe draws water from a reservoir that is initially at rest. A manually operated plunger provides a force of 440 N in the pipe. Assuming that the other end of the pipe is open to the air, with what speed does the water emerge from the pipe? (Water density 1000 kg/m³.)",
+      "choices": [
+        {"label": "A", "text": "12 m/s"},
+        {"label": "B", "text": "19 m/s"},
+        {"label": "C", "text": "150 m/s"},
+        {"label": "D", "text": "190 m/s"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The plunger produces a gauge pressure P = F/A = 440 / [π(0.028 m)²] ≈ 1.79 × 10⁵ Pa. For a horizontal pipe with the reservoir at rest, Bernoulli gives P = ½ρv², so v = √(2P/ρ) = √(2 × 1.79 × 10⁵ / 1000) ≈ 19 m/s.",
+      "topicTags": ["physics", "fluids", "Bernoulli's equation"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 12 (Fluid Dynamics) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/12-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (P = F/A, then v = √(2P/ρ))."
+    },
+    {
+      "id": "cpbs-xp061",
+      "section": "CPBS",
+      "stem": "A large container of water is open to the air, and it develops a hole of area 10 cm² at a point 5 m below the surface of the water. What is the volume flow rate (m³/s) of the water emerging from this hole? (Take g = 9.8 m/s².)",
+      "choices": [
+        {"label": "A", "text": "99 m³/s"},
+        {"label": "B", "text": "9.9 m³/s"},
+        {"label": "C", "text": "0.099 m³/s"},
+        {"label": "D", "text": "0.0099 m³/s"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "By Torricelli's theorem the efflux speed is v = √(2gh) = √(2 × 9.8 × 5) ≈ 9.9 m/s. The flow rate is Q = A·v = (10 cm² = 1.0 × 10⁻³ m²) × 9.9 m/s ≈ 0.0099 m³/s.",
+      "topicTags": ["physics", "fluids", "Torricelli's theorem"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 12 (Fluid Dynamics) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/12-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (Torricelli speed × hole area)."
+    },
+    {
+      "id": "cpbs-xp062",
+      "section": "CPBS",
+      "stem": "Two samples of ideal gas in separate containers have the same number of molecules and the same temperature, but the molecular mass of gas X is greater than that of gas Y. Which of the following correctly compares the average speed of the molecules and the average force the gases exert on their containers?",
+      "choices": [
+        {"label": "A", "text": "Average speed greater for gas X; average force greater for gas X."},
+        {"label": "B", "text": "Average speed greater for gas X; the forces cannot be compared without knowing the volumes of the gases."},
+        {"label": "C", "text": "Average speed greater for gas Y; average force greater for gas Y."},
+        {"label": "D", "text": "Average speed greater for gas Y; the forces cannot be compared without knowing the volumes of the gases."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "At the same temperature the molecules have the same average kinetic energy, so the lighter molecules (gas Y) move faster on average. The average force relates to pressure (P = NkT/V); with the same N and T but unknown volumes, the pressures—and thus the forces on the containers—cannot be compared without knowing the volumes.",
+      "topicTags": ["physics", "kinetic theory", "ideal gas"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 13 (Temperature, Kinetic Theory, and the Gas Laws) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/13-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Reformatted from the source's 4-row answer table into A-D choices without changing wording. OpenStax withholds the public answer key; answer independently verified from kinetic theory."
+    },
+    {
+      "id": "cpbs-xp063",
+      "section": "CPBS",
+      "stem": "How will the average kinetic energy of a gas molecule change if its temperature is increased from 20 ºC to 313 ºC?",
+      "choices": [
+        {"label": "A", "text": "It will become sixteen times its original value."},
+        {"label": "B", "text": "It will become four times its original value."},
+        {"label": "C", "text": "It will become double its original value."},
+        {"label": "D", "text": "It will remain unchanged."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Average molecular kinetic energy is proportional to absolute (Kelvin) temperature. Converting: 20 ºC = 293 K and 313 ºC = 586 K. The ratio 586/293 = 2, so the average kinetic energy doubles.",
+      "topicTags": ["physics", "kinetic theory", "temperature"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 13 (Temperature, Kinetic Theory, and the Gas Laws) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/13-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (KE ∝ absolute temperature; must convert to Kelvin)."
+    },
+    {
+      "id": "cpbs-xp064",
+      "section": "CPBS",
+      "stem": "An ice cube is placed in a cup of hot water. Which of the following statements correctly describes the energy transfer at the molecular level?",
+      "choices": [
+        {"label": "A", "text": "Kinetic energy is transferred only from the hot water molecules to the water molecules in the ice."},
+        {"label": "B", "text": "Kinetic energy is transferred only from the water molecules in the ice to the hot water molecules."},
+        {"label": "C", "text": "Kinetic energy is transferred mostly from the hot water molecules to the water molecules in the ice."},
+        {"label": "D", "text": "Kinetic energy is transferred mostly from the water molecules in the ice to the hot water molecules."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Energy is exchanged in both directions during molecular collisions, but because the hot water molecules are on average faster, the net (most) transfer of kinetic energy is from the hot water to the colder ice. 'Only' is too strong, since some fast ice molecules do transfer energy outward.",
+      "topicTags": ["physics", "heat transfer", "thermal equilibrium"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 14 (Heat and Heat Transfer Methods) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/14-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (net heat flow is hot-to-cold, but not exclusively)."
+    },
+    {
+      "id": "cpbs-xp065",
+      "section": "CPBS",
+      "stem": "You are timing how long it takes ice to melt inside a container in order to measure heat conduction. Which change would shorten the time in which the measurement is made?",
+      "choices": [
+        {"label": "A", "text": "Use a smaller quantity of ice (smaller m)."},
+        {"label": "B", "text": "Use containers with greater thickness (larger d)."},
+        {"label": "C", "text": "Use containers with smaller surface areas (smaller A)."},
+        {"label": "D", "text": "Use a lower ambient temperature outside the container (smaller T₂)."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The conductive heat-transfer rate is Q/t = kA(ΔT)/d. Using less ice means less energy must be transferred to melt it, shortening the time. The other options all slow the process: larger thickness, smaller area, and a smaller temperature difference all reduce the heat-transfer rate.",
+      "topicTags": ["physics", "heat transfer", "conduction"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 14 (Heat and Heat Transfer Methods) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/14-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the conduction rate equation."
+    },
+    {
+      "id": "cpbs-xp066",
+      "section": "CPBS",
+      "stem": "Which of the following correctly describes the rate of conductive heat transfer for a substance?",
+      "choices": [
+        {"label": "A", "text": "The rate decreases with increased surface area and decreased thickness."},
+        {"label": "B", "text": "The rate increases with increased temperature difference and surface area."},
+        {"label": "C", "text": "The rate increases with decreased temperature difference and increased thickness."},
+        {"label": "D", "text": "The rate decreases with decreased temperature difference and increased surface area."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Conduction follows Q/t = kA(ΔT)/d. The rate increases with larger temperature difference (ΔT) and larger cross-sectional area (A), and decreases with greater thickness (d). Only option B states this correctly.",
+      "topicTags": ["physics", "heat transfer", "conduction"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 14 (Heat and Heat Transfer Methods) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/14-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the conduction rate equation."
+    },
+    {
+      "id": "cpbs-xp067",
+      "section": "CPBS",
+      "stem": "Under which two conditions would convection in a fluid be greatest?",
+      "choices": [
+        {"label": "A", "text": "The gravitational acceleration is large, and the fluid density varies greatly for a given temperature change."},
+        {"label": "B", "text": "The gravitational acceleration is small, and the fluid density varies greatly for a given temperature change."},
+        {"label": "C", "text": "The gravitational acceleration is large, and the fluid density varies slightly for a given temperature change."},
+        {"label": "D", "text": "The gravitational acceleration is small, and the fluid density varies slightly for a given temperature change."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Convection is driven by buoyancy, which arises from density differences in a gravitational field. It is strongest when gravity is large and when a given temperature change produces a large density change (creating strong buoyant forces).",
+      "topicTags": ["physics", "heat transfer", "convection"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 14 (Heat and Heat Transfer Methods) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/14-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (convection is buoyancy-driven)."
+    },
+    {
+      "id": "cpbs-xp068",
+      "section": "CPBS",
+      "stem": "Two ideal black-body radiators have temperatures of 275 K and 1100 K. The rate of heat transfer (radiated power) from the hotter radiator is how many times greater than that of the cooler one?",
+      "choices": [
+        {"label": "A", "text": "4"},
+        {"label": "B", "text": "16"},
+        {"label": "C", "text": "64"},
+        {"label": "D", "text": "256"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "By the Stefan-Boltzmann law, radiated power is proportional to T⁴. The temperature ratio is 1100/275 = 4, so the power ratio is 4⁴ = 256.",
+      "topicTags": ["physics", "heat transfer", "radiation"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 14 (Heat and Heat Transfer Methods) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/14-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (Stefan-Boltzmann: power ∝ T⁴)."
+    },
+    {
+      "id": "cpbs-xp069",
+      "section": "CPBS",
+      "stem": "A cylinder is divided in half by a movable disk in the middle. Each half is filled with an equal number of gas molecules, but one half is at a higher temperature than the other. Which choice best describes what happens next?",
+      "choices": [
+        {"label": "A", "text": "Nothing."},
+        {"label": "B", "text": "The high temperature side expands, compressing the low temperature side."},
+        {"label": "C", "text": "Heat moves from hot to cold, so the low temperature side will gradually increase in temperature and expand."},
+        {"label": "D", "text": "(B) happens quickly, but after that (C) happens more slowly."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "With equal molecule counts and volumes, the hotter side initially has the higher pressure, so it quickly pushes the movable disk and compresses the cooler side until the pressures equalize (mechanical equilibrium). Then heat conducts through the disk from hot to cold over a longer timescale, so the situation continues to evolve toward thermal equilibrium.",
+      "topicTags": ["physics", "thermodynamics", "thermal equilibrium"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 15 (Thermodynamics) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/15-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (fast pressure equalization, then slow heat conduction)."
+    },
+    {
+      "id": "cpbs-xp070",
+      "section": "CPBS",
+      "stem": "A system has 300 J of work done on it and has a heat transfer of -320 J. Compared to before these processes, the internal energy is:",
+      "choices": [
+        {"label": "A", "text": "20 J less"},
+        {"label": "B", "text": "20 J more"},
+        {"label": "C", "text": "620 J more"},
+        {"label": "D", "text": "620 J less"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "By the first law, ΔU = Q + W(on system) = (-320 J) + (+300 J) = -20 J. The internal energy decreases by 20 J (the 320 J of heat leaving exceeds the 300 J of work added).",
+      "topicTags": ["physics", "thermodynamics", "first law"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 15 (Thermodynamics) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/15-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the first law of thermodynamics."
+    },
+    {
+      "id": "cpbs-xp071",
+      "section": "CPBS",
+      "stem": "A potato cannon has its fuel combusted, generating a lot of heat and pressure, which launches a potato. The combustion process ____ the internal energy, while launching the potato ____ the internal energy of the potato cannon.",
+      "choices": [
+        {"label": "A", "text": "increases, increases"},
+        {"label": "B", "text": "increases, decreases"},
+        {"label": "C", "text": "decreases, increases"},
+        {"label": "D", "text": "decreases, decreases"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Combustion releases chemical energy as heat, raising the internal energy of the gas. As the expanding gas does work pushing the potato out of the barrel, it gives up energy, lowering the internal energy. So internal energy increases, then decreases.",
+      "topicTags": ["physics", "thermodynamics", "first law"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 15 (Thermodynamics) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/15-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (heat in raises U; work done by gas lowers U)."
+    },
+    {
+      "id": "cpbs-xp072",
+      "section": "CPBS",
+      "stem": "Equal masses of steam (100 ºC) and ice (0 ºC) are placed in contact with each other in an otherwise insulated container. They both end up as liquid water at a common temperature. The steam ____ entropy and ____ order, while the ice ____ entropy and ____ order.",
+      "choices": [
+        {"label": "A", "text": "gained, gained, lost, lost"},
+        {"label": "B", "text": "gained, lost, lost, gained"},
+        {"label": "C", "text": "lost, gained, gained, lost"},
+        {"label": "D", "text": "lost, lost, gained, gained"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The steam releases heat as it condenses and cools, so it loses entropy and becomes more ordered (gains order). The ice absorbs heat as it melts and warms, so it gains entropy and becomes less ordered (loses order).",
+      "topicTags": ["physics", "thermodynamics", "entropy"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 15 (Thermodynamics) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/15-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (heat lost ⇒ entropy lost/order gained; heat gained ⇒ entropy gained/order lost)."
+    },
+    {
+      "id": "cpbs-xp073",
+      "section": "CPBS",
+      "stem": "A piston is resting halfway into a cylinder containing gas in thermal equilibrium. The layer of molecules next to the closed end of the cylinder is suddenly flash-heated to a very high temperature. Which best describes what happens next?",
+      "choices": [
+        {"label": "A", "text": "The high temperature molecules push out the piston until their energy is reduced enough that the system is in equilibrium."},
+        {"label": "B", "text": "The molecules with the highest temperature bounce off their neighbors, losing energy to them, and so on until the system is at a new equilibrium with the piston moved out."},
+        {"label": "C", "text": "The molecules with the highest temperature bounce off their neighbors, losing energy to them, and so on until the system is at a new equilibrium with the piston where it started."},
+        {"label": "D", "text": "The high temperature molecules push out the piston until their energy is reduced enough that the system is in equilibrium, and then the piston gets sucked back in."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The injected energy spreads through the gas by successive molecular collisions (not by the hot molecules acting alone). Because net energy was added, the gas reaches a new equilibrium at higher temperature, so the piston settles farther out than it started.",
+      "topicTags": ["physics", "thermodynamics", "statistical interpretation"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 15 (Thermodynamics) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/15-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (collisional energy spread; net energy added ⇒ piston moves out)."
+    }
+  ]
+}

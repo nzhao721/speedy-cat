@@ -28,6 +28,11 @@ service CardRenderingService {
   rpc StripHtml(StripHtmlRequest) returns (generic.String);
   rpc HtmlToTextLine(HtmlToTextLineRequest) returns (generic.String);
   rpc CompareAnswer(CompareAnswerRequest) returns (generic.String);
+  // SpeedyCAT: structured typed-answer matching for forced active recall.
+  // Unlike CompareAnswer (which only returns diff HTML), this reports whether
+  // the typed answer matches the expected answer, plus the normalized strings
+  // used for the comparison and the diff HTML for display.
+  rpc MatchAnswer(MatchAnswerRequest) returns (MatchAnswerResponse);
   rpc ExtractClozeForTyping(ExtractClozeForTypingRequest)
       returns (generic.String);
 }
@@ -167,6 +172,26 @@ message CompareAnswerRequest {
   string expected = 1;
   string provided = 2;
   bool combining = 3;
+}
+
+// SpeedyCAT: request for structured typed-answer matching.
+message MatchAnswerRequest {
+  string expected = 1;
+  string provided = 2;
+  bool combining = 3;
+}
+
+// SpeedyCAT: structured result of typed-answer matching.
+message MatchAnswerResponse {
+  // Whether the normalized provided answer equals the normalized expected one.
+  bool matches = 1;
+  // Expected answer after normalization (HTML/AV stripped, whitespace
+  // collapsed, trimmed, lower-cased, NFC).
+  string expected_normalized = 2;
+  // Provided answer after the same normalization.
+  string provided_normalized = 3;
+  // Diff HTML (same output as CompareAnswer) for displaying the comparison.
+  string diff_html = 4;
 }
 
 message ExtractClozeForTypingRequest {

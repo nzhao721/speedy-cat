@@ -33,12 +33,9 @@ class DeckPickerScreenshotTest : ScreenshotTest() {
     }
 
     @Test
-    fun baseState_and_fabExpanded() =
-        withDeckPicker(deckCount = 0) { deckPicker ->
+    fun baseState() =
+        withDeckPicker(deckCount = 0) { _ ->
             captureScreen("baseState")
-
-            deckPicker.floatingActionMenu.showFloatingActionMenu()
-            captureScreen("fabExpanded")
         }
 
     @Test

@@ -23,6 +23,10 @@ service ImportExportService {
   rpc ExportCardCsv(ExportCardCsvRequest) returns (generic.UInt32);
   rpc ImportJsonFile(generic.String) returns (ImportResponse);
   rpc ImportJsonString(generic.String) returns (ImportResponse);
+  // SpeedyCAT: import a bundled MCAT deck package under a parent deck,
+  // idempotently. See rslib/src/import_export/builtin.rs.
+  rpc ImportBuiltinDeck(ImportBuiltinDeckRequest)
+      returns (ImportBuiltinDeckResponse);
 }
 
 // Implicitly includes any of the above methods that are not listed in the
@@ -85,6 +89,28 @@ message ImportResponse {
   }
   collection.OpChanges changes = 1;
   Log log = 2;
+}
+
+// SpeedyCAT: import a bundled deck package and place it under a parent deck.
+message ImportBuiltinDeckRequest {
+  // Filesystem path to the .apkg/.colpkg/.zip package.
+  string package_path = 1;
+  // Stable key making the import idempotent (recorded in collection config).
+  string deck_key = 2;
+  // If non-empty, newly created top-level decks are moved under this parent
+  // deck, preserving their original subdeck structure.
+  string parent_deck = 3;
+  // Re-import even if this deck_key was imported before.
+  bool force = 4;
+}
+
+message ImportBuiltinDeckResponse {
+  // False if skipped because it was already imported and force was not set.
+  bool imported = 1;
+  // Number of notes contained in the package.
+  uint32 note_count = 2;
+  // Resulting top-level deck names (after optional reparenting).
+  repeated string deck_names = 3;
 }
 
 message ExportAnkiPackageRequest {

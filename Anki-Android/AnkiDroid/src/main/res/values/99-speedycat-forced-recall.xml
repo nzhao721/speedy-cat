@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ SpeedyCAT "forced active recall" feature strings.
+  ~ Kept in a dedicated file to avoid merge collisions with concurrent rebrand/theme edits.
+  ~
+  ~ This program is free software; you can redistribute it and/or modify it under
+  ~ the terms of the GNU General Public License as published by the Free Software
+  ~ Foundation; either version 3 of the License, or (at your option) any later
+  ~ version.
+  -->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!-- Preference key (not user-visible, must not be translated) -->
+    <string name="force_active_recall_preference" translatable="false">forceActiveRecall</string>
+
+    <!-- Settings entry: Reviewing screen -->
+    <string name="force_active_recall_title">Force active recall</string>
+    <string name="force_active_recall_summ">Require typing an answer before the card can be revealed</string>
+
+    <!-- Reviewer feedback -->
+    <string name="force_active_recall_type_first">Type your answer, then submit to reveal the card</string>
+    <string name="force_active_recall_correct">Correct — you recalled it</string>
+    <string name="force_active_recall_incorrect">Incorrect — check the answer</string>
+</resources>

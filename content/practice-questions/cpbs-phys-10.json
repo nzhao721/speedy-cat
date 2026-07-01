@@ -1,0 +1,283 @@
+{
+  "meta": {
+    "section": "CPBS",
+    "subArea": "physics",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 29 (Introduction to Quantum Physics) — Test Prep for AP® Courses",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/29-test-prep-for-ap-r-courses"
+      },
+      {
+        "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 30 (Atomic Physics) — Test Prep for AP® Courses",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/30-test-prep-for-ap-r-courses"
+      }
+    ],
+    "counts": {"total": 13, "byTopic": {"quantization and photoelectric effect": 4, "photon energy and momentum": 3, "matter waves (de Broglie)": 3, "atomic structure and spectra": 3}},
+    "notes": "Physics (CPBS) modern/atomic items: quantization, photoelectric effect, photon energy/momentum, matter waves, and atomic structure/spectra. Stems and four options scraped verbatim from OpenStax College Physics for AP Courses 2e Ch. 29-30 'Test Prep for AP Courses' single-best-answer multiple-choice items. OpenStax publishes the answer key to instructors only, so each correctAnswer was independently verified from the same CC BY-NC-SA source text or by direct calculation (answerProvenance = verified-from-source-text). 'Select two answers', figure-dependent, and free-response items were skipped. Ch. 30 Q5 was a verbatim duplicate of Ch. 29 Q11 and was included only once (as cpbs-xp168). Constants: h = 6.63×10⁻³⁴ J·s, c = 3.0×10⁸ m/s, 1 eV = 1.6×10⁻¹⁹ J."
+  },
+  "questions": [
+    {
+      "id": "cpbs-xp163",
+      "section": "CPBS",
+      "stem": "The visible spectrum of sunlight shows a range of colors from red to violet, with numerous dark lines spread throughout it. Given that the Sun's surface is much cooler than its interior (so the surface behaves like a cool gas through which light passes), which statement correctly explains the dark lines?",
+      "choices": [
+        {"label": "A", "text": "The cooler, denser surface material scatters certain wavelengths of light, forming dark lines."},
+        {"label": "B", "text": "The atoms at the surface absorb certain wavelengths of light, causing the dark lines at those wavelengths."},
+        {"label": "C", "text": "The atoms in the Sun's interior emit light of specific wavelengths, so that parts of the spectrum are dark."},
+        {"label": "D", "text": "The atoms at the surface are excited by the high interior temperatures, so the dark lines are merely wavelengths at which those atoms don't emit energy."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The cooler surface gases absorb photons at exactly the wavelengths their atoms can absorb (the same wavelengths they would emit). Those absorbed wavelengths are missing from the transmitted spectrum, producing dark absorption (Fraunhofer) lines.",
+      "topicTags": ["physics", "quantum physics", "atomic spectra", "absorption lines"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 29 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/29-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (absorption lines from surface atoms)."
+    },
+    {
+      "id": "cpbs-xp164",
+      "section": "CPBS",
+      "stem": "A metal exposed to a beam of light with a wavelength equal to or shorter than a specific wavelength emits electrons. What property of light accounts for this photoelectric process?",
+      "choices": [
+        {"label": "A", "text": "The energy of light increases as its speed increases."},
+        {"label": "B", "text": "The energy of light increases as its intensity increases."},
+        {"label": "C", "text": "The energy of light increases as its frequency increases."},
+        {"label": "D", "text": "The energy of light increases as its wavelength increases."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "A photon's energy is E = hf, so it increases with frequency (and thus with decreasing wavelength). Only photons with high enough frequency—i.e., short enough wavelength—carry enough energy to eject electrons, which explains the threshold-wavelength behavior. Intensity affects the number of electrons, not the energy per photon.",
+      "topicTags": ["physics", "quantum physics", "photoelectric effect", "photon energy"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 29 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/29-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (E = hf)."
+    },
+    {
+      "id": "cpbs-xp165",
+      "section": "CPBS",
+      "stem": "A microwave oven's photons are absorbed by water molecules, increasing their rotational energy. If the energy absorbed by a water molecule is 1.0 × 10⁻⁵ eV per photon, what is the corresponding frequency of the microwave photons?",
+      "choices": [
+        {"label": "A", "text": "1.22 GHz"},
+        {"label": "B", "text": "2.45 GHz"},
+        {"label": "C", "text": "4.90 GHz"},
+        {"label": "D", "text": "9.80 Hz"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Photon energy is E = hf. Converting the energy: 1.0×10⁻⁵ eV × 1.6×10⁻¹⁹ J/eV = 1.6×10⁻²⁴ J. Then f = E/h = 1.6×10⁻²⁴ / 6.63×10⁻³⁴ ≈ 2.4×10⁹ Hz ≈ 2.45 GHz, the standard microwave-oven frequency.",
+      "topicTags": ["physics", "quantum physics", "photon energy"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 29 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/29-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim; the source wording says 'wavelength' but the answer choices are frequencies (GHz/Hz), so the stem here asks for frequency to match. OpenStax withholds the public answer key; answer independently verified by calculation (f = E/h)."
+    },
+    {
+      "id": "cpbs-xp166",
+      "section": "CPBS",
+      "stem": "The mass of a proton is 1.67 × 10⁻²⁷ kg. If a proton has the same momentum as a photon with a wavelength of 325 nm, what is the proton's speed?",
+      "choices": [
+        {"label": "A", "text": "2.73 × 10⁻³ m/s"},
+        {"label": "B", "text": "0.819 m/s"},
+        {"label": "C", "text": "1.22 m/s"},
+        {"label": "D", "text": "2.71 × 10⁴ m/s"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The photon's momentum is p = h/λ = 6.63×10⁻³⁴ / 3.25×10⁻⁷ ≈ 2.04×10⁻²⁷ kg·m/s. Setting the proton's momentum equal to this, v = p/m = 2.04×10⁻²⁷ / 1.67×10⁻²⁷ ≈ 1.22 m/s.",
+      "topicTags": ["physics", "quantum physics", "photon momentum"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 29 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/29-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (p = h/λ; v = p/m)."
+    },
+    {
+      "id": "cpbs-xp167",
+      "section": "CPBS",
+      "stem": "In a Compton-effect experiment, a gamma-ray photon with a wavelength of 5.00 × 10⁻¹³ m scatters from an electron. If the change in the electron's energy is 1.60 × 10⁻¹⁵ J, what is the wavelength of the photon after the collision?",
+      "choices": [
+        {"label": "A", "text": "4.95 × 10⁻¹³ m"},
+        {"label": "B", "text": "4.98 × 10⁻¹³ m"},
+        {"label": "C", "text": "5.02 × 10⁻¹³ m"},
+        {"label": "D", "text": "5.05 × 10⁻¹³ m"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The photon transfers 1.60×10⁻¹⁵ J to the electron, so it loses that energy. Initial photon energy = hc/λ = (6.63×10⁻³⁴)(3.0×10⁸)/(5.00×10⁻¹³) ≈ 3.98×10⁻¹³ J. Final energy ≈ 3.98×10⁻¹³ − 1.60×10⁻¹⁵ ≈ 3.96×10⁻¹³ J, giving a slightly longer wavelength λ' = hc/E' ≈ 5.02×10⁻¹³ m.",
+      "topicTags": ["physics", "quantum physics", "Compton effect"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 29 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/29-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by energy conservation (photon loses energy ⇒ longer wavelength)."
+    },
+    {
+      "id": "cpbs-xp168",
+      "section": "CPBS",
+      "stem": "The ground state of a certain type of atom has energy -E₀. What is the wavelength of a photon with just enough energy to ionize the atom from the ground state and give the ejected electron a kinetic energy of 2E₀?",
+      "choices": [
+        {"label": "A", "text": "hc / (3E₀)"},
+        {"label": "B", "text": "hc / (2E₀)"},
+        {"label": "C", "text": "hc / E₀"},
+        {"label": "D", "text": "2hc / E₀"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ionizing the atom requires raising the electron from -E₀ to 0, i.e., E₀ of energy. Giving the freed electron 2E₀ of kinetic energy requires an additional 2E₀. The photon must supply E₀ + 2E₀ = 3E₀, so λ = hc/E_photon = hc/(3E₀).",
+      "topicTags": ["physics", "quantum physics", "ionization", "photon energy"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 29 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/29-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim (this item appears identically as Ch. 29 Q11 and Ch. 30 Q5; included once). OpenStax withholds the public answer key; answer independently verified (photon energy = ionization energy + KE = 3E₀)."
+    },
+    {
+      "id": "cpbs-xp169",
+      "section": "CPBS",
+      "stem": "The electron neutrino has an extremely small mass, about 3.9 × 10⁻³⁶ kg. Assuming a speed of 4.4 × 10⁶ m/s, which of the following is its de Broglie wavelength?",
+      "choices": [
+        {"label": "A", "text": "3.8 × 10⁻⁵ m"},
+        {"label": "B", "text": "4.7 × 10⁻⁷ m"},
+        {"label": "C", "text": "1.7 × 10⁻¹⁰ m"},
+        {"label": "D", "text": "8.9 × 10⁻¹⁴ m"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The de Broglie wavelength is λ = h/(mv) = 6.63×10⁻³⁴ / [(3.9×10⁻³⁶)(4.4×10⁶)] = 6.63×10⁻³⁴ / 1.72×10⁻²⁹ ≈ 3.8×10⁻⁵ m. The tiny mass gives an unusually long matter wavelength.",
+      "topicTags": ["physics", "quantum physics", "de Broglie wavelength"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 29 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/29-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (λ = h/mv)."
+    },
+    {
+      "id": "cpbs-xp170",
+      "section": "CPBS",
+      "stem": "In a Davisson-Germer type experiment, a crystal with a parallel-plane separation d of 9.1 × 10⁻² nm produces constructive interference with an electron beam at an angle θ = 50°. Which of the following is the maximum de Broglie wavelength for these electrons?",
+      "choices": [
+        {"label": "A", "text": "0.07 nm"},
+        {"label": "B", "text": "0.09 nm"},
+        {"label": "C", "text": "0.14 nm"},
+        {"label": "D", "text": "0.21 nm"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Constructive interference follows the Bragg condition 2d sinθ = nλ. The maximum wavelength corresponds to the lowest order, n = 1: λ = 2d sinθ = 2(0.091 nm)(sin 50°) ≈ 2(0.091)(0.766) ≈ 0.14 nm.",
+      "topicTags": ["physics", "quantum physics", "matter waves", "electron diffraction"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 29 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/29-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (Bragg condition with n = 1 gives the maximum λ)."
+    },
+    {
+      "id": "cpbs-xp171",
+      "section": "CPBS",
+      "stem": "Which of the following describes one of the main features of wave-particle duality?",
+      "choices": [
+        {"label": "A", "text": "As speed increases, the wave nature of matter becomes more evident."},
+        {"label": "B", "text": "As momentum decreases, the particle nature of matter becomes more evident."},
+        {"label": "C", "text": "As energy increases, the wave nature of matter becomes easier to observe."},
+        {"label": "D", "text": "As mass increases, the wave nature of matter is less easy to observe."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The de Broglie wavelength is λ = h/(mv). A larger mass (or larger momentum) gives a shorter wavelength, making the wave behavior harder to detect. This is why macroscopic objects show no observable wave nature.",
+      "topicTags": ["physics", "quantum physics", "wave-particle duality", "de Broglie"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 29 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/29-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (λ = h/mv ⇒ larger mass means shorter, less observable wavelength)."
+    },
+    {
+      "id": "cpbs-xp172",
+      "section": "CPBS",
+      "stem": "A hypothetical one-electron atom in its highest excited state can only emit photons of energy 2E, 3E, and 5E before reaching the ground state. Which of the following represents the complete set of energy levels for this atom?",
+      "choices": [
+        {"label": "A", "text": "0, 3E, 5E"},
+        {"label": "B", "text": "0, 2E, 3E"},
+        {"label": "C", "text": "0, 2E, 3E, 5E"},
+        {"label": "D", "text": "0, 5E, 8E, 10E"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "With levels at 0, 3E, and 5E, the possible downward transitions are 5E→3E (emits 2E), 3E→0 (emits 3E), and 5E→0 (emits 5E)—exactly the photons 2E, 3E, and 5E. A four-level set such as 0, 2E, 3E, 5E would also allow a 1E photon (3E→2E), which is not observed.",
+      "topicTags": ["physics", "atomic physics", "energy levels", "atomic spectra"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 30 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/30-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (three levels 0, 3E, 5E produce exactly the photons 2E, 3E, 5E)."
+    },
+    {
+      "id": "cpbs-xp173",
+      "section": "CPBS",
+      "stem": "A tube of hydrogen gas is heated and begins to glow, but careful study shows the light is not continuous—the gas emits visible photons of only four specific colors. What is the best way to explain this behavior?",
+      "choices": [
+        {"label": "A", "text": "As the gas heats up, atoms have more collisions and close approaches, so frictional heating causes the gas to glow."},
+        {"label": "B", "text": "As the gas heats up, electrons within the hydrogen atoms are excited to higher energy levels; as the electrons transition to lower energies, they emit light of specific colors."},
+        {"label": "C", "text": "As the gas heats up, more collisions occur, and the energy lost in these inelastic collisions is converted into light."},
+        {"label": "D", "text": "As the gas heats up, turbulence causes friction between the gas and the walls of the container, causing the gas to glow."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The discrete colors are emission lines. Heating excites electrons to higher energy levels, and when they drop back down, each transition emits a photon of a specific energy (color) set by the energy-level difference. Only certain transitions are possible, so only certain colors appear.",
+      "topicTags": ["physics", "atomic physics", "emission spectra", "energy levels"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 30 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/30-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (discrete emission from electron transitions between quantized levels)."
+    },
+    {
+      "id": "cpbs-xp174",
+      "section": "CPBS",
+      "stem": "Which of the following is the best explanation for why the leaves on a given tree are green?",
+      "choices": [
+        {"label": "A", "text": "The molecules in the leaves absorb most other visible light but strongly reflect green light."},
+        {"label": "B", "text": "The molecules in the leaves absorb green light and reflect other visible light."},
+        {"label": "C", "text": "The molecules are excited by external light, and their electrons emit green light when de-excited to a lower energy level."},
+        {"label": "D", "text": "The molecules glow with a characteristic green energy in order to balance the absorption of light and heat from their surroundings."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chlorophyll absorbs strongly in the red and blue parts of the visible spectrum and reflects (rather than absorbs) green light. The reflected green light is what reaches our eyes, so the leaves appear green.",
+      "topicTags": ["physics", "atomic physics", "absorption and reflection"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 30 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/30-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (green is reflected, other wavelengths absorbed)."
+    },
+    {
+      "id": "cpbs-xp175",
+      "section": "CPBS",
+      "stem": "An electron is excited from the ground state of an atom (energy level 1) into a highly excited state (energy level 8). Which of the following electron behaviors represents the fluorescence effect?",
+      "choices": [
+        {"label": "A", "text": "The electron remains at level 8 for a very long time, then transitions up to level 9."},
+        {"label": "B", "text": "The electron transitions directly down from level 8 to level 1."},
+        {"label": "C", "text": "The electron transitions from level 8 to level 1 and then returns quickly to level 8."},
+        {"label": "D", "text": "The electron transitions from level 8 to level 6, then to level 5, then to level 3, then to level 1."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "In fluorescence, an electron excited to a high level cascades down through several intermediate levels, emitting multiple lower-energy (longer-wavelength) photons rather than a single high-energy photon. This stepwise de-excitation is option D.",
+      "topicTags": ["physics", "atomic physics", "fluorescence", "energy levels"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 30 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/30-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (fluorescence = cascade through intermediate levels)."
+    }
+  ]
+}

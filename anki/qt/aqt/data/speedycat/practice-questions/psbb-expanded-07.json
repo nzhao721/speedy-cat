@@ -1,0 +1,302 @@
+{
+  "meta": {
+    "section": "PSBB",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax Psychology 2e, Ch. 13 Review Questions (Industrial-Organizational Psychology) and Ch. 14 Review Questions (Stress, Lifestyle, and Health)",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/psychology-2e/pages/14-review-questions"
+      },
+      {
+        "sourceName": "OpenStax Psychology 2e Student Solutions Guide (answer key for odd-numbered review questions)",
+        "sourceLicense": "CC BY 4.0",
+        "sourceUrl": "https://dokumen.pub/psychology-2e-student-solutions-guide.html"
+      }
+    ],
+    "counts": {"total": 14, "byTopic": {"industrial-organizational psychology": 4, "stress and health": 10}},
+    "notes": "Psychology (PSBB) items scraped verbatim from OpenStax Psychology 2e Ch. 13 and Ch. 14 review-questions pages; correct answers from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), odd-numbered review questions only. From Ch. 13 (I-O psychology) only the conceptual items were kept; US-employment-law and history-trivia items (Q1, Q5, Q7) were excluded as off-scope for MCAT PSBB. Live OpenStax pages show CC BY-NC-SA 4.0 plus a no-LLM-training notice; SpeedyCAT use is human-facing/non-AI per PRD."
+  },
+  "questions": [
+    {
+      "id": "psbb-x114",
+      "section": "PSBB",
+      "stem": "Which area of I-O psychology measures job satisfaction?",
+      "choices": [
+        {"label": "A", "text": "industrial psychology"},
+        {"label": "B", "text": "organizational psychology"},
+        {"label": "C", "text": "human factors psychology"},
+        {"label": "D", "text": "advertising psychology"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Organizational psychology, the branch of I-O psychology concerned with workers' feelings and relationships, is the area that measures job satisfaction.",
+      "topicTags": ["psychology", "industrial-organizational psychology", "job satisfaction"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 13 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/13-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 13 Q3 = B."
+    },
+    {
+      "id": "psbb-x115",
+      "section": "PSBB",
+      "stem": "Which practice is an example of Theory X management?",
+      "choices": [
+        {"label": "A", "text": "telecommuting"},
+        {"label": "B", "text": "flextime"},
+        {"label": "C", "text": "keystroke monitoring"},
+        {"label": "D", "text": "team meetings"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Theory X managers assume employees are unmotivated and need close control; keystroke monitoring reflects that distrustful, surveillance-based approach.",
+      "topicTags": ["psychology", "industrial-organizational psychology", "Theory X and Y", "management"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 13 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/13-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 13 Q9 = C."
+    },
+    {
+      "id": "psbb-x116",
+      "section": "PSBB",
+      "stem": "Which of the following is the most strongly predictive factor of overall job satisfaction?",
+      "choices": [
+        {"label": "A", "text": "financial rewards"},
+        {"label": "B", "text": "personality"},
+        {"label": "C", "text": "autonomy"},
+        {"label": "D", "text": "work content"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Per the source, work content (the nature of the work itself) is the most strongly predictive factor of overall job satisfaction.",
+      "topicTags": ["psychology", "industrial-organizational psychology", "job satisfaction"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 13 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/13-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 13 Q11 = D."
+    },
+    {
+      "id": "psbb-x117",
+      "section": "PSBB",
+      "stem": "What aspect of an office workstation would a human factors psychologist be concerned about?",
+      "choices": [
+        {"label": "A", "text": "height of the chair"},
+        {"label": "B", "text": "closeness to the supervisor"},
+        {"label": "C", "text": "frequency of coworker visits"},
+        {"label": "D", "text": "presence of an offensive sign"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Human factors psychology focuses on the fit between people and their physical work environment, such as the ergonomic height of a chair.",
+      "topicTags": ["psychology", "industrial-organizational psychology", "human factors", "ergonomics"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 13 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/13-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 13 Q13 = A."
+    },
+    {
+      "id": "psbb-x118",
+      "section": "PSBB",
+      "stem": "Negative effects of stress are most likely to be experienced when an event is perceived as ________.",
+      "choices": [
+        {"label": "A", "text": "negative, but it is likely to affect one's friends rather than oneself"},
+        {"label": "B", "text": "challenging"},
+        {"label": "C", "text": "confusing"},
+        {"label": "D", "text": "threatening, and no clear options for dealing with it are apparent"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Stress is most harmful when an event is appraised as threatening and the person sees no clear way to cope with it (a primary appraisal of threat without perceived control).",
+      "topicTags": ["psychology", "stress and health", "stress appraisal"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 14 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/14-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 14 Q1 = D."
+    },
+    {
+      "id": "psbb-x119",
+      "section": "PSBB",
+      "stem": "At which stage of Selye's general adaptation syndrome is a person especially vulnerable to illness?",
+      "choices": [
+        {"label": "A", "text": "exhaustion"},
+        {"label": "B", "text": "alarm reaction"},
+        {"label": "C", "text": "fight-or-flight"},
+        {"label": "D", "text": "resistance"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "In Selye's general adaptation syndrome, the exhaustion stage follows prolonged stress and depletes the body's resources, leaving the person especially vulnerable to illness.",
+      "topicTags": ["psychology", "stress and health", "general adaptation syndrome", "Selye"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 14 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/14-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 14 Q3 = A."
+    },
+    {
+      "id": "psbb-x120",
+      "section": "PSBB",
+      "stem": "According to the Holmes and Rahe scale, which life event requires the greatest amount of readjustment?",
+      "choices": [
+        {"label": "A", "text": "marriage"},
+        {"label": "B", "text": "personal illness"},
+        {"label": "C", "text": "divorce"},
+        {"label": "D", "text": "death of spouse"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "On the Holmes and Rahe Social Readjustment Rating Scale, death of a spouse is the highest-ranked life event, requiring the greatest readjustment.",
+      "topicTags": ["psychology", "stress and health", "life stressors", "Holmes and Rahe"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 14 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/14-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 14 Q5 = D."
+    },
+    {
+      "id": "psbb-x121",
+      "section": "PSBB",
+      "stem": "What is one of the major criticisms of the Social Readjustment Rating Scale?",
+      "choices": [
+        {"label": "A", "text": "It has too few items."},
+        {"label": "B", "text": "It was developed using only people from the New England region of the United States."},
+        {"label": "C", "text": "It does not take into consideration how a person appraises an event."},
+        {"label": "D", "text": "None of the items included are positive."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "A major criticism of the Social Readjustment Rating Scale is that it assigns fixed values to events and ignores how the individual appraises (interprets) each event.",
+      "topicTags": ["psychology", "stress and health", "measurement", "appraisal"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 14 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/14-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 14 Q7 = C."
+    },
+    {
+      "id": "psbb-x122",
+      "section": "PSBB",
+      "stem": "The white blood cells that attack foreign invaders to the body are called ________.",
+      "choices": [
+        {"label": "A", "text": "antibodies"},
+        {"label": "B", "text": "telomeres"},
+        {"label": "C", "text": "lymphocytes"},
+        {"label": "D", "text": "immune cells"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lymphocytes are the white blood cells of the immune system that identify and attack foreign invaders such as pathogens.",
+      "topicTags": ["psychology", "stress and health", "immune system", "psychoneuroimmunology"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 14 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/14-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 14 Q9 = C."
+    },
+    {
+      "id": "psbb-x123",
+      "section": "PSBB",
+      "stem": "The most lethal dimension of Type A behavior pattern seems to be ________.",
+      "choices": [
+        {"label": "A", "text": "hostility"},
+        {"label": "B", "text": "impatience"},
+        {"label": "C", "text": "time urgency"},
+        {"label": "D", "text": "competitive drive"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Research indicates that hostility is the component of the Type A behavior pattern most strongly linked to coronary heart disease.",
+      "topicTags": ["psychology", "stress and health", "Type A behavior", "heart disease"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 14 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/14-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 14 Q11 = A."
+    },
+    {
+      "id": "psbb-x124",
+      "section": "PSBB",
+      "stem": "Emotion-focused coping would likely be a better method than problem-focused coping for dealing with which of the following stressors?",
+      "choices": [
+        {"label": "A", "text": "terminal cancer"},
+        {"label": "B", "text": "poor grades in school"},
+        {"label": "C", "text": "unemployment"},
+        {"label": "D", "text": "divorce"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Emotion-focused coping is better suited to uncontrollable stressors. A terminal illness cannot be changed by action, so managing the emotional response is more adaptive.",
+      "topicTags": ["psychology", "stress and health", "coping"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 14 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/14-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 14 Q13 = A."
+    },
+    {
+      "id": "psbb-x125",
+      "section": "PSBB",
+      "stem": "Relative to those with low levels of social support, individuals with high levels of social support ________.",
+      "choices": [
+        {"label": "A", "text": "are more likely to develop asthma"},
+        {"label": "B", "text": "tend to have less perceived control"},
+        {"label": "C", "text": "are more likely to develop cardiovascular disorders"},
+        {"label": "D", "text": "tend to tolerate stress well"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "High levels of social support buffer the effects of stress, so well-supported individuals tend to tolerate stress better and have better health outcomes.",
+      "topicTags": ["psychology", "stress and health", "social support"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 14 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/14-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 14 Q15 = D."
+    },
+    {
+      "id": "psbb-x126",
+      "section": "PSBB",
+      "stem": "Which of the following is not one of the presumed components of happiness?",
+      "choices": [
+        {"label": "A", "text": "using our talents to help improve the lives of others"},
+        {"label": "B", "text": "learning new skills"},
+        {"label": "C", "text": "regular pleasurable experiences"},
+        {"label": "D", "text": "identifying and using our talents to enrich our lives"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The presumed components of happiness are the pleasant life (pleasurable experiences), the good life (using one's talents), and the meaningful life (using talents to help others). 'Learning new skills' is not one of these components.",
+      "topicTags": ["psychology", "stress and health", "happiness", "positive psychology"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 14 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/14-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 14 Q17 = B."
+    },
+    {
+      "id": "psbb-x127",
+      "section": "PSBB",
+      "stem": "How does positive affect differ from optimism?",
+      "choices": [
+        {"label": "A", "text": "Optimism is more scientific than positive affect."},
+        {"label": "B", "text": "Positive affect is more scientific than optimism."},
+        {"label": "C", "text": "Positive affect involves feeling states, whereas optimism involves expectations."},
+        {"label": "D", "text": "Optimism involves feeling states, whereas positive affect involves expectations."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Positive affect refers to pleasant feeling states (emotions and moods), whereas optimism is a cognitive expectation that good things will happen in the future.",
+      "topicTags": ["psychology", "stress and health", "positive affect", "optimism"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 14 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/14-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 14 Q19 = C."
+    }
+  ]
+}

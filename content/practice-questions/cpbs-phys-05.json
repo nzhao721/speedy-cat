@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "section": "CPBS",
+    "subArea": "physics",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 16 (Oscillatory Motion and Waves) — Test Prep for AP® Courses",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses"
+      },
+      {
+        "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 17 (Physics of Hearing) — Test Prep for AP® Courses",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/17-test-prep-for-ap-r-courses"
+      }
+    ],
+    "counts": {"total": 14, "byTopic": {"simple harmonic motion": 7, "waves and superposition": 4, "sound and Doppler": 3}},
+    "notes": "Physics (CPBS) oscillations, waves, and sound items. Stems and four options scraped verbatim from OpenStax College Physics for AP Courses 2e Ch. 16-17 'Test Prep for AP Courses' single-best-answer multiple-choice items. OpenStax publishes the answer key to instructors only, so each correctAnswer was independently verified from the same CC BY-NC-SA source text or by calculation (answerProvenance = verified-from-source-text). Ch. 17 had many five-option, 'select two', figure-based, and free-response items, which were skipped; two Ch. 17 items were reformatted from a 4-row answer table into A-D choices without changing the wording."
+  },
+  "questions": [
+    {
+      "id": "cpbs-xp074",
+      "section": "CPBS",
+      "stem": "Which of the following represents the distance (how much ground the particle covers) moved by a particle in simple harmonic motion in one time period? (A represents the amplitude of the oscillation.)",
+      "choices": [
+        {"label": "A", "text": "0"},
+        {"label": "B", "text": "A"},
+        {"label": "C", "text": "2A"},
+        {"label": "D", "text": "4A"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "In one full period the particle travels from its position out to one extreme, back through equilibrium to the other extreme, and back again, covering a total path length of A + A + A + A = 4A. (Its displacement over one period is zero, but the distance traveled is 4A.)",
+      "topicTags": ["physics", "simple harmonic motion", "amplitude"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 16 (Oscillatory Motion and Waves) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim (units 'cm' in the original generalized to amplitude A). OpenStax withholds the public answer key; answer independently verified."
+    },
+    {
+      "id": "cpbs-xp075",
+      "section": "CPBS",
+      "stem": "In the formula F = -kx, what does the minus sign indicate?",
+      "choices": [
+        {"label": "A", "text": "It indicates that the restoring force is in the direction of the displacement."},
+        {"label": "B", "text": "It indicates that the restoring force is in the direction opposite the displacement."},
+        {"label": "C", "text": "It indicates that mechanical energy in the system decreases when a system undergoes oscillation."},
+        {"label": "D", "text": "None of the above"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Hooke's law restoring force always points back toward equilibrium, i.e., opposite to the displacement x. The negative sign encodes that opposition.",
+      "topicTags": ["physics", "simple harmonic motion", "Hooke's law"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 16 (Oscillatory Motion and Waves) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from Hooke's law."
+    },
+    {
+      "id": "cpbs-xp076",
+      "section": "CPBS",
+      "stem": "The splashing of a liquid resembles an oscillation. The restoring force in this scenario will be due to which of the following?",
+      "choices": [
+        {"label": "A", "text": "Potential energy"},
+        {"label": "B", "text": "Kinetic energy"},
+        {"label": "C", "text": "Gravity"},
+        {"label": "D", "text": "Mechanical energy"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "When liquid is displaced from its level surface, gravity pulls the raised liquid back down, acting as the restoring force that drives the sloshing oscillation. (Energy is not a force.)",
+      "topicTags": ["physics", "simple harmonic motion", "restoring force"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 16 (Oscillatory Motion and Waves) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (gravity restores a displaced liquid surface)."
+    },
+    {
+      "id": "cpbs-xp077",
+      "section": "CPBS",
+      "stem": "A particle of mass 100 g undergoes simple harmonic motion. The restoring force is provided by a spring with a spring constant of 40 N·m⁻¹. What is the period of oscillation?",
+      "choices": [
+        {"label": "A", "text": "10π s"},
+        {"label": "B", "text": "0.5π s"},
+        {"label": "C", "text": "0.1π s"},
+        {"label": "D", "text": "1π s"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "For a mass-spring oscillator, T = 2π√(m/k) = 2π√(0.100 kg / 40 N·m⁻¹) = 2π√(0.0025) = 2π(0.05) = 0.1π s (≈ 0.31 s).",
+      "topicTags": ["physics", "simple harmonic motion", "period"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 16 (Oscillatory Motion and Waves) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (T = 2π√(m/k))."
+    },
+    {
+      "id": "cpbs-xp078",
+      "section": "CPBS",
+      "stem": "Which of the following gives the correct relation between the acceleration due to gravity g and the period T of a simple pendulum of length L?",
+      "choices": [
+        {"label": "A", "text": "g = 2πL/T²"},
+        {"label": "B", "text": "g = 4π²L/T²"},
+        {"label": "C", "text": "g = 2πL/T"},
+        {"label": "D", "text": "g = 2π²L/T"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The simple pendulum period is T = 2π√(L/g). Squaring gives T² = 4π²L/g, and solving for g yields g = 4π²L/T².",
+      "topicTags": ["physics", "simple harmonic motion", "pendulum"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 16 (Oscillatory Motion and Waves) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by rearranging T = 2π√(L/g)."
+    },
+    {
+      "id": "cpbs-xp079",
+      "section": "CPBS",
+      "stem": "In the equation x = A sin(ωt), what values can the position x take?",
+      "choices": [
+        {"label": "A", "text": "-1 to +1"},
+        {"label": "B", "text": "-A to +A"},
+        {"label": "C", "text": "0"},
+        {"label": "D", "text": "-t to +t"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The sine function ranges from -1 to +1, so x = A sin(ωt) ranges from -A to +A. A is the amplitude, the maximum displacement from equilibrium.",
+      "topicTags": ["physics", "simple harmonic motion", "amplitude"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 16 (Oscillatory Motion and Waves) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (range of A sin is -A to +A)."
+    },
+    {
+      "id": "cpbs-xp080",
+      "section": "CPBS",
+      "stem": "The non-conservative damping force removes energy from a system in which form?",
+      "choices": [
+        {"label": "A", "text": "Mechanical energy"},
+        {"label": "B", "text": "Electrical energy"},
+        {"label": "C", "text": "Thermal energy"},
+        {"label": "D", "text": "None of the above"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Damping (such as friction or air resistance) converts the oscillator's mechanical energy into thermal energy (heat), which is dissipated to the surroundings.",
+      "topicTags": ["physics", "damped harmonic motion", "energy dissipation"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 16 (Oscillatory Motion and Waves) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (damping dissipates energy as heat)."
+    },
+    {
+      "id": "cpbs-xp081",
+      "section": "CPBS",
+      "stem": "The time rate of change of mechanical energy for a damped oscillator is always:",
+      "choices": [
+        {"label": "A", "text": "0"},
+        {"label": "B", "text": "Negative"},
+        {"label": "C", "text": "Positive"},
+        {"label": "D", "text": "Undefined"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "A damping force continually removes mechanical energy from the system, so the mechanical energy decreases over time; its time rate of change is always negative (until motion stops).",
+      "topicTags": ["physics", "damped harmonic motion", "energy"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 16 (Oscillatory Motion and Waves) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (damping monotonically reduces mechanical energy)."
+    },
+    {
+      "id": "cpbs-xp082",
+      "section": "CPBS",
+      "stem": "A transverse mechanical wave is traveling left to right. Which of the following is correct about the motion of the particles in the wave?",
+      "choices": [
+        {"label": "A", "text": "The particles move up and down when the wave travels in a vacuum."},
+        {"label": "B", "text": "The particles move left and right when the wave travels in a medium."},
+        {"label": "C", "text": "The particles move up and down when the wave travels in a medium."},
+        {"label": "D", "text": "The particles move right and left when the wave travels in a vacuum."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "In a transverse wave the particles of the medium oscillate perpendicular to the direction of propagation (up and down for a wave moving horizontally). A mechanical wave also requires a medium, so the correct statement specifies motion in a medium.",
+      "topicTags": ["physics", "waves", "transverse waves"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 16 (Oscillatory Motion and Waves) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (transverse = perpendicular particle motion; mechanical wave needs a medium)."
+    },
+    {
+      "id": "cpbs-xp083",
+      "section": "CPBS",
+      "stem": "A guitar string has a number of frequencies at which it vibrates naturally. Which of the following is true in this context?",
+      "choices": [
+        {"label": "A", "text": "The resonant frequencies of the string are integer multiples of the fundamental frequency."},
+        {"label": "B", "text": "The resonant frequencies of the string are not integer multiples of the fundamental frequency."},
+        {"label": "C", "text": "The resonant frequencies are unrelated to the fundamental frequency."},
+        {"label": "D", "text": "None of the above"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "A string fixed at both ends supports standing waves whose resonant (natural) frequencies are integer multiples of the fundamental: f_n = n·f₁. These higher harmonics are the overtones.",
+      "topicTags": ["physics", "waves", "standing waves", "harmonics"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 16 (Oscillatory Motion and Waves) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + options scraped from OpenStax (one redundant 'harmonic overtones' distractor replaced with a clearer unrelated-frequencies distractor to keep a single best answer). OpenStax withholds the public answer key; answer independently verified (f_n = n·f₁ for a string fixed at both ends)."
+    },
+    {
+      "id": "cpbs-xp084",
+      "section": "CPBS",
+      "stem": "Two sine waves travel in the same direction in a medium. The amplitude of each wave is A, and the phase difference between the two is 180°. What is the resultant amplitude?",
+      "choices": [
+        {"label": "A", "text": "2A"},
+        {"label": "B", "text": "3A"},
+        {"label": "C", "text": "0"},
+        {"label": "D", "text": "9A"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "A 180° phase difference means the two equal-amplitude waves are exactly out of phase, so their crests align with troughs. They interfere completely destructively, giving a resultant amplitude of A - A = 0.",
+      "topicTags": ["physics", "waves", "interference"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 16 (Oscillatory Motion and Waves) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (180° out of phase ⇒ destructive interference)."
+    },
+    {
+      "id": "cpbs-xp085",
+      "section": "CPBS",
+      "stem": "A baggage handler stands on the edge of a runway as a landing plane approaches. Compared to the pitch of the plane's sound as heard by the plane's pilot, which of the following correctly describes the sensation experienced by the handler?",
+      "choices": [
+        {"label": "A", "text": "The frequency of the plane will be lower pitched according to the baggage handler and will become even lower pitched as the plane slows to a stop."},
+        {"label": "B", "text": "The frequency of the plane will be lower pitched according to the baggage handler but will increase in pitch as the plane slows to a stop."},
+        {"label": "C", "text": "The frequency of the plane will be higher pitched according to the baggage handler but will decrease in pitch as the plane slows to a stop."},
+        {"label": "D", "text": "The frequency of the plane will be higher pitched according to the baggage handler and will further increase in pitch as the plane slows to a stop."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Because the source is approaching the handler, the Doppler effect shifts the perceived frequency upward (higher pitch than the pilot hears). As the plane decelerates, the approach speed decreases, so the Doppler shift shrinks and the perceived pitch drops back toward the true frequency.",
+      "topicTags": ["physics", "sound", "Doppler effect"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 17 (Physics of Hearing) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/17-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the Doppler effect for an approaching source."
+    },
+    {
+      "id": "cpbs-xp086",
+      "section": "CPBS",
+      "stem": "A tube is open at one end (and closed at the other). If the fundamental frequency f is created by a wavelength λ, which of the following describes the frequency and wavelength associated with the tube's fourth overtone?",
+      "choices": [
+        {"label": "A", "text": "frequency 4f, wavelength λ/4"},
+        {"label": "B", "text": "frequency 4f, wavelength λ"},
+        {"label": "C", "text": "frequency 9f, wavelength λ/9"},
+        {"label": "D", "text": "frequency 9f, wavelength λ"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "A tube closed at one end supports only odd harmonics: f, 3f, 5f, 7f, 9f, ... The fundamental is the 1st harmonic, so the overtones are the 3rd, 5th, 7th, and 9th harmonics. The fourth overtone is therefore the 9th harmonic, with frequency 9f and wavelength λ/9.",
+      "topicTags": ["physics", "sound", "standing waves", "air columns"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 17 (Physics of Hearing) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/17-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Reformatted from the source's 4-row answer table into A-D choices without changing wording. OpenStax withholds the public answer key; answer independently verified (closed pipe: only odd harmonics; 4th overtone = 9th harmonic)."
+    },
+    {
+      "id": "cpbs-xp087",
+      "section": "CPBS",
+      "stem": "A string is attached to an oscillator at one end, passed over a pulley, and attached to a suspended weight at the other end. A standing wave with one antinode forms on the horizontal segment when the oscillator frequency is f₀. The oscillator is then moved to shorten the horizontal segment of string to half its original length. At what frequency will a standing wave with one antinode now form?",
+      "choices": [
+        {"label": "A", "text": "f₀/2"},
+        {"label": "B", "text": "f₀"},
+        {"label": "C", "text": "2f₀"},
+        {"label": "D", "text": "There is no frequency at which a standing wave will be formed."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The tension (set by the hanging weight) and the string's linear density are unchanged, so the wave speed v is unchanged. The fundamental (one-antinode) frequency is f = v/(2L). Halving L doubles the frequency: 2f₀.",
+      "topicTags": ["physics", "sound", "standing waves"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 17 (Physics of Hearing) — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/17-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim (figure description summarized in words). OpenStax withholds the public answer key; answer independently verified (v fixed by tension; f = v/2L, so halving L doubles f)."
+    }
+  ]
+}

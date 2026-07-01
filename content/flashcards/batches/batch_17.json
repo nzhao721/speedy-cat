@@ -1,0 +1,3874 @@
+{
+  "meta": {
+    "batch": 17,
+    "file": "batch_17.json",
+    "card_count": 257,
+    "note_count": 200,
+    "card_id_range": [
+      1590821076609,
+      1591181469032
+    ],
+    "eval_checks": [
+      "(a) question/answer correspond: the rendered answer actually answers/fills the question (for cloze, the revealed deletion fits the blank); flag empty answers, answer==question, or clear non-correspondence.",
+      "(b) text well-formed: question_text/answer_text non-empty and readable; no unrendered template artifacts ('{{', '}}', 'FrontSide', '{{c1::'), no obviously garbled/broken text; note image-only cards (no usable text).",
+      "(c) regex/LaTeX/cloze markup valid & balanced in the raw `fields`: cloze {{cN::...}} well-formed & balanced; MathJax/LaTeX delimiters balanced ( \\(..\\), \\[..\\], [$]..[/$], [$$]..[/$$], $$..$$ ); HTML tags reasonably balanced."
+    ]
+  },
+  "cards": [
+    {
+      "card_id": 1590821076609,
+      "note_id": 1590820957326,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The thalamus is the [...]",
+      "answer_text": "The thalamus is the sensory relay station that directs sensory nerves to appropriate brain regions",
+      "fields": {
+        "Text": "{{c2::The thalamus}} is the {{c1::sensory relay station that directs sensory nerves to appropriate brain regions}}",
+        "Extra": "<br><div><img src=\"paste-ec2d24974f5c7b0a449635d528dcc4a75da00394.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590821076611,
+      "note_id": 1590820957326,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is the sensory relay station that directs sensory nerves to appropriate brain regions",
+      "answer_text": "The thalamus is the sensory relay station that directs sensory nerves to appropriate brain regions",
+      "fields": {
+        "Text": "{{c2::The thalamus}} is the {{c1::sensory relay station that directs sensory nerves to appropriate brain regions}}",
+        "Extra": "<br><div><img src=\"paste-ec2d24974f5c7b0a449635d528dcc4a75da00394.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590821609362,
+      "note_id": 1590821256847,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The only sense that bypasses the thalamus is [...]",
+      "answer_text": "The only sense that bypasses the thalamus is olfaction",
+      "fields": {
+        "Text": "The only sense that bypasses the thalamus is {{c1::olfaction}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590821860710,
+      "note_id": 1590821609516,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The amygdala is involved with [...] , [...] , and [...]",
+      "answer_text": "The amygdala is involved with emotion , aggression , and fears",
+      "fields": {
+        "Text": "{{c2::The amygdala::Brain region}} is involved with {{c1::emotion}}, {{c1::aggression}}, and {{c1::fears}}",
+        "Extra": "<div><br></div><img src=\"paste-ec2d24974f5c7b0a449635d528dcc4a75da00394.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590821860711,
+      "note_id": 1590821609516,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[Brain region] is involved with emotion , aggression , and fears",
+      "answer_text": "The amygdala is involved with emotion , aggression , and fears",
+      "fields": {
+        "Text": "{{c2::The amygdala::Brain region}} is involved with {{c1::emotion}}, {{c1::aggression}}, and {{c1::fears}}",
+        "Extra": "<div><br></div><img src=\"paste-ec2d24974f5c7b0a449635d528dcc4a75da00394.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590822007453,
+      "note_id": 1590821860742,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[Syndrome] is caused by destruction of the amygdala and results in hyperorality , hypersexuality , and disinhibited behavior",
+      "answer_text": "Kluver-Bucy syndrome is caused by destruction of the amygdala and results in hyperorality , hypersexuality , and disinhibited behavior",
+      "fields": {
+        "Text": "{{c1::Kluver-Bucy syndrome::Syndrome}} is caused by {{c2::destruction of the amygdala}} and results in {{c2::hyperorality}}, {{c2::hypersexuality}}, and {{c2::disinhibited behavior}}",
+        "Extra": "<div><br></div><img src=\"kluver-bucy-syndrome.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590822007454,
+      "note_id": 1590821860742,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Kluver-Bucy syndrome is caused by [...] and results in [...] , [...] , and [...]",
+      "answer_text": "Kluver-Bucy syndrome is caused by destruction of the amygdala and results in hyperorality , hypersexuality , and disinhibited behavior",
+      "fields": {
+        "Text": "{{c1::Kluver-Bucy syndrome::Syndrome}} is caused by {{c2::destruction of the amygdala}} and results in {{c2::hyperorality}}, {{c2::hypersexuality}}, and {{c2::disinhibited behavior}}",
+        "Extra": "<div><br></div><img src=\"kluver-bucy-syndrome.jpg\">"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590822048285,
+      "note_id": 1590822007603,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Stimulation of the amygdala results in [...] , [...] , and [...]",
+      "answer_text": "Stimulation of the amygdala results in anger , violence , and fear",
+      "fields": {
+        "Text": "Stimulation of the <font color=\"#ff060a\">amygdala </font>results in {{c1::anger}}, {{c1::violence}}, and {{c1::fear}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590822068414,
+      "note_id": 1590822048328,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Destruction of the amygdala results in a [...] effect",
+      "answer_text": "Destruction of the amygdala results in a mellowing effect",
+      "fields": {
+        "Text": "Destruction of the amygdala results in a {{c1::mellowing}} effect",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590822105953,
+      "note_id": 1590822068460,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[Brain region] is involved in converting short term memory to long term memory",
+      "answer_text": "The hippocampus is involved in converting short term memory to long term memory",
+      "fields": {
+        "Text": "{{c1::The hippocampus::Brain region}} is involved in {{c2::converting short term memory to long term memory}}",
+        "Extra": "<br><div><img src=\"paste-ec2d24974f5c7b0a449635d528dcc4a75da00394.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590822105954,
+      "note_id": 1590822068460,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The hippocampus is involved in [...]",
+      "answer_text": "The hippocampus is involved in converting short term memory to long term memory",
+      "fields": {
+        "Text": "{{c1::The hippocampus::Brain region}} is involved in {{c2::converting short term memory to long term memory}}",
+        "Extra": "<br><div><img src=\"paste-ec2d24974f5c7b0a449635d528dcc4a75da00394.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590822143714,
+      "note_id": 1590822106012,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Individuals with a damaged hippocampus have [...]",
+      "answer_text": "Individuals with a damaged hippocampus have old memories but can't make new ones anterograde amnesia",
+      "fields": {
+        "Text": "Individuals with a <font color=\"#ff060a\"><u>damaged hippocampus</u></font> have {{c1::old memories but can't make new ones}}",
+        "Extra": "<i><br></i><div><i>anterograde amnesia</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590822420630,
+      "note_id": 1590822143774,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[Brain region] functions include regulating the autonomic nervous system , endocrine system (pituitary!!!) , and controlling biological drives like hunger, sleep, thirst, sex, etc .",
+      "answer_text": "The hypothalamus functions include regulating the autonomic nervous system , endocrine system (pituitary!!!) , and controlling biological drives like hunger, sleep, thirst, sex, etc .",
+      "fields": {
+        "Text": "{{c1::The hypothalamus::Brain region}} functions include {{c2::regulating the autonomic nervous system}}, {{c2::endocrine system (pituitary!!!)}}, and {{c2::controlling biological drives like hunger, sleep, thirst, sex, etc}}.",
+        "Extra": "<br><div><img src=\"paste-ec2d24974f5c7b0a449635d528dcc4a75da00394.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590822420631,
+      "note_id": 1590822143774,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The hypothalamus functions include [...] , [...] , and [...] .",
+      "answer_text": "The hypothalamus functions include regulating the autonomic nervous system , endocrine system (pituitary!!!) , and controlling biological drives like hunger, sleep, thirst, sex, etc .",
+      "fields": {
+        "Text": "{{c1::The hypothalamus::Brain region}} functions include {{c2::regulating the autonomic nervous system}}, {{c2::endocrine system (pituitary!!!)}}, and {{c2::controlling biological drives like hunger, sleep, thirst, sex, etc}}.",
+        "Extra": "<br><div><img src=\"paste-ec2d24974f5c7b0a449635d528dcc4a75da00394.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590822535338,
+      "note_id": 1590822420781,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The left hemisphere of the cerebral cortex evokes [...] emotions The right hemisphere of the cerebral cortex evokes [...] emotions",
+      "answer_text": "The left hemisphere of the cerebral cortex evokes positive emotions The right hemisphere of the cerebral cortex evokes negative emotions",
+      "fields": {
+        "Text": "The left hemisphere of the cerebral cortex evokes {{c1::positive}} emotions<div>The right hemisphere of the cerebral cortex evokes {{c1::negative}} emotions</div>",
+        "Extra": "<br><div><img src=\"114700584-right-and-left-hemispheres-of-a-brain-vector-illustration.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590822817843,
+      "note_id": 1590822535412,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[Brain region] is responsible for higher-order functions , executive control , problem solving , decision making , and how you act in social situations",
+      "answer_text": "The prefrontal cortex is responsible for higher-order functions , executive control , problem solving , decision making , and how you act in social situations mnemonic: PHEDS",
+      "fields": {
+        "Text": "{{c1::The prefrontal cortex::Brain region}} is responsible for {{c2::higher-order functions}}, {{c2::executive control}}, {{c2::problem solving}}, {{c2::decision making}}, and {{c2::how you act in social situations}}",
+        "Extra": "<div><i><br></i></div><div><i>mnemonic: <b>PHEDS</b></i></div><div><i><img src=\"PFC.jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590822817844,
+      "note_id": 1590822535412,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The prefrontal cortex is responsible for [...] , [...] , [...] , [...] , and [...]",
+      "answer_text": "The prefrontal cortex is responsible for higher-order functions , executive control , problem solving , decision making , and how you act in social situations mnemonic: PHEDS",
+      "fields": {
+        "Text": "{{c1::The prefrontal cortex::Brain region}} is responsible for {{c2::higher-order functions}}, {{c2::executive control}}, {{c2::problem solving}}, {{c2::decision making}}, and {{c2::how you act in social situations}}",
+        "Extra": "<div><i><br></i></div><div><i>mnemonic: <b>PHEDS</b></i></div><div><i><img src=\"PFC.jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590823100861,
+      "note_id": 1590822937064,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Sympathetic nervous system effects [...] [...] [...] [...] [...] [...] [...]",
+      "answer_text": "Sympathetic nervous system effects dilate pupils decrease salivation increase RR increase HR increase blood glucose increase adrenaline and norepinephrine decrease digestion",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Sympathetic nervous system</font> effects<div>{{c1::dilate pupils}}</div><div>{{c1::decrease salivation}}</div><div>{{c1::increase RR}}</div><div>{{c1::increase HR}}</div><div>{{c1::increase blood glucose}}</div><div>{{c1::increase adrenaline and norepinephrine}}</div><div>{{c1::decrease digestion}}</div>",
+        "Extra": "<div><br></div><div><img src=\"50f9d22f435e908106845c79fdf636ae.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590823172465,
+      "note_id": 1590823100935,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Parasympathetic nervous system effects [...] [...] [...] [...] [...] [...] [...]",
+      "answer_text": "Parasympathetic nervous system effects pupils constrict increased salivation decreased RR decreased HR increase glucose storage decreased adrenaline increased digestion",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Parasympathetic nervous system</font> effects<div>{{c1::pupils constrict}}</div><div>{{c1::increased salivation}}</div><div>{{c1::decreased RR}}</div><div>{{c1::decreased HR}}</div><div>{{c1::increase glucose storage}}</div><div>{{c1::decreased adrenaline}}</div><div>{{c1::increased digestion}}</div>",
+        "Extra": "<br><div><img src=\"50f9d22f435e908106845c79fdf636ae.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590823270366,
+      "note_id": 1590823172625,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The three components of emotion are [...] , [...] , and [...]",
+      "answer_text": "The three components of emotion are physiological , cognitive , and behavioral physiological: heart rate increase, muscle tenses, etc cognitive: enjoying the party because you like parties behavioral: facial expression, language",
+      "fields": {
+        "Text": "The three components of <font color=\"#00ffff\">emotion </font>are {{c1::physiological}}, {{c1::cognitive}}, and {{c1::behavioral}}",
+        "Extra": "<br><div><i>physiological: heart rate increase, muscle tenses, etc</i></div><div><i>cognitive: enjoying the party because you like parties</i></div><div><i>behavioral: facial expression, language</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590823315852,
+      "note_id": 1590823270397,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The behavioral components to emotion include [...] and [...]",
+      "answer_text": "The behavioral components to emotion include body language and facial expressions",
+      "fields": {
+        "Text": "The <font color=\"#00ffff\">behavioral components</font><font color=\"#ff060a\"> </font>to emotion include {{c1::body language}} and {{c1::facial expressions}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590823342839,
+      "note_id": 1590823315883,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The physiological components to emotion are [...]",
+      "answer_text": "The physiological components to emotion are how your body reacts to certain emotions ex: HR increase when happy",
+      "fields": {
+        "Text": "The <font color=\"#ff060a\">physiological components</font> to emotion are {{c1::how your body reacts to certain emotions}}",
+        "Extra": "<i><br></i><div><i>ex: HR increase when happy</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590823361655,
+      "note_id": 1590823342898,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Cognitive component of emotion involves [...]",
+      "answer_text": "Cognitive component of emotion involves how you feel about something ex: I like parties",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Cognitive </font>component of emotion involves {{c1::how you feel about something}}",
+        "Extra": "<br><div>ex: I like parties</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590823693374,
+      "note_id": 1590823370883,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] founded the 6 universal basic emotions that anyone can identify",
+      "answer_text": "Paul Ekman founded the 6 universal basic emotions that anyone can identify",
+      "fields": {
+        "Text": "{{c1::Paul Ekman}} founded {{c2::the 6 universal basic emotions that anyone can identify}}",
+        "Extra": "<br><div><img src=\"paul-ekman.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590823693375,
+      "note_id": 1590823370883,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Paul Ekman founded [...]",
+      "answer_text": "Paul Ekman founded the 6 universal basic emotions that anyone can identify",
+      "fields": {
+        "Text": "{{c1::Paul Ekman}} founded {{c2::the 6 universal basic emotions that anyone can identify}}",
+        "Extra": "<br><div><img src=\"paul-ekman.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590823760083,
+      "note_id": 1590823693526,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "6 universal emotions [...] [...] [...] [...] [...] [...]",
+      "answer_text": "6 universal emotions happiness sadness fear disgust anger surprise",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">6 universal emotions</font><div>{{c1::happiness}}</div><div>{{c1::sadness}}</div><div>{{c1::fear}}</div><div>{{c1::disgust}}</div><div>{{c1::anger}}</div><div>{{c1::surprise}}</div>",
+        "Extra": "<br><div><img src=\"paste-210a944af6a65ce99effb04e009125bd88f182e0.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590823843805,
+      "note_id": 1590823760160,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Darwin hypothesized that emotions are [...] .",
+      "answer_text": "Darwin hypothesized that emotions are expressed as an innate ability that allowed individuals to act in ways that gave them a better chance of survival .",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Darwin </font>hypothesized that <b>emotions </b>are {{c1::expressed as an innate ability that allowed individuals to act in ways that gave them a better chance of survival}}.",
+        "Extra": "<br><div><img src=\"screenshot1.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590824835355,
+      "note_id": 1590824209376,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] Theory of Emotion event ↓ physiological response ↓ interpretation of physiological response ↓ emotion",
+      "answer_text": "James-Lange Theory of Emotion event ↓ physiological response ↓ interpretation of physiological response ↓ emotion mnemonic: J/L one apart on the alphabet, so physiological response first then emotion example: A man, who is allergic to bees, encounters a bee. The man’s heart beat increases, he starts sweating, and he then interprets these physiological changes as the emotion fear",
+      "fields": {
+        "Text": "{{c1::James-Lange}} Theory of Emotion<div><br></div><div>{{c2::event<div>↓<br></div><div>physiological response</div><div>↓<br></div><div>interpretation of physiological response</div><div>↓<br></div><div>emotion</div>}}<br></div>",
+        "Extra": "<i><br></i><div><i>mnemonic: J/L one apart on the alphabet, so physiological response first then emotion</i></div><div><i><br></i></div><div><i>example:&nbsp;A man, who is allergic to bees, encounters a bee. The man’s heart beat increases, he starts sweating, and he then interprets these physiological changes as the emotion fear</i></div><div><i><img src=\"paste-af371e6b1ab7a19d52428edbf16d8cfd442ca904.jpg\"><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590824835356,
+      "note_id": 1590824209376,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "James-Lange Theory of Emotion [...]",
+      "answer_text": "James-Lange Theory of Emotion event ↓ physiological response ↓ interpretation of physiological response ↓ emotion mnemonic: J/L one apart on the alphabet, so physiological response first then emotion example: A man, who is allergic to bees, encounters a bee. The man’s heart beat increases, he starts sweating, and he then interprets these physiological changes as the emotion fear",
+      "fields": {
+        "Text": "{{c1::James-Lange}} Theory of Emotion<div><br></div><div>{{c2::event<div>↓<br></div><div>physiological response</div><div>↓<br></div><div>interpretation of physiological response</div><div>↓<br></div><div>emotion</div>}}<br></div>",
+        "Extra": "<i><br></i><div><i>mnemonic: J/L one apart on the alphabet, so physiological response first then emotion</i></div><div><i><br></i></div><div><i>example:&nbsp;A man, who is allergic to bees, encounters a bee. The man’s heart beat increases, he starts sweating, and he then interprets these physiological changes as the emotion fear</i></div><div><i><img src=\"paste-af371e6b1ab7a19d52428edbf16d8cfd442ca904.jpg\"><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590825128212,
+      "note_id": 1590825115757,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] Theory of Emotion Event ↓ Physiological Response + Emotion at same time",
+      "answer_text": "Cannon-Bard Theory of Emotion Event ↓ Physiological Response + Emotion at same time mnemonic: C/B next to eachother in alphabet, so physiological response + emotion at same time example: Man is allergic to bees encounters a bee. At the same time, the mans heartbeat increases, he starts sweating, and feels fear.",
+      "fields": {
+        "Text": "{{c1::Cannon-Bard}} Theory of Emotion<div><br></div><div>{{c2::<div>Event</div><div>↓<br></div><div>Physiological Response + Emotion at same time</div>}}<br></div>",
+        "Extra": "<div><i><br></i></div><div><i>mnemonic: C/B next to eachother in alphabet, so physiological response + emotion at same time</i></div><i><br></i><div><i>example: Man is allergic to bees encounters a bee. At the same time, the mans heartbeat increases, he starts sweating, and feels fear.</i></div><div><img src=\"paste-eeff921bb3db9c0380cb414de76caa5175f23c3b.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590825128213,
+      "note_id": 1590825115757,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Cannon-Bard Theory of Emotion [...]",
+      "answer_text": "Cannon-Bard Theory of Emotion Event ↓ Physiological Response + Emotion at same time mnemonic: C/B next to eachother in alphabet, so physiological response + emotion at same time example: Man is allergic to bees encounters a bee. At the same time, the mans heartbeat increases, he starts sweating, and feels fear.",
+      "fields": {
+        "Text": "{{c1::Cannon-Bard}} Theory of Emotion<div><br></div><div>{{c2::<div>Event</div><div>↓<br></div><div>Physiological Response + Emotion at same time</div>}}<br></div>",
+        "Extra": "<div><i><br></i></div><div><i>mnemonic: C/B next to eachother in alphabet, so physiological response + emotion at same time</i></div><i><br></i><div><i>example: Man is allergic to bees encounters a bee. At the same time, the mans heartbeat increases, he starts sweating, and feels fear.</i></div><div><img src=\"paste-eeff921bb3db9c0380cb414de76caa5175f23c3b.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590825733803,
+      "note_id": 1590825128246,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] Theory of Emotion Event ↓ Physiological Response + Identify Reason for the Response ↓ Emotion",
+      "answer_text": "Schachter-Singer Theory of Emotion Event ↓ Physiological Response + Identify Reason for the Response ↓ Emotion mnemonic/example: A SINGER who thinks she sucks performs at a concert. When it is over everyone claps. The singer's heart beat increases and at the same time she recognizes the clapping as people thinking she is a good singer. This makes her label the emotion as happiness :)",
+      "fields": {
+        "Text": "{{c1::Schachter-Singer}} Theory of Emotion<div><br></div><div>{{c2::<div>Event</div><div>↓<br></div><div>Physiological Response + Identify Reason for the Response</div><div>↓<br></div><div>Emotion</div>}}<br></div>",
+        "Extra": "<i><br></i><div><i>mnemonic/example: A <u>SINGER</u>&nbsp;who thinks she sucks performs at a concert. When it is over everyone claps. The singer's heart beat increases and at the same time she recognizes the clapping as people thinking she is a good singer. This makes her label the emotion as happiness :)</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590825733804,
+      "note_id": 1590825128246,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Schachter-Singer Theory of Emotion [...]",
+      "answer_text": "Schachter-Singer Theory of Emotion Event ↓ Physiological Response + Identify Reason for the Response ↓ Emotion mnemonic/example: A SINGER who thinks she sucks performs at a concert. When it is over everyone claps. The singer's heart beat increases and at the same time she recognizes the clapping as people thinking she is a good singer. This makes her label the emotion as happiness :)",
+      "fields": {
+        "Text": "{{c1::Schachter-Singer}} Theory of Emotion<div><br></div><div>{{c2::<div>Event</div><div>↓<br></div><div>Physiological Response + Identify Reason for the Response</div><div>↓<br></div><div>Emotion</div>}}<br></div>",
+        "Extra": "<i><br></i><div><i>mnemonic/example: A <u>SINGER</u>&nbsp;who thinks she sucks performs at a concert. When it is over everyone claps. The singer's heart beat increases and at the same time she recognizes the clapping as people thinking she is a good singer. This makes her label the emotion as happiness :)</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590825958492,
+      "note_id": 1590825733879,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] Theory of Emotion Event ↓ Labelling event (appraisal) ↓ Emotion + Physiological Response",
+      "answer_text": "Lazarus Theory of Emotion Event ↓ Labelling event (appraisal) ↓ Emotion + Physiological Response mnemonic: Lazarus must Label the event before emotion or PR example: Wolf is running at you. You label this even as threatening. You simultaneously sweat, increase HR, and feel the emotion of Fear.",
+      "fields": {
+        "Text": "{{c1::Lazarus}} Theory of Emotion<div><br></div><div>{{c2::<div>Event</div><div>↓<br></div><div>Labelling event (appraisal)</div><div>↓<br></div><div>Emotion + Physiological Response</div>}}<br></div>",
+        "Extra": "<i><br></i><div><i>mnemonic: Lazarus must Label the event before emotion or PR</i></div><div><i>example: Wolf is running at you. You label this even as threatening. You simultaneously sweat, increase HR, and feel the emotion of Fear.</i></div><div><img src=\"slide_24 (1).jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590825958493,
+      "note_id": 1590825733879,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Lazarus Theory of Emotion [...]",
+      "answer_text": "Lazarus Theory of Emotion Event ↓ Labelling event (appraisal) ↓ Emotion + Physiological Response mnemonic: Lazarus must Label the event before emotion or PR example: Wolf is running at you. You label this even as threatening. You simultaneously sweat, increase HR, and feel the emotion of Fear.",
+      "fields": {
+        "Text": "{{c1::Lazarus}} Theory of Emotion<div><br></div><div>{{c2::<div>Event</div><div>↓<br></div><div>Labelling event (appraisal)</div><div>↓<br></div><div>Emotion + Physiological Response</div>}}<br></div>",
+        "Extra": "<i><br></i><div><i>mnemonic: Lazarus must Label the event before emotion or PR</i></div><div><i>example: Wolf is running at you. You label this even as threatening. You simultaneously sweat, increase HR, and feel the emotion of Fear.</i></div><div><img src=\"slide_24 (1).jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590826037695,
+      "note_id": 1590825958521,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "In Lazarus ' theory of emotion, labeling is based on [...] and [...]",
+      "answer_text": "In Lazarus ' theory of emotion, labeling is based on the individual and cultural differences some things might be labeled as good/bad for different people and different cultures this is why some people like skydiving and some don't",
+      "fields": {
+        "Text": "In <font color=\"#ff060a\">Lazarus</font>' theory of emotion, labeling is based on {{c1::the individual}} and {{c1::cultural differences}}",
+        "Extra": "<i><br></i><div><i>some things might be labeled as good/bad for different people and different cultures</i></div><div><i><br></i></div><div><i>this is why some people like skydiving and some don't</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590826646149,
+      "note_id": 1590826037781,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The [...] Law states that people perform best when they are moderately aroused",
+      "answer_text": "The Yerkes-Dodson Law states that people perform best when they are moderately aroused",
+      "fields": {
+        "Text": "The {{c1::Yerkes-Dodson}} Law states that {{c2::people perform best when they are moderately aroused}}",
+        "Extra": "<br><div><img src=\"yerkes_dodson_600.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590826646150,
+      "note_id": 1590826037781,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The Yerkes-Dodson Law states that [...]",
+      "answer_text": "The Yerkes-Dodson Law states that people perform best when they are moderately aroused",
+      "fields": {
+        "Text": "The {{c1::Yerkes-Dodson}} Law states that {{c2::people perform best when they are moderately aroused}}",
+        "Extra": "<br><div><img src=\"yerkes_dodson_600.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590826711242,
+      "note_id": 1590826646211,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is the process by which we appraise and cope with environmental threats and challenges",
+      "answer_text": "Stress is the process by which we appraise and cope with environmental threats and challenges",
+      "fields": {
+        "Text": "{{c1::Stress}} is the process by which we {{c2::appraise and cope with environmental threats and challenges}}",
+        "Extra": "<div><br></div><div><img src=\"stress-3.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590826711243,
+      "note_id": 1590826646211,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Stress is the process by which we [...]",
+      "answer_text": "Stress is the process by which we appraise and cope with environmental threats and challenges",
+      "fields": {
+        "Text": "{{c1::Stress}} is the process by which we {{c2::appraise and cope with environmental threats and challenges}}",
+        "Extra": "<div><br></div><div><img src=\"stress-3.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590826766260,
+      "note_id": 1590826711273,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is the threatening/challenging event that causes stress",
+      "answer_text": "The stressor is the threatening/challenging event that causes stress",
+      "fields": {
+        "Text": "{{c1::The stressor}} is the {{c2::threatening/challenging event that causes stress}}",
+        "Extra": "<br><div><img src=\"Relationships-among-stressors-stress-and-examples-of-adaptive-and-maladaptive-stress.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590826766261,
+      "note_id": 1590826711273,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The stressor is the [...]",
+      "answer_text": "The stressor is the threatening/challenging event that causes stress",
+      "fields": {
+        "Text": "{{c1::The stressor}} is the {{c2::threatening/challenging event that causes stress}}",
+        "Extra": "<br><div><img src=\"Relationships-among-stressors-stress-and-examples-of-adaptive-and-maladaptive-stress.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590826792137,
+      "note_id": 1590826766288,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is the physical and emotional response to stress",
+      "answer_text": "The stress reaction is the physical and emotional response to stress",
+      "fields": {
+        "Text": "{{c1::The stress reaction}} is the {{c2::physical and emotional response to stress}}",
+        "Extra": "<br><div><img src=\"Relationships-among-stressors-stress-and-examples-of-adaptive-and-maladaptive-stress.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590826792138,
+      "note_id": 1590826766288,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The stress reaction is the [...]",
+      "answer_text": "The stress reaction is the physical and emotional response to stress",
+      "fields": {
+        "Text": "{{c1::The stress reaction}} is the {{c2::physical and emotional response to stress}}",
+        "Extra": "<br><div><img src=\"Relationships-among-stressors-stress-and-examples-of-adaptive-and-maladaptive-stress.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590826955889,
+      "note_id": 1590826792165,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[Theory] , associated with [Psychologist] , states that stress arises less from physical events and more from assessment/interpretation of the stressor",
+      "answer_text": "The Appraisal theory of stress , associated with Lazarus , states that stress arises less from physical events and more from assessment/interpretation of the stressor",
+      "fields": {
+        "Text": "{{c1::The Appraisal theory of stress::Theory}}, associated with {{c1::Lazarus::Psychologist}}, states that {{c2::stress arises less from physical events and more from assessment/interpretation of the stressor}}",
+        "Extra": "<br><div><img src=\"212px-Transactional_Model_of_Stress_and_Coping_-_Richard_Lazarus.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590826955890,
+      "note_id": 1590826792165,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The Appraisal theory of stress , associated with Lazarus , states that [...]",
+      "answer_text": "The Appraisal theory of stress , associated with Lazarus , states that stress arises less from physical events and more from assessment/interpretation of the stressor",
+      "fields": {
+        "Text": "{{c1::The Appraisal theory of stress::Theory}}, associated with {{c1::Lazarus::Psychologist}}, states that {{c2::stress arises less from physical events and more from assessment/interpretation of the stressor}}",
+        "Extra": "<br><div><img src=\"212px-Transactional_Model_of_Stress_and_Coping_-_Richard_Lazarus.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590826990406,
+      "note_id": 1590826955974,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The two stages to the appraisal theory of stress are [...] and [...]",
+      "answer_text": "The two stages to the appraisal theory of stress are primary appraisal and secondary appraisal",
+      "fields": {
+        "Text": "The two stages to the<font color=\"#ff060a\"> appraisal theory of stress</font> are {{c1::primary appraisal}} and {{c1::secondary appraisal}}",
+        "Extra": "<br><div><img src=\"212px-Transactional_Model_of_Stress_and_Coping_-_Richard_Lazarus.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827106660,
+      "note_id": 1590826990436,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is when you assess stress in your present situation .",
+      "answer_text": "Primary appraisal is when you assess stress in your present situation . three types of appraisal are irrelevant, positive, or negative",
+      "fields": {
+        "Text": "{{c1::Primary appraisal}} is when you {{c2::assess stress in your <b>present </b>situation}}.",
+        "Extra": "<i><br></i><div><i>three types of appraisal are irrelevant, positive, or negative</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827106661,
+      "note_id": 1590826990436,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Primary appraisal is when you [...] .",
+      "answer_text": "Primary appraisal is when you assess stress in your present situation . three types of appraisal are irrelevant, positive, or negative",
+      "fields": {
+        "Text": "{{c1::Primary appraisal}} is when you {{c2::assess stress in your <b>present </b>situation}}.",
+        "Extra": "<i><br></i><div><i>three types of appraisal are irrelevant, positive, or negative</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827141527,
+      "note_id": 1590827106690,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is the evaluation of an individuals ability to cope with a stressor",
+      "answer_text": "Secondary appraisal is the evaluation of an individuals ability to cope with a stressor",
+      "fields": {
+        "Text": "{{c1::Secondary appraisal}} is {{c2::the evaluation of an individuals ability to cope with a stressor}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827141528,
+      "note_id": 1590827106690,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Secondary appraisal is [...]",
+      "answer_text": "Secondary appraisal is the evaluation of an individuals ability to cope with a stressor",
+      "fields": {
+        "Text": "{{c1::Secondary appraisal}} is {{c2::the evaluation of an individuals ability to cope with a stressor}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827208868,
+      "note_id": 1590827141555,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Secondary appraisal evaluates [...] .",
+      "answer_text": "Secondary appraisal evaluates an individuals ability to cope with a stressor based on level of harm, threat, and challenge .",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Secondary appraisal</font>&nbsp;evaluates {{c1::an individuals ability to cope with a stressor based on level of harm, threat, and challenge}}.",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827290727,
+      "note_id": 1590827208896,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The four categories of stressors are: [...] [...] [...] [...]",
+      "answer_text": "The four categories of stressors are: significant life changes catastrophic events daily hassles ambient stressors",
+      "fields": {
+        "Text": "The four categories of <font color=\"#ff060a\">stressors </font>are:<div>{{c1::significant life changes}}</div><div>{{c1::catastrophic events}}</div><div>{{c1::daily hassles}}</div><div>{{c1::ambient stressors}}</div>",
+        "Extra": "<br><div><img src=\"paste-bcfd7d137aaf29b9d522bd0b69d1ccca8fccecb4.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827368225,
+      "note_id": 1590827290813,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Many consider [stressor] to be the most important form of stress",
+      "answer_text": "Many consider daily hassles to be the most important form of stress",
+      "fields": {
+        "Text": "Many consider {{c1::daily hassles::stressor}} to be the most important form of stress",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827460043,
+      "note_id": 1590827396710,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Stressors can trigger the bodies [...] and [...]",
+      "answer_text": "Stressors can trigger the bodies sympathetic nervous system and endocrine response",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Stressors </font>can trigger the bodies {{c1::sympathetic nervous system}} and {{c1::endocrine response}}",
+        "Extra": "<br><div><img src=\"fight_or_flight.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827540815,
+      "note_id": 1590827460086,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The endocrine response to stress includes [...] and [...]",
+      "answer_text": "The endocrine response to stress includes releasing catecholamines (epinephrine/norepinephrine) and releasing cortisol catecholamines released by adrenal medulla cortisol releasead by adrenal cortex",
+      "fields": {
+        "Text": "The <font color=\"#00ffff\">endocrine </font>response to stress includes {{c1::releasing catecholamines (epinephrine/norepinephrine)}} and {{c1::releasing cortisol}}",
+        "Extra": "<i><br></i><div><i>catecholamines released by adrenal medulla</i></div><div><i>cortisol releasead by adrenal cortex</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827671429,
+      "note_id": 1590827540842,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The tend and befriend response is [...] .",
+      "answer_text": "The tend and befriend response is the idea that humans respond better to stress when they have a support system .",
+      "fields": {
+        "Text": "{{c2::The tend and befriend response::Response}} is {{c1::the idea that humans respond better to stress when they have a support system}}.",
+        "Extra": "<div><br></div><div><img src=\"paste-475b6713c795d669506f354f9a9062bc8dd8f65a.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827671430,
+      "note_id": 1590827540842,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[Response] is the idea that humans respond better to stress when they have a support system .",
+      "answer_text": "The tend and befriend response is the idea that humans respond better to stress when they have a support system .",
+      "fields": {
+        "Text": "{{c2::The tend and befriend response::Response}} is {{c1::the idea that humans respond better to stress when they have a support system}}.",
+        "Extra": "<div><br></div><div><img src=\"paste-475b6713c795d669506f354f9a9062bc8dd8f65a.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827688945,
+      "note_id": 1590827671524,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The tend and befriend response involves the hormone [...]",
+      "answer_text": "The tend and befriend response involves the hormone oxytocin",
+      "fields": {
+        "Text": "The <font color=\"#ff060a\">tend and befriend</font> response involves the hormone {{c1::oxytocin}}",
+        "Extra": "<br><div><img src=\"133406419_m.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827745006,
+      "note_id": 1590827688975,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "General adaptation syndrome was developed by [...]",
+      "answer_text": "General adaptation syndrome was developed by Hans Selye",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">General adaptation syndrome</font> was developed by {{c1::Hans Selye}}",
+        "Extra": "<br><div><img src=\"maxresdefault (16).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827843498,
+      "note_id": 1590827745072,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The three stages to [...] are alarm , resistance , and exhaustion",
+      "answer_text": "The three stages to general adaptation syndrome are alarm , resistance , and exhaustion",
+      "fields": {
+        "Text": "The three stages to {{c1::general adaptation syndrome}} are {{c2::alarm}}, {{c2::resistance}}, and {{c2::exhaustion}}",
+        "Extra": "<br><div><img src=\"paste-78fdab50a150daa73c66ae99e7b12e866beb3f30.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827843500,
+      "note_id": 1590827745072,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The three stages to general adaptation syndrome are [...] , [...] , and [...]",
+      "answer_text": "The three stages to general adaptation syndrome are alarm , resistance , and exhaustion",
+      "fields": {
+        "Text": "The three stages to {{c1::general adaptation syndrome}} are {{c2::alarm}}, {{c2::resistance}}, and {{c2::exhaustion}}",
+        "Extra": "<br><div><img src=\"paste-78fdab50a150daa73c66ae99e7b12e866beb3f30.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827878302,
+      "note_id": 1590827843561,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The alarm phase of GAS is when [...] and [...]",
+      "answer_text": "The alarm phase of GAS is when stress kicks in and the heart races",
+      "fields": {
+        "Text": "The <font color=\"#ff060a\">alarm phase</font> of GAS is when {{c1::stress kicks in}} and {{c1::the heart races}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827951337,
+      "note_id": 1590827878363,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The resistance phase of GAS is when individuals have [...] , [...] , and [...]",
+      "answer_text": "The resistance phase of GAS is when individuals have very high cortisol , high BP and RR , and flee/huddle",
+      "fields": {
+        "Text": "The<font color=\"#ff060a\"> resistance phase</font> of GAS is when individuals have {{c1::very high cortisol}}, {{c1::high BP and RR}}, and {{c1::flee/huddle}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590827992647,
+      "note_id": 1590827951375,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The exhaustion phase of GAS is when individuals have [...] and [...]",
+      "answer_text": "The exhaustion phase of GAS is when individuals have run out of resources to handle stress and have weakened immune systems",
+      "fields": {
+        "Text": "The <font color=\"#ff060a\">exhaustion phase</font> of GAS is when individuals have {{c1::run out of resources to handle stress}} and {{c1::have weakened immune systems}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590828163416,
+      "note_id": 1590827992898,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Stress can lead to [...] , [...] , [...] , and [...] , and [...]",
+      "answer_text": "Stress can lead to hypertension , heart disease , diabetes , and reproductive issues , and immune problems",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Stress </font>can lead to {{c1::hypertension}}, {{c1::heart disease}}, {{c1::diabetes}}, and {{c1::reproductive issues}}, and {{c1::immune problems}}",
+        "Extra": "<br><div><img src=\"paste-43fcda3d5146a27543d1c6e8d40f8929eb3a85c4.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590828225103,
+      "note_id": 1590828184895,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "One major emotional response to stress is [...]",
+      "answer_text": "One major emotional response to stress is depression :(",
+      "fields": {
+        "Text": "One major emotional response to&nbsp;<font color=\"#ff060a\">stress </font>is {{c1::depression}}",
+        "Extra": "<br><div>:(</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590828439679,
+      "note_id": 1590828225179,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "In stressed individuals, the [brain region] stops responding to serotonin",
+      "answer_text": "In stressed individuals, the anterior cingulate stops responding to serotonin leads to inability to experience pleasure",
+      "fields": {
+        "Text": "In <font color=\"#00ffff\">stressed </font>individuals, the {{c1::anterior cingulate::brain region}} stops responding to {{c2::serotonin}}",
+        "Extra": "<br><div><i>leads to inability to experience pleasure</i></div><div><img src=\"Anterior_Cingulate_Cortex.png\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590828439680,
+      "note_id": 1590828225179,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "In stressed individuals, the anterior cingulate stops responding to [...]",
+      "answer_text": "In stressed individuals, the anterior cingulate stops responding to serotonin leads to inability to experience pleasure",
+      "fields": {
+        "Text": "In <font color=\"#00ffff\">stressed </font>individuals, the {{c1::anterior cingulate::brain region}} stops responding to {{c2::serotonin}}",
+        "Extra": "<br><div><i>leads to inability to experience pleasure</i></div><div><img src=\"Anterior_Cingulate_Cortex.png\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590828745117,
+      "note_id": 1590828488780,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is when a person suffers from a sense of powerlessness due to persistent failure or loss of control of a situation",
+      "answer_text": "Learned helplessness is when a person suffers from a sense of powerlessness due to persistent failure or loss of control of a situation",
+      "fields": {
+        "Text": "{{c1::Learned helplessness}} is when {{c2::a person suffers from a sense of powerlessness due to persistent failure or loss of control of a situation}}",
+        "Extra": "<br><div><img src=\"w1zml2cgixh41.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590828745118,
+      "note_id": 1590828488780,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Learned helplessness is when [...]",
+      "answer_text": "Learned helplessness is when a person suffers from a sense of powerlessness due to persistent failure or loss of control of a situation",
+      "fields": {
+        "Text": "{{c1::Learned helplessness}} is when {{c2::a person suffers from a sense of powerlessness due to persistent failure or loss of control of a situation}}",
+        "Extra": "<br><div><img src=\"w1zml2cgixh41.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590828828436,
+      "note_id": 1590828745253,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "The three emotional/behavioral effects of stress are [...] , [...] , and [...]",
+      "answer_text": "The three emotional/behavioral effects of stress are anger , anxiety , and addiction 3 A's",
+      "fields": {
+        "Text": "The three emotional/behavioral effects of <font color=\"#00ffff\">stress </font>are {{c1::anger}}, {{c1::anxiety}}, and {{c1::addiction}}",
+        "Extra": "<i><br></i><div><i>3 A's</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590828891382,
+      "note_id": 1590828828507,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Type A individuals are [...] Type B individuals are [...]",
+      "answer_text": "Type A individuals are easily angered, aggressive, and competitive Type B individuals are easy going",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Type A</font> individuals are {{c1::easily angered, aggressive, and competitive}}<div><font color=\"#ff060a\">Type B</font> individuals are {{c1::easy going}}</div>",
+        "Extra": "<br><div><img src=\"tumblr_obsubk9ynR1s667kio1_1280.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590829119165,
+      "note_id": 1590828891449,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is the belief that an individual has control over a stressor",
+      "answer_text": "Percieved control is the belief that an individual has control over a stressor",
+      "fields": {
+        "Text": "{{c1::Percieved control}} is the belief that an individual has control over a <font color=\"#ff060a\">stressor</font>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590829198343,
+      "note_id": 1590829119313,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "One of the best coping mechanisms for stress is [...]",
+      "answer_text": "One of the best coping mechanisms for stress is social support helps people see they are not alone and improves percieved control and optimism",
+      "fields": {
+        "Text": "One of the <b>best </b>coping mechanisms for <font color=\"#ff060a\">stress </font>is {{c1::social support}}",
+        "Extra": "<i><br></i><div><i>helps people see they are not alone and improves <b>percieved control </b>and <b>optimism</b></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590829299176,
+      "note_id": 1590829198403,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Four great ways to help manage stress : [...] [...] [...] [...]",
+      "answer_text": "Four great ways to help manage stress : exercise meditation religion cognitive flexibility (change your perspective on the stressor)",
+      "fields": {
+        "Text": "Four great ways to help <font color=\"#00ffff\">manage stress</font>:<div>{{c1::exercise}}</div><div>{{c1::meditation}}</div><div>{{c1::religion}}</div><div>{{c1::cognitive flexibility (change your perspective on the stressor)}}</div>",
+        "Extra": "<br><div><img src=\"1800x1200_woman_doing_sideplank_other.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590829380589,
+      "note_id": 1590829299231,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is when one reduces stress of a situation by anticipating a stressor and preparing for it",
+      "answer_text": "Proactive coping is when one reduces stress of a situation by anticipating a stressor and preparing for it",
+      "fields": {
+        "Text": "{{c1::Proactive coping}} is when {{c2::one reduces stress of a situation by anticipating a stressor and preparing for it&nbsp;}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590829396329,
+      "note_id": 1590829299231,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Proactive coping is when [...]",
+      "answer_text": "Proactive coping is when one reduces stress of a situation by anticipating a stressor and preparing for it",
+      "fields": {
+        "Text": "{{c1::Proactive coping}} is when {{c2::one reduces stress of a situation by anticipating a stressor and preparing for it&nbsp;}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590829474713,
+      "note_id": 1590829416989,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is when one deals with stress by seeking social support",
+      "answer_text": "Social coping is when one deals with stress by seeking social support",
+      "fields": {
+        "Text": "{{c1::Social coping}} is when one deals with stress by seeking <font color=\"#00ffff\">social support</font>",
+        "Extra": "<br><div><img src=\"lisa-kudrow-deos-not-watch-friends-reruns-today-main-190515-001_8f82d908e679dfcc4fd6a24482cfac0b.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590829514910,
+      "note_id": 1590829474879,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is when a person copes with a stressor by trying to derive meaning from it",
+      "answer_text": "Meaning-focused coping is when a person copes with a stressor by trying to derive meaning from it",
+      "fields": {
+        "Text": "{{c1::Meaning-focused coping}} is when a person copes with a stressor by {{c2::trying to derive meaning from it}}",
+        "Extra": "<br><div><img src=\"slide_58.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1593913170888,
+      "note_id": 1590829474879,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Meaning-focused coping is when a person copes with a stressor by [...]",
+      "answer_text": "Meaning-focused coping is when a person copes with a stressor by trying to derive meaning from it",
+      "fields": {
+        "Text": "{{c1::Meaning-focused coping}} is when a person copes with a stressor by {{c2::trying to derive meaning from it}}",
+        "Extra": "<br><div><img src=\"slide_58.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590829734451,
+      "note_id": 1590829514967,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "Maladaptive coping mechanisms include [...] , [...] , and [...]",
+      "answer_text": "Maladaptive coping mechanisms include overcompensation , surrendering , and avoidance",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">Maladaptive coping mechanisms</font> include {{c1::overcompensation}}, {{c1::surrendering}}, and {{c1::avoidance}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590830066034,
+      "note_id": 1590829734507,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Emotion, Stress & Motivation",
+      "notetype": "AACloze",
+      "question_text": "[...] is a coping mechanism where people have the tendency to exert minimal effort to escape stressful social and economic circumstances",
+      "answer_text": "Low effort syndrome is a coping mechanism where people have the tendency to exert minimal effort to escape stressful social and economic circumstances common in minority students to try and not be discriminated against by the dominant culture for trying and then failing. Would rather just not try than look stupid failing while trying",
+      "fields": {
+        "Text": "{{c1::Low effort syndrome}} is a coping mechanism where people have the tendency to <font color=\"#ff060a\">exert minimal effort </font>to escape stressful social and economic circumstances",
+        "Extra": "<i><br></i><div><i>common in minority students to try and not be discriminated against by the dominant culture for trying and then failing.&nbsp;</i></div><div><i><br></i></div><div><i>Would rather just not try than look stupid failing while trying</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590830173546,
+      "note_id": 1590830116658,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The central nervous system includes [...] and [...]",
+      "answer_text": "The central nervous system includes the brain and spinal cord",
+      "fields": {
+        "Text": "The <font color=\"#ff060a\">central nervous system</font> includes {{c1::the brain}} and {{c1::spinal cord}}",
+        "Extra": "<br><div><img src=\"h9991474_001.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590830251194,
+      "note_id": 1590830173619,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The peripheral nervous system includes [...] , [...] , and [...]",
+      "answer_text": "The peripheral nervous system includes everything outside the CNS , cranial nerves , and spinal nerves",
+      "fields": {
+        "Text": "The <font color=\"#ff060a\">peripheral nervous system</font> includes {{c1::everything outside the CNS}}, {{c1::cranial nerves}}, and {{c1::spinal nerves}}",
+        "Extra": "<br><div><img src=\"images (1).jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590830324526,
+      "note_id": 1590830251262,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The basic functions of the nervous system include [...] , [...] , and [...]",
+      "answer_text": "The basic functions of the nervous system include motor function , senses , and automatic(reflexes) functions",
+      "fields": {
+        "Text": "The <b>basic functions </b>of the <font color=\"#ff060a\">nervous system</font> include {{c1::motor function}}, {{c1::senses}}, and {{c1::automatic(reflexes) functions}}",
+        "Extra": "<br><div><img src=\"pain-withdrawal-arc_med.jpeg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590830463511,
+      "note_id": 1590830324590,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The higher functions of the nervous system include [...] , [...] , and [...]",
+      "answer_text": "The higher functions of the nervous system include cognition , emotions , and consciousness",
+      "fields": {
+        "Text": "The <b>higher functions </b>of the <font color=\"#ff060a\">nervous system</font> include {{c1::cognition}}, {{c1::emotions}}, and {{c1::consciousness}}",
+        "Extra": "<br><div><img src=\"paste-da9be9f20de6c6620f4cc9cd82bd645003949524.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590830602603,
+      "note_id": 1590830469498,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] are efferent neurons of the PNS that go from the spinal cord to a muscle to control it",
+      "answer_text": "Lower motor neurons (LMN) are efferent neurons of the PNS that go from the spinal cord to a muscle to control it",
+      "fields": {
+        "Text": "{{c1::Lower motor neurons (LMN)}} are {{c2::efferent neurons of the PNS that go from the spinal cord to a muscle to control it}}",
+        "Extra": "<br><div><img src=\"UMNLMN-connection.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590830602604,
+      "note_id": 1590830469498,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Lower motor neurons (LMN) are [...]",
+      "answer_text": "Lower motor neurons (LMN) are efferent neurons of the PNS that go from the spinal cord to a muscle to control it",
+      "fields": {
+        "Text": "{{c1::Lower motor neurons (LMN)}} are {{c2::efferent neurons of the PNS that go from the spinal cord to a muscle to control it}}",
+        "Extra": "<br><div><img src=\"UMNLMN-connection.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590830648348,
+      "note_id": 1590830602666,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Lower motor neuron cell bodies are located in [...] and terminate in [...]",
+      "answer_text": "Lower motor neuron cell bodies are located in the spinal cord and terminate in skeletal muscle",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Lower motor neuron </font><b>cell bodies</b> are located in {{c1::the spinal cord}} and <b>terminate </b>in {{c1::skeletal muscle}}",
+        "Extra": "<br><div><img src=\"UMNLMN-connection.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590830689792,
+      "note_id": 1590830648406,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Abnormalities of LMN's can cause [...]",
+      "answer_text": "Abnormalities of LMN's can cause lower motor neuron signs",
+      "fields": {
+        "Text": "Abnormalities of LMN's can cause {{c1::lower motor neuron signs}}",
+        "Extra": "<br><div><img src=\"02162017_upper-and-lower-motor-neuron-diagram.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590830715782,
+      "note_id": 1590830689837,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "LMN signs [...] [...] [...] [...]",
+      "answer_text": "LMN signs atrophy fasciculations hypotonia hyporeflexia",
+      "fields": {
+        "Text": "LMN signs<div>{{c1::atrophy}}</div><div>{{c1::fasciculations}}</div><div>{{c1::hypotonia}}</div><div>{{c1::hyporeflexia}}</div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590830776170,
+      "note_id": 1590830715844,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Atrophy is [...]",
+      "answer_text": "Atrophy is loss of skeletal muscle volume LMN sign",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Atrophy </font>is {{c1::loss of skeletal muscle volume}}",
+        "Extra": "<div><br></div><i>LMN sign</i><br><div><img src=\"06c775d00ee8f5d5e6af0c9042949aa8.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590830808947,
+      "note_id": 1590830776321,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Fasciculations are [...]",
+      "answer_text": "Fasciculations are involuntary twitches of skeletal muscle LMN sign",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Fasciculations </font>are {{c1::involuntary twitches of skeletal muscle}}",
+        "Extra": "<div><br></div><i>LMN sign</i><br><div><img src=\"gaI-rZ.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590830912261,
+      "note_id": 1590830809015,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Hypotonia is [...]",
+      "answer_text": "Hypotonia is decrease in tone of skeletal muscle LMN sign tone is how much muscle is contracted when person is relaxed",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Hypotonia </font>is {{c1::decrease in tone of skeletal muscle}}",
+        "Extra": "<div><i><br></i></div><i><div>LMN sign</div><br></i><div><i>tone is how much muscle is contracted when person is relaxed</i></div><div><img src=\"Hypotonia.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590830954357,
+      "note_id": 1590830912334,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Hyporeflexia is [...]",
+      "answer_text": "Hyporeflexia is decreased muscle stretch reflex LMN sign",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Hyporeflexia </font>is {{c1::decreased muscle stretch reflex}}",
+        "Extra": "<div><br></div><i>LMN sign</i><br><div><img src=\"Tendon_Reflex_MedicosNotes_com.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590831186332,
+      "note_id": 1590830954425,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Pacinian corpuscles detect [...] and [...]",
+      "answer_text": "Pacinian corpuscles detect deep pressure and vibration",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Pacinian corpuscles</font> detect {{c1::deep pressure}} and {{c1::vibration}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590831235251,
+      "note_id": 1590831186458,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Merkel cells detect [...] and [...]",
+      "answer_text": "Merkel cells detect texture and pressure",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Merkel cells</font> detect {{c1::texture}} and {{c1::pressure}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590831256826,
+      "note_id": 1590831235323,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Ruffini endings detect [...]",
+      "answer_text": "Ruffini endings detect stretching mnemonic: If you stretch your luck, you get ruffed up",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Ruffini endings </font>detect {{c1::stretching}}",
+        "Extra": "<br><div>mnemonic: If you <b>stretch </b>your luck, you get <b>ruffed </b>up</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590831357857,
+      "note_id": 1590831298324,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Meissener's Corpuscles detect [...]",
+      "answer_text": "Meissener's Corpuscles detect light touch",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Meissener's Corpuscles </font>detect {{c1::light touch}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590831417647,
+      "note_id": 1590831357932,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Free nerve endings detect [...]",
+      "answer_text": "Free nerve endings detect pain",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Free nerve endings</font> detect {{c1::pain}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590831514213,
+      "note_id": 1590831417716,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Nociceptors and thermoceptors travel in [Fast/Slow] neurons Position / Vibration / Touch travel in [Fast/Slow] neurons",
+      "answer_text": "Nociceptors and thermoceptors travel in slow neurons Position / Vibration / Touch travel in fast neurons",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Nociceptors </font>and <font color=\"#ff060a\">thermoceptors </font>travel in {{c1::slow::Fast/Slow}} neurons<div><font color=\"#ff060a\">Position</font>/<font color=\"#ff060a\">Vibration</font>/<font color=\"#ff060a\">Touch </font>travel in {{c1::fast::Fast/Slow}} neurons</div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590831562292,
+      "note_id": 1590831514367,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The muscle stretch reflex causes a muscle to [...]",
+      "answer_text": "The muscle stretch reflex causes a muscle to contract after it is stretched too far to protect it",
+      "fields": {
+        "Text": "The muscle stretch reflex causes a muscle to {{c1::contract after it is stretched too far to protect it}}",
+        "Extra": "<br><div><img src=\"Knee-jerk-reflex-motor-neuron-connection.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590831597935,
+      "note_id": 1590831562322,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The two steps to a reflex include the [...] and [...]",
+      "answer_text": "The two steps to a reflex include the afferent (stimulus) and efferent (response)",
+      "fields": {
+        "Text": "The two steps to a <font color=\"#ff060a\">reflex </font>include the {{c1::afferent (stimulus)}} and {{c1::efferent (response)}}",
+        "Extra": "<br><div><img src=\"Knee-jerk-reflex-motor-neuron-connection.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590831800863,
+      "note_id": 1590831597998,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Steps to muscle stretch reflex ( knee jerk ) [...] [...] [...]",
+      "answer_text": "Steps to muscle stretch reflex ( knee jerk ) somatosensory neurons (afferent) in muscle spindles synapse in spinal cord after stimulus axon sent back out LMN (efferent) to contract muscle muscle on top of leg contract (quadricep), muscle on bottom of leg inhibited (hamstring)",
+      "fields": {
+        "Text": "Steps to muscle stretch reflex (<font color=\"#ff060a\">knee jerk</font>)<div>{{c1::<font color=\"#ff060a\">somatosensory </font>neurons (afferent) in muscle <font color=\"#ff060a\">spindles </font>synapse in spinal cord after stimulus}}</div><div>{{c1::axon sent back out <font color=\"#ff060a\">LMN </font>(efferent) to <font color=\"#ff060a\">contract </font>muscle}}</div><div>{{c1::muscle on <font color=\"#ff060a\">top </font>of leg <font color=\"#ff060a\">contract </font>(quadricep), muscle on <font color=\"#ff060a\">bottom </font>of leg <font color=\"#ff060a\">inhibited </font>(hamstring)}}</div>",
+        "Extra": "<br><div><img src=\"sL6Pvk3GccRHbjdtE7dwB9wS.jpeg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590831909369,
+      "note_id": 1590831800895,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Gray matter is mostly [...]",
+      "answer_text": "Gray matter is mostly neuron somas",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Gray matter </font>is mostly {{c1::neuron somas}}",
+        "Extra": "<br><div><img src=\"grey-and-white-matter1363643392251_orig.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590831925752,
+      "note_id": 1590831909505,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "White matter is mostly [...]",
+      "answer_text": "White matter is mostly myelinated axons",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">White matter </font>is mostly {{c1::myelinated axons}}",
+        "Extra": "<br><div><img src=\"grey-and-white-matter1363643392251_orig.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590831953722,
+      "note_id": 1590831925826,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "In the spinal cord , [...] matter is on the inside and [...] matter is on the outside",
+      "answer_text": "In the spinal cord , grey matter is on the inside and white matter is on the outside",
+      "fields": {
+        "Text": "In the <font color=\"#ff060a\">spinal cord</font>, {{c1::grey}} matter is on the inside and {{c1::white}} matter is on the outside",
+        "Extra": "<br><div><img src=\"grey-and-white-matter1363643392251_orig.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590831980722,
+      "note_id": 1590831976116,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "In the brain , [...] matter is on the inside and [...] matter is on the outside",
+      "answer_text": "In the brain , white matter is on the inside and grey matter is on the outside",
+      "fields": {
+        "Text": "In the <font color=\"#ff060a\">brain</font>, {{c1::white}} matter is on the inside and {{c1::grey}} matter is on the outside",
+        "Extra": "<br><div><img src=\"grey-and-white-matter1363643392251_orig.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590832105677,
+      "note_id": 1590831980783,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The function of upper motor neurons (UMN's) is to [...]",
+      "answer_text": "The function of upper motor neurons (UMN's) is to control lower motor neurons",
+      "fields": {
+        "Text": "The function of <font color=\"#ff060a\">upper motor neurons </font>(UMN's) is to {{c1::control lower motor neurons}}",
+        "Extra": "<br><div><img src=\"UMNLMN-connection.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590832148079,
+      "note_id": 1590832105710,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Upper motor neurons are found in [...] and synapse on [...]",
+      "answer_text": "Upper motor neurons are found in the cerebral cortex and synapse on LMNs in the brainstem or spinal cord",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Upper motor neurons </font>are found in {{c1::the cerebral cortex}} and synapse on {{c1::LMNs in the brainstem or spinal cord}}",
+        "Extra": "<br><div><img src=\"UMNLMN-connection.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590832227067,
+      "note_id": 1590832148133,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] is when UMN's of the cerebral cortex synapse on LMN's in the spinal cord",
+      "answer_text": "The corticospinal tract is when UMN's of the cerebral cortex synapse on LMN's in the spinal cord",
+      "fields": {
+        "Text": "{{c1::The corticospinal tract}} is {{c2::when UMN's of the cerebral cortex synapse on LMN's in the spinal cord}}",
+        "Extra": "<br><div><img src=\"Overview-of-the-Corticospinal-Tracts-Anterior-and-Lateral..jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590832227069,
+      "note_id": 1590832148133,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The corticospinal tract is [...]",
+      "answer_text": "The corticospinal tract is when UMN's of the cerebral cortex synapse on LMN's in the spinal cord",
+      "fields": {
+        "Text": "{{c1::The corticospinal tract}} is {{c2::when UMN's of the cerebral cortex synapse on LMN's in the spinal cord}}",
+        "Extra": "<br><div><img src=\"Overview-of-the-Corticospinal-Tracts-Anterior-and-Lateral..jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590832297920,
+      "note_id": 1590832227180,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The corticobulbar tract is when [...]",
+      "answer_text": "The corticobulbar tract is when UMN's of the cerebral cortex synapse on the brainstem",
+      "fields": {
+        "Text": "{{c2::The corticobulbar tract}} is when {{c1::UMN's of the cerebral cortex synapse on the brainstem}}",
+        "Extra": "<br><div><img src=\"Overview-of-the-Corticobulbar-Tracts.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590832297922,
+      "note_id": 1590832227180,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] is when UMN's of the cerebral cortex synapse on the brainstem",
+      "answer_text": "The corticobulbar tract is when UMN's of the cerebral cortex synapse on the brainstem",
+      "fields": {
+        "Text": "{{c2::The corticobulbar tract}} is when {{c1::UMN's of the cerebral cortex synapse on the brainstem}}",
+        "Extra": "<br><div><img src=\"Overview-of-the-Corticobulbar-Tracts.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590832362711,
+      "note_id": 1590832297986,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Upper motor neuron signs [...] [...] [...] [...]",
+      "answer_text": "Upper motor neuron signs Hyperreflexia Clonus Hypertonia Extensor Plantar Response",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">Upper motor neuron signs</font><div>{{c1::Hyperreflexia}}</div><div>{{c1::Clonus}}</div><div>{{c1::Hypertonia}}</div><div>{{c1::Extensor Plantar Response}}</div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590832401289,
+      "note_id": 1590832362781,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Hyperreflexia is [...]",
+      "answer_text": "Hyperreflexia is an increase in the muscle stretch reflexes UMN sign",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Hyperreflexia </font>is {{c1::an increase in the muscle stretch reflexes}}",
+        "Extra": "<div><i><br></i></div><div><i>UMN sign</i></div><i><br></i><div><i><img src=\"hyperreflexia-clinical-serotonin-syndrome-physicalexam-original.gif\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590832487253,
+      "note_id": 1590832483451,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Clonus is [...]",
+      "answer_text": "Clonus is rhythmic contractions of antagonist muscles UMN sign",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">Clonus </font>is {{c1::rhythmic contractions of antagonist muscles}}",
+        "Extra": "<div><i><br></i></div><div><i>UMN sign</i></div><i><br></i><div><i><img src=\"clonus-video-knee-reflexes-serotonin-original.gif\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590832572149,
+      "note_id": 1590832487309,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Hypertonia is [...]",
+      "answer_text": "Hypertonia is increased tone of skeletal muscles UMN sign",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Hypertonia </font>is {{c1::increased tone of skeletal muscles}}",
+        "Extra": "<div><i><br></i></div><div><i>UMN sign&nbsp;</i></div><i><br></i><div><i><img src=\"c77a6c08653ef7c126aee5886da2e92a.jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590832864552,
+      "note_id": 1590832572298,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Extensor plantar response is [...]",
+      "answer_text": "Extensor plantar response is when your toes extend up when an object scrapes along ur foot opposed to the normal response of curling toes down",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Extensor plantar response </font>is {{c1::when your toes extend up when an object scrapes along ur foot opposed to the normal response of curling toes down}}",
+        "Extra": "<br><div><img src=\"video-clinical-plantar-babinski-reflex-original.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590833537569,
+      "note_id": 1590833364531,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The four lobes of the cerebral cortex [...] [...] [...] [...]",
+      "answer_text": "The four lobes of the cerebral cortex frontal parietal occipital temportal",
+      "fields": {
+        "Text": "The <font color=\"#ff060a\">four lobes </font>of the <font color=\"#ff060a\">cerebral cortex</font><div>{{c1::frontal}}</div><div>{{c1::parietal}}</div><div>{{c1::occipital}}</div><div>{{c1::temportal}}</div>",
+        "Extra": "<div><br></div><div><img src=\"ds00266_ds00810_im03440_bn7_lobesthu_jpg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590833641220,
+      "note_id": 1590833537643,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The functions of the frontal lobe : [...] [...] [...] [...] [...]",
+      "answer_text": "The functions of the frontal lobe : executive function impulse control long-term planning motor function (primary motor cortex) speech production (broca's area) mnemonic: SLIME",
+      "fields": {
+        "Text": "The functions of the <font color=\"#ff060a\">frontal lobe</font>:<div>{{c1::executive function}}</div><div>{{c1::impulse control}}</div><div>{{c1::long-term planning}}</div><div>{{c1::motor function (primary motor cortex)}}</div><div>{{c1::speech production (broca's area)}}</div>",
+        "Extra": "<br><div>mnemonic: <b>SLIME</b></div><div><img src=\"Temporal-lobe.gif\"><b><br></b></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590833692409,
+      "note_id": 1590833641374,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The functions of the parietal lobe : [...] [...]",
+      "answer_text": "The functions of the parietal lobe : somatosensation (somatosensory cortex) spatial processing, orientation, and manipulation",
+      "fields": {
+        "Text": "The functions of the <font color=\"#00ffff\">parietal lobe</font>:<div>{{c1::somatosensation (somatosensory cortex)}}</div><div>{{c1::spatial processing, orientation, and manipulation}}</div>",
+        "Extra": "<br><div><img src=\"Temporal-lobe.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590833792115,
+      "note_id": 1590833692466,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The functions of the occipital lobe : [...]",
+      "answer_text": "The functions of the occipital lobe : visual processing also contains striate cortex",
+      "fields": {
+        "Text": "The functions of the <font color=\"#ff060a\">occipital lobe</font>:<div>{{c1::visual processing}}</div>",
+        "Extra": "<div><i>also contains striate cortex</i></div><div><i><img src=\"Temporal-lobe.gif\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590833916053,
+      "note_id": 1590833913090,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The functions of the temporal lobe : [...] [...] [...] [...]",
+      "answer_text": "The functions of the temporal lobe : sound processing (auditory cortex) speech perception (wernicke's area) memory (hippocampus) emotion (limbic system) mnemonic: Without the temporal lobe, you are a M E S S",
+      "fields": {
+        "Text": "The functions of the <font color=\"#ff060a\">temporal lobe</font>:<div>{{c1::sound processing (auditory cortex)}}</div><div>{{c1::speech perception (wernicke's area)}}</div><div>{{c1::memory (hippocampus)}}</div><div>{{c1::emotion (limbic system)}}</div>",
+        "Extra": "<div><i><br></i></div><i>mnemonic: Without the temporal lobe, you are a&nbsp;<b>M E S S</b><br></i><div><i><img src=\"Temporal-lobe.gif\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590833992741,
+      "note_id": 1590833916128,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Contralateral control is that [...]",
+      "answer_text": "Contralateral control is that the left brain controls the right side of the body and right brain controls the left side of the body",
+      "fields": {
+        "Text": "{{c2::<font color=\"#ff060a\">Contralateral control</font>}}<font color=\"#ff060a\">&nbsp;</font>is that {{c1::the left brain controls the right side of the body and right brain controls the left side of the body}}",
+        "Extra": "<br><div><img src=\"contralateral-processing_med.jpeg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590833992743,
+      "note_id": 1590833916128,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] is that the left brain controls the right side of the body and right brain controls the left side of the body",
+      "answer_text": "Contralateral control is that the left brain controls the right side of the body and right brain controls the left side of the body",
+      "fields": {
+        "Text": "{{c2::<font color=\"#ff060a\">Contralateral control</font>}}<font color=\"#ff060a\">&nbsp;</font>is that {{c1::the left brain controls the right side of the body and right brain controls the left side of the body}}",
+        "Extra": "<br><div><img src=\"contralateral-processing_med.jpeg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590834046732,
+      "note_id": 1590833992888,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The dominant brain hemisphere for most people is the [right/left] hemisphere",
+      "answer_text": "The dominant brain hemisphere for most people is the left hemisphere",
+      "fields": {
+        "Text": "The <font color=\"#ff060a\">dominant brain hemisphere </font>for most people is the {{c1::left::right/left}} hemisphere",
+        "Extra": "<br><div><img src=\"114700584-right-and-left-hemispheres-of-a-brain-vector-illustration.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590834114498,
+      "note_id": 1590834046813,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Left hemisphere is involved in [...] , [...] , and [...]",
+      "answer_text": "Left hemisphere is involved in language , math , and logical thinking",
+      "fields": {
+        "Text": "<font color=\"#ffc0fe\">Left hemisphere</font><font color=\"#ff060a\"> </font>is involved in {{c1::language}}, {{c1::math}}, and {{c1::logical thinking}}",
+        "Extra": "<br><div><img src=\"838325973.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590834249042,
+      "note_id": 1590834114566,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The right hemisphere is involved in [...] , [...] , [...] , and [...]",
+      "answer_text": "The right hemisphere is involved in creativity , music , spatial processing , and art",
+      "fields": {
+        "Text": "The <font color=\"#ffc0fe\"><b>right hemisphere</b></font><font color=\"#ff060a\"> </font>is involved in {{c1::creativity}}, {{c1::music}}, {{c1::spatial processing}}, and {{c1::art}}",
+        "Extra": "<br><div><img src=\"838325973.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590834446812,
+      "note_id": 1590834249098,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Since brain structures build on top of eachother as we evolve , inside the brain contains [...]",
+      "answer_text": "Since brain structures build on top of eachother as we evolve , inside the brain contains older structures that regulate basic needs this is called the OLD BRAIN",
+      "fields": {
+        "Text": "Since <font color=\"#ffc0fe\">brain structures</font><font color=\"#ff060a\"> </font><u>build on top of eachother</u> as we <b>evolve</b>, inside the brain contains {{c1::older structures that regulate basic needs}}",
+        "Extra": "<i><br></i><div><i>this is called the OLD BRAIN</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590834531275,
+      "note_id": 1590834516359,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The forebrain becomes the [...]",
+      "answer_text": "The forebrain becomes the cerebrum",
+      "fields": {
+        "Text": "The <font color=\"#ff060a\">forebrain </font>becomes the {{c1::cerebrum}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590834547103,
+      "note_id": 1590834531351,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The midbrain becomes [...]",
+      "answer_text": "The midbrain becomes the midbrain fuck you",
+      "fields": {
+        "Text": "The <font color=\"#00ffff\">midbrain </font>becomes {{c1::the midbrain}}",
+        "Extra": "<br><div>fuck you</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590834583043,
+      "note_id": 1590834547170,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The hindbrain becomes the [...] , [...] , and [...]",
+      "answer_text": "The hindbrain becomes the pons , medulla , and cerebullum",
+      "fields": {
+        "Text": "The <font color=\"#ff060a\">hindbrain </font>becomes the {{c1::pons}}, {{c1::medulla}}, and {{c1::cerebullum}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590834690671,
+      "note_id": 1590834591609,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The cerebellum functions: [...] [...] [...] [...]",
+      "answer_text": "The cerebellum functions: coordinate movement aid in proprioception w/ muscle spindles helps balance fine motor function",
+      "fields": {
+        "Text": "The <font color=\"#00ffff\">cerebellum </font>functions:<div>{{c1::coordinate movement}}</div><div>{{c1::aid in proprioception w/ muscle spindles}}</div><div>{{c1::helps balance}}</div><div>{{c1::fine motor function}}</div>",
+        "Extra": "<br><div><img src=\"anatomy-of-the-brain-cerebellum-373216_final-87543856311e4c0380bd1fa616c84f41.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590834829918,
+      "note_id": 1590834690747,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The brainstem includes the [...] , [...] , [...] , and [...]",
+      "answer_text": "The brainstem includes the midbrain , pons , medulla oblongata , and reticular formation",
+      "fields": {
+        "Text": "The <font color=\"#ff060a\">brainstem </font>includes the {{c1::midbrain}}, {{c1::pons}}, {{c1::medulla oblongata}}, and {{c1::reticular formation}}",
+        "Extra": "<br><div><img src=\"1311_Brain_Stem.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590835055423,
+      "note_id": 1590834830069,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The reticular formation is [...]",
+      "answer_text": "The reticular formation is neuron somas scattered throughout the brainstem",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">The reticular formation </font>is {{c1::neuron somas scattered throughout the brainstem}}",
+        "Extra": "<br><div><img src=\"a4e99bcc98457c86c513328d9cb850c1.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590835236918,
+      "note_id": 1590835055491,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Functions of reticular formation : [...] [...] [...] [...]",
+      "answer_text": "Functions of reticular formation : aids in alertness aids sleep/wake cycle helps filter information to the thalamus some autonomic functions",
+      "fields": {
+        "Text": "Functions of <font color=\"#00ffff\">reticular formation</font>:<div>{{c1::aids in alertness}}</div><div>{{c1::aids sleep/wake cycle}}</div><div>{{c1::helps filter information to the thalamus}}</div><div>{{c1::some autonomic functions}}</div>",
+        "Extra": "<br><div><img src=\"a4e99bcc98457c86c513328d9cb850c1.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590835304346,
+      "note_id": 1590835237056,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Function of pons : [...]",
+      "answer_text": "Function of pons : regulates waking and relaxing",
+      "fields": {
+        "Text": "Function of <font color=\"#ff060a\">pons</font>:<div>{{c1::regulates waking and relaxing}}</div>",
+        "Extra": "<br><div><img src=\"1311_Brain_Stem.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590835390908,
+      "note_id": 1590835374469,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Function of medulla oblongata : [...]",
+      "answer_text": "Function of medulla oblongata : regulates autonomic activity of heart and lungs",
+      "fields": {
+        "Text": "Function of <font color=\"#ff060a\">medulla oblongata</font>:<div>{{c1::regulates autonomic activity of heart and lungs}}</div>",
+        "Extra": "<br><div><img src=\"1311_Brain_Stem.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590835549256,
+      "note_id": 1590835390981,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The [...] contains the corticospinal tract",
+      "answer_text": "The internal capsule contains the corticospinal tract",
+      "fields": {
+        "Text": "The {{c1::internal capsule}} contains the <font color=\"#ff060a\">corticospinal tract</font>",
+        "Extra": "<br><div><img src=\"41386b2b8d1990a1e85b42a7d6aa63e6.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590835629106,
+      "note_id": 1590835549409,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] connects the two cerebral hemispheres",
+      "answer_text": "The corpus collosum connects the two cerebral hemispheres",
+      "fields": {
+        "Text": "{{c1::The corpus collosum}} connects the two <font color=\"#ff060a\">cerebral hemispheres</font>",
+        "Extra": "<br><div><img src=\"FIGURE+3.20+The+Corpus+Callosum.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590835744540,
+      "note_id": 1590835629178,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Basal ganglia has an important role in [...] , [...] , and [...]",
+      "answer_text": "Basal ganglia has an important role in motor function , cognition , and emotion",
+      "fields": {
+        "Text": "<font color=\"#ffc0fe\"><b>Basal ganglia</b></font><font color=\"#ff060a\"> </font>has an important role in {{c1::motor function}}, {{c1::cognition}}, and {{c1::emotion}}",
+        "Extra": "<br><div><img src=\"basal-ganglia-anatomy-1.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590835815264,
+      "note_id": 1590835744604,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] is the most common excitatory neurotransmitter",
+      "answer_text": "Glutamate is the most common excitatory neurotransmitter",
+      "fields": {
+        "Text": "{{c1::Glutamate}} is the {{c2::most common excitatory neurotransmitter}}",
+        "Extra": "<br><div><img src=\"https://media.eurekalert.org/multimedia_prod/pub/web/196799_web.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590835815265,
+      "note_id": 1590835744604,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Glutamate is the [...]",
+      "answer_text": "Glutamate is the most common excitatory neurotransmitter",
+      "fields": {
+        "Text": "{{c1::Glutamate}} is the {{c2::most common excitatory neurotransmitter}}",
+        "Extra": "<br><div><img src=\"https://media.eurekalert.org/multimedia_prod/pub/web/196799_web.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590835896379,
+      "note_id": 1590835815319,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] is required for consciousness and is used to diffuse the projection of glutamate into the cerebral cortex",
+      "answer_text": "The Reticular Activating System is required for consciousness and is used to diffuse the projection of glutamate into the cerebral cortex",
+      "fields": {
+        "Text": "{{c1::The Reticular Activating System}} is required for {{c2::consciousness}} and is used to {{c2::diffuse the projection of glutamate into the cerebral cortex}}",
+        "Extra": "<br><div><img src=\"RAS.JPG\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590835896381,
+      "note_id": 1590835815319,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The Reticular Activating System is required for [...] and is used to [...]",
+      "answer_text": "The Reticular Activating System is required for consciousness and is used to diffuse the projection of glutamate into the cerebral cortex",
+      "fields": {
+        "Text": "{{c1::The Reticular Activating System}} is required for {{c2::consciousness}} and is used to {{c2::diffuse the projection of glutamate into the cerebral cortex}}",
+        "Extra": "<br><div><img src=\"RAS.JPG\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590835932358,
+      "note_id": 1590835896518,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The two most common inhibitory neurotransmitters are [...] and [...]",
+      "answer_text": "The two most common inhibitory neurotransmitters are GABA and Glycine",
+      "fields": {
+        "Text": "The two most common {{c2::<font color=\"#00ffff\">inhibitory</font>}}<font color=\"#ff060a\">&nbsp;</font><font color=\"#00ffff\">neurotransmitters </font>are {{c1::GABA}} and {{c1::Glycine}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590835946176,
+      "note_id": 1590835896518,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The two most common [...] neurotransmitters are GABA and Glycine",
+      "answer_text": "The two most common inhibitory neurotransmitters are GABA and Glycine",
+      "fields": {
+        "Text": "The two most common {{c2::<font color=\"#00ffff\">inhibitory</font>}}<font color=\"#ff060a\">&nbsp;</font><font color=\"#00ffff\">neurotransmitters </font>are {{c1::GABA}} and {{c1::Glycine}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590835984725,
+      "note_id": 1590835954387,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Glycine primarily acts on the [...]",
+      "answer_text": "Glycine primarily acts on the spinal cord",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">Glycine </font>primarily acts on the {{c1::spinal cord}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590835995465,
+      "note_id": 1590835984759,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "GABA primarily acts on the [...]",
+      "answer_text": "GABA primarily acts on the brain",
+      "fields": {
+        "Text": "<font color=\"#ff060a\">GABA </font>primarily acts on the {{c1::brain}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590886348869,
+      "note_id": 1590886295679,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Analytical intelligence is [...]",
+      "answer_text": "Analytical intelligence is the ability to solve well defined problems Academic ability",
+      "fields": {
+        "Text": "<b>Analytical intelligence</b> is {{c1::the ability to solve well defined problems}}",
+        "Extra": "<br><div><i>Academic ability</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590886411264,
+      "note_id": 1590886348871,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Creative Intelligence is [...] and [...]",
+      "answer_text": "Creative Intelligence is the ability to adapt to new situations and generate novel ideas",
+      "fields": {
+        "Text": "<b>Creative</b> <b>Intelligence</b> is {{c1::the ability to adapt to new situations}} and {{c1::generate novel ideas}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1590886468542,
+      "note_id": 1590886411266,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Learning, Memory & Cognition",
+      "notetype": "AACloze",
+      "question_text": "Practical intelligence is [...]",
+      "answer_text": "Practical intelligence is the ability to solve ill-defined problems Ability to apply analytical and creative intelligence to real life scenarios Street smarts",
+      "fields": {
+        "Text": "<b>Practical intelligence</b> is {{c1::the ability to solve ill-defined problems}}",
+        "Extra": "<br><div><i>Ability to apply analytical and creative intelligence to real life scenarios</i></div><div><i><br></i></div><div><i>Street smarts</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591091765058,
+      "note_id": 1591091455924,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] is released from the basilis nuclei and septal nuclei in the frontal lobe",
+      "answer_text": "Acetylcholine is released from the basilis nuclei and septal nuclei in the frontal lobe",
+      "fields": {
+        "Text": "{{c1::Acetylcholine}} is released from the {{c2::basilis nuclei}} and {{c2::septal nuclei}} in the {{c2::frontal}} lobe",
+        "Extra": "<br><div><img src=\"acetylcholine-50552179-8f71-48ad-9122-8f6f63c4e69-resize-750.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591091765059,
+      "note_id": 1591091455924,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Acetylcholine is released from the [...] and [...] in the [...] lobe",
+      "answer_text": "Acetylcholine is released from the basilis nuclei and septal nuclei in the frontal lobe",
+      "fields": {
+        "Text": "{{c1::Acetylcholine}} is released from the {{c2::basilis nuclei}} and {{c2::septal nuclei}} in the {{c2::frontal}} lobe",
+        "Extra": "<br><div><img src=\"acetylcholine-50552179-8f71-48ad-9122-8f6f63c4e69-resize-750.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591091828464,
+      "note_id": 1591091765188,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Acetylcholine is released for [...] and [...]",
+      "answer_text": "Acetylcholine is released for LMNs and the ANS",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Acetylcholine </font>is released for {{c1::LMNs}} and {{c1::the ANS}}",
+        "Extra": "<br><div><img src=\"Healthy-neuromuscular-junction-The-normal-function-of-the-neuromuscular-junction-with.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591091938421,
+      "note_id": 1591091828524,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Histamine is released from the [...] to the [...]",
+      "answer_text": "Histamine is released from the hypothalamus to the cerebral cortex",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Histamine </font>is released from the {{c1::hypothalamus}} to the {{c1::cerebral cortex}}",
+        "Extra": "<br><div><img src=\"histamine-l.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591092010254,
+      "note_id": 1591091938490,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] is released in the locus coereleus , which is in the pons .",
+      "answer_text": "Norepinephrine is released in the locus coereleus , which is in the pons .",
+      "fields": {
+        "Text": "{{c1::Norepinephrine}} is released in the {{c2::locus coereleus}}, which is in the {{c2::pons}}.",
+        "Extra": "<br><div><img src=\"Figure-1.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591092010256,
+      "note_id": 1591091938490,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Norepinephrine is released in the [...] , which is in the [...] .",
+      "answer_text": "Norepinephrine is released in the locus coereleus , which is in the pons .",
+      "fields": {
+        "Text": "{{c1::Norepinephrine}} is released in the {{c2::locus coereleus}}, which is in the {{c2::pons}}.",
+        "Extra": "<br><div><img src=\"Figure-1.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591092087056,
+      "note_id": 1591092010317,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Norepinephrine is released to the [...] and the [...]",
+      "answer_text": "Norepinephrine is released to the cerebral cortex and the ANS Released to the ANS less than acetylcholine",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Norepinephrine </font>is released to the {{c1::cerebral cortex}} and the {{c1::ANS}}",
+        "Extra": "<i><br></i><div><i>Released to the ANS less than acetylcholine</i></div><div><img src=\"824b9e8e9e472e9f20f168108e8ceb1d.png\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591092195139,
+      "note_id": 1591092087199,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] is released from raphe nuclei , which are located all over the brainstem .",
+      "answer_text": "Serotonin is released from raphe nuclei , which are located all over the brainstem .",
+      "fields": {
+        "Text": "{{c1::Serotonin}} is released from {{c2::raphe nuclei}}, which are located {{c2::all over the brainstem}}.",
+        "Extra": "<br><div><img src=\"drn_projectionsb285.png_;\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591092195141,
+      "note_id": 1591092087199,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Serotonin is released from [...] , which are located [...] .",
+      "answer_text": "Serotonin is released from raphe nuclei , which are located all over the brainstem .",
+      "fields": {
+        "Text": "{{c1::Serotonin}} is released from {{c2::raphe nuclei}}, which are located {{c2::all over the brainstem}}.",
+        "Extra": "<br><div><img src=\"drn_projectionsb285.png_;\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591092247418,
+      "note_id": 1591092195218,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Serotonin is released to the [...] and [...]",
+      "answer_text": "Serotonin is released to the cerebral cortex and many other parts of the nervous system",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Serotonin </font>is released to the {{c1::cerebral cortex}} and {{c1::many other parts of the nervous system}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591092469842,
+      "note_id": 1591092458871,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Prolactin secretion is inhibited by [...]",
+      "answer_text": "Prolactin secretion is inhibited by dopamine",
+      "fields": {
+        "Text": "<font color=\"#ffc0fe\">Prolactin </font>secretion is inhibited by {{c1::dopamine}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591092651699,
+      "note_id": 1591092469978,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Dopamine is produced in the [...] , [...] , and [...] .",
+      "answer_text": "Dopamine is produced in the arcuate nucleus , substantia nigra , and VTA .",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Dopamine </font>is produced in the {{c1::arcuate nucleus}}, {{c1::substantia nigra}}, and {{c1::VTA}}.",
+        "Extra": "<br><div><img src=\"Figure1.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591092797354,
+      "note_id": 1591092651793,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Dopamine produced in the arcuate nucleus [function]",
+      "answer_text": "Dopamine produced in the arcuate nucleus controls prolactin release",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Dopamine </font>produced in the arcuate nucleus {{c1::controls prolactin release::function}}",
+        "Extra": "<br><div><img src=\"CwGKNDIWm9oU-dgVr4jRu0mVfs1Ea-0Pkl__NAwUrOw0yCo34Da1WHf73dLRl2A2MKDR2N4_FDei2X1oYo_VLasNoIjQswmd.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591092896054,
+      "note_id": 1591092797504,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Dopamine produced in the substantia nigra helps control [...] and [...]",
+      "answer_text": "Dopamine produced in the substantia nigra helps control motor planning and purposeful movement",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Dopamine </font>produced in the <i><b>substantia nigra</b></i> helps control {{c1::motor planning}} and {{c1::purposeful movement}}",
+        "Extra": "<br><div><img src=\"1200-604017-location-of-substantia-nigra.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591092994398,
+      "note_id": 1591092896089,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Dopamine produced in the ventral tegmental area (VTA) controls [...]",
+      "answer_text": "Dopamine produced in the ventral tegmental area (VTA) controls the mesolimbic (reward) pathway at this point I hope you remember the VTA and functions of the mesolimbic pathway and its components",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Dopamine </font>produced in the <i><b>ventral tegmental area (VTA)</b></i> controls {{c1::the mesolimbic (reward) pathway}}",
+        "Extra": "<div><br></div><i>at this point I hope you remember the VTA and functions of the mesolimbic pathway and its components</i><br><div><img src=\"2538e13bdf68d86e6f49bfd2688ede4c.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591093028231,
+      "note_id": 1591092994472,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The main neurotransmitters in the peripheral nervous system are [...] and [...]",
+      "answer_text": "The main neurotransmitters in the peripheral nervous system are acetylcholine and epinephrine",
+      "fields": {
+        "Text": "The main <font color=\"#00ffff\">neurotransmitters </font>in the {{c2::peripheral}} nervous system are {{c1::acetylcholine}} and {{c1::epinephrine}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591093028233,
+      "note_id": 1591092994472,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The main neurotransmitters in the [...] nervous system are acetylcholine and epinephrine",
+      "answer_text": "The main neurotransmitters in the peripheral nervous system are acetylcholine and epinephrine",
+      "fields": {
+        "Text": "The main <font color=\"#00ffff\">neurotransmitters </font>in the {{c2::peripheral}} nervous system are {{c1::acetylcholine}} and {{c1::epinephrine}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591093083086,
+      "note_id": 1591093028308,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Low serotonin is associated with [...]",
+      "answer_text": "Low serotonin is associated with depression :(",
+      "fields": {
+        "Text": "Low <font color=\"#fc0000\">serotonin </font>is associated with {{c1::depression}}",
+        "Extra": "&nbsp;:("
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591093111199,
+      "note_id": 1591093083156,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "High dopamine is associated with [...]",
+      "answer_text": "High dopamine is associated with schizophrenia",
+      "fields": {
+        "Text": "<b>High </b><font color=\"#fc0000\">dopamine </font>is associated with {{c1::schizophrenia}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591093129849,
+      "note_id": 1591093111353,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Low dopamine is associated with [...]",
+      "answer_text": "Low dopamine is associated with parkinson's disease",
+      "fields": {
+        "Text": "<b>Low </b><font color=\"#fc0000\">dopamine </font>is associated with {{c1::parkinson's disease}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591093175089,
+      "note_id": 1591093129928,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Endorphins function to [...]",
+      "answer_text": "Endorphins function to block pain sensations",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Endorphins </font>function to {{c1::block pain sensations}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591093341765,
+      "note_id": 1591093175152,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] is an outdated system where individuals believed that each brain area is devoted to a certain personality characteristic, thought, or emotion and that as brain areas developed, they would grow and create bumps on the skull",
+      "answer_text": "Phrenology is an outdated system where individuals believed that each brain area is devoted to a certain personality characteristic, thought, or emotion and that as brain areas developed, they would grow and create bumps on the skull",
+      "fields": {
+        "Text": "{{c1::Phrenology}} is an outdated system where individuals believed that each brain area is devoted to a certain personality characteristic, thought, or emotion and that as brain areas developed, they would grow and create bumps on the skull",
+        "Extra": "<br><div><img src=\"u-g-F8XPAY0.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591093522887,
+      "note_id": 1591093341839,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] involve destroying areas of the brain and then studying the resulting changes in behavior",
+      "answer_text": "Lesion studies involve destroying areas of the brain and then studying the resulting changes in behavior EXAMPLE: Not really an intentional study, but phineas gage became a cunt when his frontal lobe got fucked up when a bar went through it. Apparently he was really nice beforehand. Shows how destroying parts of the brain can be studied to see function of a specific region.",
+      "fields": {
+        "Text": "{{c1::Lesion studies}} involve {{c2::destroying areas of the brain and then studying the resulting changes in behavior}}",
+        "Extra": "<div><i><br></i></div><i>EXAMPLE: Not really an <b>intentional </b>study, but phineas gage became a cunt when his frontal lobe got fucked up when a bar went through it. Apparently he was really nice beforehand. Shows how destroying parts of the brain can be studied to see function of a specific region.<br></i><div><i><img src=\"slide_4 (2).jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591093522889,
+      "note_id": 1591093341839,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Lesion studies involve [...]",
+      "answer_text": "Lesion studies involve destroying areas of the brain and then studying the resulting changes in behavior EXAMPLE: Not really an intentional study, but phineas gage became a cunt when his frontal lobe got fucked up when a bar went through it. Apparently he was really nice beforehand. Shows how destroying parts of the brain can be studied to see function of a specific region.",
+      "fields": {
+        "Text": "{{c1::Lesion studies}} involve {{c2::destroying areas of the brain and then studying the resulting changes in behavior}}",
+        "Extra": "<div><i><br></i></div><i>EXAMPLE: Not really an <b>intentional </b>study, but phineas gage became a cunt when his frontal lobe got fucked up when a bar went through it. Apparently he was really nice beforehand. Shows how destroying parts of the brain can be studied to see function of a specific region.<br></i><div><i><img src=\"slide_4 (2).jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591093745778,
+      "note_id": 1591093523059,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] is used to destroy cell bodies but leave passing axons alone during lesion studies",
+      "answer_text": "Kainic acid is used to destroy cell bodies but leave passing axons alone during lesion studies",
+      "fields": {
+        "Text": "{{c1::Kainic acid}} is used to <font color=\"#fc0000\">destroy cell bodies </font>but leave passing axons alone during lesion studies",
+        "Extra": "<br><div><img src=\"jad-64-jad171137-g006.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591093897014,
+      "note_id": 1591093745854,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] destroys dopamine and norepinephrine neurons to help model parkinson's disease in lesion studies",
+      "answer_text": "Oxidopamine destroys dopamine and norepinephrine neurons to help model parkinson's disease in lesion studies this DESTROYS the substantia nigra neurons completely",
+      "fields": {
+        "Text": "{{c1::Oxidopamine}} destroys <b><i>dopamine </i></b>and <b><i>norepinephrine </i></b>neurons to help model <font color=\"#fc0000\">parkinson's </font>disease in <font color=\"#fc0000\">lesion studies</font>",
+        "Extra": "<br><div><i>this DESTROYS the substantia nigra neurons completely</i></div><div><img src=\"e8c4a8077421942d76fe1def32e36091.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591093966669,
+      "note_id": 1591093923736,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] will cool down neurons until they stop firing during lesion studies",
+      "answer_text": "Cortical cooling will cool down neurons until they stop firing during lesion studies",
+      "fields": {
+        "Text": "{{c1::Cortical cooling}} will <font color=\"#fc0000\">cool down </font>neurons until they <font color=\"#fc0000\">stop firing </font>during <font color=\"#fc0000\">lesion studies</font>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591094078465,
+      "note_id": 1591093966754,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Two techniques to help analyze brain [Structure or Function] are computerized axial tomography (CAT) and magnetic resonance imaging (MRI)",
+      "answer_text": "Two techniques to help analyze brain structure are computerized axial tomography (CAT) and magnetic resonance imaging (MRI)",
+      "fields": {
+        "Text": "Two <font color=\"#00ffff\">techniques </font>to help analyze brain {{c1::structure::Structure or Function}} are {{c2::computerized axial tomography (CAT)}} and {{c2::magnetic resonance imaging (MRI)}}",
+        "Extra": "<br><div><img src=\"Upper-endoscopy-Risk-4.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591094078466,
+      "note_id": 1591093966754,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Two techniques to help analyze brain structure are [...] and [...]",
+      "answer_text": "Two techniques to help analyze brain structure are computerized axial tomography (CAT) and magnetic resonance imaging (MRI)",
+      "fields": {
+        "Text": "Two <font color=\"#00ffff\">techniques </font>to help analyze brain {{c1::structure::Structure or Function}} are {{c2::computerized axial tomography (CAT)}} and {{c2::magnetic resonance imaging (MRI)}}",
+        "Extra": "<br><div><img src=\"Upper-endoscopy-Risk-4.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591094182199,
+      "note_id": 1591094169027,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "CAT scans analyze brain structure using [...]",
+      "answer_text": "CAT scans analyze brain structure using X-ray images of the brain",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">CAT scans</font><font color=\"#fc0000\"> </font>analyze brain <u>structure</u><i>&nbsp;</i>using {{c1::X-ray images of the brain}}",
+        "Extra": "<br><div><img src=\"Upper-endoscopy-Risk-4.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591094326305,
+      "note_id": 1591094182281,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "MRI imaging involves analyzing brain structure using [...]",
+      "answer_text": "MRI imaging involves analyzing brain structure using radio waves exposed to a magnetic field to analyze signals released as atoms realign with the magnetic field. just know they use fuckin magnets",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">MRI imaging </font>involves analyzing brain structure using {{c1::radio waves exposed to a magnetic field to analyze signals released as atoms realign with the magnetic field.}}",
+        "Extra": "<div><i><b><br></b></i></div><i><b>just know they use fuckin magnets<br></b></i><div><i><b><img src=\"Upper-endoscopy-Risk-4.png\"></b></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591176907597,
+      "note_id": 1591176814073,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Brain function can be analyzed by [...] and [...]",
+      "answer_text": "Brain function can be analyzed by electroencephalogram (EEG) and magnetoencephalogram (MEG) (SQUIDS)",
+      "fields": {
+        "Text": "Brain <b>function </b>can be analyzed by {{c1::electroencephalogram (EEG)}} and {{c1::magnetoencephalogram (MEG) (SQUIDS)}}",
+        "Extra": "<br><div><img src=\"nervous2.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591177011282,
+      "note_id": 1591176907615,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] is noninvasive monitoring of the electrical activity of the brain using electrodes on the scalp",
+      "answer_text": "EEG is noninvasive monitoring of the electrical activity of the brain using electrodes on the scalp",
+      "fields": {
+        "Text": "{{c1::EEG}} is {{c2::noninvasive monitoring of the electrical activity of the brain using electrodes on the scalp}}",
+        "Extra": "<div><br></div><div><img src=\"bn7_eeg_results-8col.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591177011283,
+      "note_id": 1591176907615,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "EEG is [...]",
+      "answer_text": "EEG is noninvasive monitoring of the electrical activity of the brain using electrodes on the scalp",
+      "fields": {
+        "Text": "{{c1::EEG}} is {{c2::noninvasive monitoring of the electrical activity of the brain using electrodes on the scalp}}",
+        "Extra": "<div><br></div><div><img src=\"bn7_eeg_results-8col.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591177156436,
+      "note_id": 1591177011321,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "MEG requires [...] and records [...]",
+      "answer_text": "MEG requires a large machine and special room and records magnetic fields produced by electric currents in the brain",
+      "fields": {
+        "Text": "{{c2::MEG}} requires {{c1::a large machine and special room}} and records {{c1::magnetic fields produced by electric currents in the brain}}",
+        "Extra": "<br><div><img src=\"340.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591177156438,
+      "note_id": 1591177011321,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] requires a large machine and special room and records magnetic fields produced by electric currents in the brain",
+      "answer_text": "MEG requires a large machine and special room and records magnetic fields produced by electric currents in the brain",
+      "fields": {
+        "Text": "{{c2::MEG}} requires {{c1::a large machine and special room}} and records {{c1::magnetic fields produced by electric currents in the brain}}",
+        "Extra": "<br><div><img src=\"340.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591177250006,
+      "note_id": 1591177156535,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Brain structure and function can be analyzed simultaneously using [...] and [...]",
+      "answer_text": "Brain structure and function can be analyzed simultaneously using functional magnetic resonance imaging (fMRI) and positron emission tomography (PET) scans",
+      "fields": {
+        "Text": "Brain <b>structure </b>and <b>function </b>can be analyzed <u>simultaneously</u><i>&nbsp;</i>using {{c1::functional magnetic resonance imaging (fMRI)}} and {{c1::positron emission tomography (PET) scans}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591177353102,
+      "note_id": 1591177250020,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] analyzes amounts of oxygenated vs deoxygenated blood in the brain to figure out what regions are active",
+      "answer_text": "fMRI analyzes amounts of oxygenated vs deoxygenated blood in the brain to figure out what regions are active Neurons that are active require oxygen",
+      "fields": {
+        "Text": "{{c1::fMRI}} analyzes {{c2::amounts of oxygenated vs deoxygenated blood in the brain to figure out what regions are active}}",
+        "Extra": "<br><div><i><b>Neurons that are active require oxygen</b></i></div><div><img src=\"c0211947-brain_tumour_fmri_scan-spl.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591177353103,
+      "note_id": 1591177250020,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "fMRI analyzes [...]",
+      "answer_text": "fMRI analyzes amounts of oxygenated vs deoxygenated blood in the brain to figure out what regions are active Neurons that are active require oxygen",
+      "fields": {
+        "Text": "{{c1::fMRI}} analyzes {{c2::amounts of oxygenated vs deoxygenated blood in the brain to figure out what regions are active}}",
+        "Extra": "<br><div><i><b>Neurons that are active require oxygen</b></i></div><div><img src=\"c0211947-brain_tumour_fmri_scan-spl.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591177449862,
+      "note_id": 1591177353117,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] inject glucose into cells to analyze which brain areas are active at a given point of time",
+      "answer_text": "PET scans inject glucose into cells to analyze which brain areas are active at a given point of time Active cells will use more glucose",
+      "fields": {
+        "Text": "{{c1::PET scans}} {{c2::inject glucose into cells to analyze which brain areas are active at a given point of time}}",
+        "Extra": "<i><br></i><div><i>Active cells will use more glucose</i></div><div><img src=\"moleculartra.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591177449863,
+      "note_id": 1591177353117,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "PET scans [...]",
+      "answer_text": "PET scans inject glucose into cells to analyze which brain areas are active at a given point of time Active cells will use more glucose",
+      "fields": {
+        "Text": "{{c1::PET scans}} {{c2::inject glucose into cells to analyze which brain areas are active at a given point of time}}",
+        "Extra": "<i><br></i><div><i>Active cells will use more glucose</i></div><div><img src=\"moleculartra.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591177596408,
+      "note_id": 1591177449889,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Anterior Pituitary hormones [...] [...] [...] [...] [...] [...] [...]",
+      "answer_text": "Anterior Pituitary hormones FH LH ACTH TSH Prolactin Endorphins GH Flat Peg Tropic - flat Direct - peg",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Anterior Pituitary hormones</font><div>{{c1::FH}}</div><div>{{c1::LH}}</div><div>{{c1::ACTH}}</div><div>{{c1::TSH}}</div><div>{{c1::Prolactin&nbsp;}}</div><div>{{c1::Endorphins}}</div><div>{{c1::GH}}</div>",
+        "Extra": "<i><br></i><div><i>Flat Peg</i></div><div><i>Tropic - flat</i></div><div><i>Direct - peg</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591177656555,
+      "note_id": 1591177626848,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Posterior pituitary hormones [...] [...]",
+      "answer_text": "Posterior pituitary hormones ADH (vasopressin) Oxytocin",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Posterior pituitary hormones</font><div>{{c1::ADH (vasopressin)}}</div><div>{{c1::Oxytocin}}</div>",
+        "Extra": "<br><div><img src=\"500_F_158571739_6rtaReD1UaSAfllj9GmEtXwCoWS3Jm9G.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591177680346,
+      "note_id": 1591177656576,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Thyroid gland regulates [...]",
+      "answer_text": "Thyroid gland regulates body metabolism T3/T4",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Thyroid gland </font>regulates {{c1::body metabolism}}",
+        "Extra": "<i>T3/T4</i>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591177713335,
+      "note_id": 1591177708477,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Parathyroid glands regulate [...]",
+      "answer_text": "Parathyroid glands regulate calcium levels",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Parathyroid glands </font>regulate {{c1::calcium levels}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591177739897,
+      "note_id": 1591177713385,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Adrenal cortex secretes [...]",
+      "answer_text": "Adrenal cortex secretes corticosteroids",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Adrenal cortex </font>secretes {{c1::corticosteroids}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591177761118,
+      "note_id": 1591177739923,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Adrenal medulla secretes [...]",
+      "answer_text": "Adrenal medulla secretes catecholamines",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Adrenal medulla </font>secretes {{c1::catecholamines}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591177957052,
+      "note_id": 1591177761132,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Steps to fertilization : [...] ↓ [...] ↓ [...] ↓ [...]",
+      "answer_text": "Steps to fertilization : sperm binding ↓ acrosome reaction ↓ cortical reaction ↓ genetic transfer",
+      "fields": {
+        "Text": "Steps to <font color=\"#fc0000\">fertilization</font>:<div>{{c1::sperm binding}}</div><div>↓<br></div><div>{{c1::acrosome reaction}}</div><div>↓<br></div><div>{{c1::cortical reaction}}</div><div>↓<br></div><div>{{c1::genetic transfer}}</div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591177991273,
+      "note_id": 1591177957170,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Sperm binding occurs when sperm binds to [...]",
+      "answer_text": "Sperm binding occurs when sperm binds to the zona pellucida",
+      "fields": {
+        "Text": "Sperm binding occurs when sperm binds to {{c1::the zona pellucida}}",
+        "Extra": "<br><div><img src=\"240_F_333192896_PqP6CCqnRxEDFjdGzbT7PgXiQBIRAHZP.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591178026980,
+      "note_id": 1591177991300,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Acrosome reaction is when [...]",
+      "answer_text": "Acrosome reaction is when enzymes leak into zona pellucida and digest it",
+      "fields": {
+        "Text": "<b>Acrosome reaction</b> is when {{c1::enzymes leak into zona pellucida and digest it}}",
+        "Extra": "<br><div><img src=\"1200px-Acrosome_reaction_diagram_en.svg.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591178138804,
+      "note_id": 1591178027013,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Cortical reaction is when [...]",
+      "answer_text": "Cortical reaction is when calcium floods into the cell after acrosome reaction to prevent other sperm from binding and increase metabolism of zygote",
+      "fields": {
+        "Text": "<b>Cortical reaction</b> is when {{c1::calcium floods into the cell after acrosome reaction to prevent other sperm from binding and increase metabolism of zygote}}",
+        "Extra": "<div><br></div><img src=\"jezUCT66Q-qj93Q_S5iCuMre42QGmSEWSVfZ1y8IYddmEbxik-zLtkzagDAWzlJEQk6L_wuxIitXojzxyKFy2qyZrGG8STqA0VbC2M9-6A.png\"><div><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591178335669,
+      "note_id": 1591178138834,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Steps of zygote development [...]",
+      "answer_text": "Steps of zygote development 1 cell → 2 cell → 4 cell → 8 cell → 16 cell → morula (32 cell) → blastocyst → gastrula → neurula",
+      "fields": {
+        "Text": "Steps of zygote development<div>{{c1::1 cell&nbsp;→ 2 cell&nbsp;→ 4 cell&nbsp;→ 8 cell&nbsp;→ 16 cell&nbsp;→ morula (32 cell)&nbsp;→ blastocyst&nbsp;→ gastrula&nbsp;→ neurula}}</div>",
+        "Extra": "<br><div><img src=\"2-1.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591178556330,
+      "note_id": 1591178335767,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Fertilization occurs at week [...] after last menstrual period",
+      "answer_text": "Fertilization occurs at week 2 after last menstrual period",
+      "fields": {
+        "Text": "Fertilization occurs at week {{c1::2}} after last menstrual period",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591178589802,
+      "note_id": 1591178556360,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "The fetus is developed at [...] weeks after last menstrual period",
+      "answer_text": "The fetus is developed at 10 weeks after last menstrual period 8 weeks after fertilization",
+      "fields": {
+        "Text": "The fetus is developed at {{c1::10}} weeks after last menstrual period",
+        "Extra": "<br><div>8 weeks after fertilization</div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591178615962,
+      "note_id": 1591178589835,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Full term is between [...] and [...] weeks",
+      "answer_text": "Full term is between 37 and 42 weeks preterm is before 37 weeks postterm is after 42 weeks",
+      "fields": {
+        "Text": "Full term is between {{c1::37}} and {{c1::42}} weeks",
+        "Extra": "<i><br></i><div><i>preterm is before 37 weeks</i></div><div><i>postterm is after 42 weeks</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591178940872,
+      "note_id": 1591178615993,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Major motor milestones 2-4 months → [...] 2-5 months → [...] 5-8 months → [...] 5-10 months → [...] 6-11 months → [...] 7-12 months → [...] 7-13 months → [...] 10-14 months → [...] 11-15 months → [...]",
+      "answer_text": "Major motor milestones 2-4 months → heads up / chest up 2-5 months → roll over 5-8 months → sit up 5-10 months → stand w/ support 6-11 months → pull up to standing position 7-12 months → able to crawl 7-13 months → can walk while holding furniture 10-14 months → can stand on their own 11-15 months → walk alone",
+      "fields": {
+        "Text": "Major motor milestones<div>2-4 months&nbsp;→ {{c1::heads up / chest up}}</div><div>2-5 months&nbsp;→ {{c1::roll over}}</div><div>5-8 months&nbsp;→ {{c1::sit up}}</div><div>5-10 months&nbsp;→ {{c1::stand w/ support}}</div><div>6-11 months&nbsp;→ {{c1::pull up to standing position}}</div><div>7-12 months&nbsp;→ {{c1::able to crawl}}</div><div>7-13 months&nbsp;→ {{c1::can walk while holding furniture}}</div><div>10-14 months&nbsp;→ {{c1::can stand on their own}}</div><div>11-15 months&nbsp;→ {{c1::walk alone}}</div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179005458,
+      "note_id": 1591178940991,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Gross motor skills involve [large vs small] muscles Fine motor skills involve [large vs small] muscles",
+      "answer_text": "Gross motor skills involve large muscles Fine motor skills involve small muscles",
+      "fields": {
+        "Text": "Gross motor skills involve {{c1::large::large vs small}} muscles<div>Fine motor skills involve {{c1::small::large vs small}} muscles</div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179060317,
+      "note_id": 1591179005490,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Infants will develop from [...] to [...]",
+      "answer_text": "Infants will develop from head to toe meaning they can lift their heads before they can crawl they can do stuff with head before like moving around and shit",
+      "fields": {
+        "Text": "Infants will develop from {{c1::head}} to {{c1::toe}}",
+        "Extra": "<i><br></i><div><i>meaning they can lift their heads before they can crawl</i></div><div><i><br></i></div><div><i>they can do stuff with head before like moving around and shit</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179213634,
+      "note_id": 1591179060344,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] reflex is when an infant turns their head when their cheek is stroked",
+      "answer_text": "Rooting reflex is when an infant turns their head when their cheek is stroked allows for orientation to mothers nipple/bottle disappears in first few weeks of life",
+      "fields": {
+        "Text": "{{c1::Rooting}} reflex is when {{c2::an infant turns their head when their cheek is stroked}}",
+        "Extra": "<br><div><i>allows for orientation to mothers nipple/bottle</i></div><div><i>disappears in first few weeks of life</i></div><div><img src=\"539eKu.gif\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179213635,
+      "note_id": 1591179060344,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Rooting reflex is when [...]",
+      "answer_text": "Rooting reflex is when an infant turns their head when their cheek is stroked allows for orientation to mothers nipple/bottle disappears in first few weeks of life",
+      "fields": {
+        "Text": "{{c1::Rooting}} reflex is when {{c2::an infant turns their head when their cheek is stroked}}",
+        "Extra": "<br><div><i>allows for orientation to mothers nipple/bottle</i></div><div><i>disappears in first few weeks of life</i></div><div><img src=\"539eKu.gif\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179374981,
+      "note_id": 1591179213647,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] reflex is when babies fan their toes outward when their soles are stroked",
+      "answer_text": "Babinski reflex is when babies fan their toes outward when their soles are stroked typically disappears before 12 months, if persistent then possible UMN sign",
+      "fields": {
+        "Text": "{{c1::Babinski}} reflex is when {{c2::babies fan their toes outward when their soles are stroked}}",
+        "Extra": "<div><i><br></i></div><div><i>typically disappears before 12 months, if persistent then possible UMN sign</i></div><i><br></i><div><i><img src=\"vzJqhS.gif\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179374982,
+      "note_id": 1591179213647,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Babinski reflex is when [...]",
+      "answer_text": "Babinski reflex is when babies fan their toes outward when their soles are stroked typically disappears before 12 months, if persistent then possible UMN sign",
+      "fields": {
+        "Text": "{{c1::Babinski}} reflex is when {{c2::babies fan their toes outward when their soles are stroked}}",
+        "Extra": "<div><i><br></i></div><div><i>typically disappears before 12 months, if persistent then possible UMN sign</i></div><i><br></i><div><i><img src=\"vzJqhS.gif\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179466463,
+      "note_id": 1591179375096,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] reflex is an infants startle reaction where they fan out arms",
+      "answer_text": "Moro reflex is an infants startle reaction where they fan out arms disappears first 4-6 months MORO??? MORE LIKE GORO",
+      "fields": {
+        "Text": "{{c1::Moro}} reflex is {{c2::an infants startle reaction where they fan out arms}}",
+        "Extra": "<i><br></i><div><i>disappears first 4-6 months</i></div><div><i><br></i></div><div><i>MORO??? MORE LIKE GORO</i></div><div><img src=\"Storm-Collectibles-Mortal-Kombat-Goro-Promo-Featured.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179466464,
+      "note_id": 1591179375096,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Moro reflex is [...]",
+      "answer_text": "Moro reflex is an infants startle reaction where they fan out arms disappears first 4-6 months MORO??? MORE LIKE GORO",
+      "fields": {
+        "Text": "{{c1::Moro}} reflex is {{c2::an infants startle reaction where they fan out arms}}",
+        "Extra": "<i><br></i><div><i>disappears first 4-6 months</i></div><div><i><br></i></div><div><i>MORO??? MORE LIKE GORO</i></div><div><img src=\"Storm-Collectibles-Mortal-Kombat-Goro-Promo-Featured.jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179563472,
+      "note_id": 1591179466476,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] reflex is when a baby's head is turned, the arm on that side straightens while the other arm bends",
+      "answer_text": "Tonic neck reflex is when a baby's head is turned, the arm on that side straightens while the other arm bends disappears at 6 months",
+      "fields": {
+        "Text": "{{c1::Tonic neck}} reflex is when {{c2::a baby's head is turned, the arm on that side straightens while the other arm bends}}",
+        "Extra": "<br><div>disappears at 6 months</div><div><img src=\"QEs5xb.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179563473,
+      "note_id": 1591179466476,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Tonic neck reflex is when [...]",
+      "answer_text": "Tonic neck reflex is when a baby's head is turned, the arm on that side straightens while the other arm bends disappears at 6 months",
+      "fields": {
+        "Text": "{{c1::Tonic neck}} reflex is when {{c2::a baby's head is turned, the arm on that side straightens while the other arm bends}}",
+        "Extra": "<br><div>disappears at 6 months</div><div><img src=\"QEs5xb.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179649116,
+      "note_id": 1591179563505,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] reflex is when a baby's skin is stroked, the baby moves to the side it was stroked",
+      "answer_text": "Galant reflex is when a baby's skin is stroked, the baby moves to the side it was stroked disappears at 6 months",
+      "fields": {
+        "Text": "{{c1::Galant}} reflex is when {{c2::a baby's skin is stroked, the baby moves to the side it was stroked}}",
+        "Extra": "<br><div><i>disappears at 6 months</i></div><div><img src=\"AfraidShimmeringDanishswedishfarmdog-size_restricted.gif\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179649117,
+      "note_id": 1591179563505,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Galant reflex is when [...]",
+      "answer_text": "Galant reflex is when a baby's skin is stroked, the baby moves to the side it was stroked disappears at 6 months",
+      "fields": {
+        "Text": "{{c1::Galant}} reflex is when {{c2::a baby's skin is stroked, the baby moves to the side it was stroked}}",
+        "Extra": "<br><div><i>disappears at 6 months</i></div><div><img src=\"AfraidShimmeringDanishswedishfarmdog-size_restricted.gif\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179747003,
+      "note_id": 1591179649147,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] reflex is when children close their hands on anything that comes in their palm",
+      "answer_text": "Palmer grasp reflex is when children close their hands on anything that comes in their palm disappears at 3-4 months",
+      "fields": {
+        "Text": "{{c1::Palmer grasp}} reflex is when {{c2::children close their hands on anything that comes in their palm}}",
+        "Extra": "<br><div><i>disappears at 3-4 months</i></div><div><img src=\"MassiveTintedBarbet-size_restricted.gif\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179747004,
+      "note_id": 1591179649147,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Palmer grasp reflex is when [...]",
+      "answer_text": "Palmer grasp reflex is when children close their hands on anything that comes in their palm disappears at 3-4 months",
+      "fields": {
+        "Text": "{{c1::Palmer grasp}} reflex is when {{c2::children close their hands on anything that comes in their palm}}",
+        "Extra": "<br><div><i>disappears at 3-4 months</i></div><div><img src=\"MassiveTintedBarbet-size_restricted.gif\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179799112,
+      "note_id": 1591179747083,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] reflex is when a baby will suck on any object in its mouth",
+      "answer_text": "Sucking reflex is when a baby will suck on any object in its mouth disappeasra at 3-4 months",
+      "fields": {
+        "Text": "{{c1::Sucking}} reflex is when {{c2::a baby will suck on any object in its mouth}}",
+        "Extra": "<div><br></div><i>disappeasra at 3-4 months</i><br><div><img src=\"sucking-reflex.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179799113,
+      "note_id": 1591179747083,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Sucking reflex is when [...]",
+      "answer_text": "Sucking reflex is when a baby will suck on any object in its mouth disappeasra at 3-4 months",
+      "fields": {
+        "Text": "{{c1::Sucking}} reflex is when {{c2::a baby will suck on any object in its mouth}}",
+        "Extra": "<div><br></div><i>disappeasra at 3-4 months</i><br><div><img src=\"sucking-reflex.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179918994,
+      "note_id": 1591179813650,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] reflex is when infants will start to step when held upright with feet touching flat surface",
+      "answer_text": "Stepping reflex is when infants will start to step when held upright with feet touching flat surface disappears in first 2 months",
+      "fields": {
+        "Text": "{{c1::Stepping}} reflex is when {{c2::infants will start to step when held upright with feet touching flat surface}}",
+        "Extra": "<br><div><i>disappears in first 2 months</i></div><div><img src=\"AssuredCostlyFirebelliedtoad-size_restricted.gif\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179918995,
+      "note_id": 1591179813650,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Stepping reflex is when [...]",
+      "answer_text": "Stepping reflex is when infants will start to step when held upright with feet touching flat surface disappears in first 2 months",
+      "fields": {
+        "Text": "{{c1::Stepping}} reflex is when {{c2::infants will start to step when held upright with feet touching flat surface}}",
+        "Extra": "<br><div><i>disappears in first 2 months</i></div><div><img src=\"AssuredCostlyFirebelliedtoad-size_restricted.gif\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179993658,
+      "note_id": 1591179919018,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] reflex is when infants in water move their legs/arms in a swimming motion and involuntarily hold their breath",
+      "answer_text": "Swimming reflex is when infants in water move their legs/arms in a swimming motion and involuntarily hold their breath disappears at 6 months",
+      "fields": {
+        "Text": "{{c1::Swimming}} reflex is when {{c2::infants in water move their legs/arms in a swimming motion and involuntarily hold their breath}}",
+        "Extra": "<br><div>disappears at 6 months</div><div><img src=\"tumblr_najfcjIX4q1s1vn29o1_400.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591179993659,
+      "note_id": 1591179919018,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Swimming reflex is when [...]",
+      "answer_text": "Swimming reflex is when infants in water move their legs/arms in a swimming motion and involuntarily hold their breath disappears at 6 months",
+      "fields": {
+        "Text": "{{c1::Swimming}} reflex is when {{c2::infants in water move their legs/arms in a swimming motion and involuntarily hold their breath}}",
+        "Extra": "<br><div>disappears at 6 months</div><div><img src=\"tumblr_najfcjIX4q1s1vn29o1_400.gif\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180026196,
+      "note_id": 1591179993673,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Appearence of prenatal reflexes in adults signifies [...]",
+      "answer_text": "Appearence of prenatal reflexes in adults signifies serious medical problems",
+      "fields": {
+        "Text": "Appearence of prenatal reflexes in adults signifies {{c1::serious medical problems}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180102049,
+      "note_id": 1591180026233,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Adolescence is [...]",
+      "answer_text": "Adolescence is the transition period between childhood and adulthood",
+      "fields": {
+        "Text": "{{c2::Adolescence}} is {{c1::the transition period between childhood and adulthood}}",
+        "Extra": "<br><div><img src=\"daddy-not-now-daddynot-now-son-son-jizzlology-dad-34293144.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180102050,
+      "note_id": 1591180026233,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] is the transition period between childhood and adulthood",
+      "answer_text": "Adolescence is the transition period between childhood and adulthood",
+      "fields": {
+        "Text": "{{c2::Adolescence}} is {{c1::the transition period between childhood and adulthood}}",
+        "Extra": "<br><div><img src=\"daddy-not-now-daddynot-now-son-son-jizzlology-dad-34293144.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180214918,
+      "note_id": 1591180102173,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Puberty begins at approximately [...] y/o in males and [...] y/o in females",
+      "answer_text": "Puberty begins at approximately 13 y/o in males and 11 y/o in females",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">Puberty </font>begins at approximately {{c1::13}} y/o in males and {{c1::11}} y/o in females",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180278842,
+      "note_id": 1591180214946,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Puberty causes brain changes in the [...] , [...] , and [...]",
+      "answer_text": "Puberty causes brain changes in the prefrontal cortex , limbic system , and corpus collosum",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">Puberty </font>causes brain changes in the {{c1::prefrontal cortex}}, {{c1::limbic system}}, and {{c1::corpus collosum}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180364803,
+      "note_id": 1591180278876,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Teenagers express poor judgement as a result of [...]",
+      "answer_text": "Teenagers express poor judgement as a result of an underdeveloped prefrontal cortex",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Teenagers </font>express {{c2::poor judgement}} as a result of {{c1::an underdeveloped prefrontal cortex}}",
+        "Extra": "<br><div><img src=\"who-would-win-the-human-prefrontal-cortex-responsible-for-complex-29580079.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180364804,
+      "note_id": 1591180278876,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Teenagers express [...] as a result of an underdeveloped prefrontal cortex",
+      "answer_text": "Teenagers express poor judgement as a result of an underdeveloped prefrontal cortex",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Teenagers </font>express {{c2::poor judgement}} as a result of {{c1::an underdeveloped prefrontal cortex}}",
+        "Extra": "<br><div><img src=\"who-would-win-the-human-prefrontal-cortex-responsible-for-complex-29580079.png\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180453515,
+      "note_id": 1591180364838,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Synaptic pruning is [...]",
+      "answer_text": "Synaptic pruning is breaking down connections between certain neurons and focusing resources on the ones we use the most occurs early in adolescence and then decreases later in adolescence",
+      "fields": {
+        "Text": "{{c2::Synaptic pruning}} is {{c1::breaking down connections between certain neurons and focusing resources on the ones we use the most}}",
+        "Extra": "<i><br></i><div><i>occurs early in adolescence and then decreases later in adolescence</i></div><div><img src=\"maxresdefault (21).jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180453516,
+      "note_id": 1591180364838,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] is breaking down connections between certain neurons and focusing resources on the ones we use the most",
+      "answer_text": "Synaptic pruning is breaking down connections between certain neurons and focusing resources on the ones we use the most occurs early in adolescence and then decreases later in adolescence",
+      "fields": {
+        "Text": "{{c2::Synaptic pruning}} is {{c1::breaking down connections between certain neurons and focusing resources on the ones we use the most}}",
+        "Extra": "<i><br></i><div><i>occurs early in adolescence and then decreases later in adolescence</i></div><div><img src=\"maxresdefault (21).jpg\"><i><br></i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180482029,
+      "note_id": 1591180453568,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] looks at the genetic component to behavior",
+      "answer_text": "Behavioral genetics looks at the genetic component to behavior",
+      "fields": {
+        "Text": "{{c1::Behavioral genetics}} looks at {{c2::the genetic component to behavior}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180482030,
+      "note_id": 1591180453568,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Behavioral genetics looks at [...]",
+      "answer_text": "Behavioral genetics looks at the genetic component to behavior",
+      "fields": {
+        "Text": "{{c1::Behavioral genetics}} looks at {{c2::the genetic component to behavior}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180570546,
+      "note_id": 1591180482042,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] is passing traits from parents/ancestors to offspring through genes",
+      "answer_text": "Heredity is passing traits from parents/ancestors to offspring through genes",
+      "fields": {
+        "Text": "{{c1::Heredity}} is passing traits from parents/ancestors to offspring through genes",
+        "Extra": "<br><div><img src=\"0baa2198347e65b79d1131dce0863624f6a7fc06r1-1242-1229v2_uhq.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180623268,
+      "note_id": 1591180570587,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Traits are [...]",
+      "answer_text": "Traits are distinguishing qualities and characteristics that compose us",
+      "fields": {
+        "Text": "{{c2::Traits}} are {{c1::distinguishing qualities and characteristics that compose us}}",
+        "Extra": "<br><div><img src=\"8-Essential-Skills-and-Traits-for-Successful-Job-Seekers-1024x512.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180623269,
+      "note_id": 1591180570587,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] are distinguishing qualities and characteristics that compose us",
+      "answer_text": "Traits are distinguishing qualities and characteristics that compose us",
+      "fields": {
+        "Text": "{{c2::Traits}} are {{c1::distinguishing qualities and characteristics that compose us}}",
+        "Extra": "<br><div><img src=\"8-Essential-Skills-and-Traits-for-Successful-Job-Seekers-1024x512.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180652253,
+      "note_id": 1591180623282,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Inherited traits are [...]",
+      "answer_text": "Inherited traits are traits passed down from parents to children ex: eye color, hair color, height",
+      "fields": {
+        "Text": "<b>Inherited </b>traits are {{c1::traits passed down from parents to children}}",
+        "Extra": "<br><div><i>ex: eye color, hair color, height</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180677897,
+      "note_id": 1591180652285,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Acquired traits are [...]",
+      "answer_text": "Acquired traits are learned traits that come from experience with the environment",
+      "fields": {
+        "Text": "<b>Acquired </b>traits are {{c1::learned traits that come from experience with the environment}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180750259,
+      "note_id": 1591180677925,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Simple traits = [...] Complex traits = [...]",
+      "answer_text": "Simple traits = linked to specific genes Complex traits = controlled by group of genes and/or environment",
+      "fields": {
+        "Text": "Simple traits = {{c1::linked to specific genes}}<div>Complex traits = {{c1::controlled by group of genes and/or environment}}</div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180988657,
+      "note_id": 1591180750288,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Temperament is [...] and [...]",
+      "answer_text": "Temperament is the innate component of personality and persistant as an individual ages.",
+      "fields": {
+        "Text": "{{c2::Temperament}} is {{c1::the innate component of personality}} and {{c1::persistant as an individual ages.}}",
+        "Extra": "<br><div><img src=\"91283477-types-of-temperaments-.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591180988658,
+      "note_id": 1591180750288,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] is the innate component of personality and persistant as an individual ages.",
+      "answer_text": "Temperament is the innate component of personality and persistant as an individual ages.",
+      "fields": {
+        "Text": "{{c2::Temperament}} is {{c1::the innate component of personality}} and {{c1::persistant as an individual ages.}}",
+        "Extra": "<br><div><img src=\"91283477-types-of-temperaments-.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591181029749,
+      "note_id": 1591180988759,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Temperament can include [...] , [...] , and [...]",
+      "answer_text": "Temperament can include emotional reactivity , shyness , and sociability innate parts of personality",
+      "fields": {
+        "Text": "<font color=\"#00ffff\">Temperament </font>can include {{c1::emotional reactivity}}, {{c1::shyness}}, and {{c1::sociability}}",
+        "Extra": "<i><br></i><div><i>innate parts of personality</i></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591181074081,
+      "note_id": 1591181029762,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Personality is believed to be [ever-changing or constant] over a person's lifetime",
+      "answer_text": "Personality is believed to be constant over a person's lifetime",
+      "fields": {
+        "Text": "<font color=\"#fc0000\">Personality </font>is believed to be {{c1::constant::ever-changing or constant}} over a person's lifetime",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591181177032,
+      "note_id": 1591181074094,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Classical twin study compares [...]",
+      "answer_text": "Classical twin study compares monozygotic and dizygotic twins raised in the same household",
+      "fields": {
+        "Text": "Classical <b>twin study </b>compares {{c1::monozygotic and dizygotic twins raised in the same household}}",
+        "Extra": "<br><div><img src=\"basic-genetics-using-twin-studies-to-determine-heritability_126452.jpg\"><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591181249610,
+      "note_id": 1591181213045,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Monozygotic twins share [...] % of genes Dizygotic twins share [...] % of genes",
+      "answer_text": "Monozygotic twins share 100 % of genes Dizygotic twins share 50 % of genes",
+      "fields": {
+        "Text": "Monozygotic twins share {{c1::100}}% of genes<div>Dizygotic twins share {{c1::50}}% of genes</div>",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591181343280,
+      "note_id": 1591181249643,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "A problem with twin studies is that [...]",
+      "answer_text": "A problem with twin studies is that identical twins are typically treated more similarly than fraternal twins",
+      "fields": {
+        "Text": "A problem with twin studies is that {{c1::identical twins are typically treated more similarly than fraternal twins}}",
+        "Extra": ""
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591181385543,
+      "note_id": 1591181343318,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Adoption studies are used to [...]",
+      "answer_text": "Adoption studies are used to compared adopted children to biological family and adopted family helps in environment vs genetics debates",
+      "fields": {
+        "Text": "{{c2::Adoption studies}} are used to {{c1::compared adopted children to biological family and adopted family}}",
+        "Extra": "<div><i><br></i></div><i>helps in environment vs genetics debates<br></i><div><i><img src=\"6379214.jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591181385545,
+      "note_id": 1591181343318,
+      "ord": 1,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "[...] are used to compared adopted children to biological family and adopted family",
+      "answer_text": "Adoption studies are used to compared adopted children to biological family and adopted family helps in environment vs genetics debates",
+      "fields": {
+        "Text": "{{c2::Adoption studies}} are used to {{c1::compared adopted children to biological family and adopted family}}",
+        "Extra": "<div><i><br></i></div><i>helps in environment vs genetics debates<br></i><div><i><img src=\"6379214.jpg\"></i><br></div>"
+      },
+      "tags": []
+    },
+    {
+      "card_id": 1591181469032,
+      "note_id": 1591181385578,
+      "ord": 0,
+      "source": "Mr. Pankow P/S",
+      "topic": "Identity, Personality & Biological Bases of Behavior",
+      "notetype": "AACloze",
+      "question_text": "Problems with adoption studies include that [...] and [...]",
+      "answer_text": "Problems with adoption studies include that there is usually incomplete info about biological families and that adoption typically isnt random (matched with someone similar to biological family)",
+      "fields": {
+        "Text": "Problems with <b>adoption studies </b>include that {{c1::there is usually incomplete info about biological families}} and {{c1::that adoption typically isnt random (matched with someone similar to biological family)}}",
+        "Extra": ""
+      },
+      "tags": []
+    }
+  ]
+}

@@ -35,11 +35,9 @@ enum class ViewerCommand : MappableAction<ReviewerBinding> {
     ANSWER_EASY,
     UNDO,
     REDO,
-    EDIT,
     MARK,
     BURY_CARD,
     SUSPEND_CARD,
-    DELETE,
     PLAY_MEDIA,
     EXIT,
     BURY_NOTE,
@@ -120,7 +118,6 @@ enum class ViewerCommand : MappableAction<ReviewerBinding> {
                         keyCode(KeyEvent.KEYCODE_4, CardSide.ANSWER),
                         keyCode(KeyEvent.KEYCODE_NUMPAD_4, CardSide.ANSWER),
                     )
-                EDIT -> listOf(keyCode(KeyEvent.KEYCODE_E, CardSide.BOTH))
                 MARK -> listOf(unicode('*', CardSide.BOTH))
                 BURY_CARD -> listOf(unicode('-', CardSide.BOTH))
                 BURY_NOTE -> listOf(unicode('=', CardSide.BOTH))
@@ -176,7 +173,6 @@ enum class ViewerCommand : MappableAction<ReviewerBinding> {
                 SHOW_ALL_HINTS -> listOf(keyCode(KeyEvent.KEYCODE_G, CardSide.BOTH))
                 ADD_NOTE -> listOf(keyCode(KeyEvent.KEYCODE_A, CardSide.BOTH))
                 SHOW_ANSWER,
-                DELETE,
                 EXIT,
                 UNSET_FLAG,
                 PAGE_UP,

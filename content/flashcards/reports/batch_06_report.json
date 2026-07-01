@@ -1,0 +1,99 @@
+{
+  "batch": 6,
+  "file": "batch_06.json",
+  "cards_evaluated": 257,
+  "summary": {
+    "ok": 250,
+    "cards_with_issues": 7,
+    "by_check": {
+      "qa_correspondence": 5,
+      "wellformed": 0,
+      "markup": 2
+    },
+    "by_severity": {
+      "error": 1,
+      "warning": 0,
+      "info": 6
+    }
+  },
+  "issue_type_counts": {
+    "missing_cloze_deletion": 1,
+    "cloze_reveals_image_only": 5,
+    "malformed_href": 1
+  },
+  "flagged": [
+    {
+      "card_id": 1556150381511,
+      "note_id": 1556149478176,
+      "check": "markup",
+      "type": "missing_cloze_deletion",
+      "severity": "error",
+      "detail": "Cloze note has no {{c1::}} deletion in its Text field, so the card renders Anki's error message instead of a studyable Q/A.",
+      "evidence": "Text: '<div>Positive and Negative Selection of T-cells</div>'; Q/A both show 'No cloze 1 found on card. Please either add a cloze deletion...'"
+    },
+    {
+      "card_id": 1556234507332,
+      "note_id": 1556234274289,
+      "check": "qa_correspondence",
+      "type": "cloze_reveals_image_only",
+      "severity": "info",
+      "detail": "Cloze deletion content is an image, so the revealed answer adds no text beyond the question prompt 'Identify the α-carbon'.",
+      "evidence": "{{c1::<img src=\"Alpha Carbon Complete (1).png\">}}"
+    },
+    {
+      "card_id": 1556234957097,
+      "note_id": 1556234936569,
+      "check": "qa_correspondence",
+      "type": "cloze_reveals_image_only",
+      "severity": "info",
+      "detail": "Cloze deletion content is an image, so the text answer reveals nothing beyond 'Identify the α-hydrogens'.",
+      "evidence": "{{c1::<img src=\"Alpha Hydrogen Complete (1).png\">}}"
+    },
+    {
+      "card_id": 1556248016076,
+      "note_id": 1556248015010,
+      "check": "qa_correspondence",
+      "type": "cloze_reveals_image_only",
+      "severity": "info",
+      "detail": "Cloze deletion content is an image, so the text answer reveals nothing beyond 'Identify the acidic proton'.",
+      "evidence": "{{c1::<img src=\"Acidic Proton (1).png\">}}"
+    },
+    {
+      "card_id": 1556248465121,
+      "note_id": 1556248016092,
+      "check": "qa_correspondence",
+      "type": "cloze_reveals_image_only",
+      "severity": "info",
+      "detail": "Cloze deletion content is an image, so the text answer reveals nothing beyond 'Identify the most acidic proton'.",
+      "evidence": "{{c1::<img src=\"Dicarboxylic Acid Acidic Proton.png\">}}"
+    },
+    {
+      "card_id": 1556253049975,
+      "note_id": 1556251963680,
+      "check": "qa_correspondence",
+      "type": "cloze_reveals_image_only",
+      "severity": "info",
+      "detail": "Cloze deletion content is an image, so the text answer reveals nothing beyond 'Identify the functional group in red'.",
+      "evidence": "{{c1::<img src=\"Acyl Group (2).png\">}}"
+    },
+    {
+      "card_id": 1556167205576,
+      "note_id": 1556167083570,
+      "check": "markup",
+      "type": "malformed_href",
+      "severity": "info",
+      "detail": "Extra field has a stray &quot; entity appended inside the Khan Academy link href, producing a broken URL (card text still renders).",
+      "evidence": "href=\"...gastrointestinal-system-introduction/v/small-intestine-part-3-absorption&quot;\""
+    }
+  ],
+  "worst_offenders": [
+    1556150381511,
+    1556253049975,
+    1556248465121,
+    1556248016076,
+    1556234957097,
+    1556234507332,
+    1556167205576
+  ],
+  "notes": "Batch 06 is 257 MileDown cloze cards (Physics nuclear phenomena, Behavioral psychology, Biology immune/digestive systems, and OChem carbonyl chemistry) and is overall very clean and well-formed. Only one true error exists: a note whose Text field lacks any cloze deletion, so it renders Anki's 'No cloze found' message instead of a studyable card. The remaining six flags are low-severity info notes: five 'Identify the...' OChem cards whose cloze deletion is an image (the plain-text answer reveals nothing) and one stray &quot; inside a Khan Academy link URL."
+}

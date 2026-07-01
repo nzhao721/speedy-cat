@@ -22,7 +22,6 @@ import android.view.KeyEvent.KEYCODE_1
 import android.view.KeyEvent.KEYCODE_2
 import android.view.KeyEvent.KEYCODE_3
 import android.view.KeyEvent.KEYCODE_4
-import android.view.KeyEvent.KEYCODE_E
 import android.view.KeyEvent.KEYCODE_F5
 import android.view.KeyEvent.KEYCODE_R
 import android.view.KeyEvent.KEYCODE_SPACE
@@ -32,7 +31,6 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import anki.scheduler.CardAnswer.Rating
 import com.ibm.icu.impl.Assert
 import com.ichi2.anki.AnkiDroidApp.Companion.sharedPrefs
-import com.ichi2.anki.cardviewer.Gesture
 import com.ichi2.anki.cardviewer.ViewerCommand
 import com.ichi2.anki.libanki.Card
 import com.ichi2.anki.reviewer.Binding.Companion.keyCode
@@ -95,13 +93,6 @@ class ReviewerKeyboardInputTest : RobolectricTest() {
         val underTest = KeyboardInputTestReviewer.displayingAnswer().withButtons(4)
         underTest.handleSpacebar()
         assertThat(underTest.processedAnswer(), equalTo(Rating.GOOD))
-    }
-
-    @Test
-    fun pressingEWillEditCard() {
-        val underTest = KeyboardInputTestReviewer.displayingAnswer()
-        underTest.handleAndroidKeyPress(KEYCODE_E)
-        assertThat("Edit Card was called", underTest.editCardCalled)
     }
 
     @Test
@@ -202,8 +193,6 @@ class ReviewerKeyboardInputTest : RobolectricTest() {
         private var focusTextField = false
         private var answered: Rating? = null
         private var answerButtonCount = 4
-        var editCardCalled = false
-            private set
         var markCardCalled = false
             private set
         var undoCalled = false
@@ -363,10 +352,6 @@ class ReviewerKeyboardInputTest : RobolectricTest() {
 
         var suspendNoteCalled: Boolean = false
         var buryNoteCalled: Boolean = false
-
-        override fun editCard(fromGesture: Gesture?) {
-            editCardCalled = true
-        }
 
         override fun onMark(card: Card?) {
             markCardCalled = true

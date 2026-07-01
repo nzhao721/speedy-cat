@@ -59,6 +59,9 @@ class AnkiWebViewKind(Enum):
     FIELDS = "fields"
     IMPORT_LOG = "import log"
     IMPORT_ANKI_PACKAGE = "anki package import"
+    # SpeedyCAT: MCAT study-mode pages.
+    PRACTICE_QUESTIONS = "practice questions"
+    FULL_LENGTH_TESTS = "full-length tests"
 
 
 class AuthInterceptor(QWebEngineUrlRequestInterceptor):

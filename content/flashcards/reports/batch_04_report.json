@@ -1,0 +1,78 @@
+{
+  "batch": 4,
+  "file": "batch_04.json",
+  "cards_evaluated": 257,
+  "summary": {
+    "ok": 252,
+    "cards_with_issues": 5,
+    "by_check": {
+      "qa_correspondence": 0,
+      "wellformed": 4,
+      "markup": 1
+    },
+    "by_severity": {
+      "error": 0,
+      "warning": 1,
+      "info": 4
+    }
+  },
+  "issue_type_counts": {
+    "image_only_answer": 4,
+    "stray_entity_in_href": 1
+  },
+  "flagged": [
+    {
+      "card_id": 1554850975678,
+      "note_id": 1554850850477,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "The cloze deletion is an equation image, so answer_text reveals no textual answer; only a reference link is appended after the question.",
+      "evidence": "Text cloze is {{c1::img Ohms Law Complete.png}}; answer_text = '...Give the Ohm's law equation: Khan Academy Link'"
+    },
+    {
+      "card_id": 1554851371199,
+      "note_id": 1554851239730,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "The cloze deletion is an equation image and the Extra field has no text, so answer_text reveals no textual answer (only a link).",
+      "evidence": "Text cloze is {{c1::img Capacitance Equation.png}}; answer_text = '...in terms of coulombs and volts: Khan Academy Link'"
+    },
+    {
+      "card_id": 1554851403669,
+      "note_id": 1554851371219,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "The cloze deletion is an equation image, so answer_text reveals no textual answer; only a YouTube link is appended.",
+      "evidence": "Text cloze is {{c1::img Magnitude Electric Field Complete.png}}; answer_text = '...electric field strength in a capacitor : YouTube Link'"
+    },
+    {
+      "card_id": 1554851421532,
+      "note_id": 1554851403688,
+      "check": "wellformed",
+      "type": "image_only_answer",
+      "severity": "info",
+      "detail": "The cloze deletion is an equation image, so answer_text reveals no textual answer; only a reference link is appended.",
+      "evidence": "Text cloze is {{c1::img Potential Energy Capacitor Complete.png}}; answer_text = '...potential energy of a capacitor: Khan Academy Link'"
+    },
+    {
+      "card_id": 1555207952067,
+      "note_id": 1555207683914,
+      "check": "markup",
+      "type": "stray_entity_in_href",
+      "severity": "warning",
+      "detail": "The Khan Academy source link's href contains a stray &quot; entity at the end of the URL, producing a broken source link (trailing quote appended to the URL).",
+      "evidence": "href='https://www.khanacademy.org/.../social-cognitive-theory&quot;'>Khan Academy Link</a>"
+    }
+  ],
+  "worst_offenders": [
+    1555207952067,
+    1554850975678,
+    1554851371199,
+    1554851403669,
+    1554851421532
+  ],
+  "notes": "This batch of 257 MileDown MCAT cloze cards (Physics, Biology, Behavioral, Organic Chemistry) is high quality: cloze {{cN::...}} markup is balanced, HTML is reasonably balanced, no LaTeX/MathJax is present, and question/answer text is rendered cleanly with no unrendered template artifacts. The only genuine defect is one card whose Khan Academy link href has a stray &quot; entity (broken source URL). Four 'give the equation' cards encode the answer solely as an image, so their answer_text contains no textual answer (info); a larger set of ~29 organic-chemistry 'identify the structure' cards are image-dependent on the question side but have valid text answers and balanced markup, so they were not flagged."
+}

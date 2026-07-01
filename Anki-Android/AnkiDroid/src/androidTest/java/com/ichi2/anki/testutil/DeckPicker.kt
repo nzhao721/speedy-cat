@@ -15,11 +15,9 @@
  */
 package com.ichi2.anki.testutil
 
-import android.annotation.SuppressLint
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.action.ViewActions.typeText
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.hasDescendant
@@ -50,21 +48,6 @@ fun closeBackupCollectionDialogIfExists() {
 fun discardPreliminaryViews() {
     closeGetStartedScreenIfExists()
     closeBackupCollectionDialogIfExists()
-}
-
-/**
- * Create a deck with a unique name (based on the timestamp) return the name.
- * Must be called from a clean deck picker.
- */
-@SuppressLint("DirectSystemCurrentTimeMillisUsage")
-fun createDeckWithUniqueName(): String {
-    val testString = System.currentTimeMillis().toString()
-    val deckName = "TestDeck$testString"
-    onView(withId(R.id.fab_main)).perform(click())
-    onView(withId(R.id.add_deck_button)).perform(click())
-    onView(withId(R.id.dialog_text_input)).perform(typeText(deckName))
-    onView(withText(R.string.dialog_ok)).perform(click())
-    return deckName
 }
 
 fun tapOnCountLayouts(deckName: String) {

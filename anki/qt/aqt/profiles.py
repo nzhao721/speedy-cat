@@ -637,7 +637,6 @@ create table if not exists profiles
 
         return {
             EditorMode.ADD_CARDS: "add",
-            EditorMode.BROWSER: "browser",
             EditorMode.EDIT_CURRENT: "current",
         }[mode]
 

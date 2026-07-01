@@ -1,0 +1,958 @@
+{
+  "meta": {
+    "section": "BBLS",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax Microbiology (Parker, Schneegurt, Tu, Lister, Forster)",
+        "sourceLicense": "CC BY-NC-SA 4.0",
+        "baseUrl": "https://openstax.org/books/microbiology/",
+        "note": "Multiple-choice Review Questions scraped verbatim; correctAnswer taken from OpenStax published Answer Key pages (pages/chapter-N). OpenStax posts a 'no LLM training' notice; SpeedyCAT use is human-facing per PRD, with attribution and non-commercial/share-alike compliance."
+      }
+    ],
+    "counts": {"total": 47, "byTopic": {"molecular biology": 26, "genetics": 20, "virology": 1}},
+    "notes": "File 03: OpenStax Microbiology Ch. 10 (Biochemistry of the Genome) and Ch. 11 (Mechanisms of Microbial Genetics). Ch.10 Q16 (eukaryotic genome 'structure') was skipped because multiple listed options are simultaneously true (ambiguous). Options 1-4 map to A-D; correctAnswer letters verified against the chapter answer keys."
+  },
+  "questions": [
+    {
+      "id": "bbls-x055",
+      "section": "BBLS",
+      "stem": "Frederick Griffith infected mice with a combination of dead R and live S bacterial strains. What was the outcome, and why did it occur?",
+      "choices": [
+        {"label": "A", "text": "The mice will live. Transformation was not required."},
+        {"label": "B", "text": "The mice will die. Transformation of genetic material from R to S was required."},
+        {"label": "C", "text": "The mice will live. Transformation of genetic material from S to R was required."},
+        {"label": "D", "text": "The mice will die. Transformation was not required."}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Here the smooth (S) virulent strain is already alive, so it kills the mice on its own; the dead R cells are irrelevant and no transformation is needed. (Transformation only mattered in the classic case of dead S plus live R.)",
+      "topicTags": ["genetics", "transformation", "Griffith experiment"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q1 = D."
+    },
+    {
+      "id": "bbls-x056",
+      "section": "BBLS",
+      "stem": "Why was the alga Acetabularia a good model organism for Joachim Hämmerling to use to identify the location of genetic material?",
+      "choices": [
+        {"label": "A", "text": "It lacks a nuclear membrane."},
+        {"label": "B", "text": "It self-fertilizes."},
+        {"label": "C", "text": "It is a large, asymmetrical, single cell easy to see with the naked eye."},
+        {"label": "D", "text": "It makes a protein capsid."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Acetabularia is an unusually large single-celled alga with a distinctive shape, so Hämmerling could graft and transplant parts and observe the results with the naked eye.",
+      "topicTags": ["genetics", "model organisms", "history of genetics"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q2 = C."
+    },
+    {
+      "id": "bbls-x057",
+      "section": "BBLS",
+      "stem": "Which of the following best describes the results from Hershey and Chase's experiment using bacterial viruses with 35S-labeled proteins or 32P-labeled DNA that are consistent with protein being the molecule responsible for hereditary?",
+      "choices": [
+        {"label": "A", "text": "After infection with the 35S-labeled viruses and centrifugation, only the pellet would be radioactive."},
+        {"label": "B", "text": "After infection with the 35S-labeled viruses and centrifugation, both the pellet and the supernatant would be radioactive."},
+        {"label": "C", "text": "After infection with the 32P-labeled viruses and centrifugation, only the pellet would be radioactive."},
+        {"label": "D", "text": "After infection with the 32P-labeled viruses and centrifugation, both the pellet and the supernatant would be radioactive."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "If protein were the hereditary molecule, the 35S (protein) label would enter the bacterial cells; after centrifugation the radioactivity would be found only in the pellet (the cells). In reality the 32P (DNA) entered the cells, supporting DNA as the genetic material.",
+      "topicTags": ["genetics", "Hershey-Chase experiment", "molecular biology"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q3 = A."
+    },
+    {
+      "id": "bbls-x058",
+      "section": "BBLS",
+      "stem": "Which method did Morgan and colleagues use to show that hereditary information was carried on chromosomes?",
+      "choices": [
+        {"label": "A", "text": "statistical predictions of the outcomes of crosses using true-breeding parents"},
+        {"label": "B", "text": "correlations between microscopic observations of chromosomal movement and the characteristics of offspring"},
+        {"label": "C", "text": "transformation of nonpathogenic bacteria to pathogenic bacteria"},
+        {"label": "D", "text": "mutations resulting in distinct defects in metabolic enzymatic pathways"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Morgan's group correlated the inheritance of traits (e.g., eye color in Drosophila) with the microscopically observed behavior of specific chromosomes, supporting the chromosomal theory of inheritance.",
+      "topicTags": ["genetics", "chromosomal theory of inheritance"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q4 = B."
+    },
+    {
+      "id": "bbls-x059",
+      "section": "BBLS",
+      "stem": "According to Beadle and Tatum's \"one gene–one enzyme\" hypothesis, which of the following enzymes will eliminate the transformation of hereditary material from pathogenic bacteria to nonpathogenic bacteria?",
+      "choices": [
+        {"label": "A", "text": "carbohydrate-degrading enzymes"},
+        {"label": "B", "text": "proteinases"},
+        {"label": "C", "text": "ribonucleases"},
+        {"label": "D", "text": "deoxyribonucleases"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "DNA is the transforming material (Avery–MacLeod–McCarty). Deoxyribonucleases (DNases) degrade DNA, so treating with DNase would abolish transformation.",
+      "topicTags": ["genetics", "transformation", "molecular biology"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q5 = D."
+    },
+    {
+      "id": "bbls-x060",
+      "section": "BBLS",
+      "stem": "Which of the following is not found within DNA?",
+      "choices": [
+        {"label": "A", "text": "thymine"},
+        {"label": "B", "text": "phosphodiester bonds"},
+        {"label": "C", "text": "complementary base pairing"},
+        {"label": "D", "text": "amino acids"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "DNA is built from nucleotides (sugar, phosphate, and bases such as thymine) joined by phosphodiester bonds with complementary base pairing. Amino acids are the building blocks of proteins, not DNA.",
+      "topicTags": ["molecular biology", "DNA structure", "nucleic acids"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q6 = D."
+    },
+    {
+      "id": "bbls-x061",
+      "section": "BBLS",
+      "stem": "If 30% of the bases within a DNA molecule are adenine, what is the percentage of thymine?",
+      "choices": [
+        {"label": "A", "text": "20%"},
+        {"label": "B", "text": "25%"},
+        {"label": "C", "text": "30%"},
+        {"label": "D", "text": "35%"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "By Chargaff's rule, adenine pairs with thymine, so %A equals %T. If adenine is 30%, thymine is also 30%.",
+      "topicTags": ["molecular biology", "Chargaff's rule", "DNA structure"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q7 = C."
+    },
+    {
+      "id": "bbls-x062",
+      "section": "BBLS",
+      "stem": "Which of the following statements about base pairing in DNA is incorrect?",
+      "choices": [
+        {"label": "A", "text": "Purines always base pairs with pyrimidines."},
+        {"label": "B", "text": "Adenine binds to guanine."},
+        {"label": "C", "text": "Base pairs are stabilized by hydrogen bonds."},
+        {"label": "D", "text": "Base pairing occurs at the interior of the double helix."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The incorrect statement is that adenine binds guanine. Adenine pairs with thymine and guanine pairs with cytosine (purine–pyrimidine pairs held by hydrogen bonds inside the helix).",
+      "topicTags": ["molecular biology", "base pairing", "DNA structure"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q8 = B."
+    },
+    {
+      "id": "bbls-x063",
+      "section": "BBLS",
+      "stem": "If a DNA strand contains the sequence 5'-ATTCCGGATCGA-3', which of the following is the sequence of the complementary strand of DNA?",
+      "choices": [
+        {"label": "A", "text": "5'-TAAGGCCTAGCT-3'"},
+        {"label": "B", "text": "5'-ATTCCGGATCGA-3'"},
+        {"label": "C", "text": "3'-TAACCGGTACGT-5'"},
+        {"label": "D", "text": "5'-TCGATCCGGAAT-3'"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The complementary strand is antiparallel and base-paired (A-T, G-C): the complement of 5'-ATTCCGGATCGA-3' read in the 5'→3' direction is 5'-TCGATCCGGAAT-3'.",
+      "topicTags": ["molecular biology", "complementary strand", "DNA structure"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax (prime symbols normalized to '). correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q9 = D."
+    },
+    {
+      "id": "bbls-x064",
+      "section": "BBLS",
+      "stem": "During denaturation of DNA, which of the following happens?",
+      "choices": [
+        {"label": "A", "text": "Hydrogen bonds between complementary bases break."},
+        {"label": "B", "text": "Phosphodiester bonds break within the sugar-phosphate backbone."},
+        {"label": "C", "text": "Hydrogen bonds within the sugar-phosphate backbone break."},
+        {"label": "D", "text": "Phosphodiester bonds between complementary bases break."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Denaturation separates the two strands by breaking the hydrogen bonds between complementary bases; the covalent phosphodiester backbone stays intact.",
+      "topicTags": ["molecular biology", "DNA denaturation", "DNA structure"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q10 = A."
+    },
+    {
+      "id": "bbls-x065",
+      "section": "BBLS",
+      "stem": "Which of the following types of RNA codes for a protein?",
+      "choices": [
+        {"label": "A", "text": "dsRNA"},
+        {"label": "B", "text": "mRNA"},
+        {"label": "C", "text": "rRNA"},
+        {"label": "D", "text": "tRNA"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Messenger RNA (mRNA) carries the protein-coding sequence that ribosomes translate into a polypeptide.",
+      "topicTags": ["molecular biology", "mRNA", "gene expression"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q11 = B."
+    },
+    {
+      "id": "bbls-x066",
+      "section": "BBLS",
+      "stem": "A nucleic acid is purified from a mixture. The molecules are relatively small, contain uracil, and most are covalently bound to an amino acid. Which of the following was purified?",
+      "choices": [
+        {"label": "A", "text": "DNA"},
+        {"label": "B", "text": "mRNA"},
+        {"label": "C", "text": "rRNA"},
+        {"label": "D", "text": "tRNA"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Small RNA molecules that contain uracil and are charged with (covalently bound to) an amino acid are transfer RNAs (tRNAs).",
+      "topicTags": ["molecular biology", "tRNA", "translation"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q12 = D."
+    },
+    {
+      "id": "bbls-x067",
+      "section": "BBLS",
+      "stem": "Which of the following types of RNA is known for its catalytic abilities?",
+      "choices": [
+        {"label": "A", "text": "dsRNA"},
+        {"label": "B", "text": "mRNA"},
+        {"label": "C", "text": "rRNA"},
+        {"label": "D", "text": "tRNA"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ribosomal RNA (rRNA) acts as a ribozyme — the peptidyl transferase activity of the ribosome is catalyzed by rRNA.",
+      "topicTags": ["molecular biology", "rRNA", "ribozyme"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q13 = C."
+    },
+    {
+      "id": "bbls-x068",
+      "section": "BBLS",
+      "stem": "Ribosomes are composed of rRNA and what other component?",
+      "choices": [
+        {"label": "A", "text": "protein"},
+        {"label": "B", "text": "carbohydrates"},
+        {"label": "C", "text": "DNA"},
+        {"label": "D", "text": "mRNA"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ribosomes are ribonucleoprotein complexes made of ribosomal RNA (rRNA) and ribosomal proteins.",
+      "topicTags": ["molecular biology", "ribosomes", "translation"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q14 = A."
+    },
+    {
+      "id": "bbls-x069",
+      "section": "BBLS",
+      "stem": "Which of the following may use RNA as its genome?",
+      "choices": [
+        {"label": "A", "text": "a bacterium"},
+        {"label": "B", "text": "an archaeon"},
+        {"label": "C", "text": "a virus"},
+        {"label": "D", "text": "a eukaryote"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Only viruses can have RNA genomes; all cellular organisms (bacteria, archaea, eukaryotes) store their genetic information in DNA.",
+      "topicTags": ["virology", "RNA genome", "molecular biology"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q15 = C."
+    },
+    {
+      "id": "bbls-x070",
+      "section": "BBLS",
+      "stem": "Which of the following is typically found as part of the prokaryotic genome?",
+      "choices": [
+        {"label": "A", "text": "chloroplast DNA"},
+        {"label": "B", "text": "linear chromosomes"},
+        {"label": "C", "text": "plasmids"},
+        {"label": "D", "text": "mitochondrial DNA"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Plasmids — small, usually circular, extrachromosomal DNA molecules — are commonly part of prokaryotic genomes. Chloroplast and mitochondrial DNA are eukaryotic, and prokaryotic chromosomes are typically circular.",
+      "topicTags": ["genetics", "plasmids", "prokaryotes"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q17 = C."
+    },
+    {
+      "id": "bbls-x071",
+      "section": "BBLS",
+      "stem": "Serratia marcescens cells produce a red pigment at room temperature. The red color of the colonies is an example of which of the following?",
+      "choices": [
+        {"label": "A", "text": "genotype"},
+        {"label": "B", "text": "phenotype"},
+        {"label": "C", "text": "change in DNA base composition"},
+        {"label": "D", "text": "adaptation to the environment"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The observable red pigmentation is a phenotype — the expressed physical characteristic resulting from the organism's genotype and environment.",
+      "topicTags": ["genetics", "phenotype", "gene expression"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q18 = B."
+    },
+    {
+      "id": "bbls-x072",
+      "section": "BBLS",
+      "stem": "Which of the following genes would not likely be encoded on a plasmid?",
+      "choices": [
+        {"label": "A", "text": "genes encoding toxins that damage host tissue"},
+        {"label": "B", "text": "genes encoding antibacterial resistance"},
+        {"label": "C", "text": "gene encoding enzymes for glycolysis"},
+        {"label": "D", "text": "genes encoding enzymes for the degradation of an unusual substrate"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Essential housekeeping genes such as those for glycolysis reside on the main chromosome. Plasmids typically carry accessory, situational genes (toxins, antibiotic resistance, specialized catabolism).",
+      "topicTags": ["genetics", "plasmids", "prokaryotes"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q19 = C."
+    },
+    {
+      "id": "bbls-x073",
+      "section": "BBLS",
+      "stem": "Histones are DNA binding proteins that are important for DNA packaging in which of the following?",
+      "choices": [
+        {"label": "A", "text": "double-stranded and single-stranded DNA viruses"},
+        {"label": "B", "text": "archaea and bacteria"},
+        {"label": "C", "text": "bacteria and eukaryotes"},
+        {"label": "D", "text": "eukaryotes and archaea"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Histones package DNA in eukaryotes and in many archaea. Bacteria generally use nucleoid-associated proteins rather than true histones.",
+      "topicTags": ["molecular biology", "histones", "chromatin"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 10 Biochemistry of the Genome — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/10-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-10), Ch.10 MC Q20 = D."
+    },
+    {
+      "id": "bbls-x074",
+      "section": "BBLS",
+      "stem": "DNA does all but which of the following?",
+      "choices": [
+        {"label": "A", "text": "serves as the genetic material passed from parent to offspring"},
+        {"label": "B", "text": "remains constant despite changes in environmental conditions"},
+        {"label": "C", "text": "provides the instructions for the synthesis of messenger RNA"},
+        {"label": "D", "text": "is read by ribosomes during the process of translation"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ribosomes read messenger RNA, not DNA, during translation. DNA is the heritable material, is relatively stable, and is transcribed into mRNA.",
+      "topicTags": ["molecular biology", "central dogma", "gene expression"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q1 = D."
+    },
+    {
+      "id": "bbls-x075",
+      "section": "BBLS",
+      "stem": "According to the central dogma, which of the following represents the flow of genetic information in cells?",
+      "choices": [
+        {"label": "A", "text": "protein to DNA to RNA"},
+        {"label": "B", "text": "DNA to RNA to protein"},
+        {"label": "C", "text": "RNA to DNA to protein"},
+        {"label": "D", "text": "DNA to protein to RNA"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The central dogma describes information flowing from DNA to RNA (transcription) to protein (translation).",
+      "topicTags": ["molecular biology", "central dogma", "gene expression"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q2 = B."
+    },
+    {
+      "id": "bbls-x076",
+      "section": "BBLS",
+      "stem": "Which of the following is the enzyme that replaces the RNA nucleotides in a primer with DNA nucleotides?",
+      "choices": [
+        {"label": "A", "text": "DNA polymerase III"},
+        {"label": "B", "text": "DNA polymerase I"},
+        {"label": "C", "text": "primase"},
+        {"label": "D", "text": "helicase"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "In bacteria, DNA polymerase I removes the RNA primer and fills the gap with DNA nucleotides; DNA polymerase III is the main replicative polymerase.",
+      "topicTags": ["molecular biology", "DNA replication", "enzymes"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q3 = B."
+    },
+    {
+      "id": "bbls-x077",
+      "section": "BBLS",
+      "stem": "Which of the following is not involved in the initiation of replication?",
+      "choices": [
+        {"label": "A", "text": "ligase"},
+        {"label": "B", "text": "DNA gyrase"},
+        {"label": "C", "text": "single-stranded binding protein"},
+        {"label": "D", "text": "primase"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "DNA ligase acts later, sealing nicks and joining Okazaki fragments. DNA gyrase, single-stranded binding proteins, and primase all act during initiation/unwinding.",
+      "topicTags": ["molecular biology", "DNA replication", "enzymes"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q4 = A."
+    },
+    {
+      "id": "bbls-x078",
+      "section": "BBLS",
+      "stem": "Which of the following enzymes involved in DNA replication is unique to eukaryotes?",
+      "choices": [
+        {"label": "A", "text": "helicase"},
+        {"label": "B", "text": "DNA polymerase"},
+        {"label": "C", "text": "ligase"},
+        {"label": "D", "text": "telomerase"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Telomerase extends the linear chromosome ends (telomeres) of eukaryotes. Helicase, DNA polymerase, and ligase are common to prokaryotes and eukaryotes.",
+      "topicTags": ["molecular biology", "telomerase", "DNA replication"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q5 = D."
+    },
+    {
+      "id": "bbls-x079",
+      "section": "BBLS",
+      "stem": "Which of the following would be synthesized using 5'-CAGTTCGGA-3' as a template?",
+      "choices": [
+        {"label": "A", "text": "3'-AGGCTTGAC-4'"},
+        {"label": "B", "text": "3'-TCCGAACTG-5'"},
+        {"label": "C", "text": "3'-GTCAAGCCT-5'"},
+        {"label": "D", "text": "3'-CAGTTCGGA-5'"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The new strand is antiparallel and complementary to the template 5'-CAGTTCGGA-3', giving 3'-GTCAAGCCT-5'.",
+      "topicTags": ["molecular biology", "DNA replication", "complementary strand"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax (prime symbols normalized; option A's '4'' is reproduced as printed in the source). correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q6 = C."
+    },
+    {
+      "id": "bbls-x080",
+      "section": "BBLS",
+      "stem": "During which stage of bacterial transcription is the σ subunit of the RNA polymerase involved?",
+      "choices": [
+        {"label": "A", "text": "initiation"},
+        {"label": "B", "text": "elongation"},
+        {"label": "C", "text": "termination"},
+        {"label": "D", "text": "splicing"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The sigma (σ) factor directs RNA polymerase to the promoter to begin transcription; it functions during initiation and then dissociates during elongation.",
+      "topicTags": ["molecular biology", "transcription", "sigma factor"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q7 = A."
+    },
+    {
+      "id": "bbls-x081",
+      "section": "BBLS",
+      "stem": "Which of the following components is involved in the initiation of transcription?",
+      "choices": [
+        {"label": "A", "text": "primer"},
+        {"label": "B", "text": "origin"},
+        {"label": "C", "text": "promoter"},
+        {"label": "D", "text": "start codon"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Transcription begins when RNA polymerase binds the promoter. Primers and origins belong to replication, and the start codon is a feature of translation.",
+      "topicTags": ["molecular biology", "transcription", "promoter"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q8 = C."
+    },
+    {
+      "id": "bbls-x082",
+      "section": "BBLS",
+      "stem": "Which of the following is not a function of the 5' cap or 3' poly-A tail of a mature eukaryotic mRNA molecule?",
+      "choices": [
+        {"label": "A", "text": "to facilitate splicing"},
+        {"label": "B", "text": "to prevent mRNA degradation"},
+        {"label": "C", "text": "to aid export of the mature transcript to the cytoplasm"},
+        {"label": "D", "text": "to aid ribosome binding to the transcript"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The 5' cap and 3' poly-A tail protect the mRNA, aid nuclear export, and promote ribosome binding. Splicing is carried out by the spliceosome, not by the cap or tail.",
+      "topicTags": ["molecular biology", "mRNA processing", "gene expression"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q9 = A."
+    },
+    {
+      "id": "bbls-x083",
+      "section": "BBLS",
+      "stem": "Mature mRNA from a eukaryote would contain each of these features except which of the following?",
+      "choices": [
+        {"label": "A", "text": "exon-encoded RNA"},
+        {"label": "B", "text": "intron-encoded RNA"},
+        {"label": "C", "text": "5' cap"},
+        {"label": "D", "text": "3' poly-A tail"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Introns are spliced out during mRNA processing, so mature eukaryotic mRNA contains exon-encoded RNA, a 5' cap, and a 3' poly-A tail, but not intron-encoded RNA.",
+      "topicTags": ["molecular biology", "mRNA processing", "introns"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q10 = B."
+    },
+    {
+      "id": "bbls-x084",
+      "section": "BBLS",
+      "stem": "Which of the following is the name of the three-base sequence in the mRNA that binds to a tRNA molecule?",
+      "choices": [
+        {"label": "A", "text": "P site"},
+        {"label": "B", "text": "codon"},
+        {"label": "C", "text": "anticodon"},
+        {"label": "D", "text": "CCA binding site"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "A codon is the three-nucleotide unit of mRNA that base-pairs with the complementary anticodon of a tRNA during translation.",
+      "topicTags": ["molecular biology", "translation", "codon"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q11 = B."
+    },
+    {
+      "id": "bbls-x085",
+      "section": "BBLS",
+      "stem": "Which component is the last to join the initiation complex during the initiation of translation?",
+      "choices": [
+        {"label": "A", "text": "the mRNA molecule"},
+        {"label": "B", "text": "the small ribosomal subunit"},
+        {"label": "C", "text": "the large ribosomal subunit"},
+        {"label": "D", "text": "the initiator tRNA"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Translation initiation assembles the small subunit, mRNA, and initiator tRNA first; the large ribosomal subunit joins last to complete the initiation complex.",
+      "topicTags": ["molecular biology", "translation", "initiation"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q12 = C."
+    },
+    {
+      "id": "bbls-x086",
+      "section": "BBLS",
+      "stem": "During elongation in translation, to which ribosomal site does an incoming charged tRNA molecule bind?",
+      "choices": [
+        {"label": "A", "text": "A site"},
+        {"label": "B", "text": "P site"},
+        {"label": "C", "text": "E site"},
+        {"label": "D", "text": "B site"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Incoming aminoacyl- (charged) tRNAs enter at the A (aminoacyl) site; the growing peptide is held at the P site, and deacylated tRNAs exit through the E site.",
+      "topicTags": ["molecular biology", "translation", "ribosome"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q13 = A."
+    },
+    {
+      "id": "bbls-x087",
+      "section": "BBLS",
+      "stem": "Which of the following is the amino acid that appears at the N-terminus of all newly translated prokaryotic and eukaryotic polypeptides?",
+      "choices": [
+        {"label": "A", "text": "tryptophan"},
+        {"label": "B", "text": "methionine"},
+        {"label": "C", "text": "selenocysteine"},
+        {"label": "D", "text": "glycine"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Translation begins at the AUG start codon, which codes for methionine (formylmethionine in bacteria), so methionine is the initial N-terminal residue of newly made polypeptides.",
+      "topicTags": ["molecular biology", "translation", "start codon"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q14 = B."
+    },
+    {
+      "id": "bbls-x088",
+      "section": "BBLS",
+      "stem": "When the ribosome reaches a nonsense codon, which of the following occurs?",
+      "choices": [
+        {"label": "A", "text": "a methionine is incorporated"},
+        {"label": "B", "text": "the polypeptide is released"},
+        {"label": "C", "text": "a peptide bond forms"},
+        {"label": "D", "text": "the A site binds to a charged tRNA"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "A nonsense (stop) codon is recognized by a release factor rather than a tRNA, triggering termination and release of the completed polypeptide.",
+      "topicTags": ["molecular biology", "translation", "termination"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q15 = B."
+    },
+    {
+      "id": "bbls-x089",
+      "section": "BBLS",
+      "stem": "Which of the following is a change in the sequence that leads to formation of a stop codon?",
+      "choices": [
+        {"label": "A", "text": "missense mutation"},
+        {"label": "B", "text": "nonsense mutation"},
+        {"label": "C", "text": "silent mutation"},
+        {"label": "D", "text": "deletion mutation"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "A nonsense mutation changes a sense codon into a premature stop codon, truncating the protein. A missense mutation swaps one amino acid, and a silent mutation does not change the amino acid.",
+      "topicTags": ["genetics", "mutations", "nonsense mutation"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q16 = B."
+    },
+    {
+      "id": "bbls-x090",
+      "section": "BBLS",
+      "stem": "The formation of pyrimidine dimers results from which of the following?",
+      "choices": [
+        {"label": "A", "text": "spontaneous errors by DNA polymerase"},
+        {"label": "B", "text": "exposure to gamma radiation"},
+        {"label": "C", "text": "exposure to ultraviolet radiation"},
+        {"label": "D", "text": "exposure to intercalating agents"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ultraviolet (UV) light causes adjacent pyrimidines (especially thymines) to covalently bond, forming pyrimidine (thymine) dimers that distort the DNA.",
+      "topicTags": ["genetics", "mutations", "UV radiation"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q17 = C."
+    },
+    {
+      "id": "bbls-x091",
+      "section": "BBLS",
+      "stem": "Which of the following is an example of a frameshift mutation?",
+      "choices": [
+        {"label": "A", "text": "a deletion of a codon"},
+        {"label": "B", "text": "missense mutation"},
+        {"label": "C", "text": "silent mutation"},
+        {"label": "D", "text": "deletion of one nucleotide"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Inserting or deleting a number of nucleotides not divisible by three shifts the reading frame. Deleting one nucleotide is a frameshift; deleting a whole codon (three nucleotides) does not shift the frame.",
+      "topicTags": ["genetics", "mutations", "frameshift mutation"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q18 = D."
+    },
+    {
+      "id": "bbls-x092",
+      "section": "BBLS",
+      "stem": "Which of the following is the type of DNA repair in which thymine dimers are directly broken down by the enzyme photolyase?",
+      "choices": [
+        {"label": "A", "text": "direct repair"},
+        {"label": "B", "text": "nucleotide excision repair"},
+        {"label": "C", "text": "mismatch repair"},
+        {"label": "D", "text": "proofreading"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Photolyase uses light energy to directly reverse (break apart) thymine dimers — an example of direct repair, which does not remove or replace nucleotides.",
+      "topicTags": ["molecular biology", "DNA repair", "photolyase"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q19 = A."
+    },
+    {
+      "id": "bbls-x093",
+      "section": "BBLS",
+      "stem": "Which of the following regarding the Ames test is true?",
+      "choices": [
+        {"label": "A", "text": "It is used to identify newly formed auxotrophic mutants."},
+        {"label": "B", "text": "It is used to identify mutants with restored biosynthetic activity."},
+        {"label": "C", "text": "It is used to identify spontaneous mutants."},
+        {"label": "D", "text": "It is used to identify mutants lacking photoreactivation activity."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The Ames test screens for mutagens by detecting reversion of histidine-auxotrophic Salmonella back to histidine prototrophy — i.e., mutants with restored biosynthetic activity.",
+      "topicTags": ["genetics", "Ames test", "mutagens"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q20 = B."
+    },
+    {
+      "id": "bbls-x094",
+      "section": "BBLS",
+      "stem": "Which is the mechanism by which improper excision of a prophage from a bacterial chromosome results in packaging of bacterial genes near the integration site into a phage head?",
+      "choices": [
+        {"label": "A", "text": "conjugation"},
+        {"label": "B", "text": "generalized transduction"},
+        {"label": "C", "text": "specialized transduction"},
+        {"label": "D", "text": "transformation"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Specialized transduction occurs when a prophage excises imprecisely, carrying adjacent bacterial genes into new phage particles that then transfer those genes.",
+      "topicTags": ["genetics", "specialized transduction", "horizontal gene transfer"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q21 = C."
+    },
+    {
+      "id": "bbls-x095",
+      "section": "BBLS",
+      "stem": "Which of the following refers to the uptake of naked DNA from the surrounding environment?",
+      "choices": [
+        {"label": "A", "text": "conjugation"},
+        {"label": "B", "text": "generalized transduction"},
+        {"label": "C", "text": "specialized transduction"},
+        {"label": "D", "text": "transformation"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Transformation is the uptake and incorporation of free (naked) DNA from the environment by a competent cell.",
+      "topicTags": ["genetics", "transformation", "horizontal gene transfer"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q22 = D."
+    },
+    {
+      "id": "bbls-x096",
+      "section": "BBLS",
+      "stem": "The F plasmid is involved in which of the following processes?",
+      "choices": [
+        {"label": "A", "text": "conjugation"},
+        {"label": "B", "text": "transduction"},
+        {"label": "C", "text": "transposition"},
+        {"label": "D", "text": "transformation"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The fertility (F) plasmid encodes the sex pilus and machinery for conjugation, the direct cell-to-cell transfer of DNA.",
+      "topicTags": ["genetics", "conjugation", "F plasmid"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q23 = A."
+    },
+    {
+      "id": "bbls-x097",
+      "section": "BBLS",
+      "stem": "Which of the following refers to the mechanism of horizontal gene transfer naturally responsible for the spread of antibiotic resistance genes within a bacterial population?",
+      "choices": [
+        {"label": "A", "text": "conjugation"},
+        {"label": "B", "text": "generalized transduction"},
+        {"label": "C", "text": "specialized transduction"},
+        {"label": "D", "text": "transformation"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Conjugation, often mediated by resistance (R) plasmids, is the main route by which antibiotic-resistance genes spread between bacteria.",
+      "topicTags": ["genetics", "conjugation", "antibiotic resistance"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q24 = A."
+    },
+    {
+      "id": "bbls-x098",
+      "section": "BBLS",
+      "stem": "An operon of genes encoding enzymes in a biosynthetic pathway is likely to be which of the following?",
+      "choices": [
+        {"label": "A", "text": "inducible"},
+        {"label": "B", "text": "repressible"},
+        {"label": "C", "text": "constitutive"},
+        {"label": "D", "text": "monocistronic"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Biosynthetic (anabolic) operons are usually repressible: they are transcribed by default but switched off when the end product accumulates (e.g., the trp operon).",
+      "topicTags": ["genetics", "gene regulation", "operons"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q25 = B."
+    },
+    {
+      "id": "bbls-x099",
+      "section": "BBLS",
+      "stem": "An operon encoding genes that are transcribed and translated continuously to provide the cell with constant intermediate levels of the protein products is said to be which of the following?",
+      "choices": [
+        {"label": "A", "text": "repressible"},
+        {"label": "B", "text": "inducible"},
+        {"label": "C", "text": "constitutive"},
+        {"label": "D", "text": "activated"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Constitutive genes are expressed continuously at a relatively constant level, regardless of regulatory signals.",
+      "topicTags": ["genetics", "gene regulation", "constitutive expression"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q26 = C."
+    },
+    {
+      "id": "bbls-x100",
+      "section": "BBLS",
+      "stem": "Which of the following conditions leads to maximal expression of the lac operon?",
+      "choices": [
+        {"label": "A", "text": "lactose present, glucose absent"},
+        {"label": "B", "text": "lactose present, glucose present"},
+        {"label": "C", "text": "lactose absent, glucose absent"},
+        {"label": "D", "text": "lactose absent, glucose present"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The lac operon is maximally expressed when lactose is present (inducer removes the repressor) and glucose is absent (low glucose raises cAMP, so CAP activates transcription).",
+      "topicTags": ["genetics", "gene regulation", "lac operon"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q27 = A."
+    },
+    {
+      "id": "bbls-x101",
+      "section": "BBLS",
+      "stem": "Which of the following is a type of regulation of gene expression unique to eukaryotes?",
+      "choices": [
+        {"label": "A", "text": "attenuation"},
+        {"label": "B", "text": "use of alternate σ factor"},
+        {"label": "C", "text": "chemical modification of histones"},
+        {"label": "D", "text": "alarmones"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Histone modification (an epigenetic/chromatin-level control) is characteristic of eukaryotes. Attenuation, alternate sigma factors, and alarmones are prokaryotic regulatory mechanisms.",
+      "topicTags": ["genetics", "gene regulation", "epigenetics"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/11-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-11), Ch.11 MC Q28 = C."
+    }
+  ]
+}

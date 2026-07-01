@@ -1,0 +1,575 @@
+{
+  "meta": {
+    "title": "SpeedyCAT Practice Question Bank — scraped sample set",
+    "description": "MCAT-format practice questions collected by scraping openly/freely-licensed web sources. Built to match the PRD `PracticeQuestion` data model, plus a `passage`/`passageId` extension for passage-based items.",
+    "generatedOn": "2026-06-30",
+    "disclaimer": "Exploratory sample set. NOT from AAMC full-length practice tests. No AAMC-originated content is included. Every item carries traceable source metadata. Items whose license is proprietary/unclear are explicitly flagged with sourceLicense containing 'LICENSE-UNCERTAIN' and a note; do not ship those without clearing rights.",
+    "schemaNotes": {
+      "baseModelFields": ["id", "stem", "choices", "correctAnswer", "explanation", "section", "topicTags", "difficulty", "sourceName", "sourceLicense"],
+      "extensions": {
+        "sourceUrl": "Direct URL of the scraped page (traceability; PRD requires source attribution).",
+        "passage": "Full passage text for passage-based items (CARS). Null/omitted for discrete questions.",
+        "passageId": "Shared id grouping questions that hang off the same passage. Null/omitted for discretes.",
+        "answerProvenance": "How correctAnswer/explanation were obtained: 'source-answer-key' | 'source-solution-guide' | 'verified-from-source-text'.",
+        "notes": "Per-item provenance / licensing flags."
+      },
+      "choices": "Array of 4 objects {label: A|B|C|D, text}. correctAnswer is the matching label letter.",
+      "sectionCodes": ["CPBS", "CARS", "BBLS", "PSBB"]
+    },
+    "counts": {"CPBS": 7, "BBLS": 7, "PSBB": 7, "CARS": 6, "total": 27}
+  },
+  "questions": [
+    {
+      "id": "cpbs-001",
+      "section": "CPBS",
+      "stem": "What is the definition of a Brønsted-Lowry acid?",
+      "choices": [
+        {"label": "A", "text": "A proton donor"},
+        {"label": "B", "text": "A proton acceptor"},
+        {"label": "C", "text": "An electron pair donor"},
+        {"label": "D", "text": "An electron pair acceptor"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "A Brønsted-Lowry acid is defined as a proton (H+) donor; the species that accepts the proton is the Brønsted-Lowry base. (Electron-pair donor/acceptor are the Lewis definitions.)",
+      "topicTags": ["general chemistry", "acids and bases", "Bronsted-Lowry"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 9 Acids and Bases",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/09%3A_Acids_and_Bases/9.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The course's odd-answer key page (16.9) did not render during scraping; this definitional answer is independently verified."
+    },
+    {
+      "id": "cpbs-002",
+      "section": "CPBS",
+      "stem": "What is the conjugate base of HF?",
+      "choices": [
+        {"label": "A", "text": "H2F+"},
+        {"label": "B", "text": "HF"},
+        {"label": "C", "text": "H3O+"},
+        {"label": "D", "text": "F-"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Removing a proton (H+) from HF leaves F-, which is its conjugate base.",
+      "topicTags": ["general chemistry", "acids and bases", "conjugate pairs"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 9 Acids and Bases",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/09%3A_Acids_and_Bases/9.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim; answer independently verified (definitional)."
+    },
+    {
+      "id": "cpbs-003",
+      "section": "CPBS",
+      "stem": "What pH does an acidic solution have?",
+      "choices": [
+        {"label": "A", "text": "pH < 7"},
+        {"label": "B", "text": "pH = 7"},
+        {"label": "C", "text": "pH > 7"},
+        {"label": "D", "text": "The definition of acidity depends on the molecule."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "At 25 °C pure (neutral) water has pH 7. Acidic solutions have [H3O+] greater than 1.0×10^-7 M, which corresponds to pH < 7.",
+      "topicTags": ["general chemistry", "acids and bases", "pH scale"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 9 Acids and Bases",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/09%3A_Acids_and_Bases/9.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim; answer independently verified (definitional)."
+    },
+    {
+      "id": "cpbs-004",
+      "section": "CPBS",
+      "stem": "What is the pH of a solution with [H3O+] = 4.1 × 10^-5 M?",
+      "choices": [
+        {"label": "A", "text": "4.10"},
+        {"label": "B", "text": "4.39"},
+        {"label": "C", "text": "5.00"},
+        {"label": "D", "text": "9.61"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "pH = -log[H3O+] = -log(4.1×10^-5) = 5 - log(4.1) ≈ 5 - 0.61 = 4.39.",
+      "topicTags": ["general chemistry", "acids and bases", "pH calculation"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 9 Acids and Bases",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/09%3A_Acids_and_Bases/9.E%3A_Exercises",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim; answer independently verified by calculation."
+    },
+    {
+      "id": "cpbs-005",
+      "section": "CPBS",
+      "stem": "Which of the following is a nonpolar (hydrophobic) amino acid?",
+      "choices": [
+        {"label": "A", "text": "tyrosine"},
+        {"label": "B", "text": "serine"},
+        {"label": "C", "text": "valine"},
+        {"label": "D", "text": "lysine"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Valine has a branched hydrocarbon (isopropyl) side chain and is nonpolar/hydrophobic. Serine (–OH) and tyrosine (phenol) are polar, and lysine is positively charged.",
+      "topicTags": ["biochemistry", "amino acids", "hydrophobicity"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 14 Proteins",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/14%3A_Proteins/14.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "correctAnswer from the course's Chapter 16 answer key (16.14: Q1 = c)."
+    },
+    {
+      "id": "cpbs-006",
+      "section": "CPBS",
+      "stem": "Which of the following elements is not found in amino acids?",
+      "choices": [
+        {"label": "A", "text": "hydrogen"},
+        {"label": "B", "text": "phosphorus"},
+        {"label": "C", "text": "oxygen"},
+        {"label": "D", "text": "nitrogen"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The standard amino acids are built from carbon, hydrogen, oxygen, and nitrogen (with sulfur in cysteine and methionine). Phosphorus is not part of the amino acid structure itself.",
+      "topicTags": ["biochemistry", "amino acids", "elemental composition"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 14 Proteins",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/14%3A_Proteins/14.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "correctAnswer from the course's Chapter 16 answer key (16.14: Q2 = b)."
+    },
+    {
+      "id": "cpbs-007",
+      "section": "CPBS",
+      "stem": "Hydrogen bonding is most important in stabilizing the ________ structure of many proteins.",
+      "choices": [
+        {"label": "A", "text": "primary"},
+        {"label": "B", "text": "secondary"},
+        {"label": "C", "text": "tertiary"},
+        {"label": "D", "text": "quaternary"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Secondary structure (α-helices and β-pleated sheets) is held together mainly by hydrogen bonds between backbone carbonyl (C=O) and amide (N–H) groups.",
+      "topicTags": ["biochemistry", "protein structure", "hydrogen bonding"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 14 Proteins",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/14%3A_Proteins/14.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "correctAnswer from the course's Chapter 16 answer key (16.14: Q13 = b)."
+    },
+    {
+      "id": "bbls-001",
+      "section": "BBLS",
+      "stem": "The ________ is the basic unit of life.",
+      "choices": [
+        {"label": "A", "text": "organism"},
+        {"label": "B", "text": "cell"},
+        {"label": "C", "text": "tissue"},
+        {"label": "D", "text": "organ"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cell theory holds that the cell is the basic structural and functional unit of all living organisms.",
+      "topicTags": ["biology", "cell biology", "cell theory"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Biology 2e (hosted on Biology LibreTexts), 2.1 Cell Structure — Review Questions",
+      "sourceLicense": "CC BY 4.0",
+      "sourceUrl": "https://bio.libretexts.org/Bookshelves/Introductory_and_General_Biology/General_Biology_2e_(OpenStax)/02%3A_Unit_II-_The_Cell/2.01%3A_Cell_Structure/2.1.11%3A_Review_Questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. OpenStax withholds the official answer key publicly; this answer is independently verified from the same CC BY source text."
+    },
+    {
+      "id": "bbls-002",
+      "section": "BBLS",
+      "stem": "Which of the following organisms is a prokaryote?",
+      "choices": [
+        {"label": "A", "text": "amoeba"},
+        {"label": "B", "text": "influenza A virus"},
+        {"label": "C", "text": "charophyte algae"},
+        {"label": "D", "text": "E. coli"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "E. coli is a bacterium and therefore a prokaryote. Amoeba and charophyte algae are eukaryotes, and a virus is not a cellular organism.",
+      "topicTags": ["biology", "cell biology", "prokaryotes"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Biology 2e (hosted on Biology LibreTexts), 2.1 Cell Structure — Review Questions",
+      "sourceLicense": "CC BY 4.0",
+      "sourceUrl": "https://bio.libretexts.org/Bookshelves/Introductory_and_General_Biology/General_Biology_2e_(OpenStax)/02%3A_Unit_II-_The_Cell/2.01%3A_Cell_Structure/2.1.11%3A_Review_Questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. OpenStax withholds the official answer key publicly; answer independently verified from the same CC BY source text."
+    },
+    {
+      "id": "bbls-003",
+      "section": "BBLS",
+      "stem": "Which of the following is not a component of the endomembrane system?",
+      "choices": [
+        {"label": "A", "text": "mitochondrion"},
+        {"label": "B", "text": "Golgi apparatus"},
+        {"label": "C", "text": "endoplasmic reticulum"},
+        {"label": "D", "text": "lysosome"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The endomembrane system includes the nuclear envelope, ER, Golgi apparatus, lysosomes, vesicles, and plasma membrane. Mitochondria are not part of it (they have their own double membrane and likely arose endosymbiotically).",
+      "topicTags": ["biology", "cell biology", "organelles"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e (hosted on Biology LibreTexts), 2.1 Cell Structure — Review Questions",
+      "sourceLicense": "CC BY 4.0",
+      "sourceUrl": "https://bio.libretexts.org/Bookshelves/Introductory_and_General_Biology/General_Biology_2e_(OpenStax)/02%3A_Unit_II-_The_Cell/2.01%3A_Cell_Structure/2.1.11%3A_Review_Questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. OpenStax withholds the official answer key publicly; answer independently verified from the same CC BY source text."
+    },
+    {
+      "id": "bbls-004",
+      "section": "BBLS",
+      "stem": "Which of the following is most likely to have the greatest concentration of smooth endoplasmic reticulum?",
+      "choices": [
+        {"label": "A", "text": "a cell that secretes enzymes"},
+        {"label": "B", "text": "a cell that destroys pathogens"},
+        {"label": "C", "text": "a cell that makes steroid hormones"},
+        {"label": "D", "text": "a cell that engages in photosynthesis"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Smooth ER synthesizes lipids, including steroids, so steroid-hormone–producing cells (e.g., in the gonads or adrenal cortex) are especially rich in smooth ER. Enzyme (protein) secretion relies on rough ER.",
+      "topicTags": ["biology", "cell biology", "endoplasmic reticulum"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Biology 2e (hosted on Biology LibreTexts), 2.1 Cell Structure — Review Questions",
+      "sourceLicense": "CC BY 4.0",
+      "sourceUrl": "https://bio.libretexts.org/Bookshelves/Introductory_and_General_Biology/General_Biology_2e_(OpenStax)/02%3A_Unit_II-_The_Cell/2.01%3A_Cell_Structure/2.1.11%3A_Review_Questions",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. OpenStax withholds the official answer key publicly; answer independently verified from the same CC BY source text."
+    },
+    {
+      "id": "bbls-005",
+      "section": "BBLS",
+      "stem": "To which of the following classes of sugars does glucose belong?",
+      "choices": [
+        {"label": "A", "text": "pentose"},
+        {"label": "B", "text": "hexose"},
+        {"label": "C", "text": "tetrose"},
+        {"label": "D", "text": "heptose"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Glucose is a six-carbon sugar, so it is a hexose.",
+      "topicTags": ["biochemistry", "carbohydrates", "monosaccharides"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 12 Carbohydrates",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/12%3A_Carbohydrates/12.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "correctAnswer from the course's Chapter 16 answer key (16.12: Q7 = b)."
+    },
+    {
+      "id": "bbls-006",
+      "section": "BBLS",
+      "stem": "Which of the following is a disaccharide?",
+      "choices": [
+        {"label": "A", "text": "galactose"},
+        {"label": "B", "text": "lactose"},
+        {"label": "C", "text": "fructose"},
+        {"label": "D", "text": "amylose"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lactose is a disaccharide of glucose and galactose. Galactose and fructose are monosaccharides, and amylose is a polysaccharide (a component of starch).",
+      "topicTags": ["biochemistry", "carbohydrates", "disaccharides"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 12 Carbohydrates",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/12%3A_Carbohydrates/12.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "correctAnswer from the course's Chapter 16 answer key (16.12: Q8 = b)."
+    },
+    {
+      "id": "bbls-007",
+      "section": "BBLS",
+      "stem": "A carbohydrate with a C=O bond at carbon 2 would be classified as a(n)",
+      "choices": [
+        {"label": "A", "text": "aldose"},
+        {"label": "B", "text": "ketose"},
+        {"label": "C", "text": "triose"},
+        {"label": "D", "text": "hexose"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "A carbonyl (C=O) on an internal carbon such as C2 is a ketone group, making the sugar a ketose. An aldose has its carbonyl at C1 (an aldehyde). Triose/hexose describe carbon count, not carbonyl position.",
+      "topicTags": ["biochemistry", "carbohydrates", "aldose vs ketose"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 12 Carbohydrates",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/12%3A_Carbohydrates/12.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "correctAnswer from the course's Chapter 16 answer key (16.12: Q3 = b)."
+    },
+    {
+      "id": "psbb-001",
+      "section": "PSBB",
+      "stem": "In the scientific method, a hypothesis is a(n) ________.",
+      "choices": [
+        {"label": "A", "text": "observation"},
+        {"label": "B", "text": "measurement"},
+        {"label": "C", "text": "test"},
+        {"label": "D", "text": "proposed explanation"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "A hypothesis is a tentative, testable proposed explanation for an observed phenomenon, generated before data are collected.",
+      "topicTags": ["psychology", "research methods", "scientific method"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 1 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/1-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solution Guide (CC BY 4.0), Ch. 1 Q3 = D."
+    },
+    {
+      "id": "psbb-002",
+      "section": "PSBB",
+      "stem": "________ is most well-known for proposing his hierarchy of needs.",
+      "choices": [
+        {"label": "A", "text": "Noam Chomsky"},
+        {"label": "B", "text": "Carl Rogers"},
+        {"label": "C", "text": "Abraham Maslow"},
+        {"label": "D", "text": "Sigmund Freud"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Abraham Maslow proposed the hierarchy of needs, a humanistic motivation theory ascending from physiological needs to self-actualization.",
+      "topicTags": ["psychology", "motivation", "humanistic psychology"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 1 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/1-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solution Guide (CC BY 4.0), Ch. 1 Q5 = C."
+    },
+    {
+      "id": "psbb-003",
+      "section": "PSBB",
+      "stem": "The operant conditioning chamber (aka ________ box) is a device used to study the principles of operant conditioning.",
+      "choices": [
+        {"label": "A", "text": "Skinner"},
+        {"label": "B", "text": "Watson"},
+        {"label": "C", "text": "James"},
+        {"label": "D", "text": "Koffka"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The operant conditioning chamber is commonly called the 'Skinner box,' after B. F. Skinner, who used it to study how reinforcement and punishment shape behavior.",
+      "topicTags": ["psychology", "learning", "operant conditioning"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 1 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/1-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solution Guide (CC BY 4.0), Ch. 1 Q7 = A."
+    },
+    {
+      "id": "psbb-004",
+      "section": "PSBB",
+      "stem": "An individual's consistent pattern of thought and behavior is known as a(n) ________.",
+      "choices": [
+        {"label": "A", "text": "psychosexual stage"},
+        {"label": "B", "text": "object permanence"},
+        {"label": "C", "text": "personality"},
+        {"label": "D", "text": "perception"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Personality is defined as an individual's consistent, characteristic pattern of thinking, feeling, and behaving.",
+      "topicTags": ["psychology", "personality"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 1 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/1-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solution Guide (CC BY 4.0), Ch. 1 Q9 = C."
+    },
+    {
+      "id": "psbb-005",
+      "section": "PSBB",
+      "stem": "Which of the following best describes sociology as a subject?",
+      "choices": [
+        {"label": "A", "text": "The study of individual behavior"},
+        {"label": "B", "text": "The study of cultures"},
+        {"label": "C", "text": "The study of society and social interaction"},
+        {"label": "D", "text": "The study of economics"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Sociology is the systematic study of society and social interaction—how groups, institutions, and social forces shape human behavior.",
+      "topicTags": ["sociology", "foundations", "definition of sociology"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Introduction to Sociology 3e, Ch. 1 Section Quiz",
+      "sourceLicense": "CC BY 4.0",
+      "sourceUrl": "https://openstax.org/books/introduction-sociology-3e/pages/1-section-quiz",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax-derived chapter quiz answer key (Pressbooks adaptation, CC BY 4.0), Ch. 1 Q1 = C."
+    },
+    {
+      "id": "psbb-006",
+      "section": "PSBB",
+      "stem": "Who believed that the history of society was one of class struggle?",
+      "choices": [
+        {"label": "A", "text": "Emile Durkheim"},
+        {"label": "B", "text": "Karl Marx"},
+        {"label": "C", "text": "Erving Goffman"},
+        {"label": "D", "text": "George Herbert Mead"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Karl Marx argued that society's history is fundamentally a history of class struggle between those who own the means of production and those who labor for them.",
+      "topicTags": ["sociology", "theory", "conflict theory"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Introduction to Sociology 3e, Ch. 1 Section Quiz",
+      "sourceLicense": "CC BY 4.0",
+      "sourceUrl": "https://openstax.org/books/introduction-sociology-3e/pages/1-section-quiz",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax-derived chapter quiz answer key (Pressbooks adaptation, CC BY 4.0), Ch. 1 Q9 = B."
+    },
+    {
+      "id": "psbb-007",
+      "section": "PSBB",
+      "stem": "A symbolic interactionist may compare social interactions to:",
+      "choices": [
+        {"label": "A", "text": "behaviors"},
+        {"label": "B", "text": "conflicts"},
+        {"label": "C", "text": "human organs"},
+        {"label": "D", "text": "theatrical roles"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Symbolic interactionism (via Goffman's dramaturgical analysis) compares social interaction to a theatrical performance in which people play roles on a social 'stage.'",
+      "topicTags": ["sociology", "theory", "symbolic interactionism"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Introduction to Sociology 3e, Ch. 1 Section Quiz",
+      "sourceLicense": "CC BY 4.0",
+      "sourceUrl": "https://openstax.org/books/introduction-sociology-3e/pages/1-section-quiz",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax-derived chapter quiz answer key (Pressbooks adaptation, CC BY 4.0), Ch. 1 Q11 = D."
+    },
+    {
+      "id": "cars-001",
+      "section": "CARS",
+      "passageId": "cars-passage-bemo-03",
+      "passage": "In a world increasingly governed by visibility, it is perhaps unsurprising that recognition has become a form of social currency. From professional accolades to viral social media content, modern culture often equates being seen with being validated. Yet recognition is a peculiar commodity: its value fluctuates, its acquisition is uneven, and its effects are not always empowering. Philosophers from Hegel to Taylor have emphasized that recognition is fundamental to self-realization; to be misrecognized—or not recognized at all—can be a form of social injury.\n\nParadoxically, the more we seek recognition, the more its authenticity seems to erode. Social validation, when aggressively pursued, may lead to conformity or even deception, as individuals tailor themselves to fit into molds they believe will be affirmed. Indeed, the desire to be visible can lead to the loss of individuality, as people substitute curated personas for genuine identity. This tension is particularly evident in digital spaces, where metrics such as likes, shares, and follows act as proxies for acknowledgment, yet often promote performative rather than substantive engagement.\n\nRecognition, then, is not a neutral or harmless good. It is mediated by power relations and shaped by prevailing norms. What counts as \"worthy\" of recognition is often dictated by dominant ideologies. Consequently, some voices remain marginalized, not because they lack merit, but because they challenge the frameworks within which recognition operates. Thus, to interrogate recognition is to interrogate the broader social structures that sustain inequality under the guise of meritocracy.\n\nStill, abandoning the pursuit of recognition entirely is neither realistic nor desirable. Recognition plays a legitimate role in affirming human dignity and fostering social cohesion. The challenge is not to reject recognition altogether, but to decouple it from systems that render it conditional on assimilation. A more just form of recognition would celebrate plurality without demanding erasure; it would validate difference rather than neutralize it.",
+      "stem": "The author's primary concern in the passage is to:",
+      "choices": [
+        {"label": "A", "text": "Advocate for increased visibility of marginalized voices on social media"},
+        {"label": "B", "text": "Critique the superficial nature of online validation"},
+        {"label": "C", "text": "Explore the complexities and consequences of social recognition"},
+        {"label": "D", "text": "Denounce conformity in pursuit of societal approval"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The entire passage revolves around examining recognition—its forms, implications, risks, and potential reforms. Social media and conformity are examples used to support a broader exploration, not the main point.",
+      "topicTags": ["CARS", "humanities", "philosophy", "main idea"],
+      "difficulty": "medium",
+      "sourceName": "BeMo Academic Consulting — MCAT CARS Practice Passages (PDF), Passage #3",
+      "sourceLicense": "Proprietary / all rights reserved (BeMo) — LICENSE-UNCERTAIN: included only as a flagged format example; NOT cleared for redistribution.",
+      "sourceUrl": "https://bemoacademicconsulting.com/content/Resources/MCAT%20CARS%20Practice%20Passages.pdf",
+      "answerProvenance": "source-answer-key",
+      "notes": "FLAGGED license-uncertain. Commercial prep-company content (not openly licensed, not AAMC). Passage, question, answer, and explanation are from the source PDF. Do not ship without licensing; prefer replacing with CC-licensed CARS (e.g., Khan Academy) or commissioned original passages."
+    },
+    {
+      "id": "cars-002",
+      "section": "CARS",
+      "passageId": "cars-passage-bemo-03",
+      "passage": "In a world increasingly governed by visibility, it is perhaps unsurprising that recognition has become a form of social currency. From professional accolades to viral social media content, modern culture often equates being seen with being validated. Yet recognition is a peculiar commodity: its value fluctuates, its acquisition is uneven, and its effects are not always empowering. Philosophers from Hegel to Taylor have emphasized that recognition is fundamental to self-realization; to be misrecognized—or not recognized at all—can be a form of social injury.\n\nParadoxically, the more we seek recognition, the more its authenticity seems to erode. Social validation, when aggressively pursued, may lead to conformity or even deception, as individuals tailor themselves to fit into molds they believe will be affirmed. Indeed, the desire to be visible can lead to the loss of individuality, as people substitute curated personas for genuine identity. This tension is particularly evident in digital spaces, where metrics such as likes, shares, and follows act as proxies for acknowledgment, yet often promote performative rather than substantive engagement.\n\nRecognition, then, is not a neutral or harmless good. It is mediated by power relations and shaped by prevailing norms. What counts as \"worthy\" of recognition is often dictated by dominant ideologies. Consequently, some voices remain marginalized, not because they lack merit, but because they challenge the frameworks within which recognition operates. Thus, to interrogate recognition is to interrogate the broader social structures that sustain inequality under the guise of meritocracy.\n\nStill, abandoning the pursuit of recognition entirely is neither realistic nor desirable. Recognition plays a legitimate role in affirming human dignity and fostering social cohesion. The challenge is not to reject recognition altogether, but to decouple it from systems that render it conditional on assimilation. A more just form of recognition would celebrate plurality without demanding erasure; it would validate difference rather than neutralize it.",
+      "stem": "The author's attitude toward recognition can best be described as:",
+      "choices": [
+        {"label": "A", "text": "Enthusiastic and optimistic"},
+        {"label": "B", "text": "Cynical and dismissive"},
+        {"label": "C", "text": "Nuanced and critical"},
+        {"label": "D", "text": "Indifferent and analytical"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The author acknowledges both the harms and the necessity of recognition. The tone is reflective and critical—neither wholly positive nor negative—which fits 'nuanced and critical.'",
+      "topicTags": ["CARS", "humanities", "philosophy", "author tone"],
+      "difficulty": "medium",
+      "sourceName": "BeMo Academic Consulting — MCAT CARS Practice Passages (PDF), Passage #3",
+      "sourceLicense": "Proprietary / all rights reserved (BeMo) — LICENSE-UNCERTAIN: included only as a flagged format example; NOT cleared for redistribution.",
+      "sourceUrl": "https://bemoacademicconsulting.com/content/Resources/MCAT%20CARS%20Practice%20Passages.pdf",
+      "answerProvenance": "source-answer-key",
+      "notes": "FLAGGED license-uncertain. Commercial prep-company content (not openly licensed, not AAMC). Do not ship without licensing."
+    },
+    {
+      "id": "cars-003",
+      "section": "CARS",
+      "passageId": "cars-passage-bemo-03",
+      "passage": "In a world increasingly governed by visibility, it is perhaps unsurprising that recognition has become a form of social currency. From professional accolades to viral social media content, modern culture often equates being seen with being validated. Yet recognition is a peculiar commodity: its value fluctuates, its acquisition is uneven, and its effects are not always empowering. Philosophers from Hegel to Taylor have emphasized that recognition is fundamental to self-realization; to be misrecognized—or not recognized at all—can be a form of social injury.\n\nParadoxically, the more we seek recognition, the more its authenticity seems to erode. Social validation, when aggressively pursued, may lead to conformity or even deception, as individuals tailor themselves to fit into molds they believe will be affirmed. Indeed, the desire to be visible can lead to the loss of individuality, as people substitute curated personas for genuine identity. This tension is particularly evident in digital spaces, where metrics such as likes, shares, and follows act as proxies for acknowledgment, yet often promote performative rather than substantive engagement.\n\nRecognition, then, is not a neutral or harmless good. It is mediated by power relations and shaped by prevailing norms. What counts as \"worthy\" of recognition is often dictated by dominant ideologies. Consequently, some voices remain marginalized, not because they lack merit, but because they challenge the frameworks within which recognition operates. Thus, to interrogate recognition is to interrogate the broader social structures that sustain inequality under the guise of meritocracy.\n\nStill, abandoning the pursuit of recognition entirely is neither realistic nor desirable. Recognition plays a legitimate role in affirming human dignity and fostering social cohesion. The challenge is not to reject recognition altogether, but to decouple it from systems that render it conditional on assimilation. A more just form of recognition would celebrate plurality without demanding erasure; it would validate difference rather than neutralize it.",
+      "stem": "According to the passage, which of the following is a consequence of aggressively seeking recognition?",
+      "choices": [
+        {"label": "A", "text": "Enhanced self-awareness"},
+        {"label": "B", "text": "Loss of individuality"},
+        {"label": "C", "text": "Strengthened social bonds"},
+        {"label": "D", "text": "Exposure to alternative viewpoints"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "In paragraph 2 the author states that tailoring oneself for recognition can lead to the loss of individuality, as people substitute curated personas for genuine identity.",
+      "topicTags": ["CARS", "humanities", "philosophy", "detail/comprehension"],
+      "difficulty": "easy",
+      "sourceName": "BeMo Academic Consulting — MCAT CARS Practice Passages (PDF), Passage #3",
+      "sourceLicense": "Proprietary / all rights reserved (BeMo) — LICENSE-UNCERTAIN: included only as a flagged format example; NOT cleared for redistribution.",
+      "sourceUrl": "https://bemoacademicconsulting.com/content/Resources/MCAT%20CARS%20Practice%20Passages.pdf",
+      "answerProvenance": "source-answer-key",
+      "notes": "FLAGGED license-uncertain. Commercial prep-company content (not openly licensed, not AAMC). Do not ship without licensing."
+    },
+    {
+      "id": "cars-004",
+      "section": "CARS",
+      "passageId": "cars-passage-bemo-07",
+      "passage": "In contemporary moral discourse, freedom of choice is often heralded as the ultimate virtue. To choose, we are told, is to exercise autonomy; to lack choice is to suffer oppression. This view, deeply rooted in liberal democratic ideology, assumes that moral agency is best realized through unconstrained decision-making. Yet this seemingly intuitive belief masks a paradox: beyond a certain threshold, the proliferation of choices can hinder rather than enhance moral clarity.\n\nThe more options we are given, the more responsibility we bear for the outcomes of our decisions. This burden, rather than empowering individuals, can overwhelm them—paralyzing judgment and inducing guilt. For example, when patients are asked to select their treatment from a menu of equally viable therapies, the process can induce anxiety rather than a sense of control. The moral weight of choice, especially when outcomes are uncertain or irreversible, can transform freedom into a source of distress.\n\nMoreover, the emphasis on individual choice often ignores the structural conditions that constrain it. Not all choices are created equal; the ability to choose between gourmet meals is not the same as choosing whether to eat at all. Framing morality as a matter of individual decision-making can obscure the systemic inequities that shape which options are available in the first place. A moral system that centers choice without context risks mistaking privilege for virtue.\n\nNone of this is to suggest that choice should be dismissed entirely. But to equate choice with freedom, or freedom with morality, is to oversimplify the complex terrain of ethical life. True autonomy may lie not in having infinite options, but in cultivating the capacity to navigate constraints meaningfully and justly.",
+      "stem": "The author's main argument is that:",
+      "choices": [
+        {"label": "A", "text": "More choice always leads to better ethical outcomes"},
+        {"label": "B", "text": "Individual choice is the highest form of freedom"},
+        {"label": "C", "text": "Too much emphasis on choice can obscure ethical complexity"},
+        {"label": "D", "text": "People should delegate important decisions to experts"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The central claim is that, although choice is often celebrated, an over-emphasis on it can lead to confusion, distress, and oversimplified morality—especially when context is ignored.",
+      "topicTags": ["CARS", "humanities", "ethics", "main idea"],
+      "difficulty": "medium",
+      "sourceName": "BeMo Academic Consulting — MCAT CARS Practice Passages (PDF), Passage #7",
+      "sourceLicense": "Proprietary / all rights reserved (BeMo) — LICENSE-UNCERTAIN: included only as a flagged format example; NOT cleared for redistribution.",
+      "sourceUrl": "https://bemoacademicconsulting.com/content/Resources/MCAT%20CARS%20Practice%20Passages.pdf",
+      "answerProvenance": "source-answer-key",
+      "notes": "FLAGGED license-uncertain. Commercial prep-company content (not openly licensed, not AAMC). Do not ship without licensing."
+    },
+    {
+      "id": "cars-005",
+      "section": "CARS",
+      "passageId": "cars-passage-bemo-07",
+      "passage": "In contemporary moral discourse, freedom of choice is often heralded as the ultimate virtue. To choose, we are told, is to exercise autonomy; to lack choice is to suffer oppression. This view, deeply rooted in liberal democratic ideology, assumes that moral agency is best realized through unconstrained decision-making. Yet this seemingly intuitive belief masks a paradox: beyond a certain threshold, the proliferation of choices can hinder rather than enhance moral clarity.\n\nThe more options we are given, the more responsibility we bear for the outcomes of our decisions. This burden, rather than empowering individuals, can overwhelm them—paralyzing judgment and inducing guilt. For example, when patients are asked to select their treatment from a menu of equally viable therapies, the process can induce anxiety rather than a sense of control. The moral weight of choice, especially when outcomes are uncertain or irreversible, can transform freedom into a source of distress.\n\nMoreover, the emphasis on individual choice often ignores the structural conditions that constrain it. Not all choices are created equal; the ability to choose between gourmet meals is not the same as choosing whether to eat at all. Framing morality as a matter of individual decision-making can obscure the systemic inequities that shape which options are available in the first place. A moral system that centers choice without context risks mistaking privilege for virtue.\n\nNone of this is to suggest that choice should be dismissed entirely. But to equate choice with freedom, or freedom with morality, is to oversimplify the complex terrain of ethical life. True autonomy may lie not in having infinite options, but in cultivating the capacity to navigate constraints meaningfully and justly.",
+      "stem": "The author uses the example of patients selecting treatments to:",
+      "choices": [
+        {"label": "A", "text": "Highlight flaws in modern medical procedures"},
+        {"label": "B", "text": "Show how choice can be empowering in high-stakes contexts"},
+        {"label": "C", "text": "Illustrate how decision-making can induce anxiety"},
+        {"label": "D", "text": "Demonstrate the importance of physician-patient communication"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The example supports the claim that choice can overwhelm rather than empower—especially under uncertainty—by inducing anxiety instead of a sense of control.",
+      "topicTags": ["CARS", "humanities", "ethics", "function of detail"],
+      "difficulty": "medium",
+      "sourceName": "BeMo Academic Consulting — MCAT CARS Practice Passages (PDF), Passage #7",
+      "sourceLicense": "Proprietary / all rights reserved (BeMo) — LICENSE-UNCERTAIN: included only as a flagged format example; NOT cleared for redistribution.",
+      "sourceUrl": "https://bemoacademicconsulting.com/content/Resources/MCAT%20CARS%20Practice%20Passages.pdf",
+      "answerProvenance": "source-answer-key",
+      "notes": "FLAGGED license-uncertain. Commercial prep-company content (not openly licensed, not AAMC). Do not ship without licensing."
+    },
+    {
+      "id": "cars-006",
+      "section": "CARS",
+      "passageId": "cars-passage-bemo-07",
+      "passage": "In contemporary moral discourse, freedom of choice is often heralded as the ultimate virtue. To choose, we are told, is to exercise autonomy; to lack choice is to suffer oppression. This view, deeply rooted in liberal democratic ideology, assumes that moral agency is best realized through unconstrained decision-making. Yet this seemingly intuitive belief masks a paradox: beyond a certain threshold, the proliferation of choices can hinder rather than enhance moral clarity.\n\nThe more options we are given, the more responsibility we bear for the outcomes of our decisions. This burden, rather than empowering individuals, can overwhelm them—paralyzing judgment and inducing guilt. For example, when patients are asked to select their treatment from a menu of equally viable therapies, the process can induce anxiety rather than a sense of control. The moral weight of choice, especially when outcomes are uncertain or irreversible, can transform freedom into a source of distress.\n\nMoreover, the emphasis on individual choice often ignores the structural conditions that constrain it. Not all choices are created equal; the ability to choose between gourmet meals is not the same as choosing whether to eat at all. Framing morality as a matter of individual decision-making can obscure the systemic inequities that shape which options are available in the first place. A moral system that centers choice without context risks mistaking privilege for virtue.\n\nNone of this is to suggest that choice should be dismissed entirely. But to equate choice with freedom, or freedom with morality, is to oversimplify the complex terrain of ethical life. True autonomy may lie not in having infinite options, but in cultivating the capacity to navigate constraints meaningfully and justly.",
+      "stem": "Which of the following best describes the tone of the passage?",
+      "choices": [
+        {"label": "A", "text": "Optimistic and celebratory"},
+        {"label": "B", "text": "Skeptical and reflective"},
+        {"label": "C", "text": "Sarcastic and mocking"},
+        {"label": "D", "text": "Defensive and apologetic"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The author questions common assumptions about choice using a measured, analytical voice—skeptical of the 'choice = freedom = morality' equation while remaining reflective rather than mocking.",
+      "topicTags": ["CARS", "humanities", "ethics", "author tone"],
+      "difficulty": "medium",
+      "sourceName": "BeMo Academic Consulting — MCAT CARS Practice Passages (PDF), Passage #7",
+      "sourceLicense": "Proprietary / all rights reserved (BeMo) — LICENSE-UNCERTAIN: included only as a flagged format example; NOT cleared for redistribution.",
+      "sourceUrl": "https://bemoacademicconsulting.com/content/Resources/MCAT%20CARS%20Practice%20Passages.pdf",
+      "answerProvenance": "source-answer-key",
+      "notes": "FLAGGED license-uncertain. Commercial prep-company content (not openly licensed, not AAMC). Do not ship without licensing."
+    }
+  ]
+}

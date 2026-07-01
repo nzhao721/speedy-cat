@@ -1,0 +1,433 @@
+{
+  "meta": {
+    "section": "CPBS",
+    "subArea": "general chemistry",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 2 Atoms and Elements — Multiple-Choice Questions",
+        "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+        "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/02%3A_Atoms_and_Elements/2.E%3A_Exercises"
+      },
+      {
+        "sourceName": "LibreTexts GOB (Roosevelt) — Ch. 16.2 Ch. 2 Odd Answers (answer key)",
+        "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+        "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/16%3A_Answers_to_Odd_Problems/16.02%3A_Ch._2_Odd_Answers"
+      },
+      {
+        "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 3 Ionic and Covalent Compounds — Multiple-Choice Questions",
+        "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+        "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/03%3A_Ionic_and_Covalent_Compounds/3.E%3A_Exercises"
+      },
+      {
+        "sourceName": "LibreTexts GOB (Roosevelt) — Ch. 16.3 Ch. 3 Odd Answers (answer key)",
+        "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+        "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/16%3A_Answers_to_Odd_Problems/16.03%3A_Ch._3_Odd_Answers"
+      }
+    ],
+    "counts": {"total": 20, "byTopic": {"atomic structure / periodic": 10, "bonding / nomenclature / ions": 10}},
+    "notes": "General-chemistry MCQ scraped verbatim from the chapter 'Multiple-Choice Questions' sections. The GOB book's Chapter 16 answer key lists answers for ALL ten MCQ in each chapter (not just odds), so every item here is keyed to source-answer-key and was additionally cross-checked against the source text. Mirrors the cpbs-001..004 items already in questions.json (same book, later chapters)."
+  },
+  "questions": [
+    {
+      "id": "cpbs-xc001",
+      "section": "CPBS",
+      "stem": "Which of the following has a positive charge?",
+      "choices": [
+        {"label": "A", "text": "A proton"},
+        {"label": "B", "text": "An electron"},
+        {"label": "C", "text": "A neutron"},
+        {"label": "D", "text": "A hydrogen atom"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "A proton carries a +1 elementary charge. Electrons are negatively charged, neutrons are neutral, and a neutral hydrogen atom has no net charge.",
+      "topicTags": ["general chemistry", "atomic structure", "subatomic particles"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 2 Atoms and Elements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/02%3A_Atoms_and_Elements/2.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.2 MCQ: Q1 = a)."
+    },
+    {
+      "id": "cpbs-xc002",
+      "section": "CPBS",
+      "stem": "Which of the following is the mass number for the isotope Br-79 (79Br)?",
+      "choices": [
+        {"label": "A", "text": "35"},
+        {"label": "B", "text": "44"},
+        {"label": "C", "text": "79"},
+        {"label": "D", "text": "79.904"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "In the notation 79Br the leading number is the mass number (protons + neutrons) = 79. 35 is bromine's atomic number, 44 is the neutron count (79 - 35), and 79.904 is the element's average atomic mass.",
+      "topicTags": ["general chemistry", "atomic structure", "isotopes", "mass number"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 2 Atoms and Elements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/02%3A_Atoms_and_Elements/2.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.2 MCQ: Q2 = c)."
+    },
+    {
+      "id": "cpbs-xc003",
+      "section": "CPBS",
+      "stem": "How many electrons are present in Mg2+?",
+      "choices": [
+        {"label": "A", "text": "10"},
+        {"label": "B", "text": "12"},
+        {"label": "C", "text": "14"},
+        {"label": "D", "text": "24"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "A neutral magnesium atom has 12 electrons; the 2+ cation has lost 2 electrons, leaving 10.",
+      "topicTags": ["general chemistry", "atomic structure", "ions"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 2 Atoms and Elements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/02%3A_Atoms_and_Elements/2.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.2 MCQ: Q3 = a)."
+    },
+    {
+      "id": "cpbs-xc004",
+      "section": "CPBS",
+      "stem": "Which of the following is the correct set of protons, neutrons, and electrons for Cd-113 as the 2+ cation (113Cd2+)?",
+      "choices": [
+        {"label": "A", "text": "48, 65, 48"},
+        {"label": "B", "text": "48, 65, 50"},
+        {"label": "C", "text": "48, 65, 46"},
+        {"label": "D", "text": "50, 65, 48"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cadmium has atomic number 48 (48 protons). Mass number 113 means 113 - 48 = 65 neutrons. A 2+ charge means two fewer electrons than protons: 46 electrons.",
+      "topicTags": ["general chemistry", "atomic structure", "isotopes", "ions"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 2 Atoms and Elements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/02%3A_Atoms_and_Elements/2.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.2 MCQ: Q4 = c)."
+    },
+    {
+      "id": "cpbs-xc005",
+      "section": "CPBS",
+      "stem": "Which of the following is the correct chemical symbol for copper?",
+      "choices": [
+        {"label": "A", "text": "C"},
+        {"label": "B", "text": "Co"},
+        {"label": "C", "text": "Cr"},
+        {"label": "D", "text": "Cu"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Copper's symbol is Cu (from the Latin cuprum). C is carbon, Co is cobalt, and Cr is chromium.",
+      "topicTags": ["general chemistry", "periodic table", "element symbols"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 2 Atoms and Elements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/02%3A_Atoms_and_Elements/2.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.2 MCQ: Q5 = d)."
+    },
+    {
+      "id": "cpbs-xc006",
+      "section": "CPBS",
+      "stem": "Select the correct atomic symbol for an isotope of nitrogen with 8 neutrons.",
+      "choices": [
+        {"label": "A", "text": "7N"},
+        {"label": "B", "text": "8N"},
+        {"label": "C", "text": "14N"},
+        {"label": "D", "text": "15N"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nitrogen has 7 protons; with 8 neutrons the mass number is 7 + 8 = 15, written 15N (N-15). The leading superscript is the mass number, not the proton or neutron count alone.",
+      "topicTags": ["general chemistry", "atomic structure", "isotopes", "isotope notation"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 2 Atoms and Elements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/02%3A_Atoms_and_Elements/2.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.2 MCQ: Q6 = d)."
+    },
+    {
+      "id": "cpbs-xc007",
+      "section": "CPBS",
+      "stem": "The average atomic mass of chlorine is 35.4527 amu. There are two stable isotopes of chlorine: Cl-35 and Cl-37. Given this information, which of the statements below is true?",
+      "choices": [
+        {"label": "A", "text": "The fractional abundance of Cl-35 is greater than that of Cl-37."},
+        {"label": "B", "text": "The fractional abundance of Cl-37 is greater than that of Cl-35."},
+        {"label": "C", "text": "The fractional abundances of Cl-35 and Cl-37 are equal."},
+        {"label": "D", "text": "The relative fractional abundances of Cl-35 and Cl-37 cannot be determined from this information."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "A weighted-average atomic mass lies closest to the mass of the most abundant isotope. Because 35.45 is much nearer 35 than 37, Cl-35 must be the more abundant isotope.",
+      "topicTags": ["general chemistry", "atomic structure", "isotopic abundance", "average atomic mass"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 2 Atoms and Elements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/02%3A_Atoms_and_Elements/2.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.2 MCQ: Q7 = a)."
+    },
+    {
+      "id": "cpbs-xc008",
+      "section": "CPBS",
+      "stem": "How many valence electrons does an atom of phosphorus have?",
+      "choices": [
+        {"label": "A", "text": "3"},
+        {"label": "B", "text": "5"},
+        {"label": "C", "text": "8"},
+        {"label": "D", "text": "15"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Phosphorus is in group 15 (VA) of the periodic table, so a neutral P atom has 5 valence electrons. (15 is its total electron count, not its valence count.)",
+      "topicTags": ["general chemistry", "periodic trends", "valence electrons"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 2 Atoms and Elements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/02%3A_Atoms_and_Elements/2.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.2 MCQ: Q8 = b)."
+    },
+    {
+      "id": "cpbs-xc009",
+      "section": "CPBS",
+      "stem": "To achieve an octet in its valence shell, sulfur must …",
+      "choices": [
+        {"label": "A", "text": "gain one electron"},
+        {"label": "B", "text": "lose one electron"},
+        {"label": "C", "text": "gain two electrons"},
+        {"label": "D", "text": "lose two electrons"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Sulfur is in group 16 with 6 valence electrons, so it must gain 2 electrons to reach a stable octet of 8, forming the sulfide ion S2-.",
+      "topicTags": ["general chemistry", "octet rule", "ion formation"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 2 Atoms and Elements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/02%3A_Atoms_and_Elements/2.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.2 MCQ: Q9 = c)."
+    },
+    {
+      "id": "cpbs-xc010",
+      "section": "CPBS",
+      "stem": "Based on your knowledge of the periodic variation in atomic size, which of the following correctly orders the elements in terms of decreasing atomic radius?",
+      "choices": [
+        {"label": "A", "text": "B, N, F"},
+        {"label": "B", "text": "F, N, B"},
+        {"label": "C", "text": "Li, K, Cs"},
+        {"label": "D", "text": "K, Li, Cs"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Atomic radius decreases from left to right across a period (increasing effective nuclear charge). For the period-2 elements B, N, and F, decreasing radius is therefore B > N > F.",
+      "topicTags": ["general chemistry", "periodic trends", "atomic radius"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 2 Atoms and Elements",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/02%3A_Atoms_and_Elements/2.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.2 MCQ: Q10 = a)."
+    },
+    {
+      "id": "cpbs-xc011",
+      "section": "CPBS",
+      "stem": "Which atom is likely to form a cation?",
+      "choices": [
+        {"label": "A", "text": "O"},
+        {"label": "B", "text": "Ar"},
+        {"label": "C", "text": "Br"},
+        {"label": "D", "text": "K"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Potassium is an alkali metal (group 1); metals readily lose electrons to form cations (K+). Oxygen and bromine are nonmetals that tend to form anions, and argon is a noble gas that is generally unreactive.",
+      "topicTags": ["general chemistry", "periodic trends", "ion formation", "cations"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 3 Ionic and Covalent Compounds",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/03%3A_Ionic_and_Covalent_Compounds/3.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.3 MCQ: Q1 = d)."
+    },
+    {
+      "id": "cpbs-xc012",
+      "section": "CPBS",
+      "stem": "Which is not a physical property of metals?",
+      "choices": [
+        {"label": "A", "text": "Good conductor of heat"},
+        {"label": "B", "text": "Good insulator of electricity"},
+        {"label": "C", "text": "Malleable"},
+        {"label": "D", "text": "Ductile"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Metals are good conductors (not insulators) of electricity, and are also good heat conductors, malleable, and ductile. 'Good insulator of electricity' is therefore not a property of metals.",
+      "topicTags": ["general chemistry", "metals", "physical properties"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 3 Ionic and Covalent Compounds",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/03%3A_Ionic_and_Covalent_Compounds/3.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.3 MCQ: Q2 = b)."
+    },
+    {
+      "id": "cpbs-xc013",
+      "section": "CPBS",
+      "stem": "What is the charge on sulfate?",
+      "choices": [
+        {"label": "A", "text": "+1"},
+        {"label": "B", "text": "0"},
+        {"label": "C", "text": "-1"},
+        {"label": "D", "text": "-2"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Sulfate is the polyatomic ion SO4^2-, which carries a 2- charge.",
+      "topicTags": ["general chemistry", "polyatomic ions", "sulfate"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 3 Ionic and Covalent Compounds",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/03%3A_Ionic_and_Covalent_Compounds/3.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.3 MCQ: Q3 = d)."
+    },
+    {
+      "id": "cpbs-xc014",
+      "section": "CPBS",
+      "stem": "Which element is a nonmetal?",
+      "choices": [
+        {"label": "A", "text": "Li"},
+        {"label": "B", "text": "S"},
+        {"label": "C", "text": "Ca"},
+        {"label": "D", "text": "Zn"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Sulfur (S) is a nonmetal. Lithium and calcium are metals (groups 1 and 2), and zinc is a transition metal.",
+      "topicTags": ["general chemistry", "periodic table", "metals vs nonmetals"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 3 Ionic and Covalent Compounds",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/03%3A_Ionic_and_Covalent_Compounds/3.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.3 MCQ: Q4 = b)."
+    },
+    {
+      "id": "cpbs-xc015",
+      "section": "CPBS",
+      "stem": "What is the correct chemical formula for the ionic compound formed between calcium and oxygen?",
+      "choices": [
+        {"label": "A", "text": "CaO"},
+        {"label": "B", "text": "Ca2O"},
+        {"label": "C", "text": "CaO2"},
+        {"label": "D", "text": "Ca2O2"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Calcium forms Ca2+ and oxygen forms O2-. The 2+ and 2- charges balance in a 1:1 ratio, giving the empirical formula CaO.",
+      "topicTags": ["general chemistry", "ionic compounds", "chemical formula"],
+      "difficulty": "easy",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 3 Ionic and Covalent Compounds",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/03%3A_Ionic_and_Covalent_Compounds/3.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.3 MCQ: Q5 = a)."
+    },
+    {
+      "id": "cpbs-xc016",
+      "section": "CPBS",
+      "stem": "What is the correct name of AlP?",
+      "choices": [
+        {"label": "A", "text": "aluminum phosphide"},
+        {"label": "B", "text": "aluminum(III) phosphide"},
+        {"label": "C", "text": "aluminum phosphite"},
+        {"label": "D", "text": "aluminum phosphate"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Aluminum has a single fixed charge of 3+, so no Roman numeral is needed. The monatomic anion of phosphorus is phosphide (P3-), so AlP is aluminum phosphide. Phosphite and phosphate are oxoanions, not present here.",
+      "topicTags": ["general chemistry", "nomenclature", "ionic compounds"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 3 Ionic and Covalent Compounds",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/03%3A_Ionic_and_Covalent_Compounds/3.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.3 MCQ: Q6 = a)."
+    },
+    {
+      "id": "cpbs-xc017",
+      "section": "CPBS",
+      "stem": "What is the correct name of P2O5?",
+      "choices": [
+        {"label": "A", "text": "phosphorus oxide"},
+        {"label": "B", "text": "diphosphorus pentoxide"},
+        {"label": "C", "text": "diphosphorus oxide"},
+        {"label": "D", "text": "phosphorus pentoxide"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "P2O5 is a binary molecular (nonmetal-nonmetal) compound named with Greek prefixes: di- for the 2 phosphorus atoms and penta- for the 5 oxygen atoms, giving diphosphorus pentoxide.",
+      "topicTags": ["general chemistry", "nomenclature", "covalent compounds"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 3 Ionic and Covalent Compounds",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/03%3A_Ionic_and_Covalent_Compounds/3.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.3 MCQ: Q7 = b)."
+    },
+    {
+      "id": "cpbs-xc018",
+      "section": "CPBS",
+      "stem": "What is the correct formula for nitrous acid?",
+      "choices": [
+        {"label": "A", "text": "HN3"},
+        {"label": "B", "text": "HNO"},
+        {"label": "C", "text": "HNO2"},
+        {"label": "D", "text": "HNO3"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The '-ous' acid corresponds to the '-ite' oxoanion. Nitrite is NO2-, so nitrous acid is HNO2. HNO3 (from nitrate, NO3-) is nitric acid.",
+      "topicTags": ["general chemistry", "nomenclature", "acids", "oxoacids"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 3 Ionic and Covalent Compounds",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/03%3A_Ionic_and_Covalent_Compounds/3.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.3 MCQ: Q8 = c)."
+    },
+    {
+      "id": "cpbs-xc019",
+      "section": "CPBS",
+      "stem": "What is the correct name of Cr2S3?",
+      "choices": [
+        {"label": "A", "text": "chromium sulfide"},
+        {"label": "B", "text": "dichromium trisulfide"},
+        {"label": "C", "text": "chromium(II) sulfide"},
+        {"label": "D", "text": "chromium(III) sulfide"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Sulfide is S2-, so three sulfides total -6. The two chromium ions must therefore total +6, i.e., Cr3+. Because chromium is a variable-charge metal, the name uses a Roman numeral: chromium(III) sulfide.",
+      "topicTags": ["general chemistry", "nomenclature", "transition metals", "variable charge"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 3 Ionic and Covalent Compounds",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/03%3A_Ionic_and_Covalent_Compounds/3.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.3 MCQ: Q9 = d)."
+    },
+    {
+      "id": "cpbs-xc020",
+      "section": "CPBS",
+      "stem": "What is the correct formula for ammonium sulfate?",
+      "choices": [
+        {"label": "A", "text": "NH4SO3"},
+        {"label": "B", "text": "NH4SO4"},
+        {"label": "C", "text": "(NH4)2SO3"},
+        {"label": "D", "text": "(NH4)2SO4"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ammonium is NH4+ and sulfate is SO4^2-. Two ammonium ions are needed to balance one sulfate, and the polyatomic cation is enclosed in parentheses: (NH4)2SO4.",
+      "topicTags": ["general chemistry", "nomenclature", "polyatomic ions", "chemical formula"],
+      "difficulty": "medium",
+      "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 3 Ionic and Covalent Compounds",
+      "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
+      "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/03%3A_Ionic_and_Covalent_Compounds/3.E%3A_Exercises",
+      "answerProvenance": "source-answer-key",
+      "notes": "Question + options scraped verbatim. correctAnswer from the course's Chapter 16 answer key (16.3 MCQ: Q10 = d)."
+    }
+  ]
+}

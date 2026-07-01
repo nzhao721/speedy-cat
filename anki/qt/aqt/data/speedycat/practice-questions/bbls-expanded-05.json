@@ -1,0 +1,818 @@
+{
+  "meta": {
+    "section": "BBLS",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax Microbiology (Parker, Schneegurt, Tu, Lister, Forster)",
+        "sourceLicense": "CC BY-NC-SA 4.0",
+        "baseUrl": "https://openstax.org/books/microbiology/",
+        "note": "Multiple-choice Review Questions scraped verbatim; correctAnswer taken from OpenStax published Answer Key pages (pages/chapter-N). OpenStax posts a 'no LLM training' notice; SpeedyCAT use is human-facing per PRD, with attribution and non-commercial/share-alike compliance."
+      }
+    ],
+    "counts": {"total": 40, "byTopic": {"parasitology": 5, "mycology": 3, "microbiology": 32}},
+    "notes": "File 05: OpenStax Microbiology Ch. 5 (Eukaryotes of Microbiology) and Ch. 9 (Microbial Growth). All items are single-answer 4-option. Options 1-4 map to A-D; correctAnswer letters verified against the chapter answer keys."
+  },
+  "questions": [
+    {
+      "id": "bbls-x150",
+      "section": "BBLS",
+      "stem": "Which genus includes the causative agent for malaria?",
+      "choices": [
+        {"label": "A", "text": "Euglena"},
+        {"label": "B", "text": "Paramecium"},
+        {"label": "C", "text": "Plasmodium"},
+        {"label": "D", "text": "Trypanosoma"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Malaria is caused by apicomplexan parasites of the genus Plasmodium, transmitted by Anopheles mosquitoes.",
+      "topicTags": ["parasitology", "protozoa", "malaria"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 5 Eukaryotes of Microbiology — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q1 = C."
+    },
+    {
+      "id": "bbls-x151",
+      "section": "BBLS",
+      "stem": "Which protist is a concern because of its ability to contaminate water supplies and cause diarrheal illness?",
+      "choices": [
+        {"label": "A", "text": "Plasmodium vivax"},
+        {"label": "B", "text": "Toxoplasma gondii"},
+        {"label": "C", "text": "Giardia lamblia"},
+        {"label": "D", "text": "Trichomonas vaginalis"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Giardia lamblia is a flagellated protist whose cysts contaminate water supplies and cause giardiasis, a diarrheal illness.",
+      "topicTags": ["parasitology", "protozoa", "Giardia"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 5 Eukaryotes of Microbiology — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q2 = C."
+    },
+    {
+      "id": "bbls-x152",
+      "section": "BBLS",
+      "stem": "A fluke is classified within which of the following?",
+      "choices": [
+        {"label": "A", "text": "Nematoda"},
+        {"label": "B", "text": "Rotifera"},
+        {"label": "C", "text": "Platyhelminthes"},
+        {"label": "D", "text": "Annelida"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Flukes (trematodes) are flatworms in the phylum Platyhelminthes.",
+      "topicTags": ["parasitology", "helminths", "flatworms"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 5 Eukaryotes of Microbiology — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q3 = C."
+    },
+    {
+      "id": "bbls-x153",
+      "section": "BBLS",
+      "stem": "A nonsegmented worm is found during a routine colonoscopy of an individual who reported having abdominal cramps, nausea, and vomiting. This worm is likely which of the following?",
+      "choices": [
+        {"label": "A", "text": "nematode"},
+        {"label": "B", "text": "fluke"},
+        {"label": "C", "text": "trematode"},
+        {"label": "D", "text": "annelid"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Nematodes (roundworms) are nonsegmented worms; many are intestinal parasites. Flukes/trematodes are flatworms and annelids are segmented.",
+      "topicTags": ["parasitology", "helminths", "nematodes"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 5 Eukaryotes of Microbiology — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q4 = A."
+    },
+    {
+      "id": "bbls-x154",
+      "section": "BBLS",
+      "stem": "A segmented worm has male and female reproductive organs in each segment. Some use hooks to attach to the intestinal wall. Which type of worm is this?",
+      "choices": [
+        {"label": "A", "text": "fluke"},
+        {"label": "B", "text": "nematode"},
+        {"label": "C", "text": "cestode"},
+        {"label": "D", "text": "annelid"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cestodes (tapeworms) have segments (proglottids) each containing male and female reproductive organs and a scolex with hooks/suckers for attachment.",
+      "topicTags": ["parasitology", "helminths", "cestodes"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 5 Eukaryotes of Microbiology — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q5 = C."
+    },
+    {
+      "id": "bbls-x155",
+      "section": "BBLS",
+      "stem": "Mushrooms are a type of which of the following?",
+      "choices": [
+        {"label": "A", "text": "conidia"},
+        {"label": "B", "text": "ascus"},
+        {"label": "C", "text": "polar tubule"},
+        {"label": "D", "text": "basidiocarp"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "A mushroom is a basidiocarp, the fruiting body of a basidiomycete fungus that bears spores on basidia.",
+      "topicTags": ["mycology", "fungi", "basidiomycetes"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 5 Eukaryotes of Microbiology — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q6 = D."
+    },
+    {
+      "id": "bbls-x156",
+      "section": "BBLS",
+      "stem": "Which of the following is the most common cause of human yeast infections?",
+      "choices": [
+        {"label": "A", "text": "Candida albicans"},
+        {"label": "B", "text": "Blastomyces dermatitidis"},
+        {"label": "C", "text": "Cryptococcus neoformans"},
+        {"label": "D", "text": "Aspergillus fumigatus"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Candida albicans is the most common cause of human yeast infections (candidiasis), including oral, vaginal, and systemic forms.",
+      "topicTags": ["mycology", "fungi", "Candida"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 5 Eukaryotes of Microbiology — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q7 = A."
+    },
+    {
+      "id": "bbls-x157",
+      "section": "BBLS",
+      "stem": "Which of the following is an ascomycete fungus associated with bat droppings that can cause a respiratory infection if inhaled?",
+      "choices": [
+        {"label": "A", "text": "Candida albicans"},
+        {"label": "B", "text": "Histoplasma capsulatum"},
+        {"label": "C", "text": "Rhizopus stolonifera"},
+        {"label": "D", "text": "Trichophyton rubrum"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Histoplasma capsulatum grows in soil enriched by bat or bird droppings; inhaling its spores causes the respiratory infection histoplasmosis.",
+      "topicTags": ["mycology", "fungi", "Histoplasma"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 5 Eukaryotes of Microbiology — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q8 = B."
+    },
+    {
+      "id": "bbls-x158",
+      "section": "BBLS",
+      "stem": "Which polysaccharide found in red algal cell walls is a useful solidifying agent?",
+      "choices": [
+        {"label": "A", "text": "chitin"},
+        {"label": "B", "text": "cellulose"},
+        {"label": "C", "text": "phycoerythrin"},
+        {"label": "D", "text": "agar"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Agar, a polysaccharide from red algal cell walls, is widely used as a solidifying agent for microbiological culture media.",
+      "topicTags": ["microbiology", "algae", "red algae"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 5 Eukaryotes of Microbiology — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q9 = D."
+    },
+    {
+      "id": "bbls-x159",
+      "section": "BBLS",
+      "stem": "Which is the term for the hard outer covering of some dinoflagellates?",
+      "choices": [
+        {"label": "A", "text": "theca"},
+        {"label": "B", "text": "thallus"},
+        {"label": "C", "text": "mycelium"},
+        {"label": "D", "text": "shell"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Many dinoflagellates have a theca, an armor-like outer covering made of cellulose plates.",
+      "topicTags": ["microbiology", "protists", "dinoflagellates"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 5 Eukaryotes of Microbiology — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q10 = A."
+    },
+    {
+      "id": "bbls-x160",
+      "section": "BBLS",
+      "stem": "Which protists are associated with red tides?",
+      "choices": [
+        {"label": "A", "text": "red algae"},
+        {"label": "B", "text": "brown algae"},
+        {"label": "C", "text": "dinoflagellates"},
+        {"label": "D", "text": "green algae"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Population blooms of certain dinoflagellates produce red tides and can release toxins that accumulate in shellfish.",
+      "topicTags": ["microbiology", "protists", "dinoflagellates"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 5 Eukaryotes of Microbiology — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q11 = C."
+    },
+    {
+      "id": "bbls-x161",
+      "section": "BBLS",
+      "stem": "You encounter a lichen with leafy structures. Which term describes this lichen?",
+      "choices": [
+        {"label": "A", "text": "crustose"},
+        {"label": "B", "text": "foliose"},
+        {"label": "C", "text": "fruticose"},
+        {"label": "D", "text": "agarose"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Foliose lichens have flat, leaf-like lobes. Crustose lichens are flat and crusty, and fruticose lichens are shrubby/branched.",
+      "topicTags": ["microbiology", "lichens", "symbiosis"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 5 Eukaryotes of Microbiology — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q12 = B."
+    },
+    {
+      "id": "bbls-x162",
+      "section": "BBLS",
+      "stem": "Which of the following is the term for the outer layer of a lichen?",
+      "choices": [
+        {"label": "A", "text": "the cortex"},
+        {"label": "B", "text": "the medulla"},
+        {"label": "C", "text": "the thallus"},
+        {"label": "D", "text": "the theca"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The cortex is the protective outer layer of a lichen; the medulla is the inner layer, and the thallus is the whole lichen body.",
+      "topicTags": ["microbiology", "lichens", "symbiosis"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 5 Eukaryotes of Microbiology — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q13 = A."
+    },
+    {
+      "id": "bbls-x163",
+      "section": "BBLS",
+      "stem": "The fungus in a lichen is which of the following?",
+      "choices": [
+        {"label": "A", "text": "a basidiomycete"},
+        {"label": "B", "text": "an ascomycete"},
+        {"label": "C", "text": "a zygomycete"},
+        {"label": "D", "text": "an apicomplexan"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "In most lichens the fungal partner (mycobiont) is an ascomycete, living in symbiosis with an alga or cyanobacterium.",
+      "topicTags": ["microbiology", "lichens", "fungi"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 5 Eukaryotes of Microbiology — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q14 = B."
+    },
+    {
+      "id": "bbls-x164",
+      "section": "BBLS",
+      "stem": "Which of the following methods would be used to measure the concentration of bacterial contamination in processed peanut butter?",
+      "choices": [
+        {"label": "A", "text": "turbidity measurement"},
+        {"label": "B", "text": "total plate count"},
+        {"label": "C", "text": "dry weight measurement"},
+        {"label": "D", "text": "direct counting of bacteria on a calibrated slide under the microscope"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "A total (viable) plate count is suited to measuring low levels of viable bacteria in an opaque solid food like peanut butter, where turbidity and dry-weight methods would not work.",
+      "topicTags": ["microbiology", "microbial growth", "cell counting"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q1 = B."
+    },
+    {
+      "id": "bbls-x165",
+      "section": "BBLS",
+      "stem": "In which phase would you expect to observe the most endospores in a Bacillus cell culture?",
+      "choices": [
+        {"label": "A", "text": "death phase"},
+        {"label": "B", "text": "lag phase"},
+        {"label": "C", "text": "log phase"},
+        {"label": "D", "text": "log, lag, and death phases would all have roughly the same number of endospores."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Endospore formation is triggered by nutrient depletion and stress, which are greatest in the death phase, so the most endospores are seen then.",
+      "topicTags": ["microbiology", "endospores", "growth curve"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q2 = A."
+    },
+    {
+      "id": "bbls-x166",
+      "section": "BBLS",
+      "stem": "During which phase would penicillin, an antibiotic that inhibits cell-wall synthesis, be most effective?",
+      "choices": [
+        {"label": "A", "text": "death phase"},
+        {"label": "B", "text": "lag phase"},
+        {"label": "C", "text": "log phase"},
+        {"label": "D", "text": "stationary phase"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Penicillin targets actively dividing cells building new cell wall, so it is most effective during the log (exponential) phase of rapid growth.",
+      "topicTags": ["microbiology", "growth curve", "antibiotics"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q3 = C."
+    },
+    {
+      "id": "bbls-x167",
+      "section": "BBLS",
+      "stem": "Which of the following is the best definition of generation time in a bacterium?",
+      "choices": [
+        {"label": "A", "text": "the length of time it takes to reach the log phase"},
+        {"label": "B", "text": "the length of time it takes for a population of cells to double"},
+        {"label": "C", "text": "the time it takes to reach stationary phase"},
+        {"label": "D", "text": "the length of time of the exponential phase"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Generation (doubling) time is the time required for a bacterial population to double in number.",
+      "topicTags": ["microbiology", "generation time", "microbial growth"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q4 = B."
+    },
+    {
+      "id": "bbls-x168",
+      "section": "BBLS",
+      "stem": "What is the function of the Z ring in binary fission?",
+      "choices": [
+        {"label": "A", "text": "It controls the replication of DNA."},
+        {"label": "B", "text": "It forms a contractile ring at the septum."},
+        {"label": "C", "text": "It separates the newly synthesized DNA molecules."},
+        {"label": "D", "text": "It mediates the addition of new peptidoglycan subunits."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The Z ring, made of FtsZ protein, assembles at the midcell septum and forms a contractile ring that drives division during binary fission.",
+      "topicTags": ["microbiology", "binary fission", "FtsZ"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q5 = B."
+    },
+    {
+      "id": "bbls-x169",
+      "section": "BBLS",
+      "stem": "If a culture starts with 50 cells, how many cells will be present after five generations with no cell death?",
+      "choices": [
+        {"label": "A", "text": "200"},
+        {"label": "B", "text": "400"},
+        {"label": "C", "text": "1600"},
+        {"label": "D", "text": "3200"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Each generation doubles the population: 50 x 2^5 = 50 x 32 = 1600 cells.",
+      "topicTags": ["microbiology", "exponential growth", "calculation"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q6 = C."
+    },
+    {
+      "id": "bbls-x170",
+      "section": "BBLS",
+      "stem": "Filamentous cyanobacteria often divide by which of the following?",
+      "choices": [
+        {"label": "A", "text": "budding"},
+        {"label": "B", "text": "mitosis"},
+        {"label": "C", "text": "fragmentation"},
+        {"label": "D", "text": "formation of endospores"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Filamentous cyanobacteria commonly reproduce by fragmentation, in which pieces of the filament break off and grow into new filaments.",
+      "topicTags": ["microbiology", "cyanobacteria", "reproduction"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q7 = C."
+    },
+    {
+      "id": "bbls-x171",
+      "section": "BBLS",
+      "stem": "Which is a reason for antimicrobial resistance being higher in a biofilm than in free-floating bacterial cells?",
+      "choices": [
+        {"label": "A", "text": "The EPS allows faster diffusion of chemicals in the biofilm."},
+        {"label": "B", "text": "Cells are more metabolically active at the base of a biofilm."},
+        {"label": "C", "text": "Cells are metabolically inactive at the base of a biofilm."},
+        {"label": "D", "text": "The structure of a biofilm favors the survival of antibiotic resistant cells."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Many antimicrobials target active processes; cells deep in a biofilm are metabolically inactive (dormant), making them less susceptible and increasing resistance.",
+      "topicTags": ["microbiology", "biofilms", "antimicrobial resistance"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q8 = C."
+    },
+    {
+      "id": "bbls-x172",
+      "section": "BBLS",
+      "stem": "Quorum sensing is used by bacterial cells to determine which of the following?",
+      "choices": [
+        {"label": "A", "text": "the size of the population"},
+        {"label": "B", "text": "the availability of nutrients"},
+        {"label": "C", "text": "the speed of water flow"},
+        {"label": "D", "text": "the density of the population"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Quorum sensing lets bacteria gauge population density by detecting the concentration of secreted autoinducers, coordinating group behaviors once a threshold is reached.",
+      "topicTags": ["microbiology", "quorum sensing", "cell signaling"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q9 = D."
+    },
+    {
+      "id": "bbls-x173",
+      "section": "BBLS",
+      "stem": "Which of the following statements about autoinducers is incorrect?",
+      "choices": [
+        {"label": "A", "text": "They bind directly to DNA to activate transcription."},
+        {"label": "B", "text": "They can activate the cell that secreted them."},
+        {"label": "C", "text": "N-acylated homoserine lactones are autoinducers in gram-negative cells."},
+        {"label": "D", "text": "Autoinducers may stimulate the production of virulence factors."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Autoinducers act through receptor proteins/signal pathways rather than binding DNA directly. The other statements are true.",
+      "topicTags": ["microbiology", "quorum sensing", "autoinducers"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q10 = A."
+    },
+    {
+      "id": "bbls-x174",
+      "section": "BBLS",
+      "stem": "An inoculated thioglycolate medium culture tube shows dense growth at the surface and turbidity throughout the rest of the tube. What is your conclusion?",
+      "choices": [
+        {"label": "A", "text": "The organisms die in the presence of oxygen"},
+        {"label": "B", "text": "The organisms are facultative anaerobes."},
+        {"label": "C", "text": "The organisms should be grown in an anaerobic chamber."},
+        {"label": "D", "text": "The organisms are obligate aerobes."}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Growth densest at the oxygen-rich surface but present throughout indicates facultative anaerobes, which grow best with oxygen but can also grow without it.",
+      "topicTags": ["microbiology", "oxygen requirements", "facultative anaerobes"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q11 = B."
+    },
+    {
+      "id": "bbls-x175",
+      "section": "BBLS",
+      "stem": "An inoculated thioglycolate medium culture tube is clear throughout the tube except for dense growth at the bottom of the tube. What is your conclusion?",
+      "choices": [
+        {"label": "A", "text": "The organisms are obligate anaerobes."},
+        {"label": "B", "text": "The organisms are facultative anaerobes."},
+        {"label": "C", "text": "The organisms are aerotolerant."},
+        {"label": "D", "text": "The organisms are obligate aerobes."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Growth only at the oxygen-poor bottom indicates obligate anaerobes, which cannot grow where oxygen is present.",
+      "topicTags": ["microbiology", "oxygen requirements", "obligate anaerobes"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q12 = A."
+    },
+    {
+      "id": "bbls-x176",
+      "section": "BBLS",
+      "stem": "Pseudomonas aeruginosa is a common pathogen that infects the airways of patients with cystic fibrosis. It does not grow in the absence of oxygen. The bacterium is probably which of the following?",
+      "choices": [
+        {"label": "A", "text": "an aerotolerant anaerobe"},
+        {"label": "B", "text": "an obligate aerobe"},
+        {"label": "C", "text": "an obligate anaerobe"},
+        {"label": "D", "text": "a facultative anaerobe"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "An organism that requires oxygen and cannot grow without it is an obligate aerobe.",
+      "topicTags": ["microbiology", "oxygen requirements", "obligate aerobes"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q13 = B."
+    },
+    {
+      "id": "bbls-x177",
+      "section": "BBLS",
+      "stem": "Streptococcus mutans is a major cause of cavities. It resides in the gum pockets, does not have catalase activity, and can be grown outside of an anaerobic chamber. The bacterium is probably which of the following?",
+      "choices": [
+        {"label": "A", "text": "a facultative anaerobe"},
+        {"label": "B", "text": "an obligate aerobe"},
+        {"label": "C", "text": "an obligate anaerobe"},
+        {"label": "D", "text": "an aerotolerant anaerobe"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "An organism that does not use oxygen (and lacks catalase) yet tolerates its presence and grows outside an anaerobic chamber is an aerotolerant anaerobe.",
+      "topicTags": ["microbiology", "oxygen requirements", "aerotolerant anaerobes"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q14 = D."
+    },
+    {
+      "id": "bbls-x178",
+      "section": "BBLS",
+      "stem": "Why do the instructions for the growth of Neisseria gonorrhoeae recommend a CO2-enriched atmosphere?",
+      "choices": [
+        {"label": "A", "text": "It uses CO2 as a final electron acceptor in respiration."},
+        {"label": "B", "text": "It is an obligate anaerobe."},
+        {"label": "C", "text": "It is a capnophile."},
+        {"label": "D", "text": "It fixes CO2 through photosynthesis."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Capnophiles such as Neisseria gonorrhoeae require an elevated CO2 concentration for optimal growth.",
+      "topicTags": ["microbiology", "capnophiles", "growth requirements"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q15 = C."
+    },
+    {
+      "id": "bbls-x179",
+      "section": "BBLS",
+      "stem": "Bacteria that grow in mine drainage at pH 1–2 are probably which of the following?",
+      "choices": [
+        {"label": "A", "text": "alkaliphiles"},
+        {"label": "B", "text": "acidophiles"},
+        {"label": "C", "text": "neutrophiles"},
+        {"label": "D", "text": "obligate anaerobes"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Organisms that grow optimally at very low pH (1–2) are acidophiles.",
+      "topicTags": ["microbiology", "pH", "acidophiles"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q16 = B."
+    },
+    {
+      "id": "bbls-x180",
+      "section": "BBLS",
+      "stem": "Bacteria isolated from Lake Natron, where the water pH is close to 10, are which of the following?",
+      "choices": [
+        {"label": "A", "text": "alkaliphiles"},
+        {"label": "B", "text": "facultative anaerobes"},
+        {"label": "C", "text": "neutrophiles"},
+        {"label": "D", "text": "obligate anaerobes"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Organisms that thrive at high (basic) pH near 10 are alkaliphiles.",
+      "topicTags": ["microbiology", "pH", "alkaliphiles"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q17 = A."
+    },
+    {
+      "id": "bbls-x181",
+      "section": "BBLS",
+      "stem": "In which environment are you most likely to encounter an acidophile?",
+      "choices": [
+        {"label": "A", "text": "human blood at pH 7.2"},
+        {"label": "B", "text": "a hot vent at pH 1.5"},
+        {"label": "C", "text": "human intestine at pH 8.5"},
+        {"label": "D", "text": "milk at pH 6.5"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Acidophiles favor very low pH, so a hot vent at pH 1.5 is the most likely habitat.",
+      "topicTags": ["microbiology", "pH", "acidophiles"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q18 = B."
+    },
+    {
+      "id": "bbls-x182",
+      "section": "BBLS",
+      "stem": "A soup container was forgotten in the refrigerator and shows contamination. The contaminants are probably which of the following?",
+      "choices": [
+        {"label": "A", "text": "thermophiles"},
+        {"label": "B", "text": "acidophiles"},
+        {"label": "C", "text": "mesophiles"},
+        {"label": "D", "text": "psychrotrophs"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Microbes that grow at refrigeration temperatures (but can also grow warmer) are psychrotrophs, a common cause of refrigerated-food spoilage.",
+      "topicTags": ["microbiology", "temperature", "psychrotrophs"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q19 = D."
+    },
+    {
+      "id": "bbls-x183",
+      "section": "BBLS",
+      "stem": "Bacteria isolated from a hot tub at 39 °C are probably which of the following?",
+      "choices": [
+        {"label": "A", "text": "thermophiles"},
+        {"label": "B", "text": "psychrotrophs"},
+        {"label": "C", "text": "mesophiles"},
+        {"label": "D", "text": "hyperthermophiles"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "An optimal growth temperature near 39 °C (close to body temperature) is characteristic of mesophiles.",
+      "topicTags": ["microbiology", "temperature", "mesophiles"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q20 = C."
+    },
+    {
+      "id": "bbls-x184",
+      "section": "BBLS",
+      "stem": "In which environment are you most likely to encounter a hyperthermophile?",
+      "choices": [
+        {"label": "A", "text": "hot tub"},
+        {"label": "B", "text": "warm ocean water in Florida"},
+        {"label": "C", "text": "hydrothermal vent at the bottom of the ocean"},
+        {"label": "D", "text": "human body"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Hyperthermophiles grow at extremely high temperatures, such as those found at deep-sea hydrothermal vents.",
+      "topicTags": ["microbiology", "temperature", "hyperthermophiles"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q21 = C."
+    },
+    {
+      "id": "bbls-x185",
+      "section": "BBLS",
+      "stem": "Which of the following environments would harbor psychrophiles?",
+      "choices": [
+        {"label": "A", "text": "mountain lake with a water temperature of 12 °C"},
+        {"label": "B", "text": "contaminated plates left in a 35 °C incubator"},
+        {"label": "C", "text": "yogurt cultured at room temperature"},
+        {"label": "D", "text": "salt pond in the desert with a daytime temperature of 34 °C"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Psychrophiles grow best at cold temperatures, so a cold mountain lake at 12 °C is the most suitable of these environments.",
+      "topicTags": ["microbiology", "temperature", "psychrophiles"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q22 = A."
+    },
+    {
+      "id": "bbls-x186",
+      "section": "BBLS",
+      "stem": "Which of the following is the reason jams and dried meats often do not require refrigeration to prevent spoilage?",
+      "choices": [
+        {"label": "A", "text": "low pH"},
+        {"label": "B", "text": "toxic alkaline chemicals"},
+        {"label": "C", "text": "naturally occurring antibiotics"},
+        {"label": "D", "text": "low water activity"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "High sugar or salt and drying reduce water activity, limiting the water microbes need to grow, which preserves jams and dried meats.",
+      "topicTags": ["microbiology", "water activity", "food preservation"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q23 = D."
+    },
+    {
+      "id": "bbls-x187",
+      "section": "BBLS",
+      "stem": "Bacteria living in salt marshes are most likely which of the following?",
+      "choices": [
+        {"label": "A", "text": "acidophiles"},
+        {"label": "B", "text": "barophiles"},
+        {"label": "C", "text": "halotolerant"},
+        {"label": "D", "text": "thermophiles"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Organisms that can grow in the elevated salinity of salt marshes are halotolerant (able to tolerate high salt).",
+      "topicTags": ["microbiology", "osmotic pressure", "halotolerant"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q24 = C."
+    },
+    {
+      "id": "bbls-x188",
+      "section": "BBLS",
+      "stem": "EMB agar is a medium used in the identification and isolation of pathogenic bacteria. It contains digested meat proteins as a source of organic nutrients. Two indicator dyes, eosin and methylene blue, inhibit the growth of gram-positive bacteria and distinguish between lactose fermenting and nonlactose fermenting organisms. Lactose fermenters form metallic green or deep purple colonies, whereas the nonlactose fermenters form completely colorless colonies. EMB agar is an example of which of the following?",
+      "choices": [
+        {"label": "A", "text": "a selective medium only"},
+        {"label": "B", "text": "a differential medium only"},
+        {"label": "C", "text": "a selective medium and a chemically defined medium"},
+        {"label": "D", "text": "a selective medium, a differential medium, and a complex medium"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "EMB agar selects against gram-positives (selective), distinguishes lactose fermenters by colony color (differential), and uses digested proteins of unknown exact composition (complex), so it is all three.",
+      "topicTags": ["microbiology", "culture media", "EMB agar"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q25 = D."
+    },
+    {
+      "id": "bbls-x189",
+      "section": "BBLS",
+      "stem": "Haemophilus influenzae must be grown on chocolate agar, which is blood agar treated with heat to release growth factors in the medium. H. influenzae is described as ________.",
+      "choices": [
+        {"label": "A", "text": "an acidophile"},
+        {"label": "B", "text": "a thermophile"},
+        {"label": "C", "text": "an obligate anaerobe"},
+        {"label": "D", "text": "fastidious"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "An organism with complex, specific nutritional requirements (such as the growth factors released into chocolate agar) is described as fastidious.",
+      "topicTags": ["microbiology", "fastidious bacteria", "culture media"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)",
+      "sourceLicense": "CC BY-NC-SA 4.0",
+      "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
+      "answerProvenance": "source-answer-key",
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q26 = D."
+    }
+  ]
+}

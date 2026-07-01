@@ -103,8 +103,6 @@ class Overview:
             print("anki menu")
         elif url == "opts":
             display_options_for_deck(self.mw.col.decks.current())
-        elif url == "cram":
-            aqt.dialogs.open("FilteredDeckConfigDialog", self.mw)
         elif url == "refresh":
             self.rebuild_current_filtered_deck()
         elif url == "empty":
@@ -290,7 +288,6 @@ class Overview:
             links.append(["E", "empty", tr.studying_empty()])
         else:
             links.append(["C", "studymore", tr.actions_custom_study()])
-            # links.append(["F", "cram", _("Filter/Cram")])
         if self.mw.col.sched.have_buried():
             links.append(["U", "unbury", tr.studying_unbury()])
         if not is_dyn:

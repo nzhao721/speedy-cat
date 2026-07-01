@@ -7,9 +7,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.database.sqlite.SQLiteDatabaseCorruptException
-import android.view.KeyEvent
 import android.view.Menu
-import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.IntentCompat
@@ -234,16 +232,6 @@ class DeckPickerTest : RobolectricTest() {
     }
 
     @Test
-    fun confirmDeckDeletionDeletesEmptyDeck() {
-        val did = addDeck("Hello World")
-        assertThat("Deck was added", col.decks.count(), equalTo(2))
-        deckPicker {
-            viewModel.deleteDeck(did).join()
-            assertThat("deck was deleted", col.decks.count(), equalTo(1))
-        }
-    }
-
-    @Test
     fun databaseLockedTest() {
         // don't call .onCreate
         val deckPicker = Robolectric.buildActivity(DeckPickerEx::class.java, Intent()).get()
@@ -392,14 +380,6 @@ class DeckPickerTest : RobolectricTest() {
         deckPicker {
             val didA = addDeck("Deck 1")
 
-            selectContextMenuOption(ContextMenuOption.RENAME_DECK, didA)
-            assertDialogTitleEquals("Rename deck")
-            dismissAllDialogFragments()
-
-            selectContextMenuOption(ContextMenuOption.CREATE_SUBDECK, didA)
-            assertDialogTitleEquals("Create subdeck")
-            dismissAllDialogFragments()
-
             selectContextMenuOption(ContextMenuOption.CUSTOM_STUDY, didA)
             assertDialogTitleEquals("Custom study")
             dismissAllDialogFragments()
@@ -444,7 +424,6 @@ class DeckPickerTest : RobolectricTest() {
             }
 
             val didA = addDeck("Deck 1")
-            val didDynamicA = addDynamicDeck("Deck Dynamic 1")
 
             val noteEditor = selectContextMenuOptionForActivity(DeckPickerContextMenuOption.ADD_CARD, didA)
             assertEquals("com.ichi2.anki.NoteEditorActivity", noteEditor.component!!.className)
@@ -454,28 +433,10 @@ class DeckPickerTest : RobolectricTest() {
             assertEquals("com.ichi2.anki.CardBrowser", browser.component!!.className)
             onBackPressedDispatcher.onBackPressed()
 
-            // select deck options for a normal deck
-            val deckOptionsNormal = selectContextMenuOptionForActivity(DeckPickerContextMenuOption.DECK_OPTIONS, didA)
-            assertEquals("com.ichi2.anki.SingleFragmentActivity", deckOptionsNormal.component!!.className)
-            onBackPressedDispatcher.onBackPressed()
-
-            // select deck options for a dynamic deck
-            val deckOptionsDynamic = selectContextMenuOptionForActivity(DeckPickerContextMenuOption.DECK_OPTIONS, didDynamicA)
-            assertEquals("com.ichi2.anki.utils.ConfigAwareSingleFragmentActivity", deckOptionsDynamic.component!!.className)
-            onBackPressedDispatcher.onBackPressed()
-
             Prefs.newReviewRemindersEnabled = true
             val scheduleReminders = selectContextMenuOptionForActivity(DeckPickerContextMenuOption.SCHEDULE_REMINDERS, didA)
             assertEquals("com.ichi2.anki.SingleFragmentActivity", scheduleReminders.component!!.className)
             onBackPressedDispatcher.onBackPressed()
-        }
-
-    @Test
-    fun `ContextMenu deletes deck when selecting DELETE_DECK`() =
-        deckPicker {
-            val didA = addDeck("Deck 1")
-            selectContextMenuOption(ContextMenuOption.DELETE_DECK, didA)
-            assertThat(getColUnsafe.decks.allNamesAndIds().map { it.id }, not(containsInAnyOrder(didA)))
         }
 
     @Test
@@ -648,116 +609,6 @@ class DeckPickerTest : RobolectricTest() {
             assertThat(getUndoTitle(), containsString("Update Note"))
             undo()
             assertThat(getUndoTitle(), containsString("Add Note"))
-        }
-
-    @Test
-    fun `baseSnackbarBuilder has no anchor when FAB is hidden`() =
-        deckPicker {
-            val fab = findViewById<View>(R.id.fab_main)
-            fab.visibility = View.GONE
-
-            val snackbar = showSnackbar("test")
-
-            snackbar?.let { baseSnackbarBuilder.invoke(it) }
-
-            assertThat(
-                "anchorView must be null when FAB is not visible",
-                snackbar?.anchorView,
-                nullValue(),
-            )
-        }
-
-    @Test
-    fun `baseSnackbarBuilder anchors to FAB when visible`() =
-        deckPicker {
-            val fab = findViewById<View>(R.id.fab_main)
-            fab.visibility = View.VISIBLE
-
-            val snackbar = showSnackbar("test")
-            snackbar?.let { baseSnackbarBuilder.invoke(it) }
-
-            assertThat(
-                "anchorView is the FAB when visible",
-                snackbar?.anchorView,
-                equalTo(fab),
-            )
-        }
-
-    @Test
-    fun `FAB opens menu on accessibility click`() =
-        deckPicker {
-            val fab = findViewById<View>(R.id.fab_main)
-            assertThat("menu starts closed", floatingActionMenu.isFABOpen, equalTo(false))
-            // TalkBack activate a focused control, which routes to [View.performClick]
-            fab.performClick()
-            assertThat("FAB menu opens on click", floatingActionMenu.isFABOpen, equalTo(true))
-        }
-
-    @Test
-    fun `FAB menu opens on ENTER key`() =
-        deckPicker {
-            val fab = findViewById<View>(R.id.fab_main)
-
-            assertThat("menu starts closed", floatingActionMenu.isFABOpen, equalTo(false))
-
-            fab.dispatchKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER))
-
-            assertThat("ENTER key opens the FAB menu", floatingActionMenu.isFABOpen, equalTo(true))
-        }
-
-    @Test
-    fun `FAB menu closes on ESCAPE key`() =
-        deckPicker {
-            val fab = findViewById<View>(R.id.fab_main)
-            floatingActionMenu.showFloatingActionMenu()
-            assertThat("menu is open", floatingActionMenu.isFABOpen, equalTo(true))
-
-            fab.dispatchKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ESCAPE))
-
-            assertThat(
-                "ESCAPE key closes the FAB menu",
-                floatingActionMenu.isFABOpen,
-                equalTo(false),
-            )
-        }
-
-    @Test
-    fun `expanding the FAB menu shows the correct labels`() =
-        deckPicker {
-            floatingActionMenu.showFloatingActionMenu()
-            advanceRobolectricLooper()
-
-            val binding = floatingActionButtonBinding
-            assertThat(binding.fabMain.text.toString(), equalTo(getString(R.string.menu_add)))
-            assertThat(
-                binding.addSharedButton.text.toString(),
-                equalTo(getString(R.string.menu_get_shared_decks)),
-            )
-            assertThat(
-                binding.addFilteredDeckButton.text.toString(),
-                equalTo(getString(R.string.new_dynamic_deck)),
-            )
-            // 'Create deck' uses a backend string rather than an android:text resource
-            assertThat(
-                binding.addDeckButton.text.toString(),
-                equalTo(with(targetContext) { TR.sentenceCase.createDeck }),
-            )
-        }
-
-    @Test
-    fun `expanding the FAB menu re-extends the Create deck button`() =
-        deckPicker {
-            val addDeckButton = floatingActionButtonBinding.addDeckButton
-            addDeckButton.isExtended = false
-
-            floatingActionMenu.showFloatingActionMenu()
-            advanceRobolectricLooper()
-
-            assertTrue(!addDeckButton.text.isNullOrBlank(), "Create deck button must have a label")
-            assertTrue(
-                addDeckButton.isExtended,
-                "Create deck button must be extended so its label is visible",
-            )
         }
 
     @Test

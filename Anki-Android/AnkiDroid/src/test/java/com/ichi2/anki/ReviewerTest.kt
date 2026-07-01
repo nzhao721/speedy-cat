@@ -574,7 +574,12 @@ class ReviewerTest : RobolectricTest() {
         fun <T : Reviewer?> startReviewer(
             testClass: RobolectricTest,
             clazz: Class<T>,
-        ): T = startActivityNormallyOpenCollectionWithIntent(testClass, clazz, Intent())
+        ): T =
+            startActivityNormallyOpenCollectionWithIntent(testClass, clazz, Intent()).also {
+                // Forced active recall ships ON by default; disable it for the shared reviewer tests
+                // so the normal reveal/answer flow is tested. Feature-specific tests opt back in.
+                it?.forceActiveRecall = false
+            }
     }
 }
 

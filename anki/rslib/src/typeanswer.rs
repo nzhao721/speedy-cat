@@ -45,6 +45,49 @@ pub fn compare_answer(expected: &str, typed: &str, combining: bool) -> String {
     }
 }
 
+/// SpeedyCAT: structured outcome of comparing a typed answer with the expected
+/// answer. Unlike [`compare_answer`], which only returns diff HTML, this also
+/// reports whether the two answers match and exposes the normalized strings so
+/// callers (and tests) can reason about the comparison deterministically.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct AnswerComparison {
+    pub matches: bool,
+    pub expected_normalized: String,
+    pub provided_normalized: String,
+    pub diff_html: String,
+}
+
+/// SpeedyCAT: compare a typed answer with the expected answer and return a
+/// structured result for the "forced active recall" reviewer mode.
+///
+/// Matching is intentionally lenient and consistent with how Anki already
+/// handles typed answers: the expected and provided strings are stripped of
+/// AV/media tags and HTML, have their whitespace collapsed and trimmed, are
+/// lower-cased, and are NFC-normalized before being compared for equality. An
+/// empty typed answer never matches. The `diff_html` mirrors [`compare_answer`]
+/// so the existing visual diff can still be displayed.
+pub fn match_typed_answer(expected: &str, provided: &str, combining: bool) -> AnswerComparison {
+    let expected_normalized = normalize_for_match(expected);
+    let provided_normalized = normalize_for_match(provided);
+    let matches = !provided_normalized.is_empty() && expected_normalized == provided_normalized;
+    AnswerComparison {
+        matches,
+        expected_normalized,
+        provided_normalized,
+        diff_html: compare_answer(expected, provided, combining),
+    }
+}
+
+/// Normalize an answer for equality comparison: strip AV/media tags and HTML,
+/// collapse all runs of whitespace to a single space, trim, lower-case, and
+/// NFC-normalize. Reuses [`strip_expected`] so HTML handling stays consistent
+/// with the diff path.
+fn normalize_for_match(text: &str) -> String {
+    let stripped = strip_expected(text);
+    let collapsed = stripped.split_whitespace().collect::<Vec<_>>().join(" ");
+    normalize_to_nfc(&collapsed.to_lowercase()).into_owned()
+}
+
 // Core Logic
 trait DiffTrait {
     fn get_typed(&self) -> &[char];
@@ -432,5 +475,47 @@ mod test {
             compare_answer("ば", "は", false),
             "<code id=typeans><span class=typeGood>ば</span></code>"
         );
+    }
+
+    // SpeedyCAT: structured matching for forced active recall.
+
+    #[test]
+    fn match_exact_answer() {
+        let r = match_typed_answer("Mitochondria", "Mitochondria", true);
+        assert!(r.matches);
+        assert_eq!(r.expected_normalized, "mitochondria");
+        assert_eq!(r.provided_normalized, "mitochondria");
+    }
+
+    #[test]
+    fn match_is_case_insensitive_and_collapses_whitespace() {
+        let r = match_typed_answer("The   Krebs Cycle", "the krebs cycle", true);
+        assert!(r.matches);
+        assert_eq!(r.expected_normalized, "the krebs cycle");
+        assert_eq!(r.provided_normalized, "the krebs cycle");
+    }
+
+    #[test]
+    fn match_strips_html_av_tags_and_trims() {
+        let r = match_typed_answer("[sound:foo.mp3]<b>Heart</b><br>  ", "heart", true);
+        assert!(r.matches);
+        assert_eq!(r.expected_normalized, "heart");
+    }
+
+    #[test]
+    fn mismatch_is_reported_with_diff_html() {
+        let r = match_typed_answer("cat", "dog", true);
+        assert!(!r.matches);
+        assert_eq!(r.expected_normalized, "cat");
+        assert_eq!(r.provided_normalized, "dog");
+        // diff_html still produced for display
+        assert!(r.diff_html.contains("typeBad"));
+    }
+
+    #[test]
+    fn empty_typed_answer_never_matches() {
+        let r = match_typed_answer("anything", "   ", true);
+        assert!(!r.matches);
+        assert_eq!(r.provided_normalized, "");
     }
 }

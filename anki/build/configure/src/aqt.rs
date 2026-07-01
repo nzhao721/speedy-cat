@@ -114,7 +114,43 @@ fn build_data_folder(build: &mut Build) -> Result<()> {
     build_pages(build)?;
     build_icons(build)?;
     copy_sveltekit(build)?;
+    copy_speedycat_deck(build)?;
+    copy_speedycat_practice_content(build)?;
     Ok(())
+}
+
+/// SpeedyCAT: ship the bundled, redistributable MCAT flashcard set inside the
+/// data folder so a fresh install can auto-import it on first run with no
+/// download and no prompt (see qt/aqt/speedycat.py).
+fn copy_speedycat_deck(build: &mut Build) -> Result<()> {
+    build.add_action(
+        "qt:aqt:data:speedycat",
+        CopyFile {
+            input: "qt/aqt/data/speedycat/cards.json".into(),
+            output: "qt/_aqt/data/speedycat/cards.json",
+        },
+    )
+}
+
+/// SpeedyCAT: ship the MCAT Practice Question Bank + Full-Length Test content
+/// bundles inside the data folder so the Practice Questions / Full-Length Tests
+/// pages can import them into the collection on first run with no download (see
+/// qt/aqt/practice.py).
+fn copy_speedycat_practice_content(build: &mut Build) -> Result<()> {
+    build.add_action(
+        "qt:aqt:data:speedycat:practice",
+        CopyFiles {
+            inputs: inputs![glob!["qt/aqt/data/speedycat/practice-questions/*.json"]],
+            output_folder: "qt/_aqt/data/speedycat/practice-questions",
+        },
+    )?;
+    build.add_action(
+        "qt:aqt:data:speedycat:full-length",
+        CopyFiles {
+            inputs: inputs![glob!["qt/aqt/data/speedycat/full-length-tests/*.json"]],
+            output_folder: "qt/_aqt/data/speedycat/full-length-tests",
+        },
+    )
 }
 
 fn copy_sveltekit(build: &mut Build) -> Result<()> {

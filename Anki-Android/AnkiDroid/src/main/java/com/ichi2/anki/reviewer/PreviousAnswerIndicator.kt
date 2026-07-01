@@ -64,7 +64,7 @@ class PreviousAnswerIndicator(
             }
             Rating.EASY -> {
                 chosenAnswerText.text = "\u2022\u2022\u2022\u2022"
-                chosenAnswerText.setTextColor(getColor(CommonR.color.material_light_blue_500))
+                chosenAnswerText.setTextColor(getColor(CommonR.color.brand_orange))
             }
             Rating.UNRECOGNIZED -> {}
         }

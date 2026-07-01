@@ -40,24 +40,6 @@ class SidebarItemType(Enum):
     def is_section_root(self) -> bool:
         return self in self.section_roots()
 
-    def is_editable(self) -> bool:
-        return self in (
-            SidebarItemType.FLAG,
-            SidebarItemType.SAVED_SEARCH,
-            SidebarItemType.DECK,
-            SidebarItemType.TAG,
-        )
-
-    def can_be_added_to(self) -> bool:
-        return self == SidebarItemType.DECK
-
-    def is_deletable(self) -> bool:
-        return self in (
-            SidebarItemType.SAVED_SEARCH,
-            SidebarItemType.DECK,
-            SidebarItemType.TAG,
-        )
-
 
 class SidebarItem:
     def __init__(

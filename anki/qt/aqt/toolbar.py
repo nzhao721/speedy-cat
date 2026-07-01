@@ -344,19 +344,29 @@ class Toolbar:
 
     def _centerLinks(self) -> str:
         links = [
+            # SpeedyCAT: the former "Decks" tab is relabelled "Flashcards" (the
+            # deck browser is unchanged); it sits alongside the two new MCAT
+            # study modes.
             self.create_link(
                 "decks",
-                tr.actions_decks(),
+                "Flashcards",
                 self._deckLinkHandler,
                 tip=tr.actions_shortcut_key(val="D"),
                 id="decks",
             ),
             self.create_link(
-                "add",
-                tr.actions_add(),
-                self._addLinkHandler,
-                tip=tr.actions_shortcut_key(val="A"),
-                id="add",
+                "practice",
+                "Practice Questions",
+                self._practiceLinkHandler,
+                tip=tr.actions_shortcut_key(val="P"),
+                id="practice",
+            ),
+            self.create_link(
+                "fullLength",
+                "Full-Length Tests",
+                self._fullLengthLinkHandler,
+                tip=tr.actions_shortcut_key(val="F"),
+                id="full-length",
             ),
             self.create_link(
                 "browse",
@@ -441,11 +451,14 @@ class Toolbar:
         else:
             self.mw.onOverview()
 
-    def _addLinkHandler(self) -> None:
-        self.mw.onAddCard()
-
     def _browseLinkHandler(self) -> None:
         self.mw.onBrowse()
+
+    def _practiceLinkHandler(self) -> None:
+        aqt.dialogs.open("PracticeQuestions", self.mw)
+
+    def _fullLengthLinkHandler(self) -> None:
+        aqt.dialogs.open("FullLengthTests", self.mw)
 
     def _statsLinkHandler(self) -> None:
         self.mw.onStats()

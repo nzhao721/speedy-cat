@@ -1,0 +1,398 @@
+{
+  "meta": {
+    "section": "CPBS",
+    "subArea": "physics",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 (Electric Potential and Electric Field) — Test Prep for AP® Courses",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses"
+      }
+    ],
+    "counts": {"total": 19, "byTopic": {"electric force and field": 4, "electric potential energy": 5, "potential in a uniform field": 4, "equipotentials": 2, "capacitors and dielectrics": 4}},
+    "notes": "Physics (CPBS) electric potential, potential energy, and capacitance items. Stems and four options scraped verbatim from OpenStax College Physics for AP Courses 2e Ch. 19 'Test Prep for AP Courses' single-best-answer multiple-choice items. OpenStax publishes the answer key to instructors only, so each correctAnswer was independently verified from the same CC BY-NC-SA source text or by direct calculation (answerProvenance = verified-from-source-text). Figure-dependent items (specific equipotential diagrams, plate-geometry figures) and free-response/numeric items were skipped. Calculations use k = 8.99 × 10⁹ N·m²/C², e = 1.60 × 10⁻¹⁹ C, ε₀ = 8.85 × 10⁻¹² F/m."
+  },
+  "questions": [
+    {
+      "id": "cpbs-xp106",
+      "section": "CPBS",
+      "stem": "An electron is placed in an electric field of 12.0 N/C directed to the right. What is the resulting force on the electron?",
+      "choices": [
+        {"label": "A", "text": "1.33×10⁻²⁰ N right"},
+        {"label": "B", "text": "1.33×10⁻²⁰ N left"},
+        {"label": "C", "text": "1.92×10⁻¹⁸ N right"},
+        {"label": "D", "text": "1.92×10⁻¹⁸ N left"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The force magnitude is F = qE = (1.60×10⁻¹⁹ C)(12.0 N/C) = 1.92×10⁻¹⁸ N. Because the electron is negative, the force points opposite to the field, i.e., to the left.",
+      "topicTags": ["physics", "electric field", "force on charge"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (F = qE, opposite to field for a negative charge)."
+    },
+    {
+      "id": "cpbs-xp107",
+      "section": "CPBS",
+      "stem": "A -5.0 C charge is being forced south by a 60 N force. What are the magnitude and direction of the local electric field?",
+      "choices": [
+        {"label": "A", "text": "12 N/C south"},
+        {"label": "B", "text": "12 N/C north"},
+        {"label": "C", "text": "300 N/C south"},
+        {"label": "D", "text": "300 N/C north"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The field magnitude is E = F/|q| = 60 N / 5.0 C = 12 N/C. For a negative charge the force is opposite to the field, so a southward force means the field points north.",
+      "topicTags": ["physics", "electric field", "force on charge"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (E = F/q; field opposite to force for negative charge)."
+    },
+    {
+      "id": "cpbs-xp108",
+      "section": "CPBS",
+      "stem": "How many electrons have to be moved by a car battery containing 7.20×10⁵ J at 12 V to reduce the energy by 1%?",
+      "choices": [
+        {"label": "A", "text": "4.80×10²⁷"},
+        {"label": "B", "text": "4.00×10²⁶"},
+        {"label": "C", "text": "3.75×10²¹"},
+        {"label": "D", "text": "3.13×10²⁰"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "One percent of the energy is 0.01 × 7.20×10⁵ = 7.20×10³ J. Each electron moved through 12 V transfers qV = (1.60×10⁻¹⁹)(12) = 1.92×10⁻¹⁸ J. So the number of electrons is 7.20×10³ / 1.92×10⁻¹⁸ ≈ 3.75×10²¹.",
+      "topicTags": ["physics", "electric potential", "potential difference"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (N = energy / (qV))."
+    },
+    {
+      "id": "cpbs-xp109",
+      "section": "CPBS",
+      "stem": "A typical AAA battery can move 2000 C of charge at 1.5 V. How long will this run a 50 mW LED?",
+      "choices": [
+        {"label": "A", "text": "1000 minutes"},
+        {"label": "B", "text": "120,000 seconds"},
+        {"label": "C", "text": "15 hours"},
+        {"label": "D", "text": "250 minutes"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Energy stored = QV = 2000 C × 1.5 V = 3000 J. Run time = energy / power = 3000 J / 0.050 W = 60,000 s = 1000 minutes.",
+      "topicTags": ["physics", "electric potential", "energy and power"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (E = QV; t = E/P = 60,000 s = 1000 min)."
+    },
+    {
+      "id": "cpbs-xp110",
+      "section": "CPBS",
+      "stem": "What is the electric potential energy of a system consisting of two point charges, one +2.0 µC and the other -3.0 µC, placed 1.2 m away from each other?",
+      "choices": [
+        {"label": "A", "text": "-3.8×10⁻² J"},
+        {"label": "B", "text": "-4.5×10⁻² J"},
+        {"label": "C", "text": "4.5×10⁻² J"},
+        {"label": "D", "text": "3.8×10⁻² J"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "U = kq₁q₂/r = (8.99×10⁹)(2.0×10⁻⁶)(-3.0×10⁻⁶)/(1.2) = (8.99×10⁹)(-6.0×10⁻¹²)/1.2 ≈ -4.5×10⁻² J. The negative sign reflects the attractive (opposite-charge) interaction.",
+      "topicTags": ["physics", "electric potential energy", "point charges"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (U = kq₁q₂/r)."
+    },
+    {
+      "id": "cpbs-xp111",
+      "section": "CPBS",
+      "stem": "A system has +2.00 µC charges at (50 cm, 0) and (-50 cm, 0) and a -1.00 µC charge at (0, 70 cm). As the y-coordinate of the -1.00 µC charge increases, the potential energy ____. As the y-coordinate of the -1.00 µC charge decreases, the potential energy ____.",
+      "choices": [
+        {"label": "A", "text": "increases, increases"},
+        {"label": "B", "text": "increases, decreases"},
+        {"label": "C", "text": "decreases, increases"},
+        {"label": "D", "text": "decreases, decreases"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "The -1.00 µC charge is attracted to the two +2.00 µC charges, so the pair-wise potential energy is negative. Moving the negative charge farther away (y increases) makes the energy less negative—i.e., it increases (toward zero). Moving it closer (y decreases) makes the energy more negative—i.e., it decreases.",
+      "topicTags": ["physics", "electric potential energy", "point charges"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (attractive U is negative; |U| grows as separation shrinks)."
+    },
+    {
+      "id": "cpbs-xp112",
+      "section": "CPBS",
+      "stem": "Take a square configuration of point charges—two positive and two negative, all of the same magnitude, with like charges sharing diagonals. What will happen to the internal (potential) energy of this system if one of the negative charges becomes a positive charge of the same magnitude?",
+      "choices": [
+        {"label": "A", "text": "increase"},
+        {"label": "B", "text": "decrease"},
+        {"label": "C", "text": "no change"},
+        {"label": "D", "text": "not enough information"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The original alternating arrangement (adjacent charges opposite) is a low-energy configuration dominated by attraction. Converting one negative charge to positive creates three like (positive) charges with strong mutual repulsion, raising the system's potential energy.",
+      "topicTags": ["physics", "electric potential energy", "charge configurations"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (more like-charge repulsion raises potential energy)."
+    },
+    {
+      "id": "cpbs-xp113",
+      "section": "CPBS",
+      "stem": "A system has +2.00 µC charges at (50 cm, 0) and (-50 cm, 0) and a -1.00 µC charge at (0, 70 cm) moving with a velocity in the -y-direction. When the -1.00 µC charge reaches (0, 0), the potential energy is at a ____ and the kinetic energy is at a ____.",
+      "choices": [
+        {"label": "A", "text": "maximum, maximum"},
+        {"label": "B", "text": "maximum, minimum"},
+        {"label": "C", "text": "minimum, maximum"},
+        {"label": "D", "text": "minimum, minimum"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "At (0, 0) the negative charge is closest to both positive charges, so the attractive potential energy is most negative (a minimum). By conservation of energy, the kinetic energy is correspondingly at a maximum.",
+      "topicTags": ["physics", "electric potential energy", "energy conservation"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (closest approach ⇒ minimum PE, maximum KE)."
+    },
+    {
+      "id": "cpbs-xp114",
+      "section": "CPBS",
+      "stem": "Two plates lie horizontally, stacked with one 10.0 cm above the other. The upper plate is held at +100 V. What is the magnitude and direction of the electric field between the plates if the lower plate is held at +50.0 V, and if it is held at -50.0 V?",
+      "choices": [
+        {"label": "A", "text": "500 V/m and 1500 V/m, directed downward"},
+        {"label": "B", "text": "500 V/m and 1500 V/m, directed upward"},
+        {"label": "C", "text": "1500 V/m and 500 V/m, directed downward"},
+        {"label": "D", "text": "1500 V/m and 500 V/m, directed upward"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "E = ΔV/d. With the lower plate at +50 V: ΔV = 100 - 50 = 50 V over 0.100 m → 500 V/m. With the lower plate at -50 V: ΔV = 100 - (-50) = 150 V over 0.100 m → 1500 V/m. The field points from high to low potential, i.e., downward from the +100 V upper plate.",
+      "topicTags": ["physics", "electric potential", "uniform field"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (E = ΔV/d; field points high-to-low potential)."
+    },
+    {
+      "id": "cpbs-xp115",
+      "section": "CPBS",
+      "stem": "Three parallel conducting plates are spaced 3.0 cm apart from one another. The leftmost is at a potential of +45 V, the middle one is held at ground (0 V), and the rightmost is at -75 V. What is the magnitude of the average electric field experienced by an electron traveling across from the left plate to the right plate? (Assume the middle plate has holes for the electron to pass through.)",
+      "choices": [
+        {"label": "A", "text": "1500 V/m"},
+        {"label": "B", "text": "2500 V/m"},
+        {"label": "C", "text": "4000 V/m"},
+        {"label": "D", "text": "2000 V/m"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The total potential difference from the left plate (+45 V) to the right plate (-75 V) is 45 - (-75) = 120 V, over a total distance of 3.0 + 3.0 = 6.0 cm = 0.060 m. The average field is 120 V / 0.060 m = 2000 V/m.",
+      "topicTags": ["physics", "electric potential", "uniform field"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (average E = total ΔV / total distance)."
+    },
+    {
+      "id": "cpbs-xp116",
+      "section": "CPBS",
+      "stem": "A certain electric-potential isoline graph has isolines every 5.0 V. If six of these lines cross a 40 cm path drawn between two points of interest, what is the magnitude of the average electric field along this path?",
+      "choices": [
+        {"label": "A", "text": "750 V/m"},
+        {"label": "B", "text": "150 V/m"},
+        {"label": "C", "text": "38 V/m"},
+        {"label": "D", "text": "75 V/m"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Crossing six 5.0-V isolines corresponds to a potential change of 6 × 5.0 = 30 V over the 0.40 m path. The average field magnitude is E = ΔV/d = 30 V / 0.40 m = 75 V/m.",
+      "topicTags": ["physics", "electric potential", "equipotentials"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (ΔV = 30 V over 0.40 m)."
+    },
+    {
+      "id": "cpbs-xp117",
+      "section": "CPBS",
+      "stem": "As isolines of electric potential get closer together, the electric field gets stronger. By analogy, what shape would a hill have where the isolines of gravitational potential (contour lines) get closer together?",
+      "choices": [
+        {"label": "A", "text": "constant slope"},
+        {"label": "B", "text": "steeper slope"},
+        {"label": "C", "text": "shallower slope"},
+        {"label": "D", "text": "a U-shape"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Closely spaced contour lines indicate a rapid change in elevation over a short horizontal distance—that is, a steeper slope. This mirrors how closely spaced equipotentials mean a stronger electric field.",
+      "topicTags": ["physics", "electric potential", "equipotentials", "gradient"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (close contours ⇒ steep gradient)."
+    },
+    {
+      "id": "cpbs-xp118",
+      "section": "CPBS",
+      "stem": "How much work is necessary to keep a positive point charge in a circular orbit around a negative point charge?",
+      "choices": [
+        {"label": "A", "text": "A lot; this system is unstable."},
+        {"label": "B", "text": "Just a little; the isolines are far enough apart that crossing them doesn't take much work."},
+        {"label": "C", "text": "None; the charge travels along an isoline (equipotential), which requires no work."},
+        {"label": "D", "text": "There's not enough information to tell."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "A circular orbit at fixed radius stays on a single equipotential surface (constant electric potential). Moving along an equipotential involves no change in potential energy, so no work is required.",
+      "topicTags": ["physics", "electric potential", "equipotentials", "work"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (circular orbit = constant-radius equipotential ⇒ zero work)."
+    },
+    {
+      "id": "cpbs-xp119",
+      "section": "CPBS",
+      "stem": "Two parallel-plate capacitors are otherwise identical, except the second one has twice the plate separation of the first. If placed in otherwise identical circuits (same voltage), how much charge will the second capacitor hold compared to the first?",
+      "choices": [
+        {"label": "A", "text": "four times as much"},
+        {"label": "B", "text": "twice as much"},
+        {"label": "C", "text": "the same"},
+        {"label": "D", "text": "half as much"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Capacitance is C = ε₀A/d, so doubling the separation d halves the capacitance. At the same voltage, Q = CV, so the stored charge is also halved.",
+      "topicTags": ["physics", "capacitors", "capacitance"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (C = ε₀A/d; Q = CV at fixed V)."
+    },
+    {
+      "id": "cpbs-xp120",
+      "section": "CPBS",
+      "stem": "A parallel-plate capacitor with adjustable-size square plates is placed in a circuit with a fixed voltage. How does the charge on the capacitor change as the length of the sides of the (square) plates is increased?",
+      "choices": [
+        {"label": "A", "text": "It grows proportional to (length)²."},
+        {"label": "B", "text": "It grows proportional to length."},
+        {"label": "C", "text": "It shrinks proportional to length."},
+        {"label": "D", "text": "It shrinks proportional to (length)²."}
+      ],
+      "correctAnswer": "A",
+      "explanation": "For square plates of side L, the area is A = L². Since C = ε₀A/d and Q = CV at fixed voltage, Q ∝ A = L². So the charge grows in proportion to the square of the side length.",
+      "topicTags": ["physics", "capacitors", "capacitance"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (Q ∝ A = L²)."
+    },
+    {
+      "id": "cpbs-xp121",
+      "section": "CPBS",
+      "stem": "A student varied one dimension of a square parallel-plate capacitor (in a circuit with a battery) and measured the resulting charge, obtaining: dimension 1.00 → 0.50 µC, 1.10 → 0.61 µC, 1.20 → 0.71 µC, 1.30 → 0.86 µC. Which dimension was being varied?",
+      "choices": [
+        {"label": "A", "text": "The distance between the plates"},
+        {"label": "B", "text": "The area"},
+        {"label": "C", "text": "The length of a side"},
+        {"label": "D", "text": "Both the area and the length of a side"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "The charge rises as the dimension increases (so it is not the plate separation, for which Q ∝ 1/d would decrease). Checking the ratio: Q(1.30)/Q(1.00) = 0.86/0.50 ≈ 1.72, close to (1.30)² = 1.69, so Q ∝ (dimension)². That quadratic dependence matches varying the side length L, because area = L².",
+      "topicTags": ["physics", "capacitors", "capacitance"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim (data table small and fully in text). OpenStax withholds the public answer key; answer independently verified (Q ∝ dimension² ⇒ side length, since A = L²)."
+    },
+    {
+      "id": "cpbs-xp122",
+      "section": "CPBS",
+      "stem": "What happens to the energy stored in a circuit (at fixed battery voltage) as you increase the number of capacitors connected in parallel? In series?",
+      "choices": [
+        {"label": "A", "text": "increases, increases"},
+        {"label": "B", "text": "increases, decreases"},
+        {"label": "C", "text": "decreases, increases"},
+        {"label": "D", "text": "decreases, decreases"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Adding capacitors in parallel increases the total capacitance, raising the stored energy (½CV² at fixed V). Adding capacitors in series decreases the total capacitance, lowering the stored energy.",
+      "topicTags": ["physics", "capacitors", "series and parallel"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (parallel raises C; series lowers C; U = ½CV²)."
+    },
+    {
+      "id": "cpbs-xp123",
+      "section": "CPBS",
+      "stem": "Consider a parallel-plate capacitor with no dielectric, square plates 1.00 m on a side, separated by 1.00 mm. What is the energy stored in this capacitor with 3.00×10³ V applied to it? (ε₀ = 8.85×10⁻¹² F/m.)",
+      "choices": [
+        {"label": "A", "text": "3.98×10⁻² J"},
+        {"label": "B", "text": "5.08×10¹⁴ J"},
+        {"label": "C", "text": "1.33×10⁻⁵ J"},
+        {"label": "D", "text": "1.69×10¹¹ J"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "C = ε₀A/d = (8.85×10⁻¹²)(1.00)/(1.00×10⁻³) = 8.85×10⁻⁹ F. Energy = ½CV² = ½(8.85×10⁻⁹)(3.00×10³)² = ½(8.85×10⁻⁹)(9.00×10⁶) ≈ 3.98×10⁻² J.",
+      "topicTags": ["physics", "capacitors", "energy stored"],
+      "difficulty": "hard",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (C = ε₀A/d; U = ½CV²)."
+    },
+    {
+      "id": "cpbs-xp124",
+      "section": "CPBS",
+      "stem": "For a parallel-plate capacitor connected to a fixed voltage, if the plates grow in area (separation unchanged), the capacitance ____ and the stored energy ____.",
+      "choices": [
+        {"label": "A", "text": "decreases, decreases"},
+        {"label": "B", "text": "decreases, increases"},
+        {"label": "C", "text": "increases, decreases"},
+        {"label": "D", "text": "increases, increases"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Capacitance C = ε₀A/d increases with area. At fixed voltage, the stored energy U = ½CV² increases in proportion to C. So both the capacitance and the stored energy increase.",
+      "topicTags": ["physics", "capacitors", "energy stored"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax College Physics for AP® Courses 2e, Ch. 19 — Test Prep for AP® Courses",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/19-test-prep-for-ap-r-courses",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (C ∝ A; U = ½CV² at fixed V)."
+    }
+  ]
+}

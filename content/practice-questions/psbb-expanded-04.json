@@ -1,0 +1,382 @@
+{
+  "meta": {
+    "section": "PSBB",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "OpenStax Psychology 2e, Ch. 7 Review Questions (Thinking and Intelligence) and Ch. 8 Review Questions (Memory)",
+        "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+        "sourceUrl": "https://openstax.org/books/psychology-2e/pages/7-review-questions"
+      },
+      {
+        "sourceName": "OpenStax Psychology 2e Student Solutions Guide (answer key for odd-numbered review questions)",
+        "sourceLicense": "CC BY 4.0",
+        "sourceUrl": "https://dokumen.pub/psychology-2e-student-solutions-guide.html"
+      }
+    ],
+    "counts": {"total": 18, "byTopic": {"cognition and intelligence": 12, "memory": 6}},
+    "notes": "Psychology (PSBB) items scraped verbatim from OpenStax Psychology 2e Ch. 7 and Ch. 8 review-questions pages; correct answers from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), odd-numbered review questions only. Ch. 8 Q1: the Solutions Guide prints the answer as 'short-term memory' but the live 2e option C reads 'working memory' (Baddeley's model); the keyed letter C is unchanged and 'working memory' is the accurate term."
+  },
+  "questions": [
+    {
+      "id": "psbb-x055",
+      "section": "PSBB",
+      "stem": "Cognitive psychology is the branch of psychology that focuses on the study of ________.",
+      "choices": [
+        {"label": "A", "text": "human development"},
+        {"label": "B", "text": "human thinking"},
+        {"label": "C", "text": "human behavior"},
+        {"label": "D", "text": "human society"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cognitive psychology is the field that studies human thinking, including perception, language, attention, problem solving, and memory.",
+      "topicTags": ["psychology", "cognition", "cognitive psychology"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 7 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/7-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 7 Q1 = B."
+    },
+    {
+      "id": "psbb-x056",
+      "section": "PSBB",
+      "stem": "Which of the following is an example of an artificial concept?",
+      "choices": [
+        {"label": "A", "text": "mammals"},
+        {"label": "B", "text": "a triangle's area"},
+        {"label": "C", "text": "gemstones"},
+        {"label": "D", "text": "teachers"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "An artificial concept is defined by a specific set of rules or features. A triangle's area (1/2 base x height) is defined by a precise mathematical rule, making it an artificial concept; natural concepts like mammals develop from experience.",
+      "topicTags": ["psychology", "cognition", "concepts"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 7 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/7-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 7 Q3 = B."
+    },
+    {
+      "id": "psbb-x057",
+      "section": "PSBB",
+      "stem": "________ provides general principles for organizing words into meaningful sentences.",
+      "choices": [
+        {"label": "A", "text": "Linguistic determinism"},
+        {"label": "B", "text": "Lexicon"},
+        {"label": "C", "text": "Semantics"},
+        {"label": "D", "text": "Syntax"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Syntax refers to the rules and principles for organizing words into grammatically correct, meaningful sentences.",
+      "topicTags": ["psychology", "cognition", "language", "syntax"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 7 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/7-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 7 Q5 = D."
+    },
+    {
+      "id": "psbb-x058",
+      "section": "PSBB",
+      "stem": "The meaning of words and phrases is determined by applying the rules of ________.",
+      "choices": [
+        {"label": "A", "text": "lexicon"},
+        {"label": "B", "text": "phonemes"},
+        {"label": "C", "text": "overgeneralization"},
+        {"label": "D", "text": "semantics"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Semantics is the set of rules governing the meaning of words and phrases in a language.",
+      "topicTags": ["psychology", "cognition", "language", "semantics"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 7 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/7-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 7 Q7 = D."
+    },
+    {
+      "id": "psbb-x059",
+      "section": "PSBB",
+      "stem": "A specific formula for solving a problem is called ________.",
+      "choices": [
+        {"label": "A", "text": "an algorithm"},
+        {"label": "B", "text": "a heuristic"},
+        {"label": "C", "text": "a mental set"},
+        {"label": "D", "text": "trial and error"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "An algorithm is a specific, step-by-step formula or procedure that, if followed correctly, guarantees a solution to a problem.",
+      "topicTags": ["psychology", "cognition", "problem solving", "algorithm"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 7 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/7-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 7 Q9 = A."
+    },
+    {
+      "id": "psbb-x060",
+      "section": "PSBB",
+      "stem": "Which type of bias involves becoming fixated on a single trait of a problem?",
+      "choices": [
+        {"label": "A", "text": "anchoring bias"},
+        {"label": "B", "text": "confirmation bias"},
+        {"label": "C", "text": "representative bias"},
+        {"label": "D", "text": "availability bias"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "Anchoring bias is the tendency to focus on (anchor to) one particular piece of information or trait when making decisions.",
+      "topicTags": ["psychology", "cognition", "decision making", "cognitive bias"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 7 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/7-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 7 Q11 = A."
+    },
+    {
+      "id": "psbb-x061",
+      "section": "PSBB",
+      "stem": "Fluid intelligence is characterized by ________.",
+      "choices": [
+        {"label": "A", "text": "being able to recall information"},
+        {"label": "B", "text": "being able to create new products"},
+        {"label": "C", "text": "being able to understand and communicate with different cultures"},
+        {"label": "D", "text": "being able to see complex relationships and solve problems"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Fluid intelligence is the capacity to reason, see complex relationships, and solve novel problems, independent of acquired knowledge (crystallized intelligence).",
+      "topicTags": ["psychology", "intelligence", "fluid intelligence"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 7 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/7-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 7 Q13 = D."
+    },
+    {
+      "id": "psbb-x062",
+      "section": "PSBB",
+      "stem": "Which theorist put forth the triarchic theory of intelligence?",
+      "choices": [
+        {"label": "A", "text": "Goleman"},
+        {"label": "B", "text": "Gardner"},
+        {"label": "C", "text": "Sternberg"},
+        {"label": "D", "text": "Steitz"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Robert Sternberg proposed the triarchic theory of intelligence, comprising practical, creative, and analytical intelligence.",
+      "topicTags": ["psychology", "intelligence", "theories of intelligence"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 7 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/7-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 7 Q15 = C."
+    },
+    {
+      "id": "psbb-x063",
+      "section": "PSBB",
+      "stem": "In order for a test to be normed and standardized it must be tested on ________.",
+      "choices": [
+        {"label": "A", "text": "a group of same-age peers"},
+        {"label": "B", "text": "a representative sample"},
+        {"label": "C", "text": "children with mental disabilities"},
+        {"label": "D", "text": "children of average intelligence"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Norming and standardizing a test requires administering it to a representative sample of the population so that scores can be meaningfully compared.",
+      "topicTags": ["psychology", "intelligence", "psychometrics", "standardization"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 7 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/7-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 7 Q17 = B."
+    },
+    {
+      "id": "psbb-x064",
+      "section": "PSBB",
+      "stem": "Who developed the IQ test most widely used today?",
+      "choices": [
+        {"label": "A", "text": "Sir Francis Galton"},
+        {"label": "B", "text": "Alfred Binet"},
+        {"label": "C", "text": "Louis Terman"},
+        {"label": "D", "text": "David Wechsler"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "David Wechsler developed the Wechsler scales (e.g., the WAIS), the most widely used individual IQ tests today.",
+      "topicTags": ["psychology", "intelligence", "IQ testing"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 7 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/7-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 7 Q19 = D."
+    },
+    {
+      "id": "psbb-x065",
+      "section": "PSBB",
+      "stem": "Where does high intelligence come from?",
+      "choices": [
+        {"label": "A", "text": "genetics"},
+        {"label": "B", "text": "environment"},
+        {"label": "C", "text": "both A and B"},
+        {"label": "D", "text": "neither A nor B"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Intelligence arises from an interaction of both genetics and environment; neither alone fully accounts for it.",
+      "topicTags": ["psychology", "intelligence", "nature and nurture"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 7 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/7-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 7 Q21 = C."
+    },
+    {
+      "id": "psbb-x066",
+      "section": "PSBB",
+      "stem": "What is a learning disability?",
+      "choices": [
+        {"label": "A", "text": "a developmental disorder"},
+        {"label": "B", "text": "a neurological disorder"},
+        {"label": "C", "text": "an emotional disorder"},
+        {"label": "D", "text": "an intellectual disorder"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Learning disabilities are neurological disorders that affect specific cognitive processes (such as reading or math) and are distinct from overall intelligence.",
+      "topicTags": ["psychology", "intelligence", "learning disability"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 7 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/7-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 7 Q23 = B."
+    },
+    {
+      "id": "psbb-x067",
+      "section": "PSBB",
+      "stem": "________ is a memory store with a phonological loop, visuospatial sketchpad, episodic buffer, and a central executive.",
+      "choices": [
+        {"label": "A", "text": "sensory memory"},
+        {"label": "B", "text": "episodic memory"},
+        {"label": "C", "text": "working memory"},
+        {"label": "D", "text": "implicit memory"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Baddeley and Hitch's model of working memory comprises the phonological loop, visuospatial sketchpad, episodic buffer, and central executive.",
+      "topicTags": ["psychology", "memory", "working memory"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 8 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/8-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from the live OpenStax page (option C = 'working memory'). The Student Solutions Guide prints the Ch. 8 Q1 answer as 'short-term memory'; the keyed letter C is unchanged and 'working memory' is the correct term for Baddeley's model."
+    },
+    {
+      "id": "psbb-x068",
+      "section": "PSBB",
+      "stem": "The three functions of memory are ________.",
+      "choices": [
+        {"label": "A", "text": "automatic processing, effortful processing, and storage"},
+        {"label": "B", "text": "encoding, processing, and storage"},
+        {"label": "C", "text": "automatic processing, effortful processing, and retrieval"},
+        {"label": "D", "text": "encoding, storage, and retrieval"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Memory has three core functions: encoding (getting information in), storage (retaining it), and retrieval (getting it back out).",
+      "topicTags": ["psychology", "memory", "encoding storage retrieval"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 8 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/8-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 8 Q3 = D."
+    },
+    {
+      "id": "psbb-x069",
+      "section": "PSBB",
+      "stem": "An exceptionally clear recollection of an important event is a (an) ________.",
+      "choices": [
+        {"label": "A", "text": "engram"},
+        {"label": "B", "text": "arousal theory"},
+        {"label": "C", "text": "flashbulb memory"},
+        {"label": "D", "text": "equipotentiality hypothesis"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "A flashbulb memory is an exceptionally vivid, detailed 'snapshot' memory of an emotionally significant or surprising event.",
+      "topicTags": ["psychology", "memory", "flashbulb memory"],
+      "difficulty": "easy",
+      "sourceName": "OpenStax Psychology 2e, Ch. 8 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/8-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 8 Q5 = C."
+    },
+    {
+      "id": "psbb-x070",
+      "section": "PSBB",
+      "stem": "Tip-of-the-tongue phenomenon is also known as ________.",
+      "choices": [
+        {"label": "A", "text": "persistence"},
+        {"label": "B", "text": "misattribution"},
+        {"label": "C", "text": "transience"},
+        {"label": "D", "text": "blocking"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "The tip-of-the-tongue phenomenon is a form of blocking: the temporary inability to retrieve information that you know is stored in memory.",
+      "topicTags": ["psychology", "memory", "retrieval failure", "blocking"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 8 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/8-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 8 Q7 = D."
+    },
+    {
+      "id": "psbb-x071",
+      "section": "PSBB",
+      "stem": "When you are learning how to play the piano, the statement \"Every good boy does fine\" can help you remember the notes E, G, B, D, and F for the lines of the treble clef. This is an example of a (an) ________.",
+      "choices": [
+        {"label": "A", "text": "jingle"},
+        {"label": "B", "text": "acronym"},
+        {"label": "C", "text": "acrostic"},
+        {"label": "D", "text": "acoustic"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "An acrostic is a mnemonic in which the first letter of each word in a phrase cues the items to be remembered (here, E-G-B-D-F).",
+      "topicTags": ["psychology", "memory", "mnemonics"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 8 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/8-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 8 Q9 = C."
+    },
+    {
+      "id": "psbb-x072",
+      "section": "PSBB",
+      "stem": "The self-referencing effect refers to ________.",
+      "choices": [
+        {"label": "A", "text": "making the material you are trying to memorize personally meaningful to you"},
+        {"label": "B", "text": "making a phrase of all the first letters of the words you are trying to memorize"},
+        {"label": "C", "text": "making a word formed by the first letter of each of the words you are trying to memorize"},
+        {"label": "D", "text": "saying words you want to remember out loud to yourself"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "The self-referencing effect is the tendency to remember information better when you relate it to yourself, making the material personally meaningful.",
+      "topicTags": ["psychology", "memory", "self-referencing effect"],
+      "difficulty": "medium",
+      "sourceName": "OpenStax Psychology 2e, Ch. 8 Review Questions",
+      "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
+      "sourceUrl": "https://openstax.org/books/psychology-2e/pages/8-review-questions",
+      "answerProvenance": "source-solution-guide",
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solutions Guide (CC BY 4.0), Ch. 8 Q11 = A."
+    }
+  ]
+}

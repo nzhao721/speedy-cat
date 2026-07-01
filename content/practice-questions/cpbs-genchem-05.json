@@ -1,0 +1,238 @@
+{
+  "meta": {
+    "section": "CPBS",
+    "subArea": "general chemistry",
+    "generatedOn": "2026-06-30",
+    "sources": [
+      {
+        "sourceName": "QuizOver.com / The Saylor Foundation — General Chemistry I MCQ (Joanna Smithback, Ph.D. & Rachel Lerebours), Unit 06: Thermochemistry and Thermodynamics",
+        "sourceLicense": "CC BY-NC-ND 3.0 (The Saylor Foundation; NonCommercial, NoDerivatives — more restrictive than this bank's preferred CC BY / CC BY-NC-SA; reproduced verbatim with attribution)",
+        "sourceUrl": "https://www.jobilize.com/web-assets/ebook/general-chemistry-i-mcq-by-joanna-smithback-and-rachel-lerebours.pdf"
+      }
+    ],
+    "counts": {"total": 11, "byTopic": {"thermochemistry / calorimetry / Hess's law / enthalpy of formation": 6, "thermodynamics / Gibbs free energy / entropy / spontaneity": 5}},
+    "notes": "Source is the Saylor Foundation 'General Chemistry I MCQ' ebook (course CHEM101), distributed as a QuizOver.com PDF under CC BY-NC-ND 3.0. The PDF presents each question and its four answer choices but WITHHOLDS the answer key (it links to QuizOver.com to 'check the answer'), so every item here is answerProvenance=verified-from-source-text — the correct answer was derived independently by calculation or established concept (mirroring how questions.json handles OpenStax items whose keys are withheld). Choices are reproduced verbatim in the order printed and labeled A-D. LICENSE NOTE: CC BY-NC-ND is open but non-commercial + no-derivatives; downstream commercial shipping should confirm rights. Fills the thermochemistry/thermodynamics gap not covered by the GOB LibreTexts book."
+  },
+  "questions": [
+    {
+      "id": "cpbs-xc071",
+      "section": "CPBS",
+      "stem": "A 5.10 g sample of iron is heated from 36.0 °C to 75.0 °C. The amount of energy required is 89.5 J. What is the specific heat capacity of iron?",
+      "choices": [
+        {"label": "A", "text": "17800 J/g °C"},
+        {"label": "B", "text": "0.900 J/g °C"},
+        {"label": "C", "text": "11.7 J/g °C"},
+        {"label": "D", "text": "0.450 J/g °C"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "Specific heat c = q / (m·ΔT). With ΔT = 75.0 - 36.0 = 39.0 °C, c = 89.5 J / (5.10 g × 39.0 °C) = 0.450 J/g·°C.",
+      "topicTags": ["general chemistry", "thermochemistry", "calorimetry", "specific heat"],
+      "difficulty": "medium",
+      "sourceName": "QuizOver.com / The Saylor Foundation — General Chemistry I MCQ (Smithback & Lerebours), Unit 06: Thermochemistry and Thermodynamics",
+      "sourceLicense": "CC BY-NC-ND 3.0 (The Saylor Foundation; NonCommercial, NoDerivatives)",
+      "sourceUrl": "https://www.jobilize.com/web-assets/ebook/general-chemistry-i-mcq-by-joanna-smithback-and-rachel-lerebours.pdf",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The source PDF withholds the answer key (links to QuizOver.com); answer independently verified by calculation."
+    },
+    {
+      "id": "cpbs-xc072",
+      "section": "CPBS",
+      "stem": "A 6.75 g sample of gold (specific heat capacity = 0.13 J/g °C) is heated using 50.6 J of energy. If the original temperature of the gold is 25 °C, what is its final temperature?",
+      "choices": [
+        {"label": "A", "text": "82.7 °C"},
+        {"label": "B", "text": "57.7 °C"},
+        {"label": "C", "text": "24.4 °C"},
+        {"label": "D", "text": "43.4 °C"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "From q = m·c·ΔT, ΔT = q / (m·c) = 50.6 J / (6.75 g × 0.13 J/g·°C) = 57.7 °C. Final temperature = 25 °C + 57.7 °C = 82.7 °C.",
+      "topicTags": ["general chemistry", "thermochemistry", "calorimetry", "specific heat"],
+      "difficulty": "medium",
+      "sourceName": "QuizOver.com / The Saylor Foundation — General Chemistry I MCQ (Smithback & Lerebours), Unit 06: Thermochemistry and Thermodynamics",
+      "sourceLicense": "CC BY-NC-ND 3.0 (The Saylor Foundation; NonCommercial, NoDerivatives)",
+      "sourceUrl": "https://www.jobilize.com/web-assets/ebook/general-chemistry-i-mcq-by-joanna-smithback-and-rachel-lerebours.pdf",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The source PDF withholds the answer key (links to QuizOver.com); answer independently verified by calculation."
+    },
+    {
+      "id": "cpbs-xc073",
+      "section": "CPBS",
+      "stem": "A negative Gibbs free energy means a reaction will",
+      "choices": [
+        {"label": "A", "text": "be spontaneous."},
+        {"label": "B", "text": "react quickly."},
+        {"label": "C", "text": "Both A and B"},
+        {"label": "D", "text": "None of the above"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "A negative Gibbs free energy (ΔG < 0) indicates a thermodynamically spontaneous (product-favored) process. ΔG says nothing about reaction rate (that is kinetics), so 'react quickly' is not implied.",
+      "topicTags": ["general chemistry", "thermodynamics", "Gibbs free energy", "spontaneity"],
+      "difficulty": "easy",
+      "sourceName": "QuizOver.com / The Saylor Foundation — General Chemistry I MCQ (Smithback & Lerebours), Unit 06: Thermochemistry and Thermodynamics",
+      "sourceLicense": "CC BY-NC-ND 3.0 (The Saylor Foundation; NonCommercial, NoDerivatives)",
+      "sourceUrl": "https://www.jobilize.com/web-assets/ebook/general-chemistry-i-mcq-by-joanna-smithback-and-rachel-lerebours.pdf",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The source PDF withholds the answer key; answer independently verified (definitional)."
+    },
+    {
+      "id": "cpbs-xc074",
+      "section": "CPBS",
+      "stem": "Exothermic reactions are favored because they:",
+      "choices": [
+        {"label": "A", "text": "Increase entropy of the surroundings"},
+        {"label": "B", "text": "Increase entropy of the system"},
+        {"label": "C", "text": "Decrease entropy of the surroundings"},
+        {"label": "D", "text": "Decrease entropy of the system"}
+      ],
+      "correctAnswer": "A",
+      "explanation": "An exothermic reaction releases heat to the surroundings, which increases the entropy of the surroundings (ΔS_surr = -ΔH_sys/T > 0 when ΔH_sys < 0). By the second law, this contributes to making the overall process spontaneous.",
+      "topicTags": ["general chemistry", "thermodynamics", "entropy", "exothermic"],
+      "difficulty": "medium",
+      "sourceName": "QuizOver.com / The Saylor Foundation — General Chemistry I MCQ (Smithback & Lerebours), Unit 06: Thermochemistry and Thermodynamics",
+      "sourceLicense": "CC BY-NC-ND 3.0 (The Saylor Foundation; NonCommercial, NoDerivatives)",
+      "sourceUrl": "https://www.jobilize.com/web-assets/ebook/general-chemistry-i-mcq-by-joanna-smithback-and-rachel-lerebours.pdf",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The source PDF withholds the answer key; answer independently verified."
+    },
+    {
+      "id": "cpbs-xc075",
+      "section": "CPBS",
+      "stem": "For the following general reaction, what can be said about the spontaneity at different temperatures? A + B → C + D; ΔH° is positive; ΔS° is negative.",
+      "choices": [
+        {"label": "A", "text": "product-favored at all temperatures"},
+        {"label": "B", "text": "product-favored only at high temperature"},
+        {"label": "C", "text": "product-favored only at low temperature"},
+        {"label": "D", "text": "product not-favored at any temperature"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "ΔG = ΔH - TΔS. With ΔH° > 0 and ΔS° < 0, the term -TΔS is positive at every temperature, so ΔG > 0 for all T. The reaction is nonspontaneous (product not-favored) at any temperature.",
+      "topicTags": ["general chemistry", "thermodynamics", "Gibbs free energy", "spontaneity", "temperature dependence"],
+      "difficulty": "medium",
+      "sourceName": "QuizOver.com / The Saylor Foundation — General Chemistry I MCQ (Smithback & Lerebours), Unit 06: Thermochemistry and Thermodynamics",
+      "sourceLicense": "CC BY-NC-ND 3.0 (The Saylor Foundation; NonCommercial, NoDerivatives)",
+      "sourceUrl": "https://www.jobilize.com/web-assets/ebook/general-chemistry-i-mcq-by-joanna-smithback-and-rachel-lerebours.pdf",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The source PDF withholds the answer key; answer independently verified."
+    },
+    {
+      "id": "cpbs-xc076",
+      "section": "CPBS",
+      "stem": "Which answer provides the calculation of ΔG° for the reaction below at 25 °C? H2O(g) + S(s) → H2S(g) + 1/2 O2(g); ΔH° = +221.2 kJ, ΔS° = +87.7 J/K",
+      "choices": [
+        {"label": "A", "text": "247.3 kJ"},
+        {"label": "B", "text": "-195.1 kJ"},
+        {"label": "C", "text": "219.0 kJ"},
+        {"label": "D", "text": "195.1 kJ"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "ΔG° = ΔH° - TΔS° = 221.2 kJ - (298 K)(0.0877 kJ/K) = 221.2 - 26.1 = 195.1 kJ. Convert ΔS° from J/K to kJ/K and use T in kelvin (25 °C = 298 K).",
+      "topicTags": ["general chemistry", "thermodynamics", "Gibbs free energy", "calculation"],
+      "difficulty": "medium",
+      "sourceName": "QuizOver.com / The Saylor Foundation — General Chemistry I MCQ (Smithback & Lerebours), Unit 06: Thermochemistry and Thermodynamics",
+      "sourceLicense": "CC BY-NC-ND 3.0 (The Saylor Foundation; NonCommercial, NoDerivatives)",
+      "sourceUrl": "https://www.jobilize.com/web-assets/ebook/general-chemistry-i-mcq-by-joanna-smithback-and-rachel-lerebours.pdf",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The source PDF withholds the answer key; answer independently verified by calculation."
+    },
+    {
+      "id": "cpbs-xc077",
+      "section": "CPBS",
+      "stem": "Use the following thermochemical equations to solve for ΔH° for the reaction 2 F2(g) + 2 H2O(l) → 4 HF(g) + O2(g). [Given: H2(g) + F2(g) → 2 HF(g), ΔH° = -542 kJ; 2 H2(g) + O2(g) → 2 H2O(l), ΔH° = -572 kJ]",
+      "choices": [
+        {"label": "A", "text": "-452 kJ"},
+        {"label": "B", "text": "-922 kJ"},
+        {"label": "C", "text": "-1124 kJ"},
+        {"label": "D", "text": "-512 kJ"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "By Hess's law, target = 2 × (first equation) - (second equation). 2 × (-542) = -1084 kJ; reversing the second equation contributes +572 kJ. ΔH° = -1084 + 572 = -512 kJ.",
+      "topicTags": ["general chemistry", "thermochemistry", "Hess's law", "enthalpy"],
+      "difficulty": "hard",
+      "sourceName": "QuizOver.com / The Saylor Foundation — General Chemistry I MCQ (Smithback & Lerebours), Unit 06: Thermochemistry and Thermodynamics",
+      "sourceLicense": "CC BY-NC-ND 3.0 (The Saylor Foundation; NonCommercial, NoDerivatives)",
+      "sourceUrl": "https://www.jobilize.com/web-assets/ebook/general-chemistry-i-mcq-by-joanna-smithback-and-rachel-lerebours.pdf",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The source PDF withholds the answer key; answer independently verified by Hess's law."
+    },
+    {
+      "id": "cpbs-xc078",
+      "section": "CPBS",
+      "stem": "What is the sign of the enthalpy change for an exothermic reaction?",
+      "choices": [
+        {"label": "A", "text": "positive"},
+        {"label": "B", "text": "This cannot be determined from the information given."},
+        {"label": "C", "text": "negative"},
+        {"label": "D", "text": "It depends on the temperature."}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Exothermic reactions release heat to the surroundings, so the enthalpy change of the system (ΔH) is negative.",
+      "topicTags": ["general chemistry", "thermochemistry", "enthalpy", "exothermic"],
+      "difficulty": "easy",
+      "sourceName": "QuizOver.com / The Saylor Foundation — General Chemistry I MCQ (Smithback & Lerebours), Unit 06: Thermochemistry and Thermodynamics",
+      "sourceLicense": "CC BY-NC-ND 3.0 (The Saylor Foundation; NonCommercial, NoDerivatives)",
+      "sourceUrl": "https://www.jobilize.com/web-assets/ebook/general-chemistry-i-mcq-by-joanna-smithback-and-rachel-lerebours.pdf",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The source PDF withholds the answer key; answer independently verified (definitional)."
+    },
+    {
+      "id": "cpbs-xc079",
+      "section": "CPBS",
+      "stem": "What is the value of the standard enthalpy of formation for any element under standard conditions?",
+      "choices": [
+        {"label": "A", "text": "273 J/mol"},
+        {"label": "B", "text": "0.24 J/mol"},
+        {"label": "C", "text": "4.18 J/mol"},
+        {"label": "D", "text": "0 J/mol"}
+      ],
+      "correctAnswer": "D",
+      "explanation": "By definition, the standard enthalpy of formation (ΔHf°) of an element in its most stable (standard) form is zero, because forming an element from itself involves no change.",
+      "topicTags": ["general chemistry", "thermochemistry", "enthalpy of formation", "standard state"],
+      "difficulty": "easy",
+      "sourceName": "QuizOver.com / The Saylor Foundation — General Chemistry I MCQ (Smithback & Lerebours), Unit 06: Thermochemistry and Thermodynamics",
+      "sourceLicense": "CC BY-NC-ND 3.0 (The Saylor Foundation; NonCommercial, NoDerivatives)",
+      "sourceUrl": "https://www.jobilize.com/web-assets/ebook/general-chemistry-i-mcq-by-joanna-smithback-and-rachel-lerebours.pdf",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The source PDF withholds the answer key; answer independently verified (definitional)."
+    },
+    {
+      "id": "cpbs-xc080",
+      "section": "CPBS",
+      "stem": "Which of the following do you expect to have the largest entropy at 25 °C?",
+      "choices": [
+        {"label": "A", "text": "H2O(l)"},
+        {"label": "B", "text": "H2O(s)"},
+        {"label": "C", "text": "O2(g)"},
+        {"label": "D", "text": "CCl4(l)"}
+      ],
+      "correctAnswer": "C",
+      "explanation": "Gases have much higher molar entropy than liquids or solids because of their greater molecular disorder. O2 is the only gas among the choices, so it has the largest entropy.",
+      "topicTags": ["general chemistry", "thermodynamics", "entropy", "states of matter"],
+      "difficulty": "easy",
+      "sourceName": "QuizOver.com / The Saylor Foundation — General Chemistry I MCQ (Smithback & Lerebours), Unit 06: Thermochemistry and Thermodynamics",
+      "sourceLicense": "CC BY-NC-ND 3.0 (The Saylor Foundation; NonCommercial, NoDerivatives)",
+      "sourceUrl": "https://www.jobilize.com/web-assets/ebook/general-chemistry-i-mcq-by-joanna-smithback-and-rachel-lerebours.pdf",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The source PDF withholds the answer key; answer independently verified."
+    },
+    {
+      "id": "cpbs-xc081",
+      "section": "CPBS",
+      "stem": "Which of the following represents an increase in entropy?",
+      "choices": [
+        {"label": "A", "text": "freezing of water"},
+        {"label": "B", "text": "boiling of water"},
+        {"label": "C", "text": "crystallization of salt from a supersaturated solution"},
+        {"label": "D", "text": "the reaction 2 NO(g) → N2O2(g)"}
+      ],
+      "correctAnswer": "B",
+      "explanation": "Boiling converts liquid water to vapor, greatly increasing molecular disorder and therefore entropy. Freezing and crystallization produce more ordered solids (entropy decreases), and combining 2 mol of gas into 1 mol of gas also decreases entropy.",
+      "topicTags": ["general chemistry", "thermodynamics", "entropy", "phase changes"],
+      "difficulty": "easy",
+      "sourceName": "QuizOver.com / The Saylor Foundation — General Chemistry I MCQ (Smithback & Lerebours), Unit 06: Thermochemistry and Thermodynamics",
+      "sourceLicense": "CC BY-NC-ND 3.0 (The Saylor Foundation; NonCommercial, NoDerivatives)",
+      "sourceUrl": "https://www.jobilize.com/web-assets/ebook/general-chemistry-i-mcq-by-joanna-smithback-and-rachel-lerebours.pdf",
+      "answerProvenance": "verified-from-source-text",
+      "notes": "Question + options scraped verbatim. The source PDF withholds the answer key; answer independently verified."
+    }
+  ]
+}

@@ -18,4 +18,7 @@ package com.ichi2.anki.worker
 object UniqueWorkNames {
     const val SYNC = "sync"
     const val SYNC_MEDIA = "syncMedia"
+
+    /** One-time background download+import of the full SpeedyCAT MCAT deck. */
+    const val SPEEDYCAT_FULL_DECK = "speedycatFullDeck"
 }

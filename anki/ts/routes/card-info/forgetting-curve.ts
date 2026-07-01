@@ -255,7 +255,7 @@ export function renderForgettingCurve(
         .selectAll("stop")
         .data([
             { offset: "0%", color: "tomato" },
-            { offset: `${desiredRetentionY}%`, color: "steelblue" },
+            { offset: `${desiredRetentionY}%`, color: "#e8842b" },
             { offset: "100%", color: "green" },
         ])
         .enter().append("stop")
@@ -294,7 +294,7 @@ export function renderForgettingCurve(
             .attr("x2", bounds.width - bounds.marginRight)
             .attr("y1", y(desiredRetentionY))
             .attr("y2", y(desiredRetentionY))
-            .attr("stroke", "steelblue")
+            .attr("stroke", "#e8842b")
             .attr("stroke-dasharray", "4 4")
             .attr("stroke-width", 1.2);
     }

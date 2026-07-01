@@ -455,20 +455,12 @@ open class Reviewer :
                 Timber.i("Reviewer:: Tag button pressed")
                 showTagsDialog()
             }
-            R.id.action_edit -> {
-                Timber.i("Reviewer:: Edit note button pressed")
-                editCard()
-            }
             R.id.action_bury_card -> buryCard()
             R.id.action_bury_note -> buryNote()
             R.id.action_suspend_card -> suspendCard()
             R.id.action_suspend_note -> suspendNote()
             R.id.action_reschedule_card -> showDueDateDialog()
             R.id.action_reset_card_progress -> showResetCardDialog()
-            R.id.action_delete -> {
-                Timber.i("Reviewer:: Delete note button pressed")
-                showDeleteNoteDialog()
-            }
             R.id.action_toggle_auto_advance -> {
                 Timber.i("Reviewer:: Toggle Auto Advance button pressed")
                 toggleAutoAdvance()
@@ -855,7 +847,6 @@ open class Reviewer :
         menu.findItem(R.id.action_reschedule_card).title = TR.sentenceCase.setDueDate
         menu.findItem(R.id.action_card_info)?.title = TR.sentenceCase.cardInfo
         menu.findItem(R.id.action_previous_card_info)?.title = TR.sentenceCase.previousCardInfo
-        menu.findItem(R.id.action_delete)?.title = TR.sentenceCase.deleteNote
         // top-level (visible=false in XML) items, shown when only the card-level action is available
         menu.findItem(R.id.action_bury_card)?.title = TR.sentenceCase.buryCard
         menu.findItem(R.id.action_suspend_card)?.title = TR.sentenceCase.suspendCard
@@ -1290,6 +1281,11 @@ open class Reviewer :
 
     @VisibleForTesting
     override fun displayCardAnswer() {
+        // SpeedyCAT forced active recall: block the reveal (and the pre-reveal work below, such as
+        // pausing the answer timer) until the learner has typed and submitted a non-empty answer.
+        if (blockAnswerRevealIfRequired()) {
+            return
+        }
         if (queueState?.customSchedulingJs?.isEmpty() == true) {
             statesMutated = true
         }

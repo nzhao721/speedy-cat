@@ -1,0 +1,47 @@
+{
+  "batch": 12,
+  "file": "batch_12.json",
+  "cards_evaluated": 257,
+  "summary": {
+    "ok": 255,
+    "cards_with_issues": 2,
+    "by_check": {
+      "qa_correspondence": 0,
+      "wellformed": 0,
+      "markup": 2
+    },
+    "by_severity": {
+      "error": 0,
+      "warning": 2,
+      "info": 0
+    }
+  },
+  "issue_type_counts": {
+    "cloze_hint_splits_font_tag": 2
+  },
+  "flagged": [
+    {
+      "card_id": 1581557775815,
+      "note_id": 1581557693970,
+      "check": "markup",
+      "type": "cloze_hint_splits_font_tag",
+      "severity": "warning",
+      "detail": "The closing </font> sits inside the cloze hint (after the :: separator), so although the raw field has matched <font>/</font>, after cloze splitting the back renders an unclosed <font color> that can bleed color into the Extra text.",
+      "evidence": "{{c1::<font color=\"#fd6666\">Institutional discrimination::type of discrimination</font>}}"
+    },
+    {
+      "card_id": 1581978920591,
+      "note_id": 1581978804507,
+      "check": "markup",
+      "type": "cloze_hint_splits_font_tag",
+      "severity": "warning",
+      "detail": "The second c1 cloze opens a <font> in the answer body but places the closing </font> inside the hint (after ::); cloze splitting leaves an orphaned/unclosed font tag on the rendered side, so color may bleed though it renders acceptably.",
+      "evidence": "{{c1::Decisions <font color=\"#f2bcae\">without conscious intent::Evolutionary Game Theory</font>}}"
+    }
+  ],
+  "worst_offenders": [
+    1581557775815,
+    1581978920591
+  ],
+  "notes": "Batch 12 is a uniformly high-quality, all-cloze set drawn from MileDown's Behavioral deck (~54 cards, with tag breadcrumbs + image/link Extras) and a large Pankow P/S block (8C Social Behavior/Interactions, Biological Explanations, 9A Social Structures, 9B Demographics). Q/A correspondence is correct throughout, text is well-formed and non-empty with no unrendered template artifacts ({{, FrontSide, etc.), no LaTeX is present, and no image-only-without-text cards were found. The only issues are two cards where a closing </font> tag is authored inside the cloze hint (after the :: separator), leaving an orphaned/unclosed font tag on the rendered side; both are minor warnings that render acceptably."
+}

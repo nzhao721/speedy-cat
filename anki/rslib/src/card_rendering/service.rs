@@ -25,6 +25,7 @@ use crate::text::sanitize_html_no_images;
 use crate::text::strip_html;
 use crate::text::strip_html_preserving_media_filenames;
 use crate::typeanswer::compare_answer;
+use crate::typeanswer::match_typed_answer;
 
 /// While the majority of these methods do not actually require a collection,
 /// they are unlikely to be executed without one, so we only bother implementing
@@ -168,6 +169,19 @@ impl crate::services::CardRenderingService for Collection {
         input: anki_proto::card_rendering::CompareAnswerRequest,
     ) -> Result<generic::String> {
         Ok(compare_answer(&input.expected, &input.provided, input.combining).into())
+    }
+
+    fn match_answer(
+        &mut self,
+        input: anki_proto::card_rendering::MatchAnswerRequest,
+    ) -> Result<anki_proto::card_rendering::MatchAnswerResponse> {
+        let result = match_typed_answer(&input.expected, &input.provided, input.combining);
+        Ok(anki_proto::card_rendering::MatchAnswerResponse {
+            matches: result.matches,
+            expected_normalized: result.expected_normalized,
+            provided_normalized: result.provided_normalized,
+            diff_html: result.diff_html,
+        })
     }
 
     fn extract_cloze_for_typing(

@@ -1,0 +1,23 @@
+{
+  "batch": 19,
+  "file": "batch_19.json",
+  "cards_evaluated": 257,
+  "summary": {
+    "ok": 257,
+    "cards_with_issues": 0,
+    "by_check": {
+      "qa_correspondence": 0,
+      "wellformed": 0,
+      "markup": 0
+    },
+    "by_severity": {
+      "error": 0,
+      "warning": 0,
+      "info": 0
+    }
+  },
+  "issue_type_counts": {},
+  "flagged": [],
+  "worst_offenders": [],
+  "notes": "Batch 19 is a uniform, single-source set of 257 AACloze cards from the MrPankow P/S (psychology/sociology) deck and is uniformly clean with no errors, warnings, or info findings. Every cloze {{cN::...}} is balanced and well-formed (including valid hint syntax like {{c1::Panic disorders::Illness}} and {{c1::large::large or small}}), all HTML in the Text/Extra fields is reasonably balanced, and there is no LaTeX/MathJax to validate; all cloze deletions are text (every <img> lives in the Extra field, so there are no image-only cloze cards), so each answer_text correctly reveals its [...] blank and no card has empty/duplicate or non-corresponding answers. The only non-blocking observations (intentionally not flagged) are occasional source-level spelling typos (e.g., 'behavoirs', 'shizoid', 'Cheynes-stroke', 'seperate') and informal/profane phrasing, none of which affect studyability."
+}

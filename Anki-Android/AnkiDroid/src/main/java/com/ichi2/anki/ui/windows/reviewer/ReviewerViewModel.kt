@@ -259,13 +259,6 @@ class ReviewerViewModel(
         mutationSignal.complete(Unit)
     }
 
-    private suspend fun emitEditNoteDestination() {
-        val cardId = currentCard.await().id
-        val destination = NoteEditorLauncher.EditNoteFromPreviewer(cardId)
-        Timber.i("Opening 'edit note' for card %d", cardId)
-        destinationFlow.emit(destination)
-    }
-
     private suspend fun emitAddNoteDestination() {
         Timber.i("Launching 'add note'")
         destinationFlow.emit(NoteEditorLauncher.AddNoteFromReviewer())
@@ -339,16 +332,6 @@ class ReviewerViewModel(
         val destination = BrowserDestination.ScrollToCard(deckId, cardId)
         Timber.i("Launching 'browse options' for deck %d", deckId)
         navigateFlow.emit(destination)
-    }
-
-    private suspend fun deleteNote() {
-        val cardId = currentCard.await().id
-        val noteCount =
-            undoableOp {
-                removeNotes(cardIds = listOf(cardId))
-            }.count
-        actionFeedbackFlow.emit(TR.browsingCardsDeleted(noteCount))
-        updateCurrentCard()
     }
 
     private suspend fun buryCard() {
@@ -699,9 +682,7 @@ class ReviewerViewModel(
                     ViewerAction.CARD_INFO -> emitCardInfoDestination()
                     ViewerAction.PREVIOUS_CARD_INFO -> emitPreviousCardInfoDestination()
                     ViewerAction.DECK_OPTIONS -> emitDeckOptionsDestination()
-                    ViewerAction.EDIT -> emitEditNoteDestination()
                     ViewerAction.TAG -> editNoteTags()
-                    ViewerAction.DELETE -> deleteNote()
                     ViewerAction.MARK -> toggleMark()
                     ViewerAction.REDO -> redo()
                     ViewerAction.UNDO -> undo()

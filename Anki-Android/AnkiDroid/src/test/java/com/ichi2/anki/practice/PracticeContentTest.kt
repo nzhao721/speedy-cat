@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // SPDX-FileCopyrightText: 2026 SpeedyCAT contributors
 //
-// Unit tests for the content bundle parsing + MCAT break synthesis. These mirror
-// the desktop Rust loader/service tests in `anki/rslib/src/practice` so the
-// mobile ingestion of the identical shipped JSON produces the same questions,
-// passages, full-length definitions and scheduled breaks.
+// Unit tests for the practice-question content bundle parsing. These mirror the
+// desktop Rust loader/service tests in `anki/rslib/src/practice` so the mobile
+// ingestion of the identical shipped JSON produces the same questions and
+// passages.
 
 package com.ichi2.anki.practice
 
@@ -18,26 +18,6 @@ class PracticeContentTest {
         assertThat(normalizeSection("  cpbs "), equalTo("CPBS"))
         assertThat(normalizeSection("Cars"), equalTo("CARS"))
         assertThat(normalizeDifficulty("  Easy "), equalTo("easy"))
-    }
-
-    @Test
-    fun `synthesizeBreaks places optional breaks after every section but the last`() {
-        val breaks = synthesizeBreaks(4)
-        assertThat(breaks.size, equalTo(3))
-        assertThat(breaks[0].afterSection, equalTo(1))
-        assertThat(breaks[0].label, equalTo("Break"))
-        assertThat(breaks[0].durationSeconds, equalTo(600))
-        assertThat(breaks[1].afterSection, equalTo(2))
-        assertThat(breaks[1].label, equalTo("Mid-exam break"))
-        assertThat(breaks[1].durationSeconds, equalTo(1800))
-        assertThat(breaks[2].afterSection, equalTo(3))
-        assertThat(breaks[2].label, equalTo("Break"))
-        assertThat(breaks[2].durationSeconds, equalTo(600))
-        assertThat(breaks.all { it.optional }, equalTo(true))
-        // 10-min + 30-min mid-exam + 10-min = 50 min of scheduled breaks.
-        assertThat(breaks.sumOf { it.durationSeconds }, equalTo(3000))
-        // A single-section test synthesizes no breaks.
-        assertThat(synthesizeBreaks(1).isEmpty(), equalTo(true))
     }
 
     @Test
@@ -104,70 +84,5 @@ class PracticeContentTest {
             }
             """.trimIndent()
         assertThat(parseQuestionBundle(json).questions.isEmpty(), equalTo(true))
-    }
-
-    @Test
-    fun `two-section full-length uses one break and the provided testing time`() {
-        val json =
-            """
-            {
-              "testId": "fl-test", "title": "FL", "source": "AI", "format": "AAMC",
-              "disclaimer": "POC", "totalQuestions": 2, "totalTestingSeconds": 11400,
-              "sections": [
-                {"sectionId": "CPBS", "order": 1, "durationSeconds": 5700, "questionCount": 1,
-                 "questions": [{"id": "fl-c1", "section": "CPBS", "stem": "q?",
-                    "choices": [{"label":"A","text":"x"},{"label":"B","text":"y"}],
-                    "correctAnswer": "A", "explanation": "e", "topicTags": ["electrochemistry"],
-                    "difficulty": "medium", "sourceName": "AI", "sourceLicense": "POC"}]},
-                {"sectionId": "CARS", "order": 2, "durationSeconds": 5400, "questionCount": 1,
-                 "questions": [{"id": "fl-r1", "section": "CARS", "stem": "q?",
-                    "choices": [{"label":"A","text":"x"},{"label":"B","text":"y"}],
-                    "correctAnswer": "A", "explanation": "e", "topicTags": ["ethics"],
-                    "difficulty": "medium", "sourceName": "AI", "sourceLicense": "POC"}]}
-              ]
-            }
-            """.trimIndent()
-        val parsed = parseFullLengthBundle(json)
-        assertThat(parsed.test.sections.size, equalTo(2))
-        assertThat(parsed.test.totalTestingSeconds, equalTo(11400))
-        assertThat(parsed.test.breaks.size, equalTo(1))
-        assertThat(parsed.test.breaks[0].afterSection, equalTo(1))
-        assertThat(parsed.test.breaks[0].durationSeconds, equalTo(600))
-        assertThat(parsed.test.breaks[0].optional, equalTo(true))
-        assertThat(parsed.test.totalBreakSeconds, equalTo(600))
-        assertThat(parsed.questions.size, equalTo(2))
-        assertThat(parsed.questions.all { it.testId == "fl-test" }, equalTo(true))
-    }
-
-    @Test
-    fun `four-section full-length synthesizes breaks and derives totals`() {
-        val json =
-            """
-            {
-              "testId": "fl-4", "title": "Full", "source": "AI", "format": "AAMC",
-              "sections": [
-                {"sectionId": "CPBS", "order": 1, "durationSeconds": 5700, "questionCount": 0},
-                {"sectionId": "CARS", "order": 2, "durationSeconds": 5400, "questionCount": 0},
-                {"sectionId": "BBLS", "order": 3, "durationSeconds": 5700, "questionCount": 0},
-                {"sectionId": "PSBB", "order": 4, "durationSeconds": 5700, "questionCount": 0}
-              ]
-            }
-            """.trimIndent()
-        val test = parseFullLengthBundle(json).test
-        assertThat(test.sections.size, equalTo(4))
-        assertThat(test.breaks.size, equalTo(3))
-        assertThat(test.breaks[0].afterSection, equalTo(1))
-        assertThat(test.breaks[0].label, equalTo("Break"))
-        assertThat(test.breaks[0].durationSeconds, equalTo(600))
-        assertThat(test.breaks[1].afterSection, equalTo(2))
-        assertThat(test.breaks[1].label, equalTo("Mid-exam break"))
-        assertThat(test.breaks[1].durationSeconds, equalTo(1800))
-        assertThat(test.breaks[2].afterSection, equalTo(3))
-        assertThat(test.breaks[2].label, equalTo("Break"))
-        assertThat(test.breaks[2].durationSeconds, equalTo(600))
-        // 10-min + 30-min mid-exam + 10-min = 50 min of scheduled breaks.
-        assertThat(test.totalBreakSeconds, equalTo(3000))
-        // total_testing_seconds defaults to the sum of section durations.
-        assertThat(test.totalTestingSeconds, equalTo(22500))
     }
 }

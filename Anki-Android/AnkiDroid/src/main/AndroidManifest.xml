@@ -303,8 +303,8 @@
             android:parentActivityName=".DeckPicker"
             />
         <activity
-            android:name=".practice.FullLengthActivity"
-            android:label="@string/speedycat_full_length_tests"
+            android:name=".practice.ReadinessActivity"
+            android:label="@string/speedycat_readiness"
             android:exported="false"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:parentActivityName=".DeckPicker"

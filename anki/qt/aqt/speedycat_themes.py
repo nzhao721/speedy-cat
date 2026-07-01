@@ -29,6 +29,7 @@ script (``content/flashcards/_tools/{fix_cards,verify_deck_reorg}.py``).
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
@@ -36,6 +37,67 @@ if TYPE_CHECKING:
     from anki.collection import Collection
 
 PARENT_DECK = "SpeedyCAT MCAT"
+
+# --- tag-breadcrumb cleanup (shared by the desktop app and the apkg builder) --
+#
+# The bundled cards are pre-rendered HTML: the dataset was produced by rendering
+# the free community notes through their ORIGINAL notetypes, whose templates
+# wrapped ``{{Tags}}`` in a ``<div class="tags">…</div>`` header. That rendered
+# element is therefore baked into the stored Front/Back HTML of every tagged
+# card, so the Browse Front/Back columns show a leading tag breadcrumb
+# (e.g. ``General_Chemistry::Atomic_Structure``) before the real question/answer
+# — even though the shipped ``SpeedyCAT`` notetype's own templates are just
+# ``{{Front}}``/``{{Back}}`` and the raw source fields were clean.
+#
+# The fix strips that one wrapper from the field HTML, leaving cloze, images,
+# the answer "extra" block and all styling intact. It is applied both at build
+# time (baked into the shipped apkg) and as an idempotent desktop migration for
+# already-imported collections.
+_SPEEDYCAT_NOTETYPE = "SpeedyCAT"
+
+# Matches the question form ``<div class="tags">…</div>`` and the answer form
+# ``<div class="tags" id='tags'>…</div>``. The inner text is plain tag names
+# (never nested markup), so the non-greedy body match is safe; trailing
+# whitespace is swallowed to avoid leaving a blank line.
+_TAG_BREADCRUMB_RE = re.compile(
+    r'<div class="tags"[^>]*>.*?</div>\s*', re.IGNORECASE | re.DOTALL
+)
+
+# Cheap, self-healing guard/selector: bundled ``SpeedyCAT`` notes whose fields
+# still contain the breadcrumb wrapper. An empty result means there is nothing
+# to do, so the migration is a no-op once a collection is already clean. Only
+# the bundled notetype is matched, so a user's own notes are never touched.
+TAG_BREADCRUMB_SEARCH = f'note:{_SPEEDYCAT_NOTETYPE} "re:<div class=.tags."'
+
+
+def strip_tag_breadcrumb_html(html: str) -> str:
+    """Return ``html`` with the baked-in ``<div class="tags">…</div>`` breadcrumb
+    wrapper removed. Idempotent: HTML without the wrapper is returned unchanged."""
+    return _TAG_BREADCRUMB_RE.sub("", html)
+
+
+def strip_tag_breadcrumbs(col: Collection) -> int:
+    """Strip the leading tag breadcrumb from every bundled ``SpeedyCAT`` note.
+
+    Only notes of the bundled ``SpeedyCAT`` notetype are inspected (via
+    :data:`TAG_BREADCRUMB_SEARCH`), so a user's own notes are never modified.
+    Returns the number of notes changed; a second run matches nothing and
+    returns ``0`` (idempotent, lossless — only field HTML changes)."""
+    changed = []
+    for nid in col.find_notes(TAG_BREADCRUMB_SEARCH):
+        note = col.get_note(nid)
+        dirty = False
+        for i, val in enumerate(note.fields):
+            new = strip_tag_breadcrumb_html(val)
+            if new != val:
+                note.fields[i] = new
+                dirty = True
+        if dirty:
+            changed.append(note)
+    if changed:
+        col.update_notes(changed)
+    return len(changed)
+
 
 # --- source deck -> theme mapping (single source of truth) -------------------
 #

@@ -60,7 +60,6 @@ from aqt.toolbar import BottomWebView, Toolbar, TopWebView
 from aqt.undo import UndoActionsInfo
 from aqt.utils import (
     HelpPage,
-    KeyboardModifiersPressed,
     askUser,
     checkInvalidFilename,
     current_window,
@@ -711,7 +710,9 @@ class AnkiQt(QMainWindow):
             self.update_undo_actions()
             gui_hooks.collection_did_load(self.col)
             self.apply_collection_options()
-            self.moveToState("deckBrowser")
+            # SpeedyCAT: the whole-collection Stats dashboard is the homepage,
+            # so opening a profile lands there instead of on the deck list.
+            self.moveToState("speedycat", "stats")
         except Exception:
             # dump error to stderr so it gets picked up by errors.py
             traceback.print_exc()
@@ -855,11 +856,13 @@ class AnkiQt(QMainWindow):
     def _speedycatState(
         self, oldState: MainWindowState, mode: str = "practice"
     ) -> None:
-        # SpeedyCAT: render an MCAT study mode INSIDE the main window. Hide the
-        # normal deck-browser content (`web` + bottom bar) and reveal the
-        # dedicated API-enabled `speedycatWeb` navigated to the mode's route.
-        # The one webview is reused across modes -- only navigate when the mode
-        # actually changes -- so switching tabs never opens a separate window.
+        # SpeedyCAT: render an MCAT study mode (or the stats dashboard) INSIDE
+        # the main window. Hide the normal deck-browser content (`web` + bottom
+        # bar) and reveal the dedicated API-enabled `speedycatWeb` navigated to
+        # the mode's route. The one webview is reused across modes -- only
+        # navigate when the mode actually changes -- so switching tabs never
+        # opens a separate window. The stats dashboard always re-navigates so
+        # it shows fresh numbers whenever the user returns to it.
         import aqt.practice
 
         if mode not in aqt.practice.STUDY_ROUTES:
@@ -867,7 +870,7 @@ class AnkiQt(QMainWindow):
         aqt.practice.ensure_content_loaded(self)
         self.web.hide()
         self.bottomWeb.hide()
-        if self._speedycat_mode != mode:
+        if self._speedycat_mode != mode or mode == "stats":
             self._speedycat_mode = mode
             self.speedycatWeb.load_sveltekit_page(aqt.practice.STUDY_ROUTES[mode])
         self.speedycatWeb.show()
@@ -877,6 +880,16 @@ class AnkiQt(QMainWindow):
         # setter re-renders (and re-shows) the normal content via stdHtml().
         if newState != "speedycat":
             self.speedycatWeb.hide()
+
+    def _on_speedycat_bridge_cmd(self, cmd: str) -> bool:
+        # SpeedyCAT: the embedded stats dashboard reuses the stock graph
+        # components, whose bars/legends link into the card browser. Mirror the
+        # old stats dialog's bridge handling so those links keep working.
+        if cmd.startswith("browserSearch"):
+            _, query = cmd.split(":", 1)
+            browser = aqt.dialogs.open("Browser", self)
+            browser.search_for(query)
+        return False
 
     # Resetting state
     ##########################################################################
@@ -1027,6 +1040,8 @@ title="{}" {}>{}</button>""".format(
         self.speedycatWeb.setFocusPolicy(Qt.FocusPolicy.WheelFocus)
         self.speedycatWeb.setMinimumWidth(400)
         self.speedycatWeb.hide()
+        # graph bars on the embedded stats dashboard link into the browser
+        self.speedycatWeb.set_bridge_command(self._on_speedycat_bridge_cmd, self)
         self._speedycat_mode = None
         # bottom area
         sweb = self.bottomWeb = BottomWebView(self)
@@ -1395,14 +1410,10 @@ title="{}" {}>{}</button>""".format(
         self.moveToState("overview")
 
     def onStats(self) -> None:
-        deck = self._selectedDeck()
-        if not deck:
-            return
-        want_old = KeyboardModifiersPressed().shift
-        if want_old:
-            aqt.dialogs.open("DeckStats", self)
-        else:
-            aqt.dialogs.open("NewDeckStats", self)
+        # SpeedyCAT: stats are embedded in the main window (the dashboard is
+        # also the homepage). The old NewDeckStats/DeckStats dialogs remain
+        # registered for add-on compatibility, but nothing opens them anymore.
+        self.moveToState("speedycat", "stats")
 
     def onPrefs(self) -> None:
         aqt.dialogs.open("Preferences", self)
@@ -2123,7 +2134,10 @@ title="{}" {}>{}</button>""".format(
 
     def interactiveState(self) -> bool:
         "True if not in profile manager, syncing, etc."
-        return self.state in ("overview", "review", "deckBrowser")
+        # SpeedyCAT: the embedded study/stats tabs count as interactive -- the
+        # stats dashboard is the startup landing page, so file imports and
+        # window-raise requests must still work from it.
+        return self.state in ("overview", "review", "deckBrowser", "speedycat")
 
     # GC
     ##########################################################################

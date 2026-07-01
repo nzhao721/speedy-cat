@@ -49,7 +49,8 @@ _FULL_LENGTH_SUBDIR = "full-length-tests"
 # imported by an earlier build re-imports the new bundles on next open. The
 # marker is a collection config value, so it syncs with the collection and the
 # import only ever runs once per (collection, content version).
-_CONTENT_MARKER = "speedycat_practice_content_v1"
+# v2: adds the AI-generated practice-question expansion (3,974 items; 5,174 total).
+_CONTENT_MARKER = "speedycat_practice_content_v2"
 
 # Guards against queuing the import twice (e.g. the profile hook and a page
 # opening before the first import finishes). Collection background ops are
@@ -181,6 +182,11 @@ def _auto_load_on_open() -> None:
 STUDY_ROUTES: dict[str, str] = {
     "practice": "practice",
     "full-length": "full-length",
+    "readiness": "readiness",
+    # SpeedyCAT: the Stats dashboard is embedded through the same state (it is
+    # also the startup landing page), so the toolbar's Stats tab swaps the main
+    # window content instead of opening the old separate stats dialog.
+    "stats": "graphs",
 }
 DEFAULT_STUDY_MODE = "practice"
 

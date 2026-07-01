@@ -82,6 +82,7 @@ ListFullLengthTestsResponse = practice_pb2.ListFullLengthTestsResponse
 StartFullLengthAttemptResponse = practice_pb2.StartFullLengthAttemptResponse
 FullLengthReport = practice_pb2.FullLengthReport
 GetTopicStatsResponse = practice_pb2.GetTopicStatsResponse
+GetReadinessResponse = practice_pb2.GetReadinessResponse
 
 import logging
 import os
@@ -577,6 +578,17 @@ class Collection(DeprecatedNamesMixin):
             req.section = section
         return GetTopicStatsResponse.FromString(
             self._backend.get_topic_stats_raw(req.SerializeToString())
+        )
+
+    def get_readiness(self, *, deck_search: str = "") -> GetReadinessResponse:
+        """SpeedyCAT: the 3-pillar exam-readiness metric (Memory / Performance /
+        Readiness). Deterministic; each pillar reports a value, an explicit range
+        and a named source, or "gives up" with a message when data is
+        insufficient. ``deck_search`` selects the flashcard deck whose FSRS
+        retrievability feeds the Memory pillar (empty = whole collection)."""
+        req = practice_pb2.GetReadinessRequest(deck_search=deck_search)
+        return GetReadinessResponse.FromString(
+            self._backend.get_readiness_raw(req.SerializeToString())
         )
 
     def get_csv_metadata(self, path: str, delimiter: Delimiter.V | None) -> CsvMetadata:

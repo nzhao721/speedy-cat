@@ -6,6 +6,7 @@
 //! sessions, full-length attempts, and per-topic tracking.
 
 use std::collections::BTreeMap;
+use std::collections::HashMap;
 
 use anki_proto::practice as pb;
 use rand::rngs::StdRng;
@@ -364,6 +365,24 @@ impl crate::services::PracticeService for Collection {
             .section_stats(section_db.as_deref(), source_clause)?;
         Ok(pb::GetTopicStatsResponse { topics, sections })
     }
+
+    // ---- Exam readiness ---------------------------------------------------
+
+    fn get_readiness(
+        &mut self,
+        input: pb::GetReadinessRequest,
+    ) -> Result<pb::GetReadinessResponse> {
+        let memory = self.readiness_memory(&input.deck_search)?;
+        let (performance, performance_avg_seconds) = self.readiness_performance()?;
+        let (readiness, section_scores) = self.readiness_full_length()?;
+        Ok(pb::GetReadinessResponse {
+            memory: Some(memory),
+            performance: Some(performance),
+            readiness: Some(readiness),
+            section_scores,
+            performance_avg_seconds,
+        })
+    }
 }
 
 impl Collection {
@@ -409,6 +428,216 @@ impl Collection {
         let questions = self.filtered_questions(filter)?;
         Ok(assemble_serving_order(questions, filter.limit, None))
     }
+}
+
+// ---- Exam readiness (3-pillar deterministic metric) ------------------------
+
+/// z-score for a two-sided 95% interval (used by every pillar's range).
+const READINESS_Z: f64 = 1.96;
+/// Minimum reviewed cards before the Memory pillar reports (else it gives up).
+const MIN_MEMORY_CARDS: u64 = 30;
+/// Minimum answered practice questions before the Performance pillar reports.
+const MIN_PERFORMANCE_ATTEMPTS: u32 = 20;
+
+impl Collection {
+    /// Pillar 1 — Memory: mean FSRS retrievability over the reviewed cards
+    /// matched by `deck_search`, taken from the stock stats graph data (so no
+    /// FSRS math is re-implemented). Gives up when FSRS is off or fewer than
+    /// [`MIN_MEMORY_CARDS`] cards have a retrievability.
+    fn readiness_memory(&mut self, deck_search: &str) -> Result<pb::ReadinessPillar> {
+        const SOURCE: &str =
+            "Anki FSRS retrievability (StatsService graph data → retrievability.average)";
+        const METHOD: &str = "mean ± 1.96·SE of per-card FSRS retrievability";
+        let graphs = self.graph_data_for_search(deck_search, 0)?;
+        if !graphs.fsrs {
+            return Ok(give_up_pillar(
+                SOURCE,
+                METHOD,
+                "Turn on FSRS to unlock your Memory score.".to_string(),
+                0,
+            ));
+        }
+        let retr = graphs.retrievability.unwrap_or_default();
+        match memory_mean_and_se(&retr.retrievability, retr.average as f64) {
+            Some((mean, se, n)) if n >= MIN_MEMORY_CARDS => {
+                let (low, high) = clamp_interval(mean - READINESS_Z * se, mean + READINESS_Z * se);
+                Ok(pb::ReadinessPillar {
+                    available: true,
+                    value: mean,
+                    range_low: low,
+                    range_high: high,
+                    sample_size: n as u32,
+                    source: SOURCE.to_string(),
+                    method: METHOD.to_string(),
+                    message: String::new(),
+                })
+            }
+            other => {
+                let n = other.map(|(_, _, n)| n).unwrap_or(0);
+                Ok(give_up_pillar(
+                    SOURCE,
+                    METHOD,
+                    format!(
+                        "Study more MCAT cards to unlock your Memory score (need ≥{MIN_MEMORY_CARDS} \
+                         reviewed cards, have {n})."
+                    ),
+                    n as u32,
+                ))
+            }
+        }
+    }
+
+    /// Pillar 2 — Performance: accuracy over answered practice questions, with a
+    /// Wilson 95% interval. Also returns the average seconds per question.
+    fn readiness_performance(&self) -> Result<(pb::ReadinessPillar, f64)> {
+        const SOURCE: &str = "SpeedyCAT practice sessions (practice_attempts store)";
+        const METHOD: &str = "practice accuracy with a Wilson 95% score interval";
+        let (correct, answered, total_time) = self.storage.practice_accuracy_totals()?;
+        if answered < MIN_PERFORMANCE_ATTEMPTS {
+            return Ok((
+                give_up_pillar(
+                    SOURCE,
+                    METHOD,
+                    format!(
+                        "Answer more practice questions to unlock your Performance score (need \
+                         ≥{MIN_PERFORMANCE_ATTEMPTS} answered, have {answered})."
+                    ),
+                    answered,
+                ),
+                0.0,
+            ));
+        }
+        let (value, low, high) = wilson_interval(correct, answered, READINESS_Z);
+        let avg_seconds = total_time as f64 / answered as f64;
+        Ok((
+            pb::ReadinessPillar {
+                available: true,
+                value,
+                range_low: low,
+                range_high: high,
+                sample_size: answered,
+                source: SOURCE.to_string(),
+                method: METHOD.to_string(),
+                message: String::new(),
+            },
+            avg_seconds,
+        ))
+    }
+
+    /// Pillar 3 — Readiness: raw score (correct ÷ total) across COMPLETED
+    /// full-length tests only, with a Wilson 95% interval and a per-section
+    /// breakdown. Deliberately excludes timing/pacing, breaks, question
+    /// distribution and everything outside the full-length tests.
+    fn readiness_full_length(
+        &self,
+    ) -> Result<(pb::ReadinessPillar, Vec<pb::ReadinessSectionScore>)> {
+        const SOURCE: &str = "SpeedyCAT full-length tests (completed attempts, raw score)";
+        const METHOD: &str =
+            "raw correct ÷ total across completed full-length tests, with a Wilson 95% interval";
+        let (correct, total) = self.storage.full_length_score_totals()?;
+        if total == 0 {
+            return Ok((
+                give_up_pillar(
+                    SOURCE,
+                    METHOD,
+                    "Finish a full-length test to unlock your Readiness score.".to_string(),
+                    0,
+                ),
+                Vec::new(),
+            ));
+        }
+        let (value, low, high) = wilson_interval(correct, total, READINESS_Z);
+        let section_scores = self
+            .storage
+            .full_length_section_scores()?
+            .into_iter()
+            .map(|(section, correct, total)| pb::ReadinessSectionScore {
+                section: section_from_db(&section),
+                correct,
+                total,
+            })
+            .collect();
+        Ok((
+            pb::ReadinessPillar {
+                available: true,
+                value,
+                range_low: low,
+                range_high: high,
+                sample_size: total,
+                source: SOURCE.to_string(),
+                method: METHOD.to_string(),
+                message: String::new(),
+            },
+            section_scores,
+        ))
+    }
+}
+
+/// Build a pillar in its "gave up" state (a prerequisite is off, or there is
+/// not enough data): no value/range, just the sample size and an explanation.
+fn give_up_pillar(
+    source: &str,
+    method: &str,
+    message: String,
+    sample_size: u32,
+) -> pb::ReadinessPillar {
+    pb::ReadinessPillar {
+        available: false,
+        value: 0.0,
+        range_low: 0.0,
+        range_high: 0.0,
+        sample_size,
+        source: source.to_string(),
+        method: method.to_string(),
+        message,
+    }
+}
+
+/// Clamp an interval's endpoints to the valid [0, 1] fraction range.
+fn clamp_interval(low: f64, high: f64) -> (f64, f64) {
+    (low.clamp(0.0, 1.0), high.clamp(0.0, 1.0))
+}
+
+/// Wilson score interval for a binomial proportion at `z` (1.96 ≈ 95%). Returns
+/// (point estimate, low, high) as fractions in [0, 1]. The point estimate is the
+/// raw proportion; the Wilson interval is well-behaved for small samples and
+/// near 0/1, and never leaves [0, 1].
+fn wilson_interval(correct: u32, total: u32, z: f64) -> (f64, f64, f64) {
+    if total == 0 {
+        return (0.0, 0.0, 0.0);
+    }
+    let n = total as f64;
+    let p = (correct as f64 / n).clamp(0.0, 1.0);
+    let z2 = z * z;
+    let denom = 1.0 + z2 / n;
+    let center = (p + z2 / (2.0 * n)) / denom;
+    let margin = z * ((p * (1.0 - p) / n) + z2 / (4.0 * n * n)).sqrt() / denom;
+    let (low, high) = clamp_interval(center - margin, center + margin);
+    (p, low, high)
+}
+
+/// Estimate the mean and standard error of per-card FSRS retrievability from the
+/// stock stats retrievability histogram (bin = floor-percent → card count) plus
+/// the exact mean percentage reported alongside it. Returns (mean, se, n) as
+/// fractions in [0, 1], or `None` when no card has a retrievability. The mean
+/// comes straight from the exact `average`; the SE is estimated from the 1%-wide
+/// histogram bins, so no FSRS math is re-implemented here.
+fn memory_mean_and_se(hist: &HashMap<u32, u32>, average_percent: f64) -> Option<(f64, f64, u64)> {
+    let n: u64 = hist.values().map(|c| *c as u64).sum();
+    if n == 0 {
+        return None;
+    }
+    let mean = (average_percent / 100.0).clamp(0.0, 1.0);
+    // Sum of squared deviations, treating each 1%-wide bin's centre as the
+    // representative retrievability of the cards it holds.
+    let mut sum_sq_dev = 0.0f64;
+    for (bin, count) in hist {
+        let representative = ((*bin as f64) + 0.5) / 100.0;
+        sum_sq_dev += (representative - mean).powi(2) * (*count as f64);
+    }
+    let variance = sum_sq_dev / n as f64;
+    let se = (variance / n as f64).sqrt();
+    Some((mean, se, n))
 }
 
 /// Assemble the serving order for a set of matched questions.
@@ -498,6 +727,8 @@ fn shuffle_question_choices(question: &mut pb::PracticeQuestion, session_id: &st
 
 #[cfg(test)]
 mod test {
+    use std::collections::HashMap;
+
     use anki_proto::practice as pb;
 
     use crate::collection::Collection;
@@ -1529,5 +1760,201 @@ mod test {
         })?;
         assert_eq!(again.questions.len(), 5);
         Ok(())
+    }
+
+    // ---- Exam readiness ---------------------------------------------------
+
+    /// With no study data every pillar "gives up": each is unavailable, carries
+    /// an explanatory message and a named source, and never reports a bare
+    /// value/range.
+    #[test]
+    fn readiness_gives_up_without_data() -> Result<()> {
+        let mut col = Collection::new();
+        let r = col.get_readiness(pb::GetReadinessRequest {
+            deck_search: String::new(),
+        })?;
+
+        for pillar in [
+            r.memory.as_ref().unwrap(),
+            r.performance.as_ref().unwrap(),
+            r.readiness.as_ref().unwrap(),
+        ] {
+            assert!(!pillar.available, "pillar should give up: {pillar:?}");
+            assert!(!pillar.message.is_empty(), "give-up needs a message");
+            assert!(!pillar.source.is_empty(), "pillar needs a named source");
+            assert_eq!(pillar.value, 0.0);
+            assert_eq!(pillar.range_low, 0.0);
+            assert_eq!(pillar.range_high, 0.0);
+        }
+        assert!(r.section_scores.is_empty());
+        assert_eq!(r.performance_avg_seconds, 0.0);
+        Ok(())
+    }
+
+    /// A populated store yields available Performance and Readiness pillars, each
+    /// with a value strictly inside a [0,1] range, the right sample size, a named
+    /// source, and (for Readiness) a per-section raw breakdown. Memory still
+    /// gives up because the fresh collection has no reviewed cards.
+    #[test]
+    fn readiness_reports_performance_and_full_length() -> Result<()> {
+        let mut col = Collection::new();
+
+        // Pillar 2: 24 answered practice-session questions, 18 correct, 60s each.
+        for i in 0..24 {
+            col.storage.add_practice_attempt(&NewAttempt {
+                id: &format!("ps:{i}"),
+                session_id: Some("s1"),
+                full_length_attempt_id: None,
+                question_id: &format!("q{i}"),
+                selected_answer: "A",
+                correct: i < 18,
+                time_on_question_seconds: 60,
+                section_db: "CPBS",
+                topic: "kinetics",
+                answered_at: 0,
+            })?;
+        }
+        // A skipped (unanswered) question must not count toward accuracy.
+        col.storage.add_practice_attempt(&NewAttempt {
+            id: "ps:skip",
+            session_id: Some("s1"),
+            full_length_attempt_id: None,
+            question_id: "q-skip",
+            selected_answer: "",
+            correct: false,
+            time_on_question_seconds: 5,
+            section_db: "CPBS",
+            topic: "kinetics",
+            answered_at: 0,
+        })?;
+
+        // Pillar 3: one completed full-length attempt, two sections, 3/4 correct.
+        col.storage
+            .add_full_length_attempt("fla1", "fl-test", None, 0)?;
+        let answers = [("CPBS", true), ("CPBS", true), ("CARS", true), ("CARS", false)];
+        for (i, (section, correct)) in answers.iter().enumerate() {
+            col.storage.add_practice_attempt(&NewAttempt {
+                id: &format!("fla1:{i}"),
+                session_id: None,
+                full_length_attempt_id: Some("fla1"),
+                question_id: &format!("f{i}"),
+                selected_answer: "A",
+                correct: *correct,
+                time_on_question_seconds: 90,
+                section_db: section,
+                topic: "t",
+                answered_at: 0,
+            })?;
+        }
+        col.storage
+            .complete_full_length_attempt("fla1", "[]", None, 100)?;
+
+        let r = col.get_readiness(pb::GetReadinessRequest {
+            deck_search: String::new(),
+        })?;
+
+        // Memory: no reviewed cards on a fresh collection -> give up.
+        let memory = r.memory.unwrap();
+        assert!(!memory.available);
+        assert!(!memory.message.is_empty());
+
+        // Performance: 18/24 = 0.75 over the 24 answered (skip excluded), inside
+        // a proper [0,1] range, ~60s/question.
+        let perf = r.performance.unwrap();
+        assert!(perf.available);
+        assert_eq!(perf.sample_size, 24);
+        assert!((perf.value - 0.75).abs() < 1e-9);
+        assert!(perf.range_low < perf.value && perf.value < perf.range_high);
+        assert!(perf.range_low >= 0.0 && perf.range_high <= 1.0);
+        assert!(!perf.source.is_empty());
+        assert!((r.performance_avg_seconds - 60.0).abs() < 1e-9);
+
+        // Readiness: 3/4 = 0.75 across the completed full-length, with a
+        // per-section raw breakdown.
+        let readiness = r.readiness.unwrap();
+        assert!(readiness.available);
+        assert_eq!(readiness.sample_size, 4);
+        assert!((readiness.value - 0.75).abs() < 1e-9);
+        assert!(readiness.range_low < readiness.value && readiness.value < readiness.range_high);
+        assert_eq!(r.section_scores.len(), 2);
+        let cpbs_score = r.section_scores.iter().find(|s| s.section == cpbs()).unwrap();
+        assert_eq!((cpbs_score.correct, cpbs_score.total), (2, 2));
+        let cars_score = r.section_scores.iter().find(|s| s.section == cars()).unwrap();
+        assert_eq!((cars_score.correct, cars_score.total), (1, 2));
+        Ok(())
+    }
+
+    /// An in-progress (not yet submitted) full-length attempt does not count
+    /// toward the Readiness pillar — only completed tests contribute a score.
+    #[test]
+    fn readiness_ignores_incomplete_full_length() -> Result<()> {
+        let mut col = Collection::new();
+        col.storage
+            .add_full_length_attempt("fla-open", "fl-test", None, 0)?;
+        col.storage.add_practice_attempt(&NewAttempt {
+            id: "fla-open:0",
+            session_id: None,
+            full_length_attempt_id: Some("fla-open"),
+            question_id: "f0",
+            selected_answer: "A",
+            correct: true,
+            time_on_question_seconds: 90,
+            section_db: "CPBS",
+            topic: "t",
+            answered_at: 0,
+        })?;
+
+        let r = col.get_readiness(pb::GetReadinessRequest {
+            deck_search: String::new(),
+        })?;
+        let readiness = r.readiness.unwrap();
+        assert!(!readiness.available);
+        assert_eq!(readiness.sample_size, 0);
+        assert!(r.section_scores.is_empty());
+        Ok(())
+    }
+
+    /// The Wilson interval brackets the point estimate, stays within [0,1] even
+    /// for a perfect small sample, and returns zeros for an empty sample.
+    #[test]
+    fn wilson_interval_is_sane() {
+        let (p, low, high) = super::wilson_interval(50, 100, super::READINESS_Z);
+        assert!((p - 0.5).abs() < 1e-9);
+        assert!(low < 0.5 && 0.5 < high);
+        assert!(low >= 0.0 && high <= 1.0);
+        // Roughly symmetric around 0.5 for a balanced sample.
+        assert!(((0.5 - low) - (high - 0.5)).abs() < 1e-6);
+
+        let (p, low, high) = super::wilson_interval(5, 5, super::READINESS_Z);
+        assert!((p - 1.0).abs() < 1e-9);
+        assert!(high <= 1.0 && low > 0.0 && low < 1.0);
+
+        assert_eq!(
+            super::wilson_interval(0, 0, super::READINESS_Z),
+            (0.0, 0.0, 0.0)
+        );
+    }
+
+    /// The Memory mean/SE is derived from the retrievability histogram: the mean
+    /// tracks the reported average, a tight distribution has a near-zero SE, a
+    /// spread-out one has a larger SE, and an empty histogram yields None.
+    #[test]
+    fn memory_mean_and_se_from_histogram() {
+        let mut tight: HashMap<u32, u32> = HashMap::new();
+        tight.insert(90, 40);
+        let (mean, se, n) = super::memory_mean_and_se(&tight, 90.5).unwrap();
+        assert_eq!(n, 40);
+        assert!((mean - 0.905).abs() < 1e-9);
+        assert!(se < 0.01);
+
+        let mut spread: HashMap<u32, u32> = HashMap::new();
+        spread.insert(50, 25);
+        spread.insert(90, 25);
+        let (mean2, se2, n2) = super::memory_mean_and_se(&spread, 70.5).unwrap();
+        assert_eq!(n2, 50);
+        assert!((mean2 - 0.705).abs() < 1e-9);
+        assert!(se2 > se);
+
+        assert!(super::memory_mean_and_se(&HashMap::new(), 0.0).is_none());
     }
 }

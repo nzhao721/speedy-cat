@@ -4,10 +4,12 @@
   ~ SPDX-FileCopyrightText: 2026 SpeedyCAT contributors
   ~
   ~ User-visible strings for the SpeedyCAT MCAT study modes (Practice Questions
-  ~ and Full-Length Tests). Marked translatable="false": these are fork-specific
+  ~ and Readiness). Marked translatable="false": these are fork-specific
   ~ and are not sent through the upstream translation pipeline.
   -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="speedycat_practice_questions" translatable="false">Practice Questions</string>
-    <string name="speedycat_full_length_tests" translatable="false">Full-Length Tests</string>
+    <string name="speedycat_readiness" translatable="false">Readiness</string>
+    <!-- Account row on the More screen: subtitle shown when no sync account is signed in. -->
+    <string name="speedycat_not_signed_in" translatable="false">Not signed in</string>
 </resources>

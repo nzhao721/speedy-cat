@@ -21,7 +21,6 @@ class PracticeLogicTest {
         passageId: String? = null,
         topicTags: List<String> = emptyList(),
         difficulty: Difficulty? = null,
-        testId: String? = null,
         correctAnswer: String = "A",
     ) = PracticeQuestion(
         id = id,
@@ -39,7 +38,6 @@ class PracticeLogicTest {
         sourceUrl = null,
         answerProvenance = null,
         notes = null,
-        testId = testId,
     )
 
     private fun attempt(
@@ -50,11 +48,9 @@ class PracticeLogicTest {
         topic: String,
         selected: String = if (correct) "A" else "B",
         sessionId: String? = "s1",
-        fullLengthAttemptId: String? = null,
     ) = Attempt(
         id = questionId,
         sessionId = sessionId,
-        fullLengthAttemptId = fullLengthAttemptId,
         questionId = questionId,
         selectedAnswer = selected,
         correct = correct,
@@ -224,23 +220,17 @@ class PracticeLogicTest {
     }
 
     @Test
-    fun `filters for difficulty full-length and missed narrow the set`() {
+    fun `filters for difficulty and missed narrow the set`() {
         val bank =
             listOf(
                 q("cpbs-a", McatSection.CPBS, difficulty = Difficulty.EASY),
                 q("cpbs-b", McatSection.CPBS, difficulty = Difficulty.MEDIUM),
                 q("cpbs-c", McatSection.CPBS, difficulty = Difficulty.HARD),
-                q("fl-q1", McatSection.CPBS, difficulty = Difficulty.HARD, testId = "fl-1"),
             )
-        // Free-standing only excludes the full-length item by default.
+        // A plain section filter serves the whole section, id-ordered.
         assertThat(
             ids(bank, QuestionFilter(sections = listOf(McatSection.CPBS))),
             equalTo(listOf("cpbs-a", "cpbs-b", "cpbs-c")),
-        )
-        // Including full-length adds it.
-        assertThat(
-            ids(bank, QuestionFilter(sections = listOf(McatSection.CPBS), includeFullLength = true)).size,
-            equalTo(4),
         )
         // Difficulty selects a single item.
         assertThat(
@@ -295,7 +285,6 @@ class PracticeLogicTest {
                     section = McatSection.CPBS,
                     topic = "kinetics",
                     sessionId = null,
-                    fullLengthAttemptId = "fla1",
                 ),
             )
         val all = topicStats(attempts, AttemptSource.ALL)
@@ -306,47 +295,149 @@ class PracticeLogicTest {
         assertThat(acids.accuracy, closeTo(0.5, 1e-9))
         assertThat(acids.avgTimeSeconds, closeTo(40.0, 1e-9))
 
-        // Practice-session source excludes the full-length "kinetics" miss.
+        // ALL counts every attempt, including the non-session "kinetics" miss.
+        val allKinetics = all.first { it.topic == "kinetics" }
+        assertThat(allKinetics.attempts, equalTo(2))
+        assertThat(allKinetics.correct, equalTo(1))
+
+        // Practice-session source excludes the non-session "kinetics" miss.
         val practiceKinetics = topicStats(attempts, AttemptSource.PRACTICE_SESSION).first { it.topic == "kinetics" }
         assertThat(practiceKinetics.attempts, equalTo(1))
         assertThat(practiceKinetics.correct, equalTo(1))
+    }
 
-        val flKinetics = topicStats(attempts, AttemptSource.FULL_LENGTH).first { it.topic == "kinetics" }
-        assertThat(flKinetics.attempts, equalTo(1))
-        assertThat(flKinetics.correct, equalTo(0))
+    // ---- Randomization: seeded selection + answer-choice shuffle ----------
+    // These mirror the desktop Rust tests for `assemble_serving_order`,
+    // `shuffle_question_choices` and `seed_from_str` in
+    // `anki/rslib/src/practice/service.rs` + `mod.rs`.
+
+    private fun discrete(id: String) = q(id, McatSection.CPBS)
+
+    private fun passageQ(
+        id: String,
+        passageId: String,
+    ) = q(id, McatSection.CARS, passageId = passageId)
+
+    private fun mcq(
+        correct: String,
+        id: String = "q1",
+    ) = PracticeQuestion(
+        id = id,
+        section = McatSection.CPBS,
+        passageId = null,
+        stem = "stem",
+        choices = listOf(AnswerChoice("A", "w"), AnswerChoice("B", "x"), AnswerChoice("C", "y"), AnswerChoice("D", "z")),
+        correctAnswer = correct,
+        explanation = "e",
+        questionType = null,
+        topicTags = emptyList(),
+        difficulty = null,
+        sourceName = "src",
+        sourceLicense = "lic",
+        sourceUrl = null,
+        answerProvenance = null,
+        notes = null,
+    )
+
+    @Test
+    fun `assembleServingOrder unseeded keeps the deterministic first-seen order`() {
+        val pool = (0 until 20).map { discrete("q%02d".format(it)) }
+        assertThat(assembleServingOrder(pool, 0).map { it.id }, equalTo(pool.map { it.id }))
     }
 
     @Test
-    fun `fullLengthReport aggregates per section`() {
-        val attempts =
+    fun `seeded selection shuffle is a permutation that varies across seeds and honours the limit`() {
+        val pool = (0 until 20).map { discrete("q%02d".format(it)) }
+        val sortedIds = pool.map { it.id }.sorted()
+        val orders =
+            (1L..5L).map { seed ->
+                val shuffled = assembleServingOrder(pool, 0, seed)
+                // A shuffle is a permutation of the whole pool.
+                assertThat(shuffled.map { it.id }.sorted(), equalTo(sortedIds))
+                shuffled.map { it.id }
+            }
+        // At least one seed reorders vs first-seen, and the seeds disagree.
+        assertThat(orders.any { it != pool.map { q -> q.id } }, equalTo(true))
+        assertThat(orders.toSet().size > 1, equalTo(true))
+        // The count limit still applies after shuffling (random subset of 5).
+        assertThat(assembleServingOrder(pool, 5, 1L).size, equalTo(5))
+    }
+
+    @Test
+    fun `seeded shuffle keeps passage sets contiguous and internally ordered`() {
+        val pool =
             listOf(
-                attempt(
-                    "fl-c1",
-                    correct = true,
-                    time = 90,
-                    section = McatSection.CPBS,
-                    topic = "electrochemistry",
-                    sessionId = null,
-                    fullLengthAttemptId = "fla1",
-                ),
-                attempt(
-                    "fl-r1",
-                    correct = false,
-                    time = 120,
-                    section = McatSection.CARS,
-                    topic = "ethics",
-                    sessionId = null,
-                    fullLengthAttemptId = "fla1",
-                ),
+                passageQ("a1", "pA"), passageQ("a2", "pA"), passageQ("a3", "pA"),
+                discrete("d1"),
+                passageQ("b1", "pB"), passageQ("b2", "pB"),
+                discrete("d2"),
+                passageQ("c1", "pC"), passageQ("c2", "pC"),
             )
-        val report = fullLengthReport("fl-test", attempts)
-        assertThat(report.totalQuestions, equalTo(2))
-        assertThat(report.totalCorrect, equalTo(1))
-        assertThat(report.sectionResults.size, equalTo(2))
-        val cpbs = report.sectionResults.first { it.section == McatSection.CPBS }
-        assertThat(cpbs.correct, equalTo(1))
-        assertThat(cpbs.total, equalTo(1))
-        assertThat(cpbs.timeSeconds, equalTo(90))
-        assertThat(cpbs.scaledScore, equalTo(null))
+        val sets = mapOf("pA" to listOf("a1", "a2", "a3"), "pB" to listOf("b1", "b2"), "pC" to listOf("c1", "c2"))
+        for (seed in 0L until 8L) {
+            val out = assembleServingOrder(pool, 0, seed)
+            assertThat(out.size, equalTo(pool.size))
+            for ((pid, members) in sets) {
+                val positions = out.withIndex().filter { it.value.passageId == pid }.map { it.index }
+                assertThat(positions.size, equalTo(members.size))
+                assertThat(positions.zipWithNext().all { (a, b) -> b == a + 1 }, equalTo(true))
+                assertThat(positions.map { out[it].id }, equalTo(members))
+            }
+        }
+    }
+
+    @Test
+    fun `shuffleQuestionChoices keeps labels positional remaps correct and is stable per session`() {
+        // correct answer "B" => the correct text is "x".
+        val q1 = shuffleQuestionChoices(mcq("B"), "sess-1")
+        assertThat(q1.choices.map { it.label }, equalTo(listOf("A", "B", "C", "D")))
+        assertThat(q1.choices.first { it.label == q1.correctAnswer }.text, equalTo("x"))
+        assertThat(q1.choices.map { it.text }.sorted(), equalTo(listOf("w", "x", "y", "z")))
+        // Stable: same session + question reproduces the same order.
+        val q1b = shuffleQuestionChoices(mcq("B"), "sess-1")
+        assertThat(q1b.choices.map { it.text }, equalTo(q1.choices.map { it.text }))
+        // Varies across sessions, and the remap always stays correct.
+        val orders =
+            (0 until 6).map { s ->
+                val shuffled = shuffleQuestionChoices(mcq("B"), "sess-$s")
+                assertThat(shuffled.choices.first { it.label == shuffled.correctAnswer }.text, equalTo("x"))
+                shuffled.choices.map { it.text }
+            }
+        assertThat(orders.toSet().size > 1, equalTo(true))
+    }
+
+    @Test
+    fun `shuffleQuestionChoices leaves a single-choice question untouched`() {
+        val single = mcq("A").copy(choices = listOf(AnswerChoice("A", "only")))
+        val out = shuffleQuestionChoices(single, "sess-1")
+        assertThat(out.choices.map { it.text }, equalTo(listOf("only")))
+        assertThat(out.correctAnswer, equalTo("A"))
+    }
+
+    @Test
+    fun `seedFromStr is deterministic and starts from the FNV-1a offset basis`() {
+        assertThat(seedFromStr("abc"), equalTo(seedFromStr("abc")))
+        // Empty input hashes to the FNV-1a 64-bit offset basis (no bytes mixed in).
+        assertThat(seedFromStr("") == 0xcbf29ce484222325uL.toLong(), equalTo(true))
+        assertThat(seedFromStr("session-a") != seedFromStr("session-b"), equalTo(true))
+    }
+
+    @Test
+    fun `sessionQuestions randomizes selection and answer choices per session id`() {
+        val bank = (0 until 12).map { mcq("B", id = "q%02d".format(it)) }
+        val filter = QuestionFilter(sections = listOf(McatSection.CPBS), limit = 6)
+        val s1 = sessionQuestions(bank, filter, emptySet(), "ps-1")
+        val s2 = sessionQuestions(bank, filter, emptySet(), "ps-2")
+        assertThat(s1.size, equalTo(6))
+        assertThat(s2.size, equalTo(6))
+        // Every served question still exposes a valid, remapped correct answer.
+        for (question in s1 + s2) {
+            assertThat(question.choices.first { it.label == question.correctAnswer }.text, equalTo("x"))
+        }
+        // Two sessions differ in either the selection or the choice order.
+        val sameSelection = s1.map { it.id } == s2.map { it.id }
+        val sameChoiceOrder =
+            s1.map { q -> q.choices.map { it.text } } == s2.map { q -> q.choices.map { it.text } }
+        assertThat(sameSelection && sameChoiceOrder, equalTo(false))
     }
 }

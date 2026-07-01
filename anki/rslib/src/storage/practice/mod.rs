@@ -580,6 +580,60 @@ impl SqliteStorage {
         rows.collect()
     }
 
+    /// (correct, answered, total_time_seconds) over answered practice-session
+    /// attempts (a session attempt with a non-empty selected answer). Feeds the
+    /// readiness Performance pillar; skipped/unanswered questions are excluded
+    /// so accuracy is over questions the learner actually answered.
+    pub(crate) fn practice_accuracy_totals(&self) -> Result<(u32, u32, u32)> {
+        self.db
+            .prepare_cached(
+                "select coalesce(sum(correct), 0), count(*), \
+                 coalesce(sum(time_on_question_seconds), 0) from practice_attempts \
+                 where session_id is not null and selected_answer <> ''",
+            )?
+            .query_row([], |r| {
+                Ok((
+                    r.get::<_, i64>(0)? as u32,
+                    r.get::<_, i64>(1)? as u32,
+                    r.get::<_, i64>(2)? as u32,
+                ))
+            })
+            .map_err(Into::into)
+    }
+
+    /// (correct, total) over answers recorded for COMPLETED full-length attempts.
+    /// Feeds the readiness Readiness pillar (raw score only — no timing/pacing).
+    pub(crate) fn full_length_score_totals(&self) -> Result<(u32, u32)> {
+        self.db
+            .prepare_cached(
+                "select coalesce(sum(a.correct), 0), count(*) from practice_attempts a \
+                 join full_length_attempts f on a.full_length_attempt_id = f.id \
+                 where f.completed_at is not null",
+            )?
+            .query_row([], |r| {
+                Ok((r.get::<_, i64>(0)? as u32, r.get::<_, i64>(1)? as u32))
+            })
+            .map_err(Into::into)
+    }
+
+    /// Per-section (section_db, correct, total) over answers recorded for
+    /// COMPLETED full-length attempts. Detail for the readiness Readiness pillar.
+    pub(crate) fn full_length_section_scores(&self) -> Result<Vec<(String, u32, u32)>> {
+        let mut stmt = self.db.prepare_cached(
+            "select a.section, coalesce(sum(a.correct), 0), count(*) from practice_attempts a \
+             join full_length_attempts f on a.full_length_attempt_id = f.id \
+             where f.completed_at is not null group by a.section order by a.section",
+        )?;
+        let rows = stmt.query_and_then([], |r| {
+            Ok((
+                r.get::<_, String>(0)?,
+                r.get::<_, i64>(1)? as u32,
+                r.get::<_, i64>(2)? as u32,
+            ))
+        })?;
+        rows.collect()
+    }
+
     /// Time-spent + accuracy aggregated by section.
     pub(crate) fn section_stats(
         &self,

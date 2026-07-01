@@ -359,11 +359,6 @@ abstract class NavigationDrawerActivity(
                         startActivity(Intent(this@NavigationDrawerActivity, com.ichi2.anki.practice.PracticeActivity::class.java))
                     }
 
-                    R.id.nav_full_length -> {
-                        Timber.i("Navigating to full-length tests")
-                        startActivity(Intent(this@NavigationDrawerActivity, com.ichi2.anki.practice.FullLengthActivity::class.java))
-                    }
-
                     R.id.nav_settings -> {
                         Timber.i("Navigating to settings")
                         openSettings()

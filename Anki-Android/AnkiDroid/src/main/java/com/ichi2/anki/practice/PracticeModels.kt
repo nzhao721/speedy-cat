@@ -5,9 +5,8 @@
 // AnkiDroid is licensed GPL-3.0-or-later; Anki is created by Damien Elmes and
 // the Anki contributors.
 //
-// Domain models for the two MCAT study modes that sit alongside flashcards:
-// the Practice Question Bank and the Full-Length Practice Tests. These mirror
-// the desktop `anki.practice` protobuf messages (see
+// Domain models for the MCAT Practice Question Bank that sits alongside
+// flashcards. These mirror the desktop `anki.practice` protobuf messages (see
 // `anki/proto/anki/practice.proto`) so the two apps behave identically. On
 // mobile the data/session logic is implemented natively in Kotlin (approach B);
 // there is intentionally no dependency on the Rust `PracticeService`.
@@ -58,7 +57,6 @@ enum class Difficulty(
 enum class AttemptSource {
     ALL,
     PRACTICE_SESSION,
-    FULL_LENGTH,
 }
 
 /** A single answer option; [label] is "A".."E" and unique within a question. */
@@ -67,11 +65,7 @@ data class AnswerChoice(
     val text: String,
 )
 
-/**
- * A multiple-choice item — discrete ([passageId] null) or passage-linked. When
- * it belongs to a [FullLengthTest] section, [testId] is set (such items are
- * excluded from the free-standing bank by default).
- */
+/** A multiple-choice item — discrete ([passageId] null) or passage-linked. */
 data class PracticeQuestion(
     val id: String,
     val section: McatSection?,
@@ -88,10 +82,9 @@ data class PracticeQuestion(
     val sourceUrl: String?,
     val answerProvenance: String?,
     val notes: String?,
-    val testId: String?,
 )
 
-/** A reading passage (CARS passage set, or a full-length section passage). */
+/** A reading passage (e.g. a CARS passage set). */
 data class Passage(
     val passageId: String,
     val section: McatSection?,
@@ -103,55 +96,12 @@ data class Passage(
     val difficulty: Difficulty?,
     val sourceName: String?,
     val sourceLicense: String?,
-    val testId: String?,
 )
 
 /** A passage grouped with all of the questions that hang off it. */
 data class CarsPassageSet(
     val passage: Passage?,
     val questions: List<PracticeQuestion>,
-)
-
-/**
- * A scheduled break AFTER [afterSection] (1-based). Mirrors the real MCAT: the
- * break after section 2 is the mid-exam break.
- */
-data class FullLengthBreak(
-    val afterSection: Int,
-    val durationSeconds: Int,
-    val optional: Boolean,
-    val label: String,
-)
-
-/** One timed section of a full-length exam. */
-data class FullLengthSection(
-    val section: McatSection?,
-    val order: Int,
-    val durationSeconds: Int,
-    val questionCount: Int,
-)
-
-/** A full-length practice exam mirroring the AAMC four-section structure. */
-data class FullLengthTest(
-    val testId: String,
-    val title: String,
-    val source: String,
-    val format: String,
-    val disclaimer: String,
-    val totalQuestions: Int,
-    val totalTestingSeconds: Int,
-    val sections: List<FullLengthSection>,
-    val breaks: List<FullLengthBreak>,
-    val totalBreakSeconds: Int,
-)
-
-/** A lightweight summary of a [FullLengthTest] for the picker list. */
-data class FullLengthTestSummary(
-    val testId: String,
-    val title: String,
-    val totalQuestions: Int,
-    val totalTestingSeconds: Int,
-    val totalBreakSeconds: Int,
 )
 
 /** correct/total for one section within a practice session summary. */
@@ -169,26 +119,6 @@ data class PracticeSessionSummary(
     val unanswered: Int,
     val totalTimeSeconds: Int,
     val sectionBreakdown: List<SectionCount>,
-)
-
-/** Per-section result for a submitted full-length attempt. */
-data class SectionResult(
-    val section: McatSection?,
-    val correct: Int,
-    val total: Int,
-    val timeSeconds: Int,
-    /** Scaled score (118-132); null for the AI-generated proof-of-concept forms. */
-    val scaledScore: Int?,
-)
-
-/** Report produced when a full-length attempt is submitted. */
-data class FullLengthReport(
-    val testId: String,
-    val sectionResults: List<SectionResult>,
-    /** Overall scaled score (472-528); null when scoring data is unavailable. */
-    val overallScaledScore: Int?,
-    val totalCorrect: Int,
-    val totalQuestions: Int,
 )
 
 /** Per-topic aggregate over recorded attempts. */
@@ -233,19 +163,17 @@ data class QuestionFilter(
     val difficulty: Difficulty? = null,
     val passageId: String? = null,
     val missedOnly: Boolean = false,
-    val includeFullLength: Boolean = false,
     val limit: Int = 0,
 )
 
 /**
- * A recorded answer. Exactly one of [sessionId] / [fullLengthAttemptId] is set,
+ * A recorded answer, tied to the practice [sessionId] that produced it and
  * mirroring the desktop `practice_attempts` row. Persisted locally (never in the
  * synced collection).
  */
 data class Attempt(
     val id: String,
     val sessionId: String?,
-    val fullLengthAttemptId: String?,
     val questionId: String,
     val selectedAnswer: String,
     val correct: Boolean,

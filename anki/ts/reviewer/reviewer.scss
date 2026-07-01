@@ -12,9 +12,23 @@ hr {
     height: 1px;
 }
 
+// SpeedyCAT: the reviewer follows the app theme via CSS vars (rather than a
+// hard-coded dark/white background), and the card content sits inside a
+// centered, rounded, slightly-elevated "card box". Mirrors the mobile reviewer
+// restyle. --canvas/--canvas-elevated/--fg come from the app's theme palette.
+html {
+    background-color: var(--canvas);
+}
+
 body {
-    margin: 20px;
+    margin: 0;
+    // padding forms the gap between the card box and the window edges
+    padding: 20px;
+    box-sizing: border-box;
     overflow-wrap: break-word;
+    // themed page background (follows the app's light/dark theme)
+    background-color: var(--canvas);
+    color: var(--fg);
     // default background setting to fit with toolbar
     background-size: cover;
     background-repeat: no-repeat;
@@ -22,11 +36,33 @@ body {
     background-attachment: fixed;
 }
 
+// Override a note's full-bleed .card background so the themed page shows around
+// the card box in every theme.
+body.card {
+    background-color: var(--canvas) !important;
+}
+
 // explicit nightMode definition required
 // to override default .card styling
 body.nightMode {
     background-color: var(--canvas);
     color: var(--fg);
+}
+
+// Centered, max-width, rounded, padded, slightly-elevated card box holding the
+// rendered question/answer.
+#qa {
+    box-sizing: border-box;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 18px;
+    background-color: var(--canvas-elevated, var(--canvas));
+    border-radius: 16px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.18);
+}
+
+body.nightMode #qa {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 img {
@@ -83,19 +119,17 @@ code#typeans {
     font-variant-ligatures: none;
 }
 
-.typeGood {
-    background: #afa;
-    color: black;
-}
-
-.typeBad {
-    color: black;
-    background: #faa;
-}
-
+// SpeedyCAT: the per-character coloured diff from the backend `compare_answer`
+// is intentionally flattened — the typeGood/typeBad/typeMissed spans render as
+// plain text so the typed answer and the correct answer are shown cleanly,
+// without a distracting per-letter comparison. A simple whole-answer ✓/✗
+// indicator (see reviewer.py `_format_match_feedback`) conveys correctness
+// instead. Mirrors the mobile reviewer restyle.
+.typeGood,
+.typeBad,
 .typeMissed {
-    color: black;
-    background: #ccc;
+    background: transparent;
+    color: inherit;
 }
 
 button {

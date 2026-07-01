@@ -422,9 +422,10 @@ def is_sveltekit_page(path: str) -> bool:
         "import-csv",
         "import-page",
         "image-occlusion",
-        # SpeedyCAT: the two MCAT study-mode pages.
+        # SpeedyCAT: the MCAT study-mode pages.
         "practice",
         "full-length",
+        "readiness",
     ]
 
 
@@ -783,6 +784,7 @@ exposed_backend_list = [
     "record_full_length_answer",
     "submit_full_length_attempt",
     "get_topic_stats",
+    "get_readiness",
 ]
 
 

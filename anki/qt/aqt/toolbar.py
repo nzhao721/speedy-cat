@@ -369,6 +369,13 @@ class Toolbar:
                 id="full-length",
             ),
             self.create_link(
+                "readiness",
+                "Readiness",
+                self._readinessLinkHandler,
+                tip=tr.actions_shortcut_key(val="R"),
+                id="readiness",
+            ),
+            self.create_link(
                 "browse",
                 tr.qt_misc_browse(),
                 self._browseLinkHandler,
@@ -462,8 +469,13 @@ class Toolbar:
     def _fullLengthLinkHandler(self) -> None:
         self.mw.moveToState("speedycat", "full-length")
 
+    def _readinessLinkHandler(self) -> None:
+        self.mw.moveToState("speedycat", "readiness")
+
     def _statsLinkHandler(self) -> None:
-        self.mw.onStats()
+        # SpeedyCAT: stats render inside the main window like the other tabs
+        # (no separate dialog); the route shows the whole-collection dashboard.
+        self.mw.moveToState("speedycat", "stats")
 
     def _syncLinkHandler(self) -> None:
         self.mw.on_sync_button_clicked()

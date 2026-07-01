@@ -150,6 +150,12 @@ def main() -> None:
             flush=True,
         )
 
+        # Strip the pre-rendered tag breadcrumb baked into the card HTML so the
+        # shipped deck's Browse Front/Back columns show only the real Q/A. Uses
+        # the same helper the desktop migration runs (single source of truth).
+        stripped = themes.strip_tag_breadcrumbs(col)
+        print(f"stripped tag breadcrumb from {stripped} notes", flush=True)
+
         cards_total = len(list(col.find_cards("")))
         notes_total = len(list(col.find_notes("")))
         by_source = per_source_counts(col, src_by_id)

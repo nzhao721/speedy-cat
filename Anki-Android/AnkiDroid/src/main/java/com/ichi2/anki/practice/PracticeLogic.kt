@@ -11,6 +11,8 @@
 
 package com.ichi2.anki.practice
 
+import kotlin.random.Random
+
 // ---- Sections & difficulty labels -----------------------------------------
 
 fun sectionShort(section: McatSection?): String = section?.shortLabel ?: "—"
@@ -118,15 +120,15 @@ private val DIGITS = Regex("^\\d+$")
 // ---- Filtering & serving order --------------------------------------------
 
 /**
- * Apply a [QuestionFilter] to an in-memory [bank]. Structural filters and the
- * id ordering mirror the desktop SQL (`get_questions_filtered`), topic matching
- * (ANY, case-insensitive), passage-set grouping and the limit mirror
- * `matching_questions` + `assemble_serving_order`.
+ * The pool of questions matching a [filter]'s structural filters plus topic
+ * matching (ANY, case-insensitive), in the deterministic id order. No grouping,
+ * shuffling or limit — those are applied by [assembleServingOrder]. Mirrors the
+ * Rust `filtered_questions`.
  *
  * @param missedIds ids the user previously answered incorrectly (any attempt
  *   with `correct = false`), used only when [QuestionFilter.missedOnly] is set.
  */
-fun matchingQuestions(
+fun filteredQuestions(
     bank: List<PracticeQuestion>,
     filter: QuestionFilter,
     missedIds: Set<String> = emptySet(),
@@ -137,21 +139,45 @@ fun matchingQuestions(
                 (filter.sections.isEmpty() || q.section in filter.sections) &&
                     (filter.difficulty == null || q.difficulty == filter.difficulty) &&
                     (filter.passageId == null || q.passageId == filter.passageId) &&
-                    (filter.includeFullLength || q.testId == null) &&
                     (!filter.missedOnly || q.id in missedIds)
             }.sortedBy { it.id }
 
-    val topicFiltered =
-        if (filter.topics.isEmpty()) {
-            structural
-        } else {
-            val wanted = filter.topics.map { it.lowercase() }
-            structural.filter { q ->
-                q.topicTags.any { tag -> wanted.any { it == tag.lowercase() } }
-            }
-        }
+    if (filter.topics.isEmpty()) return structural
+    val wanted = filter.topics.map { it.lowercase() }
+    return structural.filter { q ->
+        q.topicTags.any { tag -> wanted.any { it == tag.lowercase() } }
+    }
+}
 
-    return assembleServingOrder(topicFiltered, filter.limit)
+/**
+ * Apply a [QuestionFilter] to an in-memory [bank] with the deterministic
+ * first-seen order used by the stateless query (no shuffle). Mirrors the desktop
+ * `matching_questions`.
+ */
+fun matchingQuestions(
+    bank: List<PracticeQuestion>,
+    filter: QuestionFilter,
+    missedIds: Set<String> = emptySet(),
+): List<PracticeQuestion> = assembleServingOrder(filteredQuestions(bank, filter, missedIds), filter.limit)
+
+/**
+ * Assemble the questions served for one practice **session**, mirroring the
+ * desktop `start_practice_session`: the [sessionId] (which carries randomness)
+ * seeds every shuffle, so the selection + answer-choice order are reproducible
+ * within the session but differ across sessions. The pool is shuffled at
+ * passage-set granularity *before* the count [QuestionFilter.limit] is applied,
+ * then each served question's answer choices are shuffled with the correct
+ * answer remapped.
+ */
+fun sessionQuestions(
+    bank: List<PracticeQuestion>,
+    filter: QuestionFilter,
+    missedIds: Set<String>,
+    sessionId: String,
+): List<PracticeQuestion> {
+    val pool = filteredQuestions(bank, filter, missedIds)
+    val ordered = assembleServingOrder(pool, filter.limit, seedFromStr(sessionId))
+    return ordered.map { shuffleQuestionChoices(it, sessionId) }
 }
 
 /**
@@ -159,10 +185,17 @@ fun matchingQuestions(
  * atomic unit (first-seen order) and the [limit] is applied at group
  * granularity so a CARS passage set is never split and at least one group is
  * always served. Mirrors the Rust `assemble_serving_order`.
+ *
+ * When [shuffleSeed] is non-null the *groups* are shuffled with a seeded RNG
+ * before the limit is applied — so each session draws a random subset/order,
+ * while CARS passage sets stay whole and contiguous (only the sets are
+ * reordered, not the questions inside a set). With `null` the deterministic
+ * first-seen order is preserved.
  */
 fun assembleServingOrder(
     questions: List<PracticeQuestion>,
     limit: Int,
+    shuffleSeed: Long? = null,
 ): List<PracticeQuestion> {
     val order = mutableListOf<String>()
     val groups = HashMap<String, MutableList<PracticeQuestion>>()
@@ -172,13 +205,59 @@ fun assembleServingOrder(
         if (!groups.containsKey(key)) order.add(key)
         groups.getOrPut(key) { mutableListOf() }.add(q)
     }
+    val groupList = order.map { groups.getValue(it) }.toMutableList()
+    if (shuffleSeed != null) {
+        groupList.shuffle(Random(shuffleSeed))
+    }
     val result = mutableListOf<PracticeQuestion>()
-    for (key in order) {
-        val group = groups.getValue(key)
+    for (group in groupList) {
         if (limit > 0 && result.isNotEmpty() && result.size + group.size > limit) break
         result.addAll(group)
     }
     return result
+}
+
+/**
+ * Derive a stable RNG seed from a string (FNV-1a). Deterministic and portable,
+ * so a session's shuffles are reproducible within the session (same key -> same
+ * seed) while differing across sessions (session ids are random). Mirrors the
+ * Rust `seed_from_str` — the 64-bit FNV-1a hash is bit-identical; only the
+ * downstream RNG stream differs from Rust's, which is fine because mobile keeps
+ * its own local practice store.
+ */
+fun seedFromStr(s: String): Long {
+    var hash = 0xcbf29ce484222325uL.toLong()
+    for (b in s.toByteArray(Charsets.UTF_8)) {
+        hash = hash xor (b.toLong() and 0xff)
+        hash *= 0x100000001b3L
+    }
+    return hash
+}
+
+/**
+ * Shuffle a question's answer choices for a session (stable per `sessionId` +
+ * question). The positional labels (A, B, C, …) stay in order; only the choice
+ * *texts* are reordered, and [PracticeQuestion.correctAnswer] is remapped to the
+ * new label of the originally-correct choice — so the post-submit correct
+ * reveal stays right. Mirrors the Rust `shuffle_question_choices`.
+ */
+fun shuffleQuestionChoices(
+    question: PracticeQuestion,
+    sessionId: String,
+): PracticeQuestion {
+    if (question.choices.size < 2) return question
+    val rng = Random(seedFromStr("$sessionId:${question.id}"))
+    val positionalLabels = question.choices.map { it.label }
+    val order = question.choices.indices.toMutableList().apply { shuffle(rng) }
+    var newCorrect = question.correctAnswer
+    val newChoices =
+        order.mapIndexed { position, origIdx ->
+            val newLabel = positionalLabels[position]
+            val orig = question.choices[origIdx]
+            if (orig.label == question.correctAnswer) newCorrect = newLabel
+            AnswerChoice(label = newLabel, text = orig.text)
+        }
+    return question.copy(choices = newChoices, correctAnswer = newCorrect)
 }
 
 /**
@@ -252,7 +331,6 @@ private fun sourceMatches(
     when (source) {
         AttemptSource.ALL -> true
         AttemptSource.PRACTICE_SESSION -> attempt.sessionId != null
-        AttemptSource.FULL_LENGTH -> attempt.fullLengthAttemptId != null
     }
 
 private fun ratio(
@@ -313,36 +391,3 @@ fun sectionStats(
                 avgTimeSeconds = ratio(totalTime, n),
             )
         }.sortedBy { it.section?.dbCode ?: "" }
-
-/**
- * Build a full-length report from the answers recorded for one attempt,
- * grouping per section (ordered by canonical code). Scaled scores require
- * licensed AAMC data and are always null for the proof-of-concept forms.
- * Mirrors the desktop `submit_full_length_attempt`.
- */
-fun fullLengthReport(
-    testId: String,
-    attempts: List<Attempt>,
-): FullLengthReport {
-    val bySection = sortedMapOf<String, MutableList<Attempt>>()
-    for (a in attempts) {
-        bySection.getOrPut(a.section?.dbCode ?: "") { mutableListOf() }.add(a)
-    }
-    val results =
-        bySection.map { (code, group) ->
-            SectionResult(
-                section = McatSection.fromDb(code),
-                correct = group.count { it.correct },
-                total = group.size,
-                timeSeconds = group.sumOf { it.timeSeconds },
-                scaledScore = null,
-            )
-        }
-    return FullLengthReport(
-        testId = testId,
-        sectionResults = results,
-        overallScaledScore = null,
-        totalCorrect = results.sumOf { it.correct },
-        totalQuestions = results.sumOf { it.total },
-    )
-}

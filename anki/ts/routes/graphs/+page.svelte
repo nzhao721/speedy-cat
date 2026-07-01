@@ -3,12 +3,9 @@ Copyright: Ankitects Pty Ltd and contributors
 License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 -->
 <script lang="ts">
-    import AddedGraph from "./AddedGraph.svelte";
-    import ButtonsGraph from "./ButtonsGraph.svelte";
     import CalendarGraph from "./CalendarGraph.svelte";
     import CardCounts from "./CardCounts.svelte";
     import DifficultyGraph from "./DifficultyGraph.svelte";
-    import EaseGraph from "./EaseGraph.svelte";
     import FutureDue from "./FutureDue.svelte";
     import GraphsPage from "./GraphsPage.svelte";
     import HourGraph from "./HourGraph.svelte";
@@ -17,30 +14,32 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     import RetrievabilityGraph from "./RetrievabilityGraph.svelte";
     import ReviewsGraph from "./ReviewsGraph.svelte";
     import StabilityGraph from "./StabilityGraph.svelte";
-    import TodayStats from "./TodayStats.svelte";
     import TrueRetention from "./TrueRetention.svelte";
 
+    // SpeedyCAT: the stats route is the app homepage/dashboard for a single,
+    // read-only MCAT deck (users don't add or author cards). Graphs that only
+    // make sense for multi-deck or card-authoring workflows are dropped:
+    // TodayStats (now the "Studied today" summary card), AddedGraph (cards are
+    // bundled, never hand-added), EaseGraph (legacy SM-2 ease, superseded by the
+    // FSRS difficulty graph) and ButtonsGraph. What remains tells the study
+    // progress + FSRS memory story for the one MCAT deck.
     const graphs = [
-        TodayStats,
         FutureDue,
         CalendarGraph,
         ReviewsGraph,
         CardCounts,
         IntervalsGraph,
         StabilityGraph,
-        EaseGraph,
         DifficultyGraph,
         RetrievabilityGraph,
         TrueRetention,
         HourGraph,
-        ButtonsGraph,
-        AddedGraph,
     ];
 </script>
 
 <GraphsPage
     {graphs}
-    initialSearch="deck:current"
+    initialSearch=""
     initialDays={365}
     controller={RangeBox}
 />

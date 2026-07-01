@@ -1,20 +1,20 @@
 # SpeedyCAT practice-question expansion — summary
 
-Files scanned: **48**  ·  Total items: **1200**
+Files scanned: **88**  ·  Total items: **5174**
 
 ## By section (clean / total)
 
-- **CPBS**: 283 clean / 283 total
-- **CARS**: 321 clean / 327 total
-- **BBLS**: 264 clean / 264 total
-- **PSBB**: 326 clean / 326 total
+- **CPBS**: 1291 clean / 1291 total
+- **CARS**: 1288 clean / 1294 total
+- **BBLS**: 1264 clean / 1264 total
+- **PSBB**: 1325 clean / 1325 total
 
 LICENSE-UNCERTAIN items: **6**
-Duplicate stems detected: **37**
+Duplicate stems detected: **145**
 
 ## Top sources
 
-- 300 — AI-generated (SpeedyCAT proof-of-concept)
+- 4274 — AI-generated (SpeedyCAT proof-of-concept)
 - 29 — OpenStax Microbiology, Ch. 8 Microbial Metabolism — Review Questions (Multiple Choice)
 - 28 — OpenStax Microbiology, Ch. 11 Mechanisms of Microbial Genetics — Review Questions (Multiple Choice)
 - 26 — OpenStax Microbiology, Ch. 9 Microbial Growth — Review Questions (Multiple Choice)
@@ -45,6 +45,16 @@ Duplicate stems detected: **37**
 | File | Items | Sections |
 | --- | ---: | --- |
 | _EXPANSION_SUMMARY.json | 0 |  |
+| bbls-aigen-01.json | 102 | BBLS:102 |
+| bbls-aigen-02.json | 102 | BBLS:102 |
+| bbls-aigen-03.json | 102 | BBLS:102 |
+| bbls-aigen-04.json | 102 | BBLS:102 |
+| bbls-aigen-05.json | 102 | BBLS:102 |
+| bbls-aigen-06.json | 102 | BBLS:102 |
+| bbls-aigen-07.json | 100 | BBLS:100 |
+| bbls-aigen-08.json | 96 | BBLS:96 |
+| bbls-aigen-09.json | 96 | BBLS:96 |
+| bbls-aigen-10.json | 96 | BBLS:96 |
 | bbls-expanded-01.json | 16 | BBLS:16 |
 | bbls-expanded-02.json | 38 | BBLS:38 |
 | bbls-expanded-03.json | 47 | BBLS:47 |
@@ -52,12 +62,32 @@ Duplicate stems detected: **37**
 | bbls-expanded-05.json | 40 | BBLS:40 |
 | bbls-expanded-06.json | 40 | BBLS:40 |
 | bbls-expanded-07.json | 28 | BBLS:28 |
+| cars-aigen-01.json | 97 | CARS:97 |
+| cars-aigen-02.json | 97 | CARS:97 |
+| cars-aigen-03.json | 97 | CARS:97 |
+| cars-aigen-04.json | 97 | CARS:97 |
+| cars-aigen-05.json | 95 | CARS:95 |
+| cars-aigen-06.json | 97 | CARS:97 |
+| cars-aigen-07.json | 97 | CARS:97 |
+| cars-aigen-08.json | 96 | CARS:96 |
+| cars-aigen-09.json | 96 | CARS:96 |
+| cars-aigen-10.json | 98 | CARS:98 |
 | cars-expanded-01.json | 21 | CARS:21 |
 | cars-generated-01.json | 60 | CARS:60 |
 | cars-generated-02.json | 60 | CARS:60 |
 | cars-generated-03.json | 60 | CARS:60 |
 | cars-generated-04.json | 60 | CARS:60 |
 | cars-generated-05.json | 60 | CARS:60 |
+| cpbs-aigen-01.json | 101 | CPBS:101 |
+| cpbs-aigen-02.json | 101 | CPBS:101 |
+| cpbs-aigen-03.json | 101 | CPBS:101 |
+| cpbs-aigen-04.json | 101 | CPBS:101 |
+| cpbs-aigen-05.json | 101 | CPBS:101 |
+| cpbs-aigen-06.json | 101 | CPBS:101 |
+| cpbs-aigen-07.json | 101 | CPBS:101 |
+| cpbs-aigen-08.json | 101 | CPBS:101 |
+| cpbs-aigen-09.json | 100 | CPBS:100 |
+| cpbs-aigen-10.json | 100 | CPBS:100 |
 | cpbs-genchem-01.json | 20 | CPBS:20 |
 | cpbs-genchem-02.json | 16 | CPBS:16 |
 | cpbs-genchem-03.json | 19 | CPBS:19 |
@@ -74,6 +104,16 @@ Duplicate stems detected: **37**
 | cpbs-phys-08.json | 17 | CPBS:17 |
 | cpbs-phys-09.json | 21 | CPBS:21 |
 | cpbs-phys-10.json | 13 | CPBS:13 |
+| psbb-aigen-01.json | 100 | PSBB:100 |
+| psbb-aigen-02.json | 100 | PSBB:100 |
+| psbb-aigen-03.json | 100 | PSBB:100 |
+| psbb-aigen-04.json | 100 | PSBB:100 |
+| psbb-aigen-05.json | 100 | PSBB:100 |
+| psbb-aigen-06.json | 100 | PSBB:100 |
+| psbb-aigen-07.json | 100 | PSBB:100 |
+| psbb-aigen-08.json | 100 | PSBB:100 |
+| psbb-aigen-09.json | 100 | PSBB:100 |
+| psbb-aigen-10.json | 99 | PSBB:99 |
 | psbb-expanded-01.json | 11 | PSBB:11 |
 | psbb-expanded-02.json | 22 | PSBB:22 |
 | psbb-expanded-03.json | 21 | PSBB:21 |

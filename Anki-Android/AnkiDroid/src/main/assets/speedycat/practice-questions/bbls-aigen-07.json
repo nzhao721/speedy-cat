@@ -1,0 +1,3426 @@
+{
+  "meta": {
+    "section": "BBLS",
+    "generatedOn": "2026-07-01",
+    "generator": "SpeedyCAT BBLS AI-POC deterministic fact-bank generator",
+    "disclaimer": "AI-generated proof-of-concept questions. NOT real MCAT/AAMC content. Text-only (no HTML/SVG). Each item has exactly one correct answer and three distinct distractors; all items passed the 4-criterion automated eval.",
+    "counts": {
+      "total": 100,
+      "byTopic": {
+        "evolution & diversity": 16,
+        "biochemistry & metabolism": 17,
+        "cell biology": 16,
+        "microbiology & virology": 17,
+        "molecular biology & genetics": 17,
+        "immunology": 17
+      },
+      "byDifficulty": {
+        "easy": 19,
+        "medium": 63,
+        "hard": 18
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "bbls-aigen-0613",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? an environmental factor that influences which traits are favored",
+      "choices": [
+        {
+          "label": "A",
+          "text": "adaptive radiation"
+        },
+        {
+          "label": "B",
+          "text": "a selective pressure"
+        },
+        {
+          "label": "C",
+          "text": "relative fitness"
+        },
+        {
+          "label": "D",
+          "text": "genetic variation"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The description matches a selective pressure.",
+      "topicTags": [
+        "evolution & diversity"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0614",
+      "section": "BBLS",
+      "stem": "In metabolism, what is the approximate total ATP from complete aerobic oxidation of one glucose?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "about 30 to 32"
+        },
+        {
+          "label": "B",
+          "text": "0"
+        },
+        {
+          "label": "C",
+          "text": "2 pyruvate"
+        },
+        {
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "the approximate total ATP from complete aerobic oxidation of one glucose is about 30 to 32.",
+      "topicTags": [
+        "biochemistry & metabolism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0615",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? a solution that causes a cell to gain water and swell",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a hypertonic solution"
+        },
+        {
+          "label": "B",
+          "text": "a hypotonic solution"
+        },
+        {
+          "label": "C",
+          "text": "an isotonic solution"
+        },
+        {
+          "label": "D",
+          "text": "plasmolysis"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The description matches a hypotonic solution.",
+      "topicTags": [
+        "cell biology"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0616",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? an electron carrier that enters the transport chain at a lower energy level than NADH",
+      "choices": [
+        {
+          "label": "A",
+          "text": "oxidation"
+        },
+        {
+          "label": "B",
+          "text": "FADH2"
+        },
+        {
+          "label": "C",
+          "text": "reduction"
+        },
+        {
+          "label": "D",
+          "text": "NADH"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The description matches FADH2.",
+      "topicTags": [
+        "biochemistry & metabolism"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0617",
+      "section": "BBLS",
+      "stem": "In microbiology, what is a hypha?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a single filament that makes up the body of a mold"
+        },
+        {
+          "label": "B",
+          "text": "a single-celled, usually motile eukaryotic microorganism"
+        },
+        {
+          "label": "C",
+          "text": "a mass of hyphae forming the body of a fungus"
+        },
+        {
+          "label": "D",
+          "text": "a photosynthetic, often aquatic eukaryote"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "a hypha is a single filament that makes up the body of a mold.",
+      "topicTags": [
+        "microbiology & virology"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0618",
+      "section": "BBLS",
+      "stem": "Which example best illustrates an example of heterozygote advantage?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "antibiotic resistance in bacteria"
+        },
+        {
+          "label": "B",
+          "text": "pesticide resistance in insects"
+        },
+        {
+          "label": "C",
+          "text": "the persistence of the sickle-cell allele where malaria is common"
+        },
+        {
+          "label": "D",
+          "text": "the many breeds of domestic dogs"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The description matches the persistence of the sickle-cell allele where malaria is common.",
+      "topicTags": [
+        "evolution & diversity"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0619",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? a microbe that grows best at high temperatures",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a thermophile"
+        },
+        {
+          "label": "B",
+          "text": "a complex medium"
+        },
+        {
+          "label": "C",
+          "text": "a differential medium"
+        },
+        {
+          "label": "D",
+          "text": "a psychrophile"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The description matches a thermophile.",
+      "topicTags": [
+        "microbiology & virology"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0620",
+      "section": "BBLS",
+      "stem": "In genetics, what is crossing over?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the failure of chromosomes or chromatids to separate properly in cell division"
+        },
+        {
+          "label": "B",
+          "text": "a measure of genetic distance based on how often two loci are separated"
+        },
+        {
+          "label": "C",
+          "text": "the random orientation of homologous pairs at metaphase I"
+        },
+        {
+          "label": "D",
+          "text": "the exchange of segments between homologous chromosomes during prophase I"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "crossing over is the exchange of segments between homologous chromosomes during prophase I.",
+      "topicTags": [
+        "molecular biology & genetics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0621",
+      "section": "BBLS",
+      "stem": "Which statement correctly describes the fact that the genetic code is nonoverlapping?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "most amino acids are specified by more than one codon"
+        },
+        {
+          "label": "B",
+          "text": "AUG, which also codes for methionine"
+        },
+        {
+          "label": "C",
+          "text": "each nucleotide belongs to only one codon, read in successive triplets"
+        },
+        {
+          "label": "D",
+          "text": "the same codons specify the same amino acids in almost all organisms"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "the fact that the genetic code is nonoverlapping: each nucleotide belongs to only one codon, read in successive triplets",
+      "topicTags": [
+        "molecular biology & genetics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0622",
+      "section": "BBLS",
+      "stem": "In bioenergetics, what is reduction?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "an electron carrier that delivers electrons to the electron transport chain"
+        },
+        {
+          "label": "B",
+          "text": "the electron carrier used mainly for biosynthetic (anabolic) reactions"
+        },
+        {
+          "label": "C",
+          "text": "the gain of electrons by a molecule"
+        },
+        {
+          "label": "D",
+          "text": "the cell's main energy currency, releasing energy when its terminal phosphate bond is hydrolyzed"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "reduction is the gain of electrons by a molecule.",
+      "topicTags": [
+        "biochemistry & metabolism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0623",
+      "section": "BBLS",
+      "stem": "In evolution, what is an evolutionary arms race?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a pattern of long stasis interrupted by bursts of rapid change"
+        },
+        {
+          "label": "B",
+          "text": "human-directed breeding for desired traits"
+        },
+        {
+          "label": "C",
+          "text": "escalating adaptations between predators and prey or hosts and parasites"
+        },
+        {
+          "label": "D",
+          "text": "large-scale evolutionary change such as the origin of new groups"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "an evolutionary arms race is escalating adaptations between predators and prey or hosts and parasites.",
+      "topicTags": [
+        "evolution & diversity"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0624",
+      "section": "BBLS",
+      "stem": "What is the chromosomal basis of Cri-du-chat syndrome?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "trisomy of chromosome 18"
+        },
+        {
+          "label": "B",
+          "text": "trisomy of chromosome 21"
+        },
+        {
+          "label": "C",
+          "text": "a deletion on the short arm of chromosome 5"
+        },
+        {
+          "label": "D",
+          "text": "trisomy of chromosome 13"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cri-du-chat syndrome is caused by a deletion on the short arm of chromosome 5.",
+      "topicTags": [
+        "molecular biology & genetics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0625",
+      "section": "BBLS",
+      "stem": "In evolution, what is convergent evolution?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the independent evolution of similar traits in unrelated lineages"
+        },
+        {
+          "label": "B",
+          "text": "a reduced feature that had a function in an ancestor"
+        },
+        {
+          "label": "C",
+          "text": "a feature shared due to common ancestry, like the bones of vertebrate limbs"
+        },
+        {
+          "label": "D",
+          "text": "the accumulation of differences between related lineages over time"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "convergent evolution is the independent evolution of similar traits in unrelated lineages.",
+      "topicTags": [
+        "evolution & diversity"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0626",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? the process that uses light energy to build glucose from carbon dioxide and water",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a thylakoid"
+        },
+        {
+          "label": "B",
+          "text": "photosynthesis"
+        },
+        {
+          "label": "C",
+          "text": "chlorophyll"
+        },
+        {
+          "label": "D",
+          "text": "the Calvin cycle"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The description matches photosynthesis.",
+      "topicTags": [
+        "cell biology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0627",
+      "section": "BBLS",
+      "stem": "In gene expression, what is a codon?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the tRNA triplet that base-pairs with an mRNA codon"
+        },
+        {
+          "label": "B",
+          "text": "a triplet of mRNA nucleotides specifying one amino acid or a stop signal"
+        },
+        {
+          "label": "C",
+          "text": "a noncoding sequence removed from pre-mRNA before translation"
+        },
+        {
+          "label": "D",
+          "text": "a stretch of adenine nucleotides added to the 3' end of eukaryotic mRNA"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "a codon is a triplet of mRNA nucleotides specifying one amino acid or a stop signal.",
+      "topicTags": [
+        "molecular biology & genetics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0628",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? the period of growth and DNA replication between divisions",
+      "choices": [
+        {
+          "label": "A",
+          "text": "telophase"
+        },
+        {
+          "label": "B",
+          "text": "the G1 checkpoint"
+        },
+        {
+          "label": "C",
+          "text": "interphase"
+        },
+        {
+          "label": "D",
+          "text": "anaphase"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The description matches interphase.",
+      "topicTags": [
+        "cell biology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0629",
+      "section": "BBLS",
+      "stem": "In immunology, what is the complement system?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a phagocyte that engulfs pathogens and presents their antigens"
+        },
+        {
+          "label": "B",
+          "text": "a cascade of plasma proteins that lyse microbes and enhance phagocytosis"
+        },
+        {
+          "label": "C",
+          "text": "the slower, highly specific defense that develops immunological memory"
+        },
+        {
+          "label": "D",
+          "text": "the lymphocyte that matures in the thymus and mediates cellular immunity"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "the complement system is a cascade of plasma proteins that lyse microbes and enhance phagocytosis.",
+      "topicTags": [
+        "immunology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0630",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? the release of material by fusing vesicles with the plasma membrane",
+      "choices": [
+        {
+          "label": "A",
+          "text": "active transport"
+        },
+        {
+          "label": "B",
+          "text": "the sodium-potassium pump"
+        },
+        {
+          "label": "C",
+          "text": "endocytosis"
+        },
+        {
+          "label": "D",
+          "text": "exocytosis"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The description matches exocytosis.",
+      "topicTags": [
+        "cell biology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0631",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? the main storage form of fat: glycerol plus three fatty acids",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a saturated fatty acid"
+        },
+        {
+          "label": "B",
+          "text": "a triacylglycerol"
+        },
+        {
+          "label": "C",
+          "text": "a phospholipid"
+        },
+        {
+          "label": "D",
+          "text": "cholesterol"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The description matches a triacylglycerol.",
+      "topicTags": [
+        "biochemistry & metabolism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0632",
+      "section": "BBLS",
+      "stem": "In cell biology, what is a transport vesicle?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the network of membranes including the ER, Golgi, and vesicles"
+        },
+        {
+          "label": "B",
+          "text": "the region inside the nucleus where ribosomes are assembled"
+        },
+        {
+          "label": "C",
+          "text": "the complex of DNA and protein that condenses into chromosomes"
+        },
+        {
+          "label": "D",
+          "text": "a small membrane sac that moves materials within the cell"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "a transport vesicle is a small membrane sac that moves materials within the cell.",
+      "topicTags": [
+        "cell biology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0633",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? cocci arranged in pairs",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a diplococcus arrangement"
+        },
+        {
+          "label": "B",
+          "text": "a spirochete"
+        },
+        {
+          "label": "C",
+          "text": "a staphylococcus arrangement"
+        },
+        {
+          "label": "D",
+          "text": "a spirillum"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The description matches a diplococcus arrangement.",
+      "topicTags": [
+        "microbiology & virology"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0634",
+      "section": "BBLS",
+      "stem": "In immunology, what is central tolerance?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the removal of lymphocytes that react strongly against self antigens"
+        },
+        {
+          "label": "B",
+          "text": "the increase in antibody binding strength over the course of a response"
+        },
+        {
+          "label": "C",
+          "text": "the change in antibody class a B cell makes while keeping its specificity"
+        },
+        {
+          "label": "D",
+          "text": "the elimination of self-reactive lymphocytes during their development"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "central tolerance is the elimination of self-reactive lymphocytes during their development.",
+      "topicTags": [
+        "immunology"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0635",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? a molecule that coats microbes to promote their phagocytosis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "an adjuvant"
+        },
+        {
+          "label": "B",
+          "text": "the complement fragment C3b"
+        },
+        {
+          "label": "C",
+          "text": "the humoral immune response"
+        },
+        {
+          "label": "D",
+          "text": "the Fc region of an antibody"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The description matches the complement fragment C3b.",
+      "topicTags": [
+        "immunology"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0636",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? the slower, weaker response upon first exposure to an antigen",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a booster dose"
+        },
+        {
+          "label": "B",
+          "text": "the primary immune response"
+        },
+        {
+          "label": "C",
+          "text": "herd immunity"
+        },
+        {
+          "label": "D",
+          "text": "the secondary immune response"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The description matches the primary immune response.",
+      "topicTags": [
+        "immunology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0637",
+      "section": "BBLS",
+      "stem": "In cell division, what is homologous chromosomes?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "division producing two genetically identical diploid daughter cells"
+        },
+        {
+          "label": "B",
+          "text": "a cell with two complete sets of chromosomes"
+        },
+        {
+          "label": "C",
+          "text": "a matching pair of chromosomes, one inherited from each parent"
+        },
+        {
+          "label": "D",
+          "text": "division producing four genetically varied haploid cells"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "homologous chromosomes is a matching pair of chromosomes, one inherited from each parent.",
+      "topicTags": [
+        "cell biology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0638",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? a molecule that can be specifically recognized by the immune system",
+      "choices": [
+        {
+          "label": "A",
+          "text": "an antigen-presenting cell"
+        },
+        {
+          "label": "B",
+          "text": "an antigen"
+        },
+        {
+          "label": "C",
+          "text": "the T-cell receptor"
+        },
+        {
+          "label": "D",
+          "text": "an epitope"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The description matches an antigen.",
+      "topicTags": [
+        "immunology"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0639",
+      "section": "BBLS",
+      "stem": "In bacterial genetics, what is conjugation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a mobile genetic element that can move to new positions in the genome"
+        },
+        {
+          "label": "B",
+          "text": "the transfer of DNA through direct cell-to-cell contact via a pilus"
+        },
+        {
+          "label": "C",
+          "text": "the transfer of bacterial DNA between cells by a bacteriophage"
+        },
+        {
+          "label": "D",
+          "text": "the uptake of free DNA from the surrounding environment"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "conjugation is the transfer of DNA through direct cell-to-cell contact via a pilus.",
+      "topicTags": [
+        "microbiology & virology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0640",
+      "section": "BBLS",
+      "stem": "In the diversity of life, what is the domain Archaea?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "prokaryotes with peptidoglycan cell walls"
+        },
+        {
+          "label": "B",
+          "text": "prokaryotes that often live in extreme environments and differ biochemically from bacteria"
+        },
+        {
+          "label": "C",
+          "text": "multicellular heterotrophic eukaryotes that lack cell walls"
+        },
+        {
+          "label": "D",
+          "text": "multicellular photosynthetic eukaryotes with cellulose cell walls"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "the domain Archaea is prokaryotes that often live in extreme environments and differ biochemically from bacteria.",
+      "topicTags": [
+        "evolution & diversity"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0641",
+      "section": "BBLS",
+      "stem": "In metabolism, what is the net ATP yield of glycolysis per glucose?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "2 pyruvate"
+        },
+        {
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "label": "D",
+          "text": "38"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "the net ATP yield of glycolysis per glucose is 2.",
+      "topicTags": [
+        "biochemistry & metabolism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0642",
+      "section": "BBLS",
+      "stem": "Cyanide blocks the final complex of the electron transport chain. What is the most direct metabolic consequence?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Increased protein glycosylation"
+        },
+        {
+          "label": "B",
+          "text": "A sharp drop in ATP production by oxidative phosphorylation"
+        },
+        {
+          "label": "C",
+          "text": "An increase in ATP production"
+        },
+        {
+          "label": "D",
+          "text": "Faster DNA replication"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "By blocking electron transfer to oxygen, cyanide halts the proton gradient that powers ATP synthase, so oxidative phosphorylation and ATP output collapse.",
+      "topicTags": [
+        "biochemistry & metabolism"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0643",
+      "section": "BBLS",
+      "stem": "In population genetics, what is an allele frequency?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the idea that allele and genotype frequencies stay constant without evolutionary forces"
+        },
+        {
+          "label": "B",
+          "text": "the expected frequency of the heterozygous genotype"
+        },
+        {
+          "label": "C",
+          "text": "the proportion of a specific allele among all alleles at a locus"
+        },
+        {
+          "label": "D",
+          "text": "the expected frequency of the homozygous recessive genotype"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "an allele frequency is the proportion of a specific allele among all alleles at a locus.",
+      "topicTags": [
+        "evolution & diversity"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0644",
+      "section": "BBLS",
+      "stem": "In virology, what is a provirus?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a clear zone of lysed cells used to count infectious virus particles"
+        },
+        {
+          "label": "B",
+          "text": "a virus that stays dormant in host cells and can reactivate later"
+        },
+        {
+          "label": "C",
+          "text": "viral DNA integrated into a host cell's genome"
+        },
+        {
+          "label": "D",
+          "text": "the gradual mutation of viral surface proteins causing minor changes"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "a provirus is viral DNA integrated into a host cell's genome.",
+      "topicTags": [
+        "microbiology & virology"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0645",
+      "section": "BBLS",
+      "stem": "In microbiology, what is an obligate anaerobe?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the phase of rapid, balanced cell division"
+        },
+        {
+          "label": "B",
+          "text": "an organism that requires oxygen for growth"
+        },
+        {
+          "label": "C",
+          "text": "an organism that is harmed or killed by oxygen"
+        },
+        {
+          "label": "D",
+          "text": "the phase in which cells adapt and divide little"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "an obligate anaerobe is an organism that is harmed or killed by oxygen.",
+      "topicTags": [
+        "microbiology & virology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0646",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? the loss of electrons by a molecule",
+      "choices": [
+        {
+          "label": "A",
+          "text": "NADPH"
+        },
+        {
+          "label": "B",
+          "text": "NADH"
+        },
+        {
+          "label": "C",
+          "text": "oxidation"
+        },
+        {
+          "label": "D",
+          "text": "FADH2"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The description matches oxidation.",
+      "topicTags": [
+        "biochemistry & metabolism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0647",
+      "section": "BBLS",
+      "stem": "In population genetics, what is a Hardy-Weinberg assumption?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the proportion of a specific allele among all alleles at a locus"
+        },
+        {
+          "label": "B",
+          "text": "the expected frequency of the heterozygous genotype"
+        },
+        {
+          "label": "C",
+          "text": "the expected frequency of the homozygous recessive genotype"
+        },
+        {
+          "label": "D",
+          "text": "a condition such as no selection, no mutation, no migration, random mating, and large size"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "a Hardy-Weinberg assumption is a condition such as no selection, no mutation, no migration, random mating, and large size.",
+      "topicTags": [
+        "evolution & diversity"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0648",
+      "section": "BBLS",
+      "stem": "In evolution, what is stabilizing selection?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "selection favoring one extreme phenotype, shifting the average"
+        },
+        {
+          "label": "B",
+          "text": "selection that maintains multiple alleles, as with sickle-cell heterozygotes"
+        },
+        {
+          "label": "C",
+          "text": "selection favoring both extremes over the intermediate phenotype"
+        },
+        {
+          "label": "D",
+          "text": "selection favoring intermediate phenotypes over the extremes"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "stabilizing selection is selection favoring intermediate phenotypes over the extremes.",
+      "topicTags": [
+        "evolution & diversity"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0649",
+      "section": "BBLS",
+      "stem": "In evolution, what is relative fitness?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the fraction of trait variation that is due to genetic differences"
+        },
+        {
+          "label": "B",
+          "text": "the rapid diversification of a lineage into forms filling different niches"
+        },
+        {
+          "label": "C",
+          "text": "an environmental factor that influences which traits are favored"
+        },
+        {
+          "label": "D",
+          "text": "the reproductive success of a genotype compared with others"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "relative fitness is the reproductive success of a genotype compared with others.",
+      "topicTags": [
+        "evolution & diversity"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0650",
+      "section": "BBLS",
+      "stem": "In antibody structure, what is the constant region?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "one of the two larger polypeptides that define the antibody class"
+        },
+        {
+          "label": "B",
+          "text": "one of the two smaller polypeptides in an antibody molecule"
+        },
+        {
+          "label": "C",
+          "text": "the part that determines antibody class and effector function"
+        },
+        {
+          "label": "D",
+          "text": "the exact region of an antibody that contacts the epitope"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "the constant region is the part that determines antibody class and effector function.",
+      "topicTags": [
+        "immunology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0651",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? the inner-membrane chain that passes electrons to build a proton gradient",
+      "choices": [
+        {
+          "label": "A",
+          "text": "fermentation"
+        },
+        {
+          "label": "B",
+          "text": "the electron transport chain"
+        },
+        {
+          "label": "C",
+          "text": "the citric acid (Krebs) cycle"
+        },
+        {
+          "label": "D",
+          "text": "oxidative phosphorylation"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The description matches the electron transport chain.",
+      "topicTags": [
+        "biochemistry & metabolism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0652",
+      "section": "BBLS",
+      "stem": "In cell physiology, what is a concentration gradient?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the voltage difference across the membrane of an unstimulated cell"
+        },
+        {
+          "label": "B",
+          "text": "transport that uses an existing ion gradient rather than ATP directly"
+        },
+        {
+          "label": "C",
+          "text": "a difference in solute concentration across a space or membrane"
+        },
+        {
+          "label": "D",
+          "text": "transport that uses ATP directly to move a solute against its gradient"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "a concentration gradient is a difference in solute concentration across a space or membrane.",
+      "topicTags": [
+        "cell biology"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0653",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? an enzyme regulated by molecules binding at a site other than the active site",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Vmax"
+        },
+        {
+          "label": "B",
+          "text": "a substrate"
+        },
+        {
+          "label": "C",
+          "text": "a competitive inhibitor"
+        },
+        {
+          "label": "D",
+          "text": "an allosteric enzyme"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The description matches an allosteric enzyme.",
+      "topicTags": [
+        "biochemistry & metabolism"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0654",
+      "section": "BBLS",
+      "stem": "Which sugar is found in RNA?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "pyrimidines"
+        },
+        {
+          "label": "B",
+          "text": "parallel"
+        },
+        {
+          "label": "C",
+          "text": "ribose"
+        },
+        {
+          "label": "D",
+          "text": "antiparallel"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The answer is ribose.",
+      "topicTags": [
+        "molecular biology & genetics"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0655",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? the movement of molecules down their concentration gradient without a transporter",
+      "choices": [
+        {
+          "label": "A",
+          "text": "exocytosis"
+        },
+        {
+          "label": "B",
+          "text": "facilitated diffusion"
+        },
+        {
+          "label": "C",
+          "text": "simple diffusion"
+        },
+        {
+          "label": "D",
+          "text": "active transport"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The description matches simple diffusion.",
+      "topicTags": [
+        "cell biology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0656",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? the property that limits how large a cell can efficiently become",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the surface-area-to-volume ratio"
+        },
+        {
+          "label": "B",
+          "text": "Robert Hooke's contribution"
+        },
+        {
+          "label": "C",
+          "text": "the cell theory"
+        },
+        {
+          "label": "D",
+          "text": "Antonie van Leeuwenhoek's contribution"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The description matches the surface-area-to-volume ratio.",
+      "topicTags": [
+        "cell biology"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0657",
+      "section": "BBLS",
+      "stem": "What best describes the genome of bacteriophage T4?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a double-stranded DNA genome"
+        },
+        {
+          "label": "B",
+          "text": "a positive-sense single-stranded RNA genome"
+        },
+        {
+          "label": "C",
+          "text": "a positive-sense single-stranded RNA genome that is reverse-transcribed"
+        },
+        {
+          "label": "D",
+          "text": "a segmented negative-sense single-stranded RNA genome"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "bacteriophage T4 has a double-stranded DNA genome.",
+      "topicTags": [
+        "microbiology & virology"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0658",
+      "section": "BBLS",
+      "stem": "Which statement about Gram-negative bacteria is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "it is the first dye applied in the Gram staining procedure"
+        },
+        {
+          "label": "B",
+          "text": "it contains lipopolysaccharide and lies outside a thin peptidoglycan layer"
+        },
+        {
+          "label": "C",
+          "text": "they lose the crystal violet, take up the counterstain, and appear pink"
+        },
+        {
+          "label": "D",
+          "text": "it removes the primary stain from Gram-negative cells"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Gram-negative bacteria: they lose the crystal violet, take up the counterstain, and appear pink",
+      "topicTags": [
+        "microbiology & virology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0659",
+      "section": "BBLS",
+      "stem": "In molecular biology methods, what is the annealing step of PCR?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a vector designed to drive transcription and translation of an inserted gene"
+        },
+        {
+          "label": "B",
+          "text": "a short, synthetic single-stranded DNA or RNA"
+        },
+        {
+          "label": "C",
+          "text": "the step in which primers base-pair to the single-stranded template"
+        },
+        {
+          "label": "D",
+          "text": "the heating step that separates double-stranded DNA into single strands"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "the annealing step of PCR is the step in which primers base-pair to the single-stranded template.",
+      "topicTags": [
+        "molecular biology & genetics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0660",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? reciprocal evolutionary change between interacting species",
+      "choices": [
+        {
+          "label": "A",
+          "text": "mutation"
+        },
+        {
+          "label": "B",
+          "text": "an adaptation"
+        },
+        {
+          "label": "C",
+          "text": "coevolution"
+        },
+        {
+          "label": "D",
+          "text": "genetic drift"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The description matches coevolution.",
+      "topicTags": [
+        "evolution & diversity"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0661",
+      "section": "BBLS",
+      "stem": "In biochemistry, what is a hydrogen bond?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a weak attraction between a hydrogen bonded to nitrogen or oxygen and another electronegative atom"
+        },
+        {
+          "label": "B",
+          "text": "the joining of monomers by removing a water molecule"
+        },
+        {
+          "label": "C",
+          "text": "the breaking of a bond by adding water"
+        },
+        {
+          "label": "D",
+          "text": "the tendency of nonpolar groups to cluster away from water"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "a hydrogen bond is a weak attraction between a hydrogen bonded to nitrogen or oxygen and another electronegative atom.",
+      "topicTags": [
+        "biochemistry & metabolism"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0662",
+      "section": "BBLS",
+      "stem": "During nucleic acid metabolism, what is the primary role of telomerase?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "seals nicks by joining adjacent Okazaki fragments"
+        },
+        {
+          "label": "B",
+          "text": "synthesizes short RNA primers that start DNA synthesis"
+        },
+        {
+          "label": "C",
+          "text": "extends the repetitive DNA sequence at chromosome ends"
+        },
+        {
+          "label": "D",
+          "text": "removes RNA primers and fills the resulting gaps with DNA"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "telomerase: extends the repetitive DNA sequence at chromosome ends",
+      "topicTags": [
+        "molecular biology & genetics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0663",
+      "section": "BBLS",
+      "stem": "In eukaryotic cells, what is the primary function of the smooth endoplasmic reticulum?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "digests macromolecules and worn-out organelles with hydrolytic enzymes"
+        },
+        {
+          "label": "B",
+          "text": "synthesizes lipids and helps detoxify certain molecules"
+        },
+        {
+          "label": "C",
+          "text": "synthesizes proteins by translating messenger RNA"
+        },
+        {
+          "label": "D",
+          "text": "makes and processes proteins bound for secretion or membranes"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "the smooth endoplasmic reticulum synthesizes lipids and helps detoxify certain molecules.",
+      "topicTags": [
+        "cell biology"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0664",
+      "section": "BBLS",
+      "stem": "In immunology, what is a B-cell receptor?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a granulocyte important in defense against parasites and in allergy"
+        },
+        {
+          "label": "B",
+          "text": "the surface antibody a B cell uses to recognize a specific antigen"
+        },
+        {
+          "label": "C",
+          "text": "a blood granulocyte that releases histamine and heparin in inflammation"
+        },
+        {
+          "label": "D",
+          "text": "a mediator that dilates blood vessels and increases their permeability"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "a B-cell receptor is the surface antibody a B cell uses to recognize a specific antigen.",
+      "topicTags": [
+        "immunology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0665",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? the maximum reaction rate reached at saturating substrate concentration",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Km, the Michaelis constant"
+        },
+        {
+          "label": "B",
+          "text": "the active site"
+        },
+        {
+          "label": "C",
+          "text": "Vmax"
+        },
+        {
+          "label": "D",
+          "text": "an enzyme"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The description matches Vmax.",
+      "topicTags": [
+        "biochemistry & metabolism"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0666",
+      "section": "BBLS",
+      "stem": "In the control of gene expression, what is the trp corepressor (tryptophan)?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a core promoter element that helps position eukaryotic RNA polymerase II"
+        },
+        {
+          "label": "B",
+          "text": "the DNA sequence where a repressor binds to block transcription"
+        },
+        {
+          "label": "C",
+          "text": "the molecule that activates the trp repressor to shut off the operon"
+        },
+        {
+          "label": "D",
+          "text": "the DNA sequence where RNA polymerase binds to begin transcription"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "the trp corepressor (tryptophan) is the molecule that activates the trp repressor to shut off the operon.",
+      "topicTags": [
+        "molecular biology & genetics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0667",
+      "section": "BBLS",
+      "stem": "Which statement describes the antibody class IgM?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "it is the first antibody made in a primary response and is a pentamer that agglutinates well"
+        },
+        {
+          "label": "B",
+          "text": "it is found mainly on the surface of naive B cells as a receptor"
+        },
+        {
+          "label": "C",
+          "text": "it binds mast cells and mediates allergic reactions and defense against parasites"
+        },
+        {
+          "label": "D",
+          "text": "it is the most abundant antibody in blood, crosses the placenta, and dominates secondary responses"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "IgM: it is the first antibody made in a primary response and is a pentamer that agglutinates well",
+      "topicTags": [
+        "immunology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0668",
+      "section": "BBLS",
+      "stem": "What is the typical inheritance pattern of cystic fibrosis?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "autosomal dominant"
+        },
+        {
+          "label": "B",
+          "text": "Y-linked"
+        },
+        {
+          "label": "C",
+          "text": "autosomal recessive"
+        },
+        {
+          "label": "D",
+          "text": "incompletely dominant"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "cystic fibrosis is inherited in an autosomal recessive manner.",
+      "topicTags": [
+        "molecular biology & genetics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0669",
+      "section": "BBLS",
+      "stem": "Boiling a solution of an enzyme abolishes its activity even after cooling. What has most likely happened?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The enzyme has been denatured, losing its functional shape"
+        },
+        {
+          "label": "B",
+          "text": "The enzyme switched to anaerobic mode"
+        },
+        {
+          "label": "C",
+          "text": "The enzyme's gene was mutated"
+        },
+        {
+          "label": "D",
+          "text": "The substrate concentration increased"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "High temperature disrupts the noncovalent interactions that maintain protein structure, denaturing the enzyme and destroying its active site.",
+      "topicTags": [
+        "biochemistry & metabolism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0670",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? a difference in solute concentration across a space or membrane",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the resting membrane potential"
+        },
+        {
+          "label": "B",
+          "text": "secondary active transport"
+        },
+        {
+          "label": "C",
+          "text": "a concentration gradient"
+        },
+        {
+          "label": "D",
+          "text": "primary active transport"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The description matches a concentration gradient.",
+      "topicTags": [
+        "cell biology"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0671",
+      "section": "BBLS",
+      "stem": "In immunology, what is affinity maturation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the elimination of self-reactive lymphocytes during their development"
+        },
+        {
+          "label": "B",
+          "text": "the removal of lymphocytes that react strongly against self antigens"
+        },
+        {
+          "label": "C",
+          "text": "the change in antibody class a B cell makes while keeping its specificity"
+        },
+        {
+          "label": "D",
+          "text": "the increase in antibody binding strength over the course of a response"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "affinity maturation is the increase in antibody binding strength over the course of a response.",
+      "topicTags": [
+        "immunology"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0672",
+      "section": "BBLS",
+      "stem": "In photosynthesis, what is the Calvin cycle?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the reactions that fix carbon dioxide into sugar using ATP and NADPH"
+        },
+        {
+          "label": "B",
+          "text": "the process that uses light energy to build glucose from carbon dioxide and water"
+        },
+        {
+          "label": "C",
+          "text": "the membrane compartment in chloroplasts where the light reactions occur"
+        },
+        {
+          "label": "D",
+          "text": "the reactions that capture light energy to make ATP and NADPH"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "the Calvin cycle is the reactions that fix carbon dioxide into sugar using ATP and NADPH.",
+      "topicTags": [
+        "cell biology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0673",
+      "section": "BBLS",
+      "stem": "In evolution, what is adaptive radiation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the reproductive success of a genotype compared with others"
+        },
+        {
+          "label": "B",
+          "text": "the rapid diversification of a lineage into forms filling different niches"
+        },
+        {
+          "label": "C",
+          "text": "the fraction of trait variation that is due to genetic differences"
+        },
+        {
+          "label": "D",
+          "text": "the diversity of alleles and genotypes that is the raw material for evolution"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "adaptive radiation is the rapid diversification of a lineage into forms filling different niches.",
+      "topicTags": [
+        "evolution & diversity"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0674",
+      "section": "BBLS",
+      "stem": "Which amino acid is described as follows: its thiol (-SH) side chain forms disulfide bonds?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "alanine"
+        },
+        {
+          "label": "B",
+          "text": "serine"
+        },
+        {
+          "label": "C",
+          "text": "cysteine"
+        },
+        {
+          "label": "D",
+          "text": "proline"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "That description identifies cysteine.",
+      "topicTags": [
+        "biochemistry & metabolism"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0675",
+      "section": "BBLS",
+      "stem": "In bacterial genetics, what is an F plasmid?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a mobile genetic element that can move to new positions in the genome"
+        },
+        {
+          "label": "B",
+          "text": "the transfer of DNA through direct cell-to-cell contact via a pilus"
+        },
+        {
+          "label": "C",
+          "text": "a plasmid that lets a cell act as a donor during conjugation"
+        },
+        {
+          "label": "D",
+          "text": "a cell with an integrated F plasmid that can transfer chromosomal genes"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "an F plasmid is a plasmid that lets a cell act as a donor during conjugation.",
+      "topicTags": [
+        "microbiology & virology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0676",
+      "section": "BBLS",
+      "stem": "In cellular metabolism, what is glycolysis?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the direct transfer of a phosphate group to ADP during a reaction"
+        },
+        {
+          "label": "B",
+          "text": "the cytoplasmic pathway that splits glucose into two pyruvate, netting 2 ATP and 2 NADH"
+        },
+        {
+          "label": "C",
+          "text": "the flow of protons through ATP synthase that drives ATP formation"
+        },
+        {
+          "label": "D",
+          "text": "the conversion of pyruvate to acetyl-CoA, releasing carbon dioxide and making NADH"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "glycolysis is the cytoplasmic pathway that splits glucose into two pyruvate, netting 2 ATP and 2 NADH.",
+      "topicTags": [
+        "biochemistry & metabolism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0677",
+      "section": "BBLS",
+      "stem": "Which class of nitrogenous bases includes cytosine, thymine, and uracil?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a phosphodiester bond"
+        },
+        {
+          "label": "B",
+          "text": "purines"
+        },
+        {
+          "label": "C",
+          "text": "pyrimidines"
+        },
+        {
+          "label": "D",
+          "text": "3' to 5'"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The answer is pyrimidines.",
+      "topicTags": [
+        "molecular biology & genetics"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0678",
+      "section": "BBLS",
+      "stem": "In bioenergetics, what is NADH?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "an electron carrier that delivers electrons to the electron transport chain"
+        },
+        {
+          "label": "B",
+          "text": "the gain of electrons by a molecule"
+        },
+        {
+          "label": "C",
+          "text": "an electron carrier that enters the transport chain at a lower energy level than NADH"
+        },
+        {
+          "label": "D",
+          "text": "the cell's main energy currency, releasing energy when its terminal phosphate bond is hydrolyzed"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "NADH is an electron carrier that delivers electrons to the electron transport chain.",
+      "topicTags": [
+        "biochemistry & metabolism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0679",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? the anaerobic regeneration of NAD+ from NADH so glycolysis can continue",
+      "choices": [
+        {
+          "label": "A",
+          "text": "fermentation"
+        },
+        {
+          "label": "B",
+          "text": "pyruvate oxidation (the link reaction)"
+        },
+        {
+          "label": "C",
+          "text": "the electron transport chain"
+        },
+        {
+          "label": "D",
+          "text": "chemiosmosis"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The description matches fermentation.",
+      "topicTags": [
+        "biochemistry & metabolism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0680",
+      "section": "BBLS",
+      "stem": "In membrane transport, what is the sodium-potassium pump?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "an active transporter that moves sodium out of and potassium into the cell"
+        },
+        {
+          "label": "B",
+          "text": "passive movement down a gradient through a membrane transport protein"
+        },
+        {
+          "label": "C",
+          "text": "the movement of molecules down their concentration gradient without a transporter"
+        },
+        {
+          "label": "D",
+          "text": "the movement of a solute against its gradient using energy such as ATP"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "the sodium-potassium pump is an active transporter that moves sodium out of and potassium into the cell.",
+      "topicTags": [
+        "cell biology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0681",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? the molecule that presents extracellular peptides to helper CD4+ T cells on antigen-presenting cells",
+      "choices": [
+        {
+          "label": "A",
+          "text": "an epitope"
+        },
+        {
+          "label": "B",
+          "text": "an antigen"
+        },
+        {
+          "label": "C",
+          "text": "MHC class II"
+        },
+        {
+          "label": "D",
+          "text": "the T-cell receptor"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The description matches MHC class II.",
+      "topicTags": [
+        "immunology"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0682",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? cocci arranged in chains",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a coccus"
+        },
+        {
+          "label": "B",
+          "text": "a bacillus"
+        },
+        {
+          "label": "C",
+          "text": "a spirochete"
+        },
+        {
+          "label": "D",
+          "text": "a streptococcus arrangement"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The description matches a streptococcus arrangement.",
+      "topicTags": [
+        "microbiology & virology"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0683",
+      "section": "BBLS",
+      "stem": "What is the primary mechanism of action of rifampin?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "blocks cell wall synthesis by binding peptidoglycan precursors"
+        },
+        {
+          "label": "B",
+          "text": "disrupts the bacterial cell membrane"
+        },
+        {
+          "label": "C",
+          "text": "inhibits the 50S ribosomal subunit to block protein synthesis"
+        },
+        {
+          "label": "D",
+          "text": "inhibits bacterial RNA polymerase to block transcription"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "rifampin inhibits bacterial RNA polymerase to block transcription.",
+      "topicTags": [
+        "microbiology & virology"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0684",
+      "section": "BBLS",
+      "stem": "Human infants of average birth weight historically survived better than very small or very large infants. This pattern illustrates:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Directional selection"
+        },
+        {
+          "label": "B",
+          "text": "Disruptive selection"
+        },
+        {
+          "label": "C",
+          "text": "Gene flow"
+        },
+        {
+          "label": "D",
+          "text": "Stabilizing selection"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Stabilizing selection favors intermediate phenotypes, reducing the frequency of both extremes, as seen historically with birth weight.",
+      "topicTags": [
+        "evolution & diversity"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0685",
+      "section": "BBLS",
+      "stem": "In the study of life's history, what is a stromatolite?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the relatively rapid appearance of many animal groups in the fossil record"
+        },
+        {
+          "label": "B",
+          "text": "an experiment showing organic molecules can form under early-Earth-like conditions"
+        },
+        {
+          "label": "C",
+          "text": "a layered rock built by ancient microbial mats, among the oldest fossils"
+        },
+        {
+          "label": "D",
+          "text": "the idea that early life used RNA for both genetic storage and catalysis"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "a stromatolite is a layered rock built by ancient microbial mats, among the oldest fossils.",
+      "topicTags": [
+        "evolution & diversity"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0686",
+      "section": "BBLS",
+      "stem": "Antibodies coat the surface of a bacterium, and phagocytes then engulf it much more efficiently. This enhancement is called:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Fermentation"
+        },
+        {
+          "label": "B",
+          "text": "Opsonization"
+        },
+        {
+          "label": "C",
+          "text": "Neutralization"
+        },
+        {
+          "label": "D",
+          "text": "Antigenic drift"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Opsonization is the coating of a pathogen with antibodies or complement to promote its uptake by phagocytes.",
+      "topicTags": [
+        "immunology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0687",
+      "section": "BBLS",
+      "stem": "What is the causative agent of cholera?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the bacterium Vibrio cholerae"
+        },
+        {
+          "label": "B",
+          "text": "a dermatophyte fungus"
+        },
+        {
+          "label": "C",
+          "text": "a parasitic helminth (worm)"
+        },
+        {
+          "label": "D",
+          "text": "an influenza virus"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "cholera is caused by the bacterium Vibrio cholerae.",
+      "topicTags": [
+        "microbiology & virology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0688",
+      "section": "BBLS",
+      "stem": "In evolution, what is a polymorphism?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the rapid diversification of a lineage into forms filling different niches"
+        },
+        {
+          "label": "B",
+          "text": "an environmental factor that influences which traits are favored"
+        },
+        {
+          "label": "C",
+          "text": "the diversity of alleles and genotypes that is the raw material for evolution"
+        },
+        {
+          "label": "D",
+          "text": "the presence of two or more distinct forms in a population"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "a polymorphism is the presence of two or more distinct forms in a population.",
+      "topicTags": [
+        "evolution & diversity"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0689",
+      "section": "BBLS",
+      "stem": "In cell biology, what is Antonie van Leeuwenhoek's contribution?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "an instrument that uses electron beams for much higher magnification"
+        },
+        {
+          "label": "B",
+          "text": "an instrument that uses visible light to magnify small specimens"
+        },
+        {
+          "label": "C",
+          "text": "the first description and naming of cells"
+        },
+        {
+          "label": "D",
+          "text": "the first observation of living microorganisms with a microscope"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Antonie van Leeuwenhoek's contribution is the first observation of living microorganisms with a microscope.",
+      "topicTags": [
+        "cell biology"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0690",
+      "section": "BBLS",
+      "stem": "Which cellular structure stores the cell's DNA and directs gene expression?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the cytoskeleton"
+        },
+        {
+          "label": "B",
+          "text": "the plasma membrane"
+        },
+        {
+          "label": "C",
+          "text": "the nucleus"
+        },
+        {
+          "label": "D",
+          "text": "the rough endoplasmic reticulum"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The description matches the nucleus.",
+      "topicTags": [
+        "cell biology"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0691",
+      "section": "BBLS",
+      "stem": "In innate immunity, what is the role of fever?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "they are proteins from virus-infected cells that warn neighboring cells"
+        },
+        {
+          "label": "B",
+          "text": "it is the engulfment and digestion of pathogens by cells such as macrophages"
+        },
+        {
+          "label": "C",
+          "text": "it forms a physical barrier that blocks most pathogens from entering"
+        },
+        {
+          "label": "D",
+          "text": "it raises body temperature to help inhibit pathogen growth"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "fever: it raises body temperature to help inhibit pathogen growth",
+      "topicTags": [
+        "immunology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0692",
+      "section": "BBLS",
+      "stem": "What is the typical inheritance pattern of Duchenne muscular dystrophy?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Y-linked"
+        },
+        {
+          "label": "B",
+          "text": "incompletely dominant"
+        },
+        {
+          "label": "C",
+          "text": "codominant"
+        },
+        {
+          "label": "D",
+          "text": "X-linked recessive"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Duchenne muscular dystrophy is inherited in an X-linked recessive manner.",
+      "topicTags": [
+        "molecular biology & genetics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0693",
+      "section": "BBLS",
+      "stem": "Which immune cell suppresses immune responses to help maintain self-tolerance?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a memory T cell"
+        },
+        {
+          "label": "B",
+          "text": "a regulatory T cell"
+        },
+        {
+          "label": "C",
+          "text": "a helper T cell (CD4+)"
+        },
+        {
+          "label": "D",
+          "text": "a cytotoxic T cell (CD8+)"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The description matches a regulatory T cell.",
+      "topicTags": [
+        "immunology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0694",
+      "section": "BBLS",
+      "stem": "What is the chromosomal basis of Patau syndrome?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "trisomy of chromosome 13"
+        },
+        {
+          "label": "B",
+          "text": "a single X chromosome (45,X) in females"
+        },
+        {
+          "label": "C",
+          "text": "an extra X chromosome in males (47,XXY)"
+        },
+        {
+          "label": "D",
+          "text": "a deletion on the short arm of chromosome 5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Patau syndrome is caused by trisomy of chromosome 13.",
+      "topicTags": [
+        "molecular biology & genetics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0695",
+      "section": "BBLS",
+      "stem": "In bacterial morphology, what is a streptococcus arrangement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "cocci arranged in pairs"
+        },
+        {
+          "label": "B",
+          "text": "a rigid, spiral-shaped bacterium"
+        },
+        {
+          "label": "C",
+          "text": "cocci arranged in chains"
+        },
+        {
+          "label": "D",
+          "text": "a rod-shaped bacterium"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "a streptococcus arrangement is cocci arranged in chains.",
+      "topicTags": [
+        "microbiology & virology"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0696",
+      "section": "BBLS",
+      "stem": "In immunology, what is a basophil?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a blood granulocyte that releases histamine and heparin in inflammation"
+        },
+        {
+          "label": "B",
+          "text": "a cytokine that attracts immune cells toward a site of infection"
+        },
+        {
+          "label": "C",
+          "text": "a granulocyte important in defense against parasites and in allergy"
+        },
+        {
+          "label": "D",
+          "text": "a mediator that dilates blood vessels and increases their permeability"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "a basophil is a blood granulocyte that releases histamine and heparin in inflammation.",
+      "topicTags": [
+        "immunology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0697",
+      "section": "BBLS",
+      "stem": "In the diversity of life, what is the kingdom Animalia?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "prokaryotes with peptidoglycan cell walls"
+        },
+        {
+          "label": "B",
+          "text": "eukaryotes that absorb nutrients and have chitin in their cell walls"
+        },
+        {
+          "label": "C",
+          "text": "multicellular heterotrophic eukaryotes that lack cell walls"
+        },
+        {
+          "label": "D",
+          "text": "multicellular photosynthetic eukaryotes with cellulose cell walls"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "the kingdom Animalia is multicellular heterotrophic eukaryotes that lack cell walls.",
+      "topicTags": [
+        "evolution & diversity"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0698",
+      "section": "BBLS",
+      "stem": "In prokaryotic gene regulation, what is a constitutive gene?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "regulation in which an activator protein increases transcription, as with CAP-cAMP"
+        },
+        {
+          "label": "B",
+          "text": "the glucose-dependent reduction of lac operon expression through low cAMP"
+        },
+        {
+          "label": "C",
+          "text": "an operon normally on that is switched off by a specific signal, like the trp operon"
+        },
+        {
+          "label": "D",
+          "text": "a gene that is transcribed continuously regardless of conditions"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "a constitutive gene is a gene that is transcribed continuously regardless of conditions.",
+      "topicTags": [
+        "molecular biology & genetics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0699",
+      "section": "BBLS",
+      "stem": "In a bacterial culture, a mutation deletes two nucleotides near the start of a gene's coding sequence. What is the most likely consequence for the encoded protein?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Faster transcription of the gene"
+        },
+        {
+          "label": "B",
+          "text": "No change, because the code is degenerate"
+        },
+        {
+          "label": "C",
+          "text": "A single conservative amino acid substitution"
+        },
+        {
+          "label": "D",
+          "text": "A shifted reading frame that alters most downstream amino acids"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A deletion not divisible by three causes a frameshift, changing the grouping of all downstream codons and typically producing a nonfunctional protein.",
+      "topicTags": [
+        "molecular biology & genetics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0700",
+      "section": "BBLS",
+      "stem": "What is the causative agent of gonorrhea?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the varicella-zoster virus"
+        },
+        {
+          "label": "B",
+          "text": "the bacterium Neisseria gonorrhoeae"
+        },
+        {
+          "label": "C",
+          "text": "the fungus Candida albicans"
+        },
+        {
+          "label": "D",
+          "text": "the bacterium Borrelia burgdorferi"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "gonorrhea is caused by the bacterium Neisseria gonorrhoeae.",
+      "topicTags": [
+        "microbiology & virology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0701",
+      "section": "BBLS",
+      "stem": "In virology, what is antigenic drift?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a virus that stays dormant in host cells and can reactivate later"
+        },
+        {
+          "label": "B",
+          "text": "viral DNA integrated into a host cell's genome"
+        },
+        {
+          "label": "C",
+          "text": "a major, abrupt change in viral surface proteins from genome reassortment"
+        },
+        {
+          "label": "D",
+          "text": "the gradual mutation of viral surface proteins causing minor changes"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "antigenic drift is the gradual mutation of viral surface proteins causing minor changes.",
+      "topicTags": [
+        "microbiology & virology"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0702",
+      "section": "BBLS",
+      "stem": "In the study of life's history, what is the Cambrian explosion?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "an experiment showing organic molecules can form under early-Earth-like conditions"
+        },
+        {
+          "label": "B",
+          "text": "the inferred organism from which all present-day life descends"
+        },
+        {
+          "label": "C",
+          "text": "the idea that early life used RNA for both genetic storage and catalysis"
+        },
+        {
+          "label": "D",
+          "text": "the relatively rapid appearance of many animal groups in the fossil record"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "the Cambrian explosion is the relatively rapid appearance of many animal groups in the fossil record.",
+      "topicTags": [
+        "evolution & diversity"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0703",
+      "section": "BBLS",
+      "stem": "In microbiology, what is an obligate aerobe?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "an organism that requires oxygen for growth"
+        },
+        {
+          "label": "B",
+          "text": "an organism that grows with or without oxygen, preferring it when present"
+        },
+        {
+          "label": "C",
+          "text": "the phase in which dying cells outnumber new cells"
+        },
+        {
+          "label": "D",
+          "text": "an organism that is harmed or killed by oxygen"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "an obligate aerobe is an organism that requires oxygen for growth.",
+      "topicTags": [
+        "microbiology & virology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0704",
+      "section": "BBLS",
+      "stem": "In microbial control, what is disinfection?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "uses chemicals to kill microbes on inanimate surfaces"
+        },
+        {
+          "label": "B",
+          "text": "uses mild heat to reduce pathogen numbers without full sterilization"
+        },
+        {
+          "label": "C",
+          "text": "physically removes microbes from heat-sensitive liquids or air"
+        },
+        {
+          "label": "D",
+          "text": "uses chemicals mild enough to reduce microbes on living tissue"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "disinfection is a method that uses chemicals to kill microbes on inanimate surfaces.",
+      "topicTags": [
+        "microbiology & virology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0705",
+      "section": "BBLS",
+      "stem": "In gene expression, what is a ribosome?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a modified guanine added to the 5' end of eukaryotic mRNA for stability and ribosome binding"
+        },
+        {
+          "label": "B",
+          "text": "the ribonucleoprotein machine that catalyzes peptide bond formation"
+        },
+        {
+          "label": "C",
+          "text": "the tRNA triplet that base-pairs with an mRNA codon"
+        },
+        {
+          "label": "D",
+          "text": "a sequence retained in mature mRNA and typically translated"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "a ribosome is the ribonucleoprotein machine that catalyzes peptide bond formation.",
+      "topicTags": [
+        "molecular biology & genetics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0706",
+      "section": "BBLS",
+      "stem": "What is the primary role of a lymph node?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "it is the site of blood cell formation and B cell maturation"
+        },
+        {
+          "label": "B",
+          "text": "they guard the entrance of the respiratory and digestive tracts"
+        },
+        {
+          "label": "C",
+          "text": "it filters lymph and lets immune cells meet antigens"
+        },
+        {
+          "label": "D",
+          "text": "it is the organ where T cells mature and are selected"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "a lymph node: it filters lymph and lets immune cells meet antigens",
+      "topicTags": [
+        "immunology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0707",
+      "section": "BBLS",
+      "stem": "In metabolism, what is the urea cycle?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the synthesis of glucose from noncarbohydrate precursors"
+        },
+        {
+          "label": "B",
+          "text": "the production of ketone bodies from acetyl-CoA during fasting"
+        },
+        {
+          "label": "C",
+          "text": "the pathway that converts toxic ammonia into urea for excretion"
+        },
+        {
+          "label": "D",
+          "text": "the synthesis of fatty acids and fats"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "the urea cycle is the pathway that converts toxic ammonia into urea for excretion.",
+      "topicTags": [
+        "biochemistry & metabolism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0708",
+      "section": "BBLS",
+      "stem": "In DNA, adenine base-pairs with which base?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "cytosine"
+        },
+        {
+          "label": "B",
+          "text": "adenine"
+        },
+        {
+          "label": "C",
+          "text": "thymine"
+        },
+        {
+          "label": "D",
+          "text": "uracil"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The answer is thymine.",
+      "topicTags": [
+        "molecular biology & genetics"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0709",
+      "section": "BBLS",
+      "stem": "Which term best matches this description? an immune attack on transplanted tissue recognized as foreign",
+      "choices": [
+        {
+          "label": "A",
+          "text": "anaphylaxis"
+        },
+        {
+          "label": "B",
+          "text": "an immunodeficiency"
+        },
+        {
+          "label": "C",
+          "text": "a type I hypersensitivity (allergy)"
+        },
+        {
+          "label": "D",
+          "text": "graft rejection"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The description matches graft rejection.",
+      "topicTags": [
+        "immunology"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0710",
+      "section": "BBLS",
+      "stem": "Which immune cell secretes large amounts of antibody after B cell differentiation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a regulatory T cell"
+        },
+        {
+          "label": "B",
+          "text": "a helper T cell (CD4+)"
+        },
+        {
+          "label": "C",
+          "text": "a plasma cell"
+        },
+        {
+          "label": "D",
+          "text": "a memory T cell"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The description matches a plasma cell.",
+      "topicTags": [
+        "immunology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0711",
+      "section": "BBLS",
+      "stem": "In membrane transport, what is simple diffusion?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the release of material by fusing vesicles with the plasma membrane"
+        },
+        {
+          "label": "B",
+          "text": "an active transporter that moves sodium out of and potassium into the cell"
+        },
+        {
+          "label": "C",
+          "text": "the movement of molecules down their concentration gradient without a transporter"
+        },
+        {
+          "label": "D",
+          "text": "a membrane protein forming a pore for specific ions or molecules"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "simple diffusion is the movement of molecules down their concentration gradient without a transporter.",
+      "topicTags": [
+        "cell biology"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    },
+    {
+      "id": "bbls-aigen-0712",
+      "section": "BBLS",
+      "stem": "In recombinant DNA technology, what is competent cells?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the uptake of naked DNA from the environment by a cell"
+        },
+        {
+          "label": "B",
+          "text": "cells treated so that they can take up exogenous DNA"
+        },
+        {
+          "label": "C",
+          "text": "a gene, often for antibiotic resistance, used to identify cells carrying a plasmid"
+        },
+        {
+          "label": "D",
+          "text": "a small circular DNA molecule that replicates independently of the chromosome"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "competent cells is cells treated so that they can take up exogenous DNA.",
+      "topicTags": [
+        "molecular biology & genetics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:bbls",
+      "answerProvenance": "ai-generated",
+      "notes": "AI-generated proof-of-concept item (text-only). Not real MCAT/AAMC content."
+    }
+  ]
+}

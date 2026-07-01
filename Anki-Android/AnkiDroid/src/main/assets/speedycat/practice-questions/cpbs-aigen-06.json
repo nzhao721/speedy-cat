@@ -1,0 +1,3268 @@
+{
+  "meta": {
+    "section": "CPBS",
+    "subArea": "AI-generated (proof-of-concept)",
+    "generatedOn": "2026-07-01",
+    "sources": [
+      {
+        "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+        "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+        "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+      }
+    ],
+    "counts": {
+      "total": 101,
+      "byTopic": {
+        "electricity & magnetism": 12,
+        "waves, optics & modern physics": 12,
+        "chemical bonding & structure": 11,
+        "stoichiometry, reactions & measurement": 11,
+        "solutions, gases & acid-base": 11,
+        "thermochemistry, kinetics & equilibrium": 11,
+        "thermodynamics & fluids": 11,
+        "atomic structure & periodicity": 11,
+        "mechanics": 11
+      },
+      "byDifficulty": {
+        "medium": 62,
+        "easy": 22,
+        "hard": 17
+      }
+    },
+    "notes": "AI-generated proof-of-concept CPBS items for SpeedyCAT (chunk 6 of 10). NOT real MCAT/AAMC content and NOT from any answer key. Every stem and choice is plain text (no HTML/SVG/LaTeX). Answer keys were computed programmatically and each item passed a 4-criteria eval (four distinct choices; clean plain-text formatting; MCAT-appropriate difficulty; exactly one correct choice)."
+  },
+  "questions": [
+    {
+      "id": "cpbs-ag-0506",
+      "section": "CPBS",
+      "stem": "A current of 1 A flows through a 20 Ω resistor. How much power is dissipated?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "0.05 W"
+        },
+        {
+          "label": "B",
+          "text": "400 W"
+        },
+        {
+          "label": "C",
+          "text": "20 W"
+        },
+        {
+          "label": "D",
+          "text": "40 W"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "P = I^2 R = (1)^2(20) = 20 W.",
+      "topicTags": [
+        "electricity & magnetism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0507",
+      "section": "CPBS",
+      "stem": "A wave has a period of 0.05 s. What is its frequency?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "0.05 Hz"
+        },
+        {
+          "label": "B",
+          "text": "20 Hz"
+        },
+        {
+          "label": "C",
+          "text": "40 Hz"
+        },
+        {
+          "label": "D",
+          "text": "0.1 Hz"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "f = 1 / T = 1 / 0.05 = 20 Hz.",
+      "topicTags": [
+        "waves, optics & modern physics"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0508",
+      "section": "CPBS",
+      "stem": "According to VSEPR theory, what is the molecular geometry of PCl3?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "linear"
+        },
+        {
+          "label": "B",
+          "text": "tetrahedral"
+        },
+        {
+          "label": "C",
+          "text": "trigonal pyramidal"
+        },
+        {
+          "label": "D",
+          "text": "bent"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "PCl3 adopts a trigonal pyramidal geometry based on its bonding and lone-pair electron domains.",
+      "topicTags": [
+        "chemical bonding & structure"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0509",
+      "section": "CPBS",
+      "stem": "How many molecules are in 2 mol of a substance? (Avogadro's number = 6.022 x 10^23 /mol)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "1.2 x 10^24"
+        },
+        {
+          "label": "B",
+          "text": "3.01 x 10^23"
+        },
+        {
+          "label": "C",
+          "text": "3.32 x 10^-24"
+        },
+        {
+          "label": "D",
+          "text": "2.41 x 10^24"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "molecules = moles x N_A = 2 x 6.022 x 10^23 = 1.2 x 10^24.",
+      "topicTags": [
+        "stoichiometry, reactions & measurement"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0510",
+      "section": "CPBS",
+      "stem": "A solution has pH = 6. What is its hydrogen ion concentration [H+]?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "1 x 10^-5 M"
+        },
+        {
+          "label": "B",
+          "text": "1 x 10^-8 M"
+        },
+        {
+          "label": "C",
+          "text": "1 x 10^6 M"
+        },
+        {
+          "label": "D",
+          "text": "1 x 10^-6 M"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "[H+] = 10^(-pH) = 10^(-6) = 1 x 10^-6 M.",
+      "topicTags": [
+        "solutions, gases & acid-base"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0511",
+      "section": "CPBS",
+      "stem": "How many grams of water are heated if 2090 J raises the temperature by 5 degrees C? (c = 4.18 J/(g·°C))",
+      "choices": [
+        {
+          "label": "A",
+          "text": "100 g"
+        },
+        {
+          "label": "B",
+          "text": "10450 g"
+        },
+        {
+          "label": "C",
+          "text": "418 g"
+        },
+        {
+          "label": "D",
+          "text": "2.39 x 10^-3 g"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "m = q / (c ΔT) = 2090 / (4.18 x 5) = 100 g.",
+      "topicTags": [
+        "thermochemistry, kinetics & equilibrium"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0512",
+      "section": "CPBS",
+      "stem": "What is the buoyant force on an object of volume 4 x 10^-3 m^3 fully submerged in a fluid of density 1000 kg/m^3? (g = 9.8 m/s^2)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "39.2 N"
+        },
+        {
+          "label": "B",
+          "text": "4 N"
+        },
+        {
+          "label": "C",
+          "text": "1000 N"
+        },
+        {
+          "label": "D",
+          "text": "0.0392 N"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Archimedes: F_b = ρ V g = (1000)(4 x 10^-3)(9.8) = 39.2 N.",
+      "topicTags": [
+        "thermodynamics & fluids"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0513",
+      "section": "CPBS",
+      "stem": "An atom has 20 protons and 8 neutrons. What is its mass number?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "8"
+        },
+        {
+          "label": "B",
+          "text": "20"
+        },
+        {
+          "label": "C",
+          "text": "12"
+        },
+        {
+          "label": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mass number = protons + neutrons = 20 + 8 = 28.",
+      "topicTags": [
+        "atomic structure & periodicity"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0514",
+      "section": "CPBS",
+      "stem": "A net force of 30 N acts on a 2 kg object. What is its acceleration?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "28 m/s^2"
+        },
+        {
+          "label": "B",
+          "text": "15 m/s^2"
+        },
+        {
+          "label": "C",
+          "text": "60 m/s^2"
+        },
+        {
+          "label": "D",
+          "text": "0.0667 m/s^2"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "a = F / m = 30 / 2 = 15 m/s^2.",
+      "topicTags": [
+        "mechanics"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0515",
+      "section": "CPBS",
+      "stem": "A current of 0.25 A flows for 30 s. How much charge passes a point?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "120 C"
+        },
+        {
+          "label": "B",
+          "text": "8.33 x 10^-3 C"
+        },
+        {
+          "label": "C",
+          "text": "30.2 C"
+        },
+        {
+          "label": "D",
+          "text": "7.5 C"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Q = I t = (0.25)(30) = 7.5 C.",
+      "topicTags": [
+        "electricity & magnetism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0516",
+      "section": "CPBS",
+      "stem": "What is the energy of a photon of frequency 1 x 10^14 Hz? (h = 6.63 x 10^-34 J·s)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "1.51 x 10^47 J"
+        },
+        {
+          "label": "B",
+          "text": "1.33 x 10^-19 J"
+        },
+        {
+          "label": "C",
+          "text": "6.63 x 10^-20 J"
+        },
+        {
+          "label": "D",
+          "text": "3.31 x 10^-20 J"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "E = h f = (6.63 x 10^-34)(1 x 10^14) = 6.63 x 10^-20 J.",
+      "topicTags": [
+        "waves, optics & modern physics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0517",
+      "section": "CPBS",
+      "stem": "What is the approximate bond angle in PCl3 (trigonal pyramidal)?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "about 107 degrees"
+        },
+        {
+          "label": "B",
+          "text": "120 degrees"
+        },
+        {
+          "label": "C",
+          "text": "109.5 degrees"
+        },
+        {
+          "label": "D",
+          "text": "180 degrees"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A trigonal pyramidal molecule such as PCl3 has bond angles of about 107 degrees.",
+      "topicTags": [
+        "chemical bonding & structure"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0518",
+      "section": "CPBS",
+      "stem": "For the reaction 4 Al + 3 O2 → 2 Al2O3, how many moles of Al2O3 form from 8 mol of Al (with the other reactant in excess)?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "4 mol"
+        },
+        {
+          "label": "B",
+          "text": "8 mol"
+        },
+        {
+          "label": "C",
+          "text": "10 mol"
+        },
+        {
+          "label": "D",
+          "text": "16 mol"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Use the mole ratio 2 Al2O3 : 4 Al: 8 x 2/4 = 4 mol Al2O3.",
+      "topicTags": [
+        "stoichiometry, reactions & measurement"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0519",
+      "section": "CPBS",
+      "stem": "What is the pH of a solution with [H+] = 1 x 10^-6 M?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "label": "B",
+          "text": "8"
+        },
+        {
+          "label": "C",
+          "text": "7"
+        },
+        {
+          "label": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "pH = -log[H+] = -log(1 x 10^-6) = 6.",
+      "topicTags": [
+        "solutions, gases & acid-base"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0520",
+      "section": "CPBS",
+      "stem": "How much heat is required to melt (fuse) 25 g of water? (latent heat = 334 J/g)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "13.4 J"
+        },
+        {
+          "label": "B",
+          "text": "0.0749 J"
+        },
+        {
+          "label": "C",
+          "text": "8350 J"
+        },
+        {
+          "label": "D",
+          "text": "359 J"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "q = m L = (25)(334) = 8350 J for the phase change (no temperature change).",
+      "topicTags": [
+        "thermochemistry, kinetics & equilibrium"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0521",
+      "section": "CPBS",
+      "stem": "An ideal fluid flows at 1 m/s through a pipe of cross-section 10 cm^2. What is its speed where the cross-section narrows to 1 cm^2?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "0.1 m/s"
+        },
+        {
+          "label": "B",
+          "text": "1 m/s"
+        },
+        {
+          "label": "C",
+          "text": "10 m/s"
+        },
+        {
+          "label": "D",
+          "text": "20 m/s"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Continuity: A1 v1 = A2 v2, so v2 = (10)(1)/1 = 10 m/s.",
+      "topicTags": [
+        "thermodynamics & fluids"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0522",
+      "section": "CPBS",
+      "stem": "What ionic charge do elements in group 13 most commonly form?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "+3"
+        },
+        {
+          "label": "B",
+          "text": "+2"
+        },
+        {
+          "label": "C",
+          "text": "+1"
+        },
+        {
+          "label": "D",
+          "text": "-3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Elements in group 13 typically form ions with a charge of +3.",
+      "topicTags": [
+        "atomic structure & periodicity"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0523",
+      "section": "CPBS",
+      "stem": "What is the weight of a 1 kg object near Earth's surface? (g = 9.8 m/s^2)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "1 N"
+        },
+        {
+          "label": "B",
+          "text": "9.8 N"
+        },
+        {
+          "label": "C",
+          "text": "0.102 N"
+        },
+        {
+          "label": "D",
+          "text": "15 N"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Weight W = m g = (1)(9.8) = 9.8 N.",
+      "topicTags": [
+        "mechanics"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0524",
+      "section": "CPBS",
+      "stem": "Resistors of 2 Ω, 3 Ω, 5 Ω are connected in series. What is the total resistance?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "2 Ω"
+        },
+        {
+          "label": "B",
+          "text": "3 Ω"
+        },
+        {
+          "label": "C",
+          "text": "10 Ω"
+        },
+        {
+          "label": "D",
+          "text": "5 Ω"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Series resistances add: R_total = 2 + 3 + 5 = 10 Ω.",
+      "topicTags": [
+        "electricity & magnetism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0525",
+      "section": "CPBS",
+      "stem": "What is the energy of a photon of wavelength 1 x 10^-6 m? (h = 6.63 x 10^-34 J·s, c = 3.0 x 10^8 m/s)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "1.99 x 10^-19 J"
+        },
+        {
+          "label": "B",
+          "text": "2.98 x 10^-19 J"
+        },
+        {
+          "label": "C",
+          "text": "3.98 x 10^-19 J"
+        },
+        {
+          "label": "D",
+          "text": "9.95 x 10^-20 J"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "E = h c / λ = (6.63 x 10^-34)(3.0 x 10^8) / 1 x 10^-6 = 1.99 x 10^-19 J.",
+      "topicTags": [
+        "waves, optics & modern physics"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0526",
+      "section": "CPBS",
+      "stem": "What is the hybridization of the central atom in BeCl2?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "sp2"
+        },
+        {
+          "label": "B",
+          "text": "sp"
+        },
+        {
+          "label": "C",
+          "text": "sp3d"
+        },
+        {
+          "label": "D",
+          "text": "sp3"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The electron-domain geometry of BeCl2 corresponds to sp hybridization of the central atom.",
+      "topicTags": [
+        "chemical bonding & structure"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0527",
+      "section": "CPBS",
+      "stem": "What is the mass percent of O in CaCO3?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "48%"
+        },
+        {
+          "label": "B",
+          "text": "52%"
+        },
+        {
+          "label": "C",
+          "text": "24%"
+        },
+        {
+          "label": "D",
+          "text": "100%"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "mass percent = (mass of element / molar mass) x 100 = (48/100) x 100 = 48%.",
+      "topicTags": [
+        "stoichiometry, reactions & measurement"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0528",
+      "section": "CPBS",
+      "stem": "At 25 degrees C, a solution has pH = 9. What is its pOH?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "4.5"
+        },
+        {
+          "label": "B",
+          "text": "23"
+        },
+        {
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "label": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "pH + pOH = 14, so pOH = 14 - 9 = 5.",
+      "topicTags": [
+        "solutions, gases & acid-base"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0529",
+      "section": "CPBS",
+      "stem": "A reaction proceeds in two steps with ΔH1 = 300 kJ and ΔH2 = 100 kJ. If the overall reaction is the sum of these steps, what is the overall ΔH?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "400 kJ"
+        },
+        {
+          "label": "B",
+          "text": "200 kJ"
+        },
+        {
+          "label": "C",
+          "text": "-200 kJ"
+        },
+        {
+          "label": "D",
+          "text": "30000 kJ"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "By Hess's law, ΔH_overall = ΔH1 + ΔH2 = 300 + 100 = 400 kJ.",
+      "topicTags": [
+        "thermochemistry, kinetics & equilibrium"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0530",
+      "section": "CPBS",
+      "stem": "An ideal fluid flows at 3 m/s through a pipe of cross-sectional area 2 m^2. What is the volume flow rate?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "0.667 m^3/s"
+        },
+        {
+          "label": "B",
+          "text": "6 m^3/s"
+        },
+        {
+          "label": "C",
+          "text": "1.5 m^3/s"
+        },
+        {
+          "label": "D",
+          "text": "5 m^3/s"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Flow rate Q = A v = (2)(3) = 6 m^3/s.",
+      "topicTags": [
+        "thermodynamics & fluids"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0531",
+      "section": "CPBS",
+      "stem": "What is the atomic number of neon?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "19"
+        },
+        {
+          "label": "B",
+          "text": "18"
+        },
+        {
+          "label": "C",
+          "text": "1"
+        },
+        {
+          "label": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The atomic number equals the number of protons; neon has 10.",
+      "topicTags": [
+        "atomic structure & periodicity"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0532",
+      "section": "CPBS",
+      "stem": "What is the momentum of a 0.5 kg object moving at 3 m/s?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "3.5 kg·m/s"
+        },
+        {
+          "label": "B",
+          "text": "0.167 kg·m/s"
+        },
+        {
+          "label": "C",
+          "text": "0.75 kg·m/s"
+        },
+        {
+          "label": "D",
+          "text": "1.5 kg·m/s"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Momentum p = m v = (0.5)(3) = 1.5 kg·m/s.",
+      "topicTags": [
+        "mechanics"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0533",
+      "section": "CPBS",
+      "stem": "Two resistors, 30 Ω and 30 Ω, are connected in parallel. What is the equivalent resistance?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "60 Ω"
+        },
+        {
+          "label": "B",
+          "text": "15 Ω"
+        },
+        {
+          "label": "C",
+          "text": "30 Ω"
+        },
+        {
+          "label": "D",
+          "text": "900 Ω"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Parallel: 1/R = 1/30 + 1/30, so R = (R1 R2)/(R1 + R2) = 15 Ω.",
+      "topicTags": [
+        "electricity & magnetism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0534",
+      "section": "CPBS",
+      "stem": "Light travels through a medium of refractive index 2. What is its speed in that medium? (c = 3.0 x 10^8 m/s)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "6.67 x 10^-9 m/s"
+        },
+        {
+          "label": "B",
+          "text": "3 x 10^8 m/s"
+        },
+        {
+          "label": "C",
+          "text": "1.5 x 10^8 m/s"
+        },
+        {
+          "label": "D",
+          "text": "6 x 10^8 m/s"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "v = c / n = (3.0 x 10^8) / 2 = 1.5 x 10^8 m/s.",
+      "topicTags": [
+        "waves, optics & modern physics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0535",
+      "section": "CPBS",
+      "stem": "How many valence electrons does a neutral chlorine (Cl) atom have?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "label": "C",
+          "text": "7"
+        },
+        {
+          "label": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "chlorine (Cl) is in a main group whose number of valence electrons is 7.",
+      "topicTags": [
+        "chemical bonding & structure"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0536",
+      "section": "CPBS",
+      "stem": "A sample has mass 8 g and volume 50 mL. What is its density?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "6.25 g/mL"
+        },
+        {
+          "label": "B",
+          "text": "400 g/mL"
+        },
+        {
+          "label": "C",
+          "text": "0.16 g/mL"
+        },
+        {
+          "label": "D",
+          "text": "58 g/mL"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "density = mass / volume = 8 / 50 = 0.16 g/mL.",
+      "topicTags": [
+        "stoichiometry, reactions & measurement"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0537",
+      "section": "CPBS",
+      "stem": "Using PV = nRT (R = 0.0821 L·atm/(mol·K)), what is the pressure of 0.5 mol of gas in 1 L at 400 K?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "0.5 atm"
+        },
+        {
+          "label": "B",
+          "text": "16.4 atm"
+        },
+        {
+          "label": "C",
+          "text": "8.21 atm"
+        },
+        {
+          "label": "D",
+          "text": "32.8 atm"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "P = nRT/V = (0.5)(0.0821)(400)/1 = 16.4 atm.",
+      "topicTags": [
+        "solutions, gases & acid-base"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0538",
+      "section": "CPBS",
+      "stem": "For a reaction, ΔH = -100 kJ and ΔS = 0.05 kJ/K. What is ΔG at 300 K?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "15 kJ"
+        },
+        {
+          "label": "B",
+          "text": "-85 kJ"
+        },
+        {
+          "label": "C",
+          "text": "-100 kJ"
+        },
+        {
+          "label": "D",
+          "text": "-115 kJ"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ΔG = ΔH - TΔS = -100 - (300)(0.05) = -115 kJ.",
+      "topicTags": [
+        "thermochemistry, kinetics & equilibrium"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0539",
+      "section": "CPBS",
+      "stem": "Which state of a given substance generally has the highest entropy?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Solid."
+        },
+        {
+          "label": "B",
+          "text": "Liquid."
+        },
+        {
+          "label": "C",
+          "text": "Gas."
+        },
+        {
+          "label": "D",
+          "text": "They are all equal."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Gas particles are most disordered and spread out, giving the highest entropy.",
+      "topicTags": [
+        "thermodynamics & fluids"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0540",
+      "section": "CPBS",
+      "stem": "What is the ground-state electron configuration of a neutral neon (Z=10) atom?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "1s2 2s2 2p6 3s1"
+        },
+        {
+          "label": "B",
+          "text": "1s2 2s2 2p6"
+        },
+        {
+          "label": "C",
+          "text": "1s2 2s2 2p4"
+        },
+        {
+          "label": "D",
+          "text": "1s2 2s6 2p2"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Filling orbitals by the Aufbau principle gives neon: 1s2 2s2 2p6.",
+      "topicTags": [
+        "atomic structure & periodicity"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0541",
+      "section": "CPBS",
+      "stem": "What is the kinetic energy of a 60 kg object moving at 3 m/s?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "540 J"
+        },
+        {
+          "label": "B",
+          "text": "180 J"
+        },
+        {
+          "label": "C",
+          "text": "270 J"
+        },
+        {
+          "label": "D",
+          "text": "90 J"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "KE = (1/2) m v^2 = 0.5(60)(3)^2 = 270 J.",
+      "topicTags": [
+        "mechanics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0542",
+      "section": "CPBS",
+      "stem": "A 47 μF capacitor is charged to 24 V. How much charge does it store?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "0.511 μC"
+        },
+        {
+          "label": "B",
+          "text": "1128 μC"
+        },
+        {
+          "label": "C",
+          "text": "71 μC"
+        },
+        {
+          "label": "D",
+          "text": "1.96 μC"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Q = C V = (47 μF)(24 V) = 1128 μC.",
+      "topicTags": [
+        "electricity & magnetism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0543",
+      "section": "CPBS",
+      "stem": "An object is 60 cm from a thin converging lens of focal length 30 cm. Where is the image formed?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "60 cm"
+        },
+        {
+          "label": "B",
+          "text": "90 cm"
+        },
+        {
+          "label": "C",
+          "text": "120 cm"
+        },
+        {
+          "label": "D",
+          "text": "30 cm"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1/f = 1/do + 1/di, so 1/di = 1/30 - 1/60; di = 60 cm.",
+      "topicTags": [
+        "waves, optics & modern physics"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0544",
+      "section": "CPBS",
+      "stem": "The bond in MgO has an electronegativity difference of about 2.3. It is best classified as",
+      "choices": [
+        {
+          "label": "A",
+          "text": "polar covalent"
+        },
+        {
+          "label": "B",
+          "text": "ionic"
+        },
+        {
+          "label": "C",
+          "text": "metallic"
+        },
+        {
+          "label": "D",
+          "text": "nonpolar covalent"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "An electronegativity difference near 2.3 indicates a ionic bond (roughly: 0 nonpolar covalent, up to about 1.7 polar covalent, larger values ionic).",
+      "topicTags": [
+        "chemical bonding & structure"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0545",
+      "section": "CPBS",
+      "stem": "Convert 750 nm to meters.",
+      "choices": [
+        {
+          "label": "A",
+          "text": "7.5 x 10^-8 m"
+        },
+        {
+          "label": "B",
+          "text": "7.5 x 10^-7 m"
+        },
+        {
+          "label": "C",
+          "text": "7.5 x 10^-5 m"
+        },
+        {
+          "label": "D",
+          "text": "7.5 x 10^-6 m"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Apply the SI prefix conversion: 750 nm = 7.5 x 10^-7 m.",
+      "topicTags": [
+        "stoichiometry, reactions & measurement"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0546",
+      "section": "CPBS",
+      "stem": "A gas at 3 atm occupies 6 L. At constant temperature, what volume does it occupy at 0.5 atm?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "9 L"
+        },
+        {
+          "label": "B",
+          "text": "1 L"
+        },
+        {
+          "label": "C",
+          "text": "6 L"
+        },
+        {
+          "label": "D",
+          "text": "36 L"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Boyle's law: P1 V1 = P2 V2, so V2 = (3)(6)/0.5 = 36 L.",
+      "topicTags": [
+        "solutions, gases & acid-base"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0547",
+      "section": "CPBS",
+      "stem": "According to Le Chatelier's principle, increasing the pressure by decreasing volume of a gaseous a system at equilibrium generally",
+      "choices": [
+        {
+          "label": "A",
+          "text": "shifts the equilibrium toward the products."
+        },
+        {
+          "label": "B",
+          "text": "shifts toward the side with fewer moles of gas."
+        },
+        {
+          "label": "C",
+          "text": "shifts the equilibrium toward the reactants."
+        },
+        {
+          "label": "D",
+          "text": "shifts toward the side with more moles of gas."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The system opposes the change: increasing the pressure by decreasing volume of a gaseous a system at equilibrium shifts toward the side with fewer moles of gas.",
+      "topicTags": [
+        "thermochemistry, kinetics & equilibrium"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0548",
+      "section": "CPBS",
+      "stem": "A system absorbs 1000 J of heat and does 100 J of work on its surroundings. What is the change in its internal energy?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "1100 J"
+        },
+        {
+          "label": "B",
+          "text": "-900 J"
+        },
+        {
+          "label": "C",
+          "text": "900 J"
+        },
+        {
+          "label": "D",
+          "text": "1000 J"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "First law: ΔU = Q - W = 1000 - 100 = 900 J.",
+      "topicTags": [
+        "thermodynamics & fluids"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0549",
+      "section": "CPBS",
+      "stem": "Which atom has the larger atomic radius, O or S?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "They are identical"
+        },
+        {
+          "label": "B",
+          "text": "O"
+        },
+        {
+          "label": "C",
+          "text": "atomic radius shows no periodic trend"
+        },
+        {
+          "label": "D",
+          "text": "S"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "S has the larger atomic radius: same group; radius increases down a group, so S is larger.",
+      "topicTags": [
+        "atomic structure & periodicity"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0550",
+      "section": "CPBS",
+      "stem": "What is the gravitational potential energy of a 0.5 kg object raised 3 m? (g = 9.8 m/s^2)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "4.9 J"
+        },
+        {
+          "label": "B",
+          "text": "3.5 J"
+        },
+        {
+          "label": "C",
+          "text": "1.5 J"
+        },
+        {
+          "label": "D",
+          "text": "14.7 J"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "PE = m g h = (0.5)(9.8)(3) = 14.7 J.",
+      "topicTags": [
+        "mechanics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0551",
+      "section": "CPBS",
+      "stem": "Two parallel plates 0.03 m apart have a potential difference of 9 V. What is the electric field between them?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "0.27 V/m"
+        },
+        {
+          "label": "B",
+          "text": "9.03 V/m"
+        },
+        {
+          "label": "C",
+          "text": "3.33 x 10^-3 V/m"
+        },
+        {
+          "label": "D",
+          "text": "300 V/m"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "For parallel plates, E = V / d = 9 / 0.03 = 300 V/m.",
+      "topicTags": [
+        "electricity & magnetism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0552",
+      "section": "CPBS",
+      "stem": "For a lens, the object distance is 10 cm and the image distance is 5 cm. What is the magnification?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "-0.5"
+        },
+        {
+          "label": "B",
+          "text": "0.5"
+        },
+        {
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "label": "D",
+          "text": "-2"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Magnification m = -di/do = -5/10 = -0.5.",
+      "topicTags": [
+        "waves, optics & modern physics"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0553",
+      "section": "CPBS",
+      "stem": "Overall, the molecule O2 is best described as",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a polar molecule"
+        },
+        {
+          "label": "B",
+          "text": "an ionic compound"
+        },
+        {
+          "label": "C",
+          "text": "a nonpolar molecule"
+        },
+        {
+          "label": "D",
+          "text": "a metallic solid"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "O2 is a nonpolar molecule because its symmetric shape makes the bond dipoles cancel, giving no net dipole.",
+      "topicTags": [
+        "chemical bonding & structure"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0554",
+      "section": "CPBS",
+      "stem": "In the reaction Zn + 2 HCl → ZnCl2 + H2, this is a",
+      "choices": [
+        {
+          "label": "A",
+          "text": "decomposition reaction."
+        },
+        {
+          "label": "B",
+          "text": "synthesis reaction."
+        },
+        {
+          "label": "C",
+          "text": "single-replacement reaction."
+        },
+        {
+          "label": "D",
+          "text": "double-replacement reaction."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "One element (Zn) replaces another (H) in a compound: a single-replacement reaction.",
+      "topicTags": [
+        "stoichiometry, reactions & measurement"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0555",
+      "section": "CPBS",
+      "stem": "A gas occupies 10 L at 200 K. At constant pressure, what volume does it occupy at 400 K?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "10 L"
+        },
+        {
+          "label": "B",
+          "text": "20 L"
+        },
+        {
+          "label": "C",
+          "text": "5 L"
+        },
+        {
+          "label": "D",
+          "text": "210 L"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Charles's law: V1/T1 = V2/T2, so V2 = 10 x 400/200 = 20 L.",
+      "topicTags": [
+        "solutions, gases & acid-base"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0556",
+      "section": "CPBS",
+      "stem": "A large equilibrium constant (K much greater than 1) indicates that at equilibrium,",
+      "choices": [
+        {
+          "label": "A",
+          "text": "products are favored."
+        },
+        {
+          "label": "B",
+          "text": "the reaction contains only reactants."
+        },
+        {
+          "label": "C",
+          "text": "the reaction cannot reach equilibrium."
+        },
+        {
+          "label": "D",
+          "text": "reactants are favored."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "K much greater than 1 means product concentrations dominate.",
+      "topicTags": [
+        "thermochemistry, kinetics & equilibrium"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0557",
+      "section": "CPBS",
+      "stem": "A gas expands by 1 x 10^-3 m^3 against a constant pressure of 1.5 x 10^5 Pa. How much work does it do?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "1.5 x 10^5 J"
+        },
+        {
+          "label": "B",
+          "text": "150 J"
+        },
+        {
+          "label": "C",
+          "text": "300 J"
+        },
+        {
+          "label": "D",
+          "text": "1.5 x 10^8 J"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "W = P ΔV = (1.5 x 10^5)(1 x 10^-3) = 150 J.",
+      "topicTags": [
+        "thermodynamics & fluids"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0558",
+      "section": "CPBS",
+      "stem": "Across a period (left to right), first ionization energy generally",
+      "choices": [
+        {
+          "label": "A",
+          "text": "drops to zero at the halogens."
+        },
+        {
+          "label": "B",
+          "text": "decreases."
+        },
+        {
+          "label": "C",
+          "text": "increases."
+        },
+        {
+          "label": "D",
+          "text": "stays the same."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Stronger nuclear attraction makes electrons harder to remove across a period.",
+      "topicTags": [
+        "atomic structure & periodicity"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0559",
+      "section": "CPBS",
+      "stem": "How much power is delivered if 100 J of work is done in 8 s?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "0.08 W"
+        },
+        {
+          "label": "B",
+          "text": "12.5 W"
+        },
+        {
+          "label": "C",
+          "text": "92 W"
+        },
+        {
+          "label": "D",
+          "text": "800 W"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Power P = W / t = 100 / 8 = 12.5 W.",
+      "topicTags": [
+        "mechanics"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0560",
+      "section": "CPBS",
+      "stem": "How much energy is stored in a 100 μF capacitor charged to 10 V?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "1000 μJ"
+        },
+        {
+          "label": "B",
+          "text": "10000 μJ"
+        },
+        {
+          "label": "C",
+          "text": "500 μJ"
+        },
+        {
+          "label": "D",
+          "text": "5000 μJ"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "U = (1/2) C V^2 = 0.5(100 μF)(10)^2 = 5000 μJ.",
+      "topicTags": [
+        "electricity & magnetism"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0561",
+      "section": "CPBS",
+      "stem": "After 5 half-lives, what fraction of a radioactive sample remains?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "0.167"
+        },
+        {
+          "label": "B",
+          "text": "0.0312"
+        },
+        {
+          "label": "C",
+          "text": "0.0156"
+        },
+        {
+          "label": "D",
+          "text": "0.0625"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Each half-life halves the amount: fraction = (1/2)^5 = 0.0312.",
+      "topicTags": [
+        "waves, optics & modern physics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0562",
+      "section": "CPBS",
+      "stem": "What is the strongest type of intermolecular force present in pure Ne?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "hydrogen bonding"
+        },
+        {
+          "label": "B",
+          "text": "dipole-dipole forces"
+        },
+        {
+          "label": "C",
+          "text": "London dispersion forces"
+        },
+        {
+          "label": "D",
+          "text": "ionic bonding"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The strongest intermolecular force in Ne is London dispersion forces.",
+      "topicTags": [
+        "chemical bonding & structure"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0563",
+      "section": "CPBS",
+      "stem": "What is the approximate molar mass of O2? (Use H=1, C=12, N=14, O=16, Na=23, Cl=35.5, S=32, K=39, Ca=40, Mg=24, Fe=56, Ag=108)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "32 g/mol"
+        },
+        {
+          "label": "B",
+          "text": "34 g/mol"
+        },
+        {
+          "label": "C",
+          "text": "30 g/mol"
+        },
+        {
+          "label": "D",
+          "text": "64 g/mol"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Summing the atomic masses in O2 gives a molar mass of about 32 g/mol.",
+      "topicTags": [
+        "stoichiometry, reactions & measurement"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0564",
+      "section": "CPBS",
+      "stem": "What volume does 3 mol of an ideal gas occupy at STP? (molar volume = 22.4 L/mol)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "67.2 L"
+        },
+        {
+          "label": "B",
+          "text": "0.134 L"
+        },
+        {
+          "label": "C",
+          "text": "25.4 L"
+        },
+        {
+          "label": "D",
+          "text": "7.47 L"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "V = moles x 22.4 L/mol = 3 x 22.4 = 67.2 L.",
+      "topicTags": [
+        "solutions, gases & acid-base"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0565",
+      "section": "CPBS",
+      "stem": "How much heat is needed to raise 100 g of water by 8 degrees C? (c = 4.18 J/(g·°C))",
+      "choices": [
+        {
+          "label": "A",
+          "text": "800 J"
+        },
+        {
+          "label": "B",
+          "text": "33.4 J"
+        },
+        {
+          "label": "C",
+          "text": "3344 J"
+        },
+        {
+          "label": "D",
+          "text": "418 J"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "q = m c ΔT = (100)(4.18)(8) = 3344 J.",
+      "topicTags": [
+        "thermochemistry, kinetics & equilibrium"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0566",
+      "section": "CPBS",
+      "stem": "A heat engine absorbs 2000 J and exhausts 600 J. What is its efficiency?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "30%"
+        },
+        {
+          "label": "B",
+          "text": "70%"
+        },
+        {
+          "label": "C",
+          "text": "100%"
+        },
+        {
+          "label": "D",
+          "text": "333%"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Efficiency = 1 - Qc/Qh = 1 - 600/2000 = 70%.",
+      "topicTags": [
+        "thermodynamics & fluids"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0567",
+      "section": "CPBS",
+      "stem": "How many neutrons are in an atom of nitrogen-14? (atomic number 7)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "label": "B",
+          "text": "7"
+        },
+        {
+          "label": "C",
+          "text": "21"
+        },
+        {
+          "label": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "neutrons = mass number - atomic number = 14 - 7 = 7.",
+      "topicTags": [
+        "atomic structure & periodicity"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0568",
+      "section": "CPBS",
+      "stem": "A surface has coefficient of friction 0.1 and normal force 50 N. What is the friction force?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "50.1 N"
+        },
+        {
+          "label": "B",
+          "text": "5 N"
+        },
+        {
+          "label": "C",
+          "text": "500 N"
+        },
+        {
+          "label": "D",
+          "text": "10 N"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Friction f = μ N = (0.1)(50) = 5 N.",
+      "topicTags": [
+        "mechanics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0569",
+      "section": "CPBS",
+      "stem": "How much work is required to move a charge of 3 C through a potential difference of 12 V?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "4 J"
+        },
+        {
+          "label": "B",
+          "text": "15 J"
+        },
+        {
+          "label": "C",
+          "text": "0.25 J"
+        },
+        {
+          "label": "D",
+          "text": "36 J"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "W = q V = (3)(12) = 36 J.",
+      "topicTags": [
+        "electricity & magnetism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0570",
+      "section": "CPBS",
+      "stem": "A sample starts with 200 g of a radioisotope whose half-life is 5 days. How much remains after 5 days?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "100 g"
+        },
+        {
+          "label": "B",
+          "text": "200 g"
+        },
+        {
+          "label": "C",
+          "text": "50 g"
+        },
+        {
+          "label": "D",
+          "text": "195 g"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Number of half-lives = 5/5 = 1; remaining = 200 x (1/2)^1 = 100 g.",
+      "topicTags": [
+        "waves, optics & modern physics"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0571",
+      "section": "CPBS",
+      "stem": "A sigma bond is formed by",
+      "choices": [
+        {
+          "label": "A",
+          "text": "head-on (end-to-end) overlap of orbitals along the internuclear axis."
+        },
+        {
+          "label": "B",
+          "text": "overlap of two fully filled orbitals."
+        },
+        {
+          "label": "C",
+          "text": "transfer of electrons between ions."
+        },
+        {
+          "label": "D",
+          "text": "side-by-side overlap of parallel p orbitals."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Sigma bonds arise from axial overlap; pi bonds from sideways p-orbital overlap.",
+      "topicTags": [
+        "chemical bonding & structure"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0572",
+      "section": "CPBS",
+      "stem": "How many moles are in 8 g of CH4? (molar mass 16 g/mol)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "24 mol"
+        },
+        {
+          "label": "B",
+          "text": "2 mol"
+        },
+        {
+          "label": "C",
+          "text": "128 mol"
+        },
+        {
+          "label": "D",
+          "text": "0.5 mol"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "moles = mass / molar mass = 8 / 16 = 0.5 mol.",
+      "topicTags": [
+        "stoichiometry, reactions & measurement"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0573",
+      "section": "CPBS",
+      "stem": "A solution with pH = 11 is",
+      "choices": [
+        {
+          "label": "A",
+          "text": "neutral."
+        },
+        {
+          "label": "B",
+          "text": "basic."
+        },
+        {
+          "label": "C",
+          "text": "impossible."
+        },
+        {
+          "label": "D",
+          "text": "acidic."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "pH above 7 indicates a basic (alkaline) solution.",
+      "topicTags": [
+        "solutions, gases & acid-base"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0574",
+      "section": "CPBS",
+      "stem": "Adding 8360 J of heat to 100 g of water raises its temperature by how much? (c = 4.18 J/(g·°C))",
+      "choices": [
+        {
+          "label": "A",
+          "text": "0.012 °C"
+        },
+        {
+          "label": "B",
+          "text": "83.6 °C"
+        },
+        {
+          "label": "C",
+          "text": "20 °C"
+        },
+        {
+          "label": "D",
+          "text": "8.36 x 10^5 °C"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ΔT = q / (m c) = 8360 / ((100)(4.18)) = 20 degrees C.",
+      "topicTags": [
+        "thermochemistry, kinetics & equilibrium"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0575",
+      "section": "CPBS",
+      "stem": "Convert 50 degrees C to kelvin. (Use K = C + 273.)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "323 K"
+        },
+        {
+          "label": "B",
+          "text": "-223 K"
+        },
+        {
+          "label": "C",
+          "text": "223 K"
+        },
+        {
+          "label": "D",
+          "text": "50 K"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "K = 50 + 273 = 323 K.",
+      "topicTags": [
+        "thermodynamics & fluids"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0576",
+      "section": "CPBS",
+      "stem": "How many protons are in an atom of nitrogen-14?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "14"
+        },
+        {
+          "label": "B",
+          "text": "7"
+        },
+        {
+          "label": "C",
+          "text": "9"
+        },
+        {
+          "label": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The number of protons equals the atomic number; for nitrogen-14 that is 7.",
+      "topicTags": [
+        "atomic structure & periodicity"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0577",
+      "section": "CPBS",
+      "stem": "An object moves in a circle of radius 10 m at 2 m/s. What is its centripetal acceleration?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "0.4 m/s^2"
+        },
+        {
+          "label": "B",
+          "text": "20 m/s^2"
+        },
+        {
+          "label": "C",
+          "text": "40 m/s^2"
+        },
+        {
+          "label": "D",
+          "text": "0.2 m/s^2"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "a_c = v^2 / r = (2)^2 / 10 = 0.4 m/s^2.",
+      "topicTags": [
+        "mechanics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0578",
+      "section": "CPBS",
+      "stem": "In a series circuit, which quantity is the same through every element?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The power dissipated by each element."
+        },
+        {
+          "label": "B",
+          "text": "The voltage across each element."
+        },
+        {
+          "label": "C",
+          "text": "The current."
+        },
+        {
+          "label": "D",
+          "text": "The resistance of each element."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "In series there is one path, so the same current flows through all elements; voltages add.",
+      "topicTags": [
+        "electricity & magnetism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0579",
+      "section": "CPBS",
+      "stem": "As the wavelength of a wave increases (at fixed speed), its frequency",
+      "choices": [
+        {
+          "label": "A",
+          "text": "increases."
+        },
+        {
+          "label": "B",
+          "text": "stays the same."
+        },
+        {
+          "label": "C",
+          "text": "decreases."
+        },
+        {
+          "label": "D",
+          "text": "becomes zero."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Since v = f λ at fixed v, frequency and wavelength are inversely related.",
+      "topicTags": [
+        "waves, optics & modern physics"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0580",
+      "section": "CPBS",
+      "stem": "According to VSEPR theory, what is the molecular geometry of H2S?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "trigonal pyramidal"
+        },
+        {
+          "label": "B",
+          "text": "bent"
+        },
+        {
+          "label": "C",
+          "text": "linear"
+        },
+        {
+          "label": "D",
+          "text": "tetrahedral"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "H2S adopts a bent geometry based on its bonding and lone-pair electron domains.",
+      "topicTags": [
+        "chemical bonding & structure"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0581",
+      "section": "CPBS",
+      "stem": "What is the mass of 2 mol of NH3? (molar mass 17 g/mol)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "19 g"
+        },
+        {
+          "label": "B",
+          "text": "0.118 g"
+        },
+        {
+          "label": "C",
+          "text": "8.5 g"
+        },
+        {
+          "label": "D",
+          "text": "34 g"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "mass = moles x molar mass = 2 x 17 = 34 g.",
+      "topicTags": [
+        "stoichiometry, reactions & measurement"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0582",
+      "section": "CPBS",
+      "stem": "What is the molarity of a solution with 0.1 mol of solute in 1 L of solution?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "0.1 M"
+        },
+        {
+          "label": "B",
+          "text": "10 M"
+        },
+        {
+          "label": "C",
+          "text": "0.2 M"
+        },
+        {
+          "label": "D",
+          "text": "1.1 M"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Molarity M = moles / liters = 0.1 / 1 = 0.1 M.",
+      "topicTags": [
+        "solutions, gases & acid-base"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0583",
+      "section": "CPBS",
+      "stem": "How many grams of water are heated if 12540 J raises the temperature by 5 degrees C? (c = 4.18 J/(g·°C))",
+      "choices": [
+        {
+          "label": "A",
+          "text": "3.99 x 10^-4 g"
+        },
+        {
+          "label": "B",
+          "text": "62700 g"
+        },
+        {
+          "label": "C",
+          "text": "2508 g"
+        },
+        {
+          "label": "D",
+          "text": "600 g"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "m = q / (c ΔT) = 12540 / (4.18 x 5) = 600 g.",
+      "topicTags": [
+        "thermochemistry, kinetics & equilibrium"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0584",
+      "section": "CPBS",
+      "stem": "Convert 400 K to degrees Celsius. (Use C = K - 273.)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "673 °C"
+        },
+        {
+          "label": "B",
+          "text": "127 °C"
+        },
+        {
+          "label": "C",
+          "text": "400 °C"
+        },
+        {
+          "label": "D",
+          "text": "-127 °C"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "C = 400 - 273 = 127 degrees C.",
+      "topicTags": [
+        "thermodynamics & fluids"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0585",
+      "section": "CPBS",
+      "stem": "What is the mass number of nitrogen-14?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "21"
+        },
+        {
+          "label": "B",
+          "text": "13"
+        },
+        {
+          "label": "C",
+          "text": "7"
+        },
+        {
+          "label": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The mass number counts protons plus neutrons; for nitrogen-14 it is 14.",
+      "topicTags": [
+        "atomic structure & periodicity"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0586",
+      "section": "CPBS",
+      "stem": "A spring with force constant 100 N/m is stretched 0.15 m. What restoring force does it exert?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "15 N"
+        },
+        {
+          "label": "B",
+          "text": "1.5 x 10^-3 N"
+        },
+        {
+          "label": "C",
+          "text": "667 N"
+        },
+        {
+          "label": "D",
+          "text": "100 N"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Hooke's law: F = k x = (100)(0.15) = 15 N.",
+      "topicTags": [
+        "mechanics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0587",
+      "section": "CPBS",
+      "stem": "A current of 3 A flows through a 100 Ω resistor. What is the voltage across it?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "0.03 V"
+        },
+        {
+          "label": "B",
+          "text": "103 V"
+        },
+        {
+          "label": "C",
+          "text": "33.3 V"
+        },
+        {
+          "label": "D",
+          "text": "300 V"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ohm's law: V = I R = (3)(100) = 300 V.",
+      "topicTags": [
+        "electricity & magnetism"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0588",
+      "section": "CPBS",
+      "stem": "A wave has frequency 10 Hz and wavelength 0.78 m. What is its wave speed?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "0.078 m/s"
+        },
+        {
+          "label": "B",
+          "text": "7.8 m/s"
+        },
+        {
+          "label": "C",
+          "text": "10.8 m/s"
+        },
+        {
+          "label": "D",
+          "text": "12.8 m/s"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "v = f λ = (10)(0.78) = 7.8 m/s.",
+      "topicTags": [
+        "waves, optics & modern physics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0589",
+      "section": "CPBS",
+      "stem": "What is the approximate bond angle in H2S (bent)?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "about 92 degrees"
+        },
+        {
+          "label": "B",
+          "text": "about 103 degrees"
+        },
+        {
+          "label": "C",
+          "text": "120 degrees"
+        },
+        {
+          "label": "D",
+          "text": "about 104.5 degrees"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A bent molecule such as H2S has bond angles of about 92 degrees.",
+      "topicTags": [
+        "chemical bonding & structure"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0590",
+      "section": "CPBS",
+      "stem": "How many molecules are in 3 mol of a substance? (Avogadro's number = 6.022 x 10^23 /mol)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "3.61 x 10^24"
+        },
+        {
+          "label": "B",
+          "text": "2.01 x 10^23"
+        },
+        {
+          "label": "C",
+          "text": "1.81 x 10^24"
+        },
+        {
+          "label": "D",
+          "text": "4.98 x 10^-24"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "molecules = moles x N_A = 3 x 6.022 x 10^23 = 1.81 x 10^24.",
+      "topicTags": [
+        "stoichiometry, reactions & measurement"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0591",
+      "section": "CPBS",
+      "stem": "If 0.02 L of 2 M solution is diluted to 0.5 L, what is the new concentration?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "0.08 M"
+        },
+        {
+          "label": "B",
+          "text": "2 M"
+        },
+        {
+          "label": "C",
+          "text": "50 M"
+        },
+        {
+          "label": "D",
+          "text": "0.02 M"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Dilution: M1 V1 = M2 V2, so M2 = (2)(0.02)/0.5 = 0.08 M.",
+      "topicTags": [
+        "solutions, gases & acid-base"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0592",
+      "section": "CPBS",
+      "stem": "How much heat is required to melt (fuse) 150 g of water? (latent heat = 334 J/g)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "50100 J"
+        },
+        {
+          "label": "B",
+          "text": "2.23 J"
+        },
+        {
+          "label": "C",
+          "text": "484 J"
+        },
+        {
+          "label": "D",
+          "text": "0.449 J"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "q = m L = (150)(334) = 50100 J for the phase change (no temperature change).",
+      "topicTags": [
+        "thermochemistry, kinetics & equilibrium"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0593",
+      "section": "CPBS",
+      "stem": "What is the density of an object with mass 54 g and volume 400 cm^3?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "21600 g/cm^3"
+        },
+        {
+          "label": "B",
+          "text": "0.135 g/cm^3"
+        },
+        {
+          "label": "C",
+          "text": "7.41 g/cm^3"
+        },
+        {
+          "label": "D",
+          "text": "454 g/cm^3"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "density = mass / volume = 54 / 400 = 0.135 g/cm^3.",
+      "topicTags": [
+        "thermodynamics & fluids"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0594",
+      "section": "CPBS",
+      "stem": "How many electrons are in the ion Ca2+? (atomic number 20)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "20"
+        },
+        {
+          "label": "B",
+          "text": "16"
+        },
+        {
+          "label": "C",
+          "text": "18"
+        },
+        {
+          "label": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Adjust the neutral atom's 20 electrons for the charge: Ca2+ has 18 electrons.",
+      "topicTags": [
+        "atomic structure & periodicity"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0595",
+      "section": "CPBS",
+      "stem": "How much work is done by a constant 8 N force pushing an object 2 m in the direction of the force?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "8 J"
+        },
+        {
+          "label": "B",
+          "text": "4 J"
+        },
+        {
+          "label": "C",
+          "text": "10 J"
+        },
+        {
+          "label": "D",
+          "text": "16 J"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "W = F d cos(0) = (8)(2) = 16 J.",
+      "topicTags": [
+        "mechanics"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0596",
+      "section": "CPBS",
+      "stem": "A 12 V source drives current through a 20 Ω resistor. What is the current?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "240 A"
+        },
+        {
+          "label": "B",
+          "text": "1.67 A"
+        },
+        {
+          "label": "C",
+          "text": "0.6 A"
+        },
+        {
+          "label": "D",
+          "text": "-8 A"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "I = V / R = 12 / 20 = 0.6 A.",
+      "topicTags": [
+        "electricity & magnetism"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0597",
+      "section": "CPBS",
+      "stem": "A wave travels at 1500 m/s with wavelength 4 m. What is its frequency?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "2.67 x 10^-3 Hz"
+        },
+        {
+          "label": "B",
+          "text": "1504 Hz"
+        },
+        {
+          "label": "C",
+          "text": "6000 Hz"
+        },
+        {
+          "label": "D",
+          "text": "375 Hz"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "f = v / λ = 1500 / 4 = 375 Hz.",
+      "topicTags": [
+        "waves, optics & modern physics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0598",
+      "section": "CPBS",
+      "stem": "What is the hybridization of the central atom in SO3?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "sp3d"
+        },
+        {
+          "label": "B",
+          "text": "sp"
+        },
+        {
+          "label": "C",
+          "text": "sp2"
+        },
+        {
+          "label": "D",
+          "text": "sp3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The electron-domain geometry of SO3 corresponds to sp2 hybridization of the central atom.",
+      "topicTags": [
+        "chemical bonding & structure"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0599",
+      "section": "CPBS",
+      "stem": "For the reaction N2 + 3 H2 → 2 NH3, how many moles of NH3 form from 6 mol of H2 (with the other reactant in excess)?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "8 mol"
+        },
+        {
+          "label": "B",
+          "text": "6 mol"
+        },
+        {
+          "label": "C",
+          "text": "9 mol"
+        },
+        {
+          "label": "D",
+          "text": "4 mol"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Use the mole ratio 2 NH3 : 3 H2: 6 x 2/3 = 4 mol NH3.",
+      "topicTags": [
+        "stoichiometry, reactions & measurement"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0600",
+      "section": "CPBS",
+      "stem": "A solution has pH = 8. What is its hydrogen ion concentration [H+]?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "1 x 10^-8 M"
+        },
+        {
+          "label": "B",
+          "text": "1 x 10^-6 M"
+        },
+        {
+          "label": "C",
+          "text": "1 x 10^-7 M"
+        },
+        {
+          "label": "D",
+          "text": "1 x 10^8 M"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "[H+] = 10^(-pH) = 10^(-8) = 1 x 10^-8 M.",
+      "topicTags": [
+        "solutions, gases & acid-base"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0601",
+      "section": "CPBS",
+      "stem": "A reaction proceeds in two steps with ΔH1 = -400 kJ and ΔH2 = 100 kJ. If the overall reaction is the sum of these steps, what is the overall ΔH?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "500 kJ"
+        },
+        {
+          "label": "B",
+          "text": "-300 kJ"
+        },
+        {
+          "label": "C",
+          "text": "-40000 kJ"
+        },
+        {
+          "label": "D",
+          "text": "-500 kJ"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "By Hess's law, ΔH_overall = ΔH1 + ΔH2 = -400 + 100 = -300 kJ.",
+      "topicTags": [
+        "thermochemistry, kinetics & equilibrium"
+      ],
+      "difficulty": "hard",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0602",
+      "section": "CPBS",
+      "stem": "A force of 80 N is applied over an area of 2 m^2. What is the pressure?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "82 Pa"
+        },
+        {
+          "label": "B",
+          "text": "160 Pa"
+        },
+        {
+          "label": "C",
+          "text": "0.025 Pa"
+        },
+        {
+          "label": "D",
+          "text": "40 Pa"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Pressure P = F / A = 80 / 2 = 40 Pa.",
+      "topicTags": [
+        "thermodynamics & fluids"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0603",
+      "section": "CPBS",
+      "stem": "An atom has 11 protons and 10 neutrons. What is its mass number?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "label": "B",
+          "text": "21"
+        },
+        {
+          "label": "C",
+          "text": "11"
+        },
+        {
+          "label": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mass number = protons + neutrons = 11 + 10 = 21.",
+      "topicTags": [
+        "atomic structure & periodicity"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0604",
+      "section": "CPBS",
+      "stem": "How do mass and weight differ?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Weight is always constant but mass changes with location."
+        },
+        {
+          "label": "B",
+          "text": "They are identical quantities measured in different units."
+        },
+        {
+          "label": "C",
+          "text": "Mass measures the amount of matter (kg); weight is the gravitational force on that mass (N)."
+        },
+        {
+          "label": "D",
+          "text": "Mass is a force and weight is a quantity of matter."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mass is an intrinsic scalar in kilograms; weight = m g is a force in newtons that depends on local g.",
+      "topicTags": [
+        "mechanics"
+      ],
+      "difficulty": "easy",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0605",
+      "section": "CPBS",
+      "stem": "A resistor carries 0.25 A when 12 V is applied across it. What is its resistance?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "12.2 Ω"
+        },
+        {
+          "label": "B",
+          "text": "48 Ω"
+        },
+        {
+          "label": "C",
+          "text": "0.0208 Ω"
+        },
+        {
+          "label": "D",
+          "text": "3 Ω"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "R = V / I = 12 / 0.25 = 48 Ω.",
+      "topicTags": [
+        "electricity & magnetism"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    },
+    {
+      "id": "cpbs-ag-0606",
+      "section": "CPBS",
+      "stem": "A wave of frequency 85 Hz travels at 340 m/s. What is its wavelength?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "425 m"
+        },
+        {
+          "label": "B",
+          "text": "4 m"
+        },
+        {
+          "label": "C",
+          "text": "28900 m"
+        },
+        {
+          "label": "D",
+          "text": "0.25 m"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "λ = v / f = 340 / 85 = 4 m.",
+      "topicTags": [
+        "waves, optics & modern physics"
+      ],
+      "difficulty": "medium",
+      "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
+      "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+      "sourceUrl": "urn:speedycat:ai-generated:cpbs"
+    }
+  ]
+}

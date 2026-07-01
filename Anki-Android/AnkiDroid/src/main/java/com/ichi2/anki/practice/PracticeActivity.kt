@@ -308,17 +308,18 @@ private fun SetupForm(
                             sections = chosenSections,
                             topics = chosenTopics,
                             missedOnly = missedOnly,
-                            includeFullLength = false,
                             limit = countParse.limit,
                         )
-                    val qs = vm.query(filter)
-                    if (qs.isEmpty()) {
+                    // Seeded per session so the selection + answer-choice order
+                    // are randomized (and differ) each time (mirrors desktop).
+                    val started = vm.startSession(filter)
+                    if (started.questions.isEmpty()) {
                         noMatch = true
                     } else {
                         onStart(
                             PracticeSession(
-                                sessionId = vm.newSessionId(),
-                                questions = qs,
+                                sessionId = started.sessionId,
+                                questions = started.questions,
                                 timeLimitSeconds = if (untimed) 0 else timerParse.seconds,
                             ),
                         )
@@ -439,9 +440,6 @@ private fun RunnerScreen(
                         fontWeight = FontWeight.Bold,
                         color = if (session.timeLimitSeconds > 0 && remaining <= 60) MaterialTheme.colorScheme.error else Color.Unspecified,
                     )
-                    OutlinedButton(enabled = !finishing, onClick = { scope.launch { doFinish() } }) {
-                        Text("Finish")
-                    }
                 }
             }
         },
@@ -538,7 +536,16 @@ private fun RunnerScreen(
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
-                OutlinedButton(enabled = index < runItems.size - 1, onClick = { goto(index + 1) }) { Text("Next") }
+                // On the LAST run-item the primary action finishes + scores the
+                // session (a CARS passage set is one run-item); there is no
+                // separate finish button. Mirrors the desktop PracticeRunner.
+                if (index >= runItems.size - 1) {
+                    Button(enabled = !finishing, onClick = { scope.launch { doFinish() } }) {
+                        Text(if (finishing) "Scoring…" else "Finish and Score")
+                    }
+                } else {
+                    OutlinedButton(onClick = { goto(index + 1) }) { Text("Next") }
+                }
             }
         }
     }

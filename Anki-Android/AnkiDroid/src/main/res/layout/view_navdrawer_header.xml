@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Small cheetah "m" mark + "SpeedyCAT" wordmark, side by side. logo_star_144dp is
-     used (rather than the transparent launcher foreground) because it carries its own
-     background, so the mark stays legible on light, dark and black drawer themes. -->
+<!-- Small cheetah "m" mark + "SpeedyCAT" wordmark, side by side. The launcher
+     FOREGROUND art (ic_launcher_foreground) is the m-cheetah on a transparent
+     background, so no colored (orange/yellow) background square shows behind the
+     mark; the orange/yellow fill lives in the separate ic_launcher_background.
+     The foreground carries the adaptive-icon safe-zone padding, so the box is
+     sized a little larger to keep the mark visually prominent. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -13,9 +16,9 @@
     android:paddingBottom="20dp">
 
     <ImageView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@drawable/logo_star_144dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@drawable/ic_launcher_foreground"
         android:scaleType="fitCenter"
         android:contentDescription="@string/app_name" />
 

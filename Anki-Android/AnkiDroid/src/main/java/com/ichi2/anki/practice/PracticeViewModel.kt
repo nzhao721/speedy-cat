@@ -57,6 +57,23 @@ class PracticeViewModel(
 
     fun newSessionId(): String = "ps-" + UUID.randomUUID().toString()
 
+    /** A freshly-assembled practice session: its randomized questions + the id that seeded them. */
+    data class SessionQuestions(
+        val sessionId: String,
+        val questions: List<PracticeQuestion>,
+    )
+
+    /**
+     * Start a session: mint a fresh session id and use it to seed the per-session
+     * selection + answer-choice shuffles, so repeat sessions differ. Mirrors the
+     * desktop `start_practice_session`.
+     */
+    suspend fun startSession(filter: QuestionFilter): SessionQuestions =
+        withContext(Dispatchers.IO) {
+            val sessionId = newSessionId()
+            SessionQuestions(sessionId, repo.getPracticeSessionQuestions(filter, sessionId))
+        }
+
     suspend fun record(
         sessionId: String,
         question: PracticeQuestion,
@@ -68,7 +85,6 @@ class PracticeViewModel(
             Attempt(
                 id = "$sessionId:${question.id}",
                 sessionId = sessionId,
-                fullLengthAttemptId = null,
                 questionId = question.id,
                 selectedAnswer = selectedAnswer,
                 correct = correct,

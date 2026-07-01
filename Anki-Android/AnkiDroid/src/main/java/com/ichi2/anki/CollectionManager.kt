@@ -7,6 +7,8 @@ import android.annotation.SuppressLint
 import androidx.annotation.VisibleForTesting
 import androidx.annotation.WorkerThread
 import anki.backend.backendError
+import anki.deck_config.UpdateDeckConfigsMode
+import anki.deck_config.UpdateDeckConfigsRequest
 import com.ichi2.anki.CollectionManager.discardBackend
 import com.ichi2.anki.CollectionManager.ensureBackend
 import com.ichi2.anki.CollectionManager.ensureClosed
@@ -24,6 +26,7 @@ import com.ichi2.anki.common.utils.android.isRobolectric
 import com.ichi2.anki.exception.StorageNotConfiguredException
 import com.ichi2.anki.libanki.Collection
 import com.ichi2.anki.libanki.CollectionFiles
+import com.ichi2.anki.libanki.Consts
 import com.ichi2.anki.libanki.LibAnki
 import com.ichi2.anki.libanki.Storage.collection
 import com.ichi2.anki.libanki.importCollectionPackage
@@ -82,6 +85,13 @@ object CollectionManager {
     private val testMutex = ReentrantLock()
 
     private var currentSyncCertificate: String = ""
+
+    /**
+     * SpeedyCAT: one-time marker recording that the FSRS memory-state backfill
+     * has run for this collection (see [backfillFsrsMemoryState]). Stored in the
+     * collection config so it syncs and never re-runs the heavy recompute.
+     */
+    private const val FSRS_BACKFILL_MARKER = "speedycat_fsrs_backfilled"
 
     /**
      * Execute the provided block on a serial background queue, to ensure
@@ -279,7 +289,114 @@ object CollectionManager {
                     databaseBuilder = { backend -> createDatabaseUsingRustBackend(backend) },
                     backend = backend,
                 )
+            forceFsrsOn(collection!!)
+            backfillFsrsMemoryState(collection!!)
         }
+    }
+
+    /**
+     * SpeedyCAT: force FSRS scheduling on for the freshly-opened collection,
+     * idempotently.
+     *
+     * The readiness "Memory" pillar is mean FSRS retrievability and deliberately
+     * gives up when FSRS is off, so the app keeps FSRS always on: the (shared
+     * WebView) deck-options enable toggle is disabled, and this guarantees the
+     * stored collection config agrees on every open, for fresh and pre-existing
+     * collections alike. Every write is guarded, so a correct collection does no
+     * work. This mirrors the desktop app's on-profile-open force, and sets the
+     * "fsrs" config (`BoolKey::Fsrs` in rslib) through the backend config API -
+     * the same key the deck-options screen writes - never via raw SQL.
+     */
+    private fun forceFsrsOn(col: Collection) {
+        // FSRS needs the v3 scheduler; _loadScheduler() already enables it for
+        // v2 collections, so this is normally a no-op. Guard on schedVer to
+        // avoid the "must upgrade to v2 scheduler first" error on legacy v1.
+        if (!col.v3Scheduler() && col.schedVer() == 2) {
+            col.setV3Scheduler(true)
+        }
+        if (col.config.get<Boolean>("fsrs", false) != true) {
+            col.config.set("fsrs", true)
+        }
+    }
+
+    /**
+     * SpeedyCAT: one-time recompute of FSRS memory states for the whole
+     * collection.
+     *
+     * Cards studied while FSRS was off carry no FSRS memory state (stability /
+     * difficulty), so they have no retrievability and the readiness "Memory"
+     * pillar sees zero scored cards ("study to unlock") even once FSRS is forced
+     * on. This performs the exact same whole-collection recompute the deck
+     * options screen performs when a user enables FSRS ([recomputeAllMemoryStates],
+     * which drives rslib's `update_deck_configs` -> `update_memory_state`).
+     *
+     * Guarded by [FSRS_BACKFILL_MARKER] so the heavy recompute runs at most once
+     * per collection. It runs on the serialized collection queue (via
+     * [ensureOpenInner]) so it never overlaps another collection op, and is
+     * wrapped so a failure can never crash collection open - the marker is only
+     * set on success, so a failed run is retried on the next open. A fresh
+     * collection has no review history, so this is a no-op.
+     */
+    private fun backfillFsrsMemoryState(col: Collection) {
+        if (col.config.get<Boolean>(FSRS_BACKFILL_MARKER, false) == true) return
+        try {
+            recomputeAllMemoryStates(col)
+            col.config.set(FSRS_BACKFILL_MARKER, true)
+        } catch (e: Exception) {
+            // Never let a backfill failure crash collection open. Keep FSRS on
+            // and leave the marker unset so the next open retries the recompute.
+            Timber.w(e, "SpeedyCAT: FSRS memory-state backfill failed")
+            if (col.config.get<Boolean>("fsrs", false) != true) {
+                col.config.set("fsrs", true)
+            }
+        }
+    }
+
+    /**
+     * Replay the deck options "enable FSRS" save to recompute memory states.
+     *
+     * Mirrors what the deck options screen sends when FSRS is turned on: it
+     * fetches every preset via `getDeckConfigsForUpdate` and passes them back
+     * unchanged through `updateDeckConfigs` with `fsrs = true`. rslib recomputes
+     * memory state for a deck when FSRS is *toggled* on (the stored `fsrs` flag
+     * differs from the request), so we flip the stored flag off immediately
+     * before the save to guarantee the toggle fires for every deck - otherwise
+     * the flag is already on (see [forceFsrsOn]) and nothing would recompute.
+     *
+     * `fsrsReschedule = false` matches the deck options default: memory states
+     * are computed but due dates are left untouched, so the existing schedule is
+     * not disrupted. The selected preset is placed last (the entry
+     * `updateDeckConfigs` reassigns the target deck to) and the Default deck's
+     * own preset/limits are reused, so no deck's config assignment or limits
+     * change.
+     */
+    private fun recomputeAllMemoryStates(col: Collection) {
+        val dcfu = col.decks.getDeckConfigsForUpdate(Consts.DEFAULT_DECK_ID)
+        val selectedConfigId = dcfu.currentDeck.configId
+        // Keep the target deck's current preset last so updateDeckConfigs
+        // reassigns the Default deck to its own preset (a no-op).
+        val orderedConfigs =
+            dcfu.allConfigList
+                .map { it.config }
+                .sortedBy { it.id == selectedConfigId }
+        val request =
+            UpdateDeckConfigsRequest
+                .newBuilder()
+                .setTargetDeckId(Consts.DEFAULT_DECK_ID)
+                .addAllConfigs(orderedConfigs)
+                .setMode(UpdateDeckConfigsMode.UPDATE_DECK_CONFIGS_MODE_NORMAL)
+                .setCardStateCustomizer(dcfu.cardStateCustomizer)
+                .setLimits(dcfu.currentDeck.limits)
+                .setNewCardsIgnoreReviewLimit(dcfu.newCardsIgnoreReviewLimit)
+                .setApplyAllParentLimits(dcfu.applyAllParentLimits)
+                .setFsrs(true)
+                .setFsrsReschedule(false)
+                .setFsrsHealthCheck(dcfu.fsrsHealthCheck)
+                .build()
+        // Force rslib's fsrs-toggled detection so memory state is recomputed for
+        // every deck (it only recomputes when the stored flag flips false->true).
+        col.config.set("fsrs", false)
+        col.decks.updateDeckConfigs(request)
     }
 
     suspend fun deleteCollectionDirectory() {

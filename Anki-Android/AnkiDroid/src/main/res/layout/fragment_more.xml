@@ -36,6 +36,54 @@
             android:orientation="vertical"
             android:paddingTop="8dp">
 
+            <!-- SpeedyCAT: signed-in account identity (email/username, or "Not signed in").
+                 Tapping opens the account screen. -->
+            <LinearLayout
+                android:id="@+id/more_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:minHeight="64dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp">
+
+                <ImageView
+                    android:importantForAccessibility="no"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="16dp"
+                    app:srcCompat="@drawable/ic_people_black_24dp"
+                    app:tint="?attr/colorOnSurfaceVariant" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.ichi2.ui.FixedTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/speedycat_account"
+                        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+                    <com.ichi2.ui.FixedTextView
+                        android:id="@+id/more_account_subtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/speedycat_not_signed_in"
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginHorizontal="16dp" />
+
             <!-- SpeedyCAT: Practice Questions -->
             <LinearLayout
                 android:id="@+id/more_practice"
@@ -61,9 +109,9 @@
                     android:textAppearance="?attr/textAppearanceBodyLarge" />
             </LinearLayout>
 
-            <!-- SpeedyCAT: Full-Length Tests -->
+            <!-- SpeedyCAT: Readiness (Memory / Performance metric) -->
             <LinearLayout
-                android:id="@+id/more_full_length"
+                android:id="@+id/more_readiness"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
@@ -76,13 +124,13 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginEnd="16dp"
-                    app:srcCompat="@drawable/ic_running_clock"
+                    app:srcCompat="@drawable/ic_bar_chart_black"
                     app:tint="?attr/colorOnSurfaceVariant" />
 
                 <com.ichi2.ui.FixedTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/speedycat_full_length_tests"
+                    android:text="@string/speedycat_readiness"
                     android:textAppearance="?attr/textAppearanceBodyLarge" />
             </LinearLayout>
 

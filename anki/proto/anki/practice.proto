@@ -67,6 +67,14 @@ service PracticeService {
   // Aggregate time-spent + accuracy per topic (and per section) across
   // recorded attempts.
   rpc GetTopicStats(GetTopicStatsRequest) returns (GetTopicStatsResponse);
+
+  // ---- Exam readiness ----
+
+  // Compute the 3-pillar exam-readiness metric (Memory / Performance /
+  // Readiness). Deterministic; every pillar carries a value, an explicit range
+  // and a named source, and "gives up" with a message when there is not enough
+  // data (or a prerequisite such as FSRS is off). No AI.
+  rpc GetReadiness(GetReadinessRequest) returns (GetReadinessResponse);
 }
 
 // Empty: every PracticeService method is auto-delegated to the open
@@ -401,4 +409,56 @@ message SectionStat {
 message GetTopicStatsResponse {
   repeated TopicStat topics = 1;
   repeated SectionStat sections = 2;
+}
+
+// ---- Exam readiness --------------------------------------------------------
+
+message GetReadinessRequest {
+  // Anki search selecting the MCAT flashcard deck whose FSRS retrievability
+  // feeds the Memory pillar (e.g. "deck:SpeedyCAT MCAT"). Empty = the whole
+  // collection.
+  string deck_search = 1;
+}
+
+// One readiness pillar: a point value with an explicit uncertainty range and a
+// named, traceable source. When `available` is false the pillar "gives up" (a
+// prerequisite is off, or there is not enough data) and `message` explains why;
+// `value`/`range_low`/`range_high` are then unset (0).
+message ReadinessPillar {
+  bool available = 1;
+  // Point estimate and its 95% range, as fractions in [0, 1].
+  double value = 2;
+  double range_low = 3;
+  double range_high = 4;
+  // Number of observations behind the estimate (reviewed cards / answered
+  // practice questions / full-length questions).
+  uint32 sample_size = 5;
+  // The named data source the number is derived from.
+  string source = 6;
+  // How the value and range were computed.
+  string method = 7;
+  // Give-up / insufficient-data explanation (set only when !available).
+  string message = 8;
+}
+
+// Raw full-length score for one MCAT section (Readiness-pillar detail).
+message ReadinessSectionScore {
+  McatSection section = 1;
+  uint32 correct = 2;
+  uint32 total = 3;
+}
+
+message GetReadinessResponse {
+  // Pillar 1 — Memory: mean FSRS retrievability over reviewed cards.
+  ReadinessPillar memory = 1;
+  // Pillar 2 — Performance: practice-question accuracy.
+  ReadinessPillar performance = 2;
+  // Pillar 3 — Readiness: raw score on completed full-length tests only.
+  ReadinessPillar readiness = 3;
+  // Per-section raw full-length scores (populated only when
+  // `readiness.available`).
+  repeated ReadinessSectionScore section_scores = 4;
+  // Average seconds per answered practice question (context for the Performance
+  // pillar; 0 when unavailable).
+  double performance_avg_seconds = 5;
 }

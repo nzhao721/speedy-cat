@@ -1,23 +1,27 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // SPDX-FileCopyrightText: 2026 SpeedyCAT contributors
 //
-// Shared Compose UI for the two MCAT study modes: the multiple-choice question
-// card (immediate feedback in practice, deferred in full-length) and the reading
-// passage panel. Presentational only — all flow control lives in the callers,
-// mirroring the desktop `QuestionView.svelte` / `PassagePanel.svelte`.
+// Shared Compose UI for the MCAT Practice Question Bank: the multiple-choice
+// question card (with immediate post-submit feedback) and the reading passage
+// panel. Presentational only — all flow control lives in the callers, mirroring
+// the desktop `QuestionView.svelte` / `PassagePanel.svelte`.
 
 package com.ichi2.anki.practice
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
@@ -157,6 +161,30 @@ fun QuestionCard(
     }
 }
 
+/**
+ * A radio-style indicator: a hollow ring that fills with [fillColor] (plus a
+ * white centre dot) when the choice is active — accent when picked pre-submit,
+ * green/red once the answer is revealed. Mirrors the desktop `.radio` affordance.
+ */
+@Composable
+private fun RadioDot(
+    fillColor: Color?,
+    outlineColor: Color,
+) {
+    Box(
+        modifier =
+            Modifier
+                .size(18.dp)
+                .border(2.dp, fillColor ?: outlineColor, CircleShape)
+                .background(fillColor ?: Color.Transparent, CircleShape),
+        contentAlignment = Alignment.Center,
+    ) {
+        if (fillColor != null) {
+            Box(Modifier.size(7.dp).background(Color.White, CircleShape))
+        }
+    }
+}
+
 @Composable
 private fun ChoiceRow(
     choice: AnswerChoice,
@@ -171,20 +199,19 @@ private fun ChoiceRow(
 ) {
     val isSelected = choice.label == selected
     val isCorrect = choice.label == correctAnswer
-    val border =
+    // The pre-submit "picked" state (accent) is distinct from the post-submit
+    // correct/incorrect colouring, and is replaced by it once revealed.
+    val pickedPreSubmit = !revealed && isSelected
+    // Non-null => an "active" (filled) state; drives the ring, tint and radio.
+    val activeColor =
         when {
             revealed && isCorrect -> CorrectGreen
             revealed && isSelected && !isCorrect -> IncorrectRed
-            !revealed && isSelected -> MaterialTheme.colorScheme.primary
-            else -> MaterialTheme.colorScheme.outlineVariant
+            pickedPreSubmit -> MaterialTheme.colorScheme.primary
+            else -> null
         }
-    val background =
-        when {
-            revealed && isCorrect -> CorrectGreen.copy(alpha = 0.16f)
-            revealed && isSelected && !isCorrect -> IncorrectRed.copy(alpha = 0.16f)
-            !revealed && isSelected -> MaterialTheme.colorScheme.primary.copy(alpha = 0.12f)
-            else -> MaterialTheme.colorScheme.surface
-        }
+    val border = activeColor ?: MaterialTheme.colorScheme.outlineVariant
+    val background = activeColor?.copy(alpha = if (pickedPreSubmit) 0.18f else 0.16f) ?: MaterialTheme.colorScheme.surface
     Row(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.spacedBy(6.dp),
@@ -196,16 +223,22 @@ private fun ChoiceRow(
             modifier =
                 Modifier
                     .weight(1f)
-                    .border(1.dp, border, RoundedCornerShape(8.dp))
+                    // 2dp accent ring pre-submit (mirrors the desktop inset ring).
+                    .border(if (pickedPreSubmit) 2.dp else 1.dp, border, RoundedCornerShape(8.dp))
                     .then(if (enabled) Modifier.clickable(onClick = onSelect) else Modifier),
         ) {
             Row(
                 modifier = Modifier.padding(horizontal = 12.dp, vertical = 10.dp),
                 horizontalArrangement = Arrangement.spacedBy(10.dp),
+                verticalAlignment = Alignment.CenterVertically,
             ) {
+                // Radio affordance: hollow circle that fills (accent pre-submit,
+                // green/red once revealed) to clearly mark the picked choice.
+                RadioDot(fillColor = activeColor, outlineColor = MaterialTheme.colorScheme.outline)
                 Text(
                     text = choice.label,
                     fontWeight = FontWeight.Bold,
+                    color = if (pickedPreSubmit) MaterialTheme.colorScheme.primary else Color.Unspecified,
                     style = MaterialTheme.typography.bodyMedium,
                 )
                 Text(
@@ -246,8 +279,8 @@ private fun ChoiceRow(
 }
 
 /**
- * The reading passage for a CARS / full-length passage set, shown above its
- * questions on the narrow mobile layout.
+ * The reading passage for a CARS passage set, shown above its questions on the
+ * narrow mobile layout.
  */
 @Composable
 fun PassageCard(

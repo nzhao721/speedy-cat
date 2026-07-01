@@ -878,10 +878,11 @@ class Reviewer:
         return re.sub(self.typeAnsPat, repl, buf)
 
     def _compare_typed_answer(self, expected: str, provided: str) -> tuple[str, bool | None]:
-        """Returns (diff_html, matched). ``matched`` is True/False from the new
-        rslib match RPC, or None when that binding isn't available yet (before a
-        full proto/pylib regen), in which case feedback is simply omitted and we
-        fall back to the diff-only compare_answer."""
+        """Returns (diff_html, matched). ``matched`` is the case-insensitive
+        verdict from the rslib match RPC when its binding is available, otherwise
+        a local case-insensitive fallback, so the whole-answer correct/incorrect
+        (✓/✗) indicator is always shown. The diff HTML itself is rendered plainly
+        — its per-character colours are flattened in reviewer.scss."""
         match_fn = getattr(self.mw.col, "match_answer", None)
         if match_fn is not None:
             try:
@@ -892,8 +893,28 @@ class Reviewer:
                 pass
         return (
             self.mw.col.compare_answer(expected, provided, self._combining),
-            None,
+            self._fallback_answer_match(expected, provided),
         )
+
+    @staticmethod
+    def _fallback_answer_match(expected: str, provided: str) -> bool:
+        """SpeedyCAT: case-insensitive answer match used only when the structured
+        match RPC binding is unavailable. Approximates the backend normalization
+        (strip AV/media + HTML tags, collapse whitespace, lower-case, NFC) so the
+        ✓/✗ verdict agrees with the (case-insensitive) backend; the RPC stays the
+        source of truth once its binding exists. An empty answer never matches."""
+        import html
+        import unicodedata
+
+        def normalize(text: str) -> str:
+            text = re.sub(r"\[(?:sound|anki):[^\]]*\]", " ", text)
+            text = re.sub(r"<[^>]+>", " ", text)
+            text = html.unescape(text)
+            text = " ".join(text.split())
+            return unicodedata.normalize("NFC", text).lower()
+
+        normalized_provided = normalize(provided)
+        return bool(normalized_provided) and normalize(expected) == normalized_provided
 
     def _format_match_feedback(self, matched: bool | None) -> str:
         """SpeedyCAT: small banner shown above the diff indicating whether the

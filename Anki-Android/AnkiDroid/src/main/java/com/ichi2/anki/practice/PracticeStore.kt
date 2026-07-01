@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // SPDX-FileCopyrightText: 2026 SpeedyCAT contributors
 //
-// Local persistence for practice/full-length attempts. This is a small,
-// dedicated SQLite database that is deliberately SEPARATE from the synced Anki
-// collection: MCAT attempt history is device-local study telemetry, not
-// flashcard review data, so it never touches sync. It mirrors the columns of the
-// desktop `practice_attempts` table so the same missed-only and per-topic
-// tracking queries apply.
+// Local persistence for practice attempts. This is a small, dedicated SQLite
+// database that is deliberately SEPARATE from the synced Anki collection: MCAT
+// attempt history is device-local study telemetry, not flashcard review data, so
+// it never touches sync. It mirrors the columns of the desktop
+// `practice_attempts` table so the same missed-only and per-topic tracking
+// queries apply.
 
 package com.ichi2.anki.practice
 
@@ -20,7 +20,7 @@ import android.database.sqlite.SQLiteOpenHelper
  * Stores every recorded [Attempt] locally so missed-only practice and
  * cross-session per-topic stats survive between sessions.
  *
- * A row is keyed by [Attempt.id] (`"{sessionId|attemptId}:{questionId}"`) with
+ * A row is keyed by [Attempt.id] (`"{sessionId}:{questionId}"`) with
  * `insert or replace`, so re-answering a question replaces its prior attempt —
  * exactly like the desktop engine.
  */
@@ -33,7 +33,6 @@ class PracticeStore(
             create table $TABLE (
                 id text primary key not null,
                 session_id text,
-                full_length_attempt_id text,
                 question_id text not null,
                 selected_answer text not null,
                 correct integer not null,
@@ -62,7 +61,6 @@ class PracticeStore(
             ContentValues().apply {
                 put("id", attempt.id)
                 put("session_id", attempt.sessionId)
-                put("full_length_attempt_id", attempt.fullLengthAttemptId)
                 put("question_id", attempt.questionId)
                 put("selected_answer", attempt.selectedAnswer)
                 put("correct", if (attempt.correct) 1 else 0)
@@ -89,7 +87,6 @@ class PracticeStore(
             ).use { c ->
                 val idIdx = c.getColumnIndexOrThrow("id")
                 val sessionIdx = c.getColumnIndexOrThrow("session_id")
-                val flIdx = c.getColumnIndexOrThrow("full_length_attempt_id")
                 val questionIdx = c.getColumnIndexOrThrow("question_id")
                 val selectedIdx = c.getColumnIndexOrThrow("selected_answer")
                 val correctIdx = c.getColumnIndexOrThrow("correct")
@@ -102,7 +99,6 @@ class PracticeStore(
                         Attempt(
                             id = c.getString(idIdx),
                             sessionId = c.stringOrNull(sessionIdx),
-                            fullLengthAttemptId = c.stringOrNull(flIdx),
                             questionId = c.getString(questionIdx),
                             selectedAnswer = c.getString(selectedIdx),
                             correct = c.getInt(correctIdx) != 0,

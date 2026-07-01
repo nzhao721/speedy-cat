@@ -31,10 +31,14 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     }
 
     const fsrs = state.fsrs;
-    let newlyEnabled = false;
+    // SpeedyCAT: FSRS is always on (the readiness Memory pillar is built on FSRS
+    // retrievability and gives up when FSRS is off). Pin the store true so the
+    // disabled toggle below can never save fsrs=false, and never surface the
+    // "newly enabled" hint since FSRS is on from install.
     $: if (!$fsrs) {
-        newlyEnabled = true;
+        $fsrs = true;
     }
+    const newlyEnabled = false;
 
     const settings = {
         fsrs: {
@@ -102,7 +106,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     />
     <DynamicallySlottable slotHost={Item} {api}>
         <Item>
-            <SwitchRow bind:value={$fsrs} defaultValue={false}>
+            <!-- SpeedyCAT: FSRS is always on, so this toggle is disabled (and
+            defaultValue is true so no revert-to-off is offered). The user can
+            still tap the title for help. -->
+            <SwitchRow bind:value={$fsrs} defaultValue={true} disabled={true}>
                 <SettingTitle
                     on:click={() =>
                         openHelpModal(Object.keys(settings).indexOf("fsrs"))}

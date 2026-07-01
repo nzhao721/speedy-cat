@@ -6,12 +6,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.ichi2.anki.account.AccountActivity
 import com.ichi2.anki.common.destinations.PreferencesDestination
 import com.ichi2.anki.common.destinations.navigate
 import com.ichi2.anki.databinding.FragmentMoreBinding
 import com.ichi2.anki.dialogs.help.HelpDialog
-import com.ichi2.anki.practice.FullLengthActivity
 import com.ichi2.anki.practice.PracticeActivity
+import com.ichi2.anki.practice.ReadinessActivity
+import com.ichi2.anki.settings.Prefs
 import com.ichi2.anki.utils.ext.showDialogFragment
 import dev.androidbroadcast.vbpd.viewBinding
 
@@ -31,12 +33,16 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
     ) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.moreAccount.setOnClickListener {
+            startActivity(AccountActivity.getIntent(requireContext()))
+        }
+
         binding.morePractice.setOnClickListener {
             startActivity(Intent(requireContext(), PracticeActivity::class.java))
         }
 
-        binding.moreFullLength.setOnClickListener {
-            startActivity(Intent(requireContext(), FullLengthActivity::class.java))
+        binding.moreReadiness.setOnClickListener {
+            startActivity(Intent(requireContext(), ReadinessActivity::class.java))
         }
 
         binding.moreSettings.setOnClickListener {
@@ -46,5 +52,19 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
         binding.moreHelpPrivacy.setOnClickListener {
             requireActivity().showDialogFragment(HelpDialog.newPrivacyPolicyInstance())
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Refresh on resume so the identity updates after the user logs in/out
+        // on the account screen and returns here.
+        refreshAccount()
+    }
+
+    /** Show the signed-in account's name/email, or a neutral label when signed out. */
+    private fun refreshAccount() {
+        val name = Prefs.username
+        binding.moreAccountSubtitle.text =
+            if (isLoggedIn() && !name.isNullOrBlank()) name else getString(R.string.speedycat_not_signed_in)
     }
 }

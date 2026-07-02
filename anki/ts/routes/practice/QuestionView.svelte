@@ -196,15 +196,17 @@ timing) lives in the parent; this component only renders and emits events.
         text-align: left;
         padding: 0.7rem 0.9rem;
         border-radius: 8px;
-        border: 1px solid var(--border);
+        // 2px base border on every state so the selected/correct/incorrect
+        // colouring only swaps the colour (no layout shift), and reads clearly
+        // on the software-rendered Qt webview.
+        border: 2px solid var(--border);
         background: var(--canvas-elevated);
         color: var(--fg);
         cursor: pointer;
         line-height: 1.4;
         transition:
             background 0.1s,
-            border-color 0.1s,
-            box-shadow 0.1s;
+            border-color 0.1s;
     }
     .choice:hover:not(:disabled) {
         border-color: var(--border-focus);
@@ -216,25 +218,39 @@ timing) lives in the parent; this component only renders and emits events.
     .choice:disabled {
         cursor: default;
     }
-    // Pre-submit "picked" state — a distinct, clearly-tinted highlight (accent
-    // fill + 2px accent ring + filled radio). This is separate from the
-    // post-submit correct/incorrect colouring below, and is replaced by it once
-    // the answer is revealed (choiceClass drops `selected` when revealed).
+    // Pre-submit "picked" state — an UNMISTAKABLE highlight: strong accent
+    // (brand blue) 2px border + a solid-reading accent fill + bold text + a
+    // filled radio. The previous version leaned on `box-shadow: inset` for the
+    // ring, which does not paint reliably on the software-rendered Qt webview,
+    // and a very faint 0.18 tint, so the selection looked unstyled. We use only
+    // solid border/background/text here (no box-shadow) so it always renders,
+    // and a hue (blue) distinct from the post-submit green/red below. This is
+    // replaced by the correct/incorrect colouring once the answer is revealed
+    // (choiceClass drops `selected` when revealed).
     .choice.selected {
-        border-color: var(--border-focus);
-        background: var(--selected-bg, rgba(64, 120, 240, 0.18));
-        box-shadow: inset 0 0 0 2px var(--border-focus);
+        border-color: #2f6fed;
+        background: rgba(47, 111, 237, 0.3);
+        // keep the answer text on the theme foreground (readable in light AND
+        // dark); only the leading label letter takes the accent colour.
+        color: var(--fg);
+        font-weight: 600;
     }
     .choice.selected .label {
-        color: var(--border-focus);
+        color: #2f6fed;
+        font-weight: 700;
+    }
+    .choice.selected .text {
+        font-weight: 700;
     }
     .choice.correct {
-        border-color: #2e9e4f;
-        background: rgba(46, 158, 79, 0.16);
+        border-color: #1f9d4d;
+        background: rgba(31, 157, 77, 0.28);
+        font-weight: 600;
     }
     .choice.incorrect {
         border-color: #d1434b;
-        background: rgba(209, 67, 75, 0.16);
+        background: rgba(209, 67, 75, 0.28);
+        font-weight: 600;
     }
     .choice.struck .text {
         text-decoration: line-through;
@@ -254,12 +270,12 @@ timing) lives in the parent; this component only renders and emits events.
         justify-content: center;
     }
     .choice.selected .radio {
-        border-color: var(--border-focus);
-        background: var(--border-focus);
+        border-color: #2f6fed;
+        background: #2f6fed;
     }
     .choice.correct .radio {
-        border-color: #2e9e4f;
-        background: #2e9e4f;
+        border-color: #1f9d4d;
+        background: #1f9d4d;
     }
     .choice.incorrect .radio {
         border-color: #d1434b;

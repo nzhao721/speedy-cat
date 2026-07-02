@@ -13,6 +13,7 @@ body {
   /* padding forms the gap between the card box and the screen edges */
   padding: 12px;
   box-sizing: border-box;
+  color: var(--reviewer-fg, inherit);
 
   overflow-wrap: break-word;
   /* default background setting to fit with toolbar */
@@ -26,6 +27,29 @@ body {
    background so the card content can sit inside a themed card box. */
 body.card {
   background-color: var(--reviewer-canvas, transparent) !important;
+  /* Bundled SpeedyCAT cards embed MileDown/Pankow CSS (`.card { color: #D7DEE9 }`)
+     that targets body.card; override so body text is readable on the cream box. */
+  color: var(--reviewer-fg, inherit) !important;
+}
+
+#content,
+#content #extra {
+  color: var(--reviewer-fg, inherit);
+}
+
+/* Cloze bracket hints: darker green on light theme for WCAG AA on cream. */
+.cloze,
+.cloze b,
+.cloze u,
+.cloze i {
+  color: #1b5e20 !important;
+}
+
+body.night_mode .cloze,
+body.night_mode .cloze b,
+body.night_mode .cloze u,
+body.night_mode .cloze i {
+  color: #81c784 !important;
 }
 
 li {

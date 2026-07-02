@@ -46,6 +46,7 @@ from aqt.operations.tag import add_tags_to_notes, remove_tags_from_notes
 from aqt.profiles import VideoDriver
 from aqt.qt import *
 from aqt.sound import av_player, play_clicked_audio, record_audio
+from aqt.speedycat_themes import strip_tag_breadcrumb_html
 from aqt.theme import theme_manager
 from aqt.toolbar import BottomBar
 from aqt.utils import (
@@ -810,7 +811,7 @@ class Reviewer:
         button = ""
         if required:
             hint = (
-                '<div id="typeans-hint" style="opacity:0.7;margin-bottom:6px">'
+                '<div id="typeans-hint">'
                 "Type your answer, then press Enter or Check to reveal.</div>"
             )
             button = (
@@ -828,6 +829,16 @@ class Reviewer:
         if not self.typeCorrect:
             return re.sub(self.typeAnsPat, "", buf)
         m = re.search(self.typeAnsPat, buf)
+        if self._forced_recall_active:
+            # SpeedyCAT forced active recall: the typed-answer box still gates the
+            # reveal, but we intentionally show NO correctness verdict and NO
+            # character-by-character diff — just the card's own answer (including
+            # any source link). We also strip the baked-in tag breadcrumb
+            # (``<div class="tags">…</div>``) so it never leaks onto the back;
+            # it lives in the note's field HTML and, when the note isn't the
+            # bundled SpeedyCAT notetype, is not covered by strip_tag_breadcrumbs.
+            cleaned = re.sub(self.typeAnsPat, "", buf) if m else buf
+            return strip_tag_breadcrumb_html(cleaned)
         type_pattern = m.group(1) if m else ""
         initial_expected = self.typeCorrect
         initial_provided = self.typedAnswer or ""

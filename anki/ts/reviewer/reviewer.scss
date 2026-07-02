@@ -40,6 +40,44 @@ body {
 // the card box in every theme.
 body.card {
     background-color: var(--canvas) !important;
+    // Bundled SpeedyCAT cards embed MileDown/Pankow template CSS whose
+    // `.card { color: #D7DEE9; background: #333B45 }` targets body.card in the
+    // reviewer. Without this override the light gray text is nearly invisible
+    // on the cream card box in light theme.
+    color: var(--fg) !important;
+}
+
+// Same baked-in stylesheet also tints supporting text (#extra, links) for a
+// dark card; keep it on the themed foreground inside the card box.
+#qa,
+#qa #extra {
+    color: var(--fg);
+}
+
+// Forced active recall hint (injected by reviewer.py). Use themed foreground at
+// full opacity — the old inline opacity:0.7 washed out on the cream box.
+#typeans-hint {
+    color: var(--fg);
+    opacity: 1;
+    margin-bottom: 6px;
+}
+
+// Cloze hints use MediumSeaGreen in the embedded stylesheet; nudge darker in
+// light theme so bracket hints stay green but pass WCAG AA on the cream box.
+.cloze,
+.cloze b,
+.cloze u,
+.cloze i {
+    color: #1b5e20 !important;
+}
+
+body.nightMode {
+    .cloze,
+    .cloze b,
+    .cloze u,
+    .cloze i {
+        color: #81c784 !important;
+    }
 }
 
 // explicit nightMode definition required

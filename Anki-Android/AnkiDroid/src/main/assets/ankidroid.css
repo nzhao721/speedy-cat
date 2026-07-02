@@ -8,6 +8,34 @@ img {
 }
 
 /*
+  Bundled SpeedyCAT cards ship MileDown/Pankow template CSS in the field HTML.
+  Its `.card { color: #D7DEE9 }` rule targets body.card and washes out on the
+  cream card box — mirror flashcard.css/reviewer.scss theme overrides here too.
+*/
+body.card {
+    color: var(--reviewer-fg, inherit) !important;
+}
+
+#content,
+#content #extra {
+    color: var(--reviewer-fg, inherit);
+}
+
+.cloze,
+.cloze b,
+.cloze u,
+.cloze i {
+    color: #1b5e20 !important;
+}
+
+[class*="night-mode"] .cloze,
+[class*="night-mode"] .cloze b,
+[class*="night-mode"] .cloze u,
+[class*="night-mode"] .cloze i {
+    color: #81c784 !important;
+}
+
+/*
   Flatten the per-character type-answer diff for the study screen reviewer/previewer.
   The backend `compare_answer` emits typeGood/typeBad/typeMissed spans; here the
   per-letter red/green colouring is removed so the typed answer and correct answer

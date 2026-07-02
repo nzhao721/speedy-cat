@@ -65,10 +65,11 @@ RPC — see dashboard.ts.
 
 <WithGraphData {search} {days} let:sourceData let:prefs let:revlogRange>
     <div class="dashboard-head">
+        <h1 class="page-title">Your MCAT Dashboard</h1>
+
         <ReadinessPillars />
 
         <header class="hero">
-            <h1>Your MCAT dashboard</h1>
             <p class="tagline">
                 A snapshot of where you stand — flashcard memory, practice
                 accuracy and full-length scores — all computed from your own
@@ -124,9 +125,12 @@ RPC — see dashboard.ts.
         flex-direction: column;
         gap: 1.25rem;
     }
-    .hero h1 {
-        margin: 0 0 0.3rem;
-        font-size: 1.9rem;
+    .page-title {
+        margin: 0;
+        font-size: 2.1rem;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        color: var(--fg);
     }
     .tagline {
         margin: 0;

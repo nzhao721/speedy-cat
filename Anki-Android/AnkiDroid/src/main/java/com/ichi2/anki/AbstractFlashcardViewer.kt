@@ -90,7 +90,6 @@ import com.ichi2.anki.cardviewer.OnRenderProcessGoneDelegate
 import com.ichi2.anki.cardviewer.RenderedCard
 import com.ichi2.anki.cardviewer.SingleCardSide
 import com.ichi2.anki.cardviewer.TTS
-import com.ichi2.anki.cardviewer.ForcedRecall
 import com.ichi2.anki.cardviewer.TypeAnswer
 import com.ichi2.anki.cardviewer.TypeAnswer.Companion.createInstance
 import com.ichi2.anki.cardviewer.ViewerCommand
@@ -1327,7 +1326,6 @@ abstract class AbstractFlashcardViewer :
         if (blockAnswerRevealIfRequired()) {
             return
         }
-        val wasDisplayingAnswer = displayAnswer
         // #7294 Required in case the animation end action does not fire:
         actualHideEaseButtons()
         Timber.d("displayCardAnswer()")
@@ -1365,11 +1363,9 @@ abstract class AbstractFlashcardViewer :
         }
         updateCard(answerContent)
         displayAnswerBottomBar()
-
-        // SpeedyCAT: once the back is revealed, tell the learner whether they recalled it.
-        if (!wasDisplayingAnswer && forceActiveRecall) {
-            showForcedRecallFeedback()
-        }
+        // SpeedyCAT: no correctness verdict is shown on the forced-recall reveal —
+        // typing an answer is still required to reveal (see blockAnswerRevealIfRequired),
+        // but the back is shown plainly without a Correct/Incorrect judgement.
     }
 
     // ----------------------------------------------------------------------------
@@ -1422,37 +1418,6 @@ abstract class AbstractFlashcardViewer :
         showSnackbar(R.string.force_active_recall_type_first)
         focusAnswerCompletionField()
         return true
-    }
-
-    /**
-     * The expected answer used for forced-recall match feedback. Preference order:
-     * 1. the `{{type:Field}}` field, when the template defines one (matches Anki's native typed answer);
-     * 2. the note's "Back" field, when present (case-insensitive);
-     * 3. otherwise the note's last field;
-     * 4. as a final fallback, the rendered answer side.
-     */
-    @VisibleForTesting
-    internal fun expectedAnswerForForcedRecall(): String {
-        typeAnswer?.correct?.takeIf { it.isNotBlank() }?.let { return it }
-        val card = currentCard ?: return ""
-        val col = getColUnsafe
-        val note = card.note(col)
-        val fieldNames = card.noteType(col).fieldsNames
-        fieldNames.firstOrNull { it.equals("Back", ignoreCase = true) }?.let { name ->
-            note.getItem(name).takeIf { it.isNotBlank() }?.let { return it }
-        }
-        fieldNames.lastOrNull()?.let { name ->
-            note.getItem(name).takeIf { it.isNotBlank() }?.let { return it }
-        }
-        return card.answer(col)
-    }
-
-    /** Shows whether the learner's typed answer matched the card's expected answer. */
-    private fun showForcedRecallFeedback() {
-        val matched = ForcedRecall.matches(currentTypedAnswer(), expectedAnswerForForcedRecall())
-        val messageRes =
-            if (matched) R.string.force_active_recall_correct else R.string.force_active_recall_incorrect
-        showSnackbar(messageRes)
     }
 
     /**

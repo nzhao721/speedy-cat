@@ -11,11 +11,13 @@
 package com.ichi2.anki.practice
 
 import android.content.Context
+import com.ichi2.anki.CollectionManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import timber.log.Timber
+import java.io.File
 
 /**
  * In-memory MCAT question bank, loaded once from the bundled assets, plus
@@ -71,7 +73,11 @@ class PracticeRepository internal constructor(
             .filter { it.endsWith(".json") && !it.startsWith("_") }
             .sorted()
 
-    private fun readAsset(path: String): String = appContext.assets.open(path).bufferedReader().use { it.readText() }
+    private fun readAsset(path: String): String =
+        appContext.assets
+            .open(path)
+            .bufferedReader()
+            .use { it.readText() }
 
     // ---- Querying content -------------------------------------------------
 
@@ -112,6 +118,52 @@ class PracticeRepository internal constructor(
     fun recordAttempt(attempt: Attempt) = store.recordAttempt(attempt)
 
     fun allAttempts(): List<Attempt> = store.allAttempts()
+
+    // ---- Cross-device results sync (media channel) ------------------------
+    //
+    // Practice attempts + full-length summaries move between devices as a
+    // per-device JSON file in `collection.media` (see SpeedyCatResults). We
+    // publish ours and ingest the others' into the local store, so the existing
+    // Performance / Readiness / tracking computations transparently see the
+    // union. Best-effort: the collection may be unavailable (e.g. mid-sync).
+
+    /** Publish this device's attempts to its media results file (for upload). */
+    suspend fun publishResults() {
+        val dir = mediaDirOrNull() ?: return
+        withContext(Dispatchers.IO) {
+            PracticeResultsSync.publish(
+                mediaDir = dir,
+                deviceId = PracticeResultsSync.deviceId(appContext),
+                attempts = store.allAttempts(),
+                now = System.currentTimeMillis() / 1000,
+            )
+        }
+    }
+
+    /** Union other devices' published attempts into the local store (dedup by id). */
+    suspend fun ingestResults() {
+        val dir = mediaDirOrNull() ?: return
+        withContext(Dispatchers.IO) {
+            val remote = PracticeResultsSync.remoteAttempts(dir, PracticeResultsSync.deviceId(appContext))
+            if (remote.isNotEmpty()) store.upsertAll(remote.map { it.toAttempt() })
+        }
+    }
+
+    /** Completed full-length summaries published by the desktop app (read-only). */
+    suspend fun remoteFullLengthSummaries(): List<FullLengthSummary> {
+        val dir = mediaDirOrNull() ?: return emptyList()
+        return withContext(Dispatchers.IO) {
+            PracticeResultsSync.remoteFullLength(dir, PracticeResultsSync.deviceId(appContext))
+        }
+    }
+
+    private suspend fun mediaDirOrNull(): File? =
+        try {
+            CollectionManager.withCol { media.dir }
+        } catch (e: Exception) {
+            Timber.w(e, "SpeedyCAT: media folder unavailable for results sync")
+            null
+        }
 
     companion object {
         private const val PRACTICE_DIR = "speedycat/practice-questions"

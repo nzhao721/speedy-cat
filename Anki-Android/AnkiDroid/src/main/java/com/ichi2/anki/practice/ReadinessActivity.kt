@@ -40,6 +40,8 @@ import androidx.compose.ui.unit.dp
 import com.ichi2.anki.AnkiActivity
 import com.ichi2.anki.R
 import com.ichi2.compose.theme.AnkiDroidTheme
+import java.text.DateFormat
+import java.util.Date
 
 class ReadinessActivity : AnkiActivity() {
     private val viewModel: ReadinessViewModel by viewModels()
@@ -96,7 +98,7 @@ private fun ReadinessScreen(
                         verticalArrangement = Arrangement.spacedBy(16.dp),
                     ) {
                         Text(
-                            "Two independent signals. Each shows a value with a 95% range from a " +
+                            "Three independent signals. Each shows a value with a 95% range from a " +
                                 "named source — and refuses to score without enough data. No AI: every " +
                                 "value is computed deterministically on your device.",
                             style = MaterialTheme.typography.bodyMedium,
@@ -104,6 +106,9 @@ private fun ReadinessScreen(
                         )
                         for (pillar in vm.pillars) {
                             PillarCard(pillar)
+                        }
+                        if (vm.fullLengthResults.isNotEmpty()) {
+                            FullLengthResultsSection(vm.fullLengthResults)
                         }
                     }
             }
@@ -174,6 +179,81 @@ private fun PillarCard(pillar: ReadinessPillar) {
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
+        }
+    }
+}
+
+@Composable
+private fun FullLengthResultsSection(results: List<FullLengthSummary>) {
+    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Text(
+            "Full-length results",
+            style = MaterialTheme.typography.titleMedium,
+            fontWeight = FontWeight.SemiBold,
+        )
+        Text(
+            "Taken on the SpeedyCAT desktop app · shown here read-only.",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        for (result in results) {
+            FullLengthResultCard(result)
+        }
+    }
+}
+
+@Composable
+private fun FullLengthResultCard(result: FullLengthSummary) {
+    val percent = if (result.totalQuestions > 0) result.totalCorrect.toDouble() / result.totalQuestions else 0.0
+    val date =
+        if (result.completedAt > 0) {
+            DateFormat.getDateInstance().format(Date(result.completedAt * 1000))
+        } else {
+            ""
+        }
+    Surface(
+        color = MaterialTheme.colorScheme.surfaceVariant,
+        shape = RoundedCornerShape(12.dp),
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Row(
+                Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Column(Modifier.weight(1f)) {
+                    Text(
+                        result.title.ifEmpty { "Full-length test" },
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.Medium,
+                    )
+                    if (date.isNotEmpty()) {
+                        Text(
+                            date,
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                }
+                Text(
+                    formatPercent(percent),
+                    style = MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.primary,
+                )
+            }
+            Text(
+                "${result.totalCorrect} / ${result.totalQuestions} correct",
+                style = MaterialTheme.typography.bodyMedium,
+            )
+            for (section in result.sections) {
+                val label = McatSection.fromDb(section.section)?.shortLabel ?: section.section
+                Text(
+                    "• $label: ${section.correct} / ${section.total}",
+                    style = MaterialTheme.typography.bodyMedium,
+                )
+            }
         }
     }
 }

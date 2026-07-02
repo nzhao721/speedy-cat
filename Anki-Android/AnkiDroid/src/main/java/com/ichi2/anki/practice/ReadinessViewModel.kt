@@ -34,6 +34,10 @@ class ReadinessViewModel(
     var pillars by mutableStateOf<List<ReadinessPillar>>(emptyList())
         private set
 
+    /** Desktop-created full-length results, shown read-only in a results card. */
+    var fullLengthResults by mutableStateOf<List<FullLengthSummary>>(emptyList())
+        private set
+
     init {
         load()
     }
@@ -43,7 +47,18 @@ class ReadinessViewModel(
         loadFailed = false
         viewModelScope.launch {
             try {
-                pillars = buildPillars()
+                // Pull in results synced from other devices before computing, so
+                // the pillars reflect the union of this device + desktop.
+                runCatching { repo.ingestResults() }
+                    .onFailure { Timber.w(it, "SpeedyCAT: results ingest failed") }
+                val summaries =
+                    runCatching { repo.remoteFullLengthSummaries() }
+                        .getOrElse {
+                            Timber.w(it, "SpeedyCAT: reading full-length summaries failed")
+                            emptyList()
+                        }
+                fullLengthResults = summaries
+                pillars = buildPillars(summaries)
             } catch (e: Exception) {
                 Timber.w(e, "SpeedyCAT: failed to compute readiness")
                 loadFailed = true
@@ -53,11 +68,13 @@ class ReadinessViewModel(
         }
     }
 
-    private suspend fun buildPillars(): List<ReadinessPillar> {
+    private suspend fun buildPillars(summaries: List<FullLengthSummary>): List<ReadinessPillar> {
         val attempts = withContext(Dispatchers.IO) { repo.allAttempts() }
         val memory = memoryPillarFromCollection()
         val performance = performancePillar(computePerformance(attempts.filter { it.sessionId != null }))
-        return listOf(memory, performance)
+        // Readiness is the desktop-created full-length raw score, read-only here.
+        val readiness = readinessPillar(computeReadiness(summaries))
+        return listOf(memory, performance, readiness)
     }
 
     /**

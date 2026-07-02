@@ -42,6 +42,7 @@ import com.ichi2.anki.CollectionManager.withCol
 import com.ichi2.anki.R
 import com.ichi2.anki.cancelSync
 import com.ichi2.anki.notifications.NotificationId
+import com.ichi2.anki.practice.PracticeRepository
 import com.ichi2.anki.setLastSyncTimeToNow
 import com.ichi2.anki.settings.Prefs
 import com.ichi2.anki.utils.ext.trySetForeground
@@ -168,6 +169,11 @@ class SyncWorker(
                     } else {
                         auth
                     }
+                // SpeedyCAT: refresh this device's results file (practice
+                // attempts) just before media upload so cross-device results
+                // sync carries the latest. Best-effort; never blocks a sync.
+                runCatching { PracticeRepository.getInstance(applicationContext).publishResults() }
+                    .onFailure { Timber.w(it, "SpeedyCAT: publish before media sync failed") }
                 syncMedia(syncAuth)
             }
             SyncCollectionResponse.ChangesRequired.FULL_SYNC,

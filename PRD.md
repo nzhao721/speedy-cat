@@ -97,6 +97,8 @@ Features planned after the MVP, not required for initial launch:
 - **AnkiDroid:** Consumes shared backend; use `local_backend=true` when shipping custom Rust builds to mobile.
 - **Content bundles:** Structured import for question banks; AAMC full-length definitions linked to licensed exam packages.
 
+> **Known constraint — mobile stats parity.** The current mobile build ships the **stock prebuilt backend AAR** (`io.github.david-allison:anki-android-backend`), whose bundled web assets render the **upstream Anki stats page** (with its own time-range + search choosers), *not* our SpeedyCAT dashboard (readiness pillars, practice/full-length panels). Those live in our fork's Rust RPCs + `anki/out/sveltekit`, which the stock AAR does not contain, so the desktop Dashboard cannot be mirrored on mobile by editing app code alone. Mobile therefore implements Practice + a 2-pillar Readiness (Memory + Performance) **natively in Kotlin**; the shared stats webview degrades gracefully (hides those sections instead of erroring) for the day our bundle ships. Full parity requires building a local `rsdroid` from the fork (`local_backend=true`), which swaps to `../Anki-Android-Backend/rsdroid/build/outputs/aar/rsdroid-release.aar` and bundles both our RPCs (`librsdroid.so` + generated proto) and our dashboard bundle. Feasibility: **GO-WITH-CAVEATS** (~2-4 days). Windows builds are supported and all missing tools are user-level installable (NDK `29.0.14206865`, Rust android targets — no admin needed); the dominant risk is **engine version skew** (our fork is Anki `26.05` while the backend + AnkiDroid Kotlin are pinned to `25.09.2`), best mitigated by rebasing the practice/readiness changes onto `25.09.2`.
+
 ### Platform Guardrails
 
 - Completed practice sessions and test attempts are immutable; in-progress session conflicts resolve to latest attempt.
@@ -327,6 +329,19 @@ User-generated and synced. One attempt at a `FullLengthTest`. (Name retained for
 - `completedAt` — timestamp, nullable. `null` while in progress.
 - `sectionResults` — array of `{ section: CPBS|CARS|BBLS|PSBB, correct: int, total: int, scaledScore: int|null }`, required.
 - `overallScaledScore` — integer (472–528), nullable. Present only when scoring rules / licensed content provide it.
+
+### `SpeedyCatResults` (cross-device results-sync file)
+
+User-generated **results** (`PracticeSessionAttempt`s and completed-`AamcTestAttempt` summaries) live in schema-19 collection tables that are **deliberately stripped from the AnkiWeb upload** (stock AnkiWeb only opens schema ≤18; the desktop uploads a schema-18 downgraded copy with the practice tables removed — `rslib/src/sync/collection/upload.rs` + `schema19_downgrade.sql`). So those tables never sync directly. To carry results across devices over **stock** AnkiWeb sync, each device writes one JSON file into the synced **`collection.media`** folder and reads the others'. Media is chosen because it survives the schema-19 strip (it is not in the `.anki2`), round-trips schema-agnostically, merges **per file** bidirectionally with no clobber (distinct per-device filenames), is readable/writable natively on mobile with the stock backend, and is preserved by Check Media (leading `_`). This is **not** stored in the schema-19 tables' sync path and **not** in `col.conf` (whose sync is whole-blob last-writer-wins).
+
+- **Filename** — `_speedycat_results_<deviceId>.json`, one per device. `deviceId` is a random token stored **device-locally** (desktop: profile-manager meta; mobile: `SharedPreferences`) and **never** in the synced config, so each device keeps a distinct identity + filename.
+- **`schema`** — integer, required. On-disk version (currently `1`).
+- **`deviceId`** — string, required. The writing device's id.
+- **`updatedAt`** — timestamp, required. When the file was last written.
+- **`attempts`** — array of practice-session attempts (mirrors `PracticeSessionAttempt`): `{ id, sessionId, questionId, selectedAnswer, correct, timeSeconds, section, topic, answeredAt }`. `id` is the stable, globally-unique dedup key (`"<sessionId>:<questionId>"`, and `sessionId` is a random `ps-…`). **Bidirectional**: written by both apps.
+- **`fullLength`** — array of completed full-length **summaries** (compact per-test roll-ups of `AamcTestAttempt`): `{ attemptId, testId, title, startedAt, completedAt, totalCorrect, totalQuestions, overallScaledScore, sections:[{ section, correct, total, timeSeconds, scaledScore }] }`. **One-way desktop → mobile**: only the desktop (which owns full-length tests) produces these; mobile renders them **read-only** in its 3rd Readiness pillar + a "taken on desktop" results card.
+
+**Sync model.** Each device *publishes* its own file and *ingests* the **other** devices' files, upserting `attempts` into its local store (desktop `practice_attempts`; mobile `PracticeStore`) keyed by `id` (`insert or replace`). Because every Performance/Readiness/tracking query aggregates `count()`/`sum()` over distinct primary keys, the union is exact and never double-counts, and the existing computations work unchanged over the merged store. Desktop publishes on `sync_will_start` and ingests on `profile_did_open` + `sync_did_finish`; mobile publishes on session end + before media upload and ingests on-read (Readiness/Practice screens). Contract + logic: `pylib/anki/speedycat_sync.py` (desktop) and `practice/SpeedyCatResults.kt` + `PracticeResultsSync.kt` (mobile).
 
 ### Relationships at a glance
 

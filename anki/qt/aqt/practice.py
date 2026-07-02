@@ -32,10 +32,13 @@ which lets a developer or installer swap in an alternate content set.
 from __future__ import annotations
 
 import os
+import traceback
+import uuid
 
 import aqt
 import aqt.gui_hooks
 import aqt.main
+from anki import speedycat_sync
 from anki.collection import Collection
 from aqt.operations import QueryOp
 from aqt.qt import QAction, qconnect
@@ -166,6 +169,69 @@ def _auto_load_on_open() -> None:
         ensure_content_loaded(aqt.mw)
 
 
+# Cross-device results sync (over stock AnkiWeb, via the media channel)
+######################################################################
+#
+# Practice + full-length RESULTS live in schema-19 tables that are stripped from
+# the AnkiWeb upload, so they never sync directly. Instead each device publishes
+# a per-device JSON file into ``collection.media`` and ingests the OTHER devices'
+# files, unioning attempts into the local ``practice_attempts`` table (deduped by
+# stable id). The desktop's existing Performance/Readiness/tracking queries then
+# compute over the merged store unchanged. See ``anki/speedycat_sync.py`` for the
+# transport rationale and the exact merge/dedup contract.
+
+# Device id is stored in the (local, NEVER-synced) profile-manager meta so each
+# device keeps a distinct identity; storing it in the synced collection config
+# would clobber it across devices and collapse everyone onto one media file.
+_DEVICE_ID_META_KEY = "speedycatDeviceId"
+
+
+def _device_id(mw: aqt.main.AnkiQt) -> str:
+    """This device's stable, local-only id (minted + persisted on first use)."""
+    existing = mw.pm.meta.get(_DEVICE_ID_META_KEY)
+    if isinstance(existing, str) and existing:
+        return existing
+    new_id = uuid.uuid4().hex
+    mw.pm.meta[_DEVICE_ID_META_KEY] = new_id
+    mw.pm.save()
+    return new_id
+
+
+def _publish_results_now() -> None:
+    """Write this device's results file so the next media sync uploads it.
+
+    Runs synchronously on ``sync_will_start`` (before media sync's change
+    scan). Best-effort: a failure here must never block a sync."""
+    mw = aqt.mw
+    if mw is None or mw.col is None:
+        return
+    try:
+        speedycat_sync.publish_results(mw.col, _device_id(mw))
+    except Exception:
+        traceback.print_exc()
+
+
+def _ingest_results_now() -> None:
+    """Union other devices' published attempts into the local store.
+
+    Runs on ``profile_did_open`` and ``sync_did_finish``. Executed as a
+    background ``QueryOp`` so the ``practice_attempts`` writes are serialized on
+    the collection worker thread (never racing the first-run content import or a
+    sync). Best-effort and idempotent (upsert by id); newly-ingested rows are
+    reflected the next time the dashboard recomputes readiness."""
+    mw = aqt.mw
+    if mw is None or mw.col is None:
+        return
+    device_id = _device_id(mw)
+    QueryOp(
+        parent=mw,
+        op=lambda col: speedycat_sync.ingest_results(col, device_id),
+        success=lambda _count: None,
+    ).failure(
+        lambda exc: print(f"SpeedyCAT: results ingest failed: {exc}")
+    ).run_in_background()
+
+
 # Embedded study modes
 ######################################################################
 #
@@ -203,3 +269,8 @@ def setup(mw: aqt.main.AnkiQt) -> None:
     )
     mw.form.menuTools.addAction(action)
     aqt.gui_hooks.profile_did_open.append(_auto_load_on_open)
+    # Cross-device results sync (media channel): ingest others' results on open
+    # and after each sync; publish ours right before a sync uploads media.
+    aqt.gui_hooks.profile_did_open.append(_ingest_results_now)
+    aqt.gui_hooks.sync_will_start.append(_publish_results_now)
+    aqt.gui_hooks.sync_did_finish.append(_ingest_results_now)

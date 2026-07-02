@@ -40,6 +40,9 @@ class PracticeViewModel(
         viewModelScope.launch {
             try {
                 repo.ensureLoaded()
+                // Union in attempts synced from other devices so missed-only and
+                // per-topic stats reflect practice done on desktop too.
+                runCatching { repo.ingestResults() }
                 contentReady = true
             } catch (e: Exception) {
                 loadFailed = true
@@ -98,7 +101,11 @@ class PracticeViewModel(
 
     suspend fun summarizeSession(sessionId: String): PracticeSessionSummary =
         withContext(Dispatchers.IO) {
-            summarizePracticeSession(repo.allAttempts().filter { it.sessionId == sessionId })
+            val summary = summarizePracticeSession(repo.allAttempts().filter { it.sessionId == sessionId })
+            // Publish this device's attempts so the next media sync carries the
+            // just-finished session to other devices. Best-effort.
+            runCatching { repo.publishResults() }
+            summary
         }
 
     /** Cumulative per-topic stats across all practice sessions (weakest first). */

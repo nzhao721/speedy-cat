@@ -42,3 +42,7 @@ Thumbs.db
 *~
 # JetBrains / Android Studio IDE config & caches (machine-specific)
 .idea/
+
+# --- Local secrets / throwaway test credentials (never commit) ---
+.sync-test-account.local.txt
+*.local.secret

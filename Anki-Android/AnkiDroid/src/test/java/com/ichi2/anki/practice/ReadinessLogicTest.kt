@@ -126,4 +126,52 @@ class ReadinessLogicTest {
         assertThat(pillar.value, equalTo("50%"))
         assertThat(pillar.detail.any { it.contains("2 / 4 correct") }, equalTo(true))
     }
+
+    // ---- Readiness pillar (desktop-created full-length, read-only) --------
+
+    private fun fullLength(
+        id: String,
+        correct: Int,
+        total: Int,
+    ) = FullLengthSummary(
+        attemptId = id,
+        title = "FL $id",
+        completedAt = 1000,
+        totalCorrect = correct,
+        totalQuestions = total,
+        sections = listOf(FullLengthSectionSummary("CPBS", correct, total, 5100, null)),
+    )
+
+    @Test
+    fun `readiness gives up with no full-length results`() {
+        val result = computeReadiness(emptyList())
+        assertThat(result.sufficient, equalTo(false))
+        assertThat(result.insufficientReason, containsString("desktop"))
+        val pillar = readinessPillar(result)
+        assertThat(pillar.value, equalTo("\u2014"))
+        assertThat(pillar.range, equalTo(""))
+        assertThat(pillar.source, containsString("full-length"))
+    }
+
+    @Test
+    fun `readiness aggregates raw score across completed full-length tests`() {
+        val result = computeReadiness(listOf(fullLength("a", 40, 59), fullLength("b", 45, 53)))
+        assertThat(result.sufficient, equalTo(true))
+        assertThat(result.completedTests, equalTo(2))
+        assertThat(result.totalCorrect, equalTo(85))
+        assertThat(result.totalQuestions, equalTo(112))
+        assertThat(result.accuracy, closeTo(85.0 / 112.0, 1e-9))
+        assertThat(result.ci.low <= result.accuracy && result.accuracy <= result.ci.high, equalTo(true))
+        assertThat(result.ci.low >= 0.0 && result.ci.high <= 1.0, equalTo(true))
+        val pillar = readinessPillar(result)
+        assertThat(pillar.sufficient, equalTo(true))
+        assertThat(pillar.detail.any { it.contains("85 / 112 correct") }, equalTo(true))
+        assertThat(pillar.detail.any { it.contains("2 completed full-length tests") }, equalTo(true))
+    }
+
+    @Test
+    fun `readiness ignores summaries without questions`() {
+        val result = computeReadiness(listOf(fullLength("empty", 0, 0)))
+        assertThat(result.sufficient, equalTo(false))
+    }
 }

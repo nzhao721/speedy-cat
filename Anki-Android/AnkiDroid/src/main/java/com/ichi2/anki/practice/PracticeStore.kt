@@ -57,20 +57,40 @@ class PracticeStore(
 
     /** Record one attempt, replacing any prior attempt for the same id. */
     fun recordAttempt(attempt: Attempt) {
-        val values =
-            ContentValues().apply {
-                put("id", attempt.id)
-                put("session_id", attempt.sessionId)
-                put("question_id", attempt.questionId)
-                put("selected_answer", attempt.selectedAnswer)
-                put("correct", if (attempt.correct) 1 else 0)
-                put("time_seconds", attempt.timeSeconds)
-                put("section", attempt.section?.dbCode ?: "")
-                put("topic", attempt.topic)
-                put("answered_at", attempt.answeredAt)
-            }
-        writableDatabase.insertWithOnConflict(TABLE, null, values, SQLiteDatabase.CONFLICT_REPLACE)
+        writableDatabase.insertWithOnConflict(TABLE, null, attempt.toValues(), SQLiteDatabase.CONFLICT_REPLACE)
     }
+
+    /**
+     * Bulk upsert (replace-on-conflict by id) used when ingesting attempts
+     * synced from other devices. Wrapped in a single transaction; dedup by
+     * primary key means re-ingesting the same rows is idempotent.
+     */
+    fun upsertAll(attempts: List<Attempt>) {
+        if (attempts.isEmpty()) return
+        val db = writableDatabase
+        db.beginTransaction()
+        try {
+            for (attempt in attempts) {
+                db.insertWithOnConflict(TABLE, null, attempt.toValues(), SQLiteDatabase.CONFLICT_REPLACE)
+            }
+            db.setTransactionSuccessful()
+        } finally {
+            db.endTransaction()
+        }
+    }
+
+    private fun Attempt.toValues(): ContentValues =
+        ContentValues().apply {
+            put("id", id)
+            put("session_id", sessionId)
+            put("question_id", questionId)
+            put("selected_answer", selectedAnswer)
+            put("correct", if (correct) 1 else 0)
+            put("time_seconds", timeSeconds)
+            put("section", section?.dbCode ?: "")
+            put("topic", topic)
+            put("answered_at", answeredAt)
+        }
 
     /** Every recorded attempt, for pure-Kotlin aggregation (see PracticeLogic). */
     fun allAttempts(): List<Attempt> {

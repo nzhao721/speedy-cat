@@ -240,3 +240,72 @@ fun performancePillar(result: PerformanceResult): ReadinessPillar =
             },
         insufficientReason = result.insufficientReason,
     )
+
+// ---- Pillar 3: Readiness (full-length raw score, desktop-created) ----------
+
+data class ReadinessResult(
+    val sufficient: Boolean,
+    val completedTests: Int,
+    val totalCorrect: Int,
+    val totalQuestions: Int,
+    val accuracy: Double,
+    val ci: ConfidenceInterval,
+    val insufficientReason: String,
+)
+
+/**
+ * Readiness = raw score (correct / total) over COMPLETED full-length tests, with
+ * a 95% interval. Full-length exams are taken on the SpeedyCAT desktop app and
+ * arrive here read-only via the synced media results file; this mirrors the
+ * desktop Readiness pillar. Gives up (refuses to score) when no completed
+ * full-length summary has synced yet. [summaries] are the desktop-published
+ * per-test summaries (already deduped).
+ */
+fun computeReadiness(summaries: List<FullLengthSummary>): ReadinessResult {
+    val completed = summaries.filter { it.totalQuestions > 0 }
+    if (completed.isEmpty()) {
+        return ReadinessResult(
+            sufficient = false,
+            completedTests = 0,
+            totalCorrect = 0,
+            totalQuestions = 0,
+            accuracy = 0.0,
+            ci = ConfidenceInterval(0.0, 0.0),
+            insufficientReason =
+                "No full-length results yet. Full-length exams are taken on the SpeedyCAT " +
+                    "desktop app; finish one and sync, and your Readiness score appears here.",
+        )
+    }
+    val totalCorrect = completed.sumOf { it.totalCorrect }
+    val totalQuestions = completed.sumOf { it.totalQuestions }
+    val accuracy = if (totalQuestions > 0) totalCorrect.toDouble() / totalQuestions else 0.0
+    return ReadinessResult(
+        sufficient = true,
+        completedTests = completed.size,
+        totalCorrect = totalCorrect,
+        totalQuestions = totalQuestions,
+        accuracy = accuracy,
+        ci = proportionCi(accuracy, totalQuestions),
+        insufficientReason = "",
+    )
+}
+
+fun readinessPillar(result: ReadinessResult): ReadinessPillar =
+    ReadinessPillar(
+        name = "Readiness",
+        sufficient = result.sufficient,
+        value = if (result.sufficient) formatPercent(result.accuracy) else "\u2014",
+        range = if (result.sufficient) formatPercentRange(result.ci) else "",
+        rangeCaption = CI_CAPTION,
+        source = "SpeedyCAT full-length tests (taken on desktop, synced read-only)",
+        detail =
+            if (result.sufficient) {
+                listOf(
+                    "${result.totalCorrect} / ${result.totalQuestions} correct",
+                    sampleLine(result.completedTests, "completed full-length test", "completed full-length tests"),
+                )
+            } else {
+                emptyList()
+            },
+        insufficientReason = result.insufficientReason,
+    )

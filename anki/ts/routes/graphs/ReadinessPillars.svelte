@@ -3,12 +3,10 @@ Copyright: Ankitects Pty Ltd and contributors
 License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 -->
 <!--
-SpeedyCAT: Exam Readiness page. Presents the three deterministic readiness
-pillars (Memory / Performance / Readiness). Every available pillar is shown with
-its value, an explicit 95% range and its named source together — a bare number
-is never shown. When a pillar lacks enough data it "gives up" with an
-explanation instead of a number. AI is off; every figure is computed in the Rust
-backend from the learner's own study data.
+SpeedyCAT: the three deterministic readiness pillars (Memory / Performance /
+Readiness). Every available pillar shows value + 95% range + named source +
+method + sample size; insufficient data yields a give-up message — never a
+bare number. Shared by the dashboard; AI is off.
 -->
 <script lang="ts">
     import { getReadiness } from "@generated/backend";
@@ -95,13 +93,12 @@ backend from the learner's own study data.
     load();
 </script>
 
-<div class="readiness">
-    <header>
-        <h1>Exam Readiness</h1>
-        <p class="tagline">
-            Three separate, deterministic measures of where you stand — each with
-            an explicit range and a named source. No single “readiness number”,
-            and no AI: every figure is computed from your own study data.
+<section class="readiness-section">
+    <header class="readiness-head">
+        <h2>Exam readiness</h2>
+        <p class="readiness-tagline">
+            Three separate, deterministic measures — each with an explicit range
+            and a named source. No single “readiness number”, and no AI.
         </p>
     </header>
 
@@ -117,7 +114,7 @@ backend from the learner's own study data.
             {#each pillars as pv (pv.title)}
                 <section class="pillar" class:muted={!pv.pillar?.available}>
                     <div class="pillar-head">
-                        <h2>{pv.title}</h2>
+                        <h3>{pv.title}</h3>
                         <p class="pillar-sub">{pv.subtitle}</p>
                     </div>
 
@@ -216,24 +213,23 @@ backend from the learner's own study data.
             with its range and source.
         </p>
     {/if}
-</div>
+</section>
 
 <style lang="scss">
-    .readiness {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 2.5rem 1.5rem;
+    .readiness-section {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1rem;
     }
-    header h1 {
+    .readiness-head h2 {
         margin: 0 0 0.25rem;
+        font-size: 1.2rem;
     }
-    .tagline {
+    .readiness-tagline {
         color: var(--fg-subtle);
         margin: 0;
         max-width: 720px;
+        font-size: 0.9rem;
     }
     .loading {
         color: var(--fg-subtle);
@@ -268,7 +264,7 @@ backend from the learner's own study data.
     .pillar.muted {
         opacity: 0.92;
     }
-    .pillar-head h2 {
+    .pillar-head h3 {
         margin: 0;
         font-size: 1.1rem;
     }

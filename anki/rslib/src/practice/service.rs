@@ -437,7 +437,7 @@ const READINESS_Z: f64 = 1.96;
 /// Minimum reviewed cards before the Memory pillar reports (else it gives up).
 const MIN_MEMORY_CARDS: u64 = 30;
 /// Minimum answered practice questions before the Performance pillar reports.
-const MIN_PERFORMANCE_ATTEMPTS: u32 = 20;
+const MIN_PERFORMANCE_ATTEMPTS: u32 = 30;
 
 impl Collection {
     /// Pillar 1 — Memory: mean FSRS retrievability over the reviewed cards
@@ -1799,15 +1799,15 @@ mod test {
     fn readiness_reports_performance_and_full_length() -> Result<()> {
         let mut col = Collection::new();
 
-        // Pillar 2: 24 answered practice-session questions, 18 correct, 60s each.
-        for i in 0..24 {
+        // Pillar 2: 30 answered practice-session questions, 24 correct, 60s each.
+        for i in 0..30 {
             col.storage.add_practice_attempt(&NewAttempt {
                 id: &format!("ps:{i}"),
                 session_id: Some("s1"),
                 full_length_attempt_id: None,
                 question_id: &format!("q{i}"),
                 selected_answer: "A",
-                correct: i < 18,
+                correct: i < 24,
                 time_on_question_seconds: 60,
                 section_db: "CPBS",
                 topic: "kinetics",
@@ -1858,12 +1858,12 @@ mod test {
         assert!(!memory.available);
         assert!(!memory.message.is_empty());
 
-        // Performance: 18/24 = 0.75 over the 24 answered (skip excluded), inside
+        // Performance: 24/30 = 0.8 over the 30 answered (skip excluded), inside
         // a proper [0,1] range, ~60s/question.
         let perf = r.performance.unwrap();
         assert!(perf.available);
-        assert_eq!(perf.sample_size, 24);
-        assert!((perf.value - 0.75).abs() < 1e-9);
+        assert_eq!(perf.sample_size, 30);
+        assert!((perf.value - 0.8).abs() < 1e-9);
         assert!(perf.range_low < perf.value && perf.value < perf.range_high);
         assert!(perf.range_low >= 0.0 && perf.range_high <= 1.0);
         assert!(!perf.source.is_empty());

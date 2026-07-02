@@ -111,6 +111,12 @@ export interface SummaryCardData {
 
 const LOADING_CARD_VALUE = "—";
 
+// SpeedyCAT: the "Memory now" recall percentage is only meaningful with a
+// large enough sample, so it's hidden until strictly more than this many cards
+// have been reviewed (count > MEMORY_CARD_MIN). Below the threshold the card
+// shows progress instead of a number. Matches rslib MIN_MEMORY_CARDS (30).
+const MEMORY_CARD_MIN = 30;
+
 export function studiedTodayCard(data: GraphsResponse | null): SummaryCardData {
     const label = "Studied today";
     if (!data?.today) {
@@ -152,11 +158,14 @@ export function memoryCard(data: GraphsResponse | null): SummaryCardData {
     const cardCount = retrievability
         ? Object.keys(retrievability.retrievability).length
         : 0;
-    if (!retrievability || cardCount === 0) {
+    // Require more than MEMORY_CARD_MIN reviewed cards before showing a recall
+    // percentage; a handful of cards isn't a trustworthy sample. Below the
+    // threshold, show progress toward it instead of a number.
+    if (!retrievability || cardCount <= MEMORY_CARD_MIN) {
         return {
             label,
             value: LOADING_CARD_VALUE,
-            sub: "Review some flashcards to measure recall",
+            sub: `Study more to unlock (${cardCount}/${MEMORY_CARD_MIN} reviewed cards)`,
             muted: true,
         };
     }

@@ -17,11 +17,6 @@ const i18n = setupI18n({ modules: [ModuleName.STATISTICS, ModuleName.SCHEDULING]
 
 export async function setupGraphs(
     graphs: Component<any>[],
-    {
-        search = "deck:current",
-        days = 365,
-        controller = null satisfies Component<any> | null,
-    } = {},
 ): Promise<GraphsPage> {
     checkNightMode();
     await i18n;
@@ -29,10 +24,7 @@ export async function setupGraphs(
     return new GraphsPage({
         target: document.body,
         props: {
-            initialSearch: search,
-            initialDays: days,
             graphs,
-            controller,
         },
     });
 }

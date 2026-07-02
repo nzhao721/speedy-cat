@@ -1,16 +1,16 @@
 # SpeedyCAT practice-question expansion — summary
 
-Files scanned: **88**  ·  Total items: **5174**
+Files scanned: **88**  ·  Total items: **5168**
 
 ## By section (clean / total)
 
 - **CPBS**: 1291 clean / 1291 total
-- **CARS**: 1288 clean / 1294 total
+- **CARS**: 1288 clean / 1288 total
 - **BBLS**: 1264 clean / 1264 total
 - **PSBB**: 1325 clean / 1325 total
 
-LICENSE-UNCERTAIN items: **6**
-Duplicate stems detected: **145**
+LICENSE-UNCERTAIN items: **0**
+Duplicate stems detected: **144**
 
 ## Top sources
 
@@ -131,7 +131,7 @@ Duplicate stems detected: **145**
 | psbb-expanded-15.json | 22 | PSBB:22 |
 | psbb-expanded-16.json | 18 | PSBB:18 |
 | psbb-expanded-17.json | 18 | PSBB:18 |
-| questions.json | 27 | CPBS:7, BBLS:7, PSBB:7, CARS:6 |
+| questions.json | 21 | CPBS:7, BBLS:7, PSBB:7 |
 
 > Schema problems (first 50): 300 items missing required fields
 

@@ -699,6 +699,26 @@ create table if not exists profiles
     # Profile-specific
     ######################################################################
 
+    def stored_sync_user(self, name: str) -> str | None:
+        """AnkiWeb email stored for ``name`` when that profile is signed in.
+
+        Reads the profile metadata blob from the profiles DB without loading
+        ``name`` into ``self.profile`` or opening its collection.
+        """
+        try:
+            data = self.db.scalar(
+                "select cast(data as blob) from profiles where name = ? collate nocase",
+                name,
+            )
+            if not data:
+                return None
+            profile = self._unpickle(data)
+            if not profile.get("syncKey"):
+                return None
+            return profile.get("syncUser") or None
+        except Exception:
+            return None
+
     def set_sync_key(self, val: str | None) -> None:
         self.profile["syncKey"] = val
 

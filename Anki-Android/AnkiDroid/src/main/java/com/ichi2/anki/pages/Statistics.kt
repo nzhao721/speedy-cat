@@ -10,17 +10,11 @@ import android.print.PrintManager
 import android.view.View
 import androidx.core.content.ContextCompat.getSystemService
 import com.ichi2.anki.CollectionManager
-import com.ichi2.anki.CollectionManager.withCol
 import com.ichi2.anki.R
 import com.ichi2.anki.common.time.TimeManager
 import com.ichi2.anki.common.time.getTimestamp
 import com.ichi2.anki.databinding.PageStatisticsBinding
-import com.ichi2.anki.dialogs.registerDeckSelectedHandler
-import com.ichi2.anki.dialogs.startDeckSelection
-import com.ichi2.anki.launchCatchingTask
-import com.ichi2.anki.model.SelectableDeck
 import com.ichi2.anki.snackbar.showSnackbar
-import com.ichi2.anki.withProgress
 import dev.androidbroadcast.vbpd.viewBinding
 import timber.log.Timber
 
@@ -44,9 +38,10 @@ class Statistics : PageFragment(R.layout.page_statistics) {
             binding.toolbar.navigationIcon = null
         }
 
-        binding.deckName.setOnClickListener {
-            startDeckSelection(allowAll = false, allowFiltered = false, skipEmptyDefault = true)
-        }
+        // SpeedyCAT: stats always cover the whole collection for all time.
+        // The shared graphs web page no longer exposes deck/search/time controls.
+        binding.deckName.visibility = View.GONE
+        binding.toolbar.title = getString(R.string.statistics)
 
         binding.toolbar.apply {
             menu.findItem(R.id.action_export_stats).title = CollectionManager.TR.statisticsSavePdf()
@@ -55,14 +50,6 @@ class Statistics : PageFragment(R.layout.page_statistics) {
                     exportWebViewContentAsPDF()
                 }
                 true
-            }
-        }
-        registerDeckSelectedHandler(action = ::onDeckSelected)
-        requireActivity().launchCatchingTask {
-            withProgress {
-                val deckName =
-                    savedInstanceState?.getString(KEY_DECK_NAME, null) ?: withCol { decks.current().name }
-                changeDeck(deckName)
             }
         }
     }
@@ -89,39 +76,8 @@ class Statistics : PageFragment(R.layout.page_statistics) {
             )
     }
 
-    private fun onDeckSelected(deck: SelectableDeck?) {
-        if (deck == null) return
-        require(deck is SelectableDeck.Deck)
-        changeDeck(deck.name)
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putString(KEY_DECK_NAME, binding.deckName.text.toString())
-    }
-
-    /**
-     * Updates the ui with the new selected deck. Doesn't change the backend.
-     *
-     * This method includes a workaround to change the deck in the webview by finding the text box
-     * and replacing the deck name with the selected deck name from the dialog and updating the
-     * stats. See issue #3394 in Anki repository.
-     **/
-    private fun changeDeck(selectedDeckName: String) {
-        binding.deckName.text = selectedDeckName
-        val javascriptCode =
-            """
-            var textBox = document.getElementById("statisticsSearchText");
-            textBox.value = "deck:\"$selectedDeckName\"";
-            textBox.dispatchEvent(new Event("input", { bubbles: true }));
-            textBox.dispatchEvent(new Event("change"));
-            """.trimIndent()
-        webViewLayout.evaluateJavascript(javascriptCode, null)
-    }
-
     companion object {
         const val ARG_HIDE_BACK_BUTTON = "hideBackButton"
-        private const val KEY_DECK_NAME = "key_deck_name"
     }
 }
 

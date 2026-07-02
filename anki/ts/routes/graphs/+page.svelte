@@ -10,13 +10,12 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     import GraphsPage from "./GraphsPage.svelte";
     import HourGraph from "./HourGraph.svelte";
     import IntervalsGraph from "./IntervalsGraph.svelte";
-    import RangeBox from "./RangeBox.svelte";
     import RetrievabilityGraph from "./RetrievabilityGraph.svelte";
     import ReviewsGraph from "./ReviewsGraph.svelte";
     import StabilityGraph from "./StabilityGraph.svelte";
     import TrueRetention from "./TrueRetention.svelte";
 
-    // SpeedyCAT: the stats route is the app homepage/dashboard for a single,
+    // SpeedyCAT: the graphs route is the app homepage/dashboard for a single,
     // read-only MCAT deck (users don't add or author cards). Graphs that only
     // make sense for multi-deck or card-authoring workflows are dropped:
     // TodayStats (now the "Studied today" summary card), AddedGraph (cards are
@@ -37,9 +36,4 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     ];
 </script>
 
-<GraphsPage
-    {graphs}
-    initialSearch=""
-    initialDays={365}
-    controller={RangeBox}
-/>
+<GraphsPage {graphs} />

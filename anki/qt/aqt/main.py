@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import enum
 import gc
+import getpass
 import os
 import re
 import signal
@@ -191,6 +192,24 @@ def _signed_in_account_name(pm: ProfileManagerType) -> str | None:
     if pm.profile is None or not pm.sync_auth():
         return None
     return pm.profile.get("syncUser") or None
+
+
+# SpeedyCAT: the profile chooser shows a friendly label (AnkiWeb email or OS
+# username), not the internal on-disk profile folder name ("SpeedyCAT").
+PROFILE_LIST_REAL_NAME_ROLE = Qt.ItemDataRole.UserRole
+
+
+def _profile_chooser_label(pm: ProfileManagerType, profile_name: str) -> str:
+    """Display label for one row in the profile chooser list."""
+    try:
+        if email := pm.stored_sync_user(profile_name):
+            return email
+    except Exception:
+        pass
+    try:
+        return getpass.getuser()
+    except Exception:
+        return profile_name
 
 
 class AnkiQt(QMainWindow):
@@ -380,11 +399,29 @@ class AnkiQt(QMainWindow):
         d.activateWindow()
         d.raise_()
 
+    def _profile_name_at_row(self, row: int) -> str | None:
+        """Real on-disk profile name for a chooser row (not the display label)."""
+        if row < 0:
+            return None
+        item = self.profileForm.profiles.item(row)
+        if item is None:
+            return None
+        name = item.data(PROFILE_LIST_REAL_NAME_ROLE)
+        if name:
+            return str(name)
+        profs = self.pm.profiles()
+        if 0 <= row < len(profs):
+            return profs[row]
+        return None
+
     def refreshProfilesList(self) -> None:
         f = self.profileForm
         f.profiles.clear()
         profs = self.pm.profiles()
-        f.profiles.addItems(profs)
+        for name in profs:
+            item = QListWidgetItem(_profile_chooser_label(self.pm, name))
+            item.setData(PROFILE_LIST_REAL_NAME_ROLE, name)
+            f.profiles.addItem(item)
         try:
             idx = profs.index(self.pm.name)
         except Exception:
@@ -395,12 +432,14 @@ class AnkiQt(QMainWindow):
         if n < 0:
             # called on .clear()
             return
-        name = self.pm.profiles()[n]
-        self.pm.load(name)
+        name = self._profile_name_at_row(n)
+        if name:
+            self.pm.load(name)
 
     def openProfile(self) -> None:
-        name = self.pm.profiles()[self.profileForm.profiles.currentRow()]
-        self.pm.load(name)
+        name = self._profile_name_at_row(self.profileForm.profiles.currentRow())
+        if name:
+            self.pm.load(name)
 
     def onOpenProfile(self, *, callback: Callable[[], None] | None = None) -> None:
         def on_done() -> None:
@@ -710,9 +749,9 @@ class AnkiQt(QMainWindow):
             self.update_undo_actions()
             gui_hooks.collection_did_load(self.col)
             self.apply_collection_options()
-            # SpeedyCAT: the whole-collection Stats dashboard is the homepage,
+            # SpeedyCAT: the whole-collection Dashboard is the homepage,
             # so opening a profile lands there instead of on the deck list.
-            self.moveToState("speedycat", "stats")
+            self.moveToState("speedycat", "dashboard")
         except Exception:
             # dump error to stderr so it gets picked up by errors.py
             traceback.print_exc()
@@ -856,12 +895,12 @@ class AnkiQt(QMainWindow):
     def _speedycatState(
         self, oldState: MainWindowState, mode: str = "practice"
     ) -> None:
-        # SpeedyCAT: render an MCAT study mode (or the stats dashboard) INSIDE
+        # SpeedyCAT: render an MCAT study mode (or the dashboard) INSIDE
         # the main window. Hide the normal deck-browser content (`web` + bottom
         # bar) and reveal the dedicated API-enabled `speedycatWeb` navigated to
         # the mode's route. The one webview is reused across modes -- only
         # navigate when the mode actually changes -- so switching tabs never
-        # opens a separate window. The stats dashboard always re-navigates so
+        # opens a separate window. The dashboard always re-navigates so
         # it shows fresh numbers whenever the user returns to it.
         import aqt.practice
 
@@ -870,7 +909,7 @@ class AnkiQt(QMainWindow):
         aqt.practice.ensure_content_loaded(self)
         self.web.hide()
         self.bottomWeb.hide()
-        if self._speedycat_mode != mode or mode == "stats":
+        if self._speedycat_mode != mode or mode == "dashboard":
             self._speedycat_mode = mode
             self.speedycatWeb.load_sveltekit_page(aqt.practice.STUDY_ROUTES[mode])
         self.speedycatWeb.show()
@@ -1410,10 +1449,10 @@ title="{}" {}>{}</button>""".format(
         self.moveToState("overview")
 
     def onStats(self) -> None:
-        # SpeedyCAT: stats are embedded in the main window (the dashboard is
-        # also the homepage). The old NewDeckStats/DeckStats dialogs remain
-        # registered for add-on compatibility, but nothing opens them anymore.
-        self.moveToState("speedycat", "stats")
+        # SpeedyCAT: the dashboard is embedded in the main window (also the
+        # homepage). The old NewDeckStats/DeckStats dialogs remain registered
+        # for add-on compatibility, but nothing opens them anymore.
+        self.moveToState("speedycat", "dashboard")
 
     def onPrefs(self) -> None:
         aqt.dialogs.open("Preferences", self)

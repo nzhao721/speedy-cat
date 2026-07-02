@@ -182,11 +182,10 @@ def _auto_load_on_open() -> None:
 STUDY_ROUTES: dict[str, str] = {
     "practice": "practice",
     "full-length": "full-length",
-    "readiness": "readiness",
-    # SpeedyCAT: the Stats dashboard is embedded through the same state (it is
-    # also the startup landing page), so the toolbar's Stats tab swaps the main
+    # SpeedyCAT: the Dashboard is embedded through the same state (it is also
+    # the startup landing page), so the toolbar's Dashboard tab swaps the main
     # window content instead of opening the old separate stats dialog.
-    "stats": "graphs",
+    "dashboard": "graphs",
 }
 DEFAULT_STUDY_MODE = "practice"
 

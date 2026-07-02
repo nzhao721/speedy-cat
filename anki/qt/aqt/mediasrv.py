@@ -425,7 +425,6 @@ def is_sveltekit_page(path: str) -> bool:
         # SpeedyCAT: the MCAT study-mode pages.
         "practice",
         "full-length",
-        "readiness",
     ]
 
 

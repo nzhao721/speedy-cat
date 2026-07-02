@@ -3,9 +3,9 @@ Copyright: Ankitects Pty Ltd and contributors
 License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 -->
 <!--
-SpeedyCAT: the stats route rendered as the app's homepage dashboard. A hero
-header and a row of summary "stat cards" (flashcard memory + practice accuracy +
-full-length score, all assembled in dashboard.ts) sit on top; MCAT-specific
+SpeedyCAT: the dashboard route (app homepage). Three readiness pillars sit at
+the top; a hero header and summary stat cards (flashcard memory + practice
+accuracy + full-length score, all assembled in dashboard.ts) follow; MCAT-specific
 practice and full-length breakdown panels come next; the (trimmed) flashcard
 graphs follow. Every number is deterministic and traces to an existing backend
 RPC — see dashboard.ts.
@@ -30,19 +30,15 @@ RPC — see dashboard.ts.
     import type { FullLengthOverview, PracticeOverview } from "./dashboard";
     import FullLengthPanel from "./FullLengthPanel.svelte";
     import PracticePanel from "./PracticePanel.svelte";
-    import RangeBox from "./RangeBox.svelte";
+    import ReadinessPillars from "./ReadinessPillars.svelte";
     import StatCard from "./StatCard.svelte";
     import WithGraphData from "./WithGraphData.svelte";
 
-    export let initialSearch: string;
-    export let initialDays: number;
-
-    const search = writable(initialSearch);
-    const days = writable(initialDays);
-
     export let graphs: Component<any>[];
-    /** See RangeBox */
-    export let controller: Component<any> | null = RangeBox;
+
+    // SpeedyCAT: dashboard always covers the whole collection for all time.
+    const search = writable("");
+    const days = writable(0);
 
     // Practice + full-length figures are independent of the flashcard graph
     // search/date filters, so they load once here. Each traces to an existing
@@ -67,8 +63,10 @@ RPC — see dashboard.ts.
     }
 </script>
 
-<WithGraphData {search} {days} let:sourceData let:loading let:prefs let:revlogRange>
+<WithGraphData {search} {days} let:sourceData let:prefs let:revlogRange>
     <div class="dashboard-head">
+        <ReadinessPillars />
+
         <header class="hero">
             <h1>Your MCAT dashboard</h1>
             <p class="tagline">
@@ -99,10 +97,6 @@ RPC — see dashboard.ts.
 
         <h2 class="section-title">Flashcard statistics</h2>
     </div>
-
-    {#if controller}
-        <svelte:component this={controller} {search} {days} {loading} />
-    {/if}
 
     <div class="graphs-container">
         {#if sourceData && revlogRange}

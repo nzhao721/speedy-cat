@@ -32,6 +32,7 @@ from aqt.main import (
     ACCOUNT_SIGNED_IN_FALLBACK,
     ACCOUNT_SIGNED_OUT_LABEL,
     AnkiQt,
+    _profile_chooser_label,
     _signed_in_account_name,
 )
 from aqt.profiles import ProfileManager
@@ -44,6 +45,12 @@ def _pm(tmp_path: Path) -> ProfileManager:
     # ProfileManager.__init__ is cheap: it only sets attributes (profile=None,
     # db=None) and does not touch the database, so it is safe to build directly.
     return ProfileManager(tmp_path)
+
+
+def _pm_with_db(tmp_path: Path) -> ProfileManager:
+    pm = _pm(tmp_path)
+    pm.setupMeta()
+    return pm
 
 
 def _refresh(pm: ProfileManager) -> mock.Mock:
@@ -92,6 +99,57 @@ def test_signed_in_account_name_signed_in_with_email(tmp_path: Path) -> None:
     pm = _pm(tmp_path)
     pm.profile = {"syncKey": "deadbeef", "syncUser": "me@example.com"}
     assert _signed_in_account_name(pm) == "me@example.com"
+
+
+# --- profile chooser labels (display-only; real name stays on disk) ----------
+
+
+def test_stored_sync_user_reads_meta_without_loading_profile(
+    tmp_path: Path,
+) -> None:
+    pm = _pm_with_db(tmp_path)
+    pm.create("SpeedyCAT")
+    pm.load("SpeedyCAT")
+    pm.set_sync_key("deadbeef")
+    pm.set_sync_username("me@example.com")
+    pm.save()
+    pm.profile = None
+    pm.name = None
+
+    assert pm.stored_sync_user("SpeedyCAT") == "me@example.com"
+
+
+def test_stored_sync_user_signed_out_returns_none(tmp_path: Path) -> None:
+    pm = _pm_with_db(tmp_path)
+    pm.create("SpeedyCAT")
+    pm.load("SpeedyCAT")
+    pm.save()
+    pm.profile = None
+
+    assert pm.stored_sync_user("SpeedyCAT") is None
+
+
+def test_profile_chooser_label_prefers_email(tmp_path: Path) -> None:
+    pm = _pm_with_db(tmp_path)
+    pm.create("SpeedyCAT")
+    pm.load("SpeedyCAT")
+    pm.set_sync_key("deadbeef")
+    pm.set_sync_username("me@example.com")
+    pm.save()
+    pm.profile = None
+
+    assert _profile_chooser_label(pm, "SpeedyCAT") == "me@example.com"
+
+
+def test_profile_chooser_label_falls_back_to_os_user(tmp_path: Path) -> None:
+    pm = _pm_with_db(tmp_path)
+    pm.create("SpeedyCAT")
+    pm.load("SpeedyCAT")
+    pm.save()
+    pm.profile = None
+
+    with mock.patch("aqt.main.getpass.getuser", return_value="natha"):
+        assert _profile_chooser_label(pm, "SpeedyCAT") == "natha"
 
 
 # --- the crash guard (unchanged behaviour) -----------------------------------

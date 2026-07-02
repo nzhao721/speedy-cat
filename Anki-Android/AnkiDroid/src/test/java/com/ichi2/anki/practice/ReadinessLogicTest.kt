@@ -82,6 +82,21 @@ class ReadinessLogicTest {
     // ---- Performance pillar ----------------------------------------------
 
     @Test
+    fun `memory gives up at default threshold minus one`() {
+        val result = computeMemory(fsrsEnabled = true, retrievabilities = List(29) { 0.9 })
+        assertThat(result.sufficient, equalTo(false))
+        assertThat(result.insufficientReason, containsString("29 of 30"))
+    }
+
+    @Test
+    fun `performance gives up at default threshold minus one`() {
+        val attempts = (1..29).map { i -> practiceAttempt("q$i", i % 2 == 0, 10) }
+        val result = computePerformance(attempts)
+        assertThat(result.sufficient, equalTo(false))
+        assertThat(result.insufficientReason, containsString("29 of 30"))
+    }
+
+    @Test
     fun `performance gives up with too few answered attempts`() {
         val attempts = listOf(practiceAttempt("q1", true, 30), practiceAttempt("q2", false, 40))
         val result = computePerformance(attempts, minAnswered = 4)

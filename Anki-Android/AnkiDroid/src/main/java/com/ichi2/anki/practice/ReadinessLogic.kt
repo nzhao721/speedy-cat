@@ -22,7 +22,7 @@ import kotlin.math.sqrt
 const val MIN_REVIEWED_CARDS = 30
 
 /** Minimum answered practice questions before a Performance estimate is shown. */
-const val MIN_PRACTICE_ANSWERS = 20
+const val MIN_PRACTICE_ANSWERS = 30
 
 /** The z value for a two-sided 95% confidence interval. */
 private const val Z_95 = 1.96

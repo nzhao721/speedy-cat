@@ -344,9 +344,15 @@ class Toolbar:
 
     def _centerLinks(self) -> str:
         links = [
+            self.create_link(
+                "dashboard",
+                "Dashboard",
+                self._dashboardLinkHandler,
+                tip=tr.actions_shortcut_key(val="T"),
+                id="dashboard",
+            ),
             # SpeedyCAT: the former "Decks" tab is relabelled "Flashcards" (the
-            # deck browser is unchanged); it sits alongside the two new MCAT
-            # study modes.
+            # deck browser is unchanged); it sits alongside the MCAT study modes.
             self.create_link(
                 "decks",
                 "Flashcards",
@@ -369,25 +375,11 @@ class Toolbar:
                 id="full-length",
             ),
             self.create_link(
-                "readiness",
-                "Readiness",
-                self._readinessLinkHandler,
-                tip=tr.actions_shortcut_key(val="R"),
-                id="readiness",
-            ),
-            self.create_link(
                 "browse",
                 tr.qt_misc_browse(),
                 self._browseLinkHandler,
                 tip=tr.actions_shortcut_key(val="B"),
                 id="browse",
-            ),
-            self.create_link(
-                "stats",
-                tr.qt_misc_stats(),
-                self._statsLinkHandler,
-                tip=tr.actions_shortcut_key(val="T"),
-                id="stats",
             ),
         ]
 
@@ -469,13 +461,10 @@ class Toolbar:
     def _fullLengthLinkHandler(self) -> None:
         self.mw.moveToState("speedycat", "full-length")
 
-    def _readinessLinkHandler(self) -> None:
-        self.mw.moveToState("speedycat", "readiness")
-
-    def _statsLinkHandler(self) -> None:
-        # SpeedyCAT: stats render inside the main window like the other tabs
-        # (no separate dialog); the route shows the whole-collection dashboard.
-        self.mw.moveToState("speedycat", "stats")
+    def _dashboardLinkHandler(self) -> None:
+        # SpeedyCAT: the unified dashboard (readiness pillars + stats graphs)
+        # renders inside the main window like the other tabs.
+        self.mw.moveToState("speedycat", "dashboard")
 
     def _syncLinkHandler(self) -> None:
         self.mw.on_sync_button_clicked()

@@ -77,8 +77,16 @@ RPC — see dashboard.ts.
             </p>
         </header>
 
+        <!--
+        SpeedyCAT: the flashcard cards (studied/memory/collection) come from the
+        stock graphs RPC and always render. The practice + full-length cards and
+        panels depend on our custom PracticeService RPCs, which the stock mobile
+        backend lacks. When their fetch fails (practiceError/fullLengthError) we
+        drop them entirely rather than show "Unavailable" placeholders — a
+        graceful degrade. On desktop the RPCs succeed, so everything shows.
+        -->
         <div class="summary-cards">
-            {#each [studiedTodayCard(sourceData), memoryCard(sourceData), collectionCard(sourceData), practiceCard(practiceOverview, practiceError), fullLengthCard(fullLengthOverview, fullLengthError)] as card (card.label)}
+            {#each [studiedTodayCard(sourceData), memoryCard(sourceData), collectionCard(sourceData), ...(practiceError ? [] : [practiceCard(practiceOverview, practiceError)]), ...(fullLengthError ? [] : [fullLengthCard(fullLengthOverview, fullLengthError)])] as card (card.label)}
                 <StatCard
                     label={card.label}
                     value={card.value}
@@ -88,13 +96,22 @@ RPC — see dashboard.ts.
             {/each}
         </div>
 
-        <div class="detail-panels">
-            <PracticePanel overview={practiceOverview} error={practiceError} />
-            <FullLengthPanel
-                overview={fullLengthOverview}
-                error={fullLengthError}
-            />
-        </div>
+        {#if !practiceError || !fullLengthError}
+            <div class="detail-panels">
+                {#if !practiceError}
+                    <PracticePanel
+                        overview={practiceOverview}
+                        error={practiceError}
+                    />
+                {/if}
+                {#if !fullLengthError}
+                    <FullLengthPanel
+                        overview={fullLengthOverview}
+                        error={fullLengthError}
+                    />
+                {/if}
+            </div>
+        {/if}
 
         <h2 class="section-title">Flashcard statistics</h2>
     </div>

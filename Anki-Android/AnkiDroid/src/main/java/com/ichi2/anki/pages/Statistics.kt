@@ -38,9 +38,10 @@ class Statistics : PageFragment(R.layout.page_statistics) {
             binding.toolbar.navigationIcon = null
         }
 
-        // SpeedyCAT: stats always cover the whole collection for all time.
-        // The shared graphs web page no longer exposes deck/search/time controls.
-        binding.deckName.visibility = View.GONE
+        // SpeedyCAT: stats always cover the whole collection for all time. The
+        // deck/scope picker has been removed from the layout, and the shared
+        // graphs web page exposes no deck/search/time controls, so there is no
+        // section or time-frame chooser to reach here.
         binding.toolbar.title = getString(R.string.statistics)
 
         binding.toolbar.apply {

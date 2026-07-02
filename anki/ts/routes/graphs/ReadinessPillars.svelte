@@ -83,7 +83,11 @@ bare number. Shared by the dashboard; AI is off.
         try {
             // All bundled flashcards are MCAT cards, so the whole collection is
             // the MCAT deck; an empty search covers every reviewed card.
-            data = await getReadiness({ deckSearch: "" });
+            // `alertOnError: false`: the mobile app ships the stock backend with
+            // no getReadiness RPC, so this 500s there. We swallow the error and
+            // hide the section (below) rather than pop a blocking alert() dialog.
+            // Desktop's RPC succeeds, so this is a no-op there.
+            data = await getReadiness({ deckSearch: "" }, { alertOnError: false });
             phase = "ready";
         } catch {
             phase = "error";
@@ -93,127 +97,135 @@ bare number. Shared by the dashboard; AI is off.
     load();
 </script>
 
-<section class="readiness-section">
-    <header class="readiness-head">
-        <h2>Exam readiness</h2>
-        <p class="readiness-tagline">
-            Three separate, deterministic measures — each with an explicit range
-            and a named source. No single “readiness number”, and no AI.
-        </p>
-    </header>
+<!--
+SpeedyCAT: when the getReadiness RPC is unavailable (the stock mobile backend
+has no PracticeService) `load()` sets phase = "error" and the whole section
+renders nothing — a graceful degrade rather than a broken error box. On desktop
+the RPC succeeds, so the section renders exactly as before.
+-->
+{#if phase !== "error"}
+    <section class="readiness-section">
+        <header class="readiness-head">
+            <h2>Exam readiness</h2>
+            <p class="readiness-tagline">
+                Three separate, deterministic measures — each with an explicit
+                range and a named source. No single “readiness number”, and no
+                AI.
+            </p>
+        </header>
 
-    {#if phase === "loading"}
-        <div class="loading">Calculating your readiness…</div>
-    {:else if phase === "error" || !data}
-        <div class="notice warn">
-            Couldn’t load your readiness right now.
-            <button class="secondary" on:click={load}>Retry</button>
-        </div>
-    {:else}
-        <div class="pillars">
-            {#each pillars as pv (pv.title)}
-                <section class="pillar" class:muted={!pv.pillar?.available}>
-                    <div class="pillar-head">
-                        <h3>{pv.title}</h3>
-                        <p class="pillar-sub">{pv.subtitle}</p>
-                    </div>
-
-                    {#if pv.pillar?.available}
-                        <div class="value">{pct(pv.pillar.value)}</div>
-
-                        <div
-                            class="range-bar"
-                            role="img"
-                            aria-label={`95% range ${pct(pv.pillar.rangeLow)} to ${pct(
-                                pv.pillar.rangeHigh,
-                            )}`}
-                        >
-                            <div
-                                class="range-fill"
-                                style="left:{span(
-                                    pv.pillar.rangeLow,
-                                    pv.pillar.rangeHigh,
-                                ).left};width:{span(
-                                    pv.pillar.rangeLow,
-                                    pv.pillar.rangeHigh,
-                                ).width}"
-                            ></div>
-                            <div
-                                class="range-marker"
-                                style="left:{Math.max(
-                                    0,
-                                    Math.min(1, pv.pillar.value),
-                                ) * 100}%"
-                            ></div>
-                        </div>
-                        <div class="range-label">
-                            95% range {pct(pv.pillar.rangeLow)} – {pct(
-                                pv.pillar.rangeHigh,
-                            )}
+        {#if phase === "loading"}
+            <div class="loading">Calculating your readiness…</div>
+        {:else if data}
+            <div class="pillars">
+                {#each pillars as pv (pv.title)}
+                    <section class="pillar" class:muted={!pv.pillar?.available}>
+                        <div class="pillar-head">
+                            <h3>{pv.title}</h3>
+                            <p class="pillar-sub">{pv.subtitle}</p>
                         </div>
 
-                        {#if pv.title === "Performance" && data.performanceAvgSeconds > 0}
-                            <div class="extra">
-                                ~{Math.round(data.performanceAvgSeconds)}s per question
-                            </div>
-                        {/if}
+                        {#if pv.pillar?.available}
+                            <div class="value">{pct(pv.pillar.value)}</div>
 
-                        {#if pv.title === "Readiness" && data.sectionScores.length > 0}
-                            <div class="sections">
-                                {#each data.sectionScores as s (s.section)}
-                                    <div class="section-row">
-                                        <span>{sectionShort(s.section)}</span>
-                                        <span class="mono"
-                                            >{s.correct}/{s.total}</span
-                                        >
-                                    </div>
-                                {/each}
+                            <div
+                                class="range-bar"
+                                role="img"
+                                aria-label={`95% range ${pct(pv.pillar.rangeLow)} to ${pct(
+                                    pv.pillar.rangeHigh,
+                                )}`}
+                            >
+                                <div
+                                    class="range-fill"
+                                    style="left:{span(
+                                        pv.pillar.rangeLow,
+                                        pv.pillar.rangeHigh,
+                                    ).left};width:{span(
+                                        pv.pillar.rangeLow,
+                                        pv.pillar.rangeHigh,
+                                    ).width}"
+                                ></div>
+                                <div
+                                    class="range-marker"
+                                    style="left:{Math.max(
+                                        0,
+                                        Math.min(1, pv.pillar.value),
+                                    ) * 100}%"
+                                ></div>
                             </div>
-                        {/if}
-
-                        <div class="meta">
-                            <div class="sample">
-                                Based on {countPhrase(
-                                    pv.pillar.sampleSize,
-                                    pv.unit,
+                            <div class="range-label">
+                                95% range {pct(pv.pillar.rangeLow)} – {pct(
+                                    pv.pillar.rangeHigh,
                                 )}
                             </div>
-                            <div class="method">{pv.pillar.method}</div>
-                            <div class="source">Source: {pv.pillar.source}</div>
-                        </div>
-                    {:else}
-                        <div class="giveup">
-                            <div class="giveup-badge">Not enough data yet</div>
-                            <p class="giveup-msg">
-                                {pv.pillar?.message ??
-                                    "This score is unavailable right now."}
-                            </p>
-                            {#if (pv.pillar?.sampleSize ?? 0) > 0}
-                                <div class="sample">
-                                    Based on {countPhrase(
-                                        pv.pillar?.sampleSize ?? 0,
-                                        pv.unit,
-                                    )} so far
+
+                            {#if pv.title === "Performance" && data.performanceAvgSeconds > 0}
+                                <div class="extra">
+                                    ~{Math.round(data.performanceAvgSeconds)}s per question
                                 </div>
                             {/if}
-                            {#if pv.pillar?.source}
+
+                            {#if pv.title === "Readiness" && data.sectionScores.length > 0}
+                                <div class="sections">
+                                    {#each data.sectionScores as s (s.section)}
+                                        <div class="section-row">
+                                            <span>{sectionShort(s.section)}</span>
+                                            <span class="mono"
+                                                >{s.correct}/{s.total}</span
+                                            >
+                                        </div>
+                                    {/each}
+                                </div>
+                            {/if}
+
+                            <div class="meta">
+                                <div class="sample">
+                                    Based on {countPhrase(
+                                        pv.pillar.sampleSize,
+                                        pv.unit,
+                                    )}
+                                </div>
+                                <div class="method">{pv.pillar.method}</div>
                                 <div class="source">
                                     Source: {pv.pillar.source}
                                 </div>
-                            {/if}
-                        </div>
-                    {/if}
-                </section>
-            {/each}
-        </div>
+                            </div>
+                        {:else}
+                            <div class="giveup">
+                                <div class="giveup-badge">
+                                    Not enough data yet
+                                </div>
+                                <p class="giveup-msg">
+                                    {pv.pillar?.message ??
+                                        "This score is unavailable right now."}
+                                </p>
+                                {#if (pv.pillar?.sampleSize ?? 0) > 0}
+                                    <div class="sample">
+                                        Based on {countPhrase(
+                                            pv.pillar?.sampleSize ?? 0,
+                                            pv.unit,
+                                        )} so far
+                                    </div>
+                                {/if}
+                                {#if pv.pillar?.source}
+                                    <div class="source">
+                                        Source: {pv.pillar.source}
+                                    </div>
+                                {/if}
+                            </div>
+                        {/if}
+                    </section>
+                {/each}
+            </div>
 
-        <p class="footnote">
-            Ranges are 95% intervals. Scores refuse to display until there is
-            enough data to be meaningful, so an unlocked score is always shown
-            with its range and source.
-        </p>
-    {/if}
-</section>
+            <p class="footnote">
+                Ranges are 95% intervals. Scores refuse to display until there is
+                enough data to be meaningful, so an unlocked score is always
+                shown with its range and source.
+            </p>
+        {/if}
+    </section>
+{/if}
 
 <style lang="scss">
     .readiness-section {
@@ -233,19 +245,6 @@ bare number. Shared by the dashboard; AI is off.
     }
     .loading {
         color: var(--fg-subtle);
-    }
-    .notice {
-        background: var(--canvas-elevated);
-        border: 1px solid var(--border-subtle);
-        border-radius: 8px;
-        padding: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        color: var(--fg-subtle);
-    }
-    .notice.warn {
-        border-color: #e0a34e;
     }
     .pillars {
         display: grid;
@@ -372,15 +371,5 @@ bare number. Shared by the dashboard; AI is off.
         color: var(--fg-subtle);
         font-size: 0.8rem;
         margin: 0;
-    }
-    button {
-        cursor: pointer;
-        border-radius: 6px;
-    }
-    button.secondary {
-        border: 1px solid var(--border);
-        background: var(--button-bg);
-        color: var(--fg);
-        padding: 0.4rem 0.9rem;
     }
 </style>

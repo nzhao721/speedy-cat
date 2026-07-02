@@ -14,15 +14,18 @@
 
 import type { GetReadinessResponse } from "@generated/anki/practice_pb";
 import type { GraphsResponse } from "@generated/anki/stats_pb";
-import { getReadiness } from "@generated/backend";
+import { getReadiness, getTopicStats, listFullLengthTests } from "@generated/backend";
 
 import type { GetTopicStatsResponse } from "../practice/lib";
-import {
-    AttemptSource,
-    fetchFullLengthTests,
-    fetchTopicStats,
-    formatDurationLong,
-} from "../practice/lib";
+import { AttemptSource, formatDurationLong } from "../practice/lib";
+
+// SpeedyCAT: the dashboard's practice/full-length figures come from our custom
+// PracticeService RPCs, which only exist in our own Rust backend. The mobile app
+// ships the STOCK prebuilt backend (no PracticeService), so these calls 500
+// there. We pass `alertOnError: false` so a missing RPC never pops a blocking
+// alert() dialog; the caller catches the rejection and hides the affected
+// section instead. On desktop the RPCs succeed, so behaviour is unchanged.
+const NO_ALERT = { alertOnError: false } as const;
 
 // ---- Practice questions -----------------------------------------------------
 
@@ -40,7 +43,10 @@ export interface PracticeOverview {
 }
 
 export async function loadPracticeOverview(): Promise<PracticeOverview> {
-    const stats = await fetchTopicStats(AttemptSource.PRACTICE_SESSION);
+    const stats = await getTopicStats(
+        { source: AttemptSource.PRACTICE_SESSION },
+        NO_ALERT,
+    );
     let attempted = 0;
     let correct = 0;
     let time = 0;
@@ -72,10 +78,10 @@ export async function loadFullLengthOverview(): Promise<FullLengthOverview> {
     // The full-length figures ignore the deck search entirely; "" (whole
     // collection) matches how the Readiness page calls the same RPC.
     const [readiness, tests] = await Promise.all([
-        getReadiness({ deckSearch: "" }),
-        fetchFullLengthTests(),
+        getReadiness({ deckSearch: "" }, NO_ALERT),
+        listFullLengthTests({}, NO_ALERT),
     ]);
-    return { readiness, testsAvailable: tests.length };
+    return { readiness, testsAvailable: tests.tests.length };
 }
 
 /** Raw correct/total summed across the per-section scores of completed

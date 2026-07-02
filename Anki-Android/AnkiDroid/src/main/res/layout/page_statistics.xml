@@ -2,8 +2,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
@@ -13,6 +12,11 @@
         app:statusBarForeground="?attr/appBarColor"
         android:fitsSystemWindows="true">
 
+        <!--
+            SpeedyCAT: statistics always cover the whole collection for all time,
+            so the deck/scope picker that used to live here has been removed. The
+            shared graphs web page exposes no deck/search/time controls either.
+        -->
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -21,19 +25,7 @@
             app:navigationContentDescription="@string/abc_action_bar_up_description"
             app:navigationIcon="?attr/homeAsUpIndicator"
             app:layout_scrollFlags="scroll|enterAlways|snap"
-            app:menu="@menu/statistics">
-
-            <com.ichi2.ui.FixedTextView
-                android:id="@+id/deck_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:drawableEnd="@drawable/id_arrow_drop_down"
-                android:background="?attr/selectableItemBackground"
-                android:textAppearance="?attr/textAppearanceListItem"
-                tools:text="Deck name here"
-                />
-        </com.google.android.material.appbar.MaterialToolbar>
+            app:menu="@menu/statistics" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.ichi2.anki.workarounds.NestedScrollingSafeWebViewLayout

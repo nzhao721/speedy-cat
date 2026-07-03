@@ -47,7 +47,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/12-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the continuity equation (area ∝ diameter²)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the continuity equation (area ∝ diameter²).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The continuity equation for an incompressible fluid (A₁v₁ = A₂v₂) implies that where a pipe is wider, the fluid moves:",
+          "choices": [
+            {"label": "A", "text": "slower (larger area → lower speed)"},
+            {"label": "B", "text": "faster"},
+            {"label": "C", "text": "at the same speed"},
+            {"label": "D", "text": "only if the fluid is compressible"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A₁v₁ = A₂v₂, so a larger area gives a smaller speed."
+        },
+        {
+          "level": 2,
+          "prompt": "The pipe's DIAMETER is doubled. Since cross-sectional area ∝ diameter², by what factor does the area increase?",
+          "choices": [
+            {"label": "A", "text": "4 (that is, 2²)"},
+            {"label": "B", "text": "2"},
+            {"label": "C", "text": "8"},
+            {"label": "D", "text": "no change"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Area ∝ d², so doubling the diameter quadruples the area."
+        },
+        {
+          "level": 3,
+          "prompt": "Widening the pipe makes the water slower than 12 m/s, but the area grows by 4× (not 16×), so the speed drops to a quarter—not a sixteenth. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'12 m/s' and '0.75 m/s'"},
+            {"label": "B", "text": "'3.0 m/s' and '6.0 m/s'"},
+            {"label": "C", "text": "'12 m/s' and '3.0 m/s'"},
+            {"label": "D", "text": "'0.75 m/s' and '6.0 m/s'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "12 m/s (unchanged) and 0.75 m/s (dividing by 16 instead of 4) are both wrong, so they are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp058",
@@ -67,7 +105,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/12-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (ρgh = 1 atm)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (ρgh = 1 atm).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The absolute pressure at depth h in a liquid is:",
+          "choices": [
+            {"label": "A", "text": "atmospheric pressure + ρgh"},
+            {"label": "B", "text": "atmospheric pressure × ρgh"},
+            {"label": "C", "text": "ρgh only"},
+            {"label": "D", "text": "atmospheric pressure only"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Absolute pressure = atmospheric + ρgh."
+        },
+        {
+          "level": 2,
+          "prompt": "For the total to be TWICE atmospheric, how much must the water column (ρgh) contribute?",
+          "choices": [
+            {"label": "A", "text": "exactly one atmosphere (≈ 1.0×10⁵ Pa)"},
+            {"label": "B", "text": "two atmospheres"},
+            {"label": "C", "text": "zero"},
+            {"label": "D", "text": "half an atmosphere"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Doubling atmospheric means ρgh must equal one atmosphere."
+        },
+        {
+          "level": 3,
+          "prompt": "A water column that adds one atmosphere of pressure is a depth well under a kilometer—nowhere near thousands of meters. Which pair of options can be eliminated as far too deep?",
+          "choices": [
+            {"label": "A", "text": "'1000 m' and '10,000 m'"},
+            {"label": "B", "text": "'10 m' and '100 m'"},
+            {"label": "C", "text": "'100 m' and '1000 m'"},
+            {"label": "D", "text": "'10 m' and '10,000 m'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "One atmosphere of water pressure corresponds to a shallow depth well under a kilometer, so 1000 m and 10,000 m are far too deep and eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp059",
@@ -87,7 +163,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/12-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from Bernoulli's equation."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from Bernoulli's equation.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Bernoulli's equation states that along a streamline:",
+          "choices": [
+            {"label": "A", "text": "P + ½ρv² + ρgh is constant"},
+            {"label": "B", "text": "P × ½ρv² × ρgh is constant"},
+            {"label": "C", "text": "only the pressure P is constant"},
+            {"label": "D", "text": "only ½ρv² is constant"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Bernoulli: P + ½ρv² + ρgh = constant."
+        },
+        {
+          "level": 2,
+          "prompt": "With P held constant in Bernoulli's equation, how are the kinetic term (½ρv²) and the potential term (ρgh) related?",
+          "choices": [
+            {"label": "A", "text": "they trade off—one rises only if the other falls (their sum is fixed)"},
+            {"label": "B", "text": "they always rise together"},
+            {"label": "C", "text": "they are unrelated"},
+            {"label": "D", "text": "they must both stay constant"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "With P constant, ½ρv² + ρgh is fixed, so the two terms trade off."
+        },
+        {
+          "level": 3,
+          "prompt": "Bernoulli's equation (for an incompressible fluid) directly links pressure, speed, and height—not compressibility or flow rate. Which pair of options can be eliminated as off-topic?",
+          "choices": [
+            {"label": "A", "text": "'the fluid must no longer be considered incompressible' and 'the flow rate of the fluid increases'"},
+            {"label": "B", "text": "'the potential energy per unit volume decreases' and 'the potential energy per unit volume increases'"},
+            {"label": "C", "text": "'the potential energy per unit volume decreases' and 'the flow rate of the fluid increases'"},
+            {"label": "D", "text": "'the fluid must no longer be considered incompressible' and 'the potential energy per unit volume increases'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The compressibility and flow-rate statements are irrelevant to this Bernoulli trade-off, so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp060",
@@ -107,7 +221,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/12-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (P = F/A, then v = √(2P/ρ))."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (P = F/A, then v = √(2P/ρ)).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "For a horizontal pipe with the reservoir at rest, Bernoulli reduces the ejection speed to:",
+          "choices": [
+            {"label": "A", "text": "v = √(2P/ρ), where P is the applied (gauge) pressure"},
+            {"label": "B", "text": "v = P/ρ"},
+            {"label": "C", "text": "v = √(P·ρ)"},
+            {"label": "D", "text": "v = 2P/ρ"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Horizontal Bernoulli with the source at rest gives P = ½ρv², so v = √(2P/ρ)."
+        },
+        {
+          "level": 2,
+          "prompt": "First find the pressure from the plunger. Which relationship converts the 440 N force to a pressure?",
+          "choices": [
+            {"label": "A", "text": "P = F/A, with A the pipe's cross-sectional area πr²"},
+            {"label": "B", "text": "P = F × A"},
+            {"label": "C", "text": "P = F × ρ"},
+            {"label": "D", "text": "P = F/ρ"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Pressure is force per unit area, P = F/(πr²)."
+        },
+        {
+          "level": 3,
+          "prompt": "A gauge pressure of ~1.8×10⁵ Pa gives v = √(2P/ρ) on the order of 10–20 m/s, so speeds of 150–190 m/s are far too large (a common error is using the diameter as the radius). Which pair can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'150 m/s' and '190 m/s'"},
+            {"label": "B", "text": "'12 m/s' and '19 m/s'"},
+            {"label": "C", "text": "'12 m/s' and '150 m/s'"},
+            {"label": "D", "text": "'19 m/s' and '190 m/s'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "√(2P/ρ) is on the order of 10–20 m/s, so 150 and 190 m/s are far too large and eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp061",
@@ -127,7 +279,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/12-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (Torricelli speed × hole area)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (Torricelli speed × hole area).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Torricelli's theorem gives the speed of fluid leaving a hole a depth h below the surface as:",
+          "choices": [
+            {"label": "A", "text": "v = √(2gh)"},
+            {"label": "B", "text": "v = 2gh"},
+            {"label": "C", "text": "v = √(gh)"},
+            {"label": "D", "text": "v = gh"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Efflux speed is v = √(2gh)."
+        },
+        {
+          "level": 2,
+          "prompt": "After finding v ≈ √(2·9.8·5) ≈ 9.9 m/s, how do you get the VOLUME flow rate through the hole (area 10 cm² = 1.0×10⁻³ m²)?",
+          "choices": [
+            {"label": "A", "text": "Q = A × v = (1.0×10⁻³ m²)(9.9 m/s)"},
+            {"label": "B", "text": "Q = A/v"},
+            {"label": "C", "text": "Q = v/A"},
+            {"label": "D", "text": "Q = A × v with A = 10 m²"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Flow rate Q = A × v, using the hole area in m² (10 cm² = 1.0×10⁻³ m²)."
+        },
+        {
+          "level": 3,
+          "prompt": "The speed alone is ~9.9 m/s, and the flow rate multiplies it by a SMALL area (10 cm² = 0.001 m²), so the flow rate must be much smaller than ~10. Which pair of options can be eliminated as too large?",
+          "choices": [
+            {"label": "A", "text": "'99 m³/s' and '9.9 m³/s'"},
+            {"label": "B", "text": "'0.099 m³/s' and '0.0099 m³/s'"},
+            {"label": "C", "text": "'99 m³/s' and '0.0099 m³/s'"},
+            {"label": "D", "text": "'9.9 m³/s' and '0.099 m³/s'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Multiplying ~9.9 m/s by 0.001 m² gives a small number, so 99 and 9.9 m³/s are far too large and eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp062",
@@ -147,7 +337,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/13-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Reformatted from the source's 4-row answer table into A-D choices without changing wording. OpenStax withholds the public answer key; answer independently verified from kinetic theory."
+      "notes": "Reformatted from the source's 4-row answer table into A-D choices without changing wording. OpenStax withholds the public answer key; answer independently verified from kinetic theory.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "At the same temperature, gas molecules have the same average kinetic energy. Therefore the LIGHTER molecules move:",
+          "choices": [
+            {"label": "A", "text": "faster on average"},
+            {"label": "B", "text": "slower on average"},
+            {"label": "C", "text": "at the same average speed"},
+            {"label": "D", "text": "not at all"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Same KE with a smaller mass means a higher average speed."
+        },
+        {
+          "level": 2,
+          "prompt": "Gas Y has the smaller molecular mass. For the force on the container (related to pressure P = NkT/V), what else must you know to compare the two gases?",
+          "choices": [
+            {"label": "A", "text": "the volumes—with N and T equal but volumes unknown, the pressures can't be compared"},
+            {"label": "B", "text": "nothing—equal N and T fix the pressure"},
+            {"label": "C", "text": "the color of the gases"},
+            {"label": "D", "text": "only the molecular masses"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Pressure depends on V too; with unknown volumes, the forces can't be compared."
+        },
+        {
+          "level": 3,
+          "prompt": "The lighter gas (Y) has the higher average speed, so any option saying gas X is faster is wrong. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'Average speed greater for gas X; force greater for X' and 'Average speed greater for gas X; forces cannot be compared'"},
+            {"label": "B", "text": "'Average speed greater for gas Y; force greater for Y' and 'Average speed greater for gas Y; forces cannot be compared'"},
+            {"label": "C", "text": "'Average speed greater for gas X; force greater for X' and 'Average speed greater for gas Y; force greater for Y'"},
+            {"label": "D", "text": "'Average speed greater for gas X; forces cannot be compared' and 'Average speed greater for gas Y; forces cannot be compared'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Gas Y (lighter) is faster, so both 'speed greater for gas X' options are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp063",
@@ -167,7 +395,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/13-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (KE ∝ absolute temperature; must convert to Kelvin)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (KE ∝ absolute temperature; must convert to Kelvin).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The average kinetic energy of a gas molecule is proportional to:",
+          "choices": [
+            {"label": "A", "text": "the ABSOLUTE (Kelvin) temperature"},
+            {"label": "B", "text": "the Celsius temperature"},
+            {"label": "C", "text": "the square of the Celsius temperature"},
+            {"label": "D", "text": "the pressure only"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Average molecular KE ∝ absolute (Kelvin) temperature."
+        },
+        {
+          "level": 2,
+          "prompt": "Convert to Kelvin before taking the ratio. What are 20 ºC and 313 ºC in kelvin?",
+          "choices": [
+            {"label": "A", "text": "293 K and 586 K"},
+            {"label": "B", "text": "20 K and 313 K"},
+            {"label": "C", "text": "253 K and 40 K"},
+            {"label": "D", "text": "313 K and 586 K"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Add 273: 20 ºC = 293 K and 313 ºC = 586 K."
+        },
+        {
+          "level": 3,
+          "prompt": "Using the Celsius numbers (313/20 ≈ 16) is the classic trap, and the energy clearly does change. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'become sixteen times its original value' and 'remain unchanged'"},
+            {"label": "B", "text": "'become four times its original value' and 'become double its original value'"},
+            {"label": "C", "text": "'become sixteen times its original value' and 'become double its original value'"},
+            {"label": "D", "text": "'remain unchanged' and 'become four times its original value'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "16× comes from using Celsius (a trap) and 'unchanged' is clearly wrong, so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp064",
@@ -187,7 +453,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/14-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (net heat flow is hot-to-cold, but not exclusively)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (net heat flow is hot-to-cold, but not exclusively).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "At the molecular level, when a hot substance contacts a cold one, kinetic energy is exchanged in collisions so that the NET flow is:",
+          "choices": [
+            {"label": "A", "text": "from the hotter (faster) molecules to the colder ones"},
+            {"label": "B", "text": "from the colder molecules to the hotter ones"},
+            {"label": "C", "text": "exactly zero in both directions"},
+            {"label": "D", "text": "only from cold to hot"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Net kinetic-energy transfer is from hot to cold."
+        },
+        {
+          "level": 2,
+          "prompt": "Do the ice's molecules transfer ANY energy to the hot water, or is the transfer strictly one-way?",
+          "choices": [
+            {"label": "A", "text": "some fast ice molecules do transfer energy outward, but the NET (most) transfer is hot→cold"},
+            {"label": "B", "text": "it is strictly one-way, hot→cold only"},
+            {"label": "C", "text": "it is strictly one-way, cold→hot only"},
+            {"label": "D", "text": "no molecules transfer any energy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Energy moves both ways in collisions, but the net (most) transfer is from hot to cold."
+        },
+        {
+          "level": 3,
+          "prompt": "The net energy flow is from the hot water to the ice, so any option whose main flow goes ice→water is wrong. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'transferred only from the ice molecules to the hot water' and 'transferred mostly from the ice molecules to the hot water'"},
+            {"label": "B", "text": "'transferred only from the hot water to the ice' and 'transferred mostly from the hot water to the ice'"},
+            {"label": "C", "text": "'transferred only from the hot water to the ice' and 'transferred mostly from the ice molecules to the hot water'"},
+            {"label": "D", "text": "'transferred only from the ice molecules to the hot water' and 'transferred mostly from the hot water to the ice'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Net flow is hot→cold, so both 'ice→hot water' options are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp065",
@@ -207,7 +511,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/14-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the conduction rate equation."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the conduction rate equation.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The conductive heat-transfer rate is Q/t = kA(ΔT)/d. To make a melting measurement FASTER, you can:",
+          "choices": [
+            {"label": "A", "text": "reduce the amount of energy that must be transferred, or increase the transfer rate"},
+            {"label": "B", "text": "only increase the total energy needed"},
+            {"label": "C", "text": "only reduce the temperature difference"},
+            {"label": "D", "text": "nothing changes the time"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Less energy needed, or a higher transfer rate, shortens the time."
+        },
+        {
+          "level": 2,
+          "prompt": "Melting LESS ice means less energy must be transferred. How does that affect the time?",
+          "choices": [
+            {"label": "A", "text": "it shortens the time (less energy to move at the same rate)"},
+            {"label": "B", "text": "it lengthens the time"},
+            {"label": "C", "text": "it has no effect"},
+            {"label": "D", "text": "it stops the melting"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Less ice means less energy to transfer, so the melt time is shorter."
+        },
+        {
+          "level": 3,
+          "prompt": "In Q/t = kA(ΔT)/d, greater thickness (d) and smaller area (A) both SLOW the heat transfer. Which pair of options can be eliminated because they would LENGTHEN the time?",
+          "choices": [
+            {"label": "A", "text": "'Use containers with greater thickness (larger d)' and 'Use containers with smaller surface areas (smaller A)'"},
+            {"label": "B", "text": "'Use a smaller quantity of ice (smaller m)' and 'Use a lower ambient temperature (smaller T₂)'"},
+            {"label": "C", "text": "'Use containers with greater thickness (larger d)' and 'Use a smaller quantity of ice (smaller m)'"},
+            {"label": "D", "text": "'Use containers with smaller surface areas (smaller A)' and 'Use a lower ambient temperature (smaller T₂)'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Greater thickness and smaller area both reduce the conduction rate, lengthening the time, so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp066",
@@ -227,7 +569,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/14-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the conduction rate equation."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the conduction rate equation.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The rate of conductive heat transfer, Q/t = kA(ΔT)/d, increases when:",
+          "choices": [
+            {"label": "A", "text": "the temperature difference ΔT or the area A increases, or the thickness d decreases"},
+            {"label": "B", "text": "the thickness increases"},
+            {"label": "C", "text": "the temperature difference decreases"},
+            {"label": "D", "text": "the area decreases"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Rate rises with larger ΔT and A, and with smaller d."
+        },
+        {
+          "level": 2,
+          "prompt": "Which single change would INCREASE the conduction rate?",
+          "choices": [
+            {"label": "A", "text": "increasing the temperature difference ΔT"},
+            {"label": "B", "text": "increasing the thickness d"},
+            {"label": "C", "text": "decreasing the area A"},
+            {"label": "D", "text": "decreasing the temperature difference ΔT"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A larger ΔT raises the numerator of kA(ΔT)/d, increasing the rate."
+        },
+        {
+          "level": 3,
+          "prompt": "Increased area and decreased thickness RAISE the rate, while decreased ΔT and increased thickness LOWER it. Which pair of options states the direction backwards and can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'The rate decreases with increased surface area and decreased thickness' and 'The rate increases with decreased temperature difference and increased thickness'"},
+            {"label": "B", "text": "'The rate increases with increased temperature difference and surface area' and 'The rate decreases with decreased temperature difference and increased surface area'"},
+            {"label": "C", "text": "'The rate decreases with increased surface area and decreased thickness' and 'The rate increases with increased temperature difference and surface area'"},
+            {"label": "D", "text": "'The rate increases with decreased temperature difference and increased thickness' and 'The rate decreases with decreased temperature difference and increased surface area'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Increased area/decreased thickness raise the rate and decreased ΔT/increased thickness lower it, so those two options have it backwards."
+        }
+      ]
     },
     {
       "id": "cpbs-xp067",
@@ -247,7 +627,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/14-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (convection is buoyancy-driven)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (convection is buoyancy-driven).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Convection in a fluid is driven by buoyancy, which arises from:",
+          "choices": [
+            {"label": "A", "text": "density differences in a gravitational field"},
+            {"label": "B", "text": "electric charge"},
+            {"label": "C", "text": "the fluid's color"},
+            {"label": "D", "text": "the absence of gravity"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Convection is buoyancy-driven, needing density differences and gravity."
+        },
+        {
+          "level": 2,
+          "prompt": "Would convection be stronger or weaker if gravity were very SMALL (everything else the same)?",
+          "choices": [
+            {"label": "A", "text": "weaker—buoyant forces depend on gravity, so less gravity means weaker convection"},
+            {"label": "B", "text": "stronger—less gravity boosts convection"},
+            {"label": "C", "text": "unchanged—gravity is irrelevant"},
+            {"label": "D", "text": "convection would reverse direction"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Buoyancy scales with gravity, so smaller g gives weaker convection."
+        },
+        {
+          "level": 3,
+          "prompt": "Convection needs strong gravity, so any option with SMALL gravitational acceleration is out. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'gravitational acceleration is small, and density varies greatly' and 'gravitational acceleration is small, and density varies slightly'"},
+            {"label": "B", "text": "'gravitational acceleration is large, and density varies greatly' and 'gravitational acceleration is large, and density varies slightly'"},
+            {"label": "C", "text": "'gravitational acceleration is small, and density varies greatly' and 'gravitational acceleration is large, and density varies greatly'"},
+            {"label": "D", "text": "'gravitational acceleration is small, and density varies slightly' and 'gravitational acceleration is large, and density varies slightly'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Strong convection requires large gravity, so both 'small gravitational acceleration' options are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp068",
@@ -267,7 +685,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/14-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (Stefan-Boltzmann: power ∝ T⁴)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (Stefan-Boltzmann: power ∝ T⁴).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "By the Stefan–Boltzmann law, the radiated power of a black body is proportional to:",
+          "choices": [
+            {"label": "A", "text": "the fourth power of the absolute temperature (T⁴)"},
+            {"label": "B", "text": "the temperature T"},
+            {"label": "C", "text": "T²"},
+            {"label": "D", "text": "1/T"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Radiated power ∝ T⁴."
+        },
+        {
+          "level": 2,
+          "prompt": "The temperature ratio is 1100/275 = 4. Since power ∝ T⁴, the power ratio is:",
+          "choices": [
+            {"label": "A", "text": "4⁴"},
+            {"label": "B", "text": "4"},
+            {"label": "C", "text": "4²"},
+            {"label": "D", "text": "4×4×4×4×4"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Raise the temperature ratio to the fourth power: 4⁴."
+        },
+        {
+          "level": 3,
+          "prompt": "Because power scales as T⁴ (not T¹ or T²), the ratio 4 must be raised to the FOURTH power. Which pair of options (using too low a power) can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'4' and '16'"},
+            {"label": "B", "text": "'64' and '256'"},
+            {"label": "C", "text": "'4' and '256'"},
+            {"label": "D", "text": "'16' and '64'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "4 is the ratio itself (power 1) and 16 is 4² (power 2); the T⁴ law needs a higher power, so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp069",
@@ -287,7 +743,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/15-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (fast pressure equalization, then slow heat conduction)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (fast pressure equalization, then slow heat conduction).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "When two gas regions can exchange volume through a movable piston/disk, they first reach mechanical equilibrium when:",
+          "choices": [
+            {"label": "A", "text": "their pressures become equal"},
+            {"label": "B", "text": "their temperatures become equal"},
+            {"label": "C", "text": "their volumes become zero"},
+            {"label": "D", "text": "nothing ever moves"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A free piston stops when the pressures on its two sides are equal (mechanical equilibrium)."
+        },
+        {
+          "level": 2,
+          "prompt": "With equal molecule counts and volumes but different temperatures, the hotter side starts at higher pressure. Which process is FAST and which is SLOW?",
+          "choices": [
+            {"label": "A", "text": "pressure equalizes fast (the disk moves), then heat conducts through the disk slowly"},
+            {"label": "B", "text": "heat conduction happens first and fastest"},
+            {"label": "C", "text": "nothing happens on either timescale"},
+            {"label": "D", "text": "the volumes stay fixed forever"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Pressure differences equalize quickly by moving the disk; thermal conduction is slower."
+        },
+        {
+          "level": 3,
+          "prompt": "Because the hotter side starts at higher pressure, SOMETHING happens, and a fast mechanical step precedes the slow thermal one. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'Nothing.' and 'Heat moves from hot to cold, so the low-temperature side gradually warms and expands.'"},
+            {"label": "B", "text": "'The high-temperature side expands, compressing the low-temperature side.' and '(B) happens quickly, but after that (C) happens more slowly.'"},
+            {"label": "C", "text": "'Nothing.' and 'The high-temperature side expands, compressing the low-temperature side.'"},
+            {"label": "D", "text": "'Heat moves from hot to cold...' and '(B) happens quickly, but after that (C) happens more slowly.'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "'Nothing' is wrong (pressures differ) and the conduction-only option omits the fast pressure step, so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp070",
@@ -307,7 +801,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/15-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the first law of thermodynamics."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the first law of thermodynamics.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The first law of thermodynamics (using work done ON the system) states:",
+          "choices": [
+            {"label": "A", "text": "ΔU = Q + W(on the system)"},
+            {"label": "B", "text": "ΔU = Q − W(on the system), always"},
+            {"label": "C", "text": "ΔU = Q × W"},
+            {"label": "D", "text": "ΔU = W − Q, ignoring signs"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "ΔU = Q + W when W is the work done on the system."
+        },
+        {
+          "level": 2,
+          "prompt": "With Q = −320 J (heat leaving) and W = +300 J (work added), which quantity is larger in magnitude, telling you whether U rises or falls?",
+          "choices": [
+            {"label": "A", "text": "the heat leaving (320 J) exceeds the work added (300 J), so U falls"},
+            {"label": "B", "text": "the work added exceeds the heat leaving, so U rises"},
+            {"label": "C", "text": "they are equal, so U is unchanged"},
+            {"label": "D", "text": "both add energy, so U rises a lot"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "320 J out versus 300 J in means a net loss, so internal energy decreases."
+        },
+        {
+          "level": 3,
+          "prompt": "Adding the magnitudes (320 + 300 = 620) is a sign-handling error; the correct first-law combination gives a much smaller magnitude. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'620 J more' and '620 J less'"},
+            {"label": "B", "text": "'20 J less' and '20 J more'"},
+            {"label": "C", "text": "'20 J less' and '620 J more'"},
+            {"label": "D", "text": "'20 J more' and '620 J less'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "620 J comes from adding magnitudes with the wrong signs; the actual change is only ~20 J, so both 620 J options are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp071",
@@ -327,7 +859,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/15-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (heat in raises U; work done by gas lowers U)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (heat in raises U; work done by gas lowers U).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Adding heat to a gas ____ its internal energy; having the gas do work by expanding ____ its internal energy.",
+          "choices": [
+            {"label": "A", "text": "raises; lowers"},
+            {"label": "B", "text": "lowers; raises"},
+            {"label": "C", "text": "raises; raises"},
+            {"label": "D", "text": "lowers; lowers"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Heat input raises internal energy; work done by the gas lowers it."
+        },
+        {
+          "level": 2,
+          "prompt": "As the expanding gas pushes the potato out of the barrel (doing work on it), the gas's internal energy:",
+          "choices": [
+            {"label": "A", "text": "decreases (it gives up energy doing work)"},
+            {"label": "B", "text": "increases"},
+            {"label": "C", "text": "stays the same"},
+            {"label": "D", "text": "becomes infinite"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A gas that does work while expanding loses internal energy."
+        },
+        {
+          "level": 3,
+          "prompt": "Combustion adds heat, so the internal energy must INCREASE during that step (the first blank). Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'decreases, increases' and 'decreases, decreases'"},
+            {"label": "B", "text": "'increases, increases' and 'increases, decreases'"},
+            {"label": "C", "text": "'increases, increases' and 'decreases, decreases'"},
+            {"label": "D", "text": "'increases, decreases' and 'decreases, increases'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Combustion raises the internal energy, so both options starting with 'decreases' are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp072",
@@ -347,7 +917,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/15-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (heat lost ⇒ entropy lost/order gained; heat gained ⇒ entropy gained/order lost)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (heat lost ⇒ entropy lost/order gained; heat gained ⇒ entropy gained/order lost).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "When a substance RELEASES heat (cools/condenses), its entropy ____ and its molecular order ____.",
+          "choices": [
+            {"label": "A", "text": "decreases; increases (it becomes more ordered)"},
+            {"label": "B", "text": "increases; decreases"},
+            {"label": "C", "text": "increases; increases"},
+            {"label": "D", "text": "decreases; decreases"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Losing heat lowers entropy and increases order."
+        },
+        {
+          "level": 2,
+          "prompt": "The steam condenses and cools (releasing heat) while the ice melts and warms (absorbing heat). What does the ICE's entropy do?",
+          "choices": [
+            {"label": "A", "text": "it increases (absorbing heat and melting raises entropy)"},
+            {"label": "B", "text": "it decreases"},
+            {"label": "C", "text": "it stays the same"},
+            {"label": "D", "text": "it becomes negative"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Absorbing heat and melting increases the ice's entropy (and disorder)."
+        },
+        {
+          "level": 3,
+          "prompt": "The steam releases heat as it condenses, so the STEAM must LOSE entropy (the first blank). Which pair of options can be eliminated because they say the steam gained entropy?",
+          "choices": [
+            {"label": "A", "text": "'gained, gained, lost, lost' and 'gained, lost, lost, gained'"},
+            {"label": "B", "text": "'lost, gained, gained, lost' and 'lost, lost, gained, gained'"},
+            {"label": "C", "text": "'gained, gained, lost, lost' and 'lost, gained, gained, lost'"},
+            {"label": "D", "text": "'gained, lost, lost, gained' and 'lost, lost, gained, gained'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Releasing heat lowers the steam's entropy, so both options where the steam 'gained' entropy are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp073",
@@ -367,7 +975,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/15-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (collisional energy spread; net energy added ⇒ piston moves out)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (collisional energy spread; net energy added ⇒ piston moves out).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "When energy is suddenly added to one layer of a gas, that energy spreads through the gas by:",
+          "choices": [
+            {"label": "A", "text": "successive molecular collisions (not by the hot molecules acting alone)"},
+            {"label": "B", "text": "a single molecule pushing the piston by itself"},
+            {"label": "C", "text": "gravity"},
+            {"label": "D", "text": "no mechanism—it stays in that layer"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Energy redistributes through many molecular collisions."
+        },
+        {
+          "level": 2,
+          "prompt": "Does the injected energy stay with the originally-heated molecules, or does it spread to the rest of the gas?",
+          "choices": [
+            {"label": "A", "text": "it spreads to the rest of the gas through repeated collisions"},
+            {"label": "B", "text": "it stays only with the originally-heated molecules"},
+            {"label": "C", "text": "it disappears immediately"},
+            {"label": "D", "text": "it all goes into the piston in one push"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Molecular collisions distribute the added energy throughout the gas."
+        },
+        {
+          "level": 3,
+          "prompt": "The energy spreads by collisions among all molecules (not the hot ones acting alone), and net energy was ADDED (so the piston won't simply return to its exact start). Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'The high-temperature molecules push out the piston until their energy is reduced...' and 'The high-temperature molecules push out the piston..., then the piston gets sucked back in.'"},
+            {"label": "B", "text": "'The molecules bounce off their neighbors, losing energy to them, ... piston moved out.' and 'The molecules bounce off their neighbors, ... piston where it started.'"},
+            {"label": "C", "text": "'The high-temperature molecules push out the piston until their energy is reduced...' and 'The molecules bounce off their neighbors, ... piston moved out.'"},
+            {"label": "D", "text": "'The high-temperature molecules push out the piston..., then the piston gets sucked back in.' and 'The molecules bounce off their neighbors, ... piston where it started.'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The energy spreads by collisions (not the hot molecules alone), so both 'high-temperature molecules push the piston' options are eliminated."
+        }
+      ]
     }
   ]
 }

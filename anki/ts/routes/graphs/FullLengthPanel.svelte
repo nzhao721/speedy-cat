@@ -4,16 +4,18 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 -->
 <!--
 SpeedyCAT: "Full-length tests" panel for the stats dashboard. Shows the
-learner's raw score on completed full-length practice tests, always paired with
-its explicit 95% range — the score is never fabricated. When no full-length test
+learner's ESTIMATED MCAT-scale score (472–528 total, 118–132 per section) on
+completed full-length practice tests, alongside the raw score and always paired
+with an explicit range — the score is never fabricated. When no full-length test
 has been completed the panel "gives up" with an explanation instead of inventing
 a number. Every figure is deterministic and computed in the Rust backend (AI
-off).
+off); the scaled score is an averaged raw→scaled estimate (named source below),
+not an official score.
 -->
 <script lang="ts">
     import type { FullLengthOverview } from "./dashboard";
-    import { fullLengthRawTotals, pct } from "./dashboard";
-    import { sectionShort } from "../practice/lib";
+    import { fullLengthRawTotals, fullLengthScaledEstimate, pct } from "./dashboard";
+    import { SCALED_SCORE_CAPTION, sectionShort } from "../practice/lib";
 
     export let overview: FullLengthOverview | null;
     export let error: boolean;
@@ -43,24 +45,41 @@ off).
     {:else}
         {@const pillar = overview.readiness.readiness}
         {@const totals = fullLengthRawTotals(overview.readiness)}
+        {@const scaled = fullLengthScaledEstimate(overview.readiness)}
         <div class="summary">
-            <div class="value">{totals.correct}/{totals.total}</div>
-            <div class="caption">raw score</div>
-            <div class="range">
-                {pct(pillar.value)} · 95% range {pct(pillar.rangeLow)}–{pct(
-                    pillar.rangeHigh,
-                )}
-            </div>
+            {#if scaled}
+                <div class="value">{scaled.score}</div>
+                <div class="caption">est. scaled score (472–528)</div>
+                <div class="range">estimate range {scaled.low}–{scaled.high}</div>
+                <div class="raw-line">
+                    Raw {totals.correct}/{totals.total} · {pct(pillar.value)}
+                    (95% {pct(pillar.rangeLow)}–{pct(pillar.rangeHigh)})
+                </div>
+            {:else}
+                <div class="value">{totals.correct}/{totals.total}</div>
+                <div class="caption">raw score</div>
+                <div class="range">
+                    {pct(pillar.value)} · 95% range {pct(pillar.rangeLow)}–{pct(
+                        pillar.rangeHigh,
+                    )}
+                </div>
+            {/if}
         </div>
 
         <div class="sections">
             {#each overview.readiness.sectionScores as s (s.section)}
                 <div class="section-row">
                     <span>{sectionShort(s.section)}</span>
-                    <span class="mono">{s.correct}/{s.total}</span>
+                    <span class="mono">
+                        {#if s.scaledScore !== undefined}{s.scaledScore} · {/if}{s.correct}/{s.total}
+                    </span>
                 </div>
             {/each}
         </div>
+
+        {#if scaled}
+            <p class="source">{SCALED_SCORE_CAPTION}</p>
+        {/if}
     {/if}
 </section>
 
@@ -113,6 +132,17 @@ off).
     }
     .range {
         font-size: 0.85rem;
+        color: var(--fg-subtle);
+    }
+    .raw-line {
+        font-size: 0.8rem;
+        color: var(--fg-subtle);
+        margin-top: 0.15rem;
+    }
+    .source {
+        margin: 0.5rem 0 0;
+        font-size: 0.72rem;
+        line-height: 1.4;
         color: var(--fg-subtle);
     }
     .sections {

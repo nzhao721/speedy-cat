@@ -696,6 +696,31 @@ create table if not exists profiles
     def set_last_loaded_profile_name(self, name: str) -> None:
         self.meta["last_loaded_profile_name"] = name
 
+    def profile_to_auto_open(self) -> str | None:
+        """Name of the profile to open automatically at startup (no chooser).
+
+        SpeedyCAT boots straight into a profile instead of showing the
+        profile-selection window. Preference order:
+
+        1. the most-recently-loaded profile, when it still exists;
+        2. the branded default (``DEFAULT_PROFILE_NAME``), when present;
+        3. otherwise the first profile.
+
+        Returns ``None`` only when there are no profiles at all; callers reach
+        this after :meth:`profiles` has auto-created the default, so in practice
+        a name is always returned. This governs the boot path only — in-app
+        "Switch Profile" still opens the chooser on demand.
+        """
+        profs = self.profiles()
+        if not profs:
+            return None
+        last = self.last_loaded_profile_name()
+        if last in profs:
+            return last
+        if self.DEFAULT_PROFILE_NAME in profs:
+            return self.DEFAULT_PROFILE_NAME
+        return profs[0]
+
     # Profile-specific
     ######################################################################
 

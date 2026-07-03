@@ -17,6 +17,7 @@ use crate::practice::attempt_source_clause;
 use crate::practice::difficulty_to_db;
 use crate::practice::new_full_length_attempt_id;
 use crate::practice::new_session_id;
+use crate::practice::scoring;
 use crate::practice::section_from_db;
 use crate::practice::section_to_db;
 use crate::practice::seed_from_str;
@@ -155,6 +156,11 @@ impl crate::services::PracticeService for Collection {
         let attempt_id = format!("{}:{}", input.session_id, input.question_id);
         let section_db = section_to_db(input.section).to_string();
         let answered_at = TimestampSecs::now().0;
+        // SpeedyCAT graduated hint ladder: clamp the reported tier to 0..3 and
+        // derive `assisted` from it (reaching level 3) so the flags are always
+        // internally consistent regardless of what the client sends.
+        let hint_level_used = input.hint_level_used.min(3);
+        let assisted = input.assisted || hint_level_used >= 3;
         let attempt = NewAttempt {
             id: &attempt_id,
             session_id: Some(&input.session_id),
@@ -166,6 +172,8 @@ impl crate::services::PracticeService for Collection {
             section_db: &section_db,
             topic: &input.topic,
             answered_at,
+            hint_level_used,
+            assisted,
         };
         self.transact_no_undo(|col| col.storage.add_practice_attempt(&attempt))?;
         Ok(pb::RecordAttemptResponse { attempt_id })
@@ -291,6 +299,9 @@ impl crate::services::PracticeService for Collection {
             section_db: &section_db,
             topic: &input.topic,
             answered_at,
+            // Full-length exams have no hint ladder.
+            hint_level_used: 0,
+            assisted: false,
         };
         self.transact_no_undo(|col| col.storage.add_practice_attempt(&attempt))?;
         Ok(pb::RecordAttemptResponse { attempt_id })
@@ -310,40 +321,59 @@ impl crate::services::PracticeService for Collection {
         let mut stored_results = Vec::new();
         let mut total_correct = 0u32;
         let mut total_questions = 0u32;
+        let mut scaled_sum = 0u32;
+        let mut scaled_sections = 0u32;
         for (section_db, correct, total, time) in &counts {
             total_correct += correct;
             total_questions += total;
+            // Number-correct -> scaled (118–132) via the representative averaged
+            // AAMC-anchored conversion (see practice::scoring). An ESTIMATE: our
+            // full-length forms are AI-generated proof-of-concept, and AAMC
+            // equates each real form so no exact table exists.
+            let scaled_score = scoring::section_scaled_score(*correct, *total);
+            if let Some(s) = scaled_score {
+                scaled_sum += s;
+                scaled_sections += 1;
+            }
             section_results.push(pb::SectionResult {
                 section: section_from_db(section_db),
                 correct: *correct,
                 total: *total,
                 time_seconds: *time,
-                // Scaled scores require licensed AAMC scoring data; the
-                // AI-generated proof-of-concept forms do not provide it.
-                scaled_score: None,
+                scaled_score,
             });
             stored_results.push(StoredSectionResult {
                 section: section_db.clone(),
                 correct: *correct,
                 total: *total,
                 time_seconds: *time,
-                scaled_score: None,
+                scaled_score,
             });
         }
+
+        // Overall scaled total = sum of the per-section scaled scores, clamped to
+        // the valid range for the number of scored sections (472–528 for a full
+        // four-section exam). None when no section could be scored.
+        let overall_scaled_score = (scaled_sections > 0)
+            .then(|| scoring::clamp_total_for_sections(scaled_sum, scaled_sections));
 
         let results_json = serde_json::to_string(&stored_results)?;
         let now = TimestampSecs::now().0;
         let attempt_id = input.attempt_id.clone();
         self.transact_no_undo(|col| {
-            col.storage
-                .complete_full_length_attempt(&attempt_id, &results_json, None, now)
+            col.storage.complete_full_length_attempt(
+                &attempt_id,
+                &results_json,
+                overall_scaled_score,
+                now,
+            )
         })?;
 
         Ok(pb::FullLengthReport {
             attempt_id: input.attempt_id,
             test_id,
             section_results,
-            overall_scaled_score: None,
+            overall_scaled_score,
             total_correct,
             total_questions,
         })
@@ -374,15 +404,26 @@ impl crate::services::PracticeService for Collection {
     ) -> Result<pb::GetReadinessResponse> {
         let memory = self.readiness_memory(&input.deck_search)?;
         let (performance, performance_avg_seconds) = self.readiness_performance()?;
-        let (readiness, section_scores) = self.readiness_full_length()?;
+        let (readiness, section_scores, scaled) = self.readiness_full_length()?;
         Ok(pb::GetReadinessResponse {
             memory: Some(memory),
             performance: Some(performance),
             readiness: Some(readiness),
             section_scores,
             performance_avg_seconds,
+            readiness_scaled_score: scaled.as_ref().map(|s| s.score),
+            readiness_scaled_low: scaled.as_ref().map(|s| s.low),
+            readiness_scaled_high: scaled.as_ref().map(|s| s.high),
         })
     }
+}
+
+/// Aggregate full-length scaled-score ESTIMATE (472–528) with an explicit range,
+/// summed from the per-section scaled scores + their Wilson bounds.
+struct ScaledEstimate {
+    score: u32,
+    low: u32,
+    high: u32,
 }
 
 impl Collection {
@@ -491,7 +532,9 @@ impl Collection {
     /// Wilson 95% interval. Also returns the average seconds per question.
     fn readiness_performance(&self) -> Result<(pb::ReadinessPillar, f64)> {
         const SOURCE: &str = "SpeedyCAT practice sessions (practice_attempts store)";
-        const METHOD: &str = "practice accuracy with a Wilson 95% score interval";
+        const METHOD: &str = "practice accuracy with a Wilson 95% score interval; \
+             assisted-correct answers (hint ladder reached level 3) do not count as \
+             correct (anti-gaming penalty)";
         let (correct, answered, total_time) = self.storage.practice_accuracy_totals()?;
         if answered < MIN_PERFORMANCE_ATTEMPTS {
             return Ok((
@@ -530,7 +573,11 @@ impl Collection {
     /// distribution and everything outside the full-length tests.
     fn readiness_full_length(
         &self,
-    ) -> Result<(pb::ReadinessPillar, Vec<pb::ReadinessSectionScore>)> {
+    ) -> Result<(
+        pb::ReadinessPillar,
+        Vec<pb::ReadinessSectionScore>,
+        Option<ScaledEstimate>,
+    )> {
         const SOURCE: &str = "SpeedyCAT full-length tests (completed attempts, raw score)";
         const METHOD: &str =
             "raw correct ÷ total across completed full-length tests, with a Wilson 95% interval";
@@ -544,19 +591,41 @@ impl Collection {
                     0,
                 ),
                 Vec::new(),
+                None,
             ));
         }
         let (value, low, high) = wilson_interval(correct, total, READINESS_Z);
-        let section_scores = self
-            .storage
-            .full_length_section_scores()?
-            .into_iter()
-            .map(|(section, correct, total)| pb::ReadinessSectionScore {
+
+        // Per-section raw score + averaged scaled ESTIMATE. The overall scaled
+        // estimate sums the per-section scaled scores; its range sums the scaled
+        // scores at each section's Wilson bounds (a conservative aggregate).
+        let mut section_scores = Vec::new();
+        let mut scaled_point = 0u32;
+        let mut scaled_low = 0u32;
+        let mut scaled_high = 0u32;
+        let mut scaled_sections = 0u32;
+        for (section, s_correct, s_total) in self.storage.full_length_section_scores()? {
+            let scaled_score = scoring::section_scaled_score(s_correct, s_total);
+            if scaled_score.is_some() {
+                let (p, plo, phi) = wilson_interval(s_correct, s_total, READINESS_Z);
+                scaled_point += scoring::scaled_from_fraction(p);
+                scaled_low += scoring::scaled_from_fraction(plo);
+                scaled_high += scoring::scaled_from_fraction(phi);
+                scaled_sections += 1;
+            }
+            section_scores.push(pb::ReadinessSectionScore {
                 section: section_from_db(&section),
-                correct,
-                total,
-            })
-            .collect();
+                correct: s_correct,
+                total: s_total,
+                scaled_score,
+            });
+        }
+        let scaled = (scaled_sections > 0).then(|| ScaledEstimate {
+            score: scoring::clamp_total_for_sections(scaled_point, scaled_sections),
+            low: scoring::clamp_total_for_sections(scaled_low, scaled_sections),
+            high: scoring::clamp_total_for_sections(scaled_high, scaled_sections),
+        });
+
         Ok((
             pb::ReadinessPillar {
                 available: true,
@@ -569,6 +638,7 @@ impl Collection {
                 message: String::new(),
             },
             section_scores,
+            scaled,
         ))
     }
 }
@@ -766,6 +836,33 @@ mod test {
                 time_on_question_seconds: time,
                 section,
                 topic: topic.to_string(),
+                hint_level_used: 0,
+                assisted: false,
+            })
+            .unwrap();
+    }
+
+    /// Record an attempt that used the hint ladder up to `hint_level` (0..3);
+    /// `assisted` is derived (reaching level 3). Exercises the anti-gaming
+    /// penalty in the Performance pillar.
+    fn record_hinted(
+        col: &mut Collection,
+        session_id: &str,
+        question_id: &str,
+        correct: bool,
+        hint_level: u32,
+    ) {
+        let _ = col
+            .record_practice_attempt(pb::RecordPracticeAttemptRequest {
+                session_id: session_id.to_string(),
+                question_id: question_id.to_string(),
+                selected_answer: if correct { "A".into() } else { "B".into() },
+                correct,
+                time_on_question_seconds: 30,
+                section: cpbs(),
+                topic: "kinetics".to_string(),
+                hint_level_used: hint_level,
+                assisted: hint_level >= 3,
             })
             .unwrap();
     }
@@ -859,6 +956,8 @@ mod test {
             section_db: "CPBS",
             topic: "thermodynamics",
             answered_at: 0,
+            hint_level_used: 0,
+            assisted: false,
         })?;
         col.storage.add_practice_attempt(&NewAttempt {
             id: "a-fl",
@@ -871,6 +970,8 @@ mod test {
             section_db: "CPBS",
             topic: "thermodynamics",
             answered_at: 0,
+            hint_level_used: 0,
+            assisted: false,
         })?;
 
         // ALL: both attempts combine.
@@ -1069,6 +1170,18 @@ mod test {
         assert_eq!(cpbs_result.total, 1);
         assert_eq!(cpbs_result.time_seconds, 90);
 
+        // Averaged scaled-score estimate: a perfect 1/1 section maps to the 132
+        // ceiling, a 0/1 section to the 118 floor, and the overall is their sum
+        // (clamped to the two-section range 236–264).
+        assert_eq!(cpbs_result.scaled_score, Some(132));
+        let cars_result = report
+            .section_results
+            .iter()
+            .find(|r| r.section == cars())
+            .unwrap();
+        assert_eq!(cars_result.scaled_score, Some(118));
+        assert_eq!(report.overall_scaled_score, Some(250));
+
         // A submitted attempt is closed to further answers.
         let err = col.record_full_length_answer(pb::RecordFullLengthAnswerRequest {
             attempt_id,
@@ -1106,6 +1219,8 @@ mod test {
             time_on_question_seconds: 10,
             section: cpbs(),
             topic: "kinetics".into(),
+            hint_level_used: 0,
+            assisted: false,
         })?;
 
         let summary = col.end_practice_session(pb::EndPracticeSessionRequest {
@@ -1144,6 +1259,8 @@ mod test {
             time_on_question_seconds: 5,
             section: cpbs(),
             topic: "kinetics".into(),
+            hint_level_used: 0,
+            assisted: false,
         });
         assert!(unknown.is_err());
 
@@ -1164,6 +1281,8 @@ mod test {
             time_on_question_seconds: 5,
             section: cpbs(),
             topic: "kinetics".into(),
+            hint_level_used: 0,
+            assisted: false,
         });
         assert!(after_end.is_err());
         Ok(())
@@ -1559,6 +1678,7 @@ mod test {
             answer_provenance: None,
             notes: None,
             test_id: None,
+            hints: vec![],
         }
     }
 
@@ -1788,6 +1908,10 @@ mod test {
         }
         assert!(r.section_scores.is_empty());
         assert_eq!(r.performance_avg_seconds, 0.0);
+        // No completed full-length -> no scaled estimate either.
+        assert!(r.readiness_scaled_score.is_none());
+        assert!(r.readiness_scaled_low.is_none());
+        assert!(r.readiness_scaled_high.is_none());
         Ok(())
     }
 
@@ -1812,6 +1936,8 @@ mod test {
                 section_db: "CPBS",
                 topic: "kinetics",
                 answered_at: 0,
+                hint_level_used: 0,
+                assisted: false,
             })?;
         }
         // A skipped (unanswered) question must not count toward accuracy.
@@ -1826,6 +1952,8 @@ mod test {
             section_db: "CPBS",
             topic: "kinetics",
             answered_at: 0,
+            hint_level_used: 0,
+            assisted: false,
         })?;
 
         // Pillar 3: one completed full-length attempt, two sections, 3/4 correct.
@@ -1844,6 +1972,8 @@ mod test {
                 section_db: section,
                 topic: "t",
                 answered_at: 0,
+                hint_level_used: 0,
+                assisted: false,
             })?;
         }
         col.storage
@@ -1881,6 +2011,20 @@ mod test {
         assert_eq!((cpbs_score.correct, cpbs_score.total), (2, 2));
         let cars_score = r.section_scores.iter().find(|s| s.section == cars()).unwrap();
         assert_eq!((cars_score.correct, cars_score.total), (1, 2));
+
+        // Averaged scaled-score estimate rides along the Readiness pillar: each
+        // section carries its scaled score, and the overall estimate (472–528
+        // clamped per section-count) is bracketed by its range. 2/2 -> 132,
+        // 1/2 (50%) -> 122; overall point 254 for the two scored sections.
+        assert_eq!(cpbs_score.scaled_score, Some(132));
+        assert_eq!(cars_score.scaled_score, Some(122));
+        assert_eq!(r.readiness_scaled_score, Some(254));
+        let scaled_low = r.readiness_scaled_low.unwrap();
+        let scaled_high = r.readiness_scaled_high.unwrap();
+        assert!(
+            scaled_low <= 254 && 254 <= scaled_high,
+            "range [{scaled_low}, {scaled_high}] must bracket 254"
+        );
         Ok(())
     }
 
@@ -1902,6 +2046,8 @@ mod test {
             section_db: "CPBS",
             topic: "t",
             answered_at: 0,
+            hint_level_used: 0,
+            assisted: false,
         })?;
 
         let r = col.get_readiness(pb::GetReadinessRequest {
@@ -1911,6 +2057,7 @@ mod test {
         assert!(!readiness.available);
         assert_eq!(readiness.sample_size, 0);
         assert!(r.section_scores.is_empty());
+        assert!(r.readiness_scaled_score.is_none());
         Ok(())
     }
 
@@ -1956,5 +2103,141 @@ mod test {
         assert!(se2 > se);
 
         assert!(super::memory_mean_and_se(&HashMap::new(), 0.0).is_none());
+    }
+
+    // ---- Graduated hint ladder --------------------------------------------
+
+    /// The loader parses a 3-subquestion hint ladder (order + levels preserved,
+    /// each a 4-choice MCQ), and DEFENSIVELY drops malformed tiers (wrong choice
+    /// count, a `correctAnswer` that matches no choice, an empty prompt) while
+    /// keeping the well-formed ones — so a question can load with fewer than 3
+    /// (or zero) hints while content generation is still in progress.
+    #[test]
+    fn loads_hint_ladder_defensively() -> Result<()> {
+        let mut col = Collection::new();
+        let json = r#"{
+            "questions": [
+                {"id": "h-full", "section": "CPBS", "stem": "q?",
+                 "choices": [{"label":"A","text":"x"},{"label":"B","text":"y"}],
+                 "correctAnswer": "A", "explanation": "e", "topicTags": ["kinetics"],
+                 "difficulty": "easy", "sourceName": "OpenStax", "sourceLicense": "CC BY 4.0",
+                 "hints": [
+                    {"level":1,"prompt":"concept?","choices":[
+                       {"label":"A","text":"a"},{"label":"B","text":"b"},
+                       {"label":"C","text":"c"},{"label":"D","text":"d"}],
+                     "correctAnswer":"B","rationale":"because"},
+                    {"level":2,"prompt":"process?","choices":[
+                       {"label":"A","text":"a"},{"label":"B","text":"b"},
+                       {"label":"C","text":"c"},{"label":"D","text":"d"}],
+                     "correctAnswer":"C","rationale":"steps"},
+                    {"level":3,"prompt":"eliminate two?","choices":[
+                       {"label":"A","text":"a"},{"label":"B","text":"b"},
+                       {"label":"C","text":"c"},{"label":"D","text":"d"}],
+                     "correctAnswer":"D","rationale":"narrow"}
+                 ]},
+                {"id": "h-partial", "section": "CPBS", "stem": "q?",
+                 "choices": [{"label":"A","text":"x"},{"label":"B","text":"y"}],
+                 "correctAnswer": "A", "explanation": "e", "topicTags": ["kinetics"],
+                 "difficulty": "easy", "sourceName": "OpenStax", "sourceLicense": "CC BY 4.0",
+                 "hints": [
+                    {"level":1,"prompt":"ok?","choices":[
+                       {"label":"A","text":"a"},{"label":"B","text":"b"},
+                       {"label":"C","text":"c"},{"label":"D","text":"d"}],
+                     "correctAnswer":"A"},
+                    {"level":2,"prompt":"too few choices","choices":[
+                       {"label":"A","text":"a"},{"label":"B","text":"b"}],
+                     "correctAnswer":"A"},
+                    {"level":3,"prompt":"bad correct","choices":[
+                       {"label":"A","text":"a"},{"label":"B","text":"b"},
+                       {"label":"C","text":"c"},{"label":"D","text":"d"}],
+                     "correctAnswer":"Z"},
+                    {"level":3,"prompt":"","choices":[
+                       {"label":"A","text":"a"},{"label":"B","text":"b"},
+                       {"label":"C","text":"c"},{"label":"D","text":"d"}],
+                     "correctAnswer":"A"}
+                 ]},
+                {"id": "h-none", "section": "CPBS", "stem": "q?",
+                 "choices": [{"label":"A","text":"x"},{"label":"B","text":"y"}],
+                 "correctAnswer": "A", "explanation": "e", "topicTags": ["kinetics"],
+                 "difficulty": "easy", "sourceName": "OpenStax", "sourceLicense": "CC BY 4.0"}
+            ]
+        }"#;
+        let _ = col.load_practice_question_bundle(pb::LoadBundleRequest {
+            path: String::new(),
+            json: json.to_string(),
+            replace: true,
+        })?;
+
+        let qs = col
+            .get_practice_questions(pb::GetPracticeQuestionsRequest {
+                filter: Some(pb::QuestionFilter {
+                    sections: vec![cpbs()],
+                    ..Default::default()
+                }),
+            })?
+            .questions;
+        let by_id = |id: &str| qs.iter().find(|q| q.id == id).unwrap();
+
+        // Full ladder: 3 tiers, in order, each a 4-choice MCQ, round-tripped
+        // through the DB (parse -> store -> read).
+        let full = by_id("h-full");
+        assert_eq!(full.hints.len(), 3);
+        assert_eq!(
+            full.hints.iter().map(|h| h.level).collect::<Vec<_>>(),
+            vec![1, 2, 3]
+        );
+        assert_eq!(full.hints[0].choices.len(), 4);
+        assert_eq!(full.hints[0].correct_answer, "B");
+        assert_eq!(full.hints[2].rationale, "narrow");
+
+        // Partial: only the single well-formed tier survives; the 2-choice tier,
+        // the bad-correctAnswer tier and the empty-prompt tier are all dropped.
+        let partial = by_id("h-partial");
+        assert_eq!(partial.hints.len(), 1);
+        assert_eq!(partial.hints[0].prompt, "ok?");
+
+        // No hints -> empty ladder (the UI disables/hides "Request hint").
+        assert!(by_id("h-none").hints.is_empty());
+        Ok(())
+    }
+
+    /// SpeedyCAT anti-gaming: an assisted-correct practice attempt (the learner
+    /// climbed to level 3 of the hint ladder) does NOT count as correct in the
+    /// Performance pillar, while it still counts toward the denominator — so
+    /// leaning on the tutor lowers, never inflates, the score. Unassisted correct
+    /// answers keep full credit.
+    #[test]
+    fn readiness_performance_penalizes_assisted_correct() -> Result<()> {
+        let mut col = Collection::new();
+        let session = col
+            .start_practice_session(pb::StartPracticeSessionRequest {
+                filter: None,
+                time_limit_seconds: 0,
+            })?
+            .session_id;
+
+        // 30 answered: 15 unassisted-correct (full credit) + 15 assisted-correct
+        // (reached L3 -> penalized to "incorrect"). Raw accuracy would be 30/30;
+        // the penalized accuracy is 15/30 = 0.5.
+        for i in 0..15 {
+            record_hinted(&mut col, &session, &format!("u{i}"), true, 0);
+        }
+        for i in 0..15 {
+            record_hinted(&mut col, &session, &format!("a{i}"), true, 3);
+        }
+
+        let r = col.get_readiness(pb::GetReadinessRequest {
+            deck_search: String::new(),
+        })?;
+        let perf = r.performance.unwrap();
+        assert!(perf.available);
+        assert_eq!(perf.sample_size, 30, "every answered attempt is in the denominator");
+        assert!(
+            (perf.value - 0.5).abs() < 1e-9,
+            "assisted-correct must not earn credit (got {})",
+            perf.value
+        );
+        assert!(perf.method.contains("assisted"), "penalty is documented in the method");
+        Ok(())
     }
 }

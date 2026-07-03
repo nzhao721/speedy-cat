@@ -547,6 +547,19 @@ impl SqliteStorage {
             storage.commit_trx()?;
         }
 
+        // SpeedyCAT graduated hint ladder: the additive columns
+        // (practice_questions.hints, practice_attempts.hint_level_used/assisted)
+        // are added by upgrade_to_latest_schema above — but that only runs on a
+        // create or a schema-version transition. A collection created at schema
+        // 19 *before* the hint ladder existed is already at SCHEMA_MAX_VERSION,
+        // so it never upgrades and would keep erroring on the new columns
+        // (e.g. the results-sync read of hint_level_used). Add them here for
+        // that steady-state open. Idempotent + cheap; runs outside the
+        // create/upgrade transaction, where it is already a no-op.
+        if !create && !upgrade {
+            storage.add_speedycat_hint_columns_if_missing()?;
+        }
+
         Ok(storage)
     }
 

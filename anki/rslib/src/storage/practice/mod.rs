@@ -9,6 +9,8 @@ use anki_proto::practice::FullLengthBreak;
 use anki_proto::practice::FullLengthSection;
 use anki_proto::practice::FullLengthTest;
 use anki_proto::practice::FullLengthTestSummary;
+use anki_proto::practice::HintChoice;
+use anki_proto::practice::HintSubquestion;
 use anki_proto::practice::Passage;
 use anki_proto::practice::PassageSummary;
 use anki_proto::practice::PracticeQuestion;
@@ -27,11 +29,13 @@ use crate::practice::section_from_db;
 use crate::practice::section_to_db;
 use crate::practice::StoredBreak;
 use crate::practice::StoredChoice;
+use crate::practice::StoredHint;
+use crate::practice::StoredHintChoice;
 use crate::practice::StoredSection;
 
 const QUESTION_COLS: &str = "select id, section, passage_id, test_id, stem, choices, \
     correct_answer, explanation, question_type, topic_tags, difficulty, source_name, \
-    source_license, source_url, answer_provenance, notes from practice_questions";
+    source_license, source_url, answer_provenance, notes, hints from practice_questions";
 
 const PASSAGE_COLS: &str = "select passage_id, section, test_id, title, passage, discipline, \
     word_count, topic_tags, difficulty, source_name, source_license from practice_passages";
@@ -49,6 +53,12 @@ pub(crate) struct NewAttempt<'a> {
     pub section_db: &'a str,
     pub topic: &'a str,
     pub answered_at: i64,
+    /// SpeedyCAT graduated hint ladder: highest hint tier reached before the
+    /// answer was locked (0..3). Always 0 for full-length answers (no ladder).
+    pub hint_level_used: u32,
+    /// True when the learner reached level 3 of the ladder; penalized in the
+    /// readiness Performance pillar (an assisted-correct is not a full correct).
+    pub assisted: bool,
 }
 
 fn row_to_question(row: &Row) -> Result<PracticeQuestion> {
@@ -58,6 +68,10 @@ fn row_to_question(row: &Row) -> Result<PracticeQuestion> {
     let difficulty: String = row.get(10)?;
     let choices: Vec<StoredChoice> = serde_json::from_str(&choices_json)?;
     let topic_tags: Vec<String> = serde_json::from_str(&tags_json)?;
+    // SpeedyCAT graduated hint ladder: the column is nullable and may hold "" for
+    // questions with no hints yet; treat both as an empty ladder.
+    let hints_json: Option<String> = row.get(16)?;
+    let hints = parse_stored_hints(hints_json.as_deref());
     Ok(PracticeQuestion {
         id: row.get(0)?,
         section: section_from_db(&section),
@@ -81,7 +95,38 @@ fn row_to_question(row: &Row) -> Result<PracticeQuestion> {
         source_url: row.get(13)?,
         answer_provenance: row.get(14)?,
         notes: row.get(15)?,
+        hints,
     })
+}
+
+/// SpeedyCAT graduated hint ladder: deserialize the stored hints JSON into proto
+/// subquestions. Missing/empty/invalid JSON yields an empty ladder so a question
+/// still loads (the UI then just offers no hints for it).
+fn parse_stored_hints(json: Option<&str>) -> Vec<HintSubquestion> {
+    let Some(text) = json else {
+        return Vec::new();
+    };
+    if text.trim().is_empty() {
+        return Vec::new();
+    }
+    let stored: Vec<StoredHint> = serde_json::from_str(text).unwrap_or_default();
+    stored
+        .into_iter()
+        .map(|h| HintSubquestion {
+            level: h.level,
+            prompt: h.prompt,
+            choices: h
+                .choices
+                .into_iter()
+                .map(|c| HintChoice {
+                    label: c.label,
+                    text: c.text,
+                })
+                .collect(),
+            correct_answer: h.correct_answer,
+            rationale: h.rationale,
+        })
+        .collect()
 }
 
 fn row_to_passage(row: &Row) -> Result<Passage> {
@@ -155,12 +200,38 @@ impl SqliteStorage {
             .collect();
         let choices_json = serde_json::to_string(&choices)?;
         let tags_json = serde_json::to_string(&q.topic_tags)?;
+        // SpeedyCAT graduated hint ladder: store the subquestions as JSON. None
+        // when the question has no hints, so the column stays NULL for those.
+        let hints_json: Option<String> = if q.hints.is_empty() {
+            None
+        } else {
+            let stored: Vec<StoredHint> = q
+                .hints
+                .iter()
+                .map(|h| StoredHint {
+                    level: h.level,
+                    prompt: h.prompt.clone(),
+                    choices: h
+                        .choices
+                        .iter()
+                        .map(|c| StoredHintChoice {
+                            label: c.label.clone(),
+                            text: c.text.clone(),
+                        })
+                        .collect(),
+                    correct_answer: h.correct_answer.clone(),
+                    rationale: h.rationale.clone(),
+                })
+                .collect();
+            Some(serde_json::to_string(&stored)?)
+        };
         self.db
             .prepare_cached(
                 "insert or replace into practice_questions (id, section, passage_id, test_id, \
                  stem, choices, correct_answer, explanation, question_type, topic_tags, \
-                 difficulty, source_name, source_license, source_url, answer_provenance, notes) \
-                 values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                 difficulty, source_name, source_license, source_url, answer_provenance, notes, \
+                 hints) \
+                 values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             )?
             .execute(params![
                 q.id,
@@ -179,6 +250,7 @@ impl SqliteStorage {
                 q.source_url,
                 q.answer_provenance,
                 q.notes,
+                hints_json,
             ])?;
         Ok(())
     }
@@ -349,8 +421,9 @@ impl SqliteStorage {
             .prepare_cached(
                 "insert or replace into practice_attempts (id, session_id, \
                  full_length_attempt_id, question_id, selected_answer, correct, \
-                 time_on_question_seconds, section, topic, answered_at) \
-                 values (?,?,?,?,?,?,?,?,?,?)",
+                 time_on_question_seconds, section, topic, answered_at, hint_level_used, \
+                 assisted) \
+                 values (?,?,?,?,?,?,?,?,?,?,?,?)",
             )?
             .execute(params![
                 a.id,
@@ -363,6 +436,8 @@ impl SqliteStorage {
                 a.section_db,
                 a.topic,
                 a.answered_at,
+                a.hint_level_used,
+                a.assisted,
             ])?;
         Ok(())
     }
@@ -584,10 +659,17 @@ impl SqliteStorage {
     /// attempts (a session attempt with a non-empty selected answer). Feeds the
     /// readiness Performance pillar; skipped/unanswered questions are excluded
     /// so accuracy is over questions the learner actually answered.
+    ///
+    /// SpeedyCAT anti-gaming penalty: the "correct" count credits only
+    /// UNASSISTED correct answers (`correct = 1 AND assisted = 0`). An
+    /// assisted-correct attempt (the learner climbed to level 3 of the hint
+    /// ladder) still counts toward the denominator but earns no credit — so a
+    /// student cannot inflate their Performance pillar by leaning on the tutor.
+    /// The denominator is every answered attempt; timing is unaffected.
     pub(crate) fn practice_accuracy_totals(&self) -> Result<(u32, u32, u32)> {
         self.db
             .prepare_cached(
-                "select coalesce(sum(correct), 0), count(*), \
+                "select coalesce(sum(correct = 1 and assisted = 0), 0), count(*), \
                  coalesce(sum(time_on_question_seconds), 0) from practice_attempts \
                  where session_id is not null and selected_answer <> ''",
             )?

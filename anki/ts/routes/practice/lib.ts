@@ -15,6 +15,8 @@ import type {
     FullLengthTest,
     FullLengthTestSummary,
     GetTopicStatsResponse,
+    HintChoice,
+    HintSubquestion,
     PassageSummary,
     PracticeQuestion,
     PracticeSessionSummary,
@@ -44,6 +46,8 @@ export type {
     FullLengthTest,
     FullLengthTestSummary,
     GetTopicStatsResponse,
+    HintChoice,
+    HintSubquestion,
     PassageSummary,
     PracticeQuestion,
     PracticeSessionSummary,
@@ -82,6 +86,23 @@ export function sectionShort(section: McatSection): string {
 export function sectionLong(section: McatSection): string {
     return SECTION_LONG[section] ?? "Unspecified";
 }
+
+// ---- Scaled-score estimate (raw correct -> MCAT 118-132 / 472-528) ---------
+
+// SpeedyCAT: the full-length scaled scores are a deterministic ESTIMATE, not an
+// official score and NOT an AI output. They come from a representative averaged
+// number-correct→scaled conversion computed in the Rust backend
+// (rslib/src/practice/scoring.rs), anchored to AAMC's own published scoring
+// examples. This label names that source in the UI so every estimate is
+// traceable (per the PRD), and is shared by the report + dashboard so the two
+// stay consistent.
+export const SCALED_SCORE_SOURCE =
+    "AAMC published scoring examples (students-residents.aamc.org)";
+
+/** One-line caption describing the scaled estimate + its named source. */
+export const SCALED_SCORE_CAPTION =
+    `Estimated MCAT-scale score from an averaged raw→scaled conversion (${SCALED_SCORE_SOURCE}). `
+    + "These are AI-generated proof-of-concept forms, so treat it as an estimate, not an official score.";
 
 const DIFFICULTY_LABEL: Record<number, string> = {
     [Difficulty.UNSPECIFIED]: "",
@@ -262,6 +283,10 @@ export interface AttemptRecord {
     timeOnQuestionSeconds: number;
     section: McatSection;
     topic: string;
+    /** SpeedyCAT hint ladder: highest tier reached before locking (0-3). */
+    hintLevelUsed?: number;
+    /** SpeedyCAT hint ladder: reached level 3 (penalized in Performance). */
+    assisted?: boolean;
 }
 
 export async function logPracticeAttempt(a: AttemptRecord): Promise<void> {
@@ -273,6 +298,8 @@ export async function logPracticeAttempt(a: AttemptRecord): Promise<void> {
         timeOnQuestionSeconds: a.timeOnQuestionSeconds,
         section: a.section,
         topic: a.topic,
+        hintLevelUsed: a.hintLevelUsed ?? 0,
+        assisted: a.assisted ?? false,
     });
 }
 
@@ -330,6 +357,99 @@ export async function fetchTopicStats(
         input.section = section;
     }
     return await getTopicStats(input);
+}
+
+// ---- Graduated hint ladder -------------------------------------------------
+
+// SpeedyCAT: a question's `hints` are an ordered ladder of scaffolding
+// SUBQUESTIONS (each a 4-choice MCQ). The learner works through them ONE AT A
+// TIME — they must answer the currently-revealed subquestion before revealing
+// the next one or submitting the main question (the NO-SKIP rule) — and the main
+// answer stays locked until the ladder has been worked through. The highest tier
+// reached sets `hint_level_used`; reaching level 3 sets `assisted` (penalized in
+// the Performance pillar). The pure helpers below drive the UI and are unit
+// tested; the content of each subquestion is generated separately.
+
+/** Per-question progress through the graduated hint ladder. */
+export interface HintProgress {
+    /** Number of subquestions revealed so far (0..hints.length). */
+    revealed: number;
+    /** Chosen label per revealed subquestion index (0-based). */
+    picks: Record<number, string>;
+}
+
+export function emptyHintProgress(): HintProgress {
+    return { revealed: 0, picks: {} };
+}
+
+/** Whether a question offers a (well-formed) hint ladder at all. */
+export function hasHintLadder(question: PracticeQuestion): boolean {
+    return (question.hints?.length ?? 0) > 0;
+}
+
+/**
+ * The highest hint tier reached so far (0 = none), clamped to 0-3. Drives
+ * `hint_level_used`. Uses each subquestion's `level`, falling back to its 1-based
+ * position when the level is missing/out of range.
+ */
+export function hintLevelReached(
+    hints: HintSubquestion[],
+    revealed: number,
+): number {
+    if (revealed <= 0 || hints.length === 0) {
+        return 0;
+    }
+    const last = Math.min(revealed, hints.length);
+    let level = 0;
+    for (let i = 0; i < last; i++) {
+        level = Math.max(level, hints[i]?.level || i + 1);
+    }
+    return Math.min(3, level);
+}
+
+/** A learner is "assisted" once they reach level 3 of the ladder. */
+export function isAssisted(level: number): boolean {
+    return level >= 3;
+}
+
+/**
+ * Index of the currently-revealed subquestion still awaiting an answer, or -1
+ * when the latest revealed subquestion is answered (or none is revealed). This
+ * is what enforces the NO-SKIP rule.
+ */
+export function pendingHintIndex(progress: HintProgress): number {
+    if (progress.revealed <= 0) {
+        return -1;
+    }
+    const idx = progress.revealed - 1;
+    return progress.picks[idx] === undefined ? idx : -1;
+}
+
+/**
+ * Can the learner reveal the NEXT hint? Only when one remains AND the current
+ * revealed subquestion has been answered (no skipping ahead).
+ */
+export function canRevealNextHint(
+    hints: HintSubquestion[],
+    progress: HintProgress,
+): boolean {
+    return progress.revealed < hints.length && pendingHintIndex(progress) === -1;
+}
+
+/**
+ * Can the learner submit the MAIN question? A choice must be selected AND there
+ * must be no revealed-but-unanswered subquestion (they cannot skip the ladder).
+ */
+export function canSubmitMain(
+    mainSelected: string,
+    progress: HintProgress,
+): boolean {
+    return mainSelected !== "" && pendingHintIndex(progress) === -1;
+}
+
+/** Whether a subquestion answer is correct. */
+export function hintAnswerCorrect(hint: HintSubquestion, label: string): boolean {
+    return label !== "" && label === hint.correctAnswer;
 }
 
 // ---- Misc ------------------------------------------------------------------

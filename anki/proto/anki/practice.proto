@@ -112,6 +112,27 @@ message AnswerChoice {
   string text = 2;
 }
 
+// SpeedyCAT graduated hint ladder — one answer choice of a hint subquestion.
+message HintChoice {
+  string label = 1; // "A".."D"; unique within the subquestion
+  string text = 2;
+}
+
+// SpeedyCAT graduated hint ladder — one tier is a self-contained 4-choice
+// multiple-choice SUBQUESTION that scaffolds the learner toward the parent
+// question WITHOUT ever stating the parent's final answer. A question carries an
+// ordered ladder of these (levels 1→3, escalating specificity). Content is
+// generated separately into the question JSON bundles; the engine only parses +
+// serves them. Parsed defensively: a question may temporarily have fewer than 3
+// (or none) while generation is in progress.
+message HintSubquestion {
+  uint32 level = 1; // 1|2|3, escalating specificity
+  string prompt = 2; // the subquestion stem
+  repeated HintChoice choices = 3; // exactly 4, exactly one correct
+  string correct_answer = 4; // matching HintChoice.label
+  string rationale = 5; // shown after the subquestion is answered
+}
+
 // A single multiple-choice item — discrete (passage_id unset) or
 // passage-linked (passage_id -> a Passage). Mirrors PRD `PracticeQuestion`.
 message PracticeQuestion {
@@ -132,6 +153,9 @@ message PracticeQuestion {
   optional string notes = 15;
   // Set when this question belongs to a FullLengthTest section.
   optional string test_id = 16;
+  // SpeedyCAT graduated hint ladder: an ordered list of scaffolding
+  // subquestions (levels 1→3). Empty/absent when a question has no hints yet.
+  repeated HintSubquestion hints = 17;
 }
 
 // A reading passage (CARS passage-set passage or a full-length section
@@ -254,6 +278,14 @@ message RecordPracticeAttemptRequest {
   McatSection section = 6;
   // Topic this attempt is attributed to for per-topic tracking.
   string topic = 7;
+  // SpeedyCAT graduated hint ladder: the highest hint tier the learner reached
+  // (via the "Request hint" button OR wrong-answer escalation) before this
+  // answer was locked. 0 = no hints used, up to 3.
+  uint32 hint_level_used = 8;
+  // True when the learner reached level 3 of the ladder (hint_level_used >= 3).
+  // Assisted-correct answers are penalized in the readiness Performance pillar
+  // (anti-gaming): they do not earn full credit. See rslib practice storage.
+  bool assisted = 9;
 }
 
 message RecordAttemptResponse {
@@ -360,7 +392,11 @@ message SectionResult {
   uint32 correct = 2;
   uint32 total = 3;
   uint32 time_seconds = 4;
-  // Scaled score (118-132) when scoring rules / licensed content provide it.
+  // Averaged MCAT-scale score ESTIMATE for this section (118-132), from the
+  // deterministic representative conversion in rslib/src/practice/scoring.rs
+  // (anchored to AAMC's published examples). Unset only when the section had no
+  // answered questions. It is an estimate on AI-generated proof-of-concept
+  // forms, NOT an official/AI score.
   optional uint32 scaled_score = 5;
 }
 
@@ -372,7 +408,8 @@ message FullLengthReport {
   string attempt_id = 1;
   string test_id = 2;
   repeated SectionResult section_results = 3;
-  // Overall scaled score (472-528) when available.
+  // Averaged MCAT-scale total-score ESTIMATE (472-528) = sum of the per-section
+  // scaled estimates. Unset only when no section could be scored.
   optional uint32 overall_scaled_score = 4;
   uint32 total_correct = 5;
   uint32 total_questions = 6;
@@ -446,6 +483,9 @@ message ReadinessSectionScore {
   McatSection section = 1;
   uint32 correct = 2;
   uint32 total = 3;
+  // Averaged scaled-score ESTIMATE for this section (118-132); unset when the
+  // section has no answered questions. See SectionResult.scaled_score.
+  optional uint32 scaled_score = 4;
 }
 
 message GetReadinessResponse {
@@ -461,4 +501,13 @@ message GetReadinessResponse {
   // Average seconds per answered practice question (context for the Performance
   // pillar; 0 when unavailable).
   double performance_avg_seconds = 5;
+  // Averaged MCAT-scale total-score ESTIMATE (472-528) across completed
+  // full-length tests, with its range. Populated only when
+  // `readiness.available`. This is a deterministic representative conversion
+  // (see SectionResult.scaled_score), NOT an AI output and NOT an official
+  // score; present it within the Readiness pillar's value+range+source
+  // discipline.
+  optional uint32 readiness_scaled_score = 6;
+  optional uint32 readiness_scaled_low = 7;
+  optional uint32 readiness_scaled_high = 8;
 }

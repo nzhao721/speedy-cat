@@ -11,6 +11,7 @@
 //! and implemented in [`service`].
 
 pub(crate) mod loader;
+pub(crate) mod scoring;
 pub(crate) mod service;
 
 use anki_proto::practice::AttemptSource;
@@ -24,6 +25,25 @@ use serde::Serialize;
 pub(crate) struct StoredChoice {
     pub label: String,
     pub text: String,
+}
+
+/// SpeedyCAT graduated hint ladder — a stored hint answer choice.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub(crate) struct StoredHintChoice {
+    pub label: String,
+    pub text: String,
+}
+
+/// SpeedyCAT graduated hint ladder — one stored hint subquestion (serialized as
+/// JSON in the `practice_questions.hints` column).
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub(crate) struct StoredHint {
+    pub level: u32,
+    pub prompt: String,
+    pub choices: Vec<StoredHintChoice>,
+    pub correct_answer: String,
+    #[serde(default)]
+    pub rationale: String,
 }
 
 /// A full-length section as serialized into `full_length_tests.sections`.

@@ -22,6 +22,44 @@
   "questions": [
     {
       "id": "cars-x001",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This question asks for the most logical inference. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Draw the best-supported conclusion from the passage's details taken together."},
+            {"label": "B", "text": "Pick the option that repeats a sentence word for word."},
+            {"label": "C", "text": "Choose the option with the least support in the text."},
+            {"label": "D", "text": "Select the most dramatic possibility regardless of evidence."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Inference means the conclusion the passage's details best support."
+        },
+        {
+          "level": 2,
+          "prompt": "Which detail is the strongest clue to Miranda's 'dark thoughts'?",
+          "choices": [
+            {"label": "A", "text": "That she scrubbed the floors."},
+            {"label": "B", "text": "That her husband, once 'the sunshine of her life,' 'now remained distant and unimpressed.'"},
+            {"label": "C", "text": "That she baked a casserole."},
+            {"label": "D", "text": "That she bathed the children."}
+          ],
+          "correctAnswer": "B",
+          "rationale": "The husband's coldness despite her efforts is the clue the inference builds on."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer is that Miranda is 'worried Ferdinand might be sick.' Why is it a weak inference?",
+          "choices": [
+            {"label": "A", "text": "Because nothing in the passage mentions illness; the details point to their relationship, not his health."},
+            {"label": "B", "text": "Because the passage states Ferdinand is sick."},
+            {"label": "C", "text": "Because Miranda is described as a doctor."},
+            {"label": "D", "text": "Because the casserole was for a hospital."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The text gives no hint of sickness, so that reading adds facts the passage does not support."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-infer-miranda",
       "passage": "Miranda was physically and mentally exhausted. She had scrubbed the floors, bathed the children, and baked the casserole, but her husband, Ferdinand, who had once been the sunshine of her life, now remained distant and unimpressed. Dark thoughts clouded her mind.",
@@ -44,6 +82,44 @@
     },
     {
       "id": "cars-x002",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks the author's primary purpose. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Decide what the author is mainly trying to do to the reader (inform, persuade, entertain, or instruct)."},
+            {"label": "B", "text": "Identify the grammatical subject of the sentence."},
+            {"label": "C", "text": "Count how many facts are stated."},
+            {"label": "D", "text": "Judge whether the statement is factually true."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Purpose questions ask what effect the author intends on the reader."
+        },
+        {
+          "level": 2,
+          "prompt": "What kind of language does the statement use?",
+          "choices": [
+            {"label": "A", "text": "Neutral, factual reporting of numbers."},
+            {"label": "B", "text": "Charged, evaluative language calling the holiday 'controversial' for endorsing 'colonization, slavery, and genocide.'"},
+            {"label": "C", "text": "Playful, imaginative description."},
+            {"label": "D", "text": "Technical, step-by-step instruction."}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Noticing the charged, evaluative language is the clue to the author's aim."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer says the purpose is 'to inform the reader.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because informing means neutral reporting, but the statement takes an evaluative stance rather than just relaying facts."},
+            {"label": "B", "text": "Because the statement contains no words at all."},
+            {"label": "C", "text": "Because informing is not a real purpose."},
+            {"label": "D", "text": "Because the statement is a fictional story."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The charged, judgmental phrasing goes beyond neutral information."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-intent-columbus",
       "passage": "Columbus Day is a controversial holiday because of its tacit endorsement of colonization, slavery, and the genocide of indigenous peoples.",
@@ -66,6 +142,44 @@
     },
     {
       "id": "cars-x003",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks the author's primary purpose. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Decide what the author is mainly trying to do to the reader (inform, persuade, entertain, or instruct)."},
+            {"label": "B", "text": "Identify the grammatical subject of the sentence."},
+            {"label": "C", "text": "Count how many words are used."},
+            {"label": "D", "text": "Judge whether the market drop was good."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Purpose questions ask what effect the author intends on the reader."
+        },
+        {
+          "level": 2,
+          "prompt": "What kind of language does the statement use?",
+          "choices": [
+            {"label": "A", "text": "Neutral reporting of a verifiable event (the Dow dropped after an announcement)."},
+            {"label": "B", "text": "Charged language urging the reader to take a side."},
+            {"label": "C", "text": "Imaginative storytelling for fun."},
+            {"label": "D", "text": "Step-by-step instructions."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The neutral, factual update is the clue to the author's aim."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer says the purpose is 'to persuade the reader.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because the statement uses no evaluative or opinion language; it simply reports what happened."},
+            {"label": "B", "text": "Because persuasion is not a real purpose."},
+            {"label": "C", "text": "Because the statement is a fictional story."},
+            {"label": "D", "text": "Because the statement gives instructions."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Without loaded or argumentative language, nothing is trying to change the reader's mind."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-intent-dowjones",
       "passage": "The Dow Jones Industrial dropped five hundred points today after the President announced the latest unemployment statistics.",
@@ -88,6 +202,44 @@
     },
     {
       "id": "cars-x004",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks the author's primary purpose. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Decide what the author is mainly trying to do to the reader (inform, persuade, entertain, or instruct)."},
+            {"label": "B", "text": "Identify the grammatical subject of the sentence."},
+            {"label": "C", "text": "Count how many facts are stated."},
+            {"label": "D", "text": "Judge whether zombies are real."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Purpose questions ask what effect the author intends on the reader."
+        },
+        {
+          "level": 2,
+          "prompt": "What kind of content does the statement present?",
+          "choices": [
+            {"label": "A", "text": "A neutral report of real events."},
+            {"label": "B", "text": "An argument urging the reader to act."},
+            {"label": "C", "text": "A vivid, fictional scene (a zombie horde and a stampede) meant to amuse."},
+            {"label": "D", "text": "A set of instructions to follow."}
+          ],
+          "correctAnswer": "C",
+          "rationale": "The imaginative, fictional scene is the clue to the author's aim."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer says the purpose is 'to inform the reader.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because the scene is fictional and imaginative, not a factual report of real events."},
+            {"label": "B", "text": "Because informing is not a real purpose."},
+            {"label": "C", "text": "Because the passage gives instructions."},
+            {"label": "D", "text": "Because the passage argues a political point."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A made-up zombie scene conveys no real-world information to inform."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-intent-zombie",
       "passage": "The zombie horde shambled up the hill in pursuit of its prey, an injured pony whose frightened whinnies incited a virtual zombie stampede!",
@@ -110,6 +262,44 @@
     },
     {
       "id": "cars-x005",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks the author's point of view. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Use the author's loaded word choice to detect whether they favor or oppose the subject."},
+            {"label": "B", "text": "Count how many words are in the sentence."},
+            {"label": "C", "text": "Decide whether the policy is actually good."},
+            {"label": "D", "text": "Identify the sentence's verb tense."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Point-of-view questions rely on connotation and word choice."
+        },
+        {
+          "level": 2,
+          "prompt": "Which word is the key clue to the author's point of view?",
+          "choices": [
+            {"label": "A", "text": "'laws'"},
+            {"label": "B", "text": "'benefit,' which frames stricter gun control as good for the public."},
+            {"label": "C", "text": "'streets'"},
+            {"label": "D", "text": "'individuals'"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "A positive word like 'benefit' signals the author's stance toward the subject."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer says 'the author's point of view cannot be determined.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because the positive word 'benefit' does reveal a stance, so the view is determinable."},
+            {"label": "B", "text": "Because the sentence has no adjectives."},
+            {"label": "C", "text": "Because the author names no policy."},
+            {"label": "D", "text": "Because the sentence is fictional."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A clear evaluative word makes the stance detectable, so 'cannot be determined' is wrong."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-intent-guncontrol-pov",
       "passage": "Stricter gun control laws would benefit the public by keeping guns off the streets and out of the hands of dangerous or unstable individuals.",
@@ -132,6 +322,44 @@
     },
     {
       "id": "cars-x006",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks the author's tone. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Judge the author's attitude from the connotation of the words."},
+            {"label": "B", "text": "Summarize the news event."},
+            {"label": "C", "text": "Decide whether the President is good."},
+            {"label": "D", "text": "Count the words in the headline."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Tone questions rely on the connotation and slant of the language."
+        },
+        {
+          "level": 2,
+          "prompt": "What makes the headline's tone stand out?",
+          "choices": [
+            {"label": "A", "text": "It uses neutral, factual language."},
+            {"label": "B", "text": "It mockingly casts the President as the 'Grinch' who will 'steal Halloween, too,' using irony to criticize."},
+            {"label": "C", "text": "It expresses warm sympathy for the President."},
+            {"label": "D", "text": "It fondly recalls the past."}
+          ],
+          "correctAnswer": "B",
+          "rationale": "The mocking Grinch comparison is the clue to the tone."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer calls the tone 'objective.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because an objective tone would avoid the mocking 'Grinch' framing, which clearly signals a judgment."},
+            {"label": "B", "text": "Because objective is not a tone."},
+            {"label": "C", "text": "Because the headline reports only numbers."},
+            {"label": "D", "text": "Because the headline praises the President."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The loaded 'Grinch' comparison is the opposite of neutral, objective reporting."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-intent-grinch-tone",
       "passage": "A newspaper headline reads: \"President Grinch to Steal Halloween, Too.\"",
@@ -154,6 +382,44 @@
     },
     {
       "id": "cars-x007",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks about the intended audience. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Ask what assumptions and vocabulary the author expects the reader to share."},
+            {"label": "B", "text": "Count the sentences."},
+            {"label": "C", "text": "Decide whether the candidate is qualified."},
+            {"label": "D", "text": "Identify the verb tense."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Intended-audience questions turn on the shared assumptions the language presumes."
+        },
+        {
+          "level": 2,
+          "prompt": "Which clue points to the intended audience?",
+          "choices": [
+            {"label": "A", "text": "The phrase 'presidential candidate.'"},
+            {"label": "B", "text": "The use of 'big government,' 'tax-the-rich,' and 'entitlements' as derogatory terms, plus 'rabid' to signal disapproval."},
+            {"label": "C", "text": "The mention of the European Union."},
+            {"label": "D", "text": "A neutral, balanced tone."}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Treating those phrases as insults assumes an audience that shares that disapproval."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer says the intended audience is 'a general audience with no political leanings.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because the derogatory framing assumes readers already share a particular political disapproval, not neutrality."},
+            {"label": "B", "text": "Because the statement has no political words."},
+            {"label": "C", "text": "Because the statement is fictional."},
+            {"label": "D", "text": "Because the statement praises the candidate."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The loaded language presupposes a partisan audience, so a neutral general audience does not fit."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-intent-candidate-audience",
       "passage": "The presidential candidate is a rabid proponent of the big government, tax-the-rich, entitlement policies that have bankrupted the European Union.",
@@ -176,6 +442,44 @@
     },
     {
       "id": "cars-x008",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks you to classify a statement. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Test whether it can be proven, is an unsupported judgment, or is a claim backed by evidence."},
+            {"label": "B", "text": "Decide whether you agree with it."},
+            {"label": "C", "text": "Count the numbers in it."},
+            {"label": "D", "text": "Judge how it sounds."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Classification questions apply the source's definitions of fact, opinion, and argument."
+        },
+        {
+          "level": 2,
+          "prompt": "What feature of this statement is decisive for classifying it?",
+          "choices": [
+            {"label": "A", "text": "It expresses a personal preference."},
+            {"label": "B", "text": "It states figures that could, in principle, be checked and proven or disproven."},
+            {"label": "C", "text": "It gives a claim plus supporting evidence."},
+            {"label": "D", "text": "It attacks a person."}
+          ],
+          "correctAnswer": "B",
+          "rationale": "The source defines a fact as something provable or disprovable, and the statement's figures are checkable."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer classifies it as 'an argument.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because an argument backs a claim with evidence to persuade, but this statement just reports checkable figures without arguing a point."},
+            {"label": "B", "text": "Because arguments cannot contain numbers."},
+            {"label": "C", "text": "Because the statement attacks a person."},
+            {"label": "D", "text": "Because the statement is fictional."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "No claim is being supported or urged, so it is not functioning as an argument."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-arg-congress-fact",
       "passage": "50% of politicians in the U.S. Congress are millionaires while only 1% of U.S. citizens are millionaires.",
@@ -198,6 +502,44 @@
     },
     {
       "id": "cars-x009",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks you to classify a statement. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Test whether it can be proven, is an unsupported judgment, or is a claim backed by evidence."},
+            {"label": "B", "text": "Decide whether you agree with it."},
+            {"label": "C", "text": "Count the words in it."},
+            {"label": "D", "text": "Judge how it sounds."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Classification questions apply the source's definitions of fact, opinion, and argument."
+        },
+        {
+          "level": 2,
+          "prompt": "What feature is decisive here?",
+          "choices": [
+            {"label": "A", "text": "It offers checkable evidence."},
+            {"label": "B", "text": "It makes a judgment ('horribly inefficient') with no supporting facts, relying on an unstated assumption."},
+            {"label": "C", "text": "It attacks a specific person."},
+            {"label": "D", "text": "It gives step-by-step instructions."}
+          ],
+          "correctAnswer": "B",
+          "rationale": "The source calls an unsupported evaluative claim an opinion, which matches."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer classifies it as 'an argument.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because it offers no supporting evidence, and an argument must back its claim with evidence."},
+            {"label": "B", "text": "Because arguments cannot mention government."},
+            {"label": "C", "text": "Because it reports verifiable figures."},
+            {"label": "D", "text": "Because it is fictional."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Without any support, the bare judgment is an opinion, not an argument."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-arg-biggov-opinion",
       "passage": "Big government is horribly inefficient.",
@@ -220,6 +562,44 @@
     },
     {
       "id": "cars-x010",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks you to classify a statement. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Test whether it can be proven, is an unsupported judgment, or is a claim backed by evidence."},
+            {"label": "B", "text": "Decide whether you agree with it."},
+            {"label": "C", "text": "Count the words in it."},
+            {"label": "D", "text": "Judge how it sounds."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Classification questions apply the source's definitions of fact, opinion, and argument."
+        },
+        {
+          "level": 2,
+          "prompt": "What feature is decisive here?",
+          "choices": [
+            {"label": "A", "text": "It cites evidence for the ranking."},
+            {"label": "B", "text": "It makes an evaluative claim ('best team') with no supporting facts, relying on assumption."},
+            {"label": "C", "text": "It attacks a person."},
+            {"label": "D", "text": "It names a logical fallacy."}
+          ],
+          "correctAnswer": "B",
+          "rationale": "An unsupported value judgment is an opinion by the source's definition."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer classifies it as 'an argument.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because no evidence is given for the ranking, whereas an argument supports its claim with evidence."},
+            {"label": "B", "text": "Because arguments cannot be about sports."},
+            {"label": "C", "text": "Because the statement gives statistics."},
+            {"label": "D", "text": "Because the statement is fictional."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The bare claim lacks the supporting evidence an argument requires."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-arg-yankees-opinion",
       "passage": "The New York Yankees is the best team in the history of Major League Baseball.",
@@ -242,6 +622,44 @@
     },
     {
       "id": "cars-x011",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks you to classify a statement. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Test whether it can be proven, is an unsupported judgment, or is a claim backed by evidence."},
+            {"label": "B", "text": "Decide whether you agree with it."},
+            {"label": "C", "text": "Count the words in it."},
+            {"label": "D", "text": "Judge how it sounds."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Classification questions apply the source's definitions of fact, opinion, and argument."
+        },
+        {
+          "level": 2,
+          "prompt": "What is different about this version compared with a bare opinion?",
+          "choices": [
+            {"label": "A", "text": "It removes the claim entirely."},
+            {"label": "B", "text": "It adds a reason ('has won more World Series titles than any other team') to support the claim."},
+            {"label": "C", "text": "It attacks a person."},
+            {"label": "D", "text": "It presents only two options."}
+          ],
+          "correctAnswer": "B",
+          "rationale": "The source says adding evidence to a claim converts an opinion into an argument, so the added reason is the key."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer classifies it as 'an opinion.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because, unlike a bare opinion, this version supplies supporting evidence for its claim."},
+            {"label": "B", "text": "Because opinions cannot mention sports."},
+            {"label": "C", "text": "Because the statement attacks a person."},
+            {"label": "D", "text": "Because the statement is fictional."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The added evidence lifts it beyond a mere unsupported opinion."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-arg-yankees-argument",
       "passage": "The New York Yankees is the best team in the history of Major League Baseball because it has won more World Series titles than any other team.",
@@ -264,6 +682,44 @@
     },
     {
       "id": "cars-x012",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks you to identify a logical fallacy. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Identify the specific flaw in the reasoning pattern being used."},
+            {"label": "B", "text": "Decide whether the conclusion is true."},
+            {"label": "C", "text": "Count the number of speakers."},
+            {"label": "D", "text": "Judge the grammar of the sentences."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Fallacy questions ask you to name the flaw in the reasoning, not to judge the conclusion."
+        },
+        {
+          "level": 2,
+          "prompt": "Which part of the exchange contains the flawed reasoning you must classify?",
+          "choices": [
+            {"label": "A", "text": "Person 1's claim that you are 'either for the war or against the troops.'"},
+            {"label": "B", "text": "Person 2's statement of their actual view."},
+            {"label": "C", "text": "The mention of troops being sent to war."},
+            {"label": "D", "text": "The fact that two people are speaking."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The flaw is in Person 1's framing, so that is the move to classify."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer labels this a 'slippery slope.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because a slippery slope claims one step leads to a chain of worsening events, but here the flaw is offering only two options."},
+            {"label": "B", "text": "Because slippery slope is not a fallacy."},
+            {"label": "C", "text": "Because Person 1 attacks Person 2's character."},
+            {"label": "D", "text": "Because Person 1 cites statistics."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "No chain of consequences is described, so slippery slope does not fit."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-fallacy-falsedilemma",
       "passage": "Person 1: You're either for the war or against the troops. Person 2: Actually, I do not want our troops sent into a dangerous war.",
@@ -286,6 +742,44 @@
     },
     {
       "id": "cars-x013",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks you to identify a logical fallacy. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Identify the specific flaw in the reasoning pattern being used."},
+            {"label": "B", "text": "Decide whether the conclusion is true."},
+            {"label": "C", "text": "Count the number of teenagers."},
+            {"label": "D", "text": "Judge the grammar of the sentence."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Fallacy questions ask you to name the flaw in the reasoning."
+        },
+        {
+          "level": 2,
+          "prompt": "What move does the statement make?",
+          "choices": [
+            {"label": "A", "text": "It draws a sweeping conclusion about all teenagers from the actions of a few."},
+            {"label": "B", "text": "It attacks a specific person's character."},
+            {"label": "C", "text": "It claims everyone is doing something."},
+            {"label": "D", "text": "It predicts a chain of catastrophes."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Generalizing from a small sample is the move to classify."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer labels this a 'straw man.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because a straw man distorts an opponent's argument, but here no one's argument is distorted; a broad conclusion is drawn from little evidence."},
+            {"label": "B", "text": "Because straw man is not a fallacy."},
+            {"label": "C", "text": "Because the statement predicts disasters."},
+            {"label": "D", "text": "Because the statement offers only two options."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "There is no misrepresented opponent, so straw man does not fit."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-fallacy-hastygen",
       "passage": "Some teenagers in our community recently vandalized the park downtown. Teenagers are so irresponsible and destructive.",
@@ -308,6 +802,44 @@
     },
     {
       "id": "cars-x014",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks you to identify a logical fallacy. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Identify the specific flaw in the reasoning pattern being used."},
+            {"label": "B", "text": "Decide whether the conclusion is true."},
+            {"label": "C", "text": "Count the number of candidates."},
+            {"label": "D", "text": "Judge the grammar of the sentence."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Fallacy questions ask you to name the flaw in the reasoning."
+        },
+        {
+          "level": 2,
+          "prompt": "What move does the statement make?",
+          "choices": [
+            {"label": "A", "text": "It warns of a frightening outcome (a terrorist attack) to push a voting decision."},
+            {"label": "B", "text": "It offers only two options."},
+            {"label": "C", "text": "It says everyone already agrees."},
+            {"label": "D", "text": "It distorts an opponent's stated argument."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Invoking a scary consequence to sway the reader is the move to classify."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer labels this 'ad hominem.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because ad hominem attacks the person's character, while this statement's force comes from a frightening prediction."},
+            {"label": "B", "text": "Because ad hominem is not a fallacy."},
+            {"label": "C", "text": "Because the statement lists two options."},
+            {"label": "D", "text": "Because the statement cites statistics."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The persuasive lever here is fear of an outcome, not an attack on character."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-fallacy-appealfear",
       "passage": "Elizabeth Smith doesn't understand foreign policy. If you elect Elizabeth Smith as president, we will be attacked by terrorists.",
@@ -330,6 +862,44 @@
     },
     {
       "id": "cars-x015",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks you to identify a logical fallacy. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Identify the specific flaw in the reasoning pattern being used."},
+            {"label": "B", "text": "Decide whether the conclusion is true."},
+            {"label": "C", "text": "Count the number of speakers."},
+            {"label": "D", "text": "Judge the grammar of the sentences."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Fallacy questions ask you to name the flaw in the reasoning."
+        },
+        {
+          "level": 2,
+          "prompt": "What move does Person 2 make?",
+          "choices": [
+            {"label": "A", "text": "Person 2 attacks the speaker's competence instead of addressing her argument."},
+            {"label": "B", "text": "Person 2 offers only two options."},
+            {"label": "C", "text": "Person 2 predicts a chain of disasters."},
+            {"label": "D", "text": "Person 2 says everyone agrees."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Attacking the person rather than the argument is the move to classify."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer labels this a 'hasty generalization.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because no broad conclusion is drawn from a small sample; instead the person herself is attacked."},
+            {"label": "B", "text": "Because hasty generalization is not a fallacy."},
+            {"label": "C", "text": "Because Person 2 predicts disasters."},
+            {"label": "D", "text": "Because Person 2 offers two options."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The flaw targets the person, not an over-broad inference from few cases."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-fallacy-adhominem",
       "passage": "Person 1: I am for raising the minimum wage in our state. Person 2: She is for raising the minimum wage, but she is not smart enough to even run a business.",
@@ -352,6 +922,44 @@
     },
     {
       "id": "cars-x016",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks you to identify a logical fallacy. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Identify the specific flaw in the reasoning pattern being used."},
+            {"label": "B", "text": "Decide whether the conclusion is true."},
+            {"label": "C", "text": "Count the number of steps."},
+            {"label": "D", "text": "Judge the grammar of the sentence."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Fallacy questions ask you to name the flaw in the reasoning."
+        },
+        {
+          "level": 2,
+          "prompt": "What move does the statement make?",
+          "choices": [
+            {"label": "A", "text": "It claims one step (any gun control) will trigger a chain of ever-worse events ending in catastrophe."},
+            {"label": "B", "text": "It attacks a person's character."},
+            {"label": "C", "text": "It says everyone already agrees."},
+            {"label": "D", "text": "It distorts an opponent's argument."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A chain of escalating consequences is the move to classify."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer labels this a 'straw man.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because no opponent's argument is distorted; the flaw is predicting an escalating chain of disasters."},
+            {"label": "B", "text": "Because straw man is not a fallacy."},
+            {"label": "C", "text": "Because the statement attacks a person."},
+            {"label": "D", "text": "Because the statement offers only two options."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "There is no misrepresented position, so straw man does not fit."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-fallacy-slipperyslope",
       "passage": "If we enact any kind of gun control laws, the next thing you know, we won't be allowed to have any guns at all. When that happens, we won't be able to defend ourselves against terrorist attacks, and when that happens terrorists will take over our country. Therefore, gun control laws will cause us to lose our country to terrorists.",
@@ -374,6 +982,44 @@
     },
     {
       "id": "cars-x017",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks you to identify a logical fallacy. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Identify the specific flaw in the reasoning pattern being used."},
+            {"label": "B", "text": "Decide whether the conclusion is true."},
+            {"label": "C", "text": "Count the number of people named."},
+            {"label": "D", "text": "Judge the grammar of the sentence."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Fallacy questions ask you to name the flaw in the reasoning."
+        },
+        {
+          "level": 2,
+          "prompt": "What move does the statement make?",
+          "choices": [
+            {"label": "A", "text": "It rejects a reform by linking it to a disreputable person ('Dr. Crazy')."},
+            {"label": "B", "text": "It predicts a chain of disasters."},
+            {"label": "C", "text": "It offers only two options."},
+            {"label": "D", "text": "It says everyone already agrees."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Discrediting an idea via a bad associate is the move to classify."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer labels this 'bandwagon.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because bandwagon urges you to follow the crowd, whereas this discredits an idea by tying it to a demonized figure."},
+            {"label": "B", "text": "Because bandwagon is not a fallacy."},
+            {"label": "C", "text": "Because the statement predicts disasters."},
+            {"label": "D", "text": "Because the statement offers two options."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "No appeal to what everyone else does is made; the flaw is association with a bad person."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-fallacy-guiltassoc",
       "passage": "We cannot have the educational reform that my opponent calls for because Dr. Crazy has also mentioned this kind of educational reform.",
@@ -396,6 +1042,44 @@
     },
     {
       "id": "cars-x018",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks you to identify a logical fallacy. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Identify the specific flaw in the reasoning pattern being used."},
+            {"label": "B", "text": "Decide whether the conclusion is true."},
+            {"label": "C", "text": "Count the number of speakers."},
+            {"label": "D", "text": "Judge the grammar of the sentences."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Fallacy questions ask you to name the flaw in the reasoning."
+        },
+        {
+          "level": 2,
+          "prompt": "What move does Person 2 make?",
+          "choices": [
+            {"label": "A", "text": "Person 2 exaggerates and distorts Person 1's claim, then mocks the distortion."},
+            {"label": "B", "text": "Person 2 offers only two options."},
+            {"label": "C", "text": "Person 2 says everyone agrees."},
+            {"label": "D", "text": "Person 2 predicts a chain of disasters."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Distorting the opponent's claim and attacking the distortion is the move to classify."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer labels this 'ad hominem.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because Person 2 attacks a distorted version of the argument, not Person 1's character."},
+            {"label": "B", "text": "Because ad hominem is not a fallacy."},
+            {"label": "C", "text": "Because Person 2 offers only two options."},
+            {"label": "D", "text": "Because Person 2 cites statistics."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The target is a misrepresented argument, not the person, so ad hominem does not fit."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-fallacy-strawman",
       "passage": "Person 1: I think pollution from humans contributes to climate change. Person 2: So, you think humans are directly responsible for extreme weather, like hurricanes, and have caused the droughts in the southwestern U.S.? If that's the case, maybe we just need to go to the southwest and perform a \"rain dance.\"",
@@ -418,6 +1102,44 @@
     },
     {
       "id": "cars-x019",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks you to identify a logical fallacy. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Identify the specific flaw in the reasoning pattern being used."},
+            {"label": "B", "text": "Decide whether the conclusion is true."},
+            {"label": "C", "text": "Count how many people buy the phone."},
+            {"label": "D", "text": "Judge the grammar of the sentence."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Fallacy questions ask you to name the flaw in the reasoning."
+        },
+        {
+          "level": 2,
+          "prompt": "What move does the statement make?",
+          "choices": [
+            {"label": "A", "text": "It urges you to do something because 'everyone' is doing it."},
+            {"label": "B", "text": "It attacks a person's character."},
+            {"label": "C", "text": "It predicts a chain of disasters."},
+            {"label": "D", "text": "It distorts an opponent's argument."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Appealing to what everyone else does is the move to classify."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer labels this a 'slippery slope.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because no chain of worsening consequences is described; the appeal is simply that everyone is doing it."},
+            {"label": "B", "text": "Because slippery slope is not a fallacy."},
+            {"label": "C", "text": "Because the statement attacks a person."},
+            {"label": "D", "text": "Because the statement distorts an argument."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "There is no escalating chain, so slippery slope does not fit."
+        }
+      ],
       "section": "CARS",
       "passageId": "owl-fallacy-bandwagon",
       "passage": "Everyone is going to get the new smart phone when it comes out this weekend. Why aren't you?",
@@ -440,6 +1162,44 @@
     },
     {
       "id": "cars-x020",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks what the author implies east Texas does NOT resemble. What should you do?",
+          "choices": [
+            {"label": "A", "text": "Find what the passage implies east Texas does not resemble, using its imagery."},
+            {"label": "B", "text": "Count the number of place names."},
+            {"label": "C", "text": "Decide whether Texas is a nice state."},
+            {"label": "D", "text": "Identify the sentence's verb tense."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "This is an implication question answered from the passage's imagery."
+        },
+        {
+          "level": 2,
+          "prompt": "Which words signal the imagery east Texas defies?",
+          "choices": [
+            {"label": "A", "text": "'a look and atmosphere' generally."},
+            {"label": "B", "text": "'preconceptions of sand and cacti' and the 'boots-and-saddle image.'"},
+            {"label": "C", "text": "'all who enter it.'"},
+            {"label": "D", "text": "'around every bend.'"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "The 'sand and cacti' imagery names what east Texas is said NOT to match, guiding the inference."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer says east Texas does not resemble 'the seashore.' Why is it a weak choice?",
+          "choices": [
+            {"label": "A", "text": "Because the imagery pairs sand with 'cacti,' pointing to the arid stereotype the visitor expects, not a beach."},
+            {"label": "B", "text": "Because the passage explicitly mentions the ocean."},
+            {"label": "C", "text": "Because the passage says east Texas is coastal."},
+            {"label": "D", "text": "Because a seashore is not a place."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The 'sand and cacti' pairing evokes the stereotypical dry image, and cacti rule out a beach reading."
+        }
+      ],
       "section": "CARS",
       "passageId": "asvab-pc-east-texas",
       "passage": "The eastern part of Texas will ambush the senses of all who enter it with preconceptions of sand and cacti around every bend. It has a look and atmosphere that does not fit the boots-and-saddle image of the state.",
@@ -462,6 +1222,44 @@
     },
     {
       "id": "cars-x021",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This asks for the inference behind the 'deception.' What should you do?",
+          "choices": [
+            {"label": "A", "text": "Draw the conclusion the passage's details imply about the 'deception.'"},
+            {"label": "B", "text": "Repeat a sentence word for word."},
+            {"label": "C", "text": "Pick the least supported option."},
+            {"label": "D", "text": "Choose the most dramatic option regardless of evidence."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Inference means the best-supported reading of what the 'deception' refers to."
+        },
+        {
+          "level": 2,
+          "prompt": "Which contrast in the passage creates the 'deception'?",
+          "choices": [
+            {"label": "A", "text": "Blankets on the slope vs. the water."},
+            {"label": "B", "text": "An advancing 'wall of clouds, black and gray' from the west vs. a clear sky and warm sun to the east."},
+            {"label": "C", "text": "The beach vs. the town."},
+            {"label": "D", "text": "Morning vs. evening."}
+          ],
+          "correctAnswer": "B",
+          "rationale": "The storm approaching from the west while the east stays sunny is the false impression the 'deception' names."
+        },
+        {
+          "level": 3,
+          "prompt": "A tempting wrong answer says the 'deception' is that 'the sun is warm.' Why is it a trap?",
+          "choices": [
+            {"label": "A", "text": "Because the warm sun is a true detail, not a false impression; the deception is the misleading sense the scene creates."},
+            {"label": "B", "text": "Because the sun is never mentioned."},
+            {"label": "C", "text": "Because the passage says the sun is cold."},
+            {"label": "D", "text": "Because warmth cannot deceive anyone."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The sun being warm is literally true, so it is not the deception itself, which is a misleading impression."
+        }
+      ],
       "section": "CARS",
       "passageId": "asvab-pc-deception",
       "passage": "They returned to the beach, where blankets spotted the slope to the water. An advancing wall of clouds, black and gray, darkening the expanse of ground beneath, approached from the west. To the east and above them, the sky remained clear, the sun warm, as if collaborating in the deception.",

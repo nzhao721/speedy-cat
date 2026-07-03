@@ -42,7 +42,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/20-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (charge conservation; electrons carry current)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (charge conservation; electrons carry current).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What does conservation of charge imply about the flow of charge around a closed circuit loop?",
+          "choices": [
+            {"label": "A", "text": "Charge is neither created nor destroyed, so as much charge leaves a point as returns to it."},
+            {"label": "B", "text": "Charge steadily accumulates inside the battery."},
+            {"label": "C", "text": "Charge is created by the resistor as current flows."},
+            {"label": "D", "text": "Charge disappears whenever it does work."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Conservation of charge means the charge entering the circuit equals the charge leaving it."
+        },
+        {
+          "level": 2,
+          "prompt": "In a metal wire, which particles actually move to carry the current, and are they created or destroyed in the loop?",
+          "choices": [
+            {"label": "A", "text": "Electrons move, and they are conserved — not created or destroyed."},
+            {"label": "B", "text": "Protons move through the wire and are conserved."},
+            {"label": "C", "text": "Electrons are consumed by the resistor."},
+            {"label": "D", "text": "Protons are created at the battery."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Conduction current in metals is carried by electrons, which are conserved."
+        },
+        {
+          "level": 3,
+          "prompt": "Because protons are fixed in the metal lattice and do not flow, which answer choices can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "The two choices that describe protons leaving and entering the battery."},
+            {"label": "B", "text": "The two choices that describe electrons leaving and entering the battery."},
+            {"label": "C", "text": "Only the choice about equal electron counts."},
+            {"label": "D", "text": "None of the choices can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Protons do not travel through wires, so both proton-based statements are out."
+        }
+      ]
     },
     {
       "id": "cpbs-xp126",
@@ -62,7 +100,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/20-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (Q = It)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (Q = It).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How are current, charge, and time related?",
+          "choices": [
+            {"label": "A", "text": "Current is charge per unit time, so Q = I·t."},
+            {"label": "B", "text": "Charge is current per unit time, so Q = I/t."},
+            {"label": "C", "text": "Charge is time per unit current, so Q = t/I."},
+            {"label": "D", "text": "Charge equals current plus time."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Since I = Q/t, the charge is current multiplied by time."
+        },
+        {
+          "level": 2,
+          "prompt": "Which calculation gives the charge for 2.5 A flowing over 0.5 s?",
+          "choices": [
+            {"label": "A", "text": "Multiply 2.5 A by 0.5 s."},
+            {"label": "B", "text": "Divide 2.5 A by 0.5 s."},
+            {"label": "C", "text": "Divide 0.5 s by 2.5 A."},
+            {"label": "D", "text": "Add 2.5 and 0.5."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Q = It, so multiply the current by the time."
+        },
+        {
+          "level": 3,
+          "prompt": "Which common mistake would produce a wrong value for the charge here?",
+          "choices": [
+            {"label": "A", "text": "Dividing the current by the time instead of multiplying them."},
+            {"label": "B", "text": "Multiplying the current by the time."},
+            {"label": "C", "text": "Using seconds as the unit of time."},
+            {"label": "D", "text": "Using amperes as the unit of current."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Dividing rather than multiplying is the classic error that yields a wrong distractor."
+        }
+      ]
     },
     {
       "id": "cpbs-xp127",
@@ -82,7 +158,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/20-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (Ohm's law, I = V/R)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (Ohm's law, I = V/R).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "According to Ohm's law, how does the current through a fixed resistance depend on the voltage across it?",
+          "choices": [
+            {"label": "A", "text": "Current is directly proportional to voltage (I = V/R)."},
+            {"label": "B", "text": "Current is inversely proportional to voltage."},
+            {"label": "C", "text": "Current is independent of voltage."},
+            {"label": "D", "text": "Current is proportional to voltage squared."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "With R fixed, I = V/R makes current proportional to voltage."
+        },
+        {
+          "level": 2,
+          "prompt": "With the resistance held constant, doubling the voltage changes the current by what factor?",
+          "choices": [
+            {"label": "A", "text": "It multiplies by two."},
+            {"label": "B", "text": "It multiplies by one-half."},
+            {"label": "C", "text": "It stays the same."},
+            {"label": "D", "text": "It multiplies by four."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Because current is proportional to voltage at fixed R, twice the voltage means twice the current."
+        },
+        {
+          "level": 3,
+          "prompt": "Since R is fixed and stays constant, which answer choices can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'It halves' and 'the current cannot be determined'."},
+            {"label": "B", "text": "'It doubles' and 'it stays the same'."},
+            {"label": "C", "text": "'It stays the same' and 'it cannot be determined'."},
+            {"label": "D", "text": "None of the choices can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A fixed, known resistance means the current is determinable and rises with voltage, ruling out those two options."
+        }
+      ]
     },
     {
       "id": "cpbs-xp128",
@@ -102,7 +216,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/20-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (resistivity is a material property)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (resistivity is a material property).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What kind of property is resistivity — does it depend on an object's size and shape or on the substance itself?",
+          "choices": [
+            {"label": "A", "text": "Resistivity is an intrinsic property of the material (and its temperature), not of size or shape."},
+            {"label": "B", "text": "Resistivity depends on the length and cross-sectional area of the object."},
+            {"label": "C", "text": "Resistivity depends only on the object's length."},
+            {"label": "D", "text": "Resistivity depends only on the cross-sectional area."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Resistivity is a material property, independent of geometry."
+        },
+        {
+          "level": 2,
+          "prompt": "Length and cross-sectional area appear in R = ρL/A. Which quantity do they determine — resistance or resistivity?",
+          "choices": [
+            {"label": "A", "text": "They affect the resistance R, not the resistivity ρ."},
+            {"label": "B", "text": "They affect the resistivity ρ, not the resistance R."},
+            {"label": "C", "text": "They affect both equally."},
+            {"label": "D", "text": "They affect neither."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Geometry sets the resistance through R = ρL/A, while ρ stays fixed for the material."
+        },
+        {
+          "level": 3,
+          "prompt": "Since length and area affect resistance but not resistivity, which two answer choices can be ruled out?",
+          "choices": [
+            {"label": "A", "text": "'length' and 'area of cross section'"},
+            {"label": "B", "text": "'material' and 'all of the above'"},
+            {"label": "C", "text": "'length' and 'material'"},
+            {"label": "D", "text": "'area of cross section' and 'all of the above'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Length and area are geometric factors, so neither changes the resistivity."
+        }
+      ]
     },
     {
       "id": "cpbs-xp129",
@@ -122,7 +274,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/20-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (R = ρL/A; A ∝ diameter²)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (R = ρL/A; A ∝ diameter²).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How does a wire's resistance depend on its cross-sectional area, and how does area depend on diameter?",
+          "choices": [
+            {"label": "A", "text": "Resistance is inversely proportional to area, and area is proportional to diameter squared."},
+            {"label": "B", "text": "Resistance is proportional to area, and area is proportional to diameter."},
+            {"label": "C", "text": "Resistance is inversely proportional to the diameter directly."},
+            {"label": "D", "text": "Resistance does not depend on the diameter."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "R = ρL/A with A ∝ d², so resistance falls as diameter grows."
+        },
+        {
+          "level": 2,
+          "prompt": "Doubling the diameter changes the cross-sectional area by what factor?",
+          "choices": [
+            {"label": "A", "text": "It multiplies the area by four."},
+            {"label": "B", "text": "It multiplies the area by two."},
+            {"label": "C", "text": "It leaves the area unchanged."},
+            {"label": "D", "text": "It halves the area."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Area scales with the square of the diameter, so twice the diameter gives four times the area."
+        },
+        {
+          "level": 3,
+          "prompt": "Since a larger diameter increases the area, the resistance must ___, ruling out which options?",
+          "choices": [
+            {"label": "A", "text": "decrease, ruling out '2R' and '4R'"},
+            {"label": "B", "text": "increase, ruling out 'R/2' and 'R/4'"},
+            {"label": "C", "text": "stay the same, ruling out all options"},
+            {"label": "D", "text": "increase, ruling out 'R/4' only"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "More area means less resistance, so the options larger than R are impossible."
+        }
+      ]
     },
     {
       "id": "cpbs-xp130",
@@ -142,7 +332,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/21-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (equal split among 4 identical parallel resistors)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (equal split among 4 identical parallel resistors).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "When the entire circuit current passes through a set of identical resistors in parallel, how does the current divide among them?",
+          "choices": [
+            {"label": "A", "text": "It splits equally, so each identical resistor carries an equal fraction of the total."},
+            {"label": "B", "text": "The largest-numbered resistor carries the most current."},
+            {"label": "C", "text": "All the current goes through just one resistor."},
+            {"label": "D", "text": "The current divides in proportion to each resistance."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Identical parallel resistors share the current equally."
+        },
+        {
+          "level": 2,
+          "prompt": "The total current flows through the parallel group of four 2.4-kΩ resistors. Since they are identical, each carries what fraction of the total?",
+          "choices": [
+            {"label": "A", "text": "One-fourth."},
+            {"label": "B", "text": "One-sixth."},
+            {"label": "C", "text": "One-half."},
+            {"label": "D", "text": "All of it."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Four identical resistors split the current into four equal parts."
+        },
+        {
+          "level": 3,
+          "prompt": "Which resistor group sets the fraction for one 2.4-kΩ resistor — and what is the trap to avoid?",
+          "choices": [
+            {"label": "A", "text": "Use the four resistors in that parallel group, not the six in the other group."},
+            {"label": "B", "text": "Use the six 1.6-kΩ resistors, since they carry the same current."},
+            {"label": "C", "text": "Use the total of ten resistors."},
+            {"label": "D", "text": "Use the two groups combined."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The 2.4-kΩ resistor's share depends only on how many are in its own parallel group."
+        }
+      ]
     },
     {
       "id": "cpbs-xp131",
@@ -162,7 +390,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/21-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem made self-contained (restates the setup from the source's previous question). OpenStax withholds the public answer key; answer independently verified by calculation."
+      "notes": "Stem made self-contained (restates the setup from the source's previous question). OpenStax withholds the public answer key; answer independently verified by calculation.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "For a circuit, how do you find the required total resistance from the source voltage and the total current?",
+          "choices": [
+            {"label": "A", "text": "Total resistance = voltage ÷ current (R = V/I)."},
+            {"label": "B", "text": "Total resistance = voltage × current."},
+            {"label": "C", "text": "Total resistance = current ÷ voltage."},
+            {"label": "D", "text": "Total resistance = voltage + current."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Ohm's law gives the total resistance as voltage divided by current."
+        },
+        {
+          "level": 2,
+          "prompt": "After finding the needed total resistance and subtracting the fixed 600 Ω of the four-2.4-kΩ group, how do you get the number n of 1.6-kΩ resistors that remain?",
+          "choices": [
+            {"label": "A", "text": "Set 1600 Ω ÷ n equal to the remaining resistance and solve for n."},
+            {"label": "B", "text": "Multiply 1600 Ω by the remaining resistance."},
+            {"label": "C", "text": "Add 1600 Ω to the remaining resistance."},
+            {"label": "D", "text": "Set 1600 Ω × n equal to the remaining resistance."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "n identical parallel resistors give 1600/n, which must equal the leftover resistance."
+        },
+        {
+          "level": 3,
+          "prompt": "The problem starts with six 1.6-kΩ resistors. Once you solve for the number that remain, what must you do to answer the question?",
+          "choices": [
+            {"label": "A", "text": "Subtract the number remaining from six to get the number removed."},
+            {"label": "B", "text": "Report the number remaining directly as the number removed."},
+            {"label": "C", "text": "Add the number remaining to six."},
+            {"label": "D", "text": "Multiply the number remaining by six."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The question asks how many were removed, which is six minus the number that remain."
+        }
+      ]
     },
     {
       "id": "cpbs-xp132",
@@ -182,7 +448,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/21-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem states the parallel configuration explicitly (consistent with the source figure and the only answer choice that is physically consistent). OpenStax withholds the public answer key; answer independently verified (parallel: P = V²/R)."
+      "notes": "Stem states the parallel configuration explicitly (consistent with the source figure and the only answer choice that is physically consistent). OpenStax withholds the public answer key; answer independently verified (parallel: P = V²/R).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "For two resistors in parallel, what quantity is the same across them, and how does dissipated power relate to resistance at fixed voltage?",
+          "choices": [
+            {"label": "A", "text": "The voltage is the same across both, and P = V²/R, so a larger resistance dissipates less power."},
+            {"label": "B", "text": "The current is the same through both, and P = I²R, so a larger resistance dissipates less power."},
+            {"label": "C", "text": "The voltage is the same, and P = V²/R, so a larger resistance dissipates more power."},
+            {"label": "D", "text": "Both the voltage and the current are the same across parallel resistors."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Parallel resistors share voltage, and P = V²/R decreases as resistance increases."
+        },
+        {
+          "level": 2,
+          "prompt": "Since both resistors share the same voltage, how does the power dissipated in the 2R resistor compare with that in R?",
+          "choices": [
+            {"label": "A", "text": "It is half as much, because P ∝ 1/R at fixed voltage."},
+            {"label": "B", "text": "It is twice as much, because it has more resistance."},
+            {"label": "C", "text": "It is the same, because they are in parallel."},
+            {"label": "D", "text": "It is four times as much."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Doubling the resistance at fixed voltage halves the power V²/R."
+        },
+        {
+          "level": 3,
+          "prompt": "The 2R resistor dissipates less power than R, but not a tiny fraction of it. Which two options can be eliminated as either equal to or far below the expected value?",
+          "choices": [
+            {"label": "A", "text": "'10 W' (equal to R) and '1 W' (far too small)"},
+            {"label": "B", "text": "'2.5 W' and '5 W'"},
+            {"label": "C", "text": "'5 W' and '10 W'"},
+            {"label": "D", "text": "'1 W' and '2.5 W'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The 2R power is a modest fraction below 10 W, so 10 W (equal) and 1 W (one-tenth) are both impossible."
+        }
+      ]
     },
     {
       "id": "cpbs-xp133",
@@ -202,7 +506,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/21-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (emf = I(R + r) with equal emf and I)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (emf = I(R + r) with equal emf and I).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "For a real voltage source, how does the emf relate to the current, external resistance, and internal resistance?",
+          "choices": [
+            {"label": "A", "text": "emf = I(R_external + r), so the sum R_external + r is fixed when emf and current are fixed."},
+            {"label": "B", "text": "emf = I·R_external only; internal resistance does not matter."},
+            {"label": "C", "text": "emf = I(R_external − r)."},
+            {"label": "D", "text": "emf = R_external + r, independent of the current."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The emf drives current through the series sum of external and internal resistance."
+        },
+        {
+          "level": 2,
+          "prompt": "With equal emf and equal current, the sum (R_external + r) is the same for both sources. So the source with the smaller internal resistance must have ___ external resistance.",
+          "choices": [
+            {"label": "A", "text": "a larger"},
+            {"label": "B", "text": "a smaller"},
+            {"label": "C", "text": "an equal"},
+            {"label": "D", "text": "a zero"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "If the sum is fixed and r is smaller, the external resistance must be larger to compensate."
+        },
+        {
+          "level": 3,
+          "prompt": "Because the sum R_external + r is fixed and the two internal resistances differ, which answer choices can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'External resistances are the same' and 'the relationship cannot be determined'."},
+            {"label": "B", "text": "'A's external resistance is more' and 'A's external resistance is less'."},
+            {"label": "C", "text": "'A's is more' and 'they are the same'."},
+            {"label": "D", "text": "None of the choices can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Differing internal resistances force differing external resistances, and the relationship is fully determined."
+        }
+      ]
     },
     {
       "id": "cpbs-xp134",
@@ -222,7 +564,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/21-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (RC charging current decays exponentially)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (RC charging current decays exponentially).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In an RC charging circuit, how does the current behave from the instant the switch closes as the capacitor charges?",
+          "choices": [
+            {"label": "A", "text": "The current is largest right after closing and then decays toward zero."},
+            {"label": "B", "text": "The current starts at zero and rises toward a maximum."},
+            {"label": "C", "text": "The current stays constant while charging."},
+            {"label": "D", "text": "The current oscillates up and down."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "RC charging current peaks initially and decays exponentially as the capacitor fills."
+        },
+        {
+          "level": 2,
+          "prompt": "Since the resistor's voltage equals current times resistance (V = IR), how does the resistor voltage change as the current decays?",
+          "choices": [
+            {"label": "A", "text": "It decreases along with the current."},
+            {"label": "B", "text": "It increases as the current decays."},
+            {"label": "C", "text": "It stays constant while the current decays."},
+            {"label": "D", "text": "It first rises and then falls."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "With R fixed, the resistor voltage tracks the decaying current downward."
+        },
+        {
+          "level": 3,
+          "prompt": "Because both the resistor current and voltage change the same way during charging, which options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'Both increase' and 'first increase then decrease', since the current never rises during charging."},
+            {"label": "B", "text": "'Both decrease' and 'first decrease then increase'."},
+            {"label": "C", "text": "'First increase then decrease' and 'first decrease then increase'."},
+            {"label": "D", "text": "No options can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The charging current only decays, so any option in which it rises can be ruled out."
+        }
+      ]
     },
     {
       "id": "cpbs-xp135",
@@ -242,7 +622,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/21-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (at full charge, current = 0 ⇒ resistor V = 0; capacitor voltage, not listed, is nonzero)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (at full charge, current = 0 ⇒ resistor V = 0; capacitor voltage, not listed, is nonzero).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "When a capacitor in an RC circuit is fully charged, what is the steady-state current in the circuit?",
+          "choices": [
+            {"label": "A", "text": "Zero — no current flows once the capacitor is fully charged."},
+            {"label": "B", "text": "Maximum — the current peaks at full charge."},
+            {"label": "C", "text": "Equal to the battery voltage divided by zero."},
+            {"label": "D", "text": "Constant and nonzero."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A fully charged capacitor blocks steady current, so the loop current is zero."
+        },
+        {
+          "level": 2,
+          "prompt": "With zero current at full charge, what is the voltage across the resistor (V = IR)?",
+          "choices": [
+            {"label": "A", "text": "Zero, because the current is zero."},
+            {"label": "B", "text": "Equal to the battery voltage."},
+            {"label": "C", "text": "Equal to the capacitor voltage."},
+            {"label": "D", "text": "Nonzero but small."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "No current means no IR drop across the resistor."
+        },
+        {
+          "level": 3,
+          "prompt": "At full charge no current flows anywhere in the series loop. Which two listed quantities are therefore immediately zero?",
+          "choices": [
+            {"label": "A", "text": "The current in the resistor and the current in the capacitor."},
+            {"label": "B", "text": "The voltage across the resistor and the current in the capacitor."},
+            {"label": "C", "text": "The current in the resistor and the voltage across the capacitor."},
+            {"label": "D", "text": "The voltage across the resistor and the voltage across the capacitor."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Zero current makes both the resistor current and the capacitor current zero."
+        }
+      ]
     },
     {
       "id": "cpbs-xp136",
@@ -262,7 +680,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/22-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (field beyond the N pole points outward; like poles repel)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (field beyond the N pole points outward; like poles repel).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Just outside a bar magnet's north pole, which way does the magnetic field point, and how does a compass needle align?",
+          "choices": [
+            {"label": "A", "text": "The field points outward, away from the north pole, and a compass needle's north end aligns with the local field."},
+            {"label": "B", "text": "The field points inward toward the north pole, and the compass aligns against the field."},
+            {"label": "C", "text": "The field points sideways across the pole."},
+            {"label": "D", "text": "A compass needle aligns its south end with the field."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Field lines emerge from a north pole, and a compass north end follows the local field."
+        },
+        {
+          "level": 2,
+          "prompt": "Since the compass sits beyond the magnet's north pole, the magnet's field at the compass points ___.",
+          "choices": [
+            {"label": "A", "text": "away from the magnet (outward from the north pole)"},
+            {"label": "B", "text": "back toward the magnet (into the north pole)"},
+            {"label": "C", "text": "perpendicular to the magnet's axis"},
+            {"label": "D", "text": "in a circle around the compass"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Field lines leave a north pole, so at a point beyond it they point outward."
+        },
+        {
+          "level": 3,
+          "prompt": "Because the magnet's field along this line lies on the north-south axis, which answer choices can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'East' and 'West'"},
+            {"label": "B", "text": "'North' and 'South'"},
+            {"label": "C", "text": "'North' and 'East'"},
+            {"label": "D", "text": "None of the choices can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The field here runs along the north-south line, so the sideways east/west options are impossible."
+        }
+      ]
     },
     {
       "id": "cpbs-xp137",
@@ -282,7 +738,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/22-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (domains align with the applied field)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (domains align with the applied field).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How do the magnetic domains in a ferromagnet respond to a strong external magnetic field?",
+          "choices": [
+            {"label": "A", "text": "They tend to rotate and grow so as to align with the external field."},
+            {"label": "B", "text": "They split into magnetic monopoles."},
+            {"label": "C", "text": "They align so as to cancel the external field."},
+            {"label": "D", "text": "They orient perpendicular to the external field."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "An applied field makes favorably oriented domains grow and align, magnetizing the material."
+        },
+        {
+          "level": 2,
+          "prompt": "An aligned domain reinforces the applied field, which is why the iron becomes magnetized. This means the domains line up ___ the external field.",
+          "choices": [
+            {"label": "A", "text": "parallel to (in the same direction as)"},
+            {"label": "B", "text": "opposite to"},
+            {"label": "C", "text": "perpendicular to"},
+            {"label": "D", "text": "randomly relative to"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Domains align in the same direction as the field, strengthening it."
+        },
+        {
+          "level": 3,
+          "prompt": "Since magnetic monopoles do not exist and alignment (not a perpendicular orientation) is what magnetizes iron, which answer choices can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'Split into monopoles' and 'orient perpendicular to the field'"},
+            {"label": "B", "text": "'Align with the field' and 'align to cancel the field'"},
+            {"label": "C", "text": "'Align with the field' and 'orient perpendicular'"},
+            {"label": "D", "text": "None of the choices can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Monopoles are impossible and perpendicular alignment would not magnetize the rod, so both are out."
+        }
+      ]
     },
     {
       "id": "cpbs-xp138",
@@ -302,7 +796,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/22-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (v parallel/antiparallel to B ⇒ zero force)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (v parallel/antiparallel to B ⇒ zero force).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What is the magnetic force on a charge moving parallel or antiparallel to the magnetic field?",
+          "choices": [
+            {"label": "A", "text": "Zero, because F = qv×B vanishes when v and B lie along the same line."},
+            {"label": "B", "text": "Maximum, because the vectors are aligned."},
+            {"label": "C", "text": "Directed along the velocity."},
+            {"label": "D", "text": "Directed opposite the field."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The cross product is zero when velocity and field are collinear, so no force acts."
+        },
+        {
+          "level": 2,
+          "prompt": "Here the velocity is along −x and the field is along +x. How are these two vectors oriented relative to each other?",
+          "choices": [
+            {"label": "A", "text": "They are antiparallel (pointing in exactly opposite directions along the same axis)."},
+            {"label": "B", "text": "They are perpendicular (at 90°)."},
+            {"label": "C", "text": "They are at 45° to each other."},
+            {"label": "D", "text": "They point in the same direction (parallel)."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "−x and +x lie on the same axis but point oppositely, so they are antiparallel."
+        },
+        {
+          "level": 3,
+          "prompt": "One tempting distractor says the force points in the +x-direction (along the field). Why can that choice be ruled out?",
+          "choices": [
+            {"label": "A", "text": "A magnetic force is always perpendicular to both the velocity and the field, so it can never point along the +x field direction."},
+            {"label": "B", "text": "Because the proton is positive, the force must be along +x."},
+            {"label": "C", "text": "Because the field is along +x, the force must also be along +x."},
+            {"label": "D", "text": "The magnetic force is always parallel to the velocity."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A magnetic force can never lie along the field or the velocity, so the +x option is a trap."
+        }
+      ]
     },
     {
       "id": "cpbs-xp139",
@@ -322,7 +854,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/22-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified via F = IL × B (only the vertical field component contributes)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified via F = IL × B (only the vertical field component contributes).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "For a current-carrying wire in a magnetic field, how do you find the force, and what happens to a field component parallel or antiparallel to the current?",
+          "choices": [
+            {"label": "A", "text": "F = IL×B; a field component along (or opposite to) the current produces no force."},
+            {"label": "B", "text": "F = IL·B; every field component contributes equally."},
+            {"label": "C", "text": "F = IL/B; parallel components produce the largest force."},
+            {"label": "D", "text": "The force always points along the current direction."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Only field components perpendicular to the current contribute to F = IL×B."
+        },
+        {
+          "level": 2,
+          "prompt": "The current points south. Which field component actually produces a force, and which does not?",
+          "choices": [
+            {"label": "A", "text": "The downward (vertical) component produces the force; the northward (horizontal) component, being antiparallel to the current, does not."},
+            {"label": "B", "text": "The northward component produces the force; the downward component does not."},
+            {"label": "C", "text": "Both components produce forces that add along the wire."},
+            {"label": "D", "text": "Neither component produces any force."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The north component is antiparallel to the south current, so only the vertical component matters."
+        },
+        {
+          "level": 3,
+          "prompt": "The magnetic force on the wire is horizontal and perpendicular to the north-south wire. Which two answer choices does that rule out?",
+          "choices": [
+            {"label": "A", "text": "'North' (along the wire) and 'Up' (not horizontal)"},
+            {"label": "B", "text": "'East' and 'West'"},
+            {"label": "C", "text": "'East' and 'Up'"},
+            {"label": "D", "text": "'North' and 'West'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A force perpendicular to the wire and horizontal cannot point along the wire ('North') or vertically ('Up')."
+        }
+      ]
     },
     {
       "id": "cpbs-xp140",
@@ -342,7 +912,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/22-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim (coordinate convention from the source preserved). OpenStax withholds the public answer key; answer independently verified by the right-hand rule."
+      "notes": "Stem + 4 options scraped verbatim (coordinate convention from the source preserved). OpenStax withholds the public answer key; answer independently verified by the right-hand rule.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How do you find the direction of the magnetic field around a long straight current-carrying wire?",
+          "choices": [
+            {"label": "A", "text": "Use the right-hand rule: the field circles the wire, perpendicular to both the current and the radial direction."},
+            {"label": "B", "text": "The field points radially away from the wire."},
+            {"label": "C", "text": "The field points along the current direction."},
+            {"label": "D", "text": "The field points straight toward the wire."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The field of a straight current forms circles around the wire, perpendicular to current and radius."
+        },
+        {
+          "level": 2,
+          "prompt": "With the current along +y and the point on the +x axis, along which axis does the circulating field point there?",
+          "choices": [
+            {"label": "A", "text": "Along the z-axis (perpendicular to the page), from the cross product of the current and radial directions."},
+            {"label": "B", "text": "Along the x-axis (radially)."},
+            {"label": "C", "text": "Along the y-axis (with the current)."},
+            {"label": "D", "text": "At 45° within the xy-plane."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The field ∝ (current direction)×(radial direction) points along ±z, i.e., into or out of the page."
+        },
+        {
+          "level": 3,
+          "prompt": "The field must be perpendicular to both the current direction and the radial direction. Which two answer choices can be eliminated because they lie along the current or radial directions?",
+          "choices": [
+            {"label": "A", "text": "'away from the wire' (radial) and 'vertically upward' (along the current)"},
+            {"label": "B", "text": "'into the page' and 'out of the page'"},
+            {"label": "C", "text": "'vertically upward' and 'into the page'"},
+            {"label": "D", "text": "'away from the wire' and 'out of the page'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The radial ('away') and along-current ('upward') directions cannot be the field, leaving the two out-of-plane options."
+        }
+      ]
     },
     {
       "id": "cpbs-xp141",
@@ -362,7 +970,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/22-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (same-direction parallel currents attract)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (same-direction parallel currents attract).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What is the magnetic interaction between two parallel wires carrying currents in the same direction?",
+          "choices": [
+            {"label": "A", "text": "They attract each other."},
+            {"label": "B", "text": "They repel each other."},
+            {"label": "C", "text": "They exert no force because they are parallel."},
+            {"label": "D", "text": "They exert no force because the currents are equal."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Same-direction parallel currents attract; only antiparallel currents repel."
+        },
+        {
+          "level": 2,
+          "prompt": "Each wire sits in the magnetic field created by the other. Applying F = IL×B to same-direction currents gives a force that pulls them ___.",
+          "choices": [
+            {"label": "A", "text": "together"},
+            {"label": "B", "text": "apart"},
+            {"label": "C", "text": "sideways along the wires"},
+            {"label": "D", "text": "not at all"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The mutual F = IL×B forces point inward, drawing the wires together."
+        },
+        {
+          "level": 3,
+          "prompt": "Since two current-carrying wires always exert magnetic forces on each other, which answer choices can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "Both 'no force' options."},
+            {"label": "B", "text": "'The force is attractive' and 'the force is repulsive'."},
+            {"label": "C", "text": "'No force since parallel' and 'the force is attractive'."},
+            {"label": "D", "text": "None of the choices can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Current-carrying wires do exert a mutual force, so both 'no force' choices are out."
+        }
+      ]
     }
   ]
 }

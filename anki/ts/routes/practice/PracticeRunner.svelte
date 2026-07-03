@@ -14,16 +14,23 @@ surfaces the summary.
 <script lang="ts">
     import { createEventDispatcher, onDestroy, onMount } from "svelte";
 
+    import HintLadder from "./HintLadder.svelte";
     import PassagePanel from "./PassagePanel.svelte";
     import QuestionView from "./QuestionView.svelte";
     import {
+        canSubmitMain,
+        emptyHintProgress,
         fetchPassageSet,
         finishPracticeSession,
         formatClock,
         groupIntoRunItems,
+        hasHintLadder,
+        hintLevelReached,
+        isAssisted,
         logPracticeAttempt,
         primaryTopic,
         type CarsPassageSet,
+        type HintProgress,
         type PracticeQuestion,
         type PracticeSessionSummary,
         type RunItem,
@@ -52,6 +59,12 @@ surfaces the summary.
     let submitted: Record<string, boolean> = {};
     let eliminated: Record<string, string[]> = {};
     let flagged: Record<string, boolean> = {};
+    // SpeedyCAT graduated hint ladder: per-question progress (revealed tiers +
+    // the answer chosen for each). Reactive so the ladder + gating update live.
+    let hintProgress: Record<string, HintProgress> = {};
+    // Set after a wrong submit escalates into the ladder, to explain why the
+    // main answer wasn't revealed.
+    let hintNudge: Record<string, boolean> = {};
     const timeSpent: Record<string, number> = {};
     let passageCache: Record<string, CarsPassageSet> = {};
     let passageLoading = false;
@@ -151,13 +164,51 @@ surfaces the summary.
         flagged = { ...flagged, [q.id]: !flagged[q.id] };
     }
 
-    async function submitQuestion(q: PracticeQuestion): Promise<void> {
-        if (!q || submitted[q.id]) {
+    /** The hint-ladder progress for a question (created lazily). */
+    function progressFor(q: PracticeQuestion): HintProgress {
+        return hintProgress[q.id] ?? emptyHintProgress();
+    }
+
+    /** Reveal the next hint tier (the "Request hint" / "Reveal next hint" action,
+     * and the wrong-answer escalation both funnel through here). No-op once the
+     * ladder is exhausted. */
+    function revealNextHint(q: PracticeQuestion): void {
+        const hints = q.hints ?? [];
+        const prog = progressFor(q);
+        if (prog.revealed >= hints.length) {
             return;
         }
-        flushItemTime();
-        const answer = selected[q.id] ?? "";
-        const correct = answer !== "" && answer === q.correctAnswer;
+        hintProgress = {
+            ...hintProgress,
+            [q.id]: { revealed: prog.revealed + 1, picks: { ...prog.picks } },
+        };
+    }
+
+    function onRequestHint(q: PracticeQuestion): void {
+        if (submitted[q.id]) {
+            return;
+        }
+        hintNudge = { ...hintNudge, [q.id]: false };
+        revealNextHint(q);
+    }
+
+    /** Record the answer to a subquestion (enforces the no-skip rule: only the
+     * currently-revealed subquestion is answerable, handled in HintLadder). */
+    function onAnswerHint(q: PracticeQuestion, index: number, label: string): void {
+        const prog = progressFor(q);
+        hintProgress = {
+            ...hintProgress,
+            [q.id]: { revealed: prog.revealed, picks: { ...prog.picks, [index]: label } },
+        };
+    }
+
+    /** Reveal the main answer + log the attempt, stamping the hint tier reached. */
+    async function finalizeQuestion(
+        q: PracticeQuestion,
+        answer: string,
+        correct: boolean,
+    ): Promise<void> {
+        const level = hintLevelReached(q.hints ?? [], progressFor(q).revealed);
         submitted = { ...submitted, [q.id]: true };
         try {
             await logPracticeAttempt({
@@ -168,10 +219,40 @@ surfaces the summary.
                 timeOnQuestionSeconds: Math.round(timeSpent[q.id] ?? 0),
                 section: q.section,
                 topic: primaryTopic(q),
+                hintLevelUsed: level,
+                assisted: isAssisted(level),
             });
         } catch {
             // network error already surfaced by postProto's alert
         }
+    }
+
+    async function submitQuestion(q: PracticeQuestion): Promise<void> {
+        if (!q || submitted[q.id]) {
+            return;
+        }
+        const prog = progressFor(q);
+        // No-skip guard: cannot submit the main question while a revealed hint is
+        // still unanswered (the button is also disabled in that state).
+        if (!canSubmitMain(selected[q.id] ?? "", prog)) {
+            return;
+        }
+        flushItemTime();
+        const answer = selected[q.id] ?? "";
+        const correct = answer !== "" && answer === q.correctAnswer;
+        const hints = q.hints ?? [];
+        // A WRONG answer does NOT immediately reveal the correct answer: instead
+        // it escalates the hint ladder (reveal the next tier) and lets the
+        // learner try again — climbing L1→L2→L3 across re-attempts — until they
+        // get it right OR the ladder is exhausted, at which point the answer is
+        // revealed. Correct answers finalize immediately (still stamped with the
+        // hint tier used, so assisted-correct is penalized).
+        if (!correct && hasHintLadder(q) && prog.revealed < hints.length) {
+            hintNudge = { ...hintNudge, [q.id]: true };
+            revealNextHint(q);
+            return;
+        }
+        await finalizeQuestion(q, answer, correct);
     }
 
     async function finish(): Promise<void> {
@@ -281,12 +362,29 @@ surfaces the summary.
                             on:eliminate={(e) => onEliminate(q, e.detail)}
                             on:toggleFlag={() => onToggleFlag(q)}
                         />
+                        {#if hasHintLadder(q) && !submitted[q.id]}
+                            <HintLadder
+                                hints={q.hints}
+                                progress={hintProgress[q.id] ?? emptyHintProgress()}
+                                on:requestHint={() => onRequestHint(q)}
+                                on:answerHint={(e) =>
+                                    onAnswerHint(q, e.detail.index, e.detail.label)}
+                            />
+                        {/if}
                         {#if !submitted[q.id]}
                             <div class="q-actions">
+                                {#if hintNudge[q.id] && !canSubmitMain(selected[q.id] ?? "", hintProgress[q.id] ?? emptyHintProgress())}
+                                    <span class="nudge">
+                                        Not quite — work through the hint, then try again.
+                                    </span>
+                                {/if}
                                 <button
                                     class="primary"
                                     on:click={() => submitQuestion(q)}
-                                    disabled={!selected[q.id]}
+                                    disabled={!canSubmitMain(
+                                        selected[q.id] ?? "",
+                                        hintProgress[q.id] ?? emptyHintProgress(),
+                                    )}
                                 >
                                     Submit
                                 </button>
@@ -433,6 +531,14 @@ surfaces the summary.
     }
     .q-actions {
         display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+    .nudge {
+        color: #b26a00;
+        font-size: 0.85rem;
+        font-weight: 600;
     }
     .q-divider {
         width: 100%;

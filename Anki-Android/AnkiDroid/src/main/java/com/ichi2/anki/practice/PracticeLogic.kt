@@ -288,6 +288,80 @@ fun groupIntoRunItems(questions: List<PracticeQuestion>): List<RunItem> {
 /** Primary topic attributed to an attempt (first tag, else the section label). */
 fun primaryTopic(question: PracticeQuestion): String = question.topicTags.firstOrNull() ?: sectionShort(question.section)
 
+// ---- Graduated hint ladder ------------------------------------------------
+
+// SpeedyCAT: a question's [PracticeQuestion.hints] are an ordered ladder of
+// scaffolding SUBQUESTIONS (each a 4-choice MCQ). The learner works through them
+// ONE AT A TIME — they must answer the currently-revealed subquestion before
+// revealing the next tier or submitting the main question (the NO-SKIP rule) —
+// and the main answer stays locked until the ladder is worked through. The
+// highest tier reached sets `hintLevelUsed`; reaching level 3 sets `assisted`
+// (penalized in the Performance pillar). These pure helpers mirror the desktop
+// `lib.ts` so both apps gate + track identically, and are unit-tested directly.
+
+/** Per-question progress through the hint ladder: how many tiers are revealed,
+ * and the chosen label per revealed subquestion index (0-based). */
+data class HintProgress(
+    val revealed: Int = 0,
+    val picks: Map<Int, String> = emptyMap(),
+)
+
+/** Whether a question offers a (well-formed) hint ladder at all. */
+fun hasHintLadder(question: PracticeQuestion): Boolean = question.hints.isNotEmpty()
+
+/**
+ * The highest hint tier reached so far (0 = none), clamped to 0..3. Drives
+ * `hintLevelUsed`. Uses each subquestion's [HintSubquestion.level], falling back
+ * to its 1-based position when the level is missing/out of range.
+ */
+fun hintLevelReached(
+    hints: List<HintSubquestion>,
+    revealed: Int,
+): Int {
+    if (revealed <= 0 || hints.isEmpty()) return 0
+    val last = minOf(revealed, hints.size)
+    var level = 0
+    for (i in 0 until last) {
+        val l = hints[i].level.takeIf { it in 1..3 } ?: (i + 1)
+        level = maxOf(level, l)
+    }
+    return minOf(3, level)
+}
+
+/** A learner is "assisted" once they reach level 3 of the ladder. */
+fun isAssisted(level: Int): Boolean = level >= 3
+
+/**
+ * Index of the currently-revealed subquestion still awaiting an answer, or -1
+ * when the latest revealed subquestion is answered (or none is revealed). This
+ * enforces the NO-SKIP rule.
+ */
+fun pendingHintIndex(progress: HintProgress): Int {
+    if (progress.revealed <= 0) return -1
+    val idx = progress.revealed - 1
+    return if (progress.picks[idx] == null) idx else -1
+}
+
+/** Can the learner reveal the NEXT hint? Only when one remains AND the current
+ * revealed subquestion has been answered (no skipping ahead). */
+fun canRevealNextHint(
+    hints: List<HintSubquestion>,
+    progress: HintProgress,
+): Boolean = progress.revealed < hints.size && pendingHintIndex(progress) == -1
+
+/** Can the learner submit the MAIN question? A choice must be selected AND there
+ * must be no revealed-but-unanswered subquestion (they cannot skip the ladder). */
+fun canSubmitMain(
+    mainSelected: String,
+    progress: HintProgress,
+): Boolean = mainSelected.isNotEmpty() && pendingHintIndex(progress) == -1
+
+/** Whether a subquestion answer is correct. */
+fun hintAnswerCorrect(
+    hint: HintSubquestion,
+    label: String,
+): Boolean = label.isNotEmpty() && label == hint.correctAnswer
+
 // ---- Session summary & tracking aggregation -------------------------------
 
 /**

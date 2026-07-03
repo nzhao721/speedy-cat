@@ -36,6 +36,44 @@
       ],
       "correctAnswer": "B",
       "explanation": "The kinetic molecular theory assumes gas particles exert negligible attractive or repulsive forces on one another and undergo perfectly elastic collisions. The other three statements are genuine postulates, so 'gas particles attract and repel one another' is the one that is NOT a postulate.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Which statement is a genuine postulate of the kinetic molecular theory of gases?",
+          "choices": [
+            {"label": "A", "text": "Gas particles exert negligible attractive or repulsive forces on each other"},
+            {"label": "B", "text": "Gas particles strongly attract each other"},
+            {"label": "C", "text": "Gas particles are large compared with the space between them"},
+            {"label": "D", "text": "Collisions between gas particles are inelastic"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The kinetic molecular theory assumes negligible intermolecular forces and elastic collisions."
+        },
+        {
+          "level": 2,
+          "prompt": "The kinetic molecular theory models gas particles as tiny, independent points. What does it assume about the forces between the particles?",
+          "choices": [
+            {"label": "A", "text": "They exert negligible attractive or repulsive forces on each other"},
+            {"label": "B", "text": "They exert strong attractions on each other"},
+            {"label": "C", "text": "They exert strong repulsions on each other"},
+            {"label": "D", "text": "They continuously bond and unbond with each other"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The kinetic molecular theory assumes negligible intermolecular forces."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two statements are definitely real KMT postulates and can thus be eliminated as the exception?",
+          "choices": [
+            {"label": "A", "text": "'KE proportional to absolute temperature' and 'pressure arises from wall collisions'"},
+            {"label": "B", "text": "'gas particles attract and repel one another' and 'KE proportional to temperature'"},
+            {"label": "C", "text": "'particle size is negligible' and 'gas particles attract and repel one another'"},
+            {"label": "D", "text": "'gas particles attract and repel one another' and 'pressure arises from wall collisions'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Both are standard KMT postulates, so neither is the statement that is NOT a postulate."
+        }
+      ],
       "topicTags": ["solutions, gases & acid-base"],
       "difficulty": "medium",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
@@ -56,6 +94,44 @@
       ],
       "correctAnswer": "D",
       "explanation": "The SI derived unit of pressure is the pascal (Pa = N/m^2). Atmosphere, pounds per square inch (psi), and bar are common non-SI pressure units.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What defines an SI (International System) unit?",
+          "choices": [
+            {"label": "A", "text": "A standardized metric unit built from the SI base units"},
+            {"label": "B", "text": "Any traditional or customary unit"},
+            {"label": "C", "text": "Only units named after countries"},
+            {"label": "D", "text": "Units used only in the United States"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "SI units are the standardized metric units derived from the base units."
+        },
+        {
+          "level": 2,
+          "prompt": "The unit 'pounds per square inch' (psi) comes from the US customary system. Is it an SI unit?",
+          "choices": [
+            {"label": "A", "text": "No, it is a non-SI (customary) unit"},
+            {"label": "B", "text": "Yes, it is the SI unit of pressure"},
+            {"label": "C", "text": "Yes, it is an SI base unit"},
+            {"label": "D", "text": "It is actually a unit of volume"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Pounds per square inch is a US customary unit, not part of SI."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated as clearly non-SI pressure units?",
+          "choices": [
+            {"label": "A", "text": "Pounds per square inch and atmosphere"},
+            {"label": "B", "text": "Pascal and bar"},
+            {"label": "C", "text": "Pascal and atmosphere"},
+            {"label": "D", "text": "Bar and pascal"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Pounds per square inch and atmosphere are customary, non-SI units."
+        }
+      ],
       "topicTags": ["solutions, gases & acid-base"],
       "difficulty": "easy",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
@@ -76,6 +152,44 @@
       ],
       "correctAnswer": "A",
       "explanation": "Boyle's law states that, at constant temperature and amount of gas, the pressure and volume of a gas are inversely proportional (PV = constant). Volume-temperature is Charles's law.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What does it mean for two quantities to be 'inversely proportional'?",
+          "choices": [
+            {"label": "A", "text": "When one increases, the other decreases so that their product stays constant"},
+            {"label": "B", "text": "When one increases, the other increases by the same amount"},
+            {"label": "C", "text": "They are completely unrelated"},
+            {"label": "D", "text": "They are always numerically equal"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Inverse proportion means one rises as the other falls, keeping their product constant."
+        },
+        {
+          "level": 2,
+          "prompt": "Which gas law relates volume and temperature (so it is NOT Boyle's law)?",
+          "choices": [
+            {"label": "A", "text": "Charles's law"},
+            {"label": "B", "text": "Boyle's law"},
+            {"label": "C", "text": "Avogadro's law"},
+            {"label": "D", "text": "Dalton's law"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The volume-temperature relationship is Charles's law, distinct from Boyle's law."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because they describe temperature-dependent laws, not Boyle's law?",
+          "choices": [
+            {"label": "A", "text": "'Volume and temperature' and 'Pressure and temperature'"},
+            {"label": "B", "text": "'Volume and pressure' and 'Moles and temperature'"},
+            {"label": "C", "text": "'Volume and pressure' and 'Pressure and temperature'"},
+            {"label": "D", "text": "'Volume and temperature' and 'Moles and temperature'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Volume-temperature (Charles) and pressure-temperature (Gay-Lussac) involve temperature; Boyle's law does not."
+        }
+      ],
       "topicTags": ["solutions, gases & acid-base"],
       "difficulty": "easy",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
@@ -96,6 +210,44 @@
       ],
       "correctAnswer": "D",
       "explanation": "Temperature is constant, so apply Boyle's law P1V1 = P2V2: (2.4 atm)(2.0 L) = P2(0.50 L), giving P2 = 4.8/0.50 = 9.6 atm. Compressing the gas raises its pressure.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Which equation applies to a gas at constant temperature when its volume changes?",
+          "choices": [
+            {"label": "A", "text": "P1V1 = P2V2 (Boyle's law)"},
+            {"label": "B", "text": "V1/T1 = V2/T2"},
+            {"label": "C", "text": "P1/T1 = P2/T2"},
+            {"label": "D", "text": "PV = nRT with n changing"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A constant-temperature volume/pressure change uses Boyle's law, P1V1 = P2V2."
+        },
+        {
+          "level": 2,
+          "prompt": "Solving P1V1 = P2V2 for P2 with P1 = 2.4 atm, V1 = 2.0 L, V2 = 0.50 L, which setup is right?",
+          "choices": [
+            {"label": "A", "text": "P2 = (2.4 x 2.0) / 0.50"},
+            {"label": "B", "text": "P2 = (2.4 x 0.50) / 2.0"},
+            {"label": "C", "text": "P2 = (2.0 x 0.50) / 2.4"},
+            {"label": "D", "text": "P2 = 2.4 x 0.50 x 2.0"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "P2 = P1V1 / V2 = (2.4 x 2.0) / 0.50."
+        },
+        {
+          "level": 3,
+          "prompt": "Because the gas is compressed, its pressure must rise above 2.4 atm. Which two choices can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "0.60 atm and 2.4 atm"},
+            {"label": "B", "text": "7.2 atm and 9.6 atm"},
+            {"label": "C", "text": "0.60 atm and 7.2 atm"},
+            {"label": "D", "text": "2.4 atm and 9.6 atm"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Decreasing the volume increases the pressure, so any value at or below 2.4 atm is impossible."
+        }
+      ],
       "topicTags": ["solutions, gases & acid-base"],
       "difficulty": "medium",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
@@ -116,6 +268,44 @@
       ],
       "correctAnswer": "C",
       "explanation": "London dispersion forces (induced-dipole attractions) are generally the weakest intermolecular force. Ion-dipole and hydrogen bonding are the strongest, and permanent dipole-dipole forces are stronger than pure dispersion forces of comparable size.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The common intermolecular forces (dipole-dipole, ion-dipole, hydrogen bonding, and dispersion) differ in strength. What is generally true about them?",
+          "choices": [
+            {"label": "A", "text": "Different types of intermolecular force have characteristically different strengths"},
+            {"label": "B", "text": "They are all exactly equal in strength"},
+            {"label": "C", "text": "They are all stronger than covalent bonds"},
+            {"label": "D", "text": "Their strength depends only on color"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The various types of intermolecular force differ in their characteristic strengths."
+        },
+        {
+          "level": 2,
+          "prompt": "Which listed interaction is generally the STRONGEST, so it cannot be the weakest?",
+          "choices": [
+            {"label": "A", "text": "Ion-dipole interactions"},
+            {"label": "B", "text": "Dispersion forces"},
+            {"label": "C", "text": "Dipole-dipole attractions"},
+            {"label": "D", "text": "There is no strongest one"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Ion-dipole forces are among the strongest of the listed interactions."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because they are among the STRONGEST intermolecular forces?",
+          "choices": [
+            {"label": "A", "text": "Ion-dipole interactions and hydrogen bonding"},
+            {"label": "B", "text": "Dispersion forces and dipole-dipole attractions"},
+            {"label": "C", "text": "Dispersion forces and hydrogen bonding"},
+            {"label": "D", "text": "Dipole-dipole attractions and ion-dipole interactions"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Ion-dipole and hydrogen bonding are strong interactions, not weak ones."
+        }
+      ],
       "topicTags": ["chemical bonding & structure"],
       "difficulty": "medium",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
@@ -136,6 +326,44 @@
       ],
       "correctAnswer": "A",
       "explanation": "If the surroundings (the glass and water) get warmer, the dissolution is releasing heat, so it is exothermic (negative enthalpy of solution). In an exothermic dissolution, the energy released forming solute-solvent interactions exceeds the energy needed to break the original attractions.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "If a process releases heat to its surroundings, what is it called and what happens to the surroundings' temperature?",
+          "choices": [
+            {"label": "A", "text": "Exothermic; the surroundings warm up"},
+            {"label": "B", "text": "Endothermic; the surroundings warm up"},
+            {"label": "C", "text": "Exothermic; the surroundings cool down"},
+            {"label": "D", "text": "Endothermic; the surroundings are unchanged"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Exothermic processes release heat, warming the surroundings."
+        },
+        {
+          "level": 2,
+          "prompt": "The glass and water (the surroundings) get warmer. What does that tell you about heat flow?",
+          "choices": [
+            {"label": "A", "text": "Heat is being released by the dissolving process"},
+            {"label": "B", "text": "Heat is being absorbed from the surroundings"},
+            {"label": "C", "text": "No heat is exchanged"},
+            {"label": "D", "text": "The water is doing work on the solute"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A temperature rise in the surroundings means the process releases heat."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because they describe a system that gets COLDER, not warmer?",
+          "choices": [
+            {"label": "A", "text": "'The process is endothermic' and 'The water molecules slow down on average'"},
+            {"label": "B", "text": "'The process is exothermic' and 'Weaker bonds were formed compared to the bonds broken'"},
+            {"label": "C", "text": "'The process is endothermic' and 'The process is exothermic'"},
+            {"label": "D", "text": "'The water molecules slow down on average' and 'Weaker bonds were formed compared to the bonds broken'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Endothermic dissolving and slower (cooler) water molecules both imply a temperature drop, opposite to what is observed."
+        }
+      ],
       "topicTags": ["thermochemistry, kinetics & equilibrium"],
       "difficulty": "easy",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
@@ -156,6 +384,44 @@
       ],
       "correctAnswer": "C",
       "explanation": "Hydrochloric acid is a strong acid that ionizes completely in water, making it a strong electrolyte. Sucrose and ethanol are molecular nonelectrolytes, and ammonia is a weak base (weak electrolyte).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What defines a strong electrolyte?",
+          "choices": [
+            {"label": "A", "text": "A substance that ionizes completely in water and conducts well"},
+            {"label": "B", "text": "A substance that does not dissolve"},
+            {"label": "C", "text": "A molecular compound that stays intact in water"},
+            {"label": "D", "text": "Any sugar"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Strong electrolytes fully dissociate into ions in solution."
+        },
+        {
+          "level": 2,
+          "prompt": "Which category of solute ionizes completely and is therefore a strong electrolyte?",
+          "choices": [
+            {"label": "A", "text": "A strong acid"},
+            {"label": "B", "text": "A sugar (a nonelectrolyte)"},
+            {"label": "C", "text": "A weak base"},
+            {"label": "D", "text": "An alcohol"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Strong acids ionize completely in water."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because they are molecular nonelectrolytes that do not ionize?",
+          "choices": [
+            {"label": "A", "text": "Sucrose and ethanol"},
+            {"label": "B", "text": "Hydrochloric acid and ammonia"},
+            {"label": "C", "text": "Sucrose and hydrochloric acid"},
+            {"label": "D", "text": "Ethanol and ammonia"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Sucrose and ethanol dissolve as neutral molecules and do not conduct."
+        }
+      ],
       "topicTags": ["solutions, gases & acid-base"],
       "difficulty": "easy",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
@@ -176,6 +442,44 @@
       ],
       "correctAnswer": "D",
       "explanation": "Molarity (M) is moles of solute per liter of total solution. (Moles of solute per kilogram of solvent defines molality, a different concentration unit.)",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Molarity, molality, and mass percent are different concentration units. What mainly distinguishes one from another?",
+          "choices": [
+            {"label": "A", "text": "What quantity the amount of solute is divided by (a volume or a mass; solution or solvent)"},
+            {"label": "B", "text": "The color of the solution"},
+            {"label": "C", "text": "The temperature at which they are measured"},
+            {"label": "D", "text": "Nothing; they are all identical"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Concentration units differ in the denominator used with the amount of solute."
+        },
+        {
+          "level": 2,
+          "prompt": "Moles of solute per kilogram of solvent defines which quantity (which is NOT molarity)?",
+          "choices": [
+            {"label": "A", "text": "Molality"},
+            {"label": "B", "text": "Molarity"},
+            {"label": "C", "text": "Density"},
+            {"label": "D", "text": "Normality"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A mass-of-solvent-based concentration is molality, distinct from molarity."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because molarity uses volume, not mass?",
+          "choices": [
+            {"label": "A", "text": "'Mass of solution' and 'mass of solvent'"},
+            {"label": "B", "text": "'Liters of solvent' and 'liters of solution'"},
+            {"label": "C", "text": "'Mass of solution' and 'liters of solution'"},
+            {"label": "D", "text": "'Mass of solvent' and 'liters of solvent'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Molarity is defined per liter (a volume), so mass-based denominators are wrong."
+        }
+      ],
       "topicTags": ["solutions, gases & acid-base"],
       "difficulty": "easy",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
@@ -196,6 +500,44 @@
       ],
       "correctAnswer": "B",
       "explanation": "Molarity = moles of solute / liters of solution = 0.0200 mol / 0.200 L = 0.100 M.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What is the formula for molarity?",
+          "choices": [
+            {"label": "A", "text": "M = moles of solute / liters of solution"},
+            {"label": "B", "text": "M = liters of solution / moles of solute"},
+            {"label": "C", "text": "M = moles of solute x liters of solution"},
+            {"label": "D", "text": "M = grams of solute / liters of solution"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Molarity is moles divided by liters."
+        },
+        {
+          "level": 2,
+          "prompt": "With 0.0200 mol in 0.200 L, which calculation gives the molarity?",
+          "choices": [
+            {"label": "A", "text": "0.0200 / 0.200"},
+            {"label": "B", "text": "0.200 / 0.0200"},
+            {"label": "C", "text": "0.0200 x 0.200"},
+            {"label": "D", "text": "0.200 - 0.0200"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Divide the moles (0.0200) by the liters (0.200)."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices are traps from mis-combining the numbers (multiplying or adding instead of dividing)?",
+          "choices": [
+            {"label": "A", "text": "0.00400 M (the product) and 0.220 M (the sum)"},
+            {"label": "B", "text": "0.100 M and 10.0 M"},
+            {"label": "C", "text": "0.00400 M and 0.100 M"},
+            {"label": "D", "text": "0.220 M and 10.0 M"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "0.0200 x 0.200 = 0.00400 and 0.0200 + 0.200 = 0.220 come from the wrong operations."
+        }
+      ],
       "topicTags": ["solutions, gases & acid-base"],
       "difficulty": "easy",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
@@ -216,6 +558,44 @@
       ],
       "correctAnswer": "B",
       "explanation": "A hypotonic solution has a lower solute concentration than the inside of the red blood cells, so water moves into the cells by osmosis, causing them to swell and burst (hemolysis). Shriveling (crenation) occurs in a hypertonic solution.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In osmosis, which way does water move relative to solute concentration?",
+          "choices": [
+            {"label": "A", "text": "Toward the region of higher solute concentration"},
+            {"label": "B", "text": "Toward the region of lower solute concentration"},
+            {"label": "C", "text": "Water does not move across membranes"},
+            {"label": "D", "text": "Toward the region of higher temperature"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Water moves toward higher solute concentration (lower water potential)."
+        },
+        {
+          "level": 2,
+          "prompt": "A hypotonic external solution has LOWER solute than the cell interior. Which way does water flow for a red blood cell?",
+          "choices": [
+            {"label": "A", "text": "Into the cell"},
+            {"label": "B", "text": "Out of the cell"},
+            {"label": "C", "text": "There is no net flow"},
+            {"label": "D", "text": "Out of the cell by active transport"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Water flows into the cell, toward the higher internal solute concentration."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because water enters the cell (so it does not shrivel)?",
+          "choices": [
+            {"label": "A", "text": "'Red blood cells will shrivel' and 'Neither A nor B'"},
+            {"label": "B", "text": "'Hemolysis' and 'Both A and B'"},
+            {"label": "C", "text": "'Red blood cells will shrivel' and 'Hemolysis'"},
+            {"label": "D", "text": "'Both A and B' and 'Neither A nor B'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Shriveling happens in a hypertonic solution; here water enters, so 'shrivel' and 'neither' are impossible."
+        }
+      ],
       "topicTags": ["solutions, gases & acid-base"],
       "difficulty": "medium",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 8 Gases, Liquids, and Solids",
@@ -236,6 +616,44 @@
       ],
       "correctAnswer": "A",
       "explanation": "Avogadro's number, 6.022 × 10^23, is the number of particles (atoms, molecules, ions, etc.) in exactly one mole of a substance.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A mole is a counting unit for particles. What KIND of quantity answers 'how many particles are there', rather than 'how much mass'?",
+          "choices": [
+            {"label": "A", "text": "A pure count (a number of particles)"},
+            {"label": "B", "text": "A mass expressed in grams"},
+            {"label": "C", "text": "A temperature"},
+            {"label": "D", "text": "A volume"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The number of particles is a count, which is different from a mass."
+        },
+        {
+          "level": 2,
+          "prompt": "Molar mass and formula mass are measured in what kind of units, showing they are NOT counts of atoms?",
+          "choices": [
+            {"label": "A", "text": "Mass units such as g/mol or amu"},
+            {"label": "B", "text": "Pure numbers with no units"},
+            {"label": "C", "text": "Liters"},
+            {"label": "D", "text": "Kelvin"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Molar mass and formula mass carry mass units, so they are not a count of particles."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because they are masses, not counts of atoms?",
+          "choices": [
+            {"label": "A", "text": "Formula mass and molar mass"},
+            {"label": "B", "text": "Avogadro's number and the gas constant"},
+            {"label": "C", "text": "Avogadro's number and molar mass"},
+            {"label": "D", "text": "Formula mass and the gas constant"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Formula mass and molar mass measure mass per mole, not the number of particles."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "easy",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",
@@ -256,6 +674,44 @@
       ],
       "correctAnswer": "B",
       "explanation": "Formula mass of MgCl2 = 24.31 (Mg) + 2 × 35.45 (Cl) = 24.31 + 70.90 = 95.21 amu.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How do you compute the formula mass of a compound?",
+          "choices": [
+            {"label": "A", "text": "Sum the atomic masses of every atom in the formula"},
+            {"label": "B", "text": "Add only the metal's atomic mass"},
+            {"label": "C", "text": "Multiply the two atomic masses together"},
+            {"label": "D", "text": "Average the atomic masses"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Formula mass is the sum of every atom's atomic mass."
+        },
+        {
+          "level": 2,
+          "prompt": "For MgCl2 (Mg approx 24.31, Cl approx 35.45), which setup gives the formula mass?",
+          "choices": [
+            {"label": "A", "text": "24.31 + 2 x 35.45"},
+            {"label": "B", "text": "24.31 + 35.45"},
+            {"label": "C", "text": "24.31 + 35.45 / 2"},
+            {"label": "D", "text": "2 x 24.31 + 35.45"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "One Mg plus two Cl: 24.31 + 2 x 35.45."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated as too large for one Mg plus only two Cl atoms?",
+          "choices": [
+            {"label": "A", "text": "119.5 amu and 125.8 amu"},
+            {"label": "B", "text": "59.76 amu and 95.21 amu"},
+            {"label": "C", "text": "59.76 amu and 119.5 amu"},
+            {"label": "D", "text": "95.21 amu and 125.8 amu"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Mg (24.31) plus two Cl (70.90) is about 95; values near 120-126 would require extra atoms."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "medium",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",
@@ -276,6 +732,44 @@
       ],
       "correctAnswer": "D",
       "explanation": "Potassium sulfide is K2S (K+ is +1, S^2- is -2). Formula mass = 2 × 39.10 (K) + 32.06 (S) = 78.20 + 32.06 = 110.3 amu.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Before computing potassium sulfide's formula mass, what must you determine?",
+          "choices": [
+            {"label": "A", "text": "Its correct formula from the ion charges (K+ and S2-)"},
+            {"label": "B", "text": "Its density"},
+            {"label": "C", "text": "Its color"},
+            {"label": "D", "text": "Its boiling point"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "You need the formula, K2S, before summing atomic masses."
+        },
+        {
+          "level": 2,
+          "prompt": "Potassium is K+ and sulfide is S2-. What is the formula, and thus the mass setup?",
+          "choices": [
+            {"label": "A", "text": "K2S, so 2 x 39.10 + 32.06"},
+            {"label": "B", "text": "KS, so 39.10 + 32.06"},
+            {"label": "C", "text": "K2S, so 39.10 + 2 x 32.06"},
+            {"label": "D", "text": "KS2, so 39.10 + 2 x 32.06"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Two K+ balance one S2-, so K2S = 2(39.10) + 32.06."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because they omit the sulfur atom's mass?",
+          "choices": [
+            {"label": "A", "text": "39.10 amu and 71.16 amu"},
+            {"label": "B", "text": "103.2 amu and 110.3 amu"},
+            {"label": "C", "text": "39.10 amu and 103.2 amu"},
+            {"label": "D", "text": "71.16 amu and 110.3 amu"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "39.10 is one K and 71.16 is two K only - both leave out sulfur (32.06)."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "medium",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",
@@ -296,6 +790,44 @@
       ],
       "correctAnswer": "D",
       "explanation": "Sodium sulfate is Na2SO4, which contains 4 oxygen atoms per formula unit. Therefore 3 mol Na2SO4 contains 3 × 4 = 12 mol of oxygen atoms.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In one formula unit, how does a subscript give the number of an atom?",
+          "choices": [
+            {"label": "A", "text": "The subscript is the count of that atom per formula unit"},
+            {"label": "B", "text": "The subscript gives the atom's mass"},
+            {"label": "C", "text": "The subscript gives the atom's charge"},
+            {"label": "D", "text": "Subscripts are ignored when counting atoms"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A subscript tells how many of that atom are in one formula unit."
+        },
+        {
+          "level": 2,
+          "prompt": "Sodium sulfate is Na2SO4. How many O atoms are in one unit, and how do you scale to 3 mol?",
+          "choices": [
+            {"label": "A", "text": "4 O per unit, so 3 x 4"},
+            {"label": "B", "text": "1 O per unit, so 3 x 1"},
+            {"label": "C", "text": "4 O per unit, so 3 + 4"},
+            {"label": "D", "text": "3 O per unit, so 3 x 3"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Na2SO4 has 4 oxygens per unit; multiply by the 3 mol."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because they fail to multiply the 4 oxygens by the 3 moles?",
+          "choices": [
+            {"label": "A", "text": "3 and 4"},
+            {"label": "B", "text": "9 and 12"},
+            {"label": "C", "text": "3 and 12"},
+            {"label": "D", "text": "4 and 9"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "3 is only the mole count and 4 is oxygens per unit; neither multiplies the two together."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "medium",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",
@@ -316,6 +848,44 @@
       ],
       "correctAnswer": "B",
       "explanation": "Molar mass of CCl4 = 12.01 + 4 × 35.45 = 153.81 g/mol. Moles = 7.82 g / 153.81 g/mol = 0.0508 mol.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How do you convert a mass to a number of moles?",
+          "choices": [
+            {"label": "A", "text": "Divide the mass by the molar mass"},
+            {"label": "B", "text": "Multiply the mass by the molar mass"},
+            {"label": "C", "text": "Divide the molar mass by the mass"},
+            {"label": "D", "text": "Multiply the mass by Avogadro's number"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Moles = mass / molar mass."
+        },
+        {
+          "level": 2,
+          "prompt": "The molar mass of CCl4 is about 153.8 g/mol. Which setup gives the moles in 7.82 g?",
+          "choices": [
+            {"label": "A", "text": "7.82 / 153.8"},
+            {"label": "B", "text": "153.8 / 7.82"},
+            {"label": "C", "text": "7.82 x 153.8"},
+            {"label": "D", "text": "7.82 / 12.01"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Divide 7.82 g by 153.8 g/mol."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated as too large for dividing about 7.8 g by about 154 g/mol?",
+          "choices": [
+            {"label": "A", "text": "0.106 mol and 0.254 mol"},
+            {"label": "B", "text": "0.0102 mol and 0.0508 mol"},
+            {"label": "C", "text": "0.0102 mol and 0.106 mol"},
+            {"label": "D", "text": "0.0508 mol and 0.254 mol"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "7.82 / 153.8 is about 0.05; values of 0.1 mol or more would require a molar mass under about 80 g/mol."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "medium",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",
@@ -336,6 +906,44 @@
       ],
       "correctAnswer": "C",
       "explanation": "Boron trifluoride is BF3, which contains 3 fluorine atoms. Total mass of fluorine = 3 × 19.00 = 57.00 amu.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "To find the total mass of one element in a compound, what do you do?",
+          "choices": [
+            {"label": "A", "text": "Multiply the element's atomic mass by the number of its atoms present"},
+            {"label": "B", "text": "Use the whole compound's molar mass"},
+            {"label": "C", "text": "Divide the atomic mass by the atom count"},
+            {"label": "D", "text": "Add the atomic masses of all the elements"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Total element mass = (number of that element's atoms) x (its atomic mass)."
+        },
+        {
+          "level": 2,
+          "prompt": "Boron trifluoride is BF3. How many F atoms are present (each about 19.00 amu), and which setup gives the total F mass?",
+          "choices": [
+            {"label": "A", "text": "3 x 19.00"},
+            {"label": "B", "text": "1 x 19.00"},
+            {"label": "C", "text": "2 x 19.00"},
+            {"label": "D", "text": "19.00 / 3"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "BF3 has 3 fluorine atoms, so the total is 3 x 19.00."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because they correspond to the wrong number of fluorine atoms (one, or far too many)?",
+          "choices": [
+            {"label": "A", "text": "19.00 amu (one F) and 114.0 amu (six F)"},
+            {"label": "B", "text": "38.00 amu and 57.00 amu"},
+            {"label": "C", "text": "19.00 amu and 57.00 amu"},
+            {"label": "D", "text": "38.00 amu and 114.0 amu"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "One F gives 19.00 and 114.0 would need six F; BF3 has three fluorine atoms."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "medium",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",
@@ -356,6 +964,44 @@
       ],
       "correctAnswer": "A",
       "explanation": "Moles of Fe = (2.60 × 10^24 atoms) / (6.022 × 10^23 atoms/mol) = 4.317 mol. Mass = 4.317 mol × 55.85 g/mol ≈ 241 g.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What two steps convert a number of atoms into a mass?",
+          "choices": [
+            {"label": "A", "text": "Atoms to moles (divide by Avogadro's number), then moles to mass (times molar mass)"},
+            {"label": "B", "text": "Multiply atoms by molar mass directly"},
+            {"label": "C", "text": "Divide atoms by molar mass"},
+            {"label": "D", "text": "Multiply atoms by Avogadro's number"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Divide by Avogadro's number to get moles, then multiply by the molar mass."
+        },
+        {
+          "level": 2,
+          "prompt": "For 2.60 x 10^24 Fe atoms (molar mass about 55.85), which setup gives the mass?",
+          "choices": [
+            {"label": "A", "text": "(2.60 x 10^24 / 6.022 x 10^23) x 55.85"},
+            {"label": "B", "text": "2.60 x 10^24 x 6.022 x 10^23 x 55.85"},
+            {"label": "C", "text": "2.60 x 10^24 x 55.85"},
+            {"label": "D", "text": "(6.022 x 10^23 / 2.60 x 10^24) x 55.85"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Convert atoms to moles, then multiply by 55.85 g/mol."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated as physically unreasonable for about 4.3 mol of iron?",
+          "choices": [
+            {"label": "A", "text": "4.32 x 10^46 g and 77.3 mg"},
+            {"label": "B", "text": "241 g and 2.41 kg"},
+            {"label": "C", "text": "241 g and 77.3 mg"},
+            {"label": "D", "text": "2.41 kg and 4.32 x 10^46 g"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "About 4.3 mol times 55.85 g/mol is a few hundred grams - not an astronomically huge mass nor a few milligrams."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "medium",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",
@@ -376,6 +1022,44 @@
       ],
       "correctAnswer": "B",
       "explanation": "NaCl in 150 mL = 9.0 g/L × 0.150 L = 1.35 g. Moles NaCl = 1.35 / 58.44 = 0.0231 mol, giving 0.0231 mol Na+. Number of Na+ ions = 0.0231 × 6.022 × 10^23 ≈ 1.4 × 10^22.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What sequence converts a solution volume into a number of ions?",
+          "choices": [
+            {"label": "A", "text": "Volume to grams to moles to number of particles (times Avogadro's number)"},
+            {"label": "B", "text": "Volume times Avogadro's number"},
+            {"label": "C", "text": "Grams to number of particles directly"},
+            {"label": "D", "text": "Moles to grams to volume"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Find grams, convert to moles, then to a particle count with Avogadro's number."
+        },
+        {
+          "level": 2,
+          "prompt": "In 150 mL the mass of NaCl is 9.0 g/L x 0.150 L. Which sequence then yields the Na+ count (one Na+ per NaCl)?",
+          "choices": [
+            {"label": "A", "text": "grams / 58.44 to moles, then times 6.022 x 10^23"},
+            {"label": "B", "text": "grams x 58.44 x 6.022 x 10^23"},
+            {"label": "C", "text": "grams / 6.022 x 10^23"},
+            {"label": "D", "text": "0.150 x 6.022 x 10^23"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "1.35 g / 58.44 g/mol gives moles of NaCl, then times Avogadro's number for Na+."
+        },
+        {
+          "level": 3,
+          "prompt": "About 0.023 mol of Na+ is present. Which two choices can be eliminated as far too many ions (near a full mole)?",
+          "choices": [
+            {"label": "A", "text": "3.4 x 10^23 and 5.9 x 10^23"},
+            {"label": "B", "text": "1.7 x 10^20 and 1.4 x 10^22"},
+            {"label": "C", "text": "1.7 x 10^20 and 3.4 x 10^23"},
+            {"label": "D", "text": "1.4 x 10^22 and 5.9 x 10^23"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "One mole is 6.0 x 10^23; 0.023 mol is far less, so values in the 10^23 range are too large."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "hard",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",
@@ -396,6 +1080,44 @@
       ],
       "correctAnswer": "B",
       "explanation": "Molar mass of C25H24N6O2 ≈ 440.5 g/mol. Moles of compound = 0.422 g / 440.5 g/mol = 9.58 × 10^-4 mol. Carbon atoms = 9.58 × 10^-4 mol × 25 × 6.022 × 10^23 ≈ 1.44 × 10^22.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How do you find the number of atoms of one element in a given mass of a compound?",
+          "choices": [
+            {"label": "A", "text": "Mass to moles of compound, times atoms of that element per formula, times Avogadro's number"},
+            {"label": "B", "text": "Mass times Avogadro's number"},
+            {"label": "C", "text": "Mass divided by 25"},
+            {"label": "D", "text": "Mass times 25"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Convert to moles of compound, scale by atoms per formula, then multiply by Avogadro's number."
+        },
+        {
+          "level": 2,
+          "prompt": "For 0.422 g of C25H24N6O2 (molar mass about 440.5 g/mol), which setup gives the number of carbon atoms?",
+          "choices": [
+            {"label": "A", "text": "(0.422 / 440.5) x 25 x 6.022 x 10^23"},
+            {"label": "B", "text": "(0.422 / 440.5) x 6.022 x 10^23"},
+            {"label": "C", "text": "0.422 x 25 x 6.022 x 10^23"},
+            {"label": "D", "text": "(0.422 / 440.5) / 25 x 6.022 x 10^23"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Moles of compound times 25 carbons per molecule times Avogadro's number."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated - one absurdly large, and one that forgot to multiply by the 25 carbons per molecule?",
+          "choices": [
+            {"label": "A", "text": "2.80 x 10^27 and 5.77 x 10^20"},
+            {"label": "B", "text": "1.44 x 10^22 and 3.29 x 10^22"},
+            {"label": "C", "text": "1.44 x 10^22 and 2.80 x 10^27"},
+            {"label": "D", "text": "5.77 x 10^20 and 3.29 x 10^22"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "2.80 x 10^27 comes from multiplying by the molar mass instead of dividing, and 5.77 x 10^20 omits the times-25 carbons."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "hard",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 6 Moles",

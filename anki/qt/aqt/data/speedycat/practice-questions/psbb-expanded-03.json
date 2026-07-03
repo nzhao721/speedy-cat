@@ -20,6 +20,44 @@
   "questions": [
     {
       "id": "psbb-x034",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "This question is about psychophysics, the study of how physical stimuli relate to what?",
+          "choices": [
+            {"label": "A", "text": "Our psychological sensations and perceptions of those stimuli"},
+            {"label": "B", "text": "The chemistry of DNA molecules"},
+            {"label": "C", "text": "The motion of the planets"},
+            {"label": "D", "text": "Everyday economic decisions"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Psychophysics links physical stimuli to the sensations they produce."
+        },
+        {
+          "level": 2,
+          "prompt": "The difference threshold (just noticeable difference) measures which of the following?",
+          "choices": [
+            {"label": "A", "text": "The smallest CHANGE between two stimuli that a person can detect"},
+            {"label": "B", "text": "The weakest single stimulus detectable half the time"},
+            {"label": "C", "text": "The conversion of energy into neural signals"},
+            {"label": "D", "text": "The loudest sound a person can tolerate"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The difference threshold is about detecting a change, not the minimum detectable stimulus, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated because both refer to detecting a CHANGE between stimuli rather than detecting a single faint stimulus?",
+          "choices": [
+            {"label": "A", "text": "difference threshold and just noticeable difference"},
+            {"label": "B", "text": "absolute threshold and transduction"},
+            {"label": "C", "text": "absolute threshold and difference threshold"},
+            {"label": "D", "text": "transduction and just noticeable difference"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The difference threshold and the just noticeable difference are the same change-detection concept, so both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "________ refers to the minimum amount of stimulus energy required to be detected 50% of the time.",
       "choices": [
@@ -40,6 +78,44 @@
     },
     {
       "id": "psbb-x035",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The four options are all terms drawn from the study of which topic?",
+          "choices": [
+            {"label": "A", "text": "Sensation and perception"},
+            {"label": "B", "text": "Operant conditioning"},
+            {"label": "C", "text": "Genetics and heredity"},
+            {"label": "D", "text": "Endocrine (hormone) function"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "All four are sensation-and-perception terms."
+        },
+        {
+          "level": 2,
+          "prompt": "Sensory adaptation refers to which of the following?",
+          "choices": [
+            {"label": "A", "text": "Reduced sensitivity to a constant, unchanging stimulus over time"},
+            {"label": "B", "text": "The conversion of stimulus energy into neural impulses"},
+            {"label": "C", "text": "Failing to notice an unexpected object when attention is elsewhere"},
+            {"label": "D", "text": "The smallest detectable difference between two stimuli"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Sensory adaptation is decreased responsiveness to a constant stimulus, not energy conversion, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated because one is an attention failure (missing an unexpected object) and the other concerns detecting differences between stimuli - neither being energy conversion?",
+          "choices": [
+            {"label": "A", "text": "inattentional blindness and difference threshold"},
+            {"label": "B", "text": "transduction and sensory adaptation"},
+            {"label": "C", "text": "inattentional blindness and transduction"},
+            {"label": "D", "text": "difference threshold and sensory adaptation"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Inattentional blindness is an attention phenomenon and the difference threshold is about detecting change, so neither converts energy."
+        }
+      ],
       "section": "PSBB",
       "stem": "________ involves the conversion of sensory stimulus energy into neural impulses.",
       "choices": [
@@ -60,6 +136,44 @@
     },
     {
       "id": "psbb-x036",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In the visible spectrum, the color we perceive is determined mainly by which physical property of light?",
+          "choices": [
+            {"label": "A", "text": "Its wavelength"},
+            {"label": "B", "text": "Its temperature"},
+            {"label": "C", "text": "Its loudness"},
+            {"label": "D", "text": "Its mass"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Color perception depends on the wavelength of light."
+        },
+        {
+          "level": 2,
+          "prompt": "Among red, orange, and yellow, which color has the LONGEST wavelength?",
+          "choices": [
+            {"label": "A", "text": "Red"},
+            {"label": "B", "text": "Yellow"},
+            {"label": "C", "text": "Orange"},
+            {"label": "D", "text": "They all have identical wavelengths"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Red has the longest wavelength of the three, so a correct short-to-long ordering must end in red."
+        },
+        {
+          "level": 3,
+          "prompt": "Among red, orange, and yellow, which has the SHORTEST wavelength, so it would come FIRST when ordering from short to long?",
+          "choices": [
+            {"label": "A", "text": "Yellow"},
+            {"label": "B", "text": "Red"},
+            {"label": "C", "text": "Orange"},
+            {"label": "D", "text": "None of them has the shortest"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Yellow has the shortest wavelength, so a correct short-to-long ordering must begin with yellow, eliminating any sequence that does not."
+        }
+      ],
       "section": "PSBB",
       "stem": "Which of the following correctly matches the pattern in our perception of color as we move from short wavelengths to long wavelengths?",
       "choices": [
@@ -80,6 +194,44 @@
     },
     {
       "id": "psbb-x037",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The electromagnetic spectrum is the full range of what?",
+          "choices": [
+            {"label": "A", "text": "Electromagnetic radiation across all wavelengths and frequencies"},
+            {"label": "B", "text": "Sound waves audible to the human ear"},
+            {"label": "C", "text": "The known chemical elements"},
+            {"label": "D", "text": "The types of neurons in the brain"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The electromagnetic spectrum spans all electromagnetic radiation."
+        },
+        {
+          "level": 2,
+          "prompt": "About how much of the entire electromagnetic spectrum is visible light?",
+          "choices": [
+            {"label": "A", "text": "Only a small portion; most electromagnetic radiation is invisible to us"},
+            {"label": "B", "text": "The entire spectrum is visible light"},
+            {"label": "C", "text": "None of the spectrum is visible light"},
+            {"label": "D", "text": "Exactly half of the spectrum"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Visible light is only a tiny slice; much of the spectrum is invisible to the human eye."
+        },
+        {
+          "level": 3,
+          "prompt": "Infrared light is best classified as which of the following?",
+          "choices": [
+            {"label": "A", "text": "A form of electromagnetic radiation"},
+            {"label": "B", "text": "A type of mechanical sound wave"},
+            {"label": "C", "text": "A chemical element on the periodic table"},
+            {"label": "D", "text": "A kind of nerve cell"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Infrared is one (invisible) form of electromagnetic radiation, reinforcing that the spectrum includes more than visible light."
+        }
+      ],
       "section": "PSBB",
       "stem": "The electromagnetic spectrum includes ________.",
       "choices": [
@@ -100,6 +252,44 @@
     },
     {
       "id": "psbb-x038",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Which of the following is a physical property of a sound wave?",
+          "choices": [
+            {"label": "A", "text": "Its frequency (how many cycles occur per second)"},
+            {"label": "B", "text": "The wavelength of an x-ray"},
+            {"label": "C", "text": "The color of the object making the sound"},
+            {"label": "D", "text": "The body weight of the listener"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Frequency is a core physical property of a sound wave."
+        },
+        {
+          "level": 2,
+          "prompt": "Pitch is the perceptual quality determined mainly by which single property of a sound wave?",
+          "choices": [
+            {"label": "A", "text": "Its frequency alone"},
+            {"label": "B", "text": "Its combination of frequency, amplitude, and timing"},
+            {"label": "C", "text": "Its electromagnetic charge"},
+            {"label": "D", "text": "Its temperature"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Pitch depends mainly on frequency alone, not the combination of all three, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two options can be eliminated - one because it depends on frequency alone, the other because it wrongly labels sound as an electromagnetic (rather than mechanical) wave?",
+          "choices": [
+            {"label": "A", "text": "pitch and electromagnetic"},
+            {"label": "B", "text": "timbre and tone"},
+            {"label": "C", "text": "pitch and tone"},
+            {"label": "D", "text": "electromagnetic and timbre"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Pitch is set by frequency alone and 'electromagnetic' misclassifies sound (a mechanical wave), so both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "The quality of a sound that is affected by frequency, amplitude, and timing of the sound wave is known as ________.",
       "choices": [
@@ -120,6 +310,44 @@
     },
     {
       "id": "psbb-x039",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The retina contains two types of photoreceptors. What do these light-detecting cells do?",
+          "choices": [
+            {"label": "A", "text": "Convert light into neural signals for vision"},
+            {"label": "B", "text": "Detect sound vibrations"},
+            {"label": "C", "text": "Control the movement of muscles"},
+            {"label": "D", "text": "Secrete hormones into the blood"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Photoreceptors transduce light into neural signals."
+        },
+        {
+          "level": 2,
+          "prompt": "Rods, one type of photoreceptor, function best under which conditions?",
+          "choices": [
+            {"label": "A", "text": "Dim, low-light conditions, and they do not detect color"},
+            {"label": "B", "text": "Bright light, and they capture fine color detail"},
+            {"label": "C", "text": "Only in total darkness with no light present"},
+            {"label": "D", "text": "Only under ultraviolet light"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Rods work best in dim light and are color-blind, so they are not the bright-light receptor."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated because one carries visual output out of the eye and the other is a brain region for processing vision - neither being a light-detecting photoreceptor?",
+          "choices": [
+            {"label": "A", "text": "retinal ganglion cells and striate cortex"},
+            {"label": "B", "text": "rods and cones"},
+            {"label": "C", "text": "retinal ganglion cells and rods"},
+            {"label": "D", "text": "striate cortex and cones"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Retinal ganglion cells transmit signals out of the eye and the striate cortex is a visual brain area, so neither is a photoreceptor."
+        }
+      ],
       "section": "PSBB",
       "stem": "________ operate best under bright light conditions.",
       "choices": [
@@ -140,6 +368,44 @@
     },
     {
       "id": "psbb-x040",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A negative afterimage (seeing a color after staring at another) is best explained by which theory of color vision?",
+          "choices": [
+            {"label": "A", "text": "The opponent-process theory"},
+            {"label": "B", "text": "The just-noticeable-difference law"},
+            {"label": "C", "text": "The principles of classical conditioning"},
+            {"label": "D", "text": "The gate-control theory"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Afterimages are explained by the opponent-process theory of color vision."
+        },
+        {
+          "level": 2,
+          "prompt": "In opponent-process theory, which of these is a genuine opposing color pair?",
+          "choices": [
+            {"label": "A", "text": "Blue and yellow"},
+            {"label": "B", "text": "Blue and green"},
+            {"label": "C", "text": "Red and orange"},
+            {"label": "D", "text": "Yellow and green"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Blue-yellow is one of the opponent color pairs (red-green is the other)."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated because blue and yellow are each other's opponent colors, so neither is the opponent of green?",
+          "choices": [
+            {"label": "A", "text": "blue and yellow"},
+            {"label": "B", "text": "black and red"},
+            {"label": "C", "text": "blue and red"},
+            {"label": "D", "text": "yellow and black"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Blue and yellow form their own opponent pair, so neither is green's opponent color."
+        }
+      ],
       "section": "PSBB",
       "stem": "If you were to stare at a green dot for a relatively long period of time and then shift your gaze to a blank white screen, you would see a ________ negative afterimage.",
       "choices": [
@@ -160,6 +426,44 @@
     },
     {
       "id": "psbb-x041",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The three tiny bones (ossicles) of the middle ear serve what function?",
+          "choices": [
+            {"label": "A", "text": "Transmitting and amplifying sound vibrations toward the inner ear"},
+            {"label": "B", "text": "Detecting the wavelength of light"},
+            {"label": "C", "text": "Controlling balance and nothing else"},
+            {"label": "D", "text": "Producing earwax"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The middle-ear ossicles transmit and amplify sound vibrations."
+        },
+        {
+          "level": 2,
+          "prompt": "The pinna is which part of the ear?",
+          "choices": [
+            {"label": "A", "text": "The visible outer ear, not a middle-ear bone"},
+            {"label": "B", "text": "One of the three middle-ear ossicles"},
+            {"label": "C", "text": "A fluid-filled organ of the inner ear"},
+            {"label": "D", "text": "The nerve that carries sound to the brain"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The pinna is the outer ear, so any set of structures listing it is not the middle-ear ossicles."
+        },
+        {
+          "level": 3,
+          "prompt": "The cochlea and pinna are inner- and outer-ear structures, so a set listing them is not the ossicles. Which structure below IS one of the three middle-ear ossicles?",
+          "choices": [
+            {"label": "A", "text": "The stapes"},
+            {"label": "B", "text": "The cochlea"},
+            {"label": "C", "text": "The pinna"},
+            {"label": "D", "text": "The eardrum"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The stapes is a middle-ear ossicle, whereas the cochlea and pinna are not, so a set naming them can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "The three ossicles of the middle ear are known as ________.",
       "choices": [
@@ -180,6 +484,44 @@
     },
     {
       "id": "psbb-x042",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In sensory terms, the prefixes 'mono-' and 'bi-/bin-' indicate what, respectively?",
+          "choices": [
+            {"label": "A", "text": "One versus two"},
+            {"label": "B", "text": "Near versus far"},
+            {"label": "C", "text": "Loud versus soft"},
+            {"label": "D", "text": "Light versus dark"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "'Mono-' means one and 'bi-/bin-' means two."
+        },
+        {
+          "level": 2,
+          "prompt": "In these terms, the root '-aural' refers to hearing or ears, while the root '-ocular' refers to what?",
+          "choices": [
+            {"label": "A", "text": "The eyes or vision"},
+            {"label": "B", "text": "The ears"},
+            {"label": "C", "text": "The nose"},
+            {"label": "D", "text": "The skin"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "'-ocular' refers to the eyes, so eye-based terms are not ear cues."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated because both refer to VISION (the eyes) rather than to hearing?",
+          "choices": [
+            {"label": "A", "text": "monocular and binocular"},
+            {"label": "B", "text": "monaural and binaural"},
+            {"label": "C", "text": "monocular and monaural"},
+            {"label": "D", "text": "binocular and binaural"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Monocular and binocular are vision terms, not hearing cues, so both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Cues that require two ears are referred to as ________ cues.",
       "choices": [
@@ -200,6 +542,44 @@
     },
     {
       "id": "psbb-x043",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How many basic taste qualities does the human tongue detect?",
+          "choices": [
+            {"label": "A", "text": "Five (sweet, sour, salty, bitter, and a savory taste)"},
+            {"label": "B", "text": "Two (only sweet and salty)"},
+            {"label": "C", "text": "Ten distinct tastes"},
+            {"label": "D", "text": "None; taste is entirely a matter of smell"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "There are five basic tastes, one of which MSG is linked to."
+        },
+        {
+          "level": 2,
+          "prompt": "Monosodium glutamate is added to food to enhance which sensory quality?",
+          "choices": [
+            {"label": "A", "text": "A savory, 'meaty' flavor"},
+            {"label": "B", "text": "A sugary sweetness"},
+            {"label": "C", "text": "A sharp sourness"},
+            {"label": "D", "text": "A bitter aftertaste"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "MSG enhances a savory flavor, not sweetness or sourness."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated because one is the taste of sugars and the other is the taste often linked to coffee, dark chocolate, or potential toxins?",
+          "choices": [
+            {"label": "A", "text": "sweet and bitter"},
+            {"label": "B", "text": "umami and sour"},
+            {"label": "C", "text": "sweet and umami"},
+            {"label": "D", "text": "bitter and sour"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Sweet is the taste of sugars and bitter the taste of things like coffee or toxins, so neither is MSG's savory taste."
+        }
+      ],
       "section": "PSBB",
       "stem": "Which taste is associated with monosodium glutamate?",
       "choices": [
@@ -220,6 +600,44 @@
     },
     {
       "id": "psbb-x044",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Maintaining balance and body posture depends on a sense that detects what?",
+          "choices": [
+            {"label": "A", "text": "Head position, movement, and the pull of gravity"},
+            {"label": "B", "text": "The wavelength of light"},
+            {"label": "C", "text": "The pitch of sounds"},
+            {"label": "D", "text": "Chemical odors in the air"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Balance depends on sensing head position, movement, and gravity."
+        },
+        {
+          "level": 2,
+          "prompt": "The auditory nerve carries which type of information to the brain?",
+          "choices": [
+            {"label": "A", "text": "Sound (hearing) signals from the cochlea"},
+            {"label": "B", "text": "Balance and head-position signals"},
+            {"label": "C", "text": "Pain signals from the skin"},
+            {"label": "D", "text": "Smell signals from the nose"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The auditory nerve carries hearing signals, not balance information, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated because one detects pain and the other processes smell - neither maintaining balance?",
+          "choices": [
+            {"label": "A", "text": "nociceptors and olfactory bulb"},
+            {"label": "B", "text": "vestibular system and auditory nerve"},
+            {"label": "C", "text": "nociceptors and vestibular system"},
+            {"label": "D", "text": "olfactory bulb and auditory nerve"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Nociceptors sense pain and the olfactory bulb handles smell, so neither maintains balance."
+        }
+      ],
       "section": "PSBB",
       "stem": "Which of the following is involved in maintaining balance and body posture?",
       "choices": [
@@ -240,6 +658,44 @@
     },
     {
       "id": "psbb-x045",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The four options (closure, good continuation, proximity, similarity) are all examples of which broad set of principles?",
+          "choices": [
+            {"label": "A", "text": "The Gestalt principles of perceptual organization"},
+            {"label": "B", "text": "The laws of classical conditioning"},
+            {"label": "C", "text": "The stages of sleep"},
+            {"label": "D", "text": "The types of long-term memory"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "All four are Gestalt grouping principles."
+        },
+        {
+          "level": 2,
+          "prompt": "The Gestalt principle of proximity states that we group elements based on what?",
+          "choices": [
+            {"label": "A", "text": "How close together they are in space"},
+            {"label": "B", "text": "How we mentally fill in missing pieces to see a whole"},
+            {"label": "C", "text": "How similar they look to one another"},
+            {"label": "D", "text": "How they move together in the same direction"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Proximity groups items by nearness, not by completing figures, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated because one groups items by how alike they look and the other by following smooth, continuous lines - neither being about completing a whole figure?",
+          "choices": [
+            {"label": "A", "text": "similarity and good continuation"},
+            {"label": "B", "text": "closure and proximity"},
+            {"label": "C", "text": "similarity and closure"},
+            {"label": "D", "text": "good continuation and proximity"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Similarity groups by likeness and good continuation follows continuous paths, so neither completes a whole figure."
+        }
+      ],
       "section": "PSBB",
       "stem": "Our tendency to perceive things as complete objects rather than as a series of parts is known as the principle of ________.",
       "choices": [
@@ -260,6 +716,44 @@
     },
     {
       "id": "psbb-x046",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "When you look at a scene, your visual system separates it into two parts. What are these two parts?",
+          "choices": [
+            {"label": "A", "text": "A main object of focus and its background"},
+            {"label": "B", "text": "A near object and a far object"},
+            {"label": "C", "text": "A bright color and a dark color"},
+            {"label": "D", "text": "A sound and its echo"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Figure-ground organization separates the focal object from its background."
+        },
+        {
+          "level": 2,
+          "prompt": "In figure-ground organization, the 'ground' refers to which part?",
+          "choices": [
+            {"label": "A", "text": "The background behind the main object"},
+            {"label": "B", "text": "The main object of focus itself"},
+            {"label": "C", "text": "The tendency to fill in gaps to see a whole"},
+            {"label": "D", "text": "An expectation shaped by prior experience"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The 'ground' is the background, not the focal object, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated because one is a gap-filling grouping principle and the other is a mental expectation or bias - neither naming the focal object of a scene?",
+          "choices": [
+            {"label": "A", "text": "closure and perceptual set"},
+            {"label": "B", "text": "figure and ground"},
+            {"label": "C", "text": "closure and figure"},
+            {"label": "D", "text": "perceptual set and ground"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Closure is a grouping principle and perceptual set is an expectation, so neither is the 'main point of focus.'"
+        }
+      ],
       "section": "PSBB",
       "stem": "The main point of focus in a visual display is known as the ________.",
       "choices": [
@@ -280,6 +774,44 @@
     },
     {
       "id": "psbb-x047",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A reflex is best defined as which kind of response?",
+          "choices": [
+            {"label": "A", "text": "An unlearned, automatic response to a stimulus"},
+            {"label": "B", "text": "A skill acquired through years of practice"},
+            {"label": "C", "text": "A conscious, deliberate decision"},
+            {"label": "D", "text": "A social custom taught by parents"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A reflex is an unlearned, automatic response."
+        },
+        {
+          "level": 2,
+          "prompt": "Riding a bike and walking are best described as which type of behavior?",
+          "choices": [
+            {"label": "A", "text": "Learned motor skills acquired through practice and development"},
+            {"label": "B", "text": "Innate reflexes present without any learning"},
+            {"label": "C", "text": "Purely verbal behaviors"},
+            {"label": "D", "text": "Hormonal responses of the glands"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Biking and walking are learned motor skills, not reflexes, so those options can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated because both are learned or socialized behaviors rather than automatic, unlearned reflexes?",
+          "choices": [
+            {"label": "A", "text": "a teen socializing and a child riding a bike"},
+            {"label": "B", "text": "an infant sucking on a nipple and a teen socializing"},
+            {"label": "C", "text": "a toddler walking and an infant sucking on a nipple"},
+            {"label": "D", "text": "a child riding a bike and an infant sucking on a nipple"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Socializing and bike-riding are learned behaviors, not reflexes, so both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Which of the following is an example of a reflex that occurs at some point in the development of a human being?",
       "choices": [
@@ -300,6 +832,44 @@
     },
     {
       "id": "psbb-x048",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Associative learning is learning that involves what?",
+          "choices": [
+            {"label": "A", "text": "Forming connections between stimuli, or between a behavior and its consequences"},
+            {"label": "B", "text": "Memorizing facts by rote repetition"},
+            {"label": "C", "text": "The physical growth of the body over time"},
+            {"label": "D", "text": "Inherited instincts present at birth"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Associative learning is about forming associations between events."
+        },
+        {
+          "level": 2,
+          "prompt": "Classical conditioning is also known by which other name?",
+          "choices": [
+            {"label": "A", "text": "Pavlovian conditioning"},
+            {"label": "B", "text": "Operant conditioning"},
+            {"label": "C", "text": "Observational learning"},
+            {"label": "D", "text": "Insight learning"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Classical and Pavlovian conditioning are two names for the same process, so listing both as 'two forms' is redundant."
+        },
+        {
+          "level": 3,
+          "prompt": "Which of these is NOT one of the two classic forms of associative learning?",
+          "choices": [
+            {"label": "A", "text": "Observational learning"},
+            {"label": "B", "text": "Classical conditioning"},
+            {"label": "C", "text": "Operant conditioning"},
+            {"label": "D", "text": "Pavlovian conditioning"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Observational learning is a separate (non-associative) type, so any pairing that includes it, or that uses the made-up term 'learning conditioning,' can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Two forms of associative learning are ________ and ________.",
       "choices": [
@@ -320,6 +890,44 @@
     },
     {
       "id": "psbb-x049",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In classical conditioning, a 'stimulus' is which of the following?",
+          "choices": [
+            {"label": "A", "text": "Something in the environment that can trigger, or come to trigger, a response"},
+            {"label": "B", "text": "The learner's internal level of motivation"},
+            {"label": "C", "text": "A reward delivered after a behavior"},
+            {"label": "D", "text": "The total number of learning trials"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A stimulus is an environmental event that can trigger a response."
+        },
+        {
+          "level": 2,
+          "prompt": "An unconditioned stimulus (US) is defined by which feature?",
+          "choices": [
+            {"label": "A", "text": "It naturally and automatically triggers a response without any learning"},
+            {"label": "B", "text": "It produces no response at all when first presented"},
+            {"label": "C", "text": "It works only after a period of conditioning"},
+            {"label": "D", "text": "It is a type of reinforcement schedule"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A US automatically triggers a response, the opposite of producing no initial response, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated because one triggers a response only AFTER learning and the other is a RESPONSE rather than a stimulus?",
+          "choices": [
+            {"label": "A", "text": "conditioned stimulus and unconditioned response"},
+            {"label": "B", "text": "neutral stimulus and unconditioned stimulus"},
+            {"label": "C", "text": "conditioned stimulus and neutral stimulus"},
+            {"label": "D", "text": "unconditioned response and unconditioned stimulus"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A conditioned stimulus elicits a response only after learning and an unconditioned response is a response, not a stimulus, so neither fits."
+        }
+      ],
       "section": "PSBB",
       "stem": "A stimulus that does not initially elicit a response in an organism is a(n) ________.",
       "choices": [
@@ -340,6 +948,44 @@
     },
     {
       "id": "psbb-x050",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In classical conditioning, extinction refers to what happening to a learned response?",
+          "choices": [
+            {"label": "A", "text": "The conditioned response gradually weakens and disappears"},
+            {"label": "B", "text": "The response becomes permanently stronger"},
+            {"label": "C", "text": "A brand-new inborn reflex is created"},
+            {"label": "D", "text": "The organism grows physically larger"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Extinction is the weakening and disappearance of the conditioned response."
+        },
+        {
+          "level": 2,
+          "prompt": "By the time extinction occurs, the once-neutral stimulus has already become which of the following?",
+          "choices": [
+            {"label": "A", "text": "A conditioned stimulus that now triggers the learned response"},
+            {"label": "B", "text": "Still just a neutral stimulus with no effect"},
+            {"label": "C", "text": "An unconditioned stimulus"},
+            {"label": "D", "text": "A form of reward"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "After conditioning, the neutral stimulus has become a conditioned stimulus, so extinction involves the conditioned (not 'neutral') stimulus."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two of the main answer choices can be eliminated because they describe a 'neutral stimulus' that has actually already become a conditioned stimulus?",
+          "choices": [
+            {"label": "A", "text": "the two options that begin 'the neutral stimulus is presented repeatedly'"},
+            {"label": "B", "text": "the two options that begin 'the conditioned stimulus'"},
+            {"label": "C", "text": "the options that mention an unconditioned stimulus"},
+            {"label": "D", "text": "none of them can be eliminated"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "By the time extinction happens the stimulus is conditioned, not neutral, so both 'neutral stimulus' options can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Extinction occurs when ________.",
       "choices": [
@@ -360,6 +1006,44 @@
     },
     {
       "id": "psbb-x051",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In operant conditioning, what is the difference between 'reinforcement' and 'punishment'?",
+          "choices": [
+            {"label": "A", "text": "Reinforcement increases a behavior; punishment decreases it"},
+            {"label": "B", "text": "Reinforcement decreases a behavior; punishment increases it"},
+            {"label": "C", "text": "Both of them increase a behavior"},
+            {"label": "D", "text": "Neither has any effect on behavior"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Reinforcement increases behavior while punishment decreases it."
+        },
+        {
+          "level": 2,
+          "prompt": "In these operant terms, what do the words 'positive' and 'negative' mean?",
+          "choices": [
+            {"label": "A", "text": "Positive means adding a stimulus; negative means removing a stimulus"},
+            {"label": "B", "text": "Positive means good; negative means bad"},
+            {"label": "C", "text": "Positive means fast; negative means slow"},
+            {"label": "D", "text": "Positive means reward; negative means punishment"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "'Positive' means adding and 'negative' means removing a stimulus, not good versus bad."
+        },
+        {
+          "level": 3,
+          "prompt": "Since the goal here is to STOP (decrease) a behavior, which two options can be eliminated because they would INCREASE a behavior instead?",
+          "choices": [
+            {"label": "A", "text": "positive reinforcement and negative reinforcement"},
+            {"label": "B", "text": "positive punishment and negative punishment"},
+            {"label": "C", "text": "positive reinforcement and positive punishment"},
+            {"label": "D", "text": "negative reinforcement and negative punishment"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Both forms of reinforcement increase behavior, so they cannot be used to stop one."
+        }
+      ],
       "section": "PSBB",
       "stem": "________ is when you take away a pleasant stimulus to stop a behavior.",
       "choices": [
@@ -380,6 +1064,44 @@
     },
     {
       "id": "psbb-x052",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "'Successive approximations' means rewarding behaviors that do what over time?",
+          "choices": [
+            {"label": "A", "text": "Get progressively closer to a desired target behavior"},
+            {"label": "B", "text": "Stay exactly identical on every trial"},
+            {"label": "C", "text": "Occur completely at random"},
+            {"label": "D", "text": "Never change at all"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Successive approximations are steps that move progressively closer to a goal behavior."
+        },
+        {
+          "level": 2,
+          "prompt": "How does this process differ from simply delivering positive reinforcement?",
+          "choices": [
+            {"label": "A", "text": "It reinforces a SEQUENCE of gradually improving approximations, not just one fixed behavior"},
+            {"label": "B", "text": "It removes an unpleasant stimulus each time"},
+            {"label": "C", "text": "It weakens a behavior until it disappears"},
+            {"label": "D", "text": "It involves no rewards at all"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "This technique reinforces gradually improving steps, which is more specific than one-off reinforcement."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated because one WEAKENS a behavior by withholding reinforcement and the other works by REMOVING an unpleasant stimulus - neither being 'rewarding step-by-step progress'?",
+          "choices": [
+            {"label": "A", "text": "extinction and negative reinforcement"},
+            {"label": "B", "text": "shaping and positive reinforcement"},
+            {"label": "C", "text": "extinction and positive reinforcement"},
+            {"label": "D", "text": "negative reinforcement and shaping"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Extinction weakens behavior and negative reinforcement removes an aversive stimulus, so neither is rewarding successive approximations."
+        }
+      ],
       "section": "PSBB",
       "stem": "Rewarding successive approximations toward a target behavior is ________.",
       "choices": [
@@ -400,6 +1122,44 @@
     },
     {
       "id": "psbb-x053",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Learning by watching and imitating someone else is called what?",
+          "choices": [
+            {"label": "A", "text": "Observational learning (modeling)"},
+            {"label": "B", "text": "Classical conditioning"},
+            {"label": "C", "text": "Sensory adaptation"},
+            {"label": "D", "text": "A reflex action"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Learning by watching and imitating is observational learning, or modeling."
+        },
+        {
+          "level": 2,
+          "prompt": "In observational learning, the demonstrator is referred to by a technical term regardless of whether they intend to teach. This means the demonstrator could even be which of the following?",
+          "choices": [
+            {"label": "A", "text": "Someone who is not a formal teacher at all, such as a peer or a TV character"},
+            {"label": "B", "text": "Only a certified schoolteacher"},
+            {"label": "C", "text": "Only a paid professional"},
+            {"label": "D", "text": "Only one of the learner's parents"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The demonstrator need not be a formal instructor, so job-title options are too narrow."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two options are job titles that specifically imply athletic or classroom instruction, making them narrower than the general term for any demonstrator?",
+          "choices": [
+            {"label": "A", "text": "instructor and coach"},
+            {"label": "B", "text": "teacher and model"},
+            {"label": "C", "text": "model and coach"},
+            {"label": "D", "text": "model and instructor"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "'Instructor' and 'coach' denote specific instructing roles, narrower than the general term for any demonstrator."
+        }
+      ],
       "section": "PSBB",
       "stem": "The person who performs a behavior that serves as an example is called a ________.",
       "choices": [
@@ -420,6 +1180,44 @@
     },
     {
       "id": "psbb-x054",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The four steps of observational learning (modeling) were proposed by which theorist?",
+          "choices": [
+            {"label": "A", "text": "Albert Bandura"},
+            {"label": "B", "text": "B. F. Skinner"},
+            {"label": "C", "text": "Ivan Pavlov"},
+            {"label": "D", "text": "Jean Piaget"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Bandura proposed the four-step model of observational learning."
+        },
+        {
+          "level": 2,
+          "prompt": "Logically, before you can imitate a behavior, what must you do first?",
+          "choices": [
+            {"label": "A", "text": "Pay attention to the behavior being modeled"},
+            {"label": "B", "text": "Feel motivated by a reward received afterward"},
+            {"label": "C", "text": "Physically reproduce the action"},
+            {"label": "D", "text": "Forget the details of the behavior"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "You must attend to a behavior first, so the correct sequence must begin with attention."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two orderings can be eliminated because they incorrectly place 'motivation' as the very FIRST step?",
+          "choices": [
+            {"label": "A", "text": "the two sequences that begin with 'motivation'"},
+            {"label": "B", "text": "the two sequences that begin with 'attention'"},
+            {"label": "C", "text": "the sequences that end in 'reproduction'"},
+            {"label": "D", "text": "none of them can be eliminated"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Attention must come before motivation, so any sequence starting with motivation is wrong."
+        }
+      ],
       "section": "PSBB",
       "stem": "Which is the correct order of steps in the modeling process?",
       "choices": [

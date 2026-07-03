@@ -26,6 +26,23 @@ private data class RawChoice(
     val text: String = "",
 )
 
+// SpeedyCAT graduated hint ladder — raw (JSON) shapes, mirroring loader.rs. The
+// content generators own the hint content; we only parse it, defensively.
+@Serializable
+private data class RawHintChoice(
+    val label: String = "",
+    val text: String = "",
+)
+
+@Serializable
+private data class RawHint(
+    val level: Int = 0,
+    val prompt: String = "",
+    val choices: List<RawHintChoice> = emptyList(),
+    val correctAnswer: String = "",
+    val rationale: String = "",
+)
+
 @Serializable
 private data class RawQuestion(
     val id: String = "",
@@ -44,6 +61,7 @@ private data class RawQuestion(
     val sourceUrl: String? = null,
     val answerProvenance: String? = null,
     val notes: String? = null,
+    val hints: List<RawHint> = emptyList(),
 )
 
 @Serializable
@@ -113,7 +131,37 @@ private fun RawQuestion.toQuestion(
         sourceUrl = sourceUrl,
         answerProvenance = answerProvenance,
         notes = notes,
+        hints = buildHints(hints),
     )
+
+/**
+ * SpeedyCAT graduated hint ladder: convert raw hint subquestions into validated
+ * models, DEFENSIVELY (mirrors the desktop `build_hints`). Keeps only well-formed
+ * tiers — a non-empty prompt, exactly 4 choices, and a `correctAnswer` matching
+ * one of those choice labels — and drops the rest, so a question can load with
+ * fewer than 3 (or zero) hints while content generation is still in progress.
+ * Levels are normalized to their 1-based position when missing/out of range.
+ */
+private fun buildHints(rawHints: List<RawHint>): List<HintSubquestion> {
+    val out = mutableListOf<HintSubquestion>()
+    for (raw in rawHints) {
+        if (raw.prompt.trim().isEmpty() || raw.choices.size != 4) continue
+        val choices = raw.choices.map { HintChoice(it.label, it.text) }
+        val correct = raw.correctAnswer.trim()
+        if (correct.isEmpty() || choices.none { it.label == correct }) continue
+        val level = if (raw.level in 1..3) raw.level else out.size + 1
+        out.add(
+            HintSubquestion(
+                level = level,
+                prompt = raw.prompt,
+                choices = choices,
+                correctAnswer = correct,
+                rationale = raw.rationale,
+            ),
+        )
+    }
+    return out
+}
 
 // ---- Bundle parsing -------------------------------------------------------
 

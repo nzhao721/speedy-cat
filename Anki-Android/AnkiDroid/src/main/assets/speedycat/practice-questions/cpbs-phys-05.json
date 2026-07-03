@@ -37,7 +37,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim (units 'cm' in the original generalized to amplitude A). OpenStax withholds the public answer key; answer independently verified."
+      "notes": "Stem + 4 options scraped verbatim (units 'cm' in the original generalized to amplitude A). OpenStax withholds the public answer key; answer independently verified.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In simple harmonic motion, the amplitude A is:",
+          "choices": [
+            {"label": "A", "text": "the maximum distance from equilibrium to one extreme"},
+            {"label": "B", "text": "the full distance between the two extremes"},
+            {"label": "C", "text": "the distance covered in one full period"},
+            {"label": "D", "text": "the speed at equilibrium"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Amplitude is the maximum displacement from equilibrium to an extreme."
+        },
+        {
+          "level": 2,
+          "prompt": "In HALF a period, the particle travels from one extreme all the way to the other extreme. What distance is that (in terms of A)?",
+          "choices": [
+            {"label": "A", "text": "2A"},
+            {"label": "B", "text": "A"},
+            {"label": "C", "text": "4A"},
+            {"label": "D", "text": "A/2"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "From one extreme to the other is two amplitudes, 2A (a full period is two such trips)."
+        },
+        {
+          "level": 3,
+          "prompt": "The DISTANCE (path length) over a full period is nonzero (0 is the displacement) and more than a single one-way trip. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'0' and 'A'"},
+            {"label": "B", "text": "'2A' and '4A'"},
+            {"label": "C", "text": "'0' and '4A'"},
+            {"label": "D", "text": "'A' and '2A'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "0 is the net displacement (not the distance) and A is too small for a full cycle, so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp075",
@@ -57,7 +95,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from Hooke's law."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from Hooke's law.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A 'restoring force' in an oscillator always points:",
+          "choices": [
+            {"label": "A", "text": "back toward the equilibrium position"},
+            {"label": "B", "text": "away from equilibrium"},
+            {"label": "C", "text": "in the direction of increasing displacement"},
+            {"label": "D", "text": "perpendicular to the displacement"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A restoring force points back toward equilibrium."
+        },
+        {
+          "level": 2,
+          "prompt": "Pointing 'back toward equilibrium' means the force is directed ____ the displacement x from equilibrium.",
+          "choices": [
+            {"label": "A", "text": "opposite to"},
+            {"label": "B", "text": "the same as"},
+            {"label": "C", "text": "perpendicular to"},
+            {"label": "D", "text": "unrelated to"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Toward equilibrium is opposite to the displacement, which the minus sign encodes."
+        },
+        {
+          "level": 3,
+          "prompt": "The minus sign in F = −kx describes the force's DIRECTION, not energy loss. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'it indicates mechanical energy decreases during oscillation' and 'None of the above'"},
+            {"label": "B", "text": "'restoring force is in the direction of the displacement' and 'restoring force is in the direction opposite the displacement'"},
+            {"label": "C", "text": "'restoring force is in the direction of the displacement' and 'None of the above'"},
+            {"label": "D", "text": "'it indicates mechanical energy decreases during oscillation' and 'restoring force is in the direction opposite the displacement'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The sign encodes direction, not energy loss, so the 'energy decreases' and 'none of the above' options are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp076",
@@ -77,7 +153,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (gravity restores a displaced liquid surface)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (gravity restores a displaced liquid surface).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The RESTORING agent of an oscillation must be a force (not an energy). Which of these is an actual force?",
+          "choices": [
+            {"label": "A", "text": "gravity"},
+            {"label": "B", "text": "potential energy"},
+            {"label": "C", "text": "kinetic energy"},
+            {"label": "D", "text": "mechanical energy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Gravity is a force; the others are forms of energy, not forces."
+        },
+        {
+          "level": 2,
+          "prompt": "Some choices name 'potential energy' or 'kinetic energy' as the restoring agent. Why can't an ENERGY be the restoring force?",
+          "choices": [
+            {"label": "A", "text": "energy is a scalar quantity, not a force, so it cannot BE the restoring force"},
+            {"label": "B", "text": "energy is actually a kind of force"},
+            {"label": "C", "text": "because energy always points toward equilibrium"},
+            {"label": "D", "text": "it can—energy is the restoring force"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A restoring force must be a force; energy is not a force, so energy-named options are ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "A restoring FORCE cannot be a form of energy. Which pair of energy options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'Potential energy' and 'Kinetic energy'"},
+            {"label": "B", "text": "'Gravity' and 'Mechanical energy'"},
+            {"label": "C", "text": "'Potential energy' and 'Gravity'"},
+            {"label": "D", "text": "'Kinetic energy' and 'Mechanical energy'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Potential and kinetic energy are energies, not forces, so both are eliminated as the restoring force."
+        }
+      ]
     },
     {
       "id": "cpbs-xp077",
@@ -97,7 +211,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (T = 2π√(m/k))."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (T = 2π√(m/k)).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The period of a mass–spring oscillator is:",
+          "choices": [
+            {"label": "A", "text": "T = 2π√(m/k)"},
+            {"label": "B", "text": "T = 2π√(k/m)"},
+            {"label": "C", "text": "T = 2π(m/k)"},
+            {"label": "D", "text": "T = √(m/k)"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "T = 2π√(m/k) for a mass on a spring."
+        },
+        {
+          "level": 2,
+          "prompt": "Convert to SI and set up the ratio: m = 100 g = 0.100 kg, k = 40 N/m. What is m/k inside the square root?",
+          "choices": [
+            {"label": "A", "text": "0.0025"},
+            {"label": "B", "text": "0.25"},
+            {"label": "C", "text": "400"},
+            {"label": "D", "text": "4000"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "m/k = 0.100/40 = 0.0025 (remember 100 g = 0.100 kg)."
+        },
+        {
+          "level": 3,
+          "prompt": "The period T = 2π√(m/k) for this small mass on a fairly stiff spring comes out well under 1π s—nowhere near 1π or 10π s. Which pair of options can be eliminated as too large?",
+          "choices": [
+            {"label": "A", "text": "'10π s' and '1π s'"},
+            {"label": "B", "text": "'0.5π s' and '0.1π s'"},
+            {"label": "C", "text": "'10π s' and '0.1π s'"},
+            {"label": "D", "text": "'1π s' and '0.5π s'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The period comes out to only a fraction of π (less than 1π s), so the values 10π s and 1π s are far too large and eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp078",
@@ -117,7 +269,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by rearranging T = 2π√(L/g)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by rearranging T = 2π√(L/g).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The period of a simple pendulum of length L is:",
+          "choices": [
+            {"label": "A", "text": "T = 2π√(L/g)"},
+            {"label": "B", "text": "T = 2π√(g/L)"},
+            {"label": "C", "text": "T = 2π(L/g)"},
+            {"label": "D", "text": "T = √(Lg)"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A simple pendulum has T = 2π√(L/g)."
+        },
+        {
+          "level": 2,
+          "prompt": "Square both sides of T = 2π√(L/g). What do you get?",
+          "choices": [
+            {"label": "A", "text": "T² = 4π² L/g"},
+            {"label": "B", "text": "T² = 2π L/g"},
+            {"label": "C", "text": "T² = 4π² g/L"},
+            {"label": "D", "text": "T² = 2π² L/g"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Squaring gives T² = 4π² L/g."
+        },
+        {
+          "level": 3,
+          "prompt": "Solving T² = 4π²L/g for g puts T² (not T) in the denominator. Which pair of options can be eliminated because they have only T (first power) in the denominator?",
+          "choices": [
+            {"label": "A", "text": "'g = 2πL/T' and 'g = 2π²L/T'"},
+            {"label": "B", "text": "'g = 2πL/T²' and 'g = 4π²L/T²'"},
+            {"label": "C", "text": "'g = 2πL/T' and 'g = 4π²L/T²'"},
+            {"label": "D", "text": "'g = 2π²L/T' and 'g = 2πL/T²'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "g must have T² in the denominator, so both options with only T are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp079",
@@ -137,7 +327,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (range of A sin is -A to +A)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (range of A sin is -A to +A).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The sine function, sin(θ), always takes values in the range:",
+          "choices": [
+            {"label": "A", "text": "−1 to +1"},
+            {"label": "B", "text": "0 to 1"},
+            {"label": "C", "text": "−π to +π"},
+            {"label": "D", "text": "−∞ to +∞"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Sine oscillates between −1 and +1."
+        },
+        {
+          "level": 2,
+          "prompt": "In x = A sin(ωt), what does the constant A represent physically?",
+          "choices": [
+            {"label": "A", "text": "the amplitude—the maximum displacement from equilibrium"},
+            {"label": "B", "text": "the period of the motion"},
+            {"label": "C", "text": "the angular frequency"},
+            {"label": "D", "text": "the phase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A is the amplitude, the largest magnitude x reaches."
+        },
+        {
+          "level": 3,
+          "prompt": "The position x oscillates (so it isn't a single value 0) and cannot range as '−t to +t' (that would be a time, not a position). Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'0' and '−t to +t'"},
+            {"label": "B", "text": "'−1 to +1' and '−A to +A'"},
+            {"label": "C", "text": "'0' and '−A to +A'"},
+            {"label": "D", "text": "'−t to +t' and '−1 to +1'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "x is not fixed at 0 and cannot range over a time '−t to +t', so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp080",
@@ -157,7 +385,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (damping dissipates energy as heat)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (damping dissipates energy as heat).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Non-conservative damping forces (friction, air resistance) convert mechanical energy into:",
+          "choices": [
+            {"label": "A", "text": "thermal energy (heat)"},
+            {"label": "B", "text": "more mechanical energy"},
+            {"label": "C", "text": "electrical energy"},
+            {"label": "D", "text": "nuclear energy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Damping dissipates mechanical energy as heat."
+        },
+        {
+          "level": 2,
+          "prompt": "A student says the mechanical energy removed by damping is simply STORED and can be fully recovered. Is that correct?",
+          "choices": [
+            {"label": "A", "text": "no—it is dissipated to the surroundings and not recoverable as mechanical energy"},
+            {"label": "B", "text": "yes—it is stored as potential energy"},
+            {"label": "C", "text": "yes—it is stored as kinetic energy"},
+            {"label": "D", "text": "no—no energy is ever removed"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Damping dissipates energy irreversibly; it is not merely stored."
+        },
+        {
+          "level": 3,
+          "prompt": "Damping definitely removes energy (so 'none' is wrong), and a simple mechanical oscillator does not generate electrical energy. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'Electrical energy' and 'None of the above'"},
+            {"label": "B", "text": "'Mechanical energy' and 'Thermal energy'"},
+            {"label": "C", "text": "'Electrical energy' and 'Thermal energy'"},
+            {"label": "D", "text": "'Mechanical energy' and 'None of the above'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "No electrical energy is produced and energy is definitely removed, so 'electrical' and 'none' are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp081",
@@ -177,7 +443,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (damping monotonically reduces mechanical energy)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (damping monotonically reduces mechanical energy).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A damping force continuously ____ the mechanical energy of an oscillator over time.",
+          "choices": [
+            {"label": "A", "text": "removes (decreases)"},
+            {"label": "B", "text": "adds to (increases)"},
+            {"label": "C", "text": "leaves unchanged"},
+            {"label": "D", "text": "doubles"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Damping steadily removes mechanical energy."
+        },
+        {
+          "level": 2,
+          "prompt": "While the damped oscillator is still moving, is there any moment when its mechanical energy stops changing (rate = 0)?",
+          "choices": [
+            {"label": "A", "text": "no—while damping acts and it moves, energy is continually being lost"},
+            {"label": "B", "text": "yes—the rate is zero throughout"},
+            {"label": "C", "text": "yes—the rate is positive at times"},
+            {"label": "D", "text": "the energy actually grows"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "As long as damping acts during motion, energy is continually removed, so the rate is never zero or positive."
+        },
+        {
+          "level": 3,
+          "prompt": "Damping removes energy, so the rate of change is neither positive (energy isn't gained) nor undefined (it is a well-defined rate). Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'Positive' and 'Undefined'"},
+            {"label": "B", "text": "'0' and 'Negative'"},
+            {"label": "C", "text": "'Positive' and 'Negative'"},
+            {"label": "D", "text": "'Undefined' and '0'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Energy is not gained (not positive) and the rate is well-defined (not undefined), so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp082",
@@ -197,7 +501,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (transverse = perpendicular particle motion; mechanical wave needs a medium)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (transverse = perpendicular particle motion; mechanical wave needs a medium).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In a TRANSVERSE wave, the particles of the medium oscillate:",
+          "choices": [
+            {"label": "A", "text": "perpendicular to the direction the wave travels"},
+            {"label": "B", "text": "parallel to the direction the wave travels"},
+            {"label": "C", "text": "in circles around the source"},
+            {"label": "D", "text": "not at all"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Transverse means particle motion is perpendicular to the direction of propagation."
+        },
+        {
+          "level": 2,
+          "prompt": "A MECHANICAL wave (like a wave on a rope) requires:",
+          "choices": [
+            {"label": "A", "text": "a material medium to travel through"},
+            {"label": "B", "text": "a vacuum"},
+            {"label": "C", "text": "an electric charge"},
+            {"label": "D", "text": "no medium at all"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Mechanical waves need a medium and cannot travel through a vacuum."
+        },
+        {
+          "level": 3,
+          "prompt": "A mechanical wave cannot travel in a vacuum. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'particles move up and down when the wave travels in a vacuum' and 'particles move right and left when the wave travels in a vacuum'"},
+            {"label": "B", "text": "'particles move left and right when the wave travels in a medium' and 'particles move up and down when the wave travels in a medium'"},
+            {"label": "C", "text": "'particles move up and down when the wave travels in a vacuum' and 'particles move up and down when the wave travels in a medium'"},
+            {"label": "D", "text": "'particles move right and left when the wave travels in a vacuum' and 'particles move left and right when the wave travels in a medium'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Mechanical waves need a medium, so both 'in a vacuum' options are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp083",
@@ -217,7 +559,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + options scraped from OpenStax (one redundant 'harmonic overtones' distractor replaced with a clearer unrelated-frequencies distractor to keep a single best answer). OpenStax withholds the public answer key; answer independently verified (f_n = n·f₁ for a string fixed at both ends)."
+      "notes": "Stem + options scraped from OpenStax (one redundant 'harmonic overtones' distractor replaced with a clearer unrelated-frequencies distractor to keep a single best answer). OpenStax withholds the public answer key; answer independently verified (f_n = n·f₁ for a string fixed at both ends).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A string fixed at both ends supports standing waves whose natural (resonant) frequencies are:",
+          "choices": [
+            {"label": "A", "text": "integer multiples of the fundamental frequency (f, 2f, 3f, ...)"},
+            {"label": "B", "text": "random, unrelated values"},
+            {"label": "C", "text": "all lower than the fundamental"},
+            {"label": "D", "text": "a single frequency only"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A string fixed at both ends resonates at f_n = n·f₁."
+        },
+        {
+          "level": 2,
+          "prompt": "These integer-multiple resonant frequencies above the fundamental are collectively called:",
+          "choices": [
+            {"label": "A", "text": "harmonics (overtones)"},
+            {"label": "B", "text": "nodes"},
+            {"label": "C", "text": "wavelengths"},
+            {"label": "D", "text": "amplitudes"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The higher resonant frequencies are the harmonics (overtones)."
+        },
+        {
+          "level": 3,
+          "prompt": "The resonant frequencies of a fixed string are definitely related to its fundamental. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'The resonant frequencies are unrelated to the fundamental frequency.' and 'None of the above'"},
+            {"label": "B", "text": "'The resonant frequencies are integer multiples of the fundamental frequency.' and 'The resonant frequencies are not integer multiples of the fundamental frequency.'"},
+            {"label": "C", "text": "'The resonant frequencies are unrelated to the fundamental frequency.' and 'The resonant frequencies are integer multiples of the fundamental frequency.'"},
+            {"label": "D", "text": "'None of the above' and 'The resonant frequencies are not integer multiples of the fundamental frequency.'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The frequencies are related to the fundamental, so 'unrelated' and 'none of the above' are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp084",
@@ -237,7 +617,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/16-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (180° out of phase ⇒ destructive interference)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (180° out of phase ⇒ destructive interference).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Two waves that are 180° out of phase (a crest aligns with a trough) interfere:",
+          "choices": [
+            {"label": "A", "text": "destructively"},
+            {"label": "B", "text": "constructively"},
+            {"label": "C", "text": "not at all"},
+            {"label": "D", "text": "only if they have different amplitudes"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A 180° phase difference gives destructive interference."
+        },
+        {
+          "level": 2,
+          "prompt": "How does 180°-out-of-phase (destructive) interference differ from IN-phase (constructive) interference for two equal waves?",
+          "choices": [
+            {"label": "A", "text": "destructive makes the amplitudes subtract, while constructive makes them add"},
+            {"label": "B", "text": "both make them add"},
+            {"label": "C", "text": "both make them subtract"},
+            {"label": "D", "text": "interference has no effect on amplitude"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Out of phase, amplitudes subtract; in phase, they add."
+        },
+        {
+          "level": 3,
+          "prompt": "Destructive interference makes the resultant SMALLER, so amplitudes larger than a single wave (like 3A or 9A) are impossible. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'3A' and '9A'"},
+            {"label": "B", "text": "'2A' and '0'"},
+            {"label": "C", "text": "'3A' and '0'"},
+            {"label": "D", "text": "'9A' and '2A'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Destructive interference can't increase the amplitude, so 3A and 9A are impossible and eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp085",
@@ -257,7 +675,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/17-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the Doppler effect for an approaching source."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the Doppler effect for an approaching source.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "By the Doppler effect, sound from a source moving TOWARD you is perceived at a:",
+          "choices": [
+            {"label": "A", "text": "higher frequency (higher pitch)"},
+            {"label": "B", "text": "lower frequency (lower pitch)"},
+            {"label": "C", "text": "unchanged frequency"},
+            {"label": "D", "text": "zero frequency"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "An approaching source raises the perceived pitch."
+        },
+        {
+          "level": 2,
+          "prompt": "As the approaching plane DECELERATES (its approach speed decreases), the amount of Doppler shift:",
+          "choices": [
+            {"label": "A", "text": "shrinks, so the perceived pitch drops back toward the true frequency"},
+            {"label": "B", "text": "grows, so the pitch rises further"},
+            {"label": "C", "text": "stays exactly the same"},
+            {"label": "D", "text": "reverses to below the true frequency"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A smaller approach speed means a smaller upward shift, so the pitch falls toward the true value."
+        },
+        {
+          "level": 3,
+          "prompt": "Because the plane is APPROACHING, the handler hears a HIGHER pitch than the pilot, so any 'lower pitched' option is wrong. Which pair can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'lower pitched..., even lower as it slows' and 'lower pitched..., increases in pitch as it slows'"},
+            {"label": "B", "text": "'higher pitched..., decreases in pitch as it slows' and 'higher pitched..., further increases as it slows'"},
+            {"label": "C", "text": "'lower pitched..., even lower as it slows' and 'higher pitched..., decreases in pitch as it slows'"},
+            {"label": "D", "text": "'lower pitched..., increases as it slows' and 'higher pitched..., further increases as it slows'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "An approaching source raises the pitch, so both 'lower pitched' options are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp086",
@@ -277,7 +733,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/17-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Reformatted from the source's 4-row answer table into A-D choices without changing wording. OpenStax withholds the public answer key; answer independently verified (closed pipe: only odd harmonics; 4th overtone = 9th harmonic)."
+      "notes": "Reformatted from the source's 4-row answer table into A-D choices without changing wording. OpenStax withholds the public answer key; answer independently verified (closed pipe: only odd harmonics; 4th overtone = 9th harmonic).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A tube closed at one end (open at the other) supports standing waves at:",
+          "choices": [
+            {"label": "A", "text": "only the ODD harmonics (f, 3f, 5f, 7f, 9f, ...)"},
+            {"label": "B", "text": "all integer harmonics (f, 2f, 3f, ...)"},
+            {"label": "C", "text": "only the even harmonics (2f, 4f, ...)"},
+            {"label": "D", "text": "a single frequency"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A closed-end pipe resonates only at odd harmonics."
+        },
+        {
+          "level": 2,
+          "prompt": "Listing the odd harmonics f, 3f, 5f, 7f, 9f..., the fundamental is the 1st, so the overtones are the 3rd, 5th, 7th, 9th. Which harmonic is the FOURTH overtone?",
+          "choices": [
+            {"label": "A", "text": "the 9th harmonic"},
+            {"label": "B", "text": "the 4th harmonic"},
+            {"label": "C", "text": "the 5th harmonic"},
+            {"label": "D", "text": "the 7th harmonic"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The overtones after the fundamental are 3f, 5f, 7f, 9f, so the fourth overtone is the 9th harmonic."
+        },
+        {
+          "level": 3,
+          "prompt": "A closed-end pipe has only ODD harmonics, so a frequency of 4f is impossible. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'frequency 4f, wavelength λ/4' and 'frequency 4f, wavelength λ'"},
+            {"label": "B", "text": "'frequency 9f, wavelength λ/9' and 'frequency 9f, wavelength λ'"},
+            {"label": "C", "text": "'frequency 4f, wavelength λ/4' and 'frequency 9f, wavelength λ/9'"},
+            {"label": "D", "text": "'frequency 4f, wavelength λ' and 'frequency 9f, wavelength λ'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "4f is an even harmonic, impossible for a closed pipe, so both '4f' options are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp087",
@@ -297,7 +791,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/17-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim (figure description summarized in words). OpenStax withholds the public answer key; answer independently verified (v fixed by tension; f = v/2L, so halving L doubles f)."
+      "notes": "Stem + 4 options scraped verbatim (figure description summarized in words). OpenStax withholds the public answer key; answer independently verified (v fixed by tension; f = v/2L, so halving L doubles f).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The fundamental (one-antinode) frequency of a vibrating string is f = v/(2L), where the wave speed v depends on:",
+          "choices": [
+            {"label": "A", "text": "the tension and the string's linear density (mass per length)"},
+            {"label": "B", "text": "the length only"},
+            {"label": "C", "text": "the frequency only"},
+            {"label": "D", "text": "the amplitude"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Wave speed v is set by tension and linear density, not by length."
+        },
+        {
+          "level": 2,
+          "prompt": "When the oscillator is moved to shorten the string, which quantity stays the SAME (letting you relate the new frequency to the old)?",
+          "choices": [
+            {"label": "A", "text": "the wave speed v (tension and linear density are unchanged)"},
+            {"label": "B", "text": "the frequency"},
+            {"label": "C", "text": "the length"},
+            {"label": "D", "text": "the number of antinodes times the length"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Tension and linear density are unchanged, so v stays the same while L changes."
+        },
+        {
+          "level": 3,
+          "prompt": "A SHORTER string (same wave speed) has a HIGHER fundamental frequency, so a lower or unchanged frequency is wrong. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'f₀/2' and 'f₀'"},
+            {"label": "B", "text": "'2f₀' and 'There is no frequency at which a standing wave will be formed.'"},
+            {"label": "C", "text": "'f₀/2' and '2f₀'"},
+            {"label": "D", "text": "'f₀' and 'There is no frequency at which a standing wave will be formed.'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Shortening the string raises the fundamental frequency, so f₀/2 (lower) and f₀ (unchanged) are eliminated."
+        }
+      ]
     }
   ]
 }

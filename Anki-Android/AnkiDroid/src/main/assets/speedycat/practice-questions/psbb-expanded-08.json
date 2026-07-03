@@ -20,6 +20,44 @@
   "questions": [
     {
       "id": "psbb-x128",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The 'harmful dysfunction' analysis defines a disorder as requiring BOTH of which two elements?",
+          "choices": [
+            {"label": "A", "text": "A harmful outcome AND an internal dysfunction"},
+            {"label": "B", "text": "Wealth AND social status"},
+            {"label": "C", "text": "Two or more separate diagnoses"},
+            {"label": "D", "text": "A supportive family AND a stable job"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "In Wakefield's model, a disorder requires both harm (a value judgment) and an internal dysfunction."
+        },
+        {
+          "level": 2,
+          "prompt": "The 'harmful' part of the model is a value judgment; the 'dysfunction' part adds which kind of criterion?",
+          "choices": [
+            {"label": "A", "text": "A more objective, science-based criterion about an internal mechanism"},
+            {"label": "B", "text": "A purely religious criterion"},
+            {"label": "C", "text": "A purely financial criterion"},
+            {"label": "D", "text": "A purely legal criterion"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Dysfunction adds an objective, science-based criterion (an internal mechanism failing) to the value judgment of harm."
+        },
+        {
+          "level": 3,
+          "prompt": "The model locates dysfunction INSIDE the individual. Which two main-question options instead describe EXTERNAL social problems that do not fit 'dysfunction'?",
+          "choices": [
+            {"label": "A", "text": "'The breakdown of social order in one's community' and 'communication problems in one's immediate family'"},
+            {"label": "B", "text": "'The inability of a psychological mechanism to perform its function' and 'all the above'"},
+            {"label": "C", "text": "'All the above' and 'communication problems in one's family'"},
+            {"label": "D", "text": "'The breakdown of social order' and 'the inability of a mechanism to perform its function'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Social-order and family-communication problems are external, so they do not fit 'dysfunction' and can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "In the harmful dysfunction definition of psychological disorders, dysfunction involves ________.",
       "choices": [
@@ -40,6 +78,44 @@
     },
     {
       "id": "psbb-x129",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What is the DSM-5 used for?",
+          "choices": [
+            {"label": "A", "text": "Classifying and diagnosing mental disorders"},
+            {"label": "B", "text": "Prescribing exact medication doses"},
+            {"label": "C", "text": "Measuring a person's IQ"},
+            {"label": "D", "text": "Tracking hospital billing codes"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The DSM-5 is the standard manual for classifying and diagnosing mental disorders."
+        },
+        {
+          "level": 2,
+          "prompt": "The DSM catalogs 'Mental Disorders.' A title using which word would therefore be a poor fit for it?",
+          "choices": [
+            {"label": "A", "text": "'Medicine,' since the manual is not a general medical text"},
+            {"label": "B", "text": "'Manual,' since it is a reference book"},
+            {"label": "C", "text": "'Disorders,' since it lists disorders"},
+            {"label": "D", "text": "'Mental,' since it concerns the mind"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The DSM concerns mental disorders specifically, not general 'medicine,' so a 'Manual of Medicine' title misdescribes it."
+        },
+        {
+          "level": 3,
+          "prompt": "Two main-question options begin with 'Diseases,' but the DSM is about diagnosing disorders, not cataloging physical diseases. Which two can be eliminated on that basis?",
+          "choices": [
+            {"label": "A", "text": "'Diseases and Statistics Manual of Medicine' and 'Diseases and Symptoms Manual of Mental Disorders'"},
+            {"label": "B", "text": "'Diagnosable Standards Manual of Mental Disorders' and 'Diagnostic and Statistical Manual of Mental Disorders'"},
+            {"label": "C", "text": "'Diseases and Statistics Manual of Medicine' and 'Diagnostic and Statistical Manual of Mental Disorders'"},
+            {"label": "D", "text": "'Diagnosable Standards Manual of Mental Disorders' and 'Diseases and Symptoms Manual of Mental Disorders'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The two 'Diseases...' titles misdescribe the manual and can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "The letters in the abbreviation DSM-5 stand for ________.",
       "choices": [
@@ -60,6 +136,44 @@
     },
     {
       "id": "psbb-x130",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In the diathesis-stress model, the word 'diathesis' refers to which of the following?",
+          "choices": [
+            {"label": "A", "text": "A predisposition or vulnerability (for example, genetic or biological) to a disorder"},
+            {"label": "B", "text": "A stressful life event"},
+            {"label": "C", "text": "A specific type of therapy"},
+            {"label": "D", "text": "A single brain chemical"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A diathesis is a predisposing vulnerability to a disorder."
+        },
+        {
+          "level": 2,
+          "prompt": "In the name 'diathesis-stress model,' the 'stress' component refers to which of the following?",
+          "choices": [
+            {"label": "A", "text": "Adverse or stressful life experiences"},
+            {"label": "B", "text": "An inherited vulnerability"},
+            {"label": "C", "text": "A brain-imaging technique"},
+            {"label": "D", "text": "A relaxation therapy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The 'stress' component refers to adverse or stressful life experiences that interact with the vulnerability."
+        },
+        {
+          "level": 3,
+          "prompt": "Two main-question options describe ONLY internal biology, with no role for life experience. Since the model requires stressors too, which two can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'Biochemical factors' and 'chemical imbalances and structural abnormalities in the brain'"},
+            {"label": "B", "text": "'Vulnerability and adverse experiences' and 'adverse childhood experiences'"},
+            {"label": "C", "text": "'Biochemical factors' and 'vulnerability and adverse experiences'"},
+            {"label": "D", "text": "'Adverse childhood experiences' and 'chemical imbalances in the brain'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Those two options omit stress/experience entirely, so they can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "The diathesis-stress model presumes that psychopathology results from ________.",
       "choices": [
@@ -80,6 +194,44 @@
     },
     {
       "id": "psbb-x131",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What is the core feature shared by all anxiety disorders?",
+          "choices": [
+            {"label": "A", "text": "Excessive fear and/or anxiety and related behavioral disturbances"},
+            {"label": "B", "text": "Loss of memory for personal events"},
+            {"label": "C", "text": "Hallucinations and delusions"},
+            {"label": "D", "text": "Episodes of manic euphoria"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Anxiety disorders share excessive fear and/or anxiety."
+        },
+        {
+          "level": 2,
+          "prompt": "Some anxiety disorders involve worry about a SPECIFIC trigger, while others involve pervasive, free-floating worry not tied to any one thing. The pervasive, non-specific type is best described as which of the following?",
+          "choices": [
+            {"label": "A", "text": "Chronic, generalized worry about many things at once"},
+            {"label": "B", "text": "Fear triggered only by social scrutiny"},
+            {"label": "C", "text": "Fear of being unable to escape a place"},
+            {"label": "D", "text": "Sudden, discrete surges of panic"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Free-floating, non-specific chronic worry describes the generalized type of anxiety."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two of the main-question options are defined by a SPECIFIC trigger (social situations; being trapped or unable to escape) rather than continuous, non-specific worry?",
+          "choices": [
+            {"label": "A", "text": "Social anxiety disorder and agoraphobia"},
+            {"label": "B", "text": "Generalized anxiety disorder and panic disorder"},
+            {"label": "C", "text": "Panic disorder and agoraphobia"},
+            {"label": "D", "text": "Generalized anxiety disorder and social anxiety disorder"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Social anxiety (social scrutiny) and agoraphobia (inescapable situations) have specific triggers, so they can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "In which of the following anxiety disorders is the person in a continuous state of excessive, pointless worry and apprehension?",
       "choices": [
@@ -100,6 +252,44 @@
     },
     {
       "id": "psbb-x132",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In OCD, a 'compulsion' is best described as which of the following?",
+          "choices": [
+            {"label": "A", "text": "A repetitive behavior or mental act performed to reduce anxiety"},
+            {"label": "B", "text": "A persistent unwanted thought or urge"},
+            {"label": "C", "text": "A fixed, false belief"},
+            {"label": "D", "text": "A false sensory perception"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A compulsion is a repetitive act (including a mental act) performed to relieve anxiety."
+        },
+        {
+          "level": 2,
+          "prompt": "How does an 'obsession' differ from a 'compulsion'?",
+          "choices": [
+            {"label": "A", "text": "An obsession is an intrusive thought or urge, whereas a compulsion is a repetitive act done in response"},
+            {"label": "B", "text": "They are two words for the same thing"},
+            {"label": "C", "text": "An obsession is an action and a compulsion is a thought"},
+            {"label": "D", "text": "Neither one involves anxiety"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Obsessions are intrusive thoughts; compulsions are the repetitive acts done in response."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two of the main-question options are intrusive THOUGHTS (obsessions) rather than repetitive acts?",
+          "choices": [
+            {"label": "A", "text": "'Persistent fear of germs' and 'thoughts of harming a neighbor'"},
+            {"label": "B", "text": "'Mentally counting backward from 1,000' and 'persistent fear of germs'"},
+            {"label": "C", "text": "'Thoughts of harming a neighbor' and 'mentally counting backward from 1,000'"},
+            {"label": "D", "text": "'Falsely believing that a spouse has been cheating' and 'mentally counting backward'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A fear of germs and thoughts of harm are obsessions (thoughts), not compulsive acts, so they can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Which of the following best illustrates a compulsion?",
       "choices": [
@@ -120,6 +310,44 @@
     },
     {
       "id": "psbb-x133",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "PTSD develops after which of the following?",
+          "choices": [
+            {"label": "A", "text": "Exposure to a traumatic event"},
+            {"label": "B", "text": "A chemical imbalance present from birth"},
+            {"label": "C", "text": "Learning a difficult new skill"},
+            {"label": "D", "text": "The normal process of aging"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "PTSD follows exposure to a traumatic event."
+        },
+        {
+          "level": 2,
+          "prompt": "Which of the following is a recognized cluster of PTSD symptoms?",
+          "choices": [
+            {"label": "A", "text": "Intrusive re-experiencing (memories/flashbacks), avoidance, and heightened arousal"},
+            {"label": "B", "text": "Mania, euphoria, and grandiosity"},
+            {"label": "C", "text": "Improved memory and concentration"},
+            {"label": "D", "text": "Increased calm and relaxation"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "PTSD symptom clusters include intrusion, avoidance, and hyperarousal."
+        },
+        {
+          "level": 3,
+          "prompt": "This is an 'except' question. Which two of the main-question options are clearly core PTSD symptoms (and therefore NOT the exception)?",
+          "choices": [
+            {"label": "A", "text": "'Intrusive thoughts or memories of a traumatic event' and 'avoidance of things that remind one of a traumatic event'"},
+            {"label": "B", "text": "'Jumpiness' and 'physical complaints that cannot be explained medically'"},
+            {"label": "C", "text": "'Avoidance of reminders' and 'physical complaints that cannot be explained medically'"},
+            {"label": "D", "text": "'Intrusive memories' and 'physical complaints that cannot be explained medically'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Intrusive memories and avoidance are hallmark PTSD symptoms, so they are not the exception and can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Symptoms of PTSD include all of the following except ________.",
       "choices": [
@@ -140,6 +368,44 @@
     },
     {
       "id": "psbb-x134",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Major depressive disorder is characterized primarily by which of the following?",
+          "choices": [
+            {"label": "A", "text": "Persistent low mood and/or loss of interest or pleasure"},
+            {"label": "B", "text": "Elevated, euphoric mood"},
+            {"label": "C", "text": "Hallucinations only"},
+            {"label": "D", "text": "Boundless, excessive energy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "MDD centers on depressed mood and/or loss of interest or pleasure."
+        },
+        {
+          "level": 2,
+          "prompt": "In major depression, changes in concentration and psychomotor activity typically involve which of the following?",
+          "choices": [
+            {"label": "A", "text": "Trouble concentrating, indecision, and psychomotor agitation or retardation"},
+            {"label": "B", "text": "Racing euphoric thoughts and limitless energy"},
+            {"label": "C", "text": "No changes in thinking or movement at all"},
+            {"label": "D", "text": "Sharply improved focus and joy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Depression involves impaired concentration and psychomotor changes."
+        },
+        {
+          "level": 3,
+          "prompt": "This is an 'except' question. Which two of the main-question options are genuine depressive symptoms (thus NOT the exception)?",
+          "choices": [
+            {"label": "A", "text": "'Difficulty concentrating and making decisions' and 'loss of interest or pleasure in usual activities'"},
+            {"label": "B", "text": "'Periods of extreme elation and euphoria' and 'loss of interest or pleasure'"},
+            {"label": "C", "text": "'Psychomotor agitation and retardation' and 'periods of extreme elation and euphoria'"},
+            {"label": "D", "text": "'Periods of extreme elation and euphoria' and 'difficulty concentrating'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Trouble concentrating and loss of interest are classic depressive symptoms, so they are not the exception and can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Common symptoms of major depressive disorder include all of the following except ________.",
       "choices": [
@@ -160,6 +426,44 @@
     },
     {
       "id": "psbb-x135",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A 'delusion' is best defined as which of the following?",
+          "choices": [
+            {"label": "A", "text": "A fixed, false belief maintained despite contrary evidence"},
+            {"label": "B", "text": "A false sensory perception, such as hearing voices"},
+            {"label": "C", "text": "Disorganized, off-track speech"},
+            {"label": "D", "text": "An absence of normal emotional expression"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A delusion is a fixed, false belief held despite contrary evidence."
+        },
+        {
+          "level": 2,
+          "prompt": "How does a delusion differ from a hallucination?",
+          "choices": [
+            {"label": "A", "text": "A delusion is a false BELIEF, whereas a hallucination is a false PERCEPTION"},
+            {"label": "B", "text": "They are exactly the same phenomenon"},
+            {"label": "C", "text": "A delusion is a perception and a hallucination is a belief"},
+            {"label": "D", "text": "Neither one occurs in psychosis"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Delusions are false beliefs; hallucinations are false perceptions."
+        },
+        {
+          "level": 3,
+          "prompt": "Which of the following is a disorder of SPEECH (disorganized, off-track talking) rather than a false belief?",
+          "choices": [
+            {"label": "A", "text": "Tangentiality"},
+            {"label": "B", "text": "A firmly held false belief"},
+            {"label": "C", "text": "Hearing voices that are not there"},
+            {"label": "D", "text": "A sudden panic attack"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Tangentiality is a speech disturbance, not a false belief, so it can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Clifford falsely believes that the police have planted secret cameras in his home to monitor his every movement. Clifford's belief is an example of ________.",
       "choices": [
@@ -180,6 +484,44 @@
     },
     {
       "id": "psbb-x136",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Dissociative disorders involve disruptions in which of the following?",
+          "choices": [
+            {"label": "A", "text": "Memory, identity, consciousness, or perception, typically linked to psychological stress"},
+            {"label": "B", "text": "Blood circulation"},
+            {"label": "C", "text": "Muscle strength"},
+            {"label": "D", "text": "Visual acuity"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Dissociative disorders disrupt memory, identity, consciousness, or perception, often after stress."
+        },
+        {
+          "level": 2,
+          "prompt": "Dissociative amnesia's memory loss is caused by which of the following?",
+          "choices": [
+            {"label": "A", "text": "Psychological stress or trauma, not a physical brain injury"},
+            {"label": "B", "text": "A blow to the head"},
+            {"label": "C", "text": "A stroke"},
+            {"label": "D", "text": "Normal aging"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Dissociative amnesia stems from psychological stress, not physical injury, so a physical-injury cause can be eliminated."
+        },
+        {
+          "level": 3,
+          "prompt": "Which option describes DEPERSONALIZATION (feeling detached from oneself) rather than a problem with memory?",
+          "choices": [
+            {"label": "A", "text": "Feeling detached from the self"},
+            {"label": "B", "text": "Losing the ability to recall personal information after surgery"},
+            {"label": "C", "text": "A sudden seizure"},
+            {"label": "D", "text": "Chronic joint pain"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "'Feeling detached from the self' is depersonalization, not a memory problem, so it can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Dissociative amnesia involves ________.",
       "choices": [
@@ -200,6 +542,44 @@
     },
     {
       "id": "psbb-x137",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "ADHD is primarily characterized by which of the following?",
+          "choices": [
+            {"label": "A", "text": "Inattention, hyperactivity, and impulsivity"},
+            {"label": "B", "text": "Fixed, repetitive interests and social-communication deficits"},
+            {"label": "C", "text": "Hallucinations and delusions"},
+            {"label": "D", "text": "Loss of memory for personal events"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "ADHD is defined by inattention, hyperactivity, and impulsivity."
+        },
+        {
+          "level": 2,
+          "prompt": "ADHD symptoms cluster into two domains. Which pair correctly names those domains?",
+          "choices": [
+            {"label": "A", "text": "Inattention and hyperactivity-impulsivity"},
+            {"label": "B", "text": "Mania and depression"},
+            {"label": "C", "text": "Obsessions and compulsions"},
+            {"label": "D", "text": "Delusions and hallucinations"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "ADHD's two symptom domains are inattention and hyperactivity-impulsivity."
+        },
+        {
+          "level": 3,
+          "prompt": "This is a 'not a characteristic' question. Which two of the main-question options are clearly ADHD symptoms (inattention or hyperactivity) and thus NOT the exception?",
+          "choices": [
+            {"label": "A", "text": "'Short attention span' and 'excessive fidgeting and squirming'"},
+            {"label": "B", "text": "'Restricted and fixated interest' and 'short attention span'"},
+            {"label": "C", "text": "'Difficulty concentrating and distractibility' and 'restricted and fixated interest'"},
+            {"label": "D", "text": "'Restricted and fixated interest' and 'excessive fidgeting and squirming'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Short attention span (inattention) and fidgeting (hyperactivity) are ADHD symptoms, so they are not the exception and can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Which of the following is not a primary characteristic of ADHD?",
       "choices": [
@@ -220,6 +600,44 @@
     },
     {
       "id": "psbb-x138",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Personality disorders involve which of the following?",
+          "choices": [
+            {"label": "A", "text": "Enduring, inflexible patterns of inner experience and behavior that deviate from cultural expectations"},
+            {"label": "B", "text": "Temporary sadness after a specific loss"},
+            {"label": "C", "text": "A physical brain tumor"},
+            {"label": "D", "text": "Ordinary, healthy personality variation"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Personality disorders are enduring, inflexible, maladaptive patterns of experience and behavior."
+        },
+        {
+          "level": 2,
+          "prompt": "Borderline personality disorder is marked chiefly by instability in which of the following?",
+          "choices": [
+            {"label": "A", "text": "Mood, self-image, and relationships, along with marked impulsivity"},
+            {"label": "B", "text": "Blood pressure and heart rate"},
+            {"label": "C", "text": "Memory and language"},
+            {"label": "D", "text": "Vision and hearing"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "BPD is characterized by instability in mood, self-image, and relationships, plus impulsivity."
+        },
+        {
+          "level": 3,
+          "prompt": "Two of the main-question options describe OTHER personality disorders: attention-seeking (histrionic) and accomplishing goals through cruelty (antisocial). Which two are those?",
+          "choices": [
+            {"label": "A", "text": "'Try to be the center of attention' and 'tend to accomplish goals through cruelty'"},
+            {"label": "B", "text": "'Are impulsive and unpredictable' and 'are shy and withdrawn'"},
+            {"label": "C", "text": "'Are shy and withdrawn' and 'try to be the center of attention'"},
+            {"label": "D", "text": "'Are impulsive and unpredictable' and 'tend to accomplish goals through cruelty'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Center-of-attention (histrionic) and cruelty (antisocial) describe other disorders, so they can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "People with borderline personality disorder often ________.",
       "choices": [
@@ -240,6 +658,44 @@
     },
     {
       "id": "psbb-x139",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The 'moral treatment' movement in mental health advocated which of the following?",
+          "choices": [
+            {"label": "A", "text": "Humane, compassionate care for people with mental illness"},
+            {"label": "B", "text": "Punishment and exorcism of the mentally ill"},
+            {"label": "C", "text": "Ignoring mental illness completely"},
+            {"label": "D", "text": "Permanent imprisonment of all patients"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Moral treatment promoted humane, compassionate care."
+        },
+        {
+          "level": 2,
+          "prompt": "Philippe Pinel is historically remembered for which of the following?",
+          "choices": [
+            {"label": "A", "text": "Advocating humane, reform-minded treatment of the mentally ill"},
+            {"label": "B", "text": "Promoting demonic-possession explanations"},
+            {"label": "C", "text": "Permanently imprisoning patients without care"},
+            {"label": "D", "text": "Ignoring the mentally ill entirely"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Pinel advocated humane treatment, so he DID support it and can be eliminated."
+        },
+        {
+          "level": 3,
+          "prompt": "The question asks who does NOT support humane treatment. If at least one listed figure clearly WAS a humane-treatment reformer, can 'All of the above' be the correct answer?",
+          "choices": [
+            {"label": "A", "text": "No, because some listed figures did support humane treatment"},
+            {"label": "B", "text": "Yes, all listed figures opposed humane treatment"},
+            {"label": "C", "text": "Yes, the reformers opposed humane care"},
+            {"label": "D", "text": "It cannot be determined at all"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Because at least one listed figure supported humane treatment, 'All of the above' cannot be correct and can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Who of the following does not support the humane and improved treatment of people with mental illness?",
       "choices": [
@@ -260,6 +716,44 @@
     },
     {
       "id": "psbb-x140",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In mental-health care, 'voluntary treatment' means which of the following?",
+          "choices": [
+            {"label": "A", "text": "The person chooses to seek treatment of their own free will"},
+            {"label": "B", "text": "Treatment that a court orders a person to attend"},
+            {"label": "C", "text": "Treatment imposed with physical restraint"},
+            {"label": "D", "text": "Treatment that is against the law"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Voluntary treatment is sought freely by the person."
+        },
+        {
+          "level": 2,
+          "prompt": "How is 'involuntary treatment' different from 'voluntary treatment'?",
+          "choices": [
+            {"label": "A", "text": "Involuntary treatment is imposed on a person who has not chosen it, unlike voluntary treatment"},
+            {"label": "B", "text": "Involuntary treatment is always chosen freely by the patient"},
+            {"label": "C", "text": "They mean exactly the same thing"},
+            {"label": "D", "text": "Involuntary treatment applies only to physical illness"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Involuntary treatment is imposed on a person who did not choose it, unlike voluntary treatment."
+        },
+        {
+          "level": 3,
+          "prompt": "Court-ordered treatment is clearly NOT chosen freely. Which option is the direct OPPOSITE of court-ordered treatment and can be eliminated first?",
+          "choices": [
+            {"label": "A", "text": "'Voluntary'"},
+            {"label": "B", "text": "'Involuntary'"},
+            {"label": "C", "text": "'Mandatory'"},
+            {"label": "D", "text": "'Forced'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "'Voluntary' (freely chosen) is the opposite of court-ordered treatment, so it can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Joey was convicted of domestic violence. As part of his sentence, the judge has ordered that he attend therapy for anger management. This is considered ________ treatment.",
       "choices": [
@@ -280,6 +774,44 @@
     },
     {
       "id": "psbb-x141",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Which therapy focuses on changing observable BEHAVIOR through conditioning (rewards, punishments, and associations)?",
+          "choices": [
+            {"label": "A", "text": "Behavior therapy"},
+            {"label": "B", "text": "Cognitive therapy"},
+            {"label": "C", "text": "Psychoanalysis"},
+            {"label": "D", "text": "Client-centered therapy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Behavior therapy changes behavior through conditioning."
+        },
+        {
+          "level": 2,
+          "prompt": "Client-centered therapy is built primarily around which of the following?",
+          "choices": [
+            {"label": "A", "text": "The therapist's empathy and unconditional positive regard"},
+            {"label": "B", "text": "Analyzing the client's dreams"},
+            {"label": "C", "text": "Rewarding specific target behaviors"},
+            {"label": "D", "text": "Prescribing medication"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Client-centered therapy centers on empathy and unconditional positive regard."
+        },
+        {
+          "level": 3,
+          "prompt": "The main question is about a therapy focused on THOUGHTS. Which two listed therapies are NOT primarily about changing thoughts?",
+          "choices": [
+            {"label": "A", "text": "Behavior therapy and client-centered therapy"},
+            {"label": "B", "text": "Cognitive therapy and cognitive-behavioral therapy"},
+            {"label": "C", "text": "Cognitive therapy and behavior therapy"},
+            {"label": "D", "text": "Cognitive-behavioral therapy and client-centered therapy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Behavior therapy (conditioning) and client-centered therapy (empathy) are not primarily about changing thoughts, so they can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "The idea behind ________ is that how you think determines how you feel and act.",
       "choices": [
@@ -300,6 +832,44 @@
     },
     {
       "id": "psbb-x142",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Psychoanalysis (Freudian therapy) mainly aims to do which of the following?",
+          "choices": [
+            {"label": "A", "text": "Bring unconscious conflicts into conscious awareness"},
+            {"label": "B", "text": "Change behavior through rewards and punishments"},
+            {"label": "C", "text": "Restructure conscious, present-day thoughts"},
+            {"label": "D", "text": "Provide unconditional positive regard"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Psychoanalysis seeks to uncover unconscious material."
+        },
+        {
+          "level": 2,
+          "prompt": "Which technique belongs to BEHAVIOR therapy (not psychoanalysis) and is used to reduce phobias by pairing relaxation with feared stimuli?",
+          "choices": [
+            {"label": "A", "text": "Systematic desensitization"},
+            {"label": "B", "text": "Free association"},
+            {"label": "C", "text": "Dream analysis"},
+            {"label": "D", "text": "Transference"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Systematic desensitization is a behavior-therapy technique, so that pairing can be eliminated."
+        },
+        {
+          "level": 3,
+          "prompt": "'Active listening' is a hallmark technique of which therapy?",
+          "choices": [
+            {"label": "A", "text": "Client-centered (humanistic) therapy"},
+            {"label": "B", "text": "Psychoanalysis"},
+            {"label": "C", "text": "Behavior therapy"},
+            {"label": "D", "text": "Cognitive therapy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Active listening is a client-centered technique, so the active-listening option is not the psychoanalytic 'say whatever comes to mind' technique and can be set aside."
+        }
+      ],
       "section": "PSBB",
       "stem": "Clay is in a therapy session. The therapist asks him to relax and say whatever comes to his mind at the moment. This therapist is using ________, which is a technique of ________.",
       "choices": [
@@ -320,6 +890,44 @@
     },
     {
       "id": "psbb-x143",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In a course of therapy, WHEN does an 'intake' typically occur?",
+          "choices": [
+            {"label": "A", "text": "At the very first meeting with a new client"},
+            {"label": "B", "text": "At the final session that ends therapy"},
+            {"label": "C", "text": "Only during an emergency mid-treatment"},
+            {"label": "D", "text": "After therapy has already ended"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "An intake is the initial session with a new client."
+        },
+        {
+          "level": 2,
+          "prompt": "Descriptions of working on a couple's relationship or a family's boundaries and structure refer to which kind of therapy, rather than an intake?",
+          "choices": [
+            {"label": "A", "text": "Couples or family therapy"},
+            {"label": "B", "text": "An intake interview"},
+            {"label": "C", "text": "Medication management"},
+            {"label": "D", "text": "Standardized psychological testing"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Couple- and family-focused work describes couples/family therapy, distinguishing it from an intake."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two of the main-question options describe ongoing COUPLE or FAMILY therapy work rather than an initial information-gathering session?",
+          "choices": [
+            {"label": "A", "text": "'Meets with a couple to see how their backgrounds affect their relationship' and 'examines the family's boundaries and structure'"},
+            {"label": "B", "text": "'Gathers information about the presenting problem and insurance' and 'informs the client about fees and confidentiality'"},
+            {"label": "C", "text": "'Gathers information about the presenting problem' and 'examines the family's boundaries and structure'"},
+            {"label": "D", "text": "'Informs the client about confidentiality' and 'meets with a couple about their relationship'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The couple and family options describe couples/family therapy, not an intake, so they can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "What happens during an intake?",
       "choices": [
@@ -340,6 +948,44 @@
     },
     {
       "id": "psbb-x144",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The prefix 'co-' (as in coexist and co-occur) means which of the following?",
+          "choices": [
+            {"label": "A", "text": "Together or jointly"},
+            {"label": "B", "text": "Against"},
+            {"label": "C", "text": "Without"},
+            {"label": "D", "text": "Before"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "'Co-' means together, a clue for a term describing disorders occurring together."
+        },
+        {
+          "level": 2,
+          "prompt": "Two of the main-question options are NOT terms for having multiple co-occurring diagnoses (one is a relationship pattern; one is not a real clinical term). Which two?",
+          "choices": [
+            {"label": "A", "text": "'Codependency' and 'bi-morbid disorder'"},
+            {"label": "B", "text": "'Comorbid disorder' and 'bipolar disorder'"},
+            {"label": "C", "text": "'Codependency' and 'comorbid disorder'"},
+            {"label": "D", "text": "'Bipolar disorder' and 'bi-morbid disorder'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "'Codependency' is a relationship dynamic and 'bi-morbid disorder' is not a real term, so both can be eliminated."
+        },
+        {
+          "level": 3,
+          "prompt": "A single term for having two or more disorders at the same time uses the 'co-' (together) prefix. Such disorders are described as existing in which way?",
+          "choices": [
+            {"label": "A", "text": "Together, at the same time, in one person"},
+            {"label": "B", "text": "One after another across a lifetime"},
+            {"label": "C", "text": "In different people entirely"},
+            {"label": "D", "text": "Only in fictional cases"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Co-occurring disorders exist together, at the same time, in one person."
+        }
+      ],
       "section": "PSBB",
       "stem": "When an individual has two or more diagnoses, which often includes a substance-related diagnosis and another psychiatric diagnosis, this is known as ________.",
       "choices": [
@@ -360,6 +1006,44 @@
     },
     {
       "id": "psbb-x145",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Which perspective explains behavior mainly through brain chemistry and genetics, in contrast to the sociocultural perspective?",
+          "choices": [
+            {"label": "A", "text": "The biological perspective"},
+            {"label": "B", "text": "The sociocultural perspective"},
+            {"label": "C", "text": "The learning perspective"},
+            {"label": "D", "text": "The developmental perspective"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The biological perspective focuses on brain chemistry and genetics, unlike the sociocultural perspective."
+        },
+        {
+          "level": 2,
+          "prompt": "The sociocultural perspective looks at the BROAD context a person lives in. Two of the main-question options name narrow individual demographics rather than that broad context. Which two?",
+          "choices": [
+            {"label": "A", "text": "'Education' and 'age'"},
+            {"label": "B", "text": "'Culture and background' and 'age'"},
+            {"label": "C", "text": "'Socioeconomic status' and 'culture and background'"},
+            {"label": "D", "text": "'Education' and 'culture and background'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Education and age are narrow demographics, not the broad sociocultural context, so they can be set aside."
+        },
+        {
+          "level": 3,
+          "prompt": "Socioeconomic status is one specific factor. Compared with income status alone, the context the sociocultural perspective emphasizes is which of the following?",
+          "choices": [
+            {"label": "A", "text": "Broader, encompassing shared customs, values, and heritage"},
+            {"label": "B", "text": "Narrower than income status alone"},
+            {"label": "C", "text": "Only about a person's money"},
+            {"label": "D", "text": "Completely unrelated to society"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The sociocultural context is broader than income status alone, so socioeconomic status by itself is too narrow."
+        }
+      ],
       "section": "PSBB",
       "stem": "The sociocultural perspective looks at you, your behaviors, and your symptoms in the context of your ________.",
       "choices": [

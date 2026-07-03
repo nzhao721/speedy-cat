@@ -71,6 +71,72 @@ class PracticeContentTest {
     }
 
     @Test
+    fun `question bundle parses the hint ladder defensively`() {
+        val json =
+            """
+            {
+              "questions": [
+                {"id": "h-full", "section": "CPBS", "stem": "q?",
+                 "choices": [{"label":"A","text":"x"},{"label":"B","text":"y"}],
+                 "correctAnswer": "A", "explanation": "e", "topicTags": ["kinetics"],
+                 "difficulty": "easy", "sourceName": "OpenStax", "sourceLicense": "CC BY 4.0",
+                 "hints": [
+                   {"level":1,"prompt":"concept?","choices":[
+                      {"label":"A","text":"a"},{"label":"B","text":"b"},
+                      {"label":"C","text":"c"},{"label":"D","text":"d"}],
+                    "correctAnswer":"B","rationale":"because"},
+                   {"level":2,"prompt":"process?","choices":[
+                      {"label":"A","text":"a"},{"label":"B","text":"b"},
+                      {"label":"C","text":"c"},{"label":"D","text":"d"}],
+                    "correctAnswer":"C"},
+                   {"level":3,"prompt":"eliminate two?","choices":[
+                      {"label":"A","text":"a"},{"label":"B","text":"b"},
+                      {"label":"C","text":"c"},{"label":"D","text":"d"}],
+                    "correctAnswer":"D"}
+                 ]},
+                {"id": "h-partial", "section": "CPBS", "stem": "q?",
+                 "choices": [{"label":"A","text":"x"},{"label":"B","text":"y"}],
+                 "correctAnswer": "A", "explanation": "e", "topicTags": ["kinetics"],
+                 "difficulty": "easy", "sourceName": "OpenStax", "sourceLicense": "CC BY 4.0",
+                 "hints": [
+                   {"level":1,"prompt":"ok?","choices":[
+                      {"label":"A","text":"a"},{"label":"B","text":"b"},
+                      {"label":"C","text":"c"},{"label":"D","text":"d"}],
+                    "correctAnswer":"A"},
+                   {"level":2,"prompt":"too few","choices":[
+                      {"label":"A","text":"a"},{"label":"B","text":"b"}],
+                    "correctAnswer":"A"},
+                   {"level":3,"prompt":"bad correct","choices":[
+                      {"label":"A","text":"a"},{"label":"B","text":"b"},
+                      {"label":"C","text":"c"},{"label":"D","text":"d"}],
+                    "correctAnswer":"Z"}
+                 ]},
+                {"id": "h-none", "section": "CPBS", "stem": "q?",
+                 "choices": [{"label":"A","text":"x"},{"label":"B","text":"y"}],
+                 "correctAnswer": "A", "explanation": "e", "topicTags": ["kinetics"],
+                 "difficulty": "easy", "sourceName": "OpenStax", "sourceLicense": "CC BY 4.0"}
+              ]
+            }
+            """.trimIndent()
+        val parsed = parseQuestionBundle(json)
+
+        // Full 3-tier ladder, in order, each a 4-choice MCQ.
+        val full = parsed.questions.first { it.id == "h-full" }
+        assertThat(full.hints.size, equalTo(3))
+        assertThat(full.hints.map { it.level }, equalTo(listOf(1, 2, 3)))
+        assertThat(full.hints[0].choices.size, equalTo(4))
+        assertThat(full.hints[0].correctAnswer, equalTo("B"))
+
+        // Only the well-formed tier survives (2-choice + bad-correctAnswer dropped).
+        val partial = parsed.questions.first { it.id == "h-partial" }
+        assertThat(partial.hints.size, equalTo(1))
+        assertThat(partial.hints[0].prompt, equalTo("ok?"))
+
+        // No hints -> empty ladder.
+        assertThat(parsed.questions.first { it.id == "h-none" }.hints.isEmpty(), equalTo(true))
+    }
+
+    @Test
     fun `question bundle skips items missing source attribution`() {
         val json =
             """

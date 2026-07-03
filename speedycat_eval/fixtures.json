@@ -1,0 +1,29 @@
+{
+  "description": "SpeedyCAT AI answer-checker held-out eval set. Each case is a forced-recall reveal: (front, typed, expected) with human labels (honest, correct). 'honest' = the typed text is a genuine good-faith recall attempt (not blank / mash / filler / gaming). 'correct' = the typed answer matches the expected answer in meaning. Used to compare the AI checker (openai:gpt-5.4-mini) against a deterministic baseline (case-insensitive string match for 'correct' + a conservative heuristic for 'honest').",
+  "cases": [
+    {"front": "What organelle is the powerhouse of the cell?", "typed": "Mitochondria", "expected": "Mitochondria", "honest": true, "correct": true, "note": "exact"},
+    {"front": "What organelle is the powerhouse of the cell?", "typed": "  mitochondria ", "expected": "Mitochondria", "honest": true, "correct": true, "note": "case/space variant"},
+    {"front": "Common biochemical name for the Na+/K+ pump?", "typed": "Na+/K+ ATPase", "expected": "Sodium-potassium pump", "honest": true, "correct": true, "note": "synonym; baseline string-match misses"},
+    {"front": "During depolarization, the membrane potential does what?", "typed": "goes up", "expected": "increases", "honest": true, "correct": true, "note": "paraphrase; baseline misses"},
+    {"front": "What is the cell's main energy currency molecule?", "typed": "ATP", "expected": "Adenosine triphosphate", "honest": true, "correct": true, "note": "abbreviation; baseline misses"},
+    {"front": "Which protein carries oxygen in the blood?", "typed": "insulin", "expected": "Hemoglobin", "honest": true, "correct": false, "note": "honest but wrong"},
+    {"front": "Which enzyme unwinds the DNA double helix at the replication fork?", "typed": "DNA polymerase", "expected": "Helicase", "honest": true, "correct": false, "note": "honest but wrong (plausible)"},
+    {"front": "The Krebs cycle is also known as?", "typed": "citric acid cycle", "expected": "Citric acid cycle (TCA cycle)", "honest": true, "correct": true, "note": "correct; baseline misses extra text"},
+    {"front": "What organelle is the powerhouse of the cell?", "typed": "mitochondira", "expected": "Mitochondria", "honest": true, "correct": true, "note": "misspelled but a real recall; baseline misses"},
+    {"front": "Chemical symbol for potassium?", "typed": "K", "expected": "K", "honest": true, "correct": true, "note": "single-char legitimate answer"},
+    {"front": "Which protein carries oxygen in the blood?", "typed": "   ", "expected": "Hemoglobin", "honest": false, "correct": false, "note": "blank"},
+    {"front": "What is the largest artery in the body?", "typed": "asdfgh", "expected": "Aorta", "honest": false, "correct": false, "note": "keyboard mash"},
+    {"front": "What structure synthesizes proteins in the cell?", "typed": "aaaaa", "expected": "Ribosome", "honest": false, "correct": false, "note": "repeated char"},
+    {"front": "Which organelle modifies and packages proteins?", "typed": "no idea lol", "expected": "Golgi apparatus", "honest": false, "correct": false, "note": "filler; baseline heuristic misses"},
+    {"front": "What is the functional filtering unit of the kidney?", "typed": "just show me the answer", "expected": "Nephron", "honest": false, "correct": false, "note": "gaming; baseline heuristic misses"},
+    {"front": "Where does gas exchange occur in the lungs?", "typed": "skip", "expected": "Alveoli", "honest": false, "correct": false, "note": "command not an answer; baseline misses"},
+    {"front": "The contraction phase of the cardiac cycle is called?", "typed": "blah blah blah", "expected": "Systole", "honest": false, "correct": false, "note": "filler; baseline heuristic misses"},
+    {"front": "The relaxation phase of the cardiac cycle is called?", "typed": "idk", "expected": "Diastole", "honest": false, "correct": false, "note": "filler token the heuristic already catches"},
+    {"front": "What structure connects the two cerebral hemispheres?", "typed": "corpus callosum", "expected": "Corpus callosum", "honest": true, "correct": true, "note": "correct multiword"},
+    {"front": "Which vessel carries oxygenated blood from the lungs to the heart?", "typed": "pulmonary artery", "expected": "Pulmonary vein", "honest": true, "correct": false, "note": "honest but wrong"},
+    {"front": "What is the term for programmed cell death?", "typed": "apoptosis (programmed cell death)", "expected": "Apoptosis", "honest": true, "correct": true, "note": "correct; baseline misses extra text"},
+    {"front": "What is the functional filtering unit of the kidney?", "typed": "the nephron", "expected": "Nephron", "honest": true, "correct": true, "note": "leading article; baseline misses"},
+    {"front": "Which hormone lowers blood glucose?", "typed": "glucagon", "expected": "Insulin", "honest": true, "correct": false, "note": "honest but wrong"},
+    {"front": "Which brain region controls autonomic functions like breathing?", "typed": "i like turtles", "expected": "Medulla oblongata", "honest": false, "correct": false, "note": "unrelated sentence; baseline heuristic misses"}
+  ]
+}

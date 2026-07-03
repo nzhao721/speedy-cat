@@ -56,6 +56,11 @@ data class SyncedAttempt(
     val section: String = "",
     val topic: String = "",
     val answeredAt: Long = 0,
+    // SpeedyCAT graduated hint ladder: carried so the Performance pillar's
+    // anti-gaming penalty stays consistent across devices. Default 0/false so
+    // older files (written before the hint ladder) parse cleanly.
+    val hintLevelUsed: Int = 0,
+    val assisted: Boolean = false,
 )
 
 /** One section's raw score within a full-length summary. */
@@ -118,6 +123,8 @@ fun Attempt.toSynced(): SyncedAttempt =
         section = section?.dbCode ?: "",
         topic = topic,
         answeredAt = answeredAt,
+        hintLevelUsed = hintLevelUsed,
+        assisted = assisted,
     )
 
 fun SyncedAttempt.toAttempt(): Attempt =
@@ -131,6 +138,8 @@ fun SyncedAttempt.toAttempt(): Attempt =
         section = McatSection.fromDb(section),
         topic = topic,
         answeredAt = answeredAt,
+        hintLevelUsed = hintLevelUsed,
+        assisted = assisted,
     )
 
 // ---- Serialize / parse / merge --------------------------------------------

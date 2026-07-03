@@ -22,6 +22,44 @@
       "questions": [
         {
           "id": "cars-gen-0141",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "To find the author's primary purpose, what must the correct answer capture?",
+              "choices": [
+                {"label": "A", "text": "The passage's overall project across all its paragraphs"},
+                {"label": "B", "text": "A single vivid example, such as the plumber referral"},
+                {"label": "C", "text": "An outside fact about sociology"},
+                {"label": "D", "text": "The most technical sentence"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Primary-purpose questions reward the choice that captures the whole passage's project, not a detail or outside fact."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the passage barely touches it?",
+              "choices": [
+                {"label": "A", "text": "trace the historical origins of the concept of social capital"},
+                {"label": "B", "text": "affirm that social capital is a real resource"},
+                {"label": "C", "text": "expose the limits of the capital metaphor"},
+                {"label": "D", "text": "note the costs of tight community ties"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The remark that the idea is older than the phrase is a passing aside, so tracing origins is not the purpose."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author says the resource is REAL and evidence supports it?",
+              "choices": [
+                {"label": "A", "text": "argue that social capital is an illusion invented by overenthusiastic theorists"},
+                {"label": "B", "text": "offer a qualified appraisal affirming its reality while exposing limits"},
+                {"label": "C", "text": "expose the distortions of the capital metaphor"},
+                {"label": "D", "text": "note who is left beyond a community's reach"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author explicitly rejects the illusion view, calling social capital real, so 'illusion' is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p021",
           "stem": "The author's primary purpose in the passage is to:",
@@ -41,6 +79,44 @@
         },
         {
           "id": "cars-gen-0142",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks the author's attitude toward the concept of social capital. What must you determine?",
+              "choices": [
+                {"label": "A", "text": "The author's overall stance: positive, negative, or mixed"},
+                {"label": "B", "text": "Who coined the term"},
+                {"label": "C", "text": "How many communities were studied"},
+                {"label": "D", "text": "Whether the author lives in a city"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Attitude questions ask you to characterize the author's stance toward the concept."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the passage is full of evaluation?",
+              "choices": [
+                {"label": "A", "text": "detached neutrality with no discernible evaluation"},
+                {"label": "B", "text": "appreciation of genuine benefits"},
+                {"label": "C", "text": "skepticism about the enthusiasm"},
+                {"label": "D", "text": "a mixed, weighing verdict"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "From the panacea-versus-illusion framing to the fortress image, the passage clearly evaluates, so neutrality is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author criticizes the enthusiasm the concept inspires?",
+              "choices": [
+                {"label": "A", "text": "enthusiastic endorsement"},
+                {"label": "B", "text": "appreciative but skeptical"},
+                {"label": "C", "text": "dismissive contempt"},
+                {"label": "D", "text": "detached neutrality with no discernible evaluation"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author affirms real benefits yet says the enthusiasm deserves a more skeptical hearing, so 'enthusiastic endorsement' overstates his stance and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p021",
           "stem": "The author's attitude toward the concept of social capital is best described as:",
@@ -60,6 +136,44 @@
         },
         {
           "id": "cars-gen-0143",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what the jobs-and-plumbers example does. What are you really being asked?",
+              "choices": [
+                {"label": "A", "text": "What role that example plays in the argument"},
+                {"label": "B", "text": "Whether the plumbers were trustworthy"},
+                {"label": "C", "text": "How many examples appear"},
+                {"label": "D", "text": "The author's own neighborhood"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Function questions ask what an example does for the argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the next move stresses insider homogeneity and suspicion of outsiders?",
+              "choices": [
+                {"label": "A", "text": "show that such networks are readily open to outsiders"},
+                {"label": "B", "text": "illustrate a genuine benefit of dense networks"},
+                {"label": "C", "text": "concede what the concept gets right"},
+                {"label": "D", "text": "give a concrete low-friction advantage"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author immediately notes these benefits flow within homogeneous insider groups, so 'open to outsiders' is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author makes only a limited claim, not a sweeping verdict of superiority?",
+              "choices": [
+                {"label": "A", "text": "argue that informal ties are superior to formal institutions in every respect"},
+                {"label": "B", "text": "illustrate a genuine benefit dense networks provide"},
+                {"label": "C", "text": "show such networks are open to outsiders"},
+                {"label": "D", "text": "prove social capital can be measured like money"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author says such ties supply insurance no formal institution fully replaces, a limited claim, so 'superior in every respect' is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p021",
           "stem": "The author mentions information about jobs and trustworthy plumbers traveling along lines of acquaintance primarily in order to:",
@@ -79,6 +193,44 @@
         },
         {
           "id": "cars-gen-0144",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks how the author would regard a tightly knit, supportive community. What makes an answer correct?",
+              "choices": [
+                {"label": "A", "text": "It follows from the passage's coupling of solidarity with its costs"},
+                {"label": "B", "text": "It repeats a sentence verbatim"},
+                {"label": "C", "text": "It adds outside facts about communities"},
+                {"label": "D", "text": "It is the most emphatic option"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A valid inference follows from the passage's own reasoning."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author affirms such communities deliver real benefits?",
+              "choices": [
+                {"label": "A", "text": "incapable of producing any genuine benefits for its members"},
+                {"label": "B", "text": "potentially exclusionary toward outsiders"},
+                {"label": "C", "text": "supportive yet costly"},
+                {"label": "D", "text": "a source of both warmth and suspicion"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author credits such communities with support and insurance, so 'no genuine benefits' contradicts the text."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author refuses to rank community over anonymity?",
+              "choices": [
+                {"label": "A", "text": "necessarily superior to a more anonymous society"},
+                {"label": "B", "text": "potentially exclusionary, shutting out others"},
+                {"label": "C", "text": "incapable of any benefits"},
+                {"label": "D", "text": "proof that the capital metaphor is accurate"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author asks what kind of capital and who is left out rather than ranking community as superior, so 'necessarily superior' is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p021",
           "stem": "It can most reasonably be inferred that the author would regard a tightly knit community that strongly supports its own members as:",
@@ -98,6 +250,44 @@
         },
         {
           "id": "cars-gen-0145",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks how the author would respond to a one-year trust-building plan. What is the task?",
+              "choices": [
+                {"label": "A", "text": "Predict the author's response from his stated views"},
+                {"label": "B", "text": "Judge whether the city has enough funding"},
+                {"label": "C", "text": "Decide if neighborhood associations are popular"},
+                {"label": "D", "text": "Choose the most detailed option"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Application questions ask you to extend the author's principles to a new case."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author affirms that isolation carries genuine costs?",
+              "choices": [
+                {"label": "A", "text": "associational life has no bearing on a community's well-being"},
+                {"label": "B", "text": "trust cannot simply be installed by policy on such a timeline"},
+                {"label": "C", "text": "trust is not a fungible asset that can be deposited at will"},
+                {"label": "D", "text": "the engineering logic misapplies the metaphor"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author says isolation carries real costs, so denying that associational life matters is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author denies that more connection is always better?",
+              "choices": [
+                {"label": "A", "text": "the plan is sound because more connection is always better"},
+                {"label": "B", "text": "trust cannot be installed by policy on this timeline"},
+                {"label": "C", "text": "associational life has no bearing on well-being"},
+                {"label": "D", "text": "this plan correctly applies the logic of social capital"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author warns of the costs of surveillance and conformity, so 'more connection is always better' is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p021",
           "stem": "Suppose a city government announces that it will rebuild community trust within a single year by funding new neighborhood associations. The author would most likely respond that:",
@@ -117,6 +307,44 @@
         },
         {
           "id": "cars-gen-0146",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks which assumption the 'warmth is the same heat' claim depends on. What are you looking for?",
+              "choices": [
+                {"label": "A", "text": "An unstated premise the claim needs to work"},
+                {"label": "B", "text": "A conclusion stated outright"},
+                {"label": "C", "text": "An example the author gives"},
+                {"label": "D", "text": "A claim that contradicts the author"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Assumption questions ask for the premise the claim relies on."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author affirms that communities do provide real support?",
+              "choices": [
+                {"label": "A", "text": "communities never provide any real support to their members"},
+                {"label": "B", "text": "the same source yields both solidarity and exclusion"},
+                {"label": "C", "text": "density breeds both support and suspicion"},
+                {"label": "D", "text": "binding warmth is tied to excluding heat"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author says communities do offer real support, so assuming they never do is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author rejects quantifying trust?",
+              "choices": [
+                {"label": "A", "text": "social ties can be precisely quantified"},
+                {"label": "B", "text": "the same mechanisms produce solidarity and exclusion"},
+                {"label": "C", "text": "communities never support their members"},
+                {"label": "D", "text": "outsiders are always more virtuous than insiders"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author insists trust is not like money, so precise quantification cannot be an assumption of the claim and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p021",
           "stem": "The claim that the warmth a community extends to its own is often the same heat it turns against the stranger depends on which assumption?",
@@ -150,6 +378,44 @@
       "questions": [
         {
           "id": "cars-gen-0147",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "To find the central thesis, what must the correct answer capture?",
+              "choices": [
+                {"label": "A", "text": "The passage's overall claim about bureaucracy"},
+                {"label": "B", "text": "One example, such as bridge inspection"},
+                {"label": "C", "text": "An outside fact about government"},
+                {"label": "D", "text": "The most abstract sentence"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Main-idea questions reward the choice capturing the passage's central claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the passage never raises it?",
+              "choices": [
+                {"label": "A", "text": "the chief problem is that officials are poorly trained"},
+                {"label": "B", "text": "bureaucracy secures fairness through impersonal rules"},
+                {"label": "C", "text": "bureaucracy carries costs like rigidity"},
+                {"label": "D", "text": "bureaucracy involves a genuine trade-off"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The problems described are structural, arising from rules versus discretion, not from official training, which the passage never discusses."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author calls bureaucracy indispensable and a source of hard-won equality?",
+              "choices": [
+                {"label": "A", "text": "bureaucracy is an unmitigated evil that societies should dismantle"},
+                {"label": "B", "text": "bureaucracy is a genuine trade-off securing fairness at a cost"},
+                {"label": "C", "text": "the chief problem is poorly trained officials"},
+                {"label": "D", "text": "bureaucracy becomes universally loved once understood"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author praises bureaucracy's fairness, so 'unmitigated evil' is far too negative and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p022",
           "stem": "Which of the following best captures the central thesis of the passage?",
@@ -169,6 +435,44 @@
         },
         {
           "id": "cars-gen-0148",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks the author's overall stance toward bureaucracy. What must you determine?",
+              "choices": [
+                {"label": "A", "text": "The author's overall stance: favorable, unfavorable, or mixed"},
+                {"label": "B", "text": "How many forms he has filled out"},
+                {"label": "C", "text": "When bureaucracy arose"},
+                {"label": "D", "text": "Whether he works in an office"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Attitude questions ask you to characterize the author's stance."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author shows concern for ordinary people?",
+              "choices": [
+                {"label": "A", "text": "indifferent to its effects on ordinary people"},
+                {"label": "B", "text": "recognizing both its necessity and its dangers"},
+                {"label": "C", "text": "worried about our becoming mastered by the system"},
+                {"label": "D", "text": "attentive to whether anyone is actually helped"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "His concern with whether anyone was actually helped shows care, so indifference is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author stresses real costs and an unresolved dilemma?",
+              "choices": [
+                {"label": "A", "text": "triumphant about its complete superiority"},
+                {"label": "B", "text": "ambivalent about its necessity and dangers"},
+                {"label": "C", "text": "indifferent to ordinary people"},
+                {"label": "D", "text": "nostalgic for the personal world"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author counsels an uneasy peace and names an iron cage, so 'triumphant about complete superiority' overstates and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p022",
           "stem": "The author's overall stance toward bureaucracy can best be described as:",
@@ -188,6 +492,44 @@
         },
         {
           "id": "cars-gen-0149",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what the 'cases rather than persons' observation does. What are you really being asked?",
+              "choices": [
+                {"label": "A", "text": "What role that observation plays in the argument"},
+                {"label": "B", "text": "Whether officials are friendly"},
+                {"label": "C", "text": "How many cases an office handles"},
+                {"label": "D", "text": "The author's mood"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Function questions ask what an observation does for the argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the sentence concerns fairness, not efficiency?",
+              "choices": [
+                {"label": "A", "text": "prove that bureaucracies are economically inefficient"},
+                {"label": "B", "text": "explain that impersonality secures equal treatment"},
+                {"label": "C", "text": "tie the cold treatment to a hard-won equality"},
+                {"label": "D", "text": "show why the office decides by rule"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The point is about impersonal fairness, not efficiency, so the efficiency option is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the remark is part of a DEFENSE, not an unqualified condemnation?",
+              "choices": [
+                {"label": "A", "text": "condemn bureaucracy for its inhumanity without qualification"},
+                {"label": "B", "text": "explain that impersonality is the source of equal treatment"},
+                {"label": "C", "text": "prove bureaucracies are inefficient"},
+                {"label": "D", "text": "argue officials should make exceptions"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author immediately calls the cold treatment the source of a hard-won equality, so 'condemn without qualification' is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p022",
           "stem": "The function of the observation that the office treats us as cases rather than as persons is to:",
@@ -207,6 +549,44 @@
         },
         {
           "id": "cars-gen-0150",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks how the author views a clerk who bends a rule for a sympathetic petitioner. What makes an answer correct?",
+              "choices": [
+                {"label": "A", "text": "It follows from the passage's reasoning about discretion and fairness"},
+                {"label": "B", "text": "It repeats a sentence verbatim"},
+                {"label": "C", "text": "It adds outside facts about clerks"},
+                {"label": "D", "text": "It is the most emphatic option"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A valid inference follows from the passage's own reasoning."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the example is central to the dilemma?",
+              "choices": [
+                {"label": "A", "text": "irrelevant to the larger argument about rationalization"},
+                {"label": "B", "text": "well-intentioned yet reintroducing arbitrariness"},
+                {"label": "C", "text": "an illustration of why discretion cannot simply be restored"},
+                {"label": "D", "text": "a case of good motives undermining the system"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The bending clerk illustrates the core dilemma, so calling the example irrelevant is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the clerk is sympathetic and well-meaning, not corrupt?",
+              "choices": [
+                {"label": "A", "text": "necessarily corrupt and self-serving"},
+                {"label": "B", "text": "well-intentioned yet reintroducing arbitrariness"},
+                {"label": "C", "text": "irrelevant to the argument"},
+                {"label": "D", "text": "the ideal model of compassionate administration"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author's point is that even good motives undermine fairness, so 'necessarily corrupt' misreads the example and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p022",
           "stem": "It can be inferred that the author considers a clerk who bends a rule to help a sympathetic petitioner to be:",
@@ -226,6 +606,44 @@
         },
         {
           "id": "cars-gen-0151",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks how the author would warn a reformer proposing broad discretion. What is the task?",
+              "choices": [
+                {"label": "A", "text": "Predict the author's warning from his stated views"},
+                {"label": "B", "text": "Judge whether officials are kind"},
+                {"label": "C", "text": "Decide if coldness is the worst flaw"},
+                {"label": "D", "text": "Choose the most detailed option"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Application questions ask you to extend the author's reasoning to a new case."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because nothing suggests officials would decline the freedom?",
+              "choices": [
+                {"label": "A", "text": "officials would refuse the new freedom and keep the old rules"},
+                {"label": "B", "text": "discretion would also free officials to favor friends and take bribes"},
+                {"label": "C", "text": "discretion reintroduces arbitrary abuses"},
+                {"label": "D", "text": "the freedom to judge is also a freedom to indulge prejudice"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The worry is precisely that officials would use the discretion, so assuming they would refuse it is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author says rules, not discretion, protect the obscure?",
+              "choices": [
+                {"label": "A", "text": "discretion would make the system perfectly fair for the first time"},
+                {"label": "B", "text": "discretion would free officials to favor friends and take bribes"},
+                {"label": "C", "text": "officials would refuse the new freedom"},
+                {"label": "D", "text": "the reform addresses the only real flaw"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author argues rules protect the powerless, so claiming discretion perfects fairness is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p022",
           "stem": "A reformer proposes to solve bureaucratic coldness by granting every official broad discretion to decide cases as conscience dictates. Based on the passage, the author would most likely warn that:",
@@ -245,6 +663,44 @@
         },
         {
           "id": "cars-gen-0152",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks which finding would most WEAKEN the claim that impersonality protects the powerless. What should the credited answer do?",
+              "choices": [
+                {"label": "A", "text": "Provide information that undercuts the protection claim"},
+                {"label": "B", "text": "Confirm the claim with an example"},
+                {"label": "C", "text": "Restate the claim differently"},
+                {"label": "D", "text": "Add an irrelevant true fact"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A weakener must undercut the support for the author's specific claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because it actually SUPPORTS the author's point about an auditable paper trail?",
+              "choices": [
+                {"label": "A", "text": "Bureaucracies keep detailed written records of their decisions"},
+                {"label": "B", "text": "The well-connected fared better despite formal rules"},
+                {"label": "C", "text": "Rules failed to protect the obscure"},
+                {"label": "D", "text": "Decision-by-rule did not prevent the powerful from winning"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Written records give the errors an auditable trail, which strengthens the author, so this does not weaken the claim."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because it concerns efficiency, not the equality claim?",
+              "choices": [
+                {"label": "A", "text": "Bureaucracies sometimes process cases slowly"},
+                {"label": "B", "text": "Rule-bound agencies delivered worse outcomes to the obscure despite their rules"},
+                {"label": "C", "text": "Bureaucracies keep detailed records"},
+                {"label": "D", "text": "Most people dislike filling out forms"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Slowness bears on efficiency, not on whether rules protect the powerless, so it leaves the claim untouched and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p022",
           "stem": "Which finding, if true, would most WEAKEN the author's claim that bureaucratic impersonality protects the powerless?",
@@ -278,6 +734,44 @@
       "questions": [
         {
           "id": "cars-gen-0153",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "To find the central argument, what must the correct answer capture?",
+              "choices": [
+                {"label": "A", "text": "The passage's overall claim about taste"},
+                {"label": "B", "text": "One example about forks or bread"},
+                {"label": "C", "text": "An outside fact about art"},
+                {"label": "D", "text": "The most difficult sentence"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Main-idea questions reward the choice capturing the passage's central claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author says tastes can shift and be remade?",
+              "choices": [
+                {"label": "A", "text": "taste is fixed at birth and cannot change over a lifetime"},
+                {"label": "B", "text": "taste is largely socially produced"},
+                {"label": "C", "text": "taste marks and justifies class distinctions"},
+                {"label": "D", "text": "what feels personal is learned early"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author notes tastes shift, travel across boundaries, and are deliberately remade, so fixity at birth is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because it restates the very illusion the passage attacks?",
+              "choices": [
+                {"label": "A", "text": "people from privileged backgrounds genuinely possess superior sensibility"},
+                {"label": "B", "text": "personal taste is largely socially produced and marks class"},
+                {"label": "C", "text": "taste is fixed at birth"},
+                {"label": "D", "text": "no object is better than another"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The passage argues that apparent superiority is a head start misread as talent, so treating it as genuine innate superiority is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p023",
           "stem": "The central argument of the passage is that:",
@@ -297,6 +791,44 @@
         },
         {
           "id": "cars-gen-0154",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks the author's attitude toward the 'inner spring of sensibility' belief. What must you determine?",
+              "choices": [
+                {"label": "A", "text": "The author's stance toward that belief"},
+                {"label": "B", "text": "How many people hold the belief"},
+                {"label": "C", "text": "Which art form is best"},
+                {"label": "D", "text": "Whether the author likes pastry"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Attitude questions ask you to characterize the author's stance toward the belief."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author's tone is confident and analytical?",
+              "choices": [
+                {"label": "A", "text": "anxious uncertainty"},
+                {"label": "B", "text": "polite suspicion of the belief"},
+                {"label": "C", "text": "firm doubt about its naturalness"},
+                {"label": "D", "text": "a clarifying, measured critique"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author writes with assured analysis, so anxious uncertainty is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author treats the belief with suspicion rather than acceptance?",
+              "choices": [
+                {"label": "A", "text": "wholehearted agreement"},
+                {"label": "B", "text": "anxious uncertainty"},
+                {"label": "C", "text": "bitter despair"},
+                {"label": "D", "text": "polite but firm skepticism"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author treats the feeling of natural taste with polite suspicion, so 'wholehearted agreement' reverses his stance and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p023",
           "stem": "The author's attitude toward the belief that our tastes well up from an inner spring of sensibility is best characterized as:",
@@ -316,6 +848,44 @@
         },
         {
           "id": "cars-gen-0155",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what the fork-and-opinions example does. What are you really being asked?",
+              "choices": [
+                {"label": "A", "text": "What role that example plays in the argument"},
+                {"label": "B", "text": "Whether the etiquette is correct"},
+                {"label": "C", "text": "How many manners exist"},
+                {"label": "D", "text": "The author's own upbringing"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Function questions ask what an example does for the argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author analyzes transmission rather than dispensing tips?",
+              "choices": [
+                {"label": "A", "text": "give practical etiquette advice to readers"},
+                {"label": "B", "text": "show competence absorbed early and unconsciously"},
+                {"label": "C", "text": "illustrate a disposition later mistaken for refinement"},
+                {"label": "D", "text": "reveal how the privileged acquire taste at home"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The passage explains how taste is transmitted, not how to behave, so etiquette advice is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author stresses that such competence is unequally distributed by class?",
+              "choices": [
+                {"label": "A", "text": "prove that table manners are universal across societies"},
+                {"label": "B", "text": "illustrate how cultural competence is absorbed early and mistaken for refinement"},
+                {"label": "C", "text": "give etiquette advice"},
+                {"label": "D", "text": "argue taste should be taught in schools"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The point is that this competence is transmitted unequally, not universal, so 'universal' is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p023",
           "stem": "The reference to a child who learns which fork to use and which opinions to voice serves primarily to:",
@@ -335,6 +905,44 @@
         },
         {
           "id": "cars-gen-0156",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what the passage suggests about a privileged person who sincerely believes she has better taste. What makes an answer correct?",
+              "choices": [
+                {"label": "A", "text": "It follows from the passage's account of inequality laundered into merit"},
+                {"label": "B", "text": "It repeats a sentence verbatim"},
+                {"label": "C", "text": "It adds outside facts"},
+                {"label": "D", "text": "It is the most emphatic option"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A valid inference follows from the passage's own reasoning."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the text presents the confident belief as typical?",
+              "choices": [
+                {"label": "A", "text": "unusual, because most privileged people doubt their taste"},
+                {"label": "B", "text": "blind to the inherited source of her sensibility"},
+                {"label": "C", "text": "mistaking a head start for natural endowment"},
+                {"label": "D", "text": "sincerely convinced yet unaware of privilege"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The passage treats the confident belief as the normal engine of the system, so 'unusual' is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the passage insists the belief is SINCERE, not a deliberate lie?",
+              "choices": [
+                {"label": "A", "text": "deliberately lying in order to disguise her social power"},
+                {"label": "B", "text": "failing to recognize her sensibility as an inherited advantage"},
+                {"label": "C", "text": "unusual, since most privileged people doubt their taste"},
+                {"label": "D", "text": "correct, since her taste is objectively superior"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The sincerity of the belief is what makes the laundering effective, so 'deliberately lying' is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p023",
           "stem": "The passage suggests that when a privileged person sincerely believes she simply has better taste, she is:",
@@ -354,6 +962,44 @@
         },
         {
           "id": "cars-gen-0157",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks which scenario exemplifies inequality 'laundered into merit.' What is the task?",
+              "choices": [
+                {"label": "A", "text": "Match the scenario to the passage's laundering mechanism"},
+                {"label": "B", "text": "Pick the most unfair scenario overall"},
+                {"label": "C", "text": "Pick the most common scenario"},
+                {"label": "D", "text": "Choose the most detailed option"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Application questions ask which case fits the passage's specific mechanism."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because it COUNTERS unequal transmission rather than laundering it?",
+              "choices": [
+                {"label": "A", "text": "a government distributes arts funding equally to all neighborhoods"},
+                {"label": "B", "text": "an advantage from upbringing is recast as personal merit"},
+                {"label": "C", "text": "a candidate's polish gap is blamed on inferior taste"},
+                {"label": "D", "text": "inherited advantage is read as individual deservingness"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Equal funding tries to offset unequal transmission, the opposite of laundering, so it is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because it is naked hierarchy, not the disguised, merit-based form the passage describes?",
+              "choices": [
+                {"label": "A", "text": "a wealthy patron openly states the poor deserve fewer opportunities"},
+                {"label": "B", "text": "an employer blames a candidate's polish gap on inferior taste rather than upbringing"},
+                {"label": "C", "text": "a government funds the arts equally"},
+                {"label": "D", "text": "a critic admits he enjoys a film only because he was raised to"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Laundering disguises hierarchy as merit, so an open assertion that the poor deserve less is undisguised hierarchy and a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p023",
           "stem": "Which scenario best exemplifies the passage's claim that inequality is laundered into merit?",
@@ -373,6 +1019,44 @@
         },
         {
           "id": "cars-gen-0158",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks which assumption the clustering argument makes. What are you looking for?",
+              "choices": [
+                {"label": "A", "text": "An unstated premise the argument needs"},
+                {"label": "B", "text": "A conclusion stated outright"},
+                {"label": "C", "text": "An example the author gives"},
+                {"label": "D", "text": "A claim that contradicts the author"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Assumption questions ask for the premise the argument relies on."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author denies it, noting a symphony does not become noise?",
+              "choices": [
+                {"label": "A", "text": "aesthetic objects have no real qualities of their own"},
+                {"label": "B", "text": "inborn tastes would scatter rather than cluster"},
+                {"label": "C", "text": "patterned regularities demand a social explanation"},
+                {"label": "D", "text": "taste tracks class rather than pure individuality"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author explicitly declines to say objects lack real qualities, so that cannot be the assumption."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because clustering means statistical regularity, not identical uniformity?",
+              "choices": [
+                {"label": "A", "text": "every member of a social class shares identical preferences"},
+                {"label": "B", "text": "if tastes were idiosyncratic and inborn they would not fall into social patterns"},
+                {"label": "C", "text": "objects have no real qualities"},
+                {"label": "D", "text": "individuals cannot develop unusual preferences"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Clustering is a statistical pattern, so assuming identical preferences within a class is a stronger, unnecessary claim and a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p023",
           "stem": "The author's argument that taste clusters by class rather than scattering at random assumes that:",
@@ -406,6 +1090,44 @@
       "questions": [
         {
           "id": "cars-gen-0159",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "To find the primary purpose, what must the correct answer capture?",
+              "choices": [
+                {"label": "A", "text": "The passage's overall claim about gifts"},
+                {"label": "B", "text": "One example of a competitive feast"},
+                {"label": "C", "text": "An outside fact about anthropology"},
+                {"label": "D", "text": "The most difficult sentence"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Primary-purpose questions reward the choice capturing the passage's central claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the passage offers no such advice?",
+              "choices": [
+                {"label": "A", "text": "explain how to choose appropriate gifts for different occasions"},
+                {"label": "B", "text": "argue gift-giving is governed by binding obligations"},
+                {"label": "C", "text": "show that the free gift is a disguise"},
+                {"label": "D", "text": "analyze the social logic of exchange"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The passage analyzes exchange rather than giving gift-selection tips, so that option can be dropped."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author distinguishes gifts from pure commerce?",
+              "choices": [
+                {"label": "A", "text": "prove that all gifts are disguised commercial transactions identical to buying and selling"},
+                {"label": "B", "text": "argue gift-giving is governed by binding social obligations"},
+                {"label": "C", "text": "explain how to choose gifts"},
+                {"label": "D", "text": "trace the history of money and barter"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author notes that moderns wall off pure commerce so gifts can carry meanings money cannot, so 'identical to buying and selling' is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p024",
           "stem": "The primary purpose of the passage is to:",
@@ -425,6 +1147,44 @@
         },
         {
           "id": "cars-gen-0160",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks the author's tone toward the idea of the free gift. What must you determine?",
+              "choices": [
+                {"label": "A", "text": "The author's stance toward that idea"},
+                {"label": "B", "text": "How many gifts he has received"},
+                {"label": "C", "text": "Which society is oldest"},
+                {"label": "D", "text": "Whether the author gives gifts"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Attitude questions ask you to characterize the author's stance."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author resists sentimentality?",
+              "choices": [
+                {"label": "A", "text": "nostalgic and sentimental"},
+                {"label": "B", "text": "analytical about the gift"},
+                {"label": "C", "text": "gently skeptical of the free-gift ideal"},
+                {"label": "D", "text": "observational and dispassionate"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author even warns that it would be sentimental to treat gifts as the warm opposite of commerce, so sentimentality is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author calls the free-gift picture 'charming,' showing respect rather than scorn?",
+              "choices": [
+                {"label": "A", "text": "scornful and mocking"},
+                {"label": "B", "text": "nostalgic and sentimental"},
+                {"label": "C", "text": "analytical and gently skeptical"},
+                {"label": "D", "text": "outraged and accusatory"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The word 'charming' signals respect for the ideal, so reading the tone as scornful and mocking is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p024",
           "stem": "The author's tone in discussing the idea of the free gift is best described as:",
@@ -444,6 +1204,44 @@
         },
         {
           "id": "cars-gen-0161",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what the competitive-feasts discussion does. What are you really being asked?",
+              "choices": [
+                {"label": "A", "text": "What role that discussion plays in the argument"},
+                {"label": "B", "text": "How much was given away"},
+                {"label": "C", "text": "How many feasts occurred"},
+                {"label": "D", "text": "The author's favorite ceremony"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Function questions ask what a discussion does for the argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the feasts show the opposite of pure generosity?",
+              "choices": [
+                {"label": "A", "text": "show that gift-giving is always motivated by pure generosity"},
+                {"label": "B", "text": "demonstrate giving as an instrument of power"},
+                {"label": "C", "text": "illustrate the gift as a weapon"},
+                {"label": "D", "text": "reveal how out-giving humiliates a rival"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The feasts express rivalry and dominance, so 'always motivated by pure generosity' is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the point is competitive humiliation, not charity?",
+              "choices": [
+                {"label": "A", "text": "argue that destroying goods is the highest form of charity"},
+                {"label": "B", "text": "demonstrate giving as an instrument of power and humiliation"},
+                {"label": "C", "text": "show gift-giving is pure generosity"},
+                {"label": "D", "text": "prove such societies were economically irrational"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author frames destruction as a bid for prestige, not exemplary generosity, so 'highest form of charity' is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p024",
           "stem": "The discussion of competitive feasts in which leaders give away or destroy vast quantities of goods functions to:",
@@ -463,6 +1261,44 @@
         },
         {
           "id": "cars-gen-0162",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks how the author regards someone who feels a sting at an unreciprocated gift. What makes an answer correct?",
+              "choices": [
+                {"label": "A", "text": "It follows from the passage's view that old obligation persists"},
+                {"label": "B", "text": "It repeats a sentence verbatim"},
+                {"label": "C", "text": "It adds outside facts"},
+                {"label": "D", "text": "It is the most emphatic option"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A valid inference follows from the passage's own reasoning."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the reaction is presented as normal and revealing?",
+              "choices": [
+                {"label": "A", "text": "behaving irrationally and against human nature"},
+                {"label": "B", "text": "displaying the old logic of obligation"},
+                {"label": "C", "text": "showing reciprocity's persistence beneath manners"},
+                {"label": "D", "text": "feeling a debt the etiquette conceals"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author treats the sting as revealing continuity, not as irrational, so 'behaving irrationally' is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author keeps gifts and purchases distinct?",
+              "choices": [
+                {"label": "A", "text": "proof that gifts and purchases are indistinguishable"},
+                {"label": "B", "text": "displaying the persistence of the old logic of obligation"},
+                {"label": "C", "text": "behaving irrationally"},
+                {"label": "D", "text": "uniquely modern, with no parallel elsewhere"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author says cash offends precisely because it is too honest, keeping gift and purchase distinct, so collapsing them is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p024",
           "stem": "It can be inferred that the author regards a person who feels a sting upon receiving a gift she cannot reciprocate as:",
@@ -482,6 +1318,44 @@
         },
         {
           "id": "cars-gen-0163",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks how the passage explains feeling offended when a friend repays dinner in cash. What is the task?",
+              "choices": [
+                {"label": "A", "text": "Apply the passage's account of gifts to this reaction"},
+                {"label": "B", "text": "Judge whether the dinner was expensive"},
+                {"label": "C", "text": "Decide if the friend is generous"},
+                {"label": "D", "text": "Choose the most detailed option"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Application questions ask you to explain a case using the passage's principle."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author presents cash here as a faux pas?",
+              "choices": [
+                {"label": "A", "text": "cash repayment is the most polite possible response"},
+                {"label": "B", "text": "cash makes the exchange too explicit"},
+                {"label": "C", "text": "cash strips away the relationship-building obligation"},
+                {"label": "D", "text": "cash exposes what gift etiquette veils"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The passage says we bristle at cash where a gift was expected, so 'most polite response' is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because treating the dinner as mere commerce is the misreading that causes offense?",
+              "choices": [
+                {"label": "A", "text": "the friend correctly understood the dinner was a commercial transaction"},
+                {"label": "B", "text": "cash makes the exchange too explicit, stripping the relationship obligation"},
+                {"label": "C", "text": "cash is the most polite response"},
+                {"label": "D", "text": "the dinner created no expectation of any return"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author distinguishes gift from transaction, so reading the dinner as commercial is exactly the error that offends and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p024",
           "stem": "A friend insists on paying you back in cash immediately after you treat her to dinner, and you feel oddly offended. The passage best explains this reaction by suggesting that:",
@@ -501,6 +1375,44 @@
         },
         {
           "id": "cars-gen-0164",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks which finding would most strongly SUPPORT that the modern free gift still runs on old obligation. What should the credited answer do?",
+              "choices": [
+                {"label": "A", "text": "Supply evidence confirming the persistence of obligation"},
+                {"label": "B", "text": "Restate the claim differently"},
+                {"label": "C", "text": "Undercut the claim"},
+                {"label": "D", "text": "Add an irrelevant true fact"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A supporter supplies evidence for the author's specific claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because it concerns commerce and timing, not obligation?",
+              "choices": [
+                {"label": "A", "text": "Retailers report that gift sales rise during holiday seasons"},
+                {"label": "B", "text": "Recipients feel indebted until they reciprocate"},
+                {"label": "C", "text": "The obligation to repay persists beneath the free-gift ideal"},
+                {"label": "D", "text": "Unreciprocated gifts produce lasting discomfort"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Holiday sales volume speaks to commerce, not to whether obligation governs giving, so it can be dropped."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because it reflects the very ideology that masks the obligation?",
+              "choices": [
+                {"label": "A", "text": "Most people say they give purely out of love and expect nothing back"},
+                {"label": "B", "text": "People feel indebted until they manage to give something in return"},
+                {"label": "C", "text": "Gift sales rise during holidays"},
+                {"label": "D", "text": "People generally enjoy receiving gifts"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The stated belief that one expects nothing back is the disguise the author says masks obligation, so it does not support the claim and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p024",
           "stem": "Which of the following, if true, would most strongly SUPPORT the author's claim that the modern free gift still operates by the old logic of obligation?",
@@ -534,6 +1446,44 @@
       "questions": [
         {
           "id": "cars-gen-0165",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "To find the main idea about cultural relativism, what must the correct answer capture?",
+              "choices": [
+                {"label": "A", "text": "The passage's overall claim about relativism"},
+                {"label": "B", "text": "One example of a strange custom"},
+                {"label": "C", "text": "An outside fact about anthropology"},
+                {"label": "D", "text": "The most difficult sentence"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Main-idea questions reward the choice capturing the passage's central claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author praises the methodological version?",
+              "choices": [
+                {"label": "A", "text": "relativism should be rejected entirely as an obstacle to judgment"},
+                {"label": "B", "text": "relativism is valuable as a method of understanding"},
+                {"label": "C", "text": "relativism becomes incoherent when it forbids all judgment"},
+                {"label": "D", "text": "we should keep the method while refusing the dogma"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author calls methodological relativism a civilizing corrective, so rejecting it entirely is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author warns AGAINST extending relativism into a theory of value?",
+              "choices": [
+                {"label": "A", "text": "relativism is most useful when extended into a complete theory of value"},
+                {"label": "B", "text": "relativism is valuable as method but incoherent as a doctrine forbidding judgment"},
+                {"label": "C", "text": "relativism should be rejected entirely"},
+                {"label": "D", "text": "relativism proves all standards equally valid"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author calls the leap to a theory of value 'a leap, not a deduction,' so recommending that extension is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p025",
           "stem": "The main idea of the passage is that cultural relativism:",
@@ -553,6 +1503,44 @@
         },
         {
           "id": "cars-gen-0166",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks the author's attitude toward the early, methodological relativism. What must you determine?",
+              "choices": [
+                {"label": "A", "text": "The author's stance toward the methodological version"},
+                {"label": "B", "text": "How old the method is"},
+                {"label": "C", "text": "How many anthropologists use it"},
+                {"label": "D", "text": "Whether the author travels"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Attitude questions ask you to characterize the author's stance."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because he rejects only the dogmatic extension, not the method?",
+              "choices": [
+                {"label": "A", "text": "complete rejection"},
+                {"label": "B", "text": "respect for its corrective value"},
+                {"label": "C", "text": "approval of it as a discipline of inquiry"},
+                {"label": "D", "text": "endorsement of it as a gateway worth keeping"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author preserves the method while rejecting only the dogma, so complete rejection is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author reaffirms, rather than withdraws, his approval in the conclusion?",
+              "choices": [
+                {"label": "A", "text": "reluctant tolerance that he ultimately withdraws"},
+                {"label": "B", "text": "respect for its corrective value"},
+                {"label": "C", "text": "complete rejection"},
+                {"label": "D", "text": "amused condescension"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The conclusion calls the method a gateway worth keeping, so a tolerance that he withdraws misreads him and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p025",
           "stem": "The author's attitude toward the early, methodological form of cultural relativism is one of:",
@@ -572,6 +1560,44 @@
         },
         {
           "id": "cars-gen-0167",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what the rhetorical question 'Whose version...?' does. What are you really being asked?",
+              "choices": [
+                {"label": "A", "text": "What role that question plays in the argument"},
+                {"label": "B", "text": "Whether it expects a literal answer"},
+                {"label": "C", "text": "How many questions appear"},
+                {"label": "D", "text": "The author's mood"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Function questions ask what a rhetorical move does for the argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the passage argues against abandoning judgment?",
+              "choices": [
+                {"label": "A", "text": "invite the reader to abandon all moral judgment"},
+                {"label": "B", "text": "expose a difficulty the dogmatic view cannot answer"},
+                {"label": "C", "text": "press the point that cultures contain dissent"},
+                {"label": "D", "text": "ask whose internal voice counts"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author opposes moral silence, so the question is not an invitation to abandon judgment."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the question is meant to DENY cultural unity, not concede it?",
+              "choices": [
+                {"label": "A", "text": "concede that cultures are in fact perfectly unified"},
+                {"label": "B", "text": "expose a difficulty the dogmatic view cannot answer"},
+                {"label": "C", "text": "invite the reader to abandon judgment"},
+                {"label": "D", "text": "suggest only outsiders may criticize a culture"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The question follows the point that cultures contain rebels and dissenters, so conceding unity reverses its purpose and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p025",
           "stem": "The rhetorical question 'Whose version, then, are we forbidden to criticize?' functions to:",
@@ -591,6 +1617,44 @@
         },
         {
           "id": "cars-gen-0168",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what the passage implies about an internal reformer condemning an unjust practice. What makes an answer correct?",
+              "choices": [
+                {"label": "A", "text": "It follows from the passage's critique of the dogmatic view"},
+                {"label": "B", "text": "It repeats a sentence verbatim"},
+                {"label": "C", "text": "It adds outside facts"},
+                {"label": "D", "text": "It is the most emphatic option"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A valid inference follows from the passage's own reasoning."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because she is explicitly internal, not a foreign imposer?",
+              "choices": [
+                {"label": "A", "text": "is necessarily an outsider imposing foreign values"},
+                {"label": "B", "text": "would be dismissed as a mere deviant under the dogma"},
+                {"label": "C", "text": "is a legitimate part of her own culture"},
+                {"label": "D", "text": "shows cultures are internally divided"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The reformer works within her own society, so calling her an outsider is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author rejects the premise that endorsement makes a practice valid?",
+              "choices": [
+                {"label": "A", "text": "must be mistaken, since the practice is valid within her culture"},
+                {"label": "B", "text": "would be wrongly dismissed as a deviant if the dogma were correct"},
+                {"label": "C", "text": "is necessarily an outsider"},
+                {"label": "D", "text": "proves cultures are sealed and uniform"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author treats the reformer as legitimate and denies that endorsed equals valid, so 'must be mistaken' is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p025",
           "stem": "The passage implies that an internal reformer who condemns an unjust practice in her own society:",
@@ -610,6 +1674,44 @@
         },
         {
           "id": "cars-gen-0169",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks how the author would view judging a practice after understanding it. What is the task?",
+              "choices": [
+                {"label": "A", "text": "Match the stance to the author's recommended middle path"},
+                {"label": "B", "text": "Judge whether the anthropologist is likable"},
+                {"label": "C", "text": "Decide how long the study took"},
+                {"label": "D", "text": "Choose the most detailed option"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Application questions ask you to relate a case to the author's position."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the stance presupposes successful understanding?",
+              "choices": [
+                {"label": "A", "text": "proof that understanding other cultures is impossible"},
+                {"label": "B", "text": "consistent with the recommended middle path"},
+                {"label": "C", "text": "an example of understanding sharpening criticism"},
+                {"label": "D", "text": "honoring method while refusing dogma"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The anthropologist claims to understand the community, which the author treats as achievable, so 'impossible' is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because complacent contempt judges WITHOUT understanding, unlike this case?",
+              "choices": [
+                {"label": "A", "text": "an example of the complacent contempt relativism was meant to cure"},
+                {"label": "B", "text": "consistent with the middle path, since understanding can sharpen criticism"},
+                {"label": "C", "text": "proof understanding is impossible"},
+                {"label": "D", "text": "a betrayal of relativism in all its forms"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "This judgment follows years of study, the opposite of complacent contempt, so that label is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p025",
           "stem": "An anthropologist says: 'After years studying this community, I now understand why the practice exists, and on that basis I judge it harmful.' The author would most likely view this stance as:",
@@ -629,6 +1731,44 @@
         },
         {
           "id": "cars-gen-0170",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what 'a gateway and not a destination' means. How should you decide?",
+              "choices": [
+                {"label": "A", "text": "Read the phrase in the context of the argument"},
+                {"label": "B", "text": "Take 'gateway' as a literal door"},
+                {"label": "C", "text": "Pick the rarest meaning"},
+                {"label": "D", "text": "Choose the most literal reading regardless of context"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Meaning-in-context questions require reading the phrase within its argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because 'gateway' here is metaphorical, about method?",
+              "choices": [
+                {"label": "A", "text": "a physical threshold one passes through only once"},
+                {"label": "B", "text": "a valuable starting discipline for inquiry"},
+                {"label": "C", "text": "an opening that begins, not ends, inquiry"},
+                {"label": "D", "text": "a first step of suspended judgment"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The phrase is figurative about intellectual method, so a literal door is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because 'not a destination' explicitly denies it is the final framework?",
+              "choices": [
+                {"label": "A", "text": "should be the final and complete framework for all moral reasoning"},
+                {"label": "B", "text": "a valuable starting discipline rather than an end point"},
+                {"label": "C", "text": "a physical threshold passed once"},
+                {"label": "D", "text": "leads inevitably to no judgment being possible"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "'Not a destination' says relativism is not where thought should stop, so treating it as the final framework is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p025",
           "stem": "In context, the author's description of relativism as 'a gateway and not a destination' most nearly means that relativism:",
@@ -662,6 +1802,44 @@
       "questions": [
         {
           "id": "cars-gen-0171",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what the village-versus-city contrast does. What are you really being asked?",
+              "choices": [
+                {"label": "A", "text": "What role that contrast plays in the argument"},
+                {"label": "B", "text": "Which is bigger, a village or a city"},
+                {"label": "C", "text": "How many people live in cities"},
+                {"label": "D", "text": "The author's hometown"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Function questions ask what a contrast does for the argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because economic productivity is never discussed?",
+              "choices": [
+                {"label": "A", "text": "prove cities are more economically productive than villages"},
+                {"label": "B", "text": "establish anonymity as the city's defining condition"},
+                {"label": "C", "text": "introduce the fact from which urban character flows"},
+                {"label": "D", "text": "contrast being known with being invisible"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The contrast concerns social knowledge and accountability, not productivity, so that option can be dropped."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author refuses to rank the two ways of life?",
+              "choices": [
+                {"label": "A", "text": "argue that village life is morally superior to city life"},
+                {"label": "B", "text": "establish anonymity as the defining condition of the city"},
+                {"label": "C", "text": "prove cities are more productive"},
+                {"label": "D", "text": "show city dwellers cannot form relationships"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author calls both nostalgia and celebration too simple, so ranking the village as superior is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p026",
           "stem": "The contrast between the village, where one is known, and the city, where one becomes invisible, serves primarily to:",
@@ -681,6 +1859,44 @@
         },
         {
           "id": "cars-gen-0172",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what the author attributes urban tolerance to. What makes an answer correct?",
+              "choices": [
+                {"label": "A", "text": "It follows from the passage's account of scale and anonymity"},
+                {"label": "B", "text": "It repeats a sentence verbatim"},
+                {"label": "C", "text": "It adds outside facts about cities"},
+                {"label": "D", "text": "It is the most emphatic option"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A valid inference follows from the passage's own reasoning."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the passage implies cities teem with diverse experiments in living?",
+              "choices": [
+                {"label": "A", "text": "the absence of any meaningful diversity in cities"},
+                {"label": "B", "text": "the sheer scale that leaves strangers unable to interfere"},
+                {"label": "C", "text": "strangers lacking the knowledge to meddle"},
+                {"label": "D", "text": "strangers lacking the motive to interfere"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The city is portrayed as full of varied lives, so 'absence of diversity' is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author downplays enlightened attitudes as the main cause?",
+              "choices": [
+                {"label": "A", "text": "a deliberate moral commitment to accepting difference"},
+                {"label": "B", "text": "the sheer scale of the city"},
+                {"label": "C", "text": "the absence of diversity"},
+                {"label": "D", "text": "laws forbidding neighbors from forming opinions"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author calls tolerance a byproduct of scale rather than a triumph of enlightened attitudes, so 'deliberate moral commitment' is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p026",
           "stem": "It can be inferred that the author attributes much of modern urban tolerance to:",
@@ -700,6 +1916,44 @@
         },
         {
           "id": "cars-gen-0173",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks how the author would answer 'keep the freedom, drop the indifference.' What is the task?",
+              "choices": [
+                {"label": "A", "text": "Predict the author's response from his stated views"},
+                {"label": "B", "text": "Judge whether the commentator is kind"},
+                {"label": "C", "text": "Decide if cities are pleasant"},
+                {"label": "D", "text": "Choose the most detailed option"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Application questions ask you to extend the author's reasoning to a new case."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author affirms the city's freedom is real and valuable?",
+              "choices": [
+                {"label": "A", "text": "the city has no real freedom worth preserving"},
+                {"label": "B", "text": "freedom and indifference cannot be separated"},
+                {"label": "C", "text": "the two are aspects of one loosening of bonds"},
+                {"label": "D", "text": "the wish misunderstands the situation"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author calls the city a refuge for dissenters and artists, so denying its real freedom is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author insists the two are intimately linked, not unrelated?",
+              "choices": [
+                {"label": "A", "text": "the freedom and the coldness are unrelated, so the reform is straightforward"},
+                {"label": "B", "text": "the two are two names for a single loosening and cannot be separated"},
+                {"label": "C", "text": "the city has no real freedom"},
+                {"label": "D", "text": "indifference could be eliminated by stricter laws"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author says freedom and indifference are two names for one thing, so treating them as unrelated is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p026",
           "stem": "A commentator praises city life for its freedom while condemning its coldness, urging that we keep the freedom and simply eliminate the indifference. The author would most likely respond that:",
@@ -719,6 +1973,44 @@
         },
         {
           "id": "cars-gen-0174",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks which observation would most WEAKEN the anonymity-produces-indifference claim. What should the credited answer do?",
+              "choices": [
+                {"label": "A", "text": "Provide information that undercuts that causal link"},
+                {"label": "B", "text": "Confirm the link with an example"},
+                {"label": "C", "text": "Restate the link differently"},
+                {"label": "D", "text": "Add an irrelevant true fact"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A weakener must undercut the support for the author's specific claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because it matches the author's own example, supporting him?",
+              "choices": [
+                {"label": "A", "text": "Reports describe a stranger collapsing in a crowd and being ignored"},
+                {"label": "B", "text": "Urbanites help strangers just as readily as villagers"},
+                {"label": "C", "text": "City dwellers show no greater indifference"},
+                {"label": "D", "text": "Anonymity does not reduce helping behavior"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "An ignored collapse is the author's own illustration, so it supports rather than weakens the claim."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because valuing privacy is consistent with the author's account?",
+              "choices": [
+                {"label": "A", "text": "A survey finds many city residents value their privacy"},
+                {"label": "B", "text": "Urbanites help strangers as readily as villagers, showing no greater indifference"},
+                {"label": "C", "text": "A stranger collapses and is ignored"},
+                {"label": "D", "text": "Cities contain more people than villages"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author links privacy and solitude, so valuing privacy fits his view and does not weaken it, making it a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p026",
           "stem": "Which observation, if true, would most WEAKEN the author's claim that urban anonymity tends to produce indifference toward strangers?",
@@ -738,6 +2030,44 @@
         },
         {
           "id": "cars-gen-0175",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks which assumption underlies 'reserve is a defense, not cruelty.' What are you looking for?",
+              "choices": [
+                {"label": "A", "text": "An unstated premise the claim needs"},
+                {"label": "B", "text": "A conclusion stated outright"},
+                {"label": "C", "text": "An example the author gives"},
+                {"label": "D", "text": "A claim that contradicts the author"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Assumption questions ask for the premise the claim relies on."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author treats reserve as adaptive, not virtuous?",
+              "choices": [
+                {"label": "A", "text": "city dwellers are morally better than village dwellers"},
+                {"label": "B", "text": "the volume of stimuli exceeds what anyone could answer"},
+                {"label": "C", "text": "the flood of demands cannot all be met"},
+                {"label": "D", "text": "reserve is a way to stay sane amid overload"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author never claims urbanites are morally superior, so that is not the assumption."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author says reserve becomes a HABIT, not a conscious choice?",
+              "choices": [
+                {"label": "A", "text": "indifference is always a conscious moral choice"},
+                {"label": "B", "text": "the volume of demands exceeds what any individual could humanely answer"},
+                {"label": "C", "text": "city dwellers are morally better"},
+                {"label": "D", "text": "villagers never ignore one another"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The passage says the reserve hardens into a habit, so assuming it is always a conscious choice reverses the point and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p026",
           "stem": "The author's claim that the city dweller's reserve is a defense rather than cruelty rests on the assumption that:",
@@ -757,6 +2087,44 @@
         },
         {
           "id": "cars-gen-0176",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what 'a different bargain' means for the city. How should you decide?",
+              "choices": [
+                {"label": "A", "text": "Read the phrase in the context of the argument"},
+                {"label": "B", "text": "Take 'bargain' as a literal purchase"},
+                {"label": "C", "text": "Pick the rarest meaning"},
+                {"label": "D", "text": "Choose the most negative reading regardless of context"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Meaning-in-context questions require reading the phrase within its argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because 'bargain' here is a metaphor for a social trade-off?",
+              "choices": [
+                {"label": "A", "text": "a financial transaction conducted in urban markets"},
+                {"label": "B", "text": "a trade-off with its own gains and losses"},
+                {"label": "C", "text": "something gained for something given up"},
+                {"label": "D", "text": "a deal neither better nor worse, just different"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The bargain names a social exchange, not literal commerce, so the financial reading is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because 'a different bargain' resists ranking the city as an improvement?",
+              "choices": [
+                {"label": "A", "text": "an unambiguous improvement over village life"},
+                {"label": "B", "text": "a trade-off with its own gains and losses, not simply better"},
+                {"label": "C", "text": "a financial transaction in urban markets"},
+                {"label": "D", "text": "a dishonest deal that cheats newcomers"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author calls such verdicts too simple, so reading the bargain as an unambiguous improvement is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p026",
           "stem": "As used in the passage, the phrase 'a different bargain' applied to the city most nearly means:",
@@ -790,6 +2158,44 @@
       "questions": [
         {
           "id": "cars-gen-0177",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks the author's attitude toward the belief that the two-parent family is natural. What must you determine?",
+              "choices": [
+                {"label": "A", "text": "The author's stance toward that belief"},
+                {"label": "B", "text": "How many family types exist"},
+                {"label": "C", "text": "Which society is oldest"},
+                {"label": "D", "text": "Whether the author has children"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Attitude questions ask you to characterize the author's stance toward the belief."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author clearly takes a position?",
+              "choices": [
+                {"label": "A", "text": "indifferent, expressing no view"},
+                {"label": "B", "text": "skeptical of the belief's naturalness"},
+                {"label": "C", "text": "treating the family as a historical arrangement"},
+                {"label": "D", "text": "stripping it of the false authority of nature"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author argues the naturalness is illusory, so indifference is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author says recognizing the family as constructed is NOT to declare it worthless?",
+              "choices": [
+                {"label": "A", "text": "hostile, urging readers to abandon the nuclear family"},
+                {"label": "B", "text": "skeptical, treating the belief as a construct mistaken for nature"},
+                {"label": "C", "text": "indifferent to the matter"},
+                {"label": "D", "text": "reverent toward the nuclear family"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author denies he is declaring the arrangement worthless, so 'urging its abandonment' overstates and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p027",
           "stem": "The author's attitude toward the belief that the two-parent biological family is simply natural is best described as:",
@@ -809,6 +2215,44 @@
         },
         {
           "id": "cars-gen-0178",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what the matrilineal and classificatory examples support. What makes an answer correct?",
+              "choices": [
+                {"label": "A", "text": "It follows from the passage's claim about biology and meaning"},
+                {"label": "B", "text": "It repeats a sentence verbatim"},
+                {"label": "C", "text": "It adds outside facts"},
+                {"label": "D", "text": "It is the most emphatic option"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A valid inference follows from the passage's own reasoning."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author calls these systems coherent solutions, not errors?",
+              "choices": [
+                {"label": "A", "text": "such societies misunderstand the biological facts"},
+                {"label": "B", "text": "the same biology supports many arrangements"},
+                {"label": "C", "text": "meanings built on biology vary"},
+                {"label": "D", "text": "kinship is socially recognized, not merely biological"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author says a matrilineal rule is not a quaint error about paternity, so 'misunderstand the facts' is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author universalizes the lesson to ourselves?",
+              "choices": [
+                {"label": "A", "text": "only small or remote societies organize kinship differently"},
+                {"label": "B", "text": "the same biological facts support many socially recognized arrangements"},
+                {"label": "C", "text": "such societies misunderstand biology"},
+                {"label": "D", "text": "kinship terms always track genetics"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author applies the point even to our own family, so confining variation to remote societies is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p027",
           "stem": "It can be inferred that the author cites societies with matrilineal descent or classificatory fatherhood mainly to support the claim that:",
@@ -828,6 +2272,44 @@
         },
         {
           "id": "cars-gen-0179",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks how the author would interpret a strict matrilineal rule. What is the task?",
+              "choices": [
+                {"label": "A", "text": "Interpret the rule using the passage's framework"},
+                {"label": "B", "text": "Judge whether the rule is fair"},
+                {"label": "C", "text": "Decide how common the rule is"},
+                {"label": "D", "text": "Choose the most detailed option"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Application questions ask you to interpret a case using the passage's framework."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author denies such rules are errors about paternity?",
+              "choices": [
+                {"label": "A", "text": "a misunderstanding of who the biological father is"},
+                {"label": "B", "text": "a coherent solution to keeping property in a stable group"},
+                {"label": "C", "text": "a purposeful answer to an inheritance problem"},
+                {"label": "D", "text": "a workable organization of descent"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author explicitly denies matrilineal rules are mistakes about paternity, so that reading is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because it overgeneralizes beyond a descent rule about property?",
+              "choices": [
+                {"label": "A", "text": "evidence that the society values women more than men in all respects"},
+                {"label": "B", "text": "a coherent solution to keeping property within a stable group"},
+                {"label": "C", "text": "a misunderstanding of paternity"},
+                {"label": "D", "text": "proof that biology has no influence anywhere"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A property-descent rule does not entail valuing women more in all respects, so that sweeping claim is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p027",
           "stem": "A society decides that property and group membership pass strictly through the mother's line. Based on the passage, the author would most likely interpret this rule as:",
@@ -847,6 +2329,44 @@
         },
         {
           "id": "cars-gen-0180",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks which finding would most STRENGTHEN that the nuclear family is historical, not natural. What should the credited answer do?",
+              "choices": [
+                {"label": "A", "text": "Supply support for the historical-contingency claim"},
+                {"label": "B", "text": "Restate the claim differently"},
+                {"label": "C", "text": "Undercut the claim"},
+                {"label": "D", "text": "Add an irrelevant true fact"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A strengthener supplies support for the author's specific claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because it concerns conception, not household structure?",
+              "choices": [
+                {"label": "A", "text": "Reproduction requires genetic material from two parents"},
+                {"label": "B", "text": "The nuclear household arose only under specific economic conditions"},
+                {"label": "C", "text": "The isolated household was rare in many earlier societies"},
+                {"label": "D", "text": "Household form has varied historically"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The biology of conception is not the author's subject, which is household structure, so this can be dropped."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because current prevalence is a snapshot consistent with historical contingency?",
+              "choices": [
+                {"label": "A", "text": "Most people in one country currently live in nuclear families"},
+                {"label": "B", "text": "The nuclear household became common only under specific conditions and was elsewhere rare"},
+                {"label": "C", "text": "Reproduction requires two parents' genes"},
+                {"label": "D", "text": "Children generally love their parents"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Present popularity does not show necessity and fits contingency, so it does not strengthen the claim and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p027",
           "stem": "Which finding would most strongly STRENGTHEN the author's claim that the nuclear family is a historical arrangement rather than a natural necessity?",
@@ -866,6 +2386,44 @@
         },
         {
           "id": "cars-gen-0181",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks which assumption underlies 'kinship systems solve social problems.' What are you looking for?",
+              "choices": [
+                {"label": "A", "text": "An unstated premise the argument needs"},
+                {"label": "B", "text": "A conclusion stated outright"},
+                {"label": "C", "text": "An example the author gives"},
+                {"label": "D", "text": "A claim that contradicts the author"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Assumption questions ask for the premise the argument relies on."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author's whole point is that these systems are coherent and purposeful?",
+              "choices": [
+                {"label": "A", "text": "kinship terms are chosen at random with no underlying logic"},
+                {"label": "B", "text": "societies face recurring challenges like inheritance and alliance"},
+                {"label": "C", "text": "kinship rules are organized to address shared problems"},
+                {"label": "D", "text": "different systems answer common questions differently"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author treats kinship as ingenious problem-solving, so randomness is the opposite of his view."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author treats biology as a real, universal substrate?",
+              "choices": [
+                {"label": "A", "text": "biological relationships play no role whatsoever in any kinship system"},
+                {"label": "B", "text": "societies confront recurring practical challenges that kinship rules address"},
+                {"label": "C", "text": "kinship terms are chosen at random"},
+                {"label": "D", "text": "every society's problems are entirely unique"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author says biology is everywhere the same substrate on which meanings are built, so denying it any role is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p027",
           "stem": "The author's argument that kinship systems are solving social problems assumes that:",
@@ -885,6 +2443,44 @@
         },
         {
           "id": "cars-gen-0182",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what 'one melody among many that the same human materials can play' means. How should you decide?",
+              "choices": [
+                {"label": "A", "text": "Read the metaphor in the context of the argument"},
+                {"label": "B", "text": "Take the musical image literally"},
+                {"label": "C", "text": "Pick the rarest meaning"},
+                {"label": "D", "text": "Choose the most literal reading regardless of context"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Meaning-in-context questions require reading the metaphor within its argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the musical image is a metaphor, not a literal claim?",
+              "choices": [
+                {"label": "A", "text": "kinship systems are essentially musical in nature"},
+                {"label": "B", "text": "one biological basis yields many viable forms"},
+                {"label": "C", "text": "shared materials support varied cultural arrangements"},
+                {"label": "D", "text": "the same substrate can be organized many ways"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The melody image is figurative, so taking kinship to be literally musical is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the metaphor celebrates plurality, not a single correct form?",
+              "choices": [
+                {"label": "A", "text": "only one kinship system can ever be correct at a time"},
+                {"label": "B", "text": "a shared biological basis can be organized into many workable forms"},
+                {"label": "C", "text": "kinship is essentially musical"},
+                {"label": "D", "text": "humans have no real biological relationships"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The image of many melodies affirms plurality, so 'only one can be correct' is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p027",
           "stem": "In saying that kinship is 'one melody among many that the same human materials can be made to play,' the author primarily means that:",
@@ -918,6 +2514,44 @@
       "questions": [
         {
           "id": "cars-gen-0183",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "To find what the passage is primarily arguing, what must the correct answer capture?",
+              "choices": [
+                {"label": "A", "text": "The passage's overall claim about deviance"},
+                {"label": "B", "text": "One example of a prank"},
+                {"label": "C", "text": "An outside fact about crime"},
+                {"label": "D", "text": "The most difficult sentence"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Main-idea questions reward the choice capturing the passage's central claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author argues labeling falls unevenly, not equally?",
+              "choices": [
+                {"label": "A", "text": "deviant acts are equally distributed across all social classes"},
+                {"label": "B", "text": "deviance arises largely from social reactions and labels"},
+                {"label": "C", "text": "labeling is applied selectively"},
+                {"label": "D", "text": "labels can help produce further deviance"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The passage stresses uneven labeling across class and status, so 'equally distributed' is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author suggests punitive branding can confirm people in deviance?",
+              "choices": [
+                {"label": "A", "text": "harsher punishment is the best way to reduce deviance"},
+                {"label": "B", "text": "deviance arises substantially from social reactions"},
+                {"label": "C", "text": "deviant acts are equally distributed"},
+                {"label": "D", "text": "deviance is a fixed trait present from birth"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author warns that branding can produce secondary deviance, so recommending harsher punishment is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p028",
           "stem": "The passage is primarily concerned with arguing that:",
@@ -937,6 +2571,44 @@
         },
         {
           "id": "cars-gen-0184",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what the prank-versus-crime example does. What are you really being asked?",
+              "choices": [
+                {"label": "A", "text": "What role that example plays in the argument"},
+                {"label": "B", "text": "How serious the mischief was"},
+                {"label": "C", "text": "How many neighborhoods there are"},
+                {"label": "D", "text": "The author's mood"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Function questions ask what an example does for the argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the point is that privileged offenders escape the label, not that they never offend?",
+              "choices": [
+                {"label": "A", "text": "prove that wealthy youths never commit any offenses"},
+                {"label": "B", "text": "illustrate that labeling depends on who commits an act and where"},
+                {"label": "C", "text": "show the selectivity of enforcement"},
+                {"label": "D", "text": "reveal how circumstance shapes the reaction"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The example shows unequal labeling, not that the privileged never offend, so 'never commit offenses' is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author specifies 'the same mischief,' locating the difference in the reaction?",
+              "choices": [
+                {"label": "A", "text": "show that the two acts were actually different in kind"},
+                {"label": "B", "text": "illustrate that labeling depends on who acts and where"},
+                {"label": "C", "text": "prove wealthy youths never offend"},
+                {"label": "D", "text": "argue suburban communities are morally superior"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The acts are identical by stipulation, so claiming they differ in kind is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p028",
           "stem": "The example of identical mischief treated as a prank in a wealthy suburb but as a crime in a poorer neighborhood functions to:",
@@ -956,6 +2628,44 @@
         },
         {
           "id": "cars-gen-0185",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks which concept the arrest-shunning-rearrest sequence illustrates. What is the task?",
+              "choices": [
+                {"label": "A", "text": "Match the sequence to the passage's concept"},
+                {"label": "B", "text": "Judge whether the man is guilty"},
+                {"label": "C", "text": "Decide how many arrests occurred"},
+                {"label": "D", "text": "Choose the most detailed option"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Application questions ask which of the passage's concepts the case illustrates."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the sequence shows bias and unequal consequences?",
+              "choices": [
+                {"label": "A", "text": "the impartiality of the justice system"},
+                {"label": "B", "text": "secondary deviance produced by labeling"},
+                {"label": "C", "text": "exclusion pushing him toward further offenses"},
+                {"label": "D", "text": "the label hardening into a career"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The sequence displays unequal, biased consequences, so 'impartiality' is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the labeling account explains the second offense by social reaction, not an inborn trait?",
+              "choices": [
+                {"label": "A", "text": "deviance as an inborn trait finally revealed"},
+                {"label": "B", "text": "secondary deviance produced by labeling and exclusion"},
+                {"label": "C", "text": "the impartiality of the justice system"},
+                {"label": "D", "text": "the irrelevance of social reactions"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The passage attributes the relapse to exclusion, not to a revealed inborn trait, so that reading is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p028",
           "stem": "A young man, after a single arrest, finds that employers and neighbors shun him; he drifts toward others with records and is soon arrested again. This sequence best illustrates the passage's concept of:",
@@ -975,6 +2685,44 @@
         },
         {
           "id": "cars-gen-0186",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks which finding would most STRENGTHEN that labeling produces further deviance. What should the credited answer do?",
+              "choices": [
+                {"label": "A", "text": "Supply support for the secondary-deviance claim"},
+                {"label": "B", "text": "Restate the claim differently"},
+                {"label": "C", "text": "Undercut the claim"},
+                {"label": "D", "text": "Add an irrelevant true fact"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A strengthener supplies support for the author's specific claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because it concerns ecology, not the effect of labeling on the labeled?",
+              "choices": [
+                {"label": "A", "text": "Crime rates are higher in larger cities than small towns"},
+                {"label": "B", "text": "Labeled people commit more offenses than similar unlabeled people"},
+                {"label": "C", "text": "The label itself increases later offending"},
+                {"label": "D", "text": "Exclusion drives further deviance"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A city-town crime gap is about ecology, not the causal effect of a label on an individual, so it can be dropped."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because feelings of regret do not address whether labeling increases future deviance?",
+              "choices": [
+                {"label": "A", "text": "People who commit crimes tend to regret them afterward"},
+                {"label": "B", "text": "Labeled offenders commit more offenses than similar unlabeled people"},
+                {"label": "C", "text": "Crime rates are higher in cities"},
+                {"label": "D", "text": "Most labeled offenders say they were treated fairly"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Regret speaks to feelings, not to the causal effect of labeling, so it does not strengthen and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p028",
           "stem": "Which finding, if true, would most STRENGTHEN the claim that labeling can produce further deviance?",
@@ -994,6 +2742,44 @@
         },
         {
           "id": "cars-gen-0187",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks which assumption underlies 'the deviant population is not a simple sample.' What are you looking for?",
+              "choices": [
+                {"label": "A", "text": "An unstated premise the claim needs"},
+                {"label": "B", "text": "A conclusion stated outright"},
+                {"label": "C", "text": "An example the author gives"},
+                {"label": "D", "text": "A claim that contradicts the author"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Assumption questions ask for the premise the claim relies on."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the claim depends on the OPPOSITE, that few are caught?",
+              "choices": [
+                {"label": "A", "text": "nearly everyone who breaks a rule is eventually caught and labeled"},
+                {"label": "B", "text": "enforcement and labeling are applied selectively"},
+                {"label": "C", "text": "being caught depends on more than merely breaking a rule"},
+                {"label": "D", "text": "the labeled are a skewed subset"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The passage says few are caught and fewer branded, so assuming nearly everyone is caught contradicts the claim."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the point concerns unequal enforcement, not differing rates of rule-breaking?",
+              "choices": [
+                {"label": "A", "text": "the powerful and powerless break rules at completely different rates"},
+                {"label": "B", "text": "enforcement is selective, so being labeled depends on more than breaking a rule"},
+                {"label": "C", "text": "nearly everyone who transgresses is caught"},
+                {"label": "D", "text": "records perfectly reflect all wrongdoing"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The suburb-neighborhood example holds the act constant, so the claim is about enforcement, not differing rates, making this a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p028",
           "stem": "The author's claim that the population we call deviant is not a simple sample of all who transgress assumes that:",
@@ -1013,6 +2799,44 @@
         },
         {
           "id": "cars-gen-0188",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what 'not discovered but conferred' means. How should you decide?",
+              "choices": [
+                {"label": "A", "text": "Read the phrase in the context of the argument"},
+                {"label": "B", "text": "Take 'conferred' as an academic degree"},
+                {"label": "C", "text": "Pick the rarest meaning"},
+                {"label": "D", "text": "Choose the most literal reading regardless of context"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Meaning-in-context questions require reading the phrase within its argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because 'discovered' is exactly what the author rejects?",
+              "choices": [
+                {"label": "A", "text": "a hidden quality that careful investigation uncovers"},
+                {"label": "B", "text": "a status assigned through social reaction"},
+                {"label": "C", "text": "bestowed by how others respond"},
+                {"label": "D", "text": "not an inherent property awaiting detection"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The word 'not' precedes 'discovered,' so the uncovering reading is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author argues official records are skewed by selective labeling?",
+              "choices": [
+                {"label": "A", "text": "an objective fact recorded accurately by the authorities"},
+                {"label": "B", "text": "a status assigned through social reaction"},
+                {"label": "C", "text": "a hidden quality eventually uncovered"},
+                {"label": "D", "text": "a reward granted to rule-followers"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author says records are skewed, so 'recorded accurately' contradicts him and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p028",
           "stem": "When the author writes that deviance is 'not discovered but conferred,' he most nearly means that deviance is:",
@@ -1046,6 +2870,44 @@
       "questions": [
         {
           "id": "cars-gen-0189",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "To find the central thesis, what must the correct answer capture?",
+              "choices": [
+                {"label": "A", "text": "The passage's overall claim about ritual"},
+                {"label": "B", "text": "One example, such as the rain dance"},
+                {"label": "C", "text": "An outside fact about religion"},
+                {"label": "D", "text": "The most difficult sentence"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Main-idea questions reward the choice capturing the passage's central claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author stresses secular societies are full of rituals?",
+              "choices": [
+                {"label": "A", "text": "only religious societies practice meaningful rituals"},
+                {"label": "B", "text": "rituals persist for their social functions"},
+                {"label": "C", "text": "stated aims are beside the point"},
+                {"label": "D", "text": "ritual binds the group and marks its passages"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author says modern secular societies are saturated with ritual, so 'only religious societies' is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because it states the rationalist view the author REJECTS?",
+              "choices": [
+                {"label": "A", "text": "rituals are irrational relics that will disappear as societies modernize"},
+                {"label": "B", "text": "rituals persist because of the social functions they perform"},
+                {"label": "C", "text": "only religious societies have real ritual"},
+                {"label": "D", "text": "rituals achieve their supernatural aims"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author rejects the prediction that ritual will wither, so the rationalist relic view is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p029",
           "stem": "The central thesis of the passage is that:",
@@ -1065,6 +2927,44 @@
         },
         {
           "id": "cars-gen-0190",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks the author's attitude toward the impatient rationalist. What must you determine?",
+              "choices": [
+                {"label": "A", "text": "The author's stance toward the rationalist"},
+                {"label": "B", "text": "How many rationalists there are"},
+                {"label": "C", "text": "Which ritual is oldest"},
+                {"label": "D", "text": "Whether the author is religious"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Attitude questions ask you to characterize the author's stance."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author engages the view closely and argues against it?",
+              "choices": [
+                {"label": "A", "text": "complete indifference"},
+                {"label": "B", "text": "respectful disagreement"},
+                {"label": "C", "text": "granting its surface plausibility"},
+                {"label": "D", "text": "judging it ultimately mistaken"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author debates the rationalist at length, so complete indifference is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author treats the rationalist's view as understandable rather than ridiculous?",
+              "choices": [
+                {"label": "A", "text": "full agreement"},
+                {"label": "B", "text": "open hostility and ridicule"},
+                {"label": "C", "text": "respectful disagreement, granting the view's surface plausibility while judging it mistaken"},
+                {"label": "D", "text": "complete indifference"}
+              ],
+              "correctAnswer": "B",
+              "rationale": "The author calls the rationalist's verdict one that sounds reasonable, treating it as understandable rather than ridiculous, so 'open hostility and ridicule' is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p029",
           "stem": "The author's attitude toward the impatient rationalist who dismisses ritual as folly is best described as:",
@@ -1084,6 +2984,44 @@
         },
         {
           "id": "cars-gen-0191",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks how the author explains the survival of a rain dance that fails. What makes an answer correct?",
+              "choices": [
+                {"label": "A", "text": "It follows from the passage's account of ritual's social function"},
+                {"label": "B", "text": "It repeats a sentence verbatim"},
+                {"label": "C", "text": "It adds outside facts about weather"},
+                {"label": "D", "text": "It is the most emphatic option"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A valid inference follows from the passage's own reasoning."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author denies value lies in achieving the stated end?",
+              "choices": [
+                {"label": "A", "text": "its occasional success in actually producing rain"},
+                {"label": "B", "text": "the solidarity produced by performing it together"},
+                {"label": "C", "text": "the renewed sense of belonging it creates"},
+                {"label": "D", "text": "the shared feeling it generates"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author relocates the value away from the stated aim like rain, so 'occasional success in producing rain' is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author does not attribute survival to participants' ignorance?",
+              "choices": [
+                {"label": "A", "text": "the participants' inability to notice that it does not work"},
+                {"label": "B", "text": "the social effects of performing it together"},
+                {"label": "C", "text": "its occasional success in producing rain"},
+                {"label": "D", "text": "the absence of any alternative activities"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author explains survival by positive social function, not by ignorance, so this reading is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p029",
           "stem": "It can be inferred from the passage that, in the author's view, the survival of a rain dance that fails to bring rain is explained by:",
@@ -1103,6 +3041,44 @@
         },
         {
           "id": "cars-gen-0192",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks which finding would most WEAKEN that ritual persists for its social functions. What should the credited answer do?",
+              "choices": [
+                {"label": "A", "text": "Provide information that undercuts the social-function explanation"},
+                {"label": "B", "text": "Confirm the explanation with an example"},
+                {"label": "C", "text": "Restate the explanation"},
+                {"label": "D", "text": "Add an irrelevant true fact"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A weakener must undercut the support for the author's specific claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because it fits the solidarity function and supports the author?",
+              "choices": [
+                {"label": "A", "text": "A community reports feeling more united after its annual festival"},
+                {"label": "B", "text": "Rituals persist among isolated individuals with no sense of group connection"},
+                {"label": "C", "text": "Solitary ritual thrives without any social bonding"},
+                {"label": "D", "text": "Private rites flourish absent any community"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Increased unity after a festival illustrates the solidarity function, so it supports rather than weakens the claim."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because mourning customs guiding the grieving exemplify a function the author names?",
+              "choices": [
+                {"label": "A", "text": "Mourning customs help grieving people know how to act"},
+                {"label": "B", "text": "Rituals persist just as strongly among isolated individuals who feel no group connection"},
+                {"label": "C", "text": "A community feels more united after its festival"},
+                {"label": "D", "text": "Secular societies hold many ceremonies"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Shaping grief into bearable action is one of the author's functions, so this supports the thesis and is a trap for a weakener."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p029",
           "stem": "Which finding, if true, would most WEAKEN the author's claim that ritual's persistence is explained by its social functions?",
@@ -1122,6 +3098,44 @@
         },
         {
           "id": "cars-gen-0193",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks which assumption underlies 'ritual was renamed, not abolished.' What are you looking for?",
+              "choices": [
+                {"label": "A", "text": "An unstated premise the argument needs"},
+                {"label": "B", "text": "A conclusion stated outright"},
+                {"label": "C", "text": "An example the author gives"},
+                {"label": "D", "text": "A claim that contradicts the author"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Assumption questions ask for the premise the argument relies on."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the argument requires that the two kinds of ceremony SHARE a function?",
+              "choices": [
+                {"label": "A", "text": "religious and secular ceremonies have nothing in common"},
+                {"label": "B", "text": "secular ceremonies do the same social work as older rites"},
+                {"label": "C", "text": "ritual is defined by its function"},
+                {"label": "D", "text": "graduations and moments of silence perform ritual's work"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The claim requires a shared function, so 'nothing in common' would defeat it and is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because requiring a supernatural aim would exclude the secular ceremonies the author counts?",
+              "choices": [
+                {"label": "A", "text": "a practice counts as ritual only if it has a supernatural aim"},
+                {"label": "B", "text": "secular ceremonies qualify because they do the same social work"},
+                {"label": "C", "text": "religious and secular ceremonies have nothing in common"},
+                {"label": "D", "text": "moderns consciously intend holidays as rituals"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author defines ritual functionally so secular ceremonies count, so requiring a supernatural aim is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p029",
           "stem": "The author's argument that modern secular societies have not abolished ritual but merely renamed it rests on the assumption that:",
@@ -1141,6 +3155,44 @@
         },
         {
           "id": "cars-gen-0194",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what the 'surface' versus 'substance' contrast distinguishes. How should you decide?",
+              "choices": [
+                {"label": "A", "text": "Read the contrast in the context of the argument"},
+                {"label": "B", "text": "Take 'surface' as a physical texture"},
+                {"label": "C", "text": "Pick the rarest meaning"},
+                {"label": "D", "text": "Choose the most literal reading regardless of context"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Meaning-in-context questions require reading the contrast within its argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the contrast is not financial?",
+              "choices": [
+                {"label": "A", "text": "the cost of a ritual from its monetary benefits"},
+                {"label": "B", "text": "the literal actions from the social work accomplished"},
+                {"label": "C", "text": "the stated aims from the real effects"},
+                {"label": "D", "text": "the idle motions from the binding function"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Money is never the measure here, so the financial reading is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because it names a separate distinction rather than one within a single ritual?",
+              "choices": [
+                {"label": "A", "text": "religious rituals from secular ones"},
+                {"label": "B", "text": "the literal actions and stated aims from the social work accomplished"},
+                {"label": "C", "text": "the cost from the monetary benefits"},
+                {"label": "D", "text": "ancient rituals from modern ones"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The surface-substance contrast applies within any ritual, so the religious-secular split is a different point and a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p029",
           "stem": "In the final paragraph, the contrast between a ritual's 'surface' and its 'substance' most nearly distinguishes:",
@@ -1174,6 +3226,44 @@
       "questions": [
         {
           "id": "cars-gen-0195",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "To find the author's primary purpose, what must the correct answer capture?",
+              "choices": [
+                {"label": "A", "text": "The passage's overall claim about language and thought"},
+                {"label": "B", "text": "One example about color words"},
+                {"label": "C", "text": "An outside fact about grammar"},
+                {"label": "D", "text": "The most difficult sentence"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Primary-purpose questions reward the choice capturing the passage's central claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the examples are illustrative, not a catalog?",
+              "choices": [
+                {"label": "A", "text": "catalog the grammatical features of several unrelated languages"},
+                {"label": "B", "text": "defend a moderate version of linguistic relativity"},
+                {"label": "C", "text": "reject the strong claim that language imprisons thought"},
+                {"label": "D", "text": "argue language influences habitual thought"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author uses a few examples to make a point rather than cataloging grammar, so that option can be dropped."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author explicitly DENIES the strong deterministic claim?",
+              "choices": [
+                {"label": "A", "text": "prove that language completely determines the limits of thought"},
+                {"label": "B", "text": "defend a moderate relativity while rejecting the strong claim"},
+                {"label": "C", "text": "catalog grammatical features of languages"},
+                {"label": "D", "text": "argue language has no influence at all"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author calls the strong deterministic version almost certainly false, so it cannot be his purpose and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p030",
           "stem": "The author's primary purpose is to:",
@@ -1193,6 +3283,44 @@
         },
         {
           "id": "cars-gen-0196",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks the author's attitude toward the 'prisoners of our mother tongue' claim. What must you determine?",
+              "choices": [
+                {"label": "A", "text": "The author's stance toward that strong claim"},
+                {"label": "B", "text": "How many languages exist"},
+                {"label": "C", "text": "Which language is oldest"},
+                {"label": "D", "text": "Whether the author is bilingual"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Attitude questions ask you to characterize the author's stance."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because he takes a clear evaluative stance?",
+              "choices": [
+                {"label": "A", "text": "entirely neutral and noncommittal"},
+                {"label": "B", "text": "skeptical of the strong claim"},
+                {"label": "C", "text": "judging it almost certainly false"},
+                {"label": "D", "text": "offering counterevidence against it"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author judges the strong claim almost certainly false, so neutrality is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author refutes the strong claim rather than being won over by it?",
+              "choices": [
+                {"label": "A", "text": "enthusiastically persuaded"},
+                {"label": "B", "text": "skeptical, regarding it as exciting but almost certainly false"},
+                {"label": "C", "text": "entirely neutral"},
+                {"label": "D", "text": "anxious and alarmed"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "He calls the claim exciting yet refutes it, so 'enthusiastically persuaded' misreads him and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p030",
           "stem": "The author's attitude toward the strong claim that we are prisoners of our mother tongue is best described as:",
@@ -1212,6 +3340,44 @@
         },
         {
           "id": "cars-gen-0197",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what the color-band example does. What are you really being asked?",
+              "choices": [
+                {"label": "A", "text": "What role that example plays in the argument"},
+                {"label": "B", "text": "How many colors exist"},
+                {"label": "C", "text": "Which language is most precise"},
+                {"label": "D", "text": "The author's favorite color"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Function questions ask what an example does for the argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the example shows a real, if modest, effect?",
+              "choices": [
+                {"label": "A", "text": "show that language has no measurable effect on perception"},
+                {"label": "B", "text": "illustrate that language shapes what we notice readily"},
+                {"label": "C", "text": "show habits running along linguistic grooves"},
+                {"label": "D", "text": "demonstrate a modest influence on quick perception"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The speaker divides the band a little more quickly, which is a real effect, so 'no measurable effect' is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author stresses the other divisions are NOT unthinkable?",
+              "choices": [
+                {"label": "A", "text": "prove that speakers of such a language cannot perceive other colors"},
+                {"label": "B", "text": "illustrate that language shapes what we notice readily, not what we can notice"},
+                {"label": "C", "text": "show language has no effect"},
+                {"label": "D", "text": "demonstrate that translation is impossible"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author says the unmarked divisions remain thinkable, so 'cannot perceive other colors' overstates and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p030",
           "stem": "The example of a language that sorts a band of color into two names rather than one functions to:",
@@ -1231,6 +3397,44 @@
         },
         {
           "id": "cars-gen-0198",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks which finding would most SUPPORT the moderate position over the strong view. What should the credited answer do?",
+              "choices": [
+                {"label": "A", "text": "Supply evidence favoring influence over determinism"},
+                {"label": "B", "text": "Restate the moderate position"},
+                {"label": "C", "text": "Undercut the moderate position"},
+                {"label": "D", "text": "Add an irrelevant true fact"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A supporter supplies evidence for the author's specific position."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because identical categories everywhere would suggest little differentiating effect?",
+              "choices": [
+                {"label": "A", "text": "All languages divide the world into exactly the same categories"},
+                {"label": "B", "text": "Speakers notice marked distinctions faster yet can learn unmarked ones"},
+                {"label": "C", "text": "Language eases some distinctions without forbidding others"},
+                {"label": "D", "text": "Habit favors marked distinctions but does not imprison thought"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Uniform categories would undercut even the moderate influence claim, so this cannot support it."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because it would actually support the STRONG deterministic view the author rejects?",
+              "choices": [
+                {"label": "A", "text": "Speakers with no word for a concept prove permanently unable to understand it even when explained"},
+                {"label": "B", "text": "Speakers notice marked distinctions faster yet can grasp unmarked ones when pointed out"},
+                {"label": "C", "text": "All languages use identical categories"},
+                {"label": "D", "text": "People never coin or borrow words"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A permanent inability to understand an explained concept supports determinism, so it favors the strong view and is a trap for the moderate one."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p030",
           "stem": "Which finding, if true, would most strongly SUPPORT the author's moderate position over the strong deterministic view?",
@@ -1250,6 +3454,44 @@
         },
         {
           "id": "cars-gen-0199",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks which assumption underlies 'arguments over words are seldom merely about words.' What are you looking for?",
+              "choices": [
+                {"label": "A", "text": "An unstated premise the claim needs"},
+                {"label": "B", "text": "A conclusion stated outright"},
+                {"label": "C", "text": "An example the author gives"},
+                {"label": "D", "text": "A claim that contradicts the author"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Assumption questions ask for the premise the claim relies on."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because the author emphasizes that words and usage can change?",
+              "choices": [
+                {"label": "A", "text": "words have fixed meanings that never change over time"},
+                {"label": "B", "text": "a language's categories carry evaluative judgments"},
+                {"label": "C", "text": "vocabulary shapes the path of least resistance for thought"},
+                {"label": "D", "text": "words come freighted with their coiners' judgments"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author highlights coining and renaming, so fixed, unchanging meanings cannot be the assumption."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because, if it were true, arguments over words would be pointless?",
+              "choices": [
+                {"label": "A", "text": "renaming something has no effect on how it is perceived"},
+                {"label": "B", "text": "the categories a language supplies carry judgments that influence thought"},
+                {"label": "C", "text": "words have fixed, unchanging meanings"},
+                {"label": "D", "text": "people are unaware of the words they use"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author says renaming shifts the path of least resistance, so 'renaming has no effect' contradicts the claim and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p030",
           "stem": "The author's claim that arguments over words are seldom merely about words depends on the assumption that:",
@@ -1269,6 +3511,44 @@
         },
         {
           "id": "cars-gen-0200",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This asks what 'less a cage than a current' means. How should you decide?",
+              "choices": [
+                {"label": "A", "text": "Read the metaphor in the context of the argument"},
+                {"label": "B", "text": "Take 'cage' and 'current' literally"},
+                {"label": "C", "text": "Pick the rarest meaning"},
+                {"label": "D", "text": "Choose the most extreme reading regardless of context"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "Meaning-in-context questions require reading the metaphor within its argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which choice can be eliminated because 'less a cage' denies the trapping, deterministic image?",
+              "choices": [
+                {"label": "A", "text": "physically traps thought within rigid bars"},
+                {"label": "B", "text": "guides and eases thought in certain directions"},
+                {"label": "C", "text": "exerts a pull without making other thoughts impossible"},
+                {"label": "D", "text": "influences without imprisoning"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "'Less a cage' rejects the trapping image, so the rigid-bars reading is ruled out."
+            },
+            {
+              "level": 3,
+              "prompt": "Which choice is a trap because the author says one can swim against the current with effort?",
+              "choices": [
+                {"label": "A", "text": "flows too quickly for anyone to resist"},
+                {"label": "B", "text": "guides and eases thought without making other thoughts impossible"},
+                {"label": "C", "text": "physically traps thought within bars"},
+                {"label": "D", "text": "has no bearing whatsoever on thought"}
+              ],
+              "correctAnswer": "A",
+              "rationale": "A current can be swum against with effort, so 'too quickly for anyone to resist' overstates and is a trap."
+            }
+          ],
           "section": "CARS",
           "passageId": "cars-gen-p030",
           "stem": "In context, the author's statement that language is 'less a cage than a current' most nearly means that language:",

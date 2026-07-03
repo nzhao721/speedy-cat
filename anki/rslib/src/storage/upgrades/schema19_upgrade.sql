@@ -17,7 +17,11 @@ CREATE TABLE practice_questions (
   source_license text NOT NULL,
   source_url text,
   answer_provenance text,
-  notes text
+  notes text,
+  -- SpeedyCAT graduated hint ladder: JSON array of scaffolding subquestions
+  -- (levels 1..3). NULL when a question has no hints. Content generated
+  -- separately into the question bundles.
+  hints text
 ) WITHOUT ROWID;
 CREATE INDEX idx_practice_questions_section ON practice_questions (section);
 CREATE INDEX idx_practice_questions_passage ON practice_questions (passage_id);
@@ -54,7 +58,13 @@ CREATE TABLE practice_attempts (
   time_on_question_seconds integer NOT NULL,
   section text NOT NULL,
   topic text NOT NULL,
-  answered_at integer NOT NULL
+  answered_at integer NOT NULL,
+  -- SpeedyCAT graduated hint ladder: highest hint tier reached before the
+  -- answer was locked (0..3), and whether the learner reached level 3
+  -- (assisted). Assisted-correct answers are penalized in the Performance
+  -- pillar. Always 0 for full-length answers (no hint ladder there).
+  hint_level_used integer NOT NULL DEFAULT 0,
+  assisted integer NOT NULL DEFAULT 0
 ) WITHOUT ROWID;
 CREATE INDEX idx_practice_attempts_session ON practice_attempts (session_id);
 CREATE INDEX idx_practice_attempts_fl ON practice_attempts (full_length_attempt_id);

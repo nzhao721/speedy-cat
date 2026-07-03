@@ -35,6 +35,8 @@ def _add_attempt(
     topic="kinetics",
     answered_at=1000,
     full_length_attempt_id=None,
+    hint_level_used=0,
+    assisted=False,
 ):
     attempt_id = (
         f"{session_id}:{question_id}"
@@ -44,8 +46,9 @@ def _add_attempt(
     col.db.execute(
         "insert or replace into practice_attempts "
         "(id, session_id, full_length_attempt_id, question_id, selected_answer, "
-        " correct, time_on_question_seconds, section, topic, answered_at) "
-        "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        " correct, time_on_question_seconds, section, topic, answered_at, "
+        " hint_level_used, assisted) "
+        "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         attempt_id,
         session_id,
         full_length_attempt_id,
@@ -56,6 +59,8 @@ def _add_attempt(
         section,
         topic,
         answered_at,
+        hint_level_used,
+        1 if assisted else 0,
     )
     return attempt_id
 
@@ -98,7 +103,23 @@ def test_serialize_reads_attempts_and_full_length():
     col = getEmptyCol()
     _add_session(col, "ps-a")
     _add_attempt(col, session_id="ps-a", question_id="q1", correct=True)
-    _add_attempt(col, session_id="ps-a", question_id="q2", correct=False, selected="")
+    _add_attempt(
+        col,
+        session_id="ps-a",
+        question_id="q2",
+        correct=False,
+        selected="",
+    )
+    # An assisted-correct attempt (hint ladder reached level 3) carries its
+    # tracking so the other device applies the same anti-gaming penalty.
+    _add_attempt(
+        col,
+        session_id="ps-a",
+        question_id="q4",
+        correct=True,
+        hint_level_used=3,
+        assisted=True,
+    )
     # A full-length per-question answer must NOT appear in attempts[] (it is
     # session_id NULL); only the aggregate summary is exported.
     _add_attempt(col, session_id=None, full_length_attempt_id="fla-1", question_id="q3")
@@ -110,10 +131,15 @@ def test_serialize_reads_attempts_and_full_length():
     assert payload["updatedAt"] == 12345
 
     attempts = {a["id"]: a for a in payload["attempts"]}
-    assert set(attempts) == {"ps-a:q1", "ps-a:q2"}
+    assert set(attempts) == {"ps-a:q1", "ps-a:q2", "ps-a:q4"}
     assert attempts["ps-a:q1"]["correct"] is True
     assert attempts["ps-a:q1"]["section"] == "CPBS"
     assert attempts["ps-a:q2"]["selectedAnswer"] == ""
+    # Graduated hint ladder fields ride along.
+    assert attempts["ps-a:q1"]["hintLevelUsed"] == 0
+    assert attempts["ps-a:q1"]["assisted"] is False
+    assert attempts["ps-a:q4"]["hintLevelUsed"] == 3
+    assert attempts["ps-a:q4"]["assisted"] is True
 
     assert len(payload["fullLength"]) == 1
     fl = payload["fullLength"][0]
@@ -303,6 +329,42 @@ def test_ingest_feeds_existing_performance_pillar():
     assert after.performance.available
     assert after.performance.sample_size == 30
     assert abs(after.performance.value - 0.8) < 1e-9
+
+
+def test_ingest_assisted_correct_is_penalized_in_performance():
+    col = getEmptyCol()
+    # 30 answered attempts synced from mobile, ALL correct — but 15 of them are
+    # assisted-correct (hint ladder reached level 3). The anti-gaming penalty
+    # credits only unassisted-correct, so the Performance value is 15/30 = 0.5,
+    # not a gamed 30/30 = 1.0, while all 30 stay in the denominator.
+    remote_attempts = [
+        {
+            "id": f"ps-m:q{i}",
+            "sessionId": "ps-m",
+            "questionId": f"q{i}",
+            "selectedAnswer": "A",
+            "correct": True,
+            "timeSeconds": 30,
+            "section": "CPBS",
+            "topic": "kinetics",
+            "answeredAt": 1000 + i,
+            "hintLevelUsed": 3 if i < 15 else 0,
+            "assisted": i < 15,
+        }
+        for i in range(30)
+    ]
+    _write_remote_file(
+        col,
+        "mobile",
+        {"schema": 1, "deviceId": "mobile", "attempts": remote_attempts,
+         "fullLength": []},
+    )
+    speedycat_sync.ingest_results(col, "desktop")
+
+    after = col.get_readiness(deck_search="")
+    assert after.performance.available
+    assert after.performance.sample_size == 30
+    assert abs(after.performance.value - 0.5) < 1e-9
 
 
 def test_ingest_with_no_remote_files_is_a_noop():

@@ -18,4 +18,32 @@
 
     <!-- Reviewer feedback -->
     <string name="force_active_recall_type_first">Type your answer, then submit to reveal the card</string>
+    <string name="force_active_recall_correct">Correct — you recalled it</string>
+    <string name="force_active_recall_incorrect">Incorrect — check the answer</string>
+    <!-- The expected answer the checker compared against; %1$s is that answer -->
+    <string name="force_active_recall_expected">Expected: %1$s</string>
+
+    <!-- SpeedyCAT AI answer checker -->
+    <!-- Preference key (not user-visible, must not be translated) -->
+    <string name="speedycat_ai_checker_preference" translatable="false">speedycatAiChecker</string>
+    <string name="speedycat_ai_checker_title">AI answer check</string>
+    <string name="speedycat_ai_checker_summ">Use an AI model (gpt-5.4-mini) to grade recall and flag non-attempts. Verdicts are model-generated; needs an OpenAI key. When off, a case-insensitive checker is used.</string>
+
+    <!-- "I don't know" escape hatch, offered after being stuck for 5 seconds -->
+    <string name="speedycat_stuck">Stuck on this card?</string>
+    <string name="speedycat_idk">I don\'t know</string>
+    <!-- Shown when the card is forced to Again (I don't know / gaming) -->
+    <string name="speedycat_idk_note">Marked “Again” — you\'ll see this card again soon</string>
+    <string name="speedycat_forced_again_note">Marked “Again” for an honest re-try</string>
+    <!-- Shown (instead of the answer) when the AI judges the input isn't a genuine attempt -->
+    <string name="speedycat_honesty_prompt">That doesn\'t look like a genuine attempt to recall the answer. Give it your best honest try, then reveal.</string>
+    <!-- While the AI checks the typed answer -->
+    <string name="speedycat_ai_checking">Checking your answer…</string>
+    <!-- AI verdict labels + line (model-generated); %1$s = model, %2$s = verdict, %3$s = reason -->
+    <string name="speedycat_ai_correct">Correct</string>
+    <string name="speedycat_ai_incorrect">Incorrect</string>
+    <string name="speedycat_ai_verdict">AI check (%1$s): %2$s</string>
+    <string name="speedycat_ai_verdict_reason">AI check (%1$s): %2$s — %3$s</string>
+    <!-- Shown when AI is enabled but no key is available -->
+    <string name="speedycat_ai_no_key">AI answer check is on, but no OpenAI key was found — the deterministic checker is used until a key is provided.</string>
 </resources>

@@ -37,7 +37,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks for the author's primary purpose. What is the best approach?",
+              "choices": [
+                { "label": "A", "text": "Identify the author's overall thesis across the whole passage, not one side's case or a single detail." },
+                { "label": "B", "text": "Pick whichever ideal the author spends the most words describing." },
+                { "label": "C", "text": "Choose the first strong-sounding claim that appears." },
+                { "label": "D", "text": "Treat the most detailed paragraph as the purpose." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A primary-purpose question is answered by the author's overall thesis, not by one section, one side, or a lone detail."
+            },
+            {
+              "level": 2,
+              "prompt": "Which sentence best marks where the author's argument finally lands?",
+              "choices": [
+                { "label": "A", "text": "The closing claim that each ideal 'corrects the other's characteristic blindness' and that a democracy 'must somehow hold both pictures in view.'" },
+                { "label": "B", "text": "The opening image of 'a vote being counted.'" },
+                { "label": "C", "text": "The praise that counting votes 'treats citizens as equals in the most literal way.'" },
+                { "label": "D", "text": "The remark that deliberation 'hopes to change minds.'" }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The final paragraph's both-in-view conclusion states the author's overall aim, so it points you to the purpose."
+            },
+            {
+              "level": 3,
+              "prompt": "One tempting answer says the author's purpose is to show the deliberative ideal is superior in every respect. Why is that a trap?",
+              "choices": [
+                { "label": "A", "text": "The author criticizes deliberation's 'flattering illusion' and never crowns it superior, so that overstates his position." },
+                { "label": "B", "text": "The author never mentions the deliberative ideal at all." },
+                { "label": "C", "text": "The author argues instead that aggregation is superior in every respect." },
+                { "label": "D", "text": "The passage only recounts the history of voting procedures." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the author faults deliberation as well as aggregation, 'superior in every respect' misreads a deliberately balanced thesis."
+            }
+          ]
         },
         {
           "id": "cars-gen-0212",
@@ -56,7 +94,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks about the author's attitude toward the deliberative ideal. What should the answer rest on?",
+              "choices": [
+                { "label": "A", "text": "The author's evaluative word choice: both what he praises and what he faults about it." },
+                { "label": "B", "text": "Whether the deliberative ideal is actually the best system of government." },
+                { "label": "C", "text": "The single most positive sentence found anywhere in the passage." },
+                { "label": "D", "text": "The overall subject matter the passage happens to cover." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Attitude questions turn on the author's mixed evaluative stance shown through word choice, not on the topic or one cherry-picked line."
+            },
+            {
+              "level": 2,
+              "prompt": "Which pairing of statements best reveals the author's attitude toward deliberation?",
+              "choices": [
+                { "label": "A", "text": "He credits it with refining desire and educating citizens, yet warns it 'carries a flattering illusion' that rewards the fluent." },
+                { "label": "B", "text": "He calls democracy 'a vast machine for tallying preferences.'" },
+                { "label": "C", "text": "He says aggregation 'asks no one to justify a preference.'" },
+                { "label": "D", "text": "He claims one ideal should simply 'vanquish' the other." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Genuine praise joined to a pointed reservation is the signature of the author's tempered attitude toward deliberation."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer describes the attitude as 'open contempt for an impractical, elitist fantasy.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author grants deliberation real value, such as educating citizens and refining desire, which is inconsistent with contempt." },
+                { "label": "B", "text": "The author never evaluates the deliberative ideal in any way." },
+                { "label": "C", "text": "The author is unreservedly enthusiastic about deliberation." },
+                { "label": "D", "text": "The author discusses only aggregation, never deliberation." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Real concessions of value rule out contempt, so that choice overshoots the author's measured criticism."
+            }
+          ]
         },
         {
           "id": "cars-gen-0213",
@@ -75,7 +151,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "hard",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks what the reference to a 'poll tax' does in the argument. What kind of task is that?",
+              "choices": [
+                { "label": "A", "text": "A function question: ask what job the reference does for the author's larger point." },
+                { "label": "B", "text": "A question about the actual legal history of poll taxes." },
+                { "label": "C", "text": "A request to summarize the entire passage." },
+                { "label": "D", "text": "A judgment of whether the phrase is elegantly written." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "'Functions primarily to' signals a function question, so identify the role the reference plays, not its literal history."
+            },
+            {
+              "level": 2,
+              "prompt": "In its sentence, the poll-tax image is attached to which idea?",
+              "choices": [
+                { "label": "A", "text": "That 'a conversation can exclude as efficiently as a poll tax' when a command of public speech is the price of admission." },
+                { "label": "B", "text": "That poll taxes were a specific injustice worth recounting for its own sake." },
+                { "label": "C", "text": "That aggregation has historically excluded the poor." },
+                { "label": "D", "text": "That deliberation should be fixed with a concrete new rule." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The image sits beside the claim that deliberation can shut people out, which fixes its function as an analogy."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the reference proposes a concrete reform to make deliberation more inclusive. Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The reference is used critically, to expose an exclusion, not constructively to propose any reform." },
+                { "label": "B", "text": "The author actually praises poll taxes as fair." },
+                { "label": "C", "text": "The author never mentions exclusion of any kind." },
+                { "label": "D", "text": "The reference concerns only aggregation's history." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The poll-tax analogy diagnoses a problem rather than offering a fix, so 'concrete reform' mistakes critique for proposal."
+            }
+          ]
         },
         {
           "id": "cars-gen-0214",
@@ -94,7 +208,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks you to apply the author's identified weakness of deliberation to a new scenario. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Match each scenario to the specific weakness the author names for deliberation." },
+                { "label": "B", "text": "Pick whichever scenario sounds the most dramatic." },
+                { "label": "C", "text": "Choose any scenario that happens to involve a vote." },
+                { "label": "D", "text": "Select the scenario mentioned directly in the passage." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Application questions require matching a new case to the author's stated principle, here deliberation's particular flaw."
+            },
+            {
+              "level": 2,
+              "prompt": "What exactly is the weakness of deliberation the author identifies?",
+              "choices": [
+                { "label": "A", "text": "That it rewards the fluent and articulate while sidelining a citizen whose grievance is real but clumsily phrased." },
+                { "label": "B", "text": "That it counts an ignorant preference as much as a wise one." },
+                { "label": "C", "text": "That it refuses to register disagreement honestly." },
+                { "label": "D", "text": "That it lets a majority overrule a minority." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The correct scenario must dramatize eloquence winning over substance, the author's specific charge against deliberation."
+            },
+            {
+              "level": 3,
+              "prompt": "Two scenarios are tempting: 'a majority overrules a better-informed minority' and 'a legislature adopts a policy after no debate.' Why can both be set aside?",
+              "choices": [
+                { "label": "A", "text": "The first illustrates a flaw of aggregation, and the second is a failure to deliberate at all, so neither is a flaw internal to deliberation." },
+                { "label": "B", "text": "Deliberation has no weaknesses at all, so both must be wrong." },
+                { "label": "C", "text": "Both scenarios describe deliberation working perfectly." },
+                { "label": "D", "text": "The author explicitly praises both outcomes." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Only a flaw arising within deliberation counts, so an aggregation defect and a no-debate case both miss the target."
+            }
+          ]
         },
         {
           "id": "cars-gen-0215",
@@ -113,7 +265,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks what would most weaken a specific claim. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Find new evidence that undercuts the exact claim, that deliberation favors the already-articulate." },
+                { "label": "B", "text": "Restate the claim in other words." },
+                { "label": "C", "text": "Support a different claim the passage makes." },
+                { "label": "D", "text": "Offer a true but unrelated fact." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A weaken question needs new information that cuts against the precise claim at issue."
+            },
+            {
+              "level": 2,
+              "prompt": "The claim is that deliberation's bias toward the eloquent is built in. What kind of evidence would cut against that?",
+              "choices": [
+                { "label": "A", "text": "Evidence that a simple design change removes the eloquence advantage, showing the bias is not intrinsic." },
+                { "label": "B", "text": "Evidence that the educated speak more often than others in forums." },
+                { "label": "C", "text": "Evidence that people enjoy deliberative forums." },
+                { "label": "D", "text": "Evidence that forum decisions later pass by majority vote." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "If a minor fix neutralizes the advantage, the disadvantage is not inherent to deliberation, which is what weakening requires."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting choice notes that 'educated participants speak more often than others in most forums.' Why does it fail to weaken?",
+              "choices": [
+                { "label": "A", "text": "It supports, rather than undercuts, the claim that the educated dominate deliberation." },
+                { "label": "B", "text": "It contradicts everything the passage says." },
+                { "label": "C", "text": "It proves the bias can always be fixed." },
+                { "label": "D", "text": "It is about aggregation rather than deliberation." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A fact that reinforces the eloquence advantage strengthens the claim, so it cannot be the weakener."
+            }
+          ]
         },
         {
           "id": "cars-gen-0216",
@@ -132,7 +322,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks for an assumption the argument depends on. What are you looking for?",
+              "choices": [
+                { "label": "A", "text": "An unstated premise the argument needs in order to hold together." },
+                { "label": "B", "text": "A restatement of the author's stated conclusion." },
+                { "label": "C", "text": "A claim the author openly rejects." },
+                { "label": "D", "text": "A true but irrelevant statement." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Assumption questions ask for the hidden premise the reasoning requires, not the conclusion or an off-topic fact."
+            },
+            {
+              "level": 2,
+              "prompt": "Which of the author's claims is the one that needs a hidden premise here?",
+              "choices": [
+                { "label": "A", "text": "The charge that deliberation 'rewards those already fluent,' disadvantaging the inarticulate." },
+                { "label": "B", "text": "The claim that aggregation treats citizens as equals." },
+                { "label": "C", "text": "The claim that preferences can change through talk." },
+                { "label": "D", "text": "The claim that the two ideals cannot be combined." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The fluency-reward charge only bites if fluency is spread unevenly, so that is the assumption to hunt for."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer is that the argument assumes 'the two ideals cannot be combined within one system.' Why can it be eliminated?",
+              "choices": [
+                { "label": "A", "text": "The author's conclusion urges holding both ideals together, so their combinability is assumed, not their incompatibility." },
+                { "label": "B", "text": "The author never mentions combining the ideals." },
+                { "label": "C", "text": "The author states that preferences never change." },
+                { "label": "D", "text": "The author says eloquence and wisdom always coincide." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Since the author wants both ideals combined, assuming they cannot combine would contradict his own conclusion."
+            }
+          ]
         }
       ]
     },
@@ -165,7 +393,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks for the passage's central thesis. What is the best approach?",
+              "choices": [
+                { "label": "A", "text": "Identify the author's full thesis, both his claim about nations' origins and his concession about national feeling." },
+                { "label": "B", "text": "Pick the rival view the author describes and then rejects." },
+                { "label": "C", "text": "Choose the most vivid single image in the passage." },
+                { "label": "D", "text": "Treat one example, such as a holiday or anthem, as the whole point." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A thesis question wants the author's complete claim, not a rejected rival view or a single image."
+            },
+            {
+              "level": 2,
+              "prompt": "Which sentence most directly states the author's own position?",
+              "choices": [
+                { "label": "A", "text": "That the nation 'presents itself as something discovered when it is largely something made,' while the sentiment is 'manufactured and sincere at once.'" },
+                { "label": "B", "text": "That 'nothing seems more natural than the nation.'" },
+                { "label": "C", "text": "That anthems 'stir something that feels deeper than mere opinion.'" },
+                { "label": "D", "text": "That citizens 'will die without hesitation for a flag.'" }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The 'made yet sincerely felt' sentence is the author's two-sided thesis, so it guides you to the main point."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the thesis is that nationalism is a harmful illusion clear-eyed citizens should reject entirely. Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author explicitly says a citizen 'need not despise the nation,' so total rejection misstates the thesis." },
+                { "label": "B", "text": "The author calls nations genuinely ancient and preserved." },
+                { "label": "C", "text": "The author never criticizes nationalism at all." },
+                { "label": "D", "text": "The author denies that national feeling is real." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The author's refusal to condemn the nation rules out the 'harmful illusion to reject' reading."
+            }
+          ]
         },
         {
           "id": "cars-gen-0218",
@@ -184,7 +450,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks the author's overall attitude toward nationalism. What should it rest on?",
+              "choices": [
+                { "label": "A", "text": "His evaluative word choice: what he credits and what he warns against." },
+                { "label": "B", "text": "A neutral summary of what nationalism is." },
+                { "label": "C", "text": "Whether nationalism is historically accurate." },
+                { "label": "D", "text": "The single harshest word in the passage." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Attitude questions depend on the author's balance of praise and warning, not on the topic or one word."
+            },
+            {
+              "level": 2,
+              "prompt": "Which pairing best reveals the author's attitude?",
+              "choices": [
+                { "label": "A", "text": "He calls fellow feeling 'among the more generous of human capacities' yet warns of 'the forgetting on which it depends.'" },
+                { "label": "B", "text": "He says schools teach 'a common language, often suppressing the others.'" },
+                { "label": "C", "text": "He notes that a state 'draws a boundary on a map.'" },
+                { "label": "D", "text": "He observes that printers let a peasant 'read the same morning news.'" }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Genuine credit joined to a serious warning is the mark of the author's wary appreciation."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer is 'alarmed hostility that regards all national feeling as dangerous.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author calls fellow feeling generous and says the citizen need not despise the nation, so the hostility is not wholesale." },
+                { "label": "B", "text": "The author expresses no warnings about nationalism at all." },
+                { "label": "C", "text": "The author is nostalgic for a genuinely ancient past." },
+                { "label": "D", "text": "The author refuses to judge nationalism in any way." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Explicit praise for fellow feeling contradicts a reading of across-the-board hostility."
+            }
+          ]
         },
         {
           "id": "cars-gen-0219",
@@ -203,7 +507,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks what the cathedral comparison does. What kind of task is that?",
+              "choices": [
+                { "label": "A", "text": "A function question: identify the job the analogy performs in the argument." },
+                { "label": "B", "text": "A question about the religious history of cathedrals." },
+                { "label": "C", "text": "A request for the passage's overall thesis." },
+                { "label": "D", "text": "A rating of how beautiful the analogy is." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "'Serves chiefly to' signals a function question about the analogy's role."
+            },
+            {
+              "level": 2,
+              "prompt": "Which feature of the cathedral image is the key to its purpose?",
+              "choices": [
+                { "label": "A", "text": "That it is 'constructed, stone by deliberate stone, yet' still 'offers real shelter.'" },
+                { "label": "B", "text": "That cathedrals are places of worship." },
+                { "label": "C", "text": "That cathedrals are very old buildings." },
+                { "label": "D", "text": "That cathedrals are expensive to build." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The shelter-despite-construction detail is what the analogy uses to make its point about the nation."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the comparison suggests nations, like old buildings, are destined to crumble. Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The analogy stresses reality despite construction, not eventual decay." },
+                { "label": "B", "text": "Cathedrals are never actually mentioned in the passage." },
+                { "label": "C", "text": "The author says nations are frauds with no value." },
+                { "label": "D", "text": "The author says nations are literally religious." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The point is present genuineness, so reading in future collapse imports something the analogy does not say."
+            }
+          ]
         },
         {
           "id": "cars-gen-0220",
@@ -222,7 +564,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks you to apply the author's pattern to a new case, a 'national cuisine.' What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Match the new case to the author's described pattern of made things disguised as remembered ones." },
+                { "label": "B", "text": "Decide whether the cuisine is tasty or authentic." },
+                { "label": "C", "text": "Pick the most cynical possible reading of the case." },
+                { "label": "D", "text": "Restate an example already given in the passage." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Application questions require fitting a new case to the author's stated pattern."
+            },
+            {
+              "level": 2,
+              "prompt": "What is the author's pattern that the cuisine case must be matched against?",
+              "choices": [
+                { "label": "A", "text": "Traditions 'treated as immemorial were... assembled' recently and 'disguised as the work of remembering.'" },
+                { "label": "B", "text": "Nations always go to war over disputed borders." },
+                { "label": "C", "text": "Citizens feel intense pride in their nation." },
+                { "label": "D", "text": "Some national languages descend from medieval tongues." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A recently invented tradition promoted as timeless fits the manufacture-disguised-as-memory pattern."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer treats the example as evidence that the nation is 'a fraud with no real culture.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author explicitly rejects the cynical leap from 'constructed' to 'fraudulent.'" },
+                { "label": "B", "text": "The author says traditions are always genuinely ancient." },
+                { "label": "C", "text": "The example flatly contradicts the author's claim." },
+                { "label": "D", "text": "The author denies that cuisines can be invented." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The passage separates construction from fraud, so the 'fraud' reading violates the author's own caution."
+            }
+          ]
         },
         {
           "id": "cars-gen-0221",
@@ -241,7 +621,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "hard",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks what would most strengthen the construction thesis. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Find new evidence that best supports the claim that nations are made rather than primordial." },
+                { "label": "B", "text": "Restate the thesis in new words." },
+                { "label": "C", "text": "Support a rival claim the passage mentions." },
+                { "label": "D", "text": "Offer a true but irrelevant fact." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A strengthen question needs new support for the exact claim at issue."
+            },
+            {
+              "level": 2,
+              "prompt": "The thesis is that emblems 'treated as immemorial' were recently assembled. What kind of evidence best backs that?",
+              "choices": [
+                { "label": "A", "text": "Documentation that a supposedly ancient costume and anthem were recently engineered by a government body." },
+                { "label": "B", "text": "That citizens feel intense pride in the nation." },
+                { "label": "C", "text": "That nations sometimes go to war over borders." },
+                { "label": "D", "text": "That some national languages descend from medieval tongues." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Proof that 'ancient' emblems were recently designed directly supports the manufacture thesis."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting choice is 'evidence that some national languages are genuinely descended from medieval tongues.' Why does it fail to strengthen?",
+              "choices": [
+                { "label": "A", "text": "Genuine ancient descent supports the primordialist rival, so it weakens the author instead." },
+                { "label": "B", "text": "It merely repeats the author's thesis." },
+                { "label": "C", "text": "It supports the thesis far too strongly." },
+                { "label": "D", "text": "Languages are irrelevant to nations." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Evidence of real antiquity cuts toward the opposing view, so it works against the construction thesis."
+            }
+          ]
         },
         {
           "id": "cars-gen-0222",
@@ -260,7 +678,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks for an assumption the argument makes. What are you looking for?",
+              "choices": [
+                { "label": "A", "text": "The unstated premise the author's account of 'manufacture' requires." },
+                { "label": "B", "text": "A restatement of the author's conclusion." },
+                { "label": "C", "text": "A claim the author openly denies." },
+                { "label": "D", "text": "A true but off-topic statement." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Assumption questions seek the premise the reasoning needs, not its conclusion or a denied claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which detail shows the machinery whose power the argument must assume?",
+              "choices": [
+                { "label": "A", "text": "That the nation is made through 'schoolrooms, censuses, and the daily repetition of a name.'" },
+                { "label": "B", "text": "That anthems stir deep feeling." },
+                { "label": "C", "text": "That citizens will die for a flag." },
+                { "label": "D", "text": "That borders are drawn on maps." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The manufacture story depends on institutions like schools and the press being able to mold mass self-understanding."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the argument assumes 'states always act through deliberate conspiracies.' Why can it be eliminated?",
+              "choices": [
+                { "label": "A", "text": "The author says the process 'requires no conspiracy,' only ordinary machinery." },
+                { "label": "B", "text": "The author says states never influence beliefs." },
+                { "label": "C", "text": "The author says national feeling is never sincere." },
+                { "label": "D", "text": "The author says borders match natural geography." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the passage explicitly denies any need for conspiracy, that cannot be an assumption of the argument."
+            }
+          ]
         }
       ]
     },
@@ -293,7 +749,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks for the passage's primary argument. What is the best approach?",
+              "choices": [
+                { "label": "A", "text": "Identify the author's central thesis, holding together his concession and his main claim." },
+                { "label": "B", "text": "Pick the objection the author raises against himself." },
+                { "label": "C", "text": "Choose the most striking single example." },
+                { "label": "D", "text": "Select the view the author is arguing against." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A main-idea question wants the author's overall thesis, not a concession, an example, or an opposing view."
+            },
+            {
+              "level": 2,
+              "prompt": "Which pair of statements marks the author's own thesis?",
+              "choices": [
+                { "label": "A", "text": "That 'some goods are altered, and sometimes ruined, by being treated as commodities,' and that the boundary is 'a moral question that economics is not equipped to answer.'" },
+                { "label": "B", "text": "That prices 'gather scattered knowledge no planner could assemble.'" },
+                { "label": "C", "text": "That the market is 'a marvel of coordination.'" },
+                { "label": "D", "text": "That 'bread nourishes whether given or sold.'" }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Combining 'pricing can ruin some goods' with 'economics can't set the line' produces the author's thesis."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the passage argues that 'all buying and selling should be regarded with moral suspicion.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author says 'most goods are simply goods' and explicitly rejects blanket suspicion." },
+                { "label": "B", "text": "The author says markets never work efficiently." },
+                { "label": "C", "text": "The author praises vote-selling." },
+                { "label": "D", "text": "The author says economics can answer every moral question." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the author narrows his claim to a special class of goods, wholesale suspicion overstates it."
+            }
+          ]
         },
         {
           "id": "cars-gen-0224",
@@ -312,7 +806,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "hard",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks the author's stance toward economics. What should it rest on?",
+              "choices": [
+                { "label": "A", "text": "How he evaluates economics: what he praises and what limit he insists on." },
+                { "label": "B", "text": "Whether economics counts as a real science." },
+                { "label": "C", "text": "The most negative single word about economics in the passage." },
+                { "label": "D", "text": "The general topic the passage covers." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Stance questions depend on the author's balance of credit and criticism, not on one word or the topic."
+            },
+            {
+              "level": 2,
+              "prompt": "He calls the coordination lesson 'sound,' but which statement shows the limit he places on economics?",
+              "choices": [
+                { "label": "A", "text": "That deciding which goods money corrupts is 'a moral question that economics is not equipped to answer.'" },
+                { "label": "B", "text": "That prices steer goods 'toward those who value them most.'" },
+                { "label": "C", "text": "That the market is 'a marvel of coordination.'" },
+                { "label": "D", "text": "That most goods are 'indifferent to the manner of their exchange.'" }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Praise for the insight plus a firm limit on its authority is what defines the author's stance."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer calls his stance 'uncritical admiration for its account of prices.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "He warns against the market 'creed,' so his admiration is explicitly qualified, not uncritical." },
+                { "label": "B", "text": "He rejects economics entirely as morally bankrupt." },
+                { "label": "C", "text": "He ignores economics as beneath notice." },
+                { "label": "D", "text": "He says prices carry no information at all." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A warning against the creed shows the admiration is limited, ruling out 'uncritical.'"
+            }
+          ]
         },
         {
           "id": "cars-gen-0225",
@@ -331,7 +863,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks what the hired-friend example does. What kind of task is that?",
+              "choices": [
+                { "label": "A", "text": "A function question: what job the example performs for the author's claim." },
+                { "label": "B", "text": "A question about the service quality of paid companions." },
+                { "label": "C", "text": "A request for the whole passage's thesis." },
+                { "label": "D", "text": "A judgment of how realistic the example is." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "'Functions to' signals a function question about the example's role."
+            },
+            {
+              "level": 2,
+              "prompt": "Which phrase in the paragraph is the key to the example's purpose?",
+              "choices": [
+                { "label": "A", "text": "That the relation 'becomes something else... precisely because friendship is partly constituted by its not being for sale.'" },
+                { "label": "B", "text": "That a companion is 'paid by the hour.'" },
+                { "label": "C", "text": "That the companion listens 'to troubles and offering counsel.'" },
+                { "label": "D", "text": "That 'a prize loses its meaning when the prize is the money.'" }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The 'constituted by not being for sale' line makes the example about a change in kind, which is its function."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the example proves paid companions 'provide lower-quality service than real friends.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author's point is a change in kind, a service rather than a bond, not a difference in quality." },
+                { "label": "B", "text": "Paid companions are never actually discussed." },
+                { "label": "C", "text": "The author praises the idea of hiring friends." },
+                { "label": "D", "text": "The author opposes all forms of payment." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Reading the example as about service quality misses that payment transforms what the relationship is."
+            }
+          ]
         },
         {
           "id": "cars-gen-0226",
@@ -350,7 +920,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This is an inference question about why the author would object to vote-selling. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Combine the author's stated principles to infer his reason, not expect it stated verbatim." },
+                { "label": "B", "text": "Find a sentence that states the reason word for word." },
+                { "label": "C", "text": "Pick the harshest-sounding option." },
+                { "label": "D", "text": "Choose an answer that contradicts the author." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Inference questions require assembling the author's stated principles into an implied reason."
+            },
+            {
+              "level": 2,
+              "prompt": "Which sentence should you reread to draw this inference?",
+              "choices": [
+                { "label": "A", "text": "That a man who sells his vote 'consents freely and harms no stranger, yet he has still helped convert a public trust into private property.'" },
+                { "label": "B", "text": "That 'prices gather scattered knowledge no planner could assemble.'" },
+                { "label": "C", "text": "That 'bread nourishes whether given or sold.'" },
+                { "label": "D", "text": "That the market is 'an excellent servant and a disastrous master.'" }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The freely-consented-yet-degrading vote example is what grounds the inference about the objection."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the objection is that 'vote-selling would always be coerced rather than voluntary.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author grants the seller 'consents freely,' so coercion is not his objection." },
+                { "label": "B", "text": "The author says voting is unimportant." },
+                { "label": "C", "text": "The author praises the sale of votes." },
+                { "label": "D", "text": "The author says buyers would overpay for votes." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the passage stipulates free consent, a coercion-based reason contradicts the very example."
+            }
+          ]
         },
         {
           "id": "cars-gen-0227",
@@ -369,7 +977,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks what would most strengthen the 'pricing corrupts some goods' claim. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Find new evidence that payment changes the meaning of a good, supporting the corruption mechanism." },
+                { "label": "B", "text": "Restate the claim in different words." },
+                { "label": "C", "text": "Support a different claim the passage makes." },
+                { "label": "D", "text": "Offer a true but unrelated fact." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A strengthener supplies new support for the precise mechanism the author proposes."
+            },
+            {
+              "level": 2,
+              "prompt": "The author's mechanism is that money 'drives out' the motive a good depends on. What evidence best supports that?",
+              "choices": [
+                { "label": "A", "text": "A study finding that paying someone to do a favor makes both parties value it less as an expression of goodwill." },
+                { "label": "B", "text": "That luxury buyers report more satisfaction than gift recipients." },
+                { "label": "C", "text": "That grain markets work efficiently across many cultures." },
+                { "label": "D", "text": "That most citizens would never sell their vote." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Evidence that payment corrodes a good's meaning matches the author's mechanism exactly."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting choice is 'efficient grain markets across many cultures.' Why does it fail to strengthen?",
+              "choices": [
+                { "label": "A", "text": "Ordinary commodities like grain are the goods the author says money does not corrupt, so this is beside the point." },
+                { "label": "B", "text": "It flatly contradicts everything in the passage." },
+                { "label": "C", "text": "It supports the claim far too strongly." },
+                { "label": "D", "text": "Grain is never mentioned in the passage." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Grain belongs to the author's 'simply goods' category, so its efficient market says nothing about corruptible goods."
+            }
+          ]
         },
         {
           "id": "cars-gen-0228",
@@ -388,7 +1034,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "hard",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks for an assumption the argument relies on. What are you looking for?",
+              "choices": [
+                { "label": "A", "text": "The unstated premise the 'pricing corrupts' argument needs." },
+                { "label": "B", "text": "A restatement of the author's conclusion." },
+                { "label": "C", "text": "A claim the author openly denies." },
+                { "label": "D", "text": "A true but irrelevant statement." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Assumption questions seek the required hidden premise, not the conclusion or a denied claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which detail shows what the argument must quietly assume?",
+              "choices": [
+                { "label": "A", "text": "That goods like friendship, apology, and votes 'depend on a motive that payment drives out.'" },
+                { "label": "B", "text": "That prices steer scarce goods efficiently." },
+                { "label": "C", "text": "That most goods are unaffected by how they are exchanged." },
+                { "label": "D", "text": "That the market is a disastrous master." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The claim that payment ruins these goods presupposes their value is tied to non-market motives and relationships."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the argument assumes 'money is inherently evil and contaminates everything.' Why can it be eliminated?",
+              "choices": [
+                { "label": "A", "text": "The author says most goods are unaffected by money, so he does not treat money as inherently corrupting." },
+                { "label": "B", "text": "The author says money never matters at all." },
+                { "label": "C", "text": "The author calls for banning all trade." },
+                { "label": "D", "text": "The author says every good is sacred." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because he allows that most goods are fine to sell, any assumption that money corrupts everything is ruled out."
+            }
+          ]
         }
       ]
     },
@@ -421,7 +1105,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks for the main idea. What is the best approach?",
+              "choices": [
+                { "label": "A", "text": "Identify the author's overall conclusion, balancing both sides he discusses." },
+                { "label": "B", "text": "Side with whichever camp is described last." },
+                { "label": "C", "text": "Pick a single vivid bias as the point." },
+                { "label": "D", "text": "Choose the view the author argues against." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A main-idea question wants the author's balanced conclusion, not one camp or a single detail."
+            },
+            {
+              "level": 2,
+              "prompt": "Which sentence most directly states the author's conclusion?",
+              "choices": [
+                { "label": "A", "text": "That 'rationality is not a property of human beings to be confirmed or refuted but an assumption to be adopted or dropped depending on the question at hand.'" },
+                { "label": "B", "text": "That people 'fear a loss more than they relish an equivalent gain.'" },
+                { "label": "C", "text": "That 'when the price of a good rises, people buy less of it.'" },
+                { "label": "D", "text": "That the rational actor 'has been mocked for two centuries as a bloodless caricature.'" }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The 'adopt or drop by the question' sentence is the tool-not-creed thesis, so it guides you to the main idea."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the passage's point is that 'the rational-actor model has been conclusively refuted.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author says the critics 'overreach' and the model still works in thick markets, so it is not refuted." },
+                { "label": "B", "text": "The author never mentions the rational-actor model." },
+                { "label": "C", "text": "The author fully endorses the model as literally true." },
+                { "label": "D", "text": "The author rejects all prediction as impossible." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Crediting the model's continuing usefulness rules out 'conclusively refuted.'"
+            }
+          ]
         },
         {
           "id": "cars-gen-0230",
@@ -440,7 +1162,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks the author's attitude toward both camps. It should rest on what?",
+              "choices": [
+                { "label": "A", "text": "His evaluative treatment of each side: what he credits and what he faults." },
+                { "label": "B", "text": "Which camp turns out to be factually correct." },
+                { "label": "C", "text": "The single most emotional word in the passage." },
+                { "label": "D", "text": "The passage's general subject." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Attitude toward two camps depends on how the author judges each, not on the topic or one word."
+            },
+            {
+              "level": 2,
+              "prompt": "Which combination best reveals his even-handed treatment?",
+              "choices": [
+                { "label": "A", "text": "He grants the model's predictions are 'startlingly accurate in the aggregate' yet says biases are real, while faulting both 'dogmatists' and overreaching 'critics.'" },
+                { "label": "B", "text": "He says only that people are 'predictably foolish.'" },
+                { "label": "C", "text": "He says only that the model 'lets economists derive sharp predictions.'" },
+                { "label": "D", "text": "He says the debate 'has produced nothing of value.'" }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Crediting and faulting both sides is the definition of an even-handed appraisal."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer is 'weary contempt for a debate that produced nothing of value.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author finds genuine value on both sides, which is inconsistent with contempt." },
+                { "label": "B", "text": "The author takes no position at all." },
+                { "label": "C", "text": "The author agrees fully with the critics." },
+                { "label": "D", "text": "The author never evaluates either side." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Drawing real insight from both camps rules out dismissing the debate as worthless."
+            }
+          ]
         },
         {
           "id": "cars-gen-0231",
@@ -459,7 +1219,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks what the framing-effects discussion does. What kind of task is that?",
+              "choices": [
+                { "label": "A", "text": "A function question: what job the example does in the argument." },
+                { "label": "B", "text": "A claim that language matters more than economics." },
+                { "label": "C", "text": "A request for the passage's thesis." },
+                { "label": "D", "text": "A judgment of how clever the example is." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "'Serves to' signals a function question about the example's role."
+            },
+            {
+              "level": 2,
+              "prompt": "Which surrounding claim does the framing example illustrate?",
+              "choices": [
+                { "label": "A", "text": "That people 'deviate in patterned, predictable directions' and that 'systematic bias does not average away.'" },
+                { "label": "B", "text": "That 'in thick markets... mistakes are punished.'" },
+                { "label": "C", "text": "That the model is judged 'by whether its forecasts hold.'" },
+                { "label": "D", "text": "That no one 'actually computes the way the model pretends.'" }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Framing is offered as a patterned bias, so it functions to show where the model mispredicts."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says framing effects 'show people are too foolish to be allowed to make their own choices.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author resists the 'helpless dupes' conclusion and treats bias as patterned, not disqualifying." },
+                { "label": "B", "text": "The author says framing effects never occur." },
+                { "label": "C", "text": "The author says the model predicts perfectly here." },
+                { "label": "D", "text": "The author says framing is only about language, not choice." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the author explicitly denies that people are helpless dupes, that choice overreads the example."
+            }
+          ]
         },
         {
           "id": "cars-gen-0232",
@@ -478,7 +1276,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "hard",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This is an inference question about why a lab finding may not carry over to markets. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Combine the author's claims to infer the reason, not expect a verbatim line." },
+                { "label": "B", "text": "Find the reason stated word for word." },
+                { "label": "C", "text": "Choose the most sweeping possible claim." },
+                { "label": "D", "text": "Pick an answer that contradicts the author." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Inference questions require assembling the author's stated points into an implied reason."
+            },
+            {
+              "level": 2,
+              "prompt": "Which sentence is the key clue for this inference?",
+              "choices": [
+                { "label": "A", "text": "That in 'thick markets... mistakes are punished and the careless are gradually replaced by the shrewd.'" },
+                { "label": "B", "text": "That people 'judge probabilities by how easily an example springs to mind.'" },
+                { "label": "C", "text": "That the model rests on 'spare premises.'" },
+                { "label": "D", "text": "That framing effects change how a choice is accepted." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The selection-and-feedback mechanism is what explains why lab behavior may not transfer to markets."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the reason is that 'laboratory subjects are inherently less intelligent than market professionals.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author's mechanism is selection and feedback, not any difference in intelligence." },
+                { "label": "B", "text": "The author says lab subjects are actually smarter." },
+                { "label": "C", "text": "The author rejects all behavioral evidence." },
+                { "label": "D", "text": "The author says markets ban irrationality by law." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The passage attributes convergence to the punishment of errors, never to lower intelligence."
+            }
+          ]
         },
         {
           "id": "cars-gen-0233",
@@ -497,7 +1333,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks what would most undermine the behavioral critics' challenge. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Find new evidence cutting against the critics' claim that bias defeats the model." },
+                { "label": "B", "text": "Restate the critics' claim in other words." },
+                { "label": "C", "text": "Add another example that supports the critics." },
+                { "label": "D", "text": "Offer an irrelevant truth." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "To undermine the critics you need evidence that their biases fade where the author says they might."
+            },
+            {
+              "level": 2,
+              "prompt": "The author notes biases may vanish under market-like conditions. What finding would blunt the critics?",
+              "choices": [
+                { "label": "A", "text": "That when biased choices are repeated with real money and feedback, the biases shrink until choices match the model." },
+                { "label": "B", "text": "A newly discovered bias, such as overvaluing items one already owns." },
+                { "label": "C", "text": "Subjects misjudging the frequency of rare causes of death." },
+                { "label": "D", "text": "People feeling confused when policies are described in unfamiliar terms." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Biases fading under feedback is exactly the mechanism that weakens the critics' challenge."
+            },
+            {
+              "level": 3,
+              "prompt": "Two tempting choices, 'a newly discovered bias' and 'subjects misjudging rare risks,' look relevant. Why do both fail to undermine the critics?",
+              "choices": [
+                { "label": "A", "text": "Each adds another supporting example for the critics, strengthening rather than weakening their case." },
+                { "label": "B", "text": "Both describe the model succeeding." },
+                { "label": "C", "text": "Both are about intelligence differences." },
+                { "label": "D", "text": "The author says biases never exist." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "More documented biases bolster the critics, so they cannot be what undermines them."
+            }
+          ]
         },
         {
           "id": "cars-gen-0234",
@@ -516,7 +1390,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks for an assumption behind the author's concluding position. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Find the unstated premise the 'choose the tool for the question' conclusion requires." },
+                { "label": "B", "text": "Restate the conclusion itself." },
+                { "label": "C", "text": "Find a claim the author denies." },
+                { "label": "D", "text": "Offer an irrelevant truth." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Assumption questions seek the premise the conclusion needs, not the conclusion or a denied claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which contrast in the final paragraph reveals what the author must assume?",
+              "choices": [
+                { "label": "A", "text": "That the spare model 'may serve admirably' for forecasting a tax but is 'worse than useless' for designing a retirement plan." },
+                { "label": "B", "text": "That no one computes the way the model pretends." },
+                { "label": "C", "text": "That biases do not average away." },
+                { "label": "D", "text": "That the model has been mocked for two centuries." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Recommending the model for some purposes but not others presupposes its suitability varies by purpose."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the conclusion assumes 'policymakers should never rely on the rational model.' Why can it be eliminated?",
+              "choices": [
+                { "label": "A", "text": "The author says the spare model 'may serve admirably' for some tasks, so it is not a never." },
+                { "label": "B", "text": "The author says models are strictly true or false." },
+                { "label": "C", "text": "The author ignores prediction entirely." },
+                { "label": "D", "text": "The author bans all economic models." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Endorsing the model for certain tasks contradicts any assumption that it should never be used."
+            }
+          ]
         }
       ]
     },
@@ -549,7 +1461,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks the author's attitude toward principled civil disobedience. It should rest on what?",
+              "choices": [
+                { "label": "A", "text": "The author's evaluation: what he endorses and the conditions he attaches." },
+                { "label": "B", "text": "Whether civil disobedience is legal." },
+                { "label": "C", "text": "The single strongest word in the passage." },
+                { "label": "D", "text": "The passage's general topic." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Attitude questions depend on the author's evaluative stance and its qualifications, not on the topic."
+            },
+            {
+              "level": 2,
+              "prompt": "Which set of requirements shows how the author qualifies his endorsement?",
+              "choices": [
+                { "label": "A", "text": "That the act target 'a genuine and grave injustice,' avoid violence, and accept the punishment." },
+                { "label": "B", "text": "That the dissident act in secret for private gain." },
+                { "label": "C", "text": "That the majority is always wrong about justice." },
+                { "label": "D", "text": "That the state has no authority to punish." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Endorsement hedged by strict conditions is a sympathetic-but-conditional attitude."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer is 'unconditional celebration of any act of conscience against the state.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author refuses to 'bless every act that calls itself disobedience,' so his support is conditional." },
+                { "label": "B", "text": "The author never evaluates disobedience." },
+                { "label": "C", "text": "The author equates disobedience with ordinary crime." },
+                { "label": "D", "text": "The author opposes all forms of protest." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The explicit refusal to endorse every act rules out unconditional celebration."
+            }
+          ]
         },
         {
           "id": "cars-gen-0236",
@@ -568,7 +1518,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks what the dissident-versus-criminal contrast does. What kind of task is that?",
+              "choices": [
+                { "label": "A", "text": "A function question: what job the contrast performs." },
+                { "label": "B", "text": "A claim that all lawbreaking is permissible." },
+                { "label": "C", "text": "A request for the passage's thesis." },
+                { "label": "D", "text": "A judgment of the writing." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "'Functions to' signals a function question about the contrast's role."
+            },
+            {
+              "level": 2,
+              "prompt": "Which differences does the contrast emphasize?",
+              "choices": [
+                { "label": "A", "text": "That the dissident 'acts openly,' 'seeks no personal advantage,' and 'courts' punishment, unlike the secret criminal." },
+                { "label": "B", "text": "That the dissident and the criminal are morally identical." },
+                { "label": "C", "text": "That disobedience is more common than crime." },
+                { "label": "D", "text": "That criminals deserve lighter penalties." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The contrast rebuts the chaos objection by distinguishing conscientious conduct from secret criminality."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the contrast establishes that 'breaking any law is always morally permissible.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author imposes strict limits and never claims any lawbreaking is permissible." },
+                { "label": "B", "text": "The author never actually contrasts the two." },
+                { "label": "C", "text": "The author praises ordinary crime." },
+                { "label": "D", "text": "The author says the two are identical." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The demanding conditions the author sets contradict any 'anything goes' reading."
+            }
+          ]
         },
         {
           "id": "cars-gen-0237",
@@ -587,7 +1575,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "hard",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This is an inference question about how the author would judge a secret saboteur. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Apply the author's stated conditions to infer his judgment." },
+                { "label": "B", "text": "Find a verbatim verdict in the text." },
+                { "label": "C", "text": "Pick the most forgiving option available." },
+                { "label": "D", "text": "Choose an answer that contradicts the author." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Inference questions require applying the author's criteria to reach an implied judgment."
+            },
+            {
+              "level": 2,
+              "prompt": "Which requirements should you test the saboteur against?",
+              "choices": [
+                { "label": "A", "text": "The demands for openness, acceptance of punishment, and nonviolence." },
+                { "label": "B", "text": "The demand that the cause be popular." },
+                { "label": "C", "text": "The demand that the protest be profitable." },
+                { "label": "D", "text": "The demand that the state be overthrown." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Someone who sabotages secretly and conceals his identity clearly fails the openness and penalty-acceptance the author requires."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the saboteur is 'justified so long as his underlying cause is just.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author holds that a just cause does not by itself license these methods; the manner matters." },
+                { "label": "B", "text": "The author ignores causes entirely." },
+                { "label": "C", "text": "The author praises secrecy in protest." },
+                { "label": "D", "text": "The author says sabotage is required." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the passage makes manner essential, a just cause alone is not enough to earn the dissident's standing."
+            }
+          ]
         },
         {
           "id": "cars-gen-0238",
@@ -606,7 +1632,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks you to apply the author's model to pick the best-fitting case. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Match each case to all of the author's criteria for legitimate disobedience." },
+                { "label": "B", "text": "Pick the most disruptive case." },
+                { "label": "C", "text": "Choose any case involving breaking a rule." },
+                { "label": "D", "text": "Select the most violent case." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Application questions require matching a case to the author's full set of stated conditions."
+            },
+            {
+              "level": 2,
+              "prompt": "What are the author's criteria that the correct case must satisfy?",
+              "choices": [
+                { "label": "A", "text": "Open, nonviolent, aimed at a grave injustice, and accepting the penalty." },
+                { "label": "B", "text": "Secret, self-interested, and evading arrest." },
+                { "label": "C", "text": "Armed and aimed at overthrowing the system." },
+                { "label": "D", "text": "Trivial in its grievance and privately motivated." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Only a case meeting every criterion, openness, nonviolence, grave injustice, and accepted penalty, fits the author's model."
+            },
+            {
+              "level": 3,
+              "prompt": "Two tempting cases are the secret tax evader and the armed group seizing a building. Why do both fail the author's model?",
+              "choices": [
+                { "label": "A", "text": "Secret, self-interested evasion is ordinary crime, and armed overthrow is revolution, both of which the author distinguishes from disobedience." },
+                { "label": "B", "text": "Both are open and nonviolent protests." },
+                { "label": "C", "text": "Both willingly accept punishment." },
+                { "label": "D", "text": "The author endorses both cases." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "One violates openness and selflessness, the other nonviolence and acceptance of the system, so neither fits."
+            }
+          ]
         },
         {
           "id": "cars-gen-0239",
@@ -625,7 +1689,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks for an assumption the defense rests on. What are you looking for?",
+              "choices": [
+                { "label": "A", "text": "The unstated premise the author's defense of disobedience needs." },
+                { "label": "B", "text": "A restatement of the author's conclusion." },
+                { "label": "C", "text": "A claim the author openly denies." },
+                { "label": "D", "text": "A true but irrelevant statement." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Assumption questions seek the required hidden premise, not the conclusion or a denied claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which feature of the dissident's stance reveals the needed premise?",
+              "choices": [
+                { "label": "A", "text": "That he appeals to justice against a particular law while still honoring law in general." },
+                { "label": "B", "text": "That he acts secretly for private gain." },
+                { "label": "C", "text": "That he believes the majority is always wrong." },
+                { "label": "D", "text": "That he rejects the whole legal system." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Protesting an unjust-but-valid law assumes that legality and justice can come apart."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the defense assumes 'the state has no legitimate authority to punish anyone.' Why can it be eliminated?",
+              "choices": [
+                { "label": "A", "text": "The dissident accepts the penalty, so the author affirms the state may justly punish." },
+                { "label": "B", "text": "The author says the majority is always right." },
+                { "label": "C", "text": "The author rejects nonviolence." },
+                { "label": "D", "text": "The author opposes the existence of all law." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the whole practice depends on accepting punishment, denying the state's authority to punish contradicts it."
+            }
+          ]
         },
         {
           "id": "cars-gen-0240",
@@ -644,7 +1746,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks the meaning of 'quiet guardians' in context. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Interpret the phrase using the surrounding argument, not a literal reading of 'quiet.'" },
+                { "label": "B", "text": "Use only the dictionary meaning of 'guardian.'" },
+                { "label": "C", "text": "Pick the most literal reading of 'quiet.'" },
+                { "label": "D", "text": "Choose the phrase's meaning at random." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Meaning-in-context questions require reading the phrase through the passage's argument, not literally."
+            },
+            {
+              "level": 2,
+              "prompt": "Which nearby idea fixes the meaning of the phrase?",
+              "choices": [
+                { "label": "A", "text": "That a wise polity 'prefers the middle path that disobedience provides' between 'silent complicity' and 'open revolt.'" },
+                { "label": "B", "text": "That disobedience operates entirely in secret." },
+                { "label": "C", "text": "That disobedience replaces the courts." },
+                { "label": "D", "text": "That disobedience is too timid to matter." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The middle-path framing shows 'guardians' means protecting the legal order, and 'quiet' means measured."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting reading takes 'quiet' to mean disobedience 'operates in secret so the public never learns of it.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author stresses that disobedience is open, not secret, so 'quiet' cannot mean hidden." },
+                { "label": "B", "text": "The author says disobedience is ineffective." },
+                { "label": "C", "text": "The author says it replaces the courts." },
+                { "label": "D", "text": "The author says it is a form of revolt." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the passage insists on openness, reading 'quiet' as 'secret' contradicts the text."
+            }
+          ]
         }
       ]
     },
@@ -677,7 +1817,45 @@
           "topicTags": ["society & culture"],
           "difficulty": "hard",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks the passage's primary purpose. What is the best approach?",
+              "choices": [
+                { "label": "A", "text": "Identify the author's overall claim developed across the passage." },
+                { "label": "B", "text": "Pick the reform the author warns against." },
+                { "label": "C", "text": "Treat one striking phrase as the purpose." },
+                { "label": "D", "text": "Choose the view the author argues against." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A purpose question wants the author's overall thesis, not a warning, a phrase, or an opposing view."
+            },
+            {
+              "level": 2,
+              "prompt": "Which claim carries the author's main point?",
+              "choices": [
+                { "label": "A", "text": "That the binding constraint 'is no longer the supply of facts but the supply of attention,' and competition rewards 'the most arousing.'" },
+                { "label": "B", "text": "That newspapers should 'supply the facts' for calm deliberation." },
+                { "label": "C", "text": "That censorship 'is the great enemy.'" },
+                { "label": "D", "text": "That 'more speech, more outlets' is the remedy." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The attention-scarcity mechanism is the thesis about what now hollows out the public sphere."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the purpose is to 'call for government regulation of sensational news outlets.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author explicitly warns against control as a cure, so advocating regulation misreads his aim." },
+                { "label": "B", "text": "The author never discusses the press." },
+                { "label": "C", "text": "The author praises censorship as effective." },
+                { "label": "D", "text": "The author says facts are scarce today." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the passage rejects imposed control, a call for regulation contradicts the author's purpose."
+            }
+          ]
         },
         {
           "id": "cars-gen-0242",
@@ -696,7 +1874,45 @@
           "topicTags": ["society & culture"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks what the 'staffed entirely by honest people' statement does. What kind of task is that?",
+              "choices": [
+                { "label": "A", "text": "A function question: what job the statement does in the argument." },
+                { "label": "B", "text": "A claim praising journalists' integrity for its own sake." },
+                { "label": "C", "text": "A request for the passage's thesis." },
+                { "label": "D", "text": "A judgment of the writing style." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "'Serves to' signals a function question about the statement's role."
+            },
+            {
+              "level": 2,
+              "prompt": "Which reasoning surrounds the statement and reveals its purpose?",
+              "choices": [
+                { "label": "A", "text": "That such a newsroom 'may... still drift toward sensation' because resisting outlets 'are simply read less and eventually vanish.'" },
+                { "label": "B", "text": "That editors are personally cynical." },
+                { "label": "C", "text": "That dishonest journalists are common." },
+                { "label": "D", "text": "That censorship still dominates the press." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Honest staff drifting anyway locates the cause in market structure, which is the statement's function."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the statement serves to 'blame individual editors for the decline of the news.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author specifically removes individual blame, attributing the drift to competition." },
+                { "label": "B", "text": "The author says editors are deliberately cynical." },
+                { "label": "C", "text": "The author praises sensational outlets." },
+                { "label": "D", "text": "The author says facts are scarce." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the point is that even honest editors drift, individual blame is exactly what the author rules out."
+            }
+          ]
         },
         {
           "id": "cars-gen-0243",
@@ -715,7 +1931,45 @@
           "topicTags": ["society & culture"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This is an inference question about why the attention economy is more insidious than censorship. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Combine the author's claims to infer the reason, not expect a verbatim line." },
+                { "label": "B", "text": "Find the reason stated word for word." },
+                { "label": "C", "text": "Pick the most extreme claim." },
+                { "label": "D", "text": "Choose an answer that contradicts the author." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Inference questions require assembling stated points into an implied reason."
+            },
+            {
+              "level": 2,
+              "prompt": "Which sentence is the key clue for this inference?",
+              "choices": [
+                { "label": "A", "text": "That the citizen 'feels perfectly free, even overwhelmed by choice, and that is exactly the trap.'" },
+                { "label": "B", "text": "That the important story is 'banned outright.'" },
+                { "label": "C", "text": "That the state enforces the attention economy." },
+                { "label": "D", "text": "That citizens are denied all information." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The 'feels free' trap explains the insidiousness, since the erosion goes unnoticed."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the attention economy 'withholds far more information from citizens than censorship does.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The attention economy supplies more information, not less; the problem is that the important story is buried, not withheld." },
+                { "label": "B", "text": "The author says nothing is ever buried." },
+                { "label": "C", "text": "The author says the state enforces it." },
+                { "label": "D", "text": "The author says stories are banned outright." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the passage stresses information overload, 'withholds more' reverses the author's point."
+            }
+          ]
         },
         {
           "id": "cars-gen-0244",
@@ -734,7 +1988,45 @@
           "topicTags": ["society & culture"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks you to apply the author's remedy to identify a genuine fix. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Match each option to the author's prescription for cultivating attention." },
+                { "label": "B", "text": "Pick the most technologically advanced option." },
+                { "label": "C", "text": "Choose whatever reduces competition." },
+                { "label": "D", "text": "Select the option that maximizes headlines." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Application questions require matching a case to the author's stated remedy."
+            },
+            {
+              "level": 2,
+              "prompt": "What does the author call for that the correct option must resemble?",
+              "choices": [
+                { "label": "A", "text": "'Outlets insulated enough from the scramble for clicks to pursue the unexciting truth.'" },
+                { "label": "B", "text": "Government removal of stories deemed trivial." },
+                { "label": "C", "text": "Apps that maximize how fast users scroll." },
+                { "label": "D", "text": "Mergers that concentrate ownership." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "An outlet insulated from click-chasing matches the author's call for institutions that cultivate attention."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer is 'a law requiring platforms to remove stories the government deems trivial.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "Government removal of content is exactly the control the author rejects as a cure." },
+                { "label": "B", "text": "The author demands more censorship." },
+                { "label": "C", "text": "The author wants more scrolling." },
+                { "label": "D", "text": "The author favors monopoly ownership." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the passage warns against imposed control, a government-removal law is the opposite of the author's remedy."
+            }
+          ]
         },
         {
           "id": "cars-gen-0245",
@@ -753,7 +2045,45 @@
           "topicTags": ["society & culture"],
           "difficulty": "hard",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks for an assumption the argument depends on. What are you looking for?",
+              "choices": [
+                { "label": "A", "text": "The unstated premise the author's diagnosis requires." },
+                { "label": "B", "text": "A restatement of the conclusion." },
+                { "label": "C", "text": "A claim the author denies." },
+                { "label": "D", "text": "A true but irrelevant statement." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Assumption questions seek the needed hidden premise, not the conclusion or a denied claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which claim reveals the assumption the diagnosis needs?",
+              "choices": [
+                { "label": "A", "text": "That the market 'rewards the press that captures attention best,' which is 'not the same press' that informs best." },
+                { "label": "B", "text": "That citizens can never tell entertainment from news." },
+                { "label": "C", "text": "That more information always makes a better-informed public." },
+                { "label": "D", "text": "That private ownership of the press is illegitimate." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The whole diagnosis rests on informing and attention-grabbing being separable, divergent aims."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the argument assumes 'citizens are incapable of distinguishing entertainment from news under any conditions.' Why can it be eliminated?",
+              "choices": [
+                { "label": "A", "text": "The author allows that cultivated citizens can resist, so incapacity is not assumed." },
+                { "label": "B", "text": "The author says information is scarce." },
+                { "label": "C", "text": "The author praises censorship." },
+                { "label": "D", "text": "The author condemns private ownership." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the author thinks disciplined citizens can resist, total incapacity is not a premise of the argument."
+            }
+          ]
         },
         {
           "id": "cars-gen-0246",
@@ -772,7 +2102,45 @@
           "topicTags": ["society & culture"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks the meaning of the closing phrase in context. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Interpret it through the passage's thesis, not as a literal or moralizing claim about amusement." },
+                { "label": "B", "text": "Use only the dictionary sense of 'amused.'" },
+                { "label": "C", "text": "Pick the most moralizing reading." },
+                { "label": "D", "text": "Choose a reading unrelated to the passage." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Meaning-in-context questions require reading the phrase through the argument, not literally."
+            },
+            {
+              "level": 2,
+              "prompt": "Which part of the same sentence fixes the phrase's meaning?",
+              "choices": [
+                { "label": "A", "text": "That 'a free people can be rendered ignorant without a single book being banned.'" },
+                { "label": "B", "text": "That newspapers once supplied facts for deliberation." },
+                { "label": "C", "text": "That censorship remains the great enemy." },
+                { "label": "D", "text": "That schools should teach patience with difficulty." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Paired with 'without a book being banned,' the phrase equates profitable distraction with censorship in its effect."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting reading is that 'entertainment is morally wrong and should be discouraged.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author faults the displacement of serious attention, not amusement itself as immoral." },
+                { "label": "B", "text": "The author bans all entertainment." },
+                { "label": "C", "text": "The author praises censorship." },
+                { "label": "D", "text": "The author says facts are scarce." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the critique targets distraction's effect on attention, it is not a claim about the morality of amusement."
+            }
+          ]
         }
       ]
     },
@@ -805,7 +2173,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks for the passage's primary argument. What is the best approach?",
+              "choices": [
+                { "label": "A", "text": "Identify the author's central thesis, including his concession about the proof." },
+                { "label": "B", "text": "Pick the policy view he rejects." },
+                { "label": "C", "text": "Treat one example as the whole point." },
+                { "label": "D", "text": "Choose the position he argues against." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A main-idea question wants the author's full thesis, not a rejected view or a single example."
+            },
+            {
+              "level": 2,
+              "prompt": "Which two moves together define the author's thesis?",
+              "choices": [
+                { "label": "A", "text": "That the winners 'could compensate the losers; whether they actually do' is another matter and mostly 'they do not,' and that 'a job is rarely just a wage.'" },
+                { "label": "B", "text": "That free trade makes the nation 'as a whole grows richer.'" },
+                { "label": "C", "text": "That protectionist walls protect a few workers." },
+                { "label": "D", "text": "That consumers 'gain access to cheaper products.'" }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Combining the unkept compensation with the non-monetary loss yields the author's thesis."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the passage argues 'free trade impoverishes nations and should be replaced by protectionism.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author explicitly rejects protectionism, whose walls 'would only make the whole society poorer.'" },
+                { "label": "B", "text": "The author says trade has no benefits at all." },
+                { "label": "C", "text": "The author says the proof's math is mistaken." },
+                { "label": "D", "text": "The author praises complacency." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the author rejects protectionism, reading his thesis as anti-trade is a misreading."
+            }
+          ]
         },
         {
           "id": "cars-gen-0248",
@@ -824,7 +2230,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks the author's attitude toward the orthodox defense of trade. It should rest on what?",
+              "choices": [
+                { "label": "A", "text": "How he evaluates it: what he grants and what he condemns." },
+                { "label": "B", "text": "Whether free trade is good policy overall." },
+                { "label": "C", "text": "The single harshest word about economists." },
+                { "label": "D", "text": "The passage's general topic." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Attitude questions depend on the author's mix of concession and criticism, not on the topic."
+            },
+            {
+              "level": 2,
+              "prompt": "Which pairing best captures his attitude?",
+              "choices": [
+                { "label": "A", "text": "He calls the proof 'elegant' and 'true' yet 'repeatedly, disastrously naive' as a guide to policy." },
+                { "label": "B", "text": "He calls the proof both false and worthless." },
+                { "label": "C", "text": "He longs for a world without any trade." },
+                { "label": "D", "text": "He treats economics as beneath discussion." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Granting the proof's truth while condemning its naive use is criticism of complacency, not of the math."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer is 'gleeful contempt for economics as a worthless discipline.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author respects the economics enough to use it, faulting its misuse rather than dismissing the field." },
+                { "label": "B", "text": "The author rejects the proof's math." },
+                { "label": "C", "text": "The author endorses protectionism." },
+                { "label": "D", "text": "The author is nostalgic for closed borders." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because he uses the proof approvingly, contempt for economics as worthless is ruled out."
+            }
+          ]
         },
         {
           "id": "cars-gen-0249",
@@ -843,7 +2287,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This is an inference question about how the author regards the phrase 'in principle.' What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Infer the author's view of the phrase from how he uses it, not from a dictionary." },
+                { "label": "B", "text": "Take the phrase at literal face value." },
+                { "label": "C", "text": "Pick the most sweeping claim." },
+                { "label": "D", "text": "Choose an answer that contradicts the author." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Inference questions require reading the author's implied stance toward the phrase."
+            },
+            {
+              "level": 2,
+              "prompt": "Which statement shows how much weight he puts on the phrase?",
+              "choices": [
+                { "label": "A", "text": "That 'the whole defense turns on' it, since winners 'could compensate the losers; whether they actually do is a separate question.'" },
+                { "label": "B", "text": "That consumers 'scarcely notice the source of their good fortune.'" },
+                { "label": "C", "text": "That a lost job is 'a place in a community.'" },
+                { "label": "D", "text": "That protectionism would make everyone poorer." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Calling it the hinge of the argument shows he treats 'in principle' as a rarely-honored qualifier."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says he sees 'in principle' as 'an irrelevant technicality that does not affect the conclusion.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "He calls it the very hinge the whole defense turns on, so it is anything but irrelevant." },
+                { "label": "B", "text": "He says the gains from trade are imaginary." },
+                { "label": "C", "text": "He guarantees compensation actually occurs." },
+                { "label": "D", "text": "He ignores the phrase entirely." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because he treats the phrase as central, calling it an irrelevant technicality contradicts him."
+            }
+          ]
         },
         {
           "id": "cars-gen-0250",
@@ -862,7 +2344,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "hard",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks you to apply the author's standard to a described outcome. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Test the scenario against the author's demand that the losers actually be repaid." },
+                { "label": "B", "text": "Judge whether the country followed free-trade doctrine strictly." },
+                { "label": "C", "text": "Pick the most anti-trade reading." },
+                { "label": "D", "text": "Restate a passage example." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Application questions require running a case through the author's stated principle."
+            },
+            {
+              "level": 2,
+              "prompt": "What is the author's stated demand that the scenario must be tested against?",
+              "choices": [
+                { "label": "A", "text": "That if trade 'enriches the nation as a whole, then the nation as a whole owes something real, and not merely hypothetical,' to those who bear the cost." },
+                { "label": "B", "text": "That trade should be reversed to protect a few." },
+                { "label": "C", "text": "That consumers must notice their savings." },
+                { "label": "D", "text": "That a check can fully replace a lost job." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Support that repays displaced workers and addresses community loss honors exactly the debt the author demands."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the author would call this outcome 'proof that the gains from trade were illusory all along.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The consumers' savings show the gains are real, consistent with the author's acceptance of the net-gain proof." },
+                { "label": "B", "text": "The author denies any gains from trade exist." },
+                { "label": "C", "text": "The author opposes all trade." },
+                { "label": "D", "text": "The author rejects retraining programs." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the author affirms the gains are real, an outcome demonstrating savings cannot prove them illusory."
+            }
+          ]
         },
         {
           "id": "cars-gen-0251",
@@ -881,7 +2401,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks for an assumption the argument makes. What are you looking for?",
+              "choices": [
+                { "label": "A", "text": "The unstated premise the author's critique requires." },
+                { "label": "B", "text": "A restatement of the conclusion." },
+                { "label": "C", "text": "A claim the author denies." },
+                { "label": "D", "text": "A true but irrelevant statement." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Assumption questions seek the needed hidden premise, not the conclusion or a denied claim."
+            },
+            {
+              "level": 2,
+              "prompt": "Which contrast reveals the premise the critique depends on?",
+              "choices": [
+                { "label": "A", "text": "That gains are 'diffuse, spread thinly across millions,' while losses are 'concentrated and brutal,' with different political effects." },
+                { "label": "B", "text": "That consumers are fully aware of their savings." },
+                { "label": "C", "text": "That a transfer payment can fully restore a job." },
+                { "label": "D", "text": "That the total losses exceed the total gains." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The emphasis on distribution's human and political effects presupposes that distribution matters, not just the net total."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the argument assumes 'the total gains from trade are smaller than the total losses.' Why can it be eliminated?",
+              "choices": [
+                { "label": "A", "text": "The author accepts that gains exceed losses overall; his complaint is about their distribution, not the net total." },
+                { "label": "B", "text": "The author says consumers notice every saving." },
+                { "label": "C", "text": "The author says a check restores a job fully." },
+                { "label": "D", "text": "The author opposes all trade." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because he grants a positive net gain, any assumption that losses outweigh gains is ruled out."
+            }
+          ]
         },
         {
           "id": "cars-gen-0252",
@@ -900,7 +2458,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks the meaning of 'promised in the theorem and forgotten in the world' in context. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Interpret it through the author's argument about compensation, not literally." },
+                { "label": "B", "text": "Take 'forgotten' in its everyday memory sense." },
+                { "label": "C", "text": "Pick the most conspiratorial reading." },
+                { "label": "D", "text": "Choose an unrelated meaning." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Meaning-in-context questions require reading the phrase through the passage's argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which idea does the phrase cap off?",
+              "choices": [
+                { "label": "A", "text": "That winners 'could compensate the losers' but 'the historical answer is mostly that they do not.'" },
+                { "label": "B", "text": "That economic theorems are designed to deceive." },
+                { "label": "C", "text": "That the world has abandoned trade." },
+                { "label": "D", "text": "That recipients forget compensation they were paid." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The theorem-versus-world contrast means compensation is possible in theory yet undelivered in practice."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting reading is that 'economic theorems are deliberately designed to deceive the public.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author blames complacency and misuse, not deliberate deception built into the theorem." },
+                { "label": "B", "text": "The author says trade has stopped worldwide." },
+                { "label": "C", "text": "The author says compensation is paid generously." },
+                { "label": "D", "text": "The author praises the theorem's deception." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the author faults how the proof is used rather than any intent to deceive, 'designed to deceive' overreads the phrase."
+            }
+          ]
         }
       ]
     },
@@ -933,7 +2529,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks the author's attitude toward the conventional praise of federalism. It should rest on what?",
+              "choices": [
+                { "label": "A", "text": "How he evaluates the praise: what he grants and what he faults." },
+                { "label": "B", "text": "Whether federalism is legally sound." },
+                { "label": "C", "text": "The single strongest word in the passage." },
+                { "label": "D", "text": "The passage's general topic." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Attitude questions depend on the author's evaluation of the praise, not on the topic."
+            },
+            {
+              "level": 2,
+              "prompt": "Which combination best reveals his attitude?",
+              "choices": [
+                { "label": "A", "text": "He finds 'real wisdom' in the praise but says it points 'in only one direction, toward freedom,' ignoring the dark side." },
+                { "label": "B", "text": "He says federalism is purely harmful." },
+                { "label": "C", "text": "He agrees completely with federalism's admirers." },
+                { "label": "D", "text": "He refuses to evaluate federalism at all." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Granting wisdom yet faulting one-sidedness is a skeptical, not hostile or agreeing, stance."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer is 'hostile, viewing federalism as a purely harmful arrangement.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author says federalism can protect freedom, so he does not view it as purely harmful." },
+                { "label": "B", "text": "The author fully agrees with admirers." },
+                { "label": "C", "text": "The author refuses to evaluate it." },
+                { "label": "D", "text": "The author praises only its dangers." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Crediting federalism's protective side rules out a reading of pure hostility."
+            }
+          ]
         },
         {
           "id": "cars-gen-0254",
@@ -952,7 +2586,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "hard",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks what the author's reconsideration of the 'laboratories' metaphor does. What kind of task is that?",
+              "choices": [
+                { "label": "A", "text": "A function question: what job the reconsideration performs." },
+                { "label": "B", "text": "A proposal to use scientific methods in policy." },
+                { "label": "C", "text": "A request for the passage's thesis." },
+                { "label": "D", "text": "A judgment of the metaphor's beauty." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "'In order to' signals a function question about the reconsideration's role."
+            },
+            {
+              "level": 2,
+              "prompt": "Which objections does the author raise against the metaphor?",
+              "choices": [
+                { "label": "A", "text": "That experiments may 'ruin the lives of those trapped,' persist 'insulated by pride,' and spill across borders." },
+                { "label": "B", "text": "That regions should adopt literal laboratory methods." },
+                { "label": "C", "text": "That federalism deserves praise for experimentation." },
+                { "label": "D", "text": "That all policy experiments are unethical." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Turning the metaphor's own logic against it exposes the harm, isolation, and spillovers the praise ignores."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the reconsideration serves to 'praise federalism for encouraging bold experimentation.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The paragraph undercuts the metaphor rather than reaffirming the praise." },
+                { "label": "B", "text": "The author never mentions laboratories." },
+                { "label": "C", "text": "The author endorses all experiments." },
+                { "label": "D", "text": "The author calls federalism purely good." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the passage critiques the metaphor, reading it as praise reverses its function."
+            }
+          ]
         },
         {
           "id": "cars-gen-0255",
@@ -971,7 +2643,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This is an inference question about appealing to a higher level of government. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Combine the author's statements to infer his view of the appeal, not a verbatim line." },
+                { "label": "B", "text": "Find a verbatim rule in the text." },
+                { "label": "C", "text": "Pick the most sweeping claim." },
+                { "label": "D", "text": "Choose an answer that contradicts the author." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Inference questions require assembling stated points into an implied view."
+            },
+            {
+              "level": 2,
+              "prompt": "Which sentence is the key clue?",
+              "choices": [
+                { "label": "A", "text": "That the appeal 'works only when the higher level is more just than the lower, and there is no law of nature guaranteeing that it will be.'" },
+                { "label": "B", "text": "That regions are 'laboratories' for policy." },
+                { "label": "C", "text": "That federalism builds liberty 'into the very architecture of the state.'" },
+                { "label": "D", "text": "That pollution 'drifts across borders.'" }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The 'works only when the higher level is more just' line grounds the inference directly."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the author believes the appeal 'is always available and always effective.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "He denies this optimistic assumption, noting there is no guarantee the higher level is more just." },
+                { "label": "B", "text": "He says the appeal is never legitimate." },
+                { "label": "C", "text": "He calls it the greatest threat to self-rule." },
+                { "label": "D", "text": "He says regions are always just." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the author rejects the always-available remedy, that choice states the very view he criticizes."
+            }
+          ]
         },
         {
           "id": "cars-gen-0256",
@@ -990,7 +2700,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks you to apply the author's warning to pick the illustrating case. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Match each case to the specific danger the author associates with federalism." },
+                { "label": "B", "text": "Pick the most large-scale case." },
+                { "label": "C", "text": "Choose any case involving two regions." },
+                { "label": "D", "text": "Select the case that shows the center failing." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Application questions require matching a case to the author's stated danger."
+            },
+            {
+              "level": 2,
+              "prompt": "What is the danger the author describes that the correct case must show?",
+              "choices": [
+                { "label": "A", "text": "That federalism can 'shield' a 'local majority' that 'wishes to oppress a local minority.'" },
+                { "label": "B", "text": "That a just center may override a region." },
+                { "label": "C", "text": "That regions may cooperate on shared projects." },
+                { "label": "D", "text": "That a good policy may spread between regions." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Autonomy shielding local oppression behind 'self-rule' is precisely the danger the question seeks."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer is 'a national government overrides a region to impose a widely admired reform.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "That shows the center protecting freedom, which is federalism's upside, not the danger." },
+                { "label": "B", "text": "It depicts a region oppressing a minority." },
+                { "label": "C", "text": "It involves no government at all." },
+                { "label": "D", "text": "The author praises it as the central danger." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A just center overriding a region illustrates federalism's benefit, not the harm the question asks about."
+            }
+          ]
         },
         {
           "id": "cars-gen-0257",
@@ -1009,7 +2757,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks what would most strengthen the 'neither inherently good nor bad' claim. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Find evidence showing federalism's effect on liberty varies with circumstances." },
+                { "label": "B", "text": "Restate the claim in other words." },
+                { "label": "C", "text": "Support a one-directional verdict." },
+                { "label": "D", "text": "Offer an irrelevant fact." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A strengthener must support the claim that federalism's effect is circumstance-dependent."
+            },
+            {
+              "level": 2,
+              "prompt": "The claim is that federalism 'is neither friend nor enemy of liberty in the abstract.' What kind of record best supports it?",
+              "choices": [
+                { "label": "A", "text": "A record showing regional governments protected liberty in some eras and crushed it in others, with no consistent pattern." },
+                { "label": "B", "text": "A record showing central governments were always more oppressive." },
+                { "label": "C", "text": "A record showing regional governments were always more oppressive." },
+                { "label": "D", "text": "A finding that federal systems are more common among wealthy nations." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A cuts-both-ways historical record supports the claim that the effect depends on circumstances."
+            },
+            {
+              "level": 3,
+              "prompt": "Two tempting choices claim a consistent pattern: central governments 'always' more oppressive, or regional governments 'always' more oppressive. Why do both fail to strengthen?",
+              "choices": [
+                { "label": "A", "text": "Any consistent one-directional pattern would support a fixed verdict, undercutting the 'depends on circumstances' claim." },
+                { "label": "B", "text": "Both show no pattern at all." },
+                { "label": "C", "text": "Both are only about national wealth." },
+                { "label": "D", "text": "The author endorses both patterns." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A reliable pattern in either direction contradicts neutrality, so neither strengthens the claim."
+            }
+          ]
         },
         {
           "id": "cars-gen-0258",
@@ -1028,7 +2814,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "hard",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks the meaning of 'from a principle to an instrument' in context. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Interpret the contrast using the author's argument, not the words in isolation." },
+                { "label": "B", "text": "Use only the dictionary meaning of 'instrument.'" },
+                { "label": "C", "text": "Pick the most literal reading." },
+                { "label": "D", "text": "Choose an unrelated meaning." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Meaning-in-context questions require reading the phrase through the passage's argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which nearby claim fixes the meaning of 'instrument' here?",
+              "choices": [
+                { "label": "A", "text": "That federalism's 'effects depend entirely on who holds the divided power and how they use it.'" },
+                { "label": "B", "text": "That federalism is a moral ideal citizens must uphold." },
+                { "label": "C", "text": "That federalism should be abolished as outdated." },
+                { "label": "D", "text": "That federalism measures the quality of governments." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Contrasting 'principle' with 'instrument' means federalism has no fixed value and is judged by its uses."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting reading is that federalism should be regarded as 'an outdated practice that should be abandoned.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "Demoting it to an instrument is not abolishing it; the author explicitly rejects abolition." },
+                { "label": "B", "text": "The author calls it a binding moral ideal." },
+                { "label": "C", "text": "The author says it measures governments." },
+                { "label": "D", "text": "The author says it is always good." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the author keeps federalism as a tool, 'abandon it' misreads the phrase."
+            }
+          ]
         }
       ]
     },
@@ -1061,7 +2885,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks for the central argument. What is the best approach?",
+              "choices": [
+                { "label": "A", "text": "Identify the author's thesis, holding together his critique and his concession." },
+                { "label": "B", "text": "Pick the practical arrangement he allows." },
+                { "label": "C", "text": "Treat one example as the whole point." },
+                { "label": "D", "text": "Choose the view he argues against." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A main-idea question wants the author's full thesis, including what he concedes."
+            },
+            {
+              "level": 2,
+              "prompt": "Which two moves together define the author's thesis?",
+              "choices": [
+                { "label": "A", "text": "He dismantles 'the moral theory of desert' while saying 'none of this is an argument against paying people, or even against paying them unequally.'" },
+                { "label": "B", "text": "He argues that talent and effort play no role in success." },
+                { "label": "C", "text": "He argues that all incomes should be made equal." },
+                { "label": "D", "text": "He argues that meritocracy has no redeeming value." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Rejecting desert while allowing useful inequality is exactly the author's two-part thesis."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the thesis is that 'inequality of income should be abolished because it serves no purpose.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author explicitly allows inequality as a practical arrangement and says incentives are useful." },
+                { "label": "B", "text": "The author says talent never matters." },
+                { "label": "C", "text": "The author praises the desert story." },
+                { "label": "D", "text": "The author says pay measures virtue." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because he permits useful inequality, any call to abolish it is ruled out."
+            }
+          ]
         },
         {
           "id": "cars-gen-0260",
@@ -1080,7 +2942,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks what the teacher-versus-financier comparison does. What kind of task is that?",
+              "choices": [
+                { "label": "A", "text": "A function question: what job the comparison performs." },
+                { "label": "B", "text": "A recommendation about teacher salaries." },
+                { "label": "C", "text": "A request for the passage's thesis." },
+                { "label": "D", "text": "A judgment of the writing." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "'Serves to' signals a function question about the comparison's role."
+            },
+            {
+              "level": 2,
+              "prompt": "Which stipulation in the comparison is the key to its purpose?",
+              "choices": [
+                { "label": "A", "text": "That the two 'work with equal devotion,' yet the financier 'is paid many times the first... because... supply and demand.'" },
+                { "label": "B", "text": "That teachers are more virtuous than financiers." },
+                { "label": "C", "text": "That financiers work longer hours." },
+                { "label": "D", "text": "That teachers should earn more." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Holding effort equal while pay differs shows reward follows demand, not desert, which is the comparison's function."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the comparison serves to 'prove that financiers work harder than teachers.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author stipulates equal devotion, so the point is not about who works harder." },
+                { "label": "B", "text": "The author says teachers are lazy." },
+                { "label": "C", "text": "The author recommends a pay scale for teachers." },
+                { "label": "D", "text": "The author says effort is deserved." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because effort is held equal, the example isolates demand, not harder work, as the cause of unequal pay."
+            }
+          ]
         },
         {
           "id": "cars-gen-0261",
@@ -1099,7 +2999,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "hard",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This is an inference question about someone enriched by a suddenly-demanded skill. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Combine the author's distinctions to infer what such wealth shows, not a verbatim line." },
+                { "label": "B", "text": "Find the answer stated word for word." },
+                { "label": "C", "text": "Pick the most flattering claim." },
+                { "label": "D", "text": "Choose an answer that contradicts the author." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Inference questions require assembling the author's distinctions into an implied conclusion."
+            },
+            {
+              "level": 2,
+              "prompt": "Which sentence is the key clue for this inference?",
+              "choices": [
+                { "label": "A", "text": "That 'what a talent earns is set by what others will pay for it, and what others will pay is a brute social fact, not a moral judgment.'" },
+                { "label": "B", "text": "That 'no one chooses the gifts with which she is born.'" },
+                { "label": "C", "text": "That effort 'takes work.'" },
+                { "label": "D", "text": "That success 'invites gratitude rather than pride.'" }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Separating market pay from moral desert yields 'earned but not necessarily deserved.'"
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says such a person 'has thereby proven herself more virtuous than her poorer peers.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author denies that pay measures virtue, calling it a price, not a verdict on the soul." },
+                { "label": "B", "text": "The author says she worked the hardest." },
+                { "label": "C", "text": "The author says her income is owed to the state." },
+                { "label": "D", "text": "The author praises high earners as models." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because pay is not a moral verdict, high earnings cannot prove greater virtue."
+            }
+          ]
         },
         {
           "id": "cars-gen-0262",
@@ -1118,7 +3056,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks you to apply the attitude the author recommends. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Match each response to the attitude the author explicitly recommends." },
+                { "label": "B", "text": "Pick the most self-congratulatory response." },
+                { "label": "C", "text": "Choose any response involving money." },
+                { "label": "D", "text": "Select the most extreme leveling response." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Application questions require matching a case to the author's stated recommendation."
+            },
+            {
+              "level": 2,
+              "prompt": "What attitude does the author recommend that the correct response must reflect?",
+              "choices": [
+                { "label": "A", "text": "That success, seen clearly, 'invites gratitude rather than pride,' and that rewards are not 'merely receiving their due.'" },
+                { "label": "B", "text": "That success proves superior character." },
+                { "label": "C", "text": "That all incomes should be made exactly equal." },
+                { "label": "D", "text": "That one should feel contempt for those who fail." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Gratitude for luck without a sense of desert is precisely the attitude the author recommends."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer is 'concluding that one's success proves one's superior character.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "That is exactly the flattering story of desert the author rejects." },
+                { "label": "B", "text": "The author demands equal incomes." },
+                { "label": "C", "text": "The author urges contempt for those who fail." },
+                { "label": "D", "text": "The author praises pride." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Treating success as proof of superior character is the very belief the passage dismantles."
+            }
+          ]
         },
         {
           "id": "cars-gen-0263",
@@ -1137,7 +3113,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks what would most strengthen the claim that effort is not a secure basis for desert. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Find new evidence that the capacity for effort is itself unchosen." },
+                { "label": "B", "text": "Restate the claim in other words." },
+                { "label": "C", "text": "Support a different claim in the passage." },
+                { "label": "D", "text": "Offer an irrelevant fact." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "To strengthen, you need evidence undercutting effort as something one earns credit for."
+            },
+            {
+              "level": 2,
+              "prompt": "Which of the author's claims would such evidence support?",
+              "choices": [
+                { "label": "A", "text": "That the 'capacity for sustained effort... is itself partly a gift of temperament and upbringing.'" },
+                { "label": "B", "text": "That people who work harder generally earn more." },
+                { "label": "C", "text": "That successful people report working hard." },
+                { "label": "D", "text": "That talent and effort occur together." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "If the ability to make an effort is unchosen, effort cannot ground desert, which is the author's point."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting choice is that 'people who exert more effort generally earn more than those who exert less.' Why does it fail to strengthen?",
+              "choices": [
+                { "label": "A", "text": "Linking effort to earnings does not show that effort itself is deserved, which is the claim at issue." },
+                { "label": "B", "text": "It contradicts the whole passage." },
+                { "label": "C", "text": "It proves effort is unchosen." },
+                { "label": "D", "text": "Effort is never discussed in the passage." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A correlation between effort and pay is silent on whether the capacity for effort was earned."
+            }
+          ]
         },
         {
           "id": "cars-gen-0264",
@@ -1156,7 +3170,45 @@
           "topicTags": ["politics & economics"],
           "difficulty": "hard",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks the meaning of 'a price with a verdict on the soul.' What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Interpret the contrast through the author's argument, not literally." },
+                { "label": "B", "text": "Use only the dictionary sense of 'verdict.'" },
+                { "label": "C", "text": "Pick the most literal reading of 'soul.'" },
+                { "label": "D", "text": "Choose an unrelated meaning." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Meaning-in-context questions require reading the phrase through the passage's argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which nearby claim fixes the phrase's meaning?",
+              "choices": [
+                { "label": "A", "text": "That pay 'is set by what others will pay,' a 'brute social fact,' not a moral judgment." },
+                { "label": "B", "text": "That salaries should be kept secret." },
+                { "label": "C", "text": "That money is inherently corrupting." },
+                { "label": "D", "text": "That the soul can be measured by other means." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The contrast is between a market price and a judgment of moral worth, which price cannot deliver."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting reading is that 'the soul can be accurately measured, but only by non-monetary means.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author's point is only that pay is not a measure of worth, not that some other tool measures the soul." },
+                { "label": "B", "text": "The author says salaries should be secret." },
+                { "label": "C", "text": "The author says money should be abolished." },
+                { "label": "D", "text": "The author praises high pay as virtue." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The phrase denies that price measures moral worth; it makes no claim that anything else does."
+            }
+          ]
         }
       ]
     },
@@ -1189,7 +3241,45 @@
           "topicTags": ["society & culture"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks for the passage's primary argument. What is the best approach?",
+              "choices": [
+                { "label": "A", "text": "Identify the author's overall thesis about how opinion is shaped in open societies." },
+                { "label": "B", "text": "Pick the crude picture of propaganda he rejects." },
+                { "label": "C", "text": "Treat one metaphor as the whole point." },
+                { "label": "D", "text": "Choose the view he argues against." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A main-idea question wants the author's thesis, not the view he rejects or a single image."
+            },
+            {
+              "level": 2,
+              "prompt": "Which pairing marks the author's own thesis?",
+              "choices": [
+                { "label": "A", "text": "That sophisticated shaping works 'by quietly setting the boundaries of the thinkable,' while 'facts within the boundary may be perfectly accurate.'" },
+                { "label": "B", "text": "That propaganda means 'a dictator's portrait on every wall.'" },
+                { "label": "C", "text": "That 'the great enemy' is overt suppression." },
+                { "label": "D", "text": "That fact-checkers reliably catch falsehoods." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Boundary-setting as the sophisticated mechanism, alongside possibly-accurate facts, is the author's thesis."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the passage argues 'all news reports in open societies are deliberate lies.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author says facts within the boundary 'may be perfectly accurate,' rejecting the all-lies view." },
+                { "label": "B", "text": "The author praises censorship." },
+                { "label": "C", "text": "The author says open debate is impossible." },
+                { "label": "D", "text": "The author denies that boundaries exist." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Granting that reported facts can be accurate rules out the claim that all reports are lies."
+            }
+          ]
         },
         {
           "id": "cars-gen-0266",
@@ -1208,7 +3298,45 @@
           "topicTags": ["society & culture"],
           "difficulty": "hard",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks the author's tone toward mainstream journalism. It should rest on what?",
+              "choices": [
+                { "label": "A", "text": "How he characterizes journalists' conduct: its cause and his judgment of it." },
+                { "label": "B", "text": "Whether journalism is a respectable profession." },
+                { "label": "C", "text": "The single harshest word in the passage." },
+                { "label": "D", "text": "The passage's general topic." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Tone questions depend on the author's characterization and judgment, not on the topic."
+            },
+            {
+              "level": 2,
+              "prompt": "Which framing best reveals his tone?",
+              "choices": [
+                { "label": "A", "text": "He traces the problem to 'routine, unglamorous habits,' each 'defensible on its own,' while denying any 'plot.'" },
+                { "label": "B", "text": "He calls journalists deliberate liars." },
+                { "label": "C", "text": "He admires journalism's balance and sourcing." },
+                { "label": "D", "text": "He treats the whole matter as a joke." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Criticizing effects while denying conscious deceit is a critical-but-measured tone."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer calls the tone 'contemptuous, treating journalists as deliberate liars.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author explicitly denies a plot and treats the reflexes as defensible, not as lying." },
+                { "label": "B", "text": "The author admires the practices without reservation." },
+                { "label": "C", "text": "The author is joking throughout." },
+                { "label": "D", "text": "The author never criticizes journalism." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Denying conscious deceit rules out a tone of contempt for journalists as liars."
+            }
+          ]
         },
         {
           "id": "cars-gen-0267",
@@ -1227,7 +3355,45 @@
           "topicTags": ["society & culture"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This is an inference question about why boundary-setting is more effective than censorship. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Combine the author's claims to infer the reason, not expect a verbatim line." },
+                { "label": "B", "text": "Find the reason stated word for word." },
+                { "label": "C", "text": "Pick the most extreme claim." },
+                { "label": "D", "text": "Choose an answer that contradicts the author." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Inference questions require assembling stated points into an implied reason."
+            },
+            {
+              "level": 2,
+              "prompt": "Which sentence is the key clue for this inference?",
+              "choices": [
+                { "label": "A", "text": "That boundary-setting 'enlists the citizen's own sense of independence,' so one who 'believes he has reached his own conclusions defends them far more stubbornly.'" },
+                { "label": "B", "text": "That the banned book 'becomes glamorous.'" },
+                { "label": "C", "text": "That overt suppression 'advertises its own existence.'" },
+                { "label": "D", "text": "That thought 'requires some frame or other.'" }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The psychological ownership of self-reached views is what explains the greater effectiveness."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says boundary-setting works better because 'it allows the government to imprison dissidents more efficiently.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author stresses that boundary-setting 'produces no martyrs' and punishes no one, so imprisonment is not its mechanism." },
+                { "label": "B", "text": "The author says it relies on more convincing lies." },
+                { "label": "C", "text": "The author says it is simply cheaper." },
+                { "label": "D", "text": "The author says debate is banned." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because no one is punished, efficient imprisonment cannot be why it works."
+            }
+          ]
         },
         {
           "id": "cars-gen-0268",
@@ -1246,7 +3412,45 @@
           "topicTags": ["society & culture"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks you to apply the author's advice for resisting manufactured consent. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Match each option to the author's stated remedy." },
+                { "label": "B", "text": "Pick the most drastic option." },
+                { "label": "C", "text": "Choose any option involving the news." },
+                { "label": "D", "text": "Select the option that withdraws from the issue." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Application questions require matching a case to the author's stated remedy."
+            },
+            {
+              "level": 2,
+              "prompt": "What remedy does the author prescribe that the correct option must follow?",
+              "choices": [
+                { "label": "A", "text": "'A stubborn curiosity about the frame': asking 'which questions are never asked, whose voices are absent from the respectable debate.'" },
+                { "label": "B", "text": "Refusing to believe any reported fact." },
+                { "label": "C", "text": "Choosing whichever mainstream side seems better." },
+                { "label": "D", "text": "Withdrawing from public affairs entirely." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Interrogating the frame's omissions is exactly the author's prescribed remedy."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting answer says the citizen should 'refuse to believe any fact reported by a major news outlet.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author warns against distrusting every fact, since facts within the boundary may be true." },
+                { "label": "B", "text": "The author says all facts are false." },
+                { "label": "C", "text": "The author recommends withdrawal." },
+                { "label": "D", "text": "The author says to pick a mainstream side." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Because the remedy targets the frame rather than the facts, blanket distrust misreads the advice."
+            }
+          ]
         },
         {
           "id": "cars-gen-0269",
@@ -1265,7 +3469,45 @@
           "topicTags": ["society & culture"],
           "difficulty": "hard",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks what would most strengthen the claim that consent can be manufactured without censorship or lies. What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Find evidence of shaping that uses neither censorship nor falsehood." },
+                { "label": "B", "text": "Restate the claim in other words." },
+                { "label": "C", "text": "Support the censorship mechanism instead." },
+                { "label": "D", "text": "Offer an irrelevant fact." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "A strengthener must exhibit boundary-setting with no lies and no censorship."
+            },
+            {
+              "level": 2,
+              "prompt": "What is the mechanism the strengthener must display?",
+              "choices": [
+                { "label": "A", "text": "Accurate coverage that silently narrows what is thinkable, banishing options 'to the wilderness of the unserious.'" },
+                { "label": "B", "text": "A government banning books and jailing authors." },
+                { "label": "C", "text": "Audiences distrusting outlets they find biased." },
+                { "label": "D", "text": "Fact-checkers correcting documented falsehoods." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Accurate-yet-narrowed coverage is exactly boundary-setting without lies or censorship."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting choice describes 'a government that banned several books and jailed their authors.' Why does it fail to strengthen?",
+              "choices": [
+                { "label": "A", "text": "Book-banning and jailing are overt censorship, the very mechanism the author contrasts with boundary-setting." },
+                { "label": "B", "text": "It shows accurate coverage narrowing options." },
+                { "label": "C", "text": "It involves no government." },
+                { "label": "D", "text": "It documents catchable lies." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Overt censorship is what the author distinguishes from invisible boundary-setting, so it cannot support the claim."
+            }
+          ]
         },
         {
           "id": "cars-gen-0270",
@@ -1284,7 +3526,45 @@
           "topicTags": ["society & culture"],
           "difficulty": "medium",
           "sourceName": "AI-generated (SpeedyCAT proof-of-concept)",
-          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content"
+          "sourceLicense": "AI-generated proof-of-concept — not real MCAT/AAMC content",
+          "hints": [
+            {
+              "level": 1,
+              "prompt": "This question asks the meaning of 'the chains that bind most securely are the ones the prisoner cannot feel.' What is the approach?",
+              "choices": [
+                { "label": "A", "text": "Interpret the metaphor through the passage's argument, not literally." },
+                { "label": "B", "text": "Take it as a literal claim about prisoners." },
+                { "label": "C", "text": "Use only the dictionary sense of 'chains.'" },
+                { "label": "D", "text": "Choose an unrelated meaning." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "Meaning-in-context questions require reading the metaphor through the argument."
+            },
+            {
+              "level": 2,
+              "prompt": "Which claim does the metaphor follow and restate?",
+              "choices": [
+                { "label": "A", "text": "That a person who 'believes he has reached his own conclusions defends them far more stubbornly.'" },
+                { "label": "B", "text": "That physical imprisonment is the strongest control." },
+                { "label": "C", "text": "That literally chained people rarely escape." },
+                { "label": "D", "text": "That freedom is a total illusion." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "In context the 'chains' are unnoticed mental boundaries, which bind precisely because they go unfelt."
+            },
+            {
+              "level": 3,
+              "prompt": "A tempting reading takes the line to mean 'freedom is an illusion that no one can ever escape.' Why is it a trap?",
+              "choices": [
+                { "label": "A", "text": "The author affirms that a real, if modest, freedom of mind is possible, so freedom is not declared a total illusion." },
+                { "label": "B", "text": "The passage is about literal prisoners." },
+                { "label": "C", "text": "The author says physical control is strongest." },
+                { "label": "D", "text": "The author says boundaries do not exist." }
+              ],
+              "correctAnswer": "A",
+              "rationale": "The passage's closing hope for freedom of mind contradicts reading the line as denying all freedom."
+            }
+          ]
         }
       ]
     }

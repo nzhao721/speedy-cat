@@ -32,7 +32,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim from OpenStax AP test-prep. OpenStax withholds the public answer key (instructor-only); answer independently verified from Newton's third law."
+      "notes": "Stem + 4 options scraped verbatim from OpenStax AP test-prep. OpenStax withholds the public answer key (instructor-only); answer independently verified from Newton's third law.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Newton's third law states that when one object exerts a force on a second object, the second object exerts on the first a force that is:",
+          "choices": [
+            {"label": "A", "text": "equal in magnitude and in the same direction"},
+            {"label": "B", "text": "equal in magnitude and in the opposite direction"},
+            {"label": "C", "text": "larger in magnitude and in the opposite direction"},
+            {"label": "D", "text": "present only when the first object is stationary"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Newton's third-law force pairs are equal in magnitude and opposite in direction."
+        },
+        {
+          "level": 2,
+          "prompt": "While the boy is throwing the snowball, which two forces form the relevant Newton's-third-law action–reaction pair?",
+          "choices": [
+            {"label": "A", "text": "the boy's push on the snowball and the snowball's push on the boy"},
+            {"label": "B", "text": "the boy's push on the snowball and gravity acting on the snowball"},
+            {"label": "C", "text": "the weight of the boy and the normal force from the ice"},
+            {"label": "D", "text": "the snowball's weight and air resistance on the snowball"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The interaction is between the boy and the snowball, so the pair is the boy pushing the snowball and the snowball pushing back on the boy."
+        },
+        {
+          "level": 3,
+          "prompt": "Throwing the snowball horizontally changes the boy's motion. Which pair of the main options can be eliminated right away?",
+          "choices": [
+            {"label": "A", "text": "the 'upward force' option and the 'no net force' option"},
+            {"label": "B", "text": "the 'backward force' option and the 'forward force' option"},
+            {"label": "C", "text": "the 'no net force' option and the 'backward force' option"},
+            {"label": "D", "text": "the 'upward force' option and the 'forward force' option"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A horizontal throw needs no vertical force, and the boy's motion changes so the net force is not zero—removing the 'upward' and 'no net force' options."
+        }
+      ]
     },
     {
       "id": "cpbs-xp002",
@@ -52,7 +90,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from conservation of momentum for an isolated system."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from conservation of momentum for an isolated system.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "For a system with no net external force, the total linear momentum:",
+          "choices": [
+            {"label": "A", "text": "increases over time"},
+            {"label": "B", "text": "is conserved (stays constant)"},
+            {"label": "C", "text": "decreases to zero"},
+            {"label": "D", "text": "depends on whether internal collisions are elastic"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "With no net external force the system is isolated, so total momentum is conserved."
+        },
+        {
+          "level": 2,
+          "prompt": "On the frictionless track, what is the net external horizontal force on the two-car system during the collision?",
+          "choices": [
+            {"label": "A", "text": "zero, because the track is frictionless and the forces between the cars are internal"},
+            {"label": "B", "text": "a large forward force supplied by car A"},
+            {"label": "C", "text": "a friction force that steadily removes momentum"},
+            {"label": "D", "text": "it depends on whether the collision is elastic or inelastic"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Collision forces are internal and the frictionless track exerts no horizontal external force, so the net external force is zero."
+        },
+        {
+          "level": 3,
+          "prompt": "Momentum is a conserved quantity for an isolated system and cannot spontaneously grow or shrink. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'greater before the collision' and 'greater after the collision'"},
+            {"label": "B", "text": "'equal before and after' and 'depends on elastic or inelastic'"},
+            {"label": "C", "text": "'greater before the collision' and 'equal before and after'"},
+            {"label": "D", "text": "'greater after the collision' and 'depends on elastic or inelastic'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "An isolated system's total momentum cannot be larger on one side, so 'greater before' and 'greater after' are both eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp003",
@@ -72,7 +148,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the impulse-momentum theorem."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the impulse-momentum theorem.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The impulse–momentum theorem relates the average force during a collision to which quantities?",
+          "choices": [
+            {"label": "A", "text": "F_avg = Δp/Δt (change in momentum divided by collision time)"},
+            {"label": "B", "text": "F_avg = Δp·Δt (momentum times time)"},
+            {"label": "C", "text": "F_avg = ½mv² divided by distance"},
+            {"label": "D", "text": "F_avg = mass times braking distance"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Impulse equals change in momentum, so F_avg = Δp/Δt."
+        },
+        {
+          "level": 2,
+          "prompt": "For the car that crumples to a stop against the wall, which quantities let you evaluate Δp/Δt (its mass is known)?",
+          "choices": [
+            {"label": "A", "text": "the velocity just before impact and the duration of the collision"},
+            {"label": "B", "text": "the braking acceleration before the wall and the braking distance"},
+            {"label": "C", "text": "the make and color of the car"},
+            {"label": "D", "text": "the distance the car travels while braking before impact"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Δp = m·v_impact (final speed is zero) and Δt is the collision time, so you need v_impact and the collision duration."
+        },
+        {
+          "level": 3,
+          "prompt": "The car's motion BEFORE it reaches the wall (its braking) does not set the wall's impact force. Which pair of options can be eliminated because they rely on that irrelevant braking information?",
+          "choices": [
+            {"label": "A", "text": "'acceleration before impact + braking distance' and 'collision duration + braking distance'"},
+            {"label": "B", "text": "'acceleration before impact + velocity just before impact' and 'velocity just before impact + collision duration'"},
+            {"label": "C", "text": "'velocity just before impact + collision duration' and 'collision duration + braking distance'"},
+            {"label": "D", "text": "'acceleration before impact + braking distance' and 'velocity just before impact + collision duration'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The pre-impact braking distance is irrelevant to the impact force, so both options that require it are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp004",
@@ -92,7 +206,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (center-of-mass velocity is conserved for an isolated system)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (center-of-mass velocity is conserved for an isolated system).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "For a system with no net external force, the velocity of the center of mass:",
+          "choices": [
+            {"label": "A", "text": "stays constant (is conserved)"},
+            {"label": "B", "text": "always drops to zero after a collision"},
+            {"label": "C", "text": "reverses direction during a collision"},
+            {"label": "D", "text": "equals the velocity of the faster object"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "With no external force, the center-of-mass velocity is unchanged."
+        },
+        {
+          "level": 2,
+          "prompt": "Which expression gives the center-of-mass velocity BEFORE the collision, for cart A (mass m, velocity +v) and cart B (mass m, at rest)?",
+          "choices": [
+            {"label": "A", "text": "(m·v + m·0)/(m + m)"},
+            {"label": "B", "text": "(m·v + m·0)/(m − m)"},
+            {"label": "C", "text": "m·v + m·0"},
+            {"label": "D", "text": "(m·v)·(m·0)"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The center-of-mass velocity is total momentum divided by total mass: (m·v + m·0)/(2m)."
+        },
+        {
+          "level": 3,
+          "prompt": "The center of mass is clearly moving in +x before the collision, and an isolated system's center-of-mass velocity does not reverse. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'0 before, 0 after' and '+v/2 before, −v/2 after'"},
+            {"label": "B", "text": "'+v/2 before, +v/2 after' and '+v/2 before, 0 after'"},
+            {"label": "C", "text": "'0 before, 0 after' and '+v/2 before, +v/2 after'"},
+            {"label": "D", "text": "'+v/2 before, −v/2 after' and '+v/2 before, 0 after'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "v_cm before is +v/2 (not zero), and it cannot reverse to −v/2, so those two options are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp005",
@@ -112,7 +264,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from conservation of momentum."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from conservation of momentum.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "During a collision in which only internal forces act between the objects, the total momentum of the system:",
+          "choices": [
+            {"label": "A", "text": "changes by zero (is conserved)"},
+            {"label": "B", "text": "increases"},
+            {"label": "C", "text": "decreases"},
+            {"label": "D", "text": "changes only if the collision is inelastic"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Internal collision forces cannot change the system's total momentum, so its change is zero."
+        },
+        {
+          "level": 2,
+          "prompt": "The masses (1.5 kg) and speeds (12 and 6 m/s) are given. To find the CHANGE in the system's total momentum, what actually determines the answer?",
+          "choices": [
+            {"label": "A", "text": "whether a net external force acts—if none, the change is zero regardless of the numbers"},
+            {"label": "B", "text": "the product of the two masses"},
+            {"label": "C", "text": "the difference of the two speeds times the mass"},
+            {"label": "D", "text": "the kinetic energy before and after"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The change in total momentum depends only on external forces; with none, it is zero and the specific numbers are unneeded."
+        },
+        {
+          "level": 3,
+          "prompt": "The value ±27 kg·m/s equals the system's total momentum (1.5·12 + 1.5·6), not its change. Recognizing these as traps, which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'−27 kg·m/s' and '+27 kg·m/s'"},
+            {"label": "B", "text": "'zero' and 'depends on elastic or inelastic'"},
+            {"label": "C", "text": "'−27 kg·m/s' and 'zero'"},
+            {"label": "D", "text": "'+27 kg·m/s' and 'depends on elastic or inelastic'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "±27 kg·m/s is the total momentum itself (a distractor), not the change, so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp006",
@@ -132,7 +322,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim; the original stem referenced an experimental data table, trimmed here because the answer follows from conservation of momentum alone. OpenStax withholds the public answer key; answer independently verified."
+      "notes": "Stem + 4 options scraped verbatim; the original stem referenced an experimental data table, trimmed here because the answer follows from conservation of momentum alone. OpenStax withholds the public answer key; answer independently verified.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "On a frictionless surface where only internal collision forces act, the total (center-of-mass) momentum of a system changes by:",
+          "choices": [
+            {"label": "A", "text": "zero"},
+            {"label": "B", "text": "an amount equal to the heavier puck's momentum"},
+            {"label": "C", "text": "an amount that depends on the mass ratio"},
+            {"label": "D", "text": "twice the initial momentum"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "With no external force, the system's total momentum is conserved, so its change is zero."
+        },
+        {
+          "level": 2,
+          "prompt": "For the two-puck system on the frictionless surface, what would be needed to change the system's total momentum during the collision?",
+          "choices": [
+            {"label": "A", "text": "a net external force—but the puck-on-puck forces are internal, so there is none"},
+            {"label": "B", "text": "friction from the surface"},
+            {"label": "C", "text": "the normal force from the surface acting horizontally"},
+            {"label": "D", "text": "gravity acting horizontally"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The surface is frictionless and the collision forces are internal, so there is no net external horizontal force."
+        },
+        {
+          "level": 3,
+          "prompt": "Since the total momentum of an isolated system cannot change, any nonzero value is a distractor. Which pair of nonzero options can be eliminated for the CHANGE in total momentum?",
+          "choices": [
+            {"label": "A", "text": "'+1.6 kg·m/s' and '−1.6 kg·m/s'"},
+            {"label": "B", "text": "'+0.8 kg·m/s' and '0'"},
+            {"label": "C", "text": "'+1.6 kg·m/s' and '0'"},
+            {"label": "D", "text": "'0' and '−1.6 kg·m/s'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A conserved total momentum has zero change, so the equal-and-opposite nonzero values are both eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp007",
@@ -152,7 +380,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (equal-mass 1-D elastic collisions exchange velocities)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (equal-mass 1-D elastic collisions exchange velocities).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In a one-dimensional ELASTIC collision between two objects of EQUAL mass, the objects:",
+          "choices": [
+            {"label": "A", "text": "exchange (swap) their velocities"},
+            {"label": "B", "text": "both come to rest"},
+            {"label": "C", "text": "stick together and move as one"},
+            {"label": "D", "text": "keep their original velocities"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Equal-mass 1-D elastic collisions result in the two objects exchanging velocities."
+        },
+        {
+          "level": 2,
+          "prompt": "Which two facts stated in this problem tell you the velocity-exchange rule applies here?",
+          "choices": [
+            {"label": "A", "text": "the collision is elastic and the two cars have equal mass"},
+            {"label": "B", "text": "the collision is elastic and car B starts at rest"},
+            {"label": "C", "text": "the cars have equal mass and momentum is not conserved"},
+            {"label": "D", "text": "the cars move in opposite directions and stick together"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The velocity-exchange result requires a 1-D elastic collision between equal masses—both stated here."
+        },
+        {
+          "level": 3,
+          "prompt": "Averaging the two velocities describes a perfectly INELASTIC (stick-together) collision, not an elastic one. Which pair of options can be eliminated for this elastic collision?",
+          "choices": [
+            {"label": "A", "text": "'equal to the average of the two velocities, in its original direction' and 'equal to the average of the two velocities, in the opposite direction'"},
+            {"label": "B", "text": "'the same 15 m/s speed, opposite direction' and 'equal to car B's velocity prior to the collision'"},
+            {"label": "C", "text": "'equal to car B's velocity prior' and 'average of the two velocities, original direction'"},
+            {"label": "D", "text": "'the same 15 m/s speed, opposite direction' and 'average of the two velocities, opposite direction'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The average-velocity outcomes correspond to a perfectly inelastic collision, so both 'average' options are eliminated here."
+        }
+      ]
     },
     {
       "id": "cpbs-xp008",
@@ -172,7 +438,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the source text's treatment of inelastic collisions."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the source text's treatment of inelastic collisions.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "When a bouncing ball loses kinetic energy in its collision with the floor, that energy is primarily:",
+          "choices": [
+            {"label": "A", "text": "converted into internal energy (heat/sound) as the ball deforms"},
+            {"label": "B", "text": "destroyed and no longer exists"},
+            {"label": "C", "text": "converted entirely into gravitational potential energy"},
+            {"label": "D", "text": "transferred into the Earth's kinetic energy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "In an inelastic bounce, kinetic energy is converted to internal energy as the ball deforms."
+        },
+        {
+          "level": 2,
+          "prompt": "Reaching only 90% of the original height means mechanical energy was lost during the brief floor contact. In which phase is that energy lost?",
+          "choices": [
+            {"label": "A", "text": "during the deformation and partial restoration of the ball while it is in contact with the floor"},
+            {"label": "B", "text": "during the free fall before impact"},
+            {"label": "C", "text": "during the rise after the bounce"},
+            {"label": "D", "text": "it is not actually lost"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The loss occurs during contact, when the ball deforms and only partly restores its shape."
+        },
+        {
+          "level": 3,
+          "prompt": "Gravity is a conservative force (it returns energy on the way up) and simple sliding friction is not what dissipates energy in a vertical bounce. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'Energy was lost due to friction...' and 'Energy was lost due to the work done by gravity...'"},
+            {"label": "B", "text": "'Energy was required to deform the ball...' and 'Energy was lost due to friction...'"},
+            {"label": "C", "text": "'Energy was lost due to work done by the ball pushing on the floor...' and 'Energy was lost due to work done by gravity...'"},
+            {"label": "D", "text": "'Energy was required to deform the ball...' and 'Energy was lost due to work done by the ball pushing on the floor...'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Gravity is conservative and friction is not the mechanism for a vertical bounce, so those two options are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp009",
@@ -192,7 +496,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by checking momentum and kinetic-energy conservation for each option."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by checking momentum and kinetic-energy conservation for each option.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "An inelastic collision is one in which:",
+          "choices": [
+            {"label": "A", "text": "momentum is conserved but kinetic energy decreases"},
+            {"label": "B", "text": "both momentum and kinetic energy increase"},
+            {"label": "C", "text": "kinetic energy increases"},
+            {"label": "D", "text": "momentum is not conserved"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Inelastic collisions conserve momentum while losing kinetic energy."
+        },
+        {
+          "level": 2,
+          "prompt": "The system's total momentum (per unit mass) is 10 + 4 = 14. Which condition must ANY valid outcome satisfy first, before you even check kinetic energy?",
+          "choices": [
+            {"label": "A", "text": "the two final velocities must still sum to 14 (momentum conserved)"},
+            {"label": "B", "text": "the two final velocities must sum to 28"},
+            {"label": "C", "text": "kinetic energy must increase"},
+            {"label": "D", "text": "the objects must move in opposite directions"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Any physical outcome must conserve momentum, so the final velocities must still total 14 (per unit mass)."
+        },
+        {
+          "level": 3,
+          "prompt": "A collision can never INCREASE the total kinetic energy. Which pair of outcomes can be eliminated because they would require more kinetic energy after than before?",
+          "choices": [
+            {"label": "A", "text": "'A at rest, B moves 14 m/s +x' and 'A moves 4 m/s −x, B moves 18 m/s +x'"},
+            {"label": "B", "text": "'the two stick together at 7 m/s +x' and 'A moves 4 m/s +x, B moves 10 m/s +x'"},
+            {"label": "C", "text": "'A at rest, B moves 14 m/s +x' and 'the two stick together at 7 m/s +x'"},
+            {"label": "D", "text": "'A moves 4 m/s −x, B moves 18 m/s +x' and 'A moves 4 m/s +x, B moves 10 m/s +x'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Both of those outcomes have larger total kinetic energy than the initial value, which is impossible, so they are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp010",
@@ -212,7 +554,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by velocity exchange and momentum conservation."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by velocity exchange and momentum conservation.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "For a 1-D elastic collision between EQUAL masses, a quick shortcut for the final velocities is to:",
+          "choices": [
+            {"label": "A", "text": "swap the two initial velocities"},
+            {"label": "B", "text": "set both final velocities to zero"},
+            {"label": "C", "text": "add the two initial velocities together"},
+            {"label": "D", "text": "reverse only the heavier object's velocity"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Equal-mass elastic collisions exchange the objects' velocities."
+        },
+        {
+          "level": 2,
+          "prompt": "Besides the velocity-exchange shortcut, which single principle lets you solve for B's final velocity from the other three known velocities?",
+          "choices": [
+            {"label": "A", "text": "conservation of total momentum"},
+            {"label": "B", "text": "conservation of kinetic energy only"},
+            {"label": "C", "text": "Newton's third law of motion"},
+            {"label": "D", "text": "the impulse–momentum theorem applied to gravity"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "With three of the four velocities known, conservation of momentum determines B's final velocity."
+        },
+        {
+          "level": 3,
+          "prompt": "The total momentum (per unit mass) is 5 + (−3) = +2, and A carries −3 after the collision, so B must move in +x. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'3.0 m/s in the −x-direction' and '5.0 m/s in the −x-direction'"},
+            {"label": "B", "text": "'3.0 m/s in the +x-direction' and '5.0 m/s in the +x-direction'"},
+            {"label": "C", "text": "'3.0 m/s in the +x-direction' and '3.0 m/s in the −x-direction'"},
+            {"label": "D", "text": "'5.0 m/s in the +x-direction' and '5.0 m/s in the −x-direction'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "B must move in +x to keep the total momentum positive, so both −x options are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp011",
@@ -232,7 +612,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from momentum and kinetic-energy conservation."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from momentum and kinetic-energy conservation.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "If a collision leaves the total kinetic energy unchanged, the collision is:",
+          "choices": [
+            {"label": "A", "text": "elastic"},
+            {"label": "B", "text": "perfectly inelastic"},
+            {"label": "C", "text": "impossible"},
+            {"label": "D", "text": "one in which momentum is not conserved"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A collision that conserves kinetic energy is by definition elastic."
+        },
+        {
+          "level": 2,
+          "prompt": "With no external forces and A ending at rest, momentum conservation (equal masses) forces B's final speed to be what, so you can then test kinetic energy?",
+          "choices": [
+            {"label": "A", "text": "12 m/s (equal to A's initial speed)"},
+            {"label": "B", "text": "6 m/s"},
+            {"label": "C", "text": "24 m/s"},
+            {"label": "D", "text": "0 m/s"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Momentum conservation (A stops, equal masses) gives B the full 12 m/s, which you then use to compare kinetic energies."
+        },
+        {
+          "level": 3,
+          "prompt": "The problem states there are no external forces, so momentum is definitely conserved and the situation is fully determined. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'Neither momentum nor kinetic energy is conserved.' and 'More information is needed...'"},
+            {"label": "B", "text": "'Both momentum and kinetic energy are conserved.' and 'Momentum is conserved, but kinetic energy is not...'"},
+            {"label": "C", "text": "'Neither momentum nor kinetic energy is conserved.' and 'Both momentum and kinetic energy are conserved.'"},
+            {"label": "D", "text": "'Momentum is conserved, but kinetic energy is not...' and 'More information is needed...'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "No external forces guarantees momentum is conserved and the outcome is determinable, eliminating 'neither conserved' and 'more information needed'."
+        }
+      ]
     },
     {
       "id": "cpbs-xp012",
@@ -252,7 +670,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the definition of an inelastic collision."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the definition of an inelastic collision.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In ANY collision of an isolated system (no external forces), which quantity is always conserved?",
+          "choices": [
+            {"label": "A", "text": "total momentum"},
+            {"label": "B", "text": "total kinetic energy"},
+            {"label": "C", "text": "total mechanical potential energy"},
+            {"label": "D", "text": "nothing is conserved"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Momentum is conserved in any isolated collision, elastic or inelastic."
+        },
+        {
+          "level": 2,
+          "prompt": "Two objects stick together in a collision and some kinetic energy is lost. What can you still say about the system's momentum (no external forces)?",
+          "choices": [
+            {"label": "A", "text": "it is conserved (unchanged)"},
+            {"label": "B", "text": "it is lost along with the kinetic energy"},
+            {"label": "C", "text": "it doubles"},
+            {"label": "D", "text": "it cannot be determined"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Even when kinetic energy is lost, an isolated system's momentum is conserved."
+        },
+        {
+          "level": 3,
+          "prompt": "Momentum is conserved in every isolated collision. Which pair of options can be eliminated on that basis alone?",
+          "choices": [
+            {"label": "A", "text": "'Momentum is not conserved, and kinetic energy is conserved.' and 'Momentum is not conserved, and kinetic energy is not conserved.'"},
+            {"label": "B", "text": "'Momentum is conserved, and kinetic energy is conserved.' and 'Momentum is conserved, and kinetic energy is not conserved.'"},
+            {"label": "C", "text": "'Momentum is conserved, and kinetic energy is conserved.' and 'Momentum is not conserved, and kinetic energy is conserved.'"},
+            {"label": "D", "text": "'Momentum is not conserved, and kinetic energy is not conserved.' and 'Momentum is conserved, and kinetic energy is not conserved.'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Both options claiming momentum is not conserved are eliminated, since isolated collisions always conserve momentum."
+        }
+      ]
     },
     {
       "id": "cpbs-xp013",
@@ -272,7 +728,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (equal-mass elastic collisions exchange velocities)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (equal-mass elastic collisions exchange velocities).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Two equal masses collide elastically in one dimension. The result is that they:",
+          "choices": [
+            {"label": "A", "text": "exchange their velocities"},
+            {"label": "B", "text": "both reverse and halve their speeds"},
+            {"label": "C", "text": "both continue unchanged"},
+            {"label": "D", "text": "come to rest"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Equal-mass 1-D elastic collisions swap the two velocities."
+        },
+        {
+          "level": 2,
+          "prompt": "Using the equal-mass elastic result, what will mass A's final velocity equal?",
+          "choices": [
+            {"label": "A", "text": "mass B's initial velocity"},
+            {"label": "B", "text": "mass A's own initial velocity"},
+            {"label": "C", "text": "the average of the two initial velocities"},
+            {"label": "D", "text": "zero"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "In an equal-mass elastic collision each object takes on the other's initial velocity."
+        },
+        {
+          "level": 3,
+          "prompt": "The total momentum (per unit mass) is 4 + (−5) = −1. Which pair of options can be eliminated because their final total momentum (±9) does not match?",
+          "choices": [
+            {"label": "A", "text": "'Mass A will stop; mass B will move 9 m/s +x' and 'Mass B will stop; mass A will move 9 m/s −x'"},
+            {"label": "B", "text": "'Both will move 0.5 m/s −x' and 'A moves 5 m/s −x; B moves 4 m/s +x'"},
+            {"label": "C", "text": "'Both will move 0.5 m/s −x' and 'Mass A will stop; mass B will move 9 m/s +x'"},
+            {"label": "D", "text": "'Mass B will stop; mass A will move 9 m/s −x' and 'A moves 5 m/s −x; B moves 4 m/s +x'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Those two give a total final momentum of ±9 (per unit mass), not −1, so they violate momentum conservation and are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp014",
@@ -292,7 +786,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In a perfectly inelastic collision, the change in the system's kinetic energy is:",
+          "choices": [
+            {"label": "A", "text": "negative (kinetic energy decreases)"},
+            {"label": "B", "text": "zero"},
+            {"label": "C", "text": "positive"},
+            {"label": "D", "text": "always equal to the initial kinetic energy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Perfectly inelastic collisions lose kinetic energy, so ΔKE is negative."
+        },
+        {
+          "level": 2,
+          "prompt": "To find ΔKE you first need the common final velocity. Which equation gives it?",
+          "choices": [
+            {"label": "A", "text": "v = (2.0·15)/(2.0 + 5.0)"},
+            {"label": "B", "text": "v = (2.0·15)/(5.0)"},
+            {"label": "C", "text": "v = 2.0·15"},
+            {"label": "D", "text": "v = (2.0 + 5.0)·15"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Momentum conservation for the stuck-together masses gives v = m_A v_A /(m_A + m_B)."
+        },
+        {
+          "level": 3,
+          "prompt": "The masses keep moving after they stick, so kinetic energy drops but does NOT vanish (225 J is the entire initial KE). Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'no change' and 'decrease by 225 J'"},
+            {"label": "B", "text": "'decrease by 161 J' and 'decrease by 64 J'"},
+            {"label": "C", "text": "'no change' and 'decrease by 161 J'"},
+            {"label": "D", "text": "'decrease by 225 J' and 'decrease by 64 J'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "KE must decrease (eliminating 'no change') but cannot drop by the full 225 J while the combined mass keeps moving, so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp015",
@@ -312,7 +844,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (collision forces >> friction during impact; friction is an external force otherwise)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (collision forces >> friction during impact; friction is an external force otherwise).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The total momentum of a system is conserved only when:",
+          "choices": [
+            {"label": "A", "text": "there is no net external force on the system"},
+            {"label": "B", "text": "the objects have equal mass"},
+            {"label": "C", "text": "kinetic energy is also conserved"},
+            {"label": "D", "text": "the objects are moving"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Conservation of momentum requires zero net external force."
+        },
+        {
+          "level": 2,
+          "prompt": "During the brief collision the internal contact forces are huge compared with friction, but before and after the collision friction acts alone. When is friction the important EXTERNAL force here?",
+          "choices": [
+            {"label": "A", "text": "before and after the collision (while sliding), not during the brief impact"},
+            {"label": "B", "text": "only during the brief impact"},
+            {"label": "C", "text": "never, because the table is frictionless"},
+            {"label": "D", "text": "at all times equally"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Friction (an external force) dominates during the sliding phases but is negligible during the brief, high-force collision."
+        },
+        {
+          "level": 3,
+          "prompt": "The block visibly slows from friction (12→10, then to a stop), yet during the brief collision momentum is essentially conserved. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'Momentum is not conserved at any time...' and 'Momentum is conserved at all times...'"},
+            {"label": "B", "text": "'conserved during the collision, but not before and after' and 'not conserved during the collision, but conserved before and after'"},
+            {"label": "C", "text": "'Momentum is not conserved at any time...' and 'conserved during the collision, but not before and after'"},
+            {"label": "D", "text": "'Momentum is conserved at all times...' and 'not conserved during the collision, but conserved before and after'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Momentum is ~conserved during the impact (eliminating 'never') but friction removes it while sliding (eliminating 'always'), so both extremes are wrong."
+        }
+      ]
     },
     {
       "id": "cpbs-xp016",
@@ -332,7 +902,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In a totally inelastic collision, the objects afterward:",
+          "choices": [
+            {"label": "A", "text": "move together with a common velocity"},
+            {"label": "B", "text": "move apart at equal speeds"},
+            {"label": "C", "text": "both come to rest"},
+            {"label": "D", "text": "exchange velocities"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Totally inelastic means the objects stick and move together."
+        },
+        {
+          "level": 2,
+          "prompt": "With A (mass m, 24 m/s) and B (mass 2m, at rest) sticking together, which momentum equation applies?",
+          "choices": [
+            {"label": "A", "text": "m·24 = (m + 2m)·v"},
+            {"label": "B", "text": "m·24 = (2m)·v"},
+            {"label": "C", "text": "m·24 = (m)·v"},
+            {"label": "D", "text": "½m·24² = ½(3m)·v²"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Momentum conservation: initial m·24 equals the combined mass (3m) times the common velocity."
+        },
+        {
+          "level": 3,
+          "prompt": "The total momentum before the collision points in +x and is not zero, so the stuck-together objects must move in +x. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'Neither A nor B is moving.' and 'A is moving 24 m/s −x; B is not moving.'"},
+            {"label": "B", "text": "'A is not moving; B is moving 24 m/s +x.' and 'Both A and B move together 8 m/s +x.'"},
+            {"label": "C", "text": "'Neither A nor B is moving.' and 'A is not moving; B is moving 24 m/s +x.'"},
+            {"label": "D", "text": "'A is moving 24 m/s −x; B is not moving.' and 'Both A and B move together 8 m/s +x.'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A zero or −x final motion violates conservation of the positive total momentum, so those two options are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp017",
@@ -352,7 +960,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by momentum conservation."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by momentum conservation.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "For two objects of EQUAL mass, conservation of momentum can be written (per unit mass) as:",
+          "choices": [
+            {"label": "A", "text": "v(A,initial) + v(B,initial) = v(A,final) + v(B,final)"},
+            {"label": "B", "text": "v(A,initial) − v(B,initial) = v(A,final) + v(B,final)"},
+            {"label": "C", "text": "v(A,initial) × v(B,initial) = v(A,final) × v(B,final)"},
+            {"label": "D", "text": "v(A,initial) + v(B,initial) = 0"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Equal masses cancel, so the sum of initial velocities equals the sum of final velocities."
+        },
+        {
+          "level": 2,
+          "prompt": "Taking +x as positive, what is the conserved total (per unit mass), i.e. the left side of 2 + (−6) = (−4) + v_B?",
+          "choices": [
+            {"label": "A", "text": "−4"},
+            {"label": "B", "text": "+8"},
+            {"label": "C", "text": "+4"},
+            {"label": "D", "text": "−8"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "2 + (−6) = −4, the conserved total per unit mass."
+        },
+        {
+          "level": 3,
+          "prompt": "A student guesses that B simply reverses its own initial 6 m/s to become 6 m/s +x. Which listed option is this tempting but incorrect guess?",
+          "choices": [
+            {"label": "A", "text": "'6 m/s in the +x-direction'"},
+            {"label": "B", "text": "'4 m/s in the +x-direction'"},
+            {"label": "C", "text": "'zero'"},
+            {"label": "D", "text": "'4 m/s in the −x-direction'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Assuming B just reverses its 6 m/s gives '6 m/s +x', which ignores momentum conservation—a trap, not the answer."
+        }
+      ]
     },
     {
       "id": "cpbs-xp018",
@@ -372,7 +1018,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (center-of-mass velocity is conserved with no external force)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (center-of-mass velocity is conserved with no external force).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "On a frictionless surface, the center-of-mass velocity of a system during a collision:",
+          "choices": [
+            {"label": "A", "text": "does not change"},
+            {"label": "B", "text": "drops to zero"},
+            {"label": "C", "text": "doubles"},
+            {"label": "D", "text": "reverses"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "No external force means the center-of-mass velocity is unchanged."
+        },
+        {
+          "level": 2,
+          "prompt": "What is required to change a system's center-of-mass velocity, and is it present here (frictionless surface)?",
+          "choices": [
+            {"label": "A", "text": "a net external force—absent here, so v_cm is unchanged"},
+            {"label": "B", "text": "the internal collision forces—present, so v_cm changes"},
+            {"label": "C", "text": "the masses being unequal"},
+            {"label": "D", "text": "the objects sticking together"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Only a net external force changes v_cm; internal collision forces and sticking do not."
+        },
+        {
+          "level": 3,
+          "prompt": "The center of mass moves at v_cm = (1.0·8)/(1.0+3.0) = 2 m/s in +x. A decrease of 6 or 8 m/s would make it negative, which is impossible here. Which pair can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'decrease by 6 m/s' and 'decrease by 8 m/s'"},
+            {"label": "B", "text": "'no change' and 'decrease by 2 m/s'"},
+            {"label": "C", "text": "'no change' and 'decrease by 6 m/s'"},
+            {"label": "D", "text": "'decrease by 2 m/s' and 'decrease by 8 m/s'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "v_cm is only 2 m/s, so decreases of 6 or 8 m/s would drive it negative—impossible—so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp019",
@@ -392,7 +1076,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/8-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from conservation of momentum (center-of-mass motion)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from conservation of momentum (center-of-mass motion).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The center-of-mass velocity of a system is determined by:",
+          "choices": [
+            {"label": "A", "text": "the total momentum divided by the total mass"},
+            {"label": "B", "text": "the total kinetic energy"},
+            {"label": "C", "text": "only the faster object's velocity"},
+            {"label": "D", "text": "the amount of energy lost in the collision"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "v_cm equals total momentum divided by total mass."
+        },
+        {
+          "level": 2,
+          "prompt": "This inelastic collision loses kinetic energy. Does losing kinetic energy change the total momentum (no external force)?",
+          "choices": [
+            {"label": "A", "text": "no—total momentum, and therefore v_cm, is unchanged"},
+            {"label": "B", "text": "yes—momentum decreases along with the energy"},
+            {"label": "C", "text": "yes—momentum drops to zero when they stick"},
+            {"label": "D", "text": "only the direction of the momentum changes"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Energy loss does not affect momentum; with no external force, total momentum and v_cm are conserved."
+        },
+        {
+          "level": 3,
+          "prompt": "With momentum conserved, the center-of-mass velocity keeps the same magnitude AND direction. Which pair of options can be eliminated because they claim its magnitude changes?",
+          "choices": [
+            {"label": "A", "text": "'will decrease after the collision (but not to zero)' and 'will drop to zero...'"},
+            {"label": "B", "text": "'will remain the same...' and 'magnitude remains the same, but direction changes'"},
+            {"label": "C", "text": "'will decrease after the collision (but not to zero)' and 'magnitude remains the same, but direction changes'"},
+            {"label": "D", "text": "'will drop to zero...' and 'will remain the same...'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Conserved momentum means v_cm's magnitude is unchanged, eliminating the 'decrease' and 'drop to zero' options."
+        }
+      ]
     }
   ]
 }

@@ -90,7 +90,8 @@ def _read_local_attempts(col: Collection) -> list[dict[str, Any]]:
     rows = col.db.all(
         """
         select id, session_id, question_id, selected_answer, correct,
-               time_on_question_seconds, section, topic, answered_at
+               time_on_question_seconds, section, topic, answered_at,
+               hint_level_used, assisted
         from practice_attempts
         where session_id is not null
         """
@@ -106,6 +107,8 @@ def _read_local_attempts(col: Collection) -> list[dict[str, Any]]:
         section,
         topic,
         answered_at,
+        hint_level_used,
+        assisted,
     ) in rows:
         out.append(
             {
@@ -118,6 +121,10 @@ def _read_local_attempts(col: Collection) -> list[dict[str, Any]]:
                 "section": section or "",
                 "topic": topic or "",
                 "answeredAt": int(answered_at or 0),
+                # SpeedyCAT graduated hint ladder: carried so the Performance
+                # pillar's anti-gaming penalty stays consistent across devices.
+                "hintLevelUsed": int(hint_level_used or 0),
+                "assisted": bool(assisted),
             }
         )
     return out
@@ -332,6 +339,9 @@ def ingest_results(col: Collection, device_id: str) -> int:
             a.get("section", "") or "",
             a.get("topic", "") or "",
             int(a.get("answeredAt", 0) or 0),
+            # SpeedyCAT graduated hint ladder (default 0/false for older files).
+            int(a.get("hintLevelUsed", 0) or 0),
+            1 if a.get("assisted") else 0,
         )
         for a in merged
     ]
@@ -339,8 +349,9 @@ def ingest_results(col: Collection, device_id: str) -> int:
         """
         insert or replace into practice_attempts
         (id, session_id, full_length_attempt_id, question_id, selected_answer,
-         correct, time_on_question_seconds, section, topic, answered_at)
-        values (?, ?, NULL, ?, ?, ?, ?, ?, ?, ?)
+         correct, time_on_question_seconds, section, topic, answered_at,
+         hint_level_used, assisted)
+        values (?, ?, NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         params,
     )

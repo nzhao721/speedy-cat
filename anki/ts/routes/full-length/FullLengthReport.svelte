@@ -4,16 +4,19 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 -->
 <!--
 SpeedyCAT: full-length post-test report. Per-section correct/total, accuracy and
-time, plus overall raw correct. Scaled scores (118–132 per section, 472–528
-overall) are only shown when licensed AAMC scoring data provides them — the
-AI-generated proof-of-concept forms deliberately refuse to invent a scaled
-score rather than show a misleading number.
+time, plus overall raw correct. Alongside the raw score it shows an ESTIMATED
+MCAT-scale score (118–132 per section, 472–528 overall) from a deterministic
+representative raw→scaled conversion computed in the Rust backend
+(rslib/src/practice/scoring.rs), anchored to AAMC's published scoring examples.
+It is an estimate on AI-generated proof-of-concept forms — not an official score
+and not an AI output — and is labelled as such.
 -->
 <script lang="ts">
     import { createEventDispatcher } from "svelte";
 
     import {
         formatDurationLong,
+        SCALED_SCORE_CAPTION,
         sectionLong,
         type FullLengthReport,
     } from "../practice/lib";
@@ -46,7 +49,7 @@ score rather than show a misleading number.
             <div class="value">
                 {report.overallScaledScore ?? "N/A"}
             </div>
-            <div class="label">Scaled score (472–528)</div>
+            <div class="label">Est. scaled score (472–528)</div>
         </div>
     </div>
 
@@ -57,7 +60,7 @@ score rather than show a misleading number.
                 <th>Correct</th>
                 <th>Accuracy</th>
                 <th>Time</th>
-                <th>Scaled (118–132)</th>
+                <th>Est. scaled (118–132)</th>
             </tr>
         </thead>
         <tbody>
@@ -76,9 +79,9 @@ score rather than show a misleading number.
     </table>
 
     <p class="disclaimer">
-        Scaled scores require licensed AAMC scoring data and are shown as “N/A” for the
-        AI-generated proof-of-concept forms. Raw accuracy above is based only on the
-        questions you answered.
+        {SCALED_SCORE_CAPTION}
+        The raw score above counts unanswered questions as incorrect, matching how the MCAT
+        is scored.
     </p>
 
     <div class="actions">

@@ -21,6 +21,8 @@ use anki_proto::practice::AnswerChoice;
 use anki_proto::practice::FullLengthBreak;
 use anki_proto::practice::FullLengthSection;
 use anki_proto::practice::FullLengthTest;
+use anki_proto::practice::HintChoice;
+use anki_proto::practice::HintSubquestion;
 use anki_proto::practice::LoadBundleResponse;
 use anki_proto::practice::Passage;
 use anki_proto::practice::PracticeQuestion;
@@ -47,6 +49,32 @@ const MID_EXAM_BREAK_SECONDS: u32 = 1800;
 struct RawChoice {
     label: String,
     text: String,
+}
+
+// SpeedyCAT graduated hint ladder — raw (JSON) shapes. The content generators
+// own the hint content in the question bundles; we only parse it, defensively.
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct RawHintChoice {
+    #[serde(default)]
+    label: String,
+    #[serde(default)]
+    text: String,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct RawHint {
+    #[serde(default)]
+    level: u32,
+    #[serde(default)]
+    prompt: String,
+    #[serde(default)]
+    choices: Vec<RawHintChoice>,
+    #[serde(default)]
+    correct_answer: String,
+    #[serde(default)]
+    rationale: String,
 }
 
 #[derive(Debug, Deserialize)]
@@ -80,6 +108,9 @@ struct RawQuestion {
     answer_provenance: Option<String>,
     #[serde(default)]
     notes: Option<String>,
+    // SpeedyCAT graduated hint ladder (generated separately into the bundle).
+    #[serde(default)]
+    hints: Vec<RawHint>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -189,6 +220,49 @@ struct FullLengthBundle {
 
 // ---- Helpers --------------------------------------------------------------
 
+/// SpeedyCAT graduated hint ladder: convert the raw hint subquestions into
+/// validated proto messages, DEFENSIVELY. Content generation is asynchronous, so
+/// a question may temporarily carry malformed/partial hints; we keep only the
+/// well-formed tiers (a non-empty prompt, exactly 4 choices, and a
+/// `correctAnswer` that matches one of those choice labels) and drop the rest,
+/// so the UI simply shows the tiers that exist (or none). Levels are normalized
+/// to their 1-based position when missing/out of range so the ladder still
+/// escalates 1→N. The order in the bundle is preserved.
+fn build_hints(raw_hints: &[RawHint]) -> Vec<HintSubquestion> {
+    let mut out = Vec::new();
+    for raw in raw_hints {
+        if raw.prompt.trim().is_empty() || raw.choices.len() != 4 {
+            continue;
+        }
+        let choices: Vec<HintChoice> = raw
+            .choices
+            .iter()
+            .map(|c| HintChoice {
+                label: c.label.clone(),
+                text: c.text.clone(),
+            })
+            .collect();
+        let correct = raw.correct_answer.trim();
+        if correct.is_empty() || !choices.iter().any(|c| c.label == correct) {
+            continue;
+        }
+        let position = out.len() as u32 + 1;
+        let level = if (1..=3).contains(&raw.level) {
+            raw.level
+        } else {
+            position
+        };
+        out.push(HintSubquestion {
+            level,
+            prompt: raw.prompt.clone(),
+            choices,
+            correct_answer: correct.to_string(),
+            rationale: raw.rationale.clone(),
+        });
+    }
+    out
+}
+
 fn build_question(
     raw: &RawQuestion,
     section_db: &str,
@@ -219,6 +293,7 @@ fn build_question(
         answer_provenance: raw.answer_provenance.clone(),
         notes: raw.notes.clone(),
         test_id,
+        hints: build_hints(&raw.hints),
     }
 }
 

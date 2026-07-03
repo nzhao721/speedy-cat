@@ -32,7 +32,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Based on OpenStax Figure 7.45; the force profile is fully described in the question text (no image needed). OpenStax withholds the public answer key; answer independently verified by computing the area under the force-distance graph."
+      "notes": "Based on OpenStax Figure 7.45; the force profile is fully described in the question text (no image needed). OpenStax withholds the public answer key; answer independently verified by computing the area under the force-distance graph.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The work done by a variable force over a distance equals:",
+          "choices": [
+            {"label": "A", "text": "the area under the force-vs-distance graph"},
+            {"label": "B", "text": "the final force times the total distance"},
+            {"label": "C", "text": "the average distance times the time"},
+            {"label": "D", "text": "the peak force divided by the distance"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Work is the area under the force-vs-distance curve."
+        },
+        {
+          "level": 2,
+          "prompt": "The profile is a triangle (0→10 kN over 10 m), a rectangle (10 kN over 40 m), then a triangle (10 kN→0 over 10 m). How do you get the total work?",
+          "choices": [
+            {"label": "A", "text": "add the areas: ½(10)(10) + (40)(10) + ½(10)(10) kJ"},
+            {"label": "B", "text": "multiply 10 kN by the full 60 m"},
+            {"label": "C", "text": "take only the rectangle's area"},
+            {"label": "D", "text": "add only the two triangles"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Total work is the sum of the two triangular areas and the rectangular area under the graph."
+        },
+        {
+          "level": 3,
+          "prompt": "Treating the force as the full 10 kN over the entire 60 m (ignoring the ramp-up and ramp-down) overcounts the work, and 18 MJ is off by orders of magnitude. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'600 kJ' and '18 MJ'"},
+            {"label": "B", "text": "'500 kJ' and '300 kJ'"},
+            {"label": "C", "text": "'600 kJ' and '500 kJ'"},
+            {"label": "D", "text": "'18 MJ' and '300 kJ'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "600 kJ ignores the triangular ramps (overcount) and 18 MJ is far too large, so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp041",
@@ -52,7 +90,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem references Figure 7.10(c); rephrased to be self-contained since the answer follows from the spring energy relation ½kx². OpenStax withholds the public answer key; answer independently verified."
+      "notes": "Stem references Figure 7.10(c); rephrased to be self-contained since the answer follows from the spring energy relation ½kx². OpenStax withholds the public answer key; answer independently verified.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The work needed to compress a spring by a distance x (its stored elastic energy) is:",
+          "choices": [
+            {"label": "A", "text": "proportional to x² (namely ½kx²)"},
+            {"label": "B", "text": "proportional to x"},
+            {"label": "C", "text": "proportional to 1/x"},
+            {"label": "D", "text": "independent of x"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Spring energy is ½kx², proportional to the square of the compression."
+        },
+        {
+          "level": 2,
+          "prompt": "A student reasons that compressing twice as far requires twice the work. Why is this linear reasoning wrong for a spring?",
+          "choices": [
+            {"label": "A", "text": "spring energy depends on x², not x, so the scaling is not linear"},
+            {"label": "B", "text": "it is actually correct—work is linear in x"},
+            {"label": "C", "text": "because the spring constant k also doubles"},
+            {"label": "D", "text": "because springs store no energy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Spring energy ∝ x², so the work does not merely double when x doubles."
+        },
+        {
+          "level": 3,
+          "prompt": "Compressing the spring FARTHER must require MORE work, not less or the same. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'Half as much' and 'The same'"},
+            {"label": "B", "text": "'Twice as much' and 'Four times as much'"},
+            {"label": "C", "text": "'Half as much' and 'Twice as much'"},
+            {"label": "D", "text": "'The same' and 'Four times as much'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "More compression means more work, so 'half' and 'the same' are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp042",
@@ -72,7 +148,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the sign of the work done by gravity."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the sign of the work done by gravity.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Gravity does positive work (raising KE) when motion has a downward component and negative work (lowering KE) when it has an upward component. When motion is exactly horizontal, gravity does:",
+          "choices": [
+            {"label": "A", "text": "zero work (no effect on KE)"},
+            {"label": "B", "text": "maximum positive work"},
+            {"label": "C", "text": "maximum negative work"},
+            {"label": "D", "text": "work equal to mgh"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Gravity does no work when the displacement is perpendicular to it (horizontal motion)."
+        },
+        {
+          "level": 2,
+          "prompt": "At the very top of the loop the car's velocity is horizontal while gravity points straight down. What is gravity's effect on the KE right there?",
+          "choices": [
+            {"label": "A", "text": "no effect (gravity is perpendicular to the motion)"},
+            {"label": "B", "text": "it increases the KE"},
+            {"label": "C", "text": "it decreases the KE"},
+            {"label": "D", "text": "it reverses the KE"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "At the top the motion is horizontal and gravity is vertical, so gravity does no work there."
+        },
+        {
+          "level": 3,
+          "prompt": "You established that at the TOP gravity has NO effect on kinetic energy. Which pair of options can be eliminated because their middle blank (the top) is nonzero?",
+          "choices": [
+            {"label": "A", "text": "'increases, decreases, has no effect on' and 'decreases, increases, has no effect on'"},
+            {"label": "B", "text": "'decreases, has no effect on, increases' and 'increases, has no effect on, decreases'"},
+            {"label": "C", "text": "'increases, decreases, has no effect on' and 'increases, has no effect on, decreases'"},
+            {"label": "D", "text": "'decreases, increases, has no effect on' and 'decreases, has no effect on, increases'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Both of those put a nonzero effect at the top, contradicting that gravity does no work there, so they are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp043",
@@ -92,7 +206,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by the work-energy theorem (net force × distance)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by the work-energy theorem (net force × distance).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The work–energy theorem says the change in an object's kinetic energy equals:",
+          "choices": [
+            {"label": "A", "text": "the NET work done on it (net force × distance)"},
+            {"label": "B", "text": "only the applied force times distance"},
+            {"label": "C", "text": "the mass times the distance"},
+            {"label": "D", "text": "the drag force times the distance"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "ΔKE equals the net work, i.e., net force times distance."
+        },
+        {
+          "level": 2,
+          "prompt": "The motor pushes with 75 N and drag opposes with 30 N. What NET force should you use over the 2 m?",
+          "choices": [
+            {"label": "A", "text": "75 − 30 = 45 N"},
+            {"label": "B", "text": "75 + 30 = 105 N"},
+            {"label": "C", "text": "75 N (ignore the drag)"},
+            {"label": "D", "text": "30 N (drag only)"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The net force is the forward force minus the opposing drag: 45 N."
+        },
+        {
+          "level": 3,
+          "prompt": "Drag OPPOSES the motor, so the net force (and thus the work) must be LESS than using the 75 N motor force alone. Which pair of options can be eliminated as too large?",
+          "choices": [
+            {"label": "A", "text": "'210 J' and '150 J'"},
+            {"label": "B", "text": "'90 J' and '60 J'"},
+            {"label": "C", "text": "'210 J' and '90 J'"},
+            {"label": "D", "text": "'150 J' and '60 J'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Using 75 N alone gives 150 J and adding drag (105 N) gives 210 J; since drag reduces the net force, both are too large."
+        }
+      ]
     },
     {
       "id": "cpbs-xp044",
@@ -112,7 +264,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the sign of work done by parallel vs antiparallel forces."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the sign of work done by parallel vs antiparallel forces.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A force does POSITIVE work (adding mechanical energy) when it points:",
+          "choices": [
+            {"label": "A", "text": "parallel to (along) the motion"},
+            {"label": "B", "text": "antiparallel to (against) the motion"},
+            {"label": "C", "text": "perpendicular to the motion"},
+            {"label": "D", "text": "it never adds energy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A force along the motion does positive work, adding mechanical energy."
+        },
+        {
+          "level": 2,
+          "prompt": "A sled coasting forward is pushed by a force pointing BACKWARD (opposite its motion). Over that push, its mechanical energy:",
+          "choices": [
+            {"label": "A", "text": "decreases"},
+            {"label": "B", "text": "increases"},
+            {"label": "C", "text": "stays exactly the same"},
+            {"label": "D", "text": "cannot change"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A backward (antiparallel) force does negative work, so mechanical energy decreases."
+        },
+        {
+          "level": 3,
+          "prompt": "A force parallel to the motion (the FIRST blank) must INCREASE mechanical energy. Which pair of options can be eliminated because their first blank is 'decreases'?",
+          "choices": [
+            {"label": "A", "text": "'decreases, increases' and 'decreases, decreases'"},
+            {"label": "B", "text": "'increases, increases' and 'increases, decreases'"},
+            {"label": "C", "text": "'increases, increases' and 'decreases, decreases'"},
+            {"label": "D", "text": "'increases, decreases' and 'decreases, increases'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A parallel force adds energy, so both options beginning with 'decreases' are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp045",
@@ -132,7 +322,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by the work-energy theorem."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by the work-energy theorem.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "For a connected system pulled by an external force, the change in the system's kinetic energy equals:",
+          "choices": [
+            {"label": "A", "text": "the net EXTERNAL work (external force × distance)"},
+            {"label": "B", "text": "the internal rope tension times distance"},
+            {"label": "C", "text": "the mass times the distance"},
+            {"label": "D", "text": "zero, always"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "ΔKE of the system equals the net external work; internal forces do no net work."
+        },
+        {
+          "level": 2,
+          "prompt": "The child pulls with 30 N over 5.0 m. Which quantities give the system's change in kinetic energy (the rope between the wagons is internal)?",
+          "choices": [
+            {"label": "A", "text": "30 N × 5.0 m"},
+            {"label": "B", "text": "30 N × 5.0 m × 2 (once per wagon)"},
+            {"label": "C", "text": "30 N × 5.0 m ÷ 2"},
+            {"label": "D", "text": "(10 + 10) kg × 5.0 m"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Only the external 30 N over 5.0 m does net work; the internal rope tension cancels out."
+        },
+        {
+          "level": 3,
+          "prompt": "The internal rope tension does no NET work, so you should not double the work (one per wagon) nor halve it. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'300 J' and '75 J'"},
+            {"label": "B", "text": "'150 J' and '60 J'"},
+            {"label": "C", "text": "'300 J' and '150 J'"},
+            {"label": "D", "text": "'75 J' and '60 J'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Counting 30 N once over 5 m gives the work; doubling it (300 J) or halving it (75 J) misuses the internal tension, so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp046",
@@ -152,7 +380,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (PE needs a reference height)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (PE needs a reference height).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Gravitational potential energy (mgh) can be assigned a value only once you have:",
+          "choices": [
+            {"label": "A", "text": "chosen a reference height where PE = 0"},
+            {"label": "B", "text": "measured the object's speed"},
+            {"label": "C", "text": "measured its kinetic energy"},
+            {"label": "D", "text": "nothing—PE is absolute"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "PE depends on a chosen reference height, so a reference is required."
+        },
+        {
+          "level": 2,
+          "prompt": "The baseball's speed (10 m/s) and mass (1.0 kg) are given, but no height or reference. Which energy can you compute and which can't you?",
+          "choices": [
+            {"label": "A", "text": "kinetic energy can be computed; potential energy cannot (no reference height)"},
+            {"label": "B", "text": "both can be computed"},
+            {"label": "C", "text": "neither can be computed"},
+            {"label": "D", "text": "potential energy can be computed; kinetic energy cannot"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "KE = ½mv² needs only mass and speed; PE needs a reference height, which is missing."
+        },
+        {
+          "level": 3,
+          "prompt": "The kinetic energy is definitely computable as ½·1.0·10² = 50 J. Which pair of options can be eliminated because they give the WRONG kinetic energy (the first value)?",
+          "choices": [
+            {"label": "A", "text": "'10 J, 20 J' and 'unknown, 50 J'"},
+            {"label": "B", "text": "'50 J, 20 J' and '50 J, unknown'"},
+            {"label": "C", "text": "'10 J, 20 J' and '50 J, 20 J'"},
+            {"label": "D", "text": "'unknown, 50 J' and '50 J, unknown'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "KE is 50 J, so options listing the KE as 10 J or 'unknown' are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp047",
@@ -172,7 +438,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The total mechanical energy of an object is:",
+          "choices": [
+            {"label": "A", "text": "the sum of its kinetic energy and potential energy (KE + PE)"},
+            {"label": "B", "text": "KE minus PE"},
+            {"label": "C", "text": "KE times PE"},
+            {"label": "D", "text": "just the kinetic energy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Mechanical energy is KE + PE."
+        },
+        {
+          "level": 2,
+          "prompt": "You compute KE = ½mv² and PE = mgh, then add them. Which pair of formulas is set up correctly here?",
+          "choices": [
+            {"label": "A", "text": "KE = ½(0.305)(15.8)² and PE = (0.305)(9.8)(4.00)"},
+            {"label": "B", "text": "KE = (0.305)(15.8) and PE = (0.305)(4.00)"},
+            {"label": "C", "text": "KE = ½(0.305)(15.8) and PE = (0.305)(9.8)/4.00"},
+            {"label": "D", "text": "KE = (0.305)(15.8)² and PE = (0.305)(9.8)(4.00)²"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "KE = ½mv² and PE = mgh with the given numbers."
+        },
+        {
+          "level": 3,
+          "prompt": "The value 12.0 J is actually the POTENTIAL energy (mgh), not the kinetic energy, so options listing 12.0 J as the KE (first value) are traps. Which pair can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'12.0 J, 50.1 J' and '12.0 J, 14.4 J'"},
+            {"label": "B", "text": "'2.41 J, 14.4 J' and '38.1 J, 50.1 J'"},
+            {"label": "C", "text": "'12.0 J, 50.1 J' and '2.41 J, 14.4 J'"},
+            {"label": "D", "text": "'38.1 J, 50.1 J' and '12.0 J, 14.4 J'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "12.0 J is the potential energy (mgh), not the kinetic energy, so both options that put 12.0 J first are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp048",
@@ -192,7 +496,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The total mechanical energy of a mass–spring system is:",
+          "choices": [
+            {"label": "A", "text": "the sum of the kinetic energies plus the elastic potential energy ½k(Δx)²"},
+            {"label": "B", "text": "only the elastic potential energy"},
+            {"label": "C", "text": "only the kinetic energy"},
+            {"label": "D", "text": "the spring constant times the speed"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Total energy = the kinetic energies plus the elastic PE."
+        },
+        {
+          "level": 2,
+          "prompt": "The compression is Δx = 1.0 − 0.80 = 0.20 m, and each 4.0-kg mass moves at 0.50 m/s. Which expression gives the total energy?",
+          "choices": [
+            {"label": "A", "text": "½(25)(0.20)² + 2×½(4.0)(0.50)²"},
+            {"label": "B", "text": "½(25)(0.80)² + ½(4.0)(0.50)²"},
+            {"label": "C", "text": "½(25)(1.0)² + ½(4.0)(0.50)²"},
+            {"label": "D", "text": "(25)(0.20) + (4.0)(0.50)"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Elastic PE uses the 0.20 m compression, and BOTH masses contribute kinetic energy."
+        },
+        {
+          "level": 3,
+          "prompt": "The spring's COMPRESSION is 1.0 − 0.80 = 0.20 m, not 0.80 m. Options that use 0.80 m for the spring energy (giving ~8–9 J) are traps. Which pair can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'9.0 J' and '8.0 J'"},
+            {"label": "B", "text": "'1.0 J' and '1.5 J'"},
+            {"label": "C", "text": "'9.0 J' and '1.5 J'"},
+            {"label": "D", "text": "'8.0 J' and '1.0 J'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Using 0.80 m instead of the 0.20 m compression overstates the elastic energy (~8–9 J), so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp049",
@@ -212,7 +554,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (spring energy ∝ compression²)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (spring energy ∝ compression²).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The work stored in a compressed spring is:",
+          "choices": [
+            {"label": "A", "text": "proportional to the square of the compression (½kx²)"},
+            {"label": "B", "text": "proportional to the compression"},
+            {"label": "C", "text": "independent of the compression"},
+            {"label": "D", "text": "proportional to 1/compression"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Spring energy is ½kx², proportional to x²."
+        },
+        {
+          "level": 2,
+          "prompt": "Compressing twice as far multiplies the stored work by what factor?",
+          "choices": [
+            {"label": "A", "text": "4 (since 2² = 4)"},
+            {"label": "B", "text": "2"},
+            {"label": "C", "text": "8"},
+            {"label": "D", "text": "no change"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Work ∝ x², so doubling x multiplies the work by 4."
+        },
+        {
+          "level": 3,
+          "prompt": "Compressing farther takes MORE than 5.0 J (eliminating anything smaller), but the factor is 2² = 4, not 2³ = 8. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'2.5 J' and '40 J'"},
+            {"label": "B", "text": "'20 J' and '10 J'"},
+            {"label": "C", "text": "'2.5 J' and '20 J'"},
+            {"label": "D", "text": "'40 J' and '10 J'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "2.5 J is less than the original 5.0 J (impossible) and 40 J uses a factor of 8 instead of 4, so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp050",
@@ -232,7 +612,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (total mgh)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (total mgh).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The gravitational potential energy released by a falling mass is:",
+          "choices": [
+            {"label": "A", "text": "mgh (mass × g × height dropped)"},
+            {"label": "B", "text": "½mv²"},
+            {"label": "C", "text": "mg/h"},
+            {"label": "D", "text": "m/h"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Energy released equals mgh."
+        },
+        {
+          "level": 2,
+          "prompt": "For three masses (4.0, 4.0, 6.0 kg) each dropping 1.3 m, the total energy is:",
+          "choices": [
+            {"label": "A", "text": "(4.0 + 4.0 + 6.0) × 9.8 × 1.3"},
+            {"label": "B", "text": "(4.0 × 4.0 × 6.0) × 9.8 × 1.3"},
+            {"label": "C", "text": "6.0 × 9.8 × 1.3 (heaviest mass only)"},
+            {"label": "D", "text": "(4.0 + 4.0 + 6.0) × 1.3"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Add the masses (14 kg total) and use mgh with g and the 1.3 m drop."
+        },
+        {
+          "level": 3,
+          "prompt": "All THREE masses (total 14 kg) drop, so the energy must reflect the full 14 kg—not just one mass. Which pair of options (each based on too little mass) can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'51 J' and '76 J'"},
+            {"label": "B", "text": "'127 J' and '178 J'"},
+            {"label": "C", "text": "'51 J' and '127 J'"},
+            {"label": "D", "text": "'76 J' and '178 J'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "51 J and 76 J correspond to only a single 4.0-kg or 6.0-kg mass, far short of the full 14 kg, so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp051",
@@ -252,7 +670,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the description (many low-force turns = weak spring, large deformation)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified from the description (many low-force turns = weak spring, large deformation).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A wound watch stores energy in which form?",
+          "choices": [
+            {"label": "A", "text": "elastic potential energy in a coiled spring (the mainspring)"},
+            {"label": "B", "text": "kinetic energy of a spinning flywheel"},
+            {"label": "C", "text": "gravitational PE of a raised mass"},
+            {"label": "D", "text": "chemical energy in a battery"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A watch stores energy in the elastic PE of its coiled mainspring."
+        },
+        {
+          "level": 2,
+          "prompt": "Winding took MANY turns (a large deformation) but only a SMALL force per turn. What does 'small force per turn' say about the spring's stiffness?",
+          "choices": [
+            {"label": "A", "text": "the spring is relatively weak (low stiffness)"},
+            {"label": "B", "text": "the spring is very strong (high stiffness)"},
+            {"label": "C", "text": "it says nothing about stiffness"},
+            {"label": "D", "text": "there is no spring involved"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A small force for each turn indicates a weak (low-stiffness) spring."
+        },
+        {
+          "level": 3,
+          "prompt": "A pocket watch stores energy in a spring, not by raising a mass. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'A small mass raised a long distance' and 'A large mass raised a short distance'"},
+            {"label": "B", "text": "'A weak spring deformed a long way' and 'A strong spring deformed a short way'"},
+            {"label": "C", "text": "'A small mass raised a long distance' and 'A weak spring deformed a long way'"},
+            {"label": "D", "text": "'A large mass raised a short distance' and 'A strong spring deformed a short way'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The watch uses a spring, so both mass-raising options are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp052",
@@ -272,7 +728,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (path length × friction force)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (path length × friction force).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The work done against a constant friction force along a path is:",
+          "choices": [
+            {"label": "A", "text": "the friction force times the path length"},
+            {"label": "B", "text": "the friction force divided by the path length"},
+            {"label": "C", "text": "independent of the path length"},
+            {"label": "D", "text": "the mass times the path length"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Work against friction = friction force × distance traveled."
+        },
+        {
+          "level": 2,
+          "prompt": "The rug diagonal is √(3²+4²) = 5 m (friction 55 N); the floor route along two edges is 3+4 = 7 m (friction 40 N). Which two products do you compare?",
+          "choices": [
+            {"label": "A", "text": "55 N × 5 m versus 40 N × 7 m"},
+            {"label": "B", "text": "55 N × 7 m versus 40 N × 5 m"},
+            {"label": "C", "text": "55 N × 3 m versus 40 N × 4 m"},
+            {"label": "D", "text": "55 N × 40 N versus 5 m × 7 m"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Multiply each path's friction force by that path's length: rug 55×5, floor 40×7."
+        },
+        {
+          "level": 3,
+          "prompt": "The two amounts of work are about 275 J and 280 J, so the DIFFERENCE ('extra') is only about 5 J—not 275 or 280 J. Which pair of options can be eliminated for citing the wrong 'extra'?",
+          "choices": [
+            {"label": "A", "text": "'Across the rug is 275 J extra' and 'Around the floor is 280 J extra'"},
+            {"label": "B", "text": "'Around the floor is 5 J extra' and 'Across the rug is 5 J extra'"},
+            {"label": "C", "text": "'Across the rug is 275 J extra' and 'Around the floor is 5 J extra'"},
+            {"label": "D", "text": "'Around the floor is 280 J extra' and 'Across the rug is 5 J extra'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "275 J and 280 J are the total works, not the extra; the extra is their ~5 J difference, so those two options are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp053",
@@ -292,7 +786,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (work in minus friction work)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (work in minus friction work).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "When friction acts over a distance, the kinetic energy delivered is the input energy:",
+          "choices": [
+            {"label": "A", "text": "minus the work done by friction (force × distance)"},
+            {"label": "B", "text": "plus the work done by friction"},
+            {"label": "C", "text": "times the friction force"},
+            {"label": "D", "text": "unchanged by friction"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Friction removes energy, so KE = input energy − friction work."
+        },
+        {
+          "level": 2,
+          "prompt": "The barrel/dart length is 10 cm = 0.10 m and friction is 10 N. How much energy does friction remove?",
+          "choices": [
+            {"label": "A", "text": "10 N × 0.10 m = 1 J"},
+            {"label": "B", "text": "10 N × 10 m = 100 J"},
+            {"label": "C", "text": "10 N × 0.01 m = 0.1 J"},
+            {"label": "D", "text": "10 N ÷ 0.10 m = 100 J"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Friction work = 10 N × 0.10 m = 1 J (note 10 cm = 0.10 m)."
+        },
+        {
+          "level": 3,
+          "prompt": "Friction removes exactly 10 N × 0.10 m = 1 J, so the kinetic energy is 1 J below 30 J—not 0 J below and not 3 J below. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'30 J' and '27 J'"},
+            {"label": "B", "text": "'29 J' and '28 J'"},
+            {"label": "C", "text": "'30 J' and '29 J'"},
+            {"label": "D", "text": "'27 J' and '28 J'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A 1 J loss rules out 30 J (no loss) and 27 J (a 3 J loss), so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp054",
@@ -312,7 +844,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A stretchy rope (acting like a spring) stores potential energy when it is:",
+          "choices": [
+            {"label": "A", "text": "stretched (its length increases beyond natural length)"},
+            {"label": "B", "text": "kept at its natural length"},
+            {"label": "C", "text": "cut"},
+            {"label": "D", "text": "only shortened below natural length"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "An elastic rope stores PE when stretched from its natural length."
+        },
+        {
+          "level": 2,
+          "prompt": "As the pulled front wagon momentarily pulls AHEAD of the rear wagon, what happens to the stretchy rope between them?",
+          "choices": [
+            {"label": "A", "text": "it stretches, storing elastic potential energy"},
+            {"label": "B", "text": "it goes slack, storing nothing"},
+            {"label": "C", "text": "it compresses"},
+            {"label": "D", "text": "it stays exactly at its natural length"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The front wagon moving ahead stretches the elastic rope, storing PE."
+        },
+        {
+          "level": 3,
+          "prompt": "The scenario is fully specified, and BOTH speeding up and stretching occur. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'kinetic energy of the wagons (only)' and 'not enough information'"},
+            {"label": "B", "text": "'potential energy stored in the spring (only)' and 'both A and B'"},
+            {"label": "C", "text": "'kinetic energy of the wagons (only)' and 'both A and B'"},
+            {"label": "D", "text": "'not enough information' and 'both A and B'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The scenario is fully specified (eliminating 'not enough information') and more than just the wagons' KE changes (eliminating the KE-only option)."
+        }
+      ]
     },
     {
       "id": "cpbs-xp055",
@@ -332,7 +902,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation. The answer choices imply g = 10 m/s² (mgh - friction work = 500 - 100 = 400 J exactly)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation. The answer choices imply g = 10 m/s² (mgh - friction work = 500 - 100 = 400 J exactly).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "When an object falls WITH air resistance, its kinetic energy at the bottom equals:",
+          "choices": [
+            {"label": "A", "text": "the gravitational energy released (mgh) minus the energy removed by air resistance"},
+            {"label": "B", "text": "mgh plus the air-resistance work"},
+            {"label": "C", "text": "just mgh"},
+            {"label": "D", "text": "just the air-resistance work"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "KE = energy released by gravity (mgh) minus the work done against air resistance."
+        },
+        {
+          "level": 2,
+          "prompt": "Gravity releases mgh = 5.0×10×10 and air resistance removes 10 N × 10 m. Which combination gives the KE at the ground?",
+          "choices": [
+            {"label": "A", "text": "(5.0×10×10) − (10×10)"},
+            {"label": "B", "text": "(5.0×10×10) + (10×10)"},
+            {"label": "C", "text": "(5.0×10×10) only"},
+            {"label": "D", "text": "(10×10) only"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Subtract the air-resistance work (100 J) from the gravitational energy (500 J)."
+        },
+        {
+          "level": 3,
+          "prompt": "The answer must be an ENERGY in joules (so a value in m/s is wrong), and air resistance definitely removes some energy (so it cannot be the full 500 J). Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'12.6 m/s' and '500 J'"},
+            {"label": "B", "text": "'400 J' and '100 J'"},
+            {"label": "C", "text": "'12.6 m/s' and '400 J'"},
+            {"label": "D", "text": "'500 J' and '100 J'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "'12.6 m/s' has the wrong units for energy, and 500 J ignores the air-resistance loss, so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-xp056",
@@ -352,7 +960,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/7-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (W = F d cosθ)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified by calculation (W = F d cosθ).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "When a force acts at an angle θ to the direction of motion, the work it does is:",
+          "choices": [
+            {"label": "A", "text": "W = F·d·cosθ (only the component along the motion)"},
+            {"label": "B", "text": "W = F·d·sinθ"},
+            {"label": "C", "text": "W = F·d (the angle is ignored)"},
+            {"label": "D", "text": "W = F·d·tanθ"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Only the force component along the displacement does work: W = Fd cosθ."
+        },
+        {
+          "level": 2,
+          "prompt": "Here F = 1200 N, d = 10 km = 10,000 m, θ = 20° (cos 20° ≈ 0.94). Which setup is correct?",
+          "choices": [
+            {"label": "A", "text": "1200 × 10,000 × cos 20°"},
+            {"label": "B", "text": "1200 × 10 × cos 20°"},
+            {"label": "C", "text": "1200 × 10,000 × sin 20°"},
+            {"label": "D", "text": "1200 × 10,000 (no angle factor)"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Use W = Fd cosθ with d in meters (10 km = 10,000 m)."
+        },
+        {
+          "level": 3,
+          "prompt": "Including cos 20° (≈0.94) reduces the work only slightly below the 12 MJ you'd get ignoring the angle—and you must use cos, not sin. Which pair of options can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'12 MJ' and '4.1 MJ'"},
+            {"label": "B", "text": "'11 MJ' and '6 MJ'"},
+            {"label": "C", "text": "'12 MJ' and '11 MJ'"},
+            {"label": "D", "text": "'4.1 MJ' and '6 MJ'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "12 MJ ignores the angle entirely and 4.1 MJ uses sin 20° instead of cos, so both are eliminated."
+        }
+      ]
     }
   ]
 }

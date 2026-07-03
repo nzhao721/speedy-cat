@@ -73,7 +73,81 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
       "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/09%3A_Acids_and_Bases/9.E%3A_Exercises",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Question + options scraped verbatim. The course's odd-answer key page (16.9) did not render during scraping; this definitional answer is independently verified."
+      "notes": "Question + options scraped verbatim. The course's odd-answer key page (16.9) did not render during scraping; this definitional answer is independently verified.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Bronsted-Lowry acid-base theory classifies substances according to the transfer of which species?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Protons (H+ ions)"
+            },
+            {
+              "label": "B",
+              "text": "Electron pairs"
+            },
+            {
+              "label": "C",
+              "text": "Neutrons"
+            },
+            {
+              "label": "D",
+              "text": "Hydroxide ions (OH-)"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "Bronsted-Lowry theory is defined entirely by the donation and acceptance of protons (H+), unlike the Lewis theory, which is based on electron pairs."
+        },
+        {
+          "level": 2,
+          "prompt": "Two of the four definitions offered in the question describe donating or accepting an electron pair. Those two definitions belong to which acid-base theory?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "The Arrhenius theory"
+            },
+            {
+              "label": "B",
+              "text": "The Lewis theory"
+            },
+            {
+              "label": "C",
+              "text": "The Bronsted-Lowry theory"
+            },
+            {
+              "label": "D",
+              "text": "The kinetic-molecular theory"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "Definitions based on donating or accepting electron pairs are the Lewis definitions, not the proton-based Bronsted-Lowry definitions."
+        },
+        {
+          "level": 3,
+          "prompt": "Using the previous step, which two of the question's options can be eliminated because they define Lewis acids/bases rather than a Bronsted-Lowry acid?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "'proton donor' and 'proton acceptor'"
+            },
+            {
+              "label": "B",
+              "text": "'proton donor' and 'electron pair donor'"
+            },
+            {
+              "label": "C",
+              "text": "'electron pair donor' and 'electron pair acceptor'"
+            },
+            {
+              "label": "D",
+              "text": "'proton acceptor' and 'electron pair acceptor'"
+            }
+          ],
+          "correctAnswer": "C",
+          "rationale": "The two electron-pair definitions are the Lewis definitions, so they can be ruled out, leaving the two proton-based options to decide between."
+        }
+      ]
     },
     {
       "id": "cpbs-002",
@@ -107,7 +181,81 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
       "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/09%3A_Acids_and_Bases/9.E%3A_Exercises",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Question + options scraped verbatim; answer independently verified (definitional)."
+      "notes": "Question + options scraped verbatim; answer independently verified (definitional).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "To form the conjugate base of an acid, what change is made to the acid's formula?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Add one H+ (a proton)"
+            },
+            {
+              "label": "B",
+              "text": "Remove one H+ (a proton)"
+            },
+            {
+              "label": "C",
+              "text": "Add a hydroxide ion (OH-)"
+            },
+            {
+              "label": "D",
+              "text": "Remove one electron"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "A conjugate base is what remains after a Bronsted acid donates (loses) one proton, so you remove an H+."
+        },
+        {
+          "level": 2,
+          "prompt": "Which option describes forming a conjugate ACID (the opposite of what the question asks) from HF?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Adding an H+ to HF to make H2F+"
+            },
+            {
+              "label": "B",
+              "text": "Removing an H+ from HF"
+            },
+            {
+              "label": "C",
+              "text": "Leaving HF completely unchanged"
+            },
+            {
+              "label": "D",
+              "text": "Adding a hydroxide ion to HF"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "Adding a proton to HF yields the conjugate acid H2F+, which is the reverse of forming a conjugate base, so it is a trap."
+        },
+        {
+          "level": 3,
+          "prompt": "A conjugate base forms by losing a positively charged proton, so it cannot itself be a cation. Which two of the options are cations (positively charged) and can be ruled out?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "'HF' and 'F-'"
+            },
+            {
+              "label": "B",
+              "text": "'H2F+' and 'H3O+'"
+            },
+            {
+              "label": "C",
+              "text": "'H2F+' and 'HF'"
+            },
+            {
+              "label": "D",
+              "text": "'H3O+' and 'F-'"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "H2F+ and H3O+ each carry a positive charge, but removing a proton from neutral HF cannot produce a cation, so both are eliminated."
+        }
+      ]
     },
     {
       "id": "cpbs-003",
@@ -141,7 +289,81 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
       "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/09%3A_Acids_and_Bases/9.E%3A_Exercises",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Question + options scraped verbatim; answer independently verified (definitional)."
+      "notes": "Question + options scraped verbatim; answer independently verified (definitional).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "On the pH scale at 25 C, what pH value corresponds to a neutral solution such as pure water?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "0"
+            },
+            {
+              "label": "B",
+              "text": "14"
+            },
+            {
+              "label": "C",
+              "text": "7"
+            },
+            {
+              "label": "D",
+              "text": "1"
+            }
+          ],
+          "correctAnswer": "C",
+          "rationale": "At 25 C pure water is neutral, with equal H3O+ and OH-, giving a pH of 7, the midpoint of the scale."
+        },
+        {
+          "level": 2,
+          "prompt": "How are the hydronium concentration [H3O+] and pH related?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "They are inversely related: a higher [H3O+] gives a lower pH"
+            },
+            {
+              "label": "B",
+              "text": "They are directly related: a higher [H3O+] gives a higher pH"
+            },
+            {
+              "label": "C",
+              "text": "They are completely unrelated"
+            },
+            {
+              "label": "D",
+              "text": "pH equals [H3O+] exactly"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "Because pH = -log[H3O+], the negative logarithm makes pH decrease as [H3O+] increases."
+        },
+        {
+          "level": 3,
+          "prompt": "Two of the main question's options describe solutions that are NOT acidic. Which pair describes a neutral or basic solution and can be eliminated?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "'pH < 7' and 'pH = 7'"
+            },
+            {
+              "label": "B",
+              "text": "'pH = 7' and 'pH > 7'"
+            },
+            {
+              "label": "C",
+              "text": "'pH < 7' and 'pH > 7'"
+            },
+            {
+              "label": "D",
+              "text": "'pH > 7' and 'the definition of acidity depends on the molecule'"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "A pH of 7 is neutral and a pH above 7 is basic, so both describe non-acidic solutions and can be ruled out."
+        }
+      ]
     },
     {
       "id": "cpbs-004",
@@ -175,7 +397,81 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
       "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/09%3A_Acids_and_Bases/9.E%3A_Exercises",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Question + options scraped verbatim; answer independently verified by calculation."
+      "notes": "Question + options scraped verbatim; answer independently verified by calculation.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Which formula gives the pH of a solution from its hydronium ion concentration?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "pH = log[H3O+]"
+            },
+            {
+              "label": "B",
+              "text": "pH = [H3O+]"
+            },
+            {
+              "label": "C",
+              "text": "pH = 14 - [H3O+]"
+            },
+            {
+              "label": "D",
+              "text": "pH = -log[H3O+]"
+            }
+          ],
+          "correctAnswer": "D",
+          "rationale": "pH is defined as the negative base-10 logarithm of the hydronium ion concentration."
+        },
+        {
+          "level": 2,
+          "prompt": "Since 4.1 is between 1 and 10, roughly what is log(4.1)? (Recall log 1 = 0 and log 10 = 1.)",
+          "choices": [
+            {
+              "label": "A",
+              "text": "About 0.6"
+            },
+            {
+              "label": "B",
+              "text": "About 4.1"
+            },
+            {
+              "label": "C",
+              "text": "About 1.6"
+            },
+            {
+              "label": "D",
+              "text": "About 41"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "log(4.1) is about 0.61, since 4.1 lies between 1 (log = 0) and 10 (log = 1)."
+        },
+        {
+          "level": 3,
+          "prompt": "For [H3O+] = 4.1 x 10^-5 M, two of the answer choices are clearly too high to be the pH. Which pair can be eliminated as too high?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "'4.10' and '4.39'"
+            },
+            {
+              "label": "B",
+              "text": "'4.10' and '5.00'"
+            },
+            {
+              "label": "C",
+              "text": "'5.00' and '9.61'"
+            },
+            {
+              "label": "D",
+              "text": "'4.39' and '9.61'"
+            }
+          ],
+          "correctAnswer": "C",
+          "rationale": "Because 4.1 x 10^-5 M is more concentrated than 1 x 10^-5 M (pH 5), the pH must be below 5, so 5.00 and the basic value 9.61 are too high."
+        }
+      ]
     },
     {
       "id": "cpbs-005",
@@ -209,7 +505,81 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
       "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/14%3A_Proteins/14.E%3A_Exercises",
       "answerProvenance": "source-answer-key",
-      "notes": "correctAnswer from the course's Chapter 16 answer key (16.14: Q1 = c)."
+      "notes": "correctAnswer from the course's Chapter 16 answer key (16.14: Q1 = c).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What structural feature makes an amino acid side chain nonpolar (hydrophobic)?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "It contains a hydroxyl (-OH) group"
+            },
+            {
+              "label": "B",
+              "text": "It is made mostly of hydrocarbon (C-H) groups with no charged or polar groups"
+            },
+            {
+              "label": "C",
+              "text": "It carries a full positive or negative charge"
+            },
+            {
+              "label": "D",
+              "text": "It forms many hydrogen bonds with water"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "Nonpolar side chains are built from hydrocarbon groups that lack polar or charged atoms, so they do not interact favorably with water."
+        },
+        {
+          "level": 2,
+          "prompt": "Which listed side-chain feature signals a POLAR amino acid rather than a hydrophobic one?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "A hydroxyl (-OH) group, as found in serine"
+            },
+            {
+              "label": "B",
+              "text": "A branched hydrocarbon (isopropyl) group"
+            },
+            {
+              "label": "C",
+              "text": "A plain methyl (-CH3) group"
+            },
+            {
+              "label": "D",
+              "text": "A side chain containing only C-H bonds"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "A hydroxyl group is polar and hydrogen-bonds with water, marking a side chain (such as serine's) as polar rather than hydrophobic."
+        },
+        {
+          "level": 3,
+          "prompt": "Two of the amino acids listed carry a hydroxyl (-OH) group, which makes them polar. Which pair can be eliminated for that reason?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "'valine' and 'lysine'"
+            },
+            {
+              "label": "B",
+              "text": "'tyrosine' and 'serine'"
+            },
+            {
+              "label": "C",
+              "text": "'valine' and 'serine'"
+            },
+            {
+              "label": "D",
+              "text": "'tyrosine' and 'lysine'"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "Serine's side chain has an -OH and tyrosine's phenol ring bears an -OH, so both are polar and can be ruled out."
+        }
+      ]
     },
     {
       "id": "cpbs-006",
@@ -243,7 +613,81 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
       "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/14%3A_Proteins/14.E%3A_Exercises",
       "answerProvenance": "source-answer-key",
-      "notes": "correctAnswer from the course's Chapter 16 answer key (16.14: Q2 = b)."
+      "notes": "correctAnswer from the course's Chapter 16 answer key (16.14: Q2 = b).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Which two functional groups are present in every amino acid and give the molecule its name?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "A phosphate group and a sulfate group"
+            },
+            {
+              "label": "B",
+              "text": "An amino group and a carboxyl group"
+            },
+            {
+              "label": "C",
+              "text": "A hydroxyl group and a phosphate group"
+            },
+            {
+              "label": "D",
+              "text": "Two phosphate groups"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "Every amino acid contains an amino group and a carboxylic acid (carboxyl) group, which is the origin of the name amino acid."
+        },
+        {
+          "level": 2,
+          "prompt": "The amino group (-NH2) found in every amino acid is composed of which elements?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Phosphorus and oxygen"
+            },
+            {
+              "label": "B",
+              "text": "Carbon and sulfur"
+            },
+            {
+              "label": "C",
+              "text": "Nitrogen and hydrogen"
+            },
+            {
+              "label": "D",
+              "text": "Potassium and chlorine"
+            }
+          ],
+          "correctAnswer": "C",
+          "rationale": "An amino group (-NH2) consists of a nitrogen atom bonded to hydrogen atoms."
+        },
+        {
+          "level": 3,
+          "prompt": "The question asks which element is NOT present, so any element clearly found in the amino group can be eliminated as the answer. Which two options are present in every amino acid's amino group and can be ruled out?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "'hydrogen' and 'nitrogen'"
+            },
+            {
+              "label": "B",
+              "text": "'oxygen' and 'phosphorus'"
+            },
+            {
+              "label": "C",
+              "text": "'hydrogen' and 'oxygen'"
+            },
+            {
+              "label": "D",
+              "text": "'nitrogen' and 'phosphorus'"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "The amino group (-NH2) contains both nitrogen and hydrogen, so neither of those can be the element that is absent."
+        }
+      ]
     },
     {
       "id": "cpbs-007",
@@ -277,7 +721,81 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
       "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/14%3A_Proteins/14.E%3A_Exercises",
       "answerProvenance": "source-answer-key",
-      "notes": "correctAnswer from the course's Chapter 16 answer key (16.14: Q13 = b)."
+      "notes": "correctAnswer from the course's Chapter 16 answer key (16.14: Q13 = b).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In proteins, which type of bond joins amino acids together to form the PRIMARY structure (the sequence itself)?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Covalent peptide bonds"
+            },
+            {
+              "label": "B",
+              "text": "Hydrogen bonds"
+            },
+            {
+              "label": "C",
+              "text": "Ionic bonds"
+            },
+            {
+              "label": "D",
+              "text": "Van der Waals attractions"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "Primary structure is the chain of amino acids linked by covalent peptide bonds, not by hydrogen bonds."
+        },
+        {
+          "level": 2,
+          "prompt": "Tertiary and quaternary structure are stabilized mainly by side-chain (R-group) interactions. The hydrogen bonds in this question, however, form between which parts of the protein?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Only the side chains (R groups)"
+            },
+            {
+              "label": "B",
+              "text": "The polypeptide backbone (main-chain C=O and N-H groups)"
+            },
+            {
+              "label": "C",
+              "text": "Metal ions and cofactors"
+            },
+            {
+              "label": "D",
+              "text": "The surrounding water only"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "The hydrogen bonds described are backbone-to-backbone (C=O with H-N), which distinguishes them from the side-chain interactions that stabilize higher-order structure."
+        },
+        {
+          "level": 3,
+          "prompt": "Primary structure is held together by covalent peptide bonds, and quaternary structure requires more than one polypeptide chain. Which two levels can be eliminated for backbone hydrogen bonding within a single chain's regular folds?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "'secondary' and 'tertiary'"
+            },
+            {
+              "label": "B",
+              "text": "'tertiary' and 'quaternary'"
+            },
+            {
+              "label": "C",
+              "text": "'primary' and 'secondary'"
+            },
+            {
+              "label": "D",
+              "text": "'primary' and 'quaternary'"
+            }
+          ],
+          "correctAnswer": "D",
+          "rationale": "Primary structure relies on covalent peptide bonds (not hydrogen bonds) and quaternary structure involves multiple chains, so both are ruled out."
+        }
+      ]
     },
     {
       "id": "bbls-001",
@@ -311,7 +829,81 @@
       "sourceLicense": "CC BY 4.0",
       "sourceUrl": "https://bio.libretexts.org/Bookshelves/Introductory_and_General_Biology/General_Biology_2e_(OpenStax)/02%3A_Unit_II-_The_Cell/2.01%3A_Cell_Structure/2.1.11%3A_Review_Questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Question + options scraped verbatim. OpenStax withholds the official answer key publicly; this answer is independently verified from the same CC BY source text."
+      "notes": "Question + options scraped verbatim. OpenStax withholds the official answer key publicly; this answer is independently verified from the same CC BY source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In the hierarchy of biological organization, which sequence runs from the SIMPLEST to the most complex level?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Organism -> organ -> tissue -> cell"
+            },
+            {
+              "label": "B",
+              "text": "Cell -> tissue -> organ -> organism"
+            },
+            {
+              "label": "C",
+              "text": "Organ -> organism -> cell -> tissue"
+            },
+            {
+              "label": "D",
+              "text": "Tissue -> cell -> organism -> organ"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "Biological organization ascends from cells to tissues to organs to organisms, each level built from the previous one."
+        },
+        {
+          "level": 2,
+          "prompt": "Which statement about tissues, organs, and whole organisms is TRUE and shows none of them is the most basic unit?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Each of them is composed of many smaller living building blocks"
+            },
+            {
+              "label": "B",
+              "text": "None of them can be divided into anything smaller"
+            },
+            {
+              "label": "C",
+              "text": "They are each a single, indivisible unit"
+            },
+            {
+              "label": "D",
+              "text": "They are all nonliving structures"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "Tissues, organs, and organisms are all built from many smaller units, so none of them is the most basic (indivisible) unit of life."
+        },
+        {
+          "level": 3,
+          "prompt": "Two of the options are the LARGEST, most complex levels of organization, so they cannot be the most basic unit. Which pair is the least basic (most complex)?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "'cell' and 'tissue'"
+            },
+            {
+              "label": "B",
+              "text": "'cell' and 'organ'"
+            },
+            {
+              "label": "C",
+              "text": "'organism' and 'organ'"
+            },
+            {
+              "label": "D",
+              "text": "'tissue' and 'organism'"
+            }
+          ],
+          "correctAnswer": "C",
+          "rationale": "A whole organism and an organ are high-level structures built from many simpler parts, so neither is the most basic unit."
+        }
+      ]
     },
     {
       "id": "bbls-002",
@@ -345,7 +937,81 @@
       "sourceLicense": "CC BY 4.0",
       "sourceUrl": "https://bio.libretexts.org/Bookshelves/Introductory_and_General_Biology/General_Biology_2e_(OpenStax)/02%3A_Unit_II-_The_Cell/2.01%3A_Cell_Structure/2.1.11%3A_Review_Questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Question + options scraped verbatim. OpenStax withholds the official answer key publicly; answer independently verified from the same CC BY source text."
+      "notes": "Question + options scraped verbatim. OpenStax withholds the official answer key publicly; answer independently verified from the same CC BY source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Prokaryotes are organisms whose cells lack a membrane-bound nucleus. Which group of living things consists of prokaryotes?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Bacteria"
+            },
+            {
+              "label": "B",
+              "text": "Animals"
+            },
+            {
+              "label": "C",
+              "text": "Plants"
+            },
+            {
+              "label": "D",
+              "text": "Fungi"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "Bacteria are prokaryotes (they have no membrane-bound nucleus), whereas animals, plants, and fungi are eukaryotes."
+        },
+        {
+          "level": 2,
+          "prompt": "Amoeba and charophyte algae are eukaryotes, whose cells each contain a membrane-bound nucleus. Based on the definition of a prokaryote, can either one be a prokaryote?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Yes, because all single-celled organisms are prokaryotes"
+            },
+            {
+              "label": "B",
+              "text": "No, because having a true nucleus makes them eukaryotic, not prokaryotic"
+            },
+            {
+              "label": "C",
+              "text": "Yes, because algae are always prokaryotes"
+            },
+            {
+              "label": "D",
+              "text": "Only the amoeba can be a prokaryote"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "A membrane-bound nucleus is the hallmark of eukaryotes, so amoeba and charophyte algae cannot be prokaryotes."
+        },
+        {
+          "level": 3,
+          "prompt": "After setting the eukaryotes aside, the 'influenza A virus' option can look tempting. Why is a virus NOT a prokaryote?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "A virus is a specialized type of bacterium"
+            },
+            {
+              "label": "B",
+              "text": "A virus has a membrane-bound nucleus"
+            },
+            {
+              "label": "C",
+              "text": "A virus is a large multicellular organism"
+            },
+            {
+              "label": "D",
+              "text": "A virus is not a cell at all, so it is neither prokaryotic nor eukaryotic"
+            }
+          ],
+          "correctAnswer": "D",
+          "rationale": "Prokaryote and eukaryote are classifications of cells, and a virus is acellular, so it cannot be a prokaryote."
+        }
+      ]
     },
     {
       "id": "bbls-003",
@@ -379,7 +1045,81 @@
       "sourceLicense": "CC BY 4.0",
       "sourceUrl": "https://bio.libretexts.org/Bookshelves/Introductory_and_General_Biology/General_Biology_2e_(OpenStax)/02%3A_Unit_II-_The_Cell/2.01%3A_Cell_Structure/2.1.11%3A_Review_Questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Question + options scraped verbatim. OpenStax withholds the official answer key publicly; answer independently verified from the same CC BY source text."
+      "notes": "Question + options scraped verbatim. OpenStax withholds the official answer key publicly; answer independently verified from the same CC BY source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What is the endomembrane system?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "The group of membranes and organelles that work together to modify, package, and transport proteins and lipids"
+            },
+            {
+              "label": "B",
+              "text": "The set of all organelles that produce ATP"
+            },
+            {
+              "label": "C",
+              "text": "The network of protein fibers that give the cell its shape"
+            },
+            {
+              "label": "D",
+              "text": "The collection of free ribosomes floating in the cytoplasm"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "The endomembrane system is a set of interacting membranes and organelles that process and transport proteins and lipids through the cell."
+        },
+        {
+          "level": 2,
+          "prompt": "The endoplasmic reticulum and Golgi apparatus are directly linked by transport vesicles in the protein-processing pathway. What does this shared pathway tell you about them?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Both are outside the endomembrane system"
+            },
+            {
+              "label": "B",
+              "text": "Both are part of the endomembrane system"
+            },
+            {
+              "label": "C",
+              "text": "Both are energy-producing organelles"
+            },
+            {
+              "label": "D",
+              "text": "Both are made of DNA"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "The ER and Golgi are connected stations in the vesicle-trafficking pathway, so both belong to the endomembrane system."
+        },
+        {
+          "level": 3,
+          "prompt": "A student might pick 'lysosome,' thinking its digestive role sets it apart. Why is the lysosome actually NOT the exception here?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Lysosomes are not membrane-bound"
+            },
+            {
+              "label": "B",
+              "text": "Lysosomes produce the cell's ATP"
+            },
+            {
+              "label": "C",
+              "text": "Lysosomes form from the Golgi and belong to the membrane-trafficking pathway"
+            },
+            {
+              "label": "D",
+              "text": "Lysosomes are made of RNA"
+            }
+          ],
+          "correctAnswer": "C",
+          "rationale": "Lysosomes bud from the Golgi within the vesicle-trafficking pathway, so they are part of the endomembrane system and not the exception."
+        }
+      ]
     },
     {
       "id": "bbls-004",
@@ -413,7 +1153,81 @@
       "sourceLicense": "CC BY 4.0",
       "sourceUrl": "https://bio.libretexts.org/Bookshelves/Introductory_and_General_Biology/General_Biology_2e_(OpenStax)/02%3A_Unit_II-_The_Cell/2.01%3A_Cell_Structure/2.1.11%3A_Review_Questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Question + options scraped verbatim. OpenStax withholds the official answer key publicly; answer independently verified from the same CC BY source text."
+      "notes": "Question + options scraped verbatim. OpenStax withholds the official answer key publicly; answer independently verified from the same CC BY source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What is the main function of SMOOTH endoplasmic reticulum, as opposed to rough ER?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Synthesis of lipids (including steroids) and detoxification"
+            },
+            {
+              "label": "B",
+              "text": "Synthesis and secretion of proteins"
+            },
+            {
+              "label": "C",
+              "text": "Production of most of the cell's ATP"
+            },
+            {
+              "label": "D",
+              "text": "Storage of genetic information"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "Smooth ER lacks ribosomes and specializes in lipid and steroid synthesis and in detoxification, while rough ER makes proteins."
+        },
+        {
+          "level": 2,
+          "prompt": "The option 'a cell that secretes enzymes' is a classic trap. Because enzymes are proteins, which organelle does an enzyme-secreting cell rely on most?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Smooth ER"
+            },
+            {
+              "label": "B",
+              "text": "Rough ER (studded with ribosomes for protein synthesis)"
+            },
+            {
+              "label": "C",
+              "text": "No endoplasmic reticulum at all"
+            },
+            {
+              "label": "D",
+              "text": "Only lysosomes"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "Enzymes are proteins built on the ribosomes of rough ER, so an enzyme-secreting cell is rich in rough (not smooth) ER, making it a trap here."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two options describe cells whose main jobs depend on machinery OTHER than smooth ER (protein synthesis or chloroplasts) and so can be eliminated?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "'a cell that secretes enzymes' and 'a cell that engages in photosynthesis'"
+            },
+            {
+              "label": "B",
+              "text": "'a cell that makes steroid hormones' and 'a cell that destroys pathogens'"
+            },
+            {
+              "label": "C",
+              "text": "'a cell that secretes enzymes' and 'a cell that makes steroid hormones'"
+            },
+            {
+              "label": "D",
+              "text": "'a cell that destroys pathogens' and 'a cell that engages in photosynthesis'"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "Enzyme secretion depends on rough ER (ribosomes) and photosynthesis depends on chloroplasts, so neither relies mainly on smooth ER."
+        }
+      ]
     },
     {
       "id": "bbls-005",
@@ -447,7 +1261,81 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
       "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/12%3A_Carbohydrates/12.E%3A_Exercises",
       "answerProvenance": "source-answer-key",
-      "notes": "correctAnswer from the course's Chapter 16 answer key (16.12: Q7 = b)."
+      "notes": "correctAnswer from the course's Chapter 16 answer key (16.12: Q7 = b).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Monosaccharides are named by their number of carbon atoms. What do the prefixes tetr-, pent-, hex-, and hept- indicate?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "The number of oxygen atoms"
+            },
+            {
+              "label": "B",
+              "text": "The sweetness of the sugar"
+            },
+            {
+              "label": "C",
+              "text": "The number of carbon atoms in the sugar"
+            },
+            {
+              "label": "D",
+              "text": "The number of rings in the sugar"
+            }
+          ],
+          "correctAnswer": "C",
+          "rationale": "Prefixes such as tetr- (4), pent- (5), hex- (6), and hept- (7) state how many carbon atoms a monosaccharide has."
+        },
+        {
+          "level": 2,
+          "prompt": "Classifying a sugar as a tetrose, pentose, hexose, or heptose depends only on counting its carbons. To classify glucose this way, what must you determine about glucose?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "The number of carbon atoms it contains"
+            },
+            {
+              "label": "B",
+              "text": "How sweet it tastes"
+            },
+            {
+              "label": "C",
+              "text": "Whether it is found in fruit"
+            },
+            {
+              "label": "D",
+              "text": "Its melting point"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "Classifying a sugar as tetrose/pentose/hexose/heptose requires counting its carbon atoms, nothing else."
+        },
+        {
+          "level": 3,
+          "prompt": "Once you count glucose's carbons, two options with the most different carbon counts (four and seven) can be eliminated. Which pair is that?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "'pentose' and 'hexose'"
+            },
+            {
+              "label": "B",
+              "text": "'tetrose' and 'heptose'"
+            },
+            {
+              "label": "C",
+              "text": "'hexose' and 'heptose'"
+            },
+            {
+              "label": "D",
+              "text": "'pentose' and 'tetrose'"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "A tetrose has four carbons and a heptose has seven, the counts most different from glucose's, so both can be ruled out."
+        }
+      ]
     },
     {
       "id": "bbls-006",
@@ -481,7 +1369,81 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
       "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/12%3A_Carbohydrates/12.E%3A_Exercises",
       "answerProvenance": "source-answer-key",
-      "notes": "correctAnswer from the course's Chapter 16 answer key (16.12: Q8 = b)."
+      "notes": "correctAnswer from the course's Chapter 16 answer key (16.12: Q8 = b).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How is a disaccharide defined?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "A single sugar unit"
+            },
+            {
+              "label": "B",
+              "text": "A sugar made of two monosaccharide units joined together"
+            },
+            {
+              "label": "C",
+              "text": "A polymer of many hundreds of sugar units"
+            },
+            {
+              "label": "D",
+              "text": "A sugar that contains no carbon"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "A disaccharide consists of exactly two monosaccharide units linked by a glycosidic bond."
+        },
+        {
+          "level": 2,
+          "prompt": "Two of the options, galactose and fructose, are each a single sugar unit. What class of carbohydrate is a single sugar unit?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "A monosaccharide"
+            },
+            {
+              "label": "B",
+              "text": "A disaccharide"
+            },
+            {
+              "label": "C",
+              "text": "A polysaccharide"
+            },
+            {
+              "label": "D",
+              "text": "A protein"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "A single sugar unit is a monosaccharide, so galactose and fructose cannot be disaccharides."
+        },
+        {
+          "level": 3,
+          "prompt": "The option 'amylose' can be tempting. How many sugar units make up amylose, and what does that make it?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Exactly two units, making it a disaccharide"
+            },
+            {
+              "label": "B",
+              "text": "One unit, making it a monosaccharide"
+            },
+            {
+              "label": "C",
+              "text": "Many hundreds of units, making it a polysaccharide (a component of starch)"
+            },
+            {
+              "label": "D",
+              "text": "Zero units, so it is not a carbohydrate"
+            }
+          ],
+          "correctAnswer": "C",
+          "rationale": "Amylose is a long polymer of many glucose units (a polysaccharide and a component of starch), so it has far more than two units."
+        }
+      ]
     },
     {
       "id": "bbls-007",
@@ -515,7 +1477,81 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (LibreTexts; verify per-page notice)",
       "sourceUrl": "https://chem.libretexts.org/Courses/Roosevelt_University/General_Organic_and_Biochemistry_with_Problems_Case_Studies_and_Activities/12%3A_Carbohydrates/12.E%3A_Exercises",
       "answerProvenance": "source-answer-key",
-      "notes": "correctAnswer from the course's Chapter 16 answer key (16.12: Q3 = b)."
+      "notes": "correctAnswer from the course's Chapter 16 answer key (16.12: Q3 = b).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In organic chemistry, a carbonyl (C=O) group on a terminal (end) carbon is an aldehyde. What is a carbonyl group on an INTERNAL carbon called?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "An alcohol"
+            },
+            {
+              "label": "B",
+              "text": "A ketone"
+            },
+            {
+              "label": "C",
+              "text": "A carboxylic acid"
+            },
+            {
+              "label": "D",
+              "text": "An ether"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "A carbonyl located on an internal (non-terminal) carbon is a ketone, whereas a terminal carbonyl is an aldehyde."
+        },
+        {
+          "level": 2,
+          "prompt": "The carbohydrate in the question has its C=O at carbon 2, an internal carbon. Which functional group is therefore present?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "An aldehyde"
+            },
+            {
+              "label": "B",
+              "text": "A hydroxyl group"
+            },
+            {
+              "label": "C",
+              "text": "A ketone"
+            },
+            {
+              "label": "D",
+              "text": "A carboxylic acid"
+            }
+          ],
+          "correctAnswer": "C",
+          "rationale": "A carbonyl on the internal carbon C2 (not the terminal C1) is a ketone group."
+        },
+        {
+          "level": 3,
+          "prompt": "Two of the answer choices (triose, hexose) describe the sugar's number of CARBONS, not the position of its carbonyl group. Since the question is about carbonyl position, which pair is off-topic and can be eliminated?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "'aldose' and 'ketose'"
+            },
+            {
+              "label": "B",
+              "text": "'aldose' and 'triose'"
+            },
+            {
+              "label": "C",
+              "text": "'ketose' and 'hexose'"
+            },
+            {
+              "label": "D",
+              "text": "'triose' and 'hexose'"
+            }
+          ],
+          "correctAnswer": "D",
+          "rationale": "Triose (three carbons) and hexose (six carbons) classify a sugar by carbon count, which does not describe carbonyl position, so both are off-topic here."
+        }
+      ]
     },
     {
       "id": "psbb-001",
@@ -549,7 +1585,81 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/psychology-2e/pages/1-review-questions",
       "answerProvenance": "source-solution-guide",
-      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solution Guide (CC BY 4.0), Ch. 1 Q3 = D."
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solution Guide (CC BY 4.0), Ch. 1 Q3 = D.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Which sequence correctly orders the early steps of the scientific method?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Test with an experiment -> make an observation -> form a hypothesis"
+            },
+            {
+              "label": "B",
+              "text": "Make an observation -> form a hypothesis -> test it with an experiment"
+            },
+            {
+              "label": "C",
+              "text": "Form a hypothesis -> make an observation -> never test it"
+            },
+            {
+              "label": "D",
+              "text": "Take a measurement -> publish -> then observe"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "The scientific method typically moves from making an observation, to forming a hypothesis, to testing it experimentally."
+        },
+        {
+          "level": 2,
+          "prompt": "The option 'test' refers to the experiment that evaluates a hypothesis. Is a hypothesis the same thing as the test itself?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "No, the hypothesis is the idea being evaluated, while the test is the procedure that evaluates it"
+            },
+            {
+              "label": "B",
+              "text": "Yes, a hypothesis and a test are identical"
+            },
+            {
+              "label": "C",
+              "text": "Yes, the hypothesis is the act performed in the lab"
+            },
+            {
+              "label": "D",
+              "text": "No, the hypothesis is the raw data that is collected"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "A hypothesis is the proposed idea under investigation, not the experimental test used to check it, so the two are distinct."
+        },
+        {
+          "level": 3,
+          "prompt": "An observation and a measurement are both pieces of information COLLECTED from the world. Since a hypothesis is formulated before data confirm it, which two options can be eliminated as collected data rather than a proposed idea?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "'test' and 'proposed explanation'"
+            },
+            {
+              "label": "B",
+              "text": "'observation' and 'measurement'"
+            },
+            {
+              "label": "C",
+              "text": "'observation' and 'test'"
+            },
+            {
+              "label": "D",
+              "text": "'measurement' and 'proposed explanation'"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "Observations and measurements are empirical data gathered from the world, whereas a hypothesis is an idea proposed beforehand, so those two are ruled out."
+        }
+      ]
     },
     {
       "id": "psbb-002",
@@ -583,7 +1693,81 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/psychology-2e/pages/1-review-questions",
       "answerProvenance": "source-solution-guide",
-      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solution Guide (CC BY 4.0), Ch. 1 Q5 = C."
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solution Guide (CC BY 4.0), Ch. 1 Q5 = C.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "To which broad school of psychology does the hierarchy of needs belong?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Psychoanalysis"
+            },
+            {
+              "label": "B",
+              "text": "Behaviorism"
+            },
+            {
+              "label": "C",
+              "text": "Humanistic psychology"
+            },
+            {
+              "label": "D",
+              "text": "Linguistics"
+            }
+          ],
+          "correctAnswer": "C",
+          "rationale": "The hierarchy of needs is a humanistic theory of motivation that emphasizes personal growth toward self-actualization."
+        },
+        {
+          "level": 2,
+          "prompt": "The hierarchy of needs is often drawn as a pyramid that ascends from physiological needs. Where are physiological needs located in it?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "At the base, as the most fundamental needs"
+            },
+            {
+              "label": "B",
+              "text": "At the very top, as the final goal"
+            },
+            {
+              "label": "C",
+              "text": "Outside the hierarchy entirely"
+            },
+            {
+              "label": "D",
+              "text": "They are not considered needs at all"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "The hierarchy ascends from physiological needs upward, so those needs form the base of the pyramid."
+        },
+        {
+          "level": 3,
+          "prompt": "To identify the theorist, look for the one whose work centers on motivation and self-actualization. Which research theme should the correct person be associated with?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "The interpretation of dreams"
+            },
+            {
+              "label": "B",
+              "text": "Motivation and the drive toward self-actualization"
+            },
+            {
+              "label": "C",
+              "text": "The rules of grammar and language"
+            },
+            {
+              "label": "D",
+              "text": "Stimulus-response reflex conditioning"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "The hierarchy of needs is a theory of motivation culminating in self-actualization, so its author is identified with that theme."
+        }
+      ]
     },
     {
       "id": "psbb-003",
@@ -617,7 +1801,81 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/psychology-2e/pages/1-review-questions",
       "answerProvenance": "source-solution-guide",
-      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solution Guide (CC BY 4.0), Ch. 1 Q7 = A."
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solution Guide (CC BY 4.0), Ch. 1 Q7 = A.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What does operant conditioning study?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "How reinforcement and punishment shape behavior"
+            },
+            {
+              "label": "B",
+              "text": "How traits are inherited through genes"
+            },
+            {
+              "label": "C",
+              "text": "How neurons generate electrical signals"
+            },
+            {
+              "label": "D",
+              "text": "How children first acquire language"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "Operant conditioning examines how consequences (reinforcement and punishment) increase or decrease behaviors."
+        },
+        {
+          "level": 2,
+          "prompt": "The operant conditioning chamber is a device built specifically to study operant conditioning. Its namesake is therefore a psychologist tied to which area of research?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Dream interpretation"
+            },
+            {
+              "label": "B",
+              "text": "The chemistry of the brain"
+            },
+            {
+              "label": "C",
+              "text": "Reinforcement, punishment, and operant conditioning"
+            },
+            {
+              "label": "D",
+              "text": "The physics of color vision"
+            }
+          ],
+          "correctAnswer": "C",
+          "rationale": "Because the chamber is used to study operant conditioning, it is named for a psychologist associated with reinforcement and punishment."
+        },
+        {
+          "level": 3,
+          "prompt": "Three of the four names are not primarily linked to operant conditioning. To pick the right one, which research focus should you look for?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Studying how consequences (reinforcement and punishment) change voluntary behavior"
+            },
+            {
+              "label": "B",
+              "text": "Measuring the wavelengths of visible light"
+            },
+            {
+              "label": "C",
+              "text": "Analyzing unconscious dreams and desires"
+            },
+            {
+              "label": "D",
+              "text": "Mapping the grammar rules of languages"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "The correct namesake is defined by operant conditioning research, shaping voluntary behavior through reinforcement and punishment."
+        }
+      ]
     },
     {
       "id": "psbb-004",
@@ -651,7 +1909,81 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax also posts a no-LLM-training notice; SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/psychology-2e/pages/1-review-questions",
       "answerProvenance": "source-solution-guide",
-      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solution Guide (CC BY 4.0), Ch. 1 Q9 = C."
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax Psychology 2e Student Solution Guide (CC BY 4.0), Ch. 1 Q9 = C.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The phrase 'a consistent pattern of thought and behavior' emphasizes what about a person?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "A stable, characteristic way of thinking and behaving over time"
+            },
+            {
+              "label": "B",
+              "text": "A single momentary reaction to one event"
+            },
+            {
+              "label": "C",
+              "text": "A temporary physical reflex"
+            },
+            {
+              "label": "D",
+              "text": "An inherited physical trait such as eye color"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "The key idea is a stable, characteristic pattern that persists over time, not a one-time reaction."
+        },
+        {
+          "level": 2,
+          "prompt": "Does 'a consistent pattern of thought and behavior' describe a single, narrow mental process, or a broad characteristic of the whole person?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "A single, isolated mental process"
+            },
+            {
+              "label": "B",
+              "text": "A broad, overall characteristic of the whole person"
+            },
+            {
+              "label": "C",
+              "text": "A one-time laboratory measurement"
+            },
+            {
+              "label": "D",
+              "text": "A momentary mood or feeling"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "A consistent pattern spanning both thought and behavior is a broad, person-level characteristic rather than one isolated process."
+        },
+        {
+          "level": 3,
+          "prompt": "The correct term must name a person's whole, enduring pattern, not a single developmental stage, a single ability, or a single sensory process. Which criterion should the answer meet?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "It names one narrow developmental milestone"
+            },
+            {
+              "label": "B",
+              "text": "It names one specific sensory process"
+            },
+            {
+              "label": "C",
+              "text": "It names a person's overall, enduring pattern of thinking and behaving"
+            },
+            {
+              "label": "D",
+              "text": "It names a single automatic reflex"
+            }
+          ],
+          "correctAnswer": "C",
+          "rationale": "The answer must be the broad, whole-person construct (an enduring pattern of thought and behavior), so narrow or specific terms are ruled out."
+        }
+      ]
     },
     {
       "id": "psbb-005",
@@ -685,7 +2017,81 @@
       "sourceLicense": "CC BY 4.0",
       "sourceUrl": "https://openstax.org/books/introduction-sociology-3e/pages/1-section-quiz",
       "answerProvenance": "source-answer-key",
-      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax-derived chapter quiz answer key (Pressbooks adaptation, CC BY 4.0), Ch. 1 Q1 = C."
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax-derived chapter quiz answer key (Pressbooks adaptation, CC BY 4.0), Ch. 1 Q1 = C.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The explanation stresses that sociology studies groups, institutions, and social forces. Given that, does sociology focus on the individual or on the group/collective level?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "The group/collective (social) level"
+            },
+            {
+              "label": "B",
+              "text": "Only the isolated individual"
+            },
+            {
+              "label": "C",
+              "text": "Only chemical reactions"
+            },
+            {
+              "label": "D",
+              "text": "Only individual personal finances"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "Sociology studies groups, institutions, and social forces, so its focus is the collective or social level rather than the isolated individual."
+        },
+        {
+          "level": 2,
+          "prompt": "Because sociology works at the social/group level, the option 'The study of individual behavior' is a mismatch. What level does that option actually target?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "The single-individual level, which is too narrow for sociology"
+            },
+            {
+              "label": "B",
+              "text": "The societal level, which matches sociology"
+            },
+            {
+              "label": "C",
+              "text": "The molecular level of chemistry"
+            },
+            {
+              "label": "D",
+              "text": "The level of planets and galaxies"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "The study of individual behavior targets one person, not the group or societal level that defines sociology, so it is a mismatch."
+        },
+        {
+          "level": 3,
+          "prompt": "Two options are not sociology's central definition: one targets a single person's behavior and one targets money, goods, and markets. Which pair can be eliminated?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "'The study of society and social interaction' and 'The study of cultures'"
+            },
+            {
+              "label": "B",
+              "text": "'The study of individual behavior' and 'The study of society and social interaction'"
+            },
+            {
+              "label": "C",
+              "text": "'The study of individual behavior' and 'The study of economics'"
+            },
+            {
+              "label": "D",
+              "text": "'The study of cultures' and 'The study of economics'"
+            }
+          ],
+          "correctAnswer": "C",
+          "rationale": "One option focuses on the individual and another on money and markets (economics), neither of which is sociology's core focus on society and social interaction."
+        }
+      ]
     },
     {
       "id": "psbb-006",
@@ -719,7 +2125,81 @@
       "sourceLicense": "CC BY 4.0",
       "sourceUrl": "https://openstax.org/books/introduction-sociology-3e/pages/1-section-quiz",
       "answerProvenance": "source-answer-key",
-      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax-derived chapter quiz answer key (Pressbooks adaptation, CC BY 4.0), Ch. 1 Q9 = B."
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax-derived chapter quiz answer key (Pressbooks adaptation, CC BY 4.0), Ch. 1 Q9 = B.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The idea that 'the history of society is one of class struggle' centers on conflict between which groups?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Different age groups"
+            },
+            {
+              "label": "B",
+              "text": "Those who own the means of production and those who labor for them"
+            },
+            {
+              "label": "C",
+              "text": "Different religions only"
+            },
+            {
+              "label": "D",
+              "text": "Rival sports teams"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "Class struggle refers to conflict between the owners of the means of production and the workers who labor for them."
+        },
+        {
+          "level": 2,
+          "prompt": "The class-struggle view frames the history of society mainly in terms of what?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Harmonious cooperation with no conflict"
+            },
+            {
+              "label": "B",
+              "text": "Individual dreams and the unconscious mind"
+            },
+            {
+              "label": "C",
+              "text": "Economic conflict between social classes"
+            },
+            {
+              "label": "D",
+              "text": "Face-to-face role performance"
+            }
+          ],
+          "correctAnswer": "C",
+          "rationale": "The class-struggle perspective sees society as driven by economic conflict between social classes."
+        },
+        {
+          "level": 3,
+          "prompt": "To identify the correct thinker, look for the one whose theory centers on conflict between economic classes. Which focus identifies that thinker?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "Viewing society as a set of harmonious, self-regulating parts"
+            },
+            {
+              "label": "B",
+              "text": "Viewing society as ongoing conflict between owners and workers"
+            },
+            {
+              "label": "C",
+              "text": "Understanding society through individual perception"
+            },
+            {
+              "label": "D",
+              "text": "Treating society as a stage where people perform roles"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "The class-struggle thinker is defined by seeing society as economic conflict between owners and laborers, unlike the other perspectives."
+        }
+      ]
     },
     {
       "id": "psbb-007",
@@ -753,7 +2233,81 @@
       "sourceLicense": "CC BY 4.0",
       "sourceUrl": "https://openstax.org/books/introduction-sociology-3e/pages/1-section-quiz",
       "answerProvenance": "source-answer-key",
-      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax-derived chapter quiz answer key (Pressbooks adaptation, CC BY 4.0), Ch. 1 Q11 = D."
+      "notes": "Question + options scraped verbatim from OpenStax. correctAnswer from the OpenStax-derived chapter quiz answer key (Pressbooks adaptation, CC BY 4.0), Ch. 1 Q11 = D.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Sociological perspectives are often summarized by a central metaphor. What is such a guiding metaphor?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "A comparison that represents how a theory views social life"
+            },
+            {
+              "label": "B",
+              "text": "A precise mathematical equation"
+            },
+            {
+              "label": "C",
+              "text": "A laboratory chemical used in tests"
+            },
+            {
+              "label": "D",
+              "text": "A type of government tax"
+            }
+          ],
+          "correctAnswer": "A",
+          "rationale": "A guiding metaphor is an analogy a theory uses to represent social life and convey its core viewpoint."
+        },
+        {
+          "level": 2,
+          "prompt": "This perspective is called 'dramaturgical.' The root of that word (drama) signals a metaphor drawn from which domain?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "The human body's organs"
+            },
+            {
+              "label": "B",
+              "text": "The theater and the stage"
+            },
+            {
+              "label": "C",
+              "text": "Warfare and armed conflict"
+            },
+            {
+              "label": "D",
+              "text": "Chemical reactions"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "Dramaturgical comes from drama, pointing to a metaphor based on the theater and the stage."
+        },
+        {
+          "level": 3,
+          "prompt": "A performance-based metaphor is about people acting out parts in front of others. Which two options are LEAST like a performance metaphor and can be eliminated?",
+          "choices": [
+            {
+              "label": "A",
+              "text": "'behaviors' and 'theatrical roles'"
+            },
+            {
+              "label": "B",
+              "text": "'human organs' and 'conflicts'"
+            },
+            {
+              "label": "C",
+              "text": "'behaviors' and 'human organs'"
+            },
+            {
+              "label": "D",
+              "text": "'conflicts' and 'theatrical roles'"
+            }
+          ],
+          "correctAnswer": "B",
+          "rationale": "Comparing social interaction to bodily organs or to conflicts does not fit a performance/role metaphor, so both can be set aside."
+        }
+      ]
     }
   ]
 }

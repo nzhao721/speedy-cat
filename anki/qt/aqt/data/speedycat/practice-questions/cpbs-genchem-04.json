@@ -36,6 +36,44 @@
       ],
       "correctAnswer": "C",
       "explanation": "A Brønsted-Lowry base is a proton acceptor. Ammonia (NH3) accepts a proton to become NH4+, so it is a base. HCl, H2SO4, and CH3COOH (acetic acid) are all proton donors (acids).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What is a Bronsted-Lowry base?",
+          "choices": [
+            {"label": "A", "text": "A proton (H+) acceptor"},
+            {"label": "B", "text": "A proton donor"},
+            {"label": "C", "text": "An electron emitter"},
+            {"label": "D", "text": "Any substance that contains hydrogen"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A Bronsted-Lowry base accepts protons."
+        },
+        {
+          "level": 2,
+          "prompt": "Sulfuric acid, H2SO4, readily releases H+ ions in water. Does that make it an acid or a base?",
+          "choices": [
+            {"label": "A", "text": "An acid (a proton donor)"},
+            {"label": "B", "text": "A base (a proton acceptor)"},
+            {"label": "C", "text": "Neither an acid nor a base"},
+            {"label": "D", "text": "A neutral salt"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "H2SO4 donates protons, so it is an acid."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because they are classic strong acids (proton donors)?",
+          "choices": [
+            {"label": "A", "text": "HCl and H2SO4"},
+            {"label": "B", "text": "NH3 and CH3COOH"},
+            {"label": "C", "text": "HCl and NH3"},
+            {"label": "D", "text": "H2SO4 and CH3COOH"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "HCl and H2SO4 are strong acids, so neither can be the base."
+        }
+      ],
       "topicTags": ["solutions, gases & acid-base"],
       "difficulty": "easy",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 9 Acids and Bases",
@@ -56,6 +94,44 @@
       ],
       "correctAnswer": "A",
       "explanation": "A conjugate acid is formed by adding a proton (H+). Adding H+ to NH3 gives the ammonium ion, NH4+.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How do you form the conjugate acid of a species?",
+          "choices": [
+            {"label": "A", "text": "Add one proton (H+)"},
+            {"label": "B", "text": "Remove one proton"},
+            {"label": "C", "text": "Add a hydroxide ion"},
+            {"label": "D", "text": "Add an electron"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A conjugate acid is the base plus one H+."
+        },
+        {
+          "level": 2,
+          "prompt": "Adding a proton to NH3 changes its hydrogen count and its charge by how much?",
+          "choices": [
+            {"label": "A", "text": "One more H atom and a +1 increase in charge"},
+            {"label": "B", "text": "One fewer H atom and a -1 change in charge"},
+            {"label": "C", "text": "One more H atom and a -1 change in charge"},
+            {"label": "D", "text": "No change in charge"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Adding H+ adds one hydrogen and one unit of positive charge."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because they are negatively charged (from removing a proton), not a conjugate acid?",
+          "choices": [
+            {"label": "A", "text": "NH2- and OH-"},
+            {"label": "B", "text": "NH4+ and NH3"},
+            {"label": "C", "text": "NH4+ and NH2-"},
+            {"label": "D", "text": "NH3 and OH-"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A conjugate acid must gain H+ and become more positive, so the negatively charged species are impossible."
+        }
+      ],
       "topicTags": ["solutions, gases & acid-base"],
       "difficulty": "easy",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 9 Acids and Bases",
@@ -76,6 +152,44 @@
       ],
       "correctAnswer": "C",
       "explanation": "Blood has a pH of about 7.4, which is slightly basic (above 7). Vinegar, coffee, and gastric juice are all acidic (pH below 7).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "On the pH scale, what range is basic?",
+          "choices": [
+            {"label": "A", "text": "pH greater than 7"},
+            {"label": "B", "text": "pH less than 7"},
+            {"label": "C", "text": "pH of exactly 0"},
+            {"label": "D", "text": "pH is unrelated to basicity"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Basic solutions have a pH above 7."
+        },
+        {
+          "level": 2,
+          "prompt": "Gastric juice (stomach fluid) contains hydrochloric acid. Is it acidic or basic?",
+          "choices": [
+            {"label": "A", "text": "Acidic"},
+            {"label": "B", "text": "Basic"},
+            {"label": "C", "text": "Exactly neutral"},
+            {"label": "D", "text": "It has no pH"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Gastric juice contains HCl, which makes it strongly acidic."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated as clearly acidic (well below pH 7)?",
+          "choices": [
+            {"label": "A", "text": "Vinegar and gastric juice"},
+            {"label": "B", "text": "Blood and coffee"},
+            {"label": "C", "text": "Vinegar and blood"},
+            {"label": "D", "text": "Coffee and gastric juice"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Vinegar (acetic acid) and gastric juice (hydrochloric acid) are strongly acidic."
+        }
+      ],
       "topicTags": ["solutions, gases & acid-base"],
       "difficulty": "easy",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 9 Acids and Bases",
@@ -96,6 +210,44 @@
       ],
       "correctAnswer": "B",
       "explanation": "First find pH = -log(1.6 × 10^-8) = 7.80. Then pOH = 14.00 - pH = 14.00 - 7.80 = 6.20. (Choice C, 7.80, is the pH itself—a trap.)",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How are pH and pOH related at 25 degrees C?",
+          "choices": [
+            {"label": "A", "text": "pH + pOH = 14"},
+            {"label": "B", "text": "pH + pOH = 7"},
+            {"label": "C", "text": "pH - pOH = 14"},
+            {"label": "D", "text": "pH x pOH = 14"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "At 25 degrees C, pH + pOH = 14."
+        },
+        {
+          "level": 2,
+          "prompt": "First find pH = -log[H3O+], then pOH = 14 - pH. Which setup is correct for [H3O+] = 1.6 x 10^-8?",
+          "choices": [
+            {"label": "A", "text": "pOH = 14 - (-log(1.6 x 10^-8))"},
+            {"label": "B", "text": "pOH = -log(1.6 x 10^-8)"},
+            {"label": "C", "text": "pOH = 14 + (-log(1.6 x 10^-8))"},
+            {"label": "D", "text": "pOH = 1.6 x 10^-8"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Compute pH with the negative log, then subtract from 14 to get pOH."
+        },
+        {
+          "level": 3,
+          "prompt": "Which choice is the trap equal to the solution's pH rather than its pOH?",
+          "choices": [
+            {"label": "A", "text": "7.80"},
+            {"label": "B", "text": "6.20"},
+            {"label": "C", "text": "1.60"},
+            {"label": "D", "text": "8.00"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "7.80 = -log(1.6 x 10^-8) is the pH; the question asks for the pOH."
+        }
+      ],
       "topicTags": ["solutions, gases & acid-base"],
       "difficulty": "medium",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 9 Acids and Bases",
@@ -116,6 +268,44 @@
       ],
       "correctAnswer": "C",
       "explanation": "[H3O+] = 10^-pH = 10^-4.82 = 1.5 × 10^-5 M. (Choice D, 6.6 × 10^-10 M, is the hydroxide concentration.)",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How do you get [H3O+] from a known pH?",
+          "choices": [
+            {"label": "A", "text": "[H3O+] = 10^(-pH)"},
+            {"label": "B", "text": "[H3O+] = 10^(pH)"},
+            {"label": "C", "text": "[H3O+] = -log(pH)"},
+            {"label": "D", "text": "[H3O+] = 14 - pH"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "[H3O+] equals 10 raised to the negative pH."
+        },
+        {
+          "level": 2,
+          "prompt": "For pH 4.82, which expression gives [H3O+]?",
+          "choices": [
+            {"label": "A", "text": "10^(-4.82)"},
+            {"label": "B", "text": "10^(4.82)"},
+            {"label": "C", "text": "10^(-9.18)"},
+            {"label": "D", "text": "4.82"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "[H3O+] = 10^(-4.82)."
+        },
+        {
+          "level": 3,
+          "prompt": "Which choice is the trap that gives the hydroxide concentration instead of the hydronium concentration?",
+          "choices": [
+            {"label": "A", "text": "6.6 x 10^-10 M"},
+            {"label": "B", "text": "1.5 x 10^-5 M"},
+            {"label": "C", "text": "6.6 x 10^5 M"},
+            {"label": "D", "text": "4.82 M"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "6.6 x 10^-10 M is [OH-] (from pOH = 14 - 4.82), not [H3O+]."
+        }
+      ],
       "topicTags": ["solutions, gases & acid-base"],
       "difficulty": "medium",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 9 Acids and Bases",
@@ -136,6 +326,44 @@
       ],
       "correctAnswer": "C",
       "explanation": "[OH-] = 10^-pOH = 10^-1.75 = 1.8 × 10^-2 M. (Choice D is [H3O+], obtained from pH = 14 - 1.75 = 12.25.)",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How do you get [OH-] from a known pOH?",
+          "choices": [
+            {"label": "A", "text": "[OH-] = 10^(-pOH)"},
+            {"label": "B", "text": "[OH-] = 10^(pOH)"},
+            {"label": "C", "text": "[OH-] = 14 - pOH"},
+            {"label": "D", "text": "[OH-] = -log(pOH)"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "[OH-] equals 10 raised to the negative pOH."
+        },
+        {
+          "level": 2,
+          "prompt": "For pOH 1.75, which expression gives [OH-]?",
+          "choices": [
+            {"label": "A", "text": "10^(-1.75)"},
+            {"label": "B", "text": "10^(1.75)"},
+            {"label": "C", "text": "10^(-12.25)"},
+            {"label": "D", "text": "1.75"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "[OH-] = 10^(-1.75)."
+        },
+        {
+          "level": 3,
+          "prompt": "Which choice is the trap that gives the hydronium concentration instead of the hydroxide concentration?",
+          "choices": [
+            {"label": "A", "text": "5.6 x 10^-13 M"},
+            {"label": "B", "text": "1.8 x 10^-2 M"},
+            {"label": "C", "text": "56 M"},
+            {"label": "D", "text": "1.75 M"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "5.6 x 10^-13 M is [H3O+] (from pH = 14 - 1.75 = 12.25), not [OH-]."
+        }
+      ],
       "topicTags": ["solutions, gases & acid-base"],
       "difficulty": "medium",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 9 Acids and Bases",
@@ -156,6 +384,44 @@
       ],
       "correctAnswer": "A",
       "explanation": "A scientific law describes a consistent pattern of observations but does not explain why it occurs; explaining 'why' is the role of a theory. The other three statements are true.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Can a well-established scientific theory be revised or overturned by new experimental evidence?",
+          "choices": [
+            {"label": "A", "text": "Yes - theories are testable and can be refuted by new results"},
+            {"label": "B", "text": "No - a theory is an absolute, permanent truth"},
+            {"label": "C", "text": "No - theories never change once proposed"},
+            {"label": "D", "text": "Theories are formed without any evidence"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Scientific theories are provisional and can be refuted or refined by new data."
+        },
+        {
+          "level": 2,
+          "prompt": "Which statement about laws and theories is TRUE (and so is not the false answer)?",
+          "choices": [
+            {"label": "A", "text": "'A law describes a series of experimental observations'"},
+            {"label": "B", "text": "'A law explains why something is true'"},
+            {"label": "C", "text": "'A theory needs no data'"},
+            {"label": "D", "text": "'Laws and theories are the same thing'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A law does describe experimental observations - a true statement."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two statements are clearly TRUE and can be eliminated as the 'false' answer?",
+          "choices": [
+            {"label": "A", "text": "'A law describes a series of experimental observations' and 'A theory can be refuted by new experimental results'"},
+            {"label": "B", "text": "'A law explains why something is true' and 'A law describes a series of experimental observations'"},
+            {"label": "C", "text": "'A theory can be refuted by new experimental results' and 'A law explains why something is true'"},
+            {"label": "D", "text": "'Experimental data is required to formulate a theory' and 'A law explains why something is true'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Both accurately describe scientific laws and theories, so neither is the false statement."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "medium",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",
@@ -176,6 +442,44 @@
       ],
       "correctAnswer": "D",
       "explanation": "The second is one of the seven SI base units. The SI base unit for mass is the kilogram (not the gram), while the liter and cubic centimeter are units of volume (derived from length).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What is an SI base unit?",
+          "choices": [
+            {"label": "A", "text": "One of the seven fundamental SI units from which all other units are derived"},
+            {"label": "B", "text": "Any convenient metric unit"},
+            {"label": "C", "text": "A unit built by combining other units"},
+            {"label": "D", "text": "A non-metric, customary unit"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "SI base units are the seven fundamental units of the system."
+        },
+        {
+          "level": 2,
+          "prompt": "Which of the listed quantities are volume units (which are derived, not base)?",
+          "choices": [
+            {"label": "A", "text": "Liter and cubic centimeter"},
+            {"label": "B", "text": "Gram and second"},
+            {"label": "C", "text": "Second and liter"},
+            {"label": "D", "text": "Gram and cubic centimeter"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Liter and cubic centimeter measure volume, a derived quantity."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because they measure volume (a derived quantity)?",
+          "choices": [
+            {"label": "A", "text": "Liter and cubic centimeter"},
+            {"label": "B", "text": "Gram and second"},
+            {"label": "C", "text": "Gram and liter"},
+            {"label": "D", "text": "Second and cubic centimeter"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Liter and cubic centimeter are volume units derived from length, not base units."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "easy",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",
@@ -196,6 +500,44 @@
       ],
       "correctAnswer": "C",
       "explanation": "A derived unit is constructed from base units. The milliliter is a volume (length cubed), so it is derived. Kelvin, meter, and kilogram are all SI base units.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What is a derived SI unit?",
+          "choices": [
+            {"label": "A", "text": "A unit built by combining base units"},
+            {"label": "B", "text": "One of the seven fundamental base units"},
+            {"label": "C", "text": "A non-metric unit"},
+            {"label": "D", "text": "Always a unit of time"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Derived units are combinations of the base units."
+        },
+        {
+          "level": 2,
+          "prompt": "Is the kilogram a base unit or a derived unit?",
+          "choices": [
+            {"label": "A", "text": "A base unit - the SI base unit of mass"},
+            {"label": "B", "text": "A derived unit"},
+            {"label": "C", "text": "Not an SI unit at all"},
+            {"label": "D", "text": "A unit of volume"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The kilogram is the SI base unit of mass."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because they are SI base units, not derived units?",
+          "choices": [
+            {"label": "A", "text": "Kelvin and kilogram"},
+            {"label": "B", "text": "Milliliter and meter"},
+            {"label": "C", "text": "Meter and milliliter"},
+            {"label": "D", "text": "Kelvin and milliliter"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Kelvin (temperature) and kilogram (mass) are base units."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "easy",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",
@@ -216,6 +558,44 @@
       ],
       "correctAnswer": "B",
       "explanation": "The five readings agree closely with one another (all 0.976-0.979 kg), so they are precise. But they are consistently about 0.02 kg below the true value of 1 kg, so they are not accurate.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What is the difference between precision and accuracy?",
+          "choices": [
+            {"label": "A", "text": "Precision is agreement among the readings; accuracy is closeness to the true value"},
+            {"label": "B", "text": "Precision is closeness to the true value; accuracy is agreement among readings"},
+            {"label": "C", "text": "They mean the same thing"},
+            {"label": "D", "text": "Neither depends on the true value"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Precision is reproducibility; accuracy is closeness to the true value."
+        },
+        {
+          "level": 2,
+          "prompt": "The five readings cluster tightly (0.976-0.979 kg). What does that tight clustering show?",
+          "choices": [
+            {"label": "A", "text": "High precision"},
+            {"label": "B", "text": "High accuracy"},
+            {"label": "C", "text": "Low precision"},
+            {"label": "D", "text": "Neither precision nor accuracy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Closely agreeing values indicate good precision."
+        },
+        {
+          "level": 3,
+          "prompt": "The readings are consistently about 0.02 kg too low. Which two choices can be eliminated because they claim the results are accurate?",
+          "choices": [
+            {"label": "A", "text": "'Accurate, but not precise' and 'Both accurate and precise'"},
+            {"label": "B", "text": "'Precise, but not accurate' and 'Neither accurate nor precise'"},
+            {"label": "C", "text": "'Accurate, but not precise' and 'Precise, but not accurate'"},
+            {"label": "D", "text": "'Both accurate and precise' and 'Neither accurate nor precise'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A consistent offset from the true value means the results are not accurate, ruling out both 'accurate' options."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "medium",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",
@@ -236,6 +616,44 @@
       ],
       "correctAnswer": "A",
       "explanation": "A counted or defined quantity—such as exactly 12 eggs in a dozen—is exact and has infinite significant figures. Measured quantities (height, mass, length) always carry some uncertainty.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Which kind of quantity is exact (having infinite significant figures)?",
+          "choices": [
+            {"label": "A", "text": "A counted or defined quantity"},
+            {"label": "B", "text": "Any measured quantity"},
+            {"label": "C", "text": "Only lengths"},
+            {"label": "D", "text": "Only masses"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Counted or defined values are exact; measurements carry uncertainty."
+        },
+        {
+          "level": 2,
+          "prompt": "Three of the choices are physical measurements. What do all measurements have that exact numbers lack?",
+          "choices": [
+            {"label": "A", "text": "Some inherent uncertainty"},
+            {"label": "B", "text": "Infinite significant figures"},
+            {"label": "C", "text": "Zero significant figures"},
+            {"label": "D", "text": "No units"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Measured values carry uncertainty, unlike exact counts."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because they are measured (and therefore uncertain) quantities?",
+          "choices": [
+            {"label": "A", "text": "The height of a person and the mass of a dog"},
+            {"label": "B", "text": "The number of eggs in a dozen and the length of a table"},
+            {"label": "C", "text": "The number of eggs in a dozen and the mass of a dog"},
+            {"label": "D", "text": "The height of a person and the number of eggs in a dozen"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Height and mass are measured values, so they are not exact."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "easy",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",
@@ -256,6 +674,44 @@
       ],
       "correctAnswer": "B",
       "explanation": "Leading zeros are not significant, so 0.94 has 2 significant figures. 0.207 has 3, 6.23 has 3, and 1082 has 4.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What is the rule for significant figures when a number has leading zeros?",
+          "choices": [
+            {"label": "A", "text": "Leading zeros are not significant"},
+            {"label": "B", "text": "Leading zeros are always significant"},
+            {"label": "C", "text": "All zeros in any number are significant"},
+            {"label": "D", "text": "Only trailing zeros ever count"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Leading zeros merely set the decimal place and are not significant."
+        },
+        {
+          "level": 2,
+          "prompt": "How many significant figures does 0.207 have (a zero between nonzero digits counts)?",
+          "choices": [
+            {"label": "A", "text": "Three"},
+            {"label": "B", "text": "Two"},
+            {"label": "C", "text": "One"},
+            {"label": "D", "text": "Four"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The 2, the captive 0, and the 7 are all significant, giving three."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because they each have THREE significant figures?",
+          "choices": [
+            {"label": "A", "text": "0.207 and 6.23"},
+            {"label": "B", "text": "1082 and 0.94"},
+            {"label": "C", "text": "1082 and 0.207"},
+            {"label": "D", "text": "0.94 and 6.23"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "0.207 and 6.23 each contain three significant figures."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "easy",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",
@@ -276,6 +732,44 @@
       ],
       "correctAnswer": "D",
       "explanation": "By convention the uncertainty lies in the last reported digit. The last digit of 7.934 g is in the thousandths place, so the assumed uncertainty is ±0.001 g.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "By convention, where does the uncertainty of a measurement lie?",
+          "choices": [
+            {"label": "A", "text": "In the last reported (rightmost) digit"},
+            {"label": "B", "text": "In the first digit"},
+            {"label": "C", "text": "There is no uncertainty"},
+            {"label": "D", "text": "In the units only"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The uncertainty is in the final significant digit."
+        },
+        {
+          "level": 2,
+          "prompt": "In 7.934 g, which place value is the last digit in?",
+          "choices": [
+            {"label": "A", "text": "The thousandths place (0.001)"},
+            {"label": "B", "text": "The tenths place (0.1)"},
+            {"label": "C", "text": "The ones place (1)"},
+            {"label": "D", "text": "The hundredths place (0.01)"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The final digit, 4, is in the thousandths place."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because they are far coarser than the reported digits allow?",
+          "choices": [
+            {"label": "A", "text": "+/-1 g and +/-0.1 g"},
+            {"label": "B", "text": "+/-0.01 g and +/-0.001 g"},
+            {"label": "C", "text": "+/-1 g and +/-0.001 g"},
+            {"label": "D", "text": "+/-0.1 g and +/-0.01 g"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A value written to the thousandths place is known far more precisely than +/-1 or +/-0.1 g."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "medium",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",
@@ -296,6 +790,44 @@
       ],
       "correctAnswer": "A",
       "explanation": "Air is a homogeneous mixture of gases with uniform composition throughout. Chocolate chip ice cream, dirt, and concrete are heterogeneous mixtures with visibly non-uniform composition.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What defines a homogeneous mixture?",
+          "choices": [
+            {"label": "A", "text": "It has a uniform composition throughout"},
+            {"label": "B", "text": "It has visibly different regions"},
+            {"label": "C", "text": "It is a single pure element"},
+            {"label": "D", "text": "It is always a solid"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Homogeneous mixtures are uniform throughout."
+        },
+        {
+          "level": 2,
+          "prompt": "Chocolate chip ice cream has visible chocolate chips embedded in the cream. Is it homogeneous or heterogeneous?",
+          "choices": [
+            {"label": "A", "text": "Heterogeneous"},
+            {"label": "B", "text": "Homogeneous"},
+            {"label": "C", "text": "A pure compound"},
+            {"label": "D", "text": "A single element"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Visible, separable chips make its composition non-uniform, i.e., heterogeneous."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated as clearly heterogeneous (non-uniform)?",
+          "choices": [
+            {"label": "A", "text": "Chocolate chip ice cream and dirt"},
+            {"label": "B", "text": "Air and concrete"},
+            {"label": "C", "text": "Air and dirt"},
+            {"label": "D", "text": "Concrete and chocolate chip ice cream"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Chocolate chip ice cream and dirt have visibly separate components."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "easy",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",
@@ -316,6 +848,44 @@
       ],
       "correctAnswer": "C",
       "explanation": "Brass is a mixture (an alloy of copper and zinc). Helium, copper, and iron are pure substances (each is a single element).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What distinguishes a mixture from a pure substance?",
+          "choices": [
+            {"label": "A", "text": "A mixture combines two or more substances physically, with variable composition"},
+            {"label": "B", "text": "A mixture is a single element"},
+            {"label": "C", "text": "A mixture is always a compound"},
+            {"label": "D", "text": "A mixture has a fixed number of atoms per formula"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Mixtures contain more than one substance in variable proportions."
+        },
+        {
+          "level": 2,
+          "prompt": "Helium gas consists only of helium atoms. Is it a mixture or a pure substance?",
+          "choices": [
+            {"label": "A", "text": "A pure substance"},
+            {"label": "B", "text": "A mixture"},
+            {"label": "C", "text": "A compound of two elements"},
+            {"label": "D", "text": "An alloy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Helium is a single element, so it is a pure substance, not a mixture."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two choices can be eliminated because they are pure elements, not mixtures?",
+          "choices": [
+            {"label": "A", "text": "Helium and iron"},
+            {"label": "B", "text": "Copper and brass"},
+            {"label": "C", "text": "Helium and brass"},
+            {"label": "D", "text": "Iron and brass"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Helium and iron are single elements, so neither is a mixture."
+        }
+      ],
       "topicTags": ["stoichiometry, reactions & measurement"],
       "difficulty": "easy",
       "sourceName": "LibreTexts — General, Organic, and Biochemistry with Problems, Case Studies, and Activities (Roosevelt University), Ch. 1 Scientific Method, Matter, and Measurements",

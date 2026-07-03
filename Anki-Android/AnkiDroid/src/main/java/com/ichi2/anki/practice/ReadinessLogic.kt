@@ -21,6 +21,15 @@ import kotlin.math.sqrt
 /** Minimum reviewed cards before a Memory estimate is trustworthy. */
 const val MIN_REVIEWED_CARDS = 30
 
+/**
+ * Named source for the full-length scaled-score ESTIMATE. The scaled scores are
+ * computed on the SpeedyCAT desktop app by a deterministic representative
+ * raw→scaled conversion (anchored to AAMC's published scoring examples) and
+ * arrive here read-only via the synced results file. Mirrors the desktop
+ * `SCALED_SCORE_SOURCE` so both apps name the same source.
+ */
+const val SCALED_SCORE_SOURCE = "AAMC published scoring examples (students-residents.aamc.org)"
+
 /** Minimum answered practice questions before a Performance estimate is shown. */
 const val MIN_PRACTICE_ANSWERS = 30
 
@@ -143,6 +152,9 @@ data class PerformanceResult(
     val ci: ConfidenceInterval,
     val avgTimeSeconds: Double,
     val insufficientReason: String,
+    /** Answered attempts that were assisted-correct (hint ladder reached level 3)
+     * and therefore NOT credited as correct — the anti-gaming penalty. */
+    val assistedAnswered: Int = 0,
 )
 
 /**
@@ -150,36 +162,46 @@ data class PerformanceResult(
  * selection is a skip and is excluded from accuracy), plus average time per
  * answered question. Give up when fewer than [minAnswered] answered attempts
  * exist. Pass the practice-session attempts recorded on this device.
+ *
+ * SpeedyCAT anti-gaming penalty: an assisted-correct attempt (the learner
+ * climbed to level 3 of the hint ladder, [Attempt.assisted]) does NOT count as
+ * correct — it still counts toward the denominator but earns no credit, so a
+ * student cannot inflate Performance by leaning on the tutor. Unassisted correct
+ * answers keep full credit. Mirrors the desktop `practice_accuracy_totals`.
  */
 fun computePerformance(
     practiceAttempts: List<Attempt>,
     minAnswered: Int = MIN_PRACTICE_ANSWERS,
 ): PerformanceResult {
     val answered = practiceAttempts.filter { it.selectedAnswer.isNotEmpty() }
+    // Only UNASSISTED correct answers earn credit.
+    val credited = answered.count { it.correct && !it.assisted }
+    val assistedAnswered = answered.count { it.assisted }
     if (answered.size < minAnswered) {
         return PerformanceResult(
             sufficient = false,
             answered = answered.size,
-            correct = answered.count { it.correct },
+            correct = credited,
             accuracy = 0.0,
             ci = ConfidenceInterval(0.0, 0.0),
             avgTimeSeconds = 0.0,
             insufficientReason =
                 "Not enough answered practice questions yet (${answered.size} of $minAnswered needed). " +
                     "Do more practice to build a reliable estimate.",
+            assistedAnswered = assistedAnswered,
         )
     }
-    val correct = answered.count { it.correct }
-    val accuracy = correct.toDouble() / answered.size
+    val accuracy = credited.toDouble() / answered.size
     val avgTime = answered.sumOf { it.timeSeconds }.toDouble() / answered.size
     return PerformanceResult(
         sufficient = true,
         answered = answered.size,
-        correct = correct,
+        correct = credited,
         accuracy = accuracy,
         ci = proportionCi(accuracy, answered.size),
         avgTimeSeconds = avgTime,
         insufficientReason = "",
+        assistedAnswered = assistedAnswered,
     )
 }
 
@@ -231,10 +253,16 @@ fun performancePillar(result: PerformanceResult): ReadinessPillar =
         source = "Your Practice Question attempts (stored on this device)",
         detail =
             if (result.sufficient) {
-                listOf(
-                    "${result.correct} / ${result.answered} correct",
-                    "${result.avgTimeSeconds.roundToInt()}s average per question",
-                )
+                buildList {
+                    add("${result.correct} / ${result.answered} unassisted correct")
+                    if (result.assistedAnswered > 0) {
+                        add(
+                            "${result.assistedAnswered} answered with hints (level 3) — " +
+                                "counted as incorrect (anti-gaming)",
+                        )
+                    }
+                    add("${result.avgTimeSeconds.roundToInt()}s average per question")
+                }
             } else {
                 emptyList()
             },
@@ -251,6 +279,14 @@ data class ReadinessResult(
     val accuracy: Double,
     val ci: ConfidenceInterval,
     val insufficientReason: String,
+    /**
+     * Mean of the completed tests' overall scaled ESTIMATES (472–528), or null
+     * when no synced summary carried one. [scaledLow]/[scaledHigh] are the
+     * lowest/highest per-test estimates (the spread across completed tests).
+     */
+    val scaledEstimate: Int? = null,
+    val scaledLow: Int? = null,
+    val scaledHigh: Int? = null,
 )
 
 /**
@@ -279,6 +315,9 @@ fun computeReadiness(summaries: List<FullLengthSummary>): ReadinessResult {
     val totalCorrect = completed.sumOf { it.totalCorrect }
     val totalQuestions = completed.sumOf { it.totalQuestions }
     val accuracy = if (totalQuestions > 0) totalCorrect.toDouble() / totalQuestions else 0.0
+    // Averaged MCAT-scale estimate across the completed tests that carried one
+    // (desktop-computed; may be absent on older synced summaries).
+    val scaled = completed.mapNotNull { it.overallScaledScore }
     return ReadinessResult(
         sufficient = true,
         completedTests = completed.size,
@@ -287,6 +326,9 @@ fun computeReadiness(summaries: List<FullLengthSummary>): ReadinessResult {
         accuracy = accuracy,
         ci = proportionCi(accuracy, totalQuestions),
         insufficientReason = "",
+        scaledEstimate = if (scaled.isNotEmpty()) scaled.average().roundToInt() else null,
+        scaledLow = scaled.minOrNull(),
+        scaledHigh = scaled.maxOrNull(),
     )
 }
 
@@ -300,12 +342,24 @@ fun readinessPillar(result: ReadinessResult): ReadinessPillar =
         source = "SpeedyCAT full-length tests (taken on desktop, synced read-only)",
         detail =
             if (result.sufficient) {
-                listOf(
-                    "${result.totalCorrect} / ${result.totalQuestions} correct",
-                    sampleLine(result.completedTests, "completed full-length test", "completed full-length tests"),
-                )
+                buildList {
+                    add("${result.totalCorrect} / ${result.totalQuestions} correct")
+                    if (result.scaledEstimate != null) {
+                        add("Est. MCAT score \u2248 ${result.scaledEstimate}${scaledRangeSuffix(result)} (472\u2013528)")
+                        add("Scaled score is an averaged raw\u2192scaled estimate ($SCALED_SCORE_SOURCE), not an official score")
+                    }
+                    add(sampleLine(result.completedTests, "completed full-length test", "completed full-length tests"))
+                }
             } else {
                 emptyList()
             },
         insufficientReason = result.insufficientReason,
     )
+
+/** " (range low–high)" across completed tests, or "" when there's a single test
+ * (or no spread) so we never print a degenerate range. */
+private fun scaledRangeSuffix(result: ReadinessResult): String {
+    val low = result.scaledLow
+    val high = result.scaledHigh
+    return if (low != null && high != null && low != high) " (range $low\u2013$high)" else ""
+}

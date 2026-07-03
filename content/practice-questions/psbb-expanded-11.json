@@ -20,6 +20,44 @@
   "questions": [
     {
       "id": "psbb-x194",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In sociology, 'deviance' means which of the following?",
+          "choices": [
+            {"label": "A", "text": "Any violation of a society's social norms"},
+            {"label": "B", "text": "Only acts that are punished with prison"},
+            {"label": "C", "text": "Only acts that are religiously sinful"},
+            {"label": "D", "text": "Only acts that cause physical injury"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Deviance is the violation of a society's social norms."
+        },
+        {
+          "level": 2,
+          "prompt": "An act considered deviant in one society may be acceptable in another, and this can change over time. What does this variation show about deviance?",
+          "choices": [
+            {"label": "A", "text": "It is not based on any single fixed or universal standard"},
+            {"label": "B", "text": "It is identical in every society"},
+            {"label": "C", "text": "It is fixed by human biology"},
+            {"label": "D", "text": "It never changes over time"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Deviance varies across societies and time, showing it is not based on a single fixed standard."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two of the main-question options wrongly treat deviance as fixed by a SINGLE standard (law or religion) rather than by social norms generally?",
+          "choices": [
+            {"label": "A", "text": "'Deviance is defined by federal, state, and local laws' and 'deviance's definition is determined by one's religion'"},
+            {"label": "B", "text": "'Deviance is socially defined' and 'deviance is defined by laws'"},
+            {"label": "C", "text": "'Deviance occurs whenever someone is harmed' and 'deviance is socially defined'"},
+            {"label": "D", "text": "'Deviance's definition is determined by religion' and 'deviance is socially defined'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Tying deviance solely to laws or to religion treats it as fixed by one standard, contradicting its socially variable nature, so both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Which of the following best describes how deviance is defined?",
       "choices": [
@@ -40,6 +78,44 @@
     },
     {
       "id": "psbb-x195",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In sociology, a 'sanction' is which of the following?",
+          "choices": [
+            {"label": "A", "text": "A reaction (reward or punishment) that enforces a social norm"},
+            {"label": "B", "text": "A type of written law only"},
+            {"label": "C", "text": "A private personal emotion"},
+            {"label": "D", "text": "A government agency"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A sanction is a reaction that enforces norms by rewarding or punishing behavior."
+        },
+        {
+          "level": 2,
+          "prompt": "Is the professor's spoken request (not a written rule or law) a FORMAL or an INFORMAL sanction?",
+          "choices": [
+            {"label": "A", "text": "Informal, because it is not codified in official rules or laws"},
+            {"label": "B", "text": "Formal, because it is an official written penalty"},
+            {"label": "C", "text": "Neither formal nor informal"},
+            {"label": "D", "text": "Both formal and informal equally"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A spoken reprimand is not codified, so it is informal, eliminating the two 'formal' options."
+        },
+        {
+          "level": 3,
+          "prompt": "A 'negative sanction' is best described as which of the following?",
+          "choices": [
+            {"label": "A", "text": "A punishment or corrective response to unwanted behavior"},
+            {"label": "B", "text": "A reward for good behavior"},
+            {"label": "C", "text": "An official written law"},
+            {"label": "D", "text": "A neutral, unbiased observation"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A negative sanction is a punishment or corrective response; a positive sanction would instead be a reward."
+        }
+      ],
       "section": "PSBB",
       "stem": "A student has a habit of talking on their cell phone during class. One day, the professor stops the lecture and asks the student to respect others in the class by turning off the phone. In this situation, the professor used __________ to maintain social control.",
       "choices": [
@@ -60,6 +136,44 @@
     },
     {
       "id": "psbb-x196",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In sociology, 'sanctions' are society's reactions to behavior; they enforce which of the following?",
+          "choices": [
+            {"label": "A", "text": "Social norms, by rewarding conformity and punishing deviance"},
+            {"label": "B", "text": "Only federal tax law"},
+            {"label": "C", "text": "Inherited genetic traits"},
+            {"label": "D", "text": "The weather"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Sanctions enforce social norms by rewarding conformity and punishing deviance."
+        },
+        {
+          "level": 2,
+          "prompt": "The question asks what the grocery-store PATRONS are demonstrating (their reaction), not what the pajama wearer is doing. The patrons' reaction is an example of which of the following?",
+          "choices": [
+            {"label": "A", "text": "A sanction (a social reaction to behavior)"},
+            {"label": "B", "text": "The norm violation itself"},
+            {"label": "C", "text": "A formal written law"},
+            {"label": "D", "text": "A positive reward"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The patrons' reaction is a sanction; wearing pajamas is the deviance, so 'deviance' describes the wearer, not the patrons."
+        },
+        {
+          "level": 3,
+          "prompt": "The patrons' reaction is UNOFFICIAL (not an official penalty issued by an authority). Which option is therefore ruled out?",
+          "choices": [
+            {"label": "A", "text": "Formal sanctions"},
+            {"label": "B", "text": "Informal sanctions"},
+            {"label": "C", "text": "Unofficial social disapproval"},
+            {"label": "D", "text": "Whispering and stares"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The reaction is unofficial, so it is not a 'formal' sanction, eliminating that option."
+        }
+      ],
       "section": "PSBB",
       "stem": "One day, you decide to wear pajamas to the grocery store. While you shop, you notice people giving you strange looks and whispering to others. In this case, the grocery store patrons are demonstrating _______.",
       "choices": [
@@ -80,6 +194,44 @@
     },
     {
       "id": "psbb-x197",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "C. Wright Mills's 'power elite' consists of people at the top of which institutions?",
+          "choices": [
+            {"label": "A", "text": "Government, the military, and large corporations"},
+            {"label": "B", "text": "Local sports clubs"},
+            {"label": "C", "text": "Neighborhood associations"},
+            {"label": "D", "text": "Elementary schools"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The power elite comprises those atop government, the military, and large corporations."
+        },
+        {
+          "level": 2,
+          "prompt": "To be in the power elite, a person must hold which of the following?",
+          "choices": [
+            {"label": "A", "text": "A top position of institutional power (political, military, or corporate leadership)"},
+            {"label": "B", "text": "Any ordinary job"},
+            {"label": "C", "text": "An interesting hobby"},
+            {"label": "D", "text": "A low-wage position"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Membership requires a top position of institutional power."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two of the main-question options are ordinary occupations WITHOUT top institutional power (and thus not power-elite members)?",
+          "choices": [
+            {"label": "A", "text": "'A professor' and 'a mechanic'"},
+            {"label": "B", "text": "'A senator' and 'a professor'"},
+            {"label": "C", "text": "'A war veteran' and 'a senator'"},
+            {"label": "D", "text": "'A mechanic' and 'a senator'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A professor and a mechanic do not hold top institutional power, so both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "According to C. Wright Mills, which of the following people is most likely to be a member of the power elite?",
       "choices": [
@@ -100,6 +252,44 @@
     },
     {
       "id": "psbb-x198",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "C. Wright Mills argued that a small 'power elite' holds concentrated power in society. This concept is mainly about which of the following?",
+          "choices": [
+            {"label": "A", "text": "How a small group atop major institutions wields outsized power"},
+            {"label": "B", "text": "How children inherit criminal behavior"},
+            {"label": "C", "text": "How fame makes people feel lonely"},
+            {"label": "D", "text": "How social norms get challenged"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The power-elite concept concerns concentrated power among elites atop major institutions."
+        },
+        {
+          "level": 2,
+          "prompt": "Two of the main-question options explain the celebrity's crime WITHOUT reference to power or status (one blames upbringing; one blames a desire to rebel). Which two?",
+          "choices": [
+            {"label": "A", "text": "'Because his parents committed similar crimes' and 'because he is challenging socially accepted norms'"},
+            {"label": "B", "text": "'Because his fame protects him from retribution' and 'because his parents committed crimes'"},
+            {"label": "C", "text": "'Because his fame disconnects him from society' and 'because his fame protects him'"},
+            {"label": "D", "text": "'Because he is challenging norms' and 'because his fame protects him'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Blaming upbringing or a desire to rebel does not invoke power or status, so those two can be eliminated."
+        },
+        {
+          "level": 3,
+          "prompt": "The power-elite concept is fundamentally about POWER. Which single word best captures why elites might avoid punishment, according to this concept?",
+          "choices": [
+            {"label": "A", "text": "Power/influence"},
+            {"label": "B", "text": "Loneliness"},
+            {"label": "C", "text": "Poverty"},
+            {"label": "D", "text": "Rebellion"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The power-elite concept attributes elites' impunity to their power and influence."
+        }
+      ],
       "section": "PSBB",
       "stem": "According to the concept of the power elite, why would a celebrity commit a crime?",
       "choices": [
@@ -120,6 +310,44 @@
     },
     {
       "id": "psbb-x199",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In labeling theory, deviance is analyzed by whether a person becomes LABELED as a deviant. The two key types are which of the following?",
+          "choices": [
+            {"label": "A", "text": "Primary deviance and secondary deviance"},
+            {"label": "B", "text": "Legal deviance and illegal deviance"},
+            {"label": "C", "text": "Positive deviance and negative deviance"},
+            {"label": "D", "text": "Formal deviance and informal deviance"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Labeling theory distinguishes primary and secondary deviance."
+        },
+        {
+          "level": 2,
+          "prompt": "In labeling theory, what is the key difference between primary and secondary deviance in terms of the deviant LABEL?",
+          "choices": [
+            {"label": "A", "text": "One type occurs before any deviant label is applied; the other follows from being labeled"},
+            {"label": "B", "text": "Both always result in a permanent label"},
+            {"label": "C", "text": "Neither one ever involves a label"},
+            {"label": "D", "text": "They are unrelated to labeling"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Primary deviance comes before labeling; secondary deviance follows from being labeled."
+        },
+        {
+          "level": 3,
+          "prompt": "The blank pairs a TYPE of deviance with whether it leads to a label. Which two options can be eliminated because they use a made-up 'Negative' type or the WRONG type (Secondary) for a violation that does NOT lead to a label?",
+          "choices": [
+            {"label": "A", "text": "'Negative; does' and 'Secondary; does not'"},
+            {"label": "B", "text": "'Primary; does not' and 'Primary; may or may not'"},
+            {"label": "C", "text": "'Secondary; does not' and 'Primary; does not'"},
+            {"label": "D", "text": "'Negative; does' and 'Primary; may or may not'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "'Negative' is not one of the labeling-theory types, and 'Secondary' is the type that DOES follow labeling, so both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "______ deviance is a violation of norms that ______result in a person being labeled a deviant.",
       "choices": [
@@ -140,6 +368,44 @@
     },
     {
       "id": "psbb-x200",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A 'violent crime' is defined as one that does which of the following?",
+          "choices": [
+            {"label": "A", "text": "Involves the use or threat of force against a person"},
+            {"label": "B", "text": "Involves only financial fraud"},
+            {"label": "C", "text": "Never harms anyone"},
+            {"label": "D", "text": "Can only occur on a public street"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A violent crime involves the use or threat of force against a person."
+        },
+        {
+          "level": 2,
+          "prompt": "Spousal abuse involves which of the following?",
+          "choices": [
+            {"label": "A", "text": "The use of force against another person"},
+            {"label": "B", "text": "Accounting fraud by a corporation"},
+            {"label": "C", "text": "Shoplifting merchandise"},
+            {"label": "D", "text": "A victimless act"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Spousal abuse uses force against a person, fitting the violent-crime definition."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two of the main-question options clearly do NOT fit an act involving physical force against a person?",
+          "choices": [
+            {"label": "A", "text": "'Corporate crime' (financial wrongdoing by businesses) and 'nonviolent crime'"},
+            {"label": "B", "text": "'Violent crime' and 'street crime'"},
+            {"label": "C", "text": "'Street crime' and 'corporate crime'"},
+            {"label": "D", "text": "'Nonviolent crime' and 'violent crime'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Corporate crime (financial) and nonviolent crime do not involve physical force, so both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Spousal abuse is an example of a ________.",
       "choices": [
@@ -160,6 +426,44 @@
     },
     {
       "id": "psbb-x201",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The National Crime Victimization Survey (NCVS) collects crime data by doing which of the following?",
+          "choices": [
+            {"label": "A", "text": "Surveying or contacting members of the public about their experiences as victims"},
+            {"label": "B", "text": "Reading suspects' minds"},
+            {"label": "C", "text": "Only counting arrests made by police"},
+            {"label": "D", "text": "Analyzing DNA samples"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The NCVS surveys the public about their victimization experiences."
+        },
+        {
+          "level": 2,
+          "prompt": "Any survey that must CONTACT respondents (for example, by phone) risks which of the following?",
+          "choices": [
+            {"label": "A", "text": "Missing people who are hard to reach, such as those without phones, biasing the sample"},
+            {"label": "B", "text": "Reaching literally everyone perfectly"},
+            {"label": "C", "text": "Eliminating all sampling error"},
+            {"label": "D", "text": "Collecting no data whatsoever"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Contact-based surveys can miss hard-to-reach groups, biasing results."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two of the main-question options state things that are INACCURATE about the NCVS (since it is a victim survey that DOES collect demographic data and is NOT limited to police records)?",
+          "choices": [
+            {"label": "A", "text": "'The NCVS doesn't include demographic data such as age or gender' and 'the NCVS only includes information collected by police officers'"},
+            {"label": "B", "text": "'The NCVS may be unable to reach important groups' and 'the NCVS doesn't include demographic data'"},
+            {"label": "C", "text": "'It doesn't address the relationship between the criminal and the victim' and 'the NCVS may be unable to reach important groups'"},
+            {"label": "D", "text": "'The NCVS only includes police information' and 'the NCVS may be unable to reach important groups'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The NCVS does collect demographic data and is a victim survey rather than police-record-only, so those two options are inaccurate and can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "What is a disadvantage of the National Crime Victimization Survey (NCVS)?",
       "choices": [
@@ -180,6 +484,44 @@
     },
     {
       "id": "psbb-x202",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Sociologists classify stratification systems as 'open' or 'closed' based on which of the following?",
+          "choices": [
+            {"label": "A", "text": "How much social mobility they allow"},
+            {"label": "B", "text": "How secretive their government is"},
+            {"label": "C", "text": "How many people they contain"},
+            {"label": "D", "text": "Whether they are urban or rural"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Open versus closed refers to how much social mobility is possible."
+        },
+        {
+          "level": 2,
+          "prompt": "Two of the main-question options give explanations UNRELATED to social mobility (about government secrecy or geography). Which two?",
+          "choices": [
+            {"label": "A", "text": "'They are run by secretive governments' and 'they exist only in rural areas'"},
+            {"label": "B", "text": "'People cannot change their social standing' and 'they are run by secretive governments'"},
+            {"label": "C", "text": "'Most have been outlawed' and 'people cannot change their standing'"},
+            {"label": "D", "text": "'They exist only in rural areas' and 'people cannot change their standing'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Government secrecy and rural location are unrelated to mobility, so those two can be eliminated."
+        },
+        {
+          "level": 3,
+          "prompt": "A 'closed' stratification system is one where a person's position is essentially permanent. This is because the system does NOT allow which of the following?",
+          "choices": [
+            {"label": "A", "text": "Movement from one social position to another"},
+            {"label": "B", "text": "People to eat or sleep"},
+            {"label": "C", "text": "People to travel between towns"},
+            {"label": "D", "text": "People to speak freely"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A closed system does not allow movement between social positions."
+        }
+      ],
       "section": "PSBB",
       "stem": "What factor makes caste systems closed?",
       "choices": [
@@ -200,6 +542,44 @@
     },
     {
       "id": "psbb-x203",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "'Upward social mobility' means which of the following?",
+          "choices": [
+            {"label": "A", "text": "Moving to a higher social or economic position than one started with"},
+            {"label": "B", "text": "Staying in exactly the same class as one's parents"},
+            {"label": "C", "text": "Moving to a lower position"},
+            {"label": "D", "text": "Leaving society entirely"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Upward mobility means rising above one's starting social or economic position."
+        },
+        {
+          "level": 2,
+          "prompt": "Which of the following is a classic PATHWAY that lets someone rise above their parents' social position?",
+          "choices": [
+            {"label": "A", "text": "Gaining more education than one's parents had"},
+            {"label": "B", "text": "Inheriting a parent's exact job and status"},
+            {"label": "C", "text": "Staying in the same neighborhood for life"},
+            {"label": "D", "text": "Refusing to work at all"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Gaining more education than one's parents is a classic route to upward mobility."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two of the main-question options do NOT clearly show someone RISING ABOVE their origin (one keeps the family's existing status; the other is just a lateral job placement)?",
+          "choices": [
+            {"label": "A", "text": "'Firstborn son who inherits the family business' and 'first-time interviewee who is hired for a job'"},
+            {"label": "B", "text": "'First-generation college student' and 'firstborn son who inherits the family business'"},
+            {"label": "C", "text": "'First-shift factory worker' and 'first-generation college student'"},
+            {"label": "D", "text": "'First-time interviewee who is hired for a job' and 'first-generation college student'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Inheriting the family business keeps existing status and being hired for a job is lateral, so neither clearly shows upward mobility and both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Which person best illustrates opportunities for upward social mobility in the United States?",
       "choices": [
@@ -220,6 +600,44 @@
     },
     {
       "id": "psbb-x204",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A 'meritocracy' is a system in which social position and rewards are based on which of the following?",
+          "choices": [
+            {"label": "A", "text": "Individual ability, effort, and achievement"},
+            {"label": "B", "text": "Family lineage and inheritance"},
+            {"label": "C", "text": "Pure random chance"},
+            {"label": "D", "text": "A person's physical height"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A meritocracy bases rewards on individual ability, effort, and achievement."
+        },
+        {
+          "level": 2,
+          "prompt": "In a meritocracy, how are people's rewards determined?",
+          "choices": [
+            {"label": "A", "text": "By their individual ability and achievement"},
+            {"label": "B", "text": "By their family name only"},
+            {"label": "C", "text": "Equally for everyone regardless of performance"},
+            {"label": "D", "text": "By a random lottery"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A meritocracy allocates rewards according to ability and achievement."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two of the main-question options describe outcomes that IGNORE individual merit (equal pay regardless of performance; a class or marriage assumption)?",
+          "choices": [
+            {"label": "A", "text": "'Receive the same pay as all the other physician's assistants' and 'most likely marry a professional at the same level'"},
+            {"label": "B", "text": "'Earn a pay raise for doing excellent work' and 'receive the same pay as all others'"},
+            {"label": "C", "text": "'Be considered a member of the upper class' and 'earn a pay raise for doing excellent work'"},
+            {"label": "D", "text": "'Most likely marry a professional at the same level' and 'earn a pay raise for excellent work'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Equal pay regardless of performance and marriage-based assumptions ignore individual merit, so both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Based on meritocracy, a physician's assistant would:",
       "choices": [
@@ -240,6 +658,44 @@
     },
     {
       "id": "psbb-x205",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "People in the same social class often share similar tastes, manners, and everyday habits. What general kind of thing are these shared tastes and habits?",
+          "choices": [
+            {"label": "A", "text": "Behaviors and customs"},
+            {"label": "B", "text": "Inherited genetic traits"},
+            {"label": "C", "text": "Physical objects"},
+            {"label": "D", "text": "Government laws"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Shared tastes, manners, and habits are behaviors and customs."
+        },
+        {
+          "level": 2,
+          "prompt": "Which term refers to the RESPECT or social esteem attached to a person or role, rather than to a class's customs?",
+          "choices": [
+            {"label": "A", "text": "Prestige"},
+            {"label": "B", "text": "Class traits"},
+            {"label": "C", "text": "Underclass"},
+            {"label": "D", "text": "Behaviors"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Prestige is respect or esteem, not a set of customs, so it can be eliminated."
+        },
+        {
+          "level": 3,
+          "prompt": "Which single option names a GROUP of people (a social stratum) rather than a set of behaviors or customs?",
+          "choices": [
+            {"label": "A", "text": "Underclass"},
+            {"label": "B", "text": "Class traits"},
+            {"label": "C", "text": "Prestige"},
+            {"label": "D", "text": "Power"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "'Underclass' is a group of people, not a set of customs, so it can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "The behaviors, customs, and norms associated with a class are known as:",
       "choices": [
@@ -260,6 +716,44 @@
     },
     {
       "id": "psbb-x206",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "'Occupational prestige' refers to which of the following?",
+          "choices": [
+            {"label": "A", "text": "The relative respect or social esteem attached to different jobs"},
+            {"label": "B", "text": "The exact salary of every job"},
+            {"label": "C", "text": "The physical difficulty of a job"},
+            {"label": "D", "text": "The number of people working in a job"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Occupational prestige is the relative respect or esteem society attaches to different jobs."
+        },
+        {
+          "level": 2,
+          "prompt": "Occupational prestige is about how jobs are RANKED in esteem. Which option wrongly claims all jobs have the same status?",
+          "choices": [
+            {"label": "A", "text": "All equal in status"},
+            {"label": "B", "text": "Not equally valued"},
+            {"label": "C", "text": "Assigned to a person for life"},
+            {"label": "D", "text": "Not part of a person's self-identity"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "'All equal in status' contradicts the idea that jobs are ranked by prestige, so it can be eliminated."
+        },
+        {
+          "level": 3,
+          "prompt": "Which single option is IRRELEVANT to how society ranks jobs by esteem?",
+          "choices": [
+            {"label": "A", "text": "Whether a job is part of a person's self-identity"},
+            {"label": "B", "text": "Whether some jobs are respected more than others"},
+            {"label": "C", "text": "Whether jobs differ in prestige"},
+            {"label": "D", "text": "Whether jobs are ranked by esteem"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Whether a job is part of self-identity is irrelevant to prestige ranking, so it can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Occupational prestige means that jobs are:",
       "choices": [
@@ -280,6 +774,44 @@
     },
     {
       "id": "psbb-x207",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "'Global stratification' refers to inequalities in which of the following?",
+          "choices": [
+            {"label": "A", "text": "Wealth and power between nations or regions of the world"},
+            {"label": "B", "text": "Only within a single family"},
+            {"label": "C", "text": "Among planets in the solar system"},
+            {"label": "D", "text": "Between two next-door neighbors"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Global stratification is inequality in wealth and power between nations or regions."
+        },
+        {
+          "level": 2,
+          "prompt": "A single historical event that gave some nations a huge ECONOMIC and TECHNOLOGICAL advantage would most likely be one involving which of the following?",
+          "choices": [
+            {"label": "A", "text": "A leap in industrial production and technology"},
+            {"label": "B", "text": "A change in one country's government only"},
+            {"label": "C", "text": "A purely religious reform"},
+            {"label": "D", "text": "A two-sided military war"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A jump in industrial production and technology creates lasting economic advantage."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two of the main-question options were primarily POLITICAL or RELIGIOUS events rather than a transformation of economic production?",
+          "choices": [
+            {"label": "A", "text": "'The American Revolution' (political) and 'the Reformation' (religious)"},
+            {"label": "B", "text": "'The Industrial Revolution' and 'the American Revolution'"},
+            {"label": "C", "text": "'World War I' and 'the Industrial Revolution'"},
+            {"label": "D", "text": "'The Reformation' and 'the Industrial Revolution'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The American Revolution (political) and the Reformation (religious) were not transformations of economic production, so both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Which event created a significant divide between Western Europe/America and the rest of the world?",
       "choices": [
@@ -300,6 +832,44 @@
     },
     {
       "id": "psbb-x208",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The Davis-Moore thesis is which kind of explanation of social stratification?",
+          "choices": [
+            {"label": "A", "text": "A functionalist explanation"},
+            {"label": "B", "text": "A conflict-theory explanation"},
+            {"label": "C", "text": "A symbolic-interactionist explanation"},
+            {"label": "D", "text": "A biological explanation"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The Davis-Moore thesis is a functionalist account of stratification."
+        },
+        {
+          "level": 2,
+          "prompt": "How would a CONFLICT theorist view stratification differently from the Davis-Moore thesis?",
+          "choices": [
+            {"label": "A", "text": "As unjust inequality that benefits the powerful, rather than as helping society"},
+            {"label": "B", "text": "As helping society by filling important roles"},
+            {"label": "C", "text": "As motivating the most qualified people to work hard"},
+            {"label": "D", "text": "As entirely fair and necessary"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Conflict theorists see stratification as unjust inequality, the opposite of the Davis-Moore functionalist view."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two of the main-question options frame stratification NEGATIVELY (as unjustifiable or artificial), the OPPOSITE of the Davis-Moore functionalist claim?",
+          "choices": [
+            {"label": "A", "text": "'Cannot be justified' and 'is an artificial reflection of society'"},
+            {"label": "B", "text": "'Serves a purpose in society' and 'cannot be justified'"},
+            {"label": "C", "text": "'Is an outdated mode of societal organization' and 'serves a purpose in society'"},
+            {"label": "D", "text": "'Is an artificial reflection of society' and 'serves a purpose in society'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "'Cannot be justified' and 'artificial reflection' are critical framings opposite to the functionalist thesis, so both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "The basic premise of the Davis-Moore thesis is that the unequal distribution of rewards in social stratification:",
       "choices": [
@@ -320,6 +890,44 @@
     },
     {
       "id": "psbb-x209",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Symbolic interactionism studies society at which level?",
+          "choices": [
+            {"label": "A", "text": "The micro level of everyday face-to-face interactions and the meanings people attach to them"},
+            {"label": "B", "text": "The macro level of large institutions"},
+            {"label": "C", "text": "The purely biological level"},
+            {"label": "D", "text": "The global level of nations"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Symbolic interactionism is a micro-level perspective on everyday interaction and meaning."
+        },
+        {
+          "level": 2,
+          "prompt": "A symbolic-interactionist study of class would focus on which of the following?",
+          "choices": [
+            {"label": "A", "text": "How class shapes people's everyday experiences, tastes, and where they feel comfortable"},
+            {"label": "B", "text": "National wage gaps between large groups"},
+            {"label": "C", "text": "How institutions distribute resources overall"},
+            {"label": "D", "text": "Macro-level economic policy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Symbolic interactionism focuses on class in everyday, micro-level experience."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two of the main-question options describe MACRO-level patterns (broad group wage gaps; institutional valuation) rather than micro-level everyday interaction?",
+          "choices": [
+            {"label": "A", "text": "'Men often earn more than women, even working the same job' and 'doctors earn more money because their job is more highly valued'"},
+            {"label": "B", "text": "'Pat, a janitor, feels more comfortable eating in a truck stop' and 'men often earn more than women'"},
+            {"label": "C", "text": "'Teachers continue to struggle to keep benefits' and 'Pat, a janitor, feels more comfortable in a truck stop'"},
+            {"label": "D", "text": "'Doctors earn more because their job is valued' and 'Pat, a janitor, feels more comfortable in a truck stop'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Broad gender wage gaps and institutional job valuation are macro-level patterns, not micro-level interaction, so both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Which statement represents stratification from the perspective of symbolic interactionism?",
       "choices": [
@@ -340,6 +948,44 @@
     },
     {
       "id": "psbb-x210",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Conflict theory views society primarily as which of the following?",
+          "choices": [
+            {"label": "A", "text": "An arena of struggle over scarce resources between groups with unequal power"},
+            {"label": "B", "text": "A harmonious system where all parts cooperate"},
+            {"label": "C", "text": "A set of individual face-to-face symbols"},
+            {"label": "D", "text": "A purely biological organism"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Conflict theory sees society as a struggle over resources between unequal groups."
+        },
+        {
+          "level": 2,
+          "prompt": "Conflict theory focuses on inequality and power. Which pair of words best fits how conflict theory describes society?",
+          "choices": [
+            {"label": "A", "text": "Winners and losers competing over resources"},
+            {"label": "B", "text": "Partners sharing everything equally"},
+            {"label": "C", "text": "Friends helping one another"},
+            {"label": "D", "text": "Isolated individuals with no ties"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Conflict theory frames society as groups competing, producing winners and losers."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two of the main-question options describe capitalists in POSITIVE or NEUTRAL terms that conflict theory would NOT emphasize?",
+          "choices": [
+            {"label": "A", "text": "'Are ambitious' and 'fund social services'"},
+            {"label": "B", "text": "'Get rich while workers stay poor' and 'are ambitious'"},
+            {"label": "C", "text": "'Spend money wisely' and 'get rich while workers stay poor'"},
+            {"label": "D", "text": "'Fund social services' and 'get rich while workers stay poor'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Praising capitalists as ambitious or as funders of social services is not the conflict-theory view, so both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "Conflict theorists view capitalists as those who:",
       "choices": [

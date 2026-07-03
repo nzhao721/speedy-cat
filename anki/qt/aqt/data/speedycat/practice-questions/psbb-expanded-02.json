@@ -20,6 +20,44 @@
   "questions": [
     {
       "id": "psbb-x012",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "These four terms (allele, chromosome, mutation, and epigenetic factor) all belong to which area of biology?",
+          "choices": [
+            {"label": "A", "text": "Genetics and heredity"},
+            {"label": "B", "text": "Thermodynamics"},
+            {"label": "C", "text": "Classical conditioning"},
+            {"label": "D", "text": "Social psychology"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "All four options are concepts from genetics, the study of heredity and DNA."
+        },
+        {
+          "level": 2,
+          "prompt": "What distinguishes an epigenetic change from a change to the DNA sequence itself?",
+          "choices": [
+            {"label": "A", "text": "An epigenetic change alters gene expression without changing the underlying DNA base sequence"},
+            {"label": "B", "text": "An epigenetic change permanently rewrites the order of DNA bases"},
+            {"label": "C", "text": "An epigenetic change can only occur inside a chromosome"},
+            {"label": "D", "text": "An epigenetic change creates a brand-new allele by deleting bases"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Epigenetics affects whether genes are switched on or off, not the DNA sequence, so it is not a change to the sequence itself."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated because one names a structure that packages DNA and the other names an alternate form of a gene - neither being a sudden change to DNA?",
+          "choices": [
+            {"label": "A", "text": "chromosome and allele"},
+            {"label": "B", "text": "mutation and epigenetic factor"},
+            {"label": "C", "text": "allele and mutation"},
+            {"label": "D", "text": "chromosome and mutation"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A chromosome is a DNA-packaging structure and an allele is a gene variant, so neither is a sudden change to the DNA sequence."
+        }
+      ],
       "section": "PSBB",
       "stem": "A(n) ________ is a sudden, permanent change in a sequence of DNA.",
       "choices": [
@@ -40,6 +78,44 @@
     },
     {
       "id": "psbb-x013",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In genetics, what does the phrase 'gene expression' refer to?",
+          "choices": [
+            {"label": "A", "text": "The process by which a gene is switched on or off to produce a functional product"},
+            {"label": "B", "text": "The physical transfer of genes between two adults"},
+            {"label": "C", "text": "The migration patterns of animals"},
+            {"label": "D", "text": "The measurement of a person's reaction time"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Gene expression is about genes being turned on or off, the focus of this field."
+        },
+        {
+          "level": 2,
+          "prompt": "Evolutionary psychology primarily studies which of the following?",
+          "choices": [
+            {"label": "A", "text": "How behaviors and mental traits were shaped by natural selection over time"},
+            {"label": "B", "text": "How individual genes are switched on and off by the environment"},
+            {"label": "C", "text": "Employees' overall attitudes about their jobs"},
+            {"label": "D", "text": "The chemistry of neurotransmitters at the synapse"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Evolutionary psychology focuses on adaptation and selection, not on gene expression, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated because one studies how people influence each other and the other studies the neural bases of behavior - neither being the study of gene expression?",
+          "choices": [
+            {"label": "A", "text": "social psychology and behavioral neuroscience"},
+            {"label": "B", "text": "epigenetics and evolutionary psychology"},
+            {"label": "C", "text": "social psychology and epigenetics"},
+            {"label": "D", "text": "behavioral neuroscience and epigenetics"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Social psychology (social influence) and behavioral neuroscience (neural bases of behavior) are not the study of gene expression."
+        }
+      ],
       "section": "PSBB",
       "stem": "________ is the field of study that focuses on genes and their expression.",
       "choices": [
@@ -60,6 +136,44 @@
     },
     {
       "id": "psbb-x014",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A neuron is best described as which of the following?",
+          "choices": [
+            {"label": "A", "text": "A cell specialized to receive, integrate, and transmit information"},
+            {"label": "B", "text": "A type of muscle fiber that contracts"},
+            {"label": "C", "text": "A hormone secreted by a gland"},
+            {"label": "D", "text": "A small bone located in the inner ear"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Neurons are the signaling cells of the nervous system."
+        },
+        {
+          "level": 2,
+          "prompt": "In the direction of information flow through a neuron, which structure handles the OUTPUT - sending signals toward the next neuron?",
+          "choices": [
+            {"label": "A", "text": "The terminal buttons (axon terminals)"},
+            {"label": "B", "text": "The cell body (soma)"},
+            {"label": "C", "text": "The myelin sheath"},
+            {"label": "D", "text": "The nodes of Ranvier"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Terminal buttons release neurotransmitter to send signals onward, so they are the output end, not where input is received."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated because one is the axon's fatty insulating layer and the other is the neuron's output/sending terminal - neither being where incoming signals are received?",
+          "choices": [
+            {"label": "A", "text": "myelin sheath and terminal buttons"},
+            {"label": "B", "text": "soma and dendrites"},
+            {"label": "C", "text": "dendrites and terminal buttons"},
+            {"label": "D", "text": "myelin sheath and soma"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The myelin sheath insulates the axon and the terminal buttons send output, so neither receives incoming signals."
+        }
+      ],
       "section": "PSBB",
       "stem": "The ________ receive(s) incoming signals from other neurons.",
       "choices": [
@@ -80,6 +194,44 @@
     },
     {
       "id": "psbb-x015",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The four answer options (soma, myelin sheath, synaptic vesicles, and dendrites) are all components of what?",
+          "choices": [
+            {"label": "A", "text": "A neuron and its synapse"},
+            {"label": "B", "text": "The digestive system"},
+            {"label": "C", "text": "The endocrine glands"},
+            {"label": "D", "text": "The electromagnetic spectrum"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "All four are parts of a neuron or its synapse."
+        },
+        {
+          "level": 2,
+          "prompt": "What is the function of synaptic vesicles?",
+          "choices": [
+            {"label": "A", "text": "To store and release neurotransmitter molecules at the synapse"},
+            {"label": "B", "text": "To insulate the axon and speed conduction"},
+            {"label": "C", "text": "To receive incoming signals from other neurons"},
+            {"label": "D", "text": "To generate energy for the entire body"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Synaptic vesicles store and release neurotransmitter; they are not an insulating structure, so they are not what breaks down in MS."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair consists of the neuron's cell body and its input-receiving branches (neither being the axon's insulating layer)?",
+          "choices": [
+            {"label": "A", "text": "soma and dendrites"},
+            {"label": "B", "text": "myelin sheath and soma"},
+            {"label": "C", "text": "synaptic vesicles and dendrites"},
+            {"label": "D", "text": "myelin sheath and synaptic vesicles"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The soma is the cell body and dendrites receive input, so neither is the fatty insulation damaged in MS."
+        }
+      ],
       "section": "PSBB",
       "stem": "Multiple sclerosis involves a breakdown of the ________.",
       "choices": [
@@ -100,6 +252,44 @@
     },
     {
       "id": "psbb-x016",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The peripheral nervous system has two main branches. What is the key distinction between them?",
+          "choices": [
+            {"label": "A", "text": "One controls voluntary skeletal-muscle movement; the other controls involuntary internal functions"},
+            {"label": "B", "text": "One controls the left side of the body; the other the right side"},
+            {"label": "C", "text": "One is in the brain; the other is in the spinal cord"},
+            {"label": "D", "text": "One uses hormones; the other uses bones"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The somatic branch handles voluntary movement while the autonomic branch handles involuntary functions."
+        },
+        {
+          "level": 2,
+          "prompt": "The autonomic nervous system is chiefly responsible for which of the following?",
+          "choices": [
+            {"label": "A", "text": "Involuntary functions such as heart rate, digestion, and glandular activity"},
+            {"label": "B", "text": "Voluntary movement of skeletal muscles such as the legs"},
+            {"label": "C", "text": "Conscious decision-making and language"},
+            {"label": "D", "text": "Producing new neurons throughout life"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The autonomic system controls involuntary internal functions, so it is not what moves your legs voluntarily."
+        },
+        {
+          "level": 3,
+          "prompt": "The sympathetic and parasympathetic systems are the two divisions of which larger system?",
+          "choices": [
+            {"label": "A", "text": "The autonomic (involuntary) nervous system"},
+            {"label": "B", "text": "The somatic (voluntary) nervous system"},
+            {"label": "C", "text": "The central nervous system"},
+            {"label": "D", "text": "The endocrine system"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Sympathetic and parasympathetic are autonomic subdivisions handling involuntary responses, so both can be eliminated for a voluntary-movement question."
+        }
+      ],
       "section": "PSBB",
       "stem": "Our ability to make our legs move as we walk across the room is controlled by the ________ nervous system.",
       "choices": [
@@ -120,6 +310,44 @@
     },
     {
       "id": "psbb-x017",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What is the primary function of the central nervous system?",
+          "choices": [
+            {"label": "A", "text": "To integrate information and coordinate activity throughout the body"},
+            {"label": "B", "text": "To digest food in the stomach"},
+            {"label": "C", "text": "To circulate blood to the tissues"},
+            {"label": "D", "text": "To filter waste products from the blood"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The CNS is the body's integration and coordination center."
+        },
+        {
+          "level": 2,
+          "prompt": "The somatic and autonomic nervous systems are the two divisions of which larger system?",
+          "choices": [
+            {"label": "A", "text": "The peripheral nervous system"},
+            {"label": "B", "text": "The central nervous system"},
+            {"label": "C", "text": "The digestive system"},
+            {"label": "D", "text": "The skeletal system"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Somatic and autonomic make up the peripheral nervous system, not the central nervous system."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated - one lists two subdivisions of the autonomic (peripheral) system and the other lists non-nervous body parts?",
+          "choices": [
+            {"label": "A", "text": "'sympathetic and parasympathetic' and 'organs and glands'"},
+            {"label": "B", "text": "'brain and spinal cord' and 'organs and glands'"},
+            {"label": "C", "text": "'sympathetic and parasympathetic' and 'brain and spinal cord'"},
+            {"label": "D", "text": "'somatic and autonomic' and 'brain and spinal cord'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Sympathetic/parasympathetic are peripheral autonomic branches and organs/glands are not nervous tissue, so neither makes up the CNS."
+        }
+      ],
       "section": "PSBB",
       "stem": "The central nervous system is comprised of ________.",
       "choices": [
@@ -140,6 +368,44 @@
     },
     {
       "id": "psbb-x018",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In brain organization, a 'sensory relay station' is a structure that does what?",
+          "choices": [
+            {"label": "A", "text": "Receives incoming sensory signals and routes them to the appropriate areas of the cortex"},
+            {"label": "B", "text": "Stores long-term autobiographical memories"},
+            {"label": "C", "text": "Produces reproductive hormones"},
+            {"label": "D", "text": "Contracts rhythmically to pump blood"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A sensory relay station routes incoming sensory information onward for processing."
+        },
+        {
+          "level": 2,
+          "prompt": "Which sense is the exception that does NOT pass through the brain's main sensory relay before reaching the cortex?",
+          "choices": [
+            {"label": "A", "text": "Smell (olfaction)"},
+            {"label": "B", "text": "Vision"},
+            {"label": "C", "text": "Hearing"},
+            {"label": "D", "text": "Touch"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Olfaction bypasses the relay, exactly the clue given in the stem."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair of structures is associated mainly with emotion (especially fear) and with forming new long-term memories, respectively - not with relaying sensory information?",
+          "choices": [
+            {"label": "A", "text": "amygdala and hippocampus"},
+            {"label": "B", "text": "thalamus and hypothalamus"},
+            {"label": "C", "text": "amygdala and thalamus"},
+            {"label": "D", "text": "hippocampus and thalamus"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The amygdala handles emotion and the hippocampus forms memories, so neither is the sensory relay station."
+        }
+      ],
       "section": "PSBB",
       "stem": "The ________ is a sensory relay station where all sensory information, except for smell, goes before being sent to other areas of the brain for further processing.",
       "choices": [
@@ -160,6 +426,44 @@
     },
     {
       "id": "psbb-x019",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The four options (EEG, MRI, PET scan, and CT scan) are all examples of what?",
+          "choices": [
+            {"label": "A", "text": "Techniques for measuring or imaging the brain or body"},
+            {"label": "B", "text": "Types of neurotransmitters"},
+            {"label": "C", "text": "Forms of psychotherapy"},
+            {"label": "D", "text": "Stages of the sleep cycle"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "All four are brain/body measurement or imaging methods."
+        },
+        {
+          "level": 2,
+          "prompt": "What does an EEG (electroencephalogram) actually measure?",
+          "choices": [
+            {"label": "A", "text": "The brain's electrical activity through electrodes placed on the scalp"},
+            {"label": "B", "text": "Tissue structure using strong magnetic fields"},
+            {"label": "C", "text": "Glucose metabolism using a radioactive tracer"},
+            {"label": "D", "text": "Bone density using x-ray absorption"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "An EEG records electrical activity, not magnetic images, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Which imaging pair relies on a radioactive tracer and on x-rays, respectively - and therefore NOT on magnetic fields?",
+          "choices": [
+            {"label": "A", "text": "PET scan and CT scan"},
+            {"label": "B", "text": "MRI and EEG"},
+            {"label": "C", "text": "PET scan and MRI"},
+            {"label": "D", "text": "CT scan and EEG"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A PET scan uses a radioactive tracer and a CT scan uses x-rays, so neither uses magnetic fields."
+        }
+      ],
       "section": "PSBB",
       "stem": "A(n) ________ uses magnetic fields to create pictures of a given tissue.",
       "choices": [
@@ -180,6 +484,44 @@
     },
     {
       "id": "psbb-x020",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The pancreas plays a central role in regulating which of the following in the body?",
+          "choices": [
+            {"label": "A", "text": "Blood glucose (sugar) levels"},
+            {"label": "B", "text": "The growth of the long bones"},
+            {"label": "C", "text": "Skin pigmentation"},
+            {"label": "D", "text": "Visual acuity in bright light"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The pancreas is central to blood-glucose regulation."
+        },
+        {
+          "level": 2,
+          "prompt": "Estrogen and progesterone are hormones produced primarily by which structures?",
+          "choices": [
+            {"label": "A", "text": "The ovaries (gonads)"},
+            {"label": "B", "text": "The pancreas"},
+            {"label": "C", "text": "The retina of the eye"},
+            {"label": "D", "text": "The biceps muscle"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Estrogen and progesterone are ovarian sex hormones, not pancreatic, so that pair can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two answer pairs are made OUTSIDE the pancreas - one lists adrenal stress hormones and the other a thyroid hormone plus a pituitary hormone?",
+          "choices": [
+            {"label": "A", "text": "'norepinephrine and epinephrine' and 'thyroxine and oxytocin'"},
+            {"label": "B", "text": "'glucagon and insulin' and 'estrogen and progesterone'"},
+            {"label": "C", "text": "'norepinephrine and epinephrine' and 'glucagon and insulin'"},
+            {"label": "D", "text": "'estrogen and progesterone' and 'thyroxine and oxytocin'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Norepinephrine/epinephrine are adrenal hormones and thyroxine/oxytocin come from the thyroid and pituitary, so neither pair is pancreatic."
+        }
+      ],
       "section": "PSBB",
       "stem": "The two major hormones secreted from the pancreas are:",
       "choices": [
@@ -200,6 +542,44 @@
     },
     {
       "id": "psbb-x021",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Epinephrine (adrenaline) is the hormone most associated with which bodily response?",
+          "choices": [
+            {"label": "A", "text": "The fight-or-flight stress response"},
+            {"label": "B", "text": "The digestion of carbohydrates"},
+            {"label": "C", "text": "The lengthening of bones during growth"},
+            {"label": "D", "text": "The production of breast milk"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Epinephrine drives the fight-or-flight stress response."
+        },
+        {
+          "level": 2,
+          "prompt": "The thyroid gland's main hormones primarily regulate which of the following?",
+          "choices": [
+            {"label": "A", "text": "The body's overall metabolic rate"},
+            {"label": "B", "text": "The surge of adrenaline during a threat"},
+            {"label": "C", "text": "The timing of the menstrual cycle"},
+            {"label": "D", "text": "The clotting of blood"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The thyroid controls metabolism, not the release of epinephrine, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "In the endocrine system, which gland is nicknamed the 'master gland' because it directs many other glands?",
+          "choices": [
+            {"label": "A", "text": "The pituitary gland"},
+            {"label": "B", "text": "The adrenal gland"},
+            {"label": "C", "text": "The thyroid gland"},
+            {"label": "D", "text": "The pancreas"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The pituitary is the 'master gland,' so the options 'pituitary' and 'master' name the same gland and can both be eliminated as the source of epinephrine."
+        }
+      ],
       "section": "PSBB",
       "stem": "The ________ gland secretes epinephrine.",
       "choices": [
@@ -220,6 +600,44 @@
     },
     {
       "id": "psbb-x022",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The body's 'biological clock' is responsible for regulating which of the following?",
+          "choices": [
+            {"label": "A", "text": "Daily (circadian) rhythms such as the sleep-wake cycle"},
+            {"label": "B", "text": "The storage of long-term memories"},
+            {"label": "C", "text": "The oxygen level of the blood"},
+            {"label": "D", "text": "The density of the bones"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The biological clock governs circadian timing such as the sleep-wake cycle."
+        },
+        {
+          "level": 2,
+          "prompt": "The hippocampus is best known for its role in which function?",
+          "choices": [
+            {"label": "A", "text": "Forming new long-term memories"},
+            {"label": "B", "text": "Keeping the body's circadian time"},
+            {"label": "C", "text": "Relaying incoming sensory signals"},
+            {"label": "D", "text": "Secreting growth hormone during sleep"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The hippocampus is a memory structure, not the timekeeping center, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair is best described as the brain's sensory relay station and the endocrine 'master gland,' respectively - neither being the timekeeping center?",
+          "choices": [
+            {"label": "A", "text": "thalamus and pituitary gland"},
+            {"label": "B", "text": "hypothalamus and hippocampus"},
+            {"label": "C", "text": "thalamus and hippocampus"},
+            {"label": "D", "text": "pituitary gland and hippocampus"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The thalamus relays sensory input and the pituitary directs hormones, so neither is the body's biological clock."
+        }
+      ],
       "section": "PSBB",
       "stem": "The body's biological clock is located in the ________.",
       "choices": [
@@ -240,6 +658,44 @@
     },
     {
       "id": "psbb-x023",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Which everyday example best fits a rhythm that repeats about once every 24 hours?",
+          "choices": [
+            {"label": "A", "text": "The daily sleep-wake cycle"},
+            {"label": "B", "text": "The beating of the heart each second"},
+            {"label": "C", "text": "The yearly change of the seasons"},
+            {"label": "D", "text": "The roughly monthly lunar cycle"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The sleep-wake cycle is the classic example of a roughly 24-hour rhythm."
+        },
+        {
+          "level": 2,
+          "prompt": "Biological rhythms come in many lengths (some hourly, some monthly, some yearly). What distinguishes the roughly 24-hour ones specifically?",
+          "choices": [
+            {"label": "A", "text": "They are a specific subtype tied to the daily day-night cycle"},
+            {"label": "B", "text": "They are the only biological rhythms that exist"},
+            {"label": "C", "text": "They repeat about every 28 days"},
+            {"label": "D", "text": "They have nothing to do with sleep"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A roughly 24-hour rhythm is one specific subtype of biological rhythm, so the broad label 'biological' is too general."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two of the answer choices are NOT established terms for biological rhythms?",
+          "choices": [
+            {"label": "A", "text": "'rotating' and 'conscious'"},
+            {"label": "B", "text": "'circadian' and 'biological'"},
+            {"label": "C", "text": "'rotating' and 'circadian'"},
+            {"label": "D", "text": "'conscious' and 'biological'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "'Rotating' and 'conscious' are not recognized labels for biological rhythms, so both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "________ cycles occur roughly once every 24 hours.",
       "choices": [
@@ -260,6 +716,44 @@
     },
     {
       "id": "psbb-x024",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Growth hormone is primarily responsible for which of the following?",
+          "choices": [
+            {"label": "A", "text": "Promoting physical growth and tissue repair"},
+            {"label": "B", "text": "Regulating the level of sugar in the blood"},
+            {"label": "C", "text": "Sensing light to set the sleep cycle"},
+            {"label": "D", "text": "Filtering waste from the blood"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Growth hormone drives physical growth and tissue repair."
+        },
+        {
+          "level": 2,
+          "prompt": "The pineal gland's main secretion, melatonin, is chiefly involved in what?",
+          "choices": [
+            {"label": "A", "text": "Signaling the sleep-wake cycle in response to darkness"},
+            {"label": "B", "text": "Stimulating overall body growth"},
+            {"label": "C", "text": "Regulating blood-glucose levels"},
+            {"label": "D", "text": "Triggering the fight-or-flight response"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The pineal gland releases melatonin for sleep timing, not growth hormone, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair of glands regulates metabolic rate and blood-glucose levels, respectively - neither secreting growth hormone?",
+          "choices": [
+            {"label": "A", "text": "thyroid and pancreas"},
+            {"label": "B", "text": "pituitary and pineal"},
+            {"label": "C", "text": "thyroid and pituitary"},
+            {"label": "D", "text": "pancreas and pineal"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The thyroid sets metabolic rate and the pancreas manages blood glucose, so neither secretes growth hormone."
+        }
+      ],
       "section": "PSBB",
       "stem": "Growth hormone is secreted by the ________ while we sleep.",
       "choices": [
@@ -280,6 +774,44 @@
     },
     {
       "id": "psbb-x025",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The pineal gland is best known for producing a hormone that helps regulate what?",
+          "choices": [
+            {"label": "A", "text": "The sleep-wake cycle and other biological rhythms"},
+            {"label": "B", "text": "The level of calcium in the blood"},
+            {"label": "C", "text": "The contraction of skeletal muscles"},
+            {"label": "D", "text": "Vision under bright light"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The pineal gland's hormone regulates biological rhythms such as the sleep-wake cycle."
+        },
+        {
+          "level": 2,
+          "prompt": "Growth hormone differs from the pineal gland's hormone in that growth hormone is produced by the pituitary and does what?",
+          "choices": [
+            {"label": "A", "text": "Drives body growth and tissue repair"},
+            {"label": "B", "text": "Is released mainly in response to darkness"},
+            {"label": "C", "text": "Regulates the ovarian cycle each month"},
+            {"label": "D", "text": "Is manufactured inside the pineal gland"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Growth hormone is a pituitary hormone for growth, a different gland and role, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "LH and FSH are gonadotropin hormones released by the pituitary to control which process?",
+          "choices": [
+            {"label": "A", "text": "Reproduction and the menstrual/ovarian cycle"},
+            {"label": "B", "text": "Daily biological rhythms"},
+            {"label": "C", "text": "The immune response to infection"},
+            {"label": "D", "text": "The clotting of blood"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "LH and FSH govern reproduction and come from the pituitary, not the pineal, so both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "________ is a hormone secreted by the pineal gland that plays a role in regulating biological rhythms and immune function.",
       "choices": [
@@ -300,6 +832,44 @@
     },
     {
       "id": "psbb-x026",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "'Slow-wave sleep' gets its name from the presence of which brain-wave pattern?",
+          "choices": [
+            {"label": "A", "text": "High-amplitude, low-frequency delta waves"},
+            {"label": "B", "text": "Rapid, low-amplitude beta waves"},
+            {"label": "C", "text": "Sawtooth waves seen during dreaming"},
+            {"label": "D", "text": "Alpha waves of relaxed wakefulness"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Slow-wave sleep is defined by slow, high-amplitude delta waves."
+        },
+        {
+          "level": 2,
+          "prompt": "How does REM sleep differ from the deep NREM stages?",
+          "choices": [
+            {"label": "A", "text": "REM shows fast, wake-like brain activity with vivid dreaming and muscle atonia"},
+            {"label": "B", "text": "REM has the slowest delta waves of any stage"},
+            {"label": "C", "text": "REM is the light transitional stage as you first doze off"},
+            {"label": "D", "text": "REM shows no brain activity whatsoever"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "REM features fast wake-like activity, the opposite of slow-wave sleep, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "NREM stage 1 and stage 2 are best characterized as which kind of sleep?",
+          "choices": [
+            {"label": "A", "text": "Lighter, earlier stages (dozing off and light sleep)"},
+            {"label": "B", "text": "The single deepest stage of the night"},
+            {"label": "C", "text": "The main dreaming stage"},
+            {"label": "D", "text": "Complete wakefulness"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Stages 1 and 2 are light sleep, not the deep slow-wave stage, so both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "________ is(are) described as slow-wave sleep.",
       "choices": [
@@ -320,6 +890,44 @@
     },
     {
       "id": "psbb-x027",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "REM rebound refers to which phenomenon?",
+          "choices": [
+            {"label": "A", "text": "An increase in REM sleep following a period of REM deprivation"},
+            {"label": "B", "text": "A permanent loss of the ability to dream"},
+            {"label": "C", "text": "The sudden muscle paralysis seen in narcolepsy"},
+            {"label": "D", "text": "A type of tumor that forms in the brainstem"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "REM rebound is the increase in REM sleep after REM has been suppressed."
+        },
+        {
+          "level": 2,
+          "prompt": "Schizophrenia is primarily characterized by which of the following?",
+          "choices": [
+            {"label": "A", "text": "Psychotic symptoms such as hallucinations and delusions"},
+            {"label": "B", "text": "Persistently low mood and loss of interest"},
+            {"label": "C", "text": "A resting tremor and muscular rigidity"},
+            {"label": "D", "text": "Excessive, uncontrollable daytime sleepiness"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Schizophrenia is a psychotic disorder, not the mood disorder classically linked to REM manipulation, so it can be set aside."
+        },
+        {
+          "level": 3,
+          "prompt": "A common trap is to link vivid REM dreaming to psychotic symptoms. Which listed disorder is the psychosis-related trap you should be cautious about choosing?",
+          "choices": [
+            {"label": "A", "text": "schizophrenia"},
+            {"label": "B", "text": "depression"},
+            {"label": "C", "text": "Parkinson's disease"},
+            {"label": "D", "text": "generalized anxiety disorder"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Schizophrenia is the tempting psychosis-related trap, but the item's established link is to a mood disorder, so schizophrenia can be set aside."
+        }
+      ],
       "section": "PSBB",
       "stem": "Symptoms of ________ may be improved by REM rebound.",
       "choices": [
@@ -340,6 +948,44 @@
     },
     {
       "id": "psbb-x028",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Narcolepsy is a sleep disorder whose hallmark is which of the following?",
+          "choices": [
+            {"label": "A", "text": "Overwhelming, uncontrollable episodes of daytime sleepiness or 'sleep attacks'"},
+            {"label": "B", "text": "A chronic inability to fall asleep at night"},
+            {"label": "C", "text": "Loud snoring with repeated pauses in breathing"},
+            {"label": "D", "text": "Walking or eating while still asleep"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Narcolepsy's hallmark is sudden, uncontrollable daytime sleep attacks."
+        },
+        {
+          "level": 2,
+          "prompt": "Insomnia is best defined as which of the following?",
+          "choices": [
+            {"label": "A", "text": "Difficulty falling asleep or staying asleep"},
+            {"label": "B", "text": "A sudden loss of muscle tone triggered by emotion"},
+            {"label": "C", "text": "A device that keeps the airway open during sleep"},
+            {"label": "D", "text": "Physically acting out one's dreams"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Insomnia is trouble sleeping, not a loss of muscle tone, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair consists of a disorder in which people physically act out their dreams and a therapeutic breathing device - neither being a loss of muscle tone?",
+          "choices": [
+            {"label": "A", "text": "RBD and CPAP"},
+            {"label": "B", "text": "cataplexy and insomnia"},
+            {"label": "C", "text": "RBD and cataplexy"},
+            {"label": "D", "text": "CPAP and insomnia"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "RBD is dream-enactment and CPAP is a treatment device, so neither is the emotion-triggered muscle-tone loss."
+        }
+      ],
       "section": "PSBB",
       "stem": "________ is loss of muscle tone or control that is often associated with narcolepsy.",
       "choices": [
@@ -360,6 +1006,44 @@
     },
     {
       "id": "psbb-x029",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Amphetamine-like medications primarily produce which effect?",
+          "choices": [
+            {"label": "A", "text": "Increased wakefulness and alertness (central nervous system stimulation)"},
+            {"label": "B", "text": "Deep sedation and sleep"},
+            {"label": "C", "text": "Widespread muscle paralysis"},
+            {"label": "D", "text": "A slowed heart rate and drowsiness"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Amphetamine-like drugs are stimulants that promote wakefulness."
+        },
+        {
+          "level": 2,
+          "prompt": "Sleep apnea is caused by what, and how is it usually treated?",
+          "choices": [
+            {"label": "A", "text": "Repeated pauses in breathing during sleep, typically treated with a CPAP device"},
+            {"label": "B", "text": "Emotion-triggered muscle-tone loss, treated with stimulants"},
+            {"label": "C", "text": "Acting out dreams, treated with surgery"},
+            {"label": "D", "text": "Sudden infant death, prevented by safe-sleep positioning"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Apnea is a breathing disorder treated with CPAP, not with amphetamine-like stimulants, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated because one is a cause of sudden infant death (not treated with stimulants) and the other is a REM dream-enactment disorder?",
+          "choices": [
+            {"label": "A", "text": "SIDS and RBD"},
+            {"label": "B", "text": "narcolepsy and sleep apnea"},
+            {"label": "C", "text": "SIDS and narcolepsy"},
+            {"label": "D", "text": "RBD and sleep apnea"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "SIDS is sudden infant death and RBD is dream enactment, so neither is treated with amphetamine-like stimulants."
+        }
+      ],
       "section": "PSBB",
       "stem": "The most common treatment for ________ involves the use of amphetamine-like medications.",
       "choices": [
@@ -380,6 +1064,44 @@
     },
     {
       "id": "psbb-x030",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The terms in this question (withdrawal, dependence, and tolerance) all come from the study of what?",
+          "choices": [
+            {"label": "A", "text": "How the body and brain respond to repeated drug use"},
+            {"label": "B", "text": "How neurons regenerate after an injury"},
+            {"label": "C", "text": "How long-term memories are stored"},
+            {"label": "D", "text": "How skeletal muscles contract"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "These are all concepts describing the body's response to repeated drug use."
+        },
+        {
+          "level": 2,
+          "prompt": "Withdrawal refers to which of the following?",
+          "choices": [
+            {"label": "A", "text": "The unpleasant symptoms that appear when a regular user stops taking a drug"},
+            {"label": "B", "text": "Needing larger doses to feel the same effect"},
+            {"label": "C", "text": "An emotional craving to keep using a drug"},
+            {"label": "D", "text": "A neuron reabsorbing its own neurotransmitter"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Withdrawal is the set of symptoms on stopping a drug, not the need for larger doses, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair can be eliminated because one refers to an emotional craving for a drug and the other is a normal neuron process of reabsorbing neurotransmitter?",
+          "choices": [
+            {"label": "A", "text": "psychological dependence and reuptake"},
+            {"label": "B", "text": "tolerance and withdrawal"},
+            {"label": "C", "text": "psychological dependence and tolerance"},
+            {"label": "D", "text": "reuptake and withdrawal"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Psychological dependence is craving and reuptake is neurotransmitter reabsorption, so neither is 'needing more for the same effect.'"
+        }
+      ],
       "section": "PSBB",
       "stem": "________ occurs when a drug user requires more and more of a given drug in order to experience the same effects of the drug.",
       "choices": [
@@ -400,6 +1122,44 @@
     },
     {
       "id": "psbb-x031",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Drug 'craving' is best described as which kind of experience?",
+          "choices": [
+            {"label": "A", "text": "A strong emotional or motivational urge to use the drug"},
+            {"label": "B", "text": "A physical injury to the liver from the drug"},
+            {"label": "C", "text": "A chemical that blocks a receptor"},
+            {"label": "D", "text": "An allergic skin reaction to the drug"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Craving is an emotional/motivational urge to use a drug."
+        },
+        {
+          "level": 2,
+          "prompt": "Physical dependence differs from an emotional craving in that physical dependence is defined by what?",
+          "choices": [
+            {"label": "A", "text": "Bodily withdrawal symptoms when the drug is stopped"},
+            {"label": "B", "text": "A purely emotional desire with no bodily symptoms"},
+            {"label": "C", "text": "Blocking a neurotransmitter receptor"},
+            {"label": "D", "text": "Enhancing the activity of a receptor"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Physical dependence is marked by bodily withdrawal, distinguishing it from the emotional craving, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Agonism and antagonism are pharmacology terms describing what?",
+          "choices": [
+            {"label": "A", "text": "Whether a drug activates or blocks a receptor"},
+            {"label": "B", "text": "Whether a user emotionally craves a drug"},
+            {"label": "C", "text": "How many hours a drug's effects last"},
+            {"label": "D", "text": "The legal status of a drug"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Agonism and antagonism describe activating versus blocking receptors, not craving, so both can be eliminated."
+        }
+      ],
       "section": "PSBB",
       "stem": "________ refers to drug craving.",
       "choices": [
@@ -420,6 +1180,44 @@
     },
     {
       "id": "psbb-x032",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What does it mean for a person to be highly 'suggestible'?",
+          "choices": [
+            {"label": "A", "text": "They readily accept and act on ideas proposed by another person"},
+            {"label": "B", "text": "They have an unusually strong long-term memory"},
+            {"label": "C", "text": "They have great difficulty falling asleep"},
+            {"label": "D", "text": "They have very fast physical reflexes"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Suggestibility is the tendency to readily accept another person's suggestions."
+        },
+        {
+          "level": 2,
+          "prompt": "Meditation is best characterized as which of the following?",
+          "choices": [
+            {"label": "A", "text": "A self-directed practice of focused attention or awareness to calm the mind"},
+            {"label": "B", "text": "A state produced by following another person's spoken suggestions"},
+            {"label": "C", "text": "A form of talk therapy that restructures negative thoughts"},
+            {"label": "D", "text": "A surgical procedure performed on the brain"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Meditation is self-directed focus, not driven by another's suggestions, so it can be ruled out."
+        },
+        {
+          "level": 3,
+          "prompt": "Which pair relies on the individual's own attention or thinking rather than on being highly open to another person's suggestions?",
+          "choices": [
+            {"label": "A", "text": "mindful awareness and cognitive therapy"},
+            {"label": "B", "text": "hypnosis and meditation"},
+            {"label": "C", "text": "mindful awareness and hypnosis"},
+            {"label": "D", "text": "cognitive therapy and hypnosis"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Mindful awareness centers on one's own attention and cognitive therapy on one's own thoughts, so neither depends on suggestibility."
+        }
+      ],
       "section": "PSBB",
       "stem": "________ is most effective in individuals that are very open to the power of suggestion.",
       "choices": [
@@ -440,6 +1238,44 @@
     },
     {
       "id": "psbb-x033",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Meditation is best described as which kind of practice?",
+          "choices": [
+            {"label": "A", "text": "A self-directed mental practice involving focused attention or awareness"},
+            {"label": "B", "text": "A prescription antiviral medication"},
+            {"label": "C", "text": "A surgical operation on the brain"},
+            {"label": "D", "text": "A vaccine given by injection"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Meditation is a self-directed mental practice, not a drug, surgery, or vaccine."
+        },
+        {
+          "level": 2,
+          "prompt": "Research supports meditation as helpful for which of the following?",
+          "choices": [
+            {"label": "A", "text": "Managing everyday stress"},
+            {"label": "B", "text": "Eliminating the influenza virus"},
+            {"label": "C", "text": "Mending a fractured bone"},
+            {"label": "D", "text": "Curing a bacterial ear infection"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Meditation is supported as an aid for stress, whereas it does not cure infections or heal fractures."
+        },
+        {
+          "level": 3,
+          "prompt": "Which option can be eliminated because meditation is not a medical treatment for a viral illness?",
+          "choices": [
+            {"label": "A", "text": "treating the flu"},
+            {"label": "B", "text": "reducing test anxiety"},
+            {"label": "C", "text": "easing everyday stress"},
+            {"label": "D", "text": "promoting relaxation"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Meditation is not a treatment for the flu, so that option can be eliminated, while the others are stress or relaxation benefits."
+        }
+      ],
       "section": "PSBB",
       "stem": "Meditation may be helpful in ________.",
       "choices": [

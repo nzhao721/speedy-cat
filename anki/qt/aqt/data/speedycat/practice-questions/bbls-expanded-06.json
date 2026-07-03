@@ -32,7 +32,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q3). No public OpenStax answer key; answer verified from the Biology 2e source text (definition of diploid vs haploid)."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q3). No public OpenStax answer key; answer verified from the Biology 2e source text (definition of diploid vs haploid).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How many chromosome sets does a diploid cell have compared with a haploid cell?",
+          "choices": [
+            {"label": "A", "text": "Two sets versus one set"},
+            {"label": "B", "text": "One set versus two sets"},
+            {"label": "C", "text": "The same number of sets"},
+            {"label": "D", "text": "Four sets versus one set"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A diploid cell (2n) has two chromosome sets; a haploid cell (n) has one."
+        },
+        {
+          "level": 2,
+          "prompt": "Is a diploid cell's chromosome number smaller than or larger than a haploid cell's?",
+          "choices": [
+            {"label": "A", "text": "Larger, because it has an extra full set"},
+            {"label": "B", "text": "Smaller, because it has fewer sets"},
+            {"label": "C", "text": "Exactly equal"},
+            {"label": "D", "text": "Only one-fourth as large"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Diploid cells have more chromosomes than haploid cells, so 'half' and 'one-fourth' are wrong."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'half' the reverse of the correct relationship?",
+          "choices": [
+            {"label": "A", "text": "A haploid cell has half a diploid cell's chromosomes, so diploid is not half of haploid"},
+            {"label": "B", "text": "A diploid cell has half as many chromosomes as a haploid cell"},
+            {"label": "C", "text": "'Half' correctly describes diploid relative to haploid"},
+            {"label": "D", "text": "Haploid means double the chromosome number"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Half describes haploid relative to diploid, the opposite of what the stem asks."
+        }
+      ]
     },
     {
       "id": "bbls-x191",
@@ -52,7 +90,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q4). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q4). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What are the basic units of heredity that determine an organism's traits?",
+          "choices": [
+            {"label": "A", "text": "Genes"},
+            {"label": "B", "text": "Ribosomes"},
+            {"label": "C", "text": "Mitochondria"},
+            {"label": "D", "text": "Vacuoles"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Genes are the heritable units that determine traits."
+        },
+        {
+          "level": 2,
+          "prompt": "Are cells and proteins the inherited units themselves, or products of gene expression?",
+          "choices": [
+            {"label": "A", "text": "Products of gene expression, not the inherited units"},
+            {"label": "B", "text": "The inherited units of heredity themselves"},
+            {"label": "C", "text": "Identical to genes in every way"},
+            {"label": "D", "text": "Never involved in traits"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Cells and proteins result from genes; the inherited units are the genes."
+        },
+        {
+          "level": 3,
+          "prompt": "Why are 'chromatids' not the best answer for the inherited units that determine traits?",
+          "choices": [
+            {"label": "A", "text": "Chromatids are copies of a chromosome during division; the trait-determining heritable units are genes"},
+            {"label": "B", "text": "Chromatids are the fundamental units of heredity"},
+            {"label": "C", "text": "Genes are built out of chromatids"},
+            {"label": "D", "text": "Chromatids are a type of protein"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A chromatid is a chromosome copy, not the heritable unit that specifies a trait."
+        }
+      ]
     },
     {
       "id": "bbls-x192",
@@ -72,7 +148,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q5). No public OpenStax answer key; answer verified from the Biology 2e source text (DNA winds around histones as the first packing level)."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q5). No public OpenStax answer key; answer verified from the Biology 2e source text (DNA winds around histones as the first packing level).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The first level of eukaryotic DNA packing is the winding of DNA around what?",
+          "choices": [
+            {"label": "A", "text": "Histone proteins"},
+            {"label": "B", "text": "The cell membrane"},
+            {"label": "C", "text": "Ribosomes"},
+            {"label": "D", "text": "The centriole"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "DNA first wraps around histones to form nucleosomes."
+        },
+        {
+          "level": 2,
+          "prompt": "Cohesin and condensin are proteins that mainly act when, rather than forming the first packing level?",
+          "choices": [
+            {"label": "A", "text": "During chromosome cohesion and condensation in cell division"},
+            {"label": "B", "text": "Only during DNA's first level of packing at rest"},
+            {"label": "C", "text": "Only in the cytoplasm during translation"},
+            {"label": "D", "text": "Only outside the cell"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Cohesin and condensin work in division-related cohesion/condensation, not the first packing level."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'chromatin' not the molecule that maintains the first packing level?",
+          "choices": [
+            {"label": "A", "text": "Chromatin is the overall DNA-plus-protein complex, not the specific protein DNA first wraps around"},
+            {"label": "B", "text": "Chromatin is a single protein DNA winds around"},
+            {"label": "C", "text": "Chromatin is just another word for a histone"},
+            {"label": "D", "text": "Chromatin is an enzyme that packs DNA"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Chromatin is the whole complex; the protein DNA first wraps around is the histone."
+        }
+      ]
     },
     {
       "id": "bbls-x193",
@@ -92,7 +206,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q6). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q6). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "After a chromosome is replicated, how many identical copies exist joined together?",
+          "choices": [
+            {"label": "A", "text": "Two identical copies"},
+            {"label": "B", "text": "Four identical copies"},
+            {"label": "C", "text": "One copy only"},
+            {"label": "D", "text": "Eight identical copies"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Replication produces two identical joined copies of the chromosome."
+        },
+        {
+          "level": 2,
+          "prompt": "Are histones and nucleosomes the two joined identical copies, or DNA-packing components?",
+          "choices": [
+            {"label": "A", "text": "DNA-packing components, not the identical copies themselves"},
+            {"label": "B", "text": "The two identical joined chromosome copies"},
+            {"label": "C", "text": "Enzymes that separate the copies"},
+            {"label": "D", "text": "The centromere itself"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Histones and nucleosomes package DNA; they are not the paired identical copies."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'chromatin' not the term for the two identical joined copies?",
+          "choices": [
+            {"label": "A", "text": "Chromatin is the general DNA-protein material, not the paired identical copies joined at the centromere"},
+            {"label": "B", "text": "Chromatin means exactly two joined copies"},
+            {"label": "C", "text": "Chromatin is what cohesin holds together as a pair"},
+            {"label": "D", "text": "Chromatin is a single one of the copies"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Chromatin refers to the DNA-protein material broadly, not the paired copies."
+        }
+      ]
     },
     {
       "id": "bbls-x194",
@@ -112,7 +264,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q7). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q7). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "During which part of the cell cycle is a cell's DNA replicated?",
+          "choices": [
+            {"label": "A", "text": "The S phase of interphase"},
+            {"label": "B", "text": "During cytokinesis"},
+            {"label": "C", "text": "During G0 arrest"},
+            {"label": "D", "text": "During anaphase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "DNA replication occurs in the S phase."
+        },
+        {
+          "level": 2,
+          "prompt": "The 'S' in S phase stands for what?",
+          "choices": [
+            {"label": "A", "text": "Synthesis (DNA synthesis)"},
+            {"label": "B", "text": "Separation"},
+            {"label": "C", "text": "Spindle"},
+            {"label": "D", "text": "Suppression"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "S phase is the DNA synthesis phase, when chromosomes are copied."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'prophase' not when chromosomes are duplicated?",
+          "choices": [
+            {"label": "A", "text": "Prophase is a mitotic stage where already-duplicated chromosomes condense, not when they are copied"},
+            {"label": "B", "text": "Prophase is when DNA synthesis happens"},
+            {"label": "C", "text": "Duplication occurs in prophase rather than interphase"},
+            {"label": "D", "text": "Prophase is a part of interphase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "By prophase the DNA is already copied; duplication happened earlier in S phase."
+        }
+      ]
     },
     {
       "id": "bbls-x195",
@@ -132,7 +322,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q8). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q8). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Which activities are hallmarks of interphase?",
+          "choices": [
+            {"label": "A", "text": "DNA replication, organelle duplication, and cell growth"},
+            {"label": "B", "text": "Separation of sister chromatids"},
+            {"label": "C", "text": "Formation of the cleavage furrow"},
+            {"label": "D", "text": "Alignment of chromosomes at the metaphase plate"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Interphase includes growth, DNA replication, and organelle duplication."
+        },
+        {
+          "level": 2,
+          "prompt": "Do DNA duplication and organelle duplication occur during interphase?",
+          "choices": [
+            {"label": "A", "text": "Yes; both are interphase events"},
+            {"label": "B", "text": "No; both occur only during mitosis"},
+            {"label": "C", "text": "Only organelle duplication occurs in interphase"},
+            {"label": "D", "text": "Neither occurs in the cell cycle"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Because both happen in interphase, they are not the event that fails to occur then."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'increase in cell size' NOT the correct choice (since it does occur during interphase)?",
+          "choices": [
+            {"label": "A", "text": "Cell growth is a normal interphase activity, so it is not the event excluded from interphase"},
+            {"label": "B", "text": "Cells never grow during interphase"},
+            {"label": "C", "text": "Growth happens only during mitosis"},
+            {"label": "D", "text": "Growth is the same event as chromatid separation"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Cell growth is part of interphase, so it is not the excluded event."
+        }
+      ]
     },
     {
       "id": "bbls-x196",
@@ -152,7 +380,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q9). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q9). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Which structure serves as the microtubule-organizing center from which spindle fibers emanate?",
+          "choices": [
+            {"label": "A", "text": "The centrosome"},
+            {"label": "B", "text": "The nucleolus"},
+            {"label": "C", "text": "The ribosome"},
+            {"label": "D", "text": "The lysosome"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The centrosome organizes the mitotic spindle."
+        },
+        {
+          "level": 2,
+          "prompt": "The similarly named 'centromere' is a region of the chromosome; does it generate spindle fibers?",
+          "choices": [
+            {"label": "A", "text": "No; it is where kinetochores form for attachment, not where spindles originate"},
+            {"label": "B", "text": "Yes; it is the source of all spindle fibers"},
+            {"label": "C", "text": "Yes; it is the microtubule-organizing center"},
+            {"label": "D", "text": "No; chromosomes have no centromere"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The centromere is an attachment site on the chromosome, not the spindle's origin."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is the 'kinetochore' not where mitotic spindles arise?",
+          "choices": [
+            {"label": "A", "text": "The kinetochore is a protein complex on the centromere where spindle fibers attach, not where they originate"},
+            {"label": "B", "text": "The kinetochore generates all spindle fibers"},
+            {"label": "C", "text": "The kinetochore is the microtubule-organizing center"},
+            {"label": "D", "text": "The kinetochore is identical to the centrosome"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Kinetochores are attachment points for spindles, not the site the spindles come from."
+        }
+      ]
     },
     {
       "id": "bbls-x197",
@@ -172,7 +438,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q10). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q10). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "During which stage does the nuclear envelope break down and spindle fibers attach to kinetochores?",
+          "choices": [
+            {"label": "A", "text": "Prometaphase"},
+            {"label": "B", "text": "Telophase"},
+            {"label": "C", "text": "Cytokinesis"},
+            {"label": "D", "text": "G1"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Prometaphase features envelope breakdown and spindle-kinetochore attachment."
+        },
+        {
+          "level": 2,
+          "prompt": "During the preceding prophase, what are the chromosomes mainly doing?",
+          "choices": [
+            {"label": "A", "text": "Condensing while the nuclear envelope is still largely intact"},
+            {"label": "B", "text": "Already fully attached to spindle fibers"},
+            {"label": "C", "text": "Being pulled apart to the poles"},
+            {"label": "D", "text": "Decondensing into chromatin"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "In prophase chromosomes condense before attachment, so attachment is not yet complete."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'metaphase' not when spindle fibers FIRST attach to kinetochores?",
+          "choices": [
+            {"label": "A", "text": "By metaphase, attachment has already occurred and chromosomes are aligned at the metaphase plate"},
+            {"label": "B", "text": "Metaphase occurs before any attachment"},
+            {"label": "C", "text": "Metaphase is when the nuclear envelope first breaks down"},
+            {"label": "D", "text": "No spindle attachment exists during metaphase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Attachment happens in prometaphase; by metaphase the chromosomes are already attached and aligned."
+        }
+      ]
     },
     {
       "id": "bbls-x198",
@@ -192,7 +496,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q11). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q11). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "During which mitotic stage do chromosomes decondense and new nuclear envelopes form?",
+          "choices": [
+            {"label": "A", "text": "Telophase"},
+            {"label": "B", "text": "Prophase"},
+            {"label": "C", "text": "Metaphase"},
+            {"label": "D", "text": "S phase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Telophase features chromosome decondensation and nuclear envelope reformation."
+        },
+        {
+          "level": 2,
+          "prompt": "Telophase essentially reverses which earlier stage (condensation and envelope breakdown)?",
+          "choices": [
+            {"label": "A", "text": "Prophase/prometaphase"},
+            {"label": "B", "text": "Anaphase"},
+            {"label": "C", "text": "Cytokinesis"},
+            {"label": "D", "text": "G0"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Telophase undoes the condensation and envelope breakdown of early mitosis."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'anaphase' not when the nuclear envelope reforms?",
+          "choices": [
+            {"label": "A", "text": "Anaphase is when sister chromatids are pulled to opposite poles, before the envelope reforms"},
+            {"label": "B", "text": "Anaphase is when new envelopes form around chromosomes"},
+            {"label": "C", "text": "Anaphase is when chromosomes fully decondense"},
+            {"label": "D", "text": "Anaphase is the final mitotic stage"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Envelope reformation occurs in telophase; anaphase is the earlier chromatid-separation stage."
+        }
+      ]
     },
     {
       "id": "bbls-x199",
@@ -212,7 +554,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q12). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q12). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "During which stage are sister chromatids pulled toward opposite poles?",
+          "choices": [
+            {"label": "A", "text": "Anaphase"},
+            {"label": "B", "text": "Prophase"},
+            {"label": "C", "text": "G1"},
+            {"label": "D", "text": "Cytokinesis"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Sister chromatids separate during anaphase."
+        },
+        {
+          "level": 2,
+          "prompt": "At metaphase, are the sister chromatids separated yet?",
+          "choices": [
+            {"label": "A", "text": "No; they are aligned at the metaphase plate and still joined"},
+            {"label": "B", "text": "Yes; they have fully separated by metaphase"},
+            {"label": "C", "text": "Yes; separation defines metaphase"},
+            {"label": "D", "text": "They separate before metaphase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Chromatids remain joined and aligned at metaphase, separating only afterward."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'telophase' not when sister chromatids separate?",
+          "choices": [
+            {"label": "A", "text": "By telophase the chromatids have already separated and reached the poles"},
+            {"label": "B", "text": "Telophase is when chromatids first split apart"},
+            {"label": "C", "text": "Separation begins only in telophase"},
+            {"label": "D", "text": "Telophase comes before anaphase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Separation happens in anaphase; by telophase it is already complete."
+        }
+      ]
     },
     {
       "id": "bbls-x200",
@@ -232,7 +612,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q13). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q13). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "During which stage does chromatin condense into chromosomes visible under a light microscope?",
+          "choices": [
+            {"label": "A", "text": "Prophase"},
+            {"label": "B", "text": "S phase"},
+            {"label": "C", "text": "G1"},
+            {"label": "D", "text": "Cytokinesis"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Chromatin condenses into visible chromosomes during prophase."
+        },
+        {
+          "level": 2,
+          "prompt": "Before prophase, DNA exists as diffuse chromatin. Is it visible as distinct chromosomes then?",
+          "choices": [
+            {"label": "A", "text": "No; it is too dispersed to see as distinct chromosomes"},
+            {"label": "B", "text": "Yes; individual chromosomes are clearly visible"},
+            {"label": "C", "text": "Yes; chromatin is always condensed"},
+            {"label": "D", "text": "Only under an electron microscope during S phase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Diffuse chromatin is not visible as distinct chromosomes, so condensation must occur first."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'metaphase' not the FIRST stage chromosomes become visible?",
+          "choices": [
+            {"label": "A", "text": "Chromosomes are already visible by metaphase; they first become visible earlier, in prophase"},
+            {"label": "B", "text": "Chromosomes are invisible during metaphase"},
+            {"label": "C", "text": "Metaphase occurs before prophase"},
+            {"label": "D", "text": "Metaphase is part of interphase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Chromosomes become visible in prophase, before the metaphase alignment stage."
+        }
+      ]
     },
     {
       "id": "bbls-x201",
@@ -252,7 +670,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q14). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q14). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Plant cells divide their cytoplasm by building which structure across the middle?",
+          "choices": [
+            {"label": "A", "text": "A cell plate"},
+            {"label": "B", "text": "A cleavage furrow"},
+            {"label": "C", "text": "A mitotic spindle"},
+            {"label": "D", "text": "A centriole"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Plant cytokinesis forms a cell plate that becomes the new wall."
+        },
+        {
+          "level": 2,
+          "prompt": "How do animal cells, lacking a rigid wall, instead divide the cytoplasm?",
+          "choices": [
+            {"label": "A", "text": "By pinching inward with a cleavage furrow"},
+            {"label": "B", "text": "By building a cell plate"},
+            {"label": "C", "text": "By dissolving the membrane"},
+            {"label": "D", "text": "By forming a new spindle"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Animal cells use a cleavage furrow, unlike the plant cell plate."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is the 'cleavage furrow' not how plant cells complete division?",
+          "choices": [
+            {"label": "A", "text": "A cleavage furrow pinches animal cells, but rigid plant cell walls require building a cell plate instead"},
+            {"label": "B", "text": "Plant cells pinch inward with a cleavage furrow"},
+            {"label": "C", "text": "Cleavage furrows build the new plant cell wall"},
+            {"label": "D", "text": "Plant and animal cytokinesis are identical"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Rigid plant walls cannot pinch, so plants use a cell plate rather than a furrow."
+        }
+      ]
     },
     {
       "id": "bbls-x202",
@@ -272,7 +728,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q16). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q16). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "External signals such as growth factors most strongly influence the decision to divide at which checkpoint?",
+          "choices": [
+            {"label": "A", "text": "The G1 checkpoint (restriction point)"},
+            {"label": "B", "text": "Anaphase"},
+            {"label": "C", "text": "Cytokinesis"},
+            {"label": "D", "text": "The middle of S phase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The G1 checkpoint is where external growth signals most influence commitment to divide."
+        },
+        {
+          "level": 2,
+          "prompt": "The G2 checkpoint mainly verifies which INTERNAL condition, rather than responding to external growth signals?",
+          "choices": [
+            {"label": "A", "text": "That DNA has been completely and accurately replicated"},
+            {"label": "B", "text": "That growth factors are present outside the cell"},
+            {"label": "C", "text": "That the cell has finished mitosis"},
+            {"label": "D", "text": "That neighboring cells have divided"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "G2 checks internal DNA replication, not external growth cues."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is the 'M checkpoint' not the one most influenced by external forces?",
+          "choices": [
+            {"label": "A", "text": "The M (spindle) checkpoint monitors internal spindle attachment, not external growth signals"},
+            {"label": "B", "text": "The M checkpoint responds mainly to outside growth factors"},
+            {"label": "C", "text": "The M checkpoint is the restriction point"},
+            {"label": "D", "text": "The M checkpoint controls entry into S phase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The M checkpoint watches internal spindle attachment, not outside signals."
+        }
+      ]
     },
     {
       "id": "bbls-x203",
@@ -292,7 +786,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q17). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q17). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Just before mitosis, the G2 checkpoint checks that:",
+          "choices": [
+            {"label": "A", "text": "DNA has been accurately and completely replicated"},
+            {"label": "B", "text": "The cell has already finished mitosis"},
+            {"label": "C", "text": "Sister chromatids have separated"},
+            {"label": "D", "text": "Cytokinesis is complete"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "G2 verifies complete, accurate DNA replication before mitosis."
+        },
+        {
+          "level": 2,
+          "prompt": "The G2 checkpoint comes right after which phase, whose success it confirms?",
+          "choices": [
+            {"label": "A", "text": "The S phase (DNA synthesis)"},
+            {"label": "B", "text": "Anaphase"},
+            {"label": "C", "text": "Telophase"},
+            {"label": "D", "text": "Cytokinesis"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "G2 follows S phase and confirms DNA replication succeeded."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'proper attachment of spindle fibers to kinetochores' not the G2 prerequisite?",
+          "choices": [
+            {"label": "A", "text": "Spindle-kinetochore attachment is checked at the later M checkpoint, not at G2"},
+            {"label": "B", "text": "It is the main thing the G2 checkpoint verifies"},
+            {"label": "C", "text": "Spindle fibers attach during G2"},
+            {"label": "D", "text": "G2 occurs in the middle of mitosis"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Spindle attachment is monitored at the M checkpoint, not G2."
+        }
+      ]
     },
     {
       "id": "bbls-x204",
@@ -312,7 +844,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q18). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q18). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The M (spindle) checkpoint controls the transition into which stage?",
+          "choices": [
+            {"label": "A", "text": "Anaphase"},
+            {"label": "B", "text": "Prophase"},
+            {"label": "C", "text": "S phase"},
+            {"label": "D", "text": "G1"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The M checkpoint gates the metaphase-to-anaphase transition."
+        },
+        {
+          "level": 2,
+          "prompt": "The M checkpoint ensures all kinetochores are attached before allowing chromatids to do what?",
+          "choices": [
+            {"label": "A", "text": "Separate toward opposite poles"},
+            {"label": "B", "text": "Condense for the first time"},
+            {"label": "C", "text": "Replicate their DNA"},
+            {"label": "D", "text": "Decondense into chromatin"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "It permits chromatid separation (anaphase) only when attachment is complete."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'prophase' not the stage blocked by an unmet M checkpoint?",
+          "choices": [
+            {"label": "A", "text": "Prophase occurs before the metaphase-to-anaphase checkpoint, so it is not what gets blocked"},
+            {"label": "B", "text": "Prophase is triggered by the M checkpoint"},
+            {"label": "C", "text": "The M checkpoint blocks entry into prophase"},
+            {"label": "D", "text": "Prophase follows anaphase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Prophase happens earlier, so the M checkpoint does not block it."
+        }
+      ]
     },
     {
       "id": "bbls-x205",
@@ -332,7 +902,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q19). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q19). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "An enzyme that phosphorylates (adds phosphate groups to) other proteins is a:",
+          "choices": [
+            {"label": "A", "text": "Kinase"},
+            {"label": "B", "text": "Phosphatase"},
+            {"label": "C", "text": "Polymerase"},
+            {"label": "D", "text": "Ligase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Kinases phosphorylate target proteins."
+        },
+        {
+          "level": 2,
+          "prompt": "Are p53 and Rb positive 'go' regulators or negative 'brake' regulators of the cell cycle?",
+          "choices": [
+            {"label": "A", "text": "Negative regulators (tumor suppressors / brakes)"},
+            {"label": "B", "text": "Positive regulators that drive the cycle forward"},
+            {"label": "C", "text": "Enzymes that copy DNA"},
+            {"label": "D", "text": "Structural spindle proteins"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "p53 and Rb are negative regulators, not the positive phosphorylating driver."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'cyclin' not the phosphorylating enzyme itself?",
+          "choices": [
+            {"label": "A", "text": "Cyclin is a regulatory partner that activates a Cdk; the Cdk is the enzyme that phosphorylates targets"},
+            {"label": "B", "text": "Cyclin is the kinase that adds phosphate groups"},
+            {"label": "C", "text": "Cyclin is a phosphatase"},
+            {"label": "D", "text": "Cyclin removes phosphate groups from proteins"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Cyclin activates Cdk but does not itself phosphorylate targets."
+        }
+      ]
     },
     {
       "id": "bbls-x206",
@@ -352,7 +960,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q20). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q20). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Negative cell-cycle regulators act as brakes. They were largely discovered by studying cells in which these brakes fail, namely:",
+          "choices": [
+            {"label": "A", "text": "Cancer cells"},
+            {"label": "B", "text": "Mature red blood cells"},
+            {"label": "C", "text": "Already-dead cells"},
+            {"label": "D", "text": "Sperm cells"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Tumor suppressors were mainly identified through cancer cells with defective brakes."
+        },
+        {
+          "level": 2,
+          "prompt": "In cancer cells, the negative regulators (brakes) are typically:",
+          "choices": [
+            {"label": "A", "text": "Defective or lost, allowing uncontrolled division"},
+            {"label": "B", "text": "Present in excess and overactive"},
+            {"label": "C", "text": "Completely unchanged from normal"},
+            {"label": "D", "text": "Replaced by extra positive regulators only"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Cancer cells have faulty brakes, which is why they revealed these regulators."
+        },
+        {
+          "level": 3,
+          "prompt": "Why are 'gametes' not where negative regulators were mainly discovered?",
+          "choices": [
+            {"label": "A", "text": "Gametes are normal reproductive cells; the brake defects that revealed these regulators are seen in cancer cells"},
+            {"label": "B", "text": "Gametes have the most defective checkpoints"},
+            {"label": "C", "text": "Gametes divide uncontrollably like tumors"},
+            {"label": "D", "text": "Gametes lack all cell-cycle regulators"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Gametes are normal cells, so they did not reveal defective brakes the way cancer cells did."
+        }
+      ]
     },
     {
       "id": "bbls-x207",
@@ -372,7 +1018,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q21). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q21). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Which 'guardian' protein can halt the cell cycle for repair and trigger apoptosis if damage is too severe?",
+          "choices": [
+            {"label": "A", "text": "p53"},
+            {"label": "B", "text": "Cyclin"},
+            {"label": "C", "text": "Cdk"},
+            {"label": "D", "text": "A ribosome"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "p53 arrests the cycle and can trigger apoptosis when damage is irreparable."
+        },
+        {
+          "level": 2,
+          "prompt": "Cyclin and Cdk are positive 'go' regulators; can they act as brakes that trigger cell suicide?",
+          "choices": [
+            {"label": "A", "text": "No; they drive the cycle forward rather than trigger apoptosis"},
+            {"label": "B", "text": "Yes; they are the main apoptosis triggers"},
+            {"label": "C", "text": "Yes; they brake the cycle"},
+            {"label": "D", "text": "They have no role in the cell cycle"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Cyclin/Cdk push the cycle forward, so they are not the apoptosis-triggering brakes."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'retinoblastoma protein (Rb)' not the apoptosis trigger described?",
+          "choices": [
+            {"label": "A", "text": "Rb restrains the cycle at the G1 restriction point but is not the guardian that triggers apoptosis"},
+            {"label": "B", "text": "Rb is the main inducer of apoptosis"},
+            {"label": "C", "text": "Rb is a positive regulator that speeds the cycle"},
+            {"label": "D", "text": "Rb replicates the DNA"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Rb is a brake at G1, whereas the apoptosis-triggering guardian described is a different protein."
+        }
+      ]
     },
     {
       "id": "bbls-x208",
@@ -392,7 +1076,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q22). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q22). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A change in the sequence of nucleotides in DNA is called a:",
+          "choices": [
+            {"label": "A", "text": "Mutation"},
+            {"label": "B", "text": "Translation"},
+            {"label": "C", "text": "Replication"},
+            {"label": "D", "text": "Transcription"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A change in nucleotide sequence is a mutation."
+        },
+        {
+          "level": 2,
+          "prompt": "Are proto-oncogenes and tumor suppressor genes themselves 'changes to a nucleotide sequence'?",
+          "choices": [
+            {"label": "A", "text": "No; they are genes, not changes to the sequence"},
+            {"label": "B", "text": "Yes; both are definitions of a sequence change"},
+            {"label": "C", "text": "Yes; a proto-oncogene means a mutation"},
+            {"label": "D", "text": "They are not related to DNA at all"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Those are categories of genes, not the term for a sequence change."
+        },
+        {
+          "level": 3,
+          "prompt": "Why are 'negative regulators' not the correct term for changes in nucleotide sequence?",
+          "choices": [
+            {"label": "A", "text": "Negative regulators are proteins that brake the cycle, not changes to a DNA sequence"},
+            {"label": "B", "text": "Negative regulators are a kind of DNA sequence change"},
+            {"label": "C", "text": "A mutation is a type of negative regulator"},
+            {"label": "D", "text": "Negative regulator and mutation mean the same thing"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Negative regulators are proteins, not sequence alterations."
+        }
+      ]
     },
     {
       "id": "bbls-x209",
@@ -412,7 +1134,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q23). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q23). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A normal gene that codes for a positive (go) cell-cycle regulator is a:",
+          "choices": [
+            {"label": "A", "text": "Proto-oncogene"},
+            {"label": "B", "text": "Tumor suppressor gene"},
+            {"label": "C", "text": "Kinase inhibitor"},
+            {"label": "D", "text": "Pseudogene"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A normal gene for a positive regulator is a proto-oncogene."
+        },
+        {
+          "level": 2,
+          "prompt": "Does a tumor suppressor gene code for a positive (go) or a negative (brake) regulator?",
+          "choices": [
+            {"label": "A", "text": "A negative regulator (a brake)"},
+            {"label": "B", "text": "A positive regulator that drives division"},
+            {"label": "C", "text": "Neither; it codes for a structural protein"},
+            {"label": "D", "text": "Both simultaneously"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Tumor suppressors encode negative regulators, so they are not the 'positive regulator' gene."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'oncogene' not the term for the NORMAL gene encoding a positive regulator?",
+          "choices": [
+            {"label": "A", "text": "An oncogene is the cancer-causing mutated form; the normal version is a proto-oncogene"},
+            {"label": "B", "text": "An oncogene is the normal, healthy version of the gene"},
+            {"label": "C", "text": "Oncogene and proto-oncogene mean exactly the same thing"},
+            {"label": "D", "text": "An oncogene is a brake gene"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The normal gene is a proto-oncogene; an oncogene is its mutated, cancer-driving form."
+        }
+      ]
     },
     {
       "id": "bbls-x210",
@@ -432,7 +1192,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q24). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q24). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A mutated gene that promotes uncontrolled cell division (cancer) is a(n):",
+          "choices": [
+            {"label": "A", "text": "Oncogene"},
+            {"label": "B", "text": "Tumor suppressor gene"},
+            {"label": "C", "text": "Kinase inhibitor"},
+            {"label": "D", "text": "Housekeeping gene"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A cancer-promoting mutated gene is an oncogene."
+        },
+        {
+          "level": 2,
+          "prompt": "A Cdk that is active even WITHOUT cyclin pushes the cycle forward improperly. Is that a gain of a 'go' signal or a loss of a brake?",
+          "choices": [
+            {"label": "A", "text": "A gain of an overactive 'go' signal"},
+            {"label": "B", "text": "A loss of a braking (tumor-suppressor) signal"},
+            {"label": "C", "text": "No change to the cycle at all"},
+            {"label": "D", "text": "A repair of a damaged gene"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Constitutively active Cdk is an overactive go signal, the behavior of an oncogene."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'proto-oncogene' not the best answer for this already-mutated, constantly-active Cdk gene?",
+          "choices": [
+            {"label": "A", "text": "A proto-oncogene is the normal unmutated form; once mutated to be constantly active it becomes an oncogene"},
+            {"label": "B", "text": "A proto-oncogene is the mutated, cancer-driving form"},
+            {"label": "C", "text": "Proto-oncogene means a brake gene"},
+            {"label": "D", "text": "Proto-oncogene and oncogene are identical"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The mutated, constitutively active version is an oncogene, not the normal proto-oncogene."
+        }
+      ]
     },
     {
       "id": "bbls-x211",
@@ -452,7 +1250,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q25). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q25). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "When p53 halts the cell cycle, it switches on which Cdk-inhibiting protein?",
+          "choices": [
+            {"label": "A", "text": "p21"},
+            {"label": "B", "text": "Cyclin"},
+            {"label": "C", "text": "A ribosome"},
+            {"label": "D", "text": "DNA polymerase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "p53 induces p21, which inhibits Cdk activity."
+        },
+        {
+          "level": 2,
+          "prompt": "Cyclin's role is to ACTIVATE Cdk; could cyclin be the Cdk INHIBITOR asked for?",
+          "choices": [
+            {"label": "A", "text": "No; cyclin activates Cdk, the opposite of inhibiting it"},
+            {"label": "B", "text": "Yes; cyclin is the main Cdk inhibitor"},
+            {"label": "C", "text": "Yes; cyclin blocks all kinases"},
+            {"label": "D", "text": "Cyclin has no effect on Cdk"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Cyclin activates Cdk, so it cannot be the inhibitor."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'Rb' not the p53-controlled Cdk inhibitor described?",
+          "choices": [
+            {"label": "A", "text": "Rb restrains the cycle by binding transcription factors, but the Cdk inhibitor induced by p53 is p21"},
+            {"label": "B", "text": "Rb is directly switched on by p53 to inhibit Cdk"},
+            {"label": "C", "text": "Rb is a type of cyclin"},
+            {"label": "D", "text": "Rb activates Cdk"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Rb acts through transcription factors; the p53-induced Cdk inhibitor is p21."
+        }
+      ]
     },
     {
       "id": "bbls-x212",
@@ -472,7 +1308,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q26). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q26). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Prokaryotes have no nucleus, so binary fission lacks which event?",
+          "choices": [
+            {"label": "A", "text": "Nuclear division (karyokinesis)"},
+            {"label": "B", "text": "DNA replication"},
+            {"label": "C", "text": "Cell growth"},
+            {"label": "D", "text": "Division of the cytoplasm"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Without a nucleus, binary fission has no karyokinesis."
+        },
+        {
+          "level": 2,
+          "prompt": "Do prokaryotes still replicate their DNA and grow before dividing?",
+          "choices": [
+            {"label": "A", "text": "Yes; they replicate DNA and grow, then divide"},
+            {"label": "B", "text": "No; they skip DNA replication entirely"},
+            {"label": "C", "text": "No; prokaryotes never grow"},
+            {"label": "D", "text": "Only if they have a nucleus"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Prokaryotes do replicate DNA and grow, so those are not the missing events."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'cytokinesis' NOT the event missing in binary fission?",
+          "choices": [
+            {"label": "A", "text": "Binary fission still divides the cytoplasm (cytokinesis) into two cells"},
+            {"label": "B", "text": "Binary fission skips dividing the cytoplasm"},
+            {"label": "C", "text": "Prokaryotes never split their cytoplasm"},
+            {"label": "D", "text": "Cytokinesis requires a nucleus to occur"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Binary fission does divide the cytoplasm, so cytokinesis is present."
+        }
+      ]
     },
     {
       "id": "bbls-x213",
@@ -492,7 +1366,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/10-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q27). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.10 review Q27). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In bacterial binary fission, FtsZ directs formation of the dividing wall known as the:",
+          "choices": [
+            {"label": "A", "text": "Septum"},
+            {"label": "B", "text": "Cell plate"},
+            {"label": "C", "text": "Cleavage furrow"},
+            {"label": "D", "text": "Spindle"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "FtsZ directs septum formation, which becomes the new cell walls."
+        },
+        {
+          "level": 2,
+          "prompt": "The 'cell plate' is the dividing structure in which organisms, making it wrong for bacteria?",
+          "choices": [
+            {"label": "A", "text": "Plant cells"},
+            {"label": "B", "text": "All bacteria"},
+            {"label": "C", "text": "Animal cells"},
+            {"label": "D", "text": "Viruses"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Cell plates form in plant cells, not bacteria."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'contractile ring' not the structure that becomes the new bacterial cell walls?",
+          "choices": [
+            {"label": "A", "text": "The FtsZ ring constricts, but the structure that actually forms the new cell walls is the septum it builds"},
+            {"label": "B", "text": "The contractile ring itself becomes the cell wall"},
+            {"label": "C", "text": "Bacteria build a cell plate rather than a septum"},
+            {"label": "D", "text": "The septum forms only in animal cells"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The FtsZ ring drives constriction, while the septum it directs becomes the new walls."
+        }
+      ]
     },
     {
       "id": "bbls-x214",
@@ -512,7 +1424,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q2). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q2). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Meiosis consists of how many divisions, producing how many daughter cells?",
+          "choices": [
+            {"label": "A", "text": "Two divisions producing four cells"},
+            {"label": "B", "text": "One division producing two cells"},
+            {"label": "C", "text": "Three divisions producing eight cells"},
+            {"label": "D", "text": "One division producing four cells"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Meiosis has two divisions and yields four daughter cells."
+        },
+        {
+          "level": 2,
+          "prompt": "Because meiosis reduces chromosome number, the daughter cells are:",
+          "choices": [
+            {"label": "A", "text": "Haploid"},
+            {"label": "B", "text": "Diploid"},
+            {"label": "C", "text": "Triploid"},
+            {"label": "D", "text": "Tetraploid"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Meiosis is a reduction division, producing haploid cells."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'two haploid' not the typical product of meiosis?",
+          "choices": [
+            {"label": "A", "text": "Meiosis has two divisions yielding four cells, not two"},
+            {"label": "B", "text": "Meiosis produces only two cells in total"},
+            {"label": "C", "text": "Meiosis yields two diploid cells"},
+            {"label": "D", "text": "Meiosis is only a single division"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Two divisions produce four cells, so 'two' undercounts the products."
+        }
+      ]
     },
     {
       "id": "bbls-x215",
@@ -532,7 +1482,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q3). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q3). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "During prophase I, homologous chromosomes are zipped together (synapsis) by the:",
+          "choices": [
+            {"label": "A", "text": "Synaptonemal complex"},
+            {"label": "B", "text": "Cell membrane"},
+            {"label": "C", "text": "Ribosome"},
+            {"label": "D", "text": "Centriole"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The synaptonemal complex holds homologs together to form the tetrad."
+        },
+        {
+          "level": 2,
+          "prompt": "A tetrad (bivalent) is made up of how many chromatids from the paired homologs?",
+          "choices": [
+            {"label": "A", "text": "Four chromatids (two homologs, each with two chromatids)"},
+            {"label": "B", "text": "Two chromatids total"},
+            {"label": "C", "text": "One chromatid"},
+            {"label": "D", "text": "Eight chromatids"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A tetrad has four chromatids, formed once homologs are paired."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is the 'chiasma' not the main structure that FORMS the tetrad?",
+          "choices": [
+            {"label": "A", "text": "A chiasma is the crossover point that appears within an already-formed tetrad, not what initially pairs the homologs"},
+            {"label": "B", "text": "The chiasma zips the homologs together first"},
+            {"label": "C", "text": "The chiasma is the microtubule organizer"},
+            {"label": "D", "text": "The chiasma separates the homologs"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The chiasma arises after pairing; the synaptonemal complex is what forms the tetrad."
+        }
+      ]
     },
     {
       "id": "bbls-x216",
@@ -552,7 +1540,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q4). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q4). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In meiosis, homologous chromosomes separate in anaphase I; when do sister chromatids finally separate?",
+          "choices": [
+            {"label": "A", "text": "Anaphase II"},
+            {"label": "B", "text": "Prophase I"},
+            {"label": "C", "text": "Metaphase I"},
+            {"label": "D", "text": "Interkinesis"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Sister chromatids separate in anaphase II."
+        },
+        {
+          "level": 2,
+          "prompt": "What separates during anaphase I (meiosis I)?",
+          "choices": [
+            {"label": "A", "text": "Homologous chromosomes (not sister chromatids)"},
+            {"label": "B", "text": "Sister chromatids"},
+            {"label": "C", "text": "Individual genes"},
+            {"label": "D", "text": "Nucleotides"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Anaphase I separates homologs, leaving sister chromatids joined."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'anaphase I' not when sister chromatids separate?",
+          "choices": [
+            {"label": "A", "text": "Anaphase I separates homologous chromosomes; sister chromatids stay together until anaphase II"},
+            {"label": "B", "text": "Anaphase I splits the sister chromatids apart"},
+            {"label": "C", "text": "No separation occurs during anaphase I"},
+            {"label": "D", "text": "Anaphase I is part of meiosis II"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Anaphase I separates homologs, so chromatid separation waits until anaphase II."
+        }
+      ]
     },
     {
       "id": "bbls-x217",
@@ -572,7 +1598,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q5). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q5). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "By metaphase I, homologous chromosomes are held together at crossover points called:",
+          "choices": [
+            {"label": "A", "text": "Chiasmata"},
+            {"label": "B", "text": "Ribosomes"},
+            {"label": "C", "text": "Nucleoli"},
+            {"label": "D", "text": "Vacuoles"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Chiasmata hold homologs together at metaphase I."
+        },
+        {
+          "level": 2,
+          "prompt": "By metaphase I, what has happened to the synaptonemal complex that earlier zipped the homologs?",
+          "choices": [
+            {"label": "A", "text": "It has dissolved (broken down)"},
+            {"label": "B", "text": "It has just formed for the first time"},
+            {"label": "C", "text": "It has become the spindle"},
+            {"label": "D", "text": "It has replicated"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The synaptonemal complex dissolves, leaving the homologs joined only at chiasmata."
+        },
+        {
+          "level": 3,
+          "prompt": "Why are 'kinetochores' not what connect the two homologs to each other at metaphase I?",
+          "choices": [
+            {"label": "A", "text": "Kinetochores attach chromosomes to spindle microtubules, not one homolog to another"},
+            {"label": "B", "text": "Kinetochores physically link the two homologs together"},
+            {"label": "C", "text": "Kinetochores are the crossover points"},
+            {"label": "D", "text": "Kinetochores replace the chiasmata"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Kinetochores link chromosomes to spindle fibers, not homologs to each other."
+        }
+      ]
     },
     {
       "id": "bbls-x218",
@@ -592,7 +1656,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q6). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q6). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Crossing over exchanges DNA between nonsister chromatids using recombination machinery located at the:",
+          "choices": [
+            {"label": "A", "text": "Synaptonemal complex"},
+            {"label": "B", "text": "Spindle midzone"},
+            {"label": "C", "text": "Ribosome"},
+            {"label": "D", "text": "Nuclear pore"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Crossing over occurs via recombination machinery at the synaptonemal complex."
+        },
+        {
+          "level": 2,
+          "prompt": "Do spindle microtubules perform the DNA exchange during crossing over?",
+          "choices": [
+            {"label": "A", "text": "No; spindle microtubules move whole chromosomes later, they do not transfer DNA"},
+            {"label": "B", "text": "Yes; microtubules carry DNA across during crossover"},
+            {"label": "C", "text": "Yes; microtubules are the recombination machinery"},
+            {"label": "D", "text": "Only in mitosis do they transfer DNA"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Spindle microtubules move chromosomes; they do not carry out the DNA exchange."
+        },
+        {
+          "level": 3,
+          "prompt": "Since the question asks which statement is NOT true, why is 'nonsister chromatids exchange genetic material' not the answer?",
+          "choices": [
+            {"label": "A", "text": "That statement is true, so it cannot be the false (incorrect) one"},
+            {"label": "B", "text": "It is false because sister chromatids do the exchange"},
+            {"label": "C", "text": "No chromatids exchange any material"},
+            {"label": "D", "text": "It actually describes spindle function"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Nonsister chromatids really do exchange material, so this true statement is not the exception."
+        }
+      ]
     },
     {
       "id": "bbls-x219",
@@ -612,7 +1714,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q7). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q7). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Between meiosis I and II, no DNA is copied because interkinesis lacks which phase?",
+          "choices": [
+            {"label": "A", "text": "S phase"},
+            {"label": "B", "text": "Anaphase"},
+            {"label": "C", "text": "Telophase"},
+            {"label": "D", "text": "Prophase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Interkinesis lacks an S phase, so DNA is not re-replicated."
+        },
+        {
+          "level": 2,
+          "prompt": "If DNA were replicated again between the two meiotic divisions, the chromosome reduction would fail. Which synthesis step must therefore be skipped?",
+          "choices": [
+            {"label": "A", "text": "DNA synthesis (the S phase)"},
+            {"label": "B", "text": "Protein synthesis"},
+            {"label": "C", "text": "Spindle formation"},
+            {"label": "D", "text": "Cytokinesis"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Skipping DNA synthesis (S phase) preserves the reduction in chromosome number."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'G1 phase' not the key phase whose absence prevents DNA re-replication?",
+          "choices": [
+            {"label": "A", "text": "It is the S (synthesis) phase, not G1, whose absence prevents DNA copying before meiosis II"},
+            {"label": "B", "text": "G1 is where DNA is actually copied"},
+            {"label": "C", "text": "Skipping G1 is what duplicates the DNA"},
+            {"label": "D", "text": "G1 and S phase are the same phase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "DNA copying happens in S phase, so it is S phase, not G1, that is absent."
+        }
+      ]
     },
     {
       "id": "bbls-x220",
@@ -632,7 +1772,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q8). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q8). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Which meiotic division separates sister chromatids, just as mitosis does?",
+          "choices": [
+            {"label": "A", "text": "Meiosis II"},
+            {"label": "B", "text": "Meiosis I"},
+            {"label": "C", "text": "Interkinesis"},
+            {"label": "D", "text": "Fertilization"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Meiosis II separates sister chromatids, resembling mitosis."
+        },
+        {
+          "level": 2,
+          "prompt": "Meiosis I separates homologous chromosomes. Is that like mitosis?",
+          "choices": [
+            {"label": "A", "text": "No; mitosis separates sister chromatids, not homologs"},
+            {"label": "B", "text": "Yes; mitosis separates homologs too"},
+            {"label": "C", "text": "Yes; meiosis I is identical to mitosis"},
+            {"label": "D", "text": "Mitosis separates neither"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Mitosis separates sister chromatids, so meiosis I (which separates homologs) is the unlike one."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'anaphase I' not the meiotic part most like mitosis?",
+          "choices": [
+            {"label": "A", "text": "Anaphase I separates homologs, whereas mitosis (like meiosis II) separates sister chromatids"},
+            {"label": "B", "text": "Anaphase I separates sister chromatids like mitosis"},
+            {"label": "C", "text": "Anaphase I is identical to a mitotic division"},
+            {"label": "D", "text": "Mitosis separates homologous chromosomes"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Anaphase I separates homologs, unlike mitosis, so it is not the mitosis-like part."
+        }
+      ]
     },
     {
       "id": "bbls-x221",
@@ -652,7 +1830,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q9). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q9). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Gametes contain how many chromosomes compared with body (somatic) cells?",
+          "choices": [
+            {"label": "A", "text": "Half as many"},
+            {"label": "B", "text": "Twice as many"},
+            {"label": "C", "text": "The same number"},
+            {"label": "D", "text": "One-fourth as many"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Gametes are haploid, with half the somatic chromosome number."
+        },
+        {
+          "level": 2,
+          "prompt": "Would a gamete have MORE chromosomes than the 32-chromosome muscle cell (for example, 64)?",
+          "choices": [
+            {"label": "A", "text": "No; it has fewer, since gametes carry half the number"},
+            {"label": "B", "text": "Yes; gametes double the somatic number"},
+            {"label": "C", "text": "Yes; a gamete would have 64"},
+            {"label": "D", "text": "It would have exactly 32"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Gametes have fewer chromosomes than somatic cells, ruling out 64."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is '32' not the gamete's chromosome number here?",
+          "choices": [
+            {"label": "A", "text": "32 is the diploid somatic number; a haploid gamete has half of that"},
+            {"label": "B", "text": "Gametes keep the full somatic number of 32"},
+            {"label": "C", "text": "Gametes are diploid like muscle cells"},
+            {"label": "D", "text": "32 is already the halved number"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The gamete carries half of 32, so 32 itself is the somatic (not gamete) number."
+        }
+      ]
     },
     {
       "id": "bbls-x222",
@@ -672,7 +1888,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q10). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q10). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "After meiosis I is complete, each resulting cell is:",
+          "choices": [
+            {"label": "A", "text": "Haploid"},
+            {"label": "B", "text": "Diploid"},
+            {"label": "C", "text": "Triploid"},
+            {"label": "D", "text": "Tetraploid"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Meiosis I reduces the cells to haploid."
+        },
+        {
+          "level": 2,
+          "prompt": "Even though the cell is haploid after meiosis I, each chromosome still consists of how many sister chromatids until anaphase II?",
+          "choices": [
+            {"label": "A", "text": "Two sister chromatids (so two copies of each gene)"},
+            {"label": "B", "text": "One chromatid (one copy of each gene)"},
+            {"label": "C", "text": "Four chromatids"},
+            {"label": "D", "text": "Zero; the chromatids are gone"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Each chromosome retains two sister chromatids, giving two gene copies until anaphase II."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'diploid with two copies of each gene' incorrect for prophase II?",
+          "choices": [
+            {"label": "A", "text": "Meiosis I already reduced the cell to haploid, so it is not diploid at prophase II"},
+            {"label": "B", "text": "The cell is still diploid at prophase II"},
+            {"label": "C", "text": "Meiosis I does not reduce ploidy"},
+            {"label": "D", "text": "Prophase II comes before meiosis I"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The cell is haploid (not diploid) by prophase II, even though each gene is present in two copies."
+        }
+      ]
     },
     {
       "id": "bbls-x223",
@@ -692,7 +1946,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q11). No public OpenStax answer key; answer verified by calculation (2^7 = 128)."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q11). No public OpenStax answer key; answer verified by calculation (2^7 = 128).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Ignoring crossing over, the number of genetically different gametes from independent assortment is:",
+          "choices": [
+            {"label": "A", "text": "2 raised to the haploid number n"},
+            {"label": "B", "text": "n squared"},
+            {"label": "C", "text": "2 times n"},
+            {"label": "D", "text": "n factorial"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Independent assortment yields 2^n gamete combinations."
+        },
+        {
+          "level": 2,
+          "prompt": "A diploid pea plant with 14 chromosomes has a haploid number n of:",
+          "choices": [
+            {"label": "A", "text": "7"},
+            {"label": "B", "text": "14"},
+            {"label": "C", "text": "28"},
+            {"label": "D", "text": "2"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Fourteen chromosomes means n = 7, so 2^7 gamete types are possible."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is '28' the result of a wrong approach?",
+          "choices": [
+            {"label": "A", "text": "28 comes from multiplying 14 by 2, not from raising 2 to the power of the haploid number"},
+            {"label": "B", "text": "28 equals 2 raised to the 7th power"},
+            {"label": "C", "text": "28 is the correct count of unique gametes"},
+            {"label": "D", "text": "28 equals 7 factorial"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "28 is 14 times 2, not 2^n, so it reflects the wrong formula."
+        }
+      ]
     },
     {
       "id": "bbls-x224",
@@ -712,7 +2004,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q12). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q12). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In many organisms, between meiosis I and meiosis II the chromosomes typically:",
+          "choices": [
+            {"label": "A", "text": "Remain condensed, with little decondensation"},
+            {"label": "B", "text": "Always fully decondense and re-replicate"},
+            {"label": "C", "text": "Disappear entirely"},
+            {"label": "D", "text": "Fuse into a single mass"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Chromosomes often stay condensed through the brief interkinesis."
+        },
+        {
+          "level": 2,
+          "prompt": "After telophase I, are the daughter cells already haploid?",
+          "choices": [
+            {"label": "A", "text": "Yes; homologs separated in meiosis I, so the cells are haploid"},
+            {"label": "B", "text": "No; they remain diploid until telophase II"},
+            {"label": "C", "text": "No; they are triploid"},
+            {"label": "D", "text": "They have no defined ploidy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Cells are haploid after telophase I, so any claim they stay diploid until telophase II is false."
+        },
+        {
+          "level": 3,
+          "prompt": "In animal cells, why is 'daughter cells form a cell plate during telophase I' incorrect?",
+          "choices": [
+            {"label": "A", "text": "Animal cells divide by a cleavage furrow, not a cell plate (which is used by plant cells)"},
+            {"label": "B", "text": "Animal cells always build a cell plate"},
+            {"label": "C", "text": "Cell plates form during every telophase"},
+            {"label": "D", "text": "Animal cells never divide their cytoplasm"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Animal cytokinesis uses a cleavage furrow, so the cell-plate statement is wrong for animals."
+        }
+      ]
     },
     {
       "id": "bbls-x225",
@@ -732,7 +2062,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q13). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q13). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What is the main evolutionary advantage of sexual reproduction?",
+          "choices": [
+            {"label": "A", "text": "It generates genetic variation among offspring"},
+            {"label": "B", "text": "It produces exact clones of the parent"},
+            {"label": "C", "text": "It always uses fewer resources"},
+            {"label": "D", "text": "It removes the need for meiosis"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Sexual reproduction's key benefit is genetic variation in offspring."
+        },
+        {
+          "level": 2,
+          "prompt": "Independent assortment, crossing over, and random fertilization all do what to alleles?",
+          "choices": [
+            {"label": "A", "text": "Shuffle them into new combinations, increasing variation"},
+            {"label": "B", "text": "Keep them in fixed, identical combinations"},
+            {"label": "C", "text": "Delete alleles from the genome"},
+            {"label": "D", "text": "Prevent any new combinations"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "These processes shuffle alleles, producing offspring variation."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'sexual reproduction involves fewer steps' not a real advantage?",
+          "choices": [
+            {"label": "A", "text": "Sexual reproduction is actually more complex (meiosis plus fertilization), so 'fewer steps' is false"},
+            {"label": "B", "text": "It genuinely uses fewer steps than asexual reproduction"},
+            {"label": "C", "text": "Fewer steps is its primary benefit"},
+            {"label": "D", "text": "It skips cell division entirely"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Sexual reproduction has more steps, so 'fewer steps' is not an advantage."
+        }
+      ]
     },
     {
       "id": "bbls-x226",
@@ -752,7 +2120,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q14). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q14). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A life cycle featuring BOTH a multicellular haploid stage and a multicellular diploid stage is called:",
+          "choices": [
+            {"label": "A", "text": "Alternation of generations"},
+            {"label": "B", "text": "Binary fission"},
+            {"label": "C", "text": "Budding"},
+            {"label": "D", "text": "Conjugation"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Alternation of generations has both multicellular haploid and diploid stages."
+        },
+        {
+          "level": 2,
+          "prompt": "In most animals, is there a multicellular HAPLOID stage?",
+          "choices": [
+            {"label": "A", "text": "No; only the single-celled gametes are haploid"},
+            {"label": "B", "text": "Yes; animals have a large multicellular haploid body"},
+            {"label": "C", "text": "Yes; the adult animal is haploid"},
+            {"label": "D", "text": "Animals have no haploid cells at all"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Most animals lack a multicellular haploid stage, so that is not the answer."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'most fungal life cycles' not the best answer for having both multicellular haploid AND diploid stages?",
+          "choices": [
+            {"label": "A", "text": "Most fungi are predominantly haploid and lack a prominent multicellular diploid stage"},
+            {"label": "B", "text": "Fungi have equally prominent multicellular diploid bodies"},
+            {"label": "C", "text": "Fungi have no haploid stage at all"},
+            {"label": "D", "text": "Fungi reproduce only asexually"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Fungi are mostly haploid without a major diploid multicellular stage, unlike alternation of generations."
+        }
+      ]
     },
     {
       "id": "bbls-x227",
@@ -772,7 +2178,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q15). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q15). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Most fungi spend the majority of their life cycle as:",
+          "choices": [
+            {"label": "A", "text": "Haploid organisms"},
+            {"label": "B", "text": "Diploid organisms"},
+            {"label": "C", "text": "Triploid organisms"},
+            {"label": "D", "text": "Tetraploid organisms"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Most fungi are predominantly haploid."
+        },
+        {
+          "level": 2,
+          "prompt": "In most fungi, is the diploid state typically brief or extended?",
+          "choices": [
+            {"label": "A", "text": "Brief, often only just after fertilization"},
+            {"label": "B", "text": "Extended, dominating the life cycle"},
+            {"label": "C", "text": "Permanent for the whole life cycle"},
+            {"label": "D", "text": "Absent entirely"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The diploid phase is transient, so the conspicuous body is haploid."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'diploid' not the ploidy of the conspicuous body of most fungi?",
+          "choices": [
+            {"label": "A", "text": "In most fungi the diploid phase is transient, so the visible body is usually haploid"},
+            {"label": "B", "text": "The visible fungal body is normally diploid"},
+            {"label": "C", "text": "Fungi are diploid throughout life"},
+            {"label": "D", "text": "Fungi have no haploid phase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The diploid stage is fleeting, so the conspicuous form is haploid, not diploid."
+        }
+      ]
     },
     {
       "id": "bbls-x228",
@@ -792,7 +2236,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q16). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q16). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In alternation of generations, the diploid, multicellular stage that produces haploid spores by meiosis is the:",
+          "choices": [
+            {"label": "A", "text": "Sporophyte"},
+            {"label": "B", "text": "Gametophyte"},
+            {"label": "C", "text": "Zygote"},
+            {"label": "D", "text": "Gamete"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The sporophyte is the diploid stage that makes spores by meiosis."
+        },
+        {
+          "level": 2,
+          "prompt": "Is the gametophyte stage haploid or diploid?",
+          "choices": [
+            {"label": "A", "text": "Haploid (it produces gametes)"},
+            {"label": "B", "text": "Diploid (it produces spores)"},
+            {"label": "C", "text": "Triploid"},
+            {"label": "D", "text": "It has no set ploidy"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The gametophyte is haploid, so it is not the diploid spore-producing stage."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'gamete' not the diploid, multicellular stage described?",
+          "choices": [
+            {"label": "A", "text": "A gamete is a single haploid reproductive cell, not a diploid multicellular stage"},
+            {"label": "B", "text": "A gamete is a diploid multicellular body"},
+            {"label": "C", "text": "Gametes produce spores by meiosis"},
+            {"label": "D", "text": "Gamete and sporophyte mean the same thing"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A gamete is a single haploid cell, unlike the diploid multicellular sporophyte."
+        }
+      ]
     },
     {
       "id": "bbls-x229",
@@ -812,7 +2294,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/11-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q18). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.11 review Q18). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Low genetic diversity in a population means many individuals share:",
+          "choices": [
+            {"label": "A", "text": "The same vulnerabilities, such as susceptibility to a particular disease"},
+            {"label": "B", "text": "Completely different immune profiles"},
+            {"label": "C", "text": "Uniformly higher fitness"},
+            {"label": "D", "text": "Faster mutation rates"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Low diversity means shared vulnerabilities across individuals."
+        },
+        {
+          "level": 2,
+          "prompt": "If a new disease strikes a genetically uniform crop, how much of it is at risk?",
+          "choices": [
+            {"label": "A", "text": "A large fraction, because they share the same vulnerability"},
+            {"label": "B", "text": "Only a tiny, random fraction"},
+            {"label": "C", "text": "None, because uniformity gives protection"},
+            {"label": "D", "text": "Only the oldest plants"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Shared vulnerability puts a large portion of a uniform crop at risk."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'consumers do not trust identical-appearing produce' not the genetic concern?",
+          "choices": [
+            {"label": "A", "text": "The real risk is biological vulnerability to disease, not consumer perception of appearance"},
+            {"label": "B", "text": "Consumer distrust is the main genetic danger"},
+            {"label": "C", "text": "Identical produce is genetically safer"},
+            {"label": "D", "text": "Consumer trust changes allele frequencies"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The concern is disease vulnerability from low diversity, not how produce looks to shoppers."
+        }
+      ]
     }
   ]
 }

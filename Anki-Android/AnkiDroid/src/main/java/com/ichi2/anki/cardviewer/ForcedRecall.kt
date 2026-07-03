@@ -34,8 +34,17 @@ object ForcedRecall {
     private val whitespace = Regex("\\s+")
 
     /**
+     * SpeedyCAT: separator punctuation treated as whitespace so MULTI-CLOZE answers match
+     * regardless of the learner's separator (`, ; : / |`). With ordered cloze answers joined
+     * by single spaces, typing `a b`, `a, b`, or `a; b` all normalize identically to `a b`.
+     */
+    private val separators = Regex("[,;:/|\\\\]+")
+
+    /**
      * Normalizes an answer for comparison: strips HTML & special fields (e.g. `[[type:...]]`),
-     * collapses runs of whitespace to a single space, trims, and lower-cases.
+     * treats separator punctuation (`, ; : / |`) as whitespace so multi-cloze answers match
+     * regardless of the learner's separator, collapses runs of whitespace to a single space,
+     * trims, and lower-cases.
      *
      * Note: this delegates to [stripHTMLAndSpecialFields], which uses Android's `HtmlCompat`
      * to decode HTML entities, so it must run on an Android (or Robolectric) runtime.
@@ -43,6 +52,7 @@ object ForcedRecall {
     fun normalize(text: String): String =
         stripHTMLAndSpecialFields(text)
             .replace('\u00a0', ' ') // non-breaking space -> regular space
+            .replace(separators, " ") // SpeedyCAT: separator-flexible multi-cloze matching
             .replace(whitespace, " ")
             .trim()
             .lowercase()
@@ -61,4 +71,19 @@ object ForcedRecall {
         if (normalizedTyped.isEmpty()) return false
         return normalizedTyped == normalize(expected)
     }
+
+    /**
+     * Human-readable form of the [expected] answer for display next to the verdict, so the learner
+     * can see exactly what the checker compared their typed answer against.
+     *
+     * Uses the same HTML & special-field stripping and whitespace collapsing as [normalize] (so it
+     * reflects what was actually compared), but intentionally does NOT lower-case: matching is
+     * case-insensitive, so the answer is shown in its original case for readability. Returns an
+     * empty string when there is nothing to show.
+     */
+    fun displayAnswer(expected: String): String =
+        stripHTMLAndSpecialFields(expected)
+            .replace('\u00a0', ' ') // non-breaking space -> regular space
+            .replace(whitespace, " ")
+            .trim()
 }

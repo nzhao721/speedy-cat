@@ -99,6 +99,29 @@ export function fullLengthRawTotals(readiness: GetReadinessResponse): {
     return { correct, total };
 }
 
+/** The averaged MCAT-scale total-score ESTIMATE (472–528) + its range, or null
+ * when the backend didn't produce one (no completed full-length). Deterministic
+ * lookup computed in the Rust backend — never an AI/official score. */
+export interface ScaledEstimate {
+    score: number;
+    low: number;
+    high: number;
+}
+
+export function fullLengthScaledEstimate(
+    readiness: GetReadinessResponse,
+): ScaledEstimate | null {
+    const score = readiness.readinessScaledScore;
+    if (score === undefined) {
+        return null;
+    }
+    return {
+        score,
+        low: readiness.readinessScaledLow ?? score,
+        high: readiness.readinessScaledHigh ?? score,
+    };
+}
+
 // ---- Formatting ---------------------------------------------------------------
 
 export function pct(fraction: number): string {

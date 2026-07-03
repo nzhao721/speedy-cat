@@ -42,7 +42,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/24-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (T = 1/f; λ = c/f)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (T = 1/f; λ = c/f).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How are a wave's period and wavelength related to its frequency (and, for wavelength, the wave speed)?",
+          "choices": [
+            {"label": "A", "text": "T = 1/f and λ = c/f."},
+            {"label": "B", "text": "T = f and λ = f/c."},
+            {"label": "C", "text": "T = 1/f and λ = f/c."},
+            {"label": "D", "text": "T = c/f and λ = 1/f."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Period is the reciprocal of frequency, and wavelength is speed divided by frequency."
+        },
+        {
+          "level": 2,
+          "prompt": "For a 3 GHz wave in vacuum, which substitutions give the period and the wavelength?",
+          "choices": [
+            {"label": "A", "text": "T = 1/(3×10⁹ Hz) and λ = (3×10⁸ m/s)/(3×10⁹ Hz)."},
+            {"label": "B", "text": "T = 3×10⁹ Hz and λ = (3×10⁹)/(3×10⁸)."},
+            {"label": "C", "text": "T = 1/(3×10⁹) and λ = (3×10⁹)(3×10⁸)."},
+            {"label": "D", "text": "T = (3×10⁸)/(3×10⁹) and λ = 1/(3×10⁹)."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Substitute f = 3×10⁹ Hz into T = 1/f and λ = c/f with c = 3×10⁸ m/s."
+        },
+        {
+          "level": 3,
+          "prompt": "The period of a gigahertz wave is an extremely short time, not a huge one. Which two options can be eliminated because their period is unreasonably large?",
+          "choices": [
+            {"label": "A", "text": "The two options listing a period of 3.0×10⁹ s."},
+            {"label": "B", "text": "The two options listing a period of 3.3×10⁻¹⁰ s."},
+            {"label": "C", "text": "The two options listing a wavelength of 10 cm."},
+            {"label": "D", "text": "The two options listing a wavelength of 10 m."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A gigahertz period is a fraction of a nanosecond, so a period of 10⁹ s is impossible."
+        }
+      ]
     },
     {
       "id": "cpbs-xp143",
@@ -62,7 +100,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/24-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (mechanical waves need a medium; EM waves do not)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (mechanical waves need a medium; EM waves do not).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Which type of wave requires a material medium to travel, and which can travel through vacuum?",
+          "choices": [
+            {"label": "A", "text": "Mechanical waves need a medium; electromagnetic waves can travel through vacuum."},
+            {"label": "B", "text": "Electromagnetic waves need a medium; mechanical waves travel through vacuum."},
+            {"label": "C", "text": "Both types need a medium."},
+            {"label": "D", "text": "Neither type needs a medium."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Mechanical waves require matter, while electromagnetic waves propagate through empty space."
+        },
+        {
+          "level": 2,
+          "prompt": "Since a mechanical wave cannot exist without a medium, what must happen to it at the boundary with vacuum?",
+          "choices": [
+            {"label": "A", "text": "It cannot enter the vacuum, so it is reflected back."},
+            {"label": "B", "text": "It continues into the vacuum unchanged."},
+            {"label": "C", "text": "It speeds up in the vacuum."},
+            {"label": "D", "text": "It converts into an electromagnetic wave."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "With no medium beyond the boundary, the mechanical wave is reflected."
+        },
+        {
+          "level": 3,
+          "prompt": "A mechanical wave at a vacuum boundary is reflected — not transmitted and not simply halted. Which two options can be eliminated based on the mechanical wave's behavior?",
+          "choices": [
+            {"label": "A", "text": "'Mechanical wave continues on…' and 'Mechanical wave stops…'"},
+            {"label": "B", "text": "The two options stating the mechanical wave reflects backward."},
+            {"label": "C", "text": "The two options stating the electromagnetic wave continues on."},
+            {"label": "D", "text": "None of the choices can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The mechanical wave reflects rather than continuing or stopping, so those two options are out."
+        }
+      ]
     },
     {
       "id": "cpbs-xp144",
@@ -82,7 +158,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/24-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (spectrum order; green wavelength < red)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (spectrum order; green wavelength < red).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Across the electromagnetic spectrum, how does wavelength compare for gamma rays versus radio waves, and for green versus red light?",
+          "choices": [
+            {"label": "A", "text": "Gamma rays have the shortest wavelength and radio (ELF) the longest; green is shorter than red."},
+            {"label": "B", "text": "Radio waves have the shortest wavelength and gamma rays the longest; red is shorter than green."},
+            {"label": "C", "text": "Gamma rays have the longest wavelength; green and red are equal."},
+            {"label": "D", "text": "All visible colors have the same wavelength."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Gamma rays are shortest, ELF radio longest, and green (~550 nm) is shorter than red (~700 nm)."
+        },
+        {
+          "level": 2,
+          "prompt": "Ordering from least to greatest wavelength, which end of the spectrum comes first, and which visible color comes first?",
+          "choices": [
+            {"label": "A", "text": "Gamma rays come first (shortest), and green comes before red."},
+            {"label": "B", "text": "ELF radio comes first, and red comes before green."},
+            {"label": "C", "text": "Gamma rays come first, and red comes before green."},
+            {"label": "D", "text": "ELF radio comes first, and green comes before red."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The shortest wavelength (gamma) leads, and green precedes red because it has the shorter wavelength."
+        },
+        {
+          "level": 3,
+          "prompt": "For a least-to-greatest wavelength ordering, the list must begin with the shortest-wavelength radiation. Which two options can be eliminated because they begin at the wrong end?",
+          "choices": [
+            {"label": "A", "text": "The two options that begin with 'ELF' (the longest wavelength)."},
+            {"label": "B", "text": "The two options that begin with 'gamma ray'."},
+            {"label": "C", "text": "The two options that place green before red."},
+            {"label": "D", "text": "The two options that place red before green."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A least-to-greatest list cannot start with the longest-wavelength ELF radiation."
+        }
+      ]
     },
     {
       "id": "cpbs-xp145",
@@ -102,7 +216,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/24-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (intensity ∝ E²)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (intensity ∝ E²).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How does the intensity (power delivered) of an electromagnetic wave depend on its electric-field amplitude?",
+          "choices": [
+            {"label": "A", "text": "Intensity is proportional to the square of the electric field."},
+            {"label": "B", "text": "Intensity is proportional to the electric field directly."},
+            {"label": "C", "text": "Intensity is inversely proportional to the electric field."},
+            {"label": "D", "text": "Intensity does not depend on the electric field."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The delivered power of an EM wave scales as the square of the field amplitude."
+        },
+        {
+          "level": 2,
+          "prompt": "If the electric field drops to half, the delivered power drops to ___, so the cooking time changes inversely.",
+          "choices": [
+            {"label": "A", "text": "one-fourth"},
+            {"label": "B", "text": "one-half"},
+            {"label": "C", "text": "one-eighth"},
+            {"label": "D", "text": "the same"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Since power ∝ E², halving the field gives one-quarter of the power."
+        },
+        {
+          "level": 3,
+          "prompt": "Because less power is delivered, the cooking time must ___, ruling out which options?",
+          "choices": [
+            {"label": "A", "text": "increase, ruling out 'half the time' and 'one fourth the time'"},
+            {"label": "B", "text": "decrease, ruling out 'four times as long' and 'twice as long'"},
+            {"label": "C", "text": "stay the same, ruling out all options"},
+            {"label": "D", "text": "increase, ruling out 'twice as long' only"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Lower power means longer cooking, so the two 'less time' options are impossible."
+        }
+      ]
     },
     {
       "id": "cpbs-xp146",
@@ -122,7 +274,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (ray model of geometric optics)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (ray model of geometric optics).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What is the defining assumption of the ray model of light?",
+          "choices": [
+            {"label": "A", "text": "Light travels in straight lines that reflect and refract at surfaces."},
+            {"label": "B", "text": "Light spreads only as spherical wavefronts that interfere."},
+            {"label": "C", "text": "Light consists solely of discrete photons that collide with matter."},
+            {"label": "D", "text": "Light cannot form images at all."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The ray model treats light as straight-line rays that reflect and refract."
+        },
+        {
+          "level": 2,
+          "prompt": "Which optical phenomena require the wave or particle models rather than the ray model?",
+          "choices": [
+            {"label": "A", "text": "Interference and the photoelectric effect, not simple image formation."},
+            {"label": "B", "text": "Reflection and refraction at a mirror."},
+            {"label": "C", "text": "Image formation by a concave mirror."},
+            {"label": "D", "text": "Light traveling in straight lines."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Wave and particle models handle interference and the photoelectric effect, which ray optics cannot."
+        },
+        {
+          "level": 3,
+          "prompt": "Interference and the photoelectric effect need the wave and particle models, but simple image formation does not. Which two answer choices can be eliminated as not the model used here?",
+          "choices": [
+            {"label": "A", "text": "'wave' and 'particle'"},
+            {"label": "B", "text": "'ray' and 'all of the above'"},
+            {"label": "C", "text": "'wave' and 'ray'"},
+            {"label": "D", "text": "'particle' and 'all of the above'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The wave and particle models describe other phenomena, so they are not the model for this image formation."
+        }
+      ]
     },
     {
       "id": "cpbs-xp147",
@@ -142,7 +332,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim (the source's ray-angle detail omitted; a plane-mirror image is at the object's distance behind the mirror). OpenStax withholds the public answer key; answer independently verified."
+      "notes": "Stem + 4 options scraped verbatim (the source's ray-angle detail omitted; a plane-mirror image is at the object's distance behind the mirror). OpenStax withholds the public answer key; answer independently verified.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "For a plane (flat) mirror, how does the image distance behind the mirror compare to the object distance in front?",
+          "choices": [
+            {"label": "A", "text": "The image is the same distance behind the mirror as the object is in front."},
+            {"label": "B", "text": "The image is half the object distance."},
+            {"label": "C", "text": "The image is twice the object distance."},
+            {"label": "D", "text": "The image forms right at the mirror's surface."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A plane mirror places the virtual image as far behind as the object is in front."
+        },
+        {
+          "level": 2,
+          "prompt": "The object is 2 m in front of the flat mirror. Using the plane-mirror rule, the image distance behind equals ___.",
+          "choices": [
+            {"label": "A", "text": "the object's distance"},
+            {"label": "B", "text": "half the object's distance"},
+            {"label": "C", "text": "double the object's distance"},
+            {"label": "D", "text": "one-tenth of the object's distance"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The image distance equals the object distance for a plane mirror."
+        },
+        {
+          "level": 3,
+          "prompt": "Because a plane mirror preserves distance, which two answer choices can be eliminated as not equal to the object distance?",
+          "choices": [
+            {"label": "A", "text": "'0.2 m' and '0.5 m'"},
+            {"label": "B", "text": "'2 m' and '4 m'"},
+            {"label": "C", "text": "'0.5 m' and '2 m'"},
+            {"label": "D", "text": "'0.2 m' and '4 m'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Values smaller than the object distance cannot match the equal-distance rule."
+        }
+      ]
     },
     {
       "id": "cpbs-xp148",
@@ -162,7 +390,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (higher n ⇒ slower speed, shorter wavelength; f constant)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (higher n ⇒ slower speed, shorter wavelength; f constant).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "When light enters a medium with a higher index of refraction, what happens to its speed, and how does its frequency behave?",
+          "choices": [
+            {"label": "A", "text": "Speed decreases while frequency stays the same."},
+            {"label": "B", "text": "Speed increases while frequency stays the same."},
+            {"label": "C", "text": "Speed decreases and frequency also decreases."},
+            {"label": "D", "text": "Speed stays constant; only the frequency changes."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A higher index slows the light, and the frequency is unchanged across the boundary."
+        },
+        {
+          "level": 2,
+          "prompt": "Since frequency is unchanged and v = fλ, a decrease in speed means the wavelength ___.",
+          "choices": [
+            {"label": "A", "text": "also decreases"},
+            {"label": "B", "text": "increases"},
+            {"label": "C", "text": "stays the same"},
+            {"label": "D", "text": "becomes zero"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "With frequency fixed, a smaller speed forces a smaller wavelength."
+        },
+        {
+          "level": 3,
+          "prompt": "Water has a higher index of refraction than air, so the light's speed must ___, ruling out which options?",
+          "choices": [
+            {"label": "A", "text": "decrease, ruling out the two 'speed increases' options"},
+            {"label": "B", "text": "increase, ruling out the two 'speed decreases' options"},
+            {"label": "C", "text": "stay the same, ruling out all options"},
+            {"label": "D", "text": "decrease, ruling out only one option"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Entering higher-index water slows the light, so any 'speed increases' option is out."
+        }
+      ]
     },
     {
       "id": "cpbs-xp149",
@@ -182,7 +448,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (entering higher-n medium: slows, bends toward normal)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (entering higher-n medium: slows, bends toward normal).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "When light enters a medium with a higher index of refraction, how does its speed change and which way does it bend relative to the normal?",
+          "choices": [
+            {"label": "A", "text": "It slows down and bends toward the normal."},
+            {"label": "B", "text": "It speeds up and bends toward the normal."},
+            {"label": "C", "text": "It slows down and bends away from the normal."},
+            {"label": "D", "text": "It speeds up and bends away from the normal."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A higher-index medium slows light and bends it toward the normal."
+        },
+        {
+          "level": 2,
+          "prompt": "Glass has a higher index than air, so on entering the glass the light ___.",
+          "choices": [
+            {"label": "A", "text": "slows down"},
+            {"label": "B", "text": "speeds up"},
+            {"label": "C", "text": "keeps the same speed"},
+            {"label": "D", "text": "stops"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Light slows when it enters the higher-index glass."
+        },
+        {
+          "level": 3,
+          "prompt": "Because glass has a higher index than air, the light must slow down, ruling out which options?",
+          "choices": [
+            {"label": "A", "text": "The two 'speed increases' options."},
+            {"label": "B", "text": "The two 'speed decreases' options."},
+            {"label": "C", "text": "The two 'bends toward the normal' options."},
+            {"label": "D", "text": "None of the choices can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The light slows entering glass, so both options in which it speeds up are impossible."
+        }
+      ]
     },
     {
       "id": "cpbs-xp150",
@@ -202,7 +506,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (lower n ⇒ faster, bends away from normal)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (lower n ⇒ faster, bends away from normal).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How does light's speed relate to a medium's index of refraction, and which way does it bend when it speeds up?",
+          "choices": [
+            {"label": "A", "text": "Higher index means slower light; when light speeds up (entering a lower-index medium) it bends away from the normal."},
+            {"label": "B", "text": "Higher index means faster light; speeding up bends light toward the normal."},
+            {"label": "C", "text": "Index has no effect on speed or bending."},
+            {"label": "D", "text": "Light always bends toward the normal regardless of index."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Speed is inversely related to index, and light bends away from the normal when it speeds up."
+        },
+        {
+          "level": 2,
+          "prompt": "For a fluid with a lower index than water, the light should ___.",
+          "choices": [
+            {"label": "A", "text": "speed up and bend away from the normal"},
+            {"label": "B", "text": "slow down and bend toward the normal"},
+            {"label": "C", "text": "speed up and bend toward the normal"},
+            {"label": "D", "text": "slow down and bend away from the normal"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A lower-index medium speeds the light up and bends it away from the normal."
+        },
+        {
+          "level": 3,
+          "prompt": "Two options describe a higher-index fluid but pair it with the wrong speed-and-bend behavior. Which two options are internally inconsistent and can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "The two options beginning 'If the index of refraction of the fluid is higher than that of water…'."},
+            {"label": "B", "text": "The two options beginning 'If the index of refraction of the fluid is lower than that of water…'."},
+            {"label": "C", "text": "The two options mentioning 'bend away from the normal'."},
+            {"label": "D", "text": "None of the choices can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Both higher-index options describe physically impossible speed-and-bend combinations."
+        }
+      ]
     },
     {
       "id": "cpbs-xp151",
@@ -222,7 +564,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (object at focal point ⇒ image at infinity)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (object at focal point ⇒ image at infinity).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "According to the thin-lens equation 1/f = 1/dₒ + 1/dᵢ, what happens to the image distance when the object is placed exactly at the focal point?",
+          "choices": [
+            {"label": "A", "text": "1/dᵢ becomes zero, so the image forms at infinity."},
+            {"label": "B", "text": "The image forms at the focal point on the other side."},
+            {"label": "C", "text": "The image forms right at the lens."},
+            {"label": "D", "text": "The image forms at twice the focal length."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "An object at the focal point yields parallel emerging rays and an image at infinity."
+        },
+        {
+          "level": 2,
+          "prompt": "Here the object distance equals the focal length (both 25 cm). Substituting into 1/f = 1/dₒ + 1/dᵢ gives 1/dᵢ = ___.",
+          "choices": [
+            {"label": "A", "text": "zero, so the image distance is infinite"},
+            {"label": "B", "text": "2/25 cm⁻¹"},
+            {"label": "C", "text": "1/25 cm⁻¹"},
+            {"label": "D", "text": "−1/25 cm⁻¹"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "1/25 − 1/25 = 0, so the image distance diverges."
+        },
+        {
+          "level": 3,
+          "prompt": "When the object is at the focal point, the refracted rays emerge parallel and never converge to a finite point. Which two finite-image options are traps that can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'25 cm in front of the lens' and '25 cm behind the lens'"},
+            {"label": "B", "text": "'50 cm behind the lens' and 'at infinity'"},
+            {"label": "C", "text": "'25 cm behind the lens' and '50 cm behind the lens'"},
+            {"label": "D", "text": "'25 cm in front of the lens' and 'at infinity'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Parallel emerging rays cannot meet at the finite 25 cm positions, so those are traps."
+        }
+      ]
     },
     {
       "id": "cpbs-xp152",
@@ -242,7 +622,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (one do-di pair determines f, hence magnification for any do)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (one do-di pair determines f, hence magnification for any do).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What single property of a thin lens lets you predict magnification at any object distance?",
+          "choices": [
+            {"label": "A", "text": "Its focal length, from which magnification follows via the lens equation."},
+            {"label": "B", "text": "Its diameter."},
+            {"label": "C", "text": "Its color."},
+            {"label": "D", "text": "Nothing — magnification cannot be predicted."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Knowing the focal length lets you compute image distance and magnification for any object distance."
+        },
+        {
+          "level": 2,
+          "prompt": "How can the focal length be determined experimentally?",
+          "choices": [
+            {"label": "A", "text": "From one matched pair of object distance and image distance, using 1/f = 1/dₒ + 1/dᵢ."},
+            {"label": "B", "text": "From the image distance alone."},
+            {"label": "C", "text": "From whether the image is upright or inverted."},
+            {"label": "D", "text": "From the lens diameter and index of refraction."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A single object–image distance pair fixes the focal length via the lens equation."
+        },
+        {
+          "level": 3,
+          "prompt": "Predicting magnification requires the focal length. Which two answer choices provide data that cannot determine the focal length?",
+          "choices": [
+            {"label": "A", "text": "'A specific image distance with upright/inverted info' and 'the diameter and index of refraction'."},
+            {"label": "B", "text": "'A specific object distance and its image distance' and 'the radius of curvature of each side'."},
+            {"label": "C", "text": "'The diameter and index' and 'the radius of curvature of each side'."},
+            {"label": "D", "text": "None of the choices can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Orientation plus one distance, or diameter and index, are insufficient to pin the focal length."
+        }
+      ]
     },
     {
       "id": "cpbs-xp153",
@@ -262,7 +680,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (convex mirror always gives upright, reduced images)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (convex mirror always gives upright, reduced images).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How do the images formed by convex, flat, and concave mirrors differ in general?",
+          "choices": [
+            {"label": "A", "text": "A convex mirror always gives upright, reduced images; a flat mirror gives same-size images; a concave mirror can give enlarged or inverted images."},
+            {"label": "B", "text": "A convex mirror always gives enlarged images; a flat mirror inverts; a concave mirror reduces."},
+            {"label": "C", "text": "All three mirror types give identical images."},
+            {"label": "D", "text": "Only concave mirrors can form any image."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Convex mirrors always shrink and keep images upright, unlike flat and concave mirrors."
+        },
+        {
+          "level": 2,
+          "prompt": "A same-size image would indicate a flat mirror, and images that can enlarge or invert would indicate a concave mirror. An always-smaller, always-upright image indicates ___.",
+          "choices": [
+            {"label": "A", "text": "a mirror that always diverges the reflected rays"},
+            {"label": "B", "text": "a flat mirror"},
+            {"label": "C", "text": "a concave mirror"},
+            {"label": "D", "text": "no possible mirror"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A mirror that always diverges reflected rays produces only upright, reduced virtual images."
+        },
+        {
+          "level": 3,
+          "prompt": "A flat mirror gives a same-size image and a concave mirror can enlarge or invert. Which two answer choices can be eliminated because they don't always give a smaller, upright image?",
+          "choices": [
+            {"label": "A", "text": "'The mirror is flat' and 'the mirror is concave'"},
+            {"label": "B", "text": "'The mirror is convex' and 'more information is required'"},
+            {"label": "C", "text": "'The mirror is flat' and 'the mirror is convex'"},
+            {"label": "D", "text": "None of the choices can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Flat and concave mirrors do not always produce reduced, upright images, so both are out."
+        }
+      ]
     },
     {
       "id": "cpbs-xp154",
@@ -282,7 +738,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/25-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (m = +2 ⇒ di = -20 cm; 1/f = 1/do + 1/di)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (m = +2 ⇒ di = -20 cm; 1/f = 1/do + 1/di).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "For a mirror, how is magnification related to image and object distances, and what sign of image distance corresponds to an upright, enlarged (virtual) image?",
+          "choices": [
+            {"label": "A", "text": "m = −dᵢ/dₒ, and an upright, enlarged image is virtual, so dᵢ is negative."},
+            {"label": "B", "text": "m = dᵢ/dₒ, and an upright image has a positive dᵢ."},
+            {"label": "C", "text": "m = −dₒ/dᵢ, and an upright image has a negative dₒ."},
+            {"label": "D", "text": "Magnification does not depend on image distance."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Magnification is −dᵢ/dₒ, and a virtual upright image has a negative image distance."
+        },
+        {
+          "level": 2,
+          "prompt": "With an upright image twice as large (m = +2) and an object at 10 cm, which image distance should you use in the mirror equation?",
+          "choices": [
+            {"label": "A", "text": "dᵢ = −20 cm (from m = −dᵢ/dₒ = +2)."},
+            {"label": "B", "text": "dᵢ = +20 cm."},
+            {"label": "C", "text": "dᵢ = +5 cm."},
+            {"label": "D", "text": "dᵢ = −5 cm."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "m = +2 = −dᵢ/10 gives dᵢ = −20 cm."
+        },
+        {
+          "level": 3,
+          "prompt": "A single mirror forming an upright, enlarged image must be concave, so its focal length is positive. Which two options can be eliminated (negative, or equal to the object distance)?",
+          "choices": [
+            {"label": "A", "text": "'−10 cm' (negative) and '10 cm' (equal to the object distance)"},
+            {"label": "B", "text": "'20 cm' and '40 cm'"},
+            {"label": "C", "text": "'−10 cm' and '40 cm'"},
+            {"label": "D", "text": "'10 cm' and '20 cm'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A concave mirror has positive focal length larger than the object distance, ruling out the negative and 10 cm options."
+        }
+      ]
     },
     {
       "id": "cpbs-xp155",
@@ -302,7 +796,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/27-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (Huygens: each wavefront point is a new source)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (Huygens: each wavefront point is a new source).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What does Huygens's principle state about points on a wavefront?",
+          "choices": [
+            {"label": "A", "text": "Every point on a wavefront acts as a source of secondary spherical wavelets, whose envelope forms the next wavefront."},
+            {"label": "B", "text": "Only the center of a wavefront emits new wavelets."},
+            {"label": "C", "text": "Wavefronts explain the particle nature of light."},
+            {"label": "D", "text": "Wavefronts never change shape."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Huygens treated each wavefront point as a source of secondary wavelets."
+        },
+        {
+          "level": 2,
+          "prompt": "Huygens's principle is used to explain wave phenomena such as diffraction. Which statement correctly captures it?",
+          "choices": [
+            {"label": "A", "text": "Each point on a wavefront can be considered a new wave source."},
+            {"label": "B", "text": "It explains the particle behavior of waves."},
+            {"label": "C", "text": "It is used mainly to find a wave's velocity."},
+            {"label": "D", "text": "It applies only to sound, not light."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The principle models propagation by treating wavefront points as new sources."
+        },
+        {
+          "level": 3,
+          "prompt": "Huygens's principle addresses wave propagation, not particle behavior or wave speed. Which two answer choices can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'It can explain the particle behavior of waves' and 'it can be used to find the velocity of a wave'."},
+            {"label": "B", "text": "'Each point on a wavefront can be considered a new wave source' and 'all of the above'."},
+            {"label": "C", "text": "'It explains particle behavior' and 'each point is a new wave source'."},
+            {"label": "D", "text": "None of the choices can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The principle is not about particle behavior or measuring speed, so those statements are out."
+        }
+      ]
     },
     {
       "id": "cpbs-xp156",
@@ -322,7 +854,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/27-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (equal-amplitude dark fringe stays at zero intensity)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (equal-amplitude dark fringe stays at zero intensity).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In two-wave interference with equal amplitudes, what is the intensity at a completely destructive (dark) fringe?",
+          "choices": [
+            {"label": "A", "text": "Zero, because equal amplitudes cancel exactly."},
+            {"label": "B", "text": "Equal to the bright-fringe intensity."},
+            {"label": "C", "text": "Half the bright-fringe intensity."},
+            {"label": "D", "text": "Directly proportional to the amplitude."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Equal amplitudes interfere destructively to zero at a dark fringe."
+        },
+        {
+          "level": 2,
+          "prompt": "If both (still-equal) amplitudes are doubled, the dark fringe stays completely destructive, so its intensity ___, while the bright-fringe intensity (∝ amplitude²) ___.",
+          "choices": [
+            {"label": "A", "text": "stays zero; increases"},
+            {"label": "B", "text": "increases; stays the same"},
+            {"label": "C", "text": "stays zero; stays the same"},
+            {"label": "D", "text": "doubles; doubles"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The dark fringe remains zero while the bright fringe grows with amplitude squared."
+        },
+        {
+          "level": 3,
+          "prompt": "Doubling the amplitudes raises the bright-fringe intensity (∝ amplitude²) and thus the bright-dark difference. Which two answer choices can be eliminated because those quantities do change?",
+          "choices": [
+            {"label": "A", "text": "'The intensity of the bright fringe' and 'the difference in intensities of consecutive bright and dark fringes'."},
+            {"label": "B", "text": "'The intensity of the dark fringe' and 'none of the above'."},
+            {"label": "C", "text": "'The intensity of the bright fringe' and 'the intensity of the dark fringe'."},
+            {"label": "D", "text": "None of the choices can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The bright-fringe intensity and the bright-dark difference both change, so they cannot be the unchanged quantity."
+        }
+      ]
     },
     {
       "id": "cpbs-xp157",
@@ -342,7 +912,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/27-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (in-phase amplitudes add: a + 3a = 4a)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (in-phase amplitudes add: a + 3a = 4a).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "At the central (zeroth-order) fringe of a double-slit pattern, how do the two waves combine?",
+          "choices": [
+            {"label": "A", "text": "They arrive in phase, so their amplitudes add directly."},
+            {"label": "B", "text": "They arrive out of phase and cancel."},
+            {"label": "C", "text": "They multiply together."},
+            {"label": "D", "text": "Their amplitudes subtract."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "At the central maximum the waves are in phase, so amplitudes add."
+        },
+        {
+          "level": 2,
+          "prompt": "Combining the amplitudes a and 3a at the central fringe gives a result that is ___ (note: an amplitude, not an intensity).",
+          "choices": [
+            {"label": "A", "text": "the sum of the two amplitudes"},
+            {"label": "B", "text": "the product of the two amplitudes"},
+            {"label": "C", "text": "the square of the sum"},
+            {"label": "D", "text": "the difference of the two amplitudes"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "In-phase amplitudes add to give the resultant amplitude a + 3a."
+        },
+        {
+          "level": 3,
+          "prompt": "The question asks for an amplitude, not an intensity. Which two answer choices can be eliminated because they carry units of amplitude squared?",
+          "choices": [
+            {"label": "A", "text": "'8a²' and '16a²'"},
+            {"label": "B", "text": "'2a' and '4a'"},
+            {"label": "C", "text": "'4a' and '8a²'"},
+            {"label": "D", "text": "'2a' and '16a²'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Terms in a² are intensities, not amplitudes, so they cannot be the answer."
+        }
+      ]
     },
     {
       "id": "cpbs-xp158",
@@ -362,7 +970,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/27-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (wavelength-dependent dispersion makes equal widths impossible)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (wavelength-dependent dispersion makes equal widths impossible).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "For a diffraction grating, does the diffraction angle of a maximum depend on wavelength, and what does that cause for white light?",
+          "choices": [
+            {"label": "A", "text": "Yes — the angle depends on wavelength, so higher-order maxima disperse white light into spectra and broaden."},
+            {"label": "B", "text": "No — all wavelengths diffract to the same angle."},
+            {"label": "C", "text": "Only the central maximum depends on wavelength."},
+            {"label": "D", "text": "A grating does not affect white light."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Diffraction angle varies with wavelength, dispersing white light in higher orders."
+        },
+        {
+          "level": 2,
+          "prompt": "Because different wavelengths spread by different amounts, the higher-order maxima of white light are ___ compared with the narrow, white central maximum.",
+          "choices": [
+            {"label": "A", "text": "broader and dispersed into colors"},
+            {"label": "B", "text": "exactly the same width and white"},
+            {"label": "C", "text": "narrower and white"},
+            {"label": "D", "text": "absent entirely"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Higher orders fan out into color and are wider than the central maximum."
+        },
+        {
+          "level": 3,
+          "prompt": "Two of the listed outcomes actually do occur with a grating, so they cannot be the answer to 'which cannot happen.' Which two can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'The central maximum is white but higher orders disperse into colors' and 'shorter wavelengths diffract less than longer ones except at the center'."},
+            {"label": "B", "text": "'The maxima are all of equal width' and 'none of the above'."},
+            {"label": "C", "text": "'The central maximum is white…' and 'the maxima are of equal widths'."},
+            {"label": "D", "text": "None of the choices can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Those two describe outcomes that genuinely happen, so they are not the impossible one."
+        }
+      ]
     },
     {
       "id": "cpbs-xp159",
@@ -382,7 +1028,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/27-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (spacing ∝ λ/W ⇒ W₂ = W₁·λ₂/λ₁)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (spacing ∝ λ/W ⇒ W₂ = W₁·λ₂/λ₁).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "For single-slit diffraction, how does the fringe spacing depend on wavelength and slit width?",
+          "choices": [
+            {"label": "A", "text": "Spacing is proportional to λ/W."},
+            {"label": "B", "text": "Spacing is proportional to W/λ."},
+            {"label": "C", "text": "Spacing is proportional to λ·W."},
+            {"label": "D", "text": "Spacing is independent of slit width."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Single-slit fringe spacing scales as wavelength divided by slit width."
+        },
+        {
+          "level": 2,
+          "prompt": "To keep the spacing the same when the wavelength increases from 410 nm to 700 nm, how must the slit width change?",
+          "choices": [
+            {"label": "A", "text": "Scale the width up by the same factor as the wavelength: W₂ = W₁ × (700/410)."},
+            {"label": "B", "text": "Scale the width down: W₂ = W₁ × (410/700)."},
+            {"label": "C", "text": "Keep the width unchanged."},
+            {"label": "D", "text": "Square the ratio: W₂ = W₁ × (700/410)²."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Holding λ/W constant means the width scales in proportion to the wavelength."
+        },
+        {
+          "level": 3,
+          "prompt": "Since the wavelength increased, the slit must widen to keep the same spacing. Which two options can be eliminated because they are not larger than the original 1 μm?",
+          "choices": [
+            {"label": "A", "text": "'0.6 μm' and '1 μm'"},
+            {"label": "B", "text": "'1.4 μm' and '1.7 μm'"},
+            {"label": "C", "text": "'0.6 μm' and '1.4 μm'"},
+            {"label": "D", "text": "'1 μm' and '1.7 μm'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A longer wavelength requires a wider slit, so widths at or below 1 μm are impossible."
+        }
+      ]
     },
     {
       "id": "cpbs-xp160",
@@ -402,7 +1086,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/27-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (spread ∝ λ/S, so larger S ⇒ narrower maximum)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (spread ∝ λ/S, so larger S ⇒ narrower maximum).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How does the angular spread of diffraction through an aperture depend on the aperture size?",
+          "choices": [
+            {"label": "A", "text": "The spread is inversely related to aperture size (spread ∝ λ/S)."},
+            {"label": "B", "text": "The spread is directly proportional to aperture size."},
+            {"label": "C", "text": "The spread does not depend on aperture size."},
+            {"label": "D", "text": "The spread is proportional to S²."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Diffraction spreading grows as the aperture shrinks (spread ∝ λ/S)."
+        },
+        {
+          "level": 2,
+          "prompt": "A larger aperture produces a ___ central diffraction maximum.",
+          "choices": [
+            {"label": "A", "text": "narrower"},
+            {"label": "B", "text": "wider"},
+            {"label": "C", "text": "same-width"},
+            {"label": "D", "text": "brighter but equally wide"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Because spread ∝ λ/S, a bigger aperture narrows the central maximum."
+        },
+        {
+          "level": 3,
+          "prompt": "There is a definite inverse relationship between the central maximum's width and the aperture size. Which two answer choices can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "'W increases as S increases' and 'W can neither increase nor decrease as S decreases'."},
+            {"label": "B", "text": "'W decreases as S increases' and 'W can increase or decrease as S decreases'."},
+            {"label": "C", "text": "'W increases as S increases' and 'W decreases as S increases'."},
+            {"label": "D", "text": "None of the choices can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The relationship is definite and inverse, ruling out the same-direction and no-change options."
+        }
+      ]
     },
     {
       "id": "cpbs-xp161",
@@ -422,7 +1144,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/27-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (interference between reflections off the two film surfaces)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (interference between reflections off the two film surfaces).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "What is the fundamental cause of thin-film interference?",
+          "choices": [
+            {"label": "A", "text": "Interference between light reflected from the film's top surface and light reflected from its bottom surface."},
+            {"label": "B", "text": "Light changing color as it reflects."},
+            {"label": "C", "text": "Light being absorbed by the film."},
+            {"label": "D", "text": "Light traveling in a straight line through the film."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Two reflections — from the top and bottom of the film — interfere to cause the effect."
+        },
+        {
+          "level": 2,
+          "prompt": "The two reflected beams travel different path lengths through the film. Their combination is constructive or destructive depending on ___.",
+          "choices": [
+            {"label": "A", "text": "the path-length difference (and any reflection phase shifts)"},
+            {"label": "B", "text": "the film's color only"},
+            {"label": "C", "text": "the observer's distance"},
+            {"label": "D", "text": "the light's speed in vacuum"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The path-length difference between the two reflections sets the interference condition."
+        },
+        {
+          "level": 3,
+          "prompt": "Interference requires two beams to combine, so a description involving only one reflecting surface cannot be the cause. Which two answer choices can be eliminated?",
+          "choices": [
+            {"label": "A", "text": "The two options describing reflection from a single medium of higher or lower index."},
+            {"label": "B", "text": "'Light reflecting from the top and bottom surfaces of a film' and 'light changing its wavelength and speed after reflection'."},
+            {"label": "C", "text": "The options about the top/bottom surfaces and a higher index."},
+            {"label": "D", "text": "None of the choices can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A single-surface reflection cannot by itself cause interference, so those two options are out."
+        }
+      ]
     },
     {
       "id": "cpbs-xp162",
@@ -442,7 +1202,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0 (OpenStax; live page also posts a no-LLM-training notice — SpeedyCAT use is human-facing, non-AI per PRD)",
       "sourceUrl": "https://openstax.org/books/college-physics-ap-courses-2e/pages/27-test-prep-for-ap-r-courses",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (polarization = E-field direction, perpendicular to propagation)."
+      "notes": "Stem + 4 options scraped verbatim. OpenStax withholds the public answer key; answer independently verified (polarization = E-field direction, perpendicular to propagation).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "How is the direction of polarization of a light wave defined relative to its electric field and its direction of propagation?",
+          "choices": [
+            {"label": "A", "text": "It is along the electric field, which oscillates perpendicular to the propagation direction."},
+            {"label": "B", "text": "It is along the propagation direction."},
+            {"label": "C", "text": "It is along the magnetic field only."},
+            {"label": "D", "text": "It is at 45° to both the electric field and the propagation direction."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Polarization follows the electric field, which is transverse to propagation."
+        },
+        {
+          "level": 2,
+          "prompt": "Light is a transverse wave, so its electric field oscillates ___ the direction of propagation.",
+          "choices": [
+            {"label": "A", "text": "perpendicular to"},
+            {"label": "B", "text": "parallel to"},
+            {"label": "C", "text": "at 45° to"},
+            {"label": "D", "text": "sometimes along, sometimes across"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The transverse electric field is perpendicular to the propagation direction."
+        },
+        {
+          "level": 3,
+          "prompt": "Polarization direction is defined by the electric field, which is never along the propagation direction. Which two answer choices can be eliminated because they place polarization parallel to the propagation direction?",
+          "choices": [
+            {"label": "A", "text": "'Parallel to propagation and perpendicular to E' and 'parallel to both propagation and E'."},
+            {"label": "B", "text": "'Perpendicular to propagation and parallel to E' and 'perpendicular to both propagation and E'."},
+            {"label": "C", "text": "The two options mentioning the electric field."},
+            {"label": "D", "text": "None of the choices can be eliminated."}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Polarization is never along the propagation direction, so both 'parallel to propagation' options are out."
+        }
+      ]
     }
   ]
 }

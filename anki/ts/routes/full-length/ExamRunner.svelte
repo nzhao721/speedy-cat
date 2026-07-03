@@ -68,7 +68,11 @@ section ends. There is deliberately no way back into a section once it closes.
         } finally {
             loading = false;
         }
-        void ensurePassage(current);
+        // Read the freshly-loaded array directly: the reactive `current` has not
+        // recomputed yet in this same tick (Svelte batches `$:` updates), so it
+        // is still undefined here and would skip prefetching the first item's
+        // passage — leaving "No passage." on question 1 of every section.
+        void ensurePassage(ordered[index]);
         ticker = setInterval(tick, 1000);
     });
     onDestroy(() => {

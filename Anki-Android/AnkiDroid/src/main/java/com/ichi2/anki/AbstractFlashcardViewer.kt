@@ -78,6 +78,7 @@ import com.ichi2.anki.backend.stripHTMLAndSpecialFields
 import com.ichi2.anki.cardviewer.AndroidCardRenderContext
 import com.ichi2.anki.cardviewer.AndroidCardRenderContext.Companion.createInstance
 import com.ichi2.anki.cardviewer.CardMediaPlayer
+import com.ichi2.anki.cardviewer.ForcedRecall
 import com.ichi2.anki.cardviewer.Gesture
 import com.ichi2.anki.cardviewer.GestureProcessor
 import com.ichi2.anki.cardviewer.JavascriptEvaluator
@@ -89,6 +90,7 @@ import com.ichi2.anki.cardviewer.MediaErrorListener
 import com.ichi2.anki.cardviewer.OnRenderProcessGoneDelegate
 import com.ichi2.anki.cardviewer.RenderedCard
 import com.ichi2.anki.cardviewer.SingleCardSide
+import com.ichi2.anki.cardviewer.SpeedyCatAiChecker
 import com.ichi2.anki.cardviewer.TTS
 import com.ichi2.anki.cardviewer.TypeAnswer
 import com.ichi2.anki.cardviewer.TypeAnswer.Companion.createInstance
@@ -160,8 +162,11 @@ import com.ichi2.utils.positiveButton
 import com.ichi2.utils.show
 import com.ichi2.utils.title
 import com.squareup.seismic.ShakeDetector
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import timber.log.Timber
 import java.io.File
 import java.io.UnsupportedEncodingException
@@ -219,6 +224,19 @@ abstract class AbstractFlashcardViewer :
      */
     @VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
     internal var forceActiveRecall = false
+
+    /**
+     * SpeedyCAT AI answer checker (per-card, additive on top of forced recall).
+     * [speedycatForceAgain] locks the ratings to Again for this card (set by
+     * "I don't know" or a gaming/dishonest verdict); [speedycatAiDecision] is the
+     * last applied reveal decision; [speedycatIdkJob] reveals the "I don't know"
+     * affordance after 5s.
+     */
+    @VisibleForTesting
+    internal var speedycatForceAgain = false
+    private var speedycatAiDecision: SpeedyCatAiChecker.Decision? = null
+    private var speedycatChecking = false
+    private var speedycatIdkJob: Job? = null
 
     /** Generates HTML content  */
     private var cardRenderContext: AndroidCardRenderContext? = null
@@ -780,17 +798,20 @@ abstract class AbstractFlashcardViewer :
                 if (inAnswer) {
                     return@launchCatchingTask
                 }
+                // SpeedyCAT: a locked card (I don't know / gaming verdict) is forced to
+                // Again regardless of which rating control was pressed.
+                val effectiveRating = if (speedycatForceAgain) Rating.AGAIN else rating
                 isSelecting = false
                 if (previousAnswerIndicator == null) {
                     // workaround for a broken ReviewerKeyboardInputTest
                     return@launchCatchingTask
                 }
                 // Temporarily sets the answer indicator dots appearing below the toolbar
-                previousAnswerIndicator?.displayAnswerIndicator(rating)
+                previousAnswerIndicator?.displayAnswerIndicator(effectiveRating)
                 stopCardMediaPlayer()
-                currentEase = rating
+                currentEase = effectiveRating
 
-                answerCardInner(rating)
+                answerCardInner(effectiveRating)
                 updateCardAndRedraw()
             }
         }
@@ -1291,6 +1312,8 @@ abstract class AbstractFlashcardViewer :
     open fun displayCardQuestion() {
         Timber.d("displayCardQuestion()")
         displayAnswer = false
+        // SpeedyCAT: clear per-card AI-checker state for the new question.
+        speedycatResetCardState()
         backButtonPressedToReturn = false
         setInterface()
         typeAnswer?.input = ""
@@ -1303,7 +1326,13 @@ abstract class AbstractFlashcardViewer :
             answerField?.visibility = View.GONE
         }
         applyForcedRecallInput()
-        val content = cardRenderContext!!.renderCard(getColUnsafe, currentCard!!, SingleCardSide.FRONT)
+        // SpeedyCAT: strip the baked-in `Subject::Subtopic` breadcrumb from the displayed question.
+        val content =
+            RenderedCard(
+                SpeedyCatAiChecker.stripBreadcrumbHtml(
+                    cardRenderContext!!.renderCard(getColUnsafe, currentCard!!, SingleCardSide.FRONT).html,
+                ),
+            )
         automaticAnswer.onDisplayQuestion()
         launchCatchingTask {
             if (!automaticAnswerShouldWaitForMedia()) {
@@ -1312,6 +1341,8 @@ abstract class AbstractFlashcardViewer :
         }
         updateCard(content)
         hideEaseButtons()
+        // SpeedyCAT: arm the 5s "I don't know" affordance for forced-recall cards.
+        speedycatStartIdkTimer()
         // If Card-based TTS is enabled, we "automatic display" after the TTS has finished as we don't know the duration
         Timber.i(
             "AbstractFlashcardViewer:: Question successfully shown for card id %d",
@@ -1326,6 +1357,13 @@ abstract class AbstractFlashcardViewer :
         if (blockAnswerRevealIfRequired()) {
             return
         }
+        // SpeedyCAT: decide the reveal via the AI checker (deterministic fallback).
+        // Returns true when it defers (AI in flight) or withholds the back (dishonest).
+        if (speedycatMaybeInterceptReveal()) {
+            return
+        }
+        speedycatCancelIdkTimer()
+        val wasDisplayingAnswer = displayAnswer
         // #7294 Required in case the animation end action does not fire:
         actualHideEaseButtons()
         Timber.d("displayCardAnswer()")
@@ -1363,9 +1401,16 @@ abstract class AbstractFlashcardViewer :
         }
         updateCard(answerContent)
         displayAnswerBottomBar()
-        // SpeedyCAT: no correctness verdict is shown on the forced-recall reveal —
-        // typing an answer is still required to reveal (see blockAnswerRevealIfRequired),
-        // but the back is shown plainly without a Correct/Incorrect judgement.
+
+        // SpeedyCAT: once the back is revealed, tell the learner whether they recalled it.
+        // This is a SIMPLE case-insensitive Correct/Incorrect verdict only — no
+        // character-by-character diff. Typing an answer is still required to reveal
+        // (see blockAnswerRevealIfRequired).
+        if (!wasDisplayingAnswer && forceActiveRecall) {
+            speedycatShowRevealFeedback()
+        }
+        // SpeedyCAT: lock the ratings to Again when required (I don't know / gaming).
+        speedycatApplyRatingLock()
     }
 
     // ----------------------------------------------------------------------------
@@ -1411,6 +1456,9 @@ abstract class AbstractFlashcardViewer :
      * been typed yet, so a normal submit (non-empty answer) passes straight through.
      */
     protected fun blockAnswerRevealIfRequired(): Boolean {
+        // SpeedyCAT: "I don't know" / a locked card reveals even with an empty typed
+        // answer, so never block once the card is forced to Again.
+        if (speedycatForceAgain) return false
         if (!forcedRecallActive() || displayAnswer || currentTypedAnswer().isNotBlank()) {
             return false
         }
@@ -1418,6 +1466,215 @@ abstract class AbstractFlashcardViewer :
         showSnackbar(R.string.force_active_recall_type_first)
         focusAnswerCompletionField()
         return true
+    }
+
+    /**
+     * The expected answer used for forced-recall match feedback. Preference order:
+     * 1. the `{{type:Field}}` field, when the template defines one (matches Anki's native typed answer);
+     * 2. SpeedyCAT core fix — for a CLOZE card, the cloze deletion(s) for the current ord (the
+     *    real answer, e.g. `direction`), NOT the rendered field (which carries the notetype's
+     *    `<style>` CSS, a leading `Subject::Subtopic` breadcrumb, and a source/"…Link" footer);
+     * 3. the note's "Back" field, when present (case-insensitive);
+     * 4. otherwise the note's last field;
+     * 5. as a final fallback, the rendered answer side.
+     *
+     * Every source is run through [SpeedyCatAiChecker.stripExpected] so the value used for the
+     * prompt, the case-insensitive fallback, and the displayed "Expected" line is exactly the
+     * answer. Multiple cloze deletions are comma-joined (order preserved) and matched
+     * separator-flexibly (see [ForcedRecall.matches]).
+     */
+    @VisibleForTesting
+    internal fun expectedAnswerForForcedRecall(): String {
+        typeAnswer?.correct?.takeIf { it.isNotBlank() }?.let { return SpeedyCatAiChecker.stripExpected(it) }
+        val card = currentCard ?: return ""
+        val col = getColUnsafe
+        val note = card.note(col)
+        val fieldNames = card.noteType(col).fieldsNames
+        // SpeedyCAT: a cloze card's real answer is its deletion(s) for this ord.
+        val clozeIdx = card.ord + 1
+        for (name in fieldNames) {
+            val cloze = SpeedyCatAiChecker.clozeAnswerForOrd(note.getItem(name), clozeIdx)
+            if (!cloze.isNullOrBlank()) return SpeedyCatAiChecker.stripExpected(cloze)
+        }
+        fieldNames.firstOrNull { it.equals("Back", ignoreCase = true) }?.let { name ->
+            note.getItem(name).takeIf { it.isNotBlank() }?.let { return SpeedyCatAiChecker.stripExpected(it) }
+        }
+        fieldNames.lastOrNull()?.let { name ->
+            note.getItem(name).takeIf { it.isNotBlank() }?.let { return SpeedyCatAiChecker.stripExpected(it) }
+        }
+        return SpeedyCatAiChecker.stripExpected(card.answer(col))
+    }
+
+    /**
+     * Shows whether the learner's typed answer matched the card's expected answer.
+     *
+     * Matching is case-insensitive (see [ForcedRecall.matches]); the verdict is a
+     * simple Correct/Incorrect snackbar with no character-by-character diff. The snackbar also
+     * shows the expected answer the checker compared against (the same value passed to
+     * [ForcedRecall.matches]) so the learner sees what would have counted as correct — this is the
+     * reliable channel for cards without a `{{type:}}` field, whose back has no inline feedback.
+     */
+    private fun showForcedRecallFeedback() {
+        val expected = expectedAnswerForForcedRecall()
+        val matched = ForcedRecall.matches(currentTypedAnswer(), expected)
+        val verdict =
+            getString(
+                if (matched) R.string.force_active_recall_correct else R.string.force_active_recall_incorrect,
+            )
+        val expectedText = ForcedRecall.displayAnswer(expected)
+        val message =
+            if (expectedText.isEmpty()) {
+                verdict
+            } else {
+                "$verdict\n${getString(R.string.force_active_recall_expected, expectedText)}"
+            }
+        showSnackbar(message)
+    }
+
+    // --- SpeedyCAT AI answer checker (additive on top of forced recall) ---
+
+    /** Clears per-card AI-checker state and cancels any pending "I don't know" timer. */
+    private fun speedycatResetCardState() {
+        speedycatForceAgain = false
+        speedycatAiDecision = null
+        speedycatChecking = false
+        speedycatCancelIdkTimer()
+    }
+
+    /**
+     * True only when the user opted in ([SpeedyCatAiChecker.AI_PREF_KEY]) AND an OpenAI key is
+     * available. Either being false selects the deterministic (AI-off) path — the hard project
+     * requirement that the app runs fully with AI off.
+     */
+    private fun speedycatAiEnabled(): Boolean =
+        baseContext.sharedPrefs().getBoolean(SpeedyCatAiChecker.AI_PREF_KEY, false) &&
+            SpeedyCatAiChecker.keyPresent(this)
+
+    /** Arm the 5s timer that offers the "I don't know" affordance (forced recall only). */
+    private fun speedycatStartIdkTimer() {
+        speedycatCancelIdkTimer()
+        if (!forcedRecallActive()) return
+        speedycatIdkJob =
+            launchCatchingTask {
+                delay(SpeedyCatAiChecker.IDK_DELAY_MS)
+                if (!displayAnswer && forcedRecallActive()) {
+                    speedycatShowIdkPrompt()
+                }
+            }
+    }
+
+    private fun speedycatCancelIdkTimer() {
+        speedycatIdkJob?.cancel()
+        speedycatIdkJob = null
+    }
+
+    /** After 5s stuck, offer an "I don't know" action that reveals + forces Again. */
+    private fun speedycatShowIdkPrompt() {
+        showSnackbar(R.string.speedycat_stuck, Snackbar.LENGTH_INDEFINITE) {
+            setAction(R.string.speedycat_idk) { speedycatOnIdk() }
+        }
+    }
+
+    /** "I don't know": reveal the answer, force Again, and lock the ratings. */
+    private fun speedycatOnIdk() {
+        if (displayAnswer) return
+        val decision = SpeedyCatAiChecker.decideIdk()
+        speedycatAiDecision = decision
+        speedycatForceAgain = decision.forceAgain
+        // decideIdk() reveals; the empty-typed-answer block is bypassed via speedycatForceAgain.
+        displayCardAnswer()
+    }
+
+    /**
+     * Decide what to do with the submitted typed answer. Returns true when the reveal is handled
+     * here (AI check in flight, or a dishonest attempt whose back is withheld) so the caller stops;
+     * returns false to let the normal reveal proceed (AI off, or an already-approved decision).
+     */
+    private fun speedycatMaybeInterceptReveal(): Boolean {
+        if (!forcedRecallActive()) return false
+        speedycatAiDecision?.let { existing ->
+            if (existing.reveal) return false
+            speedycatShowHonestyState(existing)
+            return true
+        }
+        if (speedycatChecking) return true
+        val typed = currentTypedAnswer()
+        val expected = expectedAnswerForForcedRecall()
+        if (!speedycatAiEnabled()) {
+            val decision = SpeedyCatAiChecker.decideReveal(typed, expected, aiOn = false, aiResult = null)
+            speedycatAiDecision = decision
+            speedycatForceAgain = decision.forceAgain
+            return false
+        }
+        val front = currentCard?.question(getColUnsafe).orEmpty()
+        val key = SpeedyCatAiChecker.loadKey(this)
+        speedycatChecking = true
+        showSnackbar(R.string.speedycat_ai_checking, Snackbar.LENGTH_SHORT)
+        launchCatchingTask {
+            val result = withContext(Dispatchers.IO) { SpeedyCatAiChecker.runCheck(front, typed, expected, key) }
+            speedycatChecking = false
+            val decision = SpeedyCatAiChecker.decideReveal(typed, expected, aiOn = true, aiResult = result)
+            speedycatAiDecision = decision
+            speedycatForceAgain = decision.forceAgain
+            if (decision.reveal) {
+                displayCardAnswer()
+            } else {
+                speedycatShowHonestyState(decision)
+            }
+        }
+        return true
+    }
+
+    /**
+     * Dishonest attempt (AI): withhold the back, keep the front shown, present a single locked
+     * "Again", and prompt the learner to make a genuine attempt.
+     */
+    private fun speedycatShowHonestyState(decision: SpeedyCatAiChecker.Decision) {
+        speedycatCancelIdkTimer()
+        speedycatForceAgain = decision.forceAgain
+        actualHideEaseButtons()
+        displayAnswerBottomBar()
+        speedycatApplyRatingLock()
+        showSnackbar(R.string.speedycat_honesty_prompt, Snackbar.LENGTH_LONG)
+    }
+
+    /**
+     * Reveal-time feedback. When the reveal came from the AI checker, show the model-generated
+     * verdict (labelled); for "I don't know" show the forced-Again note; otherwise fall back to the
+     * deterministic [showForcedRecallFeedback].
+     */
+    private fun speedycatShowRevealFeedback() {
+        val decision = speedycatAiDecision
+        when {
+            decision?.source == SpeedyCatAiChecker.SOURCE_IDK ->
+                showSnackbar(R.string.speedycat_idk_note)
+            decision?.source == SpeedyCatAiChecker.SOURCE_AI && decision.verdict != null -> {
+                val label =
+                    getString(
+                        if (decision.verdict == "correct") {
+                            R.string.speedycat_ai_correct
+                        } else {
+                            R.string.speedycat_ai_incorrect
+                        },
+                    )
+                val message =
+                    if (decision.reason.isBlank()) {
+                        getString(R.string.speedycat_ai_verdict, SpeedyCatAiChecker.MODEL, label)
+                    } else {
+                        getString(R.string.speedycat_ai_verdict_reason, SpeedyCatAiChecker.MODEL, label, decision.reason)
+                    }
+                showSnackbar(message)
+            }
+            else -> showForcedRecallFeedback()
+        }
+    }
+
+    /** Hide Hard/Good/Easy when the card is locked to Again (I don't know / gaming). */
+    private fun speedycatApplyRatingLock() {
+        if (!speedycatForceAgain) return
+        easeButton2?.hide()
+        easeButton3?.hide()
+        easeButton4?.hide()
     }
 
     /**
@@ -2004,7 +2261,13 @@ abstract class AbstractFlashcardViewer :
                 answerField?.visibility = View.GONE
             }
             applyForcedRecallInput()
-            val content = cardRenderContext!!.renderCard(getColUnsafe, currentCard!!, SingleCardSide.FRONT)
+            // SpeedyCAT: strip the baked-in `Subject::Subtopic` breadcrumb from the displayed question.
+        val content =
+            RenderedCard(
+                SpeedyCatAiChecker.stripBreadcrumbHtml(
+                    cardRenderContext!!.renderCard(getColUnsafe, currentCard!!, SingleCardSide.FRONT).html,
+                ),
+            )
             automaticAnswer.onDisplayQuestion()
             updateCard(content)
             hideEaseButtons()

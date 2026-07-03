@@ -361,11 +361,14 @@ class AnkiQt(QMainWindow):
         # - if an invalid profile was provided, we skip this step and show the picker
         # - if no profile was provided, we use this step
         if not self.pm.name and not self.pm.invalid_profile_provided_on_commandline:
-            profs = self.pm.profiles()
-            name = self.pm.last_loaded_profile_name()
-            if len(profs) == 1:
-                self.pm.load(profs[0])
-            elif name in profs:
+            # SpeedyCAT: never show the profile chooser on boot. Auto-open the
+            # most-recently-used profile, falling back to the branded default
+            # ("SpeedyCAT") then the first profile, and go straight into the
+            # app. Users can still switch accounts / log out afterwards via the
+            # account toolbar's "Switch Profile", which opens the chooser on
+            # demand (see unloadProfileAndShowProfileManager).
+            name = self.pm.profile_to_auto_open()
+            if name:
                 self.pm.load(name)
 
         if not self.pm.name:

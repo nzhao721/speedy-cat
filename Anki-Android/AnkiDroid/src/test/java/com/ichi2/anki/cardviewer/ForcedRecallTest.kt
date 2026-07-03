@@ -16,6 +16,7 @@
 
 package com.ichi2.anki.cardviewer
 
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -69,5 +70,28 @@ class ForcedRecallTest {
         assertFalse(ForcedRecall.matches("   ", "anything"))
         // even if the expected answer is also effectively blank
         assertFalse(ForcedRecall.matches("   ", "<br>"))
+    }
+
+    // displayAnswer: the human-readable expected answer shown next to the verdict.
+
+    @Test
+    fun displayAnswerStripsHtmlButPreservesCase() {
+        // Unlike normalize (used for matching), displayAnswer keeps the original case.
+        assertEquals("Aorta", ForcedRecall.displayAnswer("<b>Aorta</b>"))
+    }
+
+    @Test
+    fun displayAnswerCollapsesWhitespace() {
+        assertEquals("the Krebs cycle", ForcedRecall.displayAnswer("  the   Krebs\tcycle "))
+    }
+
+    @Test
+    fun displayAnswerStripsTypeSpecialField() {
+        assertEquals("aorta", ForcedRecall.displayAnswer("[[type:Back]]aorta"))
+    }
+
+    @Test
+    fun displayAnswerBlankWhenEffectivelyEmpty() {
+        assertEquals("", ForcedRecall.displayAnswer("<br>"))
     }
 }

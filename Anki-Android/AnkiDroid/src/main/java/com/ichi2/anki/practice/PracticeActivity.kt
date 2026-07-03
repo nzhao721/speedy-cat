@@ -356,6 +356,12 @@ private fun RunnerScreen(
     val submitted = remember { mutableStateMapOf<String, Boolean>() }
     val eliminated = remember { mutableStateMapOf<String, List<String>>() }
     val flagged = remember { mutableStateMapOf<String, Boolean>() }
+    // SpeedyCAT graduated hint ladder: per-question progress (revealed tiers +
+    // the answer chosen for each), the tentative selection for the current
+    // subquestion, and a nudge shown after a wrong answer escalates the ladder.
+    val hintProgress = remember { mutableStateMapOf<String, HintProgress>() }
+    val hintPendingChoice = remember { mutableStateMapOf<String, String>() }
+    val hintNudge = remember { mutableStateMapOf<String, Boolean>() }
     val timeSpent = remember { mutableMapOf<String, Double>() }
     val passageCache = remember { mutableStateMapOf<String, CarsPassageSet>() }
     var elapsed by remember { mutableStateOf(0) }
@@ -494,22 +500,65 @@ private fun RunnerScreen(
                             },
                             onToggleFlag = { flagged[q.id] = !(flagged[q.id] ?: false) },
                         )
+                        val prog = hintProgress[q.id] ?: HintProgress()
+                        if (hasHintLadder(q) && submitted[q.id] != true) {
+                            HintLadderCard(
+                                hints = q.hints,
+                                progress = prog,
+                                pendingChoice = hintPendingChoice[q.id] ?: "",
+                                onRequestHint = {
+                                    hintNudge[q.id] = false
+                                    val cur = hintProgress[q.id] ?: HintProgress()
+                                    if (cur.revealed < q.hints.size) {
+                                        hintProgress[q.id] = cur.copy(revealed = cur.revealed + 1)
+                                        hintPendingChoice[q.id] = ""
+                                    }
+                                },
+                                onPendingChoiceChange = { hintPendingChoice[q.id] = it },
+                                onSubmitHint = { idx, label ->
+                                    val cur = hintProgress[q.id] ?: HintProgress()
+                                    hintProgress[q.id] = cur.copy(picks = cur.picks + (idx to label))
+                                    hintPendingChoice[q.id] = ""
+                                },
+                            )
+                        }
                         if (submitted[q.id] != true) {
+                            if (hintNudge[q.id] == true && !canSubmitMain(selected[q.id] ?: "", prog)) {
+                                Text(
+                                    "Not quite — work through the hint, then try again.",
+                                    color = FlagAmber,
+                                    style = MaterialTheme.typography.bodySmall,
+                                )
+                            }
                             Button(
-                                enabled = !selected[q.id].isNullOrEmpty(),
+                                enabled = canSubmitMain(selected[q.id] ?: "", prog),
                                 onClick = {
                                     scope.launch {
                                         flushItemTime()
                                         val answer = selected[q.id] ?: ""
                                         val correct = answer.isNotEmpty() && answer == q.correctAnswer
-                                        submitted[q.id] = true
-                                        vm.record(
-                                            session.sessionId,
-                                            q,
-                                            answer,
-                                            correct,
-                                            (timeSpent[q.id] ?: 0.0).roundToInt(),
-                                        )
+                                        val cur = hintProgress[q.id] ?: HintProgress()
+                                        // A WRONG answer escalates the hint ladder (reveal the
+                                        // next tier) instead of revealing the correct answer,
+                                        // until the ladder is exhausted; correct answers finalize
+                                        // immediately (still stamped with the hint tier used).
+                                        if (!correct && hasHintLadder(q) && cur.revealed < q.hints.size) {
+                                            hintNudge[q.id] = true
+                                            hintProgress[q.id] = cur.copy(revealed = cur.revealed + 1)
+                                            hintPendingChoice[q.id] = ""
+                                        } else {
+                                            submitted[q.id] = true
+                                            val level = hintLevelReached(q.hints, cur.revealed)
+                                            vm.record(
+                                                session.sessionId,
+                                                q,
+                                                answer,
+                                                correct,
+                                                (timeSpent[q.id] ?: 0.0).roundToInt(),
+                                                level,
+                                                isAssisted(level),
+                                            )
+                                        }
                                     }
                                 },
                             ) {

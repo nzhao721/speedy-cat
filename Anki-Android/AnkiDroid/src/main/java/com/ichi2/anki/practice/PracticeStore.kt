@@ -39,7 +39,9 @@ class PracticeStore(
                 time_seconds integer not null,
                 section text not null,
                 topic text not null,
-                answered_at integer not null
+                answered_at integer not null,
+                hint_level_used integer not null default 0,
+                assisted integer not null default 0
             )
             """.trimIndent(),
         )
@@ -90,6 +92,8 @@ class PracticeStore(
             put("section", section?.dbCode ?: "")
             put("topic", topic)
             put("answered_at", answeredAt)
+            put("hint_level_used", hintLevelUsed)
+            put("assisted", if (assisted) 1 else 0)
         }
 
     /** Every recorded attempt, for pure-Kotlin aggregation (see PracticeLogic). */
@@ -114,6 +118,8 @@ class PracticeStore(
                 val sectionIdx = c.getColumnIndexOrThrow("section")
                 val topicIdx = c.getColumnIndexOrThrow("topic")
                 val answeredIdx = c.getColumnIndexOrThrow("answered_at")
+                val hintLevelIdx = c.getColumnIndexOrThrow("hint_level_used")
+                val assistedIdx = c.getColumnIndexOrThrow("assisted")
                 while (c.moveToNext()) {
                     out.add(
                         Attempt(
@@ -126,6 +132,8 @@ class PracticeStore(
                             section = McatSection.fromDb(c.getString(sectionIdx)),
                             topic = c.getString(topicIdx),
                             answeredAt = c.getLong(answeredIdx),
+                            hintLevelUsed = c.getInt(hintLevelIdx),
+                            assisted = c.getInt(assistedIdx) != 0,
                         ),
                     )
                 }
@@ -150,7 +158,9 @@ class PracticeStore(
 
     companion object {
         private const val DATABASE_NAME = "speedycat_practice.db"
-        private const val DATABASE_VERSION = 1
+        // v2: SpeedyCAT graduated hint ladder adds hint_level_used + assisted.
+        // Attempt history is regenerable telemetry, so onUpgrade rebuilds.
+        private const val DATABASE_VERSION = 2
         private const val TABLE = "practice_attempts"
     }
 }

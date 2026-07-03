@@ -12,6 +12,7 @@ import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.closeTo
 import org.hamcrest.Matchers.containsString
 import org.hamcrest.Matchers.equalTo
+import org.hamcrest.Matchers.nullValue
 import org.junit.Test
 
 class ReadinessLogicTest {
@@ -20,6 +21,8 @@ class ReadinessLogicTest {
         correct: Boolean,
         time: Int,
         selected: String = if (correct) "A" else "B",
+        assisted: Boolean = false,
+        hintLevelUsed: Int = if (assisted) 3 else 0,
     ) = Attempt(
         id = id,
         sessionId = "s1",
@@ -30,6 +33,8 @@ class ReadinessLogicTest {
         section = McatSection.CPBS,
         topic = "kinetics",
         answeredAt = 0,
+        hintLevelUsed = hintLevelUsed,
+        assisted = assisted,
     )
 
     // ---- Formatting -------------------------------------------------------
@@ -124,7 +129,42 @@ class ReadinessLogicTest {
         assertThat(result.ci.low <= 0.5 && 0.5 <= result.ci.high, equalTo(true))
         val pillar = performancePillar(result)
         assertThat(pillar.value, equalTo("50%"))
-        assertThat(pillar.detail.any { it.contains("2 / 4 correct") }, equalTo(true))
+        assertThat(pillar.detail.any { it.contains("2 / 4 unassisted correct") }, equalTo(true))
+    }
+
+    @Test
+    fun `performance penalizes assisted-correct answers (anti-gaming)`() {
+        // 15 unassisted-correct (full credit) + 15 assisted-correct (reached L3,
+        // penalized to incorrect). Raw accuracy would be 30/30; penalized is
+        // 15/30 = 0.5, and every attempt still counts in the denominator.
+        val attempts =
+            (1..15).map { practiceAttempt("u$it", correct = true, time = 20) } +
+                (1..15).map { practiceAttempt("a$it", correct = true, time = 20, assisted = true) }
+        val result = computePerformance(attempts)
+        assertThat(result.sufficient, equalTo(true))
+        assertThat(result.answered, equalTo(30))
+        assertThat(result.correct, equalTo(15))
+        assertThat(result.assistedAnswered, equalTo(15))
+        assertThat(result.accuracy, closeTo(0.5, 1e-9))
+        val pillar = performancePillar(result)
+        assertThat(pillar.value, equalTo("50%"))
+        assertThat(pillar.detail.any { it.contains("15 answered with hints") }, equalTo(true))
+    }
+
+    @Test
+    fun `performance credits level 1 and 2 assists but penalizes only level 3`() {
+        // Level 1/2 assists are NOT assisted -> full credit; only L3 is penalized.
+        val attempts =
+            (1..28).map { practiceAttempt("ok$it", correct = true, time = 10) } +
+                listOf(
+                    practiceAttempt("l2", correct = true, time = 10, hintLevelUsed = 2),
+                    practiceAttempt("l3", correct = true, time = 10, assisted = true),
+                )
+        val result = computePerformance(attempts)
+        // 29 credited (28 + the level-2 assist), 1 penalized (the level-3 assist).
+        assertThat(result.correct, equalTo(29))
+        assertThat(result.answered, equalTo(30))
+        assertThat(result.assistedAnswered, equalTo(1))
     }
 
     // ---- Readiness pillar (desktop-created full-length, read-only) --------
@@ -173,5 +213,31 @@ class ReadinessLogicTest {
     fun `readiness ignores summaries without questions`() {
         val result = computeReadiness(listOf(fullLength("empty", 0, 0)))
         assertThat(result.sufficient, equalTo(false))
+    }
+
+    @Test
+    fun `readiness surfaces averaged scaled estimate with range and named source`() {
+        val a = fullLength("a", 40, 59).copy(overallScaledScore = 508)
+        val b = fullLength("b", 45, 53).copy(overallScaledScore = 512)
+        val result = computeReadiness(listOf(a, b))
+        // Mean of the per-test overall scaled estimates, and the spread.
+        assertThat(result.scaledEstimate, equalTo(510))
+        assertThat(result.scaledLow, equalTo(508))
+        assertThat(result.scaledHigh, equalTo(512))
+        val pillar = readinessPillar(result)
+        assertThat(
+            pillar.detail.any { it.contains("Est. MCAT score") && it.contains("510") },
+            equalTo(true),
+        )
+        assertThat(pillar.detail.any { it.contains("range 508\u2013512") }, equalTo(true))
+        assertThat(pillar.detail.any { it.contains(SCALED_SCORE_SOURCE) }, equalTo(true))
+    }
+
+    @Test
+    fun `readiness omits scaled estimate when no summary carries one`() {
+        val result = computeReadiness(listOf(fullLength("a", 40, 59)))
+        assertThat(result.scaledEstimate, nullValue())
+        val pillar = readinessPillar(result)
+        assertThat(pillar.detail.none { it.contains("Est. MCAT score") }, equalTo(true))
     }
 }

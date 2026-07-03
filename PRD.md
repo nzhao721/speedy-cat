@@ -163,6 +163,17 @@ Session behavior:
 
 No tutor mode, hint system, or AI integration in MVP.
 
+#### Graduated hint ladder (subquestion-based)
+
+A post-MVP addition to the Practice Question Bank (desktop **and** mobile). Instead of revealing the answer when a student is stuck, each question can carry a short **ladder of scaffolding SUBQUESTIONS** that reveal progressively more of the reasoning **without ever giving away the parent question's final answer** (Koedinger & Aleven assistance dilemma). Hint *content* is generated separately into the question bundles; the apps only parse + serve it (no LLM at runtime — both apps still run fully with AI off).
+
+- **Schema.** Each question gains `hints`: an ordered array of up to 3 subquestion objects `{ level: 1|2|3, prompt, choices: [{label, text} ×4], correctAnswer: A–D, rationale }`. Each hint is itself a 4-choice MCQ with exactly one correct answer. Parsed **defensively**: a question may temporarily have missing/empty/malformed/<3 hints while generation is in progress — malformed tiers (not exactly 4 choices, a `correctAnswer` matching no choice, an empty prompt) are dropped and the well-formed ones kept; a question with no valid ladder simply disables the "Request hint" affordance.
+- **Two entry paths.** The ladder starts when EITHER (a) the student presses **"Request hint"**, OR (b) the student submits a **WRONG** answer to the main question — a wrong choice does **not** reveal the correct answer; it enters/escalates the ladder instead.
+- **No-skip rule.** Subquestions are presented **one at a time**. The student **must answer** the currently-revealed subquestion (select one of its 4 choices and submit it) before the next tier can be revealed or the main question can be (re)submitted — there is no skip / next-without-answering control, and the main answer stays locked until the ladder has been worked through step by step in order. After the last subquestion, the student returns to answer the main question; only once the ladder is **exhausted** does a subsequent wrong answer reveal the correct answer.
+- **Tracking.** The highest subquestion **level reached** is recorded per attempt as `hintLevelUsed` (0–3); `assisted = (hintLevelUsed reached level 3)`. Both entry paths (Request-hint button and wrong-answer escalation) count. A correct answer given with no hints used is `hintLevelUsed = 0, assisted = false`.
+- **Anti-gaming penalty (Performance pillar).** So students cannot game the tutor for a better readiness number, an **assisted-correct** attempt (reached level 3) does **not** count as a full correct: in the readiness **Performance** pillar's accuracy the credited count is `correct AND NOT assisted`, while the assisted-correct attempt still counts toward the denominator (answered). Unassisted correct = full credit; incorrect = incorrect regardless of assists; level-1/level-2 assists still earn full credit. Implemented in `rslib` `practice_accuracy_totals` (SQL `sum(correct = 1 and assisted = 0)`) and mirrored on mobile in `ReadinessLogic.computePerformance`. The pillar keeps the existing value + range + named-source + give-up discipline (never a bare number).
+- **Sync.** `hintLevelUsed`/`assisted` ride the existing per-device media results file (`_speedycat_results_<deviceId>.json`) alongside every other attempt field, so the Performance pillar stays consistent across devices.
+
 ### AAMC Full-Length Practice Tests
 
 Test types for MVP:
@@ -178,10 +189,19 @@ Test session rules:
 
 Post-test report:
 
-- Raw correct/total per section.
-- Section scaled scores per AAMC scoring where licensed content provides it.
+- Raw correct/total per section (unanswered questions count as incorrect, matching MCAT scoring).
+- **Estimated** MCAT-scale scores: per section (118–132) and overall (472–528), alongside the raw score — see *Scaled-score estimate* below.
 - Topic or skill breakdown where metadata exists.
 - Comparison to prior attempts on the same exam form.
+
+#### Scaled-score estimate (raw → 118–132 / 472–528)
+
+The MCAT reports scaled section scores of **118–132** and a total of **472–528** (sum of the four sections). Real number-correct → scaled conversions are **form-specific and never published** — AAMC *equates* every form after test day, so there is no official conversion table. To let the AI-generated proof-of-concept full-length forms report a familiar scaled total, SpeedyCAT applies a deterministic **representative average** conversion — clearly labelled in the UI as an **ESTIMATE**, not an official score, and **not** an AI output (it is a plain lookup/interpolation; both apps behave identically with AI on or off).
+
+- **Named source.** AAMC — official MCAT scoring guidance, `students-residents.aamc.org` ("How is the MCAT Exam Scored?" and "Your Questions Answered: The MCAT Scoring Process"). AAMC publishes the 118–132 / 472–528 scale and two illustrative number-correct → scaled anchors that apply "on one of the sections": **35–37 correct → 123** and **46–48 correct → 128**.
+- **Method (interpolation).** We treat AAMC's illustrative anchors as a representative 59-question section (their 46–48 example only fits a ~59-question section) and express them plus the scale endpoints as **fraction-correct anchors**: `0.000 → 118` (floor), `36/59 ≈ 0.610 → 123`, `47/59 ≈ 0.797 → 128`, `1.000 → 132` (ceiling). A section's estimate is a **monotonic piecewise-linear interpolation** of its fraction correct (`correct / total`) between those anchors, rounded and clamped to 118–132. The **same** representative curve is applied to every section by that section's own question count — **CPBS 59, CARS 53, BBLS 59, PSBB 59** (230 total) — so each section gets a distinct raw→scaled mapping from one "fairly average" curve. The total is the sum of the four section estimates, clamped to 472–528.
+- **Where it lives.** The conversion is a deterministic table/const in the Rust engine (`rslib/src/practice/scoring.rs`), computed at submit time (`SubmitFullLengthAttempt`) and aggregated for the Readiness pillar (`GetReadiness`). Mobile does not recompute it: the desktop-computed estimate rides the synced results summary and is shown read-only.
+- **Caveat.** These are AI-generated proof-of-concept forms of unknown calibration, and the curve is a smoothed average of AAMC's illustrative examples — so the number is a rough estimate only. A production build with licensed AAMC packages would use each form's official equated conversion.
 
 Content requirements:
 
@@ -243,6 +263,7 @@ A single multiple-choice item — either **discrete** (standalone) or **passage-
 - `sourceUrl` — string, nullable. Direct URL of the scraped source page (traceability).
 - `answerProvenance` — enum `source-answer-key | source-solution-guide | verified-from-source-text`, required for scraped items. How `correctAnswer`/`explanation` were obtained.
 - `notes` — string, nullable. Per-item provenance / licensing notes.
+- `hints` — array of subquestion objects, optional (may be empty/absent). The graduated hint ladder (see *Graduated hint ladder*): each is `{ level: 1|2|3, prompt: string, choices: [{label: A–D, text}] ×4, correctAnswer: A–D, rationale: string }` — a 4-choice MCQ with exactly one correct answer, ordered by escalating specificity, never stating the parent question's answer. Generated separately into the bundle; parsed defensively (malformed tiers dropped).
 
 > **Note:** `section = "CARS"` items are **AI-generated proof-of-concept** (see *Proof-of-Concept Content Disclaimer*); CPBS/BBLS/PSBB items are scraped from named, openly-licensed sources. In the sample bundle, passage text is denormalized (inlined as a `passage` field on each passage-linked item) for convenience; in the normalized model the passage text lives once on `CarsPassageSet.passage` / a `FullLengthTest` section passage and is referenced by `passageId`.
 
@@ -317,6 +338,8 @@ One answered question within a `PracticeSession`.
 - `timeOnQuestionSeconds` — integer, required. Seconds spent on the question.
 - `section` — enum `CPBS | CARS | BBLS | PSBB`, required. Section this attempt is attributed to; drives per-section tracking.
 - `topic` — string, required (may be empty). Topic this attempt is attributed to; the single attribution key for per-topic tracking (`get_topic_stats` groups attempts by `section` + `topic`). The caller supplies it (typically the question's primary/filter topic), since a question can carry multiple `topicTags`.
+- `hintLevelUsed` — integer `0–3`, required (default `0`). Highest graduated-hint-ladder tier reached before the answer was locked (via the "Request hint" button or wrong-answer escalation). Always `0` for full-length answers (no ladder). See *Graduated hint ladder*.
+- `assisted` — boolean, required (default `false`). `true` when the learner reached level 3 of the ladder (`hintLevelUsed >= 3`). Assisted-correct attempts are penalized in the readiness Performance pillar (they earn no credit while still counting toward the denominator).
 
 ### `AamcTestAttempt`
 
@@ -327,8 +350,8 @@ User-generated and synced. One attempt at a `FullLengthTest`. (Name retained for
 - `aamcExamId` — string, nullable. Official AAMC exam id when a licensed form is used; `null` for AI-generated proof-of-concept forms.
 - `startedAt` — timestamp, required.
 - `completedAt` — timestamp, nullable. `null` while in progress.
-- `sectionResults` — array of `{ section: CPBS|CARS|BBLS|PSBB, correct: int, total: int, scaledScore: int|null }`, required.
-- `overallScaledScore` — integer (472–528), nullable. Present only when scoring rules / licensed content provide it.
+- `sectionResults` — array of `{ section: CPBS|CARS|BBLS|PSBB, correct: int, total: int, timeSeconds: int, scaledScore: int|null }`, required. `scaledScore` (118–132) is the **estimated** section scaled score from the representative averaged conversion (see *Scaled-score estimate*); `null` only when the section had no answered questions.
+- `overallScaledScore` — integer (472–528), nullable. **Estimated** total scaled score = sum of the per-section `scaledScore`s (see *Scaled-score estimate*). An estimate on AI-generated proof-of-concept forms, not an official score; `null` only when no section could be scored.
 
 ### `SpeedyCatResults` (cross-device results-sync file)
 
@@ -338,7 +361,7 @@ User-generated **results** (`PracticeSessionAttempt`s and completed-`AamcTestAtt
 - **`schema`** — integer, required. On-disk version (currently `1`).
 - **`deviceId`** — string, required. The writing device's id.
 - **`updatedAt`** — timestamp, required. When the file was last written.
-- **`attempts`** — array of practice-session attempts (mirrors `PracticeSessionAttempt`): `{ id, sessionId, questionId, selectedAnswer, correct, timeSeconds, section, topic, answeredAt }`. `id` is the stable, globally-unique dedup key (`"<sessionId>:<questionId>"`, and `sessionId` is a random `ps-…`). **Bidirectional**: written by both apps.
+- **`attempts`** — array of practice-session attempts (mirrors `PracticeSessionAttempt`): `{ id, sessionId, questionId, selectedAnswer, correct, timeSeconds, section, topic, answeredAt, hintLevelUsed, assisted }`. `id` is the stable, globally-unique dedup key (`"<sessionId>:<questionId>"`, and `sessionId` is a random `ps-…`). `hintLevelUsed`/`assisted` carry the graduated-hint-ladder tracking so the Performance-pillar anti-gaming penalty stays consistent across devices (default `0`/`false` on older files). **Bidirectional**: written by both apps.
 - **`fullLength`** — array of completed full-length **summaries** (compact per-test roll-ups of `AamcTestAttempt`): `{ attemptId, testId, title, startedAt, completedAt, totalCorrect, totalQuestions, overallScaledScore, sections:[{ section, correct, total, timeSeconds, scaledScore }] }`. **One-way desktop → mobile**: only the desktop (which owns full-length tests) produces these; mobile renders them **read-only** in its 3rd Readiness pillar + a "taken on desktop" results card.
 
 **Sync model.** Each device *publishes* its own file and *ingests* the **other** devices' files, upserting `attempts` into its local store (desktop `practice_attempts`; mobile `PracticeStore`) keyed by `id` (`insert or replace`). Because every Performance/Readiness/tracking query aggregates `count()`/`sum()` over distinct primary keys, the union is exact and never double-counts, and the existing computations work unchanged over the merged store. Desktop publishes on `sync_will_start` and ingests on `profile_did_open` + `sync_did_finish`; mobile publishes on session end + before media upload and ingests on-read (Readiness/Practice screens). Contract + logic: `pylib/anki/speedycat_sync.py` (desktop) and `practice/SpeedyCatResults.kt` + `PracticeResultsSync.kt` (mobile).
@@ -363,9 +386,10 @@ User-generated **results** (`PracticeSessionAttempt`s and completed-`AamcTestAtt
 
 - Content import: `LoadPracticeQuestionBundle`, `LoadFullLengthTestBundle` (parse `content/practice-questions/*.json` incl. the CARS `passageSets` format, and `content/full-length-tests/*.json`; reject items missing source/license metadata; synthesize breaks).
 - Query: `GetPracticeQuestions` (section/topic/difficulty/passage/missed-only filter), `GetCarsPassageSet` (passage + its questions), `ListPassages`.
-- Practice sessions: `StartPracticeSession`, `RecordPracticeAttempt`, `EndPracticeSession` (post-session summary).
-- Full-length: `ListFullLengthTests`, `GetFullLengthTest`, `StartFullLengthAttempt` (returns timers + breaks), `RecordFullLengthAnswer`, `SubmitFullLengthAttempt` (per-section results).
+- Practice sessions: `StartPracticeSession`, `RecordPracticeAttempt`, `EndPracticeSession` (post-session summary). `PracticeQuestion` carries the `hints` subquestion ladder; `RecordPracticeAttempt` carries `hint_level_used`/`assisted` (see *Graduated hint ladder*).
+- Full-length: `ListFullLengthTests`, `GetFullLengthTest`, `StartFullLengthAttempt` (returns timers + breaks), `RecordFullLengthAnswer`, `SubmitFullLengthAttempt` (per-section results **plus the estimated per-section (118–132) and overall (472–528) scaled scores**, computed by `rslib/src/practice/scoring.rs` — see *Scaled-score estimate*).
 - Tracking: `GetTopicStats` — time-spent + accuracy aggregated by `topic` and by `section`, with an optional section filter and attempt-source filter (all / practice-session / full-length).
+- Readiness: `GetReadiness` — the 3-pillar metric (Memory / Performance / Readiness), each a value + explicit range + named source that "gives up" without enough data. The **Performance** pillar applies the graduated-hint-ladder **anti-gaming penalty** (assisted-correct answers earn no credit; see *Graduated hint ladder*). The Readiness pillar carries the per-section raw scores and the aggregate **scaled-score estimate** (`readiness_scaled_score`/`_low`/`_high`, 472–528) so the dashboard presents the estimate within the value+range+source discipline (never a bare number).
 
 Both apps run with AI off; nothing here calls an LLM at runtime.
 

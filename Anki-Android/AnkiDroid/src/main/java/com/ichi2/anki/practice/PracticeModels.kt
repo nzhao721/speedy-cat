@@ -65,6 +65,26 @@ data class AnswerChoice(
     val text: String,
 )
 
+/** One answer option of a hint subquestion; [label] is "A".."D". */
+data class HintChoice(
+    val label: String,
+    val text: String,
+)
+
+/**
+ * SpeedyCAT graduated hint ladder — one tier is a self-contained 4-choice
+ * multiple-choice SUBQUESTION that scaffolds toward the parent question WITHOUT
+ * revealing its final answer. A question carries an ordered ladder (levels 1→3).
+ * Mirrors the desktop `HintSubquestion` proto message.
+ */
+data class HintSubquestion(
+    val level: Int,
+    val prompt: String,
+    val choices: List<HintChoice>,
+    val correctAnswer: String,
+    val rationale: String,
+)
+
 /** A multiple-choice item — discrete ([passageId] null) or passage-linked. */
 data class PracticeQuestion(
     val id: String,
@@ -82,6 +102,8 @@ data class PracticeQuestion(
     val sourceUrl: String?,
     val answerProvenance: String?,
     val notes: String?,
+    /** Graduated hint ladder; empty when the question has no hints yet. */
+    val hints: List<HintSubquestion> = emptyList(),
 )
 
 /** A reading passage (e.g. a CARS passage set). */
@@ -181,4 +203,8 @@ data class Attempt(
     val section: McatSection?,
     val topic: String,
     val answeredAt: Long,
+    /** Graduated hint ladder: highest tier reached before locking (0..3). */
+    val hintLevelUsed: Int = 0,
+    /** Graduated hint ladder: reached level 3 (penalized in Performance). */
+    val assisted: Boolean = false,
 )

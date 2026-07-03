@@ -15,7 +15,7 @@ behind a one-shot config marker, so it never re-ran to repair such collections.
 
 ``reorganize_into_themes`` migrates that layout up to the top level (tested here
 directly, since it is what the repair runs), and ``_auto_import_on_first_run``
-now invokes ``_repair_themes_on_open`` on every open so already-imported
+now invokes ``_repair_on_open`` on every open so already-imported
 collections get fixed.
 """
 
@@ -150,10 +150,16 @@ def test_reorg_maps_source_layout_and_keeps_stray_cards() -> None:
 # --- wiring: the repair actually runs on collection open -------------------
 
 
-def _fake_mw(marker: bool, parent_present: bool = True) -> mock.Mock:
+def _fake_mw(
+    marker: bool, parent_present: bool = True, breadcrumb_present: bool = False
+) -> mock.Mock:
     mw = mock.Mock()
     mw.col.get_config.return_value = marker
     mw.col.decks.id_for_name.return_value = 123 if parent_present else None
+    # `_repair_on_open` also strips the baked-in tag breadcrumb, guarded on
+    # `col.find_notes(TAG_BREADCRUMB_SEARCH)`. Default to none so the guard is
+    # driven only by `parent_present` unless a test opts in.
+    mw.col.find_notes.return_value = [1] if breadcrumb_present else []
     return mw
 
 
@@ -164,7 +170,7 @@ def test_auto_import_repairs_when_already_imported() -> None:
     mw = _fake_mw(marker=True)
     with (
         mock.patch.object(sc.aqt, "mw", mw),
-        mock.patch.object(sc, "_repair_themes_on_open") as repair,
+        mock.patch.object(sc, "_repair_on_open") as repair,
         mock.patch.object(sc, "import_deck") as import_deck,
     ):
         sc._auto_import_on_first_run()
@@ -179,7 +185,7 @@ def test_auto_import_imports_on_first_run() -> None:
     mw = _fake_mw(marker=False)
     with (
         mock.patch.object(sc.aqt, "mw", mw),
-        mock.patch.object(sc, "_repair_themes_on_open") as repair,
+        mock.patch.object(sc, "_repair_on_open") as repair,
         mock.patch.object(sc, "import_deck") as import_deck,
     ):
         sc._auto_import_on_first_run()
@@ -193,7 +199,7 @@ def test_repair_skips_background_op_when_tree_already_flat() -> None:
 
     mw = _fake_mw(marker=True, parent_present=False)
     with mock.patch.object(sc, "QueryOp") as query_op:
-        sc._repair_themes_on_open(mw)
+        sc._repair_on_open(mw)
     query_op.assert_not_called()
 
 
@@ -202,5 +208,15 @@ def test_repair_launches_background_op_when_parent_present() -> None:
 
     mw = _fake_mw(marker=True, parent_present=True)
     with mock.patch.object(sc, "QueryOp") as query_op:
-        sc._repair_themes_on_open(mw)
+        sc._repair_on_open(mw)
+    query_op.assert_called_once()
+
+
+def test_repair_launches_background_op_when_only_breadcrumb_present() -> None:
+    """Even with a flat tree, a leftover tag breadcrumb still triggers a repair."""
+    import aqt.speedycat as sc
+
+    mw = _fake_mw(marker=True, parent_present=False, breadcrumb_present=True)
+    with mock.patch.object(sc, "QueryOp") as query_op:
+        sc._repair_on_open(mw)
     query_op.assert_called_once()

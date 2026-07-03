@@ -32,7 +32,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q1 = C."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q1 = C.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Malaria is spread by Anopheles mosquitoes and caused by which kind of organism?",
+          "choices": [
+            {"label": "A", "text": "A single-celled protozoan parasite"},
+            {"label": "B", "text": "A bacterium"},
+            {"label": "C", "text": "A fungus"},
+            {"label": "D", "text": "A virus"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Malaria is caused by an apicomplexan protozoan parasite."
+        },
+        {
+          "level": 2,
+          "prompt": "Which listed genus is responsible for African sleeping sickness rather than malaria?",
+          "choices": [
+            {"label": "A", "text": "Trypanosoma"},
+            {"label": "B", "text": "Paramecium"},
+            {"label": "C", "text": "Euglena"},
+            {"label": "D", "text": "Plasmodium"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Trypanosoma causes sleeping sickness, so it is not the malaria genus."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'Euglena' not the cause of malaria?",
+          "choices": [
+            {"label": "A", "text": "Euglena is a free-living, often photosynthetic flagellate, not a blood parasite"},
+            {"label": "B", "text": "Euglena is the parasite injected by mosquitoes"},
+            {"label": "C", "text": "Euglena invades red blood cells to cause malaria"},
+            {"label": "D", "text": "Euglena is itself a mosquito"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Euglena is a free-living protist, not the malaria-causing parasite."
+        }
+      ]
     },
     {
       "id": "bbls-x151",
@@ -52,7 +90,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q2 = C."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q2 = C.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A protist spread through contaminated water and causing diarrhea infects which body system?",
+          "choices": [
+            {"label": "A", "text": "The gastrointestinal (digestive) tract"},
+            {"label": "B", "text": "The respiratory tract"},
+            {"label": "C", "text": "The central nervous system"},
+            {"label": "D", "text": "The skeletal system"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A waterborne diarrheal protist infects the intestines."
+        },
+        {
+          "level": 2,
+          "prompt": "Plasmodium vivax and Toxoplasma gondii are known for which diseases (not waterborne diarrhea)?",
+          "choices": [
+            {"label": "A", "text": "Malaria and toxoplasmosis, respectively"},
+            {"label": "B", "text": "Two forms of waterborne dysentery"},
+            {"label": "C", "text": "Two respiratory infections"},
+            {"label": "D", "text": "Two skin infections"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "P. vivax causes malaria and T. gondii causes toxoplasmosis, so neither is the diarrheal water contaminant."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'Trichomonas vaginalis' not the waterborne diarrheal pathogen?",
+          "choices": [
+            {"label": "A", "text": "It is a sexually transmitted urogenital parasite, not a waterborne intestinal one"},
+            {"label": "B", "text": "It contaminates drinking water and causes diarrhea"},
+            {"label": "C", "text": "It forms cysts that spread through lakes"},
+            {"label": "D", "text": "It primarily infects the lungs"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Trichomonas vaginalis is a urogenital STI, not a water-contaminating diarrheal agent."
+        }
+      ]
     },
     {
       "id": "bbls-x152",
@@ -72,7 +148,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q3 = C."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q3 = C.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A fluke (trematode) has which basic body plan?",
+          "choices": [
+            {"label": "A", "text": "A flatworm"},
+            {"label": "B", "text": "A segmented worm"},
+            {"label": "C", "text": "A round, cylindrical worm"},
+            {"label": "D", "text": "A jointed-leg arthropod"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Flukes are flatworms."
+        },
+        {
+          "level": 2,
+          "prompt": "The phyla Nematoda and Annelida describe which worm types?",
+          "choices": [
+            {"label": "A", "text": "Roundworms and segmented worms, respectively"},
+            {"label": "B", "text": "Two kinds of flatworm"},
+            {"label": "C", "text": "Two kinds of fluke"},
+            {"label": "D", "text": "Two kinds of insect"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Nematoda are roundworms and Annelida are segmented worms, neither being flatworms."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'Annelida' not the phylum of a fluke?",
+          "choices": [
+            {"label": "A", "text": "Annelids are segmented worms like earthworms, whereas flukes are unsegmented flatworms"},
+            {"label": "B", "text": "Annelids are a kind of flatworm"},
+            {"label": "C", "text": "Flukes are just small earthworms"},
+            {"label": "D", "text": "Annelids and flukes are identical"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Annelids are segmented, unlike the flatworm body of a fluke."
+        }
+      ]
     },
     {
       "id": "bbls-x153",
@@ -92,7 +206,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q4 = A."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q4 = A.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "An unsegmented, cylindrical (round-bodied) worm is classified as a:",
+          "choices": [
+            {"label": "A", "text": "Roundworm (nematode)"},
+            {"label": "B", "text": "Flatworm"},
+            {"label": "C", "text": "Segmented annelid"},
+            {"label": "D", "text": "Mollusk"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A nonsegmented, round worm is a nematode."
+        },
+        {
+          "level": 2,
+          "prompt": "Are nematodes (roundworms) segmented or unsegmented?",
+          "choices": [
+            {"label": "A", "text": "Unsegmented"},
+            {"label": "B", "text": "Segmented into identical rings"},
+            {"label": "C", "text": "Segmented only at the head"},
+            {"label": "D", "text": "The same as tapeworm segments"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Nematodes are unsegmented, matching the described worm."
+        },
+        {
+          "level": 3,
+          "prompt": "Why can 'fluke' and 'trematode' both be ruled out for this worm?",
+          "choices": [
+            {"label": "A", "text": "They are two names for the same flatworm group, which is flattened rather than the round nematode form"},
+            {"label": "B", "text": "They are both roundworms like the one described"},
+            {"label": "C", "text": "One of them is a segmented worm"},
+            {"label": "D", "text": "They are both insects"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Fluke and trematode are synonyms for flatworms, so neither fits a nonsegmented roundworm."
+        }
+      ]
     },
     {
       "id": "bbls-x154",
@@ -112,7 +264,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q5 = C."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q5 = C.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A worm whose body is a chain of repeating segments, each with reproductive organs, is a:",
+          "choices": [
+            {"label": "A", "text": "Tapeworm (cestode)"},
+            {"label": "B", "text": "Roundworm"},
+            {"label": "C", "text": "Fluke"},
+            {"label": "D", "text": "Leech"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Tapeworms have repeating segments (proglottids) each bearing reproductive organs."
+        },
+        {
+          "level": 2,
+          "prompt": "Are nematodes (roundworms) built from repeating reproductive segments?",
+          "choices": [
+            {"label": "A", "text": "No; nematodes are unsegmented"},
+            {"label": "B", "text": "Yes; each ring holds reproductive organs"},
+            {"label": "C", "text": "Yes; they use hooks on every segment"},
+            {"label": "D", "text": "Only their heads are segmented"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Nematodes are unsegmented, so they do not fit the described segmented worm."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'fluke' not the segmented worm described?",
+          "choices": [
+            {"label": "A", "text": "Flukes are unsegmented flatworms, lacking the repeating proglottid segments described"},
+            {"label": "B", "text": "Flukes are segmented with organs in each segment"},
+            {"label": "C", "text": "Flukes attach using a chain of segments"},
+            {"label": "D", "text": "Flukes are roundworms"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Flukes are unsegmented, so they lack the segmentation described in the stem."
+        }
+      ]
     },
     {
       "id": "bbls-x155",
@@ -132,7 +322,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q6 = D."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q6 = D.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A mushroom functions as which part of a fungus?",
+          "choices": [
+            {"label": "A", "text": "The spore-producing fruiting body"},
+            {"label": "B", "text": "The underground root system"},
+            {"label": "C", "text": "A single microscopic spore"},
+            {"label": "D", "text": "The rigid cell wall"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A mushroom is a fungal fruiting body that bears spores."
+        },
+        {
+          "level": 2,
+          "prompt": "An 'ascus' is a spore-containing sac characteristic of which fungal group?",
+          "choices": [
+            {"label": "A", "text": "Ascomycetes (sac fungi), not the mushroom-forming group"},
+            {"label": "B", "text": "The basidiomycetes that form mushrooms"},
+            {"label": "C", "text": "Bacteria"},
+            {"label": "D", "text": "Protozoa"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "An ascus belongs to ascomycetes, so it is not what a mushroom is."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'conidia' not what a mushroom is?",
+          "choices": [
+            {"label": "A", "text": "Conidia are tiny asexual spores, not the large fruiting body that a mushroom represents"},
+            {"label": "B", "text": "Conidia are giant fruiting bodies"},
+            {"label": "C", "text": "A mushroom is a single conidium"},
+            {"label": "D", "text": "Conidia are fungal roots"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Conidia are microscopic spores, whereas a mushroom is a macroscopic fruiting body."
+        }
+      ]
     },
     {
       "id": "bbls-x156",
@@ -152,7 +380,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q7 = A."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q7 = A.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Common human yeast infections such as thrush and vaginal candidiasis are caused by which genus?",
+          "choices": [
+            {"label": "A", "text": "Candida"},
+            {"label": "B", "text": "Aspergillus"},
+            {"label": "C", "text": "Histoplasma"},
+            {"label": "D", "text": "Trichophyton"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Candida species cause the most common human yeast infections."
+        },
+        {
+          "level": 2,
+          "prompt": "Aspergillus fumigatus is a mold that mainly causes what kind of illness?",
+          "choices": [
+            {"label": "A", "text": "Respiratory (lung) infection, not ordinary yeast infection"},
+            {"label": "B", "text": "The most common vaginal yeast infection"},
+            {"label": "C", "text": "Oral thrush in healthy babies"},
+            {"label": "D", "text": "Athlete's foot"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Aspergillus causes respiratory aspergillosis, not the common yeast infections."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'Cryptococcus neoformans' not the most common cause of ordinary yeast infections?",
+          "choices": [
+            {"label": "A", "text": "Cryptococcus mainly causes meningitis in immunocompromised people, not everyday candidiasis"},
+            {"label": "B", "text": "Cryptococcus is the usual cause of thrush"},
+            {"label": "C", "text": "Cryptococcus is not a fungus at all"},
+            {"label": "D", "text": "Cryptococcus infects only plants"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Cryptococcus typically causes meningitis, not the common yeast infections."
+        }
+      ]
     },
     {
       "id": "bbls-x157",
@@ -172,7 +438,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q8 = B."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q8 = B.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Inhaling fungal spores from soil enriched by bat or bird droppings can cause what kind of disease?",
+          "choices": [
+            {"label": "A", "text": "A respiratory (lung) fungal infection"},
+            {"label": "B", "text": "A skin rash only"},
+            {"label": "C", "text": "A blood-clotting disorder"},
+            {"label": "D", "text": "A common viral cold"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Inhaled spores from such soil cause a respiratory fungal infection."
+        },
+        {
+          "level": 2,
+          "prompt": "Candida albicans is chiefly associated with which infections, making it a poor fit here?",
+          "choices": [
+            {"label": "A", "text": "Mucosal yeast infections (thrush, vaginal), not an inhaled soil fungus"},
+            {"label": "B", "text": "Inhaled disease from bat caves"},
+            {"label": "C", "text": "Bird-dropping-associated lung disease"},
+            {"label": "D", "text": "Athlete's foot from droppings"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Candida causes mucosal yeast infections, unrelated to inhaled bat-dropping spores."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'Trichophyton rubrum' not the bat-dropping respiratory fungus?",
+          "choices": [
+            {"label": "A", "text": "Trichophyton causes skin infections such as athlete's foot, not an inhaled lung disease"},
+            {"label": "B", "text": "Trichophyton is inhaled from bat caves"},
+            {"label": "C", "text": "Trichophyton lives in bird droppings and infects lungs"},
+            {"label": "D", "text": "Trichophyton causes histoplasmosis"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Trichophyton is a skin (dermatophyte) fungus, not a respiratory soil fungus."
+        }
+      ]
     },
     {
       "id": "bbls-x158",
@@ -192,7 +496,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q9 = D."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q9 = D.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Which substance is widely used to solidify microbiological culture media?",
+          "choices": [
+            {"label": "A", "text": "Agar"},
+            {"label": "B", "text": "Table salt"},
+            {"label": "C", "text": "Bone gelatin"},
+            {"label": "D", "text": "Cholesterol"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Agar is the standard gelling/solidifying agent for culture media."
+        },
+        {
+          "level": 2,
+          "prompt": "Chitin and cellulose are structural polysaccharides found in which structures?",
+          "choices": [
+            {"label": "A", "text": "Fungal cell walls (chitin) and plant cell walls (cellulose), not the red-algal solidifier"},
+            {"label": "B", "text": "Red algal walls used to gel media"},
+            {"label": "C", "text": "The membranes of all bacteria"},
+            {"label": "D", "text": "The nucleus of protists"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Chitin and cellulose are wall polysaccharides of fungi and plants, not the media-gelling agent."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'phycoerythrin' not the solidifying agent from red algae?",
+          "choices": [
+            {"label": "A", "text": "Phycoerythrin is a red photosynthetic pigment, not a gelling polysaccharide"},
+            {"label": "B", "text": "Phycoerythrin is the main gelling agent in plates"},
+            {"label": "C", "text": "Phycoerythrin is a cell-wall sugar used to solidify media"},
+            {"label": "D", "text": "Phycoerythrin sets media at room temperature"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Phycoerythrin is a pigment, so it does not solidify media."
+        }
+      ]
     },
     {
       "id": "bbls-x159",
@@ -212,7 +554,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q10 = A."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q10 = A.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Some dinoflagellates are covered by protective plates made of cellulose. Such an armored covering is generally called a:",
+          "choices": [
+            {"label": "A", "text": "Theca"},
+            {"label": "B", "text": "Flagellum"},
+            {"label": "C", "text": "Nucleus"},
+            {"label": "D", "text": "Ribosome"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The armor-like plated covering of dinoflagellates is the theca."
+        },
+        {
+          "level": 2,
+          "prompt": "The term 'mycelium' refers to a structure found in which organisms?",
+          "choices": [
+            {"label": "A", "text": "Fungi (a mass of hyphae), not a dinoflagellate covering"},
+            {"label": "B", "text": "Dinoflagellates only"},
+            {"label": "C", "text": "All bacteria"},
+            {"label": "D", "text": "Red blood cells"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A mycelium is a fungal structure, not a dinoflagellate covering."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'thallus' not the dinoflagellate armor?",
+          "choices": [
+            {"label": "A", "text": "A thallus is an undifferentiated algal/fungal/lichen body, not a hard cellulose plate covering"},
+            {"label": "B", "text": "A thallus is a single cellulose plate"},
+            {"label": "C", "text": "A thallus is the dinoflagellate's shell"},
+            {"label": "D", "text": "A thallus is a swimming flagellum"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A thallus is a whole body form, not the hard plated covering asked about."
+        }
+      ]
     },
     {
       "id": "bbls-x160",
@@ -232,7 +612,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q11 = C."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q11 = C.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Harmful blooms called red tides result from explosive population growth of which protists?",
+          "choices": [
+            {"label": "A", "text": "Dinoflagellates"},
+            {"label": "B", "text": "Amoebas"},
+            {"label": "C", "text": "Slime molds"},
+            {"label": "D", "text": "Ciliated paramecia"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Red tides are dinoflagellate blooms that can release toxins."
+        },
+        {
+          "level": 2,
+          "prompt": "Red, brown, and green 'algae' are named for their pigments; are these the red-tide organisms?",
+          "choices": [
+            {"label": "A", "text": "No; red tides specifically involve dinoflagellate blooms"},
+            {"label": "B", "text": "Yes; brown algae cause red tides"},
+            {"label": "C", "text": "Yes; green algae cause red tides"},
+            {"label": "D", "text": "Yes; all algae cause red tides equally"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Red tides are caused by dinoflagellates, not the pigment-named seaweed groups."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'red algae' not the cause of red tides, despite the name?",
+          "choices": [
+            {"label": "A", "text": "Red tides are dinoflagellate blooms; red algae are a separate group of multicellular seaweeds"},
+            {"label": "B", "text": "Red algae are the only cause of red tides"},
+            {"label": "C", "text": "Red algae are a type of dinoflagellate"},
+            {"label": "D", "text": "Red algae release the red-tide toxins"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The name is misleading: red tides come from dinoflagellates, not red algae."
+        }
+      ]
     },
     {
       "id": "bbls-x161",
@@ -252,7 +670,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q12 = B."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q12 = B.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Lichen growth forms are named by shape. Which prefix relates to 'leaf'?",
+          "choices": [
+            {"label": "A", "text": "Foli- (leaf), as in foliose"},
+            {"label": "B", "text": "Crusto- (crust)"},
+            {"label": "C", "text": "Frutico- (shrub)"},
+            {"label": "D", "text": "Agaro- (gel)"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A leafy lichen is foliose, from a root meaning leaf."
+        },
+        {
+          "level": 2,
+          "prompt": "A lichen that is flat and crusty, tightly stuck to a rock surface, is described as:",
+          "choices": [
+            {"label": "A", "text": "Crustose"},
+            {"label": "B", "text": "Foliose"},
+            {"label": "C", "text": "Fruticose"},
+            {"label": "D", "text": "Gelatinous"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A flat, crusty lichen is crustose, not the leafy form."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'fruticose' not the term for a leafy lichen?",
+          "choices": [
+            {"label": "A", "text": "Fruticose lichens are shrubby and branched, not flat and leaf-like"},
+            {"label": "B", "text": "Fruticose means leaf-shaped"},
+            {"label": "C", "text": "Fruticose lichens are crusty and flat"},
+            {"label": "D", "text": "Fruticose is a kind of alga"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Fruticose describes a shrubby, branching form, not a leafy one."
+        }
+      ]
     },
     {
       "id": "bbls-x162",
@@ -272,7 +728,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q13 = A."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q13 = A.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In a layered structure, which term usually denotes the protective OUTER layer?",
+          "choices": [
+            {"label": "A", "text": "Cortex"},
+            {"label": "B", "text": "Medulla"},
+            {"label": "C", "text": "Core"},
+            {"label": "D", "text": "Center"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The cortex is typically the outer protective layer."
+        },
+        {
+          "level": 2,
+          "prompt": "What is the inner layer of a lichen called?",
+          "choices": [
+            {"label": "A", "text": "The medulla"},
+            {"label": "B", "text": "The cortex"},
+            {"label": "C", "text": "The theca"},
+            {"label": "D", "text": "The scolex"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The medulla is the inner lichen layer, distinct from the outer layer."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'thallus' not the outer layer of a lichen?",
+          "choices": [
+            {"label": "A", "text": "The thallus is the entire lichen body, not specifically its outer layer"},
+            {"label": "B", "text": "The thallus is only the outer skin"},
+            {"label": "C", "text": "The thallus is the innermost layer"},
+            {"label": "D", "text": "The thallus is a fungal spore"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The thallus refers to the whole lichen body rather than one layer."
+        }
+      ]
     },
     {
       "id": "bbls-x163",
@@ -292,7 +786,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/5-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q14 = B."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-5), Ch.5 MC Q14 = B.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A lichen is a symbiosis between a fungus and which kind of partner?",
+          "choices": [
+            {"label": "A", "text": "A photosynthetic alga or cyanobacterium"},
+            {"label": "B", "text": "A virus"},
+            {"label": "C", "text": "A tapeworm"},
+            {"label": "D", "text": "A protozoan parasite"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A lichen pairs a fungus with a photosynthetic alga or cyanobacterium."
+        },
+        {
+          "level": 2,
+          "prompt": "An 'apicomplexan' is a type of what, which makes it impossible as the lichen's fungal partner?",
+          "choices": [
+            {"label": "A", "text": "A protozoan parasite (not a fungus at all)"},
+            {"label": "B", "text": "A sac fungus"},
+            {"label": "C", "text": "A club fungus"},
+            {"label": "D", "text": "A green alga"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "An apicomplexan is a protozoan parasite, so it cannot be the fungal partner."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'a zygomycete' not the usual lichen fungus?",
+          "choices": [
+            {"label": "A", "text": "Most lichen fungi are ascomycetes (sac fungi), not zygomycetes"},
+            {"label": "B", "text": "Zygomycetes are the standard lichen partner"},
+            {"label": "C", "text": "Zygomycetes are actually algae"},
+            {"label": "D", "text": "Zygomycetes are bacteria"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The typical lichen mycobiont is an ascomycete, not a zygomycete."
+        }
+      ]
     },
     {
       "id": "bbls-x164",
@@ -312,7 +844,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q1 = B."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q1 = B.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "To count a small number of LIVE bacteria in an opaque solid food, the best method is one that:",
+          "choices": [
+            {"label": "A", "text": "Grows colonies from viable cells and counts them (a viable plate count)"},
+            {"label": "B", "text": "Measures the cloudiness of a clear liquid"},
+            {"label": "C", "text": "Weighs the total dried biomass"},
+            {"label": "D", "text": "Reads the sample's pH"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A viable plate count grows and counts colonies from living cells."
+        },
+        {
+          "level": 2,
+          "prompt": "Why can turbidity (cloudiness) measurement not be used on peanut butter?",
+          "choices": [
+            {"label": "A", "text": "Turbidity requires a clear liquid suspension, but peanut butter is opaque and solid"},
+            {"label": "B", "text": "Turbidity only works on solids"},
+            {"label": "C", "text": "Turbidity counts only dead cells"},
+            {"label": "D", "text": "Turbidity measures pH, not cells"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Turbidity needs a clear liquid, so it fails on an opaque solid food."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'dry weight measurement' a poor choice here?",
+          "choices": [
+            {"label": "A", "text": "Dry weight estimates large amounts of biomass and cannot separate low-level microbes from the food"},
+            {"label": "B", "text": "Dry weight precisely counts only living cells"},
+            {"label": "C", "text": "Dry weight requires a perfectly clear solution"},
+            {"label": "D", "text": "Dry weight is identical to a viable plate count"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Dry weight suits large biomass, not low-level viable contamination in food."
+        }
+      ]
     },
     {
       "id": "bbls-x165",
@@ -332,7 +902,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q2 = A."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q2 = A.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Bacterial endospore formation is triggered mainly by:",
+          "choices": [
+            {"label": "A", "text": "Nutrient depletion and stressful conditions"},
+            {"label": "B", "text": "An abundance of fresh nutrients"},
+            {"label": "C", "text": "The fastest rate of cell division"},
+            {"label": "D", "text": "Warm temperature by itself"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Endospores form in response to starvation and stress."
+        },
+        {
+          "level": 2,
+          "prompt": "During the log (exponential) phase, nutrients are plentiful and cells divide rapidly. Is this when spores form?",
+          "choices": [
+            {"label": "A", "text": "No; sporulation is triggered by starvation, not by abundant growth"},
+            {"label": "B", "text": "Yes; log phase produces the most spores"},
+            {"label": "C", "text": "Yes; rapid division forces sporulation"},
+            {"label": "D", "text": "Yes; spores only form during fast growth"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Log phase is nutrient-rich, so it does not trigger the most sporulation."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'lag phase' not when the most endospores appear?",
+          "choices": [
+            {"label": "A", "text": "In lag phase cells are adjusting with nutrients still available, so sporulation is not yet triggered"},
+            {"label": "B", "text": "Lag phase is the most nutrient-starved phase"},
+            {"label": "C", "text": "Lag phase has the greatest cell death"},
+            {"label": "D", "text": "Lag phase always follows the death phase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Nutrients are still available in lag phase, so few spores form then."
+        }
+      ]
     },
     {
       "id": "bbls-x166",
@@ -352,7 +960,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q3 = C."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q3 = C.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Penicillin blocks new cell-wall synthesis, so it harms bacteria that are:",
+          "choices": [
+            {"label": "A", "text": "Actively dividing and building new cell wall"},
+            {"label": "B", "text": "Completely dormant"},
+            {"label": "C", "text": "Already dead"},
+            {"label": "D", "text": "Not synthesizing any wall"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Penicillin targets cells actively building new cell wall."
+        },
+        {
+          "level": 2,
+          "prompt": "During the stationary and death phases, is net cell-wall synthesis high or low?",
+          "choices": [
+            {"label": "A", "text": "Low, because there is little net growth"},
+            {"label": "B", "text": "Highest of all phases"},
+            {"label": "C", "text": "The same as during rapid growth"},
+            {"label": "D", "text": "Unrelated to growth"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Little wall is being built in stationary/death phases, so penicillin is less effective then."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'lag phase' not when penicillin is most effective?",
+          "choices": [
+            {"label": "A", "text": "In lag phase cells are adapting and not yet dividing rapidly, so little new wall is being built"},
+            {"label": "B", "text": "Lag phase has the fastest wall synthesis"},
+            {"label": "C", "text": "Lag-phase cells divide most quickly"},
+            {"label": "D", "text": "Penicillin cannot act during any growth"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Cells are not yet dividing quickly in lag phase, so wall synthesis is minimal."
+        }
+      ]
     },
     {
       "id": "bbls-x167",
@@ -372,7 +1018,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q4 = B."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q4 = B.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "During exponential growth, a bacterial population increases by what pattern?",
+          "choices": [
+            {"label": "A", "text": "Doubling with each generation"},
+            {"label": "B", "text": "Adding a fixed number of cells each hour"},
+            {"label": "C", "text": "Halving each generation"},
+            {"label": "D", "text": "Staying constant"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Bacteria grow by doubling via binary fission."
+        },
+        {
+          "level": 2,
+          "prompt": "Does 'generation time' refer to how long the entire exponential phase lasts?",
+          "choices": [
+            {"label": "A", "text": "No; it is the interval for one doubling, not the length of a growth phase"},
+            {"label": "B", "text": "Yes; it equals the whole log phase duration"},
+            {"label": "C", "text": "Yes; it is the time in stationary phase"},
+            {"label": "D", "text": "Yes; it is the death-phase duration"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Generation time is a doubling interval, not the duration of a phase."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'the length of time to reach the log phase' incorrect for generation time?",
+          "choices": [
+            {"label": "A", "text": "That describes the lag before exponential growth, not the population-doubling interval"},
+            {"label": "B", "text": "It is exactly the doubling time"},
+            {"label": "C", "text": "Generation time means time to reach stationary phase"},
+            {"label": "D", "text": "It is the time cells spend dead"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Time to reach log phase is the lag, not the doubling (generation) time."
+        }
+      ]
     },
     {
       "id": "bbls-x168",
@@ -392,7 +1076,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q5 = B."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q5 = B.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "For a bacterium to split into two cells, what must happen at its midpoint?",
+          "choices": [
+            {"label": "A", "text": "It must constrict (pinch inward) at the midcell division site"},
+            {"label": "B", "text": "It must double in width without dividing"},
+            {"label": "C", "text": "It must dissolve its DNA"},
+            {"label": "D", "text": "It must stop all metabolism"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Division requires constriction at the midcell site."
+        },
+        {
+          "level": 2,
+          "prompt": "Where does the FtsZ Z ring assemble?",
+          "choices": [
+            {"label": "A", "text": "At the midcell septum (the division plane)"},
+            {"label": "B", "text": "Only at the cell poles"},
+            {"label": "C", "text": "Inside the nucleoid DNA"},
+            {"label": "D", "text": "Outside the cell wall"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The Z ring forms at the midcell septum where division occurs."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'It controls the replication of DNA' wrong for the Z ring?",
+          "choices": [
+            {"label": "A", "text": "DNA replication is done by DNA polymerase and origin machinery, not the FtsZ Z ring"},
+            {"label": "B", "text": "The Z ring is the cell's main DNA polymerase"},
+            {"label": "C", "text": "The Z ring copies the chromosome"},
+            {"label": "D", "text": "The Z ring pulls the two DNA copies apart"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The Z ring drives division, whereas DNA replication is a separate process."
+        }
+      ]
     },
     {
       "id": "bbls-x169",
@@ -412,7 +1134,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q6 = C."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q6 = C.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "After each generation of binary fission, the number of cells is multiplied by:",
+          "choices": [
+            {"label": "A", "text": "2"},
+            {"label": "B", "text": "5"},
+            {"label": "C", "text": "10"},
+            {"label": "D", "text": "1 (no change)"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Each generation doubles the population (multiply by 2)."
+        },
+        {
+          "level": 2,
+          "prompt": "Over 5 generations, the starting number is multiplied by 2 raised to what power?",
+          "choices": [
+            {"label": "A", "text": "2 to the 5th power, which equals 32"},
+            {"label": "B", "text": "5"},
+            {"label": "C", "text": "2 times 5, which equals 10"},
+            {"label": "D", "text": "5 squared, which equals 25"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Five doublings multiply the start by 2^5 = 32."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is '200' the result of a wrong calculation?",
+          "choices": [
+            {"label": "A", "text": "200 comes from multiplying 50 by 4 (only 2 doublings) instead of by 32 (five doublings)"},
+            {"label": "B", "text": "200 equals 50 multiplied by 32"},
+            {"label": "C", "text": "200 is the correct five-generation result"},
+            {"label": "D", "text": "200 equals 50 plus 5 generations"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "200 reflects too few doublings, not five full generations."
+        }
+      ]
     },
     {
       "id": "bbls-x170",
@@ -432,7 +1192,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q7 = C."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q7 = C.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A long filamentous organism can reproduce by breaking into pieces that each grow into a new filament. This is called:",
+          "choices": [
+            {"label": "A", "text": "Fragmentation"},
+            {"label": "B", "text": "Fertilization"},
+            {"label": "C", "text": "Meiosis"},
+            {"label": "D", "text": "Phagocytosis"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Breaking into growing pieces is fragmentation."
+        },
+        {
+          "level": 2,
+          "prompt": "Do bacteria, including cyanobacteria, reproduce by mitosis?",
+          "choices": [
+            {"label": "A", "text": "No; mitosis is a eukaryotic process"},
+            {"label": "B", "text": "Yes; cyanobacteria use mitosis"},
+            {"label": "C", "text": "Yes; all bacteria undergo mitosis"},
+            {"label": "D", "text": "Only filamentous ones use mitosis"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Mitosis is eukaryotic, so it is not how cyanobacteria divide."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'formation of endospores' not the usual way filamentous cyanobacteria multiply?",
+          "choices": [
+            {"label": "A", "text": "Endospores are dormant survival structures, not a routine means of reproducing the filament"},
+            {"label": "B", "text": "Endospores are how filaments normally split during growth"},
+            {"label": "C", "text": "Cyanobacteria reproduce only by endospores"},
+            {"label": "D", "text": "Endospores are the same thing as fragments"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Endospores are for survival, not the normal reproduction of a filament."
+        }
+      ]
     },
     {
       "id": "bbls-x171",
@@ -452,7 +1250,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q8 = C."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q8 = C.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Many antibiotics act on active cellular processes, so which cells are LEAST affected?",
+          "choices": [
+            {"label": "A", "text": "Dormant, metabolically inactive cells"},
+            {"label": "B", "text": "Rapidly dividing cells"},
+            {"label": "C", "text": "Cells building lots of new wall"},
+            {"label": "D", "text": "Cells rapidly taking up nutrients"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Dormant cells are least vulnerable to drugs that target active processes."
+        },
+        {
+          "level": 2,
+          "prompt": "Does the biofilm's extracellular matrix (EPS) speed up or slow the diffusion of antimicrobials?",
+          "choices": [
+            {"label": "A", "text": "It slows/hinders diffusion of many chemicals"},
+            {"label": "B", "text": "It speeds diffusion so drugs act faster"},
+            {"label": "C", "text": "It has no effect on diffusion"},
+            {"label": "D", "text": "It only affects nutrients, never drugs"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The EPS hinders diffusion, contradicting the claim that it speeds it up."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'cells are more metabolically active at the base of a biofilm' incorrect?",
+          "choices": [
+            {"label": "A", "text": "Cells deep at the base face limited nutrients and oxygen, so they are actually less active"},
+            {"label": "B", "text": "The base has the most nutrients and oxygen"},
+            {"label": "C", "text": "The base is the most metabolically active zone"},
+            {"label": "D", "text": "Metabolic activity is identical throughout the biofilm"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Nutrient/oxygen limits make basal cells less active, not more."
+        }
+      ]
     },
     {
       "id": "bbls-x172",
@@ -472,7 +1308,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q9 = D."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q9 = D.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Bacteria secrete autoinducers whose concentration rises as more cells accumulate. Detecting that concentration tells them about:",
+          "choices": [
+            {"label": "A", "text": "How crowded the local population is"},
+            {"label": "B", "text": "The outside air temperature"},
+            {"label": "C", "text": "The water's pH"},
+            {"label": "D", "text": "The amount of sunlight"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Autoinducer concentration reports how crowded the population is."
+        },
+        {
+          "level": 2,
+          "prompt": "Does quorum sensing directly measure nutrient availability?",
+          "choices": [
+            {"label": "A", "text": "No; it senses autoinducer concentration, reflecting crowding"},
+            {"label": "B", "text": "Yes; it measures nutrient levels directly"},
+            {"label": "C", "text": "Yes; it measures water flow"},
+            {"label": "D", "text": "Yes; it counts nearby nutrients only"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Quorum sensing gauges autoinducer concentration, not nutrients directly."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'the size of the population' a weaker answer than population density?",
+          "choices": [
+            {"label": "A", "text": "Autoinducers report concentration (cells per volume, i.e., density), not an absolute head count independent of space"},
+            {"label": "B", "text": "Autoinducers count total cells regardless of volume"},
+            {"label": "C", "text": "Quorum sensing measures water-flow speed"},
+            {"label": "D", "text": "Quorum sensing ignores cell numbers entirely"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Autoinducer signals reflect density (concentration), which is not the same as raw population size."
+        }
+      ]
     },
     {
       "id": "bbls-x173",
@@ -492,7 +1366,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q10 = A."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q10 = A.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Signaling molecules such as autoinducers typically act by:",
+          "choices": [
+            {"label": "A", "text": "Binding receptor proteins that then change gene expression"},
+            {"label": "B", "text": "Attaching directly to DNA themselves"},
+            {"label": "C", "text": "Physically cutting the chromosome"},
+            {"label": "D", "text": "Replacing the ribosomes"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Autoinducers work through receptor proteins, not by binding DNA directly."
+        },
+        {
+          "level": 2,
+          "prompt": "Are the statements 'they can activate the secreting cell' and 'AHLs are gram-negative autoinducers' true?",
+          "choices": [
+            {"label": "A", "text": "Yes, both are accurate statements about autoinducers"},
+            {"label": "B", "text": "No, both are false"},
+            {"label": "C", "text": "Only the first is true"},
+            {"label": "D", "text": "Only the second is true"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Both statements are true, so neither is the 'incorrect' one."
+        },
+        {
+          "level": 3,
+          "prompt": "Since the question asks for the INCORRECT statement, why is 'autoinducers may stimulate virulence factors' not the answer?",
+          "choices": [
+            {"label": "A", "text": "That statement is true, so it cannot be the incorrect one"},
+            {"label": "B", "text": "It is false because autoinducers never affect virulence"},
+            {"label": "C", "text": "Virulence factors have nothing to do with bacteria"},
+            {"label": "D", "text": "It means the same thing as binding DNA"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Autoinducers do regulate virulence factors, so this true statement is not the exception."
+        }
+      ]
     },
     {
       "id": "bbls-x174",
@@ -512,7 +1424,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q11 = B."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q11 = B.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In a thioglycolate tube, oxygen is highest at the top and lowest at the bottom, so where a microbe grows reveals its:",
+          "choices": [
+            {"label": "A", "text": "Relationship to oxygen (its oxygen requirement or tolerance)"},
+            {"label": "B", "text": "Optimal pH"},
+            {"label": "C", "text": "Salt tolerance"},
+            {"label": "D", "text": "Generation time"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Growth position in the oxygen gradient shows the organism's oxygen relationship."
+        },
+        {
+          "level": 2,
+          "prompt": "If an organism grew ONLY at the very top of the tube, it would be:",
+          "choices": [
+            {"label": "A", "text": "An obligate aerobe (needs oxygen)"},
+            {"label": "B", "text": "An obligate anaerobe"},
+            {"label": "C", "text": "Indifferent to oxygen"},
+            {"label": "D", "text": "A halophile"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Growth only at the top marks an obligate aerobe; growth throughout is a different pattern."
+        },
+        {
+          "level": 3,
+          "prompt": "Why does 'the organisms die in the presence of oxygen' contradict this result?",
+          "choices": [
+            {"label": "A", "text": "They grew densely at the oxygen-rich surface, so oxygen is clearly not lethal to them"},
+            {"label": "B", "text": "They showed no growth at the surface"},
+            {"label": "C", "text": "Oxygen prevented all their growth"},
+            {"label": "D", "text": "They grew only at the bottom"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Dense surface growth shows oxygen is tolerated, ruling out oxygen being lethal."
+        }
+      ]
     },
     {
       "id": "bbls-x175",
@@ -532,7 +1482,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q12 = A."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q12 = A.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In a thioglycolate tube, growth confined to the oxygen-poor bottom indicates the organism:",
+          "choices": [
+            {"label": "A", "text": "Grows only where oxygen is absent"},
+            {"label": "B", "text": "Requires oxygen to grow"},
+            {"label": "C", "text": "Grows best at the oxygen-rich surface"},
+            {"label": "D", "text": "Grows evenly regardless of oxygen"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Bottom-only growth means the organism grows where oxygen is absent."
+        },
+        {
+          "level": 2,
+          "prompt": "Would an obligate aerobe grow at the oxygen-poor bottom?",
+          "choices": [
+            {"label": "A", "text": "No; an obligate aerobe needs oxygen and would grow near the top"},
+            {"label": "B", "text": "Yes; obligate aerobes prefer the bottom"},
+            {"label": "C", "text": "Yes; oxygen is highest at the bottom"},
+            {"label": "D", "text": "Only if the tube is shaken"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Obligate aerobes need oxygen, so bottom-only growth is not theirs."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'aerotolerant' not the best fit for growth ONLY at the bottom?",
+          "choices": [
+            {"label": "A", "text": "Aerotolerant anaerobes grow evenly throughout the tube because they tolerate oxygen, not just at the bottom"},
+            {"label": "B", "text": "Aerotolerant organisms avoid oxygen entirely"},
+            {"label": "C", "text": "Aerotolerant means requiring oxygen"},
+            {"label": "D", "text": "Aerotolerant organisms grow only at the surface"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Aerotolerant organisms grow throughout, unlike the bottom-only pattern shown."
+        }
+      ]
     },
     {
       "id": "bbls-x176",
@@ -552,7 +1540,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q13 = B."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q13 = B.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The terms aerobe and anaerobe classify microbes by their relationship to which gas?",
+          "choices": [
+            {"label": "A", "text": "Oxygen"},
+            {"label": "B", "text": "Carbon dioxide"},
+            {"label": "C", "text": "Nitrogen"},
+            {"label": "D", "text": "Hydrogen"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Aerobe/anaerobe classifications are based on oxygen."
+        },
+        {
+          "level": 2,
+          "prompt": "Since P. aeruginosa does not grow without oxygen, oxygen is for it:",
+          "choices": [
+            {"label": "A", "text": "Absolutely required"},
+            {"label": "B", "text": "Toxic and lethal"},
+            {"label": "C", "text": "Completely optional"},
+            {"label": "D", "text": "Entirely irrelevant"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Being unable to grow without oxygen means oxygen is required."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'facultative anaerobe' incorrect for P. aeruginosa here?",
+          "choices": [
+            {"label": "A", "text": "A facultative anaerobe can grow without oxygen, but this organism cannot"},
+            {"label": "B", "text": "Facultative anaerobes require oxygen absolutely"},
+            {"label": "C", "text": "Facultative anaerobes are killed by oxygen"},
+            {"label": "D", "text": "Facultative anaerobes never use oxygen"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Facultative anaerobes grow with or without oxygen, unlike this strictly oxygen-dependent organism."
+        }
+      ]
     },
     {
       "id": "bbls-x177",
@@ -572,7 +1598,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q14 = D."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q14 = D.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Being able to grow in open air (outside an anaerobic chamber) shows an organism can at least do what with oxygen?",
+          "choices": [
+            {"label": "A", "text": "Tolerate its presence"},
+            {"label": "B", "text": "Absolutely require it"},
+            {"label": "C", "text": "Be killed instantly by it"},
+            {"label": "D", "text": "Photosynthesize with it"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Growing in air shows the organism can tolerate oxygen."
+        },
+        {
+          "level": 2,
+          "prompt": "Does S. mutans, which does not use oxygen for energy, require oxygen (making it an obligate aerobe)?",
+          "choices": [
+            {"label": "A", "text": "No; it does not use oxygen, so it is not an obligate aerobe"},
+            {"label": "B", "text": "Yes; it strictly requires oxygen"},
+            {"label": "C", "text": "Yes; it respires using oxygen"},
+            {"label": "D", "text": "Only in an anaerobic chamber"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "S. mutans does not use oxygen, so it is not an obligate aerobe."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'obligate anaerobe' incorrect for S. mutans?",
+          "choices": [
+            {"label": "A", "text": "Obligate anaerobes are harmed by oxygen and cannot grow in air, yet S. mutans grows outside an anaerobic chamber"},
+            {"label": "B", "text": "Obligate anaerobes thrive in open air"},
+            {"label": "C", "text": "Obligate anaerobes require oxygen"},
+            {"label": "D", "text": "Obligate anaerobes are full of catalase"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Because S. mutans grows in air, it is not an oxygen-intolerant obligate anaerobe."
+        }
+      ]
     },
     {
       "id": "bbls-x178",
@@ -592,7 +1656,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q15 = C."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q15 = C.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A microbe that grows best with an elevated concentration of carbon dioxide is called a:",
+          "choices": [
+            {"label": "A", "text": "Capnophile"},
+            {"label": "B", "text": "Halophile"},
+            {"label": "C", "text": "Acidophile"},
+            {"label": "D", "text": "Thermophile"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "An organism needing high CO2 is a capnophile."
+        },
+        {
+          "level": 2,
+          "prompt": "The prefix 'capno-' refers to a requirement for which gas?",
+          "choices": [
+            {"label": "A", "text": "Carbon dioxide"},
+            {"label": "B", "text": "Oxygen"},
+            {"label": "C", "text": "Nitrogen"},
+            {"label": "D", "text": "Methane"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "'Capno-' relates to carbon dioxide, matching a capnophile's need."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'It uses CO2 as a final electron acceptor in respiration' the wrong reason for needing CO2?",
+          "choices": [
+            {"label": "A", "text": "Requiring elevated CO2 for growth (capnophily) is not the same as using CO2 as a respiratory electron acceptor"},
+            {"label": "B", "text": "All capnophiles respire using CO2 as the electron acceptor"},
+            {"label": "C", "text": "CO2 is the universal electron acceptor for bacteria"},
+            {"label": "D", "text": "It proves the organism is a strict anaerobe"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Capnophily is a growth requirement for CO2, distinct from using CO2 in respiration."
+        }
+      ]
     },
     {
       "id": "bbls-x179",
@@ -612,7 +1714,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q16 = B."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q16 = B.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Microbes that grow best at very low (acidic) pH are called:",
+          "choices": [
+            {"label": "A", "text": "Acidophiles"},
+            {"label": "B", "text": "Alkaliphiles"},
+            {"label": "C", "text": "Neutrophiles"},
+            {"label": "D", "text": "Halophiles"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Acid-loving organisms are acidophiles."
+        },
+        {
+          "level": 2,
+          "prompt": "Is a pH of 1 to 2 strongly acidic or strongly basic?",
+          "choices": [
+            {"label": "A", "text": "Strongly acidic"},
+            {"label": "B", "text": "Strongly basic"},
+            {"label": "C", "text": "Exactly neutral"},
+            {"label": "D", "text": "Slightly basic"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "pH 1-2 is strongly acidic, favoring acidophiles."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'alkaliphiles' incorrect for organisms growing at pH 1 to 2?",
+          "choices": [
+            {"label": "A", "text": "Alkaliphiles prefer high (basic) pH, the opposite of acidic pH 1-2"},
+            {"label": "B", "text": "Alkaliphiles thrive in acidic conditions"},
+            {"label": "C", "text": "pH 1-2 is actually basic"},
+            {"label": "D", "text": "Alkaliphiles grow only at neutral pH"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Alkaliphiles favor basic pH, so they do not fit an acidic pH 1-2 habitat."
+        }
+      ]
     },
     {
       "id": "bbls-x180",
@@ -632,7 +1772,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q17 = A."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q17 = A.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Microbes adapted to grow at high (basic) pH are called:",
+          "choices": [
+            {"label": "A", "text": "Alkaliphiles"},
+            {"label": "B", "text": "Acidophiles"},
+            {"label": "C", "text": "Neutrophiles"},
+            {"label": "D", "text": "Mesophiles"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Base-loving organisms are alkaliphiles."
+        },
+        {
+          "level": 2,
+          "prompt": "Is a water pH close to 10 acidic, neutral, or basic?",
+          "choices": [
+            {"label": "A", "text": "Basic"},
+            {"label": "B", "text": "Acidic"},
+            {"label": "C", "text": "Exactly neutral"},
+            {"label": "D", "text": "Slightly acidic"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "pH 10 is basic, favoring alkaliphiles."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'neutrophiles' incorrect for water at pH 10?",
+          "choices": [
+            {"label": "A", "text": "Neutrophiles prefer near-neutral pH around 7, not the basic pH 10"},
+            {"label": "B", "text": "Neutrophiles prefer strongly basic pH"},
+            {"label": "C", "text": "pH 10 is essentially neutral"},
+            {"label": "D", "text": "Neutrophiles cannot survive at pH 7"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Neutrophiles favor pH near 7, so pH 10 is outside their optimum."
+        }
+      ]
     },
     {
       "id": "bbls-x181",
@@ -652,7 +1830,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q18 = B."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q18 = B.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "An acidophile would be found in an environment that is:",
+          "choices": [
+            {"label": "A", "text": "Strongly acidic (low pH)"},
+            {"label": "B", "text": "Strongly basic (high pH)"},
+            {"label": "C", "text": "Exactly neutral"},
+            {"label": "D", "text": "Completely salt-free"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Acidophiles inhabit strongly acidic (low-pH) environments."
+        },
+        {
+          "level": 2,
+          "prompt": "Is human blood at pH 7.2 acidic or near-neutral?",
+          "choices": [
+            {"label": "A", "text": "Near-neutral, so it would not host an acidophile"},
+            {"label": "B", "text": "Strongly acidic"},
+            {"label": "C", "text": "Strongly basic"},
+            {"label": "D", "text": "Identical to pH 1.5"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Blood at pH 7.2 is near-neutral, unsuitable for an acidophile."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'human intestine at pH 8.5' not where you would find an acidophile?",
+          "choices": [
+            {"label": "A", "text": "pH 8.5 is basic, which is unsuitable for an acid-loving organism"},
+            {"label": "B", "text": "pH 8.5 is strongly acidic"},
+            {"label": "C", "text": "The intestine is the most acidic site listed"},
+            {"label": "D", "text": "Acidophiles prefer basic environments"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "pH 8.5 is basic, so it does not suit an acidophile."
+        }
+      ]
     },
     {
       "id": "bbls-x182",
@@ -672,7 +1888,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q19 = D."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q19 = D.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Microbes able to grow at cold refrigerator temperatures are generally:",
+          "choices": [
+            {"label": "A", "text": "Cold-tolerant (psychrotrophic) organisms"},
+            {"label": "B", "text": "Heat-loving thermophiles"},
+            {"label": "C", "text": "Acid-loving acidophiles"},
+            {"label": "D", "text": "Salt-loving halophiles"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Refrigerator spoilage organisms tolerate cold (psychrotrophic)."
+        },
+        {
+          "level": 2,
+          "prompt": "Refrigeration slows spoilage, so organisms that still grow there must tolerate what?",
+          "choices": [
+            {"label": "A", "text": "Cold temperatures"},
+            {"label": "B", "text": "High heat"},
+            {"label": "C", "text": "Low pH"},
+            {"label": "D", "text": "High salt"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Growing in a fridge requires cold tolerance."
+        },
+        {
+          "level": 3,
+          "prompt": "Why are 'thermophiles' not the likely refrigerator contaminants?",
+          "choices": [
+            {"label": "A", "text": "Thermophiles require high temperatures and would not grow in a cold refrigerator"},
+            {"label": "B", "text": "Thermophiles grow best when refrigerated"},
+            {"label": "C", "text": "Thermophiles prefer about 4 degrees C"},
+            {"label": "D", "text": "Thermophiles cannot grow above 20 degrees C"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Thermophiles need heat, so they will not grow in the cold."
+        }
+      ]
     },
     {
       "id": "bbls-x183",
@@ -692,7 +1946,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q20 = C."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q20 = C.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Microbes that grow best at moderate temperatures (roughly 20-45 degrees C, including body temperature) are:",
+          "choices": [
+            {"label": "A", "text": "Mesophiles"},
+            {"label": "B", "text": "Psychrophiles"},
+            {"label": "C", "text": "Thermophiles"},
+            {"label": "D", "text": "Hyperthermophiles"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Moderate-temperature organisms are mesophiles."
+        },
+        {
+          "level": 2,
+          "prompt": "About 39 degrees C is closest to which familiar temperature?",
+          "choices": [
+            {"label": "A", "text": "Human body temperature, a moderate temperature"},
+            {"label": "B", "text": "Freezing point of water"},
+            {"label": "C", "text": "Boiling point of water"},
+            {"label": "D", "text": "A deep-sea vent temperature"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "39 degrees C is near body temperature, a moderate range."
+        },
+        {
+          "level": 3,
+          "prompt": "Why are 'thermophiles' not the best answer for 39 degrees C?",
+          "choices": [
+            {"label": "A", "text": "Thermophiles are adapted to much hotter conditions (roughly 50-70 degrees C), well above 39"},
+            {"label": "B", "text": "Thermophiles grow best right at 39 degrees C"},
+            {"label": "C", "text": "39 degrees C is extremely hot for any microbe"},
+            {"label": "D", "text": "Thermophiles prefer refrigeration"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Thermophiles need higher heat, so 39 degrees C favors mesophiles instead."
+        }
+      ]
     },
     {
       "id": "bbls-x184",
@@ -712,7 +2004,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q21 = C."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q21 = C.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A hyperthermophile requires an environment that is:",
+          "choices": [
+            {"label": "A", "text": "Extremely hot"},
+            {"label": "B", "text": "Freezing cold"},
+            {"label": "C", "text": "Only mildly warm"},
+            {"label": "D", "text": "At normal room temperature"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Hyperthermophiles grow at extremely high temperatures."
+        },
+        {
+          "level": 2,
+          "prompt": "Is the human body (about 37 degrees C) hot enough for a hyperthermophile?",
+          "choices": [
+            {"label": "A", "text": "No; it is far too cool for a hyperthermophile"},
+            {"label": "B", "text": "Yes; body temperature is ideal for them"},
+            {"label": "C", "text": "Yes; it exceeds their needs"},
+            {"label": "D", "text": "Only during a fever"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Body temperature is far below a hyperthermophile's requirement."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'warm ocean water in Florida' not suitable for a hyperthermophile?",
+          "choices": [
+            {"label": "A", "text": "Warm surface seawater is far cooler than the extreme heat hyperthermophiles require"},
+            {"label": "B", "text": "Florida seawater regularly exceeds 80 degrees C"},
+            {"label": "C", "text": "It is the hottest environment listed"},
+            {"label": "D", "text": "Hyperthermophiles prefer mild warmth"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Surface seawater is far too cool for a hyperthermophile."
+        }
+      ]
     },
     {
       "id": "bbls-x185",
@@ -732,7 +2062,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q22 = A."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q22 = A.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Psychrophiles are adapted to grow best at:",
+          "choices": [
+            {"label": "A", "text": "Cold temperatures"},
+            {"label": "B", "text": "High temperatures"},
+            {"label": "C", "text": "A specific neutral pH only"},
+            {"label": "D", "text": "A specific high salt only"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Psychrophiles thrive in the cold."
+        },
+        {
+          "level": 2,
+          "prompt": "Would a 35 degrees C incubator or room-temperature yogurt culture favor a cold-loving organism?",
+          "choices": [
+            {"label": "A", "text": "No; both are too warm for a psychrophile"},
+            {"label": "B", "text": "Yes; 35 degrees C is ideal for psychrophiles"},
+            {"label": "C", "text": "Yes; room temperature is freezing to them"},
+            {"label": "D", "text": "Only the yogurt would"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Both settings are warm, unsuitable for cold-loving psychrophiles."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'salt pond in the desert at 34 degrees C' unsuitable for psychrophiles?",
+          "choices": [
+            {"label": "A", "text": "34 degrees C is warm, not the cold environment psychrophiles require"},
+            {"label": "B", "text": "34 degrees C is essentially freezing"},
+            {"label": "C", "text": "Deserts are the coldest habitats on Earth"},
+            {"label": "D", "text": "Psychrophiles specifically prefer 34 degrees C"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A 34 degrees C pond is warm, so it does not suit cold-loving organisms."
+        }
+      ]
     },
     {
       "id": "bbls-x186",
@@ -752,7 +2120,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q23 = D."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q23 = D.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Adding lots of sugar or salt, or drying a food, preserves it mainly by:",
+          "choices": [
+            {"label": "A", "text": "Lowering the water available for microbial growth"},
+            {"label": "B", "text": "Raising the storage temperature"},
+            {"label": "C", "text": "Adding natural antibiotics"},
+            {"label": "D", "text": "Increasing the oxygen content"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "These methods reduce available water (water activity) that microbes need."
+        },
+        {
+          "level": 2,
+          "prompt": "Microbes need available water to grow; a high-sugar jam or dried meat provides how much?",
+          "choices": [
+            {"label": "A", "text": "Very little available water"},
+            {"label": "B", "text": "An abundance of free water"},
+            {"label": "C", "text": "The same water as fresh food"},
+            {"label": "D", "text": "More water than fresh fruit"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "High-sugar or dried foods have low available water, limiting microbial growth."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'naturally occurring antibiotics' not why jams resist spoilage?",
+          "choices": [
+            {"label": "A", "text": "Jams and dried meats are preserved by low water availability, not by containing antibiotics"},
+            {"label": "B", "text": "Fruit jam is naturally full of antibiotics"},
+            {"label": "C", "text": "Antibiotics are the main preservative in dried meat"},
+            {"label": "D", "text": "Sugar itself acts as an antibiotic"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Preservation here comes from low water activity, not antibiotics."
+        }
+      ]
     },
     {
       "id": "bbls-x187",
@@ -772,7 +2178,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q24 = C."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q24 = C.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Microbes able to grow in elevated salt concentrations are described as:",
+          "choices": [
+            {"label": "A", "text": "Salt-tolerant (halotolerant)"},
+            {"label": "B", "text": "Acid-loving"},
+            {"label": "C", "text": "Heat-loving"},
+            {"label": "D", "text": "Pressure-loving"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Organisms that grow in high salt are halotolerant."
+        },
+        {
+          "level": 2,
+          "prompt": "Salt marshes are characterized by elevated levels of what?",
+          "choices": [
+            {"label": "A", "text": "Salt (high salinity)"},
+            {"label": "B", "text": "Acid"},
+            {"label": "C", "text": "Heat"},
+            {"label": "D", "text": "Pressure"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Salt marshes have high salinity, selecting for salt tolerance."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'barophiles' not the best answer for salt-marsh bacteria?",
+          "choices": [
+            {"label": "A", "text": "Barophiles are adapted to high pressure (such as the deep sea), not high salt"},
+            {"label": "B", "text": "Barophiles specifically love high salt"},
+            {"label": "C", "text": "Salt marshes are extreme high-pressure habitats"},
+            {"label": "D", "text": "Barophile is another word for salt-tolerant"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Barophiles favor high pressure, whereas salt marshes select for salt tolerance."
+        }
+      ]
     },
     {
       "id": "bbls-x188",
@@ -792,7 +2236,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q25 = D."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q25 = D.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A culture medium that inhibits the growth of some organisms while permitting others is called:",
+          "choices": [
+            {"label": "A", "text": "Selective"},
+            {"label": "B", "text": "Differential"},
+            {"label": "C", "text": "Chemically defined"},
+            {"label": "D", "text": "Minimal"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A medium that suppresses some organisms is selective."
+        },
+        {
+          "level": 2,
+          "prompt": "EMB also makes lactose fermenters form colored colonies. A medium that visibly distinguishes organisms is:",
+          "choices": [
+            {"label": "A", "text": "Differential"},
+            {"label": "B", "text": "Purely selective with no distinction"},
+            {"label": "C", "text": "Chemically defined"},
+            {"label": "D", "text": "A minimal medium"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Distinguishing organisms by appearance makes a medium differential."
+        },
+        {
+          "level": 3,
+          "prompt": "Why is 'a differential medium only' an incomplete description of EMB?",
+          "choices": [
+            {"label": "A", "text": "EMB also selectively inhibits gram-positive bacteria, so it is more than differential alone"},
+            {"label": "B", "text": "EMB does not distinguish colonies at all"},
+            {"label": "C", "text": "EMB inhibits nothing, so it cannot be selective"},
+            {"label": "D", "text": "EMB has a completely defined chemical formula"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "EMB is both selective and differential (and complex), so 'differential only' understates it."
+        }
+      ]
     },
     {
       "id": "bbls-x189",
@@ -812,7 +2294,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/microbiology/pages/9-multiple-choice",
       "answerProvenance": "source-answer-key",
-      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q26 = D."
+      "notes": "Stem/options verbatim from OpenStax. correctAnswer from OpenStax Answer Key (pages/chapter-9), Ch.9 MC Q26 = D.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A microbe that requires special, complex nutrients in order to grow is described as:",
+          "choices": [
+            {"label": "A", "text": "Fastidious"},
+            {"label": "B", "text": "Fast-growing"},
+            {"label": "C", "text": "Motile"},
+            {"label": "D", "text": "Thermophilic"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "An organism with demanding nutrient needs is fastidious."
+        },
+        {
+          "level": 2,
+          "prompt": "Needing growth factors specially released into chocolate agar reflects what kind of requirement?",
+          "choices": [
+            {"label": "A", "text": "A complex, demanding nutritional requirement"},
+            {"label": "B", "text": "A need for very low pH"},
+            {"label": "C", "text": "A need for high temperature"},
+            {"label": "D", "text": "A need to avoid all oxygen"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Requiring released growth factors is a nutritional demand, i.e., fastidiousness."
+        },
+        {
+          "level": 3,
+          "prompt": "Why does needing chocolate agar's growth factors NOT indicate 'an obligate anaerobe'?",
+          "choices": [
+            {"label": "A", "text": "Requiring specific nutrients (fastidious) concerns nutrition, not the ability to tolerate oxygen"},
+            {"label": "B", "text": "Chocolate agar proves the organism cannot tolerate oxygen"},
+            {"label": "C", "text": "Released growth factors indicate anaerobiosis"},
+            {"label": "D", "text": "Fastidious is another word for obligate anaerobe"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "The chocolate-agar requirement is about nutrition, unrelated to oxygen tolerance."
+        }
+      ]
     }
   ]
 }

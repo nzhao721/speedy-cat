@@ -23,8 +23,10 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -314,6 +316,162 @@ fun PassageCard(
 
                 loading -> Text("Loading passage…", color = MaterialTheme.colorScheme.onSurfaceVariant)
                 else -> Text("Passage unavailable.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+        }
+    }
+}
+
+/**
+ * SpeedyCAT graduated hint ladder for one practice question. Each hint is a
+ * self-contained 4-choice SUBQUESTION that scaffolds toward the main question
+ * without revealing its answer. The learner works through them ONE AT A TIME:
+ * they MUST answer the currently-revealed subquestion (no skip) before revealing
+ * the next tier or re-answering the main question. Presentational only — the
+ * caller (PracticeActivity) owns [progress], the trigger paths and the
+ * assisted/hintLevelUsed tracking. Mirrors the desktop `HintLadder.svelte`.
+ */
+@Composable
+fun HintLadderCard(
+    hints: List<HintSubquestion>,
+    progress: HintProgress,
+    pendingChoice: String,
+    onRequestHint: () -> Unit,
+    onPendingChoiceChange: (String) -> Unit,
+    onSubmitHint: (index: Int, label: String) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Surface(
+        color = MaterialTheme.colorScheme.surfaceVariant,
+        shape = RoundedCornerShape(10.dp),
+        modifier = modifier.fillMaxWidth(),
+    ) {
+        Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            if (progress.revealed == 0) {
+                Text(
+                    "Stuck? Work through a guided hint before answering.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                Button(onClick = onRequestHint) { Text("\uD83D\uDCA1 Request a hint") }
+            } else {
+                Text(
+                    "Guided hints",
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.Bold,
+                )
+                for (i in 0 until minOf(progress.revealed, hints.size)) {
+                    val hint = hints[i]
+                    val answered = progress.picks[i] != null
+                    val isCurrent = i == progress.revealed - 1
+                    Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
+                            Text("Hint ${i + 1}", fontWeight = FontWeight.Bold, style = MaterialTheme.typography.bodyMedium)
+                            Badge("Level ${hint.level.takeIf { it in 1..3 } ?: (i + 1)}")
+                        }
+                        Text(hint.prompt, style = MaterialTheme.typography.bodyMedium)
+                        Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                            for (c in hint.choices) {
+                                HintChoiceRow(
+                                    choice = c,
+                                    correctAnswer = hint.correctAnswer,
+                                    picked = progress.picks[i],
+                                    pending = if (isCurrent && !answered) pendingChoice else "",
+                                    answered = answered,
+                                    enabled = isCurrent && !answered,
+                                    onSelect = { onPendingChoiceChange(c.label) },
+                                )
+                            }
+                        }
+                        if (answered) {
+                            val correct = hintAnswerCorrect(hint, progress.picks[i] ?: "")
+                            Text(
+                                text =
+                                    if (correct) {
+                                        "Correct"
+                                    } else {
+                                        "Not quite — the answer to this hint is ${hint.correctAnswer}"
+                                    },
+                                color = if (correct) CorrectGreen else IncorrectRed,
+                                fontWeight = FontWeight.Bold,
+                                style = MaterialTheme.typography.bodySmall,
+                            )
+                            if (hint.rationale.isNotEmpty()) {
+                                Text(
+                                    hint.rationale,
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                )
+                            }
+                        } else if (isCurrent) {
+                            Button(
+                                enabled = pendingChoice.isNotEmpty(),
+                                onClick = { if (pendingChoice.isNotEmpty()) onSubmitHint(i, pendingChoice) },
+                            ) {
+                                Text("Submit hint answer")
+                            }
+                            Text(
+                                "Answer this hint to continue.",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            )
+                        }
+                    }
+                }
+                when {
+                    canRevealNextHint(hints, progress) ->
+                        OutlinedButton(onClick = onRequestHint) { Text("\uD83D\uDCA1 Reveal next hint") }
+                    progress.revealed >= hints.size && pendingHintIndex(progress) == -1 ->
+                        Text(
+                            "You've worked through all the hints — now answer the question above.",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun HintChoiceRow(
+    choice: HintChoice,
+    correctAnswer: String,
+    picked: String?,
+    pending: String,
+    answered: Boolean,
+    enabled: Boolean,
+    onSelect: () -> Unit,
+) {
+    val isCorrect = choice.label == correctAnswer
+    val activeColor =
+        when {
+            answered && isCorrect -> CorrectGreen
+            answered && choice.label == picked && !isCorrect -> IncorrectRed
+            !answered && choice.label == pending -> MaterialTheme.colorScheme.primary
+            else -> null
+        }
+    val border = activeColor ?: MaterialTheme.colorScheme.outlineVariant
+    val background = activeColor?.copy(alpha = 0.18f) ?: MaterialTheme.colorScheme.surface
+    Surface(
+        color = background,
+        shape = RoundedCornerShape(7.dp),
+        modifier =
+            Modifier
+                .fillMaxWidth()
+                .border(2.dp, border, RoundedCornerShape(7.dp))
+                .then(if (enabled) Modifier.clickable(onClick = onSelect) else Modifier),
+    ) {
+        Row(
+            modifier = Modifier.padding(horizontal = 10.dp, vertical = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Text(choice.label, fontWeight = FontWeight.Bold, style = MaterialTheme.typography.bodyMedium)
+            Text(choice.text, style = MaterialTheme.typography.bodyMedium, modifier = Modifier.weight(1f))
+            if (answered && isCorrect) {
+                Text("\u2713", fontWeight = FontWeight.Bold)
+            } else if (answered && choice.label == picked) {
+                Text("\u2717", fontWeight = FontWeight.Bold)
             }
         }
     }

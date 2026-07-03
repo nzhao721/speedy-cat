@@ -83,7 +83,12 @@ class PracticeViewModel(
         selectedAnswer: String,
         correct: Boolean,
         timeSeconds: Int,
+        hintLevelUsed: Int = 0,
+        assisted: Boolean = false,
     ) = withContext(Dispatchers.IO) {
+        // Keep the flags internally consistent (assisted ⇔ reached level 3),
+        // clamped to 0..3, regardless of what the caller passes.
+        val level = hintLevelUsed.coerceIn(0, 3)
         repo.recordAttempt(
             Attempt(
                 id = "$sessionId:${question.id}",
@@ -95,6 +100,8 @@ class PracticeViewModel(
                 section = question.section,
                 topic = primaryTopic(question),
                 answeredAt = System.currentTimeMillis() / 1000,
+                hintLevelUsed = level,
+                assisted = assisted || level >= 3,
             ),
         )
     }

@@ -56,6 +56,11 @@ const vitestConfig = defineVitestConfig({
             include: ["lib/**", "routes/**", "editable/**", "editor/**", "html-filter/**", "reviewer/**", "tools/**"],
         },
     },
+    // Under Vitest, resolve packages' `browser` entry points (notably Svelte's
+    // client runtime) so component tests can mount() a component and run its
+    // onMount lifecycle in jsdom. Guarded by VITEST so the dev server / build
+    // SSR resolution is left untouched.
+    resolve: process.env.VITEST ? { conditions: ["browser"] } : {},
 });
 
 export default mergeConfig(viteConfig, vitestConfig);

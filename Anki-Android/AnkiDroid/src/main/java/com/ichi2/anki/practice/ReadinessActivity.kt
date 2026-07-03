@@ -247,11 +247,26 @@ private fun FullLengthResultCard(result: FullLengthSummary) {
                 "${result.totalCorrect} / ${result.totalQuestions} correct",
                 style = MaterialTheme.typography.bodyMedium,
             )
+            if (result.overallScaledScore != null) {
+                Text(
+                    "Est. MCAT score: ${result.overallScaledScore} (472\u2013528)",
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.Medium,
+                )
+            }
             for (section in result.sections) {
                 val label = McatSection.fromDb(section.section)?.shortLabel ?: section.section
+                val scaled = section.scaledScore?.let { "  ·  est. $it" } ?: ""
                 Text(
-                    "• $label: ${section.correct} / ${section.total}",
+                    "• $label: ${section.correct} / ${section.total}$scaled",
                     style = MaterialTheme.typography.bodyMedium,
+                )
+            }
+            if (result.overallScaledScore != null) {
+                Text(
+                    "Scaled scores are an averaged raw\u2192scaled estimate ($SCALED_SCORE_SOURCE), not an official score.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
         }

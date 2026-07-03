@@ -440,4 +440,68 @@ class PracticeLogicTest {
             s1.map { q -> q.choices.map { it.text } } == s2.map { q -> q.choices.map { it.text } }
         assertThat(sameSelection && sameChoiceOrder, equalTo(false))
     }
+
+    // ---- Graduated hint ladder --------------------------------------------
+
+    private fun hint(
+        level: Int,
+        correct: String = "A",
+    ) = HintSubquestion(
+        level = level,
+        prompt = "prompt L$level",
+        choices =
+            listOf(
+                HintChoice("A", "a"),
+                HintChoice("B", "b"),
+                HintChoice("C", "c"),
+                HintChoice("D", "d"),
+            ),
+        correctAnswer = correct,
+        rationale = "because",
+    )
+
+    private val ladder = listOf(hint(1), hint(2), hint(3))
+
+    @Test
+    fun `hintLevelReached tracks the highest tier and clamps to 0 through 3`() {
+        assertThat(hintLevelReached(ladder, 0), equalTo(0))
+        assertThat(hintLevelReached(ladder, 1), equalTo(1))
+        assertThat(hintLevelReached(ladder, 2), equalTo(2))
+        assertThat(hintLevelReached(ladder, 3), equalTo(3))
+        // Falls back to 1-based position when a level is missing/out of range.
+        val noLevels = listOf(hint(0), hint(0), hint(0))
+        assertThat(hintLevelReached(noLevels, 3), equalTo(3))
+    }
+
+    @Test
+    fun `assisted is true only once level 3 is reached`() {
+        assertThat(isAssisted(hintLevelReached(ladder, 1)), equalTo(false))
+        assertThat(isAssisted(hintLevelReached(ladder, 2)), equalTo(false))
+        assertThat(isAssisted(hintLevelReached(ladder, 3)), equalTo(true))
+    }
+
+    @Test
+    fun `no-skip cannot reveal the next hint until the current one is answered`() {
+        val pending = HintProgress(revealed = 1, picks = emptyMap())
+        assertThat(pendingHintIndex(pending), equalTo(0))
+        assertThat(canRevealNextHint(ladder, pending), equalTo(false))
+
+        val answered = HintProgress(revealed = 1, picks = mapOf(0 to "A"))
+        assertThat(pendingHintIndex(answered), equalTo(-1))
+        assertThat(canRevealNextHint(ladder, answered), equalTo(true))
+
+        val allDone = HintProgress(revealed = 3, picks = mapOf(0 to "A", 1 to "B", 2 to "C"))
+        assertThat(canRevealNextHint(ladder, allDone), equalTo(false))
+    }
+
+    @Test
+    fun `no-skip cannot submit the main question while a hint is unanswered`() {
+        val pending = HintProgress(revealed = 2, picks = mapOf(0 to "A"))
+        assertThat(canSubmitMain("C", pending), equalTo(false))
+        val cleared = HintProgress(revealed = 2, picks = mapOf(0 to "A", 1 to "B"))
+        assertThat(canSubmitMain("C", cleared), equalTo(true))
+        assertThat(canSubmitMain("", cleared), equalTo(false))
+        // No ladder engaged: a selection submits immediately.
+        assertThat(canSubmitMain("C", HintProgress()), equalTo(true))
+    }
 }

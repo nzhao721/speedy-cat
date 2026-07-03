@@ -32,7 +32,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q5). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q5). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Pollen carries the male gametes of a flowering plant. Which general part of the flower produces pollen?",
+          "choices": [
+            {"label": "A", "text": "the male reproductive organ"},
+            {"label": "B", "text": "the female reproductive organ"},
+            {"label": "C", "text": "the leaves"},
+            {"label": "D", "text": "the roots"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Pollen is produced by the flower's male reproductive organ."
+        },
+        {
+          "level": 2,
+          "prompt": "Among the answer choices, 'pistil' and 'stigma' are parts of which structure?",
+          "choices": [
+            {"label": "A", "text": "the male organ (stamen)"},
+            {"label": "B", "text": "the female organ (carpel/pistil)"},
+            {"label": "C", "text": "the seed"},
+            {"label": "D", "text": "the stem"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "The pistil and its stigma are female structures that receive pollen rather than produce it."
+        },
+        {
+          "level": 3,
+          "prompt": "The blank must name the male SOURCE of the pollen. Which two options can be ruled out because they are female structures that receive pollen?",
+          "choices": [
+            {"label": "A", "text": "'anther' and 'seed'"},
+            {"label": "B", "text": "'pistil' and 'stigma'"},
+            {"label": "C", "text": "'anther' and 'pistil'"},
+            {"label": "D", "text": "'stigma' and 'seed'"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Pistil and stigma are female parts that receive pollen, so neither can be the male source."
+        }
+      ]
     },
     {
       "id": "bbls-x231",
@@ -52,7 +90,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q6). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q6). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Mendel's seven characters were each observed as two clearly contrasting, discrete forms (an either/or difference). Which of the following is an example of that kind of discrete either/or contrast?",
+          "choices": [
+            {"label": "A", "text": "purple vs. white flowers"},
+            {"label": "B", "text": "slightly taller vs. slightly shorter than average"},
+            {"label": "C", "text": "more leaves vs. fewer leaves"},
+            {"label": "D", "text": "a smooth gradient of stem shades"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Mendel used traits with two distinct forms, such as purple versus white flowers, not continuously varying features."
+        },
+        {
+          "level": 2,
+          "prompt": "Mendel deliberately avoided traits that vary continuously (like size) and traits he did not track. Why would 'flower size' be a poor fit for his method?",
+          "choices": [
+            {"label": "A", "text": "because size varies continuously rather than as two discrete forms"},
+            {"label": "B", "text": "because flowers have no heritable traits"},
+            {"label": "C", "text": "because size is determined only by environment, never genes"},
+            {"label": "D", "text": "because Mendel studied only animals"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Mendel needed discrete either/or traits, and size varies continuously rather than in two clear forms."
+        },
+        {
+          "level": 3,
+          "prompt": "Mendel DID study the pea flower (its color and position), which makes one distractor especially tempting. Which option is the trap that names the right organ (the flower) but the wrong feature (a continuous size)?",
+          "choices": [
+            {"label": "A", "text": "flower size"},
+            {"label": "B", "text": "seed texture"},
+            {"label": "C", "text": "leaf shape"},
+            {"label": "D", "text": "stem color"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Mendel studied flower color and position but not flower size, making 'flower size' a tempting trap."
+        }
+      ]
     },
     {
       "id": "bbls-x232",
@@ -72,7 +148,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q7). No public OpenStax answer key; answer verified by Mendelian reasoning."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q7). No public OpenStax answer key; answer verified by Mendelian reasoning.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "When you cross two true-breeding (homozygous) parents that differ in one trait, what are ALL of the F1 offspring genotypically?",
+          "choices": [
+            {"label": "A", "text": "all homozygous dominant"},
+            {"label": "B", "text": "all heterozygous"},
+            {"label": "C", "text": "all homozygous recessive"},
+            {"label": "D", "text": "a 1:2:1 mix"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "A homozygous-dominant x homozygous-recessive cross gives uniformly heterozygous F1."
+        },
+        {
+          "level": 2,
+          "prompt": "Because every F1 plant here has the identical genotype (Yy), what can you conclude about the F1 phenotypes?",
+          "choices": [
+            {"label": "A", "text": "they will be uniform (all the same phenotype)"},
+            {"label": "B", "text": "they will split 3:1"},
+            {"label": "C", "text": "they will split 1:1"},
+            {"label": "D", "text": "they will each be individually a blend of two colors"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Identical genotypes yield a uniform phenotype across the F1, not a ratio."
+        },
+        {
+          "level": 3,
+          "prompt": "Because these alleles show SIMPLE (complete) dominance rather than incomplete dominance, which answer choice is a trap describing a blended intermediate color that would only occur under incomplete dominance?",
+          "choices": [
+            {"label": "A", "text": "100 percent yellow-green seeds"},
+            {"label": "B", "text": "50 percent yellow, 50 percent green seeds"},
+            {"label": "C", "text": "25 percent green, 75 percent yellow seeds"},
+            {"label": "D", "text": "100 percent yellow seeds"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A yellow-green blend would arise only under incomplete dominance, so it is the trap here."
+        }
+      ]
     },
     {
       "id": "bbls-x233",
@@ -92,7 +206,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q8). No public OpenStax answer key; answer verified by calculation (650/3 ≈ 217)."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q8). No public OpenStax answer key; answer verified by calculation (650/3 ≈ 217).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In a monohybrid F2 generation for a simple dominant/recessive trait, what is the expected phenotypic ratio of dominant to recessive?",
+          "choices": [
+            {"label": "A", "text": "1:1"},
+            {"label": "B", "text": "3:1"},
+            {"label": "C", "text": "9:3:3:1"},
+            {"label": "D", "text": "1:2:1"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "A monohybrid F2 shows a 3:1 dominant-to-recessive phenotypic ratio."
+        },
+        {
+          "level": 2,
+          "prompt": "In a 3:1 ratio, the 650 inflated (dominant) plants correspond to what fraction of the total F2 plants?",
+          "choices": [
+            {"label": "A", "text": "one-quarter"},
+            {"label": "B", "text": "one-half"},
+            {"label": "C", "text": "three-quarters"},
+            {"label": "D", "text": "the entire generation"}
+          ],
+          "correctAnswer": "C",
+          "rationale": "Dominant phenotypes make up three of the four parts, i.e., three-quarters of the F2."
+        },
+        {
+          "level": 3,
+          "prompt": "A common mistake is to treat 650 as the TOTAL number of F2 plants rather than as the dominant (3-part) class. Which answer choice reflects that error (approximately 650 divided by 4)?",
+          "choices": [
+            {"label": "A", "text": "600"},
+            {"label": "B", "text": "165"},
+            {"label": "C", "text": "217"},
+            {"label": "D", "text": "468"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Dividing 650 by 4 (about 165) wrongly treats 650 as the total, making it the trap."
+        }
+      ]
     },
     {
       "id": "bbls-x234",
@@ -112,7 +264,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q9). No public OpenStax answer key; answer verified by Mendelian reasoning (violet and axial are the dominant pea traits)."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q9). No public OpenStax answer key; answer verified by Mendelian reasoning (violet and axial are the dominant pea traits).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "In a dihybrid cross, each trait assorts independently. For a single dominant/recessive trait, about what fraction of the F2 shows the dominant form?",
+          "choices": [
+            {"label": "A", "text": "about 25%"},
+            {"label": "B", "text": "about 50%"},
+            {"label": "C", "text": "about 75%"},
+            {"label": "D", "text": "about 100%"}
+          ],
+          "correctAnswer": "C",
+          "rationale": "Each independently assorting trait yields roughly 75% dominant in the F2 (a 3:1 ratio)."
+        },
+        {
+          "level": 2,
+          "prompt": "The violet parent had terminal flowers and the white parent had axial flowers. In the F2, does the roughly 75% axial result depend on axial having come from the white parent?",
+          "choices": [
+            {"label": "A", "text": "No, because traits assort independently, the parental pairing does not matter"},
+            {"label": "B", "text": "Yes, axial can only appear together with white"},
+            {"label": "C", "text": "Yes, traits stay linked to their original parent"},
+            {"label": "D", "text": "No, because axial is actually the recessive form"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Independent assortment means a trait's dominant form predominates regardless of which parent contributed it."
+        },
+        {
+          "level": 3,
+          "prompt": "One distractor claims '75% violet flowers in an axial position,' combining two traits into a single 75%. Why is stating a combined 75% incorrect?",
+          "choices": [
+            {"label": "A", "text": "because the probability of BOTH dominant traits together is 9/16 (about 56%), not 75%"},
+            {"label": "B", "text": "because violet is the recessive form"},
+            {"label": "C", "text": "because axial never occurs together with violet"},
+            {"label": "D", "text": "because the F2 is uniform"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Two independent 3/4 events give a joint probability of 9/16 (about 56%), so a combined 75% is wrong."
+        }
+      ]
     },
     {
       "id": "bbls-x235",
@@ -132,7 +322,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q10). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q10). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Geneticists distinguish an organism's observable characteristics from its underlying genetic makeup. The genetic makeup itself is called the:",
+          "choices": [
+            {"label": "A", "text": "phenotype"},
+            {"label": "B", "text": "genotype"},
+            {"label": "C", "text": "habitat"},
+            {"label": "D", "text": "niche"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "The genotype is the underlying genetic makeup, as distinct from what is observed."
+        },
+        {
+          "level": 2,
+          "prompt": "Two of the main answer choices, 'alleles' and 'zygote,' refer to something other than a set of observable traits. What does 'zygote' actually denote?",
+          "choices": [
+            {"label": "A", "text": "a fertilized egg (the first cell of a new organism)"},
+            {"label": "B", "text": "a visible physical trait"},
+            {"label": "C", "text": "a version of a gene"},
+            {"label": "D", "text": "the complete set of observed traits"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A zygote is a fertilized egg, not a description of observable traits."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two answer choices can be eliminated because one names a single gene VERSION and the other names an early CELL/stage, neither of which is a description of traits?",
+          "choices": [
+            {"label": "A", "text": "'phenotype' and 'genotype'"},
+            {"label": "B", "text": "'alleles' and 'zygote'"},
+            {"label": "C", "text": "'phenotype' and 'alleles'"},
+            {"label": "D", "text": "'genotype' and 'zygote'"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "'Alleles' are gene versions and a 'zygote' is a fertilized-egg cell, so neither describes an organism's traits."
+        }
+      ]
     },
     {
       "id": "bbls-x236",
@@ -152,7 +380,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q11). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q11). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "If an individual has one dominant and one recessive allele for a trait, which phenotype is expressed?",
+          "choices": [
+            {"label": "A", "text": "the recessive phenotype"},
+            {"label": "B", "text": "the dominant phenotype"},
+            {"label": "C", "text": "a blend of both"},
+            {"label": "D", "text": "neither phenotype"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "With one dominant allele present, the dominant phenotype is expressed and the recessive is masked."
+        },
+        {
+          "level": 2,
+          "prompt": "One main answer choice, 'diploid,' describes having two sets of chromosomes in general. Is 'diploid' specific enough to explain WHY a recessive trait shows up?",
+          "choices": [
+            {"label": "A", "text": "No, nearly all body cells are diploid, so it does not specify the allele combination"},
+            {"label": "B", "text": "Yes, diploid means having two recessive alleles"},
+            {"label": "C", "text": "Yes, only diploid cells can show recessive traits"},
+            {"label": "D", "text": "No, diploid means having just one allele"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Being diploid only means two chromosome sets; it does not specify the two-recessive-allele condition needed."
+        },
+        {
+          "level": 3,
+          "prompt": "A heterozygote shows the DOMINANT phenotype, so a recessive trait cannot appear in heterozygotes. Which two answer choices can be eliminated because they include heterozygotes?",
+          "choices": [
+            {"label": "A", "text": "'heterozygous' and 'homozygous or heterozygous'"},
+            {"label": "B", "text": "'homozygous' and 'diploid'"},
+            {"label": "C", "text": "'heterozygous' and 'homozygous'"},
+            {"label": "D", "text": "'homozygous or heterozygous' and 'diploid'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Both 'heterozygous' and 'homozygous or heterozygous' include heterozygotes, which show the dominant trait, so both are ruled out."
+        }
+      ]
     },
     {
       "id": "bbls-x237",
@@ -172,7 +438,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q12). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q12). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Two nonstandard inheritance patterns are often confused: one produces a BLENDED intermediate in the heterozygote, the other shows BOTH parental phenotypes at once. In codominance, the heterozygote shows:",
+          "choices": [
+            {"label": "A", "text": "a smooth blend of the two phenotypes"},
+            {"label": "B", "text": "both distinct parental phenotypes simultaneously"},
+            {"label": "C", "text": "only the dominant phenotype"},
+            {"label": "D", "text": "neither phenotype"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Codominance shows both parental phenotypes at once, not a single blended intermediate."
+        },
+        {
+          "level": 2,
+          "prompt": "The mouse cross gives offspring that are uniformly GRAY, a color intermediate between black and white. Is gray best described as 'both colors shown at once' or 'a blend'?",
+          "choices": [
+            {"label": "A", "text": "both colors shown separately at the same time"},
+            {"label": "B", "text": "a single blended intermediate color"},
+            {"label": "C", "text": "only the dominant color"},
+            {"label": "D", "text": "an unrelated third color"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Gray is a single intermediate blend of black and white, not the two colors displayed separately."
+        },
+        {
+          "level": 3,
+          "prompt": "A uniformly BLENDED color rules out patterns that would instead show a pure parental color or both colors separately. Which two answer choices can be eliminated because they predict a NON-blended result?",
+          "choices": [
+            {"label": "A", "text": "'codominance' and 'incomplete dominance'"},
+            {"label": "B", "text": "'dominance' and 'codominance'"},
+            {"label": "C", "text": "'multiple alleles' and 'incomplete dominance'"},
+            {"label": "D", "text": "'dominance' and 'multiple alleles'"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Complete dominance predicts a pure parental color and codominance predicts both colors separately, so neither matches the observed blend."
+        }
+      ]
     },
     {
       "id": "bbls-x238",
@@ -192,7 +496,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q13). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q13). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "If a heterozygote expresses BOTH alleles' products fully and separately (not a blend), the relationship between those alleles is called:",
+          "choices": [
+            {"label": "A", "text": "incomplete dominance"},
+            {"label": "B", "text": "codominance"},
+            {"label": "C", "text": "complete dominance"},
+            {"label": "D", "text": "epistasis"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Full, separate expression of both alleles in the heterozygote is codominance."
+        },
+        {
+          "level": 2,
+          "prompt": "The ABO system uses three alleles (IA, IB, and i) in the population. A gene that has more than two allele versions in a population is described as having:",
+          "choices": [
+            {"label": "A", "text": "a single allele"},
+            {"label": "B", "text": "only two alleles"},
+            {"label": "C", "text": "multiple alleles"},
+            {"label": "D", "text": "no alleles"}
+          ],
+          "correctAnswer": "C",
+          "rationale": "Three allele versions (IA, IB, i) means the gene has multiple alleles."
+        },
+        {
+          "level": 3,
+          "prompt": "Which single answer choice is a trap because it describes ONLY a blended intermediate and ignores both the three alleles and the two fully-expressed antigens?",
+          "choices": [
+            {"label": "A", "text": "multiple alleles and codominance"},
+            {"label": "B", "text": "codominance and incomplete dominance"},
+            {"label": "C", "text": "incomplete dominance only"},
+            {"label": "D", "text": "multiple alleles and incomplete dominance"}
+          ],
+          "correctAnswer": "C",
+          "rationale": "'Incomplete dominance only' is the trap: it captures neither the three alleles nor the full, separate expression of both antigens."
+        }
+      ]
     },
     {
       "id": "bbls-x239",
@@ -212,7 +554,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q14). No public OpenStax answer key; answer verified by Mendelian reasoning (aa lethal removes the homozygous recessive class)."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q14). No public OpenStax answer key; answer verified by Mendelian reasoning (aa lethal removes the homozygous recessive class).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "For a standard monohybrid cross between two heterozygotes (Aa x Aa), what genotypic ratio (homozygous dominant : heterozygous : homozygous recessive) is expected at conception?",
+          "choices": [
+            {"label": "A", "text": "3:1:0"},
+            {"label": "B", "text": "1:2:1"},
+            {"label": "C", "text": "1:1:1"},
+            {"label": "D", "text": "2:1:1"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Aa x Aa yields a 1:2:1 genotypic ratio before any selection acts."
+        },
+        {
+          "level": 2,
+          "prompt": "A recessive LETHAL allele expressed in utero means the homozygous recessive (aa) individuals do what before they can be observed?",
+          "choices": [
+            {"label": "A", "text": "survive normally"},
+            {"label": "B", "text": "die"},
+            {"label": "C", "text": "become heterozygous"},
+            {"label": "D", "text": "double in number"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "A recessive lethal expressed in utero removes the homozygous recessive class before it can be observed."
+        },
+        {
+          "level": 3,
+          "prompt": "The homozygous-dominant and heterozygous classes are unaffected, so they stay in a 1:2 relationship. Which two answer choices can be eliminated because their FIRST two numbers are not 1 and 2?",
+          "choices": [
+            {"label": "A", "text": "'1:2:1' and '1:2:0'"},
+            {"label": "B", "text": "'3:1:1' and '0:2:1'"},
+            {"label": "C", "text": "'1:2:1' and '3:1:1'"},
+            {"label": "D", "text": "'1:2:0' and '0:2:1'"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "The dominant and heterozygous classes remain 1 and 2, so options starting 3:1 or 0:2 can be ruled out."
+        }
+      ]
     },
     {
       "id": "bbls-x240",
@@ -232,7 +612,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q15). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q15). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Does an allele being DOMINANT tell you anything about how COMMON it is in a population?",
+          "choices": [
+            {"label": "A", "text": "Yes, dominant alleles are always common"},
+            {"label": "B", "text": "No, dominance describes how an allele is expressed, not its frequency"},
+            {"label": "C", "text": "Yes, dominant alleles are always rare"},
+            {"label": "D", "text": "Yes, dominance sets the exact frequency"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Dominance is about how an allele is expressed, independent of how frequent it is."
+        },
+        {
+          "level": 2,
+          "prompt": "A dominant allele shows its phenotype whenever it is present, even in a single copy. Given that, why can't 'most people have five fingers' be explained by people hiding a dominant polydactyly allele?",
+          "choices": [
+            {"label": "A", "text": "because a dominant allele would be expressed if present, so people without the trait simply lack it"},
+            {"label": "B", "text": "because dominant alleles are never expressed"},
+            {"label": "C", "text": "because five fingers is itself the dominant trait"},
+            {"label": "D", "text": "because polydactyly is actually recessive"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "A dominant allele is expressed whenever present, so people without the trait must not carry it."
+        },
+        {
+          "level": 3,
+          "prompt": "Which distractor is a trap because it would actually PREVENT affected people from ever existing, contradicting the fact that people with polydactyly clearly do exist?",
+          "choices": [
+            {"label": "A", "text": "Genetic elements suppress the polydactyl gene."},
+            {"label": "B", "text": "Polydactyly is embryonic lethal."},
+            {"label": "C", "text": "The sixth finger is removed at birth."},
+            {"label": "D", "text": "The polydactyl allele is very rare in the human population."}
+          ],
+          "correctAnswer": "B",
+          "rationale": "If polydactyly were embryonic lethal, affected individuals could not exist, yet they do, so it is a trap."
+        }
+      ]
     },
     {
       "id": "bbls-x241",
@@ -252,7 +670,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q16). No public OpenStax answer key; answer verified by Mendelian reasoning (codominant 1:2:1)."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q16). No public OpenStax answer key; answer verified by Mendelian reasoning (codominant 1:2:1).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "F1 chickens showing BOTH black and white (speckled) rather than a blended gray indicates which inheritance pattern?",
+          "choices": [
+            {"label": "A", "text": "complete dominance"},
+            {"label": "B", "text": "codominance"},
+            {"label": "C", "text": "incomplete dominance"},
+            {"label": "D", "text": "epistasis"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Displaying both colors at once (speckling) rather than a blend is codominance."
+        },
+        {
+          "level": 2,
+          "prompt": "The speckled F1 are heterozygotes. Crossing two heterozygotes (like Aa x Aa) produces what genotypic ratio?",
+          "choices": [
+            {"label": "A", "text": "3:1"},
+            {"label": "B", "text": "1:2:1"},
+            {"label": "C", "text": "1:1"},
+            {"label": "D", "text": "all offspring identical"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "A heterozygote x heterozygote cross gives a 1:2:1 genotypic ratio."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two answer choices can be eliminated, one because it wrongly claims the F2 are uniform (all one phenotype), and the other because it shows only the two pure colors with NO speckled birds?",
+          "choices": [
+            {"label": "A", "text": "'All the offspring will be speckled' and '50% black and 50% white'"},
+            {"label": "B", "text": "'75% speckled, 25% black' and '50% speckled, 25% black, 25% white'"},
+            {"label": "C", "text": "'All the offspring will be speckled' and '75% speckled, 25% black'"},
+            {"label": "D", "text": "'50% black and 50% white' and '50% speckled, 25% black, 25% white'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "An all-speckled F2 (uniform) and a black/white-only F2 (no speckled) both contradict the expected three-class codominant result."
+        }
+      ]
     },
     {
       "id": "bbls-x242",
@@ -272,7 +728,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q17). No public OpenStax answer key; answer verified by Mendelian reasoning."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q17). No public OpenStax answer key; answer verified by Mendelian reasoning.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Under the law of independent assortment, when a dihybrid (AaBb) forms gametes, the alleles of the two genes combine:",
+          "choices": [
+            {"label": "A", "text": "in fixed parental combinations only"},
+            {"label": "B", "text": "randomly and independently"},
+            {"label": "C", "text": "always keeping A together with B"},
+            {"label": "D", "text": "not at all"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Independent assortment means the two genes' alleles combine randomly and independently in gametes."
+        },
+        {
+          "level": 2,
+          "prompt": "Two distractor ratios describe F2 OFFSPRING patterns rather than GAMETE ratios. What is this question actually asking for?",
+          "choices": [
+            {"label": "A", "text": "the F2 offspring ratio"},
+            {"label": "B", "text": "the ratio of the F1 gametes"},
+            {"label": "C", "text": "the parental genotypes"},
+            {"label": "D", "text": "the number of chromosomes"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "The question asks for the ratio of F1 gamete types, not the F2 offspring ratio."
+        },
+        {
+          "level": 3,
+          "prompt": "One distractor, 1:2:2:1, resembles a genotype ratio rather than equal gamete frequencies. Which other distractor is a trap because it echoes the classic F2 OFFSPRING dihybrid pattern (as in 9:3:3:1)?",
+          "choices": [
+            {"label": "A", "text": "1:1:1:1"},
+            {"label": "B", "text": "1:3:3:1"},
+            {"label": "C", "text": "1:2:2:1"},
+            {"label": "D", "text": "4:3:2:1"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "1:3:3:1 mimics the F2 offspring dihybrid pattern, so it is a trap for a gamete-ratio question."
+        }
+      ]
     },
     {
       "id": "bbls-x243",
@@ -292,7 +786,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q18). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q18). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "To find the probability that TWO independent events BOTH occur, you combine their individual probabilities by:",
+          "choices": [
+            {"label": "A", "text": "adding them"},
+            {"label": "B", "text": "multiplying them"},
+            {"label": "C", "text": "subtracting them"},
+            {"label": "D", "text": "dividing them"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "The probability that two independent events both occur is the product (multiply) of their probabilities."
+        },
+        {
+          "level": 2,
+          "prompt": "The forked-line and probability methods combine the chances of several independent traits occurring TOGETHER in one offspring. Combining 'AND' (all-together) probabilities requires which operation?",
+          "choices": [
+            {"label": "A", "text": "adding the probabilities"},
+            {"label": "B", "text": "multiplying the probabilities"},
+            {"label": "C", "text": "taking the largest probability"},
+            {"label": "D", "text": "ignoring probability entirely"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Getting several traits together is an 'AND' situation, which multiplies the probabilities."
+        },
+        {
+          "level": 3,
+          "prompt": "The 'sum rule' (adding probabilities) is the trap here because it applies to a different situation. The sum rule is used when outcomes are:",
+          "choices": [
+            {"label": "A", "text": "required to happen together (an AND situation)"},
+            {"label": "B", "text": "mutually exclusive alternatives (an either/or situation)"},
+            {"label": "C", "text": "always independent of each other"},
+            {"label": "D", "text": "impossible"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "The sum rule applies to mutually exclusive either/or events, not to both-together events, making it the trap."
+        }
+      ]
     },
     {
       "id": "bbls-x244",
@@ -312,7 +844,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q19). No public OpenStax answer key; answer verified by calculation (3^3 genotypes, 2^3 phenotypes)."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q19). No public OpenStax answer key; answer verified by calculation (3^3 genotypes, 2^3 phenotypes).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "For n gene pairs that are each heterozygous (with simple dominance), the number of possible offspring GENOTYPES is 3 to the n. The number of possible PHENOTYPES is:",
+          "choices": [
+            {"label": "A", "text": "3 to the n"},
+            {"label": "B", "text": "2 to the n"},
+            {"label": "C", "text": "4 to the n"},
+            {"label": "D", "text": "n squared"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Each dominant/recessive trait has two phenotypes, so n traits give 2 to the n phenotypes."
+        },
+        {
+          "level": 2,
+          "prompt": "For any set of heterozygous gene pairs with simple dominance, will there be MORE possible genotypes or MORE possible phenotypes?",
+          "choices": [
+            {"label": "A", "text": "more phenotypes than genotypes"},
+            {"label": "B", "text": "more genotypes than phenotypes"},
+            {"label": "C", "text": "exactly equal numbers of each"},
+            {"label": "D", "text": "it depends on the environment"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Since 3 to the n exceeds 2 to the n, there are always more genotypes than phenotypes."
+        },
+        {
+          "level": 3,
+          "prompt": "You expect MORE genotypes than phenotypes. Which two answer choices can be eliminated because they list MORE phenotypes than genotypes?",
+          "choices": [
+            {"label": "A", "text": "'64 genotypes; 16 phenotypes' and '27 genotypes; 8 phenotypes'"},
+            {"label": "B", "text": "'16 genotypes; 64 phenotypes' and '8 genotypes; 27 phenotypes'"},
+            {"label": "C", "text": "'64 genotypes; 16 phenotypes' and '8 genotypes; 27 phenotypes'"},
+            {"label": "D", "text": "'16 genotypes; 64 phenotypes' and '27 genotypes; 8 phenotypes'"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Options listing more phenotypes than genotypes invert the correct relationship and are ruled out."
+        }
+      ]
     },
     {
       "id": "bbls-x245",
@@ -332,7 +902,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q20). No public OpenStax answer key; answer verified from the Biology 2e source text (recessive epistasis)."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q20). No public OpenStax answer key; answer verified from the Biology 2e source text (recessive epistasis).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Codominance and incomplete dominance both describe interactions between the TWO ALLELES OF A SINGLE gene. Do they describe one gene masking a SECOND, different gene?",
+          "choices": [
+            {"label": "A", "text": "Yes, both describe one gene hiding another gene"},
+            {"label": "B", "text": "No, they describe allele interactions within a single gene"},
+            {"label": "C", "text": "Yes, but only codominance does"},
+            {"label": "D", "text": "No, they describe physical linkage on a chromosome"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Codominance and incomplete dominance are within-gene allele interactions, not one gene masking another gene."
+        },
+        {
+          "level": 2,
+          "prompt": "In Labradors, a dog with genotype ee is yellow NO MATTER what alleles it has at the separate B gene. This means the ee genotype is doing what to the B gene's effect?",
+          "choices": [
+            {"label": "A", "text": "blending with it"},
+            {"label": "B", "text": "masking (hiding) it"},
+            {"label": "C", "text": "being unaffected by it"},
+            {"label": "D", "text": "being physically linked to it"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "The ee genotype hides the B gene's effect, meaning one gene masks a second, different gene."
+        },
+        {
+          "level": 3,
+          "prompt": "Two answer choices describe interactions BETWEEN the two alleles of a SINGLE gene, not one gene hiding another. Which two can be eliminated on that basis?",
+          "choices": [
+            {"label": "A", "text": "'epistasis' and 'linkage'"},
+            {"label": "B", "text": "'codominance' and 'incomplete dominance'"},
+            {"label": "C", "text": "'epistasis' and 'codominance'"},
+            {"label": "D", "text": "'incomplete dominance' and 'linkage'"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Codominance and incomplete dominance are single-gene allele interactions, so both are ruled out for a two-gene masking effect."
+        }
+      ]
     },
     {
       "id": "bbls-x246",
@@ -352,7 +960,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/12-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q21). No public OpenStax answer key; answer verified from the Biology 2e source text (sex-linked inheritance is an exception to independent assortment)."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.12 review Q21). No public OpenStax answer key; answer verified from the Biology 2e source text (sex-linked inheritance is an exception to independent assortment).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The Law of Independent Assortment can fail when genes are inherited together with a particular chromosome. Traits inherited along with the SEX chromosomes are called:",
+          "choices": [
+            {"label": "A", "text": "autosomal traits"},
+            {"label": "B", "text": "sex-linked traits"},
+            {"label": "C", "text": "codominant traits"},
+            {"label": "D", "text": "polygenic traits"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Traits inherited with the sex chromosomes are sex-linked, an exception to independent assortment."
+        },
+        {
+          "level": 2,
+          "prompt": "The scenario 'a hog and sow produce six female piglets' can look suspicious, but offspring sex results from random segregation of the sex chromosomes. Does an all-female litter VIOLATE independent assortment?",
+          "choices": [
+            {"label": "A", "text": "Yes, it proves the genes are linked"},
+            {"label": "B", "text": "No, an offspring sex ratio is just chance and does not violate the law"},
+            {"label": "C", "text": "Yes, because sex is not heritable"},
+            {"label": "D", "text": "No, because piglets have no genes"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "An all-female litter is ordinary chance in sex determination and does not violate independent assortment."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two scenarios can be eliminated because they show ordinary inheritance (a dominant trait passing to offspring, and a codominant roan blend) that FOLLOWS independent assortment?",
+          "choices": [
+            {"label": "A", "text": "the blond/brown-hair offspring result and the roan cattle result"},
+            {"label": "B", "text": "the roan cattle result and the six female piglets"},
+            {"label": "C", "text": "the blond/brown-hair result and the six female piglets"},
+            {"label": "D", "text": "the six female piglets and the hemophilia pattern"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Simple dominance (the blond offspring) and codominance (the roan cattle) both follow normal assortment, so both are ruled out."
+        }
+      ]
     },
     {
       "id": "bbls-x247",
@@ -372,7 +1018,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q4). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q4). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Evolution is defined as a change in what, over generations, which is the basis for distinguishing micro- from macroevolution?",
+          "choices": [
+            {"label": "A", "text": "an individual organism's body during its own lifetime"},
+            {"label": "B", "text": "allele frequencies in populations"},
+            {"label": "C", "text": "the physical size of organisms"},
+            {"label": "D", "text": "the number of molecules in a cell"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Evolution is change in allele frequencies across generations, not change within one organism's lifetime."
+        },
+        {
+          "level": 2,
+          "prompt": "Given that evolution happens to POPULATIONS across generations (never within one organism's lifetime), which distractor can be dismissed for describing change 'over their lifetimes'?",
+          "choices": [
+            {"label": "A", "text": "the option contrasting small vs. large organisms"},
+            {"label": "B", "text": "the option contrasting molecules vs. whole organisms"},
+            {"label": "C", "text": "the option saying microevolution occurs over an organism's lifetime"},
+            {"label": "D", "text": "none of the options can be dismissed"}
+          ],
+          "correctAnswer": "C",
+          "rationale": "Evolution never occurs within a single organism's lifetime, so that option is wrong."
+        },
+        {
+          "level": 3,
+          "prompt": "Micro- and macroevolution are distinguished by SCALE (populations vs. species over time), not by organism SIZE or by molecules-vs-organisms. Which two answer choices can be eliminated because they wrongly define the terms that way?",
+          "choices": [
+            {"label": "A", "text": "the 'small vs. large organisms' option and the 'molecules vs. whole organisms' option"},
+            {"label": "B", "text": "the 'populations vs. species' option and the 'lifetimes vs. generations' option"},
+            {"label": "C", "text": "the 'small vs. large organisms' option and the 'populations vs. species' option"},
+            {"label": "D", "text": "the 'molecules vs. whole organisms' option and the 'lifetimes vs. generations' option"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Defining the terms by organism size or by molecules-versus-organisms misrepresents both, so those two are ruled out."
+        }
+      ]
     },
     {
       "id": "bbls-x248",
@@ -392,7 +1076,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q5). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q5). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Population genetics focuses on how the frequencies of what change in a population across time?",
+          "choices": [
+            {"label": "A", "text": "individual organisms"},
+            {"label": "B", "text": "alleles"},
+            {"label": "C", "text": "whole species"},
+            {"label": "D", "text": "ecosystems"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Population genetics tracks how allele frequencies change over time."
+        },
+        {
+          "level": 2,
+          "prompt": "Evolutionary forces such as natural selection act to CHANGE allele frequencies. Population genetics is especially concerned with which aspect?",
+          "choices": [
+            {"label": "A", "text": "the unchanging, static state of a population"},
+            {"label": "B", "text": "the dynamic change of frequencies over time"},
+            {"label": "C", "text": "a purely descriptive snapshot of one individual"},
+            {"label": "D", "text": "strictly non-genetic factors"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Population genetics emphasizes how allele frequencies change over time, driven by forces like selection."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two answer choices can be eliminated because they concern WHETHER traits are genetic or how inbred a population is, rather than CHANGES in allele frequency over time?",
+          "choices": [
+            {"label": "A", "text": "'how selective forces change allele frequencies' and 'the degree of inbreeding'"},
+            {"label": "B", "text": "'whether traits have a genetic basis' and 'the degree of inbreeding in a population'"},
+            {"label": "C", "text": "'how selective forces change allele frequencies' and 'the genetic basis of population-wide traits'"},
+            {"label": "D", "text": "'the genetic basis of population-wide traits' and 'how selective forces change allele frequencies'"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Asking whether traits are genetic, or measuring inbreeding, is not about allele-frequency change over time."
+        }
+      ]
     },
     {
       "id": "bbls-x249",
@@ -412,7 +1134,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q7). No public OpenStax answer key; answer verified from the Biology 2e source text (founder effect is a type of genetic drift)."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q7). No public OpenStax answer key; answer verified from the Biology 2e source text (founder effect is a type of genetic drift).",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "When allele frequencies change purely by CHANCE — for example because a new population is started by a small, random sample of individuals — rather than because certain alleles improve survival, the change is driven by:",
+          "choices": [
+            {"label": "A", "text": "chance (random sampling)"},
+            {"label": "B", "text": "a fitness advantage"},
+            {"label": "C", "text": "adaptation to the environment"},
+            {"label": "D", "text": "selective pressure"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Allele-frequency change from random sampling in a small group is due to chance, not a survival advantage."
+        },
+        {
+          "level": 2,
+          "prompt": "A single colonist carrying a rare allele leads to its high frequency in the new population by chance, not by any survival advantage. Which force is therefore NOT responsible here?",
+          "choices": [
+            {"label": "A", "text": "genetic drift"},
+            {"label": "B", "text": "natural selection"},
+            {"label": "C", "text": "the founder effect"},
+            {"label": "D", "text": "chance sampling"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "The change is due to chance in a small founding group, not a survival advantage, so natural selection is not the cause."
+        },
+        {
+          "level": 3,
+          "prompt": "Which answer choice is the trap that should be rejected because the allele became common by CHANCE in a small founding group, not because it improved survival or reproduction?",
+          "choices": [
+            {"label": "A", "text": "natural selection"},
+            {"label": "B", "text": "genetic drift"},
+            {"label": "C", "text": "founder effect"},
+            {"label": "D", "text": "b and c"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Natural selection is the trap; the allele spread by chance in a small founding group, not by a fitness advantage."
+        }
+      ]
     },
     {
       "id": "bbls-x250",
@@ -432,7 +1192,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q8). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q8). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "When organisms MIGRATE from one population and breed in another, what do they carry with them that can change the receiving population's allele frequencies?",
+          "choices": [
+            {"label": "A", "text": "their alleles (genes)"},
+            {"label": "B", "text": "only their body size"},
+            {"label": "C", "text": "nothing heritable"},
+            {"label": "D", "text": "the local environment"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Migrating individuals carry their alleles into the new population, altering its allele frequencies."
+        },
+        {
+          "level": 2,
+          "prompt": "A mature male lion LEAVING his group to join a different pride is an example of an individual doing what between populations?",
+          "choices": [
+            {"label": "A", "text": "mutating"},
+            {"label": "B", "text": "migrating"},
+            {"label": "C", "text": "being naturally selected"},
+            {"label": "D", "text": "staying put"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Leaving one group to join another is migration between populations."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two answer choices can be eliminated because they do NOT require any movement of individuals between populations?",
+          "choices": [
+            {"label": "A", "text": "'natural selection' and 'gene flow'"},
+            {"label": "B", "text": "'genetic drift' and 'gene flow'"},
+            {"label": "C", "text": "'natural selection' and 'genetic drift'"},
+            {"label": "D", "text": "'gene flow' and 'random mating'"}
+          ],
+          "correctAnswer": "C",
+          "rationale": "Natural selection and genetic drift can occur within a single population without any migration, so both are ruled out."
+        }
+      ]
     },
     {
       "id": "bbls-x251",
@@ -452,7 +1250,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q9). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q9). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Evolutionary processes differ: some can introduce genetic variation that was never present before, while others only re-sort or remove variation that already exists. Which SINGLE process can introduce a brand-new allele that did not previously exist in any population?",
+          "choices": [
+            {"label": "A", "text": "natural selection"},
+            {"label": "B", "text": "genetic drift"},
+            {"label": "C", "text": "mutation"},
+            {"label": "D", "text": "nonrandom mating"}
+          ],
+          "correctAnswer": "C",
+          "rationale": "Mutation generates brand-new alleles, whereas selection, drift, and nonrandom mating only act on variation that already exists."
+        },
+        {
+          "level": 2,
+          "prompt": "Natural selection and genetic drift change the frequencies of alleles that ALREADY exist. Can they, by themselves, introduce a brand-new allele into the population?",
+          "choices": [
+            {"label": "A", "text": "Yes, selection creates new alleles"},
+            {"label": "B", "text": "No, they only act on existing variation"},
+            {"label": "C", "text": "Yes, drift creates new alleles"},
+            {"label": "D", "text": "Yes, both of them create new alleles"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Selection and drift only act on existing alleles; they do not create new ones."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two answer choices can be eliminated because NEITHER of their listed processes introduces new variation (both merely act on existing alleles)?",
+          "choices": [
+            {"label": "A", "text": "'natural selection and genetic drift' and 'natural selection and nonrandom mating'"},
+            {"label": "B", "text": "'mutation and gene flow' and 'mutation and genetic drift'"},
+            {"label": "C", "text": "'natural selection and genetic drift' and 'mutation and gene flow'"},
+            {"label": "D", "text": "'mutation and genetic drift' and 'natural selection and nonrandom mating'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Selection, drift, and nonrandom mating all act only on existing alleles, so the two options built entirely from them add nothing new."
+        }
+      ]
     },
     {
       "id": "bbls-x252",
@@ -472,7 +1308,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q10). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q10). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Assortative mating is a form of NONRANDOM mating in which mate choice is based on:",
+          "choices": [
+            {"label": "A", "text": "geographic distance only"},
+            {"label": "B", "text": "phenotypic similarity or dissimilarity between mates"},
+            {"label": "C", "text": "pure random chance"},
+            {"label": "D", "text": "the mutation rate"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Assortative mating is nonrandom mating based on how similar or dissimilar potential mates' phenotypes are."
+        },
+        {
+          "level": 2,
+          "prompt": "Two answer choices define mate choice by FITNESS ('most fit' or 'least fit') rather than by resemblance. Does assortative mating refer to choosing mates by their fitness level?",
+          "choices": [
+            {"label": "A", "text": "Yes, always the most fit"},
+            {"label": "B", "text": "No, it refers to resemblance (similarity or dissimilarity), not a fitness ranking"},
+            {"label": "C", "text": "Yes, always the least fit"},
+            {"label": "D", "text": "Yes, fitness is the only factor"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Assortative mating is about phenotypic resemblance, not about selecting mates by fitness."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two answer choices can be eliminated because they describe choosing mates based on FITNESS (most or least fit) rather than on resemblance?",
+          "choices": [
+            {"label": "A", "text": "'similar to themselves' and 'dissimilar to themselves'"},
+            {"label": "B", "text": "'the most fit in the population' and 'the least fit in the population'"},
+            {"label": "C", "text": "'similar to themselves' and 'the most fit in the population'"},
+            {"label": "D", "text": "'dissimilar to themselves' and 'the least fit in the population'"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "The 'most fit' and 'least fit' options describe fitness-based choice, not the resemblance that defines assortative mating."
+        }
+      ]
     },
     {
       "id": "bbls-x253",
@@ -492,7 +1366,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q11). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q11). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Inbreeding increases the chance that offspring inherit TWO copies of the same allele. In other words, inbreeding increases:",
+          "choices": [
+            {"label": "A", "text": "heterozygosity"},
+            {"label": "B", "text": "homozygosity"},
+            {"label": "C", "text": "the mutation rate"},
+            {"label": "D", "text": "the total number of genes"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Mating between close relatives increases homozygosity in the offspring."
+        },
+        {
+          "level": 2,
+          "prompt": "Many harmful alleles are RECESSIVE, so they cause harm only when present in TWO copies. Increased homozygosity from inbreeding therefore makes it more likely that:",
+          "choices": [
+            {"label": "A", "text": "beneficial dominant alleles are lost"},
+            {"label": "B", "text": "two copies of a harmful recessive allele come together"},
+            {"label": "C", "text": "brand-new mutations are created"},
+            {"label": "D", "text": "chromosomes fail to form at all"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Higher homozygosity raises the chance that two harmful recessive alleles pair up and are expressed."
+        },
+        {
+          "level": 3,
+          "prompt": "One distractor claims inbreeding 'causes normally silent alleles to be expressed.' Why is that phrasing misleading?",
+          "choices": [
+            {"label": "A", "text": "because harmful recessive alleles are not 'silent'; they are simply masked until two are paired in a homozygote"},
+            {"label": "B", "text": "because alleles can never be expressed"},
+            {"label": "C", "text": "because inbreeding creates brand-new alleles"},
+            {"label": "D", "text": "because all alleles are always expressed regardless"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Recessive deleterious alleles are not truly silent; they are masked by a dominant allele until inbreeding pairs two together."
+        }
+      ]
     },
     {
       "id": "bbls-x254",
@@ -512,7 +1424,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q12). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q12). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The concept of a 'cline' involves a GRADIENT. In general, does a gradient describe something that stays uniform and constant, or something that changes progressively along an axis?",
+          "choices": [
+            {"label": "A", "text": "something that stays uniform and constant"},
+            {"label": "B", "text": "something that changes progressively along an axis"},
+            {"label": "C", "text": "something that is counted as a single total"},
+            {"label": "D", "text": "something randomly scattered with no pattern"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "A gradient refers to a progressive change along an axis, not a constant value, a total count, or a random scatter."
+        },
+        {
+          "level": 2,
+          "prompt": "The distractor 'the slope of a mountain where a population lives' plays on the everyday meaning of the word. Is a biological cline a literal physical landform?",
+          "choices": [
+            {"label": "A", "text": "Yes, it is literally a mountain slope"},
+            {"label": "B", "text": "No, a cline is not a physical landform"},
+            {"label": "C", "text": "Yes, but only when populations live on mountains"},
+            {"label": "D", "text": "No, because a cline is actually a headcount of organisms"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "A cline is a biological pattern, not a literal physical landform like a mountain slope."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two answer choices can be eliminated because they describe a COUNT of individuals or a measure of SURVIVAL benefit, neither of which is a gradual geographic pattern?",
+          "choices": [
+            {"label": "A", "text": "'the slope of a mountain' and 'gradual geographic variation across a gradient'"},
+            {"label": "B", "text": "'the degree to which a mutation helps survival' and 'the number of individuals in the population'"},
+            {"label": "C", "text": "'the slope of a mountain' and 'the number of individuals in the population'"},
+            {"label": "D", "text": "'the degree to which a mutation helps survival' and 'gradual geographic variation across a gradient'"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "A survival-benefit measure and a population count are not gradual geographic patterns, so both are ruled out."
+        }
+      ]
     },
     {
       "id": "bbls-x255",
@@ -532,7 +1482,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q13). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q13). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "A type of selection that favors BOTH extreme phenotypes over the intermediate ones will tend to do what to the population's genetic variability?",
+          "choices": [
+            {"label": "A", "text": "decrease it"},
+            {"label": "B", "text": "increase it"},
+            {"label": "C", "text": "leave it unchanged"},
+            {"label": "D", "text": "eliminate it completely"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Favoring both extremes preserves and can increase genetic variability."
+        },
+        {
+          "level": 2,
+          "prompt": "Stabilizing selection favors the AVERAGE/intermediate phenotype and removes the extremes. What effect does stabilizing selection have on variability?",
+          "choices": [
+            {"label": "A", "text": "it increases variability"},
+            {"label": "B", "text": "it decreases variability"},
+            {"label": "C", "text": "it has no effect on variability"},
+            {"label": "D", "text": "it creates brand-new alleles"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Stabilizing selection favors the mean and reduces variability by removing extremes."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two answer choices can be eliminated because they NARROW variation, one by favoring the average and the other by shifting the population toward a SINGLE extreme?",
+          "choices": [
+            {"label": "A", "text": "'stabilizing selection' and 'directional selection'"},
+            {"label": "B", "text": "'diversifying selection' and 'directional selection'"},
+            {"label": "C", "text": "'stabilizing selection' and 'diversifying selection'"},
+            {"label": "D", "text": "'directional selection' and 'positive frequency-dependent selection'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "Stabilizing selection favors the mean and directional selection shifts toward one extreme; both reduce variability."
+        }
+      ]
     },
     {
       "id": "bbls-x256",
@@ -552,7 +1540,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q14). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q14). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "Some biology terms describe a PATTERN or STATE (a difference that simply exists), while others describe a PROCESS or FORCE (something that causes change). 'Sexual selection' is best categorized as:",
+          "choices": [
+            {"label": "A", "text": "a static description of appearance"},
+            {"label": "B", "text": "a process/force that drives evolutionary change"},
+            {"label": "C", "text": "a geographic gradient"},
+            {"label": "D", "text": "a counting method"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Sexual selection is an evolutionary process/force, not merely a description of how the sexes look."
+        },
+        {
+          "level": 2,
+          "prompt": "The question asks for the term describing the STATE in which males and females simply LOOK or ACT differently, an observed difference rather than a driving force. Should the answer be a 'force/process' term or a 'descriptive state' term?",
+          "choices": [
+            {"label": "A", "text": "a force/process term"},
+            {"label": "B", "text": "a descriptive-state term"},
+            {"label": "C", "text": "a geographic term"},
+            {"label": "D", "text": "a probability term"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "'Males and females look or act differently' describes an observed state, so a descriptive term fits, not a process term."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two answer choices can be eliminated because they have NOTHING to do with differences between males and females (one is about phenotypes at the population's extremes, the other about geographic gradients)?",
+          "choices": [
+            {"label": "A", "text": "'sexual dimorphism' and 'sexual selection'"},
+            {"label": "B", "text": "'diversifying selection' and 'a cline'"},
+            {"label": "C", "text": "'sexual selection' and 'a cline'"},
+            {"label": "D", "text": "'sexual dimorphism' and 'diversifying selection'"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Diversifying selection concerns extreme phenotypes and a cline is a geographic gradient; neither involves male/female differences."
+        }
+      ]
     },
     {
       "id": "bbls-x257",
@@ -572,7 +1598,45 @@
       "sourceLicense": "CC BY-NC-SA 4.0",
       "sourceUrl": "https://openstax.org/books/biology-2e/pages/19-review-questions",
       "answerProvenance": "verified-from-source-text",
-      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q15). No public OpenStax answer key; answer verified from the Biology 2e source text."
+      "notes": "Stem/options verbatim from OpenStax Biology 2e (Ch.19 review Q15). No public OpenStax answer key; answer verified from the Biology 2e source text.",
+      "hints": [
+        {
+          "level": 1,
+          "prompt": "The 'good genes hypothesis' is part of the theory of SEXUAL SELECTION. It proposes that elaborate ornaments (like a peacock's tail) serve as honest signals of an individual's:",
+          "choices": [
+            {"label": "A", "text": "age"},
+            {"label": "B", "text": "underlying genetic quality"},
+            {"label": "C", "text": "diet"},
+            {"label": "D", "text": "geographic origin"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "Under the good genes hypothesis, ornaments honestly advertise underlying genetic quality."
+        },
+        {
+          "level": 2,
+          "prompt": "The good genes hypothesis specifically addresses MATE CHOICE and ornaments, not survival in general. Which broad topic is it NOT primarily trying to explain?",
+          "choices": [
+            {"label": "A", "text": "why elaborate ornaments evolve"},
+            {"label": "B", "text": "the routine survival advantage of any beneficial trait in general"},
+            {"label": "C", "text": "honest signaling of genetic quality"},
+            {"label": "D", "text": "mate preference for ornamented individuals"}
+          ],
+          "correctAnswer": "B",
+          "rationale": "It focuses on ornaments and mate choice, not the general survival advantage of any beneficial trait."
+        },
+        {
+          "level": 3,
+          "prompt": "Which two answer choices can be eliminated because they describe GENERAL natural selection (fitness or beneficial alleles) rather than mate choice and ornaments?",
+          "choices": [
+            {"label": "A", "text": "'why more fit individuals have more offspring' and 'why beneficial alleles are selected for'"},
+            {"label": "B", "text": "'why some deleterious mutations are maintained' and 'why one sex develops ornamental traits'"},
+            {"label": "C", "text": "'why more fit individuals have more offspring' and 'why one sex develops ornamental traits'"},
+            {"label": "D", "text": "'why beneficial alleles are selected for' and 'why some deleterious mutations are maintained'"}
+          ],
+          "correctAnswer": "A",
+          "rationale": "General fitness and selection for beneficial alleles are ordinary natural selection, not the ornament-focused good genes hypothesis."
+        }
+      ]
     }
   ]
 }

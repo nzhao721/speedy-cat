@@ -62,6 +62,9 @@ class DeckAdapter(
     private val reviewCountColor: Int
     private val rowCurrentDrawable: Int
     private val deckNameDefaultColor: Int
+
+    /** Parent decks that expand/collapse subdecks (flashcard group headers). */
+    private val deckGroupTitleColor: Int
     private val deckNameDynColor: Int
     private val expandImage: Drawable
     private val collapseImage: Drawable
@@ -165,7 +168,13 @@ class DeckAdapter(
         }
         // Set deck name and colour. Filtered decks have their own colour
         binding.deckName.text = node.lastDeckNameComponent
-        binding.deckName.setTextColor(if (node.filtered) deckNameDynColor else deckNameDefaultColor)
+        binding.deckName.setTextColor(
+            when {
+                node.filtered -> deckNameDynColor
+                node.canCollapse -> deckGroupTitleColor
+                else -> deckNameDefaultColor
+            },
+        )
 
         // Set the card counts and their colors
         binding.deckNew.text = node.newCount.toString()
@@ -233,6 +242,7 @@ class DeckAdapter(
                 R.attr.reviewCountColor,
                 R.attr.currentDeckBackground,
                 android.R.attr.textColor,
+                com.google.android.material.R.attr.colorOnSurface,
                 R.attr.dynDeckColor,
                 R.attr.expandRef,
                 R.attr.collapseRef,
@@ -244,10 +254,11 @@ class DeckAdapter(
         reviewCountColor = ta.getColor(3, context.getColor(R.color.black))
         rowCurrentDrawable = ta.getResourceId(4, 0)
         deckNameDefaultColor = ta.getColor(5, context.getColor(R.color.black))
-        deckNameDynColor = ta.getColor(6, context.getColor(CommonR.color.brand_orange))
-        expandImage = ta.getDrawableOrThrow(7)
+        deckGroupTitleColor = ta.getColor(6, context.getColor(CommonR.color.brand_brown_darkest))
+        deckNameDynColor = ta.getColor(7, context.getColor(CommonR.color.brand_orange))
+        expandImage = ta.getDrawableOrThrow(8)
         expandImage.isAutoMirrored = true
-        collapseImage = ta.getDrawableOrThrow(8)
+        collapseImage = ta.getDrawableOrThrow(9)
         collapseImage.isAutoMirrored = true
         ta.recycle()
         context.withStyledAttributes(attrs = intArrayOf(android.R.attr.selectableItemBackground)) {

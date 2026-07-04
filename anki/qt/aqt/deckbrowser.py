@@ -130,8 +130,6 @@ class DeckBrowser:
 <table cellspacing=0 cellpadding=3>
 %(tree)s
 </table>
-
-<br>
 %(stats)s
 </center>
 """
@@ -300,11 +298,9 @@ class DeckBrowser:
     ######################################################################
 
     def _drawButtons(self) -> None:
-        self.bottom.draw(
-            buf="",
-            link_handler=self._linkHandler,
-            web_context=DeckBrowserBottomBar(self),
-        )
+        # SpeedyCAT: the deck browser has no bottom-bar actions; skip drawing an
+        # empty toolbar webview that showed as a stray bar under the deck list.
+        pass
 
     ######################################################################
 

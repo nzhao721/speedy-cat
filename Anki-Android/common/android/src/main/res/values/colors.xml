@@ -93,4 +93,9 @@
     <color name="brand_brown_darkest">#FF2A1810</color>  <!-- night deepest bg / status bar -->
     <color name="brand_brown_mid">#FF6B4423</color>      <!-- secondary / borders -->
     <color name="brand_cream">#FFFFF8F1</color>          <!-- light background -->
+
+    <!-- Deck picker / primary text (referenced from theme_light.xml) -->
+    <color name="text_color_light">@color/brand_brown_dark</color>
+    <color name="text_color_secondary_light">@color/brand_brown_mid</color>
+    <color name="text_color_secondary_dark">#CCFFFFFF</color>
 </resources>

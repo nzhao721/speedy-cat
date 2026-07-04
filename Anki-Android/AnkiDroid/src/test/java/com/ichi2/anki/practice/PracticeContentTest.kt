@@ -133,7 +133,13 @@ class PracticeContentTest {
         assertThat(partial.hints[0].prompt, equalTo("ok?"))
 
         // No hints -> empty ladder.
-        assertThat(parsed.questions.first { it.id == "h-none" }.hints.isEmpty(), equalTo(true))
+        assertThat(
+            parsed.questions
+                .first { it.id == "h-none" }
+                .hints
+                .isEmpty(),
+            equalTo(true),
+        )
     }
 
     @Test

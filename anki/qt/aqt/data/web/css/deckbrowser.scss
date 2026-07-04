@@ -46,6 +46,10 @@ tr.deck td {
     }
 }
 
+tr.deck:last-of-type td {
+    border-bottom: none;
+}
+
 tr.top-level-drag-row td {
     border-bottom: 1px solid transparent;
 }

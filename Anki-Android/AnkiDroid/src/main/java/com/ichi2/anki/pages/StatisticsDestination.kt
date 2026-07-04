@@ -9,4 +9,5 @@ import com.ichi2.anki.SingleFragmentActivity
 import com.ichi2.anki.common.destinations.StatisticsDestination
 
 /** Builds the [Intent] that opens the statistics screen. */
-fun StatisticsDestination.toIntent(context: Context): Intent = SingleFragmentActivity.getIntent(context, fragmentClass = Statistics::class)
+fun StatisticsDestination.toIntent(context: Context): Intent =
+    SingleFragmentActivity.getIntent(context, fragmentClass = DashboardFragment::class)

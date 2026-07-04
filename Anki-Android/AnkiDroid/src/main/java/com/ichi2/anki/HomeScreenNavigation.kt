@@ -16,7 +16,7 @@ import androidx.fragment.app.commit
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ichi2.anki.BottomNavController.NavigationItem
 import com.ichi2.anki.common.annotations.NeedsTest
-import com.ichi2.anki.pages.Statistics
+import com.ichi2.anki.pages.DashboardFragment
 import com.ichi2.anki.settings.Prefs
 
 /**
@@ -77,8 +77,8 @@ private fun handleNavigationItemSelected(
             backCallback.isEnabled = true
             showBottomNavFragment(
                 {
-                    Statistics().apply {
-                        arguments = Bundle().apply { putBoolean(Statistics.ARG_HIDE_BACK_BUTTON, true) }
+                    DashboardFragment().apply {
+                        arguments = Bundle().apply { putBoolean(DashboardFragment.ARG_HIDE_BACK_BUTTON, true) }
                     }
                 },
                 item.tag,

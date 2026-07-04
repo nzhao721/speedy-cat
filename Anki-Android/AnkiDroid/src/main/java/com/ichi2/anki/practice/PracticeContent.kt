@@ -108,8 +108,7 @@ fun normalizeDifficulty(s: String): String = s.trim().lowercase()
  * desktop loader aborts a bundle missing this; on mobile we skip the individual
  * item so one malformed row can never blank out the whole bank.
  */
-private fun RawQuestion.hasSourceAttribution(): Boolean =
-    sourceName.trim().isNotEmpty() && sourceLicense.trim().isNotEmpty()
+private fun RawQuestion.hasSourceAttribution(): Boolean = sourceName.trim().isNotEmpty() && sourceLicense.trim().isNotEmpty()
 
 private fun RawQuestion.toQuestion(
     sectionDb: String,

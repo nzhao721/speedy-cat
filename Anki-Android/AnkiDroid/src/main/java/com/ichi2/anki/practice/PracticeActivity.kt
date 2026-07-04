@@ -21,6 +21,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.relocation.BringIntoViewRequester
+import androidx.compose.foundation.relocation.bringIntoViewRequester
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
@@ -360,6 +362,10 @@ private fun RunnerScreen(
     val hintCooldown = remember { mutableStateOf<Map<String, Int>>(emptyMap()) }
     val hintWrongFlash = remember { mutableStateMapOf<String, Int>() }
 
+    /** When true the hint ladder is hidden so the learner can focus on the main question. */
+    val hintLadderDismissed = remember { mutableStateMapOf<String, Boolean>() }
+    val questionBringIntoView = remember { mutableStateMapOf<String, BringIntoViewRequester>() }
+
     /** Hint timers start on first viewport visibility; pause when scrolled away. */
     val questionEverVisible = remember { mutableStateMapOf<String, Boolean>() }
     val questionCurrentlyVisible = remember { mutableStateMapOf<String, Boolean>() }
@@ -444,6 +450,7 @@ private fun RunnerScreen(
     fun requestHint(q: PracticeQuestion) {
         if (submitted[q.id] == true) return
         hintNudge[q.id] = false
+        hintLadderDismissed[q.id] = false
         val cur = hintProgress[q.id] ?: HintProgress()
         if (cur.revealed < q.hints.size) {
             hintProgress[q.id] = cur.copy(revealed = cur.revealed + 1)
@@ -711,10 +718,14 @@ private fun RunnerScreen(
                         val prog = hintProgress[q.id] ?: HintProgress()
                         val expProg = explanationProgress[q.id] ?: ExplanationProgress()
                         val awaitingExplanation = expProg.active && !expProg.passed
-                        val ladderActive = hasHintLadder(q) && submitted[q.id] != true && !awaitingExplanation
+                        val hintEligible =
+                            hasHintLadder(q) && submitted[q.id] != true && !awaitingExplanation
+                        val ladderActive = hintEligible && hintLadderDismissed[q.id] != true
+                        val bringIntoView = questionBringIntoView.getOrPut(q.id) { BringIntoViewRequester() }
                         val hintPassageWc = hintPassageWordCount(current, qi)
                         val showFirstStuck =
-                            ladderActive &&
+                            hintEligible &&
+                                hintLadderDismissed[q.id] != true &&
                                 canShowFirstHintButton(
                                     secondsOnQuestion[q.id] ?: 0,
                                     q,
@@ -723,7 +734,8 @@ private fun RunnerScreen(
                                     hintPassageWc,
                                 )
                         val showNextStuck =
-                            ladderActive &&
+                            hintEligible &&
+                                hintLadderDismissed[q.id] != true &&
                                 canShowNextHintButton(
                                     secondsSinceHintComplete[q.id] ?: 0,
                                     q.hints,
@@ -733,81 +745,98 @@ private fun RunnerScreen(
                         TrackQuestionHintVisibility(
                             onCurrentlyVisible = { onQuestionVisibilityChanged(q.id, it) },
                         ) {
-                            QuestionCard(
-                                question = q,
-                                number = number,
-                                selected = selected[q.id] ?: "",
-                                eliminated = eliminated[q.id] ?: emptyList(),
-                                flagged = flagged[q.id] == true,
-                                revealed = submitted[q.id] == true,
-                                enabled = submitted[q.id] != true && !awaitingExplanation,
-                                onSelect = { if (submitted[q.id] != true) selected[q.id] = it },
-                                onEliminate = { label ->
-                                    val list = eliminated[q.id] ?: emptyList()
-                                    eliminated[q.id] = if (list.contains(label)) list - label else list + label
-                                },
-                                onToggleFlag = { flagged[q.id] = !(flagged[q.id] ?: false) },
-                                actions =
-                                    if (submitted[q.id] != true) {
-                                        {
-                                            if (awaitingExplanation) {
-                                                Text(
-                                                    "Correct — explain your reasoning below to continue.",
-                                                    color = CorrectGreen,
-                                                    style = MaterialTheme.typography.bodySmall,
-                                                    fontWeight = FontWeight.SemiBold,
-                                                )
-                                            }
-                                            if (showFirstStuck) {
-                                                OutlinedButton(onClick = { requestHint(q) }) {
-                                                    Text("I'm stuck")
-                                                }
-                                            }
-                                            if (showNextStuck) {
-                                                OutlinedButton(onClick = { requestHint(q) }) {
-                                                    Text("I'm still stuck")
-                                                }
-                                            }
-                                            if (
-                                                hintNudge[q.id] == true &&
-                                                !canSubmitMain(selected[q.id] ?: "", prog)
-                                            ) {
-                                                Text(
-                                                    "Not quite — work through the hint, then try again.",
-                                                    color = FlagAmber,
-                                                    style = MaterialTheme.typography.bodySmall,
-                                                )
-                                            }
-                                            Button(
-                                                enabled = canSubmitMain(selected[q.id] ?: "", prog),
-                                                onClick = { submitMainQuestion(q) },
-                                            ) {
-                                                Text("Submit")
-                                            }
-                                        }
-                                    } else {
-                                        null
+                            Column(
+                                Modifier.bringIntoViewRequester(bringIntoView),
+                                verticalArrangement = Arrangement.spacedBy(16.dp),
+                            ) {
+                                QuestionCard(
+                                    question = q,
+                                    number = number,
+                                    selected = selected[q.id] ?: "",
+                                    eliminated = eliminated[q.id] ?: emptyList(),
+                                    flagged = flagged[q.id] == true,
+                                    revealed = submitted[q.id] == true,
+                                    enabled = submitted[q.id] != true && !awaitingExplanation,
+                                    onSelect = { if (submitted[q.id] != true) selected[q.id] = it },
+                                    onEliminate = { label ->
+                                        val list = eliminated[q.id] ?: emptyList()
+                                        eliminated[q.id] = if (list.contains(label)) list - label else list + label
                                     },
-                            )
-                            if (awaitingExplanation) {
-                                ExplanationChatCard(
-                                    opener = buildUserVisibleExplanationPrompt(q.stem),
-                                    progress = expProg,
-                                    coachingHint = explanationCoaching[q.id] ?: "",
-                                    onSubmit = { submitExplanation(q, it) },
+                                    onToggleFlag = { flagged[q.id] = !(flagged[q.id] ?: false) },
+                                    actions =
+                                        if (submitted[q.id] != true) {
+                                            {
+                                                if (awaitingExplanation) {
+                                                    Text(
+                                                        "Correct — explain your reasoning below to continue.",
+                                                        color = CorrectGreen,
+                                                        style = MaterialTheme.typography.bodySmall,
+                                                        fontWeight = FontWeight.SemiBold,
+                                                    )
+                                                }
+                                                if (showFirstStuck) {
+                                                    OutlinedButton(onClick = { requestHint(q) }) {
+                                                        Text("I'm stuck")
+                                                    }
+                                                }
+                                                if (showNextStuck) {
+                                                    OutlinedButton(onClick = { requestHint(q) }) {
+                                                        Text("I'm still stuck")
+                                                    }
+                                                }
+                                                if (
+                                                    hintEligible &&
+                                                    hintLadderDismissed[q.id] == true &&
+                                                    prog.revealed > 0
+                                                ) {
+                                                    OutlinedButton(onClick = { hintLadderDismissed[q.id] = false }) {
+                                                        Text("Show hints again")
+                                                    }
+                                                }
+                                                if (
+                                                    hintNudge[q.id] == true &&
+                                                    !canSubmitMain(selected[q.id] ?: "", prog)
+                                                ) {
+                                                    Text(
+                                                        "Not quite — work through the hint, then try again.",
+                                                        color = FlagAmber,
+                                                        style = MaterialTheme.typography.bodySmall,
+                                                    )
+                                                }
+                                                Button(
+                                                    enabled = canSubmitMain(selected[q.id] ?: "", prog),
+                                                    onClick = { submitMainQuestion(q) },
+                                                ) {
+                                                    Text("Submit")
+                                                }
+                                            }
+                                        } else {
+                                            null
+                                        },
                                 )
-                            }
-                            if (ladderActive) {
-                                HintLadderCard(
-                                    hints = q.hints,
-                                    progress = prog,
-                                    pendingChoice = hintPendingChoice[q.id] ?: "",
-                                    hintCooldown = hintCooldown.value[q.id] ?: 0,
-                                    wrongFlash = hintWrongFlash[q.id] ?: 0,
-                                    onPendingChoiceChange = { hintPendingChoice[q.id] = it },
-                                    onSubmitHint = { idx, label -> submitHintAnswer(q, idx, label) },
-                                    onReturnToMain = { scope.launch { contentScroll.animateScrollTo(0) } },
-                                )
+                                if (awaitingExplanation) {
+                                    ExplanationChatCard(
+                                        opener = buildUserVisibleExplanationPrompt(q.stem),
+                                        progress = expProg,
+                                        coachingHint = explanationCoaching[q.id] ?: "",
+                                        onSubmit = { submitExplanation(q, it) },
+                                    )
+                                }
+                                if (ladderActive) {
+                                    HintLadderCard(
+                                        hints = q.hints,
+                                        progress = prog,
+                                        pendingChoice = hintPendingChoice[q.id] ?: "",
+                                        hintCooldown = hintCooldown.value[q.id] ?: 0,
+                                        wrongFlash = hintWrongFlash[q.id] ?: 0,
+                                        onPendingChoiceChange = { hintPendingChoice[q.id] = it },
+                                        onSubmitHint = { idx, label -> submitHintAnswer(q, idx, label) },
+                                        onReturnToMain = {
+                                            hintLadderDismissed[q.id] = true
+                                            scope.launch { bringIntoView.bringIntoView() }
+                                        },
+                                    )
+                                }
                             }
                         }
                         if (qi < current.questions.size - 1) {

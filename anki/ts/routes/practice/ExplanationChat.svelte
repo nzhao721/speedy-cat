@@ -27,6 +27,22 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 
     let draft = $state("");
 
+    function botMessage(): string {
+        const lines: string[] = [opener];
+        if (coachingHint.trim()) {
+            lines.push(coachingHint);
+        }
+        if (progress.lastFeedback && !progress.passed && !progress.bypassed) {
+            lines.push(progress.lastFeedback);
+        }
+        if (progress.passed) {
+            lines.push("Thanks — your explanation shows you understand why.");
+        } else if (progress.bypassed && progress.lastFeedback) {
+            lines.push(progress.lastFeedback);
+        }
+        return lines.filter((line) => line.trim() !== "").join("\n\n");
+    }
+
     function onSubmit(): void {
         const text = draft.trim();
         if (!text || progress.checking || disabled) {
@@ -40,21 +56,9 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 <div class="explanation-chat" aria-live="polite">
     <div class="chat-head">Explain your answer</div>
 
-    <div class="bubble bot">{opener}</div>
+    <div class="bubble bot">{botMessage()}</div>
 
-    {#if coachingHint}
-        <div class="bubble bot hint">{coachingHint}</div>
-    {/if}
-
-    {#if progress.lastFeedback && !progress.passed && !progress.bypassed}
-        <div class="bubble bot feedback">{progress.lastFeedback}</div>
-    {/if}
-
-    {#if progress.passed}
-        <div class="bubble bot pass">Thanks — your explanation shows you understand why.</div>
-    {:else if progress.bypassed}
-        <div class="bubble bot note">{progress.lastFeedback}</div>
-    {:else}
+    {#if !progress.passed && !progress.bypassed}
         <label class="input-wrap">
             <span class="sr-only">Your explanation</span>
             <textarea
@@ -101,24 +105,6 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         align-self: flex-start;
         background: var(--canvas-elevated);
         border: 1px solid var(--border-subtle);
-    }
-    .bubble.hint,
-    .bubble.feedback {
-        border-color: #e0a34e;
-        background: rgba(224, 163, 78, 0.12);
-        color: var(--fg);
-        font-size: 0.92rem;
-    }
-    .bubble.pass {
-        border-color: #2e9e4f;
-        background: rgba(46, 158, 79, 0.15);
-        color: var(--fg);
-    }
-    .bubble.note {
-        border-color: var(--border-subtle);
-        background: var(--canvas-elevated);
-        color: var(--fg-subtle);
-        font-size: 0.92rem;
     }
     .input-wrap textarea {
         width: 100%;

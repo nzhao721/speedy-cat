@@ -629,6 +629,15 @@ fun ExplanationChatCard(
     modifier: Modifier = Modifier,
 ) {
     var draft by remember(progress.active) { mutableStateOf("") }
+    val botMessage =
+        buildList {
+            add(opener)
+            if (coachingHint.isNotBlank()) add(coachingHint)
+            if (progress.lastFeedback.isNotBlank() && !progress.passed) add(progress.lastFeedback)
+            if (progress.passed) {
+                add("Thanks — your explanation shows you understand why.")
+            }
+        }.joinToString("\n\n")
     Surface(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(10.dp),
@@ -644,19 +653,12 @@ fun ExplanationChatCard(
                 style = MaterialTheme.typography.titleSmall,
                 fontWeight = FontWeight.Bold,
             )
-            ChatBubble(text = opener)
-            if (coachingHint.isNotEmpty()) {
-                ChatBubble(text = coachingHint, emphasized = true)
-            }
-            if (progress.lastFeedback.isNotEmpty() && !progress.passed) {
-                ChatBubble(text = progress.lastFeedback, emphasized = true)
-            }
-            if (progress.passed) {
-                ChatBubble(
-                    text = "Thanks — your explanation shows you understand why.",
-                    success = true,
-                )
-            } else {
+            ChatBubble(
+                text = botMessage,
+                emphasized = progress.lastFeedback.isNotBlank() && !progress.passed,
+                success = progress.passed,
+            )
+            if (!progress.passed) {
                 OutlinedTextField(
                     value = draft,
                     onValueChange = { draft = it },

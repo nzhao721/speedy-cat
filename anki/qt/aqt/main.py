@@ -6,6 +6,7 @@ from __future__ import annotations
 import enum
 import gc
 import getpass
+import json
 import os
 import re
 import signal
@@ -221,6 +222,8 @@ class AnkiQt(QMainWindow):
     # mode currently shown in it (None until a study tab is first opened).
     speedycatWeb: AnkiWebView
     _speedycat_mode: str | None = None
+    _full_length_lockdown: bool = False
+    _full_length_attempt_id: str | None = None
 
     def __init__(
         self,
@@ -838,6 +841,16 @@ class AnkiQt(QMainWindow):
     ##########################################################################
 
     def moveToState(self, state: MainWindowState, *args: Any) -> None:
+        # SpeedyCAT: block navigation away from an active full-length attempt
+        # unless the user confirms abandoning it.
+        import aqt.full_length_lockdown
+
+        if aqt.full_length_lockdown.is_active(self):
+            leaving = state != "speedycat" or (
+                args and args[0] != "full-length"
+            ) or (not args and self._speedycat_mode != "full-length")
+            if leaving and not aqt.full_length_lockdown.confirm_leave(self):
+                return
         # print("-> move from", self.state, "to", state)
         oldState = self.state
         cleanup = getattr(self, f"_{oldState}Cleanup", None)
@@ -924,14 +937,98 @@ class AnkiQt(QMainWindow):
             self.speedycatWeb.hide()
 
     def _on_speedycat_bridge_cmd(self, cmd: str) -> bool:
-        # SpeedyCAT: the embedded stats dashboard reuses the stock graph
-        # components, whose bars/legends link into the card browser. Mirror the
-        # old stats dialog's bridge handling so those links keep working.
-        if cmd.startswith("browserSearch"):
-            _, query = cmd.split(":", 1)
-            browser = aqt.dialogs.open("Browser", self)
-            browser.search_for(query)
+        # SpeedyCAT: full-length exam lockdown signals from the embedded page.
+        import aqt.full_length_lockdown
+
+        if cmd.startswith("speedycat:fullLengthLock:"):
+            _, _, mode, *rest = cmd.split(":", 3)
+            if mode == "on" and rest:
+                aqt.full_length_lockdown.set_active(self, True, rest[0])
+            elif mode == "off":
+                aqt.full_length_lockdown.set_active(self, False)
+            return True
+        if cmd == "speedycat:explanationAiStatus":
+            from anki import speedycat_ai, speedycat_explanation
+
+            col = self.col
+            ai_on = (
+                col.get_config(speedycat_ai.AI_CONFIG_KEY, speedycat_ai.AI_CONFIG_DEFAULT)
+                if col
+                else speedycat_ai.AI_CONFIG_DEFAULT
+            )
+            return {
+                "available": speedycat_explanation.explanation_ai_available(),
+                "aiOn": bool(ai_on),
+            }
+        if cmd.startswith("speedycat:explanationCheck:"):
+            # The embedded webview can't reach the AI proxy directly, so the
+            # practice page hands the explanation check to Python (same proxy +
+            # local-key path as the answer checker). Runs off the GUI thread;
+            # the verdict is delivered back via web.eval. A null result is a
+            # genuine transient failure — the page then lets the learner advance.
+            self._speedycat_run_explanation_check(cmd)
+            return True
         return False
+
+    def _speedycat_run_explanation_check(self, cmd: str) -> None:
+        """Parse a `speedycat:explanationCheck:<id>:<encoded-json>` bridge command
+        and run the AI explanation check on a background thread, delivering the
+        result to the practice page via web.eval."""
+        from urllib.parse import unquote
+
+        from anki import speedycat_explanation
+
+        parts = cmd.split(":", 3)
+        if len(parts) != 4:
+            return
+        request_id = parts[2]
+        stem = user_explanation = correct_answer = ""
+        try:
+            payload = json.loads(unquote(parts[3]))
+        except Exception:
+            payload = None
+        if isinstance(payload, dict):
+            stem = str(payload.get("stem") or "")
+            user_explanation = str(payload.get("userExplanation") or "")
+            correct_answer = str(payload.get("correctAnswer") or "")
+
+        def task() -> tuple[speedycat_explanation.ExplanationResult | None, str]:
+            return speedycat_explanation.run_check(
+                stem, user_explanation, correct_answer
+            )
+
+        def on_done(future: Future) -> None:
+            try:
+                result, source = future.result()
+            except Exception:
+                result, source = None, speedycat_explanation.SOURCE_BASELINE
+            verdict = (
+                {
+                    "pass": result.passed,
+                    "feedback": result.feedback,
+                    "source": source,
+                }
+                if result is not None
+                else None
+            )
+            self._speedycat_resolve_explanation_check(request_id, verdict)
+
+        self.taskman.run_in_background(task, on_done, uses_collection=False)
+
+    def _speedycat_resolve_explanation_check(
+        self, request_id: str, verdict: dict[str, Any] | None
+    ) -> None:
+        """Deliver an explanation-check verdict (or null) back to the practice
+        page's pending promise. Runs on the main thread (taskman on_done)."""
+        try:
+            rid = int(request_id)
+        except (TypeError, ValueError):
+            return
+        payload = json.dumps(verdict)
+        self.speedycatWeb.eval(
+            "window.__speedycatResolveExplanationCheck && "
+            f"window.__speedycatResolveExplanationCheck({rid}, {payload});"
+        )
 
     # Resetting state
     ##########################################################################
@@ -1322,10 +1419,8 @@ title="{}" {}>{}</button>""".format(
             ("d", lambda: self.moveToState("deckBrowser")),
             ("s", self.onStudyKey),
             ("a", self.onAddCard),
-            ("b", self.onBrowse),
             ("t", self.onStats),
             ("Shift+t", self.onStats),
-            ("y", self.on_sync_button_clicked),
         ]
         self.applyShortcuts(globalShortcuts)
         self.stateShortcuts: list[QShortcut] = []
@@ -1385,15 +1480,24 @@ title="{}" {}>{}</button>""".format(
         else:
             self.moveToState("overview")
 
+    def _guard_full_length_navigation(self) -> bool:
+        import aqt.full_length_lockdown
+
+        return aqt.full_length_lockdown.confirm_leave(self)
+
     # App exit
     ##########################################################################
 
     def closeEvent(self, event: QCloseEvent) -> None:
+        import aqt.full_length_lockdown
+
         if self.state == "profileManager":
             # if profile manager active, this event may fire via OS X menu bar's
             # quit option
             self.profileDiag.close()
             event.accept()
+        elif not aqt.full_length_lockdown.confirm_close(self):
+            event.ignore()
         else:
             # ignore the event for now, as we need time to clean up
             event.ignore()
@@ -1443,10 +1547,9 @@ title="{}" {}>{}</button>""".format(
     ##########################################################################
 
     def onAddCard(self) -> None:
+        if not self._guard_full_length_navigation():
+            return
         aqt.dialogs.open("AddCards", self)
-
-    def onBrowse(self) -> None:
-        aqt.dialogs.open("Browser", self, card=self.reviewer.card)
 
     def onOverview(self) -> None:
         self.moveToState("overview")
@@ -1484,12 +1587,6 @@ title="{}" {}>{}</button>""".format(
 
     def onAbout(self) -> None:
         aqt.dialogs.open("About", self)
-
-    def onDonate(self) -> None:
-        openLink(aqt.appDonate)
-
-    def onDocumentation(self) -> None:
-        openHelp(HelpPage.INDEX)
 
     # legacy
 
@@ -1565,8 +1662,6 @@ title="{}" {}>{}</button>""".format(
         qconnect(m.actionExit.triggered, self.close)
 
         # Help
-        qconnect(m.actionDocumentation.triggered, self.onDocumentation)
-        qconnect(m.actionDonate.triggered, self.onDonate)
         qconnect(m.actionAbout.triggered, self.onAbout)
         m.actionAbout.setText(tr.qt_accel_about_mac())
 
@@ -1615,6 +1710,10 @@ title="{}" {}>{}</button>""".format(
         import aqt.practice
 
         aqt.practice.setup(self)
+
+        import aqt.speedycat_auto_sync
+
+        aqt.speedycat_auto_sync.setup(self)
 
     def _remove_menu_bar(self) -> None:
         """SpeedyCAT: remove the native menu bar from the main window entirely.

@@ -93,7 +93,7 @@ def evaluate(ai: ModuleType, run_ai: bool) -> tuple[Metrics, Metrics | None, lis
         }
 
         if ai_metrics is not None:
-            result = ai.run_check(front, typed, expected)
+            result, _source = ai.run_check(front, typed, expected)
             if result is None:
                 ai_metrics.errors += 1
                 # A failed call falls back to the baseline in the live app; for

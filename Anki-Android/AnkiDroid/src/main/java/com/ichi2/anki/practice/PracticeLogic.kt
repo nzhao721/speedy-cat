@@ -248,7 +248,10 @@ fun shuffleQuestionChoices(
     if (question.choices.size < 2) return question
     val rng = Random(seedFromStr("$sessionId:${question.id}"))
     val positionalLabels = question.choices.map { it.label }
-    val order = question.choices.indices.toMutableList().apply { shuffle(rng) }
+    val order =
+        question.choices.indices
+            .toMutableList()
+            .apply { shuffle(rng) }
     var newCorrect = question.correctAnswer
     val newChoices =
         order.mapIndexed { position, origIdx ->
@@ -342,6 +345,33 @@ fun pendingHintIndex(progress: HintProgress): Int {
     return if (progress.picks[idx] == null) idx else -1
 }
 
+/**
+ * Indices of the revealed hint subquestions in DISPLAY order: the most-recently
+ * revealed tier first. This ONLY affects how revealed tiers are rendered (newest
+ * on top, directly under the main question); the ladder still PROGRESSES strictly
+ * L1 -> L2 -> L3 with no skipping (see [pendingHintIndex] / [canRevealNextHint]).
+ * e.g. after all three are revealed this returns [2, 1, 0]. Mirrors the desktop
+ * `hintDisplayOrder`.
+ */
+fun hintDisplayOrder(revealed: Int): List<Int> = (maxOf(0, revealed) - 1 downTo 0).toList()
+
+/**
+ * Whether to offer the "Return to main question" shortcut on the revealed hint at
+ * [index]. Only the LATEST revealed subquestion shows it, and only once it has
+ * been answered correctly (picks store correct answers only) and the ladder is
+ * still interactive (not [locked] because the main question is submitted).
+ * Mirrors the desktop `canReturnToMain`.
+ */
+fun canReturnToMain(
+    progress: HintProgress,
+    index: Int,
+    locked: Boolean,
+): Boolean {
+    if (locked || progress.revealed <= 0) return false
+    val latest = progress.revealed - 1
+    return index == latest && progress.picks[latest] != null
+}
+
 /** Can the learner reveal the NEXT hint? Only when one remains AND the current
  * revealed subquestion has been answered (no skipping ahead). */
 fun canRevealNextHint(
@@ -361,6 +391,174 @@ fun hintAnswerCorrect(
     hint: HintSubquestion,
     label: String,
 ): Boolean = label.isNotEmpty() && label == hint.correctAnswer
+
+// ---- Hint ladder UX timers -------------------------------------------------
+//
+// SpeedyCAT practice mode gates hint affordances so learners attempt retrieval
+// before scaffolding. Mirrors the desktop `lib.ts` helpers.
+
+/** Minimum wait before the first "I'm stuck" button (seconds). */
+const val HINT_FIRST_MIN_SECONDS = 15
+
+/** Maximum wait before the first "I'm stuck" button (seconds). */
+const val HINT_FIRST_MAX_SECONDS = 30
+
+/** Wait on the main question before "I'm still stuck" reveals the next tier. */
+const val HINT_SUBSEQUENT_SECONDS = 6
+
+/** Cooldown after a wrong hint subquestion submit before retry (seconds). */
+const val HINT_WRONG_RETRY_SECONDS = 5
+
+/** Assumed reading speed when gating hints behind passage read time (words/min). */
+const val PASSAGE_READ_WPM = 300
+
+/** Readable character count for a question stem + all answer choices. */
+fun questionReadingChars(question: PracticeQuestion): Int = question.stem.length + question.choices.sumOf { it.text.length }
+
+/** Word count from passage metadata or plain text (HTML stripped). */
+fun passageWordCount(
+    wordCount: Int?,
+    passageText: String?,
+): Int {
+    if (wordCount != null && wordCount > 0) return wordCount
+    val text = (passageText ?: "").replace(Regex("<[^>]+>"), " ").trim()
+    if (text.isEmpty()) return 0
+    return text.split(Regex("\\s+")).filter { it.isNotEmpty() }.size
+}
+
+/**
+ * Seconds to allow reading a passage at [PASSAGE_READ_WPM] before hints may
+ * unlock (e.g. 600 words → 120 s).
+ */
+fun passageReadGateSeconds(wordCount: Int): Int {
+    if (wordCount <= 0) return 0
+    return kotlin.math.ceil(wordCount / PASSAGE_READ_WPM.toDouble() * 60).toInt()
+}
+
+/**
+ * Passage read gate for one question within a run item. In a multi-question
+ * CARS sidebar only the first question carries the shared passage allowance;
+ * later questions use stem-only timing once the learner scrolls to them.
+ */
+fun passageHintWordCountForQuestion(
+    questionCountInItem: Int,
+    questionIndexInItem: Int,
+    passageWordCount: Int,
+): Int? {
+    if (passageWordCount <= 0) return null
+    if (questionCountInItem > 1 && questionIndexInItem > 0) return null
+    return passageWordCount
+}
+
+/**
+ * Delay before showing the first "I'm stuck" affordance. Starts at 15 s, adds
+ * ~1 s per 100 characters of stem/choices (time to read + attempt retrieval),
+ * capped at 30 s. When a passage is linked, uses whichever is longer: that
+ * base delay or the time to read the passage at 300 WPM.
+ */
+fun firstHintDelaySeconds(
+    question: PracticeQuestion,
+    passageWordCount: Int? = null,
+): Int {
+    val extra = questionReadingChars(question) / 100
+    val base = minOf(HINT_FIRST_MAX_SECONDS, maxOf(HINT_FIRST_MIN_SECONDS, HINT_FIRST_MIN_SECONDS + extra))
+    if (passageWordCount == null || passageWordCount <= 0) return base
+    return maxOf(base, passageReadGateSeconds(passageWordCount))
+}
+
+/**
+ * Whether a per-question hint timer should advance this tick. Timers start on
+ * first viewport visibility and pause when scrolled away without resetting.
+ */
+fun shouldTickQuestionHintTimer(
+    everVisible: Boolean,
+    currentlyVisible: Boolean,
+): Boolean = everVisible && currentlyVisible
+
+/** May the learner tap "I'm stuck" to reveal hint tier 1? */
+fun canShowFirstHintButton(
+    elapsedSeconds: Int,
+    question: PracticeQuestion,
+    progress: HintProgress,
+    locked: Boolean,
+    passageWordCount: Int? = null,
+): Boolean =
+    !locked &&
+        progress.revealed == 0 &&
+        elapsedSeconds >= firstHintDelaySeconds(question, passageWordCount)
+
+/**
+ * May the learner tap "I'm still stuck" on the main question to reveal the
+ * next tier? Requires the current tier to be answered and a subsequent delay.
+ */
+fun canShowNextHintButton(
+    elapsedSinceHintComplete: Int,
+    hints: List<HintSubquestion>,
+    progress: HintProgress,
+    locked: Boolean,
+): Boolean =
+    !locked &&
+        canRevealNextHint(hints, progress) &&
+        elapsedSinceHintComplete >= HINT_SUBSEQUENT_SECONDS
+
+/** May the learner submit a hint subquestion answer right now? */
+fun canSubmitHintAnswer(
+    choice: String,
+    cooldownRemaining: Int,
+): Boolean = choice.isNotEmpty() && cooldownRemaining <= 0
+
+/** May the learner pick a choice on the active hint subquestion? */
+fun hintChoicesEnabled(
+    answered: Boolean,
+    locked: Boolean,
+    isCurrent: Boolean,
+    cooldownRemaining: Int,
+): Boolean = !answered && !locked && isCurrent && cooldownRemaining <= 0
+
+/** Start the post-wrong hint retry cooldown for one question. */
+fun startHintWrongCooldown(
+    cooldowns: Map<String, Int>,
+    questionId: String,
+): Map<String, Int> = cooldowns + (questionId to HINT_WRONG_RETRY_SECONDS)
+
+/** Advance all per-question hint wrong-answer cooldowns by one second. */
+fun tickHintCooldowns(cooldowns: Map<String, Int>): Map<String, Int> {
+    var changed = false
+    val next = cooldowns.toMutableMap()
+    for ((qid, remaining) in cooldowns) {
+        if (remaining > 0) {
+            next[qid] = remaining - 1
+            changed = true
+        }
+    }
+    return if (changed) next else cooldowns
+}
+
+/**
+ * Show a duplicate main Submit next to the hint affordances (near the top of
+ * the question) so learners need not scroll past the ladder after using hints.
+ * Mirrors the desktop `shouldShowConvenientMainSubmit`.
+ */
+fun shouldShowConvenientMainSubmit(
+    progress: HintProgress,
+    locked: Boolean,
+): Boolean = !locked && progress.revealed > 0
+
+/**
+ * Apply a hint subquestion answer. Wrong picks are rejected (progress unchanged)
+ * so the learner must retry until correct — picks only store correct answers.
+ */
+fun applyHintAnswer(
+    hint: HintSubquestion,
+    index: Int,
+    label: String,
+    progress: HintProgress,
+): Pair<HintProgress, Boolean> {
+    if (!hintAnswerCorrect(hint, label)) {
+        return progress to false
+    }
+    return progress.copy(picks = progress.picks + (index to label)) to true
+}
 
 // ---- Session summary & tracking aggregation -------------------------------
 
@@ -421,13 +619,20 @@ fun topicStats(
     attempts: List<Attempt>,
     source: AttemptSource = AttemptSource.ALL,
     section: McatSection? = null,
+    firstAttemptNoHintOnly: Boolean = false,
 ): List<TopicStat> =
     attempts
         .filter { sourceMatches(it, source) && (section == null || it.section == section) }
+        .filter { !firstAttemptNoHintOnly || it.firstTryNoHint != null }
         .groupBy { (it.section?.dbCode ?: "") to it.topic }
         .map { (key, group) ->
             val n = group.size
-            val correct = group.count { it.correct }
+            val correct =
+                if (firstAttemptNoHintOnly) {
+                    group.sumOf { it.firstTryNoHint ?: 0 }
+                } else {
+                    group.count { it.correct }
+                }
             val totalTime = group.sumOf { it.timeSeconds }
             TopicStat(
                 topic = key.second,
@@ -439,6 +644,85 @@ fun topicStats(
                 avgTimeSeconds = ratio(totalTime, n),
             )
         }.sortedWith(compareBy({ it.section?.dbCode ?: "" }, { it.topic }))
+
+// ---- Explanation gate (correct-answer verification) -----------------------
+
+const val EXPLANATION_GATE_MODULO = 5
+const val EXPLANATION_GATE_SUFFIX = ":explanation-gate"
+
+val GENERIC_EXPLANATION_FAIL_HINTS: List<String> =
+    listOf(
+        "Walk through your reasoning step by step. What concept does this question test, " +
+            "and how does it support your conclusion?",
+        "Be more specific about the underlying principle. How does it apply to the " +
+            "scenario in the stem?",
+        "Connect the stem's details to the science. Explain why your answer follows " +
+            "from that principle — without just restating the question.",
+    )
+
+/** Per-question progress through the explanation gate after a correct MCQ answer. */
+data class ExplanationProgress(
+    val active: Boolean = false,
+    val failCount: Int = 0,
+    val lastFeedback: String = "",
+    val passed: Boolean = false,
+    val checking: Boolean = false,
+)
+
+/** Deterministic ~1-in-5 gate per session + question (stable on revisit). */
+fun requiresExplanationGate(
+    sessionId: String,
+    questionId: String,
+): Boolean {
+    val key = "$sessionId:$questionId$EXPLANATION_GATE_SUFFIX"
+    return seedFromStr(key) % EXPLANATION_GATE_MODULO == 0L
+}
+
+fun shouldUseExplanationGate(
+    sessionId: String,
+    questionId: String,
+    aiOn: Boolean,
+    aiAvailable: Boolean,
+): Boolean {
+    if (!aiOn || !aiAvailable) return false
+    return requiresExplanationGate(sessionId, questionId)
+}
+
+fun correctAnswerText(question: PracticeQuestion): String {
+    val match = question.choices.firstOrNull { it.label == question.correctAnswer }
+    return match?.text?.trim()?.takeIf { it.isNotEmpty() } ?: question.correctAnswer
+}
+
+fun buildUserVisibleExplanationPrompt(stem: String): String {
+    val preview = stem.trim().let { if (it.length > 280) it.take(277) + "..." else it }
+    return (
+        "You answered correctly. Before moving on, explain your reasoning in a few " +
+            "sentences — why is your answer right for this question?\n\n\"$preview\""
+    )
+}
+
+fun explanationFailureHint(
+    failCount: Int,
+    hints: List<HintSubquestion> = emptyList(),
+): String {
+    val level = maxOf(1, failCount)
+    if (level <= GENERIC_EXPLANATION_FAIL_HINTS.size) {
+        return GENERIC_EXPLANATION_FAIL_HINTS[level - 1]
+    }
+    val hintIdx = level - GENERIC_EXPLANATION_FAIL_HINTS.size - 1
+    val prompt = hints.getOrNull(hintIdx)?.prompt
+    if (!prompt.isNullOrBlank()) return "Consider: $prompt"
+    return GENERIC_EXPLANATION_FAIL_HINTS.last()
+}
+
+fun itemBlocksExplanationProgress(
+    questions: List<PracticeQuestion>,
+    progress: Map<String, ExplanationProgress>,
+): Boolean =
+    questions.any { q ->
+        val p = progress[q.id]
+        p?.active == true && p.passed != true
+    }
 
 /**
  * Aggregate time-spent + accuracy per section. Mirrors the desktop

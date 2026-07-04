@@ -819,7 +819,6 @@ class AddonsDialog(QDialog):
         qconnect(f.installFromFile.clicked, self.onInstallFiles)
         qconnect(f.checkForUpdates.clicked, self.check_for_updates)
         qconnect(f.toggleEnabled.clicked, self.onToggleEnabled)
-        qconnect(f.viewPage.clicked, self.onViewPage)
         qconnect(f.viewFiles.clicked, self.onViewFiles)
         qconnect(f.delete_2.clicked, self.onDelete)
         qconnect(f.config.clicked, self.onConfig)
@@ -1073,10 +1072,6 @@ class GetAddons(QDialog):
         self.ids: list[int] = []
         self.form = aqt.forms.getaddons.Ui_Dialog()
         self.form.setupUi(self)
-        b = self.form.buttonBox.addButton(
-            tr.addons_browse_addons(), QDialogButtonBox.ButtonRole.ActionRole
-        )
-        qconnect(b.clicked, self.onBrowse)
         disable_help_button(self)
         restoreGeom(self, "getaddons", adjustSize=True)
         self.exec()
@@ -1391,13 +1386,9 @@ class ChooseAddonsToUpdateList(QListWidget):
             self.header_checked(self.bool_to_check(not checked))
 
     def on_context_menu(self, point: QPoint) -> None:
-        if not (item := self.itemAt(point)):
+        if not self.itemAt(point):
             return
-        addon_id = item.data(self.ADDON_ID_ROLE)
-        m = QMenu()
-        a = m.addAction(tr.addons_view_addon_page())
-        qconnect(a.triggered, lambda _: openLink(f"{aqt.appShared}info/{addon_id}"))
-        m.exec(QCursor.pos())
+        return
 
     def check_item(self, item: QListWidgetItem, check: Qt.CheckState) -> None:
         "call item.setCheckState without triggering on_check"

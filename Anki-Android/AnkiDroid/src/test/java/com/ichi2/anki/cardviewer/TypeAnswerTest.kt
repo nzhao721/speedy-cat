@@ -60,7 +60,7 @@ $!"""
  background-color: white;
 }
 </style>Type in hello
-<div class="type-answer-result type-answer-correct"><code id=typeans><span class=typeGood>hello</span></code></div><div class="type-answer-expected">Expected: hello</div>
+<div class="type-answer-result type-answer-correct"><code id=typeans><span class=typeGood>hello</span></code></div>
 
 <hr id=answer>
 
@@ -94,7 +94,7 @@ hello"""
  background-color: white;
 }
 </style>Type in hello
-<div class="type-answer-result type-answer-incorrect"><code id=typeans><span class=typeBad>hello</span><br><span id=typearrow>&darr;</span><br><span class=typeMissed>xyzzy$$$22</span></code></div><div class="type-answer-expected">Expected: xyzzy$$$22</div>
+<div class="type-answer-result type-answer-incorrect"><code id=typeans><span class=typeBad>hello</span><br><span id=typearrow>&darr;</span><br><span class=typeMissed>xyzzy$$$22</span></code></div>
 
 <hr id=answer>
 
@@ -164,7 +164,7 @@ $!"""
  background-color: white;
 }
 </style>Type in $!
-<div class="type-answer-result type-answer-correct"><code id=typeans><span class=typeGood>$!</span></code></div><div class="type-answer-expected">Expected: $!</div>
+<div class="type-answer-result type-answer-correct"><code id=typeans><span class=typeGood>$!</span></code></div>
 
 <hr id=answer>
 
@@ -199,7 +199,7 @@ $!"""
  background-color: white;
 }
 </style>Type in $!
-<div class="type-answer-result type-answer-incorrect"><code id=typeans><span class=typeBad>$!</span><br><span id=typearrow>&darr;</span><br><span class=typeMissed>hello</span></code></div><div class="type-answer-expected">Expected: hello</div>
+<div class="type-answer-result type-answer-incorrect"><code id=typeans><span class=typeBad>$!</span><br><span id=typearrow>&darr;</span><br><span class=typeMissed>hello</span></code></div>
 
 <hr id=answer>
 
@@ -253,24 +253,13 @@ $!"""
     }
 
     @Test
-    fun forcedRecallRevealShowsExpectedAnswerForBothOutcomes() {
-        // SpeedyCAT: alongside the verdict, the reveal shows the expected answer the checker
-        // compared against, clearly labelled, for both correct and incorrect outcomes.
+    fun forcedRecallRevealDoesNotShowExpectedAnswer() {
         val correct = typeAnsAnswerFilter("[[type:Back]]", "hello", "hello")
-        assertThat(correct, containsString("type-answer-expected"))
-        assertThat(correct, containsString("Expected: hello"))
+        assertThat(correct, not(containsString("type-answer-expected")))
+        assertThat(correct, not(containsString("Expected:")))
 
         val incorrect = typeAnsAnswerFilter("[[type:Back]]", "hallo", "hello")
-        assertThat(incorrect, containsString("type-answer-incorrect"))
-        assertThat(incorrect, containsString("Expected: hello"))
-    }
-
-    @Test
-    fun forcedRecallExpectedAnswerStripsHtmlAndPreservesCase() {
-        // The expected answer is displayed with HTML stripped and its original case kept.
-        val output = typeAnsAnswerFilter("[[type:Back]]", "aorta", "<b>Aorta</b>")
-        assertThat(output, containsString("Expected: Aorta"))
-        assertThat(output, not(containsString("Expected: <b>")))
+        assertThat(incorrect, not(containsString("Expected:")))
     }
 
     @Test

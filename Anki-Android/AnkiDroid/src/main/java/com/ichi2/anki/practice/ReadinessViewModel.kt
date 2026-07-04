@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // SPDX-FileCopyrightText: 2026 SpeedyCAT contributors
 //
-// ViewModel for the Readiness screen. It gathers each pillar's inputs from its
-// named, deterministic source — FSRS retrievability from the Anki backend
-// (Memory) and the local Practice attempt store (Performance) — and hands them
-// to the pure ReadinessLogic to compute value + range + give-up. No AI is used.
+// ViewModel for the Readiness screen. Prefers `PracticeService.GetReadiness`
+// from the Rust backend (Memory + Performance); falls back to ReadinessLogic
+// when the stock backend lacks PracticeService. Full-length Readiness uses
+// synced desktop summaries when the backend pillar is unavailable.
 
 package com.ichi2.anki.practice
 
@@ -47,8 +47,6 @@ class ReadinessViewModel(
         loadFailed = false
         viewModelScope.launch {
             try {
-                // Pull in results synced from other devices before computing, so
-                // the pillars reflect the union of this device + desktop.
                 runCatching { repo.ingestResults() }
                     .onFailure { Timber.w(it, "SpeedyCAT: results ingest failed") }
                 val summaries =
@@ -70,20 +68,58 @@ class ReadinessViewModel(
 
     private suspend fun buildPillars(summaries: List<FullLengthSummary>): List<ReadinessPillar> {
         val attempts = withContext(Dispatchers.IO) { repo.allAttempts() }
-        val memory = memoryPillarFromCollection()
-        val performance = performancePillar(computePerformance(attempts.filter { it.sessionId != null }))
-        // Readiness is the desktop-created full-length raw score, read-only here.
-        val readiness = readinessPillar(computeReadiness(summaries))
+        val sessionAttempts = attempts.filter { it.sessionId != null }
+        val totalCards = collectionTotalCards()
+        val performanceResult = computePerformance(sessionAttempts)
+
+        val fromBackend =
+            CollectionManager.withCol {
+                ReadinessBackend.tryFetchPillars(this, sessionAttempts)
+            }
+        if (fromBackend != null) {
+            val readiness =
+                enhanceReadinessPillar(
+                    fromBackend.readiness?.takeIf { it.sufficient }
+                        ?: readinessPillar(computeReadiness(summaries), summaries),
+                    summaries,
+                )
+            return listOf(
+                enhanceMemoryPillar(fromBackend.memory, totalCards),
+                enhancePerformancePillar(fromBackend.performance, performanceResult),
+                readiness,
+            )
+        }
+
+        Timber.d("SpeedyCAT: using Kotlin readiness fallback (stock backend)")
+        val memory = memoryPillarFromCollection(totalCards)
+        val performance = performancePillar(performanceResult)
+        val readiness = readinessPillar(computeReadiness(summaries), summaries)
         return listOf(memory, performance, readiness)
     }
 
-    /**
-     * Memory pillar: mean FSRS retrievability over reviewed cards. Reads the
-     * per-card retrievability the Anki backend exposes on card stats; only cards
-     * that carry a retrievability (i.e. reviewed, with FSRS on) are counted.
-     */
-    private suspend fun memoryPillarFromCollection(): ReadinessPillar =
+    private suspend fun collectionTotalCards(): Int =
+        withContext(Dispatchers.IO) {
+            CollectionManager.withCol { cardCount() }
+        }
+
+    /** Memory pillar fallback when GetReadiness is unavailable. */
+    private suspend fun memoryPillarFromCollection(totalCards: Int): ReadinessPillar =
         CollectionManager.withCol {
+            val stats =
+                com.ichi2.anki.cardviewer.SpeedyCatGaming
+                    .loadStats(this)
+            com.ichi2.anki.cardviewer.SpeedyCatGaming.memorySuppressionMessage(stats)?.let { message ->
+                return@withCol memoryPillar(
+                    MemoryResult(
+                        sufficient = false,
+                        fsrsEnabled = true,
+                        reviewedCards = stats.dailyReviews,
+                        meanRetrievability = 0.0,
+                        ci = ConfidenceInterval(0.0, 0.0),
+                        insufficientReason = message,
+                    ),
+                )
+            }
             val fsrsEnabled = config.get<Boolean>("fsrs", false) ?: false
             if (!fsrsEnabled) {
                 return@withCol memoryPillar(computeMemory(fsrsEnabled = false, retrievabilities = emptyList()))
@@ -96,6 +132,6 @@ class ReadinessViewModel(
                     retrievabilities.add(stats.fsrsRetrievability.toDouble())
                 }
             }
-            memoryPillar(computeMemory(fsrsEnabled = true, retrievabilities = retrievabilities))
+            memoryPillar(computeMemory(fsrsEnabled = true, retrievabilities = retrievabilities), totalCards)
         }
 }

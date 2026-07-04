@@ -109,7 +109,6 @@ class CollectionStats:
         from .statsbg import bg
 
         txt = self.css % bg
-        txt += self._section(self.todayStats())
         txt += self._section(self.dueGraph())
         txt += self.repsGraphs()
         txt += self._section(self.introductionGraph())

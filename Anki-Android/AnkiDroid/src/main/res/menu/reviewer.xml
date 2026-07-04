@@ -7,13 +7,6 @@
     android:layoutDirection="locale">
 
     <item
-        android:id="@+id/action_undo"
-        android:enabled="false"
-        android:icon="@drawable/ic_undo_white"
-        android:title="@string/undo"
-        ankidroid:actionProviderClass="com.ichi2.ui.RtlCompliantActionProvider"
-        ankidroid:showAsAction="always"/>
-    <item
         android:id="@+id/action_redo"
         android:enabled="false"
         android:icon="@drawable/ic_redo"

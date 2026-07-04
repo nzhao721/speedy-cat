@@ -33,13 +33,11 @@ import androidx.fragment.app.viewModels
 import com.google.android.material.appbar.MaterialToolbar
 import com.ichi2.anki.CollectionManager.TR
 import com.ichi2.anki.R
-import com.ichi2.anki.dialogs.help.HelpDialog
 import com.ichi2.anki.pages.RemoveAccountFragment
 import com.ichi2.anki.settings.Prefs
 import com.ichi2.anki.ui.internationalization.sentenceCase
 import com.ichi2.anki.utils.ext.isCompactWidth
 import com.ichi2.anki.utils.ext.removeFragmentFromContainer
-import com.ichi2.anki.utils.ext.showDialogFragment
 import timber.log.Timber
 
 class LoggedInFragment : Fragment(R.layout.fragment_my_account_logged_in) {
@@ -77,7 +75,7 @@ class LoggedInFragment : Fragment(R.layout.fragment_my_account_logged_in) {
 
         view.findViewById<TextView>(R.id.username_logged_in).text = Prefs.username
 
-        view.findViewById<Button>(R.id.privacy_policy_button).setOnClickListener { openAnkiDroidPrivacyPolicy() }
+        view.findViewById<Button>(R.id.privacy_policy_button).isVisible = false
         view.findViewById<Button>(R.id.logout_button).apply {
             text = TR.sentenceCase.logOut
             setOnClickListener { logout() }
@@ -85,11 +83,6 @@ class LoggedInFragment : Fragment(R.layout.fragment_my_account_logged_in) {
         view.findViewById<Button>(R.id.remove_account_button).setOnClickListener { openRemoveAccountScreen() }
 
         loggedInLogo = view.findViewById(R.id.login_logo)
-    }
-
-    private fun openAnkiDroidPrivacyPolicy() {
-        Timber.i("Opening 'Privacy policy'")
-        showDialogFragment(HelpDialog.newPrivacyPolicyInstance())
     }
 
     private fun logout() {

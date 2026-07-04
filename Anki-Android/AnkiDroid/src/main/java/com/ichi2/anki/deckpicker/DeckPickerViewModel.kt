@@ -21,17 +21,13 @@ import com.ichi2.anki.DeckPicker
 import com.ichi2.anki.InitialActivity
 import com.ichi2.anki.OnErrorListener
 import com.ichi2.anki.PermissionSet
-import com.ichi2.anki.common.destinations.BrowserDestination
 import com.ichi2.anki.configureRenderingMode
 import com.ichi2.anki.launchCatchingIO
 import com.ichi2.anki.libanki.CardId
-import com.ichi2.anki.libanki.Consts
 import com.ichi2.anki.libanki.Consts.DEFAULT_DECK_ID
 import com.ichi2.anki.libanki.DeckId
 import com.ichi2.anki.libanki.Decks
 import com.ichi2.anki.libanki.sched.DeckNode
-import com.ichi2.anki.libanki.undoAvailable
-import com.ichi2.anki.libanki.undoLabel
 import com.ichi2.anki.libanki.utils.extend
 import com.ichi2.anki.noteeditor.NoteEditorLauncher
 import com.ichi2.anki.notetype.ManageNoteTypesDestination
@@ -49,7 +45,6 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import net.ankiweb.rsdroid.RustCleanup
@@ -153,9 +148,6 @@ class DeckPickerViewModel :
             tree.newCount + tree.revCount + tree.lrnCount
         }
 
-    /** "Studied N cards in 0 seconds today */
-    val flowOfStudiedTodayStats = MutableStateFlow("")
-
     /** Flow that determines when the resizing divider should be visible */
     val flowOfResizingDividerVisible =
         combine(flowOfDeckListInInitialState, flowOfCollectionHasNoCards) { isInInitialState, hasNoCards ->
@@ -234,12 +226,6 @@ class DeckPickerViewModel :
             withCol { decks.select(deckId) }
             focusedDeck = deckId
             flowOfRefreshDeckList.emit(Unit)
-        }
-
-    fun browseCards(deckId: DeckId) =
-        launchCatchingIO {
-            withCol { decks.select(deckId) }
-            flowOfNavigate.emit(BrowserDestination.ToDeck(deckId))
         }
 
     fun addNote(
@@ -330,10 +316,6 @@ class DeckPickerViewModel :
 
                 flowOfCollectionHasNoCards.value = collectionHasNoCards
 
-                // TODO: This is in the wrong place
-                // Backend returns studiedToday() with newlines for HTML formatting,so we replace them with spaces.
-                flowOfStudiedTodayStats.value = withCol { sched.studiedToday().replace("\n", " ") }
-
                 /**
                  * Checks the current scheduler version and prompts the upgrade dialog if using the legacy version.
                  * Ensures the dialog is only shown once per collection load, even if [updateDeckList()] is called multiple times.
@@ -350,7 +332,6 @@ class DeckPickerViewModel :
                 // TODO: This is in the wrong place
                 // current deck may have changed
                 focusedDeck = withCol { decks.current().id }
-                refreshUndoMenuState()
 
                 flowOfDecksReloaded.emit(Unit)
             }
@@ -520,7 +501,7 @@ class DeckPickerViewModel :
     /**
      * Current state of the options menu, or `null` if the collection is inaccessible.
      *
-     * Updated by [refreshMenuState] and [refreshUndoMenuState].
+     * Updated by [refreshMenuState].
      */
     val optionsMenuState: OptionsMenuState? get() = flowOfOptionsMenuState.value
 
@@ -531,31 +512,14 @@ class DeckPickerViewModel :
         flowOfOptionsMenuState.value =
             withOpenColOrNull {
                 val searchIcon = decks.count() >= 10
-                val undoLabel = undoLabel()
-                val undoAvailable = undoAvailable()
                 // besides checking for cards being available also consider if we have empty decks
                 val isColEmpty = isEmpty && decks.count() == 1
                 // the correct sync status is fetched in the next call so "Normal" is used as a placeholder
-                OptionsMenuState(searchIcon, undoLabel, SyncIconState.Normal, undoAvailable, isColEmpty)
-            }?.let { (searchIcon, undoLabel, _, undoAvailable, isColEmpty) ->
+                OptionsMenuState(searchIcon, SyncIconState.Normal, isColEmpty)
+            }?.let { (searchIcon, _, isColEmpty) ->
                 val syncIcon = fetchSyncIconState()
-                OptionsMenuState(searchIcon, undoLabel, syncIcon, undoAvailable, isColEmpty)
+                OptionsMenuState(searchIcon, syncIcon, isColEmpty)
             }
-    }
-
-    /**
-     * Refreshes only the undo-related fields of the menu state, leaving the rest untouched.
-     *
-     * @see refreshMenuState
-     */
-    private suspend fun refreshUndoMenuState() {
-        withOpenColOrNull {
-            val newUndoLabel = undoLabel()
-            val newUndoAvailable = undoAvailable()
-            flowOfOptionsMenuState.update { current ->
-                current?.copy(undoLabel = newUndoLabel, undoAvailable = newUndoAvailable)
-            }
-        }
     }
 
     @SuppressLint("UseKtx")
@@ -630,9 +594,6 @@ enum class SyncIconState {
 /** Menu state data for the options menu */
 data class OptionsMenuState(
     val searchIcon: Boolean,
-    /** If undo is available, a string describing the action. */
-    val undoLabel: String?,
     val syncIcon: SyncIconState,
-    val undoAvailable: Boolean,
     val isColEmpty: Boolean,
 )

@@ -12,9 +12,10 @@
 //   tests only — raw scores with an explicit range, never a fabricated scaled
 //   score) plus ListFullLengthTests for context.
 
-import type { GetReadinessResponse } from "@generated/anki/practice_pb";
+import type { GetReadinessResponse, ReadinessPillar } from "@generated/anki/practice_pb";
 import type { GraphsResponse } from "@generated/anki/stats_pb";
 import { getReadiness, getTopicStats, listFullLengthTests } from "@generated/backend";
+import { localizedNumber } from "@tslib/i18n";
 
 import type { GetTopicStatsResponse } from "../practice/lib";
 import { AttemptSource, formatDurationLong } from "../practice/lib";
@@ -44,7 +45,7 @@ export interface PracticeOverview {
 
 export async function loadPracticeOverview(): Promise<PracticeOverview> {
     const stats = await getTopicStats(
-        { source: AttemptSource.PRACTICE_SESSION },
+        { source: AttemptSource.PRACTICE_SESSION, firstAttemptNoHintOnly: true },
         NO_ALERT,
     );
     let attempted = 0;
@@ -128,6 +129,51 @@ export function pct(fraction: number): string {
     return `${Math.round(fraction * 100)}%`;
 }
 
+/** 95% interval for pillar headlines, e.g. "72%–84%". */
+export function pctRange(low: number, high: number): string {
+    return `${pct(low)}–${pct(high)}`;
+}
+
+/** Reviewed cards with an FSRS retrievability (sum of histogram bins, not bin count). */
+export function retrievabilityCardCount(
+    retrievability: GraphsResponse["retrievability"] | undefined,
+): number {
+    if (!retrievability) {
+        return 0;
+    }
+    return Object.values(retrievability.retrievability).reduce(
+        (sum, count) => sum + count,
+        0,
+    );
+}
+
+/** Total flashcards in the collection (matches the card-counts graph). */
+export function collectionTotalCards(data: GraphsResponse | null | undefined): number {
+    const counts = data?.cardCounts?.includingInactive;
+    if (!counts) {
+        return 0;
+    }
+    return (
+        counts.newCards
+        + counts.learn
+        + counts.relearn
+        + counts.young
+        + counts.mature
+        + counts.suspended
+        + counts.buried
+    );
+}
+
+/** Memory pillar sample line when studied and collection totals are known. */
+export function memoryStudiedLine(
+    studied: number,
+    total: number,
+    soFar = false,
+): string {
+    const base = `${localizedNumber(studied)} out of ${localizedNumber(total)} flashcards studied`;
+    return soFar ? `${base} so far` : base;
+}
+
 // ---- Summary cards ------------------------------------------------------------
 
 export interface SummaryCardData {
@@ -146,32 +192,19 @@ const LOADING_CARD_VALUE = "—";
 // shows progress instead of a number. Matches rslib MIN_MEMORY_CARDS (30).
 const MEMORY_CARD_MIN = 30;
 
-export function studiedTodayCard(data: GraphsResponse | null): SummaryCardData {
-    const label = "Studied today";
-    if (!data?.today) {
-        return { label, value: LOADING_CARD_VALUE, sub: "Loading…", muted: true };
-    }
-    const today = data.today;
-    if (!today.answerCount) {
+export function memoryCard(
+    data: GraphsResponse | null,
+    memoryPillar?: ReadinessPillar,
+): SummaryCardData {
+    const label = "Memory now";
+    if (memoryPillar && !memoryPillar.available && memoryPillar.message) {
         return {
             label,
-            value: "0 cards",
-            sub: "No flashcards reviewed yet today",
+            value: LOADING_CARD_VALUE,
+            sub: memoryPillar.message,
             muted: true,
         };
     }
-    const minutes = Math.round(today.answerMillis / 1000 / 60);
-    const correct = pct(today.correctCount / today.answerCount);
-    return {
-        label,
-        value: `${today.answerCount} cards`,
-        sub: `${minutes} min · ${correct} correct`,
-        muted: false,
-    };
-}
-
-export function memoryCard(data: GraphsResponse | null): SummaryCardData {
-    const label = "Memory now";
     if (!data) {
         return { label, value: LOADING_CARD_VALUE, sub: "Loading…", muted: true };
     }
@@ -183,10 +216,8 @@ export function memoryCard(data: GraphsResponse | null): SummaryCardData {
             muted: true,
         };
     }
+    const cardCount = retrievabilityCardCount(data.retrievability);
     const retrievability = data.retrievability;
-    const cardCount = retrievability
-        ? Object.keys(retrievability.retrievability).length
-        : 0;
     // Require more than MEMORY_CARD_MIN reviewed cards before showing a recall
     // percentage; a handful of cards isn't a trustworthy sample. Below the
     // threshold, show progress toward it instead of a number.

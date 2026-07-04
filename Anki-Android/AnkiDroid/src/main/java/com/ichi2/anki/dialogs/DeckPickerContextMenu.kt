@@ -69,7 +69,6 @@ class DeckPickerContextMenu : AnalyticsDialogFragment() {
         CUSTOM_STUDY_REBUILD,
         CUSTOM_STUDY_EMPTY,
         CREATE_SHORTCUT,
-        BROWSE_CARDS,
         EDIT_DESCRIPTION,
         ADD_CARD,
         SCHEDULE_REMINDERS,
@@ -83,7 +82,6 @@ class DeckPickerContextMenu : AnalyticsDialogFragment() {
                     CUSTOM_STUDY_REBUILD -> TR.actionsRebuild()
                     CUSTOM_STUDY_EMPTY -> getString(R.string.empty_cram_label)
                     CREATE_SHORTCUT -> getString(R.string.create_shortcut)
-                    BROWSE_CARDS -> getString(R.string.browse_cards)
                     EDIT_DESCRIPTION -> getString(R.string.edit_deck_description)
                     ADD_CARD -> TR.actionsAdd()
                     SCHEDULE_REMINDERS -> getString(R.string.schedule_reminders_do_not_translate)

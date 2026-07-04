@@ -11,6 +11,16 @@ enum SyncState {
     Full,
 }
 
+function updateUndoLink(canUndo: boolean, tooltip: string) {
+    const elem = document.getElementById("undo-link");
+    if (!elem) {
+        return;
+    }
+    elem.classList.toggle("disabled", !canUndo);
+    elem.setAttribute("aria-label", tooltip);
+    elem.setAttribute("title", tooltip);
+}
+
 function updateSyncColor(state: SyncState) {
     const elem = document.getElementById("sync");
     switch (state) {

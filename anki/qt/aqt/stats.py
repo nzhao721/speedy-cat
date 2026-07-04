@@ -130,11 +130,6 @@ class NewDeckStats(QDialog):
         pass
 
     def _on_bridge_cmd(self, cmd: str) -> bool:
-        if cmd.startswith("browserSearch"):
-            _, query = cmd.split(":", 1)
-            browser = aqt.dialogs.open("Browser", self.mw)
-            browser.search_for(query)
-
         return False
 
     def refresh(self) -> None:

@@ -53,7 +53,9 @@ _FULL_LENGTH_SUBDIR = "full-length-tests"
 # marker is a collection config value, so it syncs with the collection and the
 # import only ever runs once per (collection, content version).
 # v2: adds the AI-generated practice-question expansion (3,974 items; 5,174 total).
-_CONTENT_MARKER = "speedycat_practice_content_v2"
+# v3: re-imports the graduated hint-ladder subquestions now bundled on 87/88
+# question JSON files (collections imported at v2 stored NULL hints).
+_CONTENT_MARKER = "speedycat_practice_content_v3"
 
 # Guards against queuing the import twice (e.g. the profile hook and a page
 # opening before the first import finishes). Collection background ops are

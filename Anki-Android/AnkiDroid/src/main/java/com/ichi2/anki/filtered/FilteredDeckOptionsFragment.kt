@@ -7,7 +7,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputFilter
-import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -25,17 +24,13 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.google.android.material.materialswitch.MaterialSwitch
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import com.ichi2.anki.CardBrowser
 import com.ichi2.anki.CollectionManager.TR
 import com.ichi2.anki.R
-import com.ichi2.anki.browser.CardBrowserViewModel
 import com.ichi2.anki.databinding.FragmentFilteredDeckOptionsBinding
 import com.ichi2.anki.dialogs.DiscardChangesDialog
 import com.ichi2.anki.libanki.DeckId
 import com.ichi2.anki.utils.ConfigAwareSingleFragmentActivity
-import com.ichi2.anki.utils.openUrl
 import com.ichi2.utils.cancelable
-import com.ichi2.utils.configureIconsDirection
 import com.ichi2.utils.message
 import com.ichi2.utils.positiveButton
 import com.ichi2.utils.show
@@ -71,16 +66,6 @@ class FilteredDeckOptionsFragment : Fragment(R.layout.fragment_filtered_deck_opt
             title = "" // properly set in state updates
             setNavigationOnClickListener {
                 requireActivity().onBackPressedDispatcher.onBackPressed()
-            }
-            setOnMenuItemClickListener { menuItem ->
-                when (menuItem.itemId) {
-                    R.id.action_help -> {
-                        requireActivity().openUrl(R.string.link_filtered_decks_help)
-                        true
-                    }
-
-                    else -> true
-                }
             }
         }
         // backend allows at most 5 digits
@@ -137,12 +122,6 @@ class FilteredDeckOptionsFragment : Fragment(R.layout.fragment_filtered_deck_opt
                                 }
                                 return@collect
                             }
-                            if (state.browserQuery != null) {
-                                val browserSearchIntent = Intent(context, CardBrowser::class.java)
-                                browserSearchIntent.putExtra(CardBrowserViewModel.EXTRA_SEARCH_QUERY, state.browserQuery)
-                                startActivity(browserSearchIntent)
-                                viewModel.clearSearchInBrowser()
-                            }
                         }
                     }
                 }
@@ -151,11 +130,6 @@ class FilteredDeckOptionsFragment : Fragment(R.layout.fragment_filtered_deck_opt
     }
 
     private fun setupMenuIfNeeded() {
-        val helpMenuItem: MenuItem? = binding.toolbar.menu.findItem(R.id.action_help)
-        if (helpMenuItem == null) {
-            binding.toolbar.inflateMenu(R.menu.filtered_options)
-            binding.toolbar.menu.configureIconsDirection(requireContext())
-        }
     }
 
     private fun bindState(state: FilteredDeckOptions) {

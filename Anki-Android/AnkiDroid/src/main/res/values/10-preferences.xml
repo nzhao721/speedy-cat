@@ -192,7 +192,6 @@
         As an alternative to synchronizing with SpeedyCAT Sync,
         you may use your own server for synchronization.
         If not set, the default SpeedyCAT Sync server will be used instead.
-        <a href="%s">Learn more</a>
         ]]></string>
     <string name="custom_sync_server_base_url_title" maxLength="41">Sync URL</string>
     <string name="custom_sync_certificate_title" maxLength="41">Custom root certificate (PEM)</string>
@@ -449,7 +448,7 @@ this formatter is used if the bind only applies to the answer">A: %s</string>
     <string name="toolbar_position" maxLength="28">Toolbar position</string>
     <string name="new_study_screen" maxLength="41">New study screen</string>
     <string name="new_study_screen_summ"
-        ><![CDATA[Improved study screen that will succeed the current one. Some features of the old screen have been changed or removed. Please report any <a href="%1$s">feedback</a> or <a href="%2$s">bugs</a>.]]></string>
+        >Improved study screen that will succeed the current one. Some features of the old screen have been changed or removed. Please report any feedback or bugs.</string>
     <string name="show_answer_feedback" maxLength="41">Show answer feedback</string>
     <string name="screen" maxLength="41">Screen</string>
     <string name="only_answer" maxLength="41" comment="Configuration of the 'Answer' commands to only answer the card"

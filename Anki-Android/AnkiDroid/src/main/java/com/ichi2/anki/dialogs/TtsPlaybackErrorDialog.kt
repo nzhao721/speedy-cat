@@ -24,7 +24,6 @@ import com.ichi2.anki.R
 import com.ichi2.anki.TtsVoices
 import com.ichi2.anki.common.crashreporting.CrashReportService
 import com.ichi2.anki.libanki.TTSTag
-import com.ichi2.anki.utils.openUrl
 import com.ichi2.utils.show
 import timber.log.Timber
 
@@ -43,9 +42,6 @@ object TtsPlaybackErrorDialog {
                 setPositiveButton(
                     activity.getString(R.string.tts_error_dialog_supported_voices_button_text),
                 ) { _, _ -> showVoicesDialog(fragmentManager) }
-                setNeutralButton(context.getString(R.string.help)) { _, _ ->
-                    activity.openUrl(R.string.link_faq_tts)
-                }
             }
         }
     }

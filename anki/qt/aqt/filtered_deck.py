@@ -19,6 +19,7 @@ from aqt.theme import theme_manager
 from aqt.utils import (
     HelpPage,
     disable_help_button,
+    hide_button_box_help_button,
     openHelp,
     restoreGeom,
     saveGeom,
@@ -95,10 +96,8 @@ class FilteredDeckConfigDialog(QDialog):
             QPushButton[label="hint"] {{ color: {grey} }}"""
         )
         disable_help_button(self)
+        hide_button_box_help_button(self.form.buttonBox)
         self.setWindowModality(Qt.WindowModality.WindowModal)
-        qconnect(
-            self.form.buttonBox.helpRequested, lambda: openHelp(HelpPage.FILTERED_DECK)
-        )
 
         self.form.again_delay_label.setText(
             tr.decks_delay_for_button(button=tr.studying_again())
@@ -204,7 +203,7 @@ class FilteredDeckConfigDialog(QDialog):
             line.selectAll()
             showWarning(str(err))
         else:
-            aqt.dialogs.open("Browser", self.mw, search=(search,))
+            pass
 
     def on_hint_button(self) -> None:
         """Open the browser to show cards that match the typed-in filters but cannot be included
@@ -223,7 +222,7 @@ class FilteredDeckConfigDialog(QDialog):
         except Exception as err:
             showWarning(str(err))
         else:
-            aqt.dialogs.open("Browser", self.mw, search=(search,))
+            pass
 
     def _second_filter(self) -> tuple[str, ...]:
         if self.form.secondFilter.isChecked():

@@ -14,6 +14,7 @@ from aqt.utils import (
     HelpPage,
     HelpPageArgument,
     disable_help_button,
+    hide_button_box_help_button,
     openHelp,
     restoreGeom,
     saveGeom,
@@ -77,7 +78,7 @@ class StudyDeck(QDialog):
             accept or tr.decks_study(), QDialogButtonBox.ButtonRole.AcceptRole
         )
         self.setModal(True)
-        qconnect(self.form.buttonBox.helpRequested, lambda: openHelp(help))
+        hide_button_box_help_button(self.form.buttonBox)
         qconnect(self.form.filter.textEdited, self.redraw)
         qconnect(self.form.list.itemDoubleClicked, self.accept)
         qconnect(self.finished, self.on_finished)

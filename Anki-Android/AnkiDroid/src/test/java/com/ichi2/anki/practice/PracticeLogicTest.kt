@@ -272,6 +272,41 @@ class PracticeLogicTest {
     }
 
     @Test
+    fun `topicStats firstAttemptNoHintOnly excludes retries and hint-assisted`() {
+        val attempts =
+            listOf(
+                practiceAttempt("s1:q1", "q1", true, firstTry = 1),
+                practiceAttempt("s1:q2", "q2", false, firstTry = 0),
+                practiceAttempt("s1:q3", "q3", true, hint = 2, firstTry = null),
+                practiceAttempt("s2:q1", "q1", true, firstTry = null),
+            )
+        val stats = topicStats(attempts, AttemptSource.PRACTICE_SESSION, firstAttemptNoHintOnly = true)
+        assertThat(stats.single().attempts, equalTo(2))
+        assertThat(stats.single().correct, equalTo(1))
+    }
+
+    private fun practiceAttempt(
+        id: String,
+        questionId: String,
+        correct: Boolean,
+        hint: Int = 0,
+        firstTry: Int?,
+    ) = Attempt(
+        id = id,
+        sessionId = "s1",
+        questionId = questionId,
+        selectedAnswer = if (correct) "A" else "B",
+        correct = correct,
+        timeSeconds = 10,
+        section = McatSection.CPBS,
+        topic = "kinetics",
+        answeredAt = 0,
+        hintLevelUsed = hint,
+        assisted = hint >= 3,
+        firstTryNoHint = firstTry,
+    )
+
+    @Test
     fun `topicStats computes accuracy time and honours the source filter`() {
         val attempts =
             listOf(
@@ -367,11 +402,15 @@ class PracticeLogicTest {
     fun `seeded shuffle keeps passage sets contiguous and internally ordered`() {
         val pool =
             listOf(
-                passageQ("a1", "pA"), passageQ("a2", "pA"), passageQ("a3", "pA"),
+                passageQ("a1", "pA"),
+                passageQ("a2", "pA"),
+                passageQ("a3", "pA"),
                 discrete("d1"),
-                passageQ("b1", "pB"), passageQ("b2", "pB"),
+                passageQ("b1", "pB"),
+                passageQ("b2", "pB"),
                 discrete("d2"),
-                passageQ("c1", "pC"), passageQ("c2", "pC"),
+                passageQ("c1", "pC"),
+                passageQ("c2", "pC"),
             )
         val sets = mapOf("pA" to listOf("a1", "a2", "a3"), "pB" to listOf("b1", "b2"), "pC" to listOf("c1", "c2"))
         for (seed in 0L until 8L) {
@@ -503,5 +542,206 @@ class PracticeLogicTest {
         assertThat(canSubmitMain("", cleared), equalTo(false))
         // No ladder engaged: a selection submits immediately.
         assertThat(canSubmitMain("C", HintProgress()), equalTo(true))
+    }
+
+    @Test
+    fun `firstHintDelaySeconds scales with reading load and clamps 15 through 30 seconds`() {
+        val short =
+            mcq("A").copy(
+                stem = "x",
+                choices = listOf(AnswerChoice("A", "a")),
+            )
+        val medium =
+            mcq("A").copy(
+                stem = "x".repeat(500),
+                choices = listOf(AnswerChoice("A", "y".repeat(500))),
+            )
+        val veryLong =
+            mcq("A").copy(
+                stem = "x".repeat(1500),
+                choices = listOf(AnswerChoice("A", "y".repeat(1500))),
+            )
+        assertThat(firstHintDelaySeconds(short), equalTo(15))
+        assertThat(firstHintDelaySeconds(medium), equalTo(25))
+        assertThat(firstHintDelaySeconds(veryLong), equalTo(30))
+    }
+
+    @Test
+    fun `passageReadGateSeconds uses 300 WPM`() {
+        assertThat(passageReadGateSeconds(600), equalTo(120))
+        assertThat(passageReadGateSeconds(300), equalTo(60))
+        assertThat(passageReadGateSeconds(0), equalTo(0))
+    }
+
+    @Test
+    fun `firstHintDelaySeconds uses max of base and passage read time`() {
+        val q = mcq("A").copy(stem = "x", choices = listOf(AnswerChoice("A", "a")))
+        assertThat(firstHintDelaySeconds(q, 600), equalTo(120))
+        assertThat(firstHintDelaySeconds(q, 50), equalTo(15))
+    }
+
+    @Test
+    fun `passageHintWordCountForQuestion applies only to first in multi-question sets`() {
+        assertThat(passageHintWordCountForQuestion(3, 0, 500), equalTo(500))
+        assertThat(passageHintWordCountForQuestion(3, 1, 500), equalTo(null))
+        assertThat(passageHintWordCountForQuestion(1, 0, 500), equalTo(500))
+    }
+
+    @Test
+    fun `shouldTickQuestionHintTimer starts on first visibility and pauses off-screen`() {
+        assertThat(shouldTickQuestionHintTimer(false, false), equalTo(false))
+        assertThat(shouldTickQuestionHintTimer(false, true), equalTo(false))
+        assertThat(shouldTickQuestionHintTimer(true, true), equalTo(true))
+        assertThat(shouldTickQuestionHintTimer(true, false), equalTo(false))
+    }
+
+    @Test
+    fun `per-question hint timers are independent via visibility gating`() {
+        var q1Elapsed = 0
+        var q2Elapsed = 0
+        val q1Ever = true
+        var q2Ever = false
+        repeat(60) {
+            if (shouldTickQuestionHintTimer(q1Ever, true)) q1Elapsed += 1
+            if (shouldTickQuestionHintTimer(q2Ever, false)) q2Elapsed += 1
+        }
+        assertThat(q1Elapsed, equalTo(60))
+        assertThat(q2Elapsed, equalTo(0))
+        q2Ever = true
+        repeat(10) {
+            if (shouldTickQuestionHintTimer(q2Ever, true)) q2Elapsed += 1
+        }
+        assertThat(q2Elapsed, equalTo(10))
+    }
+
+    @Test
+    fun `hint affordance buttons respect timers and progress`() {
+        val q = mcq("A").copy(stem = "stem", choices = listOf(AnswerChoice("A", "a")))
+        assertThat(canShowFirstHintButton(14, q, HintProgress(), false), equalTo(false))
+        assertThat(canShowFirstHintButton(15, q, HintProgress(), false), equalTo(true))
+        assertThat(canShowFirstHintButton(20, q, HintProgress(revealed = 1), false), equalTo(false))
+
+        val doneL1 = HintProgress(revealed = 1, picks = mapOf(0 to "A"))
+        assertThat(canShowNextHintButton(5, ladder, doneL1, false), equalTo(false))
+        assertThat(canShowNextHintButton(HINT_SUBSEQUENT_SECONDS, ladder, doneL1, false), equalTo(true))
+    }
+
+    @Test
+    fun `wrong hint answers are rejected and picks store correct answers only`() {
+        val prog = HintProgress(revealed = 1)
+        val (afterWrong, wrong) = applyHintAnswer(ladder[0], 0, "B", prog)
+        assertThat(wrong, equalTo(false))
+        assertThat(afterWrong.picks.containsKey(0), equalTo(false))
+
+        val (afterRight, right) = applyHintAnswer(ladder[0], 0, "A", prog)
+        assertThat(right, equalTo(true))
+        assertThat(afterRight.picks[0], equalTo("A"))
+    }
+
+    @Test
+    fun `hint submit cooldown blocks rapid retries`() {
+        assertThat(canSubmitHintAnswer("A", 0), equalTo(true))
+        assertThat(canSubmitHintAnswer("A", 3), equalTo(false))
+        assertThat(canSubmitHintAnswer("", 0), equalTo(false))
+        assertThat(HINT_WRONG_RETRY_SECONDS, equalTo(5))
+    }
+
+    @Test
+    fun `hint cooldown expires and re-enables choices for retry`() {
+        val qid = "q1"
+        var cooldowns = startHintWrongCooldown(emptyMap(), qid)
+        assertThat(cooldowns[qid], equalTo(HINT_WRONG_RETRY_SECONDS))
+        assertThat(hintChoicesEnabled(false, false, true, cooldowns[qid] ?: 0), equalTo(false))
+        assertThat(canSubmitHintAnswer("A", cooldowns[qid] ?: 0), equalTo(false))
+
+        repeat(HINT_WRONG_RETRY_SECONDS) {
+            cooldowns = tickHintCooldowns(cooldowns)
+        }
+        assertThat(cooldowns[qid] ?: 0, equalTo(0))
+        assertThat(hintChoicesEnabled(false, false, true, cooldowns[qid] ?: 0), equalTo(true))
+        assertThat(canSubmitHintAnswer("A", cooldowns[qid] ?: 0), equalTo(true))
+
+        val prog = HintProgress(revealed = 1)
+        val (afterWrong, wrong) = applyHintAnswer(ladder[0], 0, "B", prog)
+        assertThat(wrong, equalTo(false))
+        assertThat(afterWrong.picks.containsKey(0), equalTo(false))
+        cooldowns = startHintWrongCooldown(cooldowns, qid)
+        repeat(HINT_WRONG_RETRY_SECONDS) {
+            cooldowns = tickHintCooldowns(cooldowns)
+        }
+        val (afterRight, right) = applyHintAnswer(ladder[0], 0, "A", prog)
+        assertThat(right, equalTo(true))
+        assertThat(canSubmitHintAnswer("A", cooldowns[qid] ?: 0), equalTo(true))
+    }
+
+    @Test
+    fun `convenient main submit appears once any hint tier is revealed`() {
+        assertThat(shouldShowConvenientMainSubmit(HintProgress(), false), equalTo(false))
+        assertThat(shouldShowConvenientMainSubmit(HintProgress(revealed = 1), false), equalTo(true))
+        assertThat(
+            shouldShowConvenientMainSubmit(HintProgress(revealed = 2, picks = mapOf(0 to "A")), false),
+            equalTo(true),
+        )
+        assertThat(shouldShowConvenientMainSubmit(HintProgress(revealed = 1), true), equalTo(false))
+    }
+
+    @Test
+    fun `hintDisplayOrder renders the most-recent tier first`() {
+        // Display-only reversal: newest revealed hint on top, ladder still
+        // progresses 0 -> 1 -> 2.
+        assertThat(hintDisplayOrder(0), equalTo(emptyList<Int>()))
+        assertThat(hintDisplayOrder(1), equalTo(listOf(0)))
+        assertThat(hintDisplayOrder(3), equalTo(listOf(2, 1, 0)))
+        // Never yields negative indices for a degenerate revealed count.
+        assertThat(hintDisplayOrder(-2), equalTo(emptyList<Int>()))
+    }
+
+    @Test
+    fun `canReturnToMain only on the latest answered hint while unlocked`() {
+        // Nothing revealed yet — no shortcut.
+        assertThat(canReturnToMain(HintProgress(revealed = 0), 0, false), equalTo(false))
+        // Latest hint revealed but unanswered — no shortcut (no-skip intact).
+        assertThat(canReturnToMain(HintProgress(revealed = 2, picks = mapOf(0 to "A")), 1, false), equalTo(false))
+        // Latest hint answered — shortcut appears on that (latest) tier only.
+        val answered = HintProgress(revealed = 2, picks = mapOf(0 to "A", 1 to "A"))
+        assertThat(canReturnToMain(answered, 1, false), equalTo(true))
+        assertThat(canReturnToMain(answered, 0, false), equalTo(false))
+        // Locked (main question already submitted) — never shown.
+        assertThat(canReturnToMain(answered, 1, true), equalTo(false))
+    }
+
+    @Test
+    fun `requiresExplanationGate is about one in five and stable`() {
+        val session = "ps-test"
+        val flags = (0 until 100).map { requiresExplanationGate(session, "q-$it") }
+        val rate = flags.count { it }.toDouble() / flags.size
+        assertThat(rate > 0.10, equalTo(true))
+        assertThat(rate < 0.35, equalTo(true))
+        assertThat(requiresExplanationGate(session, "q-42"), equalTo(requiresExplanationGate(session, "q-42")))
+    }
+
+    @Test
+    fun `shouldUseExplanationGate skips when AI unavailable`() {
+        assertThat(shouldUseExplanationGate("ps", "q", aiOn = false, aiAvailable = true), equalTo(false))
+        assertThat(shouldUseExplanationGate("ps", "q", aiOn = true, aiAvailable = false), equalTo(false))
+    }
+
+    @Test
+    fun `itemBlocksExplanationProgress while gate active`() {
+        val q = q("q1", McatSection.CPBS)
+        assertThat(
+            itemBlocksExplanationProgress(
+                listOf(q),
+                mapOf("q1" to ExplanationProgress(active = true, passed = false)),
+            ),
+            equalTo(true),
+        )
+        assertThat(
+            itemBlocksExplanationProgress(
+                listOf(q),
+                mapOf("q1" to ExplanationProgress(active = true, passed = true)),
+            ),
+            equalTo(false),
+        )
     }
 }

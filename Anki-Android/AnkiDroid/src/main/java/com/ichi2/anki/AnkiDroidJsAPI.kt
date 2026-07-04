@@ -4,7 +4,6 @@
 package com.ichi2.anki
 
 import android.content.Context
-import android.content.Intent
 import androidx.lifecycle.lifecycleScope
 import anki.scheduler.CardAnswer.Rating
 import com.github.zafarkhaja.semver.Version
@@ -19,8 +18,6 @@ import com.ichi2.anki.AnkiDroidJsAPIConstants.ANKI_JS_ERROR_CODE_SUSPEND_CARD
 import com.ichi2.anki.AnkiDroidJsAPIConstants.ANKI_JS_ERROR_CODE_SUSPEND_NOTE
 import com.ichi2.anki.AnkiDroidJsAPIConstants.flagCommands
 import com.ichi2.anki.CollectionManager.withCol
-import com.ichi2.anki.browser.CardBrowserViewModel
-import com.ichi2.anki.browser.search.SearchString
 import com.ichi2.anki.cardviewer.ViewerCommand
 import com.ichi2.anki.common.annotations.NeedsTest
 import com.ichi2.anki.common.utils.android.showThemedToast
@@ -29,8 +26,6 @@ import com.ichi2.anki.libanki.Card
 import com.ichi2.anki.libanki.Collection
 import com.ichi2.anki.libanki.Decks
 import com.ichi2.anki.libanki.Note
-import com.ichi2.anki.libanki.SortOrder
-import com.ichi2.anki.model.CardsOrNotes
 import com.ichi2.anki.servicelayer.rescheduleCards
 import com.ichi2.anki.servicelayer.resetCards
 import com.ichi2.anki.snackbar.setMaxLines
@@ -134,9 +129,6 @@ open class AnkiDroidJsAPI(
 
         activity.showSnackbar(snackbarMsg, Snackbar.LENGTH_INDEFINITE) {
             setMaxLines(3)
-            setAction(R.string.reviewer_invalid_api_version_visit_documentation) {
-                activity.openUrl("https://github.com/ankidroid/Anki-Android/wiki")
-            }
         }
     }
 
@@ -290,16 +282,8 @@ open class AnkiDroidJsAPI(
                 convertToByteArray(apiContract, false)
             }
             "ttsStop" -> convertToByteArray(apiContract, talker.stop())
-            "searchCard" -> {
-                val intent =
-                    Intent(context, CardBrowser::class.java).apply {
-                        putExtra("currentCard", currentCard.id)
-                        putExtra(CardBrowserViewModel.EXTRA_SEARCH_QUERY, apiParams)
-                    }
-                activity.startActivity(intent)
-                convertToByteArray(apiContract, true)
-            }
-            "searchCardWithCallback" -> ankiSearchCardWithCallback(apiContract)
+            "searchCard" -> convertToByteArray(apiContract, false)
+            "searchCardWithCallback" -> convertToByteArray(apiContract, false)
             "isDisplayingAnswer" -> convertToByteArray(apiContract, activity.isDisplayingAnswer)
             "addTagToCard" -> {
                 activity.runOnUiThread { activity.showTagsDialog() }
@@ -441,50 +425,6 @@ open class AnkiDroidJsAPI(
         }
         return conversion(apiContract, status)
     }
-
-    @NeedsTest("needs coverage")
-    private suspend fun ankiSearchCardWithCallback(apiContract: ApiContract): ByteArray =
-        withContext(Dispatchers.Main) {
-            val cards =
-                try {
-                    val searchString = withCol { SearchString.fromUserInput(apiContract.cardSuppliedData) }.getOrThrow()
-                    searchForRows(searchString, SortOrder.UseCollectionOrdering, CardsOrNotes.CARDS)
-                        .map { withCol { getCard(it.cardOrNoteId) } }
-                } catch (_: Exception) {
-                    activity.webView!!.evaluateJavascript(
-                        "console.log('${context.getString(R.string.search_card_js_api_no_results)}')",
-                        null,
-                    )
-                    showDeveloperContact(AnkiDroidJsAPIConstants.ANKI_JS_ERROR_CODE_SEARCH_CARD, apiContract.cardSuppliedDeveloperContact)
-                    return@withContext convertToByteArray(apiContract, false)
-                }
-            val searchResult: MutableList<String> = ArrayList()
-            for (card in cards) {
-                val jsonObject = JSONObject()
-                val fieldsData = card.note(getColUnsafe).fields
-                val fieldsName = card.noteType(getColUnsafe).fieldsNames
-
-                val noteId = card.nid
-                val cardId = card.id
-                jsonObject.put("cardId", cardId)
-                jsonObject.put("noteId", noteId)
-
-                val jsonFieldObject = JSONObject()
-                fieldsName.zip(fieldsData).forEach { pair ->
-                    jsonFieldObject.put(pair.component1(), pair.component2())
-                }
-                jsonObject.put("fieldsData", jsonFieldObject)
-
-                searchResult.add(jsonObject.toString())
-            }
-
-            // quote result to prevent JSON injection attack
-            val jsonEncodedString = JSONObject.quote(searchResult.toString())
-            activity.runOnUiThread {
-                activity.webView!!.evaluateJavascript("ankiSearchCard($jsonEncodedString)", null)
-            }
-            convertToByteArray(apiContract, true)
-        }
 
     open class CardDataForJsApi {
         var newCardCount: Int = -1

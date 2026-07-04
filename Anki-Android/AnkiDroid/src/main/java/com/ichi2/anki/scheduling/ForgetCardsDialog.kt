@@ -22,12 +22,11 @@ import com.ichi2.anki.libanki.sched.Scheduler
 import com.ichi2.anki.observability.undoableOp
 import com.ichi2.anki.snackbar.showSnackbar
 import com.ichi2.anki.utils.ext.setFragmentResultListener
-import com.ichi2.anki.utils.openUrl
 import com.ichi2.anki.withProgress
 import com.ichi2.utils.create
 import com.ichi2.utils.negativeButton
 import com.ichi2.utils.positiveButton
-import com.ichi2.utils.titleWithHelpIcon
+import com.ichi2.utils.title
 import timber.log.Timber
 
 // TODO: Rename the labels opening this class once Anki Desktop's translations support plurals
@@ -101,9 +100,7 @@ class ForgetCardsDialog : DialogFragment() {
         return MaterialAlertDialogBuilder(requireContext()).create {
             // BUG: this is 'Reset Card'/'Forget Card' in Anki Desktop (24.04)
             // "Reset card progress" is less explicit on the singular/plural dimension
-            titleWithHelpIcon(stringRes = R.string.reset_card_dialog_title) {
-                requireContext().openUrl(R.string.link_help_forget_cards)
-            }
+            title(R.string.reset_card_dialog_title)
             positiveButton(R.string.reset) {
                 sharedPrefs.edit {
                     putBoolean(ARG_RESTORE_ORIGINAL, restoreOriginalPositionIfPossible)

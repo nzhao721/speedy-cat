@@ -9,23 +9,16 @@ import "./graphs-base.scss";
 
 import { ModuleName, setupI18n } from "@tslib/i18n";
 import { checkNightMode } from "@tslib/nightmode";
-import type { Component } from "svelte";
-
 import GraphsPage from "./GraphsPage.svelte";
 
 const i18n = setupI18n({ modules: [ModuleName.STATISTICS, ModuleName.SCHEDULING] });
 
-export async function setupGraphs(
-    graphs: Component<any>[],
-): Promise<GraphsPage> {
+export async function setupGraphs(): Promise<GraphsPage> {
     checkNightMode();
     await i18n;
 
     return new GraphsPage({
         target: document.body,
-        props: {
-            graphs,
-        },
     });
 }
 
@@ -43,10 +36,8 @@ import RangeBox from "./RangeBox.svelte";
 import RetrievabilityGraph from "./RetrievabilityGraph.svelte";
 import ReviewsGraph from "./ReviewsGraph.svelte";
 import StabilityGraph from "./StabilityGraph.svelte";
-import TodayStats from "./TodayStats.svelte";
 
 export const graphComponents = {
-    TodayStats,
     FutureDue,
     CalendarGraph,
     ReviewsGraph,

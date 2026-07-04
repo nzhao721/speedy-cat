@@ -27,7 +27,7 @@
     <!-- Preference key (not user-visible, must not be translated) -->
     <string name="speedycat_ai_checker_preference" translatable="false">speedycatAiChecker</string>
     <string name="speedycat_ai_checker_title">AI answer check</string>
-    <string name="speedycat_ai_checker_summ">Use an AI model (gpt-5.4-mini) to grade recall and flag non-attempts. Verdicts are model-generated; needs an OpenAI key. When off, a case-insensitive checker is used.</string>
+    <string name="speedycat_ai_checker_summ">Use an AI model (gpt-5.4-mini) to grade recall and flag non-attempts. Verdicts are model-generated; uses the SpeedyCAT cloud proxy by default, or a local OpenAI key as fallback. When off, a case-insensitive checker is used.</string>
 
     <!-- "I don't know" escape hatch, offered after being stuck for 5 seconds -->
     <string name="speedycat_stuck">Stuck on this card?</string>

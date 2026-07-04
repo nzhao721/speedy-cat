@@ -195,14 +195,10 @@ def _init_message_box(
     _mbox.setIcon(QMessageBox.Icon.Warning)
     _mbox.setTextFormat(text_format)
 
-    def show_help():
-        openHelp(help_page)
-
     def copy_debug_info():
         QApplication.clipboard().setText(debug_text)
         tooltip(tr.errors_copied_to_clipboard(), parent=_mbox)
 
-    help = _mbox.addButton(QMessageBox.StandardButton.Help)
     if debug_text:
         debug_info = _mbox.addButton(
             tr.errors_copy_debug_info_button(), QMessageBox.ButtonRole.ActionRole
@@ -211,9 +207,6 @@ def _init_message_box(
         debug_info.clicked.connect(copy_debug_info)
     cancel = _mbox.addButton(QMessageBox.StandardButton.Cancel)
     cancel.setText(tr.actions_close())
-
-    help.clicked.disconnect()
-    help.clicked.connect(show_help)
 
     return _mbox
 

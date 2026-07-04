@@ -72,7 +72,19 @@ class ForcedRecallTest {
         assertFalse(ForcedRecall.matches("   ", "<br>"))
     }
 
-    // displayAnswer: the human-readable expected answer shown next to the verdict.
+    // displayAnswer: human-readable expected answer for AI checker prompts (not shown on reveal).
+
+    @Test
+    fun formatVerdictBannerCorrect() {
+        assertTrue(ForcedRecall.formatVerdictBanner(true).contains("Correct"))
+        assertTrue(ForcedRecall.formatVerdictBanner(true).contains("type-result"))
+    }
+
+    @Test
+    fun formatVerdictBannerIncorrect() {
+        assertTrue(ForcedRecall.formatVerdictBanner(false).contains("Incorrect"))
+        assertFalse(ForcedRecall.formatVerdictBanner(false).contains("Expected:"))
+    }
 
     @Test
     fun displayAnswerStripsHtmlButPreservesCase() {

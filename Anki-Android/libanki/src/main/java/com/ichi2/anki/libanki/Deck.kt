@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2020 Arthur Milchior <arthur@milchior.fr>
  *
  * This program is free software; you can redistribute it and/or modify it under

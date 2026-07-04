@@ -2,11 +2,7 @@
 
 package com.ichi2.anki
 
-import android.app.Activity
 import android.os.Bundle
-import android.text.Html
-import android.text.Spanned
-import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -15,12 +11,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.VisibleForTesting
 import androidx.constraintlayout.widget.Group
-import androidx.core.text.HtmlCompat
-import androidx.core.text.parseAsHtml
 import androidx.core.view.MenuProvider
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -29,10 +21,6 @@ import androidx.lifecycle.lifecycleScope
 import anki.collection.OpChanges
 import com.ichi2.anki.CollectionManager.TR
 import com.ichi2.anki.CollectionManager.withCol
-import com.ichi2.anki.backend.stripHTMLScriptAndStyleTags
-import com.ichi2.anki.common.crashreporting.CrashReportService
-import com.ichi2.anki.dialogs.customstudy.CustomStudyDialog
-import com.ichi2.anki.filtered.FilteredDeckOptionsFragment
 import com.ichi2.anki.libanki.Collection
 import com.ichi2.anki.libanki.Decks
 import com.ichi2.anki.observability.ChangeManager
@@ -40,20 +28,14 @@ import com.ichi2.anki.observability.undoableOp
 import com.ichi2.anki.reviewreminders.ReviewReminderScope
 import com.ichi2.anki.reviewreminders.ScheduleRemindersFragment
 import com.ichi2.anki.settings.Prefs
-import com.ichi2.anki.ui.internationalization.sentenceCase
-import com.ichi2.anki.utils.ext.showDialogFragment
-import com.ichi2.ui.CollectionMediaImageGetter
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import org.intellij.lang.annotations.Language
 import timber.log.Timber
 
 /**
- * Displays an overview of a deck (title, counts, description) and allows studying or modification
- * of the deck (Unbury, Deck Options, Custom Study)
- *
- * Filtered decks may be emptied or rebuilt
+ * Displays an overview of a deck (title, counts) and allows studying or modification
+ * of the deck (Unbury; filtered decks may be emptied or rebuilt)
  *
  * On a tablet, this is the primary screen to study a deck and appears inside [DeckPicker]
  * On a phone, this is hosted inside [StudyOptionsActivity], opened via the the [DeckPicker] counts
@@ -66,7 +48,6 @@ class StudyOptionsFragment :
     private lateinit var deckInfoLayout: Group
     private lateinit var buttonStart: Button
     private lateinit var textDeckName: TextView
-    private lateinit var textDeckDescription: TextView
     private lateinit var buryInfoLabel: TextView
     private lateinit var newCountText: TextView
     private lateinit var newBuryText: TextView
@@ -85,14 +66,10 @@ class StudyOptionsFragment :
         View.OnClickListener { v: View ->
             if (v.id == R.id.studyoptions_start) {
                 Timber.i("StudyOptionsFragment:: start study button pressed")
-                if (currentContentView != CONTENT_CONGRATS) {
-                    parentFragmentManager.setFragmentResult(
-                        REQUEST_STUDY_OPTIONS_STUDY,
-                        Bundle(),
-                    )
-                } else {
-                    showCustomStudyContextMenu()
-                }
+                parentFragmentManager.setFragmentResult(
+                    REQUEST_STUDY_OPTIONS_STUDY,
+                    Bundle(),
+                )
             }
         }
 
@@ -124,7 +101,6 @@ class StudyOptionsFragment :
     ) {
         menuInflater.inflate(R.menu.study_options_fragment, menu)
         menu.findItem(R.id.action_rebuild)?.title = TR.actionsRebuild()
-        menu.findItem(R.id.action_custom_study)?.title = TR.sentenceCase.customStudy
         menu.findItem(R.id.action_unbury)?.title = TR.studyingUnbury()
     }
 
@@ -133,26 +109,11 @@ class StudyOptionsFragment :
         refreshInterface()
     }
 
-    private fun closeStudyOptions(result: Int) {
-        val a: Activity? = activity
-        if (!fragmented && a != null) {
-            a.setResult(result)
-            a.finish()
-        } else if (a == null) {
-            // getActivity() can return null if reference to fragment lingers after parent activity has been closed,
-            // which is particularly relevant when using AsyncTasks.
-            Timber.e("closeStudyOptions() failed due to getActivity() returning null")
-        }
-    }
-
     private fun initAllContentViews(studyOptionsView: View) {
         studyOptionsView.findViewById<View>(R.id.studyoptions_gradient).visibility =
             if (fragmented) View.VISIBLE else View.GONE
         deckInfoLayout = studyOptionsView.findViewById(R.id.group_counts)
         textDeckName = studyOptionsView.findViewById(R.id.studyoptions_deck_name)
-        textDeckDescription = studyOptionsView.findViewById(R.id.studyoptions_deck_description)
-        // make links clickable
-        textDeckDescription.movementMethod = LinkMovementMethod.getInstance()
         buryInfoLabel =
             studyOptionsView.findViewById<TextView>(R.id.studyoptions_bury_counts_label).apply {
                 // TODO see if we could further improve the display and discoverability of buried cards here
@@ -176,33 +137,8 @@ class StudyOptionsFragment :
         totalCardsCount = studyOptionsView.findViewById(R.id.studyoptions_total_count)
     }
 
-    private fun showCustomStudyContextMenu() {
-        val dialog = CustomStudyDialog.createInstance(deckId = col!!.decks.selected())
-        requireActivity().showDialogFragment(dialog)
-    }
-
     override fun onMenuItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_deck_or_study_options -> {
-                Timber.i("StudyOptionsFragment:: Deck or study options button pressed")
-                if (col!!.decks.isFiltered(col!!.decks.selected())) {
-                    val i = FilteredDeckOptionsFragment.getIntent(requireActivity(), did = col!!.decks.current().id)
-                    Timber.i("Opening filtered deck options")
-                    onDeckOptionsActivityResult.launch(i)
-                } else {
-                    val i =
-                        com.ichi2.anki.pages.DeckOptions
-                            .getIntent(requireContext(), col!!.decks.current().id)
-                    Timber.i("Opening deck options for activity result")
-                    onDeckOptionsActivityResult.launch(i)
-                }
-                return true
-            }
-            R.id.action_custom_study -> {
-                Timber.i("StudyOptionsFragment:: custom study button pressed")
-                showCustomStudyContextMenu()
-                return true
-            }
             R.id.action_schedule_reminders -> {
                 Timber.i("StudyOptionsFragment:: schedule reminders button pressed")
                 val intent =
@@ -264,25 +200,14 @@ class StudyOptionsFragment :
         super.onPrepareMenu(menu)
         Timber.i("configureToolbarInternal()")
         try {
-            // Switch on or off rebuild/empty/custom study depending on whether or not filtered deck
             if (col != null && col!!.decks.isFiltered(col!!.decks.selected())) {
                 menu.findItem(R.id.action_rebuild)?.isVisible = true
                 menu.findItem(R.id.action_empty)?.isVisible = true
-                menu.findItem(R.id.action_custom_study)?.isVisible = false
-                menu.findItem(R.id.action_deck_or_study_options)?.setTitle(R.string.menu__study_options)
             } else {
                 menu.findItem(R.id.action_rebuild)?.isVisible = false
                 menu.findItem(R.id.action_empty)?.isVisible = false
-                menu.findItem(R.id.action_custom_study)?.isVisible = true
-                menu.findItem(R.id.action_deck_or_study_options)?.title = TR.sentenceCase.deckOptions
             }
-            // Don't show custom study icon if congrats shown
-            if (currentContentView == CONTENT_CONGRATS) {
-                menu.findItem(R.id.action_custom_study)?.isVisible = false
-            }
-            // Use new review reminders system if enabled
             menu.findItem(R.id.action_schedule_reminders)?.isVisible = Prefs.newReviewRemindersEnabled
-            // Switch on or off unbury depending on if there are cards to unbury
             menu.findItem(R.id.action_unbury)?.isVisible = col != null && col!!.sched.haveBuried()
         } catch (e: IllegalStateException) {
             if (!CollectionManager.isOpenUnsafe()) {
@@ -302,27 +227,6 @@ class StudyOptionsFragment :
             }
         }
     }
-
-    private var onDeckOptionsActivityResult =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
-            Timber.i("StudyOptionsFragment::mOnDeckOptionsActivityResult")
-
-            if (!isAdded) {
-                Timber.d("Fragment not added to the activity")
-                CrashReportService.sendExceptionReport("Fragment is not added to activity", "StudyOptionsFragment")
-                return@registerForActivityResult
-            }
-
-            Timber.d(
-                "Handling onActivityResult for StudyOptionsFragment (deckOptions/filteredDeckOptions, resultCode = %d)",
-                result.resultCode,
-            )
-            activity?.invalidateMenu()
-            if (result.resultCode == DeckPicker.RESULT_MEDIA_EJECTED) {
-                closeStudyOptions(result.resultCode)
-                return@registerForActivityResult
-            }
-        }
 
     private var updateValuesFromDeckJob: Job? = null
 
@@ -421,48 +325,13 @@ class StudyOptionsFragment :
             buttonStart.visibility = View.GONE
         } else if (result.newCardsToday + result.lrnCardsToday + result.revCardsToday == 0) {
             currentContentView = CONTENT_CONGRATS
-            if (!isDynamic) {
-                deckInfoLayout.visibility = View.GONE
-                buttonStart.visibility = View.VISIBLE
-                buttonStart.text = TR.sentenceCase.customStudy
-            } else {
-                buttonStart.visibility = View.GONE
-            }
+            deckInfoLayout.visibility = View.GONE
+            buttonStart.visibility = View.GONE
         } else {
             currentContentView = CONTENT_STUDY_OPTIONS
             deckInfoLayout.visibility = View.VISIBLE
             buttonStart.visibility = View.VISIBLE
             buttonStart.setText(R.string.studyoptions_start)
-        }
-
-        // Set deck description
-        @Language("HTML")
-        val desc: String =
-            if (isDynamic) {
-                resources.getString(R.string.dyn_deck_desc)
-            } else {
-                val deck = col.decks.current()
-                if (deck.descriptionAsMarkdown) {
-                    @Suppress("DEPRECATION") // renderMarkdown is fine here.
-                    col.renderMarkdown(deck.description, sanitize = true)
-                } else {
-                    deck.description
-                }
-            }
-        if (desc.isNotEmpty()) {
-            val mediaDir = col.media.dir
-            val imageGetter =
-                CollectionMediaImageGetter(
-                    requireContext(),
-                    textDeckDescription,
-                    mediaDir,
-                    viewLifecycleOwner.lifecycleScope,
-                )
-
-            textDeckDescription.text = formatDescription(desc, imageGetter)
-            textDeckDescription.visibility = View.VISIBLE
-        } else {
-            textDeckDescription.visibility = View.GONE
         }
 
         // Set new/learn/review card counts
@@ -536,24 +405,6 @@ class StudyOptionsFragment :
         private const val CONTENT_STUDY_OPTIONS = 0
         private const val CONTENT_CONGRATS = 1
         private const val CONTENT_EMPTY = 2
-
-        @VisibleForTesting
-        fun formatDescription(
-            @Language("HTML") desc: String,
-            imageGetter: Html.ImageGetter? = null,
-        ): Spanned {
-            // #5715: In deck description, ignore what is in style and script tag
-            // Since we don't currently execute the JS/CSS, it's not worth displaying.
-            val withStrippedTags = stripHTMLScriptAndStyleTags(desc)
-            // #5188 - compat.fromHtml converts newlines into spaces.
-            val withoutWindowsLineEndings = withStrippedTags.replace("\r\n", "<br/>")
-            val withoutLinuxLineEndings = withoutWindowsLineEndings.replace("\n", "<br/>")
-
-            return withoutLinuxLineEndings.parseAsHtml(
-                flags = HtmlCompat.FROM_HTML_MODE_LEGACY,
-                imageGetter = imageGetter,
-            )
-        }
     }
 
     override fun opExecuted(

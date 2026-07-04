@@ -81,6 +81,28 @@ impl SqliteStorage {
             "integer not null default 0",
         )?;
         self.add_column_if_missing("practice_attempts", "assisted", "integer not null default 0")?;
+        self.add_column_if_missing(
+            "practice_attempts",
+            "main_wrong_first",
+            "integer not null default 0",
+        )?;
+        self.add_column_if_missing("practice_attempts", "first_try_no_hint", "integer")?;
+        self.add_speedycat_full_length_columns_if_missing()?;
+        Ok(())
+    }
+
+    /// SpeedyCAT full-length attempt flags: readiness exclusion + abandoned state.
+    pub(super) fn add_speedycat_full_length_columns_if_missing(&self) -> Result<()> {
+        self.add_column_if_missing(
+            "full_length_attempts",
+            "counts_for_readiness",
+            "integer not null default 1",
+        )?;
+        self.add_column_if_missing(
+            "full_length_attempts",
+            "abandoned",
+            "integer not null default 0",
+        )?;
         Ok(())
     }
 
@@ -248,6 +270,8 @@ mod test {
         for (table, column) in [
             ("practice_attempts", "hint_level_used"),
             ("practice_attempts", "assisted"),
+            ("practice_attempts", "main_wrong_first"),
+            ("practice_attempts", "first_try_no_hint"),
             ("practice_questions", "hints"),
         ] {
             let present: i64 = col.storage.db.query_row(

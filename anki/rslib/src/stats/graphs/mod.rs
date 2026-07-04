@@ -88,7 +88,7 @@ impl Collection {
             calendar_first_day_of_week: self.get_first_day_of_week() as i32,
             card_counts_separate_inactive: self
                 .get_config_bool(BoolKey::CardCountsSeparateInactive),
-            browser_links_supported: true,
+            browser_links_supported: false,
             future_due_show_backlog: self.get_config_bool(BoolKey::FutureDueShowBacklog),
         }
     }

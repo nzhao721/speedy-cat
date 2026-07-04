@@ -41,7 +41,9 @@ class PracticeStore(
                 topic text not null,
                 answered_at integer not null,
                 hint_level_used integer not null default 0,
-                assisted integer not null default 0
+                assisted integer not null default 0,
+                main_wrong_first integer not null default 0,
+                first_try_no_hint integer
             )
             """.trimIndent(),
         )
@@ -94,6 +96,12 @@ class PracticeStore(
             put("answered_at", answeredAt)
             put("hint_level_used", hintLevelUsed)
             put("assisted", if (assisted) 1 else 0)
+            put("main_wrong_first", if (mainWrongFirst) 1 else 0)
+            if (firstTryNoHint != null) {
+                put("first_try_no_hint", firstTryNoHint)
+            } else {
+                putNull("first_try_no_hint")
+            }
         }
 
     /** Every recorded attempt, for pure-Kotlin aggregation (see PracticeLogic). */
@@ -120,6 +128,8 @@ class PracticeStore(
                 val answeredIdx = c.getColumnIndexOrThrow("answered_at")
                 val hintLevelIdx = c.getColumnIndexOrThrow("hint_level_used")
                 val assistedIdx = c.getColumnIndexOrThrow("assisted")
+                val mainWrongIdx = c.getColumnIndexOrThrow("main_wrong_first")
+                val firstTryIdx = c.getColumnIndexOrThrow("first_try_no_hint")
                 while (c.moveToNext()) {
                     out.add(
                         Attempt(
@@ -134,6 +144,13 @@ class PracticeStore(
                             answeredAt = c.getLong(answeredIdx),
                             hintLevelUsed = c.getInt(hintLevelIdx),
                             assisted = c.getInt(assistedIdx) != 0,
+                            mainWrongFirst = c.getInt(mainWrongIdx) != 0,
+                            firstTryNoHint =
+                                if (c.isNull(firstTryIdx)) {
+                                    null
+                                } else {
+                                    c.getInt(firstTryIdx)
+                                },
                         ),
                     )
                 }
@@ -158,9 +175,9 @@ class PracticeStore(
 
     companion object {
         private const val DATABASE_NAME = "speedycat_practice.db"
-        // v2: SpeedyCAT graduated hint ladder adds hint_level_used + assisted.
-        // Attempt history is regenerable telemetry, so onUpgrade rebuilds.
-        private const val DATABASE_VERSION = 2
+
+        // v3: progressive hint penalties + first-try dashboard tracking.
+        private const val DATABASE_VERSION = 3
         private const val TABLE = "practice_attempts"
     }
 }

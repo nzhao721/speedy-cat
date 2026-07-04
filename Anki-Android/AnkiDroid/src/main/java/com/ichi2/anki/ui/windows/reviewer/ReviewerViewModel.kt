@@ -17,7 +17,6 @@ import com.ichi2.anki.Reviewer
 import com.ichi2.anki.asyncIO
 import com.ichi2.anki.cardviewer.SingleCardSide
 import com.ichi2.anki.common.annotations.NeedsTest
-import com.ichi2.anki.common.destinations.BrowserDestination
 import com.ichi2.anki.common.destinations.CardInfoDestination
 import com.ichi2.anki.common.destinations.CardInfoDestination.EntryPoint
 import com.ichi2.anki.common.destinations.DeckOptionsDestination
@@ -31,7 +30,6 @@ import com.ichi2.anki.libanki.DeckId
 import com.ichi2.anki.libanki.NoteId
 import com.ichi2.anki.libanki.redoLabel
 import com.ichi2.anki.libanki.sched.CurrentQueueState
-import com.ichi2.anki.libanki.undoLabel
 import com.ichi2.anki.noteeditor.NoteEditorLauncher
 import com.ichi2.anki.observability.ChangeManager
 import com.ichi2.anki.observability.undoableOp
@@ -49,7 +47,6 @@ import com.ichi2.anki.servicelayer.NoteService
 import com.ichi2.anki.servicelayer.isBuryNoteAvailable
 import com.ichi2.anki.servicelayer.isSuspendNoteAvailable
 import com.ichi2.anki.tryRedo
-import com.ichi2.anki.tryUndo
 import com.ichi2.anki.ui.windows.reviewer.autoadvance.AnswerAction
 import com.ichi2.anki.ui.windows.reviewer.autoadvance.AutoAdvance
 import com.ichi2.anki.ui.windows.reviewer.autoadvance.AutoAdvanceAction
@@ -94,7 +91,6 @@ class ReviewerViewModel(
     val actionFeedbackFlow = MutableSharedFlow<String>()
     val canBuryNoteFlow = MutableStateFlow(true)
     val canSuspendNoteFlow = MutableStateFlow(true)
-    val undoLabelFlow = MutableStateFlow<String?>(null)
     val redoLabelFlow = MutableStateFlow<String?>(null)
     val countsFlow = savedStateHandle.getMutableStateFlow(KEY_COUNTS, StudyCounts())
     val typeAnswerFlow = MutableStateFlow<TypeAnswer?>(null)
@@ -145,7 +141,7 @@ class ReviewerViewModel(
         ChangeManager.subscribe(this)
         launchCatchingIO {
             withCol { startTimebox() }
-            updateUndoAndRedoLabels()
+            updateRedoLabel()
             // The height of the answer buttons may increase if `Show button time` is enabled.
             // To ensure consistent height, load the times to match the height of the `Show answer`
             // button with the answer buttons.
@@ -326,14 +322,6 @@ class ReviewerViewModel(
         }
     }
 
-    private suspend fun emitBrowseDestination() {
-        val deckId = withCol { decks.getCurrentId() }
-        val cardId = currentCard.await().id
-        val destination = BrowserDestination.ScrollToCard(deckId, cardId)
-        Timber.i("Launching 'browse options' for deck %d", deckId)
-        navigateFlow.emit(destination)
-    }
-
     private suspend fun buryCard() {
         val cardId = currentCard.await().id
         val noteCount =
@@ -370,11 +358,6 @@ class ReviewerViewModel(
         }
         actionFeedbackFlow.emit(TR.studyingNoteSuspended())
         updateCurrentCard()
-    }
-
-    private suspend fun undo() {
-        Timber.v("ReviewerViewModel::undo")
-        actionFeedbackFlow.emit(tryUndo())
     }
 
     private suspend fun redo() {
@@ -606,9 +589,8 @@ class ReviewerViewModel(
         return typeAnsRe.replace(text, repl)
     }
 
-    private suspend fun updateUndoAndRedoLabels() {
-        Timber.v("ReviewerViewModel::updateUndoAndRedoLabels")
-        undoLabelFlow.emit(withCol { undoLabel() })
+    private suspend fun updateRedoLabel() {
+        Timber.v("ReviewerViewModel::updateRedoLabel")
         redoLabelFlow.emit(withCol { redoLabel() })
     }
 
@@ -685,7 +667,6 @@ class ReviewerViewModel(
                     ViewerAction.TAG -> editNoteTags()
                     ViewerAction.MARK -> toggleMark()
                     ViewerAction.REDO -> redo()
-                    ViewerAction.UNDO -> undo()
                     ViewerAction.RESCHEDULE_NOTE -> launchSetDueDate()
                     ViewerAction.RESET_PROGRESS -> launchResetProgress()
                     ViewerAction.TOGGLE_AUTO_ADVANCE -> toggleAutoAdvance()
@@ -733,7 +714,6 @@ class ReviewerViewModel(
                     ViewerAction.SUSPEND_MENU -> suspendCard()
                     ViewerAction.BURY_MENU -> buryCard()
                     ViewerAction.STATISTICS -> navigateFlow.emit(StatisticsDestination)
-                    ViewerAction.BROWSE -> emitBrowseDestination()
                     ViewerAction.PLAY_MEDIA -> replayMedia()
                     ViewerAction.FLAG_MENU -> {}
                 }
@@ -774,7 +754,7 @@ class ReviewerViewModel(
         handler: Any?,
     ) {
         launchCatchingIO {
-            updateUndoAndRedoLabels()
+            updateRedoLabel()
 
             if (handler == this) return@launchCatchingIO
 

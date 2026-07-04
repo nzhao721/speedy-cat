@@ -14,10 +14,30 @@ surfaces the summary.
 <script lang="ts">
     import { createEventDispatcher, onDestroy, onMount } from "svelte";
 
+    import ExplanationChat from "./ExplanationChat.svelte";
     import HintLadder from "./HintLadder.svelte";
     import PassagePanel from "./PassagePanel.svelte";
     import QuestionView from "./QuestionView.svelte";
     import {
+        buildUserVisiblePrompt,
+        correctAnswerText,
+        emptyExplanationProgress,
+        explanationBypassedProgress,
+        explanationFailureHint,
+        hintPromptsFromQuestion,
+        itemBlocksProgress,
+        shouldUseExplanationGate,
+        type ExplanationAiStatus,
+        type ExplanationProgress,
+    } from "./explanationGate";
+    import {
+        checkExplanation,
+        fetchExplanationAiStatus,
+    } from "./explanationCheck";
+    import {
+        applyHintAnswer,
+        canShowFirstHintButton,
+        canShowNextHintButton,
         canSubmitMain,
         emptyHintProgress,
         fetchPassageSet,
@@ -28,7 +48,15 @@ surfaces the summary.
         hintLevelReached,
         isAssisted,
         logPracticeAttempt,
+        passageHintWordCountForQuestion,
+        passageWordCount,
+        pendingHintIndex,
         primaryTopic,
+        questionHints,
+        canRevealNextHint,
+        shouldTickQuestionHintTimer,
+        startHintWrongCooldown,
+        tickHintCooldowns,
         type CarsPassageSet,
         type HintProgress,
         type PracticeQuestion,
@@ -36,9 +64,17 @@ surfaces the summary.
         type RunItem,
     } from "./lib";
 
-    export let questions: PracticeQuestion[];
-    export let sessionId: string;
-    export let timeLimitSeconds = 0;
+    interface Props {
+        questions: PracticeQuestion[];
+        sessionId: string;
+        timeLimitSeconds?: number;
+    }
+
+    const {
+        questions,
+        sessionId,
+        timeLimitSeconds = 0,
+    }: Props = $props();
 
     const dispatch = createEventDispatcher<{ finished: PracticeSessionSummary }>();
 
@@ -54,52 +90,238 @@ surfaces the summary.
         item.questions.forEach((q) => itemOfQuestion.set(q.id, i)),
     );
 
-    let index = 0;
-    let selected: Record<string, string> = {};
-    let submitted: Record<string, boolean> = {};
-    let eliminated: Record<string, string[]> = {};
-    let flagged: Record<string, boolean> = {};
+    let index = $state(0);
+    let selected = $state<Record<string, string>>({});
+    let submitted = $state<Record<string, boolean>>({});
+    let eliminated = $state<Record<string, string[]>>({});
+    let flagged = $state<Record<string, boolean>>({});
     // SpeedyCAT graduated hint ladder: per-question progress (revealed tiers +
     // the answer chosen for each). Reactive so the ladder + gating update live.
-    let hintProgress: Record<string, HintProgress> = {};
+    let hintProgress = $state<Record<string, HintProgress>>({});
     // Set after a wrong submit escalates into the ladder, to explain why the
     // main answer wasn't revealed.
-    let hintNudge: Record<string, boolean> = {};
+    let hintNudge = $state<Record<string, boolean>>({});
+    /** True once the learner submitted a wrong main answer (wrong-answer path). */
+    let mainWrongFirst = $state<Record<string, boolean>>({});
+    // Per-question timers for hint affordances (seconds while visible on screen).
+    let secondsOnQuestion = $state<Record<string, number>>({});
+    let secondsSinceHintComplete = $state<Record<string, number>>({});
+    let hintCooldown = $state<Record<string, number>>({});
+    /** Hint timers start on first viewport visibility; pause when scrolled away. */
+    let questionEverVisible = $state<Record<string, boolean>>({});
+    let questionCurrentlyVisible = $state<Record<string, boolean>>({});
+    /** Tentative pick for the current (unanswered) hint subquestion, per question. */
+    let hintPendingChoice = $state<Record<string, string>>({});
+    // SpeedyCAT explanation gate: ~1-in-5 correct answers require a written
+    // explanation verified by AI before the question is finalized.
+    let explanationAiStatus = $state<ExplanationAiStatus>({
+        available: false,
+        aiOn: false,
+    });
+    let explanationProgress = $state<Record<string, ExplanationProgress>>({});
+    let explanationCoaching = $state<Record<string, string>>({});
     const timeSpent: Record<string, number> = {};
-    let passageCache: Record<string, CarsPassageSet> = {};
-    let passageLoading = false;
-    let finishing = false;
+    let passageCache = $state<Record<string, CarsPassageSet>>({});
+    let passageLoading = $state(false);
+    let finishing = $state(false);
 
-    let elapsed = 0;
-    let secondsOnItem = 0;
+    let elapsed = $state(0);
+    let secondsOnItem = $state(0);
     let ticker: ReturnType<typeof setInterval> | undefined;
+    // Per-question wrapper elements, so the hint ladder's "Return to main
+    // question" shortcut can scroll that question's stem back into view.
+    let questionEls = $state<Record<string, HTMLElement>>({});
+    let questionColEl = $state<HTMLElement | undefined>();
 
-    $: current = runItems[index];
-    $: totalItems = runItems.length;
-    $: totalQuestions = allQuestions.length;
-    $: remaining = timeLimitSeconds > 0 ? Math.max(0, timeLimitSeconds - elapsed) : 0;
-    $: answeredCount = allQuestions.filter((q) => submitted[q.id]).length;
-    $: firstNum = current ? (questionNumber.get(current.questions[0].id) ?? 1) : 0;
-    $: lastNum = current
-        ? (questionNumber.get(current.questions[current.questions.length - 1].id) ??
-          firstNum)
-        : 0;
+    const visibilityObservers = new Map<string, IntersectionObserver>();
+
+    function passageWordCountForItem(item: RunItem | undefined): number {
+        if (!item?.passageId) {
+            return 0;
+        }
+        const passage = passageCache[item.passageId]?.passage;
+        return passageWordCount(passage?.wordCount, passage?.passage);
+    }
+
+    function hintPassageWordCount(
+        item: RunItem | undefined,
+        questionIndex: number,
+    ): number | undefined {
+        if (!item?.passageId) {
+            return undefined;
+        }
+        const wc = passageWordCountForItem(item);
+        return passageHintWordCountForQuestion(
+            item.questions.length,
+            questionIndex,
+            wc,
+        );
+    }
+
+    function observeQuestionVisibility(qid: string, el: HTMLElement): void {
+        visibilityObservers.get(qid)?.disconnect();
+        const root = questionColEl ?? null;
+        const observer = new IntersectionObserver(
+            (entries) => {
+                for (const entry of entries) {
+                    const visible = entry.isIntersecting;
+                    questionCurrentlyVisible = {
+                        ...questionCurrentlyVisible,
+                        [qid]: visible,
+                    };
+                    if (visible && !questionEverVisible[qid]) {
+                        questionEverVisible = {
+                            ...questionEverVisible,
+                            [qid]: true,
+                        };
+                    }
+                }
+            },
+            { root, threshold: 0.08 },
+        );
+        observer.observe(el);
+        visibilityObservers.set(qid, observer);
+    }
+
+    function clearVisibilityObservers(): void {
+        for (const observer of visibilityObservers.values()) {
+            observer.disconnect();
+        }
+        visibilityObservers.clear();
+    }
+
+    function questionVisibility(node: HTMLElement, qid: string): { destroy: () => void } {
+        questionEls = { ...questionEls, [qid]: node };
+        observeQuestionVisibility(qid, node);
+        return {
+            destroy(): void {
+                visibilityObservers.get(qid)?.disconnect();
+                visibilityObservers.delete(qid);
+                const next = { ...questionEls };
+                delete next[qid];
+                questionEls = next;
+            },
+        };
+    }
+
+    const current = $derived(runItems[index]);
+    const totalItems = $derived(runItems.length);
+    const totalQuestions = $derived(allQuestions.length);
+    const remaining = $derived(
+        timeLimitSeconds > 0 ? Math.max(0, timeLimitSeconds - elapsed) : 0,
+    );
+    const answeredCount = $derived(
+        allQuestions.filter((q) => submitted[q.id]).length,
+    );
+    const firstNum = $derived(
+        current ? (questionNumber.get(current.questions[0].id) ?? 1) : 0,
+    );
+    const lastNum = $derived(
+        current
+            ? (questionNumber.get(current.questions[current.questions.length - 1].id) ??
+                  firstNum)
+            : 0,
+    );
 
     onMount(() => {
         void ensurePassage(current);
+        resetQuestionTimers(current);
+        void fetchExplanationAiStatus().then((status) => {
+            explanationAiStatus = status;
+        });
         ticker = setInterval(tick, 1000);
+    });
+
+    // Re-root observers once the scrollable question column is mounted.
+    $effect(() => {
+        if (!questionColEl) {
+            return;
+        }
+        for (const [qid, el] of Object.entries(questionEls)) {
+            observeQuestionVisibility(qid, el);
+        }
     });
     onDestroy(() => {
         if (ticker) {
             clearInterval(ticker);
         }
+        clearVisibilityObservers();
     });
 
     function tick(): void {
         elapsed += 1;
         secondsOnItem += 1;
+        tickQuestionTimers(current);
+        hintCooldown = tickHintCooldowns(hintCooldown);
         if (timeLimitSeconds > 0 && elapsed >= timeLimitSeconds) {
             void finish();
+        }
+    }
+
+    /** Reset per-question hint timers when landing on a run item. */
+    function resetQuestionTimers(item: RunItem | undefined): void {
+        if (!item) {
+            return;
+        }
+        for (const q of item.questions) {
+            if (!submitted[q.id]) {
+                secondsOnQuestion = { ...secondsOnQuestion, [q.id]: 0 };
+                secondsSinceHintComplete = {
+                    ...secondsSinceHintComplete,
+                    [q.id]: 0,
+                };
+                questionEverVisible = { ...questionEverVisible, [q.id]: false };
+                questionCurrentlyVisible = {
+                    ...questionCurrentlyVisible,
+                    [q.id]: false,
+                };
+            }
+        }
+        // Re-observe after reset so first-visible detection runs again.
+        for (const q of item.questions) {
+            const el = questionEls[q.id];
+            if (el) {
+                observeQuestionVisibility(q.id, el);
+            }
+        }
+    }
+
+    /** Advance hint affordance timers for visible, unsubmitted questions. */
+    function tickQuestionTimers(item: RunItem | undefined): void {
+        if (!item) {
+            return;
+        }
+        for (const q of item.questions) {
+            if (submitted[q.id]) {
+                continue;
+            }
+            const qid = q.id;
+            if (
+                !shouldTickQuestionHintTimer(
+                    questionEverVisible[qid] ?? false,
+                    questionCurrentlyVisible[qid] ?? false,
+                )
+            ) {
+                continue;
+            }
+            secondsOnQuestion = {
+                ...secondsOnQuestion,
+                [qid]: (secondsOnQuestion[qid] ?? 0) + 1,
+            };
+            const prog = progressFor(q);
+            const hints = questionHints(q);
+            if (
+                pendingHintIndex(prog) === -1
+                && prog.revealed > 0
+                && canRevealNextHint(hints, prog)
+            ) {
+                secondsSinceHintComplete = {
+                    ...secondsSinceHintComplete,
+                    [qid]: (secondsSinceHintComplete[qid] ?? 0) + 1,
+                };
+            } else {
+                secondsSinceHintComplete = { ...secondsSinceHintComplete, [qid]: 0 };
+            }
         }
     }
 
@@ -136,12 +358,20 @@ surfaces the summary.
         }
     }
 
+    const currentBlocksNavigation = $derived(
+        current ? itemBlocksProgress(current.questions, explanationProgress) : false,
+    );
+
     function goto(newIndex: number): void {
         if (newIndex < 0 || newIndex >= totalItems || newIndex === index) {
             return;
         }
+        if (newIndex > index && currentBlocksNavigation) {
+            return;
+        }
         flushItemTime();
         index = newIndex;
+        resetQuestionTimers(runItems[index]);
         void ensurePassage(runItems[index]);
     }
 
@@ -164,6 +394,13 @@ surfaces the summary.
         flagged = { ...flagged, [q.id]: !flagged[q.id] };
     }
 
+    /** Scroll a question's main view back into sight — the "Return to main
+     * question" shortcut from the hint ladder. Same view (no navigation): the
+     * main question renders above the ladder in the scrolling column. */
+    function returnToMain(q: PracticeQuestion): void {
+        questionEls[q.id]?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
     /** The hint-ladder progress for a question (created lazily). */
     function progressFor(q: PracticeQuestion): HintProgress {
         return hintProgress[q.id] ?? emptyHintProgress();
@@ -173,7 +410,7 @@ surfaces the summary.
      * and the wrong-answer escalation both funnel through here). No-op once the
      * ladder is exhausted. */
     function revealNextHint(q: PracticeQuestion): void {
-        const hints = q.hints ?? [];
+        const hints = questionHints(q);
         const prog = progressFor(q);
         if (prog.revealed >= hints.length) {
             return;
@@ -182,6 +419,9 @@ surfaces the summary.
             ...hintProgress,
             [q.id]: { revealed: prog.revealed + 1, picks: { ...prog.picks } },
         };
+        hintPendingChoice = { ...hintPendingChoice, [q.id]: "" };
+        secondsSinceHintComplete = { ...secondsSinceHintComplete, [q.id]: 0 };
+        hintCooldown = { ...hintCooldown, [q.id]: 0 };
     }
 
     function onRequestHint(q: PracticeQuestion): void {
@@ -190,16 +430,29 @@ surfaces the summary.
         }
         hintNudge = { ...hintNudge, [q.id]: false };
         revealNextHint(q);
+        secondsSinceHintComplete = { ...secondsSinceHintComplete, [q.id]: 0 };
+        hintCooldown = { ...hintCooldown, [q.id]: 0 };
     }
 
-    /** Record the answer to a subquestion (enforces the no-skip rule: only the
-     * currently-revealed subquestion is answerable, handled in HintLadder). */
+    /** Record the answer to a subquestion. Wrong answers are rejected; the
+     * learner must retry after a cooldown (handled in HintLadder). */
     function onAnswerHint(q: PracticeQuestion, index: number, label: string): void {
+        const hints = questionHints(q);
+        const hint = hints[index];
+        if (!hint) {
+            return;
+        }
         const prog = progressFor(q);
-        hintProgress = {
-            ...hintProgress,
-            [q.id]: { revealed: prog.revealed, picks: { ...prog.picks, [index]: label } },
-        };
+        const result = applyHintAnswer(hint, index, label, prog);
+        if (result.correct) {
+            hintProgress = { ...hintProgress, [q.id]: result.progress };
+            hintPendingChoice = { ...hintPendingChoice, [q.id]: "" };
+            secondsSinceHintComplete = { ...secondsSinceHintComplete, [q.id]: 0 };
+            hintCooldown = { ...hintCooldown, [q.id]: 0 };
+        } else {
+            hintCooldown = startHintWrongCooldown(hintCooldown, q.id);
+            hintPendingChoice = { ...hintPendingChoice, [q.id]: "" };
+        }
     }
 
     /** Reveal the main answer + log the attempt, stamping the hint tier reached. */
@@ -208,7 +461,7 @@ surfaces the summary.
         answer: string,
         correct: boolean,
     ): Promise<void> {
-        const level = hintLevelReached(q.hints ?? [], progressFor(q).revealed);
+        const level = hintLevelReached(questionHints(q), progressFor(q).revealed);
         submitted = { ...submitted, [q.id]: true };
         try {
             await logPracticeAttempt({
@@ -221,6 +474,7 @@ surfaces the summary.
                 topic: primaryTopic(q),
                 hintLevelUsed: level,
                 assisted: isAssisted(level),
+                mainWrongFirst: mainWrongFirst[q.id] ?? false,
             });
         } catch {
             // network error already surfaced by postProto's alert
@@ -240,7 +494,7 @@ surfaces the summary.
         flushItemTime();
         const answer = selected[q.id] ?? "";
         const correct = answer !== "" && answer === q.correctAnswer;
-        const hints = q.hints ?? [];
+        const hints = questionHints(q);
         // A WRONG answer does NOT immediately reveal the correct answer: instead
         // it escalates the hint ladder (reveal the next tier) and lets the
         // learner try again — climbing L1→L2→L3 across re-attempts — until they
@@ -249,10 +503,93 @@ surfaces the summary.
         // hint tier used, so assisted-correct is penalized).
         if (!correct && hasHintLadder(q) && prog.revealed < hints.length) {
             hintNudge = { ...hintNudge, [q.id]: true };
+            mainWrongFirst = { ...mainWrongFirst, [q.id]: true };
             revealNextHint(q);
             return;
         }
+        if (
+            correct
+            && shouldUseExplanationGate(sessionId, q.id, explanationAiStatus)
+        ) {
+            explanationProgress = {
+                ...explanationProgress,
+                [q.id]: {
+                    active: true,
+                    failCount: 0,
+                    lastFeedback: "",
+                    passed: false,
+                    checking: false,
+                    bypassed: false,
+                },
+            };
+            explanationCoaching = { ...explanationCoaching, [q.id]: "" };
+            return;
+        }
         await finalizeQuestion(q, answer, correct);
+    }
+
+    async function onSubmitExplanation(
+        q: PracticeQuestion,
+        text: string,
+    ): Promise<void> {
+        const prog = explanationProgress[q.id] ?? emptyExplanationProgress();
+        if (!prog.active || prog.passed || prog.checking) {
+            return;
+        }
+        explanationProgress = {
+            ...explanationProgress,
+            [q.id]: { ...prog, checking: true },
+        };
+        const result = await checkExplanation(
+            q.stem,
+            text,
+            correctAnswerText(q),
+        );
+        if (!result) {
+            // Genuine transient failure (network/proxy/AI unavailable): don't
+            // trap the learner. They submitted an explanation, so clear the
+            // gate (bypassed — not a verified pass) and let them advance.
+            explanationProgress = {
+                ...explanationProgress,
+                [q.id]: explanationBypassedProgress(prog),
+            };
+            explanationCoaching = { ...explanationCoaching, [q.id]: "" };
+            const answer = selected[q.id] ?? "";
+            await finalizeQuestion(q, answer, true);
+            return;
+        }
+        if (result.pass) {
+            explanationProgress = {
+                ...explanationProgress,
+                [q.id]: {
+                    ...prog,
+                    checking: false,
+                    passed: true,
+                    lastFeedback: result.feedback,
+                },
+            };
+            explanationCoaching = { ...explanationCoaching, [q.id]: "" };
+            const answer = selected[q.id] ?? "";
+            await finalizeQuestion(q, answer, true);
+            return;
+        }
+        const failCount = prog.failCount + 1;
+        explanationProgress = {
+            ...explanationProgress,
+            [q.id]: {
+                ...prog,
+                checking: false,
+                failCount,
+                lastFeedback: result.feedback,
+            },
+        };
+        explanationCoaching = {
+            ...explanationCoaching,
+            [q.id]: explanationFailureHint(
+                failCount,
+                hintPromptsFromQuestion(q),
+            ),
+        };
     }
 
     async function finish(): Promise<void> {
@@ -346,49 +683,112 @@ surfaces the summary.
                 />
             </div>
         {/if}
-        <div class="question-col">
+        <div class="question-col" bind:this={questionColEl}>
             {#if current}
                 {#each current.questions as q, qi (q.id)}
+                    {@const prog = hintProgress[q.id] ?? emptyHintProgress()}
+                    {@const hints = questionHints(q)}
+                    {@const expProg = explanationProgress[q.id] ?? emptyExplanationProgress()}
+                    {@const awaitingExplanation =
+                        expProg.active && !expProg.passed && !expProg.bypassed}
+                    {@const ladderActive = hasHintLadder(q) && !submitted[q.id] && !awaitingExplanation}
+                    {@const hintPassageWc = hintPassageWordCount(current, qi)}
+                    {@const showFirstStuck =
+                        ladderActive
+                        && canShowFirstHintButton(
+                            secondsOnQuestion[q.id] ?? 0,
+                            q,
+                            prog,
+                            false,
+                            hintPassageWc,
+                        )}
+                    {@const showNextStuck =
+                        ladderActive
+                        && canShowNextHintButton(
+                            secondsSinceHintComplete[q.id] ?? 0,
+                            hints,
+                            prog,
+                            false,
+                        )}
                     <div class="q-block">
-                        <QuestionView
-                            question={q}
-                            number={questionNumber.get(q.id) ?? qi + 1}
-                            selected={selected[q.id] ?? ""}
-                            eliminated={eliminated[q.id] ?? []}
-                            flagged={flagged[q.id] ?? false}
-                            revealed={submitted[q.id] ?? false}
-                            disabled={submitted[q.id] ?? false}
-                            on:select={(e) => onSelect(q, e.detail)}
-                            on:eliminate={(e) => onEliminate(q, e.detail)}
-                            on:toggleFlag={() => onToggleFlag(q)}
-                        />
-                        {#if hasHintLadder(q) && !submitted[q.id]}
-                            <HintLadder
-                                hints={q.hints}
-                                progress={hintProgress[q.id] ?? emptyHintProgress()}
-                                on:requestHint={() => onRequestHint(q)}
-                                on:answerHint={(e) =>
-                                    onAnswerHint(q, e.detail.index, e.detail.label)}
+                        <div use:questionVisibility={q.id}>
+                            <QuestionView
+                                question={q}
+                                number={questionNumber.get(q.id) ?? qi + 1}
+                                selected={selected[q.id] ?? ""}
+                                eliminated={eliminated[q.id] ?? []}
+                                flagged={flagged[q.id] ?? false}
+                                revealed={submitted[q.id] ?? false}
+                                disabled={(submitted[q.id] ?? false) || awaitingExplanation}
+                                on:select={(e) => onSelect(q, e.detail)}
+                                on:eliminate={(e) => onEliminate(q, e.detail)}
+                                on:toggleFlag={() => onToggleFlag(q)}
+                            >
+                                {#snippet actions()}
+                                    {#if awaitingExplanation}
+                                        <span class="nudge explain-nudge">
+                                            Correct — explain your reasoning below to continue.
+                                        </span>
+                                    {:else if !submitted[q.id]}
+                                        {#if showFirstStuck}
+                                            <button
+                                                class="hint-stuck"
+                                                on:click={() => onRequestHint(q)}
+                                            >
+                                                I'm stuck
+                                            </button>
+                                        {/if}
+                                        {#if showNextStuck}
+                                            <button
+                                                class="hint-stuck"
+                                                on:click={() => onRequestHint(q)}
+                                            >
+                                                I'm still stuck
+                                            </button>
+                                        {/if}
+                                        {#if hintNudge[q.id] && !canSubmitMain(selected[q.id] ?? "", prog)}
+                                            <span class="nudge">
+                                                Not quite — work through the hint, then try again.
+                                            </span>
+                                        {/if}
+                                        <button
+                                            class="primary"
+                                            on:click={() => submitQuestion(q)}
+                                            disabled={!canSubmitMain(
+                                                selected[q.id] ?? "",
+                                                prog,
+                                            )}
+                                        >
+                                            Submit
+                                        </button>
+                                    {/if}
+                                {/snippet}
+                            </QuestionView>
+                        </div>
+                        {#if awaitingExplanation || expProg.bypassed}
+                            <ExplanationChat
+                                opener={buildUserVisiblePrompt(q.stem)}
+                                progress={expProg}
+                                coachingHint={explanationCoaching[q.id] ?? ""}
+                                on:submit={(e) => void onSubmitExplanation(q, e.detail)}
                             />
                         {/if}
-                        {#if !submitted[q.id]}
-                            <div class="q-actions">
-                                {#if hintNudge[q.id] && !canSubmitMain(selected[q.id] ?? "", hintProgress[q.id] ?? emptyHintProgress())}
-                                    <span class="nudge">
-                                        Not quite — work through the hint, then try again.
-                                    </span>
-                                {/if}
-                                <button
-                                    class="primary"
-                                    on:click={() => submitQuestion(q)}
-                                    disabled={!canSubmitMain(
-                                        selected[q.id] ?? "",
-                                        hintProgress[q.id] ?? emptyHintProgress(),
-                                    )}
-                                >
-                                    Submit
-                                </button>
-                            </div>
+                        {#if ladderActive}
+                            <HintLadder
+                                hints={hints}
+                                progress={prog}
+                                pendingChoice={hintPendingChoice[q.id] ?? ""}
+                                hintCooldown={hintCooldown[q.id] ?? 0}
+                                on:pendingChoiceChange={(e) => {
+                                    hintPendingChoice = {
+                                        ...hintPendingChoice,
+                                        [q.id]: e.detail,
+                                    };
+                                }}
+                                on:answerHint={(e) =>
+                                    onAnswerHint(q, e.detail.index, e.detail.label)}
+                                on:returnToMain={() => returnToMain(q)}
+                            />
                         {/if}
                     </div>
                     {#if qi < current.questions.length - 1}
@@ -413,7 +813,14 @@ surfaces the summary.
                 {finishing ? "Scoring…" : "Finish and Score"}
             </button>
         {:else}
-            <button class="secondary" on:click={() => goto(index + 1)}>
+            <button
+                class="secondary"
+                on:click={() => goto(index + 1)}
+                disabled={currentBlocksNavigation}
+                title={currentBlocksNavigation
+                    ? "Explain your correct answer before moving on"
+                    : undefined}
+            >
                 Next
             </button>
         {/if}
@@ -529,17 +936,6 @@ surfaces the summary.
         flex-direction: column;
         gap: 1rem;
     }
-    .q-actions {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-    }
-    .nudge {
-        color: #b26a00;
-        font-size: 0.85rem;
-        font-weight: 600;
-    }
     .q-divider {
         width: 100%;
         border: none;
@@ -579,5 +975,10 @@ surfaces the summary.
     button:disabled {
         opacity: 0.5;
         cursor: default;
+    }
+    .q-actions :global(.explain-nudge) {
+        color: #2e9e4f;
+        font-size: 0.85rem;
+        font-weight: 600;
     }
 </style>

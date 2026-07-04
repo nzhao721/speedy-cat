@@ -33,7 +33,6 @@ import com.ichi2.anki.launchCatchingTask
 import com.ichi2.anki.provider.CardContentProvider
 import com.ichi2.anki.settings.Prefs
 import com.ichi2.anki.snackbar.showSnackbar
-import com.ichi2.anki.utils.openUrl
 import com.ichi2.utils.show
 import timber.log.Timber
 import java.io.File
@@ -82,10 +81,6 @@ class AdvancedSettingsFragment : SettingsFragment() {
                 setIcon(R.drawable.ic_warning)
                 setMessage(R.string.readtext_deprecation_warn)
                 setNegativeButton(R.string.dialog_cancel) { _, _ -> ttsPref.isChecked = false }
-                setNeutralButton(R.string.scoped_storage_learn_more) { _, _ ->
-                    ttsPref.isChecked = false
-                    requireContext().openUrl(R.string.link_tts)
-                }
                 setPositiveButton(R.string.dialog_ok) { _, _ -> }
                 setOnCancelListener { ttsPref.isChecked = false }
             }
@@ -112,11 +107,7 @@ class AdvancedSettingsFragment : SettingsFragment() {
          * Plugins section
          */
 
-        // Third party apps
-        requirePreference<Preference>(R.string.thirdparty_apps_key).setOnPreferenceClickListener {
-            requireContext().openUrl(R.string.link_third_party_api_apps)
-            false
-        }
+        // Third party apps preference removed (linked to AnkiDroid wiki documentation).
 
         // Enable API
         requirePreference<SwitchPreferenceCompat>(R.string.enable_api_key).setOnPreferenceChangeListener { newValue ->

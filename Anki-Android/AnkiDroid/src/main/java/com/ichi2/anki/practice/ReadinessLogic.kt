@@ -1,20 +1,15 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // SPDX-FileCopyrightText: 2026 SpeedyCAT contributors
 //
-// Pure, framework-free logic for the SpeedyCAT Readiness metric, computed
-// natively on mobile:
-//
-//   * Memory      = mean FSRS retrievability over reviewed MCAT cards
-//   * Performance = practice-question accuracy (+ time) from the local store
-//
-// Each pillar is reported as a value PLUS an explicit range (a 95% confidence
-// interval, ±1.96·SE) PLUS an explicit give-up / insufficient-data rule, and a
-// named, deterministic source. No AI is involved. This mirrors the desktop
-// readiness computation so both apps report the metric the same way, and is
-// unit-tested directly.
+// Pure, framework-free **fallback** logic for the SpeedyCAT Readiness metric on
+// mobile when `PracticeService.GetReadiness` is unavailable (stock backend).
+// Prefer [ReadinessBackend.tryFetchPillars] when the SpeedyCAT Rust backend is
+// linked (`local_backend=true`); keep these formulas in sync with `rslib`.
 
 package com.ichi2.anki.practice
 
+import kotlin.math.ln
+import kotlin.math.pow
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
 
@@ -33,8 +28,144 @@ const val SCALED_SCORE_SOURCE = "AAMC published scoring examples (students-resid
 /** Minimum answered practice questions before a Performance estimate is shown. */
 const val MIN_PRACTICE_ANSWERS = 30
 
+/** Performance EWMA half-life: half the weight from data within 7 days. */
+const val PERFORMANCE_HALF_LIFE_DAYS = 7.0
+
+/** Readiness EWMA half-life: half the weight from data within 30 days. */
+const val READINESS_HALF_LIFE_DAYS = 30.0
+
+/** Decay constant λ = ln(2) / half-life (per day). */
+fun ewmaDecayPerDay(halfLifeDays: Double): Double = ln(2.0) / halfLifeDays
+
+/** Weight at age *t* days: `2^(-t/H)`. */
+fun ewmaWeightForAgeDays(
+    ageDays: Double,
+    halfLifeDays: Double,
+): Double = if (ageDays <= 0.0) 1.0 else 2.0.pow(-ageDays / halfLifeDays)
+
+/** Age in days; missing timestamps (`≤ 0`) count as current. */
+fun observationAgeDays(
+    nowSecs: Long,
+    timestampSecs: Long,
+): Double =
+    if (timestampSecs <= 0) {
+        0.0
+    } else {
+        (nowSecs - timestampSecs).coerceAtLeast(0).toDouble() / 86_400.0
+    }
+
+data class EwmaAggregate(
+    val mean: Double,
+    val effectiveN: Double,
+    val count: Int,
+)
+
+/** Weighted mean of `(value, timestampSecs)` pairs. */
+fun ewmaAggregate(
+    observations: List<Pair<Double, Long>>,
+    halfLifeDays: Double,
+    nowSecs: Long = System.currentTimeMillis() / 1000,
+): EwmaAggregate {
+    var weightedSum = 0.0
+    var weightSum = 0.0
+    var weightSqSum = 0.0
+    for ((value, ts) in observations) {
+        val w = ewmaWeightForAgeDays(observationAgeDays(nowSecs, ts), halfLifeDays)
+        weightedSum += w * value
+        weightSum += w
+        weightSqSum += w * w
+    }
+    val mean = if (weightSum > 0.0) weightedSum / weightSum else 0.0
+    val effectiveN = if (weightSqSum > 0.0) weightSum * weightSum / weightSqSum else 0.0
+    return EwmaAggregate(mean = mean, effectiveN = effectiveN, count = observations.size)
+}
+
+/** Wilson 95% CI using Kish effective sample size. */
+private fun proportionCiEffective(
+    p: Double,
+    effectiveN: Double,
+): ConfidenceInterval {
+    if (effectiveN <= 0.0) return ConfidenceInterval(0.0, 0.0)
+    return proportionCi(p, effectiveN.roundToInt().coerceAtLeast(1))
+}
+
+/**
+ * Target pace for the Performance pillar: 230 questions in 6h15m (22_500s / 230
+ * ≈ 97.8s), rounded to 98s. Slower averages scale the accuracy score down.
+ */
+const val PERFORMANCE_TARGET_SECONDS = 98.0
+
+/** Multiplier when average pace exceeds [PERFORMANCE_TARGET_SECONDS]. */
+fun performanceTimePenaltyFactor(avgSeconds: Double): Double =
+    if (avgSeconds <= PERFORMANCE_TARGET_SECONDS) {
+        1.0
+    } else {
+        PERFORMANCE_TARGET_SECONDS / avgSeconds
+    }
+
+/** Scale accuracy and its CI by the pace penalty (mirrors rslib). */
+fun applyPerformanceTimePenalty(
+    accuracy: Double,
+    ci: ConfidenceInterval,
+    avgSeconds: Double,
+): Pair<Double, ConfidenceInterval> {
+    val factor = performanceTimePenaltyFactor(avgSeconds)
+    return Pair(
+        accuracy * factor,
+        ConfidenceInterval(ci.low * factor, ci.high * factor),
+    )
+}
+
+/** Full credit — correct with no hints (Performance pillar). */
+const val HINT_CREDIT_L0 = 1.0
+
+/** Slightly penalized — correct after hint tier 1. */
+const val HINT_CREDIT_L1 = 0.60
+
+/** More penalized — correct after hint tier 2. */
+const val HINT_CREDIT_L2 = 0.30
+
+/** Heavily penalized (~incorrect) — correct after hint tier 3. */
+const val HINT_CREDIT_L3 = 0.10
+
+/** Fractional Performance credit for one answered attempt (see PRD). */
+fun performanceCredit(
+    correct: Boolean,
+    hintLevelUsed: Int,
+    mainWrongFirst: Boolean,
+): Double {
+    if (mainWrongFirst || !correct) return 0.0
+    return when (hintLevelUsed.coerceIn(0, 3)) {
+        0 -> HINT_CREDIT_L0
+        1 -> HINT_CREDIT_L1
+        2 -> HINT_CREDIT_L2
+        else -> HINT_CREDIT_L3
+    }
+}
+
+/**
+ * Dashboard first-try eligibility: the learner's first-ever attempt on a question
+ * with no hint usage. Returns null for retries or hint-assisted first encounters.
+ */
+fun firstTryNoHint(
+    questionSeenBefore: Boolean,
+    replacing: Boolean,
+    priorFirstTry: Int?,
+    hintLevelUsed: Int,
+    selectedAnswer: String,
+    correct: Boolean,
+): Int? {
+    if (replacing) return priorFirstTry
+    if (questionSeenBefore) return null
+    if (hintLevelUsed > 0 || selectedAnswer.isEmpty()) return null
+    return if (correct) 1 else 0
+}
+
 /** The z value for a two-sided 95% confidence interval. */
 private const val Z_95 = 1.96
+
+/** Caption shown under every pillar's numeric range. */
+internal const val CI_CAPTION = "95% confidence interval (\u00b11.96\u00b7SE)"
 
 /** A closed numeric interval, both ends in the metric's own units. */
 data class ConfidenceInterval(
@@ -86,6 +217,27 @@ fun sampleLine(
     singular: String,
     plural: String,
 ): String = "Based on $count ${if (count == 1) singular else plural}"
+
+/**
+ * Memory pillar sample line when studied and collection totals are known, e.g.
+ * "42 out of 10,287 flashcards studied".
+ */
+fun memoryStudiedLine(
+    studied: Int,
+    total: Int,
+    soFar: Boolean = false,
+): String {
+    val studiedText =
+        java.text.NumberFormat
+            .getIntegerInstance()
+            .format(studied)
+    val totalText =
+        java.text.NumberFormat
+            .getIntegerInstance()
+            .format(total)
+    val base = "$studiedText out of $totalText flashcards studied"
+    return if (soFar) "$base so far" else base
+}
 
 // ---- Pillar 1: Memory (FSRS retrievability) -------------------------------
 
@@ -152,56 +304,84 @@ data class PerformanceResult(
     val ci: ConfidenceInterval,
     val avgTimeSeconds: Double,
     val insufficientReason: String,
-    /** Answered attempts that were assisted-correct (hint ladder reached level 3)
-     * and therefore NOT credited as correct — the anti-gaming penalty. */
-    val assistedAnswered: Int = 0,
+    /** Sum of fractional hint-penalty credits (for display as "weighted correct"). */
+    val weightedCorrect: Double = 0.0,
+    /** Answered attempts that used hints on tier 3 (heavily penalized). */
+    val heavilyHinted: Int = 0,
+    /** Raw accuracy before the pace penalty (equals [accuracy] when no penalty). */
+    val rawAccuracy: Double = 0.0,
+    /** True when average pace exceeded [PERFORMANCE_TARGET_SECONDS]. */
+    val timePenaltyApplied: Boolean = false,
 )
 
 /**
- * Performance = accuracy over answered Practice-Question attempts (a blank
- * selection is a skip and is excluded from accuracy), plus average time per
- * answered question. Give up when fewer than [minAnswered] answered attempts
- * exist. Pass the practice-session attempts recorded on this device.
+ * Performance = time-weighted accuracy (EWMA, 7-day half-life) over answered
+ * Practice-Question attempts (a blank selection is a skip and is excluded from
+ * accuracy), plus EWMA average time per answered question. Give up when fewer
+ * than [minAnswered] answered attempts exist. Pass the practice-session attempts
+ * recorded on this device.
  *
- * SpeedyCAT anti-gaming penalty: an assisted-correct attempt (the learner
- * climbed to level 3 of the hint ladder, [Attempt.assisted]) does NOT count as
- * correct — it still counts toward the denominator but earns no credit, so a
- * student cannot inflate Performance by leaning on the tutor. Unassisted correct
- * answers keep full credit. Mirrors the desktop `practice_accuracy_totals`.
+ * SpeedyCAT progressive hint penalties: L0=1.0, L1=0.60, L2=0.30, L3=0.10;
+ * main-wrong-first or incorrect = 0. Every answered attempt is in the
+ * denominator. Mirrors desktop `practice_performance_observations`.
  */
 fun computePerformance(
     practiceAttempts: List<Attempt>,
     minAnswered: Int = MIN_PRACTICE_ANSWERS,
+    nowSecs: Long = System.currentTimeMillis() / 1000,
 ): PerformanceResult {
     val answered = practiceAttempts.filter { it.selectedAnswer.isNotEmpty() }
-    // Only UNASSISTED correct answers earn credit.
-    val credited = answered.count { it.correct && !it.assisted }
-    val assistedAnswered = answered.count { it.assisted }
+    val weightedCorrect =
+        answered.sumOf { performanceCredit(it.correct, it.hintLevelUsed, it.mainWrongFirst) }
+    val heavilyHinted = answered.count { it.hintLevelUsed >= 3 && it.correct && !it.mainWrongFirst }
     if (answered.size < minAnswered) {
         return PerformanceResult(
             sufficient = false,
             answered = answered.size,
-            correct = credited,
+            correct = weightedCorrect.roundToInt(),
             accuracy = 0.0,
             ci = ConfidenceInterval(0.0, 0.0),
             avgTimeSeconds = 0.0,
             insufficientReason =
                 "Not enough answered practice questions yet (${answered.size} of $minAnswered needed). " +
                     "Do more practice to build a reliable estimate.",
-            assistedAnswered = assistedAnswered,
+            weightedCorrect = weightedCorrect,
+            heavilyHinted = heavilyHinted,
         )
     }
-    val accuracy = credited.toDouble() / answered.size
-    val avgTime = answered.sumOf { it.timeSeconds }.toDouble() / answered.size
+    val creditObs =
+        answered.map {
+            performanceCredit(it.correct, it.hintLevelUsed, it.mainWrongFirst) to it.answeredAt
+        }
+    val timeObs = answered.map { it.timeSeconds to it.answeredAt }
+    val agg = ewmaAggregate(creditObs, PERFORMANCE_HALF_LIFE_DAYS, nowSecs)
+    val rawAccuracy = agg.mean
+    val avgTime =
+        run {
+            var weightedSum = 0.0
+            var weightSum = 0.0
+            for ((seconds, ts) in timeObs) {
+                val w = ewmaWeightForAgeDays(observationAgeDays(nowSecs, ts), PERFORMANCE_HALF_LIFE_DAYS)
+                weightedSum += w * seconds
+                weightSum += w
+            }
+            if (weightSum > 0.0) weightedSum / weightSum else 0.0
+        }
+    val rawCi = proportionCiEffective(rawAccuracy, agg.effectiveN)
+    val (accuracy, ci) = applyPerformanceTimePenalty(rawAccuracy, rawCi, avgTime)
+    val timePenaltyApplied = performanceTimePenaltyFactor(avgTime) < 1.0
     return PerformanceResult(
         sufficient = true,
         answered = answered.size,
-        correct = credited,
+        correct = weightedCorrect.roundToInt(),
         accuracy = accuracy,
-        ci = proportionCi(accuracy, answered.size),
+        ci = ci,
         avgTimeSeconds = avgTime,
         insufficientReason = "",
-        assistedAnswered = assistedAnswered,
+        weightedCorrect = weightedCorrect,
+        heavilyHinted = heavilyHinted,
+        rawAccuracy = rawAccuracy,
+        timePenaltyApplied = timePenaltyApplied,
     )
 }
 
@@ -210,8 +390,9 @@ fun computePerformance(
 /**
  * A fully-formatted pillar ready to render: a value, an explicit range, the
  * named source, and — when there isn't enough data — the give-up message
- * ([insufficientReason]). The UI never shows a bare number: when [sufficient]
- * it shows value + range; otherwise it shows the give-up message.
+ * ([insufficientReason]). The UI never shows a bare point estimate as the
+ * headline: when [sufficient] it shows [range] prominently with [value] as the
+ * estimate; otherwise it shows the give-up message.
  */
 data class ReadinessPillar(
     val name: String,
@@ -222,11 +403,14 @@ data class ReadinessPillar(
     val source: String,
     val detail: List<String>,
     val insufficientReason: String,
+    /** Sample the pillar's value was computed from (0 when unknown). */
+    val sampleSize: Int = 0,
 )
 
-private const val CI_CAPTION = "95% confidence interval (\u00b11.96\u00b7SE)"
-
-fun memoryPillar(result: MemoryResult): ReadinessPillar =
+fun memoryPillar(
+    result: MemoryResult,
+    totalCards: Int = 0,
+): ReadinessPillar =
     ReadinessPillar(
         name = "Memory",
         sufficient = result.sufficient,
@@ -235,12 +419,19 @@ fun memoryPillar(result: MemoryResult): ReadinessPillar =
         rangeCaption = CI_CAPTION,
         source = "FSRS retrievability (Anki scheduler) over your reviewed MCAT cards",
         detail =
-            if (result.sufficient) {
-                listOf(sampleLine(result.reviewedCards, "reviewed card", "reviewed cards"))
+            if (result.reviewedCards > 0) {
+                listOf(
+                    if (totalCards > 0) {
+                        memoryStudiedLine(result.reviewedCards, totalCards, soFar = !result.sufficient)
+                    } else {
+                        "${result.reviewedCards} flashcards studied"
+                    },
+                )
             } else {
                 emptyList()
             },
         insufficientReason = result.insufficientReason,
+        sampleSize = result.reviewedCards,
     )
 
 fun performancePillar(result: PerformanceResult): ReadinessPillar =
@@ -254,22 +445,19 @@ fun performancePillar(result: PerformanceResult): ReadinessPillar =
         detail =
             if (result.sufficient) {
                 buildList {
-                    add("${result.correct} / ${result.answered} unassisted correct")
-                    if (result.assistedAnswered > 0) {
-                        add(
-                            "${result.assistedAnswered} answered with hints (level 3) — " +
-                                "counted as incorrect (anti-gaming)",
-                        )
+                    add(
+                        "${result.weightedCorrect.roundToInt()} correct out of ${result.answered} practice questions answered",
+                    )
+                    if (result.avgTimeSeconds > 0) {
+                        add("Average time of ${result.avgTimeSeconds.roundToInt()} seconds")
                     }
-                    add("${result.avgTimeSeconds.roundToInt()}s average per question")
                 }
             } else {
                 emptyList()
             },
         insufficientReason = result.insufficientReason,
+        sampleSize = result.answered,
     )
-
-// ---- Pillar 3: Readiness (full-length raw score, desktop-created) ----------
 
 data class ReadinessResult(
     val sufficient: Boolean,
@@ -290,14 +478,17 @@ data class ReadinessResult(
 )
 
 /**
- * Readiness = raw score (correct / total) over COMPLETED full-length tests, with
- * a 95% interval. Full-length exams are taken on the SpeedyCAT desktop app and
- * arrive here read-only via the synced media results file; this mirrors the
- * desktop Readiness pillar. Gives up (refuses to score) when no completed
- * full-length summary has synced yet. [summaries] are the desktop-published
- * per-test summaries (already deduped).
+ * Readiness = time-weighted raw score (EWMA, 30-day half-life) over COMPLETED
+ * full-length tests, with a 95% interval on effective sample size. Full-length
+ * exams are taken on the SpeedyCAT desktop app and arrive here read-only via
+ * the synced media results file; this mirrors the desktop Readiness pillar.
+ * Gives up (refuses to score) when no completed full-length summary has synced
+ * yet. [summaries] are the desktop-published per-test summaries (already deduped).
  */
-fun computeReadiness(summaries: List<FullLengthSummary>): ReadinessResult {
+fun computeReadiness(
+    summaries: List<FullLengthSummary>,
+    nowSecs: Long = System.currentTimeMillis() / 1000,
+): ReadinessResult {
     val completed = summaries.filter { it.totalQuestions > 0 }
     if (completed.isEmpty()) {
         return ReadinessResult(
@@ -314,7 +505,12 @@ fun computeReadiness(summaries: List<FullLengthSummary>): ReadinessResult {
     }
     val totalCorrect = completed.sumOf { it.totalCorrect }
     val totalQuestions = completed.sumOf { it.totalQuestions }
-    val accuracy = if (totalQuestions > 0) totalCorrect.toDouble() / totalQuestions else 0.0
+    val obs =
+        completed.map {
+            (it.totalCorrect.toDouble() / it.totalQuestions) to it.completedAt
+        }
+    val agg = ewmaAggregate(obs, READINESS_HALF_LIFE_DAYS, nowSecs)
+    val accuracy = agg.mean
     // Averaged MCAT-scale estimate across the completed tests that carried one
     // (desktop-computed; may be absent on older synced summaries).
     val scaled = completed.mapNotNull { it.overallScaledScore }
@@ -324,7 +520,7 @@ fun computeReadiness(summaries: List<FullLengthSummary>): ReadinessResult {
         totalCorrect = totalCorrect,
         totalQuestions = totalQuestions,
         accuracy = accuracy,
-        ci = proportionCi(accuracy, totalQuestions),
+        ci = proportionCiEffective(accuracy, agg.effectiveN),
         insufficientReason = "",
         scaledEstimate = if (scaled.isNotEmpty()) scaled.average().roundToInt() else null,
         scaledLow = scaled.minOrNull(),
@@ -332,7 +528,24 @@ fun computeReadiness(summaries: List<FullLengthSummary>): ReadinessResult {
     )
 }
 
-fun readinessPillar(result: ReadinessResult): ReadinessPillar =
+fun readinessExamLines(
+    summaries: List<FullLengthSummary>,
+    maxExams: Int = 3,
+): List<String> =
+    summaries
+        .filter { it.totalQuestions > 0 }
+        .sortedByDescending { it.completedAt }
+        .take(maxExams)
+        .map { summary ->
+            val title = summary.title.ifEmpty { "Full-length test" }
+            val accuracy = formatPercent(summary.totalCorrect.toDouble() / summary.totalQuestions)
+            "$title: $accuracy"
+        }
+
+fun readinessPillar(
+    result: ReadinessResult,
+    summaries: List<FullLengthSummary> = emptyList(),
+): ReadinessPillar =
     ReadinessPillar(
         name = "Readiness",
         sufficient = result.sufficient,
@@ -340,26 +553,42 @@ fun readinessPillar(result: ReadinessResult): ReadinessPillar =
         range = if (result.sufficient) formatPercentRange(result.ci) else "",
         rangeCaption = CI_CAPTION,
         source = "SpeedyCAT full-length tests (taken on desktop, synced read-only)",
-        detail =
-            if (result.sufficient) {
-                buildList {
-                    add("${result.totalCorrect} / ${result.totalQuestions} correct")
-                    if (result.scaledEstimate != null) {
-                        add("Est. MCAT score \u2248 ${result.scaledEstimate}${scaledRangeSuffix(result)} (472\u2013528)")
-                        add("Scaled score is an averaged raw\u2192scaled estimate ($SCALED_SCORE_SOURCE), not an official score")
-                    }
-                    add(sampleLine(result.completedTests, "completed full-length test", "completed full-length tests"))
-                }
-            } else {
-                emptyList()
-            },
+        detail = if (result.sufficient) readinessExamLines(summaries) else emptyList(),
         insufficientReason = result.insufficientReason,
+        sampleSize = result.totalQuestions,
     )
 
-/** " (range low–high)" across completed tests, or "" when there's a single test
- * (or no spread) so we never print a degenerate range. */
-private fun scaledRangeSuffix(result: ReadinessResult): String {
-    val low = result.scaledLow
-    val high = result.scaledHigh
-    return if (low != null && high != null && low != high) " (range $low\u2013$high)" else ""
+/** Replace the Memory pillar sample line when collection totals are known. */
+fun enhanceMemoryPillar(
+    pillar: ReadinessPillar,
+    totalCards: Int,
+): ReadinessPillar {
+    if (pillar.name != "Memory" || totalCards <= 0 || pillar.sampleSize <= 0) return pillar
+    val line = memoryStudiedLine(pillar.sampleSize, totalCards, soFar = !pillar.sufficient)
+    return pillar.copy(detail = listOf(line))
+}
+
+/** Replace Performance pillar detail with minimal answered/time lines. */
+fun enhancePerformancePillar(
+    pillar: ReadinessPillar,
+    result: PerformanceResult,
+): ReadinessPillar {
+    if (pillar.name != "Performance") return pillar
+    return performancePillar(result).copy(
+        sufficient = pillar.sufficient,
+        value = pillar.value,
+        range = pillar.range,
+        source = pillar.source,
+        insufficientReason = pillar.insufficientReason,
+        sampleSize = pillar.sampleSize,
+    )
+}
+
+/** Replace Readiness pillar detail with per-exam accuracy lines. */
+fun enhanceReadinessPillar(
+    pillar: ReadinessPillar,
+    summaries: List<FullLengthSummary>,
+): ReadinessPillar {
+    if (pillar.name != "Readiness" || !pillar.sufficient) return pillar
+    return pillar.copy(detail = readinessExamLines(summaries))
 }

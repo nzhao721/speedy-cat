@@ -216,9 +216,6 @@ abstract class CardViewerFragment(
                     AlertDialog.Builder(requireContext()).show {
                         setMessage(message)
                         setPositiveButton(R.string.dialog_ok) { _, _ -> }
-                        setNeutralButton(R.string.help) { _, _ ->
-                            openUrl(R.string.link_user_actions_help)
-                        }
                     }
                 }
                 else -> {
@@ -304,8 +301,6 @@ abstract class CardViewerFragment(
     }
 
     private fun showMediaErrorSnackbar(filename: String) {
-        showSnackbar(getString(R.string.card_viewer_could_not_find_image, filename)) {
-            setAction(R.string.help) { openUrl(R.string.link_faq_missing_media) }
-        }
+        showSnackbar(getString(R.string.card_viewer_could_not_find_image, filename))
     }
 }

@@ -71,7 +71,6 @@ import com.ichi2.anki.snackbar.SnackbarBuilder
 import com.ichi2.anki.snackbar.showSnackbar
 import com.ichi2.anki.ui.windows.reviewer.audiorecord.CheckPronunciationFragment
 import com.ichi2.anki.ui.windows.reviewer.whiteboard.WhiteboardFragment
-import com.ichi2.anki.utils.CollectionPreferences
 import com.ichi2.anki.utils.ext.collectIn
 import com.ichi2.anki.utils.ext.collectLatestIn
 import com.ichi2.anki.utils.ext.sharedPrefs
@@ -90,7 +89,6 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import kotlin.math.max
-import kotlin.math.roundToInt
 import kotlin.reflect.jvm.jvmName
 
 class ReviewerFragment :
@@ -162,7 +160,6 @@ class ReviewerFragment :
         setupImmersiveMode()
         setupTypeAnswer()
         setupAnswerButtons()
-        setupCounts()
         setupMenu()
         setupToolbarPosition()
         setupAnswerTimer()
@@ -383,20 +380,6 @@ class ReviewerFragment :
         }
     }
 
-    private fun setupCounts() {
-        viewModel.countsFlow
-            .flowWithLifecycle(lifecycle)
-            .collectLatestIn(lifecycleScope) { counts ->
-                binding.studyCounts.updateCounts(counts)
-            }
-
-        lifecycleScope.launch {
-            if (!CollectionPreferences.getShowRemainingDueCounts()) {
-                binding.studyCounts.isVisible = false
-            }
-        }
-    }
-
     private fun setupMenu() {
         binding.reviewerMenuView.apply {
             setup(lifecycle, viewModel)
@@ -562,12 +545,8 @@ class ReviewerFragment :
 
             viewModel.stopAutoAdvance()
 
-            val minutes = (timebox.secs / 60f).roundToInt()
-            val message = CollectionManager.TR.studyingCardStudiedIn(timebox.reps) + " " + CollectionManager.TR.studyingMinute(minutes)
-
             AlertDialog.Builder(requireContext()).show {
                 setTitle(R.string.timebox_reached_title)
-                setMessage(message)
                 setPositiveButton(CollectionManager.TR.studyingContinue()) { _, _ ->
                     Timber.i("ReviewerFragment: Timebox 'Continue'")
                     viewModel.onPageFinished(false)

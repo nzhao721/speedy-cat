@@ -1,11 +1,10 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // SPDX-FileCopyrightText: 2026 SpeedyCAT contributors
 //
-// The Readiness screen: the MCAT readiness metric (Memory / Performance)
-// presented natively in Compose. Each pillar shows a value, an explicit range
-// (95% CI), and its named source — or an explicit give-up message when there
-// isn't enough data. A bare readiness number is never shown, and nothing here
-// uses AI (all values are deterministic).
+// The Readiness screen: the MCAT readiness metric (Memory / Performance /
+// Readiness) presented natively in Compose. Each pillar shows a value, an
+// explicit range (95% CI), and minimal sample lines — or a give-up message when
+// there isn't enough data. A bare readiness number is never shown.
 
 package com.ichi2.anki.practice
 
@@ -40,8 +39,6 @@ import androidx.compose.ui.unit.dp
 import com.ichi2.anki.AnkiActivity
 import com.ichi2.anki.R
 import com.ichi2.compose.theme.AnkiDroidTheme
-import java.text.DateFormat
-import java.util.Date
 
 class ReadinessActivity : AnkiActivity() {
     private val viewModel: ReadinessViewModel by viewModels()
@@ -97,18 +94,8 @@ private fun ReadinessScreen(
                             .padding(16.dp),
                         verticalArrangement = Arrangement.spacedBy(16.dp),
                     ) {
-                        Text(
-                            "Three independent signals. Each shows a value with a 95% range from a " +
-                                "named source — and refuses to score without enough data. No AI: every " +
-                                "value is computed deterministically on your device.",
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
                         for (pillar in vm.pillars) {
                             PillarCard(pillar)
-                        }
-                        if (vm.fullLengthResults.isNotEmpty()) {
-                            FullLengthResultsSection(vm.fullLengthResults)
                         }
                     }
             }
@@ -132,7 +119,7 @@ private fun PillarCard(pillar: ReadinessPillar) {
                 Text(pillar.name, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
                 if (pillar.sufficient) {
                     Text(
-                        pillar.value,
+                        pillar.range,
                         style = MaterialTheme.typography.headlineMedium,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.primary,
@@ -154,120 +141,17 @@ private fun PillarCard(pillar: ReadinessPillar) {
             }
 
             if (pillar.sufficient) {
-                Text(
-                    "Range ${pillar.range}",
-                    style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.Medium,
-                )
-                Text(
-                    pillar.rangeCaption,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
                 for (line in pillar.detail) {
-                    Text("• $line", style = MaterialTheme.typography.bodyMedium)
+                    Text(line, style = MaterialTheme.typography.bodyMedium)
                 }
             } else {
                 Text(
                     pillar.insufficientReason,
                     style = MaterialTheme.typography.bodyMedium,
                 )
-            }
-
-            Text(
-                "Source: ${pillar.source}",
-                style = MaterialTheme.typography.labelSmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-        }
-    }
-}
-
-@Composable
-private fun FullLengthResultsSection(results: List<FullLengthSummary>) {
-    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        Text(
-            "Full-length results",
-            style = MaterialTheme.typography.titleMedium,
-            fontWeight = FontWeight.SemiBold,
-        )
-        Text(
-            "Taken on the SpeedyCAT desktop app · shown here read-only.",
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
-        for (result in results) {
-            FullLengthResultCard(result)
-        }
-    }
-}
-
-@Composable
-private fun FullLengthResultCard(result: FullLengthSummary) {
-    val percent = if (result.totalQuestions > 0) result.totalCorrect.toDouble() / result.totalQuestions else 0.0
-    val date =
-        if (result.completedAt > 0) {
-            DateFormat.getDateInstance().format(Date(result.completedAt * 1000))
-        } else {
-            ""
-        }
-    Surface(
-        color = MaterialTheme.colorScheme.surfaceVariant,
-        shape = RoundedCornerShape(12.dp),
-        modifier = Modifier.fillMaxWidth(),
-    ) {
-        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Row(
-                Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Column(Modifier.weight(1f)) {
-                    Text(
-                        result.title.ifEmpty { "Full-length test" },
-                        style = MaterialTheme.typography.titleSmall,
-                        fontWeight = FontWeight.Medium,
-                    )
-                    if (date.isNotEmpty()) {
-                        Text(
-                            date,
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-                    }
+                for (line in pillar.detail) {
+                    Text(line, style = MaterialTheme.typography.bodyMedium)
                 }
-                Text(
-                    formatPercent(percent),
-                    style = MaterialTheme.typography.headlineSmall,
-                    fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colorScheme.primary,
-                )
-            }
-            Text(
-                "${result.totalCorrect} / ${result.totalQuestions} correct",
-                style = MaterialTheme.typography.bodyMedium,
-            )
-            if (result.overallScaledScore != null) {
-                Text(
-                    "Est. MCAT score: ${result.overallScaledScore} (472\u2013528)",
-                    style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.Medium,
-                )
-            }
-            for (section in result.sections) {
-                val label = McatSection.fromDb(section.section)?.shortLabel ?: section.section
-                val scaled = section.scaledScore?.let { "  ·  est. $it" } ?: ""
-                Text(
-                    "• $label: ${section.correct} / ${section.total}$scaled",
-                    style = MaterialTheme.typography.bodyMedium,
-                )
-            }
-            if (result.overallScaledScore != null) {
-                Text(
-                    "Scaled scores are an averaged raw\u2192scaled estimate ($SCALED_SCORE_SOURCE), not an official score.",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
             }
         }
     }

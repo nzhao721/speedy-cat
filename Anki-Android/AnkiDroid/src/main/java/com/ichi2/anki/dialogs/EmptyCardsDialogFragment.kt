@@ -5,17 +5,13 @@ package com.ichi2.anki.dialogs
 
 import android.app.Activity
 import android.app.Dialog
-import android.content.Context
-import android.content.Intent
 import android.content.res.Configuration
 import android.content.res.Configuration.ORIENTATION_LANDSCAPE
 import android.graphics.Insets
 import android.os.Build
 import android.os.Bundle
 import android.text.SpannableStringBuilder
-import android.text.Spanned
 import android.text.method.LinkMovementMethod
-import android.text.style.ClickableSpan
 import android.util.DisplayMetrics
 import android.view.View
 import android.view.ViewGroup
@@ -32,11 +28,9 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import anki.card_rendering.EmptyCardsReport
-import com.ichi2.anki.CardBrowser
 import com.ichi2.anki.CollectionManager.TR
 import com.ichi2.anki.DeckPicker
 import com.ichi2.anki.R
-import com.ichi2.anki.browser.CardBrowserViewModel
 import com.ichi2.anki.databinding.DialogEmptyCardsBinding
 import com.ichi2.anki.dialogs.EmptyCardsUiState.EmptyCardsSearchFailure
 import com.ichi2.anki.dialogs.EmptyCardsUiState.EmptyCardsSearchResult
@@ -157,22 +151,13 @@ class EmptyCardsDialogFragment : DialogFragment() {
 
     /**
      * Replaces the anki format [anki:nid:#nid](ex: [anki:nid:234783924354]) from the report with
-     * just the nid as a [ClickableSpan] which will trigger a [CardBrowser] search for that nid.
+     * just the nid.
      */
     private fun EmptyCardsReport.asActionableReport(): SpannableStringBuilder {
         val spannableReport =
             SpannableStringBuilder(HtmlCompat.fromHtml(report, HtmlCompat.FROM_HTML_MODE_LEGACY))
         AnkiNidTag.parseFromReport(spannableReport).forEach { tag ->
-            // make nid clickable
-            spannableReport.setSpan(
-                BrowserSearchByNidSpan(requireContext(), tag.nid),
-                tag.matchedNid.range.first,
-                tag.matchedNid.range.last + 1,
-                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE,
-            )
-            // remove suffix
             spannableReport.delete(tag.matchedSuffix)
-            // remove prefix
             spannableReport.delete(tag.matchedPrefix)
         }
         return spannableReport
@@ -226,24 +211,6 @@ class EmptyCardsDialogFragment : DialogFragment() {
                     AnkiNidTag(matchedPrefix, matchedNid, nid, matchedSuffix)
                 }
             }
-        }
-    }
-
-    /**
-     * A specialized [ClickableSpan] that on click will open the [CardBrowser] and initiate a
-     * search with the passed [nid].
-     *
-     * @see CardBrowser
-     */
-    private class BrowserSearchByNidSpan(
-        val context: Context,
-        val nid: NoteId,
-    ) : ClickableSpan() {
-        override fun onClick(widget: View) {
-            val browserSearchIntent = Intent(context, CardBrowser::class.java)
-            browserSearchIntent.putExtra(CardBrowserViewModel.EXTRA_SEARCH_QUERY, "nid:$nid")
-            browserSearchIntent.putExtra(CardBrowserViewModel.EXTRA_ALL_DECKS, true)
-            context.startActivity(browserSearchIntent)
         }
     }
 

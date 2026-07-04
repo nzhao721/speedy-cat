@@ -25,6 +25,7 @@ from aqt.utils import (
     disable_help_button,
     getFile,
     getText,
+    hide_button_box_help_button,
     openHelp,
     showInfo,
     showText,
@@ -91,12 +92,7 @@ class ImportDialog(QDialog):
         self.importer = importer
         self.frm = aqt.forms.importing.Ui_ImportDialog()
         self.frm.setupUi(self)
-        help_button = self.frm.buttonBox.button(QDialogButtonBox.StandardButton.Help)
-        assert help_button is not None
-        qconnect(
-            help_button.clicked,
-            self.helpRequested,
-        )
+        hide_button_box_help_button(self.frm.buttonBox)
         disable_help_button(self)
         self.setupMappingFrame()
         self.setupOptions()

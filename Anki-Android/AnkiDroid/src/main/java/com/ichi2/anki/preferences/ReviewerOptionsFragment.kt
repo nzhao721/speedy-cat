@@ -18,12 +18,9 @@ package com.ichi2.anki.preferences
 import androidx.preference.ListPreference
 import androidx.preference.PreferenceCategory
 import androidx.preference.SwitchPreferenceCompat
-import com.ichi2.anki.CollectionManager
 import com.ichi2.anki.R
-import com.ichi2.anki.launchCatchingTask
 import com.ichi2.anki.settings.Prefs
 import com.ichi2.anki.settings.enums.HideSystemBars
-import com.ichi2.anki.utils.CollectionPreferences
 import com.ichi2.preferences.HtmlHelpPreference
 
 class ReviewerOptionsFragment :
@@ -62,37 +59,6 @@ class ReviewerOptionsFragment :
             setPrefsEnableState(newValue)
         }
 
-        // Show play buttons on cards with audio
-        // Note: Stored inverted in the collection as HIDE_AUDIO_PLAY_BUTTONS
-        requirePreference<SwitchPreferenceCompat>(R.string.show_audio_play_buttons_key).apply {
-            title = CollectionManager.TR.preferencesShowPlayButtonsOnCardsWith()
-            launchCatchingTask { isChecked = !CollectionPreferences.getHidePlayAudioButtons() }
-            setOnPreferenceChangeListener { newValue ->
-                launchCatchingTask { CollectionPreferences.setHideAudioPlayButtons(!newValue) }
-            }
-        }
-
-        // Show remaining card count
-        requirePreference<SwitchPreferenceCompat>(R.string.show_progress_preference).apply {
-            title = CollectionManager.TR.preferencesShowRemainingCardCount()
-            launchCatchingTask { isChecked = CollectionPreferences.getShowRemainingDueCounts() }
-            setOnPreferenceChangeListener { newValue ->
-                launchCatchingTask { CollectionPreferences.setShowRemainingDueCounts(newValue) }
-            }
-        }
-
-        // Show estimate time
-        // Represents the collection pref "estTime": i.e.
-        // whether the buttons should indicate the duration of the interval if we click on them.
-        requirePreference<SwitchPreferenceCompat>(R.string.show_estimates_preference).apply {
-            title = CollectionManager.TR.preferencesShowNextReviewTimeAboveAnswer()
-            launchCatchingTask { isChecked = CollectionPreferences.getShowIntervalOnButtons() }
-            setOnPreferenceChangeListener { newValue ->
-                launchCatchingTask { CollectionPreferences.setShowIntervalsOnButtons(newValue) }
-            }
-        }
-
-        requirePreference<PreferenceCategory>(R.string.pref_review_category_key).title =
-            CollectionManager.TR.preferencesReview()
+        requirePreference<PreferenceCategory>(R.string.pref_review_category_key).isVisible = false
     }
 }

@@ -221,14 +221,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <com.ichi2.ui.FixedTextView
-                    android:id="@+id/studyoptions_deck_description"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_marginTop="16dp"
-                    tools:text="See shared deck for more info"/>
             </LinearLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

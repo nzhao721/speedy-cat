@@ -75,11 +75,6 @@ def show(mw: aqt.AnkiQt) -> QDialog:
         qVersion(),
         (qWebEngineChromiumVersion() or "").split(".")[0],
     )
-    abouttext += (
-        without_unicode_isolation(tr.about_visit_website(val=aqt.appWebsite))
-        + "</span>"
-    )
-
     # Automatically sorted; add new lines at the end.
     # This is a list of users who want to appear in the dialog, and includes people who have
     # contributed in non-code ways, like providing support on the forums, so it cannot be

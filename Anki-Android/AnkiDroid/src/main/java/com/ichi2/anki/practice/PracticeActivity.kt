@@ -49,15 +49,21 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import androidx.preference.PreferenceManager
 import com.ichi2.anki.AnkiActivity
 import com.ichi2.anki.R
+import com.ichi2.anki.cardviewer.SpeedyCatAiChecker
+import com.ichi2.anki.cardviewer.SpeedyCatExplanationChecker
 import com.ichi2.compose.theme.AnkiDroidTheme
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import kotlin.math.roundToInt
 
 class PracticeActivity : AnkiActivity() {
@@ -207,20 +213,6 @@ private fun SetupForm(
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
-        Text(
-            "MCAT-style multiple-choice practice — discrete questions and CARS passage sets. " +
-                "The explanation is shown after you submit.",
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
-
-        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            for (s in McatSection.TEST_ORDER) {
-                val n = bank.count { it.section == s }
-                CountPill(count = n, label = s.longLabel)
-            }
-        }
-
         FieldLabel("Section")
         FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             for (s in McatSection.TEST_ORDER) {
@@ -362,6 +354,26 @@ private fun RunnerScreen(
     val hintProgress = remember { mutableStateMapOf<String, HintProgress>() }
     val hintPendingChoice = remember { mutableStateMapOf<String, String>() }
     val hintNudge = remember { mutableStateMapOf<String, Boolean>() }
+    val mainWrongFirst = remember { mutableStateMapOf<String, Boolean>() }
+    val secondsOnQuestion = remember { mutableStateMapOf<String, Int>() }
+    val secondsSinceHintComplete = remember { mutableStateMapOf<String, Int>() }
+    val hintCooldown = remember { mutableStateOf<Map<String, Int>>(emptyMap()) }
+    val hintWrongFlash = remember { mutableStateMapOf<String, Int>() }
+
+    /** Hint timers start on first viewport visibility; pause when scrolled away. */
+    val questionEverVisible = remember { mutableStateMapOf<String, Boolean>() }
+    val questionCurrentlyVisible = remember { mutableStateMapOf<String, Boolean>() }
+    val explanationProgress = remember { mutableStateMapOf<String, ExplanationProgress>() }
+    val explanationCoaching = remember { mutableStateMapOf<String, String>() }
+    val context = LocalContext.current
+    val explanationAiOn =
+        remember(context) {
+            PreferenceManager
+                .getDefaultSharedPreferences(context)
+                .getBoolean(SpeedyCatAiChecker.AI_PREF_KEY, SpeedyCatAiChecker.AI_PREF_DEFAULT)
+        }
+    val explanationAiAvailable =
+        remember(context) { SpeedyCatExplanationChecker.explanationAiAvailable(context) }
     val timeSpent = remember { mutableMapOf<String, Double>() }
     val passageCache = remember { mutableStateMapOf<String, CarsPassageSet>() }
     var elapsed by remember { mutableStateOf(0) }
@@ -372,6 +384,95 @@ private fun RunnerScreen(
     // questions on flush (a shared passage is read for all of them).
     var secondsOnItem by remember { mutableStateOf(0) }
 
+    fun passageWordCountForItem(item: RunItem?): Int {
+        val pid = item?.passageId ?: return 0
+        val passage = passageCache[pid]?.passage
+        return passageWordCount(passage?.wordCount, passage?.passage)
+    }
+
+    fun hintPassageWordCount(
+        item: RunItem?,
+        questionIndex: Int,
+    ): Int? {
+        val pid = item?.passageId ?: return null
+        val wc = passageWordCountForItem(item)
+        return passageHintWordCountForQuestion(item.questions.size, questionIndex, wc)
+    }
+
+    fun resetQuestionTimers(item: RunItem?) {
+        item?.questions?.forEach { q ->
+            if (submitted[q.id] != true) {
+                secondsOnQuestion[q.id] = 0
+                secondsSinceHintComplete[q.id] = 0
+                questionEverVisible[q.id] = false
+                questionCurrentlyVisible[q.id] = false
+            }
+        }
+    }
+
+    fun tickQuestionTimers(item: RunItem?) {
+        item?.questions?.forEach { q ->
+            if (submitted[q.id] == true) return@forEach
+            if (
+                !shouldTickQuestionHintTimer(
+                    questionEverVisible[q.id] == true,
+                    questionCurrentlyVisible[q.id] == true,
+                )
+            ) {
+                return@forEach
+            }
+            secondsOnQuestion[q.id] = (secondsOnQuestion[q.id] ?: 0) + 1
+            val prog = hintProgress[q.id] ?: HintProgress()
+            if (pendingHintIndex(prog) == -1 && prog.revealed > 0 && canRevealNextHint(q.hints, prog)) {
+                secondsSinceHintComplete[q.id] = (secondsSinceHintComplete[q.id] ?: 0) + 1
+            } else {
+                secondsSinceHintComplete[q.id] = 0
+            }
+        }
+    }
+
+    fun onQuestionVisibilityChanged(
+        qid: String,
+        visible: Boolean,
+    ) {
+        questionCurrentlyVisible[qid] = visible
+        if (visible && questionEverVisible[qid] != true) {
+            questionEverVisible[qid] = true
+        }
+    }
+
+    fun requestHint(q: PracticeQuestion) {
+        if (submitted[q.id] == true) return
+        hintNudge[q.id] = false
+        val cur = hintProgress[q.id] ?: HintProgress()
+        if (cur.revealed < q.hints.size) {
+            hintProgress[q.id] = cur.copy(revealed = cur.revealed + 1)
+            hintPendingChoice[q.id] = ""
+            secondsSinceHintComplete[q.id] = 0
+            hintCooldown.value = hintCooldown.value + (q.id to 0)
+        }
+    }
+
+    fun submitHintAnswer(
+        q: PracticeQuestion,
+        index: Int,
+        label: String,
+    ) {
+        val hint = q.hints.getOrNull(index) ?: return
+        val cur = hintProgress[q.id] ?: HintProgress()
+        val (next, correct) = applyHintAnswer(hint, index, label, cur)
+        if (correct) {
+            hintProgress[q.id] = next
+            hintPendingChoice[q.id] = ""
+            secondsSinceHintComplete[q.id] = 0
+            hintCooldown.value = hintCooldown.value + (q.id to 0)
+        } else {
+            hintCooldown.value = startHintWrongCooldown(hintCooldown.value, q.id)
+            hintPendingChoice[q.id] = ""
+            hintWrongFlash[q.id] = (hintWrongFlash[q.id] ?: 0) + 1
+        }
+    }
+
     fun flushItemTime() {
         val item = runItems.getOrNull(index)
         if (item != null && secondsOnItem > 0) {
@@ -381,6 +482,65 @@ private fun RunnerScreen(
             for (q in targets) timeSpent[q.id] = (timeSpent[q.id] ?: 0.0) + per
         }
         secondsOnItem = 0
+    }
+
+    val finalizeQuestion: (PracticeQuestion, String, Boolean) -> Unit = fun(
+        q: PracticeQuestion,
+        answer: String,
+        correct: Boolean,
+    ) {
+        submitted[q.id] = true
+        val cur = hintProgress[q.id] ?: HintProgress()
+        val level = hintLevelReached(q.hints, cur.revealed)
+        scope.launch {
+            vm.record(
+                session.sessionId,
+                q,
+                answer,
+                correct,
+                (timeSpent[q.id] ?: 0.0).roundToInt(),
+                level,
+                isAssisted(level),
+                mainWrongFirst = mainWrongFirst[q.id] == true,
+            )
+        }
+    }
+
+    fun submitMainQuestion(q: PracticeQuestion) {
+        if (submitted[q.id] == true) return
+        val prog = hintProgress[q.id] ?: HintProgress()
+        if (!canSubmitMain(selected[q.id] ?: "", prog)) return
+        scope.launch {
+            flushItemTime()
+            val answer = selected[q.id] ?: ""
+            val correct = answer.isNotEmpty() && answer == q.correctAnswer
+            val cur = hintProgress[q.id] ?: HintProgress()
+            // A WRONG answer escalates the hint ladder (reveal the next tier)
+            // instead of revealing the correct answer, until the ladder is
+            // exhausted; correct answers finalize immediately (still stamped
+            // with the hint tier used).
+            if (!correct && hasHintLadder(q) && cur.revealed < q.hints.size) {
+                hintNudge[q.id] = true
+                mainWrongFirst[q.id] = true
+                hintProgress[q.id] = cur.copy(revealed = cur.revealed + 1)
+                hintPendingChoice[q.id] = ""
+                secondsSinceHintComplete[q.id] = 0
+                hintCooldown.value = hintCooldown.value + (q.id to 0)
+            } else if (
+                correct &&
+                shouldUseExplanationGate(
+                    session.sessionId,
+                    q.id,
+                    explanationAiOn,
+                    explanationAiAvailable,
+                )
+            ) {
+                explanationProgress[q.id] = ExplanationProgress(active = true)
+                explanationCoaching[q.id] = ""
+            } else {
+                finalizeQuestion(q, answer, correct)
+            }
+        }
     }
 
     suspend fun doFinish() {
@@ -397,13 +557,18 @@ private fun RunnerScreen(
     }
 
     val current = runItems.getOrNull(index)
+    val currentBlocksNavigation =
+        current?.let { itemBlocksExplanationProgress(it.questions, explanationProgress) } == true
 
     // Countdown / elapsed ticker; auto-finishes a timed session at zero.
     androidx.compose.runtime.LaunchedEffect(session) {
+        resetQuestionTimers(current)
         while (true) {
             delay(1000)
             elapsed += 1
             secondsOnItem += 1
+            tickQuestionTimers(current)
+            hintCooldown.value = tickHintCooldowns(hintCooldown.value)
             if (session.timeLimitSeconds > 0 && elapsed >= session.timeLimitSeconds) {
                 doFinish()
                 break
@@ -419,8 +584,63 @@ private fun RunnerScreen(
 
     fun goto(newIndex: Int) {
         if (newIndex < 0 || newIndex >= runItems.size || newIndex == index) return
+        val currentItem = runItems.getOrNull(index)
+        if (newIndex > index && currentItem != null &&
+            itemBlocksExplanationProgress(currentItem.questions, explanationProgress)
+        ) {
+            return
+        }
         flushItemTime()
         index = newIndex
+        resetQuestionTimers(runItems[index])
+    }
+
+    fun submitExplanation(
+        q: PracticeQuestion,
+        text: String,
+    ) {
+        val prog = explanationProgress[q.id] ?: ExplanationProgress()
+        if (!prog.active || prog.passed || prog.checking) return
+        explanationProgress[q.id] = prog.copy(checking = true)
+        scope.launch {
+            val (result, _) =
+                withContext(Dispatchers.IO) {
+                    SpeedyCatExplanationChecker.runCheck(
+                        context,
+                        q.stem,
+                        text,
+                        correctAnswerText(q),
+                    )
+                }
+            val latest = explanationProgress[q.id] ?: ExplanationProgress()
+            if (result == null) {
+                explanationProgress[q.id] =
+                    latest.copy(
+                        checking = false,
+                        lastFeedback = "Could not verify your explanation right now. Try again.",
+                    )
+                return@launch
+            }
+            if (result.passed) {
+                explanationProgress[q.id] =
+                    latest.copy(
+                        checking = false,
+                        passed = true,
+                        lastFeedback = result.feedback,
+                    )
+                explanationCoaching[q.id] = ""
+                finalizeQuestion(q, selected[q.id] ?: "", true)
+                return@launch
+            }
+            val failCount = latest.failCount + 1
+            explanationProgress[q.id] =
+                latest.copy(
+                    checking = false,
+                    failCount = failCount,
+                    lastFeedback = result.feedback,
+                )
+            explanationCoaching[q.id] = explanationFailureHint(failCount, q.hints)
+        }
     }
 
     val answeredCount = allQuestions.count { submitted[it.id] == true }
@@ -469,10 +689,13 @@ private fun RunnerScreen(
             )
             HorizontalDivider()
 
+            // Hoisted so the hint ladder's "Return to main question" shortcut can
+            // scroll this column back to the top (where the main question renders).
+            val contentScroll = rememberScrollState()
             Column(
                 Modifier
                     .weight(1f)
-                    .verticalScroll(rememberScrollState())
+                    .verticalScroll(contentScroll)
                     .padding(16.dp),
                 verticalArrangement = Arrangement.spacedBy(16.dp),
             ) {
@@ -485,84 +708,106 @@ private fun RunnerScreen(
                     }
                     current.questions.forEachIndexed { qi, q ->
                         val number = allQuestions.indexOfFirst { it.id == q.id } + 1
-                        QuestionCard(
-                            question = q,
-                            number = number,
-                            selected = selected[q.id] ?: "",
-                            eliminated = eliminated[q.id] ?: emptyList(),
-                            flagged = flagged[q.id] == true,
-                            revealed = submitted[q.id] == true,
-                            enabled = submitted[q.id] != true,
-                            onSelect = { if (submitted[q.id] != true) selected[q.id] = it },
-                            onEliminate = { label ->
-                                val list = eliminated[q.id] ?: emptyList()
-                                eliminated[q.id] = if (list.contains(label)) list - label else list + label
-                            },
-                            onToggleFlag = { flagged[q.id] = !(flagged[q.id] ?: false) },
-                        )
                         val prog = hintProgress[q.id] ?: HintProgress()
-                        if (hasHintLadder(q) && submitted[q.id] != true) {
-                            HintLadderCard(
-                                hints = q.hints,
-                                progress = prog,
-                                pendingChoice = hintPendingChoice[q.id] ?: "",
-                                onRequestHint = {
-                                    hintNudge[q.id] = false
-                                    val cur = hintProgress[q.id] ?: HintProgress()
-                                    if (cur.revealed < q.hints.size) {
-                                        hintProgress[q.id] = cur.copy(revealed = cur.revealed + 1)
-                                        hintPendingChoice[q.id] = ""
-                                    }
+                        val expProg = explanationProgress[q.id] ?: ExplanationProgress()
+                        val awaitingExplanation = expProg.active && !expProg.passed
+                        val ladderActive = hasHintLadder(q) && submitted[q.id] != true && !awaitingExplanation
+                        val hintPassageWc = hintPassageWordCount(current, qi)
+                        val showFirstStuck =
+                            ladderActive &&
+                                canShowFirstHintButton(
+                                    secondsOnQuestion[q.id] ?: 0,
+                                    q,
+                                    prog,
+                                    false,
+                                    hintPassageWc,
+                                )
+                        val showNextStuck =
+                            ladderActive &&
+                                canShowNextHintButton(
+                                    secondsSinceHintComplete[q.id] ?: 0,
+                                    q.hints,
+                                    prog,
+                                    false,
+                                )
+                        TrackQuestionHintVisibility(
+                            onCurrentlyVisible = { onQuestionVisibilityChanged(q.id, it) },
+                        ) {
+                            QuestionCard(
+                                question = q,
+                                number = number,
+                                selected = selected[q.id] ?: "",
+                                eliminated = eliminated[q.id] ?: emptyList(),
+                                flagged = flagged[q.id] == true,
+                                revealed = submitted[q.id] == true,
+                                enabled = submitted[q.id] != true && !awaitingExplanation,
+                                onSelect = { if (submitted[q.id] != true) selected[q.id] = it },
+                                onEliminate = { label ->
+                                    val list = eliminated[q.id] ?: emptyList()
+                                    eliminated[q.id] = if (list.contains(label)) list - label else list + label
                                 },
-                                onPendingChoiceChange = { hintPendingChoice[q.id] = it },
-                                onSubmitHint = { idx, label ->
-                                    val cur = hintProgress[q.id] ?: HintProgress()
-                                    hintProgress[q.id] = cur.copy(picks = cur.picks + (idx to label))
-                                    hintPendingChoice[q.id] = ""
-                                },
+                                onToggleFlag = { flagged[q.id] = !(flagged[q.id] ?: false) },
+                                actions =
+                                    if (submitted[q.id] != true) {
+                                        {
+                                            if (awaitingExplanation) {
+                                                Text(
+                                                    "Correct — explain your reasoning below to continue.",
+                                                    color = CorrectGreen,
+                                                    style = MaterialTheme.typography.bodySmall,
+                                                    fontWeight = FontWeight.SemiBold,
+                                                )
+                                            }
+                                            if (showFirstStuck) {
+                                                OutlinedButton(onClick = { requestHint(q) }) {
+                                                    Text("I'm stuck")
+                                                }
+                                            }
+                                            if (showNextStuck) {
+                                                OutlinedButton(onClick = { requestHint(q) }) {
+                                                    Text("I'm still stuck")
+                                                }
+                                            }
+                                            if (
+                                                hintNudge[q.id] == true &&
+                                                !canSubmitMain(selected[q.id] ?: "", prog)
+                                            ) {
+                                                Text(
+                                                    "Not quite — work through the hint, then try again.",
+                                                    color = FlagAmber,
+                                                    style = MaterialTheme.typography.bodySmall,
+                                                )
+                                            }
+                                            Button(
+                                                enabled = canSubmitMain(selected[q.id] ?: "", prog),
+                                                onClick = { submitMainQuestion(q) },
+                                            ) {
+                                                Text("Submit")
+                                            }
+                                        }
+                                    } else {
+                                        null
+                                    },
                             )
-                        }
-                        if (submitted[q.id] != true) {
-                            if (hintNudge[q.id] == true && !canSubmitMain(selected[q.id] ?: "", prog)) {
-                                Text(
-                                    "Not quite — work through the hint, then try again.",
-                                    color = FlagAmber,
-                                    style = MaterialTheme.typography.bodySmall,
+                            if (awaitingExplanation) {
+                                ExplanationChatCard(
+                                    opener = buildUserVisibleExplanationPrompt(q.stem),
+                                    progress = expProg,
+                                    coachingHint = explanationCoaching[q.id] ?: "",
+                                    onSubmit = { submitExplanation(q, it) },
                                 )
                             }
-                            Button(
-                                enabled = canSubmitMain(selected[q.id] ?: "", prog),
-                                onClick = {
-                                    scope.launch {
-                                        flushItemTime()
-                                        val answer = selected[q.id] ?: ""
-                                        val correct = answer.isNotEmpty() && answer == q.correctAnswer
-                                        val cur = hintProgress[q.id] ?: HintProgress()
-                                        // A WRONG answer escalates the hint ladder (reveal the
-                                        // next tier) instead of revealing the correct answer,
-                                        // until the ladder is exhausted; correct answers finalize
-                                        // immediately (still stamped with the hint tier used).
-                                        if (!correct && hasHintLadder(q) && cur.revealed < q.hints.size) {
-                                            hintNudge[q.id] = true
-                                            hintProgress[q.id] = cur.copy(revealed = cur.revealed + 1)
-                                            hintPendingChoice[q.id] = ""
-                                        } else {
-                                            submitted[q.id] = true
-                                            val level = hintLevelReached(q.hints, cur.revealed)
-                                            vm.record(
-                                                session.sessionId,
-                                                q,
-                                                answer,
-                                                correct,
-                                                (timeSpent[q.id] ?: 0.0).roundToInt(),
-                                                level,
-                                                isAssisted(level),
-                                            )
-                                        }
-                                    }
-                                },
-                            ) {
-                                Text("Submit")
+                            if (ladderActive) {
+                                HintLadderCard(
+                                    hints = q.hints,
+                                    progress = prog,
+                                    pendingChoice = hintPendingChoice[q.id] ?: "",
+                                    hintCooldown = hintCooldown.value[q.id] ?: 0,
+                                    wrongFlash = hintWrongFlash[q.id] ?: 0,
+                                    onPendingChoiceChange = { hintPendingChoice[q.id] = it },
+                                    onSubmitHint = { idx, label -> submitHintAnswer(q, idx, label) },
+                                    onReturnToMain = { scope.launch { contentScroll.animateScrollTo(0) } },
+                                )
                             }
                         }
                         if (qi < current.questions.size - 1) {
@@ -593,7 +838,10 @@ private fun RunnerScreen(
                         Text(if (finishing) "Scoring…" else "Finish and Score")
                     }
                 } else {
-                    OutlinedButton(onClick = { goto(index + 1) }) { Text("Next") }
+                    OutlinedButton(
+                        enabled = !currentBlocksNavigation,
+                        onClick = { goto(index + 1) },
+                    ) { Text("Next") }
                 }
             }
         }
@@ -689,22 +937,6 @@ private fun HintText(
         style = MaterialTheme.typography.bodySmall,
         color = if (error) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant,
     )
-}
-
-@Composable
-private fun CountPill(
-    count: Int,
-    label: String,
-) {
-    Surface(
-        color = MaterialTheme.colorScheme.surfaceVariant,
-        shape = RoundedCornerShape(8.dp),
-    ) {
-        Row(Modifier.padding(horizontal = 10.dp, vertical = 6.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-            Text("$count", fontWeight = FontWeight.Bold)
-            Text(label, color = MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.bodySmall)
-        }
-    }
 }
 
 @Composable

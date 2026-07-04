@@ -17,9 +17,12 @@ package com.ichi2.anki.ui.windows.reviewer
 
 import android.content.res.Resources
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import anki.config.copy
 import com.github.ivanshafran.sharedpreferencesmock.SPMockBuilder
 import com.ichi2.anki.CollectionManager
+import com.ichi2.anki.CollectionManager.withCol
 import com.ichi2.anki.EmptyApplicationCategory
+import com.ichi2.anki.observability.undoableOp
 import com.ichi2.anki.settings.PrefsRepository
 import com.ichi2.anki.utils.CollectionPreferences
 import com.ichi2.anki.utils.ext.cardStateCustomizer
@@ -64,7 +67,16 @@ class StudyScreenRepositoryCollectionTest : JvmTest() {
             assertEquals(defaultValue, repository.getShouldShowNextTimes())
 
             suspend fun assertNewValue(newValue: Boolean) {
-                CollectionPreferences.setShowIntervalsOnButtons(newValue)
+                undoableOp {
+                    withCol {
+                        val prefs = getPreferences()
+                        setPreferences(
+                            prefs.copy {
+                                reviewing = reviewing.copy { showIntervalsOnButtons = newValue }
+                            },
+                        )
+                    }
+                }
                 assertEquals(newValue, repository.getShouldShowNextTimes())
             }
 

@@ -10,19 +10,15 @@ import com.ichi2.anki.account.AccountActivity
 import com.ichi2.anki.common.destinations.PreferencesDestination
 import com.ichi2.anki.common.destinations.navigate
 import com.ichi2.anki.databinding.FragmentMoreBinding
-import com.ichi2.anki.dialogs.help.HelpDialog
 import com.ichi2.anki.practice.PracticeActivity
 import com.ichi2.anki.practice.ReadinessActivity
 import com.ichi2.anki.settings.Prefs
-import com.ichi2.anki.utils.ext.showDialogFragment
 import dev.androidbroadcast.vbpd.viewBinding
 
 /**
  * Full-screen "More" destination in the bottom navigation bar.
  *
- * Shows Settings and a Privacy policy link. The Help and Support sections were removed;
- * the privacy policy remains reachable here and post-login via
- * [HelpDialog.newPrivacyPolicyInstance].
+ * Shows Settings. The Help, Support, and privacy policy sections were removed.
  */
 class MoreFragment : Fragment(R.layout.fragment_more) {
     private val binding by viewBinding(FragmentMoreBinding::bind)
@@ -49,9 +45,7 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
             navigate(PreferencesDestination.Root)
         }
 
-        binding.moreHelpPrivacy.setOnClickListener {
-            requireActivity().showDialogFragment(HelpDialog.newPrivacyPolicyInstance())
-        }
+        binding.moreHelpPrivacy.visibility = View.GONE
     }
 
     override fun onResume() {

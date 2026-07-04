@@ -3,32 +3,24 @@
 
 from __future__ import annotations
 
-import functools
 import re
 from collections.abc import Callable
 
 import anki.lang
 import aqt
 import aqt.forms
-import aqt.operations
-from anki.collection import OpChanges
 from anki.utils import is_mac
 from aqt import AnkiQt
-from aqt.operations.collection import set_preferences
 from aqt.profiles import VideoDriver
 from aqt.qt import *
-from aqt.sync import sync_login
 from aqt.theme import Theme
-from aqt.url_schemes import show_url_schemes_dialog
 from aqt.utils import (
     HelpPage,
-    add_ellipsis_to_action_label,
-    askUser,
     disable_help_button,
+    hide_button_box_help_button,
     is_win,
     openHelp,
     showInfo,
-    showWarning,
     tr,
 )
 
@@ -40,74 +32,34 @@ class Preferences(QDialog):
         self.prof = self.mw.pm.profile
         self.form = aqt.forms.preferences.Ui_Preferences()
         self.form.setupUi(self)
-        for spinbox in (
-            self.form.lrnCutoff,
-            self.form.dayOffset,
-            self.form.timeLimit,
-            self.form.network_timeout,
-        ):
-            spinbox.setSuffix(f" {spinbox.suffix()}")
 
         disable_help_button(self)
-        help_button = self.form.buttonBox.button(QDialogButtonBox.StandardButton.Help)
-        assert help_button is not None
-        help_button.setAutoDefault(False)
+        self.setWindowFlags(
+            self.windowFlags()
+            & ~Qt.WindowType.WindowMinimizeButtonHint
+            & ~Qt.WindowType.WindowMaximizeButtonHint
+        )
+        hide_button_box_help_button(self.form.buttonBox)
 
         close_button = self.form.buttonBox.button(QDialogButtonBox.StandardButton.Close)
         assert close_button is not None
         close_button.setAutoDefault(False)
-
-        qconnect(
-            self.form.buttonBox.helpRequested, lambda: openHelp(HelpPage.PREFERENCES)
-        )
         self.silentlyClose = True
-        self.setup_collection()
-        self.setup_profile()
-        self.setup_global()
-        self.setup_configurable_answer_keys()
         self.remove_disabled_tabs()
+        self.setup_global()
         self.show()
 
     def remove_disabled_tabs(self) -> None:
-        """SpeedyCAT: drop the stock Editing and Third-party services tabs.
-
-        ``tab_1`` is the Editing page and ``tab_3`` is the Third-party
-        services (AnkiHub) page. Note the bundled form reuses the object name
-        ``tab_3`` for both the Review and Third-party pages, so ``self.form.tab_3``
-        resolves to the last-created widget, which is the Third-party page; the
-        Review page is a distinct widget and is left untouched. We remove the
-        pages from the tab widget rather than editing the .ui form.
-        """
-        for tab in (self.form.tab_1, self.form.tab_3):
+        """SpeedyCAT: drop stock Editing, Review, Syncing, and Backups tabs."""
+        for tab in (
+            self.form.tab_1,
+            self.form.tab_3,
+            self.form.tab_2,
+            self.form.tab,
+        ):
             index = self.form.tabWidget.indexOf(tab)
             if index != -1:
                 self.form.tabWidget.removeTab(index)
-
-    def setup_configurable_answer_keys(self):
-        """
-        Create a group box in Preferences with widgets that let the user edit answer keys.
-        """
-        ease_labels = (
-            (1, tr.studying_again()),
-            (2, tr.studying_hard()),
-            (3, tr.studying_good()),
-            (4, tr.studying_easy()),
-        )
-        group = self.form.preferences_answer_keys
-        group.setLayout(layout := QFormLayout())
-        tab_widget: QWidget = self.form.url_schemes
-        for ease, label in ease_labels:
-            layout.addRow(
-                label,
-                line_edit := QLineEdit(self.mw.pm.get_answer_key(ease) or ""),
-            )
-            QWidget.setTabOrder(tab_widget, line_edit)
-            tab_widget = line_edit
-            qconnect(
-                line_edit.textChanged,
-                functools.partial(self.mw.pm.set_answer_key, ease),
-            )
-            line_edit.setPlaceholderText(tr.preferences_shortcut_placeholder())
 
     def accept(self) -> None:
         self.accept_with_callback()
@@ -117,226 +69,22 @@ class Preferences(QDialog):
         if not self.mw.col:
             return
 
-        def after_collection_update() -> None:
-            self.update_profile()
-            self.update_global()
-            self.mw.pm.save()
-            self.done(0)
-            aqt.dialogs.markClosed("Preferences")
+        self.update_global()
+        self.mw.pm.save()
+        self.done(0)
+        aqt.dialogs.markClosed("Preferences")
 
-            if callback:
-                callback()
-
-        self.update_collection(after_collection_update)
+        if callback:
+            callback()
 
     def reject(self) -> None:
         self.accept()
-
-    # Preferences stored in the collection
-    ######################################################################
-
-    def setup_collection(self) -> None:
-        self.prefs = self.mw.col.get_preferences()
-
-        form = self.form
-
-        scheduling = self.prefs.scheduling
-
-        form.lrnCutoff.setValue(int(scheduling.learn_ahead_secs / 60.0))
-        form.dayOffset.setValue(scheduling.rollover)
-
-        reviewing = self.prefs.reviewing
-        form.timeLimit.setValue(int(reviewing.time_limit_secs / 60.0))
-        form.showEstimates.setChecked(reviewing.show_intervals_on_buttons)
-        form.showProgress.setChecked(reviewing.show_remaining_due_counts)
-        form.showPlayButtons.setChecked(not reviewing.hide_audio_play_buttons)
-        form.interrupt_audio.setChecked(reviewing.interrupt_audio_when_answering)
-
-        # The render_latex option lives on the Review tab; the remaining
-        # editing fields belong to the removed Editing tab.
-        editing = self.prefs.editing
-        form.render_latex.setChecked(editing.render_latex)
-
-        form.backup_explanation.setText(
-            anki.lang.with_collapsed_whitespace(tr.preferences_backup_explanation())
-        )
-        form.daily_backups.setValue(self.prefs.backups.daily)
-        form.weekly_backups.setValue(self.prefs.backups.weekly)
-        form.monthly_backups.setValue(self.prefs.backups.monthly)
-        form.minutes_between_backups.setValue(self.prefs.backups.minimum_interval_mins)
-
-        add_ellipsis_to_action_label(self.form.url_schemes)
-        qconnect(self.form.url_schemes.clicked, show_url_schemes_dialog)
-
-    def update_collection(self, on_done: Callable[[], None]) -> None:
-        form = self.form
-
-        scheduling = self.prefs.scheduling
-        scheduling.learn_ahead_secs = form.lrnCutoff.value() * 60
-        scheduling.rollover = form.dayOffset.value()
-
-        reviewing = self.prefs.reviewing
-        reviewing.show_remaining_due_counts = form.showProgress.isChecked()
-        reviewing.show_intervals_on_buttons = form.showEstimates.isChecked()
-        reviewing.time_limit_secs = form.timeLimit.value() * 60
-        reviewing.hide_audio_play_buttons = not self.form.showPlayButtons.isChecked()
-        reviewing.interrupt_audio_when_answering = self.form.interrupt_audio.isChecked()
-
-        editing = self.prefs.editing
-        editing.render_latex = self.form.render_latex.isChecked()
-
-        self.prefs.backups.daily = form.daily_backups.value()
-        self.prefs.backups.weekly = form.weekly_backups.value()
-        self.prefs.backups.monthly = form.monthly_backups.value()
-        self.prefs.backups.minimum_interval_mins = form.minutes_between_backups.value()
-
-        def after_prefs_update(changes: OpChanges) -> None:
-            self.mw.apply_collection_options()
-            on_done()
-
-        set_preferences(parent=self, preferences=self.prefs).success(
-            after_prefs_update
-        ).run_in_background()
-
-    # Preferences stored in the profile
-    ######################################################################
-
-    def setup_profile(self) -> None:
-        "Setup options stored in the user profile."
-        self.setup_network()
-
-    def update_profile(self) -> None:
-        self.update_network()
-
-    # Profile: network
-    ######################################################################
-
-    def setup_network(self) -> None:
-        self.form.media_log.setText(tr.sync_media_log_button())
-        qconnect(self.form.media_log.clicked, self.on_media_log)
-        self.form.syncOnProgramOpen.setChecked(self.mw.pm.auto_syncing_enabled())
-        self.form.syncMedia.setChecked(self.mw.pm.media_syncing_enabled())
-        self.form.autoSyncMedia.setChecked(
-            self.mw.pm.periodic_sync_media_minutes() != 0
-        )
-        self.form.custom_sync_url.setText(self.mw.pm.custom_sync_url())
-        self.form.network_timeout.setValue(self.mw.pm.network_timeout())
-
-        self.form.check_for_updates.setChecked(self.mw.pm.check_for_updates())
-        qconnect(self.form.check_for_updates.stateChanged, self.mw.pm.set_update_check)
-
-        self.form.check_for_addon_updates.setChecked(
-            self.mw.pm.check_for_addon_updates()
-        )
-        qconnect(
-            self.form.check_for_addon_updates.stateChanged,
-            self.mw.pm.set_check_for_addon_updates,
-        )
-
-        self.update_login_status()
-        qconnect(self.form.syncLogout.clicked, self.sync_logout)
-        qconnect(self.form.syncLogin.clicked, self.sync_login)
-
-    def update_login_status(self) -> None:
-        assert self.prof is not None
-        if not self.prof.get("syncKey"):
-            self.form.syncUser.setText(tr.preferences_ankiweb_intro())
-            self.form.syncLogin.setVisible(True)
-            self.form.syncLogout.setVisible(False)
-        else:
-            self.form.syncUser.setText(self.prof.get("syncUser", ""))
-            self.form.syncLogin.setVisible(False)
-            self.form.syncLogout.setVisible(True)
-
-    def on_media_log(self) -> None:
-        self.mw.media_syncer.show_sync_log()
-
-    def sync_login(self) -> None:
-        def on_success():
-            assert self.prof is not None
-            if self.prof.get("syncKey"):
-                self.update_login_status()
-                self.confirm_sync_after_login()
-
-        self.update_network()
-        sync_login(self.mw, on_success)
-
-    def sync_logout(self) -> None:
-        if self.mw.media_syncer.is_syncing():
-            showWarning("Can't log out while sync in progress.")
-            return
-        assert self.prof is not None
-        self.prof["syncKey"] = None
-        self.mw.col.media.force_resync()
-        self.update_login_status()
-
-    def confirm_sync_after_login(self) -> None:
-        from aqt import mw
-
-        if askUser(tr.preferences_login_successful_sync_now(), parent=mw):
-            self.accept_with_callback(self.mw.on_sync_button_clicked)
-
-    def update_network(self) -> None:
-        assert self.prof is not None
-        self.prof["autoSync"] = self.form.syncOnProgramOpen.isChecked()
-        self.prof["syncMedia"] = self.form.syncMedia.isChecked()
-        self.mw.pm.set_periodic_sync_media_minutes(
-            self.form.autoSyncMedia.isChecked() and 15 or 0
-        )
-        if self.form.fullSync.isChecked():
-            self.mw.col.mod_schema(check=False)
-        self.mw.pm.set_custom_sync_url(self.form.custom_sync_url.text())
-        self.mw.pm.set_network_timeout(self.form.network_timeout.value())
 
     # Global preferences
     ######################################################################
 
     def setup_global(self) -> None:
         "Setup options global to all profiles."
-        self.form.reduce_motion.setChecked(self.mw.pm.reduce_motion())
-        qconnect(self.form.reduce_motion.stateChanged, self.mw.pm.set_reduce_motion)
-
-        self.form.minimalist_mode.setChecked(self.mw.pm.minimalist_mode())
-        qconnect(self.form.minimalist_mode.stateChanged, self.mw.pm.set_minimalist_mode)
-
-        self.form.spacebar_rates_card.setChecked(self.mw.pm.spacebar_rates_card())
-        qconnect(
-            self.form.spacebar_rates_card.stateChanged,
-            self.mw.pm.set_spacebar_rates_card,
-        )
-
-        hide_choices = [tr.preferences_full_screen_only(), tr.preferences_always()]
-
-        self.form.hide_top_bar.setChecked(self.mw.pm.hide_top_bar())
-        qconnect(self.form.hide_top_bar.stateChanged, self.mw.pm.set_hide_top_bar)
-        qconnect(
-            self.form.hide_top_bar.stateChanged,
-            self.form.topBarComboBox.setVisible,
-        )
-        self.form.topBarComboBox.addItems(hide_choices)
-        self.form.topBarComboBox.setCurrentIndex(self.mw.pm.top_bar_hide_mode())
-        self.form.topBarComboBox.setVisible(self.form.hide_top_bar.isChecked())
-
-        qconnect(
-            self.form.topBarComboBox.currentIndexChanged,
-            self.mw.pm.set_top_bar_hide_mode,
-        )
-
-        self.form.hide_bottom_bar.setChecked(self.mw.pm.hide_bottom_bar())
-        qconnect(self.form.hide_bottom_bar.stateChanged, self.mw.pm.set_hide_bottom_bar)
-        qconnect(
-            self.form.hide_bottom_bar.stateChanged,
-            self.form.bottomBarComboBox.setVisible,
-        )
-        self.form.bottomBarComboBox.addItems(hide_choices)
-        self.form.bottomBarComboBox.setCurrentIndex(self.mw.pm.bottom_bar_hide_mode())
-        self.form.bottomBarComboBox.setVisible(self.form.hide_bottom_bar.isChecked())
-
-        qconnect(
-            self.form.bottomBarComboBox.currentIndexChanged,
-            self.mw.pm.set_bottom_bar_hide_mode,
-        )
-
         self.form.uiScale.setValue(int(self.mw.pm.uiScale() * 100))
         themes = [
             tr.preferences_theme_follow_system(),

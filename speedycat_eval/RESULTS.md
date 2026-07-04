@@ -8,7 +8,7 @@ and must beat a **simpler baseline**. Both apps also work fully with **AI off**.
 
 - **AI checker:** `openai:gpt-5.4-mini` (OpenAI *responses* API, strict
   `json_schema` structured output, low reasoning effort, bounded
-  `max_output_tokens` — mirrors the `brilliant-clone` setup).
+  `max_output_tokens` — mirrors the cloud proxy setup).
 - **Baseline:** `baseline:string-match+heuristic` — the deterministic AI-off
   path the apps fall back to:
   - **verdict** (correct/incorrect): case-insensitive whole-answer string match

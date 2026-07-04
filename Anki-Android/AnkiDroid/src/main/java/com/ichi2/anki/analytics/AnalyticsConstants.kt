@@ -166,11 +166,9 @@ object AnalyticsConstants {
             R.string.night_theme_key, // Night theme
             R.string.pref_deck_picker_background_key, // Background image
             R.string.pref_remove_wallpaper_key, // Remove wallpaper
-            R.string.fullscreen_mode_preference, // Fullscreen mode
             R.string.center_vertically_preference, // Center align
             R.string.show_estimates_preference, // Show button time
             R.string.answer_buttons_position_preference, // Answer buttons position
-            R.string.show_topbar_preference, // Show top bar
             R.string.show_progress_preference, // Show remaining
             R.string.show_eta_preference, // Show ETA
             R.string.show_audio_play_buttons_key, // Show play buttons on cards with audio (reversed in collection: HIDE_AUDIO_PLAY_BUTTONS)
@@ -242,7 +240,6 @@ object AnalyticsConstants {
             R.string.pref_ankidroid_directory_key, // AnkiDroid directory
             R.string.double_scrolling_gap_key, // Double scrolling
             R.string.disable_hardware_render_key, // Disable card hardware render
-            R.string.safe_display_key, // Safe display mode
             R.string.use_input_tag_key, // Type answer into the card
             R.string.disable_single_field_edit_key, // Disable Single-Field Edit Mode
             R.string.note_editor_newline_replace_key, // Replace newlines with HTML

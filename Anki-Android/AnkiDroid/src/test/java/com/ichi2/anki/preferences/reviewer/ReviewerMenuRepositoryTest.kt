@@ -40,19 +40,19 @@ class ReviewerMenuRepositoryTest {
     // a preference upgrade
     @Test
     fun `setPreferenceValue stores actions as comma-separated string`() {
-        val actions = listOf(ViewerAction.UNDO, ViewerAction.REDO)
+        val actions = listOf(ViewerAction.REDO, ViewerAction.MARK)
         repository.setDisplayTypeActions(alwaysShowActions = actions, emptyList(), emptyList())
 
-        val expectedValue = "UNDO,REDO"
+        val expectedValue = "REDO,MARK"
         assertEquals(expectedValue, prefs.getString(MenuDisplayType.ALWAYS.preferenceKey, null))
     }
 
     @Test
     fun `getActionsByMenuDisplayType returns correctly categorized items`() {
-        // assuming that UNDO is the only action with ALWAYS as default, put it in another list
+        // assuming that MARK is not ALWAYS by default, put REDO in another list
         repository.setDisplayTypeActions(
             alwaysShowActions = emptyList(),
-            menuOnlyActions = listOf(ViewerAction.UNDO),
+            menuOnlyActions = listOf(ViewerAction.REDO),
             disabledActions = emptyList(),
         )
         val result = repository.getActionsByMenuDisplayTypes(MenuDisplayType.ALWAYS).getValue(MenuDisplayType.ALWAYS)

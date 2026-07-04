@@ -9,11 +9,15 @@
 import { AttemptSource, Difficulty, McatSection } from "@generated/anki/practice_pb";
 import type {
     CarsPassageSet,
+    FullLengthAttemptSummary,
     FullLengthBreak,
     FullLengthReport,
+    FullLengthReviewItem,
     FullLengthSection,
+    FullLengthStats,
     FullLengthTest,
     FullLengthTestSummary,
+    GetFullLengthReviewResponse,
     GetTopicStatsResponse,
     HintChoice,
     HintSubquestion,
@@ -22,12 +26,17 @@ import type {
     PracticeSessionSummary,
     StartFullLengthAttemptResponse,
     StartPracticeSessionResponse,
+    TopicScore,
 } from "@generated/anki/practice_pb";
 import {
+    abandonFullLengthAttempt,
     endPracticeSession,
     getCarsPassageSet,
+    getFullLengthReview,
+    getFullLengthStats,
     getPracticeQuestions,
     getTopicStats,
+    listFullLengthAttempts,
     listFullLengthTests,
     listPassages,
     recordFullLengthAnswer,
@@ -36,21 +45,27 @@ import {
     startPracticeSession,
     submitFullLengthAttempt,
 } from "@generated/backend";
+import { bridgeCommand, bridgeCommandsAvailable } from "@tslib/bridgecommand";
 
 export { AttemptSource, Difficulty, McatSection };
 export type {
     CarsPassageSet,
+    FullLengthAttemptSummary,
     FullLengthBreak,
     FullLengthReport,
+    FullLengthReviewItem,
     FullLengthSection,
+    FullLengthStats,
     FullLengthTest,
     FullLengthTestSummary,
+    GetFullLengthReviewResponse,
     GetTopicStatsResponse,
     HintChoice,
     HintSubquestion,
     PassageSummary,
     PracticeQuestion,
     PracticeSessionSummary,
+    TopicScore,
 };
 
 // ---- Sections & difficulty -------------------------------------------------
@@ -287,6 +302,8 @@ export interface AttemptRecord {
     hintLevelUsed?: number;
     /** SpeedyCAT hint ladder: reached level 3 (penalized in Performance). */
     assisted?: boolean;
+    /** True when a wrong main-question submit escalated into the hint ladder. */
+    mainWrongFirst?: boolean;
 }
 
 export async function logPracticeAttempt(a: AttemptRecord): Promise<void> {
@@ -300,6 +317,7 @@ export async function logPracticeAttempt(a: AttemptRecord): Promise<void> {
         topic: a.topic,
         hintLevelUsed: a.hintLevelUsed ?? 0,
         assisted: a.assisted ?? false,
+        mainWrongFirst: a.mainWrongFirst ?? false,
     });
 }
 
@@ -348,11 +366,82 @@ export async function finishFullLengthAttempt(
     return await submitFullLengthAttempt({ attemptId });
 }
 
+export async function abandonAttempt(attemptId: string): Promise<void> {
+    await abandonFullLengthAttempt({ attemptId });
+}
+
+export async function fetchCompletedAttempts(): Promise<FullLengthAttemptSummary[]> {
+    const res = await listFullLengthAttempts({});
+    return res.attempts;
+}
+
+/** Full-length tests not yet completed — exclude from the picker once submitted. */
+export function availableFullLengthTests(
+    tests: FullLengthTestSummary[],
+    completed: FullLengthAttemptSummary[],
+): FullLengthTestSummary[] {
+    const completedTestIds = new Set(completed.map((a) => a.testId));
+    return tests.filter((t) => !completedTestIds.has(t.testId));
+}
+
+export async function fetchFullLengthStats(attemptId: string): Promise<FullLengthStats> {
+    return await getFullLengthStats({ attemptId });
+}
+
+export async function fetchFullLengthReview(
+    attemptId: string,
+): Promise<GetFullLengthReviewResponse> {
+    return await getFullLengthReview({ attemptId });
+}
+
+/** Desktop exam lockdown: hide the top nav and block mode switches. */
+export function setFullLengthLockdown(active: boolean, attemptId?: string): void {
+    if (!bridgeCommandsAvailable()) {
+        return;
+    }
+    if (active && attemptId) {
+        bridgeCommand(`speedycat:fullLengthLock:on:${attemptId}`);
+    } else {
+        bridgeCommand("speedycat:fullLengthLock:off");
+    }
+}
+
+export const FULL_LENGTH_START_WARNING =
+    "The section timer starts immediately when you begin. There is no pause "
+    + "except scheduled breaks. Leaving the test before you finish will abandon "
+    + "your attempt and the score will not count toward Readiness.\n\n"
+    + "Start the full-length test now?";
+
+export function confirmFullLengthStart(): boolean {
+    return globalThis.confirm(FULL_LENGTH_START_WARNING);
+}
+
+export function earlySectionEndWarning(unansweredCount: number): string {
+    let msg =
+        "End this section now? You will not be able to return to it "
+        + "once it ends.";
+    if (unansweredCount > 0) {
+        const noun = unansweredCount === 1 ? "question" : "questions";
+        msg += `\n\nYou have ${unansweredCount} unanswered ${noun} in this section.`;
+    }
+    return msg;
+}
+
+export function confirmEarlySectionEnd(unansweredCount: number): boolean {
+    return globalThis.confirm(earlySectionEndWarning(unansweredCount));
+}
+
 export async function fetchTopicStats(
     source: AttemptSource,
     section?: McatSection,
 ): Promise<GetTopicStatsResponse> {
-    const input: { source: AttemptSource; section?: McatSection } = { source };
+    // Session summaries count every recorded attempt, so leave the
+    // first-attempt-no-hint filter off (only the dashboard accuracy card sets it).
+    const input: {
+        source: AttemptSource;
+        section?: McatSection;
+        firstAttemptNoHintOnly: boolean;
+    } = { source, firstAttemptNoHintOnly: false };
     if (section) {
         input.section = section;
     }
@@ -382,9 +471,15 @@ export function emptyHintProgress(): HintProgress {
     return { revealed: 0, picks: {} };
 }
 
+/** The hint subquestions carried on a practice item (empty when none). */
+export function questionHints(question: PracticeQuestion): HintSubquestion[] {
+    const hints = question.hints;
+    return Array.isArray(hints) ? hints : [];
+}
+
 /** Whether a question offers a (well-formed) hint ladder at all. */
 export function hasHintLadder(question: PracticeQuestion): boolean {
-    return (question.hints?.length ?? 0) > 0;
+    return questionHints(question).length > 0;
 }
 
 /**
@@ -426,6 +521,40 @@ export function pendingHintIndex(progress: HintProgress): number {
 }
 
 /**
+ * Indices of the revealed hint subquestions in DISPLAY order: the most-recently
+ * revealed tier first. This ONLY affects how the revealed tiers are rendered
+ * (newest on top, directly under the main question); the ladder still PROGRESSES
+ * strictly L1 -> L2 -> L3 with no skipping (see `pendingHintIndex` /
+ * `canRevealNextHint`, which are unchanged). e.g. after all three are revealed,
+ * this returns [2, 1, 0] so the view reads Hint 3, Hint 2, Hint 1.
+ */
+export function hintDisplayOrder(revealed: number): number[] {
+    const order: number[] = [];
+    for (let i = Math.max(0, revealed) - 1; i >= 0; i--) {
+        order.push(i);
+    }
+    return order;
+}
+
+/**
+ * Whether to offer the "Return to main question" shortcut on the revealed hint
+ * at `index`. Only the LATEST revealed subquestion shows it, and only once it
+ * has been answered correctly (picks store correct answers only) and the ladder
+ * is still interactive (not `locked` because the main question is submitted).
+ */
+export function canReturnToMain(
+    progress: HintProgress,
+    index: number,
+    locked: boolean,
+): boolean {
+    if (locked || progress.revealed <= 0) {
+        return false;
+    }
+    const latest = progress.revealed - 1;
+    return index === latest && progress.picks[latest] !== undefined;
+}
+
+/**
  * Can the learner reveal the NEXT hint? Only when one remains AND the current
  * revealed subquestion has been answered (no skipping ahead).
  */
@@ -450,6 +579,212 @@ export function canSubmitMain(
 /** Whether a subquestion answer is correct. */
 export function hintAnswerCorrect(hint: HintSubquestion, label: string): boolean {
     return label !== "" && label === hint.correctAnswer;
+}
+
+// ---- Hint ladder UX timers -------------------------------------------------
+//
+// SpeedyCAT practice mode gates hint affordances so learners attempt retrieval
+// before scaffolding. Timers are pure functions of elapsed seconds + progress
+// so both desktop and mobile can share identical rules (see PracticeLogic.kt).
+
+/** Minimum wait before the first "I'm stuck" button (seconds). */
+export const HINT_FIRST_MIN_SECONDS = 15;
+/** Maximum wait before the first "I'm stuck" button (seconds). */
+export const HINT_FIRST_MAX_SECONDS = 30;
+/** Wait on the main question before "I'm still stuck" reveals the next tier. */
+export const HINT_SUBSEQUENT_SECONDS = 6;
+/** Cooldown after a wrong hint subquestion submit before retry (seconds). */
+export const HINT_WRONG_RETRY_SECONDS = 5;
+/** Assumed reading speed when gating hints behind passage read time (words/min). */
+export const PASSAGE_READ_WPM = 300;
+
+/** Readable character count for a question stem + all answer choices. */
+export function questionReadingChars(question: PracticeQuestion): number {
+    const choiceChars = question.choices.reduce((n, c) => n + c.text.length, 0);
+    return question.stem.length + choiceChars;
+}
+
+/** Word count from passage metadata or plain text (HTML stripped). */
+export function passageWordCount(
+    wordCount: number | undefined | null,
+    passageText: string | undefined | null,
+): number {
+    if (wordCount != null && wordCount > 0) {
+        return wordCount;
+    }
+    const text = (passageText ?? "").replace(/<[^>]+>/g, " ").trim();
+    if (!text) {
+        return 0;
+    }
+    return text.split(/\s+/).filter(Boolean).length;
+}
+
+/**
+ * Seconds to allow reading a passage at {@link PASSAGE_READ_WPM} before hints
+ * may unlock (e.g. 600 words → 120 s).
+ */
+export function passageReadGateSeconds(wordCount: number): number {
+    if (wordCount <= 0) {
+        return 0;
+    }
+    return Math.ceil((wordCount / PASSAGE_READ_WPM) * 60);
+}
+
+/**
+ * Passage read gate for one question within a run item. In a multi-question
+ * CARS sidebar only the first question carries the shared passage allowance;
+ * later questions use stem-only timing once the learner scrolls to them.
+ */
+export function passageHintWordCountForQuestion(
+    questionCountInItem: number,
+    questionIndexInItem: number,
+    passageWordCount: number,
+): number | undefined {
+    if (passageWordCount <= 0) {
+        return undefined;
+    }
+    if (questionCountInItem > 1 && questionIndexInItem > 0) {
+        return undefined;
+    }
+    return passageWordCount;
+}
+
+/**
+ * Delay before showing the first "I'm stuck" affordance. Starts at 15 s, adds
+ * ~1 s per 100 characters of stem/choices (time to read + attempt retrieval),
+ * capped at 30 s. When a passage is linked, uses whichever is longer: that
+ * base delay or the time to read the passage at 300 WPM.
+ */
+export function firstHintDelaySeconds(
+    question: PracticeQuestion,
+    passageWordCount?: number | null,
+): number {
+    const extra = Math.floor(questionReadingChars(question) / 100);
+    const base = Math.min(
+        HINT_FIRST_MAX_SECONDS,
+        Math.max(HINT_FIRST_MIN_SECONDS, HINT_FIRST_MIN_SECONDS + extra),
+    );
+    if (!passageWordCount || passageWordCount <= 0) {
+        return base;
+    }
+    return Math.max(base, passageReadGateSeconds(passageWordCount));
+}
+
+/**
+ * Whether a per-question hint timer should advance this tick. Timers start on
+ * first viewport visibility and pause when scrolled away without resetting.
+ */
+export function shouldTickQuestionHintTimer(
+    everVisible: boolean,
+    currentlyVisible: boolean,
+): boolean {
+    return everVisible && currentlyVisible;
+}
+
+/** May the learner tap "I'm stuck" to reveal hint tier 1? */
+export function canShowFirstHintButton(
+    elapsedSeconds: number,
+    question: PracticeQuestion,
+    progress: HintProgress,
+    locked: boolean,
+    passageWordCount?: number | null,
+): boolean {
+    return (
+        !locked
+        && progress.revealed === 0
+        && elapsedSeconds >= firstHintDelaySeconds(question, passageWordCount)
+    );
+}
+
+/**
+ * May the learner tap "I'm still stuck" on the main question to reveal the
+ * next tier? Requires the current tier to be answered and a subsequent delay.
+ */
+export function canShowNextHintButton(
+    elapsedSinceHintComplete: number,
+    hints: HintSubquestion[],
+    progress: HintProgress,
+    locked: boolean,
+): boolean {
+    return (
+        !locked
+        && canRevealNextHint(hints, progress)
+        && elapsedSinceHintComplete >= HINT_SUBSEQUENT_SECONDS
+    );
+}
+
+/** May the learner submit a hint subquestion answer right now? */
+export function canSubmitHintAnswer(
+    choice: string,
+    cooldownRemaining: number,
+): boolean {
+    return choice !== "" && cooldownRemaining <= 0;
+}
+
+/** May the learner pick a choice on the active hint subquestion? */
+export function hintChoicesEnabled(
+    answered: boolean,
+    locked: boolean,
+    isCurrent: boolean,
+    cooldownRemaining: number,
+): boolean {
+    return !answered && !locked && isCurrent && cooldownRemaining <= 0;
+}
+
+/** Start the post-wrong hint retry cooldown for one question. */
+export function startHintWrongCooldown(
+    cooldowns: Readonly<Record<string, number>>,
+    questionId: string,
+): Record<string, number> {
+    return { ...cooldowns, [questionId]: HINT_WRONG_RETRY_SECONDS };
+}
+
+/** Advance all per-question hint wrong-answer cooldowns by one second. */
+export function tickHintCooldowns(
+    cooldowns: Readonly<Record<string, number>>,
+): Record<string, number> {
+    let changed = false;
+    const next: Record<string, number> = { ...cooldowns };
+    for (const qid of Object.keys(next)) {
+        if (next[qid] > 0) {
+            next[qid] -= 1;
+            changed = true;
+        }
+    }
+    return changed ? next : cooldowns;
+}
+
+/**
+ * Show a duplicate main Submit next to the hint affordances (near the top of
+ * the question) so learners need not scroll past the ladder after using hints.
+ */
+export function shouldShowConvenientMainSubmit(
+    progress: HintProgress,
+    locked: boolean,
+): boolean {
+    return !locked && progress.revealed > 0;
+}
+
+/**
+ * Apply a hint subquestion answer. Wrong picks are rejected (progress unchanged)
+ * so the learner must retry until correct — picks only store correct answers.
+ */
+export function applyHintAnswer(
+    hint: HintSubquestion,
+    index: number,
+    label: string,
+    progress: HintProgress,
+): { progress: HintProgress; correct: boolean } {
+    if (!hintAnswerCorrect(hint, label)) {
+        return { progress, correct: false };
+    }
+    return {
+        progress: {
+            revealed: progress.revealed,
+            picks: { ...progress.picks, [index]: label },
+        },
+        correct: true,
+    };
 }
 
 // ---- Misc ------------------------------------------------------------------

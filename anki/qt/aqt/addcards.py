@@ -137,10 +137,6 @@ class AddCards(QMainWindow):
         self.closeButton.setAutoDefault(False)
         bb.addButton(self.closeButton, QDialogButtonBox.ButtonRole.RejectRole)
         qconnect(self.closeButton.clicked, self.close)
-        # help
-        self.helpButton = QPushButton(tr.actions_help(), clicked=self.helpRequested)  # type: ignore
-        self.helpButton.setAutoDefault(False)
-        bb.addButton(self.helpButton, QDialogButtonBox.ButtonRole.HelpRole)
         # history
         b = bb.addButton(f"{tr.adding_history()} {downArrow()}", ar)
         if is_mac:
@@ -274,7 +270,7 @@ class AddCards(QMainWindow):
         m.exec(self.historyButton.mapToGlobal(QPoint(0, 0)))
 
     def editHistory(self, nid: NoteId) -> None:
-        aqt.dialogs.open("Browser", self.mw, search=(SearchNode(nid=nid),))
+        pass
 
     def add_current_note(self) -> None:
         if self.editor.current_notetype_is_image_occlusion():

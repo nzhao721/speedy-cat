@@ -6,12 +6,6 @@
     android:title="@string/new_study_screen"
     >
 
-    <com.ichi2.preferences.HtmlHelpPreference
-        android:summary="@string/new_study_screen_summ"
-        app:substitution1="@string/link_anki_forum_ankidroid"
-        app:substitution2="@string/link_help"
-        search:ignore="true"
-        />
 
     <SwitchPreferenceCompat
         android:key="@string/new_reviewer_options_key"
@@ -48,6 +42,7 @@
 
     <PreferenceCategory
         android:key="@string/pref_review_category_key"
+        android:visibility="gone"
         tools:title="Review"
         >
 

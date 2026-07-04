@@ -81,8 +81,12 @@ FullLengthTest = practice_pb2.FullLengthTest
 ListFullLengthTestsResponse = practice_pb2.ListFullLengthTestsResponse
 StartFullLengthAttemptResponse = practice_pb2.StartFullLengthAttemptResponse
 FullLengthReport = practice_pb2.FullLengthReport
+FullLengthStats = practice_pb2.FullLengthStats
+ListFullLengthAttemptsResponse = practice_pb2.ListFullLengthAttemptsResponse
+GetFullLengthReviewResponse = practice_pb2.GetFullLengthReviewResponse
 GetTopicStatsResponse = practice_pb2.GetTopicStatsResponse
 GetReadinessResponse = practice_pb2.GetReadinessResponse
+SpeedycatGamingStatus = practice_pb2.SpeedycatGamingStatus
 
 import logging
 import os
@@ -566,6 +570,28 @@ class Collection(DeprecatedNamesMixin):
             self._backend.submit_full_length_attempt_raw(req.SerializeToString())
         )
 
+    def abandon_full_length_attempt(self, *, attempt_id: str) -> None:
+        req = practice_pb2.AbandonFullLengthAttemptRequest(attempt_id=attempt_id)
+        self._backend.abandon_full_length_attempt_raw(req.SerializeToString())
+
+    def list_full_length_attempts(self) -> ListFullLengthAttemptsResponse:
+        req = practice_pb2.ListFullLengthAttemptsRequest()
+        return ListFullLengthAttemptsResponse.FromString(
+            self._backend.list_full_length_attempts_raw(req.SerializeToString())
+        )
+
+    def get_full_length_stats(self, attempt_id: str) -> FullLengthStats:
+        req = practice_pb2.GetFullLengthStatsRequest(attempt_id=attempt_id)
+        return FullLengthStats.FromString(
+            self._backend.get_full_length_stats_raw(req.SerializeToString())
+        )
+
+    def get_full_length_review(self, attempt_id: str) -> GetFullLengthReviewResponse:
+        req = practice_pb2.GetFullLengthReviewRequest(attempt_id=attempt_id)
+        return GetFullLengthReviewResponse.FromString(
+            self._backend.get_full_length_review_raw(req.SerializeToString())
+        )
+
     def get_topic_stats(
         self,
         *,
@@ -589,6 +615,31 @@ class Collection(DeprecatedNamesMixin):
         req = practice_pb2.GetReadinessRequest(deck_search=deck_search)
         return GetReadinessResponse.FromString(
             self._backend.get_readiness_raw(req.SerializeToString())
+        )
+
+    def reset_speedycat_review_session(self) -> SpeedycatGamingStatus:
+        """SpeedyCAT: reset per-session gamed-lapse / IDK-bypass counters."""
+        return SpeedycatGamingStatus.FromString(
+            self._backend.reset_speedycat_review_session_raw(generic_pb2.Empty().SerializeToString())
+        )
+
+    def record_speedycat_honest_review(self) -> SpeedycatGamingStatus:
+        """SpeedyCAT: count an honest forced-recall review for daily rate tracking."""
+        return SpeedycatGamingStatus.FromString(
+            self._backend.record_speedycat_honest_review_raw(generic_pb2.Empty().SerializeToString())
+        )
+
+    def record_speedycat_gamed_lapse(self, *, idk: bool = False) -> SpeedycatGamingStatus:
+        """SpeedyCAT: record a gamed lapse and apply Memory-score lockout if needed."""
+        req = practice_pb2.RecordSpeedycatGamedLapseRequest(idk=idk)
+        return SpeedycatGamingStatus.FromString(
+            self._backend.record_speedycat_gamed_lapse_raw(req.SerializeToString())
+        )
+
+    def get_speedycat_gaming_status(self) -> SpeedycatGamingStatus:
+        """SpeedyCAT: current anti-gaming counters and Memory suppression state."""
+        return SpeedycatGamingStatus.FromString(
+            self._backend.get_speedycat_gaming_status_raw(generic_pb2.Empty().SerializeToString())
         )
 
     def get_csv_metadata(self, path: str, delimiter: Delimiter.V | None) -> CsvMetadata:

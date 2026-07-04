@@ -61,6 +61,8 @@ data class SyncedAttempt(
     // older files (written before the hint ladder) parse cleanly.
     val hintLevelUsed: Int = 0,
     val assisted: Boolean = false,
+    val mainWrongFirst: Boolean = false,
+    val firstTryNoHint: Int? = null,
 )
 
 /** One section's raw score within a full-length summary. */
@@ -125,6 +127,8 @@ fun Attempt.toSynced(): SyncedAttempt =
         answeredAt = answeredAt,
         hintLevelUsed = hintLevelUsed,
         assisted = assisted,
+        mainWrongFirst = mainWrongFirst,
+        firstTryNoHint = firstTryNoHint,
     )
 
 fun SyncedAttempt.toAttempt(): Attempt =
@@ -140,6 +144,8 @@ fun SyncedAttempt.toAttempt(): Attempt =
         answeredAt = answeredAt,
         hintLevelUsed = hintLevelUsed,
         assisted = assisted,
+        mainWrongFirst = mainWrongFirst,
+        firstTryNoHint = firstTryNoHint,
     )
 
 // ---- Serialize / parse / merge --------------------------------------------

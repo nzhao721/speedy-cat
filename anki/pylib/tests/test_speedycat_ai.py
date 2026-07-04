@@ -103,7 +103,7 @@ def test_prompt_contains_front_typed_expected() -> None:
     assert "Mitochondria" in prompt
 
 
-def test_request_body_mirrors_brilliant_clone_setup() -> None:
+def test_request_body_matches_cloud_proxy_setup() -> None:
     body = ai.build_request_body("f", "t", "e", model=ai.MODEL)
     assert body["model"] == "gpt-5.4-mini"
     assert body["max_output_tokens"] == ai.MAX_OUTPUT_TOKENS
@@ -178,6 +178,56 @@ def test_heuristic_flags_non_attempts(typed: str) -> None:
 )
 def test_heuristic_keeps_real_attempts(typed: str) -> None:
     assert ai.heuristic_is_honest_attempt(typed) is True
+
+
+# --- Static-first AI gate (plan_reveal) -------------------------------------
+
+
+def test_plan_reveal_static_correct_skips_ai() -> None:
+    plan = ai.plan_reveal("Mitochondria", "mitochondria", ai_on=True)
+    assert plan.needs_ai is False
+    assert plan.decision is not None
+    assert plan.decision.verdict == "correct"
+    assert plan.decision.source == ai.SOURCE_BASELINE
+    assert plan.decision.force_again is False
+
+
+def test_plan_reveal_static_incorrect_with_ai_on_needs_ai() -> None:
+    plan = ai.plan_reveal("mitochondira", "mitochondria", ai_on=True)
+    assert plan.needs_ai is True
+    assert plan.decision is None
+
+
+def test_plan_reveal_static_incorrect_ai_off_uses_baseline() -> None:
+    plan = ai.plan_reveal("insulin", "mitochondria", ai_on=False)
+    assert plan.needs_ai is False
+    assert plan.decision is not None
+    assert plan.decision.verdict == "incorrect"
+    assert plan.decision.source == ai.SOURCE_BASELINE
+
+
+def test_run_check_only_after_static_incorrect(monkeypatch: pytest.MonkeyPatch) -> None:
+    calls: list[tuple[str, ...]] = []
+
+    def fake_proxy(*a: object, **k: object) -> ai.CheckerResult:
+        calls.append(("proxy",) + tuple(str(x) for x in a))
+        return ai.CheckerResult(True, "correct", "synonym")
+
+    monkeypatch.setattr(ai, "run_check_via_proxy", fake_proxy)
+    monkeypatch.setattr(ai, "run_check_direct", lambda *a, **k: None)
+
+    # Static correct: run_check should never be reached via plan_reveal.
+    plan = ai.plan_reveal("mitochondria", "Mitochondria", ai_on=True)
+    assert not plan.needs_ai
+    assert calls == []
+
+    # Static incorrect: caller invokes run_check.
+    plan = ai.plan_reveal("mitochondira", "Mitochondria", ai_on=True)
+    assert plan.needs_ai
+    result, source = ai.run_check("front", "mitochondira", "Mitochondria")
+    assert result is not None
+    assert source == ai.SOURCE_AI_PROXY
+    assert len(calls) == 1
 
 
 # --- Shared decision logic --------------------------------------------------
@@ -282,14 +332,163 @@ def test_key_absent_means_ai_off(monkeypatch: pytest.MonkeyPatch, tmp_path) -> N
     assert ai.key_present() is False
 
 
-def test_run_check_without_key_returns_none_no_network(
+def test_run_check_without_key_or_proxy_returns_baseline(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     monkeypatch.setattr(ai, "load_openai_key", lambda: None)
-    assert ai.run_check("front", "typed", "expected", key=None) is None
+    monkeypatch.setattr(ai, "resolve_proxy_url", lambda: None)
+    result, source = ai.run_check("front", "typed", "expected", key=None)
+    assert result is None
+    assert source == ai.SOURCE_BASELINE
+
+
+def test_resolve_proxy_url_default() -> None:
+    assert ai.resolve_proxy_url() == (
+        "https://us-central1-speedycat-mcat.cloudfunctions.net/checkSpeedycatAnswer"
+    )
+    assert ai.resolve_proxy_url() == ai.DEFAULT_PROXY_URL
+
+
+def test_resolve_proxy_url_empty_default_disables(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.delenv(ai.ENV_PROXY_URL, raising=False)
+    monkeypatch.setattr(ai, "DEFAULT_PROXY_URL", "")
+    monkeypatch.setattr(ai, "load_openai_key", lambda: None)
+    assert ai.resolve_proxy_url() is None
+    assert ai.ai_checker_available() is False
+
+
+def test_resolve_proxy_url_env_override(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv(ai.ENV_PROXY_URL, "https://example.test/proxy")
+    assert ai.resolve_proxy_url() == "https://example.test/proxy"
+
+
+def test_resolve_proxy_url_empty_env_disables(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv(ai.ENV_PROXY_URL, "  ")
+    assert ai.resolve_proxy_url() is None
+
+
+def test_ai_checker_available_with_proxy_only(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(ai, "load_openai_key", lambda: None)
+    monkeypatch.setattr(ai, "resolve_proxy_url", lambda: "https://example.test/proxy")
+    assert ai.ai_checker_available() is True
+    assert ai.key_present() is False
+
+
+def test_ai_checker_available_with_local_key_only(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(ai, "load_openai_key", lambda: "sk-local")
+    monkeypatch.setattr(ai, "resolve_proxy_url", lambda: None)
+    assert ai.ai_checker_available() is True
+
+
+def test_run_check_prefers_proxy_over_local_key(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(
+        ai,
+        "run_check_via_proxy",
+        lambda *a, **k: ai.CheckerResult(True, "correct", "proxy"),
+    )
+    monkeypatch.setattr(ai, "run_check_direct", lambda *a, **k: None)
+    result, source = ai.run_check("f", "t", "e", key="sk-local")
+    assert result is not None
+    assert source == ai.SOURCE_AI_PROXY
+
+
+def test_run_check_falls_back_to_local_key(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(ai, "run_check_via_proxy", lambda *a, **k: None)
+    monkeypatch.setattr(
+        ai,
+        "run_check_direct",
+        lambda *a, **k: ai.CheckerResult(True, "incorrect", "direct"),
+    )
+    result, source = ai.run_check("f", "t", "e", key="sk-local")
+    assert result is not None
+    assert source == ai.SOURCE_AI
+
+
+def test_run_check_falls_back_to_proxy(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(ai, "load_openai_key", lambda: None)
+    monkeypatch.setattr(
+        ai,
+        "run_check_via_proxy",
+        lambda *a, **k: ai.CheckerResult(True, "incorrect", "proxy"),
+    )
+    result, source = ai.run_check("f", "t", "e")
+    assert result is not None
+    assert source == ai.SOURCE_AI_PROXY
+
+
+def test_is_ai_source() -> None:
+    assert ai.is_ai_source(ai.SOURCE_AI) is True
+    assert ai.is_ai_source(ai.SOURCE_AI_PROXY) is True
+    assert ai.is_ai_source(ai.SOURCE_BASELINE) is False
+
+
+def test_source_proxy_traces_to_named_model() -> None:
+    assert ai.SOURCE_AI_PROXY == "openai/gpt-5.4-mini via speedycat-proxy"
 
 
 # --- Field stripping: expected-answer source cleanup (CSS/HTML/breadcrumb/footer)
+
+
+def test_extract_cloze_answer_from_markers() -> None:
+    field = (
+        "{{c1::rotational equilibrium}} occurs in the absence of any net "
+        "torques acting on an object"
+    )
+    assert ai.extract_cloze_answer(field, 1) == "rotational equilibrium"
+
+
+def test_extract_cloze_from_prerendered_rotational_equilibrium() -> None:
+    front = "___ occurs in the absence of any net torques acting on an object"
+    back = (
+        "rotational equilibrium occurs in the absence of any net torques "
+        "acting on an object"
+    )
+    assert ai.extract_cloze_from_prerendered(front, back) == "rotational equilibrium"
+
+
+def test_extract_cloze_from_prerendered_bracket_blank() -> None:
+    front = "[...] occurs in the absence of any net torques acting on an object"
+    back = (
+        "rotational equilibrium occurs in the absence of any net torques "
+        "acting on an object"
+    )
+    assert ai.extract_cloze_from_prerendered(front, back) == "rotational equilibrium"
+
+
+def test_extract_cloze_from_prerendered_translational_equilibrium() -> None:
+    front = (
+        "___ equilibrium occurs in the absence of any net forces acting on an object"
+    )
+    back = (
+        "Translational equilibrium occurs in the absence of any net forces "
+        "acting on an object"
+    )
+    assert ai.extract_cloze_from_prerendered(front, back) == "Translational"
+
+
+def test_extract_cloze_answer_skips_front_placeholder_span() -> None:
+    front = (
+        '<span class="cloze" data-ordinal="1">[...] equilibrium</span> '
+        "occurs in the absence of any net forces acting on an object"
+    )
+    assert ai.extract_cloze_answer(front, 1) is None
+    back = (
+        '<span class="cloze" data-ordinal="1">Translational</span> '
+        "equilibrium occurs in the absence of any net forces acting on an object"
+    )
+    assert ai.extract_cloze_answer(back, 1) == "Translational"
+
+
+def test_extract_cloze_answer_from_rendered_span() -> None:
+    back = (
+        '<span class="cloze" data-ordinal="1">rotational equilibrium</span> '
+        "occurs in the absence of any net torques acting on an object"
+    )
+    assert ai.extract_cloze_answer(back, 1) == "rotational equilibrium"
 
 
 def test_strip_expected_leaves_bare_cloze_untouched() -> None:
@@ -365,3 +564,25 @@ def test_multicloze_quantum_example_end_to_end() -> None:
     assert ai.deterministic_correct("n energy level or shell number", expected) is True
     assert ai.deterministic_correct("n, energy level or shell number", expected) is True
     assert ai.deterministic_correct("energy level or shell number n", expected) is False
+
+
+def test_idk_delay_escalates() -> None:
+    assert ai.idk_delay_ms(0) == 5000
+    assert ai.idk_delay_ms(1) == 10_000
+    assert ai.idk_delay_ms(2) == 15_000
+    assert ai.idk_delay_ms(99) == 15_000
+
+
+def test_is_gamed_decision() -> None:
+    assert ai.is_gamed_decision(ai.decide_idk()) is True
+    honest = ai.decide_reveal("mitochondria", "mitochondria", ai_on=False, ai_result=None)
+    assert ai.is_gamed_decision(honest) is False
+    gamed = ai.decide_reveal("asdf", "mitochondria", ai_on=False, ai_result=None)
+    assert ai.is_gamed_decision(gamed) is True
+
+
+def test_is_idk_decision() -> None:
+    assert ai.is_idk_decision(ai.decide_idk()) is True
+    assert not ai.is_idk_decision(
+        ai.decide_reveal("asdf", "x", ai_on=False, ai_result=None)
+    )

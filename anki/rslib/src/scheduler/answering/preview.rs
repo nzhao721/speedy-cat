@@ -97,6 +97,7 @@ mod test {
             milliseconds_taken: 0,
             custom_data: None,
             from_queue: true,
+            speedycat_gamed_lapse: false,
         })?;
 
         c = col.storage.get_card(c.id)?.unwrap();
@@ -113,6 +114,7 @@ mod test {
             milliseconds_taken: 0,
             custom_data: None,
             from_queue: true,
+            speedycat_gamed_lapse: false,
         })?;
         c = col.storage.get_card(c.id)?.unwrap();
         assert_eq!(c.queue, CardQueue::PreviewRepeat);
@@ -129,6 +131,7 @@ mod test {
             milliseconds_taken: 0,
             custom_data: None,
             from_queue: true,
+            speedycat_gamed_lapse: false,
         })?;
         c = col.storage.get_card(c.id)?.unwrap();
         assert_eq!(c.queue, CardQueue::DayLearn);

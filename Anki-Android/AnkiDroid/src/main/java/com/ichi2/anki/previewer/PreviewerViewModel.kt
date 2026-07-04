@@ -20,8 +20,8 @@ import androidx.lifecycle.SavedStateHandle
 import anki.collection.OpChanges
 import com.ichi2.anki.CollectionManager.withCol
 import com.ichi2.anki.Flag
+import com.ichi2.anki.IdsFile
 import com.ichi2.anki.asyncIO
-import com.ichi2.anki.browser.IdsFile
 import com.ichi2.anki.cardviewer.SingleCardSide
 import com.ichi2.anki.common.annotations.NeedsTest
 import com.ichi2.anki.launchCatchingIO

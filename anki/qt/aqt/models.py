@@ -27,6 +27,7 @@ from aqt.utils import (
     askUser,
     disable_help_button,
     getText,
+    hide_button_box_help_button,
     maybeHideClose,
     openHelp,
     restoreGeom,
@@ -54,10 +55,7 @@ class Models(QDialog):
         self.mm = self.col.models
         self.form = aqt.forms.models.Ui_Dialog()
         self.form.setupUi(self)
-        qconnect(
-            self.form.buttonBox.helpRequested,
-            lambda: openHelp(HelpPage.ADDING_A_NOTE_TYPE),
-        )
+        hide_button_box_help_button(self.form.buttonBox)
         self.models: Sequence[NotetypeNameIdUseCount] = []
         self.setupModels()
 
@@ -219,7 +217,7 @@ class Models(QDialog):
         d.setWindowTitle(
             without_unicode_isolation(tr.actions_options_for(val=nt["name"]))
         )
-        qconnect(frm.buttonBox.helpRequested, lambda: openHelp(HelpPage.LATEX))
+        hide_button_box_help_button(frm.buttonBox)
         restoreGeom(d, "modelopts")
         gui_hooks.models_advanced_will_show(d)
         d.exec()
@@ -287,8 +285,7 @@ class AddModel(QDialog):
         # the list widget will swallow the enter key
         s = QShortcut(QKeySequence("Return"), self)
         qconnect(s.activated, self.accept)
-        # help
-        qconnect(self.dialog.buttonBox.helpRequested, self.onHelp)
+        hide_button_box_help_button(self.dialog.buttonBox)
         self.on_success = on_success
         self.show()
 

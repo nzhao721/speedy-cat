@@ -97,11 +97,6 @@
                 android:key="@string/enable_api_key"
                 android:summary="@string/enable_api_summary"
                 android:title="@string/enable_api_title"/>
-            <Preference
-                android:key="@string/thirdparty_apps_key"
-                android:summary="@string/thirdparty_apps_summary"
-                android:title="@string/thirdparty_apps_title">
-            </Preference>
         </PreferenceCategory>
     <SwitchPreferenceCompat
         android:defaultValue="false"

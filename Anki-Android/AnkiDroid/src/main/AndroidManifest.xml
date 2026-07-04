@@ -317,40 +317,6 @@
             >
         </activity>
 
-        <!-- Context menu item name is the label, context is the system language -->
-        <!-- Note: This appears to require that the target label is variable -->
-        <activity-alias
-            android:name="com.ichi2.anki.CardBrowserContextMenuAction"
-            android:label="@string/card_browser_context_menu"
-            android:enabled="false"
-            android:targetActivity="com.ichi2.anki.CardBrowser"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.PROCESS_TEXT" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain" />
-            </intent-filter>
-        </activity-alias>
-        <activity
-            android:name="com.ichi2.anki.CardBrowser"
-            android:label="@string/card_browser"
-            android:theme="@style/Theme_Dark.Launcher"
-            android:exported="false"
-            android:parentActivityName=".DeckPicker"
-            />
-        <!-- `anki://x-callback-url/browser` deep link. -->
-        <activity-alias
-            android:name="com.ichi2.anki.CardBrowserDeepLink"
-            android:label="@string/card_browser"
-            android:targetActivity="com.ichi2.anki.IntentHandler"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="anki" android:host="x-callback-url" android:path="/browser"/>
-            </intent-filter>
-        </activity-alias>
         <activity
             android:name=".notetype.ManageNotetypes"
             android:label="@string/model_browser_label"

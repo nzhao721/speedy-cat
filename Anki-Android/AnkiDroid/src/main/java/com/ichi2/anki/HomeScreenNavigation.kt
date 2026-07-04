@@ -13,11 +13,8 @@ import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.commit
-import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ichi2.anki.BottomNavController.NavigationItem
-import com.ichi2.anki.browser.CardBrowserFragment
-import com.ichi2.anki.browser.CardBrowserViewModel
 import com.ichi2.anki.common.annotations.NeedsTest
 import com.ichi2.anki.pages.Statistics
 import com.ichi2.anki.settings.Prefs
@@ -76,12 +73,6 @@ private fun handleNavigationItemSelected(
             backCallback.isEnabled = false
             true
         }
-        NavigationItem.BROWSER -> {
-            backCallback.isEnabled = true
-            ensureBrowserViewModel()
-            showBottomNavFragment(::CardBrowserFragment, item.tag, contentWrapper, fragmentContainer)
-            true
-        }
         NavigationItem.STATS -> {
             backCallback.isEnabled = true
             showBottomNavFragment(
@@ -102,21 +93,6 @@ private fun handleNavigationItemSelected(
             true
         }
     }
-
-/** Create CardBrowserViewModel before the fragment accesses it via activityViewModels() */
-context(deckPicker: DeckPicker)
-private fun ensureBrowserViewModel() {
-    ViewModelProvider(
-        deckPicker.viewModelStore,
-        CardBrowserViewModel.factory(
-            lastDeckIdRepository = AnkiDroidApp.instance.sharedPrefsLastDeckIdRepository,
-            cacheDir = deckPicker.cacheDir,
-            options = null,
-            isFragmented = false,
-        ),
-        deckPicker.defaultViewModelCreationExtras,
-    )[CardBrowserViewModel::class.java]
-}
 
 context(deckPicker: DeckPicker)
 private fun showBottomNavFragment(

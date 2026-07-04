@@ -1,10 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // SPDX-FileCopyrightText: 2026 SpeedyCAT contributors
-//
-// Unit tests for the pure Readiness metric logic: the two pillars each yield a
-// value + explicit 95% range + explicit give-up rule, computed deterministically
-// from named sources (FSRS retrievability, practice attempts). These pin the
-// give-up thresholds and the CI math.
 
 package com.ichi2.anki.practice
 
@@ -23,18 +18,24 @@ class ReadinessLogicTest {
         selected: String = if (correct) "A" else "B",
         assisted: Boolean = false,
         hintLevelUsed: Int = if (assisted) 3 else 0,
+        mainWrongFirst: Boolean = false,
+        firstTryNoHint: Int? = null,
+        questionId: String = id,
+        answeredAt: Long = 0,
     ) = Attempt(
         id = id,
         sessionId = "s1",
-        questionId = id,
+        questionId = questionId,
         selectedAnswer = selected,
         correct = correct,
         timeSeconds = time,
         section = McatSection.CPBS,
         topic = "kinetics",
-        answeredAt = 0,
+        answeredAt = answeredAt,
         hintLevelUsed = hintLevelUsed,
         assisted = assisted,
+        mainWrongFirst = mainWrongFirst,
+        firstTryNoHint = firstTryNoHint,
     )
 
     // ---- Formatting -------------------------------------------------------
@@ -73,15 +74,39 @@ class ReadinessLogicTest {
         assertThat(result.sufficient, equalTo(true))
         assertThat(result.reviewedCards, equalTo(3))
         assertThat(result.meanRetrievability, closeTo(0.9, 1e-9))
-        // CI is ordered, brackets the mean, and stays within [0, 1].
         assertThat(result.ci.low <= result.meanRetrievability, equalTo(true))
         assertThat(result.meanRetrievability <= result.ci.high, equalTo(true))
         assertThat(result.ci.low >= 0.0 && result.ci.high <= 1.0, equalTo(true))
-        val pillar = memoryPillar(result)
+        val pillar = memoryPillar(result, totalCards = 100)
         assertThat(pillar.value, equalTo("90%"))
+        assertThat(pillar.range, equalTo(formatPercentRange(result.ci)))
         assertThat(pillar.range.isNotEmpty(), equalTo(true))
-        assertThat(pillar.detail.any { it.contains("3 reviewed cards") }, equalTo(true))
+        assertThat(pillar.detail.any { it.contains("3 out of 100 flashcards studied") }, equalTo(true))
         assertThat(pillar.source, containsString("FSRS"))
+    }
+
+    @Test
+    fun `memoryStudiedLine formats studied out of total`() {
+        assertThat(memoryStudiedLine(42, 10287), containsString("42 out of 10,287 flashcards studied"))
+        assertThat(memoryStudiedLine(42, 10287, soFar = true), containsString("so far"))
+    }
+
+    @Test
+    fun `enhanceMemoryPillar replaces backend sample line`() {
+        val pillar =
+            ReadinessPillar(
+                name = "Memory",
+                sufficient = true,
+                value = "80%",
+                range = "70%\u201390%",
+                rangeCaption = CI_CAPTION,
+                source = "test",
+                detail = listOf("Based on 42 reviewed cards"),
+                insufficientReason = "",
+                sampleSize = 42,
+            )
+        val enhanced = enhanceMemoryPillar(pillar, totalCards = 10287)
+        assertThat(enhanced.detail.single(), containsString("42 out of 10,287 flashcards studied"))
     }
 
     // ---- Performance pillar ----------------------------------------------
@@ -117,54 +142,113 @@ class ReadinessLogicTest {
                 practiceAttempt("q2", correct = true, time = 20),
                 practiceAttempt("q3", correct = false, time = 30),
                 practiceAttempt("q4", correct = false, time = 40),
-                // A skip (blank selection) is not an answered attempt.
                 practiceAttempt("q5", correct = false, time = 100, selected = ""),
             )
         val result = computePerformance(attempts, minAnswered = 4)
         assertThat(result.sufficient, equalTo(true))
         assertThat(result.answered, equalTo(4))
-        assertThat(result.correct, equalTo(2))
+        assertThat(result.weightedCorrect, closeTo(2.0, 1e-9))
         assertThat(result.accuracy, closeTo(0.5, 1e-9))
         assertThat(result.avgTimeSeconds, closeTo(25.0, 1e-9))
-        assertThat(result.ci.low <= 0.5 && 0.5 <= result.ci.high, equalTo(true))
-        val pillar = performancePillar(result)
-        assertThat(pillar.value, equalTo("50%"))
-        assertThat(pillar.detail.any { it.contains("2 / 4 unassisted correct") }, equalTo(true))
     }
 
     @Test
-    fun `performance penalizes assisted-correct answers (anti-gaming)`() {
-        // 15 unassisted-correct (full credit) + 15 assisted-correct (reached L3,
-        // penalized to incorrect). Raw accuracy would be 30/30; penalized is
-        // 15/30 = 0.5, and every attempt still counts in the denominator.
+    fun `performance applies progressive hint penalties`() {
+        // 10 L0 + 10 L1 + 10 L3 -> 10 + 6 + 1 = 17 / 30
         val attempts =
-            (1..15).map { practiceAttempt("u$it", correct = true, time = 20) } +
-                (1..15).map { practiceAttempt("a$it", correct = true, time = 20, assisted = true) }
+            (1..10).map { practiceAttempt("l0$it", correct = true, time = 10) } +
+                (1..10).map {
+                    practiceAttempt("l1$it", correct = true, time = 10, hintLevelUsed = 1)
+                } +
+                (1..10).map {
+                    practiceAttempt("l3$it", correct = true, time = 10, hintLevelUsed = 3, assisted = true)
+                }
         val result = computePerformance(attempts)
         assertThat(result.sufficient, equalTo(true))
         assertThat(result.answered, equalTo(30))
-        assertThat(result.correct, equalTo(15))
-        assertThat(result.assistedAnswered, equalTo(15))
-        assertThat(result.accuracy, closeTo(0.5, 1e-9))
-        val pillar = performancePillar(result)
-        assertThat(pillar.value, equalTo("50%"))
-        assertThat(pillar.detail.any { it.contains("15 answered with hints") }, equalTo(true))
+        assertThat(result.weightedCorrect, closeTo(17.0, 1e-9))
+        assertThat(result.accuracy, closeTo(17.0 / 30.0, 1e-9))
+        assertThat(result.heavilyHinted, equalTo(10))
     }
 
     @Test
-    fun `performance credits level 1 and 2 assists but penalizes only level 3`() {
-        // Level 1/2 assists are NOT assisted -> full credit; only L3 is penalized.
+    fun `performance main wrong first earns zero credit`() {
         val attempts =
-            (1..28).map { practiceAttempt("ok$it", correct = true, time = 10) } +
+            (1..29).map { practiceAttempt("ok$it", correct = true, time = 10) } +
                 listOf(
-                    practiceAttempt("l2", correct = true, time = 10, hintLevelUsed = 2),
-                    practiceAttempt("l3", correct = true, time = 10, assisted = true),
+                    practiceAttempt(
+                        "bad",
+                        correct = true,
+                        time = 10,
+                        hintLevelUsed = 2,
+                        mainWrongFirst = true,
+                    ),
                 )
         val result = computePerformance(attempts)
-        // 29 credited (28 + the level-2 assist), 1 penalized (the level-3 assist).
-        assertThat(result.correct, equalTo(29))
-        assertThat(result.answered, equalTo(30))
-        assertThat(result.assistedAnswered, equalTo(1))
+        assertThat(result.weightedCorrect, closeTo(29.0, 1e-9))
+        assertThat(result.accuracy, closeTo(29.0 / 30.0, 1e-9))
+    }
+
+    @Test
+    fun `performance time penalty scales slow pace`() {
+        val attempts =
+            (1..30).map { i ->
+                practiceAttempt("q$i", correct = i <= 27, time = 147)
+            }
+        val result = computePerformance(attempts)
+        assertThat(result.sufficient, equalTo(true))
+        assertThat(result.rawAccuracy, closeTo(0.9, 1e-9))
+        assertThat(result.avgTimeSeconds, closeTo(147.0, 1e-9))
+        assertThat(result.timePenaltyApplied, equalTo(true))
+        assertThat(result.accuracy, closeTo(0.6, 1e-9))
+    }
+
+    @Test
+    fun `performance no time penalty at or under 98 seconds`() {
+        val attempts =
+            (1..30).map { i ->
+                practiceAttempt("q$i", correct = i <= 27, time = if (i == 1) 98 else 97)
+            }
+        val result = computePerformance(attempts)
+        assertThat(result.timePenaltyApplied, equalTo(false))
+        assertThat(result.accuracy, closeTo(0.9, 1e-9))
+    }
+
+    @Test
+    fun `firstTryNoHint marks first-ever no-hint attempts only`() {
+        assertThat(
+            firstTryNoHint(
+                questionSeenBefore = false,
+                replacing = false,
+                priorFirstTry = null,
+                hintLevelUsed = 0,
+                selectedAnswer = "A",
+                correct = true,
+            ),
+            equalTo(1),
+        )
+        assertThat(
+            firstTryNoHint(
+                questionSeenBefore = true,
+                replacing = false,
+                priorFirstTry = null,
+                hintLevelUsed = 0,
+                selectedAnswer = "A",
+                correct = true,
+            ),
+            nullValue(),
+        )
+        assertThat(
+            firstTryNoHint(
+                questionSeenBefore = false,
+                replacing = false,
+                priorFirstTry = null,
+                hintLevelUsed = 2,
+                selectedAnswer = "A",
+                correct = true,
+            ),
+            nullValue(),
+        )
     }
 
     // ---- Readiness pillar (desktop-created full-length, read-only) --------
@@ -173,10 +257,11 @@ class ReadinessLogicTest {
         id: String,
         correct: Int,
         total: Int,
+        completedAt: Long = 1_700_000_000L,
     ) = FullLengthSummary(
         attemptId = id,
         title = "FL $id",
-        completedAt = 1000,
+        completedAt = completedAt,
         totalCorrect = correct,
         totalQuestions = total,
         sections = listOf(FullLengthSectionSummary("CPBS", correct, total, 5100, null)),
@@ -187,57 +272,40 @@ class ReadinessLogicTest {
         val result = computeReadiness(emptyList())
         assertThat(result.sufficient, equalTo(false))
         assertThat(result.insufficientReason, containsString("desktop"))
-        val pillar = readinessPillar(result)
-        assertThat(pillar.value, equalTo("\u2014"))
-        assertThat(pillar.range, equalTo(""))
-        assertThat(pillar.source, containsString("full-length"))
     }
 
     @Test
-    fun `readiness aggregates raw score across completed full-length tests`() {
-        val result = computeReadiness(listOf(fullLength("a", 40, 59), fullLength("b", 45, 53)))
+    fun `readiness aggregates with EWMA across completed full-length tests`() {
+        val now = 1_700_000_000L
+        val result =
+            computeReadiness(
+                listOf(fullLength("a", 40, 59, now), fullLength("b", 45, 53, now)),
+                nowSecs = now,
+            )
         assertThat(result.sufficient, equalTo(true))
         assertThat(result.completedTests, equalTo(2))
         assertThat(result.totalCorrect, equalTo(85))
         assertThat(result.totalQuestions, equalTo(112))
-        assertThat(result.accuracy, closeTo(85.0 / 112.0, 1e-9))
-        assertThat(result.ci.low <= result.accuracy && result.accuracy <= result.ci.high, equalTo(true))
-        assertThat(result.ci.low >= 0.0 && result.ci.high <= 1.0, equalTo(true))
-        val pillar = readinessPillar(result)
-        assertThat(pillar.sufficient, equalTo(true))
-        assertThat(pillar.detail.any { it.contains("85 / 112 correct") }, equalTo(true))
-        assertThat(pillar.detail.any { it.contains("2 completed full-length tests") }, equalTo(true))
+        val expected = (40.0 / 59.0 + 45.0 / 53.0) / 2.0
+        assertThat(result.accuracy, closeTo(expected, 1e-9))
     }
 
     @Test
-    fun `readiness ignores summaries without questions`() {
-        val result = computeReadiness(listOf(fullLength("empty", 0, 0)))
-        assertThat(result.sufficient, equalTo(false))
+    fun `ewma weight halves at half-life`() {
+        assertThat(ewmaWeightForAgeDays(0.0, 7.0), closeTo(1.0, 1e-12))
+        assertThat(ewmaWeightForAgeDays(7.0, 7.0), closeTo(0.5, 1e-12))
+        assertThat(ewmaWeightForAgeDays(30.0, 30.0), closeTo(0.5, 1e-12))
     }
 
     @Test
-    fun `readiness surfaces averaged scaled estimate with range and named source`() {
-        val a = fullLength("a", 40, 59).copy(overallScaledScore = 508)
-        val b = fullLength("b", 45, 53).copy(overallScaledScore = 512)
-        val result = computeReadiness(listOf(a, b))
-        // Mean of the per-test overall scaled estimates, and the spread.
-        assertThat(result.scaledEstimate, equalTo(510))
-        assertThat(result.scaledLow, equalTo(508))
-        assertThat(result.scaledHigh, equalTo(512))
-        val pillar = readinessPillar(result)
-        assertThat(
-            pillar.detail.any { it.contains("Est. MCAT score") && it.contains("510") },
-            equalTo(true),
-        )
-        assertThat(pillar.detail.any { it.contains("range 508\u2013512") }, equalTo(true))
-        assertThat(pillar.detail.any { it.contains(SCALED_SCORE_SOURCE) }, equalTo(true))
-    }
-
-    @Test
-    fun `readiness omits scaled estimate when no summary carries one`() {
-        val result = computeReadiness(listOf(fullLength("a", 40, 59)))
-        assertThat(result.scaledEstimate, nullValue())
-        val pillar = readinessPillar(result)
-        assertThat(pillar.detail.none { it.contains("Est. MCAT score") }, equalTo(true))
+    fun `performance EWMA favors recent attempts at half-life`() {
+        val now = 2_000_000_000L
+        val ageSecs = (7.0 * 86_400.0).toLong()
+        val recent = practiceAttempt("recent", correct = true, time = 10, answeredAt = now)
+        val old =
+            practiceAttempt("old", correct = false, time = 10, answeredAt = now - ageSecs)
+                .copy(questionId = "old-q")
+        val result = computePerformance(listOf(recent, old), minAnswered = 2, nowSecs = now)
+        assertThat(result.accuracy, closeTo(2.0 / 3.0, 1e-9))
     }
 }

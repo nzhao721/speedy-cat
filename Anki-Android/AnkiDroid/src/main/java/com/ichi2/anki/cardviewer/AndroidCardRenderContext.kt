@@ -43,15 +43,17 @@ class AndroidCardRenderContext(
         col: Collection,
         card: Card,
         side: SingleCardSide,
+        forcedRecallVerdictHtml: String? = null,
+        forcedRecallAiNoteHtml: String? = null,
     ): RenderedCard {
         // obtain the libAnki-rendered card
         var content: String = if (side == SingleCardSide.FRONT) card.question(col) else card.answer(col)
         // IRI-encodes media: `foo bar` -> `foo%20bar`
         content = col.media.escapeMediaFilenames(content)
         // produces either an <input> or <span>...</span> to denote typed input
-        content = filterTypeAnswer(content, side)
+        content = filterTypeAnswer(content, side, forcedRecallVerdictHtml != null)
         // wraps content in <div id="qa">
-        content = enrichWithQADiv(content)
+        content = enrichWithQADiv(content, forcedRecallVerdictHtml, forcedRecallAiNoteHtml)
         // expands [anki:q:1] to a play button
         content = expandSounds(content, card.renderOutput(col), col)
         // fixes an Android bug where font-weight:600 does not display
@@ -89,20 +91,36 @@ class AndroidCardRenderContext(
      * @param content The content to surround with tags.
      * @return The enriched content
      */
-    private fun enrichWithQADiv(content: String) =
-        buildString {
-            append("""<div id="qa">""")
-            append(content)
-            append("</div>")
+    private fun enrichWithQADiv(
+        content: String,
+        forcedRecallVerdictHtml: String? = null,
+        forcedRecallAiNoteHtml: String? = null,
+    ) = buildString {
+        append("""<div id="qa">""")
+        if (forcedRecallVerdictHtml != null) {
+            append(forcedRecallVerdictHtml)
+            append("<hr>")
         }
+        append(content)
+        if (forcedRecallAiNoteHtml != null) {
+            append(forcedRecallAiNoteHtml)
+        }
+        append("</div>")
+    }
 
     private fun filterTypeAnswer(
         content: String,
         side: SingleCardSide,
+        forcedRecallBack: Boolean,
     ): String =
         when (side) {
             SingleCardSide.FRONT -> typeAnswer.filterQuestion(content)
-            SingleCardSide.BACK -> typeAnswer.filterAnswer(content)
+            SingleCardSide.BACK ->
+                if (forcedRecallBack) {
+                    TypeAnswer.PATTERN.matcher(content).replaceAll("")
+                } else {
+                    typeAnswer.filterAnswer(content)
+                }
         }
 
     private fun expandSounds(

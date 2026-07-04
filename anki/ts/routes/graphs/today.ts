@@ -4,7 +4,6 @@
 import type { GraphsResponse } from "@generated/anki/stats_pb";
 import * as tr from "@generated/ftl";
 import { localizedNumber } from "@tslib/i18n";
-import { studiedToday } from "@tslib/time";
 
 export interface TodayData {
     title: string;
@@ -15,7 +14,6 @@ export function gatherData(data: GraphsResponse): TodayData {
     let lines: string[];
     const today = data.today!;
     if (today.answerCount) {
-        const studiedTodayText = studiedToday(today.answerCount, today.answerMillis / 1000);
         const againCount = today.answerCount - today.correctCount;
         let againCountText = tr.statisticsTodayAgainCount();
         againCountText += ` ${againCount} (${
@@ -39,7 +37,7 @@ export function gatherData(data: GraphsResponse): TodayData {
         } else {
             matureText = tr.statisticsTodayNoMatureCards();
         }
-        lines = [studiedTodayText, againCountText, typeCounts, matureText];
+        lines = [againCountText, typeCounts, matureText];
     } else {
         lines = [tr.statisticsTodayNoCards()];
     }

@@ -51,15 +51,6 @@ fun ReviewerMenuView.setup(
             }
     }
 
-    findItem(ViewerAction.UNDO.menuId)?.let { undoItem ->
-        viewModel.undoLabelFlow
-            .flowWithLifecycle(lifecycle)
-            .collectLatestIn(lifecycle.coroutineScope) { label ->
-                undoItem.title = label ?: CollectionManager.TR.undoUndo()
-                undoItem.isEnabled = label != null
-            }
-    }
-
     findItem(ViewerAction.REDO.menuId)?.let { redoItem ->
         viewModel.redoLabelFlow
             .flowWithLifecycle(lifecycle)

@@ -211,20 +211,6 @@ class ControlsSettingsFragment :
             val key = getString(keyRes)
             findPreference<Preference>(key)?.isVisible = false
         }
-        findPreference<ControlPreference>(getString(R.string.browse_command_key))?.apply {
-            title = TR.qtMiscBrowse()
-            isVisible = true
-            if (value == null) {
-                value = ViewerAction.BROWSE.getBindings(sharedPrefs()).toPreferenceString()
-            }
-        }
-        findPreference<ControlPreference>(getString(R.string.statistics_command_key))?.apply {
-            title = TR.statisticsTitle()
-            isVisible = true
-            if (value == null) {
-                value = ViewerAction.STATISTICS.getBindings(sharedPrefs()).toPreferenceString()
-            }
-        }
     }
 
     private fun setupAnswerCommands() {

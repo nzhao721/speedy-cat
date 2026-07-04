@@ -43,7 +43,6 @@ import com.ichi2.anki.dialogs.viewmodel.TtsVoicesViewModel
 import com.ichi2.anki.libanki.TtsVoice
 import com.ichi2.anki.localizedErrorMessage
 import com.ichi2.anki.snackbar.showSnackbar
-import com.ichi2.anki.utils.openUrl
 import com.ichi2.themes.Themes
 import com.ichi2.utils.UiUtil.makeFullscreen
 import dev.androidbroadcast.vbpd.viewBinding
@@ -167,12 +166,7 @@ class TtsVoicesDialogFragment : DialogFragment(R.layout.dialog_tts_voices) {
 
         viewModel.ttsPlaybackErrorFlow.observe {
             val string = it.localizedErrorMessage(requireContext())
-            dialog?.window?.decorView?.showSnackbar(string) {
-                setAction(R.string.help) {
-                    // TODO: Should do this in ViewModel, but we need an Activity
-                    requireContext().openUrl(R.string.link_faq_tts)
-                }
-            }
+            dialog?.window?.decorView?.showSnackbar(string)
         }
     }
 

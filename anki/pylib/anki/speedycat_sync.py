@@ -91,7 +91,7 @@ def _read_local_attempts(col: Collection) -> list[dict[str, Any]]:
         """
         select id, session_id, question_id, selected_answer, correct,
                time_on_question_seconds, section, topic, answered_at,
-               hint_level_used, assisted
+               hint_level_used, assisted, main_wrong_first, first_try_no_hint
         from practice_attempts
         where session_id is not null
         """
@@ -109,6 +109,8 @@ def _read_local_attempts(col: Collection) -> list[dict[str, Any]]:
         answered_at,
         hint_level_used,
         assisted,
+        main_wrong_first,
+        first_try_no_hint,
     ) in rows:
         out.append(
             {
@@ -125,6 +127,8 @@ def _read_local_attempts(col: Collection) -> list[dict[str, Any]]:
                 # pillar's anti-gaming penalty stays consistent across devices.
                 "hintLevelUsed": int(hint_level_used or 0),
                 "assisted": bool(assisted),
+                "mainWrongFirst": bool(main_wrong_first),
+                "firstTryNoHint": first_try_no_hint,
             }
         )
     return out
@@ -342,6 +346,8 @@ def ingest_results(col: Collection, device_id: str) -> int:
             # SpeedyCAT graduated hint ladder (default 0/false for older files).
             int(a.get("hintLevelUsed", 0) or 0),
             1 if a.get("assisted") else 0,
+            1 if a.get("mainWrongFirst") else 0,
+            a.get("firstTryNoHint"),
         )
         for a in merged
     ]
@@ -350,8 +356,8 @@ def ingest_results(col: Collection, device_id: str) -> int:
         insert or replace into practice_attempts
         (id, session_id, full_length_attempt_id, question_id, selected_answer,
          correct, time_on_question_seconds, section, topic, answered_at,
-         hint_level_used, assisted)
-        values (?, ?, NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+         hint_level_used, assisted, main_wrong_first, first_try_no_hint)
+        values (?, ?, NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         params,
     )

@@ -149,7 +149,6 @@ import com.ichi2.anki.utils.RunOnlyOnce
 import com.ichi2.anki.utils.ext.sharedPrefs
 import com.ichi2.anki.utils.ext.showDialogFragment
 import com.ichi2.anki.utils.ext.window
-import com.ichi2.anki.utils.openUrl
 import com.ichi2.imagecropper.ImageCropper
 import com.ichi2.imagecropper.ImageCropper.Companion.CROP_IMAGE_RESULT
 import com.ichi2.imagecropper.ImageCropperLauncher
@@ -166,7 +165,6 @@ import com.ichi2.utils.configureView
 import com.ichi2.utils.iconAttr
 import com.ichi2.utils.message
 import com.ichi2.utils.negativeButton
-import com.ichi2.utils.neutralButton
 import com.ichi2.utils.positiveButton
 import com.ichi2.utils.show
 import com.ichi2.utils.title
@@ -2337,9 +2335,7 @@ class NoteEditorFragment :
         get() =
             AlertDialog
                 .Builder(requireContext())
-                .neutralButton(R.string.help) {
-                    requireContext().openUrl(R.string.link_manual_note_format_toolbar)
-                }.negativeButton(R.string.dialog_cancel)
+                .negativeButton(R.string.dialog_cancel)
 
     private fun displayAddToolbarDialog() {
         val v = layoutInflater.inflate(R.layout.dialog_note_editor_toolbar_add_custom_item, null)

@@ -29,6 +29,13 @@ import timber.log.Timber
 
 private const val CHANGE_LOG_URL = "https://docs.ankidroid.org/changelog.html"
 
+private fun isAnkiDocumentationUrl(url: String): Boolean =
+    url.contains("ankiweb.net") ||
+        url.contains("docs.ankidroid.org") ||
+        url.contains("ankidroid.org") ||
+        url.contains("github.com/ankidroid") ||
+        url.contains("github.com/ankitects")
+
 /**
  * Shows an about box, which is a small HTML page.
  *
@@ -126,7 +133,12 @@ class Info :
                                 """javascript:document.body.style.setProperty("color", "$textColor");
                                     x=document.getElementsByTagName("a");
                                     for(i=0; i<x.length; i++){
-                                      x[i].style.color="$anchorTextColor";
+                                      var href = x[i].href || "";
+                                      if(href.indexOf("ankiweb.net")>=0 || href.indexOf("ankidroid.org")>=0 || href.indexOf("github.com/ankidroid")>=0 || href.indexOf("github.com/ankitects")>=0){
+                                        x[i].outerHTML = x[i].innerText;
+                                      } else {
+                                        x[i].style.color="$anchorTextColor";
+                                      }
                                     }
                                     document.getElementsByTagName("h1")[0].style.color="$textColor";
                                     x=document.getElementsByTagName("h2");
@@ -144,6 +156,9 @@ class Info :
                             // Excludes the url that are opened inside the changelog.html
                             // and redirect the user to the browser
                             val url = request?.url?.toString() ?: return false
+                            if (isAnkiDocumentationUrl(url)) {
+                                return true
+                            }
                             if (url == CHANGE_LOG_URL) {
                                 return false
                             }

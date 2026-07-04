@@ -5,7 +5,7 @@
 
 These pin the behaviour that lives on ``Reviewer`` rather than in the pure
 ``anki.speedycat_ai`` core (which is unit-tested separately): the AI on/off gate
-(opt-in AND key required) and the per-card state reset. They construct a bare
+(toggle default ON AND proxy/key availability) and the per-card state reset. They construct a bare
 ``Reviewer`` via ``__new__`` with a tiny stub ``mw`` so no collection/Qt event
 loop is needed, matching ``test_forced_recall_verdict.py``.
 """
@@ -54,27 +54,55 @@ def _reviewer_with_config(config: dict) -> Reviewer:
     return reviewer
 
 
-def test_ai_enabled_requires_optin_and_key(monkeypatch: pytest.MonkeyPatch) -> None:
-    # Opt-in ON + key present -> AI on.
+def test_ai_enabled_requires_toggle_and_availability(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    # Toggle ON + checker available -> AI on.
     reviewer = _reviewer_with_config({speedycat_ai.AI_CONFIG_KEY: True})
-    monkeypatch.setattr(speedycat_ai, "key_present", lambda: True)
+    monkeypatch.setattr(speedycat_ai, "ai_checker_available", lambda: True)
     assert reviewer._speedycat_ai_enabled() is True
 
-    # Opt-in ON but no key -> AI off (deterministic fallback).
-    monkeypatch.setattr(speedycat_ai, "key_present", lambda: False)
+    # Toggle ON but unavailable -> AI off (deterministic fallback).
+    monkeypatch.setattr(speedycat_ai, "ai_checker_available", lambda: False)
     assert reviewer._speedycat_ai_enabled() is False
 
-    # Opt-in OFF (default) -> AI off even if a key is present.
+    # Toggle OFF -> AI off even if checker is available.
     reviewer_off = _reviewer_with_config({speedycat_ai.AI_CONFIG_KEY: False})
-    monkeypatch.setattr(speedycat_ai, "key_present", lambda: True)
+    monkeypatch.setattr(speedycat_ai, "ai_checker_available", lambda: True)
     assert reviewer_off._speedycat_ai_enabled() is False
 
 
-def test_ai_disabled_by_default(monkeypatch: pytest.MonkeyPatch) -> None:
-    # No config entry at all -> default OFF (the project requirement).
+def test_ai_enabled_by_default(monkeypatch: pytest.MonkeyPatch) -> None:
+    # No config entry at all -> default ON when checker is available.
     reviewer = _reviewer_with_config({})
-    monkeypatch.setattr(speedycat_ai, "key_present", lambda: True)
-    assert reviewer._speedycat_ai_enabled() is False
+    monkeypatch.setattr(speedycat_ai, "ai_checker_available", lambda: True)
+    assert reviewer._speedycat_ai_enabled() is True
+
+
+def test_plan_reveal_static_correct_skips_ai_when_enabled(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    reviewer = _reviewer_with_config({speedycat_ai.AI_CONFIG_KEY: True})
+    monkeypatch.setattr(speedycat_ai, "ai_checker_available", lambda: True)
+    plan = speedycat_ai.plan_reveal(
+        "Mitochondria", "mitochondria", ai_on=reviewer._speedycat_ai_enabled()
+    )
+    assert plan.needs_ai is False
+    assert plan.decision is not None
+    assert plan.decision.verdict == "correct"
+    assert plan.decision.source == speedycat_ai.SOURCE_BASELINE
+
+
+def test_plan_reveal_static_incorrect_invokes_ai_path_when_enabled(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    reviewer = _reviewer_with_config({speedycat_ai.AI_CONFIG_KEY: True})
+    monkeypatch.setattr(speedycat_ai, "ai_checker_available", lambda: True)
+    plan = speedycat_ai.plan_reveal(
+        "mitochondira", "Mitochondria", ai_on=reviewer._speedycat_ai_enabled()
+    )
+    assert plan.needs_ai is True
+    assert plan.decision is None
 
 
 def test_reset_card_state_clears_flags_and_timer() -> None:
@@ -143,5 +171,35 @@ def test_forced_recall_cloze_answer_none_for_basic_notetype() -> None:
         reviewer.mw = SimpleNamespace(col=col)
         reviewer.card = note.cards()[0]
         assert reviewer._forced_recall_cloze_answer() is None
+    finally:
+        col.close()
+
+
+def test_forced_recall_expected_from_prerendered_front_back() -> None:
+    """SpeedyCAT import stores rendered Front/Back without {{cN::}} markers."""
+    col = _new_col()
+    try:
+        models = col.models
+        notetype = models.new("SpeedyCAT-test")
+        models.add_field(notetype, models.new_field("Front"))
+        models.add_field(notetype, models.new_field("Back"))
+        tmpl = models.new_template("Card 1")
+        tmpl["qfmt"] = "{{Front}}"
+        tmpl["afmt"] = "{{Back}}"
+        models.add_template(notetype, tmpl)
+        models.save(notetype)
+        note = col.new_note(notetype)
+        note["Front"] = (
+            "___ occurs in the absence of any net torques acting on an object"
+        )
+        note["Back"] = (
+            "rotational equilibrium occurs in the absence of any net torques "
+            "acting on an object"
+        )
+        col.add_note(note, DeckId(1))
+        reviewer = Reviewer.__new__(Reviewer)
+        reviewer.mw = SimpleNamespace(col=col)
+        reviewer.card = note.cards()[0]
+        assert reviewer._forced_recall_expected() == "rotational equilibrium"
     finally:
         col.close()

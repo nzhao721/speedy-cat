@@ -18,6 +18,7 @@ from aqt.utils import (
     askUser,
     disable_help_button,
     getOnlyText,
+    hide_button_box_help_button,
     openHelp,
     restoreGeom,
     saveGeom,
@@ -40,9 +41,8 @@ class DeckConf(QDialog):
         gui_hooks.deck_conf_did_setup_ui_form(self)
         self.setupCombos()
         self.setupConfs()
-        qconnect(
-            self.form.buttonBox.helpRequested, lambda: openHelp(HelpPage.DECK_OPTIONS)
-        )
+        disable_help_button(self)
+        hide_button_box_help_button(self.form.buttonBox)
         qconnect(self.form.confOpts.clicked, self.confOpts)
         qconnect(
             self.form.buttonBox.button(

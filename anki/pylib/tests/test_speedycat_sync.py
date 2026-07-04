@@ -364,7 +364,8 @@ def test_ingest_assisted_correct_is_penalized_in_performance():
     after = col.get_readiness(deck_search="")
     assert after.performance.available
     assert after.performance.sample_size == 30
-    assert abs(after.performance.value - 0.5) < 1e-9
+    # 15 * 1.0 + 15 * 0.10 = 16.5 / 30 (progressive L3 penalty)
+    assert abs(after.performance.value - 16.5 / 30.0) < 1e-9
 
 
 def test_ingest_with_no_remote_files_is_a_noop():

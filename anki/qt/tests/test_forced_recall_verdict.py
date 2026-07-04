@@ -73,29 +73,16 @@ def test_format_match_feedback_is_verdict_only_no_diff() -> None:
         assert "typearrow" not in html
         assert "id=typeans" not in html
         assert "&darr;" not in html
+        assert "Expected:" not in html
+        assert "type-expected" not in html
 
 
-def test_format_expected_answer_labels_and_strips_html() -> None:
-    """The forced-recall reveal also shows the expected answer the checker
-    compared against: a labelled "Expected: …" line derived from the same value
-    passed to the matcher, with HTML/media stripped for display but case
-    preserved (matching itself stays case-insensitive), and carrying no
-    character-by-character diff markup."""
+def test_forced_recall_verdict_is_prepended_before_answer() -> None:
+    """The forced-recall reveal places the verdict banner before the card back."""
     reviewer = Reviewer.__new__(Reviewer)
-
-    line = reviewer._format_expected_answer("<b>Hemoglobin</b>")
-    assert "Expected:" in line
-    assert "Hemoglobin" in line  # case preserved
-    assert "<b>" not in line  # source HTML stripped from the displayed value
-
-    # Media/AV references are stripped just like the matcher normalizes them.
-    assert "[sound:" not in reviewer._format_expected_answer("Aorta[sound:a.mp3]")
-
-    # Nothing to show when there is no expected text.
-    assert reviewer._format_expected_answer("") == ""
-    assert reviewer._format_expected_answer("   ") == ""
-    assert reviewer._format_expected_answer(None) == ""
-
-    # The verdict's diff markup must never leak into the expected line either.
-    for token in ("typeGood", "typeBad", "typeMissed", "typearrow", "id=typeans"):
-        assert token not in line
+    verdict = reviewer._format_match_feedback(True)
+    cleaned = "<p>Back side content</p>"
+    banner = f'<div style="font-family: \'arial\'; font-size: 20px">{verdict}</div>'
+    composed = f"{banner}<hr>{cleaned}"
+    assert composed.index("type-result") < composed.index("Back side content")
+    assert "Expected:" not in composed

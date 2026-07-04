@@ -4,8 +4,6 @@ package com.ichi2.anki.navigation
 
 import android.app.Application
 import android.content.Intent
-import com.ichi2.anki.browser.toIntent
-import com.ichi2.anki.common.destinations.BrowserDestination
 import com.ichi2.anki.common.destinations.CardInfoDestination
 import com.ichi2.anki.common.destinations.CsvImporterDestination
 import com.ichi2.anki.common.destinations.DeckOptionsDestination
@@ -26,7 +24,6 @@ object AnkiDroidNavigator : Navigator {
 
     override fun toIntent(destination: Destination): Intent =
         when (destination) {
-            is BrowserDestination -> destination.toIntent(navContext)
             is CardInfoDestination -> destination.toIntent(navContext)
             is CsvImporterDestination -> destination.toIntent(navContext)
             is DeckOptionsDestination -> destination.toIntent(navContext)

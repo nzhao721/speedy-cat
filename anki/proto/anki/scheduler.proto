@@ -283,6 +283,9 @@ message CardAnswer {
   Rating rating = 4;
   int64 answered_at_millis = 5;
   uint32 milliseconds_taken = 6;
+  // SpeedyCAT: gamed lapse (I don't know / dishonest input) — triggers extra
+  // FSRS punishment beyond a plain Again in the Rust scheduler.
+  bool speedycat_gamed_lapse = 7;
 }
 
 message CustomStudyRequest {

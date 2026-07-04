@@ -30,10 +30,10 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ichi2.anki.CollectionManager.TR
+import com.ichi2.anki.IdsFile
 import com.ichi2.anki.OnContextAndLongClickListener
 import com.ichi2.anki.R
 import com.ichi2.anki.analytics.AnalyticsDialogFragment
-import com.ichi2.anki.browser.IdsFile
 import com.ichi2.anki.common.annotations.NeedsTest
 import com.ichi2.anki.databinding.DialogTagsBinding
 import com.ichi2.anki.launchCatchingTask

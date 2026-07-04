@@ -177,7 +177,7 @@ class MediaChecker:
 
         if out is not None:
             nid, err = out
-            aqt.dialogs.open("Browser", self.mw, search=(SearchNode(nid=nid),))
+            pass
             showText(err, type="html")
         else:
             tooltip(tr.media_check_all_latex_rendered())

@@ -43,12 +43,10 @@ import com.ichi2.anki.CollectionManager.TR
 import com.ichi2.anki.DeckPicker
 import com.ichi2.anki.R
 import com.ichi2.anki.account.AccountActivity.Companion.START_FROM_DECKPICKER
-import com.ichi2.anki.dialogs.help.HelpDialog
 import com.ichi2.anki.getEndpoint
 import com.ichi2.anki.snackbar.showSnackbar
 import com.ichi2.anki.ui.internationalization.sentenceCase
 import com.ichi2.anki.utils.ext.isCompactWidth
-import com.ichi2.anki.utils.ext.showDialogFragment
 import com.ichi2.anki.utils.hideKeyboard
 import com.ichi2.anki.utils.openUrl
 import com.ichi2.anki.withProgress
@@ -173,14 +171,11 @@ class LoginFragment : Fragment(R.layout.fragment_my_account) {
 
         requireView()
             .findViewById<Button>(R.id.lost_mail_instructions)
-            .setOnClickListener { openUrl(resources.getString(R.string.link_ankiweb_lost_email_instructions).toUri()) }
+            .isVisible = false
 
         requireView()
             .findViewById<Button>(R.id.privacy_policy_button)
-            .setOnClickListener {
-                Timber.i("Opening 'Privacy policy'")
-                showDialogFragment(HelpDialog.newPrivacyPolicyInstance())
-            }
+            .isVisible = false
     }
 
     private fun onUsernameChanged(newUsername: String) {

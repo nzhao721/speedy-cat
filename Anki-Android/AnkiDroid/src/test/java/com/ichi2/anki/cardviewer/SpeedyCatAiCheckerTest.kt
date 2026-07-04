@@ -42,9 +42,10 @@ class SpeedyCatAiCheckerTest {
 
     @Test
     fun parsesHonestCorrect() {
-        val result = SpeedyCatAiChecker.parseCheckerResponse(
-            """{"honest_attempt": true, "verdict": "correct", "reason": "matches"}""",
-        )
+        val result =
+            SpeedyCatAiChecker.parseCheckerResponse(
+                """{"honest_attempt": true, "verdict": "correct", "reason": "matches"}""",
+            )
         assertNotNull(result)
         assertTrue(result!!.honestAttempt)
         assertTrue(result.correct)
@@ -54,9 +55,10 @@ class SpeedyCatAiCheckerTest {
     @Test
     fun dishonestIsForcedIncorrect() {
         // Even if the model returns verdict=correct, a dishonest attempt is incorrect.
-        val result = SpeedyCatAiChecker.parseCheckerResponse(
-            """{"honest_attempt": false, "verdict": "correct", "reason": "mash"}""",
-        )
+        val result =
+            SpeedyCatAiChecker.parseCheckerResponse(
+                """{"honest_attempt": false, "verdict": "correct", "reason": "mash"}""",
+            )
         assertNotNull(result)
         assertFalse(result!!.honestAttempt)
         assertEquals("incorrect", result.verdict)
@@ -103,7 +105,7 @@ class SpeedyCatAiCheckerTest {
     }
 
     @Test
-    fun requestBodyMirrorsBrilliantCloneSetup() {
+    fun requestBodyMatchesCloudProxySetup() {
         val body = JSONObject(SpeedyCatAiChecker.buildRequestBody("f", "t", "e"))
         assertEquals("gpt-5.4-mini", body.getString("model"))
         assertEquals(600, body.getInt("max_output_tokens"))
@@ -145,6 +147,34 @@ class SpeedyCatAiCheckerTest {
         assertFalse(SpeedyCatAiChecker.deterministicCorrect("   ", "mitochondria"))
     }
 
+    // --- Static-first AI gate (planReveal) ---
+
+    @Test
+    fun planRevealStaticCorrectSkipsAi() {
+        val plan = SpeedyCatAiChecker.planReveal("Mitochondria", "mitochondria", aiOn = true)
+        assertFalse(plan.needsAi)
+        assertNotNull(plan.decision)
+        assertEquals("correct", plan.decision!!.verdict)
+        assertEquals(SpeedyCatAiChecker.SOURCE_BASELINE, plan.decision!!.source)
+        assertFalse(plan.decision!!.forceAgain)
+    }
+
+    @Test
+    fun planRevealStaticIncorrectWithAiOnNeedsAi() {
+        val plan = SpeedyCatAiChecker.planReveal("mitochondira", "mitochondria", aiOn = true)
+        assertTrue(plan.needsAi)
+        assertNull(plan.decision)
+    }
+
+    @Test
+    fun planRevealStaticIncorrectAiOffUsesBaseline() {
+        val plan = SpeedyCatAiChecker.planReveal("insulin", "mitochondria", aiOn = false)
+        assertFalse(plan.needsAi)
+        assertNotNull(plan.decision)
+        assertEquals("incorrect", plan.decision!!.verdict)
+        assertEquals(SpeedyCatAiChecker.SOURCE_BASELINE, plan.decision!!.source)
+    }
+
     // --- Shared decision logic ---
 
     @Test
@@ -169,14 +199,15 @@ class SpeedyCatAiCheckerTest {
     }
 
     @Test
-    fun decideRevealAiOnDishonestBlocksRevealAndLocks() {
+    fun decideRevealAiOnDishonestBlocksRevealAndStaysOnCard() {
         val result = CheckResult(honestAttempt = false, verdict = "incorrect", reason = "mash")
         val decision = SpeedyCatAiChecker.decideReveal("asdf", "Mitochondria", aiOn = true, aiResult = result)
         assertFalse(decision.reveal)
-        assertTrue(decision.forceAgain)
-        assertTrue(decision.lockRatings)
+        assertFalse(decision.forceAgain)
+        assertFalse(decision.lockRatings)
         assertEquals(MessageType.HONESTY_PROMPT, decision.messageType)
         assertEquals(SpeedyCatAiChecker.SOURCE_AI, decision.source)
+        assertTrue(SpeedyCatAiChecker.isGamingRetryDecision(decision))
     }
 
     @Test
@@ -194,12 +225,19 @@ class SpeedyCatAiCheckerTest {
     }
 
     @Test
-    fun decideRevealAiOffHeuristicLocksOnGaming() {
+    fun decideRevealAiOffHeuristicBlocksGamingWithoutReveal() {
         val decision = SpeedyCatAiChecker.decideReveal("asdf", "mitochondria", aiOn = false, aiResult = null)
-        assertTrue(decision.reveal)
-        assertTrue(decision.forceAgain)
-        assertTrue(decision.lockRatings)
+        assertFalse(decision.reveal)
+        assertFalse(decision.forceAgain)
+        assertFalse(decision.lockRatings)
+        assertEquals(MessageType.HONESTY_PROMPT, decision.messageType)
         assertEquals(SpeedyCatAiChecker.SOURCE_BASELINE, decision.source)
+        assertTrue(SpeedyCatAiChecker.isGamingRetryDecision(decision))
+    }
+
+    @Test
+    fun isGamingRetryDecisionExcludesIdk() {
+        assertFalse(SpeedyCatAiChecker.isGamingRetryDecision(SpeedyCatAiChecker.decideIdk()))
     }
 
     @Test
@@ -214,12 +252,50 @@ class SpeedyCatAiCheckerTest {
         assertEquals(5_000L, SpeedyCatAiChecker.IDK_DELAY_MS)
     }
 
-    // --- AI off without a key ---
+    // --- AI off without a key; proxy URL resolution ---
 
     @Test
-    fun runCheckWithoutKeyReturnsNull() {
-        assertNull(SpeedyCatAiChecker.runCheck("front", "typed", "expected", null))
-        assertNull(SpeedyCatAiChecker.runCheck("front", "typed", "expected", ""))
+    fun runCheckWithoutKeyFallsBackToBaselineWhenProxyUnavailable() {
+        val (result, source) = SpeedyCatAiChecker.runCheck("front", "typed", "expected", null)
+        assertNull(result)
+        assertEquals(SpeedyCatAiChecker.SOURCE_BASELINE, source)
+    }
+
+    @Test
+    fun aiPrefDefaultIsOn() {
+        assertTrue(SpeedyCatAiChecker.AI_PREF_DEFAULT)
+    }
+
+    @Test
+    fun resolveProxyUrlDefault() {
+        assertEquals(
+            "https://us-central1-speedycat-mcat.cloudfunctions.net/checkSpeedycatAnswer",
+            SpeedyCatAiChecker.resolveProxyUrl(),
+        )
+        assertEquals(SpeedyCatAiChecker.DEFAULT_PROXY_URL, SpeedyCatAiChecker.resolveProxyUrl())
+    }
+
+    @Test
+    fun runCheckViaProxyWithEmptyUrlReturnsNull() {
+        assertNull(SpeedyCatAiChecker.runCheckViaProxy("front", "typed", "expected", proxyUrl = ""))
+        assertNull(SpeedyCatAiChecker.runCheckViaProxy("front", "typed", "expected", proxyUrl = "   "))
+    }
+
+    @Test
+    fun aiCheckerAvailableWithDefaultProxy() {
+        assertTrue(SpeedyCatAiChecker.aiCheckerAvailable(null))
+    }
+
+    @Test
+    fun isAiSourceRecognizesDirectAndProxy() {
+        assertTrue(SpeedyCatAiChecker.isAiSource(SpeedyCatAiChecker.SOURCE_AI))
+        assertTrue(SpeedyCatAiChecker.isAiSource(SpeedyCatAiChecker.SOURCE_AI_PROXY))
+        assertFalse(SpeedyCatAiChecker.isAiSource(SpeedyCatAiChecker.SOURCE_BASELINE))
+    }
+
+    @Test
+    fun sourceProxyTracesToNamedModel() {
+        assertEquals("openai/gpt-5.4-mini via speedycat-proxy", SpeedyCatAiChecker.SOURCE_AI_PROXY)
     }
 
     // --- Cloze-deletion extraction (the expected-answer source) ---
@@ -247,6 +323,64 @@ class SpeedyCatAiCheckerTest {
     fun clozeExtractionDropsHintAndReturnsNullWhenAbsent() {
         assertEquals("mitochondria", SpeedyCatAiChecker.clozeAnswerForOrd("{{c1::mitochondria::organelle}}", 1))
         assertNull(SpeedyCatAiChecker.clozeAnswerForOrd("no cloze here", 1))
+    }
+
+    @Test
+    fun clozeExtractionRotationalEquilibriumFromMarkers() {
+        val field =
+            "{{c1::rotational equilibrium}} occurs in the absence of any net torques acting on an object"
+        assertEquals("rotational equilibrium", SpeedyCatAiChecker.clozeAnswerForOrd(field, 1))
+    }
+
+    @Test
+    fun clozeExtractionFromRenderedSpan() {
+        val back =
+            """<span class="cloze" data-ordinal="1">rotational equilibrium</span> occurs in the absence of any net torques acting on an object"""
+        assertEquals("rotational equilibrium", SpeedyCatAiChecker.clozeAnswerForOrd(back, 1))
+    }
+
+    @Test
+    fun extractClozeFromPrerenderedRotationalEquilibrium() {
+        val front = "___ occurs in the absence of any net torques acting on an object"
+        val back =
+            "rotational equilibrium occurs in the absence of any net torques acting on an object"
+        assertEquals(
+            "rotational equilibrium",
+            SpeedyCatAiChecker.extractClozeFromPrerendered(front, back),
+        )
+    }
+
+    @Test
+    fun extractClozeFromPrerenderedBracketBlank() {
+        val front = "[...] occurs in the absence of any net torques acting on an object"
+        val back =
+            "rotational equilibrium occurs in the absence of any net torques acting on an object"
+        assertEquals(
+            "rotational equilibrium",
+            SpeedyCatAiChecker.extractClozeFromPrerendered(front, back),
+        )
+    }
+
+    @Test
+    fun extractClozeFromPrerenderedTranslationalEquilibrium() {
+        val front =
+            "___ equilibrium occurs in the absence of any net forces acting on an object"
+        val back =
+            "Translational equilibrium occurs in the absence of any net forces acting on an object"
+        assertEquals(
+            "Translational",
+            SpeedyCatAiChecker.extractClozeFromPrerendered(front, back),
+        )
+    }
+
+    @Test
+    fun clozeExtractionSkipsFrontPlaceholderSpan() {
+        val front =
+            """<span class="cloze" data-ordinal="1">[...] equilibrium</span> occurs in the absence of any net forces acting on an object"""
+        assertNull(SpeedyCatAiChecker.clozeAnswerForOrd(front, 1))
+        val back =
+            """<span class="cloze" data-ordinal="1">Translational</span> equilibrium occurs in the absence of any net forces acting on an object"""
+        assertEquals("Translational", SpeedyCatAiChecker.clozeAnswerForOrd(back, 1))
     }
 
     // --- Field stripping: expected-answer source cleanup ---

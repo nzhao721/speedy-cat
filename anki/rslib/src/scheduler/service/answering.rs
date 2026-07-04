@@ -22,6 +22,7 @@ impl From<anki_proto::scheduler::CardAnswer> for CardAnswer {
             milliseconds_taken: answer.milliseconds_taken,
             custom_data,
             from_queue: true,
+            speedycat_gamed_lapse: answer.speedycat_gamed_lapse,
         }
     }
 }

@@ -12,6 +12,8 @@ and passed in; this component just renders it in a scrollable column.
 
     export let passageSet: CarsPassageSet | undefined = undefined;
     export let loading = false;
+    /** Section pill badge (hidden during full-length practice). */
+    export let showMetaBadges = true;
 
     $: passage = passageSet?.passage;
 </script>
@@ -25,7 +27,9 @@ and passed in; this component just renders it in a scrollable column.
                 <div class="title">{passage.title}</div>
             {/if}
             <div class="meta">
-                <span class="badge">{sectionShort(passage.section)}</span>
+                {#if showMetaBadges}
+                    <span class="badge">{sectionShort(passage.section)}</span>
+                {/if}
                 {#if passage.discipline}
                     <span class="badge">{passage.discipline}</span>
                 {/if}

@@ -207,4 +207,8 @@ data class Attempt(
     val hintLevelUsed: Int = 0,
     /** Graduated hint ladder: reached level 3 (penalized in Performance). */
     val assisted: Boolean = false,
+    /** Wrong main-question escalation before finalize (zero Performance credit). */
+    val mainWrongFirst: Boolean = false,
+    /** Dashboard: first-ever no-hint attempt (null = retry or hint-assisted). */
+    val firstTryNoHint: Int? = null,
 )

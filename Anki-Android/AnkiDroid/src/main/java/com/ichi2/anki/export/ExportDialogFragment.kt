@@ -36,9 +36,8 @@ import anki.notes.noteIds
 import com.ichi2.anki.CollectionManager
 import com.ichi2.anki.CollectionManager.TR
 import com.ichi2.anki.CollectionManager.withCol
+import com.ichi2.anki.IdsFile
 import com.ichi2.anki.R
-import com.ichi2.anki.browser.IdsFile
-import com.ichi2.anki.browser.removeSafely
 import com.ichi2.anki.common.ALL_DECKS_ID
 import com.ichi2.anki.common.time.TimeManager
 import com.ichi2.anki.common.time.getTimestamp
@@ -50,6 +49,7 @@ import com.ichi2.anki.exportSelectedCards
 import com.ichi2.anki.exportSelectedNotes
 import com.ichi2.anki.libanki.DeckId
 import com.ichi2.anki.libanki.DeckNameId
+import com.ichi2.anki.removeSafely
 import com.ichi2.anki.requireAnkiActivity
 import com.ichi2.anki.ui.BasicItemSelectedListener
 import com.ichi2.anki.ui.internationalization.sentenceCase

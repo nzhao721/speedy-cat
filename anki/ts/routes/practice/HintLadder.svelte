@@ -6,131 +6,143 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 SpeedyCAT: the graduated hint ladder for a practice question. Each hint is a
 self-contained 4-choice SUBQUESTION that scaffolds toward the main question
 without revealing its answer. The learner works through them ONE AT A TIME:
-they MUST answer the currently-revealed subquestion (no skip / no
+they MUST answer the currently-revealed subquestion correctly (no skip / no
 next-without-answering) before revealing the next tier or re-answering the main
 question. Presentational only — the parent (PracticeRunner) owns the progress
-state, the trigger paths (Request-hint button + wrong-answer escalation) and the
-assisted/hint_level_used tracking.
+state, the timed "I'm stuck" / "I'm still stuck" triggers on the main question,
+and the assisted/hint_level_used tracking.
 -->
 <script lang="ts">
     import { createEventDispatcher } from "svelte";
 
-    import { hintAnswerCorrect, pendingHintIndex, type HintProgress, type HintSubquestion } from "./lib";
+    import {
+        canReturnToMain,
+        canSubmitHintAnswer,
+        hintChoicesEnabled,
+        hintDisplayOrder,
+        pendingHintIndex,
+        type HintProgress,
+        type HintSubquestion,
+    } from "./lib";
 
     export let hints: HintSubquestion[] = [];
     export let progress: HintProgress = { revealed: 0, picks: {} };
+    /** Tentative selection for the current (not-yet-answered) subquestion. */
+    export let pendingChoice = "";
     /** Hide the interactive affordances (main question already answered). */
     export let locked = false;
+    /** Seconds remaining before a wrong hint answer can be resubmitted. */
+    export let hintCooldown = 0;
 
     const dispatch = createEventDispatcher<{
-        requestHint: void;
+        pendingChoiceChange: string;
         answerHint: { index: number; label: string };
+        returnToMain: void;
     }>();
-
-    // Tentative selection for the current (not-yet-answered) subquestion, before
-    // the learner commits it. Answered subquestions read their locked pick from
-    // `progress.picks`.
-    let choice: Record<number, string> = {};
 
     $: pending = pendingHintIndex(progress);
     $: allRevealed = progress.revealed >= hints.length;
-    $: canRevealNext = !locked && progress.revealed < hints.length && pending === -1;
-
-    function subClass(index: number, label: string): string {
-        const answered = progress.picks[index];
-        if (answered !== undefined) {
-            const correct = hints[index]?.correctAnswer;
-            if (label === correct) {
-                return "sub-choice correct";
-            }
-            if (label === answered && label !== correct) {
-                return "sub-choice incorrect";
-            }
-            return "sub-choice";
-        }
-        return label === choice[index] ? "sub-choice selected" : "sub-choice";
-    }
+    $: canSubmit =
+        pending >= 0
+        && canSubmitHintAnswer(pendingChoice, hintCooldown);
 </script>
 
+{#if progress.revealed > 0}
 <div class="hint-ladder">
-    {#if progress.revealed === 0}
-        <div class="ladder-intro">
-            <span class="intro-text">Stuck? Work through a guided hint before answering.</span>
-            <button class="hint-btn" disabled={locked} on:click={() => dispatch("requestHint")}>
-                {"\u{1F4A1}"} Request a hint
-            </button>
-        </div>
-    {:else}
         <div class="ladder-head">Guided hints</div>
-        {#each hints.slice(0, progress.revealed) as hint, i (i)}
-            {@const answered = progress.picks[i] !== undefined}
-            <div class="sub" class:answered>
-                <div class="sub-head">
-                    <span class="sub-num">Hint {i + 1}</span>
-                    <span class="sub-level">Level {hint.level || i + 1}</span>
-                </div>
-                <div class="sub-prompt">{hint.prompt}</div>
-                <div class="sub-choices">
-                    {#each hint.choices as c (c.label)}
-                        <button
-                            class={subClass(i, c.label)}
-                            disabled={answered || locked || i !== progress.revealed - 1}
-                            aria-pressed={c.label === (progress.picks[i] ?? choice[i])}
-                            on:click={() => {
-                                if (!answered && i === progress.revealed - 1) {
-                                    choice = { ...choice, [i]: c.label };
-                                }
-                            }}
-                        >
-                            <span class="sub-label">{c.label}</span>
-                            <span class="sub-text">{c.text}</span>
-                            {#if answered && c.label === hint.correctAnswer}
-                                <span class="sub-mark">{"\u2713"}</span>
-                            {:else if answered && c.label === progress.picks[i]}
-                                <span class="sub-mark">{"\u2717"}</span>
+        <!-- Most-recently-revealed tier first (reverse of progression order): the
+             ladder still advances L1 -> L2 -> L3 with no skipping, only the
+             DISPLAY is reversed so the newest hint sits directly under the main
+             question. `i` remains each tier's true ladder index. -->
+        {#each hintDisplayOrder(progress.revealed) as i (i)}
+            {@const hint = hints[i]}
+            {#if hint}
+                {@const answered = progress.picks[i] !== undefined}
+                <div class="sub" class:answered>
+                    <div class="sub-head">
+                        <span class="sub-num">Hint {i + 1}</span>
+                        <span class="sub-level">Level {hint.level || i + 1}</span>
+                    </div>
+                    <div class="sub-prompt">{hint.prompt}</div>
+                    <div class="sub-choices">
+                        {#each hint.choices as c (c.label)}
+                            {@const isCurrent = pending === i}
+                            {@const picked = progress.picks[i] ?? (isCurrent ? pendingChoice : "")}
+                            {@const choicesEnabled = hintChoicesEnabled(
+                                answered,
+                                locked,
+                                isCurrent,
+                                hintCooldown,
+                            )}
+                            {@const isSelected =
+                                !answered && isCurrent && c.label === pendingChoice}
+                            <button
+                                class="sub-choice"
+                                class:selected={isSelected}
+                                class:correct={answered && c.label === hint.correctAnswer}
+                                disabled={!choicesEnabled}
+                                aria-pressed={c.label === picked}
+                                on:click={() => {
+                                    if (choicesEnabled) {
+                                        dispatch("pendingChoiceChange", c.label);
+                                    }
+                                }}
+                            >
+                                <span class="radio" aria-hidden="true"></span>
+                                <span class="sub-label">{c.label}</span>
+                                <span class="sub-text">{c.text}</span>
+                                {#if answered && c.label === hint.correctAnswer}
+                                    <span class="sub-mark">{"\u2713"}</span>
+                                {/if}
+                            </button>
+                        {/each}
+                    </div>
+                    {#if answered}
+                        <div class="sub-verdict right">Correct</div>
+                        {#if hint.rationale}
+                            <div class="sub-rationale">{hint.rationale}</div>
+                        {/if}
+                        {#if canReturnToMain(progress, i, locked)}
+                            <div class="sub-actions">
+                                <button
+                                    class="hint-btn primary return-main"
+                                    on:click={() => dispatch("returnToMain")}
+                                >
+                                    Return to main question
+                                </button>
+                            </div>
+                        {/if}
+                    {:else if !locked && pending === i}
+                        <div class="sub-actions">
+                            <button
+                                class="hint-btn primary"
+                                disabled={!canSubmit}
+                                on:click={() =>
+                                    pendingChoice
+                                    && dispatch("answerHint", { index: i, label: pendingChoice })}
+                            >
+                                Submit hint answer
+                            </button>
+                            {#if hintCooldown > 0}
+                                <span class="sub-note cooldown">
+                                    Not quite — try again in {hintCooldown}s.
+                                </span>
+                            {:else}
+                                <span class="sub-note">Answer this hint to continue.</span>
                             {/if}
-                        </button>
-                    {/each}
-                </div>
-                {#if answered}
-                    <div
-                        class="sub-verdict"
-                        class:right={hintAnswerCorrect(hint, progress.picks[i] ?? "")}
-                    >
-                        {hintAnswerCorrect(hint, progress.picks[i] ?? "")
-                            ? "Correct"
-                            : `Not quite — the answer to this hint is ${hint.correctAnswer}`}
-                    </div>
-                    {#if hint.rationale}
-                        <div class="sub-rationale">{hint.rationale}</div>
+                        </div>
                     {/if}
-                {:else if !locked}
-                    <div class="sub-actions">
-                        <button
-                            class="hint-btn primary"
-                            disabled={!choice[i]}
-                            on:click={() =>
-                                choice[i] && dispatch("answerHint", { index: i, label: choice[i] })}
-                        >
-                            Submit hint answer
-                        </button>
-                        <span class="sub-note">Answer this hint to continue.</span>
-                    </div>
-                {/if}
-            </div>
+                </div>
+            {/if}
         {/each}
 
-        {#if canRevealNext}
-            <button class="hint-btn" on:click={() => dispatch("requestHint")}>
-                {"\u{1F4A1}"} Reveal next hint
-            </button>
-        {:else if allRevealed && pending === -1 && !locked}
+        {#if allRevealed && pending === -1 && !locked}
             <div class="ladder-done">
                 You've worked through all the hints — now answer the question above.
             </div>
         {/if}
-    {/if}
 </div>
+{/if}
 
 <style lang="scss">
     .hint-ladder {
@@ -141,17 +153,6 @@ assisted/hint_level_used tracking.
         border: 1px solid var(--border-subtle);
         border-radius: 10px;
         background: var(--canvas-inset);
-    }
-    .ladder-intro {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
-    .intro-text {
-        color: var(--fg-subtle);
-        font-size: 0.9rem;
     }
     .ladder-head {
         font-weight: 700;
@@ -189,49 +190,97 @@ assisted/hint_level_used tracking.
     .sub-choices {
         display: flex;
         flex-direction: column;
-        gap: 0.35rem;
+        gap: 0.5rem;
     }
     .sub-choice {
         display: flex;
         align-items: center;
-        gap: 0.55rem;
+        gap: 0.6rem;
         text-align: left;
-        padding: 0.5rem 0.7rem;
-        border-radius: 7px;
+        padding: 0.7rem 0.9rem;
+        border-radius: 8px;
+        // 2px base border on every state so the selected/correct colouring only
+        // swaps the colour (no layout shift), and reads clearly on the
+        // software-rendered Qt webview.
         border: 2px solid var(--border);
-        background: var(--canvas);
+        background: var(--canvas-elevated);
         color: var(--fg);
         cursor: pointer;
-        line-height: 1.35;
+        line-height: 1.4;
+        appearance: none;
+        transition:
+            background 0.1s,
+            border-color 0.1s;
+    }
+    .sub-choice:hover:not(:disabled) {
+        border-color: var(--border-focus);
+    }
+    .sub-choice:focus-visible {
+        outline: 2px solid var(--border-focus);
+        outline-offset: 2px;
     }
     .sub-choice:disabled {
         cursor: default;
+        // Do not let the UA or ancestor `button:disabled { opacity: … }` wash
+        // out the pre-submit selected highlight on the active hint tier.
+        opacity: 1;
     }
+    // Pre-submit "picked" state — IDENTICAL to the main question's
+    // `.choice.selected` (QuestionView.svelte): the theme accent
+    // (`--button-primary-bg`) border + label + radio and the theme's
+    // `--selected-bg` selection tint for the fill.
     .sub-choice.selected {
-        border-color: #2f6fed;
-        background: rgba(47, 111, 237, 0.28);
+        border-color: var(--button-primary-bg);
+        background: var(--selected-bg);
+        color: var(--fg);
         font-weight: 600;
+    }
+    .sub-choice.selected .sub-label {
+        color: var(--button-primary-bg);
+        font-weight: 700;
+    }
+    .sub-choice.selected .sub-text {
+        font-weight: 700;
+    }
+    .sub-choice.selected .radio {
+        border-color: var(--button-primary-bg);
+        background: var(--button-primary-bg);
+    }
+    .sub-choice.correct .radio {
+        border-color: #1f9d4d;
+        background: #1f9d4d;
+    }
+    .radio {
+        flex: 0 0 auto;
+        width: 1.15rem;
+        height: 1.15rem;
+        border-radius: 50%;
+        border: 2px solid var(--border-strong, var(--border));
+        background: transparent;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .sub-choice.selected .radio::after,
+    .sub-choice.correct .radio::after {
+        content: "";
+        width: 0.42rem;
+        height: 0.42rem;
+        border-radius: 50%;
+        background: #fff;
     }
     .sub-choice.correct {
         border-color: #1f9d4d;
         background: rgba(31, 157, 77, 0.26);
         font-weight: 600;
     }
-    .sub-choice.incorrect {
-        border-color: #d1434b;
-        background: rgba(209, 67, 75, 0.26);
-        font-weight: 600;
-    }
     .sub-label {
         font-weight: 700;
-        min-width: 1.1rem;
+        min-width: 1.2rem;
     }
     .sub-text {
         flex: 1;
         white-space: pre-wrap;
-    }
-    .sub-mark {
-        font-weight: 700;
     }
     .sub-verdict {
         font-weight: 700;
@@ -256,6 +305,10 @@ assisted/hint_level_used tracking.
     .sub-note {
         color: var(--fg-subtle);
         font-size: 0.8rem;
+    }
+    .sub-note.cooldown {
+        color: #b26a00;
+        font-weight: 600;
     }
     .ladder-done {
         color: var(--fg-subtle);

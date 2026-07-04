@@ -73,6 +73,11 @@ button {
 
 #outer {
     border-top: 1px solid color(border);
+    /* Room for interval labels (.nobold/.stattxt) floated above ease buttons.
+       Without this padding they overflow the measured body height and get
+       clipped by toolbar-bottom's overflow:hidden. */
+    padding-top: 18px;
+    box-sizing: border-box;
     /* Better compatibility with graphics pad/touchscreen */
     -webkit-user-select: none;
 }

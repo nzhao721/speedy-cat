@@ -6,7 +6,6 @@ from . import (
     addmodel,
     addonconf,
     addons,
-    browser,
     browserdisp,
     browseropts,
     changemap,

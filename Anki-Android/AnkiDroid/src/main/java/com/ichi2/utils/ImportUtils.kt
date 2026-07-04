@@ -217,7 +217,6 @@ object ImportUtils {
                         return ImportResult.Failure(
                             AnkiDroidApp.appResources.getString(
                                 R.string.import_error_content_provider,
-                                AnkiDroidApp.manualUrl + "#importing",
                             ),
                         )
                     }

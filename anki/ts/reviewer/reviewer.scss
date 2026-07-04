@@ -163,6 +163,11 @@ code#typeans {
 // without a distracting per-letter comparison. A simple whole-answer ✓/✗
 // indicator (see reviewer.py `_format_match_feedback`) conveys correctness
 // instead. Mirrors the mobile reviewer restyle.
+#type-result {
+    text-align: center;
+    margin-top: 0;
+}
+
 .typeGood,
 .typeBad,
 .typeMissed {

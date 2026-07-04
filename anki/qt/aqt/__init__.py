@@ -110,7 +110,7 @@ import aqt.forms
 # - make preferences modal? cmd+q does wrong thing
 
 
-from aqt import addcards, addons, browser, editcurrent, filtered_deck  # isort:skip
+from aqt import addcards, addons, editcurrent, filtered_deck  # isort:skip
 from aqt import stats, about, preferences, mediasync  # isort:skip
 
 
@@ -118,7 +118,6 @@ class DialogManager:
     _dialogs: dict[str, list] = {
         "AddCards": [addcards.AddCards, None],
         "AddonsDialog": [addons.AddonsDialog, None],
-        "Browser": [browser.Browser, None],
         "EditCurrent": [editcurrent.EditCurrent, None],
         "FilteredDeckConfigDialog": [filtered_deck.FilteredDeckConfigDialog, None],
         "DeckStats": [stats.DeckStats, None],

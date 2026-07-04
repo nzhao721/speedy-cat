@@ -3,7 +3,6 @@
 
 import type { ImportResponse_Log, ImportResponse_Note } from "@generated/anki/import_export_pb";
 import { CsvMetadata_DupeResolution } from "@generated/anki/import_export_pb";
-import { searchInBrowser } from "@generated/backend";
 import * as tr from "@generated/ftl";
 
 import { checkCircle, closeBox, newBox, updateIcon } from "$lib/components/icons";
@@ -44,7 +43,7 @@ export function getSummaries(log: ImportResponse_Log): SummarizedLogQueues[] {
             ],
             action: tr.addingAdded(),
             summaryTemplate: tr.importingNotesAdded,
-            canBrowse: true,
+            canBrowse: false,
             icon: newBox,
         },
         {
@@ -56,7 +55,7 @@ export function getSummaries(log: ImportResponse_Log): SummarizedLogQueues[] {
             ],
             action: tr.importingSkipped(),
             summaryTemplate: tr.importingExistingNotesSkipped,
-            canBrowse: true,
+            canBrowse: false,
             icon: checkCircle,
         },
         {
@@ -68,7 +67,7 @@ export function getSummaries(log: ImportResponse_Log): SummarizedLogQueues[] {
             ],
             action: tr.importingUpdated(),
             summaryTemplate: tr.importingNotesUpdated,
-            canBrowse: true,
+            canBrowse: false,
             icon: updateIcon,
         },
         {
@@ -118,13 +117,4 @@ export function getRows(summaries: SummarizedLogQueues[]): NoteRow[] {
         }
     }
     return rows;
-}
-
-export function showInBrowser(notes: ImportResponse_Note[]): void {
-    searchInBrowser({
-        filter: {
-            case: "nids",
-            value: { ids: notes.map((note) => note.id!.nid) },
-        },
-    });
 }

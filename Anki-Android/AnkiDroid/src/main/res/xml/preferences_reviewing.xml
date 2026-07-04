@@ -55,7 +55,7 @@
             android:summary="@string/force_active_recall_summ"
             android:title="@string/force_active_recall_title" />
         <SwitchPreferenceCompat
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="@string/speedycat_ai_checker_preference"
             android:summary="@string/speedycat_ai_checker_summ"
             android:title="@string/speedycat_ai_checker_title" />

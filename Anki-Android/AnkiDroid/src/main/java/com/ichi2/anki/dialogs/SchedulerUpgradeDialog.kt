@@ -9,8 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.ichi2.anki.CollectionManager.TR
 import com.ichi2.anki.R
-import com.ichi2.anki.common.android.AdaptionUtil
-import com.ichi2.anki.utils.openUrl
 
 /**
  * A reusable, non-dismissible dialog that prompts the user to upgrade the scheduler.
@@ -35,11 +33,7 @@ class SchedulerUpgradeDialog(
                 .setMessage(TR.schedulingUpdateRequired())
                 .setPositiveButton(R.string.dialog_ok, null)
                 .setNegativeButton(R.string.dialog_cancel, null)
-                .apply {
-                    if (AdaptionUtil.hasWebBrowser(activity)) {
-                        setNeutralButton(TR.schedulingUpdateMoreInfoButton(), null)
-                    }
-                }.create()
+                .create()
 
         dialog.setCancelable(false)
         dialog.setCanceledOnTouchOutside(false)
@@ -58,10 +52,6 @@ class SchedulerUpgradeDialog(
 
             dialog.getButton(AlertDialog.BUTTON_NEGATIVE)?.setOnClickListener {
                 dismissAndCancel()
-            }
-
-            dialog.getButton(AlertDialog.BUTTON_NEUTRAL)?.setOnClickListener {
-                activity.openUrl(R.string.link_scheduler_upgrade_faq)
             }
 
             dialog.setOnKeyListener { _, keyCode, event ->

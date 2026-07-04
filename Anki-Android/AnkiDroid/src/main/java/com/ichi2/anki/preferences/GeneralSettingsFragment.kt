@@ -13,7 +13,6 @@ import com.ichi2.anki.CollectionManager.withCol
 import com.ichi2.anki.R
 import com.ichi2.anki.common.crashreporting.CrashReportService
 import com.ichi2.anki.contextmenu.AnkiCardContextMenu
-import com.ichi2.anki.contextmenu.CardBrowserContextMenu
 import com.ichi2.anki.launchCatchingTask
 import com.ichi2.utils.LanguageUtil
 import com.ichi2.utils.LanguageUtil.getStringByLocale
@@ -57,14 +56,6 @@ class GeneralSettingsFragment : SettingsFragment() {
                 )
             setOnPreferenceChangeListener { newValue ->
                 AnkiCardContextMenu.ensureConsistentStateWithPreferenceStatus(requireContext(), newValue)
-            }
-        }
-        // Card browser context menu
-        requirePreference<SwitchPreferenceCompat>(R.string.card_browser_external_context_menu_key).apply {
-            title = getString(R.string.card_browser_enable_external_context_menu, getString(R.string.card_browser_context_menu))
-            summary = getString(R.string.card_browser_enable_external_context_menu_summary, getString(R.string.card_browser_context_menu))
-            setOnPreferenceChangeListener { newValue ->
-                CardBrowserContextMenu.ensureConsistentStateWithPreferenceStatus(requireContext(), newValue)
             }
         }
     }

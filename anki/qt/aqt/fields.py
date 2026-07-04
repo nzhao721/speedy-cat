@@ -18,6 +18,7 @@ from aqt.utils import (
     askUser,
     disable_help_button,
     getOnlyText,
+    hide_button_box_help_button,
     openHelp,
     show_warning,
     tooltip,
@@ -51,9 +52,7 @@ class FieldDialog(QDialog):
         )
 
         disable_help_button(self)
-        help_button = self.form.buttonBox.button(QDialogButtonBox.StandardButton.Help)
-        assert help_button is not None
-        help_button.setAutoDefault(False)
+        hide_button_box_help_button(self.form.buttonBox)
 
         cancel_button = self.form.buttonBox.button(
             QDialogButtonBox.StandardButton.Cancel
@@ -92,7 +91,6 @@ class FieldDialog(QDialog):
         qconnect(f.fieldRename.clicked, self.onRename)
         qconnect(f.fieldPosition.clicked, self.onPosition)
         qconnect(f.sortField.clicked, self.onSortField)
-        qconnect(f.buttonBox.helpRequested, self.onHelp)
 
     def onDrop(self, ev: QDropEvent) -> None:
         fieldList = self.form.fieldList

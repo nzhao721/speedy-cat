@@ -15,6 +15,7 @@ use rand::SeedableRng;
 
 use crate::practice::attempt_source_clause;
 use crate::practice::difficulty_to_db;
+use crate::practice::ewma;
 use crate::practice::new_full_length_attempt_id;
 use crate::practice::new_session_id;
 use crate::practice::scoring;
@@ -161,6 +162,20 @@ impl crate::services::PracticeService for Collection {
         // internally consistent regardless of what the client sends.
         let hint_level_used = input.hint_level_used.min(3);
         let assisted = input.assisted || hint_level_used >= 3;
+        let main_wrong_first = input.main_wrong_first;
+        let existing_first_try = self.storage.attempt_first_try_no_hint(&attempt_id)?;
+        let replacing = existing_first_try.is_some();
+        let question_seen = self
+            .storage
+            .question_attempted_before(&input.question_id, &attempt_id)?;
+        let first_try_no_hint = crate::practice::performance::first_try_no_hint(
+            question_seen,
+            replacing,
+            existing_first_try.flatten(),
+            hint_level_used,
+            &input.selected_answer,
+            input.correct,
+        );
         let attempt = NewAttempt {
             id: &attempt_id,
             session_id: Some(&input.session_id),
@@ -174,6 +189,8 @@ impl crate::services::PracticeService for Collection {
             answered_at,
             hint_level_used,
             assisted,
+            main_wrong_first,
+            first_try_no_hint,
         };
         self.transact_no_undo(|col| col.storage.add_practice_attempt(&attempt))?;
         Ok(pb::RecordAttemptResponse { attempt_id })
@@ -302,6 +319,8 @@ impl crate::services::PracticeService for Collection {
             // Full-length exams have no hint ladder.
             hint_level_used: 0,
             assisted: false,
+            main_wrong_first: false,
+            first_try_no_hint: None,
         };
         self.transact_no_undo(|col| col.storage.add_practice_attempt(&attempt))?;
         Ok(pb::RecordAttemptResponse { attempt_id })
@@ -317,55 +336,34 @@ impl crate::services::PracticeService for Collection {
             .or_invalid(format!("unknown attempt_id: {}", input.attempt_id))?;
         let counts = self.storage.full_length_section_counts(&input.attempt_id)?;
 
-        let mut section_results = Vec::new();
-        let mut stored_results = Vec::new();
-        let mut total_correct = 0u32;
-        let mut total_questions = 0u32;
-        let mut scaled_sum = 0u32;
-        let mut scaled_sections = 0u32;
-        for (section_db, correct, total, time) in &counts {
-            total_correct += correct;
-            total_questions += total;
-            // Number-correct -> scaled (118–132) via the representative averaged
-            // AAMC-anchored conversion (see practice::scoring). An ESTIMATE: our
-            // full-length forms are AI-generated proof-of-concept, and AAMC
-            // equates each real form so no exact table exists.
-            let scaled_score = scoring::section_scaled_score(*correct, *total);
-            if let Some(s) = scaled_score {
-                scaled_sum += s;
-                scaled_sections += 1;
-            }
-            section_results.push(pb::SectionResult {
-                section: section_from_db(section_db),
-                correct: *correct,
-                total: *total,
-                time_seconds: *time,
-                scaled_score,
-            });
-            stored_results.push(StoredSectionResult {
+        let (section_results, total_correct, total_questions, overall_scaled_score) =
+            section_results_from_counts(&counts);
+        let stored_results: Vec<StoredSectionResult> = section_results
+            .iter()
+            .zip(counts.iter())
+            .map(|(sr, (section_db, correct, total, time))| StoredSectionResult {
                 section: section_db.clone(),
                 correct: *correct,
                 total: *total,
                 time_seconds: *time,
-                scaled_score,
-            });
-        }
-
-        // Overall scaled total = sum of the per-section scaled scores, clamped to
-        // the valid range for the number of scored sections (472–528 for a full
-        // four-section exam). None when no section could be scored.
-        let overall_scaled_score = (scaled_sections > 0)
-            .then(|| scoring::clamp_total_for_sections(scaled_sum, scaled_sections));
+                scaled_score: sr.scaled_score,
+            })
+            .collect();
 
         let results_json = serde_json::to_string(&stored_results)?;
         let now = TimestampSecs::now().0;
         let attempt_id = input.attempt_id.clone();
+        let prior_incomplete = self
+            .storage
+            .count_incomplete_full_length_attempts(Some(&attempt_id))?;
+        let counts_for_readiness = prior_incomplete == 0;
         self.transact_no_undo(|col| {
             col.storage.complete_full_length_attempt(
                 &attempt_id,
                 &results_json,
                 overall_scaled_score,
                 now,
+                counts_for_readiness,
             )
         })?;
 
@@ -376,6 +374,138 @@ impl crate::services::PracticeService for Collection {
             overall_scaled_score,
             total_correct,
             total_questions,
+            counts_for_readiness,
+        })
+    }
+
+    fn abandon_full_length_attempt(
+        &mut self,
+        input: pb::AbandonFullLengthAttemptRequest,
+    ) -> Result<()> {
+        let (_, completed_at) = self
+            .storage
+            .get_full_length_attempt(&input.attempt_id)?
+            .or_invalid(format!("unknown attempt_id: {}", input.attempt_id))?;
+        require!(
+            completed_at.is_none(),
+            "full-length attempt {} is already finished",
+            input.attempt_id
+        );
+        let now = TimestampSecs::now().0;
+        let attempt_id = input.attempt_id.clone();
+        self.transact_no_undo(|col| col.storage.abandon_full_length_attempt(&attempt_id, now))?;
+        Ok(())
+    }
+
+    fn list_full_length_attempts(
+        &mut self,
+        _input: pb::ListFullLengthAttemptsRequest,
+    ) -> Result<pb::ListFullLengthAttemptsResponse> {
+        let rows = self.storage.list_completed_full_length_attempts()?;
+        let attempts = rows
+            .into_iter()
+            .map(|row| pb::FullLengthAttemptSummary {
+                attempt_id: row.attempt_id,
+                test_id: row.test_id,
+                test_title: row.test_title,
+                started_at: row.started_at,
+                completed_at: row.completed_at,
+                overall_scaled_score: row.overall_scaled_score,
+                total_correct: row.total_correct,
+                total_questions: row.total_questions,
+                counts_for_readiness: row.counts_for_readiness,
+            })
+            .collect();
+        Ok(pb::ListFullLengthAttemptsResponse { attempts })
+    }
+
+    fn get_full_length_stats(
+        &mut self,
+        input: pb::GetFullLengthStatsRequest,
+    ) -> Result<pb::FullLengthStats> {
+        let meta = self
+            .storage
+            .get_full_length_attempt_meta(&input.attempt_id)?
+            .or_invalid(format!("unknown attempt_id: {}", input.attempt_id))?;
+        require!(
+            meta.completed_at.is_some() && !meta.abandoned,
+            "attempt {} is not a completed full-length test",
+            input.attempt_id
+        );
+        let test = self
+            .storage
+            .get_full_length_test(&meta.test_id)?
+            .or_invalid(format!("unknown test_id: {}", meta.test_id))?;
+        let counts = self.storage.full_length_section_counts(&input.attempt_id)?;
+        let (section_results, total_correct, total_questions, overall_scaled_score) =
+            section_results_from_counts(&counts);
+        let topic_scores = self
+            .storage
+            .full_length_topic_scores(&input.attempt_id)?
+            .into_iter()
+            .map(|(section_db, topic, correct, total)| pb::TopicScore {
+                topic,
+                section: section_from_db(&section_db),
+                correct,
+                total,
+            })
+            .collect();
+        Ok(pb::FullLengthStats {
+            attempt_id: input.attempt_id,
+            test_id: meta.test_id,
+            test_title: test.title,
+            section_results,
+            overall_scaled_score,
+            total_correct,
+            total_questions,
+            topic_scores,
+            counts_for_readiness: meta.counts_for_readiness,
+        })
+    }
+
+    fn get_full_length_review(
+        &mut self,
+        input: pb::GetFullLengthReviewRequest,
+    ) -> Result<pb::GetFullLengthReviewResponse> {
+        let meta = self
+            .storage
+            .get_full_length_attempt_meta(&input.attempt_id)?
+            .or_invalid(format!("unknown attempt_id: {}", input.attempt_id))?;
+        require!(
+            meta.completed_at.is_some() && !meta.abandoned,
+            "attempt {} is not available for review",
+            input.attempt_id
+        );
+        let test = self
+            .storage
+            .get_full_length_test(&meta.test_id)?
+            .or_invalid(format!("unknown test_id: {}", meta.test_id))?;
+        let answers = self
+            .storage
+            .full_length_attempt_answers(&input.attempt_id)?;
+        let answer_map: HashMap<String, (String, bool)> = answers
+            .into_iter()
+            .map(|(qid, selected, correct, _)| (qid, (selected, correct)))
+            .collect();
+        let questions = self.storage.questions_for_test(&meta.test_id)?;
+        let mut items = Vec::new();
+        for question in questions {
+            let (selected_answer, correct) = answer_map
+                .get(&question.id)
+                .map(|(s, c)| (s.clone(), *c))
+                .unwrap_or_else(|| (String::new(), false));
+            items.push(pb::FullLengthReviewItem {
+                question: Some(question),
+                selected_answer,
+                correct,
+            });
+        }
+        Ok(pb::GetFullLengthReviewResponse {
+            attempt_id: input.attempt_id,
+            test_id: meta.test_id,
+            test_title: test.title.clone(),
+            test: Some(test),
+            items,
         })
     }
 
@@ -387,12 +517,17 @@ impl crate::services::PracticeService for Collection {
     ) -> Result<pb::GetTopicStatsResponse> {
         let section_db = input.section.map(|s| section_to_db(s).to_string());
         let source_clause = attempt_source_clause(input.source);
-        let topics = self
-            .storage
-            .topic_stats(section_db.as_deref(), source_clause)?;
-        let sections = self
-            .storage
-            .section_stats(section_db.as_deref(), source_clause)?;
+        let first_only = input.first_attempt_no_hint_only;
+        let topics = self.storage.topic_stats(
+            section_db.as_deref(),
+            source_clause,
+            first_only,
+        )?;
+        let sections = self.storage.section_stats(
+            section_db.as_deref(),
+            source_clause,
+            first_only,
+        )?;
         Ok(pb::GetTopicStatsResponse { topics, sections })
     }
 
@@ -414,7 +549,28 @@ impl crate::services::PracticeService for Collection {
             readiness_scaled_score: scaled.as_ref().map(|s| s.score),
             readiness_scaled_low: scaled.as_ref().map(|s| s.low),
             readiness_scaled_high: scaled.as_ref().map(|s| s.high),
+            performance_time_penalty_applied: performance_avg_seconds
+                > crate::practice::performance::PERFORMANCE_TARGET_SECONDS,
         })
+    }
+
+    fn reset_speedycat_review_session(&mut self) -> Result<pb::SpeedycatGamingStatus> {
+        self.speedycat_reset_review_session()
+    }
+
+    fn record_speedycat_honest_review(&mut self) -> Result<pb::SpeedycatGamingStatus> {
+        self.speedycat_record_honest_review()
+    }
+
+    fn record_speedycat_gamed_lapse(
+        &mut self,
+        input: pb::RecordSpeedycatGamedLapseRequest,
+    ) -> Result<pb::SpeedycatGamingStatus> {
+        self.speedycat_record_gamed_lapse(input.idk)
+    }
+
+    fn get_speedycat_gaming_status(&mut self) -> Result<pb::SpeedycatGamingStatus> {
+        self.speedycat_gaming_status()
     }
 }
 
@@ -489,6 +645,15 @@ impl Collection {
         const SOURCE: &str =
             "Anki FSRS retrievability (StatsService graph data → retrievability.average)";
         const METHOD: &str = "mean ± 1.96·SE of per-card FSRS retrievability";
+        if let Some(message) = self.speedycat_memory_suppression_message()? {
+            let stats = self.speedycat_gaming_stats()?;
+            return Ok(give_up_pillar(
+                SOURCE,
+                METHOD,
+                message,
+                stats.daily_reviews,
+            ));
+        }
         let graphs = self.graph_data_for_search(deck_search, 0)?;
         if !graphs.fsrs {
             return Ok(give_up_pillar(
@@ -528,14 +693,14 @@ impl Collection {
         }
     }
 
-    /// Pillar 2 — Performance: accuracy over answered practice questions, with a
-    /// Wilson 95% interval. Also returns the average seconds per question.
+    /// Pillar 2 — Performance: time-weighted accuracy (EWMA, 7-day half-life)
+    /// over answered practice questions, with a Wilson 95% interval on effective
+    /// sample size. Also returns the EWMA average seconds per question.
     fn readiness_performance(&self) -> Result<(pb::ReadinessPillar, f64)> {
         const SOURCE: &str = "SpeedyCAT practice sessions (practice_attempts store)";
-        const METHOD: &str = "practice accuracy with a Wilson 95% score interval; \
-             assisted-correct answers (hint ladder reached level 3) do not count as \
-             correct (anti-gaming penalty)";
-        let (correct, answered, total_time) = self.storage.practice_accuracy_totals()?;
+        const METHOD: &str = crate::practice::performance::PERFORMANCE_METHOD;
+        let rows = self.storage.practice_performance_observations()?;
+        let answered = rows.len() as u32;
         if answered < MIN_PERFORMANCE_ATTEMPTS {
             return Ok((
                 give_up_pillar(
@@ -550,8 +715,20 @@ impl Collection {
                 0.0,
             ));
         }
-        let (value, low, high) = wilson_interval(correct, answered, READINESS_Z);
-        let avg_seconds = total_time as f64 / answered as f64;
+        let now = TimestampSecs::now().0;
+        let credit_obs: Vec<(f64, i64)> = rows.iter().map(|(c, t, _)| (*c, *t)).collect();
+        let time_obs: Vec<(u32, i64)> = rows.iter().map(|(_, t, s)| (*s, *t)).collect();
+        let agg = ewma::ewma_aggregate(&credit_obs, ewma::PERFORMANCE_HALF_LIFE_DAYS, now);
+        let avg_seconds = ewma::ewma_weighted_seconds(
+            &time_obs,
+            ewma::PERFORMANCE_HALF_LIFE_DAYS,
+            now,
+        );
+        let n_eff = effective_sample_size_for_wilson(agg.effective_n);
+        let (value, low, high) =
+            wilson_interval_fraction(agg.mean.clamp(0.0, 1.0), n_eff, READINESS_Z);
+        let (value, low, high) =
+            crate::practice::performance::apply_performance_time_penalty(value, low, high, avg_seconds);
         Ok((
             pb::ReadinessPillar {
                 available: true,
@@ -567,10 +744,11 @@ impl Collection {
         ))
     }
 
-    /// Pillar 3 — Readiness: raw score (correct ÷ total) across COMPLETED
-    /// full-length tests only, with a Wilson 95% interval and a per-section
-    /// breakdown. Deliberately excludes timing/pacing, breaks, question
-    /// distribution and everything outside the full-length tests.
+    /// Pillar 3 — Readiness: time-weighted raw score (EWMA, 30-day half-life)
+    /// across COMPLETED full-length test answers, with a Wilson 95% interval on
+    /// effective sample size and a per-section breakdown. Deliberately excludes
+    /// timing/pacing, breaks, question distribution and everything outside the
+    /// full-length tests.
     fn readiness_full_length(
         &self,
     ) -> Result<(
@@ -579,9 +757,11 @@ impl Collection {
         Option<ScaledEstimate>,
     )> {
         const SOURCE: &str = "SpeedyCAT full-length tests (completed attempts, raw score)";
-        const METHOD: &str =
-            "raw correct ÷ total across completed full-length tests, with a Wilson 95% interval";
-        let (correct, total) = self.storage.full_length_score_totals()?;
+        const METHOD: &str = "time-weighted raw correct ÷ total (EWMA, 30-day half-life) \
+             across completed full-length answers, with a Wilson 95% interval on \
+             effective sample size";
+        let obs = self.storage.full_length_readiness_observations()?;
+        let total = obs.len() as u32;
         if total == 0 {
             return Ok((
                 give_up_pillar(
@@ -594,7 +774,11 @@ impl Collection {
                 None,
             ));
         }
-        let (value, low, high) = wilson_interval(correct, total, READINESS_Z);
+        let now = TimestampSecs::now().0;
+        let agg = ewma::ewma_aggregate(&obs, ewma::READINESS_HALF_LIFE_DAYS, now);
+        let n_eff = effective_sample_size_for_wilson(agg.effective_n);
+        let (value, low, high) =
+            wilson_interval_fraction(agg.mean.clamp(0.0, 1.0), n_eff, READINESS_Z);
 
         // Per-section raw score + averaged scaled ESTIMATE. The overall scaled
         // estimate sums the per-section scaled scores; its range sums the scaled
@@ -645,6 +829,41 @@ impl Collection {
 
 /// Build a pillar in its "gave up" state (a prerequisite is off, or there is
 /// not enough data): no value/range, just the sample size and an explanation.
+/// Build section results + totals from per-section attempt aggregates.
+fn section_results_from_counts(
+    counts: &[(String, u32, u32, u32)],
+) -> (Vec<pb::SectionResult>, u32, u32, Option<u32>) {
+    let mut section_results = Vec::new();
+    let mut total_correct = 0u32;
+    let mut total_questions = 0u32;
+    let mut scaled_sum = 0u32;
+    let mut scaled_sections = 0u32;
+    for (section_db, correct, total, time) in counts {
+        total_correct += correct;
+        total_questions += total;
+        let scaled_score = scoring::section_scaled_score(*correct, *total);
+        if let Some(s) = scaled_score {
+            scaled_sum += s;
+            scaled_sections += 1;
+        }
+        section_results.push(pb::SectionResult {
+            section: section_from_db(section_db),
+            correct: *correct,
+            total: *total,
+            time_seconds: *time,
+            scaled_score,
+        });
+    }
+    let overall_scaled_score = (scaled_sections > 0)
+        .then(|| scoring::clamp_total_for_sections(scaled_sum, scaled_sections));
+    (
+        section_results,
+        total_correct,
+        total_questions,
+        overall_scaled_score,
+    )
+}
+
 fn give_up_pillar(
     source: &str,
     method: &str,
@@ -676,14 +895,31 @@ fn wilson_interval(correct: u32, total: u32, z: f64) -> (f64, f64, f64) {
     if total == 0 {
         return (0.0, 0.0, 0.0);
     }
+    wilson_interval_fraction(correct as f64 / total as f64, total, z)
+}
+
+/// Wilson interval when the point estimate is already a fraction in [0, 1]
+/// (e.g. a weighted-mean performance credit).
+fn wilson_interval_fraction(p: f64, total: u32, z: f64) -> (f64, f64, f64) {
+    if total == 0 {
+        return (0.0, 0.0, 0.0);
+    }
     let n = total as f64;
-    let p = (correct as f64 / n).clamp(0.0, 1.0);
+    let p = p.clamp(0.0, 1.0);
     let z2 = z * z;
     let denom = 1.0 + z2 / n;
     let center = (p + z2 / (2.0 * n)) / denom;
     let margin = z * ((p * (1.0 - p) / n) + z2 / (4.0 * n * n)).sqrt() / denom;
     let (low, high) = clamp_interval(center - margin, center + margin);
     (p, low, high)
+}
+
+/// Map Kish effective sample size to a Wilson `n` (at least 1 when positive).
+fn effective_sample_size_for_wilson(effective_n: f64) -> u32 {
+    if effective_n <= 0.0 {
+        return 0;
+    }
+    effective_n.round().max(1.0) as u32
 }
 
 /// Estimate the mean and standard error of per-card FSRS retrievability from the
@@ -838,19 +1074,29 @@ mod test {
                 topic: topic.to_string(),
                 hint_level_used: 0,
                 assisted: false,
+                main_wrong_first: false,
             })
             .unwrap();
     }
 
-    /// Record an attempt that used the hint ladder up to `hint_level` (0..3);
-    /// `assisted` is derived (reaching level 3). Exercises the anti-gaming
-    /// penalty in the Performance pillar.
+    /// Record an attempt that used the hint ladder up to `hint_level` (0..3).
     fn record_hinted(
         col: &mut Collection,
         session_id: &str,
         question_id: &str,
         correct: bool,
         hint_level: u32,
+    ) {
+        record_hinted_with_main_wrong(col, session_id, question_id, correct, hint_level, false);
+    }
+
+    fn record_hinted_with_main_wrong(
+        col: &mut Collection,
+        session_id: &str,
+        question_id: &str,
+        correct: bool,
+        hint_level: u32,
+        main_wrong_first: bool,
     ) {
         let _ = col
             .record_practice_attempt(pb::RecordPracticeAttemptRequest {
@@ -863,6 +1109,7 @@ mod test {
                 topic: "kinetics".to_string(),
                 hint_level_used: hint_level,
                 assisted: hint_level >= 3,
+                main_wrong_first,
             })
             .unwrap();
     }
@@ -905,6 +1152,7 @@ mod test {
         let stats = col.get_topic_stats(pb::GetTopicStatsRequest {
             section: None,
             source: pb::AttemptSource::All as i32,
+            first_attempt_no_hint_only: false,
         })?;
 
         let acids = topic(&stats, cpbs(), "acids and bases");
@@ -958,6 +1206,8 @@ mod test {
             answered_at: 0,
             hint_level_used: 0,
             assisted: false,
+            main_wrong_first: false,
+            first_try_no_hint: Some(1),
         })?;
         col.storage.add_practice_attempt(&NewAttempt {
             id: "a-fl",
@@ -972,12 +1222,15 @@ mod test {
             answered_at: 0,
             hint_level_used: 0,
             assisted: false,
+            main_wrong_first: false,
+            first_try_no_hint: None,
         })?;
 
         // ALL: both attempts combine.
         let all = col.get_topic_stats(pb::GetTopicStatsRequest {
             section: None,
             source: pb::AttemptSource::All as i32,
+            first_attempt_no_hint_only: false,
         })?;
         let combined = topic(&all, cpbs(), "thermodynamics");
         assert_eq!(combined.attempts, 2);
@@ -989,6 +1242,7 @@ mod test {
         let ps = col.get_topic_stats(pb::GetTopicStatsRequest {
             section: None,
             source: pb::AttemptSource::PracticeSession as i32,
+            first_attempt_no_hint_only: false,
         })?;
         let ps_topic = topic(&ps, cpbs(), "thermodynamics");
         assert_eq!(ps_topic.attempts, 1);
@@ -999,6 +1253,7 @@ mod test {
         let fl = col.get_topic_stats(pb::GetTopicStatsRequest {
             section: None,
             source: pb::AttemptSource::FullLength as i32,
+            first_attempt_no_hint_only: false,
         })?;
         let fl_topic = topic(&fl, cpbs(), "thermodynamics");
         assert_eq!(fl_topic.attempts, 1);
@@ -1009,6 +1264,7 @@ mod test {
         let cars_only = col.get_topic_stats(pb::GetTopicStatsRequest {
             section: Some(cars()),
             source: pb::AttemptSource::All as i32,
+            first_attempt_no_hint_only: false,
         })?;
         assert!(cars_only.topics.is_empty());
         assert!(cars_only.sections.is_empty());
@@ -1182,6 +1438,17 @@ mod test {
         assert_eq!(cars_result.scaled_score, Some(118));
         assert_eq!(report.overall_scaled_score, Some(250));
 
+        // The completed attempt shows up in the Full-Length Tests listing,
+        // joined to its test title. This exercises the full_length_attempts ->
+        // full_length_tests join (regression: the join must key on t.id).
+        let listing = col.list_full_length_attempts(pb::ListFullLengthAttemptsRequest {})?;
+        assert_eq!(listing.attempts.len(), 1);
+        let summary = &listing.attempts[0];
+        assert_eq!(summary.test_id, "fl-test");
+        assert_eq!(summary.test_title, "FL");
+        assert_eq!(summary.total_questions, 2);
+        assert_eq!(summary.total_correct, 1);
+
         // A submitted attempt is closed to further answers.
         let err = col.record_full_length_answer(pb::RecordFullLengthAnswerRequest {
             attempt_id,
@@ -1220,8 +1487,9 @@ mod test {
             section: cpbs(),
             topic: "kinetics".into(),
             hint_level_used: 0,
-            assisted: false,
-        })?;
+                assisted: false,
+                main_wrong_first: false,
+            })?;
 
         let summary = col.end_practice_session(pb::EndPracticeSessionRequest {
             session_id: session.clone(),
@@ -1260,8 +1528,9 @@ mod test {
             section: cpbs(),
             topic: "kinetics".into(),
             hint_level_used: 0,
-            assisted: false,
-        });
+                assisted: false,
+                main_wrong_first: false,
+            });
         assert!(unknown.is_err());
 
         let session = col
@@ -1282,8 +1551,9 @@ mod test {
             section: cpbs(),
             topic: "kinetics".into(),
             hint_level_used: 0,
-            assisted: false,
-        });
+                assisted: false,
+                main_wrong_first: false,
+            });
         assert!(after_end.is_err());
         Ok(())
     }
@@ -1884,6 +2154,22 @@ mod test {
 
     // ---- Exam readiness ---------------------------------------------------
 
+    /// With excessive gamed lapses the Memory pillar gives up with an anti-gaming message.
+    #[test]
+    fn readiness_memory_suppressed_by_gaming() -> Result<()> {
+        let mut col = Collection::new();
+        for _ in 0..4 {
+            let _ = col.speedycat_record_gamed_lapse(false)?;
+        }
+        let r = col.get_readiness(pb::GetReadinessRequest {
+            deck_search: String::new(),
+        })?;
+        let memory = r.memory.as_ref().unwrap();
+        assert!(!memory.available);
+        assert!(memory.message.contains("Excessive guessing"));
+        Ok(())
+    }
+
     /// With no study data every pillar "gives up": each is unavailable, carries
     /// an explanatory message and a named source, and never reports a bare
     /// value/range.
@@ -1938,6 +2224,8 @@ mod test {
                 answered_at: 0,
                 hint_level_used: 0,
                 assisted: false,
+                main_wrong_first: false,
+                first_try_no_hint: Some(if i < 24 { 1 } else { 0 }),
             })?;
         }
         // A skipped (unanswered) question must not count toward accuracy.
@@ -1954,6 +2242,8 @@ mod test {
             answered_at: 0,
             hint_level_used: 0,
             assisted: false,
+            main_wrong_first: false,
+            first_try_no_hint: None,
         })?;
 
         // Pillar 3: one completed full-length attempt, two sections, 3/4 correct.
@@ -1974,10 +2264,12 @@ mod test {
                 answered_at: 0,
                 hint_level_used: 0,
                 assisted: false,
+                main_wrong_first: false,
+                first_try_no_hint: None,
             })?;
         }
         col.storage
-            .complete_full_length_attempt("fla1", "[]", None, 100)?;
+            .complete_full_length_attempt("fla1", "[]", None, 100, true)?;
 
         let r = col.get_readiness(pb::GetReadinessRequest {
             deck_search: String::new(),
@@ -2048,6 +2340,8 @@ mod test {
             answered_at: 0,
             hint_level_used: 0,
             assisted: false,
+            main_wrong_first: false,
+            first_try_no_hint: None,
         })?;
 
         let r = col.get_readiness(pb::GetReadinessRequest {
@@ -2058,6 +2352,89 @@ mod test {
         assert_eq!(readiness.sample_size, 0);
         assert!(r.section_scores.is_empty());
         assert!(r.readiness_scaled_score.is_none());
+        Ok(())
+    }
+
+    /// Completing a full-length while another attempt is still in progress
+    /// shows results but excludes the score from the Readiness pillar.
+    #[test]
+    fn readiness_excludes_score_with_prior_incomplete_attempt() -> Result<()> {
+        let mut col = Collection::new();
+        col.storage
+            .add_full_length_attempt("fla-open", "fl-test", None, 0)?;
+        col.storage
+            .add_full_length_attempt("fla-done", "fl-test", None, 1)?;
+        col.storage.add_practice_attempt(&NewAttempt {
+            id: "fla-done:0",
+            session_id: None,
+            full_length_attempt_id: Some("fla-done"),
+            question_id: "f0",
+            selected_answer: "A",
+            correct: true,
+            time_on_question_seconds: 60,
+            section_db: "CPBS",
+            topic: "t",
+            answered_at: 1,
+            hint_level_used: 0,
+            assisted: false,
+            main_wrong_first: false,
+            first_try_no_hint: None,
+        })?;
+
+        let report = col.submit_full_length_attempt(pb::SubmitFullLengthAttemptRequest {
+            attempt_id: "fla-done".into(),
+        })?;
+        assert!(!report.counts_for_readiness);
+        assert_eq!(report.total_correct, 1);
+
+        let r = col.get_readiness(pb::GetReadinessRequest {
+            deck_search: String::new(),
+        })?;
+        let readiness = r.readiness.unwrap();
+        assert!(!readiness.available);
+        assert_eq!(readiness.sample_size, 0);
+        Ok(())
+    }
+
+    /// After the unfinished attempt is abandoned, a later completion counts.
+    #[test]
+    fn readiness_counts_after_prior_incomplete_abandoned() -> Result<()> {
+        let mut col = Collection::new();
+        col.storage
+            .add_full_length_attempt("fla-open", "fl-test", None, 0)?;
+        col.storage
+            .add_full_length_attempt("fla-done", "fl-test", None, 1)?;
+        col.abandon_full_length_attempt(pb::AbandonFullLengthAttemptRequest {
+            attempt_id: "fla-open".into(),
+        })?;
+        col.storage.add_practice_attempt(&NewAttempt {
+            id: "fla-done:0",
+            session_id: None,
+            full_length_attempt_id: Some("fla-done"),
+            question_id: "f0",
+            selected_answer: "A",
+            correct: true,
+            time_on_question_seconds: 60,
+            section_db: "CPBS",
+            topic: "t",
+            answered_at: 1,
+            hint_level_used: 0,
+            assisted: false,
+            main_wrong_first: false,
+            first_try_no_hint: None,
+        })?;
+
+        let report = col.submit_full_length_attempt(pb::SubmitFullLengthAttemptRequest {
+            attempt_id: "fla-done".into(),
+        })?;
+        assert!(report.counts_for_readiness);
+
+        let r = col.get_readiness(pb::GetReadinessRequest {
+            deck_search: String::new(),
+        })?;
+        let readiness = r.readiness.unwrap();
+        assert!(readiness.available);
+        assert_eq!(readiness.sample_size, 1);
         Ok(())
     }
 
@@ -2201,11 +2578,107 @@ mod test {
         Ok(())
     }
 
-    /// SpeedyCAT anti-gaming: an assisted-correct practice attempt (the learner
-    /// climbed to level 3 of the hint ladder) does NOT count as correct in the
-    /// Performance pillar, while it still counts toward the denominator — so
-    /// leaning on the tutor lowers, never inflates, the score. Unassisted correct
-    /// answers keep full credit.
+    /// SpeedyCAT progressive hint penalties in the Performance pillar.
+    #[test]
+    fn readiness_performance_progressive_hint_penalties() -> Result<()> {
+        let mut col = Collection::new();
+        let session = col
+            .start_practice_session(pb::StartPracticeSessionRequest {
+                filter: None,
+                time_limit_seconds: 0,
+            })?
+            .session_id;
+
+        // 10 L0 + 10 L1 + 10 L3 correct -> credit = 10 + 6 + 1 = 17 / 30
+        for i in 0..10 {
+            record_hinted(&mut col, &session, &format!("l0{i}"), true, 0);
+        }
+        for i in 0..10 {
+            record_hinted(&mut col, &session, &format!("l1{i}"), true, 1);
+        }
+        for i in 0..10 {
+            record_hinted(&mut col, &session, &format!("l3{i}"), true, 3);
+        }
+
+        let r = col.get_readiness(pb::GetReadinessRequest {
+            deck_search: String::new(),
+        })?;
+        let perf = r.performance.unwrap();
+        assert!(perf.available);
+        assert_eq!(perf.sample_size, 30);
+        assert!(
+            (perf.value - 17.0 / 30.0).abs() < 1e-9,
+            "progressive credits expected {:.4}, got {}",
+            17.0 / 30.0,
+            perf.value
+        );
+        assert!(perf.method.contains("L1=0.60"), "penalty documented in method");
+        Ok(())
+    }
+
+    /// Wrong main-question escalation zeroes Performance credit even when the
+    /// final recorded answer is correct via the hint ladder.
+    #[test]
+    fn readiness_performance_main_wrong_first_is_zero_credit() -> Result<()> {
+        let mut col = Collection::new();
+        let session = col
+            .start_practice_session(pb::StartPracticeSessionRequest {
+                filter: None,
+                time_limit_seconds: 0,
+            })?
+            .session_id;
+
+        for i in 0..29 {
+            record_hinted(&mut col, &session, &format!("ok{i}"), true, 0);
+        }
+        record_hinted_with_main_wrong(&mut col, &session, "bad", true, 2, true);
+
+        let r = col.get_readiness(pb::GetReadinessRequest {
+            deck_search: String::new(),
+        })?;
+        let perf = r.performance.unwrap();
+        assert!((perf.value - 29.0 / 30.0).abs() < 1e-9);
+        Ok(())
+    }
+
+    /// Dashboard stats count only first-ever no-hint attempts; retries and
+    /// hint-assisted first encounters are excluded.
+    #[test]
+    fn topic_stats_first_attempt_no_hint_only() -> Result<()> {
+        let mut col = Collection::new();
+        let session = col
+            .start_practice_session(pb::StartPracticeSessionRequest {
+                filter: None,
+                time_limit_seconds: 0,
+            })?
+            .session_id;
+
+        record(&mut col, &session, "q1", true, 10, cpbs(), "kinetics");
+        record(&mut col, &session, "q2", false, 10, cpbs(), "kinetics");
+        record_hinted(&mut col, &session, "q3", true, 2);
+
+        // Retry q1 in a new session — must not count toward dashboard stats.
+        let session2 = col
+            .start_practice_session(pb::StartPracticeSessionRequest {
+                filter: None,
+                time_limit_seconds: 0,
+            })?
+            .session_id;
+        record(&mut col, &session2, "q1", true, 10, cpbs(), "kinetics");
+
+        let dash = col.get_topic_stats(pb::GetTopicStatsRequest {
+            section: None,
+            source: pb::AttemptSource::PracticeSession as i32,
+            first_attempt_no_hint_only: true,
+        })?;
+        let cpbs_section = section(&dash, cpbs());
+        assert_eq!(cpbs_section.attempts, 2, "q1 retry + q3 hint excluded");
+        assert_eq!(cpbs_section.correct, 1, "only q1 first try counts");
+        assert!((cpbs_section.accuracy - 0.5).abs() < 1e-9);
+        Ok(())
+    }
+
+    /// Legacy test name kept: L3 correct earns heavily penalized credit (0.1).
     #[test]
     fn readiness_performance_penalizes_assisted_correct() -> Result<()> {
         let mut col = Collection::new();
@@ -2216,9 +2689,6 @@ mod test {
             })?
             .session_id;
 
-        // 30 answered: 15 unassisted-correct (full credit) + 15 assisted-correct
-        // (reached L3 -> penalized to "incorrect"). Raw accuracy would be 30/30;
-        // the penalized accuracy is 15/30 = 0.5.
         for i in 0..15 {
             record_hinted(&mut col, &session, &format!("u{i}"), true, 0);
         }
@@ -2231,13 +2701,201 @@ mod test {
         })?;
         let perf = r.performance.unwrap();
         assert!(perf.available);
-        assert_eq!(perf.sample_size, 30, "every answered attempt is in the denominator");
+        assert_eq!(perf.sample_size, 30);
+        // 15 * 1.0 + 15 * 0.1 = 16.5 / 30
         assert!(
-            (perf.value - 0.5).abs() < 1e-9,
-            "assisted-correct must not earn credit (got {})",
+            (perf.value - 16.5 / 30.0).abs() < 1e-9,
+            "L3-assisted correct earns 0.1 credit (got {})",
             perf.value
         );
-        assert!(perf.method.contains("assisted"), "penalty is documented in the method");
+        Ok(())
+    }
+
+    /// Average pace over 98s/question scales the accuracy-based Performance score.
+    #[test]
+    fn readiness_performance_time_penalty_slow_pace() -> Result<()> {
+        let mut col = Collection::new();
+        // 27/30 = 90% accuracy at 147s/question → 90% × (98/147) = 60%.
+        for i in 0..30 {
+            col.storage.add_practice_attempt(&NewAttempt {
+                id: &format!("ps:{i}"),
+                session_id: Some("s1"),
+                full_length_attempt_id: None,
+                question_id: &format!("q{i}"),
+                selected_answer: "A",
+                correct: i < 27,
+                time_on_question_seconds: 147,
+                section_db: "CPBS",
+                topic: "kinetics",
+                answered_at: 0,
+                hint_level_used: 0,
+                assisted: false,
+                main_wrong_first: false,
+                first_try_no_hint: Some(if i < 27 { 1 } else { 0 }),
+            })?;
+        }
+
+        let r = col.get_readiness(pb::GetReadinessRequest {
+            deck_search: String::new(),
+        })?;
+        let perf = r.performance.unwrap();
+        assert!(perf.available);
+        assert!((r.performance_avg_seconds - 147.0).abs() < 1e-9);
+        assert!(r.performance_time_penalty_applied);
+        assert!((perf.value - 0.6).abs() < 1e-9, "got {}", perf.value);
+        Ok(())
+    }
+
+    /// At or under 98s/question the Performance score is unchanged.
+    #[test]
+    fn readiness_performance_no_time_penalty_at_target_pace() -> Result<()> {
+        let mut col = Collection::new();
+        for i in 0..30 {
+            col.storage.add_practice_attempt(&NewAttempt {
+                id: &format!("ps:{i}"),
+                session_id: Some("s1"),
+                full_length_attempt_id: None,
+                question_id: &format!("q{i}"),
+                selected_answer: "A",
+                correct: i < 27,
+                time_on_question_seconds: if i == 0 { 98 } else { 97 },
+                section_db: "CPBS",
+                topic: "kinetics",
+                answered_at: 0,
+                hint_level_used: 0,
+                assisted: false,
+                main_wrong_first: false,
+                first_try_no_hint: Some(if i < 27 { 1 } else { 0 }),
+            })?;
+        }
+
+        let r = col.get_readiness(pb::GetReadinessRequest {
+            deck_search: String::new(),
+        })?;
+        let perf = r.performance.unwrap();
+        assert!(!r.performance_time_penalty_applied);
+        assert!((perf.value - 0.9).abs() < 1e-9, "got {}", perf.value);
+        Ok(())
+    }
+
+    /// EWMA with one observation at age 0 and one at exactly the 7-day half-life
+    /// should weight the older one at half — here 1.0 vs 0.0 credit → 2/3 mean.
+    #[test]
+    fn readiness_performance_ewma_half_life() -> Result<()> {
+        let mut col = Collection::new();
+        let now = TimestampSecs::now().0;
+        let age_secs = (ewma::PERFORMANCE_HALF_LIFE_DAYS * 86_400.0) as i64;
+        col.storage.add_practice_attempt(&NewAttempt {
+            id: "ps:recent",
+            session_id: Some("s1"),
+            full_length_attempt_id: None,
+            question_id: "q-recent",
+            selected_answer: "A",
+            correct: true,
+            time_on_question_seconds: 60,
+            section_db: "CPBS",
+            topic: "kinetics",
+            answered_at: now,
+            hint_level_used: 0,
+            assisted: false,
+            main_wrong_first: false,
+            first_try_no_hint: Some(1),
+        })?;
+        col.storage.add_practice_attempt(&NewAttempt {
+            id: "ps:old",
+            session_id: Some("s1"),
+            full_length_attempt_id: None,
+            question_id: "q-old",
+            selected_answer: "B",
+            correct: false,
+            time_on_question_seconds: 60,
+            section_db: "CPBS",
+            topic: "kinetics",
+            answered_at: now - age_secs,
+            hint_level_used: 0,
+            assisted: false,
+            main_wrong_first: false,
+            first_try_no_hint: Some(0),
+        })?;
+        // Pad to the minimum answered threshold with equal-weight rows at `now`.
+        for i in 0..28 {
+            col.storage.add_practice_attempt(&NewAttempt {
+                id: &format!("ps:pad{i}"),
+                session_id: Some("s1"),
+                full_length_attempt_id: None,
+                question_id: &format!("q-pad{i}"),
+                selected_answer: "A",
+                correct: true,
+                time_on_question_seconds: 60,
+                section_db: "CPBS",
+                topic: "kinetics",
+                answered_at: now,
+                hint_level_used: 0,
+                assisted: false,
+                main_wrong_first: false,
+                first_try_no_hint: Some(1),
+            })?;
+        }
+
+        let r = col.get_readiness(pb::GetReadinessRequest {
+            deck_search: String::new(),
+        })?;
+        let perf = r.performance.unwrap();
+        assert!(perf.available);
+        // 29×1.0 + 0.5×0.0 at `now` vs one half-weight 0 at half-life → mean > 0.9
+        assert!(perf.value > 0.9, "got {}", perf.value);
+        Ok(())
+    }
+
+    /// Readiness EWMA: one correct answer now and one wrong answer one half-life ago.
+    #[test]
+    fn readiness_full_length_ewma_half_life() -> Result<()> {
+        let mut col = Collection::new();
+        let now = TimestampSecs::now().0;
+        let age_secs = (ewma::READINESS_HALF_LIFE_DAYS * 86_400.0) as i64;
+        col.storage
+            .add_full_length_attempt("fla1", "fl-test", None, 0)?;
+        col.storage.add_practice_attempt(&NewAttempt {
+            id: "fla1:recent",
+            session_id: None,
+            full_length_attempt_id: Some("fla1"),
+            question_id: "f-recent",
+            selected_answer: "A",
+            correct: true,
+            time_on_question_seconds: 90,
+            section_db: "CPBS",
+            topic: "t",
+            answered_at: now,
+            hint_level_used: 0,
+            assisted: false,
+            main_wrong_first: false,
+            first_try_no_hint: None,
+        })?;
+        col.storage.add_practice_attempt(&NewAttempt {
+            id: "fla1:old",
+            session_id: None,
+            full_length_attempt_id: Some("fla1"),
+            question_id: "f-old",
+            selected_answer: "B",
+            correct: false,
+            time_on_question_seconds: 90,
+            section_db: "CPBS",
+            topic: "t",
+            answered_at: now - age_secs,
+            hint_level_used: 0,
+            assisted: false,
+            main_wrong_first: false,
+            first_try_no_hint: None,
+        })?;
+        col.storage
+            .complete_full_length_attempt("fla1", "[]", None, 100, true)?;
+
+        let r = col.get_readiness(pb::GetReadinessRequest {
+            deck_search: String::new(),
+        })?;
+        let readiness = r.readiness.unwrap();
+        assert!(readiness.available);
+        assert!((readiness.value - 2.0 / 3.0).abs() < 1e-9, "got {}", readiness.value);
         Ok(())
     }
 }

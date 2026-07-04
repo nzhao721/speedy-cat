@@ -31,6 +31,10 @@ function updateTime(): void {
 
 let intervalId: number | undefined;
 
+function resizeBottomBar(): void {
+    pycmd("bottomBarResized");
+}
+
 function showQuestion(txt: string, maxTime_: number): void {
     showAnswer(txt);
     time = 0;
@@ -52,6 +56,7 @@ function showQuestion(txt: string, maxTime_: number): void {
 function showAnswer(txt: string, stopTimer = false): void {
     document.getElementById("middle").innerHTML = txt;
     timerStopped = stopTimer;
+    resizeBottomBar();
 }
 
 function selectedAnswerButton(): string {

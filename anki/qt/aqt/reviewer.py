@@ -14,13 +14,11 @@ from functools import partial
 from typing import Any, Literal, Match, Union, cast
 
 import aqt
-import aqt.browser
 import aqt.operations
 from anki import speedycat_ai
 from anki.cards import Card, CardId
 from anki.collection import Config, OpChanges, OpChangesWithCount
 from anki.consts import MODEL_CLOZE
-from anki.lang import with_collapsed_whitespace
 from anki.scheduler.base import ScheduleCardsAsNew
 from anki.scheduler.v3 import (
     CardAnswer,
@@ -33,7 +31,7 @@ from anki.scheduler.v3 import Scheduler as V3Scheduler
 from anki.tags import MARKED_TAG
 from anki.types import assert_exhaustive
 from aqt import AnkiQt, gui_hooks
-from aqt.browser.card_info import PreviousReviewerCardInfo, ReviewerCardInfo
+from aqt.card_info import PreviousReviewerCardInfo, ReviewerCardInfo
 from aqt.deckoptions import confirm_deck_then_display_options
 from aqt.operations.card import set_card_flag
 from aqt.operations.scheduling import (
@@ -54,8 +52,6 @@ from aqt.theme import theme_manager
 from aqt.toolbar import BottomBar
 from aqt.utils import (
     askUserDialog,
-    downArrow,
-    qtMenuShortcutWorkaround,
     show_warning,
     tooltip,
     tr,
@@ -172,6 +168,7 @@ class Reviewer:
         self._speedycat_ai_decision: speedycat_ai.Decision | None = None
         self._speedycat_checking: bool = False
         self._speedycat_idk_timer: QTimer | None = None
+        self._speedycat_idk_bypass_count: int = 0
         self.state: Literal["question", "answer", "transition"] | None = None
         self._refresh_needed: RefreshNeeded | None = None
         self._v3: V3CardInfo | None = None
@@ -198,6 +195,12 @@ class Reviewer:
         self._state_mutation_js = self.mw.col.get_config("cardStateCustomizer")
         self._reps = None
         self._refresh_needed = RefreshNeeded.QUEUES
+        self._speedycat_idk_bypass_count = 0
+        try:
+            status = self.mw.col.reset_speedycat_review_session()
+            self._speedycat_idk_bypass_count = status.idk_bypass_count
+        except Exception:
+            pass
         self.refresh_if_needed()
 
     # this is only used by add-ons
@@ -581,9 +584,10 @@ class Reviewer:
             return
         if self.state != "answer":
             return
+        gamed = self._speedycat_force_again
         # SpeedyCAT: a locked card (I don't know / gaming verdict) is forced to
         # Again no matter which rating control was pressed.
-        if self._speedycat_force_again:
+        if gamed:
             ease = 1
         proceed, ease = gui_hooks.reviewer_will_answer_card(
             (True, ease), self, self.card
@@ -597,6 +601,21 @@ class Reviewer:
             states=self._v3.states,
             rating=self._v3.rating_from_ease(ease),
         )
+        if gamed:
+            answer.speedycat_gamed_lapse = True
+            decision = self._speedycat_ai_decision
+            idk = decision is not None and speedycat_ai.is_idk_decision(decision)
+            try:
+                status = self.mw.col.record_speedycat_gamed_lapse(idk=idk)
+                self._speedycat_idk_bypass_count = status.idk_bypass_count
+            except Exception:
+                if idk:
+                    self._speedycat_idk_bypass_count += 1
+        elif self._forced_recall_active:
+            try:
+                self.mw.col.record_speedycat_honest_review()
+            except Exception:
+                pass
 
         def after_answer(changes: OpChanges) -> None:
             if gui_hooks.reviewer_did_answer_card.count() > 0:
@@ -625,7 +644,6 @@ class Reviewer:
         self,
     ) -> Sequence[tuple[str, Callable] | tuple[Qt.Key, Callable]]:
         return [
-            ("ㅡ", self.showContextMenu),
             ("ㄱ", self.replayAudio),
             ("Ctrl+Alt+ㅜ", self.forget_current_card),
             # does not work
@@ -658,7 +676,6 @@ class Reviewer:
             (" ", self.onEnterKey),
             (Qt.Key.Key_Return, self.onEnterKey),
             (Qt.Key.Key_Enter, self.onEnterKey),
-            ("m", self.showContextMenu),
             ("r", self.replayAudio),
             (Qt.Key.Key_F5, self.replayAudio),
             *(
@@ -725,8 +742,6 @@ class Reviewer:
         elif url.startswith("ease"):
             val: Literal[1, 2, 3, 4] = int(url[4:])  # type: ignore
             self._answerCard(val)
-        elif url == "more":
-            self.showContextMenu()
         elif url.startswith("play:"):
             play_clicked_audio(url, self.card)
         elif url.startswith("updateToolbar"):
@@ -734,6 +749,8 @@ class Reviewer:
         elif url == "repaintNeeded":
             # Ensure stale frames showing previous or corrupt content are not displayed (#3668)
             self.web.update()
+        elif url == "bottomBarResized":
+            self.mw.bottomWeb.adjustHeightToFit()
         elif url == "statesMutated":
             self._states_mutated = True
         else:
@@ -838,23 +855,53 @@ class Reviewer:
         answer = self.card.answer()
         if "<hr id=answer>" in answer:
             answer = answer.split("<hr id=answer>", 1)[1]
+        extracted = speedycat_ai.extract_cloze_answer(answer, self.card.ord + 1)
+        if extracted and extracted.strip():
+            return speedycat_ai.strip_expected(extracted)
         return speedycat_ai.strip_expected(answer)
 
     def _forced_recall_cloze_answer(self) -> str | None:
         """SpeedyCAT: the cloze deletion text for the current card ord, cleaned.
 
-        Returns ``None`` for a non-cloze notetype. For a cloze card, extracts the
-        deletion(s) for ``ord + 1`` from the note's cloze field via the backend
-        (comma-joined when there are several), then strips HTML/entities so the
-        result is exactly the answer — e.g. ``direction`` for the vector card, or
-        ``n, energy level or shell number`` for a two-deletion card."""
+        Returns ``None`` when no cloze deletion can be found. For a cloze notetype,
+        uses the backend ``extract_cloze_for_typing`` (nested clozes). For any
+        notetype — including SpeedyCAT's pre-rendered Front/Back import — also
+        tries ``{{cN::}}`` / rendered ``<span class="cloze">`` markers and, when
+        Front+Back fields carry a ``[...]`` blank, aligns them to isolate the
+        deletion only (e.g. ``rotational equilibrium``, not the full back field)."""
         note_type = self.card.note_type()
-        if note_type.get("type") != MODEL_CLOZE:
-            return None
         ordinal = self.card.ord + 1
         note = self.card.note()
+        if note_type.get("type") == MODEL_CLOZE:
+            for f in note_type["flds"]:
+                extracted = self.mw.col.extract_cloze_for_typing(
+                    note[f["name"]], ordinal
+                )
+                if extracted and extracted.strip():
+                    return speedycat_ai.strip_expected(extracted)
+        front_val: str | None = None
+        back_val: str | None = None
         for f in note_type["flds"]:
-            extracted = self.mw.col.extract_cloze_for_typing(note[f["name"]], ordinal)
+            lname = f["name"].lower()
+            val = note[f["name"]]
+            if lname in ("front", "text") and val and val.strip():
+                front_val = val
+            elif lname in ("back", "back extra") and val and val.strip():
+                back_val = val
+        if front_val and back_val:
+            extracted = speedycat_ai.extract_cloze_from_prerendered(
+                front_val, back_val, ordinal
+            )
+            if extracted and extracted.strip():
+                return speedycat_ai.strip_expected(extracted)
+        back_names = [
+            f["name"]
+            for f in note_type["flds"]
+            if f["name"].lower() in ("back", "back extra")
+        ]
+        other_names = [f["name"] for f in note_type["flds"] if f["name"] not in back_names]
+        for name in back_names + other_names:
+            extracted = speedycat_ai.extract_cloze_answer(note[name], ordinal)
             if extracted and extracted.strip():
                 return speedycat_ai.strip_expected(extracted)
         return None
@@ -897,10 +944,10 @@ class Reviewer:
             # SpeedyCAT forced active recall: the typed-answer box still gates the
             # reveal. We show a SIMPLE, case-insensitive Correct/Incorrect verdict
             # (computed by the same rslib match RPC / local fallback as the normal
-            # type-answer path), but intentionally NO character-by-character diff —
-            # just the verdict, a labelled "Expected" line (what the checker
-            # compared against), and the card's own answer (including any source
-            # link). We also strip the baked-in tag breadcrumb
+            # type-answer path) at the very top of the back, but intentionally NO
+            # character-by-character diff and no separate "Expected" line — just
+            # the verdict and the card's own answer (including any source link).
+            # We also strip the baked-in tag breadcrumb
             # (``<div class="tags">…</div>``) so it never leaks onto the back;
             # it lives in the note's field HTML and, when the note isn't the
             # bundled SpeedyCAT notetype, is not covered by strip_tag_breadcrumbs.
@@ -911,25 +958,29 @@ class Reviewer:
             # the ordered cloze answers regardless of the user's separator
             # (see speedycat_ai.deterministic_correct) — the SAME normalization
             # the AI-off decision uses, so the badge and the decision agree.
-            matched = speedycat_ai.deterministic_correct(
-                self.typedAnswer or "", self.typeCorrect or ""
-            )
-            # Show the verdict AND, beneath it, the expected answer the checker
-            # compared against (``self.typeCorrect`` — the exact value passed to
-            # the matcher above), so the learner sees what would have counted as
-            # correct. Case is preserved; matching stays case-insensitive.
+            # When the AI checker ran successfully, its verdict drives the badge
+            # instead of the deterministic string match (which rejects typos).
+            decision = self._speedycat_ai_decision
+            if (
+                decision
+                and speedycat_ai.is_ai_source(decision.source)
+                and decision.verdict
+            ):
+                matched = decision.verdict == "correct"
+            else:
+                matched = speedycat_ai.deterministic_correct(
+                    self.typedAnswer or "", self.typeCorrect or ""
+                )
             verdict = self._format_match_feedback(matched)
-            expected_line = self._format_expected_answer(self.typeCorrect)
-            inner = f"{verdict}{expected_line}"
-            if not inner:
+            if not verdict:
                 return cleaned
             banner = """
 <div style="font-family: '{}'; font-size: {}px">{}</div>""".format(
                 self.typeFont,
                 self.typeSize,
-                inner,
+                verdict,
             )
-            return f"{cleaned}<hr>{banner}"
+            return f"{banner}<hr>{cleaned}"
         type_pattern = m.group(1) if m else ""
         initial_expected = self.typeCorrect
         initial_provided = self.typedAnswer or ""
@@ -1033,29 +1084,6 @@ class Reviewer:
             'margin-bottom:6px">&#x2718; Incorrect</div>'
         )
 
-    @staticmethod
-    def _format_expected_answer(expected: str | None) -> str:
-        """SpeedyCAT: labelled "Expected" line shown beneath the forced-recall
-        verdict so the learner can see exactly what the (case-insensitive) checker
-        compared their typed answer against — i.e. what would have counted as
-        correct. ``expected`` is the same value handed to the matcher
-        (``self.typeCorrect``); we only strip media/HTML for a clean inline
-        display (mirroring the matcher's own normalization in
-        ``_fallback_answer_match``) and, unlike matching, preserve case. Returns
-        an empty string when there is nothing to show."""
-        import html
-
-        text = re.sub(r"\[(?:sound|anki):[^\]]*\]", " ", expected or "")
-        text = re.sub(r"<[^>]+>", " ", text)
-        text = html.unescape(text)
-        text = " ".join(text.split())
-        if not text:
-            return ""
-        return (
-            '<div id="type-expected" style="margin-top:6px">'
-            f"Expected: {html.escape(text)}</div>"
-        )
-
     def _contentForCloze(self, txt: str, idx: int) -> str | None:
         return self.mw.col.extract_cloze_for_typing(txt, idx) or None
 
@@ -1090,28 +1118,16 @@ class Reviewer:
         self._speedycat_clear_idk_timer()
 
     def _speedycat_ai_enabled(self) -> bool:
-        """True only when the user opted in AND an OpenAI key is available.
+        """True only when the user has AI checking enabled AND it is available.
 
+        A local OpenAI key OR the SpeedyCAT cloud proxy satisfies availability.
         Either condition being false selects the deterministic (AI-off) path —
         the hard project requirement that both apps run fully with AI off."""
-        if not self.mw.col.get_config(speedycat_ai.AI_CONFIG_KEY, False):
+        if not self.mw.col.get_config(
+            speedycat_ai.AI_CONFIG_KEY, speedycat_ai.AI_CONFIG_DEFAULT
+        ):
             return False
-        return speedycat_ai.key_present()
-
-    def _speedycat_toggle_ai(self) -> None:
-        """Reviewer context-menu toggle for the AI answer checker (opt-in)."""
-        enabled = not bool(self.mw.col.get_config(speedycat_ai.AI_CONFIG_KEY, False))
-        self.mw.col.set_config(speedycat_ai.AI_CONFIG_KEY, enabled)
-        if enabled and not speedycat_ai.key_present():
-            tooltip(
-                "AI answer check on, but no OpenAI key was found — set "
-                "SPEEDYCAT_OPENAI_API_KEY or create .speedycat-openai.key. "
-                "Until then the deterministic checker is used."
-            )
-        elif enabled:
-            tooltip("AI answer check on (verdicts are model-generated).")
-        else:
-            tooltip("AI answer check off.")
+        return speedycat_ai.ai_checker_available()
 
     def _speedycat_start_idk_timer(self) -> None:
         """Arm the 5s timer that reveals the 'I don't know' button (forced
@@ -1119,8 +1135,9 @@ class Reviewer:
         self._speedycat_clear_idk_timer()
         if not self._forced_recall_active:
             return
+        delay = speedycat_ai.idk_delay_ms(self._speedycat_idk_bypass_count)
         self._speedycat_idk_timer = self.mw.progress.timer(
-            speedycat_ai.IDK_DELAY_MS,
+            delay,
             self._speedycat_reveal_idk_button,
             repeat=False,
             parent=self.mw,
@@ -1156,26 +1173,28 @@ class Reviewer:
     def _speedycat_decide_and_reveal(self) -> None:
         """Decide what to do with the typed answer, then reveal / gate / lock.
 
-        With AI on, the OpenAI check runs on a background thread and the decision
-        is applied on the main thread; on any failure (or AI off) the
-        deterministic decision (always reveal + case-insensitive verdict, with
+        Static checker runs first: a deterministic correct match reveals
+        immediately without calling AI. When static says incorrect and AI is on,
+        the OpenAI check runs on a background thread; on any failure (or AI off)
+        the deterministic decision (always reveal + case-insensitive verdict, with
         the heuristic driving the FSRS lock) is used instead."""
         self._speedycat_clear_idk_timer()
         typed = self.typedAnswer or ""
         expected = self.typeCorrect or ""
-        if not self._speedycat_ai_enabled():
-            self._speedycat_apply_reveal_decision(
-                speedycat_ai.decide_reveal(typed, expected, ai_on=False, ai_result=None)
-            )
+        plan = speedycat_ai.plan_reveal(
+            typed, expected, ai_on=self._speedycat_ai_enabled()
+        )
+        if not plan.needs_ai:
+            assert plan.decision is not None
+            self._speedycat_apply_reveal_decision(plan.decision)
             return
         front = self.card.question() if self.card else ""
-        key = speedycat_ai.load_openai_key()
         card_id = self.card.id if self.card else None
         self._speedycat_checking = True
         tooltip("Checking your answer\u2026", period=1500)
 
-        def task() -> speedycat_ai.CheckerResult | None:
-            return speedycat_ai.run_check(front, typed, expected, key=key)
+        def task() -> tuple[speedycat_ai.CheckerResult | None, str]:
+            return speedycat_ai.run_check(front, typed, expected)
 
         def on_done(future: Future) -> None:
             self._speedycat_checking = False
@@ -1183,12 +1202,12 @@ class Reviewer:
             if self.state != "question" or (self.card and self.card.id != card_id):
                 return
             try:
-                result = future.result()
+                result, source = future.result()
             except Exception:
-                result = None
+                result, source = None, speedycat_ai.SOURCE_BASELINE
             self._speedycat_apply_reveal_decision(
                 speedycat_ai.decide_reveal(
-                    typed, expected, ai_on=True, ai_result=result
+                    typed, expected, ai_on=True, ai_result=result, ai_source=source
                 )
             )
 
@@ -1199,7 +1218,7 @@ class Reviewer:
         self._speedycat_force_again = decision.force_again
         if decision.reveal:
             self._showAnswer()
-            if decision.source == speedycat_ai.SOURCE_AI and decision.verdict:
+            if speedycat_ai.is_ai_source(decision.source) and decision.verdict:
                 self._speedycat_inject_ai_note(decision.verdict, decision.reason)
             elif decision.message:
                 tooltip(decision.message)
@@ -1227,9 +1246,9 @@ class Reviewer:
     def _speedycat_inject_ai_note(self, verdict: str, reason: str) -> None:
         """Append a labelled, model-generated verdict line beneath the reveal.
 
-        Additive: it does not alter the deterministic verdict/expected lines
-        rendered by the type-answer filter; it adds the AI's judgement and (per
-        spec) makes clear the verdict is model-generated."""
+        Additive: it does not alter the deterministic verdict rendered by the
+        type-answer filter; it adds the AI's judgement and (per spec) makes clear
+        the verdict is model-generated."""
         import html
 
         label = "Correct" if verdict == "correct" else "Incorrect"
@@ -1259,10 +1278,7 @@ class Reviewer:
 <td align=center valign=top id=middle>
 </td>
 <td align=end valign=top class=stat>
-<button title="%(morekey)s" onclick="pycmd('more');">
-%(more)s %(downArrow)s
 <span id=time class=stattxt></span>
-</button>
 </td>
 </tr>
 </table>
@@ -1272,9 +1288,6 @@ time = %(time)d;
 timerStopped = false;
 </script>
 """ % dict(
-            more=tr.studying_more(),
-            morekey=tr.actions_shortcut_key(val="M"),
-            downArrow=downArrow(),
             time=self.card.time_taken() // 1000,
         )
 
@@ -1431,13 +1444,7 @@ timerStopped = false;
         elapsed = self.mw.col.timeboxReached()
         if elapsed:
             assert not isinstance(elapsed, bool)
-            cards_val = elapsed[1]
-            minutes_val = int(round(elapsed[0] / 60))
-            message = with_collapsed_whitespace(
-                tr.studying_card_studied_in_minute(
-                    cards=cards_val, minutes=str(minutes_val)
-                )
-            )
+            message = ""
             fin = tr.studying_finish()
             diag = askUserDialog(message, [tr.studying_continue(), fin])
             diag.setIcon(QMessageBox.Icon.Information)
@@ -1446,110 +1453,6 @@ timerStopped = false;
                 return True
             self.mw.col.startTimebox()
         return False
-
-    # Context menu
-    ##########################################################################
-
-    # note the shortcuts listed here also need to be defined above
-    def _contextMenu(self) -> list[Any]:
-        currentFlag = self.card and self.card.user_flag()
-        opts = [
-            [
-                tr.studying_flag_card(),
-                [
-                    [
-                        flag.label,
-                        f"Ctrl+{flag.index}",
-                        self.set_flag_func(flag.index),
-                        dict(checked=currentFlag == flag.index),
-                    ]
-                    for flag in self.mw.flags.all()
-                ],
-            ],
-            [tr.studying_bury_card(), "-", self.bury_current_card],
-            [
-                tr.actions_with_ellipsis(action=tr.actions_forget_card()),
-                "Ctrl+Alt+N",
-                self.forget_current_card,
-            ],
-            [
-                tr.actions_with_ellipsis(action=tr.actions_set_due_date()),
-                "Ctrl+Shift+D",
-                self.on_set_due,
-            ],
-            [tr.actions_suspend_card(), "@", self.suspend_current_card],
-            [tr.actions_options(), "O", self.onOptions],
-            [tr.actions_card_info(), "I", self.on_card_info],
-            [tr.actions_previous_card_info(), "Ctrl+Alt+I", self.on_previous_card_info],
-            None,
-            [tr.studying_mark_note(), "*", self.toggle_mark_on_current_note],
-            [tr.studying_bury_note(), "=", self.bury_current_note],
-            [tr.studying_suspend_note(), "!", self.suspend_current_note],
-            [
-                tr.actions_with_ellipsis(action=tr.actions_create_copy()),
-                "Ctrl+Alt+E",
-                self.on_create_copy,
-            ],
-            None,
-            [tr.actions_replay_audio(), "R", self.replayAudio],
-            [tr.studying_pause_audio(), "5", self.on_pause_audio],
-            [tr.studying_audio_5s(), "6", self.on_seek_backward],
-            [tr.studying_audio_and5s(), "7", self.on_seek_forward],
-            [tr.studying_record_own_voice(), "Shift+V", self.onRecordVoice],
-            [tr.studying_replay_own_voice(), "V", self.onReplayRecorded],
-            [
-                tr.actions_auto_advance(),
-                "Shift+A",
-                self.toggle_auto_advance,
-                dict(checked=self.auto_advance_enabled),
-            ],
-            None,
-            # SpeedyCAT: user-facing on/off opt-in for the AI answer checker
-            # (default OFF; verdicts are model-generated and need an API key).
-            [
-                "AI answer check (model-generated)",
-                None,
-                self._speedycat_toggle_ai,
-                dict(
-                    checked=bool(
-                        self.mw.col.get_config(speedycat_ai.AI_CONFIG_KEY, False)
-                    )
-                ),
-            ],
-        ]
-        return opts
-
-    def showContextMenu(self) -> None:
-        opts = self._contextMenu()
-        m = QMenu(self.mw)
-        self._addMenuItems(m, opts)
-
-        gui_hooks.reviewer_will_show_context_menu(self, m)
-        qtMenuShortcutWorkaround(m)
-        m.popup(QCursor.pos())
-
-    def _addMenuItems(self, m: QMenu, rows: Sequence) -> None:
-        for row in rows:
-            if not row:
-                m.addSeparator()
-                continue
-            if len(row) == 2:
-                subm = m.addMenu(row[0])
-                self._addMenuItems(subm, row[1])
-                qtMenuShortcutWorkaround(subm)
-                continue
-            if len(row) == 4:
-                label, scut, func, opts = row
-            else:
-                label, scut, func = row
-                opts = {}
-            a = m.addAction(label)
-            if scut:
-                a.setShortcut(QKeySequence(scut))
-            if opts.get("checked"):
-                a.setCheckable(True)
-                a.setChecked(True)
-            qconnect(a.triggered, func)
 
     def onOptions(self) -> None:
         confirm_deck_then_display_options(self.card)

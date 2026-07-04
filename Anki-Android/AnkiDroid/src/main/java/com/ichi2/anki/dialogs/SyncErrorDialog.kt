@@ -25,8 +25,7 @@ import com.ichi2.anki.dialogs.SyncErrorDialog.Type.DIALOG_SYNC_SANITY_ERROR_CONF
 import com.ichi2.anki.dialogs.SyncErrorDialog.Type.DIALOG_USER_NOT_LOGGED_IN_SYNC
 import com.ichi2.anki.ui.internationalization.sentenceCase
 import com.ichi2.anki.utils.ext.dismissAllDialogFragments
-import com.ichi2.anki.utils.openUrl
-import com.ichi2.utils.titleWithHelpIcon
+import com.ichi2.utils.title
 
 class SyncErrorDialog : AsyncDialogFragment() {
     interface SyncErrorDialogListener {
@@ -81,12 +80,9 @@ class SyncErrorDialog : AsyncDialogFragment() {
             DIALOG_SYNC_CONFLICT_RESOLUTION -> {
                 // Sync conflict; allow user to cancel, or choose between local and remote versions
                 dialog
-                    .titleWithHelpIcon(
-                        text = getString(R.string.sync_conflict_title_new),
-                        startIcon = R.drawable.ic_sync_problem,
-                    ) {
-                        requireContext().openUrl(getString(R.string.link_sync_conflict_help))
-                    }.setPositiveButton(R.string.sync_conflict_keep_local_new) { _, _ ->
+                    .setIcon(R.drawable.ic_sync_problem)
+                    .setTitle(getString(R.string.sync_conflict_title_new))
+                    .setPositiveButton(R.string.sync_conflict_keep_local_new) { _, _ ->
                         requireSyncErrorDialogListener().showSyncErrorDialog(DIALOG_SYNC_CONFLICT_CONFIRM_KEEP_LOCAL)
                     }.setNegativeButton(R.string.sync_conflict_keep_remote_new) { _, _ ->
                         requireSyncErrorDialogListener().showSyncErrorDialog(DIALOG_SYNC_CONFLICT_CONFIRM_KEEP_REMOTE)
@@ -149,9 +145,7 @@ class SyncErrorDialog : AsyncDialogFragment() {
             DIALOG_SYNC_CORRUPT_COLLECTION -> {
                 dialog
                     .setPositiveButton(R.string.dialog_ok) { _, _ -> }
-                    .setNegativeButton(R.string.help) { _, _ ->
-                        requireContext().openUrl(R.string.repair_deck)
-                    }.setCancelable(false)
+                    .setCancelable(false)
                     .create()
             }
             DIALOG_SYNC_BASIC_CHECK_ERROR -> {
@@ -214,8 +208,7 @@ class SyncErrorDialog : AsyncDialogFragment() {
                     )
                 DIALOG_SYNC_CORRUPT_COLLECTION -> {
                     val syncMessage = requireArguments().getString(DIALOG_MESSAGE_KEY)
-                    val repairUrl = res().getString(R.string.repair_deck)
-                    val dialogMessage = res().getString(R.string.sync_corrupt_database, repairUrl)
+                    val dialogMessage = res().getString(R.string.sync_corrupt_database)
                     joinSyncMessages(dialogMessage, syncMessage)
                 }
                 else -> requireArguments().getString(DIALOG_MESSAGE_KEY)

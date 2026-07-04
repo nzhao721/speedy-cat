@@ -505,13 +505,6 @@ class DatabaseErrorDialog : AsyncDialogFragment() {
                 }
             },
         ),
-        GET_HELP(
-            R.string.help_title_get_help,
-            dismissesDialog = false,
-            {
-                it.openUrl(R.string.link_forum)
-            },
-        ),
         RECREATE_COLLECTION(
             R.string.create_new_collection,
             dismissesDialog = false,
@@ -556,9 +549,9 @@ class DatabaseErrorDialog : AsyncDialogFragment() {
              */
             fun createList() =
                 if (isLoggedIn()) {
-                    listOf(RESTORE_FROM_ANKIWEB, INSTALL_NON_PLAY_APP_NORMAL, RESTORE_FROM_BACKUP, GET_HELP, RECREATE_COLLECTION)
+                    listOf(RESTORE_FROM_ANKIWEB, INSTALL_NON_PLAY_APP_NORMAL, RESTORE_FROM_BACKUP, RECREATE_COLLECTION)
                 } else {
-                    listOf(INSTALL_NON_PLAY_APP_RECOMMENDED, RESTORE_FROM_BACKUP, GET_HELP, RECREATE_COLLECTION)
+                    listOf(INSTALL_NON_PLAY_APP_RECOMMENDED, RESTORE_FROM_BACKUP, RECREATE_COLLECTION)
                 }
 
             /**
@@ -583,10 +576,10 @@ class DatabaseErrorDialog : AsyncDialogFragment() {
                     if (DatabaseCorruption.isDetected) {
                         // The sqlite database has been corrupted (DatabaseErrorHandler.onCorrupt() was called)
                         // Show a specific message appropriate for the situation
-                        res().getString(R.string.corrupt_db_message, res().getString(R.string.repair_deck))
+                        res().getString(R.string.corrupt_db_message)
                     } else {
                         // Generic message shown when a libanki task failed
-                        res().getString(R.string.access_collection_failed_message, res().getString(R.string.link_help))
+                        res().getString(R.string.access_collection_failed_message)
                     }
                 DIALOG_DB_ERROR -> res().getString(R.string.answering_error_message)
                 DIALOG_DISK_FULL -> res().getString(R.string.storage_full_message)
@@ -614,7 +607,7 @@ class DatabaseErrorDialog : AsyncDialogFragment() {
                 DIALOG_STORAGE_UNAVAILABLE_AFTER_UNINSTALL -> {
                     val directory =
                         context?.let { CollectionHelper.getCurrentAnkiDroidDirectory(it) }
-                            ?: res().getString(R.string.card_browser_unknown_deck_name)
+                            ?: res().getString(R.string.unknown_path_name)
                     res().getString(R.string.directory_inaccessible_after_uninstall_summary, directory)
                 }
                 DIALOG_ERROR_HANDLING -> requireArguments().getString("dialogMessage")

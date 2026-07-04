@@ -11,7 +11,6 @@ import androidx.annotation.IdRes
 import com.ichi2.anki.CollectionManager.TR
 import com.ichi2.anki.Flag
 import com.ichi2.anki.R
-import com.ichi2.anki.preferences.reviewer.MenuDisplayType.ALWAYS
 import com.ichi2.anki.preferences.reviewer.MenuDisplayType.DISABLED
 import com.ichi2.anki.preferences.reviewer.MenuDisplayType.MENU_ONLY
 import com.ichi2.anki.reviewer.Binding
@@ -37,9 +36,6 @@ enum class ViewerAction(
     val defaultDisplayType: MenuDisplayType? = null,
     val parentMenu: ViewerAction? = null,
 ) : MappableAction<ReviewerBinding> {
-    // Always
-    UNDO(R.id.action_undo, R.drawable.ic_undo_white, ALWAYS),
-
     // Menu only
     REDO(R.id.action_redo, R.drawable.ic_redo, MENU_ONLY),
     FLAG_MENU(R.id.action_flag, R.drawable.ic_flag_transparent, MENU_ONLY),
@@ -49,7 +45,6 @@ enum class ViewerAction(
     TOGGLE_WHITEBOARD(R.id.action_toggle_whiteboard, R.drawable.ic_enable_whiteboard, MENU_ONLY),
 
     // Disabled
-    BROWSE(R.id.action_browse, R.drawable.ic_flashcard_black, DISABLED),
     STATISTICS(R.id.action_statistics, R.drawable.ic_bar_chart_black, DISABLED),
     DECK_OPTIONS(R.id.action_deck_options, R.drawable.ic_tune_white, DISABLED),
     CARD_INFO(R.id.action_card_info, R.drawable.ic_dialog_info, DISABLED),
@@ -115,7 +110,6 @@ enum class ViewerAction(
 
     private val defaultBindings: List<ReviewerBinding> get() =
         when (this) {
-            UNDO -> listOf(keycode(KeyEvent.KEYCODE_Z, ctrl()))
             REDO -> listOf(keycode(KeyEvent.KEYCODE_Z, ModifierKeys(shift = true, ctrl = true, alt = false)))
             MARK -> listOf(unicode('*'))
             ADD_NOTE -> listOf(keycode(KeyEvent.KEYCODE_A))
@@ -128,7 +122,6 @@ enum class ViewerAction(
             SHOW_ALL_HINTS -> listOf(keycode(KeyEvent.KEYCODE_G))
             RECORD_VOICE -> listOf(keycode(KeyEvent.KEYCODE_V, shift()))
             REPLAY_VOICE -> listOf(keycode(KeyEvent.KEYCODE_V))
-            BROWSE -> listOf(keycode(KeyEvent.KEYCODE_B))
             STATISTICS -> listOf(keycode(KeyEvent.KEYCODE_T))
             PLAY_MEDIA -> listOf(keycode(KeyEvent.KEYCODE_R))
             PREVIOUS_CARD_INFO -> listOf(keycode(KeyEvent.KEYCODE_I, ModifierKeys(shift = false, ctrl = true, alt = true)))
@@ -242,11 +235,9 @@ enum class ViewerAction(
     fun title(context: Context): String =
         with(context) {
             when (this@ViewerAction) {
-                BROWSE -> TR.qtMiscBrowse()
                 STATISTICS -> TR.statisticsTitle()
                 RESCHEDULE_NOTE -> TR.sentenceCase.setDueDate
                 PREVIOUS_CARD_INFO -> TR.sentenceCase.previousCardInfo
-                UNDO -> getString(R.string.undo)
                 REDO -> getString(R.string.redo)
                 FLAG_MENU -> TR.browsingFlag()
                 MARK -> TR.sentenceCase.markNote

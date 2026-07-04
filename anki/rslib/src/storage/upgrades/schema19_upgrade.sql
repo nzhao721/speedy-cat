@@ -64,7 +64,12 @@ CREATE TABLE practice_attempts (
   -- (assisted). Assisted-correct answers are penalized in the Performance
   -- pillar. Always 0 for full-length answers (no hint ladder there).
   hint_level_used integer NOT NULL DEFAULT 0,
-  assisted integer NOT NULL DEFAULT 0
+  assisted integer NOT NULL DEFAULT 0,
+  -- SpeedyCAT: wrong main-question escalation before finalize (zero Performance credit).
+  main_wrong_first integer NOT NULL DEFAULT 0,
+  -- SpeedyCAT dashboard: NULL = not eligible (retry or hints on first encounter);
+  -- 0/1 = first-ever no-hint attempt incorrect/correct.
+  first_try_no_hint integer
 ) WITHOUT ROWID;
 CREATE INDEX idx_practice_attempts_session ON practice_attempts (session_id);
 CREATE INDEX idx_practice_attempts_fl ON practice_attempts (full_length_attempt_id);
@@ -87,7 +92,9 @@ CREATE TABLE full_length_attempts (
   started_at integer NOT NULL,
   completed_at integer,
   section_results text,
-  overall_scaled_score integer
+  overall_scaled_score integer,
+  counts_for_readiness integer NOT NULL DEFAULT 1,
+  abandoned integer NOT NULL DEFAULT 0
 ) WITHOUT ROWID;
 CREATE INDEX idx_full_length_attempts_test ON full_length_attempts (test_id);
 UPDATE col

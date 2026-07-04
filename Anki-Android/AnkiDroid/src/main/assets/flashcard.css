@@ -107,6 +107,11 @@ body.night_mode #content {
 }
 
 /* Simple, whole-answer correct/incorrect feedback (not per character). */
+#type-result {
+  text-align: center;
+  margin-top: 0;
+}
+
 .type-answer-result {
   margin: 0 auto;
 }

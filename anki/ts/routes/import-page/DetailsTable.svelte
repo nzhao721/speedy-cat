@@ -6,11 +6,9 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     import * as tr from "@generated/ftl";
 
     import Icon from "$lib/components/Icon.svelte";
-    import IconButton from "$lib/components/IconButton.svelte";
-    import { magnifyIcon } from "$lib/components/icons";
     import VirtualTable from "$lib/components/VirtualTable.svelte";
 
-    import { getRows, showInBrowser } from "./lib";
+    import { getRows } from "./lib";
     import TableCellWithTooltip from "./TableCellWithTooltip.svelte";
     import type { SummarizedLogQueues } from "./types";
 
@@ -33,7 +31,6 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                 <th>#</th>
                 <th>{tr.importingStatus()}</th>
                 <th>{tr.editingFields()}</th>
-                <th></th>
             </tr>
             <svelte:fragment slot="row" let:index>
                 <tr>
@@ -50,19 +47,6 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                     >
                         {rows[index].note.fields.join(",")}
                     </TableCellWithTooltip>
-                    <td class="search-cell">
-                        <IconButton
-                            class="search-icon"
-                            iconSize={100}
-                            active={false}
-                            disabled={!rows[index].summary.canBrowse}
-                            on:click={() => {
-                                showInBrowser([rows[index].note]);
-                            }}
-                        >
-                            <Icon icon={magnifyIcon} />
-                        </IconButton>
-                    </td>
                 </tr>
             </svelte:fragment>
         </VirtualTable>

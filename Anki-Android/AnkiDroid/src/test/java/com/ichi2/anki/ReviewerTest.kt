@@ -23,8 +23,6 @@ import com.ichi2.anki.cardviewer.Gesture
 import com.ichi2.anki.cardviewer.ViewerCommand.ANSWER_AGAIN
 import com.ichi2.anki.cardviewer.ViewerCommand.MARK
 import com.ichi2.anki.common.preferences.sharedPrefs
-import com.ichi2.anki.common.time.MockTime
-import com.ichi2.anki.common.time.TimeManager
 import com.ichi2.anki.common.ui.TransitionDirection
 import com.ichi2.anki.common.utils.annotation.KotlinCleanup
 import com.ichi2.anki.libanki.Card
@@ -53,7 +51,6 @@ import org.hamcrest.Matchers.empty
 import org.hamcrest.Matchers.equalTo
 import org.hamcrest.Matchers.not
 import org.hamcrest.Matchers.nullValue
-import org.json.JSONArray
 import org.junit.Assume.assumeTrue
 import org.junit.Ignore
 import org.junit.Test
@@ -220,84 +217,6 @@ class ReviewerTest : RobolectricTest() {
     }
 
     @Test
-    @Synchronized
-    @Throws(ConfirmModSchemaException::class)
-    @Flaky(OS.ALL, "java.lang.AssertionError: Unexpected card ord Expected: <2> but: was <1>")
-    fun testMultipleCards() =
-        runTest {
-            addNoteWithThreeCards()
-            val new = defaultDeckConfig.new
-            val time = collectionTime
-            new.delays = JSONArray(intArrayOf(1, 10, 60, 120))
-
-            advanceRobolectricLooper()
-
-            val reviewer = startReviewer()
-
-            advanceRobolectricLooper()
-
-            assertCounts(reviewer, 3, 0, 0)
-            answerCardOrdinalAsGood(reviewer, 1) // card 1 is shown
-            time.addM(3) // card get scheduler in [10, 12.5] minutes
-            // We wait 3 minutes to ensure card 2 is scheduled after card 1
-            answerCardOrdinalAsGood(reviewer, 2) // card 2 is shown
-            time.addM(3) // Same as above
-            answerCardOrdinalAsGood(reviewer, 3) // card 3 is shown
-
-            undo(reviewer)
-            assertCurrentOrdIs(reviewer, 3)
-
-            answerCardOrdinalAsGood(reviewer, 3) // card 3 is shown
-
-            assertCurrentOrdIsNot(reviewer, 3) // Anki Desktop shows "1"
-        }
-
-    @Test
-    @Flaky(OS.ALL, "java.lang.AssertionError: Expected: \"2\" but: was \"1\"")
-    fun testLrnQueueAfterUndo() =
-        runTest {
-            val new = defaultDeckConfig.new
-            val time = TimeManager.time as MockTime
-            new.delays = JSONArray(intArrayOf(1, 10, 60, 120))
-
-            val cards =
-                arrayOf(
-                    addBasicNote("1", "bar").firstCard(),
-                    addBasicNote("2", "bar").firstCard(),
-                    addBasicNote("3", "bar").firstCard(),
-                )
-            advanceRobolectricLooper()
-
-            val reviewer = startReviewer()
-
-            advanceRobolectricLooper()
-
-            equalFirstField(cards[0], reviewer.currentCard!!)
-            reviewer.answerCard(Rating.AGAIN)
-            advanceRobolectricLooper()
-
-            equalFirstField(cards[1], reviewer.currentCard!!)
-            reviewer.answerCard(Rating.AGAIN)
-            advanceRobolectricLooper()
-
-            undo(reviewer)
-            advanceRobolectricLooper()
-
-            equalFirstField(cards[1], reviewer.currentCard!!)
-            reviewer.answerCard(Rating.GOOD)
-            advanceRobolectricLooper()
-
-            equalFirstField(cards[2], reviewer.currentCard!!)
-            time.addM(2)
-            reviewer.answerCard(Rating.GOOD)
-            advanceRobolectricLooper()
-            equalFirstField(
-                cards[0],
-                reviewer.currentCard!!,
-            ) // This failed in #6898 because this card was not in the queue
-        }
-
-    @Test
     fun jsAnkiGetDeckName() =
         runTest {
             val didAb = addDeck("A::B")
@@ -419,10 +338,6 @@ class ReviewerTest : RobolectricTest() {
         val ord = r.currentCard!!.ord
 
         assertThat("Unexpected card ord", ord + 1, not(equalTo(i)))
-    }
-
-    private fun undo(reviewer: Reviewer) {
-        reviewer.undo()
     }
 
     @Suppress("SameParameterValue")

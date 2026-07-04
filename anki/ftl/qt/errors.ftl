@@ -1,4 +1,3 @@
--errors-support-site = [support site](https://help.ankiweb.net)
 errors-standard-popup2 =
     SpeedyCAT encountered a problem. Please follow the troubleshooting steps.
 errors-may-be-addon = The problem may be caused by an add-on.
@@ -11,8 +10,7 @@ errors-standard-popup =
     An error occurred. Please use **Tools > Check Database** to see if
     that fixes the problem.
     
-    If problems persist, please report the problem on our { -errors-support-site }.
-    Please copy and paste the information below into your report.
+    If problems persist, please copy and paste the information below when reporting the problem.
 errors-addons-active-popup =
     # Error
     

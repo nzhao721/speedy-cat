@@ -18,7 +18,6 @@ import androidx.test.core.app.ActivityScenario
 import anki.collection.opChanges
 import anki.scheduler.CardAnswer.Rating
 import app.cash.turbine.test
-import com.ichi2.anki.CollectionManager.TR
 import com.ichi2.anki.common.preferences.sharedPrefs
 import com.ichi2.anki.common.time.TimeManager
 import com.ichi2.anki.common.utils.annotation.KotlinCleanup
@@ -33,8 +32,6 @@ import com.ichi2.anki.libanki.DeckId
 import com.ichi2.anki.navigation.AnkiDroidNavigator
 import com.ichi2.anki.observability.ChangeManager
 import com.ichi2.anki.settings.Prefs
-import com.ichi2.anki.snackbar.showSnackbar
-import com.ichi2.anki.ui.internationalization.sentenceCase
 import com.ichi2.anki.ui.windows.permissions.PermissionsActivity
 import com.ichi2.anki.ui.windows.permissions.PermissionsActivity.Companion.PERMISSIONS_SET_EXTRA
 import com.ichi2.anki.utils.Destination
@@ -44,7 +41,6 @@ import com.ichi2.testutils.BackendEmulatingOpenConflict
 import com.ichi2.testutils.BackupManagerTestUtilities
 import com.ichi2.testutils.common.Flaky
 import com.ichi2.testutils.common.OS
-import com.ichi2.testutils.ext.addBasicNoteWithOp
 import com.ichi2.testutils.ext.menu
 import com.ichi2.testutils.grantWritePermissions
 import com.ichi2.testutils.revokeWritePermissions
@@ -52,8 +48,6 @@ import com.ichi2.testutils.withDeniedPermissions
 import com.ichi2.testutils.withWritePermissions
 import kotlinx.coroutines.flow.merge
 import org.hamcrest.MatcherAssert.assertThat
-import org.hamcrest.Matchers.containsInAnyOrder
-import org.hamcrest.Matchers.containsString
 import org.hamcrest.Matchers.equalTo
 import org.hamcrest.Matchers.not
 import org.hamcrest.Matchers.notNullValue
@@ -588,28 +582,6 @@ class DeckPickerTest : RobolectricTest() {
             assertThat("deck focus has changed", viewModel.focusedDeck, equalTo(deckWithCards))
         }
     }
-
-    @Test
-    fun `undo menu item is updated after undoableOp call`() =
-        deckPicker {
-            fun DeckPicker.getUndoTitle() = menu().findItem(R.id.action_undo).title.toString()
-
-            fun waitForMenu() = ShadowLooper.runUiThreadTasksIncludingDelayedTasks()
-
-            suspend fun DeckPicker.undo() {
-                undoAndShowSnackbar()
-                waitForMenu()
-            }
-
-            // enqueue two actions, neither of which affect the study queues
-            val note = addBasicNoteWithOp()
-            note.updateOp { this.fields[0] = "baz" }
-
-            waitForMenu()
-            assertThat(getUndoTitle(), containsString("Update Note"))
-            undo()
-            assertThat(getUndoTitle(), containsString("Add Note"))
-        }
 
     @Test
     fun `On a new startup, the App Intro is displayed`() =

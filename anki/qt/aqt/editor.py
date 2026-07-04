@@ -47,6 +47,7 @@ from aqt.utils import (
     KeyboardModifiersPressed,
     disable_help_button,
     getFile,
+    hide_button_box_help_button,
     openFolder,
     openHelp,
     qtMenuShortcutWorkaround,
@@ -1272,9 +1273,7 @@ require("anki/ui").loaded.then(() => require("anki/NoteEditor").instances[0].too
         form.setupUi(d)
         restoreGeom(d, "htmlEditor")
         disable_help_button(d)
-        qconnect(
-            form.buttonBox.helpRequested, lambda: openHelp(HelpPage.EDITING_FEATURES)
-        )
+        hide_button_box_help_button(form.buttonBox)
         font = QFont("Courier")
         font.setStyleHint(QFont.StyleHint.TypeWriter)
         form.textEdit.setFont(font)

@@ -19,6 +19,7 @@ section ends. There is deliberately no way back into a section once it closes.
         fetchQuestions,
         formatClock,
         groupIntoRunItems,
+        confirmEarlySectionEnd,
         logFullLengthAnswer,
         primaryTopic,
         sectionLong,
@@ -34,7 +35,7 @@ section ends. There is deliberately no way back into a section once it closes.
     export let sectionOrder = 1;
     export let sectionTotal = 4;
 
-    const dispatch = createEventDispatcher<{ sectionDone: void }>();
+    const dispatch = createEventDispatcher<{ sectionDone: void; abandon: void }>();
 
     let ordered: PracticeQuestion[] = [];
     let loading = true;
@@ -54,6 +55,7 @@ section ends. There is deliberately no way back into a section once it closes.
     $: current = ordered[index];
     $: total = ordered.length;
     $: answeredCount = ordered.filter((q) => selected[q.id]).length;
+    $: unansweredCount = total - answeredCount;
 
     onMount(async () => {
         try {
@@ -140,6 +142,16 @@ section ends. There is deliberately no way back into a section once it closes.
         flagged = { ...flagged, [current.id]: !flagged[current.id] };
     }
 
+    function requestEndSection(): void {
+        if (ending) {
+            return;
+        }
+        if (remaining > 0 && !confirmEarlySectionEnd(unansweredCount)) {
+            return;
+        }
+        void endSection();
+    }
+
     async function endSection(): Promise<void> {
         if (ending) {
             return;
@@ -180,7 +192,10 @@ section ends. There is deliberately no way back into a section once it closes.
         <div class="timer" class:low={remaining <= 300}>
             {formatClock(remaining)}
         </div>
-        <button class="finish" on:click={endSection} disabled={ending}>
+        <button class="abandon" on:click={() => dispatch("abandon")}>
+            Abandon test
+        </button>
+        <button class="finish" on:click={requestEndSection} disabled={ending}>
             End section
         </button>
     </div>
@@ -190,7 +205,7 @@ section ends. There is deliberately no way back into a section once it closes.
     {:else if total === 0}
         <div class="center">
             <p>No questions found for this section.</p>
-            <button class="primary" on:click={endSection}>Continue</button>
+            <button class="primary" on:click={requestEndSection}>Continue</button>
         </div>
     {:else}
         <div class="nav-strip">
@@ -213,6 +228,7 @@ section ends. There is deliberately no way back into a section once it closes.
                     <PassagePanel
                         passageSet={passageCache[current.passageId]}
                         loading={passageLoading && !passageCache[current.passageId]}
+                        showMetaBadges={false}
                     />
                 </div>
             {/if}
@@ -225,6 +241,7 @@ section ends. There is deliberately no way back into a section once it closes.
                         eliminated={eliminated[current.id] ?? []}
                         flagged={flagged[current.id] ?? false}
                         revealed={false}
+                        showMetaBadges={false}
                         on:select={(e) => onSelect(e.detail)}
                         on:eliminate={(e) => onEliminate(e.detail)}
                         on:toggleFlag={onToggleFlag}
@@ -292,13 +309,18 @@ section ends. There is deliberately no way back into a section once it closes.
         color: #fff;
         background: #d1434b;
     }
-    .finish {
+    .finish,
+    .abandon {
         border: 1px solid var(--border);
         background: var(--button-bg);
         color: var(--fg);
         border-radius: 6px;
         padding: 0.4rem 0.8rem;
         cursor: pointer;
+    }
+    .abandon {
+        color: #d1434b;
+        border-color: rgba(209, 67, 75, 0.45);
     }
     .nav-strip {
         display: flex;

@@ -59,7 +59,6 @@ import com.ichi2.anki.snackbar.showSnackbar
 import com.ichi2.anki.ui.internationalization.sentenceCase
 import com.ichi2.anki.utils.doOnImeHidden
 import com.ichi2.anki.utils.ext.requireBoolean
-import com.ichi2.anki.utils.openUrl
 import com.ichi2.anki.withProgress
 import com.ichi2.utils.AndroidUiUtils
 import com.ichi2.utils.create
@@ -67,7 +66,6 @@ import com.ichi2.utils.dp
 import com.ichi2.utils.negativeButton
 import com.ichi2.utils.positiveButton
 import com.ichi2.utils.title
-import com.ichi2.utils.titleWithHelpIcon
 import dev.androidbroadcast.vbpd.viewBinding
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.launch
@@ -139,11 +137,6 @@ class SetDueDateDialog : DialogFragment() {
         binding = DialogSetDueDateBinding.inflate(layoutInflater)
         return MaterialAlertDialogBuilder(requireContext())
             .create {
-                titleWithHelpIcon(
-                    text = TR.sentenceCase.setDueDate,
-                ) {
-                    openUrl(R.string.link_set_due_date_help)
-                }
                 title(text = TR.sentenceCase.setDueDate)
                 positiveButton(R.string.dialog_ok) { launchUpdateDueDate() }
                 negativeButton(R.string.dialog_cancel)

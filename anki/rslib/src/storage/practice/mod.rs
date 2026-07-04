@@ -18,6 +18,7 @@ use anki_proto::practice::SectionStat;
 use anki_proto::practice::TopicStat;
 use rusqlite::params;
 use rusqlite::params_from_iter;
+use rusqlite::OptionalExtension;
 use rusqlite::types::Value;
 use rusqlite::Row;
 
@@ -59,6 +60,31 @@ pub(crate) struct NewAttempt<'a> {
     /// True when the learner reached level 3 of the ladder; penalized in the
     /// readiness Performance pillar (an assisted-correct is not a full correct).
     pub assisted: bool,
+    /// True when the learner submitted a wrong main-question answer before
+    /// finalizing (wrong-answer escalation into the hint ladder).
+    pub main_wrong_first: bool,
+    /// Dashboard first-try eligibility: `Some(0/1)` when this row is the
+    /// learner's first-ever no-hint attempt on the question; `None` otherwise.
+    pub first_try_no_hint: Option<i32>,
+}
+
+pub(crate) struct CompletedFullLengthAttempt {
+    pub attempt_id: String,
+    pub test_id: String,
+    pub test_title: String,
+    pub started_at: i64,
+    pub completed_at: i64,
+    pub overall_scaled_score: Option<u32>,
+    pub total_correct: u32,
+    pub total_questions: u32,
+    pub counts_for_readiness: bool,
+}
+
+pub(crate) struct FullLengthAttemptMeta {
+    pub test_id: String,
+    pub completed_at: Option<i64>,
+    pub abandoned: bool,
+    pub counts_for_readiness: bool,
 }
 
 fn row_to_question(row: &Row) -> Result<PracticeQuestion> {
@@ -307,6 +333,14 @@ impl SqliteStorage {
         rows.collect()
     }
 
+    pub(crate) fn questions_for_test(&self, test_id: &str) -> Result<Vec<PracticeQuestion>> {
+        let mut stmt = self
+            .db
+            .prepare_cached(&format!("{QUESTION_COLS} where test_id = ? order by id"))?;
+        let rows = stmt.query_and_then([test_id], row_to_question)?;
+        rows.collect()
+    }
+
     // ---- Passages ---------------------------------------------------------
 
     pub(crate) fn upsert_practice_passage(&self, p: &Passage) -> Result<()> {
@@ -422,8 +456,8 @@ impl SqliteStorage {
                 "insert or replace into practice_attempts (id, session_id, \
                  full_length_attempt_id, question_id, selected_answer, correct, \
                  time_on_question_seconds, section, topic, answered_at, hint_level_used, \
-                 assisted) \
-                 values (?,?,?,?,?,?,?,?,?,?,?,?)",
+                 assisted, main_wrong_first, first_try_no_hint) \
+                 values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             )?
             .execute(params![
                 a.id,
@@ -438,8 +472,33 @@ impl SqliteStorage {
                 a.answered_at,
                 a.hint_level_used,
                 a.assisted,
+                a.main_wrong_first,
+                a.first_try_no_hint,
             ])?;
         Ok(())
+    }
+
+    /// Whether any attempt row exists for `question_id` other than `exclude_id`.
+    pub(crate) fn question_attempted_before(
+        &self,
+        question_id: &str,
+        exclude_id: &str,
+    ) -> Result<bool> {
+        self.db
+            .prepare_cached(
+                "select 1 from practice_attempts where question_id = ? and id <> ? limit 1",
+            )?
+            .exists(params![question_id, exclude_id])
+            .map_err(Into::into)
+    }
+
+    /// Prior `first_try_no_hint` for an attempt row, if it exists.
+    pub(crate) fn attempt_first_try_no_hint(&self, id: &str) -> Result<Option<Option<i32>>> {
+        self.db
+            .prepare_cached("select first_try_no_hint from practice_attempts where id = ?")?
+            .query_row([id], |r| r.get(0))
+            .optional()
+            .map_err(Into::into)
     }
 
     /// (correct, time_seconds, section_db, selected_answer) for each attempt in
@@ -578,19 +637,55 @@ impl SqliteStorage {
         section_results_json: &str,
         overall_scaled_score: Option<u32>,
         completed_at: i64,
+        counts_for_readiness: bool,
     ) -> Result<()> {
         self.db
             .prepare_cached(
                 "update full_length_attempts set section_results = ?, overall_scaled_score = ?, \
-                 completed_at = ? where id = ?",
+                 completed_at = ?, counts_for_readiness = ?, abandoned = 0 where id = ?",
             )?
             .execute(params![
                 section_results_json,
                 overall_scaled_score,
                 completed_at,
+                counts_for_readiness as i32,
                 id
             ])?;
         Ok(())
+    }
+
+    /// Mark an in-progress attempt as abandoned (user left mid-exam).
+    pub(crate) fn abandon_full_length_attempt(&self, id: &str, completed_at: i64) -> Result<()> {
+        self.db
+            .prepare_cached(
+                "update full_length_attempts set completed_at = ?, section_results = '[]', \
+                 overall_scaled_score = null, counts_for_readiness = 0, abandoned = 1 \
+                 where id = ? and completed_at is null",
+            )?
+            .execute(params![completed_at, id])?;
+        Ok(())
+    }
+
+    /// In-progress attempts (not submitted, not abandoned), optionally excluding one id.
+    pub(crate) fn count_incomplete_full_length_attempts(
+        &self,
+        exclude_id: Option<&str>,
+    ) -> Result<u32> {
+        let sql = if exclude_id.is_some() {
+            "select count(*) from full_length_attempts \
+             where completed_at is null and abandoned = 0 and id != ?"
+        } else {
+            "select count(*) from full_length_attempts \
+             where completed_at is null and abandoned = 0"
+        };
+        let count = if let Some(id) = exclude_id {
+            self.db
+                .prepare_cached(sql)?
+                .query_row([id], |r| r.get::<_, i64>(0))?
+        } else {
+            self.db.prepare_cached(sql)?.query_row([], |r| r.get::<_, i64>(0))?
+        };
+        Ok(count as u32)
     }
 
     /// (section_db, correct, total, time_seconds) grouped by section for a
@@ -621,11 +716,21 @@ impl SqliteStorage {
         &self,
         section_db: Option<&str>,
         source_clause: Option<&str>,
+        first_attempt_no_hint_only: bool,
     ) -> Result<Vec<TopicStat>> {
         let mut sql = String::from(
-            "select section, topic, count(*), sum(correct), sum(time_on_question_seconds) \
-             from practice_attempts where 1=1",
+            "select section, topic, count(*), sum(",
         );
+        if first_attempt_no_hint_only {
+            sql.push_str("first_try_no_hint");
+        } else {
+            sql.push_str("correct");
+        }
+        sql.push_str("), sum(time_on_question_seconds) \
+             from practice_attempts where 1=1");
+        if first_attempt_no_hint_only {
+            sql.push_str(" and first_try_no_hint is not null");
+        }
         let mut args: Vec<Value> = Vec::new();
         if let Some(s) = section_db {
             sql.push_str(" and section = ?");
@@ -655,27 +760,34 @@ impl SqliteStorage {
         rows.collect()
     }
 
-    /// (correct, answered, total_time_seconds) over answered practice-session
+    /// (weighted_credit_sum, answered, total_time_seconds) over answered practice-session
     /// attempts (a session attempt with a non-empty selected answer). Feeds the
     /// readiness Performance pillar; skipped/unanswered questions are excluded
     /// so accuracy is over questions the learner actually answered.
     ///
-    /// SpeedyCAT anti-gaming penalty: the "correct" count credits only
-    /// UNASSISTED correct answers (`correct = 1 AND assisted = 0`). An
-    /// assisted-correct attempt (the learner climbed to level 3 of the hint
-    /// ladder) still counts toward the denominator but earns no credit — so a
-    /// student cannot inflate their Performance pillar by leaning on the tutor.
-    /// The denominator is every answered attempt; timing is unaffected.
-    pub(crate) fn practice_accuracy_totals(&self) -> Result<(u32, u32, u32)> {
+    /// SpeedyCAT progressive hint penalties: credit is summed per attempt (L0=1.0,
+    /// L1=0.60, L2=0.30, L3=0.10; main-wrong-first or incorrect=0). The
+    /// denominator is every answered attempt; timing is unaffected.
+    ///
+    /// Prefer [`Self::practice_performance_observations`] for EWMA aggregation.
+    pub(crate) fn practice_accuracy_totals(&self) -> Result<(f64, u32, u32)> {
         self.db
             .prepare_cached(
-                "select coalesce(sum(correct = 1 and assisted = 0), 0), count(*), \
+                "select coalesce(sum(
+                    case
+                        when main_wrong_first = 1 or correct = 0 then 0.0
+                        when hint_level_used = 0 then 1.0
+                        when hint_level_used = 1 then 0.6
+                        when hint_level_used = 2 then 0.3
+                        else 0.1
+                    end
+                 ), 0.0), count(*), \
                  coalesce(sum(time_on_question_seconds), 0) from practice_attempts \
                  where session_id is not null and selected_answer <> ''",
             )?
             .query_row([], |r| {
                 Ok((
-                    r.get::<_, i64>(0)? as u32,
+                    r.get::<_, f64>(0)?,
                     r.get::<_, i64>(1)? as u32,
                     r.get::<_, i64>(2)? as u32,
                 ))
@@ -683,14 +795,61 @@ impl SqliteStorage {
             .map_err(Into::into)
     }
 
-    /// (correct, total) over answers recorded for COMPLETED full-length attempts.
-    /// Feeds the readiness Readiness pillar (raw score only — no timing/pacing).
+    /// Per-answered practice-session attempt for EWMA Performance aggregation:
+    /// (fractional credit, answered_at, time_on_question_seconds).
+    pub(crate) fn practice_performance_observations(
+        &self,
+    ) -> Result<Vec<(f64, i64, u32)>> {
+        let mut stmt = self.db.prepare_cached(
+            "select
+                case
+                    when main_wrong_first = 1 or correct = 0 then 0.0
+                    when hint_level_used = 0 then 1.0
+                    when hint_level_used = 1 then 0.6
+                    when hint_level_used = 2 then 0.3
+                    else 0.1
+                end,
+                answered_at,
+                time_on_question_seconds
+             from practice_attempts
+             where session_id is not null and selected_answer <> ''",
+        )?;
+        let rows = stmt.query_and_then([], |r| {
+            Ok((
+                r.get::<_, f64>(0)?,
+                r.get::<_, i64>(1)?,
+                r.get::<_, i64>(2)? as u32,
+            ))
+        })?;
+        rows.collect()
+    }
+
+    /// Per-answer rows for EWMA Readiness aggregation over completed full-length
+    /// tests: (correct as 0/1, answered_at).
+    pub(crate) fn full_length_readiness_observations(&self) -> Result<Vec<(f64, i64)>> {
+        let mut stmt = self.db.prepare_cached(
+            "select a.correct, a.answered_at from practice_attempts a \
+             join full_length_attempts f on a.full_length_attempt_id = f.id \
+             where f.completed_at is not null and f.abandoned = 0 \
+             and f.counts_for_readiness = 1",
+        )?;
+        let rows = stmt.query_and_then([], |r| {
+            let correct: i64 = r.get(0)?;
+            Ok((if correct != 0 { 1.0 } else { 0.0 }, r.get::<_, i64>(1)?))
+        })?;
+        rows.collect()
+    }
+
+    /// (correct, total) over answers recorded for COMPLETED full-length attempts
+    /// that count toward readiness (excludes abandoned and scores earned while
+    /// another attempt was left unfinished).
     pub(crate) fn full_length_score_totals(&self) -> Result<(u32, u32)> {
         self.db
             .prepare_cached(
                 "select coalesce(sum(a.correct), 0), count(*) from practice_attempts a \
                  join full_length_attempts f on a.full_length_attempt_id = f.id \
-                 where f.completed_at is not null",
+                 where f.completed_at is not null and f.abandoned = 0 \
+                 and f.counts_for_readiness = 1",
             )?
             .query_row([], |r| {
                 Ok((r.get::<_, i64>(0)? as u32, r.get::<_, i64>(1)? as u32))
@@ -699,12 +858,13 @@ impl SqliteStorage {
     }
 
     /// Per-section (section_db, correct, total) over answers recorded for
-    /// COMPLETED full-length attempts. Detail for the readiness Readiness pillar.
+    /// completed full-length attempts that count toward readiness.
     pub(crate) fn full_length_section_scores(&self) -> Result<Vec<(String, u32, u32)>> {
         let mut stmt = self.db.prepare_cached(
             "select a.section, coalesce(sum(a.correct), 0), count(*) from practice_attempts a \
              join full_length_attempts f on a.full_length_attempt_id = f.id \
-             where f.completed_at is not null group by a.section order by a.section",
+             where f.completed_at is not null and f.abandoned = 0 \
+             and f.counts_for_readiness = 1 group by a.section order by a.section",
         )?;
         let rows = stmt.query_and_then([], |r| {
             Ok((
@@ -716,16 +876,120 @@ impl SqliteStorage {
         rows.collect()
     }
 
+    /// Completed, non-abandoned attempts with aggregate scores (newest first).
+    pub(crate) fn list_completed_full_length_attempts(
+        &self,
+    ) -> Result<Vec<CompletedFullLengthAttempt>> {
+        let mut stmt = self.db.prepare_cached(
+            "select f.id, f.test_id, t.title, f.started_at, f.completed_at, \
+             f.overall_scaled_score, f.counts_for_readiness, \
+             coalesce((select sum(a.correct) from practice_attempts a \
+               where a.full_length_attempt_id = f.id), 0), \
+             coalesce((select count(*) from practice_attempts a \
+               where a.full_length_attempt_id = f.id), 0) \
+             from full_length_attempts f \
+             join full_length_tests t on f.test_id = t.id \
+             where f.completed_at is not null and f.abandoned = 0 \
+             order by f.completed_at desc",
+        )?;
+        let rows = stmt.query_and_then([], |r| {
+            Ok(CompletedFullLengthAttempt {
+                attempt_id: r.get(0)?,
+                test_id: r.get(1)?,
+                test_title: r.get(2)?,
+                started_at: r.get(3)?,
+                completed_at: r.get(4)?,
+                overall_scaled_score: r.get::<_, Option<i64>>(5)?.map(|s| s as u32),
+                total_correct: r.get::<_, i64>(7)? as u32,
+                total_questions: r.get::<_, i64>(8)? as u32,
+                counts_for_readiness: r.get::<_, i64>(6)? != 0,
+            })
+        })?;
+        rows.collect()
+    }
+
+    /// (section_db, topic, correct, total) for one completed attempt.
+    pub(crate) fn full_length_topic_scores(
+        &self,
+        attempt_id: &str,
+    ) -> Result<Vec<(String, String, u32, u32)>> {
+        let mut stmt = self.db.prepare_cached(
+            "select section, topic, coalesce(sum(correct), 0), count(*) \
+             from practice_attempts where full_length_attempt_id = ? \
+             group by section, topic order by section, topic",
+        )?;
+        let rows = stmt.query_and_then([attempt_id], |r| {
+            Ok((
+                r.get::<_, String>(0)?,
+                r.get::<_, String>(1)?,
+                r.get::<_, i64>(2)? as u32,
+                r.get::<_, i64>(3)? as u32,
+            ))
+        })?;
+        rows.collect()
+    }
+
+    /// Stored answers for a full-length attempt: (question_id, selected_answer, correct, section_db).
+    pub(crate) fn full_length_attempt_answers(
+        &self,
+        attempt_id: &str,
+    ) -> Result<Vec<(String, String, bool, String)>> {
+        let mut stmt = self.db.prepare_cached(
+            "select question_id, selected_answer, correct, section \
+             from practice_attempts where full_length_attempt_id = ? \
+             order by answered_at",
+        )?;
+        let rows = stmt.query_and_then([attempt_id], |r| {
+            Ok((
+                r.get::<_, String>(0)?,
+                r.get::<_, String>(1)?,
+                r.get::<_, i64>(2)? != 0,
+                r.get::<_, String>(3)?,
+            ))
+        })?;
+        rows.collect()
+    }
+
+    /// Returns (test_id, completed_at, abandoned, counts_for_readiness) if the attempt exists.
+    pub(crate) fn get_full_length_attempt_meta(
+        &self,
+        id: &str,
+    ) -> Result<Option<FullLengthAttemptMeta>> {
+        self.db
+            .prepare_cached(
+                "select test_id, completed_at, abandoned, counts_for_readiness \
+                 from full_length_attempts where id = ?",
+            )?
+            .query_and_then([id], |r| {
+                Ok(FullLengthAttemptMeta {
+                    test_id: r.get(0)?,
+                    completed_at: r.get(1)?,
+                    abandoned: r.get::<_, i64>(2)? != 0,
+                    counts_for_readiness: r.get::<_, i64>(3)? != 0,
+                })
+            })?
+            .next()
+            .transpose()
+    }
+
     /// Time-spent + accuracy aggregated by section.
     pub(crate) fn section_stats(
         &self,
         section_db: Option<&str>,
         source_clause: Option<&str>,
+        first_attempt_no_hint_only: bool,
     ) -> Result<Vec<SectionStat>> {
-        let mut sql = String::from(
-            "select section, count(*), sum(correct), sum(time_on_question_seconds) \
-             from practice_attempts where 1=1",
-        );
+        let mut sql = String::from("select section, count(*), sum(");
+        if first_attempt_no_hint_only {
+            sql.push_str("first_try_no_hint");
+        } else {
+            sql.push_str("correct");
+        }
+        sql.push_str("), sum(time_on_question_seconds) \
+             from practice_attempts where 1=1");
+        if first_attempt_no_hint_only {
+            sql.push_str(" and first_try_no_hint is not null");
+        }
         let mut args: Vec<Value> = Vec::new();
         if let Some(s) = section_db {
             sql.push_str(" and section = ?");

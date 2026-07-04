@@ -9,18 +9,6 @@
         app:actionViewClass="com.ichi2.ui.AccessibleSearchView"
         app:showAsAction="always|collapseActionView"/>
     <item
-        android:id="@+id/action_sync"
-        android:icon="@drawable/ic_sync"
-        android:title="@string/button_sync"
-        app:actionProviderClass="com.ichi2.anki.SyncActionProvider"
-        app:showAsAction="always"/>
-    <item
-        android:id="@+id/action_undo"
-        android:icon="@drawable/ic_undo_white"
-        app:showAsAction="never"
-        android:visible="false"
-        tools:title="Undo X"/>
-    <item
         android:id="@+id/checks"
         android:title="@string/checks_action"
         app:showAsAction="never">

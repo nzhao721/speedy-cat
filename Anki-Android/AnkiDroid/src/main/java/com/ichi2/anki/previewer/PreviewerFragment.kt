@@ -34,8 +34,8 @@ import com.google.android.material.slider.Slider
 import com.ichi2.anki.CollectionManager.TR
 import com.ichi2.anki.DispatchKeyEventListener
 import com.ichi2.anki.Flag
+import com.ichi2.anki.IdsFile
 import com.ichi2.anki.R
-import com.ichi2.anki.browser.IdsFile
 import com.ichi2.anki.common.annotations.NeedsTest
 import com.ichi2.anki.databinding.FragmentPreviewerBinding
 import com.ichi2.anki.previewer.PreviewerFragment.Companion.CARD_IDS_FILE_ARG

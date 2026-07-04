@@ -111,7 +111,7 @@ class ReviewerMenuSettingsFragment :
         viewLifecycleOwner.lifecycleScope.launch {
             val menu = binding.reviewerMenuView
             menu.clear()
-            menu.addActions(alwaysShowActions, menuOnlyActions)
+            menu.addActions(alwaysShowActions)
             menu.setFlagTitles()
         }
     }

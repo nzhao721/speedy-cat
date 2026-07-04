@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import enum
+import html
 import re
 from collections.abc import Callable
 from typing import Any, cast
@@ -192,6 +193,13 @@ class BottomWebView(ToolbarWebView):
         super().__init__(mw, kind=AnkiWebViewKind.BOTTOM_TOOLBAR)
         qconnect(self.hide_timer.timeout, self.hide_if_allowed)
 
+    def adjustHeightToFit(self) -> None:
+        self.eval("""document.body.style.setProperty("min-height", "0px"); """)
+        self.evalWithCallback(
+            "Math.max(document.documentElement.offsetHeight, document.documentElement.scrollHeight)",
+            self._onHeight,
+        )
+
     def eventFilter(self, obj, evt):
         if handled := super().eventFilter(obj, evt):
             return handled
@@ -268,6 +276,18 @@ class BottomWebView(ToolbarWebView):
 
 
 class Toolbar:
+    UNDO_ICON_SVG = (
+        '<svg viewBox="0 0 24 24" role="img" aria-hidden="true" '
+        'focusable="false" xmlns="http://www.w3.org/2000/svg">'
+        "<title>Undo</title>"
+        '<path d="M9 14 4 9l5-5" fill="none" stroke="currentColor" '
+        'stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
+        '<path d="M4 9h10.5a5.5 5.5 0 1 1 0 11H12" fill="none" '
+        'stroke="currentColor" stroke-width="2" stroke-linecap="round" '
+        'stroke-linejoin="round"/>'
+        "</svg>"
+    )
+
     def __init__(self, mw: aqt.AnkiQt, web: AnkiWebView) -> None:
         self.mw = mw
         self.web = web
@@ -342,6 +362,29 @@ class Toolbar:
             f"""{label}</a>"""
         )
 
+    def create_icon_link(
+        self,
+        cmd: str,
+        label: str,
+        func: Callable,
+        icon_svg: str,
+        tip: str | None = None,
+        id: str | None = None,
+    ) -> str:
+        """Like create_link, but renders an inline SVG instead of text."""
+        self.link_handlers[cmd] = func
+
+        safe_label = html.escape(label, quote=True)
+        title_attr = f'title="{html.escape(tip, quote=True)}"' if tip else ""
+        id_attr = f'id="{id}"' if id else ""
+
+        return (
+            f"""<a class="hitem hitem-icon" tabindex="-1" """
+            f"""aria-label="{safe_label}" {title_attr} {id_attr} href=# """
+            f"""onclick="if(this.classList.contains('disabled'))return false; """
+            f"""return pycmd('{cmd}')">{icon_svg}</a>"""
+        )
+
     def _centerLinks(self) -> str:
         links = [
             self.create_link(
@@ -374,16 +417,7 @@ class Toolbar:
                 tip=tr.actions_shortcut_key(val="F"),
                 id="full-length",
             ),
-            self.create_link(
-                "browse",
-                tr.qt_misc_browse(),
-                self._browseLinkHandler,
-                tip=tr.actions_shortcut_key(val="B"),
-                id="browse",
-            ),
         ]
-
-        links.append(self._create_sync_link())
 
         gui_hooks.top_toolbar_did_init_links(links, self)
 
@@ -449,9 +483,6 @@ class Toolbar:
             self.mw.moveToState("review")
         else:
             self.mw.onOverview()
-
-    def _browseLinkHandler(self) -> None:
-        self.mw.onBrowse()
 
     def _practiceLinkHandler(self) -> None:
         # SpeedyCAT: study modes render inside the main window (no pop-up);

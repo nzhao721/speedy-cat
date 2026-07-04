@@ -31,7 +31,6 @@ from aqt.toolbar import HideMode
 from aqt.utils import disable_help_button, send_to_trash, showWarning, tr
 
 if TYPE_CHECKING:
-    from aqt.browser.layout import BrowserLayout
     from aqt.editor import EditorMode
 
 
@@ -577,18 +576,18 @@ create table if not exists profiles
         self.meta["uiScale"] = scale
 
     def reduce_motion(self) -> bool:
-        return self.meta.get("reduce_motion", True)
+        # SpeedyCAT: distractions settings are locked (reduce motion ON).
+        return True
 
     def set_reduce_motion(self, on: bool) -> None:
-        self.meta["reduce_motion"] = on
-        gui_hooks.body_classes_need_update()
+        pass
 
     def minimalist_mode(self) -> bool:
-        return self.meta.get("minimalist_mode", False)
+        # SpeedyCAT: distractions settings are locked (minimalist mode OFF).
+        return False
 
     def set_minimalist_mode(self, on: bool) -> None:
-        self.meta["minimalist_mode"] = on
-        gui_hooks.body_classes_need_update()
+        pass
 
     def spacebar_rates_card(self) -> bool:
         return self.meta.get("spacebar_rates_card", True)
@@ -603,11 +602,11 @@ create table if not exists profiles
         self.meta.setdefault("answer_keys", self.default_answer_keys)[ease] = key
 
     def hide_top_bar(self) -> bool:
-        return self.meta.get("hide_top_bar", False)
+        # SpeedyCAT: distractions settings are locked (hide top bar OFF).
+        return False
 
     def set_hide_top_bar(self, on: bool) -> None:
-        self.meta["hide_top_bar"] = on
-        gui_hooks.body_classes_need_update()
+        pass
 
     def top_bar_hide_mode(self) -> HideMode:
         return self.meta.get("top_bar_hide_mode", HideMode.FULLSCREEN)
@@ -617,11 +616,11 @@ create table if not exists profiles
         gui_hooks.body_classes_need_update()
 
     def hide_bottom_bar(self) -> bool:
-        return self.meta.get("hide_bottom_bar", False)
+        # SpeedyCAT: distractions settings are locked (hide bottom bar OFF).
+        return False
 
     def set_hide_bottom_bar(self, on: bool) -> None:
-        self.meta["hide_bottom_bar"] = on
-        gui_hooks.body_classes_need_update()
+        pass
 
     def bottom_bar_hide_mode(self) -> HideMode:
         return self.meta.get("bottom_bar_hide_mode", HideMode.FULLSCREEN)
@@ -637,10 +636,11 @@ create table if not exists profiles
         self.meta["last_addon_update_check"] = secs
 
     def check_for_addon_updates(self) -> bool:
-        return self.meta.get("check_for_addon_updates", True)
+        # SpeedyCAT: automatic add-on update checks are permanently disabled.
+        return False
 
     def set_check_for_addon_updates(self, on: bool) -> None:
-        self.meta["check_for_addon_updates"] = on
+        pass
 
     @deprecated(info="use theme_manager.night_mode")
     def night_mode(self) -> bool:
@@ -660,14 +660,6 @@ create table if not exists profiles
         return self.meta.get(
             "widget_style", WidgetStyle.NATIVE if is_mac else WidgetStyle.ANKI
         )
-
-    def browser_layout(self) -> BrowserLayout:
-        from aqt.browser.layout import BrowserLayout
-
-        return BrowserLayout(self.meta.get("browser_layout", "auto"))
-
-    def set_browser_layout(self, layout: BrowserLayout) -> None:
-        self.meta["browser_layout"] = layout.value
 
     def editor_key(self, mode: EditorMode) -> str:
         from aqt.editor import EditorMode
@@ -754,10 +746,11 @@ create table if not exists profiles
         self.profile["hostNum"] = val or 0
 
     def check_for_updates(self) -> bool:
-        return self.meta.get("check_for_updates", True)
+        # SpeedyCAT: automatic program update checks are permanently disabled.
+        return False
 
     def set_update_check(self, on: bool) -> None:
-        self.meta["check_for_updates"] = on
+        pass
 
     def media_syncing_enabled(self) -> bool:
         return self.profile.get("syncMedia", True)

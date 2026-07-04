@@ -66,11 +66,6 @@ and the post-session summary.
 
     $: topicDropdownOptions = topicOptions.map((t) => ({ value: t, label: t }));
 
-    $: sectionCounts = SECTIONS.map((s) => ({
-        section: s,
-        count: bank.filter((q) => q.section === s).length,
-    }));
-
     // drop any chosen topics that no longer apply to the selected sections
     $: {
         const stillValid = selectedTopics.filter((t) => topicOptions.includes(t));
@@ -173,10 +168,6 @@ and the post-session summary.
     <div class="setup">
         <header>
             <h1>Practice Questions</h1>
-            <p class="tagline">
-                MCAT-style multiple-choice practice — discrete questions and CARS
-                passage sets. The explanation is shown after you submit.
-            </p>
         </header>
 
         {#if phase === "loading"}
@@ -188,15 +179,6 @@ and the post-session summary.
                 <button class="secondary" on:click={loadBank}>Retry</button>
             </div>
         {:else}
-            <div class="counts">
-                {#each sectionCounts as sc (sc.section)}
-                    <div class="count-pill">
-                        <span class="n">{sc.count}</span>
-                        {sectionLong(sc.section)}
-                    </div>
-                {/each}
-            </div>
-
             <div class="form">
                 <div class="field">
                     <span class="field-label">Section</span>
@@ -306,28 +288,6 @@ and the post-session summary.
     }
     header h1 {
         margin: 0 0 0.25rem;
-    }
-    .tagline {
-        color: var(--fg-subtle);
-        margin: 0;
-    }
-    .counts {
-        display: flex;
-        gap: 0.6rem;
-        flex-wrap: wrap;
-    }
-    .count-pill {
-        background: var(--canvas-elevated);
-        border: 1px solid var(--border-subtle);
-        border-radius: 8px;
-        padding: 0.5rem 0.8rem;
-        font-size: 0.85rem;
-        color: var(--fg-subtle);
-    }
-    .count-pill .n {
-        font-weight: 700;
-        color: var(--fg);
-        margin-right: 0.3rem;
     }
     .form {
         display: grid;

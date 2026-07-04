@@ -149,7 +149,7 @@
     <string name="import_error_handle_exception">Failed to import file\n\n%s</string>
     <string name="import_error_not_apkg_extension">Filename “%s” doesn’t have .apkg or .colpkg extension</string>
     <string name="import_error_load_imported_database">SpeedyCAT database (.anki2) replacements are not yet supported. Please see the manual for replacement instructions.</string>
-    <string name="import_error_content_provider">The selected file couldn’t be imported automatically by SpeedyCAT. Please see the user manual for how to manually import SpeedyCAT files: \n%s</string>
+    <string name="import_error_content_provider">The selected file couldn’t be imported automatically by SpeedyCAT.</string>
     <string name="import_error_copy_to_cache_title">Failed to cache file</string>
     <string name="import_error_copy_to_cache_explanation" comment="The substitution is a list of suggested fixes in bullet point form">This is often caused by a bug in the app you used to select the file. Please try the following fixes:\n\n%s</string>
     <string name="import_interrupted">Import interrupted: SpeedyCAT was closed</string>
@@ -163,10 +163,8 @@
         <![CDATA[
         Hi!
         <br/><br/>
-        This is a flashcards deck sent from SpeedyCAT[1].
-        Try to open it using one of the available compatible apps[2] and enjoy easy and efficient learning!<br/><br/>
-        [1] %1$s<br/>
-        [2] %2$s
+        This is a flashcards deck sent from SpeedyCAT.
+        Try to open it using a compatible spaced-repetition app and enjoy easy and efficient learning!
         ]]>
     </string>
     <string name="export_choice_share">Share</string>

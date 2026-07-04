@@ -749,13 +749,8 @@ open class AnkiActivity(
                 .setType(targetMimeType)
                 .setStream(uri)
                 .setSubject(getString(R.string.export_email_subject, attachment.name))
-                .setHtmlText(
-                    getString(
-                        R.string.export_email_text,
-                        getString(R.string.link_manual),
-                        getString(R.string.link_distributions),
-                    ),
-                ).intent
+                .setHtmlText(getString(R.string.export_email_text))
+                .intent
                 .apply {
                     clipData = ClipData.newUri(contentResolver, attachment.name, uri)
                     addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)

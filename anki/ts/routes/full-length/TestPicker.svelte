@@ -3,19 +3,36 @@ Copyright: Ankitects Pty Ltd and contributors
 License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 -->
 <!--
-SpeedyCAT: the full-length test chooser. Lists the available AAMC-style
-practice exams with their question count and testing/break time budgets.
+SpeedyCAT: the full-length test chooser. Lists available practice exams and
+completed attempts with review entry points.
 -->
 <script lang="ts">
     import { createEventDispatcher } from "svelte";
 
-    import { formatDurationLong, type FullLengthTestSummary } from "../practice/lib";
+    import {
+        formatDurationLong,
+        type FullLengthAttemptSummary,
+        type FullLengthTestSummary,
+    } from "../practice/lib";
 
     export let tests: FullLengthTestSummary[] = [];
+    export let completed: FullLengthAttemptSummary[] = [];
     export let loading = false;
     export let starting = false;
 
-    const dispatch = createEventDispatcher<{ select: string; retry: void }>();
+    const dispatch = createEventDispatcher<{
+        select: string;
+        review: string;
+        retry: void;
+    }>();
+
+    function formatDate(epochSecs: number | bigint): string {
+        const n = typeof epochSecs === "bigint" ? Number(epochSecs) : epochSecs;
+        if (!n) {
+            return "";
+        }
+        return new Date(n * 1000).toLocaleDateString();
+    }
 </script>
 
 <div class="picker">
@@ -23,14 +40,14 @@ practice exams with their question count and testing/break time budgets.
         <h1>Full-Length Tests</h1>
         <p class="tagline">
             AAMC-style four-section practice exams with enforced section timers and
-            scheduled breaks. Once a section's timer ends you can't return to it — just
-            like the real MCAT.
+            scheduled breaks. Once a section's timer ends you can't return to it —
+            just like the real MCAT.
         </p>
     </header>
 
     {#if loading}
         <div class="notice">Loading tests…</div>
-    {:else if tests.length === 0}
+    {:else if tests.length === 0 && completed.length === 0}
         <div class="notice">
             No full-length tests are loaded yet. The bundled content is imported in the
             background on first run — give it a moment, then retry.
@@ -72,6 +89,42 @@ practice exams with their question count and testing/break time budgets.
             formatting.
         </p>
     {/if}
+
+    {#if completed.length > 0}
+        <section class="completed">
+            <h2>Completed tests</h2>
+            <div class="list">
+                {#each completed as attempt (attempt.attemptId)}
+                    <div class="test-card">
+                        <div class="info">
+                            <div class="name">{attempt.testTitle}</div>
+                            <div class="meta">
+                                <span>{formatDate(attempt.completedAt)}</span>
+                                <span>·</span>
+                                <span>
+                                    {attempt.totalCorrect} / {attempt.totalQuestions} correct
+                                </span>
+                                {#if attempt.overallScaledScore}
+                                    <span>·</span>
+                                    <span>Est. {attempt.overallScaledScore}</span>
+                                {/if}
+                                {#if !attempt.countsForReadiness}
+                                    <span>·</span>
+                                    <span class="excluded">Not counted for Readiness</span>
+                                {/if}
+                            </div>
+                        </div>
+                        <button
+                            class="secondary"
+                            on:click={() => dispatch("review", attempt.attemptId)}
+                        >
+                            Review test
+                        </button>
+                    </div>
+                {/each}
+            </div>
+        </section>
+    {/if}
 </div>
 
 <style lang="scss">
@@ -83,8 +136,12 @@ practice exams with their question count and testing/break time budgets.
         flex-direction: column;
         gap: 1.5rem;
     }
-    header h1 {
+    header h1,
+    .completed h2 {
         margin: 0 0 0.25rem;
+    }
+    .completed h2 {
+        font-size: 1.1rem;
     }
     .tagline {
         color: var(--fg-subtle);
@@ -118,6 +175,9 @@ practice exams with their question count and testing/break time budgets.
         font-size: 0.85rem;
         margin-top: 0.3rem;
     }
+    .excluded {
+        color: #d1434b;
+    }
     .notice {
         background: var(--canvas-elevated);
         border: 1px solid var(--border-subtle);
@@ -149,6 +209,7 @@ practice exams with their question count and testing/break time budgets.
         background: var(--button-bg);
         color: var(--fg);
         padding: 0.4rem 0.9rem;
+        flex: 0 0 auto;
     }
     button:disabled {
         opacity: 0.6;

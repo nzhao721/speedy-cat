@@ -3,6 +3,8 @@
 
 syntax = "proto3";
 
+import "anki/generic.proto";
+
 option java_multiple_files = true;
 
 package anki.practice;
@@ -61,6 +63,17 @@ service PracticeService {
       returns (RecordAttemptResponse);
   rpc SubmitFullLengthAttempt(SubmitFullLengthAttemptRequest)
       returns (FullLengthReport);
+  // Mark an in-progress attempt as abandoned (leaving mid-exam).
+  rpc AbandonFullLengthAttempt(AbandonFullLengthAttemptRequest)
+      returns (generic.Empty);
+  // Completed attempts for the test picker / review entry points.
+  rpc ListFullLengthAttempts(ListFullLengthAttemptsRequest)
+      returns (ListFullLengthAttemptsResponse);
+  // Detailed stats (section + topic breakdown) for one completed attempt.
+  rpc GetFullLengthStats(GetFullLengthStatsRequest) returns (FullLengthStats);
+  // Question-level data for post-test review mode (answers + explanations).
+  rpc GetFullLengthReview(GetFullLengthReviewRequest)
+      returns (GetFullLengthReviewResponse);
 
   // ---- Per-topic tracking ----
 
@@ -75,6 +88,18 @@ service PracticeService {
   // and a named source, and "gives up" with a message when there is not enough
   // data (or a prerequisite such as FSRS is off). No AI.
   rpc GetReadiness(GetReadinessRequest) returns (GetReadinessResponse);
+
+  // ---- SpeedyCAT anti-gaming (forced-recall review) ----
+
+  // Reset per-session gamed-lapse / IDK-bypass counters at review start.
+  rpc ResetSpeedycatReviewSession(generic.Empty) returns (SpeedycatGamingStatus);
+  // Record an honest (non-gamed) flashcard review for daily rate tracking.
+  rpc RecordSpeedycatHonestReview(generic.Empty) returns (SpeedycatGamingStatus);
+  // Record a gamed lapse (I don't know or dishonest input) and apply lockout.
+  rpc RecordSpeedycatGamedLapse(RecordSpeedycatGamedLapseRequest)
+      returns (SpeedycatGamingStatus);
+  // Current anti-gaming counters + Memory suppression / wait-gate state.
+  rpc GetSpeedycatGamingStatus(generic.Empty) returns (SpeedycatGamingStatus);
 }
 
 // Empty: every PracticeService method is auto-delegated to the open
@@ -286,6 +311,10 @@ message RecordPracticeAttemptRequest {
   // Assisted-correct answers are penalized in the readiness Performance pillar
   // (anti-gaming): they do not earn full credit. See rslib practice storage.
   bool assisted = 9;
+  // True when the learner submitted a WRONG main-question answer before
+  // finalizing (wrong-answer escalation into the hint ladder). Such attempts
+  // earn zero Performance credit even if the final recorded answer is correct.
+  bool main_wrong_first = 10;
 }
 
 message RecordAttemptResponse {
@@ -413,6 +442,72 @@ message FullLengthReport {
   optional uint32 overall_scaled_score = 4;
   uint32 total_correct = 5;
   uint32 total_questions = 6;
+  // False when another full-length was left unfinished before this submit, so
+  // the score is shown but excluded from the Readiness pillar.
+  bool counts_for_readiness = 7;
+}
+
+message AbandonFullLengthAttemptRequest {
+  string attempt_id = 1;
+}
+
+message FullLengthAttemptSummary {
+  string attempt_id = 1;
+  string test_id = 2;
+  string test_title = 3;
+  int64 started_at = 4;
+  int64 completed_at = 5;
+  optional uint32 overall_scaled_score = 6;
+  uint32 total_correct = 7;
+  uint32 total_questions = 8;
+  bool counts_for_readiness = 9;
+}
+
+message ListFullLengthAttemptsRequest {}
+
+message ListFullLengthAttemptsResponse {
+  repeated FullLengthAttemptSummary attempts = 1;
+}
+
+message TopicScore {
+  string topic = 1;
+  McatSection section = 2;
+  uint32 correct = 3;
+  uint32 total = 4;
+}
+
+message GetFullLengthStatsRequest {
+  string attempt_id = 1;
+}
+
+message FullLengthStats {
+  string attempt_id = 1;
+  string test_id = 2;
+  string test_title = 3;
+  repeated SectionResult section_results = 4;
+  optional uint32 overall_scaled_score = 5;
+  uint32 total_correct = 6;
+  uint32 total_questions = 7;
+  repeated TopicScore topic_scores = 8;
+  bool counts_for_readiness = 9;
+}
+
+message FullLengthReviewItem {
+  PracticeQuestion question = 1;
+  string selected_answer = 2;
+  bool correct = 3;
+}
+
+message GetFullLengthReviewRequest {
+  string attempt_id = 1;
+}
+
+message GetFullLengthReviewResponse {
+  string attempt_id = 1;
+  string test_id = 2;
+  string test_title = 3;
+  FullLengthTest test = 4;
+  repeated FullLengthReviewItem items = 5;
 }
 
 // ---- Tracking --------------------------------------------------------------
@@ -422,6 +517,10 @@ message GetTopicStatsRequest {
   optional McatSection section = 1;
   // Which attempts to include (default ALL).
   AttemptSource source = 2;
+  // When true, stats count only each question's first-ever attempt with no
+  // hint usage (dashboard practice-accuracy card). Retries and hint-assisted
+  // attempts are excluded entirely.
+  bool first_attempt_no_hint_only = 3;
 }
 
 message TopicStat {
@@ -510,4 +609,26 @@ message GetReadinessResponse {
   optional uint32 readiness_scaled_score = 6;
   optional uint32 readiness_scaled_low = 7;
   optional uint32 readiness_scaled_high = 8;
+  // True when average pace exceeded 98s/question and the Performance pillar value
+  // was scaled by 98 / performance_avg_seconds.
+  bool performance_time_penalty_applied = 9;
+}
+
+// ---- SpeedyCAT anti-gaming --------------------------------------------------
+
+message RecordSpeedycatGamedLapseRequest {
+  // True when the lapse came from the "I don't know" bypass (drives wait tax).
+  bool idk = 1;
+}
+
+message SpeedycatGamingStatus {
+  uint32 session_gamed = 1;
+  uint32 session_reviews = 2;
+  uint32 daily_gamed = 3;
+  uint32 daily_reviews = 4;
+  bool memory_suppressed = 5;
+  string memory_message = 6;
+  uint32 idk_delay_ms = 7;
+  int64 lockout_until_ms = 8;
+  uint32 idk_bypass_count = 9;
 }

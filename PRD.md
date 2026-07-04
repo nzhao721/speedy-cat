@@ -136,6 +136,7 @@ MCAT sections covered: CPBS, CARS, BBLS, PSBB.
 - The AnKing MCAT deck is deliberately **not** bundled—it is gated behind AnkiHub (paid login) and not freely redistributable; it remains a possible future optional add-on.
 - Continue to support MCAT-specific deck templates and user-imported decks alongside the built-in library.
 - Flashcard review remains the default Anki experience—no SpeedyCAT-specific gating.
+- **AI answer checker (forced active recall):** On by default, typed answers on cloze cards can be judged by `gpt-5.4-mini` (honesty gate + semantic verdict). Fresh installs use a **self-hosted Firebase cloud proxy** in this repo (`functions/checkSpeedycatAnswer`, project `speedycat-mcat`) so no local OpenAI key file is required; dev builds can fall back to `SPEEDYCAT_OPENAI_API_KEY` / `.speedycat-openai.key` when the proxy is unavailable. Proxy unreachable → deterministic string-match + heuristic fallback. Named sources: `openai/gpt-5.4-mini`, `openai/gpt-5.4-mini via speedycat-proxy`, or `baseline:string-match+heuristic`. See `docs/speedycat-ai-proxy.md`.
 
 ### Practice Question Bank
 
@@ -171,8 +172,18 @@ A post-MVP addition to the Practice Question Bank (desktop **and** mobile). Inst
 - **Two entry paths.** The ladder starts when EITHER (a) the student presses **"Request hint"**, OR (b) the student submits a **WRONG** answer to the main question — a wrong choice does **not** reveal the correct answer; it enters/escalates the ladder instead.
 - **No-skip rule.** Subquestions are presented **one at a time**. The student **must answer** the currently-revealed subquestion (select one of its 4 choices and submit it) before the next tier can be revealed or the main question can be (re)submitted — there is no skip / next-without-answering control, and the main answer stays locked until the ladder has been worked through step by step in order. After the last subquestion, the student returns to answer the main question; only once the ladder is **exhausted** does a subsequent wrong answer reveal the correct answer.
 - **Tracking.** The highest subquestion **level reached** is recorded per attempt as `hintLevelUsed` (0–3); `assisted = (hintLevelUsed reached level 3)`. Both entry paths (Request-hint button and wrong-answer escalation) count. A correct answer given with no hints used is `hintLevelUsed = 0, assisted = false`.
-- **Anti-gaming penalty (Performance pillar).** So students cannot game the tutor for a better readiness number, an **assisted-correct** attempt (reached level 3) does **not** count as a full correct: in the readiness **Performance** pillar's accuracy the credited count is `correct AND NOT assisted`, while the assisted-correct attempt still counts toward the denominator (answered). Unassisted correct = full credit; incorrect = incorrect regardless of assists; level-1/level-2 assists still earn full credit. Implemented in `rslib` `practice_accuracy_totals` (SQL `sum(correct = 1 and assisted = 0)`) and mirrored on mobile in `ReadinessLogic.computePerformance`. The pillar keeps the existing value + range + named-source + give-up discipline (never a bare number).
-- **Sync.** `hintLevelUsed`/`assisted` ride the existing per-device media results file (`_speedycat_results_<deviceId>.json`) alongside every other attempt field, so the Performance pillar stays consistent across devices.
+- **Anti-gaming penalty (Performance pillar).** So students cannot game the tutor for a better readiness number, practice accuracy uses **progressive hint penalties** on each answered attempt (every attempt stays in the denominator):
+  | Outcome | Credit |
+  |---------|--------|
+  | Correct, no hints (L0) | 1.0 |
+  | Correct with hint L1 | 0.60 |
+  | Correct with hint L2 | 0.30 |
+  | Correct with hint L3 | 0.10 (~incorrect) |
+  | Incorrect on main question (`mainWrongFirst`) | 0.0 — even if the final recorded answer is correct via the hint ladder |
+  | Incorrect (final) | 0.0 |
+  Implemented in `rslib` `practice_accuracy_totals` (SQL weighted sum). Desktop and mobile Readiness screens call `PracticeService.GetReadiness` when the SpeedyCAT backend is available; the stock mobile backend lacks this RPC and falls back to mirrored Kotlin formulas in `ReadinessLogic.kt` (kept in sync with Rust). The pillar keeps the existing value + range + named-source + give-up discipline (never a bare number).
+- **Dashboard practice accuracy.** The homepage practice-accuracy card counts **only first-ever attempts with no hint usage** (`first_try_no_hint` is set on the first row for a `question_id` when `hint_level_used = 0`; retries and hint-assisted first encounters are excluded entirely). Request `GetTopicStats` with `first_attempt_no_hint_only = true` (desktop `dashboard.ts`).
+- **Sync.** `hintLevelUsed`/`assisted`/`mainWrongFirst`/`firstTryNoHint` ride the existing per-device media results file (`_speedycat_results_<deviceId>.json`) alongside every other attempt field, so the Performance pillar stays consistent across devices.
 
 ### AAMC Full-Length Practice Tests
 

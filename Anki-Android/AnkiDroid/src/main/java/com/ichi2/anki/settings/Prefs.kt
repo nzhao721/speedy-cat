@@ -242,10 +242,11 @@ open class PrefsRepository(
     val exitViaDoubleTapBack by booleanPref(R.string.exit_via_double_tap_back_key, false)
 
     // ****************************************** Sync ****************************************** //
+    // SpeedyCAT: sync settings are not user-configurable (see SpeedyCatAutoSync).
 
-    val isAutoSyncEnabled by booleanPref(R.string.automatic_sync_choice_key, false)
-    val displaySyncStatus by booleanPref(R.string.sync_status_badge_key, defaultValue = true)
-    var allowSyncOnMeteredConnections by booleanPref(R.string.metered_sync_key, defaultValue = false)
+    val isAutoSyncEnabled: Boolean get() = false
+    val displaySyncStatus: Boolean get() = true
+    val allowSyncOnMeteredConnections: Boolean get() = true
 
     var username by stringPref(R.string.username_key)
     var hkey by stringPref(R.string.hkey_key)
@@ -253,16 +254,15 @@ open class PrefsRepository(
 
     var lastSyncTime by longPref(R.string.last_sync_time_key, defaultValue = 0L)
 
-    val shouldFetchMedia: ShouldFetchMedia
-        get() = getEnum(R.string.sync_fetch_media_key, ShouldFetchMedia.ALWAYS)
+    val shouldFetchMedia: ShouldFetchMedia get() = ShouldFetchMedia.ALWAYS
 
-    var networkTimeoutSecs by intPref(R.string.sync_io_timeout_secs_key, defaultValue = 60)
+    val networkTimeoutSecs: Int get() = 60
 
     //region Custom sync server
 
-    val customSyncCertificate by stringPref(R.string.custom_sync_certificate_key)
-    val customSyncUri by stringPref(R.string.custom_sync_server_collection_url_key)
-    val isCustomSyncEnabled by booleanPref(R.string.custom_sync_server_enabled_key, defaultValue = false)
+    val customSyncCertificate: String? get() = null
+    val customSyncUri: String? get() = null
+    val isCustomSyncEnabled: Boolean get() = false
     var isBackgroundEnabled by booleanPref(R.string.pref_deck_picker_background_key, defaultValue = false)
 
     //endregion
@@ -346,7 +346,7 @@ open class PrefsRepository(
     val autoFocusTypeAnswer by booleanPref(R.string.type_in_answer_focus_key, true)
     val showAnswerFeedback by booleanPref(R.string.show_answer_feedback_key, defaultValue = true)
     var showAnswerButtons by booleanPref(R.string.show_answer_buttons_key, true)
-    val keepScreenOn by booleanPref(R.string.keep_screen_on_preference, defaultValue = false)
+    val keepScreenOn: Boolean get() = false
     val hideHardAndEasyButtons by booleanPref(R.string.hide_hard_and_easy_key, defaultValue = false)
 
     val doubleTapInterval by intPref(R.string.double_tap_timeout_pref_key, defaultValue = 200)
@@ -382,7 +382,7 @@ open class PrefsRepository(
 
     val answerButtonsSize: Int by intPref(R.string.answer_button_size_preference, 100)
     val cardZoom: Int by intPref(R.string.card_zoom_preference, 100)
-    override val removeAppAnimations by booleanPref(R.string.safe_display_key, defaultValue = false)
+    override val removeAppAnimations: Boolean get() = true
 
     // **************************************** Advanced **************************************** //
 
@@ -406,14 +406,8 @@ open class PrefsRepository(
 
     var isNewStudyScreenEnabled by booleanPref(R.string.new_reviewer_options_key, false)
 
-    val devIsCardBrowserFragmented: Boolean
-        get() = getBoolean(R.string.dev_card_browser_fragmented, false)
-
     val devBottomNavEnabled: Boolean
         get() = getBoolean(R.string.dev_bottom_nav_key, false)
-
-    @set:VisibleForTesting
-    var devUsingCardBrowserSearchView: Boolean by booleanPref(R.string.dev_card_browser_search_view, false)
 
     val isWebDebugEnabled: Boolean
         get() = (getBoolean(R.string.html_javascript_debugging_key, false) || BuildConfig.DEBUG) && !isRunningAsUnitTest

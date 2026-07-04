@@ -54,6 +54,8 @@ pub struct CardAnswer {
     pub milliseconds_taken: u32,
     pub custom_data: Option<String>,
     pub from_queue: bool,
+    /// SpeedyCAT: gamed lapse — apply extra learning/relearning punishment.
+    pub speedycat_gamed_lapse: bool,
 }
 
 impl CardAnswer {
@@ -340,6 +342,9 @@ impl Collection {
         let timing = updater.timing;
         let deckconfig_id = updater.original_deck.config_id();
         let mut card = updater.into_card();
+        if answer.speedycat_gamed_lapse {
+            crate::speedycat::gaming::apply_gamed_lapse_punishment(&mut card);
+        }
         if !matches!(
             answer.current_state,
             CardState::Filtered(FilteredState::Preview(_))
@@ -629,6 +634,7 @@ pub mod test_helpers {
                 milliseconds_taken: 0,
                 custom_data: None,
                 from_queue: true,
+                speedycat_gamed_lapse: false,
             })?;
             Ok(PostAnswerState {
                 card_id: queued.card.id,

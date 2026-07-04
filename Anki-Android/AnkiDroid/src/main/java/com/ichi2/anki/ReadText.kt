@@ -21,7 +21,6 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.view.WindowManager.BadTokenException
-import androidx.annotation.StringRes
 import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AlertDialog
 import com.ichi2.anki.CollectionManager.TR
@@ -36,7 +35,6 @@ import com.ichi2.anki.libanki.TTSTag
 import com.ichi2.anki.provider.pureAnswer
 import com.ichi2.anki.reviewer.CardSide
 import com.ichi2.anki.snackbar.showSnackbar
-import com.ichi2.anki.utils.openUrl
 import com.ichi2.utils.message
 import com.ichi2.utils.positiveButton
 import com.ichi2.utils.title
@@ -320,13 +318,8 @@ object ReadText {
                                     errorToDeveloperString(errorCode),
                                     errorCode,
                                 )
-                                @StringRes val helpUrl = R.string.link_faq_tts
                                 val ankiActivity = context as AnkiActivity
-                                ankiActivity.mayOpenUrl(helpUrl)
-                                // TODO: We can do better in this UI now we have a reason for failure
-                                ankiActivity.showSnackbar(R.string.no_tts_available_message) {
-                                    setAction(R.string.help) { openTtsHelpUrl(helpUrl) }
-                                }
+                                ankiActivity.showSnackbar(R.string.no_tts_available_message)
                             }
 
                             @Suppress("DeprecatedCallableAddReplaceWith")
@@ -360,12 +353,6 @@ object ReadText {
             TextToSpeech.ERROR_SERVICE -> "TTS service"
             else -> "Unhandled Error [$errorCode]"
         }
-
-    fun openTtsHelpUrl(
-        @StringRes helpUrl: Int,
-    ) {
-        flashCardViewer.get()!!.openUrl(helpUrl)
-    }
 
     /**
      * Request that TextToSpeech is stopped and shutdown after it it no longer being used

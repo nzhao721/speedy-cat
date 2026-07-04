@@ -20,6 +20,7 @@
 package com.ichi2.anki.cardviewer
 
 import com.ichi2.anki.backend.stripHTMLAndSpecialFields
+import org.intellij.lang.annotations.Language
 
 /**
  * Deterministic (AI-off) helpers for SpeedyCAT's "forced active recall" feature.
@@ -73,13 +74,20 @@ object ForcedRecall {
     }
 
     /**
-     * Human-readable form of the [expected] answer for display next to the verdict, so the learner
-     * can see exactly what the checker compared their typed answer against.
-     *
-     * Uses the same HTML & special-field stripping and whitespace collapsing as [normalize] (so it
-     * reflects what was actually compared), but intentionally does NOT lower-case: matching is
-     * case-insensitive, so the answer is shown in its original case for readability. Returns an
-     * empty string when there is nothing to show.
+     * Whole-answer Correct/Incorrect banner for forced-recall reveals (mirrors desktop
+     * ``Reviewer._format_match_feedback``).
+     */
+    @Language("HTML")
+    fun formatVerdictBanner(correct: Boolean): String =
+        if (correct) {
+            """<div id="type-result" style="color:#1b873b;font-weight:bold;margin-bottom:6px">&#x2714; Correct</div>"""
+        } else {
+            """<div id="type-result" style="color:#c0392b;font-weight:bold;margin-bottom:6px">&#x2718; Incorrect</div>"""
+        }
+
+    /**
+     * Human-readable form of the [expected] answer (HTML stripped, case preserved).
+     * Used internally by the AI checker prompt/fallback — not shown on the reveal UI.
      */
     fun displayAnswer(expected: String): String =
         stripHTMLAndSpecialFields(expected)

@@ -230,6 +230,9 @@ also changes the interval of the card"
         <item quantity="one">Current interval: %d day</item>
         <item quantity="other">Current interval: %d days</item>
     </plurals>
+    <string name="set_due_date_hintText" comment="plural set_due_date_label_suffix is used for parameters, parameter 1 is the plural for 0, parameter 2 is the plural for 1">Today is ‘0 %1$s’, tomorrow is ‘1 %2$s’, etc…</string>
+    <string name="card_details_tags">Tags</string>
+    <string name="filtered_deck_search" maxLength="28" comment="Accessibility label for filtered deck search field">Search</string>
     <string name="range_delimiter" comment="Placed between two input boxes to denote a range">–</string>
     <string name="set_due_date_range_start" comment="'Set Due Date' may change the due date of a card to a random number of days in the future. This labels the 'minimum' value of this range (inclusive)">From</string>
     <string name="set_due_date_range_end" comment="'Set Due Date' may change the due date of a card to a random number of days in the future. This labels the 'maximum' value of this range (inclusive)">To</string>

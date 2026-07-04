@@ -23,17 +23,6 @@
         android:icon="@drawable/ic_clear_white"
         ankidroid:showAsAction="ifRoom"/>
     <item
-        android:id="@+id/action_custom_study"
-        tools:title="Custom study"
-        android:icon="@drawable/ic_build_white"
-        ankidroid:showAsAction="ifRoom"/>
-    <!-- the title for the following option will be set dynamically -->
-    <item
-        android:id="@+id/action_deck_or_study_options"
-        tools:title="Deck options"
-        android:icon="@drawable/ic_tune_white"
-        ankidroid:showAsAction="always"/>
-    <item
         android:id="@+id/action_unbury"
         tools:title="Unbury"
         android:visibility = "gone"/>

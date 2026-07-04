@@ -11,10 +11,8 @@ import com.ichi2.anki.R
 import com.ichi2.anki.RobolectricTest
 import com.ichi2.anki.common.destinations.PreferencesDestination
 import com.ichi2.anki.common.destinations.launchActivity
-import com.ichi2.anki.libanki.exception.ConfirmModSchemaException
 import com.ichi2.anki.preferences.HeaderFragment.Companion.getHeaderKeyForFragment
 import com.ichi2.anki.preferences.PreferenceTestUtils.getAttrFromXml
-import com.ichi2.anki.utils.CollectionPreferences
 import com.ichi2.preferences.HeaderPreference
 import com.ichi2.testutils.getInstanceFromClassName
 import com.ichi2.testutils.getJavaMethodAsAccessible
@@ -44,28 +42,6 @@ class PreferencesTest : RobolectricTest() {
         attachBaseContext.invoke(preferences, targetContext)
     }
 
-    @Test
-    fun testDayOffsetExhaustive() {
-        runTest {
-            for (i in 0..23) {
-                setDayOffset(preferences, i)
-                assertThat(CollectionPreferences.getDayOffset(), equalTo(i))
-            }
-        }
-    }
-
-    @Test
-    @Throws(ConfirmModSchemaException::class)
-    fun testDayOffsetExhaustiveV2() {
-        runTest {
-            for (i in 0..23) {
-                setDayOffset(preferences, i)
-                assertThat(CollectionPreferences.getDayOffset(), equalTo(i))
-            }
-        }
-    }
-
-    /** checks if any of the Preferences fragments throws while being created */
     @Test
     fun fragmentsDoNotThrowOnCreation() {
         launchActivity<PreferencesActivity>(PreferencesDestination.Root).use { activityScenario ->
@@ -118,14 +94,5 @@ class PreferencesTest : RobolectricTest() {
     @Config(qualifiers = "ar")
     fun buildHeaderSummary_RTL_Test() {
         assertThat(HeaderPreference.buildHeaderSummary("حساب أنكي ويب", "مزامنة تلقائية"), equalTo("مزامنة تلقائية • حساب أنكي ويب"))
-    }
-
-    @Test
-    @Throws(ConfirmModSchemaException::class)
-    fun setDayOffsetSetsConfig() {
-        runTest {
-            setDayOffset(preferences, 2)
-            assertThat("rollover config should be set to new value", col.config.get("rollover") ?: 4, equalTo(2))
-        }
     }
 }

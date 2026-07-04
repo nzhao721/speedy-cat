@@ -51,6 +51,24 @@
     }
 }
 
+.hitem-icon {
+    padding: 5px 8px;
+    line-height: 0;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+    svg {
+        width: 18px;
+        height: 18px;
+        display: block;
+    }
+    &.disabled {
+        opacity: 0.38;
+        pointer-events: none;
+    }
+}
+
 body {
     margin: 0;
     padding: 0;

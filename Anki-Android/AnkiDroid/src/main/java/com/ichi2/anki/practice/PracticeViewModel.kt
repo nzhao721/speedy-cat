@@ -13,6 +13,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.ichi2.anki.SpeedyCatAutoSync
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -85,13 +86,24 @@ class PracticeViewModel(
         timeSeconds: Int,
         hintLevelUsed: Int = 0,
         assisted: Boolean = false,
+        mainWrongFirst: Boolean = false,
     ) = withContext(Dispatchers.IO) {
-        // Keep the flags internally consistent (assisted ⇔ reached level 3),
-        // clamped to 0..3, regardless of what the caller passes.
         val level = hintLevelUsed.coerceIn(0, 3)
+        val attemptId = "$sessionId:${question.id}"
+        val existing = repo.allAttempts()
+        val prior = existing.find { it.id == attemptId }
+        val firstTry =
+            firstTryNoHint(
+                questionSeenBefore = existing.any { it.questionId == question.id && it.id != attemptId },
+                replacing = prior != null,
+                priorFirstTry = prior?.firstTryNoHint,
+                hintLevelUsed = level,
+                selectedAnswer = selectedAnswer,
+                correct = correct,
+            )
         repo.recordAttempt(
             Attempt(
-                id = "$sessionId:${question.id}",
+                id = attemptId,
                 sessionId = sessionId,
                 questionId = question.id,
                 selectedAnswer = selectedAnswer,
@@ -102,6 +114,8 @@ class PracticeViewModel(
                 answeredAt = System.currentTimeMillis() / 1000,
                 hintLevelUsed = level,
                 assisted = assisted || level >= 3,
+                mainWrongFirst = mainWrongFirst,
+                firstTryNoHint = firstTry,
             ),
         )
     }
@@ -112,6 +126,7 @@ class PracticeViewModel(
             // Publish this device's attempts so the next media sync carries the
             // just-finished session to other devices. Best-effort.
             runCatching { repo.publishResults() }
+            SpeedyCatAutoSync.onPracticeDataChanged(getApplication())
             summary
         }
 

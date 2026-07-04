@@ -94,7 +94,6 @@ class DeckPickerMenuContentProvider(
         ): List<DeckPickerContextMenu.DeckPickerContextMenuOption> =
             mutableListOf<DeckPickerContextMenu.DeckPickerContextMenuOption>().apply {
                 add(DeckPickerContextMenu.DeckPickerContextMenuOption.ADD_CARD)
-                add(DeckPickerContextMenu.DeckPickerContextMenuOption.BROWSE_CARDS)
                 if (isDynamic) {
                     add(DeckPickerContextMenu.DeckPickerContextMenuOption.CUSTOM_STUDY_REBUILD)
                     add(DeckPickerContextMenu.DeckPickerContextMenuOption.CUSTOM_STUDY_EMPTY)

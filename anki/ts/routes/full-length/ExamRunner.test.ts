@@ -28,7 +28,7 @@ vi.mock("../practice/lib", async (importOriginal) => {
 
 import { mount, tick, unmount } from "svelte";
 
-import { McatSection } from "../practice/lib";
+import { McatSection, earlySectionEndWarning } from "../practice/lib";
 import type { CarsPassageSet, PracticeQuestion } from "../practice/lib";
 import ExamRunner from "./ExamRunner.svelte";
 
@@ -66,8 +66,11 @@ const firstPassageSet = {
 
 let host: HTMLElement;
 let component: Record<string, unknown> | undefined;
+let confirmSpy: ReturnType<typeof vi.spyOn>;
 
 beforeEach(() => {
+    confirmSpy = vi.spyOn(globalThis, "confirm");
+    confirmSpy.mockReturnValue(true);
     fetchQuestions.mockReset();
     fetchPassageSet.mockReset();
     logFullLengthAnswer.mockReset();
@@ -83,6 +86,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
+    confirmSpy.mockRestore();
     if (component) {
         unmount(component);
         component = undefined;
@@ -121,4 +125,123 @@ test("shows the first question's passage when a section starts", async () => {
     const text = host.textContent ?? "";
     expect(text).toContain(PASSAGE_BODY);
     expect(text).not.toContain("No passage.");
+});
+
+test("earlySectionEndWarning includes unanswered count when needed", () => {
+    expect(earlySectionEndWarning(0)).not.toContain("unanswered");
+    expect(earlySectionEndWarning(1)).toContain(
+        "You have 1 unanswered question in this section.",
+    );
+    expect(earlySectionEndWarning(3)).toContain(
+        "You have 3 unanswered questions in this section.",
+    );
+    expect(earlySectionEndWarning(0)).toContain("not be able to return");
+});
+
+test("asks for confirmation before ending a section early", async () => {
+    confirmSpy.mockReturnValue(false);
+    let sectionDone = false;
+
+    component = mount(ExamRunner, {
+        target: host,
+        props: {
+            attemptId: "A1",
+            testId: "T1",
+            section: McatSection.CARS,
+            durationSeconds: 600,
+            sectionOrder: 1,
+            sectionTotal: 4,
+        },
+        events: {
+            sectionDone: () => {
+                sectionDone = true;
+            },
+        },
+    });
+
+    await settle();
+
+    const endButton = Array.from(host.querySelectorAll("button")).find(
+        (b) => b.textContent?.trim() === "End section",
+    );
+    expect(endButton).toBeTruthy();
+    endButton!.click();
+    await settle();
+
+    expect(confirmSpy).toHaveBeenCalledWith(
+        earlySectionEndWarning(2),
+    );
+    expect(sectionDone).toBe(false);
+    expect(logFullLengthAnswer).not.toHaveBeenCalled();
+});
+
+test("ends section when early end is confirmed", async () => {
+    confirmSpy.mockReturnValue(true);
+    let sectionDone = false;
+
+    component = mount(ExamRunner, {
+        target: host,
+        props: {
+            attemptId: "A1",
+            testId: "T1",
+            section: McatSection.CARS,
+            durationSeconds: 600,
+            sectionOrder: 1,
+            sectionTotal: 4,
+        },
+        events: {
+            sectionDone: () => {
+                sectionDone = true;
+            },
+        },
+    });
+
+    await settle();
+
+    const endButton = Array.from(host.querySelectorAll("button")).find(
+        (b) => b.textContent?.trim() === "End section",
+    );
+    endButton!.click();
+    await settle();
+
+    expect(confirmSpy).toHaveBeenCalled();
+    expect(sectionDone).toBe(true);
+    expect(logFullLengthAnswer).toHaveBeenCalledTimes(2);
+});
+
+test("auto-ends section when the timer expires without confirmation", async () => {
+    vi.useFakeTimers();
+    confirmSpy.mockReturnValue(false);
+    let sectionDone = false;
+
+    try {
+        component = mount(ExamRunner, {
+            target: host,
+            props: {
+                attemptId: "A1",
+                testId: "T1",
+                section: McatSection.CARS,
+                durationSeconds: 2,
+                sectionOrder: 1,
+                sectionTotal: 4,
+            },
+            events: {
+                sectionDone: () => {
+                    sectionDone = true;
+                },
+            },
+        });
+
+        await settle();
+        expect(confirmSpy).not.toHaveBeenCalled();
+
+        await vi.advanceTimersByTimeAsync(2000);
+        await settle();
+
+        expect(confirmSpy).not.toHaveBeenCalled();
+        expect(sectionDone).toBe(true);
+        expect(logFullLengthAnswer).toHaveBeenCalledTimes(2);
+    } finally {
+        vi.useRealTimers();
+    }
 });

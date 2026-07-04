@@ -9,21 +9,42 @@ feedback until the test is submitted). All flow control (submit, navigation,
 timing) lives in the parent; this component only renders and emits events.
 -->
 <script lang="ts">
-    import { createEventDispatcher } from "svelte";
+    import { createEventDispatcher, type Snippet } from "svelte";
+
+    import Icon from "$lib/components/Icon.svelte";
+    import { mdiUndo } from "$lib/components/icons";
 
     import { difficultyLabel, sectionShort, type PracticeQuestion } from "./lib";
 
-    export let question: PracticeQuestion;
-    export let selected = "";
-    export let eliminated: string[] = [];
-    /** Reveal correctness + explanation (practice feedback / post-test review). */
-    export let revealed = false;
-    /** Prevent changing the answer (locked after submit in practice mode). */
-    export let disabled = false;
-    export let flagged = false;
-    export let number = 0;
-    /** Show the eliminate (strike-through) affordance. */
-    export let allowEliminate = true;
+    interface Props {
+        question: PracticeQuestion;
+        selected?: string;
+        eliminated?: string[];
+        /** Reveal correctness + explanation (practice feedback / post-test review). */
+        revealed?: boolean;
+        /** Prevent changing the answer (locked after submit in practice mode). */
+        disabled?: boolean;
+        flagged?: boolean;
+        number?: number;
+        /** Show the eliminate (strike-through) affordance. */
+        allowEliminate?: boolean;
+        /** Section + difficulty pill badges (hidden during full-length practice). */
+        showMetaBadges?: boolean;
+        actions?: Snippet;
+    }
+
+    const {
+        question,
+        selected = "",
+        eliminated = [],
+        revealed = false,
+        disabled = false,
+        flagged = false,
+        number = 0,
+        allowEliminate = true,
+        showMetaBadges = true,
+        actions,
+    }: Props = $props();
 
     const dispatch = createEventDispatcher<{
         select: string;
@@ -31,30 +52,19 @@ timing) lives in the parent; this component only renders and emits events.
         toggleFlag: void;
     }>();
 
-    $: correctAnswer = question.correctAnswer;
-    $: difficulty = difficultyLabel(question.difficulty);
-
-    function choiceClass(label: string): string {
-        if (revealed) {
-            if (label === correctAnswer) {
-                return "choice correct";
-            }
-            if (label === selected && label !== correctAnswer) {
-                return "choice incorrect";
-            }
-            return "choice";
-        }
-        return label === selected ? "choice selected" : "choice";
-    }
+    const correctAnswer = $derived(question.correctAnswer);
+    const difficulty = $derived(difficultyLabel(question.difficulty));
 </script>
 
 <div class="question">
     <div class="q-head">
         <span class="q-num">Question {number}</span>
         <span class="badges">
-            <span class="badge section">{sectionShort(question.section)}</span>
-            {#if difficulty}
-                <span class="badge difficulty">{difficulty}</span>
+            {#if showMetaBadges}
+                <span class="badge section">{sectionShort(question.section)}</span>
+                {#if difficulty}
+                    <span class="badge difficulty">{difficulty}</span>
+                {/if}
             {/if}
             <button
                 class="flag"
@@ -74,7 +84,12 @@ timing) lives in the parent; this component only renders and emits events.
             {@const struck = eliminated.includes(choice.label)}
             <div class="choice-row">
                 <button
-                    class={choiceClass(choice.label)}
+                    class="choice"
+                    class:selected={!revealed && choice.label === selected}
+                    class:correct={revealed && choice.label === correctAnswer}
+                    class:incorrect={revealed
+                        && choice.label === selected
+                        && choice.label !== correctAnswer}
                     class:struck
                     disabled={disabled && !revealed}
                     aria-pressed={choice.label === selected}
@@ -93,15 +108,25 @@ timing) lives in the parent; this component only renders and emits events.
                     <button
                         class="elim"
                         class:on={struck}
-                        title="Eliminate this choice"
+                        title={struck ? "Restore this choice" : "Eliminate this choice"}
                         on:click={() => dispatch("eliminate", choice.label)}
                     >
-                        {struck ? "undo" : "\u2715"}
+                        {#if struck}
+                            <Icon icon={mdiUndo} />
+                        {:else}
+                            {"\u2715"}
+                        {/if}
                     </button>
                 {/if}
             </div>
         {/each}
     </div>
+
+    {#if actions}
+        <div class="q-actions">
+            {@render actions()}
+        </div>
+    {/if}
 
     {#if revealed}
         <div class="explanation">
@@ -183,6 +208,39 @@ timing) lives in the parent; this component only renders and emits events.
         flex-direction: column;
         gap: 0.5rem;
     }
+    .q-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+    .q-actions :global(.hint-stuck) {
+        border-radius: 6px;
+        padding: 0.45rem 1rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+        border: 1px solid var(--border);
+        background: var(--button-bg);
+        color: var(--fg);
+    }
+    .q-actions :global(.nudge) {
+        color: #b26a00;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+    .q-actions :global(button.primary) {
+        border-radius: 6px;
+        padding: 0.45rem 1rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+        border: 1px solid var(--button-primary-bg);
+        background: var(--button-primary-bg);
+        color: #fff;
+    }
+    .q-actions :global(button.primary:disabled) {
+        opacity: 0.5;
+        cursor: default;
+    }
     .choice-row {
         display: flex;
         align-items: stretch;
@@ -218,25 +276,26 @@ timing) lives in the parent; this component only renders and emits events.
     .choice:disabled {
         cursor: default;
     }
-    // Pre-submit "picked" state — an UNMISTAKABLE highlight: strong accent
-    // (brand blue) 2px border + a solid-reading accent fill + bold text + a
-    // filled radio. The previous version leaned on `box-shadow: inset` for the
-    // ring, which does not paint reliably on the software-rendered Qt webview,
-    // and a very faint 0.18 tint, so the selection looked unstyled. We use only
-    // solid border/background/text here (no box-shadow) so it always renders,
-    // and a hue (blue) distinct from the post-submit green/red below. This is
-    // replaced by the correct/incorrect colouring once the answer is revealed
-    // (choiceClass drops `selected` when revealed).
+    // Pre-submit "picked" state — an UNMISTAKABLE highlight that uses the app's
+    // THEME accent (the same `--button-primary-bg` the primary buttons use) for
+    // the 2px border + label + radio, and the theme's `--selected-bg` selection
+    // tint for the fill. This is the single source of truth reused verbatim by
+    // the hint subquestions (HintLadder.svelte) and the full-length runner, so
+    // selection colouring tracks the theme (light/dark) everywhere. We use only
+    // solid border/background/text (no box-shadow, which does not paint reliably
+    // on the software-rendered Qt webview). It is replaced by the
+    // correct/incorrect colouring once the answer is revealed (`class:selected`
+    // is false when revealed).
     .choice.selected {
-        border-color: #2f6fed;
-        background: rgba(47, 111, 237, 0.3);
+        border-color: var(--button-primary-bg);
+        background: var(--selected-bg);
         // keep the answer text on the theme foreground (readable in light AND
         // dark); only the leading label letter takes the accent colour.
         color: var(--fg);
         font-weight: 600;
     }
     .choice.selected .label {
-        color: #2f6fed;
+        color: var(--button-primary-bg);
         font-weight: 700;
     }
     .choice.selected .text {
@@ -252,9 +311,22 @@ timing) lives in the parent; this component only renders and emits events.
         background: rgba(209, 67, 75, 0.28);
         font-weight: 600;
     }
-    .choice.struck .text {
-        text-decoration: line-through;
+    // Eliminated choice: a single line across the full row (radio + label + text),
+    // not just through the answer text.
+    .choice.struck {
+        position: relative;
         opacity: 0.5;
+    }
+    .choice.struck::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 2px;
+        background: currentColor;
+        pointer-events: none;
+        transform: translateY(-50%);
     }
     // Radio affordance: a hollow circle that fills to show the active state —
     // accent (blue) when picked pre-submit, green/red once revealed.
@@ -270,8 +342,8 @@ timing) lives in the parent; this component only renders and emits events.
         justify-content: center;
     }
     .choice.selected .radio {
-        border-color: #2f6fed;
-        background: #2f6fed;
+        border-color: var(--button-primary-bg);
+        background: var(--button-primary-bg);
     }
     .choice.correct .radio {
         border-color: #1f9d4d;
@@ -309,6 +381,14 @@ timing) lives in the parent; this component only renders and emits events.
         color: var(--fg-subtle);
         cursor: pointer;
         font-size: 0.8rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .elim :global(svg) {
+        width: 1rem;
+        height: 1rem;
+        display: block;
     }
     .elim.on {
         color: var(--fg);

@@ -344,11 +344,6 @@ abstract class NavigationDrawerActivity(
                         startActivity(deckPicker)
                     }
 
-                    R.id.nav_browser -> {
-                        Timber.i("Navigating to card browser")
-                        openCardBrowser()
-                    }
-
                     R.id.nav_stats -> {
                         Timber.i("Navigating to stats")
                         openStatistics()
@@ -367,14 +362,6 @@ abstract class NavigationDrawerActivity(
             }
         closeDrawer()
         return true
-    }
-
-    protected fun openCardBrowser() {
-        val intent = Intent(this@NavigationDrawerActivity, CardBrowser::class.java)
-        if (currentCardId != null) {
-            intent.putExtra("currentCard", currentCardId)
-        }
-        startActivity(intent)
     }
 
     /**
@@ -498,24 +485,11 @@ abstract class NavigationDrawerActivity(
                     .setIntent(intentAddNote)
                     .build()
 
-            // CardBrowser Shortcut
-            val intentCardBrowser = Intent(context, CardBrowser::class.java)
-            intentCardBrowser.action = Intent.ACTION_VIEW
-            intentCardBrowser.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
-            val cardBrowserShortcut =
-                ShortcutInfoCompat
-                    .Builder(context, "cardBrowserShortcutId")
-                    .setShortLabel(context.getString(R.string.card_browser))
-                    .setLongLabel(context.getString(R.string.card_browser))
-                    .setIcon(IconCompat.createWithResource(context, R.drawable.browse_shortcut))
-                    .setIntent(intentCardBrowser)
-                    .build()
             ShortcutManagerCompat.addDynamicShortcuts(
                 context,
                 listOf(
                     reviewCardsShortcut,
                     noteEditorShortcut,
-                    cardBrowserShortcut,
                 ),
             )
         }

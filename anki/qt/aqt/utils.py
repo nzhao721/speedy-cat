@@ -107,14 +107,7 @@ HelpPageArgument = Union["HelpPage.V", str]
 
 
 def openHelp(section: HelpPageArgument) -> None:
-    assert tr.backend is not None
-    backend = tr.backend()
-    assert backend is not None
-    if isinstance(section, str):
-        link = backend.help_page_link(page=HelpPage.INDEX) + section
-    else:
-        link = backend.help_page_link(page=section)
-    openLink(link)
+    pass
 
 
 def openLink(link: str | QUrl) -> None:
@@ -173,10 +166,6 @@ class MessageBox(QMessageBox):
                 qconnect(b.clicked, partial(callback, i))
             if i == default_button:
                 self.setDefaultButton(b)
-        if help is not None:
-            b = self.addButton(QMessageBox.StandardButton.Help)
-            assert b is not None
-            qconnect(b.clicked, lambda: openHelp(help))
         self.open()
 
 
@@ -331,11 +320,6 @@ def showInfo(
         b = mb.addButton(QMessageBox.StandardButton.Ok)
         assert b is not None
         b.setDefault(True)
-    if help is not None:
-        b = mb.addButton(QMessageBox.StandardButton.Help)
-        assert b is not None
-        qconnect(b.clicked, lambda: openHelp(help))
-        b.setAutoDefault(False)
     return mb.exec()
 
 
@@ -423,19 +407,11 @@ def askUser(
     if not msgfunc:
         msgfunc = QMessageBox.question
     sb = QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
-    if help:
-        sb |= QMessageBox.StandardButton.Help
-    while 1:
-        if defaultno:
-            default = QMessageBox.StandardButton.No
-        else:
-            default = QMessageBox.StandardButton.Yes
-        r = msgfunc(parent, title, text, sb, default)
-        if r == QMessageBox.StandardButton.Help:
-            assert help is not None
-            openHelp(help)
-        else:
-            break
+    if defaultno:
+        default = QMessageBox.StandardButton.No
+    else:
+        default = QMessageBox.StandardButton.Yes
+    r = msgfunc(parent, title, text, sb, default)
     return r == QMessageBox.StandardButton.Yes
 
 
@@ -456,19 +432,12 @@ class ButtonedDialog(QMessageBox):
         self.setText(text)
         for b in buttons:
             self._buttons.append(self.addButton(b, QMessageBox.ButtonRole.AcceptRole))
-        if help:
-            self.addButton(tr.actions_help(), QMessageBox.ButtonRole.HelpRole)
-            buttons.append(tr.actions_help())
 
     def run(self) -> str:
         self.exec()
         clicked_button = self.clickedButton()
         assert clicked_button is not None
         txt = clicked_button.text()
-        if txt == "Help":
-            # FIXME stop dialog closing?
-            assert self.help is not None
-            openHelp(self.help)
         # work around KDE 'helpfully' adding accelerators to button text of Qt apps
         return txt.replace("&", "")
 
@@ -519,8 +488,6 @@ class GetTextDialog(QDialog):
         buts = (
             QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel
         )
-        if help:
-            buts |= QDialogButtonBox.StandardButton.Help
         b = QDialogButtonBox(buts)  # type: ignore
         v.addWidget(b)
         self.setLayout(v)
@@ -531,11 +498,6 @@ class GetTextDialog(QDialog):
         cancel_button = b.button(QDialogButtonBox.StandardButton.Cancel)
         assert cancel_button is not None
         qconnect(cancel_button.clicked, self.reject)
-
-        if help:
-            help_button = b.button(QDialogButtonBox.StandardButton.Help)
-            assert help_button is not None
-            qconnect(help_button.clicked, self.helpRequested)
         self.l.setFocus()
 
     def accept(self) -> None:
@@ -624,6 +586,12 @@ def disable_help_button(widget: QWidget) -> None:
     widget.setWindowFlags(
         widget.windowFlags() & ~Qt.WindowType.WindowContextHelpButtonHint
     )
+
+
+def hide_button_box_help_button(button_box: QDialogButtonBox) -> None:
+    help_button = button_box.button(QDialogButtonBox.StandardButton.Help)
+    if help_button is not None:
+        help_button.hide()
 
 
 def setWindowIcon(widget: QWidget) -> None:

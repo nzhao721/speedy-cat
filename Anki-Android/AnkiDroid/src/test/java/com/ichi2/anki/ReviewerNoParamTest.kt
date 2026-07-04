@@ -20,7 +20,6 @@ import android.graphics.Color
 import androidx.annotation.CheckResult
 import androidx.core.content.edit
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import anki.scheduler.CardAnswer.Rating
 import com.ichi2.anki.cardviewer.Gesture
 import com.ichi2.anki.cardviewer.Gesture.SWIPE_DOWN
 import com.ichi2.anki.cardviewer.Gesture.SWIPE_RIGHT
@@ -32,8 +31,6 @@ import com.ichi2.anki.libanki.Consts
 import com.ichi2.anki.libanki.DeckId
 import com.ichi2.anki.model.WhiteboardPenColor
 import com.ichi2.anki.reviewer.Binding
-import com.ichi2.anki.reviewer.FullScreenMode
-import com.ichi2.anki.reviewer.FullScreenMode.Companion.setPreference
 import com.ichi2.anki.reviewer.MappableBinding.Companion.toPreferenceString
 import com.ichi2.anki.reviewer.ReviewerBinding
 import com.ichi2.anki.settings.enums.NightTheme
@@ -43,7 +40,6 @@ import com.ichi2.testutils.common.OS
 import com.ichi2.themes.Themes.currentTheme
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.equalTo
-import org.hamcrest.Matchers.greaterThan
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -126,66 +122,10 @@ class ReviewerNoParamTest : RobolectricTest() {
     }
 
     @Test
-    fun flippingCardHidesFullscreen() {
-        addBasicNote("Hello", "World")
-        val reviewer = startReviewerFullScreen()
-
-        val hideCount = reviewer.delayedHideCount
-
-        reviewer.displayCardAnswer()
-
-        assertThat("Hide should be called after flipping a card", reviewer.delayedHideCount, greaterThan(hideCount))
-    }
-
-    @Test
-    @Flaky(
-        OS.ALL,
-        "Hide should be called after answering a card" +
-            "    Expected: a value greater than <2>" +
-            "         but: <2> was equal to <2>",
-    )
-    fun showingCardHidesFullScreen() {
-        addBasicNote("Hello", "World")
-        val reviewer = startReviewerFullScreen()
-
-        reviewer.displayCardAnswer()
-        advanceRobolectricLooper()
-
-        val hideCount = reviewer.delayedHideCount
-
-        reviewer.answerCard(Rating.AGAIN)
-        advanceRobolectricLooper()
-
-        assertThat("Hide should be called after answering a card", reviewer.delayedHideCount, greaterThan(hideCount))
-    }
-
-    @Test
-    @Flaky(OS.ALL, "Expected: a value greater than <2> but: <2> was equal to <2>")
-    fun undoingCardHidesFullScreen() =
-        runTest {
-            addBasicNote("Hello", "World")
-            val reviewer = startReviewerFullScreen()
-
-            reviewer.displayCardAnswer()
-            advanceRobolectricLooper()
-            reviewer.answerCard(Rating.AGAIN)
-            advanceRobolectricLooper()
-
-            val hideCount = reviewer.delayedHideCount
-
-            reviewer.undo()
-
-            advanceRobolectricLooper()
-
-            assertThat("Hide should be called after answering a card", reviewer.delayedHideCount, greaterThan(hideCount))
-        }
-
-    @Test
-    @Flaky(OS.ALL, "hasDrawerSwipeConflicts was false")
     fun defaultDrawerConflictIsTrueIfGesturesEnabled() {
         enableGestureSetting()
         enableGesture(SWIPE_RIGHT)
-        val reviewer = startReviewerFullScreen()
+        val reviewer = startReviewer()
 
         assertThat(reviewer.hasDrawerSwipeConflicts(), equalTo(true))
     }
@@ -209,7 +149,7 @@ class ReviewerNoParamTest : RobolectricTest() {
     fun noDrawerConflictsIfGesturesDisabled() {
         disableGestureSetting()
         enableGesture(SWIPE_UP)
-        val reviewer = startReviewerFullScreen()
+        val reviewer = startReviewer()
         assertThat("gestures should be disabled", gestureProcessor.isEnabled, equalTo(false))
         assertThat(reviewer.hasDrawerSwipeConflicts(), equalTo(false))
     }
@@ -218,7 +158,7 @@ class ReviewerNoParamTest : RobolectricTest() {
     fun noDrawerConflictsIfNoGestures() {
         enableGestureSetting()
         disableConflictGestures()
-        val reviewer = startReviewerFullScreen()
+        val reviewer = startReviewer()
         assertThat("gestures should be enabled", gestureProcessor.isEnabled, equalTo(true))
         assertThat("no conflicts, so no conflicts detected", reviewer.hasDrawerSwipeConflicts(), equalTo(false))
     }
@@ -229,7 +169,7 @@ class ReviewerNoParamTest : RobolectricTest() {
         enableGestureSetting()
         disableConflictGestures()
         enableGesture(SWIPE_UP)
-        val reviewer = startReviewerFullScreen()
+        val reviewer = startReviewer()
         assertThat("gestures should be enabled", gestureProcessor.isEnabled, equalTo(true))
         assertThat(reviewer.hasDrawerSwipeConflicts(), equalTo(true))
     }
@@ -240,7 +180,7 @@ class ReviewerNoParamTest : RobolectricTest() {
         enableGestureSetting()
         disableConflictGestures()
         enableGesture(SWIPE_DOWN)
-        val reviewer = startReviewerFullScreen()
+        val reviewer = startReviewer()
         assertThat("gestures should be enabled", gestureProcessor.isEnabled, equalTo(true))
         assertThat(reviewer.hasDrawerSwipeConflicts(), equalTo(true))
     }
@@ -251,7 +191,7 @@ class ReviewerNoParamTest : RobolectricTest() {
         enableGestureSetting()
         disableConflictGestures()
         enableGesture(SWIPE_RIGHT)
-        val reviewer = startReviewerFullScreen()
+        val reviewer = startReviewer()
         assertThat("gestures should be enabled", gestureProcessor.isEnabled, equalTo(true))
         assertThat(reviewer.hasDrawerSwipeConflicts(), equalTo(true))
     }
@@ -260,12 +200,6 @@ class ReviewerNoParamTest : RobolectricTest() {
     fun normalReviewerFitsSystemWindows() {
         val reviewer = startReviewer()
         assertThat(reviewer.fitsSystemWindows(), equalTo(true))
-    }
-
-    @Test
-    fun fullscreenDoesNotFitSystemWindow() {
-        val reviewer = startReviewerFullScreen()
-        assertThat(reviewer.fitsSystemWindows(), equalTo(false))
     }
 
     private val gestureProcessor: GestureProcessor
@@ -316,12 +250,6 @@ class ReviewerNoParamTest : RobolectricTest() {
             prefs,
             ReviewerBinding.fromGesture(gesture),
         )
-    }
-
-    private fun startReviewerFullScreen(): ReviewerExt {
-        val sharedPrefs = targetContext.sharedPrefs()
-        setPreference(sharedPrefs, FullScreenMode.BUTTONS_ONLY)
-        return ReviewerTest.startReviewer(this, ReviewerExt::class.java)
     }
 
     @Suppress("SameParameterValue")

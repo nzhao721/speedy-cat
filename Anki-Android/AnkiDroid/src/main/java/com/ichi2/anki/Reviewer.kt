@@ -32,14 +32,12 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.CheckResult
-import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.appcompat.widget.ThemeUtils
 import androidx.appcompat.widget.Toolbar
-import androidx.appcompat.widget.TooltipCompat
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.isGone
@@ -53,6 +51,7 @@ import com.ichi2.anki.CollectionManager.withCol
 import com.ichi2.anki.Whiteboard.Companion.createInstance
 import com.ichi2.anki.Whiteboard.OnPaintColorChangeListener
 import com.ichi2.anki.cardviewer.Gesture
+import com.ichi2.anki.cardviewer.SpeedyCatGaming
 import com.ichi2.anki.cardviewer.ViewerCommand
 import com.ichi2.anki.common.annotations.NeedsTest
 import com.ichi2.anki.common.crashreporting.CrashReportService
@@ -71,8 +70,6 @@ import com.ichi2.anki.libanki.redoAvailable
 import com.ichi2.anki.libanki.redoLabel
 import com.ichi2.anki.libanki.sched.Counts
 import com.ichi2.anki.libanki.sched.CurrentQueueState
-import com.ichi2.anki.libanki.undoAvailable
-import com.ichi2.anki.libanki.undoLabel
 import com.ichi2.anki.multimedia.audio.AudioRecordingController
 import com.ichi2.anki.multimedia.audio.AudioRecordingController.Companion.generateTempAudioFile
 import com.ichi2.anki.multimedia.audio.AudioRecordingController.Companion.isAudioRecordingSaved
@@ -95,8 +92,6 @@ import com.ichi2.anki.reviewer.BindingProcessor
 import com.ichi2.anki.reviewer.CardMarker
 import com.ichi2.anki.reviewer.CardSide
 import com.ichi2.anki.reviewer.FullScreenMode
-import com.ichi2.anki.reviewer.FullScreenMode.Companion.fromPreference
-import com.ichi2.anki.reviewer.FullScreenMode.Companion.isFullScreenReview
 import com.ichi2.anki.reviewer.ReviewerBinding
 import com.ichi2.anki.reviewer.ReviewerUi
 import com.ichi2.anki.scheduling.ForgetCardsDialog
@@ -123,7 +118,6 @@ import com.ichi2.utils.ViewGroupUtils.setRenderWorkaround
 import com.ichi2.utils.cancelable
 import com.ichi2.utils.iconAlpha
 import com.ichi2.utils.increaseHorizontalPaddingOfOverflowMenuIcons
-import com.ichi2.utils.message
 import com.ichi2.utils.negativeButton
 import com.ichi2.utils.positiveButton
 import com.ichi2.utils.show
@@ -365,6 +359,9 @@ open class Reviewer :
 
     override fun onCollectionLoaded(col: Collection) {
         super.onCollectionLoaded(col)
+        launchCatchingTask {
+            withCol { speedycatIdkBypassCount = SpeedyCatGaming.resetReviewSession(this).idkBypassCount }
+        }
         if (Intent.ACTION_VIEW == intent.action) {
             Timber.d("onCreate() :: received Intent with action = %s", intent.action)
             selectDeckFromExtra()
@@ -395,7 +392,7 @@ open class Reviewer :
 
         // Set full screen/immersive mode if needed
         if (prefFullscreenReview) {
-            setFullScreen(this)
+            setFullScreen()
         }
         setRenderWorkaround(this)
     }
@@ -421,14 +418,6 @@ open class Reviewer :
             android.R.id.home -> {
                 Timber.i("Reviewer:: Home button pressed")
                 closeReviewer(RESULT_OK)
-            }
-            R.id.action_undo -> {
-                Timber.i("Reviewer:: Undo button pressed")
-                if (showWhiteboard && whiteboard != null && !whiteboard!!.undoEmpty()) {
-                    whiteboard!!.undo()
-                } else {
-                    undo()
-                }
             }
             R.id.action_redo -> {
                 Timber.i("Reviewer:: Redo button pressed")
@@ -861,53 +850,17 @@ open class Reviewer :
             suspendItem.subMenu?.findItem(R.id.action_suspend_note)?.title = TR.sentenceCase.suspendNote
         }
 
-        // Undo button
-        @DrawableRes val undoIconId: Int
-        val undoEnabled: Boolean
+        // Whiteboard eraser button
+        val toggleEraserIcon = menu.findItem(R.id.action_toggle_eraser)
         val whiteboardIsShownAndHasStrokes = showWhiteboard && whiteboard?.undoEmpty() == false
-        if (whiteboardIsShownAndHasStrokes) {
-            undoIconId = R.drawable.ic_arrow_u_left_top
-            undoEnabled = true
-        } else {
-            undoIconId = R.drawable.ic_undo_white
-            undoEnabled = colIsOpenUnsafe() && getColUnsafe.undoAvailable()
-            this.isEraserMode = false
-        }
-        val alphaUndo = Themes.ALPHA_ICON_ENABLED_LIGHT
-        val undoIcon = menu.findItem(R.id.action_undo)
-        undoIcon.setIcon(undoIconId)
-        undoIcon.setEnabled(undoEnabled).iconAlpha = alphaUndo
-        undoIcon.actionView!!.isEnabled = undoEnabled
-        val toggleEraserIcon = menu.findItem((R.id.action_toggle_eraser))
         if (colIsOpenUnsafe()) { // Required mostly because there are tests where `col` is null
             if (whiteboardIsShownAndHasStrokes) {
-                // Make Undo action title to whiteboard Undo specific one
-                undoIcon.title = resources.getString(R.string.undo_action_whiteboard_last_stroke)
-
-                // Show whiteboard Eraser action button
                 if (!actionButtons.status.toggleEraserIsDisabled()) {
                     toggleEraserIcon.isVisible = true
                 }
             } else {
-                // Disable whiteboard eraser action button
                 isEraserMode = false
                 whiteboard?.reviewerEraserModeIsToggledOn = isEraserMode
-
-                if (getColUnsafe.undoAvailable()) {
-                    // set the undo title to a named action ('Undo Answer Card' etc...)
-                    undoIcon.title = getColUnsafe.undoLabel()
-                } else {
-                    // In this case, there is no object word for the verb, "Undo",
-                    // so in some languages such as Japanese, which have pre/post-positional particle with the object,
-                    // we need to use the string for just "Undo" instead of the string for "Undo %s".
-                    undoIcon.title = resources.getString(R.string.undo)
-                    undoIcon.iconAlpha = Themes.ALPHA_ICON_DISABLED_LIGHT
-                }
-            }
-
-            // Set the undo tooltip, only if the icon is shown in the action bar
-            undoIcon.actionView?.let { undoView ->
-                TooltipCompat.setTooltipText(undoView, undoIcon.title)
             }
 
             menu.findItem(R.id.action_redo)?.apply {
@@ -1117,7 +1070,7 @@ open class Reviewer :
         val preferences = super.restorePreferences()
         prefHideDueCount = preferences.getBoolean("hideDueCount", false)
         prefShowETA = preferences.getBoolean("showETA", false)
-        prefFullscreenReview = isFullScreenReview(preferences)
+        prefFullscreenReview = false
         actionButtons.setup(preferences)
         return preferences
     }
@@ -1246,16 +1199,11 @@ open class Reviewer :
         }
     }
 
-    private suspend fun dealWithTimeBox(timebox: Collection.TimeboxReached) {
-        val nCards = timebox.reps
-        val nMins = timebox.secs / 60
-        val mins = resources.getQuantityString(R.plurals.in_minutes, nMins, nMins)
-        val timeboxMessage = resources.getQuantityString(R.plurals.timebox_reached, nCards, nCards, mins)
+    private suspend fun dealWithTimeBox(_timebox: Collection.TimeboxReached) {
         suspendCancellableCoroutine { coroutines ->
             Timber.i("Showing timebox reached dialog")
             AlertDialog.Builder(this).show {
                 title(R.string.timebox_reached_title)
-                message(text = timeboxMessage)
                 positiveButton(R.string.dialog_continue) {
                     coroutines.resume(Unit)
                 }
@@ -1526,7 +1474,7 @@ open class Reviewer :
         object : Handler(getDefaultLooper()) {
             override fun handleMessage(msg: Message) {
                 if (prefFullscreenReview) {
-                    setFullScreen(this@Reviewer)
+                    setFullScreen()
                 }
             }
         }
@@ -1547,9 +1495,9 @@ open class Reviewer :
     }
 
     @Suppress("deprecation") // #9332: UI Visibility -> Insets
-    private fun setFullScreen(a: AbstractFlashcardViewer) {
+    private fun setFullScreen() {
         // Set appropriate flags to enable Sticky Immersive mode.
-        a.window.decorView.systemUiVisibility = (
+        window.decorView.systemUiVisibility = (
             View.SYSTEM_UI_FLAG_LAYOUT_STABLE // | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION // temporarily disabled due to #5245
                 or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                 or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
@@ -1558,14 +1506,13 @@ open class Reviewer :
                 or View.SYSTEM_UI_FLAG_IMMERSIVE
         )
         // Show / hide the Action bar together with the status bar
-        val prefs = a.sharedPrefs()
-        val fullscreenMode = fromPreference(prefs)
-        a.window.statusBarColor = MaterialColors.getColor(a, CommonR.attr.appBarColor, 0)
-        val decorView = a.window.decorView
+        val mode = fullscreenMode
+        window.statusBarColor = MaterialColors.getColor(this, CommonR.attr.appBarColor, 0)
+        val decorView = window.decorView
         decorView.setOnSystemUiVisibilityChangeListener { flags: Int ->
-            val toolbar = a.findViewById<View>(R.id.toolbar)
-            val answerButtons = a.findViewById<View>(R.id.answer_options_layout)
-            val topbar = a.findViewById<View>(R.id.top_bar)
+            val toolbar = findViewById<View>(R.id.toolbar)
+            val answerButtons = findViewById<View>(R.id.answer_options_layout)
+            val topbar = findViewById<View>(R.id.top_bar)
             if (toolbar == null || topbar == null || answerButtons == null) {
                 return@setOnSystemUiVisibilityChangeListener
             }
@@ -1575,13 +1522,13 @@ open class Reviewer :
             Timber.d("System UI visibility change. Visible: %b", visible)
             if (visible) {
                 showViewWithAnimation(toolbar)
-                if (fullscreenMode == FullScreenMode.FULLSCREEN_ALL_GONE) {
+                if (mode == FullScreenMode.FULLSCREEN_ALL_GONE) {
                     showViewWithAnimation(topbar)
                     showViewWithAnimation(answerButtons)
                 }
             } else {
                 hideViewWithAnimation(toolbar)
-                if (fullscreenMode == FullScreenMode.FULLSCREEN_ALL_GONE) {
+                if (mode == FullScreenMode.FULLSCREEN_ALL_GONE) {
                     hideViewWithAnimation(topbar)
                     hideViewWithAnimation(answerButtons)
                 }

@@ -96,6 +96,9 @@ class PreferencesAnalyticsTest : RobolectricTest() {
             R.string.ignore_display_cutout_key, // ignoreDisplayCutout
             R.string.reviewer_toolbar_position_key, // reviewerToolbarPosition
             R.string.answer_button_size_pref_key, // answerBtnSize
+            R.string.fullscreen_mode_preference, // fullscreenMode (SpeedyCAT locked)
+            R.string.show_topbar_preference, // showTopbar (SpeedyCAT locked)
+            R.string.safe_display_key, // safeDisplay (SpeedyCAT locked)
         ).toStringResourceSet()
 
     @Test

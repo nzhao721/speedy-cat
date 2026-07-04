@@ -73,6 +73,6 @@ object AndroidPermanentlyRevokedPermissionsDialog {
             CollectionHelper.getCurrentAnkiDroidDirectory(context).absolutePath
         } catch (e: Exception) {
             Timber.w(e)
-            context.getString(R.string.card_browser_unknown_deck_name)
+            context.getString(R.string.unknown_path_name)
         }
 }

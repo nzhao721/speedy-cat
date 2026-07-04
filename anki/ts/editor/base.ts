@@ -19,7 +19,6 @@ import LabelButton from "$lib/components/LabelButton.svelte";
 import WithContext from "$lib/components/WithContext.svelte";
 import WithState from "$lib/components/WithState.svelte";
 
-import BrowserEditor from "./BrowserEditor.svelte";
 import NoteCreator from "./NoteCreator.svelte";
 import * as editorContextKeys from "./NoteEditor.svelte";
 import ReviewerEditor from "./ReviewerEditor.svelte";
@@ -55,11 +54,6 @@ export const components = {
 
 export { editorToolbar } from "./editor-toolbar";
 
-async function setupBrowserEditor(): Promise<void> {
-    await setupI18n({ modules: editorModules });
-    mount(BrowserEditor, { target: document.body, props: { uiResolve } });
-}
-
 async function setupNoteCreator(): Promise<void> {
     await setupI18n({ modules: editorModules });
     mount(NoteCreator, { target: document.body, props: { uiResolve } });
@@ -70,13 +64,10 @@ async function setupReviewerEditor(): Promise<void> {
     mount(ReviewerEditor, { target: document.body, props: { uiResolve } });
 }
 
-export function setupEditor(mode: "add" | "browse" | "review") {
+export function setupEditor(mode: "add" | "review") {
     switch (mode) {
         case "add":
             setupNoteCreator();
-            break;
-        case "browse":
-            setupBrowserEditor();
             break;
         case "review":
             setupReviewerEditor();

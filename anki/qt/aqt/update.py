@@ -84,7 +84,7 @@ def prompt_to_update(mw: aqt.AnkiQt, ver: str) -> None:
         # ignore this update
         mw.pm.meta["suppressUpdate"] = ver
     elif ret == QMessageBox.StandardButton.Yes:
-        openLink(aqt.appWebsiteDownloadSection)
+        pass
 
 
 def prompt_and_install_github_update(mw: aqt.AnkiQt, release: GithubRelease) -> None:

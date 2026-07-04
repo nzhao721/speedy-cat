@@ -315,11 +315,6 @@ class DebugConsole(QDialog):
         self._card_repr(card)
         return card
 
-    def _debugBrowserCard(self) -> anki.cards.Card | None:
-        card = aqt.dialogs._dialogs["Browser"][1].card
-        self._card_repr(card)
-        return card
-
     def onDebugPrint(self) -> None:
         cursor = self._text.textCursor()
         position = cursor.position()

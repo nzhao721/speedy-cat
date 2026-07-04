@@ -116,7 +116,7 @@
                     android:layout_gravity="center_vertical"
                     app:endIconMode="custom"
                     app:endIconDrawable="@drawable/ic_search_white"
-                    app:endIconContentDescription="@string/card_browser_cram_search"
+                    app:endIconContentDescription="@string/filtered_deck_search"
                     tools:hint="Search">
 
                     <com.google.android.material.textfield.TextInputEditText

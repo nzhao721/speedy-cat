@@ -10,7 +10,9 @@
 //! user-generated. The RPC surface is defined in `proto/anki/practice.proto`
 //! and implemented in [`service`].
 
+pub(crate) mod ewma;
 pub(crate) mod loader;
+pub(crate) mod performance;
 pub(crate) mod scoring;
 pub(crate) mod service;
 

@@ -48,3 +48,8 @@ Thumbs.db
 *.local.secret
 .speedycat-openai.key
 *.key.local
+.firebaserc
+
+# --- SpeedyCAT Firebase proxy build outputs ---
+functions/node_modules/
+functions/lib/

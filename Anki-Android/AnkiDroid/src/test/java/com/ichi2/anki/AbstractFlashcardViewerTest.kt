@@ -222,6 +222,31 @@ class AbstractFlashcardViewerTest : RobolectricTest() {
         }
 
     @Test
+    fun gamingAttemptBlocksRevealAndClearsInput() =
+        runTest {
+            addBasicWithTypingNote("Hello", "World")
+            val viewer: NonAbstractFlashcardViewer = getViewer(false)
+            viewer.forceActiveRecall = true
+            viewer.baseContext
+                .sharedPrefs()
+                .edit()
+                .putBoolean(com.ichi2.anki.cardviewer.SpeedyCatAiChecker.AI_PREF_KEY, false)
+                .apply()
+
+            viewer.typeAnswerForTesting("asdf")
+            viewer.displayCardAnswer()
+            advanceRobolectricLooper()
+
+            assertThat("gaming blocks reveal", viewer.isDisplayingAnswer, equalTo(false))
+            assertThat("typed answer cleared for retry", viewer.typedInput, equalTo(""))
+
+            viewer.typeAnswerForTesting("World")
+            viewer.displayCardAnswer()
+            advanceRobolectricLooper()
+            assertThat("honest retry reveals answer", viewer.isDisplayingAnswer, equalTo(true))
+        }
+
+    @Test
     fun testEditCardProvidesInverseTransition() {
         val viewer: NonAbstractFlashcardViewer = getViewer(true)
         val gestures = listOf(Gesture.SWIPE_LEFT, Gesture.SWIPE_UP, Gesture.DOUBLE_TAP)

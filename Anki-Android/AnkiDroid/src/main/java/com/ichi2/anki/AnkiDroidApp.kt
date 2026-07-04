@@ -24,7 +24,6 @@ import androidx.lifecycle.ProcessLifecycleOwner
 import anki.collection.OpChanges
 import com.ichi2.anki.AnkiDroidApp.Companion.sharedPreferencesTestingOverride
 import com.ichi2.anki.analytics.UsageAnalytics
-import com.ichi2.anki.browser.SharedPreferencesLastDeckIdRepository
 import com.ichi2.anki.common.android.AdaptionUtil
 import com.ichi2.anki.common.android.Animations
 import com.ichi2.anki.common.android.ApplicationContextInitializer
@@ -41,7 +40,6 @@ import com.ichi2.anki.common.utils.android.showThemedToast
 import com.ichi2.anki.common.utils.annotation.KotlinCleanup
 import com.ichi2.anki.compat.CompatHelper
 import com.ichi2.anki.contextmenu.AnkiCardContextMenu
-import com.ichi2.anki.contextmenu.CardBrowserContextMenu
 import com.ichi2.anki.exception.StorageAccessException
 import com.ichi2.anki.exception.SystemStorageException
 import com.ichi2.anki.logging.FragmentLifecycleLogger
@@ -85,7 +83,6 @@ open class AnkiDroidApp :
     private val notifications = MutableLiveData<Void?>()
 
     lateinit var activityAgnosticDialogs: ActivityAgnosticDialogs
-    val sharedPrefsLastDeckIdRepository = SharedPreferencesLastDeckIdRepository()
 
     /** Used to avoid showing extra progress dialogs when one already shown. */
     var progressDialogShown = false
@@ -180,8 +177,6 @@ open class AnkiDroidApp :
             return
         }
 
-        // Forget the last deck that was used in the CardBrowser
-        CardBrowser.clearLastDeckId()
         val anki = AnkiContext.apply { setupAnkiBackend() }
         with(anki) { initializeAnkiDroidDirectory() }
         with(anki) { setupDayRollover() }
@@ -298,15 +293,6 @@ open class AnkiDroidApp :
         setup("setupContextMenus") {
             val preferences = this.sharedPrefs()
 
-            // setup 'Card Browser'
-            CardBrowserContextMenu.ensureConsistentStateWithPreferenceStatus(
-                this,
-                preferences.getBoolean(
-                    getString(R.string.card_browser_external_context_menu_key),
-                    false,
-                ),
-            )
-
             // Setup 'Anki Card'
             AnkiCardContextMenu.ensureConsistentStateWithPreferenceStatus(
                 this,
@@ -337,6 +323,7 @@ open class AnkiDroidApp :
                 .get()
                 .lifecycle
                 .addObserver(appLifecycleObserver)
+            SpeedyCatAutoSync.install()
         }
 
     /**

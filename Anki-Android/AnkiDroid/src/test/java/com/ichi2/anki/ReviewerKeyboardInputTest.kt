@@ -25,7 +25,6 @@ import android.view.KeyEvent.KEYCODE_4
 import android.view.KeyEvent.KEYCODE_F5
 import android.view.KeyEvent.KEYCODE_R
 import android.view.KeyEvent.KEYCODE_SPACE
-import android.view.KeyEvent.KEYCODE_Z
 import androidx.annotation.CheckResult
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import anki.scheduler.CardAnswer.Rating
@@ -34,11 +33,8 @@ import com.ichi2.anki.AnkiDroidApp.Companion.sharedPrefs
 import com.ichi2.anki.cardviewer.ViewerCommand
 import com.ichi2.anki.libanki.Card
 import com.ichi2.anki.reviewer.Binding.Companion.keyCode
-import com.ichi2.anki.reviewer.Binding.ModifierKeys
 import com.ichi2.anki.reviewer.BindingMap
-import com.ichi2.anki.reviewer.CardSide
 import com.ichi2.anki.reviewer.ReviewerBinding
-import com.ichi2.anki.utils.ext.addBinding
 import kotlinx.coroutines.Job
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.equalTo
@@ -141,28 +137,6 @@ class ReviewerKeyboardInputTest : RobolectricTest() {
         val underTest = KeyboardInputTestReviewer.displayingAnswer()
         underTest.handleKeyPress(KEYCODE_F5, '\u0000')
         assertThat("Replay Media should be called", underTest.replayMediaCalled)
-    }
-
-    @Test
-    fun pressingZShouldUndoIfAvailable() {
-        ViewerCommand.UNDO.addBinding(
-            sharedPrefs(),
-            ReviewerBinding(keyCode(KEYCODE_Z, ModifierKeys.none()), CardSide.BOTH),
-        )
-        val underTest = KeyboardInputTestReviewer.displayingAnswer().withUndoAvailable(true)
-        underTest.handleAndroidKeyPress(KEYCODE_Z)
-        assertThat("Undo should be called", underTest.undoCalled)
-    }
-
-    @Test
-    fun pressingZShouldNotUndoIfNotAvailable() {
-        ViewerCommand.UNDO.addBinding(
-            sharedPrefs(),
-            ReviewerBinding(keyCode(KEYCODE_Z, ModifierKeys.none()), CardSide.BOTH),
-        )
-        val underTest = KeyboardInputTestReviewer.displayingAnswer().withUndoAvailable(false)
-        underTest.handleUnicodeKeyPress('z')
-        assertThat("Undo is not available so should not be called", !underTest.undoCalled)
     }
 
     @Test

@@ -4,69 +4,54 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 -->
 <!--
 SpeedyCAT: the three deterministic readiness pillars (Memory / Performance /
-Readiness). Every available pillar shows value + 95% range + named source +
-method + sample size; insufficient data yields a give-up message — never a
-bare number. Shared by the dashboard; AI is off.
+Readiness). Each available pillar shows value + 95% range + minimal sample
+lines; insufficient data yields a give-up message — never a bare point estimate.
+Shared by the dashboard; AI is off.
 -->
 <script lang="ts">
-    import { getReadiness } from "@generated/backend";
+    import { AttemptSource } from "@generated/anki/practice_pb";
     import type {
+        FullLengthAttemptSummary,
         GetReadinessResponse,
         ReadinessPillar,
     } from "@generated/anki/practice_pb";
+    import type { GraphsResponse } from "@generated/anki/stats_pb";
+    import {
+        getReadiness,
+        getTopicStats,
+        listFullLengthAttempts,
+    } from "@generated/backend";
 
-    import { sectionShort } from "../practice/lib";
+    import {
+        collectionTotalCards,
+        memoryStudiedLine,
+        pct,
+        pctRange,
+    } from "./dashboard";
+
+    /** Graph data from WithGraphData; used for collection card totals. */
+    export let sourceData: GraphsResponse | null | undefined = undefined;
 
     type Phase = "loading" | "ready" | "error";
 
     let phase: Phase = "loading";
     let data: GetReadinessResponse | undefined;
+    let practiceCorrect = 0;
+    let practiceAttempted = 0;
+    let completedExams: FullLengthAttemptSummary[] = [];
 
     interface PillarView {
         title: string;
-        subtitle: string;
-        /** Noun for the sample-size line, e.g. "reviewed cards". */
-        unit: string;
         pillar: ReadinessPillar | undefined;
     }
 
     $: pillars = data
         ? ([
-              {
-                  title: "Memory",
-                  subtitle:
-                      "Mean chance you'd recall a flashcard right now (FSRS retrievability).",
-                  unit: "reviewed cards",
-                  pillar: data.memory,
-              },
-              {
-                  title: "Performance",
-                  subtitle: "Your accuracy on practice-bank questions.",
-                  unit: "answered questions",
-                  pillar: data.performance,
-              },
-              {
-                  title: "Readiness",
-                  subtitle:
-                      "Your raw score on completed full-length tests (score only).",
-                  unit: "test questions",
-                  pillar: data.readiness,
-              },
+              { title: "Memory", pillar: data.memory },
+              { title: "Performance", pillar: data.performance },
+              { title: "Readiness", pillar: data.readiness },
           ] as PillarView[])
         : [];
-
-    function pct(fraction: number): string {
-        return `${Math.round(fraction * 100)}%`;
-    }
-
-    /**
-     * The sample a pillar's number was computed from, e.g. "42 reviewed cards".
-     * The unit noun is singularised when n is 1 ("1 reviewed card").
-     */
-    function countPhrase(n: number, unit: string): string {
-        const noun = n === 1 ? unit.replace(/s$/, "") : unit;
-        return `${n} ${noun}`;
-    }
 
     /** Left offset / width (in %) for the range bar segments. */
     function span(low: number, high: number): { left: string; width: string } {
@@ -76,6 +61,51 @@ bare number. Shared by the dashboard; AI is off.
             left: `${lo * 100}%`,
             width: `${Math.max(0, hi - lo) * 100}%`,
         };
+    }
+
+    function memoryLine(studied: number, soFar = false): string {
+        const total = collectionTotalCards(sourceData);
+        if (total > 0) {
+            return memoryStudiedLine(studied, total, soFar);
+        }
+        return `${studied} flashcards studied`;
+    }
+
+    function performanceLines(): string[] {
+        const answered = data?.performance?.sampleSize ?? practiceAttempted;
+        const correct = practiceCorrect;
+        const lines = [
+            `${correct} correct out of ${answered} practice questions answered`,
+        ];
+        const avgSeconds = data?.performanceAvgSeconds ?? 0;
+        if (avgSeconds > 0) {
+            lines.push(`Average time of ${Math.round(avgSeconds)} seconds`);
+        }
+        return lines;
+    }
+
+    function readinessExamLines(): string[] {
+        return completedExams.map((exam) => {
+            const title = exam.testTitle || "Full-length test";
+            const accuracy =
+                exam.totalQuestions > 0
+                    ? pct(exam.totalCorrect / exam.totalQuestions)
+                    : "—";
+            return `${title}: ${accuracy}`;
+        });
+    }
+
+    function pillarDetailLines(title: string, pillar: ReadinessPillar): string[] {
+        if (title === "Memory") {
+            return [memoryLine(pillar.sampleSize)];
+        }
+        if (title === "Performance") {
+            return performanceLines();
+        }
+        if (title === "Readiness") {
+            return readinessExamLines();
+        }
+        return [];
     }
 
     async function load(): Promise<void> {
@@ -88,6 +118,33 @@ bare number. Shared by the dashboard; AI is off.
             // hide the section (below) rather than pop a blocking alert() dialog.
             // Desktop's RPC succeeds, so this is a no-op there.
             data = await getReadiness({ deckSearch: "" }, { alertOnError: false });
+            try {
+                const topicStats = await getTopicStats(
+                    {
+                        source: AttemptSource.PRACTICE_SESSION,
+                        firstAttemptNoHintOnly: false,
+                    },
+                    { alertOnError: false },
+                );
+                practiceCorrect = 0;
+                practiceAttempted = 0;
+                for (const section of topicStats.sections) {
+                    practiceCorrect += section.correct;
+                    practiceAttempted += section.attempts;
+                }
+            } catch {
+                practiceCorrect = 0;
+                practiceAttempted = data?.performance?.sampleSize ?? 0;
+            }
+            try {
+                const attempts = await listFullLengthAttempts({}, { alertOnError: false });
+                completedExams = attempts.attempts
+                    .filter((exam) => exam.totalQuestions > 0)
+                    .sort((a, b) => Number(b.completedAt) - Number(a.completedAt))
+                    .slice(0, 3);
+            } catch {
+                completedExams = [];
+            }
             phase = "ready";
         } catch {
             phase = "error";
@@ -105,15 +162,6 @@ the RPC succeeds, so the section renders exactly as before.
 -->
 {#if phase !== "error"}
     <section class="readiness-section">
-        <header class="readiness-head">
-            <h2>Exam readiness</h2>
-            <p class="readiness-tagline">
-                Three separate, deterministic measures — each with an explicit
-                range and a named source. No single “readiness number”, and no
-                AI.
-            </p>
-        </header>
-
         {#if phase === "loading"}
             <div class="loading">Calculating your readiness…</div>
         {:else if data}
@@ -122,11 +170,15 @@ the RPC succeeds, so the section renders exactly as before.
                     <section class="pillar" class:muted={!pv.pillar?.available}>
                         <div class="pillar-head">
                             <h3>{pv.title}</h3>
-                            <p class="pillar-sub">{pv.subtitle}</p>
                         </div>
 
                         {#if pv.pillar?.available}
-                            <div class="value">{pct(pv.pillar.value)}</div>
+                            <div class="value">
+                                {pctRange(
+                                    pv.pillar.rangeLow,
+                                    pv.pillar.rangeHigh,
+                                )}
+                            </div>
 
                             <div
                                 class="range-bar"
@@ -153,42 +205,11 @@ the RPC succeeds, so the section renders exactly as before.
                                     ) * 100}%"
                                 ></div>
                             </div>
-                            <div class="range-label">
-                                95% range {pct(pv.pillar.rangeLow)} – {pct(
-                                    pv.pillar.rangeHigh,
-                                )}
-                            </div>
 
-                            {#if pv.title === "Performance" && data.performanceAvgSeconds > 0}
-                                <div class="extra">
-                                    ~{Math.round(data.performanceAvgSeconds)}s per question
-                                </div>
-                            {/if}
-
-                            {#if pv.title === "Readiness" && data.sectionScores.length > 0}
-                                <div class="sections">
-                                    {#each data.sectionScores as s (s.section)}
-                                        <div class="section-row">
-                                            <span>{sectionShort(s.section)}</span>
-                                            <span class="mono"
-                                                >{s.correct}/{s.total}</span
-                                            >
-                                        </div>
-                                    {/each}
-                                </div>
-                            {/if}
-
-                            <div class="meta">
-                                <div class="sample">
-                                    Based on {countPhrase(
-                                        pv.pillar.sampleSize,
-                                        pv.unit,
-                                    )}
-                                </div>
-                                <div class="method">{pv.pillar.method}</div>
-                                <div class="source">
-                                    Source: {pv.pillar.source}
-                                </div>
+                            <div class="detail">
+                                {#each pillarDetailLines(pv.title, pv.pillar) as line}
+                                    <div>{line}</div>
+                                {/each}
                             </div>
                         {:else}
                             <div class="giveup">
@@ -199,17 +220,12 @@ the RPC succeeds, so the section renders exactly as before.
                                     {pv.pillar?.message ??
                                         "This score is unavailable right now."}
                                 </p>
-                                {#if (pv.pillar?.sampleSize ?? 0) > 0}
-                                    <div class="sample">
-                                        Based on {countPhrase(
+                                {#if (pv.pillar?.sampleSize ?? 0) > 0 && pv.title === "Memory"}
+                                    <div class="detail">
+                                        {memoryLine(
                                             pv.pillar?.sampleSize ?? 0,
-                                            pv.unit,
-                                        )} so far
-                                    </div>
-                                {/if}
-                                {#if pv.pillar?.source}
-                                    <div class="source">
-                                        Source: {pv.pillar.source}
+                                            true,
+                                        )}
                                     </div>
                                 {/if}
                             </div>
@@ -217,12 +233,6 @@ the RPC succeeds, so the section renders exactly as before.
                     </section>
                 {/each}
             </div>
-
-            <p class="footnote">
-                Ranges are 95% intervals. Scores refuse to display until there is
-                enough data to be meaningful, so an unlocked score is always
-                shown with its range and source.
-            </p>
         {/if}
     </section>
 {/if}
@@ -232,16 +242,6 @@ the RPC succeeds, so the section renders exactly as before.
         display: flex;
         flex-direction: column;
         gap: 1rem;
-    }
-    .readiness-head h2 {
-        margin: 0 0 0.25rem;
-        font-size: 1.2rem;
-    }
-    .readiness-tagline {
-        color: var(--fg-subtle);
-        margin: 0;
-        max-width: 720px;
-        font-size: 0.9rem;
     }
     .loading {
         color: var(--fg-subtle);
@@ -266,11 +266,6 @@ the RPC succeeds, so the section renders exactly as before.
     .pillar-head h3 {
         margin: 0;
         font-size: 1.1rem;
-    }
-    .pillar-sub {
-        margin: 0.25rem 0 0;
-        font-size: 0.82rem;
-        color: var(--fg-subtle);
     }
     .value {
         font-size: 2.6rem;
@@ -301,40 +296,12 @@ the RPC succeeds, so the section renders exactly as before.
         background: var(--button-primary-bg, #4c6ef5);
         transform: translateX(-1px);
     }
-    .range-label {
-        font-size: 0.82rem;
+    .detail {
+        font-size: 0.9rem;
         color: var(--fg-subtle);
-    }
-    .extra {
-        font-size: 0.85rem;
-        color: var(--fg-subtle);
-    }
-    .sections {
         display: flex;
         flex-direction: column;
         gap: 0.2rem;
-        margin-top: 0.2rem;
-    }
-    .section-row {
-        display: flex;
-        justify-content: space-between;
-        font-size: 0.85rem;
-        color: var(--fg-subtle);
-    }
-    .mono {
-        font-variant-numeric: tabular-nums;
-        color: var(--fg);
-    }
-    .meta {
-        margin-top: 0.4rem;
-        font-size: 0.72rem;
-        color: var(--fg-subtle);
-        display: flex;
-        flex-direction: column;
-        gap: 0.15rem;
-    }
-    .meta .source {
-        opacity: 0.85;
     }
     .giveup {
         display: flex;
@@ -357,19 +324,5 @@ the RPC succeeds, so the section renders exactly as before.
         margin: 0;
         color: var(--fg);
         font-size: 0.9rem;
-    }
-    .giveup .sample {
-        font-size: 0.85rem;
-        color: var(--fg);
-        font-variant-numeric: tabular-nums;
-    }
-    .giveup .source {
-        font-size: 0.72rem;
-        color: var(--fg-subtle);
-    }
-    .footnote {
-        color: var(--fg-subtle);
-        font-size: 0.8rem;
-        margin: 0;
     }
 </style>

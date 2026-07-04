@@ -19,8 +19,6 @@ package com.ichi2.anki.sync
 import android.content.Context
 import androidx.appcompat.app.AlertDialog
 import com.ichi2.anki.R
-import com.ichi2.anki.settings.Prefs
-import com.ichi2.utils.NetworkUtils.isActiveNetworkMetered
 import com.ichi2.utils.checkBoxPrompt
 import com.ichi2.utils.message
 import com.ichi2.utils.negativeButton
@@ -34,12 +32,12 @@ import com.ichi2.utils.show
  */
 object MeteredSyncPolicy {
     /** True when sync should be blocked/prompted because the network is metered. */
-    fun shouldBlock(): Boolean = !Prefs.allowSyncOnMeteredConnections && isActiveNetworkMetered()
+    fun shouldBlock(): Boolean = false
 
-    /** Persist the user's "don't ask again" choice from the warning dialog. */
-    fun setAlwaysAllow(allow: Boolean) {
-        Prefs.allowSyncOnMeteredConnections = allow
-    }
+    /** SpeedyCAT: metered-sync preference removed; always allow background sync. */
+    fun setAlwaysAllow(
+        @Suppress("UNUSED_PARAMETER") allow: Boolean,
+    ) = Unit
 
     /**
      * Run [onConfirm] immediately if the network is unmetered, metered-network sync is

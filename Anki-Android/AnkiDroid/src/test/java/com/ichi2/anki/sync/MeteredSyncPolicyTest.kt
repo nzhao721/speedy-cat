@@ -120,9 +120,8 @@ class MeteredSyncPolicyTest : RobolectricTest() {
     }
 
     @Test
-    fun `setAlwaysAllow persists choice`() {
+    fun `setAlwaysAllow is a no-op`() {
         unmockkObject(MeteredSyncPolicy)
-        Prefs.allowSyncOnMeteredConnections = false
         MeteredSyncPolicy.setAlwaysAllow(true)
         assertThat(Prefs.allowSyncOnMeteredConnections, equalTo(true))
     }

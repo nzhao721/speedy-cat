@@ -653,14 +653,6 @@ def import_json_string() -> bytes:
 
 
 def search_in_browser() -> bytes:
-    node = SearchNode()
-    node.ParseFromString(request.data)
-
-    def handle_on_main() -> None:
-        aqt.dialogs.open("Browser", aqt.mw, search=(node,))
-
-    aqt.mw.taskman.run_on_main(handle_on_main)
-
     return b""
 
 
@@ -782,6 +774,10 @@ exposed_backend_list = [
     "start_full_length_attempt",
     "record_full_length_answer",
     "submit_full_length_attempt",
+    "abandon_full_length_attempt",
+    "list_full_length_attempts",
+    "get_full_length_stats",
+    "get_full_length_review",
     "get_topic_stats",
     "get_readiness",
 ]

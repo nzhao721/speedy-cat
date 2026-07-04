@@ -13,17 +13,6 @@
         ankidroid:actionViewClass="com.ichi2.ui.AccessibleSearchView"
         ankidroid:showAsAction="always|collapseActionView"/>
     <item
-        android:id="@+id/action_sync"
-        android:icon="@drawable/ic_sync"
-        android:title="@string/button_sync"
-        ankidroid:actionProviderClass="com.ichi2.anki.SyncActionProvider"
-        ankidroid:showAsAction="always"/>
-    <item
-        android:id="@+id/action_undo"
-        ankidroid:showAsAction="never"
-        android:visible="false"
-        tools:title="Undo X"/>
-    <item
         android:id="@+id/checks"
         android:title="@string/checks_action"
         ankidroid:showAsAction="never">

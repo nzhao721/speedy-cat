@@ -239,10 +239,6 @@ class TypeAnswer(
          *
          * When nothing was typed (e.g. the answer was revealed without input) no indicator is
          * shown and the correct answer is displayed as-is.
-         *
-         * SpeedyCAT: in addition to the verdict, a labelled "Expected: …" line is appended showing
-         * the expected answer the checker compared against, so the learner sees what would have
-         * counted as correct (see [ForcedRecall.displayAnswer]).
          */
         @Language("HTML")
         fun simpleTypeAnswerFeedback(
@@ -257,25 +253,14 @@ class TypeAnswer(
                 } else {
                     "type-answer-incorrect"
                 }
-            // Alongside the verdict, show the expected answer the checker compared against (the same
-            // [correctAnswer] passed to [ForcedRecall.matches]), clearly labelled, so the learner
-            // sees what would have counted as correct. HTML is stripped for display and case is
-            // preserved (matching stays case-insensitive), matching the desktop reviewer's wording.
-            val expected = ForcedRecall.displayAnswer(correctAnswer)
-            val expectedLine =
-                if (expected.isEmpty()) {
-                    ""
-                } else {
-                    """<div class="type-answer-expected">Expected: ${escapeHtmlText(expected)}</div>"""
-                }
-            return """<div class="type-answer-result $resultClass">$comparison</div>$expectedLine"""
+            return """<div class="type-answer-result $resultClass">$comparison</div>"""
         }
 
         /**
-         * Minimal HTML-escaping for plain text inserted into card HTML. [ForcedRecall.displayAnswer]
-         * already strips tags, but the resulting text may still contain bare `&`, `<` or `>`.
+         * Minimal HTML-escaping for plain text inserted into card HTML.
          */
-        private fun escapeHtmlText(text: String): String =
+        @VisibleForTesting
+        internal fun escapeHtmlText(text: String): String =
             text
                 .replace("&", "&amp;")
                 .replace("<", "&lt;")

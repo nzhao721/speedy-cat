@@ -74,7 +74,7 @@ class EmptyCardsDialog(QDialog):
         qconnect(self._delete_button.clicked, self._on_delete)
 
     def _on_note_link_clicked(self, link: str) -> None:
-        aqt.dialogs.open("Browser", self.mw, search=(link,))
+        pass
 
     def _on_delete(self) -> None:
         self.mw.progress.start()

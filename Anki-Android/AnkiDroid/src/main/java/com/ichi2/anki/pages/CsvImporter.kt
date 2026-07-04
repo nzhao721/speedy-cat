@@ -26,7 +26,6 @@ import com.ichi2.anki.CollectionManager
 import com.ichi2.anki.R
 import com.ichi2.anki.SingleFragmentActivity
 import com.ichi2.anki.common.destinations.CsvImporterDestination
-import com.ichi2.anki.hideShowButtonCss
 import com.ichi2.utils.OLDEST_WORKING_WEBVIEW_VERSION
 import com.ichi2.utils.WebViewVersion
 
@@ -78,9 +77,7 @@ class CsvImporter : PageFragment() {
             view: WebView?,
             url: String?,
         ) {
-            view!!.evaluateJavascript(hideShowButtonCss) {
-                super.onPageFinished(view, url)
-            }
+            super.onPageFinished(view, url)
         }
 
         override fun onLoadResource(

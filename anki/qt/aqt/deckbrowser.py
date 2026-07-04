@@ -33,7 +33,6 @@ class RenderData:
 
     tree: DeckTreeNode
     current_deck_id: DeckId
-    studied_today: str
     sched_upgrade_required: bool
 
 
@@ -111,10 +110,7 @@ class DeckBrowser:
         elif cmd == "v2upgrade":
             self._confirm_upgrade()
         elif cmd == "v2upgradeinfo":
-            if self.mw.col.sched_ver() == 1:
-                openLink("https://faqs.ankiweb.net/the-anki-2.1-scheduler.html")
-            else:
-                openLink("https://faqs.ankiweb.net/the-2021-scheduler.html")
+            pass
         elif cmd == "select":
             set_current_deck(
                 parent=self.mw, deck_id=DeckId(int(arg))
@@ -147,7 +143,6 @@ class DeckBrowser:
                 return RenderData(
                     tree=col.sched.deck_due_tree(),
                     current_deck_id=col.decks.get_current_id(),
-                    studied_today=col.studied_today(),
                     sched_upgrade_required=not col.v3_scheduler(),
                 )
 
@@ -190,9 +185,7 @@ class DeckBrowser:
         self.web.eval("window.scrollTo(0, %d, 'instant');" % offset)
 
     def _renderStats(self) -> str:
-        return '<div id="studiedToday"><span>{}</span></div>'.format(
-            self._render_data.studied_today
-        )
+        return ""
 
     def _renderDeckTree(self, top: DeckTreeNode) -> str:
         buf = """

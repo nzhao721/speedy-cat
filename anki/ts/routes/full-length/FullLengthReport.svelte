@@ -53,6 +53,13 @@ and not an AI output — and is labelled as such.
         </div>
     </div>
 
+    {#if !report.countsForReadiness}
+        <p class="exclude-note">
+            This score is not counted toward your Readiness pillar because another
+            full-length attempt was left unfinished when you submitted.
+        </p>
+    {/if}
+
     <table>
         <thead>
             <tr>
@@ -104,6 +111,15 @@ and not an AI output — and is labelled as such.
     .title {
         color: var(--fg-subtle);
         margin: 0.25rem 0 0;
+    }
+    .exclude-note {
+        background: var(--canvas-inset);
+        border-radius: 8px;
+        padding: 0.85rem 1rem;
+        color: var(--fg-subtle);
+        font-size: 0.88rem;
+        line-height: 1.5;
+        margin: 0;
     }
     .overall {
         display: flex;

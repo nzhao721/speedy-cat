@@ -15,6 +15,7 @@ accuracy + time from get_topic_stats (practice-session attempts only).
         fetchTopicStats,
         formatClock,
         formatDurationLong,
+        formatTopicLabel,
         sectionShort,
         type PracticeSessionSummary,
     } from "./lib";
@@ -123,7 +124,7 @@ accuracy + time from get_topic_stats (practice-session attempts only).
                 <tbody>
                     {#each topics as t (t.section + t.topic)}
                         <tr>
-                            <td>{t.topic}</td>
+                            <td>{formatTopicLabel(t.topic)}</td>
                             <td>{sectionShort(t.section)}</td>
                             <td>
                                 <span

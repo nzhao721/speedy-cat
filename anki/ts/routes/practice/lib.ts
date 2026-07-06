@@ -35,6 +35,7 @@ import {
     getFullLengthReview,
     getFullLengthStats,
     getPracticeQuestions,
+    getRecommendedPracticeTopics,
     getTopicStats,
     listFullLengthAttempts,
     listFullLengthTests,
@@ -119,6 +120,31 @@ export const SCALED_SCORE_CAPTION =
     `Estimated MCAT-scale score from an averaged raw→scaled conversion (${SCALED_SCORE_SOURCE}). `
     + "These are AI-generated proof-of-concept forms, so treat it as an estimate, not an official score.";
 
+// ---- Readiness pillar tooltips (rslib/src/practice/service.rs) ------------
+
+/** One-sentence overview of the Memory pillar. */
+export const MEMORY_PILLAR_TOOLTIP =
+    "The chance you can correctly recall a flashcard you have studied.";
+
+/** One-sentence overview of the Performance pillar. */
+export const PERFORMANCE_PILLAR_TOOLTIP =
+    "The chance that a student effectively applies their knowledge to solve problems in varied contexts.";
+
+/** One-sentence overview of the Readiness pillar. */
+export const READINESS_PILLAR_TOOLTIP =
+    "The chance that a student correctly solves a previously unseen question in a real testing environment.";
+
+/** Hover/tap copy when a pillar breakdown row has insufficient data. */
+export const PILLAR_BREAKDOWN_INSUFFICIENT_TOOLTIP =
+    "Insufficient data in this category to calculate an estimate";
+
+/** Dashboard hover copy keyed by pillar title. */
+export const PILLAR_TOOLTIPS: Record<string, string> = {
+    Memory: MEMORY_PILLAR_TOOLTIP,
+    Performance: PERFORMANCE_PILLAR_TOOLTIP,
+    Readiness: READINESS_PILLAR_TOOLTIP,
+};
+
 const DIFFICULTY_LABEL: Record<number, string> = {
     [Difficulty.UNSPECIFIED]: "",
     [Difficulty.EASY]: "Easy",
@@ -169,7 +195,6 @@ export interface FilterOptions {
     sections?: McatSection[];
     /** Topics to include (matches ANY, case-insensitive). Empty = all topics. */
     topics?: string[];
-    missedOnly?: boolean;
     includeFullLength?: boolean;
     limit?: number;
 }
@@ -184,7 +209,6 @@ export function buildFilter(opts: FilterOptions) {
     return {
         sections,
         topics: opts.topics ?? [],
-        missedOnly: opts.missedOnly ?? false,
         includeFullLength: opts.includeFullLength ?? false,
         limit: opts.limit ?? 0,
     };
@@ -280,6 +304,11 @@ export async function fetchPassages(
     return res.passages;
 }
 
+export async function fetchRecommendedTopics(): Promise<string[]> {
+    const res = await getRecommendedPracticeTopics({});
+    return res.topics;
+}
+
 export async function beginPracticeSession(
     opts: FilterOptions,
     timeLimitSeconds: number,
@@ -373,6 +402,23 @@ export async function abandonAttempt(attemptId: string): Promise<void> {
 export async function fetchCompletedAttempts(): Promise<FullLengthAttemptSummary[]> {
     const res = await listFullLengthAttempts({});
     return res.attempts;
+}
+
+/** Regex to pull a full-length exam number from a test id or verbose title. */
+const FULL_LENGTH_LABEL_NUMBER =
+    /(?:full[- ]?length|(?:^|[-_])fl)[-_ ]*(\d+)/i;
+
+/**
+ * Short dashboard label for a completed full-length exam, e.g.
+ * "speedycat-fl-1" → "Full-length 1". Falls back to title parsing, then
+ * "Full-length test".
+ */
+export function formatFullLengthExamLabel(testId: string, title = ""): string {
+    const fromId = FULL_LENGTH_LABEL_NUMBER.exec(testId)?.[1];
+    if (fromId) return `Full-length ${fromId}`;
+    const fromTitle = FULL_LENGTH_LABEL_NUMBER.exec(title)?.[1];
+    if (fromTitle) return `Full-length ${fromTitle}`;
+    return "Full-length test";
 }
 
 /** Full-length tests not yet completed — exclude from the picker once submitted. */
@@ -537,24 +583,6 @@ export function hintDisplayOrder(revealed: number): number[] {
 }
 
 /**
- * Whether to offer the "Return to main question" shortcut on the revealed hint
- * at `index`. Only the LATEST revealed subquestion shows it, and only once it
- * has been answered correctly (picks store correct answers only) and the ladder
- * is still interactive (not `locked` because the main question is submitted).
- */
-export function canReturnToMain(
-    progress: HintProgress,
-    index: number,
-    locked: boolean,
-): boolean {
-    if (locked || progress.revealed <= 0) {
-        return false;
-    }
-    const latest = progress.revealed - 1;
-    return index === latest && progress.picks[latest] !== undefined;
-}
-
-/**
  * Can the learner reveal the NEXT hint? Only when one remains AND the current
  * revealed subquestion has been answered (no skipping ahead).
  */
@@ -581,6 +609,15 @@ export function hintAnswerCorrect(hint: HintSubquestion, label: string): boolean
     return label !== "" && label === hint.correctAnswer;
 }
 
+/** Label + text for the correct choice on a hint subquestion (compact display). */
+export function hintCorrectAnswerLine(hint: HintSubquestion): string {
+    const choice = hint.choices.find((c) => c.label === hint.correctAnswer);
+    if (!choice) {
+        return hint.correctAnswer;
+    }
+    return `${choice.label}. ${choice.text}`;
+}
+
 // ---- Hint ladder UX timers -------------------------------------------------
 //
 // SpeedyCAT practice mode gates hint affordances so learners attempt retrieval
@@ -591,7 +628,9 @@ export function hintAnswerCorrect(hint: HintSubquestion, label: string): boolean
 export const HINT_FIRST_MIN_SECONDS = 15;
 /** Maximum wait before the first "I'm stuck" button (seconds). */
 export const HINT_FIRST_MAX_SECONDS = 30;
-/** Wait on the main question before "I'm still stuck" reveals the next tier. */
+/** Wait on the main question before "I'm still stuck" reveals the next tier.
+ *  Counting starts only after the hint popup is dismissed (see
+ *  {@link shouldTickSubsequentHintTimer}). */
 export const HINT_SUBSEQUENT_SECONDS = 6;
 /** Cooldown after a wrong hint subquestion submit before retry (seconds). */
 export const HINT_WRONG_RETRY_SECONDS = 5;
@@ -713,6 +752,24 @@ export function canShowNextHintButton(
     );
 }
 
+/**
+ * Whether the post-hint "I'm still stuck" delay should advance this second.
+ * The timer starts only after the learner dismisses the hint popup (or returns
+ * to the main question), not while answering a tier inside the overlay.
+ */
+export function shouldTickSubsequentHintTimer(
+    hints: HintSubquestion[],
+    progress: HintProgress,
+    hintLadderDismissed: boolean,
+): boolean {
+    return (
+        hintLadderDismissed
+        && pendingHintIndex(progress) === -1
+        && progress.revealed > 0
+        && canRevealNextHint(hints, progress)
+    );
+}
+
 /** May the learner submit a hint subquestion answer right now? */
 export function canSubmitHintAnswer(
     choice: string,
@@ -788,6 +845,63 @@ export function applyHintAnswer(
 }
 
 // ---- Misc ------------------------------------------------------------------
+
+/** Known science / exam acronyms (matched case-insensitively). */
+const TOPIC_ACRONYMS = new Set([
+    "MCAT",
+    "DNA",
+    "RNA",
+    "mRNA",
+    "tRNA",
+    "rRNA",
+    "ATP",
+    "ADP",
+    "NAD",
+    "FAD",
+    "GDP",
+    "GTP",
+    "PCR",
+    "AAMC",
+    "pH",
+    "pKa",
+    "pKb",
+    "UV",
+    "IR",
+    "NMR",
+    "HIV",
+    "AIDS",
+    "CNS",
+    "PNS",
+]);
+
+function formatTopicWord(word: string): string {
+    if (!word) {
+        return "";
+    }
+    const upper = word.toUpperCase();
+    for (const acr of TOPIC_ACRONYMS) {
+        if (upper === acr.toUpperCase()) {
+            return acr;
+        }
+    }
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
+
+/**
+ * Title-case a topic label for UI display. Splits on whitespace, `-`, and `_`.
+ * Canonical `topic_tags` in JSON/DB are unchanged; call at render time only.
+ */
+export function formatTopicLabel(raw: string): string {
+    const trimmed = raw.trim();
+    if (!trimmed) {
+        return "";
+    }
+    return trimmed
+        .split(/[\s_-]+/)
+        .filter(Boolean)
+        .map(formatTopicWord)
+        .join(" ");
+}
 
 /** Primary topic attributed to an attempt (first tag, else section name). */
 export function primaryTopic(question: PracticeQuestion): string {

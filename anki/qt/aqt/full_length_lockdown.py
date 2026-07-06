@@ -67,6 +67,6 @@ def abandon_current(mw: aqt.main.AnkiQt) -> None:
 
 def _sync_toolbar(mw: aqt.main.AnkiQt) -> None:
     if is_active(mw):
-        mw.toolbarWeb.hide()
+        mw.toolbarWeb.collapse_for_lockdown()
     elif mw.state == "speedycat":
-        mw.toolbarWeb.show()
+        mw.toolbarWeb.restore_from_lockdown()

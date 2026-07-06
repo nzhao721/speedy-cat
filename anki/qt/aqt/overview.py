@@ -18,13 +18,7 @@ from aqt.operations.scheduling import (
     unbury_deck,
 )
 from aqt.sound import av_player
-from aqt.toolbar import BottomBar
-from aqt.utils import askUserDialog, openLink, shortcut, tooltip, tr
-
-
-class OverviewBottomBar:
-    def __init__(self, overview: Overview) -> None:
-        self.overview = overview
+from aqt.utils import askUserDialog, openLink, tooltip, tr
 
 
 @dataclass
@@ -49,7 +43,6 @@ class Overview:
     def __init__(self, mw: aqt.AnkiQt) -> None:
         self.mw = mw
         self.web = mw.web
-        self.bottom = BottomBar(mw, mw.bottomWeb)
         self._refresh_needed = False
 
     def show(self) -> None:
@@ -62,7 +55,6 @@ class Overview:
         def success(_counts: tuple) -> None:
             self._refresh_needed = False
             self._renderPage()
-            self._renderBottom()
             self.mw.web.setFocus()
             gui_hooks.overview_did_refresh(self)
 
@@ -232,32 +224,3 @@ class Overview:
 %(table)s
 </center>
 """
-
-    # Bottom area
-    ######################################################################
-
-    def _renderBottom(self) -> None:
-        links: list[list[str]] = []
-        is_dyn = self.mw.col.decks.current()["dyn"]
-        if is_dyn:
-            links.append(["R", "refresh", tr.actions_rebuild()])
-            links.append(["E", "empty", tr.studying_empty()])
-        if self.mw.col.sched.have_buried():
-            links.append(["U", "unbury", tr.studying_unbury()])
-        link_handler = gui_hooks.overview_will_render_bottom(
-            self._linkHandler,
-            links,
-        )
-        if not callable(link_handler):
-            link_handler = self._linkHandler
-        buf = ""
-        for b in links:
-            if b[0]:
-                b[0] = tr.actions_shortcut_key(val=shortcut(b[0]))
-            buf += """
-<button title="%s" onclick='pycmd("%s")'>%s</button>""" % tuple(b)
-        self.bottom.draw(
-            buf=buf,
-            link_handler=link_handler,
-            web_context=OverviewBottomBar(self),
-        )

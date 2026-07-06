@@ -157,15 +157,18 @@ object SpeedyCatAutoSync :
 
     private suspend fun runBackgroundSync(context: Context): Boolean {
         if (!areThereChangesToSync()) {
-            Timber.d("SpeedyCatAutoSync: no collection changes; media-only if configured")
             if (shouldFetchMedia()) {
                 val auth = syncAuth() ?: return false
+                Timber.i("SpeedyCAT-sync: no collection changes; starting media-only sync (carries results files)")
                 SyncMediaWorker.start(context, auth)
+            } else {
+                Timber.w("SpeedyCAT-sync: no collection changes and media fetch disabled; results cannot transfer")
             }
             setLastSyncTimeToNow()
             return false
         }
         val auth = syncAuth() ?: return false
+        Timber.i("SpeedyCAT-sync: collection changes present; starting collection+media sync (media=%b)", shouldFetchMedia())
         SyncWorker.start(context, auth, shouldFetchMedia())
         return true
     }

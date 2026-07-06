@@ -40,6 +40,7 @@ import com.ichi2.anki.CollectionManager
 import com.ichi2.anki.R
 import com.ichi2.anki.cancelMediaSync
 import com.ichi2.anki.notifications.NotificationId
+import com.ichi2.anki.practice.PracticeRepository
 import com.ichi2.anki.utils.ext.trySetForeground
 import com.ichi2.utils.Permissions
 import kotlinx.coroutines.CancellationException
@@ -101,6 +102,13 @@ class SyncMediaWorker(
         }
         Timber.d("SyncMediaWorker: cancelling progress notification (sync completed)")
         notificationManager?.cancel(NotificationId.SYNC_MEDIA)
+
+        // SpeedyCAT: cross-device practice/full-length results ride the media
+        // channel (`_speedycat_results_<device>.json`), which is only now on disk.
+        // Fold any newly-downloaded results into the local store and notify live
+        // Dashboard/Readiness screens so Performance & Readiness reflect them
+        // immediately (mobile counterpart of desktop's `sync_did_finish` ingest).
+        PracticeRepository.ingestAfterMediaSync(applicationContext)
 
         Timber.d("SyncMediaWorker: success")
         return Result.success()

@@ -61,6 +61,9 @@ class Preferences(QDialog):
             if index != -1:
                 self.form.tabWidget.removeTab(index)
 
+        if self.form.tabWidget.count() == 1:
+            self.form.tabWidget.tabBar().hide()
+
     def accept(self) -> None:
         self.accept_with_callback()
 

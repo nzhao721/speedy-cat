@@ -35,6 +35,7 @@ import com.ichi2.anki.CollectionManager.TR
 import com.ichi2.anki.R
 import com.ichi2.anki.pages.RemoveAccountFragment
 import com.ichi2.anki.settings.Prefs
+import com.ichi2.anki.practice.applySpeedyCatLightAppBar
 import com.ichi2.anki.ui.internationalization.sentenceCase
 import com.ichi2.anki.utils.ext.isCompactWidth
 import com.ichi2.anki.utils.ext.removeFragmentFromContainer
@@ -72,6 +73,7 @@ class LoggedInFragment : Fragment(R.layout.fragment_my_account_logged_in) {
         toolbar.setNavigationOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
+        activity.applySpeedyCatLightAppBar(toolbar)
 
         view.findViewById<TextView>(R.id.username_logged_in).text = Prefs.username
 

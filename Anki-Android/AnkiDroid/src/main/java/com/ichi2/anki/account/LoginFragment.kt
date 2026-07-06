@@ -45,6 +45,7 @@ import com.ichi2.anki.R
 import com.ichi2.anki.account.AccountActivity.Companion.START_FROM_DECKPICKER
 import com.ichi2.anki.getEndpoint
 import com.ichi2.anki.snackbar.showSnackbar
+import com.ichi2.anki.practice.applySpeedyCatLightAppBar
 import com.ichi2.anki.ui.internationalization.sentenceCase
 import com.ichi2.anki.utils.ext.isCompactWidth
 import com.ichi2.anki.utils.hideKeyboard
@@ -89,6 +90,7 @@ class LoginFragment : Fragment(R.layout.fragment_my_account) {
         toolbar.setNavigationOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
+        activity.applySpeedyCatLightAppBar(toolbar)
 
         passwordLayout = view.findViewById(R.id.password_layout)
         username = view.findViewById(R.id.username)

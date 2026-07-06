@@ -184,7 +184,6 @@ data class QuestionFilter(
     val topics: List<String> = emptyList(),
     val difficulty: Difficulty? = null,
     val passageId: String? = null,
-    val missedOnly: Boolean = false,
     val limit: Int = 0,
 )
 

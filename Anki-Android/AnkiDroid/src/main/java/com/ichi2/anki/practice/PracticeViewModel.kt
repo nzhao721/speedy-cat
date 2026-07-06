@@ -13,6 +13,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.ichi2.anki.CollectionManager
 import com.ichi2.anki.SpeedyCatAutoSync
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -41,8 +42,8 @@ class PracticeViewModel(
         viewModelScope.launch {
             try {
                 repo.ensureLoaded()
-                // Union in attempts synced from other devices so missed-only and
-                // per-topic stats reflect practice done on desktop too.
+                // Union in attempts synced from other devices so per-topic stats
+                // reflect practice done on desktop too.
                 runCatching { repo.ingestResults() }
                 contentReady = true
             } catch (e: Exception) {
@@ -68,14 +69,35 @@ class PracticeViewModel(
     )
 
     /**
-     * Start a session: mint a fresh session id and use it to seed the per-session
-     * selection + answer-choice shuffles, so repeat sessions differ. Mirrors the
-     * desktop `start_practice_session`.
+     * Start a session via the Rust `StartPracticeSession` RPC when the local
+     * backend is available (same path as desktop). Falls back to the bundled
+     * in-memory JSON bank when the RPC or collection question bank is missing.
      */
-    suspend fun startSession(filter: QuestionFilter): SessionQuestions =
+    suspend fun startSession(
+        filter: QuestionFilter,
+        timeLimitSeconds: Int = 0,
+    ): SessionQuestions =
         withContext(Dispatchers.IO) {
+            CollectionManager.withOpenColOrNull {
+                SpeedyCatBackendCapabilities.logCapabilities(this)
+                PracticeBackend.startPracticeSession(this, filter, timeLimitSeconds)
+            }?.takeIf { it.questions.isNotEmpty() }?.let {
+                return@withContext SessionQuestions(it.sessionId, it.questions)
+            }
             val sessionId = newSessionId()
             SessionQuestions(sessionId, repo.getPracticeSessionQuestions(filter, sessionId))
+        }
+
+    /**
+     * Engine-recommended topics from the Rust backend, or a structured failure
+     * when the RPC / collection prerequisites are missing.
+     */
+    suspend fun recommendedTopics(): RecommendedTopicsResult =
+        withContext(Dispatchers.IO) {
+            CollectionManager.withOpenColOrNull {
+                SpeedyCatBackendCapabilities.logCapabilities(this)
+                PracticeBackend.getRecommendedTopics(this, repo.allAttempts())
+            } ?: RecommendedTopicsResult.Unavailable(SpeedyCatBackendIssue.SyncFailed)
         }
 
     suspend fun record(

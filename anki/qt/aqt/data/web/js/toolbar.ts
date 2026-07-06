@@ -23,6 +23,9 @@ function updateUndoLink(canUndo: boolean, tooltip: string) {
 
 function updateSyncColor(state: SyncState) {
     const elem = document.getElementById("sync");
+    if (!elem) {
+        return;
+    }
     switch (state) {
         case SyncState.NoChanges:
             elem.classList.remove("full-sync", "normal-sync");
@@ -78,6 +81,9 @@ function getElementDimensions(element: HTMLElement): [number, number] {
 
 function moveLegacyAddonsToTray() {
     const rightTray = document.getElementsByClassName("right-tray")[0];
+    if (!rightTray) {
+        return;
+    }
     const toolbarChildren = document.querySelectorAll<HTMLElement>(".toolbar > *");
     const legacyAddonElements: HTMLElement[] = Array.from(toolbarChildren)
         .reverse() // restore original add-on load order

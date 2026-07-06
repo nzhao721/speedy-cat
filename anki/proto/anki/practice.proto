@@ -81,6 +81,11 @@ service PracticeService {
   // recorded attempts.
   rpc GetTopicStats(GetTopicStatsRequest) returns (GetTopicStatsResponse);
 
+  // Engine-recommended practice topics for a session (weak Performance pillar
+  // scores first; see rslib recommended_practice_topics).
+  rpc GetRecommendedPracticeTopics(GetRecommendedPracticeTopicsRequest)
+      returns (GetRecommendedPracticeTopicsResponse);
+
   // ---- Exam readiness ----
 
   // Compute the 3-pillar exam-readiness metric (Memory / Performance /
@@ -246,8 +251,7 @@ message QuestionFilter {
   repeated string topics = 2;
   optional Difficulty difficulty = 3;
   optional string passage_id = 4;
-  // Restrict to questions the user previously answered incorrectly.
-  bool missed_only = 5;
+  reserved 5;
   // Include questions that belong to a full-length test. Default false =
   // free-standing question bank only.
   bool include_full_length = 6;
@@ -547,6 +551,14 @@ message GetTopicStatsResponse {
   repeated SectionStat sections = 2;
 }
 
+message GetRecommendedPracticeTopicsRequest {}
+
+message GetRecommendedPracticeTopicsResponse {
+  // Canonical topic_tags to pass to QuestionFilter.topics when starting a
+  // practice session. Empty when the question bank has no topics.
+  repeated string topics = 1;
+}
+
 // ---- Exam readiness --------------------------------------------------------
 
 message GetReadinessRequest {
@@ -587,6 +599,44 @@ message ReadinessSectionScore {
   optional uint32 scaled_score = 4;
 }
 
+// Per-section breakdown row for a readiness pillar dropdown.
+message PillarSectionBreakdown {
+  McatSection section = 1;
+  bool available = 2;
+  // Point estimate and 95% range as fractions in [0, 1].
+  double value = 3;
+  double range_low = 4;
+  double range_high = 5;
+  uint32 sample_size = 6;
+  // Give-up explanation when !available.
+  string message = 7;
+  // Readiness pillar only: scaled-score estimate (118–132) at Wilson bounds.
+  optional uint32 scaled_score = 8;
+  optional uint32 scaled_low = 9;
+  optional uint32 scaled_high = 10;
+}
+
+// Per-topic breakdown row (practice topic tag or flashcard theme deck).
+message PillarTopicBreakdown {
+  string topic = 1;
+  McatSection section = 2;
+  bool available = 3;
+  double value = 4;
+  double range_low = 5;
+  double range_high = 6;
+  uint32 sample_size = 7;
+  string message = 8;
+  optional uint32 scaled_score = 9;
+  optional uint32 scaled_low = 10;
+  optional uint32 scaled_high = 11;
+}
+
+// Section + topic tables for one pillar's expandable dashboard detail.
+message PillarBreakdowns {
+  repeated PillarSectionBreakdown sections = 1;
+  repeated PillarTopicBreakdown topics = 2;
+}
+
 message GetReadinessResponse {
   // Pillar 1 — Memory: mean FSRS retrievability over reviewed cards.
   ReadinessPillar memory = 1;
@@ -612,6 +662,41 @@ message GetReadinessResponse {
   // True when average pace exceeded 98s/question and the Performance pillar value
   // was scaled by 98 / performance_avg_seconds.
   bool performance_time_penalty_applied = 9;
+  // Projected MCAT total (472–528) + per-section breakdown, blended from
+  // per-section Performance (practice) and Readiness (full-length) signals.
+  // Gives up when any section lacks enough practice data.
+  ProjectedMcatScore projected = 10;
+  // Expandable per-pillar breakdowns (section table + topic table).
+  PillarBreakdowns memory_breakdown = 11;
+  PillarBreakdowns performance_breakdown = 12;
+  PillarBreakdowns readiness_breakdown = 13;
+}
+
+// Per-section input to the projected MCAT score (practice + full-length blend).
+message ProjectedSectionScore {
+  McatSection section = 1;
+  // Estimated scaled section score (118–132) from the blended fraction.
+  optional uint32 scaled_score = 2;
+  optional uint32 scaled_low = 3;
+  optional uint32 scaled_high = 4;
+  // Equivalent raw correct on a standard-length section (for traceability).
+  uint32 raw_correct = 5;
+  uint32 raw_total = 6;
+  uint32 practice_attempts = 7;
+  uint32 full_length_attempts = 8;
+}
+
+// Dashboard projected MCAT score: sum of four per-section scaled estimates.
+message ProjectedMcatScore {
+  bool available = 1;
+  // Give-up explanation when !available.
+  string message = 2;
+  string source = 3;
+  string method = 4;
+  optional uint32 total = 5;
+  optional uint32 total_low = 6;
+  optional uint32 total_high = 7;
+  repeated ProjectedSectionScore sections = 8;
 }
 
 // ---- SpeedyCAT anti-gaming --------------------------------------------------

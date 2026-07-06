@@ -51,6 +51,7 @@ class PreferencesAnalyticsTest : RobolectricTest() {
             R.string.analytics_opt_in_key, // analytics_opt_in
             // Screens: don't have a value
             R.string.pref_general_screen_key, // generalScreen
+            R.string.pref_account_screen_key, // accountScreen
             R.string.pref_reviewing_screen_key, // reviewingScreen
             R.string.pref_sync_screen_key, // syncScreen
             R.string.pref_notifications_screen_key, // notificationsScreen

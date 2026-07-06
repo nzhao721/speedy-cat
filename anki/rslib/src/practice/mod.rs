@@ -10,11 +10,14 @@
 //! user-generated. The RPC surface is defined in `proto/anki/practice.proto`
 //! and implemented in [`service`].
 
+pub(crate) mod breakdown;
 pub(crate) mod ewma;
 pub(crate) mod loader;
 pub(crate) mod performance;
+pub(crate) mod recommended_practice_topics;
 pub(crate) mod scoring;
 pub(crate) mod service;
+pub(crate) mod topic_display;
 
 use anki_proto::practice::AttemptSource;
 use anki_proto::practice::Difficulty;

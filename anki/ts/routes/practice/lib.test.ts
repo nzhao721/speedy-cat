@@ -12,8 +12,9 @@ import { expect, test } from "vitest";
 import {
     applyHintAnswer,
     availableFullLengthTests,
+    formatFullLengthExamLabel,
+    formatTopicLabel,
     canRevealNextHint,
-    canReturnToMain,
     canShowFirstHintButton,
     canShowNextHintButton,
     canSubmitHintAnswer,
@@ -36,6 +37,7 @@ import {
     passageWordCount,
     pendingHintIndex,
     shouldTickQuestionHintTimer,
+    shouldTickSubsequentHintTimer,
     startHintWrongCooldown,
     tickHintCooldowns,
 } from "./lib";
@@ -56,6 +58,39 @@ function hint(level: number, correct = "A"): HintSubquestion {
 }
 
 const ladder = [hint(1), hint(2), hint(3)];
+
+test("formatFullLengthExamLabel shortens verbose bundled titles", () => {
+    expect(
+        formatFullLengthExamLabel(
+            "speedycat-fl-1",
+            "SpeedyCAT Full-Length 1 (AI-generated proof-of-concept)",
+        ),
+    ).toBe("Full-length 1");
+    expect(formatFullLengthExamLabel("full-length-2", "")).toBe("Full-length 2");
+    expect(formatFullLengthExamLabel("unknown", "")).toBe("Full-length test");
+    expect(
+        formatFullLengthExamLabel("unknown", "SpeedyCAT Full-Length 3 (AI-generated)"),
+    ).toBe("Full-length 3");
+});
+
+test("formatTopicLabel title-cases topic tags for display", () => {
+    expect(formatTopicLabel("general chemistry")).toBe("General Chemistry");
+    expect(formatTopicLabel("GENERAL_CHEMISTRY")).toBe("General Chemistry");
+    expect(formatTopicLabel("kinetics")).toBe("Kinetics");
+    expect(formatTopicLabel("acids-and-bases")).toBe("Acids And Bases");
+    expect(formatTopicLabel("DNA")).toBe("DNA");
+    expect(formatTopicLabel("dna replication")).toBe("DNA Replication");
+    expect(formatTopicLabel("General Chemistry")).toBe("General Chemistry");
+    expect(formatTopicLabel("psychology")).toBe("Psychology");
+    expect(formatTopicLabel("PSYCHOLOGY")).toBe("Psychology");
+    expect(formatTopicLabel("pSYCHOLOGY")).toBe("Psychology");
+    expect(formatTopicLabel("pHYSICS")).toBe("Physics");
+    expect(formatTopicLabel("development & social psychology")).toBe(
+        "Development & Social Psychology",
+    );
+    expect(formatTopicLabel("ph")).toBe("pH");
+    expect(formatTopicLabel("pka")).toBe("pKa");
+});
 
 test("availableFullLengthTests hides completed tests from the picker", () => {
     const tests = [
@@ -215,6 +250,15 @@ test("hint affordance buttons respect timers and progress", () => {
     );
 });
 
+test("subsequent hint timer ticks only after popup dismissed", () => {
+    const doneL1: HintProgress = { revealed: 1, picks: { 0: "A" } };
+    const pendingL2: HintProgress = { revealed: 2, picks: { 0: "A" } };
+
+    expect(shouldTickSubsequentHintTimer(ladder, doneL1, false)).toBe(false);
+    expect(shouldTickSubsequentHintTimer(ladder, doneL1, true)).toBe(true);
+    expect(shouldTickSubsequentHintTimer(ladder, pendingL2, true)).toBe(false);
+});
+
 test("wrong hint answers are rejected; picks store correct answers only", () => {
     const prog: HintProgress = { revealed: 1, picks: {} };
     const wrong = applyHintAnswer(ladder[0], 0, "B", prog);
@@ -281,15 +325,3 @@ test("hintDisplayOrder renders the most-recent tier first (reverse of progressio
     expect(hintDisplayOrder(-2)).toEqual([]);
 });
 
-test("canReturnToMain: only the latest revealed hint, once answered, while unlocked", () => {
-    // Nothing revealed yet — no shortcut.
-    expect(canReturnToMain({ revealed: 0, picks: {} }, 0, false)).toBe(false);
-    // Latest hint revealed but not yet answered — no shortcut (no-skip intact).
-    expect(canReturnToMain({ revealed: 2, picks: { 0: "A" } }, 1, false)).toBe(false);
-    // Latest hint answered — shortcut appears on that (latest) tier only.
-    const answered: HintProgress = { revealed: 2, picks: { 0: "A", 1: "A" } };
-    expect(canReturnToMain(answered, 1, false)).toBe(true);
-    expect(canReturnToMain(answered, 0, false)).toBe(false);
-    // Locked (main question already submitted) — never shown.
-    expect(canReturnToMain(answered, 1, true)).toBe(false);
-});

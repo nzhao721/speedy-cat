@@ -118,7 +118,6 @@ impl crate::services::PracticeService for Collection {
             "topics": filter.topics,
             "difficulty": filter.difficulty,
             "passage_id": filter.passage_id,
-            "missed_only": filter.missed_only,
             "include_full_length": filter.include_full_length,
             "limit": filter.limit,
             "time_limit_seconds": input.time_limit_seconds,
@@ -444,7 +443,7 @@ impl crate::services::PracticeService for Collection {
             .full_length_topic_scores(&input.attempt_id)?
             .into_iter()
             .map(|(section_db, topic, correct, total)| pb::TopicScore {
-                topic,
+                topic: crate::practice::topic_display::format_topic_display(&topic),
                 section: section_from_db(&section_db),
                 correct,
                 total,
@@ -518,17 +517,33 @@ impl crate::services::PracticeService for Collection {
         let section_db = input.section.map(|s| section_to_db(s).to_string());
         let source_clause = attempt_source_clause(input.source);
         let first_only = input.first_attempt_no_hint_only;
-        let topics = self.storage.topic_stats(
-            section_db.as_deref(),
-            source_clause,
-            first_only,
-        )?;
+        let topics = self
+            .storage
+            .topic_stats(
+                section_db.as_deref(),
+                source_clause,
+                first_only,
+            )?
+            .into_iter()
+            .map(|mut t| {
+                t.topic = crate::practice::topic_display::format_topic_display(&t.topic);
+                t
+            })
+            .collect();
         let sections = self.storage.section_stats(
             section_db.as_deref(),
             source_clause,
             first_only,
         )?;
         Ok(pb::GetTopicStatsResponse { topics, sections })
+    }
+
+    fn get_recommended_practice_topics(
+        &mut self,
+        _input: pb::GetRecommendedPracticeTopicsRequest,
+    ) -> Result<pb::GetRecommendedPracticeTopicsResponse> {
+        let topics = self.recommended_practice_topics()?;
+        Ok(pb::GetRecommendedPracticeTopicsResponse { topics })
     }
 
     // ---- Exam readiness ---------------------------------------------------
@@ -540,6 +555,19 @@ impl crate::services::PracticeService for Collection {
         let memory = self.readiness_memory(&input.deck_search)?;
         let (performance, performance_avg_seconds) = self.readiness_performance()?;
         let (readiness, section_scores, scaled) = self.readiness_full_length()?;
+        let projected = self.readiness_projected_mcat(
+            Some(&performance),
+            performance_avg_seconds,
+        )?;
+        let graphs = self.graph_data_for_search(&input.deck_search, 0)?;
+        let fsrs_on = graphs.fsrs;
+        let memory_breakdown = if memory.available || fsrs_on {
+            self.readiness_memory_breakdowns(&input.deck_search, fsrs_on)?
+        } else {
+            crate::practice::breakdown::empty_breakdowns_give_up(&memory.message)
+        };
+        let performance_breakdown = self.readiness_performance_breakdowns()?;
+        let readiness_breakdown = self.readiness_full_length_breakdowns()?;
         Ok(pb::GetReadinessResponse {
             memory: Some(memory),
             performance: Some(performance),
@@ -551,6 +579,10 @@ impl crate::services::PracticeService for Collection {
             readiness_scaled_high: scaled.as_ref().map(|s| s.high),
             performance_time_penalty_applied: performance_avg_seconds
                 > crate::practice::performance::PERFORMANCE_TARGET_SECONDS,
+            projected: Some(projected),
+            memory_breakdown: Some(memory_breakdown),
+            performance_breakdown: Some(performance_breakdown),
+            readiness_breakdown: Some(readiness_breakdown),
         })
     }
 
@@ -605,7 +637,6 @@ impl Collection {
             difficulty_db.as_deref(),
             filter.passage_id.as_deref(),
             filter.include_full_length,
-            filter.missed_only,
         )?;
         if !filter.topics.is_empty() {
             let wanted: Vec<String> = filter.topics.iter().map(|t| t.to_lowercase()).collect();
@@ -635,6 +666,12 @@ const READINESS_Z: f64 = 1.96;
 const MIN_MEMORY_CARDS: u64 = 30;
 /// Minimum answered practice questions before the Performance pillar reports.
 const MIN_PERFORMANCE_ATTEMPTS: u32 = 30;
+/// Minimum answered practice questions per MCAT section before the projected
+/// score includes that section (all four sections are required).
+const MIN_PROJECTED_SECTION_ATTEMPTS: u32 = 5;
+
+/// Canonical MCAT sections in display order.
+const PROJECTED_SECTIONS: [&str; 4] = ["CPBS", "CARS", "BBLS", "PSBB"];
 
 impl Collection {
     /// Pillar 1 — Memory: mean FSRS retrievability over the reviewed cards
@@ -645,22 +682,22 @@ impl Collection {
         const SOURCE: &str =
             "Anki FSRS retrievability (StatsService graph data → retrievability.average)";
         const METHOD: &str = "mean ± 1.96·SE of per-card FSRS retrievability";
+        let graphs = self.graph_data_for_search(deck_search, 0)?;
+        let lifetime_studied = memory_lifetime_studied_count(&graphs);
         if let Some(message) = self.speedycat_memory_suppression_message()? {
-            let stats = self.speedycat_gaming_stats()?;
             return Ok(give_up_pillar(
                 SOURCE,
                 METHOD,
                 message,
-                stats.daily_reviews,
+                lifetime_studied,
             ));
         }
-        let graphs = self.graph_data_for_search(deck_search, 0)?;
         if !graphs.fsrs {
             return Ok(give_up_pillar(
                 SOURCE,
                 METHOD,
                 "Turn on FSRS to unlock your Memory score.".to_string(),
-                0,
+                lifetime_studied,
             ));
         }
         let retr = graphs.retrievability.unwrap_or_default();
@@ -825,6 +862,144 @@ impl Collection {
             scaled,
         ))
     }
+
+    /// Projected MCAT score (472–528): per-section blend of Performance
+    /// (practice-session EWMA accuracy) and Readiness (completed full-length
+    /// EWMA accuracy), mapped through the representative AAMC anchor curve in
+    /// [`scoring`]. Gives up unless the Performance pillar is available and
+    /// every section has at least [`MIN_PROJECTED_SECTION_ATTEMPTS`] practice
+    /// answers. When a section has no full-length data the practice signal
+    /// alone drives that section's estimate.
+    fn readiness_projected_mcat(
+        &self,
+        performance: Option<&pb::ReadinessPillar>,
+        performance_avg_seconds: f64,
+    ) -> Result<pb::ProjectedMcatScore> {
+        const SOURCE: &str =
+            "SpeedyCAT practice sessions + full-length tests (per-section blend)";
+        const METHOD: &str = "per-section average of Performance (practice EWMA, 7-day \
+             half-life) and Readiness (full-length EWMA, 30-day half-life) fractions, \
+             mapped to scaled scores via AAMC representative anchors; 95% range from \
+             Wilson intervals on each signal; total = sum of four sections (472–528)";
+
+        match performance {
+            Some(p) if p.available => {}
+            _ => {
+                return Ok(give_up_projected(
+                    SOURCE,
+                    METHOD,
+                    format!(
+                        "Answer more practice questions to unlock your projected MCAT score \
+                         (need ≥{MIN_PERFORMANCE_ATTEMPTS} answered overall)."
+                    ),
+                ));
+            }
+        }
+
+        let now = TimestampSecs::now().0;
+        let practice_by_section = self.storage.practice_performance_observations_by_section()?;
+        let fl_by_section = self.storage.full_length_readiness_observations_by_section()?;
+
+        let mut section_scores = Vec::new();
+        let mut scaled_point = 0u32;
+        let mut scaled_low = 0u32;
+        let mut scaled_high = 0u32;
+        let mut missing_sections = Vec::new();
+
+        for section_db in PROJECTED_SECTIONS {
+            let section_q = scoring::section_question_count(section_db);
+            let practice_obs = practice_by_section
+                .get(section_db)
+                .map(|v| v.as_slice())
+                .unwrap_or(&[]);
+            let practice_n = practice_obs.len() as u32;
+            if practice_n < MIN_PROJECTED_SECTION_ATTEMPTS {
+                missing_sections.push(section_db);
+                continue;
+            }
+
+            let perf_agg =
+                ewma::ewma_aggregate(practice_obs, ewma::PERFORMANCE_HALF_LIFE_DAYS, now);
+            let perf_n_eff = effective_sample_size_for_wilson(perf_agg.effective_n);
+            let (perf_p, perf_lo, perf_hi) = wilson_interval_fraction(
+                perf_agg.mean.clamp(0.0, 1.0),
+                perf_n_eff,
+                READINESS_Z,
+            );
+            let (perf_p, perf_lo, perf_hi) = crate::practice::performance::apply_performance_time_penalty(
+                perf_p,
+                perf_lo,
+                perf_hi,
+                performance_avg_seconds,
+            );
+
+            let fl_obs = fl_by_section
+                .get(section_db)
+                .map(|v| v.as_slice())
+                .unwrap_or(&[]);
+            let fl_n = fl_obs.len() as u32;
+            let (blend_p, blend_lo, blend_hi) = if fl_obs.is_empty() {
+                (perf_p, perf_lo, perf_hi)
+            } else {
+                let fl_agg = ewma::ewma_aggregate(fl_obs, ewma::READINESS_HALF_LIFE_DAYS, now);
+                let fl_n_eff = effective_sample_size_for_wilson(fl_agg.effective_n);
+                let (ready_p, ready_lo, ready_hi) = wilson_interval_fraction(
+                    fl_agg.mean.clamp(0.0, 1.0),
+                    fl_n_eff,
+                    READINESS_Z,
+                );
+                (
+                    (perf_p + ready_p) / 2.0,
+                    (perf_lo + ready_lo) / 2.0,
+                    (perf_hi + ready_hi) / 2.0,
+                )
+            };
+
+            let raw_correct = (blend_p * section_q as f64).round() as u32;
+            let scaled = scoring::scaled_from_fraction(blend_p);
+            let section_low = scoring::scaled_from_fraction(blend_lo);
+            let section_high = scoring::scaled_from_fraction(blend_hi);
+
+            scaled_point += scaled;
+            scaled_low += section_low;
+            scaled_high += section_high;
+
+            section_scores.push(pb::ProjectedSectionScore {
+                section: section_from_db(section_db),
+                scaled_score: Some(scaled),
+                scaled_low: Some(section_low),
+                scaled_high: Some(section_high),
+                raw_correct,
+                raw_total: section_q,
+                practice_attempts: practice_n,
+                full_length_attempts: fl_n,
+            });
+        }
+
+        if !missing_sections.is_empty() {
+            return Ok(give_up_projected(
+                SOURCE,
+                METHOD,
+                format!(
+                    "Answer more practice questions per section to unlock your projected MCAT \
+                     score (need ≥{MIN_PROJECTED_SECTION_ATTEMPTS} per section; need more data \
+                     for: {}).",
+                    missing_sections.join(", ")
+                ),
+            ));
+        }
+
+        Ok(pb::ProjectedMcatScore {
+            available: true,
+            message: String::new(),
+            source: SOURCE.to_string(),
+            method: METHOD.to_string(),
+            total: Some(scoring::clamp_total_for_sections(scaled_point, 4)),
+            total_low: Some(scoring::clamp_total_for_sections(scaled_low, 4)),
+            total_high: Some(scoring::clamp_total_for_sections(scaled_high, 4)),
+            sections: section_scores,
+        })
+    }
 }
 
 /// Build a pillar in its "gave up" state (a prerequisite is off, or there is
@@ -882,6 +1057,19 @@ fn give_up_pillar(
     }
 }
 
+fn give_up_projected(source: &str, method: &str, message: String) -> pb::ProjectedMcatScore {
+    pb::ProjectedMcatScore {
+        available: false,
+        message,
+        source: source.to_string(),
+        method: method.to_string(),
+        total: None,
+        total_low: None,
+        total_high: None,
+        sections: Vec::new(),
+    }
+}
+
 /// Clamp an interval's endpoints to the valid [0, 1] fraction range.
 fn clamp_interval(low: f64, high: f64) -> (f64, f64) {
     (low.clamp(0.0, 1.0), high.clamp(0.0, 1.0))
@@ -928,6 +1116,18 @@ fn effective_sample_size_for_wilson(effective_n: f64) -> u32 {
 /// fractions in [0, 1], or `None` when no card has a retrievability. The mean
 /// comes straight from the exact `average`; the SE is estimated from the 1%-wide
 /// histogram bins, so no FSRS math is re-implemented here.
+/// Non-new cards in the collection search scope: lifetime cards studied at least once.
+fn memory_lifetime_studied_count(graphs: &anki_proto::stats::GraphsResponse) -> u32 {
+    let Some(counts) = graphs
+        .card_counts
+        .as_ref()
+        .and_then(|c| c.including_inactive.as_ref())
+    else {
+        return 0;
+    };
+    counts.learn + counts.relearn + counts.young + counts.mature
+}
+
 fn memory_mean_and_se(hist: &HashMap<u32, u32>, average_percent: f64) -> Option<(f64, f64, u64)> {
     let n: u64 = hist.values().map(|c| *c as u64).sum();
     if n == 0 {
@@ -1039,8 +1239,10 @@ mod test {
 
     use crate::collection::Collection;
     use crate::error::Result;
+    use crate::practice::ewma;
     use crate::services::PracticeService;
     use crate::storage::practice::NewAttempt;
+    use crate::timestamp::TimestampSecs;
 
     fn cpbs() -> i32 {
         pb::McatSection::Cpbs as i32
@@ -1119,10 +1321,11 @@ mod test {
         section: i32,
         name: &str,
     ) -> &'a pb::TopicStat {
+        let want = crate::practice::topic_display::format_topic_display(name);
         resp.topics
             .iter()
-            .find(|t| t.section == section && t.topic == name)
-            .unwrap_or_else(|| panic!("missing topic stat {name}"))
+            .find(|t| t.section == section && t.topic == want)
+            .unwrap_or_else(|| panic!("missing topic stat {want}"))
     }
 
     fn section(resp: &pb::GetTopicStatsResponse, s: i32) -> &pb::SectionStat {
@@ -1558,10 +1761,10 @@ mod test {
         Ok(())
     }
 
-    /// The question-bank filters — difficulty, limit, missed-only, and the
-    /// free-standing vs full-length split — each narrow the result set.
+    /// The question-bank filters — difficulty, limit, and the free-standing
+    /// vs full-length split — each narrow the result set.
     #[test]
-    fn question_filters_difficulty_limit_missed_and_full_length() -> Result<()> {
+    fn question_filters_difficulty_limit_and_full_length() -> Result<()> {
         let mut col = Collection::new();
         // Three free-standing CPBS questions of differing difficulty.
         let bank = r#"{
@@ -1655,24 +1858,6 @@ mod test {
             },
         );
         assert_eq!(limited, vec!["cpbs-a", "cpbs-b"]);
-
-        // missed_only: mark cpbs-b wrong; it is then the only free-standing miss.
-        let session = col
-            .start_practice_session(pb::StartPracticeSessionRequest {
-                filter: None,
-                time_limit_seconds: 0,
-            })?
-            .session_id;
-        record(&mut col, &session, "cpbs-b", false, 20, cpbs(), "kinetics");
-        let missed = ids(
-            &mut col,
-            pb::QuestionFilter {
-                sections: vec![cpbs()],
-                missed_only: true,
-                ..Default::default()
-            },
-        );
-        assert_eq!(missed, vec!["cpbs-b"]);
         Ok(())
     }
 
@@ -2198,6 +2383,9 @@ mod test {
         assert!(r.readiness_scaled_score.is_none());
         assert!(r.readiness_scaled_low.is_none());
         assert!(r.readiness_scaled_high.is_none());
+        let projected = r.projected.as_ref().unwrap();
+        assert!(!projected.available);
+        assert!(!projected.message.is_empty());
         Ok(())
     }
 
@@ -2317,6 +2505,79 @@ mod test {
             scaled_low <= 254 && 254 <= scaled_high,
             "range [{scaled_low}, {scaled_high}] must bracket 254"
         );
+
+        // Performance breakdown: CPBS section has 30 practice attempts.
+        let perf_bd = r.performance_breakdown.as_ref().unwrap();
+        let cpbs_bd = perf_bd
+            .sections
+            .iter()
+            .find(|s| s.section == cpbs())
+            .unwrap();
+        assert!(cpbs_bd.available);
+        assert_eq!(cpbs_bd.sample_size, 30);
+        assert_eq!(perf_bd.topics.len(), 1);
+        assert_eq!(perf_bd.topics[0].topic, "Kinetics");
+        assert!(perf_bd.topics[0].available);
+
+        // Readiness breakdown: section rows exist; CPBS has 2 FL answers (< 10 min).
+        let ready_bd = r.readiness_breakdown.as_ref().unwrap();
+        let cpbs_ready = ready_bd
+            .sections
+            .iter()
+            .find(|s| s.section == cpbs())
+            .unwrap();
+        assert!(!cpbs_ready.available);
+        assert_eq!(cpbs_ready.sample_size, 2);
+        assert!(ready_bd.topics.is_empty());
+        Ok(())
+    }
+
+    /// Projected MCAT score requires practice data in every section and returns
+    /// a 472–528 total with an explicit per-section breakdown and range.
+    #[test]
+    fn readiness_projected_mcat_available() -> Result<()> {
+        let mut col = Collection::new();
+        let sections = [("CPBS", 8), ("CARS", 8), ("BBLS", 7), ("PSBB", 7)];
+        let mut i = 0;
+        for (section, count) in sections {
+            for _ in 0..count {
+                col.storage.add_practice_attempt(&NewAttempt {
+                    id: &format!("proj:{i}"),
+                    session_id: Some("s-proj"),
+                    full_length_attempt_id: None,
+                    question_id: &format!("q{i}"),
+                    selected_answer: "A",
+                    correct: i % 5 != 0,
+                    time_on_question_seconds: 60,
+                    section_db: section,
+                    topic: "t",
+                    answered_at: 0,
+                    hint_level_used: 0,
+                    assisted: false,
+                    main_wrong_first: false,
+                    first_try_no_hint: Some(1),
+                })?;
+                i += 1;
+            }
+        }
+
+        let r = col.get_readiness(pb::GetReadinessRequest {
+            deck_search: String::new(),
+        })?;
+        let projected = r.projected.as_ref().unwrap();
+        assert!(projected.available, "{}", projected.message);
+        assert_eq!(projected.sections.len(), 4);
+        let total = projected.total.unwrap();
+        let low = projected.total_low.unwrap();
+        let high = projected.total_high.unwrap();
+        assert!((472..=528).contains(&total));
+        assert!(low <= total && total <= high);
+        assert!(low >= 472 && high <= 528);
+        for section in projected.sections.iter() {
+            let scaled = section.scaled_score.unwrap();
+            assert!((118..=132).contains(&scaled));
+            assert!(section.raw_total > 0);
+        }
         Ok(())
     }
 

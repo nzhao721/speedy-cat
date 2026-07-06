@@ -932,19 +932,23 @@ html {{ {font} }}
             f"""
 (function() {{
     const doc = document.documentElement;
-    const body = document.body.classList;
+    const body = document.body;
+    if (!body) {{
+        return;
+    }}
+    const bodyClasses = body.classList;
     if ({1 if theme_manager.night_mode else 0}) {{
         doc.dataset.bsTheme = "dark";
         doc.classList.add("night-mode");
-        body.add("night_mode");
-        body.add("nightMode");
-        {"body.add('macos-dark-mode');" if theme_manager.macos_dark_mode() else ""}
+        bodyClasses.add("night_mode");
+        bodyClasses.add("nightMode");
+        {"bodyClasses.add('macos-dark-mode');" if theme_manager.macos_dark_mode() else ""}
     }} else {{
         doc.dataset.bsTheme = "light";
         doc.classList.remove("night-mode");
-        body.remove("night_mode");
-        body.remove("nightMode");
-        body.remove("macos-dark-mode");
+        bodyClasses.remove("night_mode");
+        bodyClasses.remove("nightMode");
+        bodyClasses.remove("macos-dark-mode");
     }}
 }})();
 """
@@ -954,10 +958,16 @@ html {{ {font} }}
         from aqt import mw
 
         self.eval(
-            f"""document.body.classList.toggle("fancy", {json.dumps(not mw.pm.minimalist_mode())}); """
+            f"""(function() {{
+    if (!document.body) return;
+    document.body.classList.toggle("fancy", {json.dumps(not mw.pm.minimalist_mode())});
+}})();"""
         )
         self.eval(
-            f"""document.body.classList.toggle("reduce-motion", {json.dumps(mw.pm.reduce_motion())}); """
+            f"""(function() {{
+    if (!document.body) return;
+    document.body.classList.toggle("reduce-motion", {json.dumps(mw.pm.reduce_motion())});
+}})();"""
         )
 
     @deprecated(info="use theme_manager.qcolor() instead")

@@ -19,7 +19,6 @@ surfaces the summary.
     import PassagePanel from "./PassagePanel.svelte";
     import QuestionView from "./QuestionView.svelte";
     import {
-        buildUserVisiblePrompt,
         correctAnswerText,
         emptyExplanationProgress,
         explanationBypassedProgress,
@@ -50,11 +49,10 @@ surfaces the summary.
         logPracticeAttempt,
         passageHintWordCountForQuestion,
         passageWordCount,
-        pendingHintIndex,
         primaryTopic,
         questionHints,
-        canRevealNextHint,
         shouldTickQuestionHintTimer,
+        shouldTickSubsequentHintTimer,
         startHintWrongCooldown,
         tickHintCooldowns,
         type CarsPassageSet,
@@ -112,6 +110,8 @@ surfaces the summary.
     let questionCurrentlyVisible = $state<Record<string, boolean>>({});
     /** Tentative pick for the current (unanswered) hint subquestion, per question. */
     let hintPendingChoice = $state<Record<string, string>>({});
+    /** When true the hint popup is hidden but ladder progress is preserved. */
+    let hintLadderDismissed = $state<Record<string, boolean>>({});
     // SpeedyCAT explanation gate: ~1-in-5 correct answers require a written
     // explanation verified by AI before the question is finalized.
     let explanationAiStatus = $state<ExplanationAiStatus>({
@@ -128,8 +128,7 @@ surfaces the summary.
     let elapsed = $state(0);
     let secondsOnItem = $state(0);
     let ticker: ReturnType<typeof setInterval> | undefined;
-    // Per-question wrapper elements, so the hint ladder's "Return to main
-    // question" shortcut can scroll that question's stem back into view.
+    // Per-question wrapper elements for viewport visibility tracking.
     let questionEls = $state<Record<string, HTMLElement>>({});
     let questionColEl = $state<HTMLElement | undefined>();
 
@@ -311,9 +310,11 @@ surfaces the summary.
             const prog = progressFor(q);
             const hints = questionHints(q);
             if (
-                pendingHintIndex(prog) === -1
-                && prog.revealed > 0
-                && canRevealNextHint(hints, prog)
+                shouldTickSubsequentHintTimer(
+                    hints,
+                    prog,
+                    hintLadderDismissed[qid] ?? false,
+                )
             ) {
                 secondsSinceHintComplete = {
                     ...secondsSinceHintComplete,
@@ -394,11 +395,9 @@ surfaces the summary.
         flagged = { ...flagged, [q.id]: !flagged[q.id] };
     }
 
-    /** Scroll a question's main view back into sight — the "Return to main
-     * question" shortcut from the hint ladder. Same view (no navigation): the
-     * main question renders above the ladder in the scrolling column. */
-    function returnToMain(q: PracticeQuestion): void {
-        questionEls[q.id]?.scrollIntoView({ behavior: "smooth", block: "start" });
+    function dismissHintLadder(q: PracticeQuestion): void {
+        hintLadderDismissed = { ...hintLadderDismissed, [q.id]: true };
+        secondsSinceHintComplete = { ...secondsSinceHintComplete, [q.id]: 0 };
     }
 
     /** The hint-ladder progress for a question (created lazily). */
@@ -422,6 +421,7 @@ surfaces the summary.
         hintPendingChoice = { ...hintPendingChoice, [q.id]: "" };
         secondsSinceHintComplete = { ...secondsSinceHintComplete, [q.id]: 0 };
         hintCooldown = { ...hintCooldown, [q.id]: 0 };
+        hintLadderDismissed = { ...hintLadderDismissed, [q.id]: false };
     }
 
     function onRequestHint(q: PracticeQuestion): void {
@@ -691,10 +691,15 @@ surfaces the summary.
                     {@const expProg = explanationProgress[q.id] ?? emptyExplanationProgress()}
                     {@const awaitingExplanation =
                         expProg.active && !expProg.passed && !expProg.bypassed}
-                    {@const ladderActive = hasHintLadder(q) && !submitted[q.id] && !awaitingExplanation}
-                    {@const hintPassageWc = hintPassageWordCount(current, qi)}
+                    {@const hintEligible =
+                        hasHintLadder(q) && !submitted[q.id] && !awaitingExplanation}
+                    {@const ladderOpen =
+                        hintEligible
+                        && !hintLadderDismissed[q.id]
+                        && prog.revealed > 0}
                     {@const showFirstStuck =
-                        ladderActive
+                        hintEligible
+                        && !hintLadderDismissed[q.id]
                         && canShowFirstHintButton(
                             secondsOnQuestion[q.id] ?? 0,
                             q,
@@ -702,14 +707,19 @@ surfaces the summary.
                             false,
                             hintPassageWc,
                         )}
+                    {@const hintPassageWc = hintPassageWordCount(current, qi)}
                     {@const showNextStuck =
-                        ladderActive
+                        hintEligible
                         && canShowNextHintButton(
                             secondsSinceHintComplete[q.id] ?? 0,
                             hints,
                             prog,
                             false,
                         )}
+                    {@const showReopenHints =
+                        hintEligible
+                        && hintLadderDismissed[q.id]
+                        && prog.revealed > 0}
                     <div class="q-block">
                         <div use:questionVisibility={q.id}>
                             <QuestionView
@@ -725,11 +735,24 @@ surfaces the summary.
                                 on:toggleFlag={() => onToggleFlag(q)}
                             >
                                 {#snippet actions()}
-                                    {#if awaitingExplanation}
-                                        <span class="nudge explain-nudge">
-                                            Correct — explain your reasoning below to continue.
-                                        </span>
-                                    {:else if !submitted[q.id]}
+                                    {#if !awaitingExplanation && !submitted[q.id]}
+                                        {#if showReopenHints}
+                                            <button
+                                                class="hint-reopen"
+                                                on:click={() => {
+                                                    hintLadderDismissed = {
+                                                        ...hintLadderDismissed,
+                                                        [q.id]: false,
+                                                    };
+                                                    secondsSinceHintComplete = {
+                                                        ...secondsSinceHintComplete,
+                                                        [q.id]: 0,
+                                                    };
+                                                }}
+                                            >
+                                                Show hints again
+                                            </button>
+                                        {/if}
                                         {#if showFirstStuck}
                                             <button
                                                 class="hint-stuck"
@@ -740,7 +763,7 @@ surfaces the summary.
                                         {/if}
                                         {#if showNextStuck}
                                             <button
-                                                class="hint-stuck"
+                                                class="hint-escalate"
                                                 on:click={() => onRequestHint(q)}
                                             >
                                                 I'm still stuck
@@ -767,18 +790,19 @@ surfaces the summary.
                         </div>
                         {#if awaitingExplanation || expProg.bypassed}
                             <ExplanationChat
-                                opener={buildUserVisiblePrompt(q.stem)}
                                 progress={expProg}
                                 coachingHint={explanationCoaching[q.id] ?? ""}
                                 on:submit={(e) => void onSubmitExplanation(q, e.detail)}
                             />
                         {/if}
-                        {#if ladderActive}
+                        {#if ladderOpen}
                             <HintLadder
                                 hints={hints}
                                 progress={prog}
                                 pendingChoice={hintPendingChoice[q.id] ?? ""}
                                 hintCooldown={hintCooldown[q.id] ?? 0}
+                                open={true}
+                                on:dismiss={() => dismissHintLadder(q)}
                                 on:pendingChoiceChange={(e) => {
                                     hintPendingChoice = {
                                         ...hintPendingChoice,
@@ -787,7 +811,6 @@ surfaces the summary.
                                 }}
                                 on:answerHint={(e) =>
                                     onAnswerHint(q, e.detail.index, e.detail.label)}
-                                on:returnToMain={() => returnToMain(q)}
                             />
                         {/if}
                     </div>
@@ -975,10 +998,5 @@ surfaces the summary.
     button:disabled {
         opacity: 0.5;
         cursor: default;
-    }
-    .q-actions :global(.explain-nudge) {
-        color: #2e9e4f;
-        font-size: 0.85rem;
-        font-weight: 600;
     }
 </style>

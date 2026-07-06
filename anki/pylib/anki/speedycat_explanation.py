@@ -156,13 +156,11 @@ def build_evaluator_prompt(
 
 
 def build_user_visible_prompt(stem: str) -> str:
-    """Chatbot opener shown to the learner (stem only, no choices or answer)."""
-    preview = stem.strip()
-    if len(preview) > 280:
-        preview = preview[:277] + "..."
+    """Chatbot opener shown to the learner (instruction only — no question quote)."""
+    del stem  # stem kept for API parity with TS/Kotlin twins
     return (
         "You answered correctly. Before moving on, explain your reasoning in a few "
-        f'sentences — why is your answer right for this question?\n\n"{preview}"'
+        "sentences."
     )
 
 

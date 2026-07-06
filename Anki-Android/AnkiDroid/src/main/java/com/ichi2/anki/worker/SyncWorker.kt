@@ -174,13 +174,17 @@ class SyncWorker(
                 // sync carries the latest. Best-effort; never blocks a sync.
                 runCatching { PracticeRepository.getInstance(applicationContext).publishResults() }
                     .onFailure { Timber.w(it, "SpeedyCAT: publish before media sync failed") }
+                Timber.i("SpeedyCAT-sync: collection sync done; enqueuing media sync (carries results files)")
                 syncMedia(syncAuth)
             }
             SyncCollectionResponse.ChangesRequired.FULL_SYNC,
             SyncCollectionResponse.ChangesRequired.FULL_DOWNLOAD,
             SyncCollectionResponse.ChangesRequired.FULL_UPLOAD,
             -> {
-                Timber.d("One-way sync required: Skipping background sync")
+                // A one-way sync needs the foreground UI (conflict dialog); the
+                // background worker skips it AND its media sync, so cross-device
+                // results won't transfer until a foreground sync resolves this.
+                Timber.w("SpeedyCAT-sync: one-way sync required; skipping background collection AND media sync")
             }
             SyncCollectionResponse.ChangesRequired.UNRECOGNIZED,
             SyncCollectionResponse.ChangesRequired.NORMAL_SYNC,

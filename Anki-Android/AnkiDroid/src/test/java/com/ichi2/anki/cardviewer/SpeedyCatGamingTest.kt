@@ -21,16 +21,15 @@ class SpeedyCatGamingTest {
     }
 
     @Test
-    fun sessionThresholdSuppressesMemory() {
+    fun sessionBurstDoesNotSuppressMemory() {
         val stats =
             GamingStats(
                 sessionGamed = 4,
                 sessionReviews = 8,
+                dailyReviews = 100,
+                dailyGamed = 5,
             )
-        assertThat(
-            SpeedyCatGaming.memorySuppressionMessage(stats, nowMs = 0L),
-            containsString("Excessive guessing"),
-        )
+        assertThat(SpeedyCatGaming.memorySuppressionMessage(stats, nowMs = 0L), nullValue())
     }
 
     @Test

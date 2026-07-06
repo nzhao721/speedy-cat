@@ -272,6 +272,7 @@ fun getFragmentFromXmlRes(
         R.xml.preferences_general -> GeneralSettingsFragment()
         R.xml.preferences_notifications -> NotificationsSettingsFragment()
         R.xml.preferences_appearance -> AppearanceSettingsFragment()
+        R.xml.preferences_account -> AccountSettingsFragment()
         R.xml.preferences_controls -> ControlsSettingsFragment()
         R.xml.preferences_reviewer_controls -> ControlsSettingsFragment()
         R.xml.preferences_previewer_controls -> ControlsSettingsFragment()

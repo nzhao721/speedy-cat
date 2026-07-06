@@ -110,14 +110,9 @@ object SpeedyCatExplanationChecker {
             append("Return the JSON verdict now.")
         }
 
-    fun buildUserVisiblePrompt(stem: String): String {
-        val preview =
-            stem.trim().let { if (it.length > 280) it.take(277) + "..." else it }
-        return (
-            "You answered correctly. Before moving on, explain your reasoning in a few " +
-                "sentences — why is your answer right for this question?\n\n\"$preview\""
-        )
-    }
+    fun buildUserVisiblePrompt(@Suppress("UNUSED_PARAMETER") stem: String): String =
+        "You answered correctly. Before moving on, explain your reasoning in a few " +
+            "sentences."
 
     fun explanationFailureHint(
         failCount: Int,

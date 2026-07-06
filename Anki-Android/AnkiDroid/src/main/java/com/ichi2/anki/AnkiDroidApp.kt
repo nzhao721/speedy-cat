@@ -549,7 +549,7 @@ open class AnkiDroidApp :
             ApplicationContextInitializer.setInstance(value)
         }
 
-        /** Load the libraries to allow access to Anki-Android-Backend */
+        /** Load the libraries to allow access to rsdroid (shared rslib engine) */
         @NeedsTest("Not calling this in the ContentProvider should have failed a test")
         fun makeBackendUsable(context: Context) {
             // Robolectric uses RustBackendLoader.ensureSetup()

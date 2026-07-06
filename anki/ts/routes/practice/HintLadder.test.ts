@@ -111,7 +111,7 @@ test("only the pending hint tier can show a selected choice", async () => {
     );
 });
 
-test("answered hint shows correct styling instead of selected", async () => {
+test("answered hint shows compact correct answer instead of choice buttons", async () => {
     const progress: HintProgress = { revealed: 1, picks: { 0: "A" } };
     component = mount(HintLadder, {
         target: host,
@@ -123,8 +123,50 @@ test("answered hint shows correct styling instead of selected", async () => {
     });
     await tick();
 
-    const buttons = choiceButtons(host);
-    expect(buttons[0].classList.contains("correct")).toBe(true);
-    expect(buttons[0].classList.contains("selected")).toBe(false);
-    expect(buttons[1].classList.contains("selected")).toBe(false);
+    expect(choiceButtons(host)).toHaveLength(0);
+    const answer = host.querySelector(".sub-answer");
+    expect(answer?.textContent).toContain("A. Thymine");
+});
+
+test("backdrop is a dimming layer, not a styled button", async () => {
+    const progress: HintProgress = { revealed: 1, picks: {} };
+    component = mount(HintLadder, {
+        target: host,
+        props: {
+            hints: [sampleHint()],
+            progress,
+            pendingChoice: "",
+        },
+    });
+    await tick();
+
+    const backdrop = host.querySelector(".hint-backdrop");
+    expect(backdrop).not.toBeNull();
+    expect(backdrop?.tagName).toBe("DIV");
+    expect(host.querySelector("button.hint-backdrop")).toBeNull();
+});
+
+test("close button dismisses the hint popup", async () => {
+    const progress: HintProgress = { revealed: 1, picks: {} };
+    let dismissed = false;
+    component = mount(HintLadder, {
+        target: host,
+        props: {
+            hints: [sampleHint()],
+            progress,
+            pendingChoice: "",
+        },
+        events: {
+            dismiss: () => {
+                dismissed = true;
+            },
+        },
+    });
+    await tick();
+
+    const close = host.querySelector<HTMLButtonElement>("button.hint-close");
+    expect(close).not.toBeNull();
+    close!.click();
+    await tick();
+    expect(dismissed).toBe(true);
 });

@@ -21,14 +21,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.widthIn
-import androidx.compose.foundation.relocation.BringIntoViewRequester
-import androidx.compose.foundation.relocation.bringIntoViewRequester
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
-import androidx.compose.material3.Checkbox
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -180,12 +177,13 @@ private fun SetupForm(
 
     val selectedSections = remember { mutableStateMapOf<McatSection, Boolean>() }
     val selectedTopics = remember { mutableStateMapOf<String, Boolean>() }
-    var missedOnly by remember { mutableStateOf(false) }
     var countInput by remember { mutableStateOf("20") }
     var untimed by remember { mutableStateOf(true) }
     var timerInput by remember { mutableStateOf("20") }
     var noMatch by remember { mutableStateOf(false) }
     var starting by remember { mutableStateOf(false) }
+    var startingRecommended by remember { mutableStateOf(false) }
+    var recommendedError by remember { mutableStateOf<String?>(null) }
 
     val chosenSections = McatSection.TEST_ORDER.filter { selectedSections[it] == true }
     val topicOptions =
@@ -206,7 +204,39 @@ private fun SetupForm(
         }
     val countParse = parseQuestionCount(countInput, availableForFilter)
     val timerParse = parseTimerMinutes(timerInput)
-    val canStart = !starting && bank.isNotEmpty() && countParse.valid && (untimed || timerParse.valid)
+    val canStart = !starting && !startingRecommended && bank.isNotEmpty() && countParse.valid && (untimed || timerParse.valid)
+    val canStartRecommended = canStart
+
+    fun launchSession(topics: List<String>) {
+        starting = true
+        noMatch = false
+        scope.launch {
+            val filter =
+                QuestionFilter(
+                    sections = chosenSections,
+                    topics = topics,
+                    limit = countParse.limit,
+                )
+            val started =
+                vm.startSession(
+                    filter,
+                    timeLimitSeconds = if (untimed) 0 else timerParse.seconds,
+                )
+            if (started.questions.isEmpty()) {
+                noMatch = true
+            } else {
+                onStart(
+                    PracticeSession(
+                        sessionId = started.sessionId,
+                        questions = started.questions,
+                        timeLimitSeconds = if (untimed) 0 else timerParse.seconds,
+                    ),
+                )
+            }
+            starting = false
+            startingRecommended = false
+        }
+    }
 
     Column(
         Modifier
@@ -235,7 +265,12 @@ private fun SetupForm(
                     FilterChip(
                         selected = selectedTopics[t] == true,
                         onClick = { selectedTopics[t] = !(selectedTopics[t] ?: false) },
-                        label = { Text(t) },
+                        label = {
+                            Text(
+                                formatTopicLabel(t),
+                                color = MaterialTheme.colorScheme.onSurface,
+                            )
+                        },
                     )
                 }
             }
@@ -279,9 +314,12 @@ private fun SetupForm(
             }
         }
 
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Checkbox(checked = missedOnly, onCheckedChange = { missedOnly = it })
-            Text("Only questions I previously missed")
+        recommendedError?.let { message ->
+            Text(
+                message,
+                color = MaterialTheme.colorScheme.error,
+                style = MaterialTheme.typography.bodySmall,
+            )
         }
 
         if (noMatch) {
@@ -291,38 +329,48 @@ private fun SetupForm(
             )
         }
 
-        Button(
-            enabled = canStart,
-            onClick = {
-                starting = true
-                noMatch = false
-                scope.launch {
-                    val filter =
-                        QuestionFilter(
-                            sections = chosenSections,
-                            topics = chosenTopics,
-                            missedOnly = missedOnly,
-                            limit = countParse.limit,
-                        )
-                    // Seeded per session so the selection + answer-choice order
-                    // are randomized (and differ) each time (mirrors desktop).
-                    val started = vm.startSession(filter)
-                    if (started.questions.isEmpty()) {
-                        noMatch = true
-                    } else {
-                        onStart(
-                            PracticeSession(
-                                sessionId = started.sessionId,
-                                questions = started.questions,
-                                timeLimitSeconds = if (untimed) 0 else timerParse.seconds,
-                            ),
-                        )
-                    }
-                    starting = false
-                }
-            },
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            Text(if (starting) "Starting…" else "Start practice")
+            Button(
+                enabled = canStart,
+                onClick = { launchSession(chosenTopics) },
+                modifier = Modifier.fillMaxWidth(),
+            ) {
+                Text(if (starting && !startingRecommended) "Starting…" else "Start practice")
+            }
+            OutlinedButton(
+                enabled = canStartRecommended,
+                modifier = Modifier.fillMaxWidth(),
+                onClick = {
+                    startingRecommended = true
+                    recommendedError = null
+                    noMatch = false
+                    scope.launch {
+                        when (val result = vm.recommendedTopics()) {
+                            is RecommendedTopicsResult.Unavailable -> {
+                                recommendedError = SpeedyCatBackendCapabilities.messageFor(result.issue)
+                                startingRecommended = false
+                            }
+                            is RecommendedTopicsResult.Ok ->
+                                when {
+                                    result.topics.isEmpty() -> {
+                                        noMatch = true
+                                        startingRecommended = false
+                                    }
+                                    else -> {
+                                        selectedTopics.clear()
+                                        result.topics.forEach { selectedTopics[it] = true }
+                                        launchSession(result.topics)
+                                    }
+                                }
+                        }
+                    }
+                },
+            ) {
+                Text(if (startingRecommended) "Starting…" else "Start recommended session")
+            }
         }
     }
 }
@@ -364,7 +412,6 @@ private fun RunnerScreen(
 
     /** When true the hint ladder is hidden so the learner can focus on the main question. */
     val hintLadderDismissed = remember { mutableStateMapOf<String, Boolean>() }
-    val questionBringIntoView = remember { mutableStateMapOf<String, BringIntoViewRequester>() }
 
     /** Hint timers start on first viewport visibility; pause when scrolled away. */
     val questionEverVisible = remember { mutableStateMapOf<String, Boolean>() }
@@ -429,7 +476,7 @@ private fun RunnerScreen(
             }
             secondsOnQuestion[q.id] = (secondsOnQuestion[q.id] ?: 0) + 1
             val prog = hintProgress[q.id] ?: HintProgress()
-            if (pendingHintIndex(prog) == -1 && prog.revealed > 0 && canRevealNextHint(q.hints, prog)) {
+            if (shouldTickSubsequentHintTimer(q.hints, prog, hintLadderDismissed[q.id] == true)) {
                 secondsSinceHintComplete[q.id] = (secondsSinceHintComplete[q.id] ?: 0) + 1
             } else {
                 secondsSinceHintComplete[q.id] = 0
@@ -529,6 +576,7 @@ private fun RunnerScreen(
             if (!correct && hasHintLadder(q) && cur.revealed < q.hints.size) {
                 hintNudge[q.id] = true
                 mainWrongFirst[q.id] = true
+                hintLadderDismissed[q.id] = false
                 hintProgress[q.id] = cur.copy(revealed = cur.revealed + 1)
                 hintPendingChoice[q.id] = ""
                 secondsSinceHintComplete[q.id] = 0
@@ -696,8 +744,6 @@ private fun RunnerScreen(
             )
             HorizontalDivider()
 
-            // Hoisted so the hint ladder's "Return to main question" shortcut can
-            // scroll this column back to the top (where the main question renders).
             val contentScroll = rememberScrollState()
             Column(
                 Modifier
@@ -720,8 +766,10 @@ private fun RunnerScreen(
                         val awaitingExplanation = expProg.active && !expProg.passed
                         val hintEligible =
                             hasHintLadder(q) && submitted[q.id] != true && !awaitingExplanation
-                        val ladderActive = hintEligible && hintLadderDismissed[q.id] != true
-                        val bringIntoView = questionBringIntoView.getOrPut(q.id) { BringIntoViewRequester() }
+                        val ladderOpen =
+                            hintEligible &&
+                                hintLadderDismissed[q.id] != true &&
+                                prog.revealed > 0
                         val hintPassageWc = hintPassageWordCount(current, qi)
                         val showFirstStuck =
                             hintEligible &&
@@ -735,18 +783,20 @@ private fun RunnerScreen(
                                 )
                         val showNextStuck =
                             hintEligible &&
-                                hintLadderDismissed[q.id] != true &&
                                 canShowNextHintButton(
                                     secondsSinceHintComplete[q.id] ?: 0,
                                     q.hints,
                                     prog,
                                     false,
                                 )
+                        val showReopenHints =
+                            hintEligible &&
+                                hintLadderDismissed[q.id] == true &&
+                                prog.revealed > 0
                         TrackQuestionHintVisibility(
                             onCurrentlyVisible = { onQuestionVisibilityChanged(q.id, it) },
                         ) {
                             Column(
-                                Modifier.bringIntoViewRequester(bringIntoView),
                                 verticalArrangement = Arrangement.spacedBy(16.dp),
                             ) {
                                 QuestionCard(
@@ -766,13 +816,13 @@ private fun RunnerScreen(
                                     actions =
                                         if (submitted[q.id] != true) {
                                             {
-                                                if (awaitingExplanation) {
-                                                    Text(
-                                                        "Correct — explain your reasoning below to continue.",
-                                                        color = CorrectGreen,
-                                                        style = MaterialTheme.typography.bodySmall,
-                                                        fontWeight = FontWeight.SemiBold,
-                                                    )
+                                                if (showReopenHints) {
+                                                    OutlinedButton(onClick = {
+                                                        hintLadderDismissed[q.id] = false
+                                                        secondsSinceHintComplete[q.id] = 0
+                                                    }) {
+                                                        Text("Show hints again")
+                                                    }
                                                 }
                                                 if (showFirstStuck) {
                                                     OutlinedButton(onClick = { requestHint(q) }) {
@@ -780,17 +830,8 @@ private fun RunnerScreen(
                                                     }
                                                 }
                                                 if (showNextStuck) {
-                                                    OutlinedButton(onClick = { requestHint(q) }) {
+                                                    Button(onClick = { requestHint(q) }) {
                                                         Text("I'm still stuck")
-                                                    }
-                                                }
-                                                if (
-                                                    hintEligible &&
-                                                    hintLadderDismissed[q.id] == true &&
-                                                    prog.revealed > 0
-                                                ) {
-                                                    OutlinedButton(onClick = { hintLadderDismissed[q.id] = false }) {
-                                                        Text("Show hints again")
                                                     }
                                                 }
                                                 if (
@@ -816,25 +857,25 @@ private fun RunnerScreen(
                                 )
                                 if (awaitingExplanation) {
                                     ExplanationChatCard(
-                                        opener = buildUserVisibleExplanationPrompt(q.stem),
                                         progress = expProg,
                                         coachingHint = explanationCoaching[q.id] ?: "",
                                         onSubmit = { submitExplanation(q, it) },
                                     )
                                 }
-                                if (ladderActive) {
+                                if (ladderOpen) {
                                     HintLadderCard(
                                         hints = q.hints,
                                         progress = prog,
                                         pendingChoice = hintPendingChoice[q.id] ?: "",
                                         hintCooldown = hintCooldown.value[q.id] ?: 0,
                                         wrongFlash = hintWrongFlash[q.id] ?: 0,
+                                        open = true,
+                                        onDismiss = {
+                                            hintLadderDismissed[q.id] = true
+                                            secondsSinceHintComplete[q.id] = 0
+                                        },
                                         onPendingChoiceChange = { hintPendingChoice[q.id] = it },
                                         onSubmitHint = { idx, label -> submitHintAnswer(q, idx, label) },
-                                        onReturnToMain = {
-                                            hintLadderDismissed[q.id] = true
-                                            scope.launch { bringIntoView.bringIntoView() }
-                                        },
                                     )
                                 }
                             }
@@ -930,7 +971,7 @@ private fun SummaryScreen(
                 else ->
                     for (t in topicList) {
                         TableRow(
-                            t.topic,
+                            formatTopicLabel(t.topic),
                             "${sectionShort(t.section)} · ${t.correct}/${t.attempts}",
                             "${(t.accuracy * 100).roundToInt()}%",
                         )
@@ -998,7 +1039,12 @@ private fun TableRow(
     c: String,
 ) {
     Row(Modifier.fillMaxWidth().padding(vertical = 4.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-        Text(a, modifier = Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium)
+        Text(
+            a,
+            modifier = Modifier.weight(1f),
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurface,
+        )
         Text(b, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
         Text(c, style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
     }

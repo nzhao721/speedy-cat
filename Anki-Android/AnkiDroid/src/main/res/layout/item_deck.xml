@@ -47,7 +47,7 @@
             android:gravity="start|center_vertical"
             android:maxLines="2"
             android:ellipsize="end"
-            android:textColor="?android:textColorPrimary"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="20sp"
             android:textStyle="bold"
             tools:text="Deck name" />
@@ -63,7 +63,9 @@
         android:minWidth="70dp"
         android:gravity="end"
         android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true" >
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        tools:visibility="visible" >
         <com.ichi2.ui.FixedTextView
             android:id="@+id/deck_new"
             android:contentDescription="@string/deck_picker_new"

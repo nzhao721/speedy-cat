@@ -91,6 +91,7 @@ import com.ichi2.anki.exception.SystemStorageException
 import com.ichi2.anki.libanki.Collection
 import com.ichi2.anki.receiver.SdCardReceiver
 import com.ichi2.anki.settings.Prefs
+import com.ichi2.anki.settings.UiScale
 import com.ichi2.anki.snackbar.showSnackbar
 import com.ichi2.anki.utils.ext.requireString
 import com.ichi2.anki.utils.ext.showDialogFragment
@@ -129,6 +130,10 @@ open class AnkiActivity(
 
     val dialogHandler = DialogHandler(this)
     override val ankiActivity = this
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(UiScale.wrap(newBase))
+    }
 
     private val customTabActivityHelper: CustomTabActivityHelper = CustomTabActivityHelper()
 

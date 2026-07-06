@@ -7,6 +7,7 @@ import {
     buildEvaluatorPrompt,
     buildUserVisiblePrompt,
     correctAnswerText,
+    EXPLANATION_INSTRUCTION,
     emptyExplanationProgress,
     EXPLANATION_UNVERIFIED_NOTE,
     explanationBypassedProgress,
@@ -67,9 +68,10 @@ test("buildEvaluatorPrompt includes stem and withholds choices", () => {
     expect(prompt).not.toContain("Answer choices");
 });
 
-test("buildUserVisiblePrompt shows stem only", () => {
+test("buildUserVisiblePrompt is instruction only", () => {
     const prompt = buildUserVisiblePrompt(sampleQuestion.stem);
-    expect(prompt).toContain(sampleQuestion.stem);
+    expect(prompt).toBe(EXPLANATION_INSTRUCTION);
+    expect(prompt).not.toContain(sampleQuestion.stem);
     expect(prompt).not.toContain("Phosphofructokinase");
 });
 

@@ -18,13 +18,7 @@ from aqt.operations.deck import (
 )
 from aqt.qt import *
 from aqt.sound import av_player
-from aqt.toolbar import BottomBar
 from aqt.utils import openLink, showInfo, tr
-
-
-class DeckBrowserBottomBar:
-    def __init__(self, deck_browser: DeckBrowser) -> None:
-        self.deck_browser = deck_browser
 
 
 @dataclass
@@ -61,7 +55,6 @@ class DeckBrowser:
     def __init__(self, mw: AnkiQt) -> None:
         self.mw = mw
         self.web = mw.web
-        self.bottom = BottomBar(mw, mw.bottomWeb)
         self.scrollPos = QPoint(0, 0)
         self._refresh_needed = False
 
@@ -119,7 +112,7 @@ class DeckBrowser:
 
     def set_current_deck(self, deck_id: DeckId) -> None:
         set_current_deck(parent=self.mw, deck_id=deck_id).success(
-            lambda _: self.mw.onOverview()
+            lambda _: self.mw.startStudying()
         ).run_in_background(initiator=self)
 
     # HTML generation
@@ -174,7 +167,6 @@ class DeckBrowser:
             ],
             context=self,
         )
-        self._drawButtons()
         if offset is not None:
             self._scrollToOffset(offset)
         gui_hooks.deck_browser_did_render(self)
@@ -186,16 +178,8 @@ class DeckBrowser:
         return ""
 
     def _renderDeckTree(self, top: DeckTreeNode) -> str:
-        buf = """
-<tr><th colspan=5 align=start>{}</th>
-<th class=count>{}</th>
-<th class=count>{}</th>
-<th class=count>{}</th></tr>""".format(
-            tr.decks_deck(),
-            tr.actions_new(),
-            tr.decks_learn_header(),
-            tr.decks_review_header(),
-        )
+        # SpeedyCAT: hide New/Learn/Due count columns on the flashcards list.
+        buf = "<tr><th align=start>{}</th></tr>".format(tr.decks_deck())
         buf += self._topLevelDragRow()
 
         ctx = RenderDeckNodeContext(current_deck_id=self._render_data.current_deck_id)
@@ -241,28 +225,13 @@ class DeckBrowser:
             extraclass = ""
         buf += """
 
-        <td class=decktd colspan=5>%s%s<a class="deck %s"
+        <td class=decktd>%s%s<a class="deck %s"
         href=# onclick="return pycmd('open:%d')">%s</a></td>""" % (
             indent(),
             collapse,
             extraclass,
             node.deck_id,
             html.escape(node.name),
-        )
-
-        # due counts
-        def nonzeroColour(cnt: int, klass: str) -> str:
-            if not cnt:
-                klass = "zero-count"
-            return f'<span class="{klass}">{cnt}</span>'
-
-        review = nonzeroColour(node.review_count, "review-count")
-        learn = nonzeroColour(node.learn_count, "learn-count")
-
-        buf += ("<td align=end>%s</td>" * 3) % (
-            nonzeroColour(node.new_count, "new-count"),
-            learn,
-            review,
         )
         buf += "</tr>"
         # children
@@ -272,7 +241,7 @@ class DeckBrowser:
         return buf
 
     def _topLevelDragRow(self) -> str:
-        return "<tr class='top-level-drag-row'><td colspan='6'>&nbsp;</td></tr>"
+        return "<tr class='top-level-drag-row'><td>&nbsp;</td></tr>"
 
     # Deck tree actions
     ##########################################################################
@@ -293,14 +262,6 @@ class DeckBrowser:
         reparent_decks(
             parent=self.mw, deck_ids=[source], new_parent=target
         ).run_in_background()
-
-    # Bottom bar
-    ######################################################################
-
-    def _drawButtons(self) -> None:
-        # SpeedyCAT: the deck browser has no bottom-bar actions; skip drawing an
-        # empty toolbar webview that showed as a stray bar under the deck list.
-        pass
 
     ######################################################################
 

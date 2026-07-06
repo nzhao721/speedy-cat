@@ -65,12 +65,17 @@ def get_sync_status(
     )
 
 
-def handle_sync_error(mw: aqt.main.AnkiQt, err: Exception) -> None:
+def handle_sync_error(
+    mw: aqt.main.AnkiQt, err: Exception, *, silent: bool = False
+) -> None:
     if isinstance(err, SyncError):
         if err.kind is SyncErrorKind.AUTH:
             mw.pm.clear_sync_auth()
     elif isinstance(err, Interrupted):
         # no message to show
+        return
+    if silent:
+        print(str(err))
         return
     show_warning(str(err), parent=mw)
 
@@ -91,48 +96,66 @@ def on_normal_sync_timer(mw: aqt.main.AnkiQt) -> None:
         mw.col.abort_sync()
 
 
-def sync_collection(mw: aqt.main.AnkiQt, on_done: Callable[[], None]) -> None:
+def sync_collection(
+    mw: aqt.main.AnkiQt, on_done: Callable[[], None], *, silent: bool = False
+) -> None:
     auth = mw.pm.sync_auth()
     if not auth:
         raise Exception("expected auth")
 
-    def on_timer() -> None:
-        on_normal_sync_timer(mw)
+    timer: QTimer | None = None
+    if not silent:
 
-    timer = QTimer(mw)
-    qconnect(timer.timeout, on_timer)
-    timer.start(150)
+        def on_timer() -> None:
+            on_normal_sync_timer(mw)
+
+        timer = QTimer(mw)
+        qconnect(timer.timeout, on_timer)
+        timer.start(150)
 
     def on_future_done(fut: Future[SyncOutput]) -> None:
         # scheduler version may have changed
-        mw.col._load_scheduler()
-        timer.stop()
+        if mw.col:
+            mw.col._load_scheduler()
+        if timer is not None:
+            timer.stop()
         try:
             out = fut.result()
         except Exception as err:
-            handle_sync_error(mw, err)
+            handle_sync_error(mw, err, silent=silent)
             return on_done()
 
         mw.pm.set_host_number(out.host_number)
         if out.new_endpoint:
             mw.pm.set_current_sync_url(out.new_endpoint)
         if out.server_message:
-            showText(out.server_message, parent=mw, type="rich")
+            if silent:
+                print(out.server_message)
+            else:
+                showText(out.server_message, parent=mw, type="rich")
         if out.required == out.NO_CHANGES:
-            tooltip(parent=mw, msg=tr.sync_collection_complete())
+            if not silent:
+                tooltip(parent=mw, msg=tr.sync_collection_complete())
             # all done; track media progress
-            mw.media_syncer.start_monitoring()
+            mw.media_syncer.start_monitoring(is_periodic_sync=silent)
+            return on_done()
+        elif silent:
+            # Full sync needs user confirmation; skip during unattended sync.
             return on_done()
         else:
             full_sync(mw, out, on_done)
 
-    mw.taskman.with_progress(
-        lambda: mw.col.sync_collection(auth, mw.pm.media_syncing_enabled()),
-        on_future_done,
-        label=tr.sync_checking(),
-        immediate=True,
-        title=tr.sync_checking(),
-    )
+    task = lambda: mw.col.sync_collection(auth, mw.pm.media_syncing_enabled())
+    if silent:
+        mw.taskman.run_in_background(task, on_future_done)
+    else:
+        mw.taskman.with_progress(
+            task,
+            on_future_done,
+            label=tr.sync_checking(),
+            immediate=True,
+            title=tr.sync_checking(),
+        )
 
 
 def full_sync(

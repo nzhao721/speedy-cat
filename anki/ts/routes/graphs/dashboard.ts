@@ -164,6 +164,17 @@ export function collectionTotalCards(data: GraphsResponse | null | undefined): n
     );
 }
 
+/** Lifetime flashcards studied at least once (non-new cards in the collection). */
+export function memoryLifetimeStudiedCount(
+    data: GraphsResponse | null | undefined,
+): number {
+    const counts = data?.cardCounts?.includingInactive;
+    if (!counts) {
+        return 0;
+    }
+    return counts.learn + counts.relearn + counts.young + counts.mature;
+}
+
 /** Memory pillar sample line when studied and collection totals are known. */
 export function memoryStudiedLine(
     studied: number,

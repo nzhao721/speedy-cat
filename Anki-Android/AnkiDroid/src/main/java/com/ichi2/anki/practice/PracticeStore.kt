@@ -5,7 +5,7 @@
 // database that is deliberately SEPARATE from the synced Anki collection: MCAT
 // attempt history is device-local study telemetry, not flashcard review data, so
 // it never touches sync. It mirrors the columns of the desktop
-// `practice_attempts` table so the same missed-only and per-topic tracking
+// `practice_attempts` table so per-topic tracking stays aligned with desktop.
 // queries apply.
 
 package com.ichi2.anki.practice
@@ -17,7 +17,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
 /**
- * Stores every recorded [Attempt] locally so missed-only practice and
+ * Stores every recorded [Attempt] locally so per-topic stats and session
  * cross-session per-topic stats survive between sessions.
  *
  * A row is keyed by [Attempt.id] (`"{sessionId}:{questionId}"`) with
@@ -153,19 +153,6 @@ class PracticeStore(
                                 },
                         ),
                     )
-                }
-            }
-        return out
-    }
-
-    /** Ids of questions the user previously answered incorrectly (missed-only). */
-    fun missedQuestionIds(): Set<String> {
-        val out = mutableSetOf<String>()
-        readableDatabase
-            .rawQuery("select distinct question_id from $TABLE where correct = 0", null)
-            .use { c ->
-                while (c.moveToNext()) {
-                    out.add(c.getString(0))
                 }
             }
         return out

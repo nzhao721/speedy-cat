@@ -779,6 +779,7 @@ exposed_backend_list = [
     "get_full_length_stats",
     "get_full_length_review",
     "get_topic_stats",
+    "get_recommended_practice_topics",
     "get_readiness",
 ]
 

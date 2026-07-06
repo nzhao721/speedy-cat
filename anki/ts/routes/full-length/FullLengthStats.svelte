@@ -10,6 +10,7 @@ and per-topic raw breakdown. Entry point before optional question review.
     import { createEventDispatcher } from "svelte";
 
     import {
+        formatTopicLabel,
         SCALED_SCORE_CAPTION,
         sectionLong,
         type FullLengthStats,
@@ -93,7 +94,7 @@ and per-topic raw breakdown. Entry point before optional question review.
             {#each stats.topicScores as t (`${t.section}-${t.topic}`)}
                 <tr>
                     <td>{sectionLong(t.section)}</td>
-                    <td>{t.topic}</td>
+                    <td>{formatTopicLabel(t.topic)}</td>
                     <td>{t.correct} / {t.total}</td>
                     <td>
                         {t.total > 0 ? Math.round((t.correct / t.total) * 100) : 0}%

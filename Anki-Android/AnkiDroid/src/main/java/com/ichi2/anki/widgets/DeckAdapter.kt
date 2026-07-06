@@ -17,6 +17,7 @@
 package com.ichi2.anki.widgets
 
 import android.content.Context
+import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
@@ -30,6 +31,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ichi2.anki.R
 import com.ichi2.anki.databinding.ItemDeckBinding
 import com.ichi2.anki.deckpicker.DisplayDeckNode
+import com.ichi2.anki.practice.formatTopicLabel
 import com.ichi2.anki.libanki.DeckId
 import kotlinx.coroutines.runBlocking
 import net.ankiweb.rsdroid.RustCleanup
@@ -61,10 +63,8 @@ class DeckAdapter(
     private val learnCountColor: Int
     private val reviewCountColor: Int
     private val rowCurrentDrawable: Int
-    private val deckNameDefaultColor: Int
-
-    /** Parent decks that expand/collapse subdecks (flashcard group headers). */
-    private val deckGroupTitleColor: Int
+    /** Primary deck/topic label color (high contrast on light backgrounds). */
+    private val deckNameColor: Int
     private val deckNameDynColor: Int
     private val expandImage: Drawable
     private val collapseImage: Drawable
@@ -166,15 +166,12 @@ class DeckAdapter(
         } else {
             holder.binding.deckLayout.setBackgroundResource(selectableItemBackground)
         }
-        // Set deck name and colour. Filtered decks have their own colour
-        binding.deckName.text = node.lastDeckNameComponent
-        binding.deckName.setTextColor(
-            when {
-                node.filtered -> deckNameDynColor
-                node.canCollapse -> deckGroupTitleColor
-                else -> deckNameDefaultColor
-            },
-        )
+        // Set deck name and colour. Filtered decks have their own colour.
+        binding.deckName.text = formatTopicLabel(node.lastDeckNameComponent)
+        binding.deckName.setTextColor(if (node.filtered) deckNameDynColor else deckNameColor)
+        // BottomFadeFrameLayout DST_OUT fade affects drawn pixels, not View.alpha; reset anyway.
+        binding.deckLayout.alpha = 1f
+        binding.deckName.alpha = 1f
 
         // Set the card counts and their colors
         binding.deckNew.text = node.newCount.toString()
@@ -183,6 +180,10 @@ class DeckAdapter(
         binding.deckLearn.setTextColor(if (node.lrnCount == 0) zeroCountColor else learnCountColor)
         binding.deckReview.text = node.revCount.toString()
         binding.deckReview.setTextColor(if (node.revCount == 0) zeroCountColor else reviewCountColor)
+        // SpeedyCAT: hide the new/learn/review due counts on the Flashcards deck list.
+        // This adapter/layout (item_deck.xml) is only used by the DeckPicker, which SpeedyCAT
+        // presents as the "Flashcards" topic list, so hiding the counts here is scoped to it.
+        binding.countsLayout.visibility = View.GONE
 
         holder.binding.deckLayout.setOnClickListener { onDeckSelected(node.did) }
         holder.binding.deckLayout.setOnLongClickListener {
@@ -241,7 +242,6 @@ class DeckAdapter(
                 R.attr.learnCountColor,
                 R.attr.reviewCountColor,
                 R.attr.currentDeckBackground,
-                android.R.attr.textColor,
                 com.google.android.material.R.attr.colorOnSurface,
                 R.attr.dynDeckColor,
                 R.attr.expandRef,
@@ -253,16 +253,15 @@ class DeckAdapter(
         learnCountColor = ta.getColor(2, context.getColor(R.color.black))
         reviewCountColor = ta.getColor(3, context.getColor(R.color.black))
         rowCurrentDrawable = ta.getResourceId(4, 0)
-        deckNameDefaultColor = ta.getColor(5, context.getColor(R.color.black))
-        deckGroupTitleColor = ta.getColor(6, context.getColor(CommonR.color.brand_brown_darkest))
-        deckNameDynColor = ta.getColor(7, context.getColor(CommonR.color.brand_orange))
-        expandImage = ta.getDrawableOrThrow(8)
+        deckNameColor = ta.getColor(5, Color.BLACK)
+        deckNameDynColor = ta.getColor(6, context.getColor(CommonR.color.brand_orange))
+        expandImage = ta.getDrawableOrThrow(7)
         expandImage.isAutoMirrored = true
-        collapseImage = ta.getDrawableOrThrow(9)
+        collapseImage = ta.getDrawableOrThrow(8)
         collapseImage.isAutoMirrored = true
         ta.recycle()
         context.withStyledAttributes(attrs = intArrayOf(android.R.attr.selectableItemBackground)) {
-            selectableItemBackground = ta.getResourceId(0, 0)
+            selectableItemBackground = getResourceId(0, 0)
         }
     }
 }

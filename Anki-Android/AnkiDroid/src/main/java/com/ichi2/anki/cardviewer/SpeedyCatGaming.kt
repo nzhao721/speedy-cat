@@ -13,9 +13,6 @@ import org.json.JSONObject
 /** Collection-config key for synced anti-gaming counters. */
 const val GAMING_CONFIG_KEY = "speedycatGamingStats"
 
-/** Suppress Memory when session gamed lapses exceed this count (within [SESSION_REVIEW_WINDOW]). */
-const val SESSION_GAMED_LIMIT = 3
-const val SESSION_REVIEW_WINDOW = 10
 const val DAILY_GAMED_RATE = 0.10
 const val LOCKOUT_MS = 3_600_000L
 val IDK_DELAYS_MS = longArrayOf(5_000L, 10_000L, 15_000L)
@@ -45,9 +42,6 @@ object SpeedyCatGaming {
         nowMs: Long = System.currentTimeMillis(),
     ): String? {
         if (nowMs < stats.lockoutUntilMs) return MEMORY_SUPPRESSION_MSG
-        if (stats.sessionReviews <= SESSION_REVIEW_WINDOW && stats.sessionGamed > SESSION_GAMED_LIMIT) {
-            return MEMORY_SUPPRESSION_MSG
-        }
         if (stats.dailyReviews > 0) {
             val rate = stats.dailyGamed.toDouble() / stats.dailyReviews
             if (rate > DAILY_GAMED_RATE) return MEMORY_SUPPRESSION_MSG

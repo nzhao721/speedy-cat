@@ -124,22 +124,17 @@ private val DIGITS = Regex("^\\d+$")
  * matching (ANY, case-insensitive), in the deterministic id order. No grouping,
  * shuffling or limit — those are applied by [assembleServingOrder]. Mirrors the
  * Rust `filtered_questions`.
- *
- * @param missedIds ids the user previously answered incorrectly (any attempt
- *   with `correct = false`), used only when [QuestionFilter.missedOnly] is set.
  */
 fun filteredQuestions(
     bank: List<PracticeQuestion>,
     filter: QuestionFilter,
-    missedIds: Set<String> = emptySet(),
 ): List<PracticeQuestion> {
     val structural =
         bank
             .filter { q ->
                 (filter.sections.isEmpty() || q.section in filter.sections) &&
                     (filter.difficulty == null || q.difficulty == filter.difficulty) &&
-                    (filter.passageId == null || q.passageId == filter.passageId) &&
-                    (!filter.missedOnly || q.id in missedIds)
+                    (filter.passageId == null || q.passageId == filter.passageId)
             }.sortedBy { it.id }
 
     if (filter.topics.isEmpty()) return structural
@@ -157,8 +152,7 @@ fun filteredQuestions(
 fun matchingQuestions(
     bank: List<PracticeQuestion>,
     filter: QuestionFilter,
-    missedIds: Set<String> = emptySet(),
-): List<PracticeQuestion> = assembleServingOrder(filteredQuestions(bank, filter, missedIds), filter.limit)
+): List<PracticeQuestion> = assembleServingOrder(filteredQuestions(bank, filter), filter.limit)
 
 /**
  * Assemble the questions served for one practice **session**, mirroring the
@@ -172,10 +166,9 @@ fun matchingQuestions(
 fun sessionQuestions(
     bank: List<PracticeQuestion>,
     filter: QuestionFilter,
-    missedIds: Set<String>,
     sessionId: String,
 ): List<PracticeQuestion> {
-    val pool = filteredQuestions(bank, filter, missedIds)
+    val pool = filteredQuestions(bank, filter)
     val ordered = assembleServingOrder(pool, filter.limit, seedFromStr(sessionId))
     return ordered.map { shuffleQuestionChoices(it, sessionId) }
 }
@@ -355,23 +348,6 @@ fun pendingHintIndex(progress: HintProgress): Int {
  */
 fun hintDisplayOrder(revealed: Int): List<Int> = (maxOf(0, revealed) - 1 downTo 0).toList()
 
-/**
- * Whether to offer the "Return to main question" shortcut on the revealed hint at
- * [index]. Only the LATEST revealed subquestion shows it, and only once it has
- * been answered correctly (picks store correct answers only) and the ladder is
- * still interactive (not [locked] because the main question is submitted).
- * Mirrors the desktop `canReturnToMain`.
- */
-fun canReturnToMain(
-    progress: HintProgress,
-    index: Int,
-    locked: Boolean,
-): Boolean {
-    if (locked || progress.revealed <= 0) return false
-    val latest = progress.revealed - 1
-    return index == latest && progress.picks[latest] != null
-}
-
 /** Can the learner reveal the NEXT hint? Only when one remains AND the current
  * revealed subquestion has been answered (no skipping ahead). */
 fun canRevealNextHint(
@@ -391,6 +367,12 @@ fun hintAnswerCorrect(
     hint: HintSubquestion,
     label: String,
 ): Boolean = label.isNotEmpty() && label == hint.correctAnswer
+
+/** Label + text for the correct choice on a hint subquestion (compact display). */
+fun hintCorrectAnswerLine(hint: HintSubquestion): String {
+    val choice = hint.choices.find { it.label == hint.correctAnswer }
+    return choice?.let { "${it.label}. ${it.text}" } ?: hint.correctAnswer
+}
 
 // ---- Hint ladder UX timers -------------------------------------------------
 //
@@ -500,6 +482,21 @@ fun canShowNextHintButton(
     !locked &&
         canRevealNextHint(hints, progress) &&
         elapsedSinceHintComplete >= HINT_SUBSEQUENT_SECONDS
+
+/**
+ * Whether the post-hint "I'm still stuck" delay should advance this second.
+ * The timer starts only after the learner dismisses the hint popup (or returns
+ * to the main question), not while answering a tier inside the overlay.
+ */
+fun shouldTickSubsequentHintTimer(
+    hints: List<HintSubquestion>,
+    progress: HintProgress,
+    hintLadderDismissed: Boolean,
+): Boolean =
+    hintLadderDismissed &&
+        pendingHintIndex(progress) == -1 &&
+        progress.revealed > 0 &&
+        canRevealNextHint(hints, progress)
 
 /** May the learner submit a hint subquestion answer right now? */
 fun canSubmitHintAnswer(
@@ -693,13 +690,12 @@ fun correctAnswerText(question: PracticeQuestion): String {
     return match?.text?.trim()?.takeIf { it.isNotEmpty() } ?: question.correctAnswer
 }
 
-fun buildUserVisibleExplanationPrompt(stem: String): String {
-    val preview = stem.trim().let { if (it.length > 280) it.take(277) + "..." else it }
-    return (
-        "You answered correctly. Before moving on, explain your reasoning in a few " +
-            "sentences — why is your answer right for this question?\n\n\"$preview\""
-    )
-}
+const val EXPLANATION_INSTRUCTION =
+    "You answered correctly. Before moving on, explain your reasoning in a few " +
+        "sentences."
+
+fun buildUserVisibleExplanationPrompt(@Suppress("UNUSED_PARAMETER") stem: String): String =
+    EXPLANATION_INSTRUCTION
 
 fun explanationFailureHint(
     failCount: Int,

@@ -8,10 +8,10 @@ import java.io.File
 import java.util.Properties
 
 // The Anki backend (rsdroid) is consumed either as a locally-built artifact in
-// ../Anki-Android-Backend (when `local_backend=true` in local.properties) or as
+// ../rsdroid-build (when `local_backend=true` in local.properties) or as
 // the published library from the version catalog.
 
-// Paths within the `Anki-Android-Backend` checkout, which sits beside the repo root.
+// Paths within the `rsdroid-build` checkout, which sits beside the repo root.
 private const val RSDROID_AAR =
     "rsdroid/build/outputs/aar/rsdroid-release.aar"
 private const val RSDROID_TESTING_JAR =
@@ -60,8 +60,8 @@ private fun Project.addBackendArtifact(
     catalogAlias: String,
 ) {
     if (useLocalBackend) {
-        // ../Anki-Android-Backend
-        val backendCheckout = File(rootProject.projectDir.parentFile, "Anki-Android-Backend")
+        // ../rsdroid-build
+        val backendCheckout = File(rootProject.projectDir.parentFile, "rsdroid-build")
         dependencies.add(configuration, files(File(backendCheckout, localPath)))
     } else {
         dependencies.addProvider(configuration, libsLibrary(catalogAlias))

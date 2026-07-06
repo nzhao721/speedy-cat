@@ -91,8 +91,10 @@ import com.ichi2.anki.common.utils.android.showThemedToast
 import com.ichi2.anki.common.utils.annotation.KotlinCleanup
 import com.ichi2.anki.compat.CompatHelper.Companion.getSerializableCompat
 import com.ichi2.anki.contextmenu.DeckPickerMenuContentProvider
-import com.ichi2.anki.databinding.ActivityHomescreenBinding
+import com.ichi2.anki.pages.DashboardFragment
+import com.ichi2.anki.practice.applySpeedyCatLightAppBar
 import com.ichi2.anki.databinding.IncludeDeckPickerBinding
+import com.ichi2.anki.databinding.ActivityHomescreenBinding
 import com.ichi2.anki.deckpicker.BackgroundImage
 import com.ichi2.anki.deckpicker.DeckPickerViewModel
 import com.ichi2.anki.deckpicker.DeckPickerViewModel.AnkiDroidEnvironment
@@ -214,6 +216,7 @@ import com.ichi2.anki.common.android.R as CommonR
 @NeedsTest("Regression test of #19555 or remove 'android:configChanges' for the screen")
 open class DeckPicker :
     NavigationDrawerActivity(),
+    DashboardFragment.Callbacks,
     SyncErrorDialogListener,
     ImportDialogListener,
     OnRequestPermissionsResultCallback,
@@ -236,6 +239,20 @@ open class DeckPicker :
             resources.configuration.screenLayout and Configuration.SCREENLAYOUT_SIZE_MASK ==
                 Configuration.SCREENLAYOUT_SIZE_XLARGE
         set(_) = throw UnsupportedOperationException()
+
+    override fun usesNavigationDrawer(): Boolean = false
+
+    /** True when the deck picker (Flashcards) screen is visible on phones. */
+    internal var speedyCatOnFlashcards = false
+
+    internal var speedyCatHomeViews: SpeedyCatHomeViews? = null
+
+    internal data class SpeedyCatHomeViews(
+        val contentWrapper: View,
+        val fragmentContainer: View,
+        val toolbarContainer: View,
+        val flashcardsBackCallback: OnBackPressedCallback,
+    )
 
     // Short animation duration from system
     private var shortAnimDuration = 0
@@ -419,7 +436,7 @@ open class DeckPicker :
 
         // match the status bar theme of the rest of the app
         enableEdgeToEdge(
-            statusBarStyle = SystemBarStyle.dark(Color.TRANSPARENT),
+            statusBarStyle = SystemBarStyle.light(Color.TRANSPARENT, Color.TRANSPARENT),
             navigationBarStyle = BottomFadeFrameLayout.navigationBarStyle(),
         )
         // Then set theme and content view
@@ -445,6 +462,7 @@ open class DeckPicker :
 
         setViewBinding(binding)
         enableToolbar()
+        applySpeedyCatLightAppBar()
         // TODO This method is run on every activity recreation, which can happen often.
         //  It seems that the original idea was for this to only run once, on app start.
         //  This method triggers backups, sync, and may re-show dialogs
@@ -453,12 +471,16 @@ open class DeckPicker :
 
         registerReceiver()
 
-        // create inherited navigation drawer layout here so that it can be used by parent class
-        initNavigationDrawer()
-        if (Prefs.devBottomNavEnabled && !fragmented) disableDrawerSwipe()
+        if (usesNavigationDrawer()) {
+            initNavigationDrawer()
+        }
         setupBottomNavigation()
         setupEdgeToEdge()
-        title = resources.getString(R.string.app_name)
+        if (!fragmented) {
+            title = resources.getString(R.string.dashboard)
+        } else {
+            title = resources.getString(R.string.decks)
+        }
 
         deckPickerBinding.deckPickerContent.visibility = View.GONE
         deckPickerBinding.noDecksPlaceholder.visibility = View.GONE
@@ -545,7 +567,11 @@ open class DeckPicker :
     /** Applied edge-to-edge insets for the screen */
     private fun setupEdgeToEdge() {
         deckPickerBinding.decksFadeWrapper.setup(window)
-        deckPickerBinding.decksFadeWrapper.anchorView = deckPickerBinding.decks
+        // SpeedyCAT phones never show the review-summary bar. Upstream anchors the bottom
+        // fade to that view; anchoring to `decks` (match_parent RecyclerView) starts the
+        // ~90% (0xE6) DST_OUT band at the top and washes the whole topic list to ~10% opacity.
+        deckPickerBinding.decksFadeWrapper.anchorView =
+            if (fragmented) deckPickerBinding.reviewSummaryTextView else null
         ViewCompat.setOnApplyWindowInsetsListener(binding.toolbarContainer) { toolbar, insets ->
             val bars = insets.getInsets(systemBars() or displayCutout())
             toolbar.updatePadding(left = bars.left, top = bars.top, right = bars.right)
@@ -651,6 +677,9 @@ open class DeckPicker :
         }
 
         fun onCardsDueChanged(dueCount: Int?) {
+            if (!fragmented) {
+                return
+            }
             if (dueCount == null) {
                 supportActionBar?.subtitle = null
                 return
@@ -924,6 +953,9 @@ open class DeckPicker :
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        if (!fragmented) {
+            return false
+        }
         if (viewModel.flowOfStartupResponse.value is StartupResponse.FatalError) {
             return false
         }
@@ -1001,7 +1033,7 @@ open class DeckPicker :
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (drawerToggle.onOptionsItemSelected(item)) {
+        if (navDrawerIsReady() && drawerToggle.onOptionsItemSelected(item)) {
             return true
         }
         when (item.itemId) {
@@ -1103,17 +1135,44 @@ open class DeckPicker :
                         foregroundSync = { sync() },
                     )
                 if (!synced) {
-                    selectNavigationItem(R.id.nav_decks)
+                    if (navDrawerIsReady()) {
+                        selectNavigationItem(R.id.nav_decks)
+                    }
                     updateDeckList()
-                    title = resources.getString(R.string.app_name)
+                    updateSpeedyCatTitle()
                 }
             }
         } else {
-            selectNavigationItem(R.id.nav_decks)
+            if (navDrawerIsReady()) {
+                selectNavigationItem(R.id.nav_decks)
+            }
             updateDeckList()
-            title = resources.getString(R.string.app_name)
+            updateSpeedyCatTitle()
         }
         invalidateOptionsMenu()
+    }
+
+    private fun updateSpeedyCatTitle() {
+        if (fragmented) {
+            title = resources.getString(R.string.decks)
+        } else if (speedyCatOnFlashcards) {
+            title = resources.getString(R.string.decks)
+            supportActionBar?.subtitle = null
+        }
+    }
+
+    override fun onFlashcardsClick() {
+        val views = speedyCatHomeViews ?: return
+        showSpeedyCatFlashcards(
+            contentWrapper = views.contentWrapper,
+            fragmentContainer = views.fragmentContainer,
+            toolbarContainer = views.toolbarContainer,
+            flashcardsBackCallback = views.flashcardsBackCallback,
+        )
+    }
+
+    override fun onPracticeClick() {
+        navigateToSpeedyCatPractice()
     }
 
     public override fun onSaveInstanceState(outState: Bundle) {

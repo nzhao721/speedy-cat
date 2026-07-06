@@ -10,6 +10,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="speedycat_practice_questions" translatable="false">Practice Questions</string>
     <string name="speedycat_readiness" translatable="false">Readiness</string>
+    <!-- One-sentence pillar score explanations (rslib readiness_memory/performance/full_length). -->
+    <string name="speedycat_pillar_memory_tooltip" translatable="false">The chance you can correctly recall a flashcard you have studied.</string>
+    <string name="speedycat_pillar_performance_tooltip" translatable="false">The chance that a student effectively applies their knowledge to solve problems in varied contexts.</string>
+    <string name="speedycat_pillar_readiness_tooltip" translatable="false">The chance that a student correctly solves a previously unseen question in a real testing environment.</string>
+    <string name="speedycat_pillar_breakdown_insufficient" translatable="false">Insufficient data in this category to calculate an estimate</string>
     <!-- Account row on the More screen: subtitle shown when no sync account is signed in. -->
     <string name="speedycat_not_signed_in" translatable="false">Not signed in</string>
 </resources>

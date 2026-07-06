@@ -175,8 +175,6 @@ IDK_DELAY_MS = 5000
 IDK_DELAYS_MS = (5000, 10_000, 15_000)
 
 #: Anti-gaming thresholds (mirrors rslib speedycat::gaming).
-SESSION_GAMED_LIMIT = 3
-SESSION_REVIEW_WINDOW = 10
 DAILY_GAMED_RATE = 0.10
 MEMORY_SUPPRESSION_MSG = (
     "Memory Score Unavailable: Excessive guessing detected. "

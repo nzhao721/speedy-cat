@@ -35,9 +35,13 @@ def test_build_evaluator_prompt_has_stem_not_choices() -> None:
     assert "Hexokinase" not in prompt
 
 
-def test_build_user_visible_prompt_omits_answer() -> None:
+def test_build_user_visible_prompt_is_instruction_only() -> None:
     prompt = expl.build_user_visible_prompt("What is the powerhouse of the cell?")
-    assert "powerhouse" in prompt
+    assert prompt == (
+        "You answered correctly. Before moving on, explain your reasoning in a few "
+        "sentences."
+    )
+    assert "powerhouse" not in prompt
     assert "mitochondria" not in prompt.lower()
 
 

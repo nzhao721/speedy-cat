@@ -16,9 +16,9 @@ and the assisted/hint_level_used tracking.
     import { createEventDispatcher } from "svelte";
 
     import {
-        canReturnToMain,
         canSubmitHintAnswer,
         hintChoicesEnabled,
+        hintCorrectAnswerLine,
         hintDisplayOrder,
         pendingHintIndex,
         type HintProgress,
@@ -33,11 +33,13 @@ and the assisted/hint_level_used tracking.
     export let locked = false;
     /** Seconds remaining before a wrong hint answer can be resubmitted. */
     export let hintCooldown = 0;
+    /** When false the popup is hidden but ladder progress is preserved. */
+    export let open = true;
 
     const dispatch = createEventDispatcher<{
         pendingChoiceChange: string;
         answerHint: { index: number; label: string };
-        returnToMain: void;
+        dismiss: void;
     }>();
 
     $: pending = pendingHintIndex(progress);
@@ -47,9 +49,35 @@ and the assisted/hint_level_used tracking.
         && canSubmitHintAnswer(pendingChoice, hintCooldown);
 </script>
 
-{#if progress.revealed > 0}
+{#if progress.revealed > 0 && open}
+    <!-- Fixed overlay so hints are visible without scrolling the question column. -->
+    <div
+        class="hint-overlay"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="hint-ladder-title"
+    >
+        <!-- Backdrop must not be a <button>: global Anki button styles
+             (base.scss) outrank Svelte-scoped rules and paint it white. -->
+        <div
+            class="hint-backdrop"
+            role="presentation"
+            on:click={() => dispatch("dismiss")}
+        ></div>
+        <div class="hint-dialog">
+            <div class="hint-dialog-header">
+                <div class="ladder-head" id="hint-ladder-title">Guided hints</div>
+                <button
+                    type="button"
+                    class="hint-close"
+                    aria-label="Close hints"
+                    on:click={() => dispatch("dismiss")}
+                >
+                    {"\u00d7"}
+                </button>
+            </div>
+            <div class="hint-dialog-body">
 <div class="hint-ladder">
-        <div class="ladder-head">Guided hints</div>
         <!-- Most-recently-revealed tier first (reverse of progression order): the
              ladder still advances L1 -> L2 -> L3 with no skipping, only the
              DISPLAY is reversed so the newest hint sits directly under the main
@@ -58,12 +86,15 @@ and the assisted/hint_level_used tracking.
             {@const hint = hints[i]}
             {#if hint}
                 {@const answered = progress.picks[i] !== undefined}
-                <div class="sub" class:answered>
+                <div class="sub" class:answered class:compact={answered}>
                     <div class="sub-head">
                         <span class="sub-num">Hint {i + 1}</span>
                         <span class="sub-level">Level {hint.level || i + 1}</span>
                     </div>
                     <div class="sub-prompt">{hint.prompt}</div>
+                    {#if answered}
+                        <div class="sub-answer">{hintCorrectAnswerLine(hint)}</div>
+                    {:else}
                     <div class="sub-choices">
                         {#each hint.choices as c (c.label)}
                             {@const isCurrent = pending === i}
@@ -97,22 +128,7 @@ and the assisted/hint_level_used tracking.
                             </button>
                         {/each}
                     </div>
-                    {#if answered}
-                        <div class="sub-verdict right">Correct</div>
-                        {#if hint.rationale}
-                            <div class="sub-rationale">{hint.rationale}</div>
-                        {/if}
-                        {#if canReturnToMain(progress, i, locked)}
-                            <div class="sub-actions">
-                                <button
-                                    class="hint-btn primary return-main"
-                                    on:click={() => dispatch("returnToMain")}
-                                >
-                                    Return to main question
-                                </button>
-                            </div>
-                        {/if}
-                    {:else if !locked && pending === i}
+                    {#if !locked && pending === i}
                         <div class="sub-actions">
                             <button
                                 class="hint-btn primary"
@@ -132,6 +148,7 @@ and the assisted/hint_level_used tracking.
                             {/if}
                         </div>
                     {/if}
+                    {/if}
                 </div>
             {/if}
         {/each}
@@ -142,17 +159,83 @@ and the assisted/hint_level_used tracking.
             </div>
         {/if}
 </div>
+            </div>
+        </div>
+    </div>
 {/if}
 
 <style lang="scss">
+    .hint-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+    .hint-backdrop {
+        position: absolute;
+        inset: 0;
+        border: none;
+        margin: 0;
+        padding: 0;
+        background: rgba(0, 0, 0, 0.62);
+        cursor: pointer;
+        // Keep dimmed even if a future global style targets clickable layers.
+        &:hover,
+        &:active {
+            background: rgba(0, 0, 0, 0.62);
+            box-shadow: none;
+        }
+    }
+    .hint-dialog {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        width: min(36rem, 100%);
+        max-height: min(85vh, 40rem);
+        border-radius: 12px;
+        border: 1px solid var(--border-subtle);
+        background: var(--canvas-elevated);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+        overflow: hidden;
+    }
+    .hint-dialog-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid var(--border-subtle);
+        background: var(--canvas-inset);
+        flex-shrink: 0;
+    }
+    .hint-dialog-body {
+        overflow-y: auto;
+        padding: 0.85rem 1rem 1rem;
+    }
+    .hint-close {
+        flex: 0 0 auto;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        background: var(--button-bg);
+        color: var(--fg);
+        font-size: 1.35rem;
+        line-height: 1;
+        cursor: pointer;
+        padding: 0;
+    }
+    .hint-close:hover {
+        border-color: var(--border-focus);
+    }
     .hint-ladder {
         display: flex;
         flex-direction: column;
         gap: 0.75rem;
-        padding: 0.85rem 1rem;
-        border: 1px solid var(--border-subtle);
-        border-radius: 10px;
-        background: var(--canvas-inset);
     }
     .ladder-head {
         font-weight: 700;
@@ -186,6 +269,17 @@ and the assisted/hint_level_used tracking.
     .sub-prompt {
         white-space: pre-wrap;
         line-height: 1.45;
+    }
+    .sub.compact {
+        gap: 0.35rem;
+        padding: 0.55rem 0.7rem;
+    }
+    .sub-answer {
+        white-space: pre-wrap;
+        line-height: 1.4;
+        font-size: 0.9rem;
+        color: #2e9e4f;
+        font-weight: 600;
     }
     .sub-choices {
         display: flex;
@@ -281,20 +375,6 @@ and the assisted/hint_level_used tracking.
     .sub-text {
         flex: 1;
         white-space: pre-wrap;
-    }
-    .sub-verdict {
-        font-weight: 700;
-        color: #d1434b;
-        font-size: 0.9rem;
-    }
-    .sub-verdict.right {
-        color: #2e9e4f;
-    }
-    .sub-rationale {
-        white-space: pre-wrap;
-        line-height: 1.45;
-        color: var(--fg-subtle);
-        font-size: 0.9rem;
     }
     .sub-actions {
         display: flex;

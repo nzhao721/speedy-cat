@@ -3,6 +3,7 @@
 
 package com.ichi2.anki.pages
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,16 +15,35 @@ import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.ichi2.anki.R
-import com.ichi2.anki.practice.ReadinessPillarsScreen
+import com.ichi2.anki.common.destinations.PreferencesDestination
+import com.ichi2.anki.common.destinations.navigate
+import com.ichi2.anki.practice.DashboardScreen
 import com.ichi2.anki.practice.ReadinessViewModel
 import com.ichi2.compose.theme.AnkiDroidTheme
 
 /**
- * SpeedyCAT dashboard: the same three readiness pillars (Memory / Performance /
- * Readiness) as the desktop dashboard tab, rendered natively in Compose.
+ * SpeedyCAT dashboard: readiness pillars plus navigation to Flashcards,
+ * Practice Questions, and Settings.
  */
 class DashboardFragment : Fragment() {
+    interface Callbacks {
+        fun onFlashcardsClick()
+
+        fun onPracticeClick()
+    }
+
     private val viewModel: ReadinessViewModel by viewModels()
+    private var callbacks: Callbacks? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        callbacks = context as? Callbacks
+    }
+
+    override fun onDetach() {
+        callbacks = null
+        super.onDetach()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,7 +55,12 @@ class DashboardFragment : Fragment() {
             setContent {
                 AnkiDroidTheme {
                     Surface(color = MaterialTheme.colorScheme.background) {
-                        ReadinessPillarsScreen(viewModel)
+                        DashboardScreen(
+                            viewModel = viewModel,
+                            onFlashcardsClick = { callbacks?.onFlashcardsClick() },
+                            onPracticeClick = { callbacks?.onPracticeClick() },
+                            onSettingsClick = { navigate(PreferencesDestination.Root) },
+                        )
                     }
                 }
             }
@@ -46,13 +71,7 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?,
     ) {
         super.onViewCreated(view, savedInstanceState)
-        val hideBack = arguments?.getBoolean(ARG_HIDE_BACK_BUTTON) == true
-        requireActivity().title =
-            if (hideBack) {
-                getString(R.string.dashboard)
-            } else {
-                getString(R.string.dashboard)
-            }
+        requireActivity().title = getString(R.string.dashboard)
     }
 
     companion object {

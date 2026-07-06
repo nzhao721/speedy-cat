@@ -1,0 +1,35 @@
+{
+  "description": "Flashcards for measuring how many distinct alternative answers (excluding case-only changes) the AI checker accepts per question.",
+  "cards": [
+    {
+      "id": "mitochondria",
+      "front": "What organelle is the powerhouse of the cell?",
+      "expected": "Mitochondria"
+    },
+    {
+      "id": "na_k_pump",
+      "front": "Common biochemical name for the Na+/K+ pump?",
+      "expected": "Sodium-potassium pump"
+    },
+    {
+      "id": "depolarization",
+      "front": "During depolarization, the membrane potential does what?",
+      "expected": "increases"
+    },
+    {
+      "id": "atp",
+      "front": "What is the cell's main energy currency molecule?",
+      "expected": "Adenosine triphosphate"
+    },
+    {
+      "id": "krebs",
+      "front": "The Krebs cycle is also known as?",
+      "expected": "Citric acid cycle (TCA cycle)"
+    },
+    {
+      "id": "nephron",
+      "front": "What is the functional filtering unit of the kidney?",
+      "expected": "Nephron"
+    }
+  ]
+}

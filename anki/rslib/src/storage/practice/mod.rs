@@ -291,7 +291,6 @@ impl SqliteStorage {
         difficulty_db: Option<&str>,
         passage_id: Option<&str>,
         include_full_length: bool,
-        missed_only: bool,
     ) -> Result<Vec<PracticeQuestion>> {
         let mut sql = String::from(QUESTION_COLS);
         sql.push_str(" where 1=1");
@@ -313,11 +312,6 @@ impl SqliteStorage {
         }
         if !include_full_length {
             sql.push_str(" and test_id is null");
-        }
-        if missed_only {
-            sql.push_str(
-                " and id in (select question_id from practice_attempts where correct = 0)",
-            );
         }
         sql.push_str(" order by id");
         let mut stmt = self.db.prepare(&sql)?;
@@ -793,6 +787,165 @@ impl SqliteStorage {
                 ))
             })
             .map_err(Into::into)
+    }
+
+    /// Per-section practice-session observations for EWMA Performance aggregation:
+    /// section_db -> [(fractional credit, answered_at, time_on_question_seconds), ...].
+    pub(crate) fn practice_performance_observations_by_section_with_time(
+        &self,
+    ) -> Result<std::collections::HashMap<String, Vec<(f64, i64, u32)>>> {
+        let mut stmt = self.db.prepare_cached(
+            "select section,
+                case
+                    when main_wrong_first = 1 or correct = 0 then 0.0
+                    when hint_level_used = 0 then 1.0
+                    when hint_level_used = 1 then 0.6
+                    when hint_level_used = 2 then 0.3
+                    else 0.1
+                end,
+                answered_at,
+                time_on_question_seconds
+             from practice_attempts
+             where session_id is not null and selected_answer <> ''",
+        )?;
+        let mut map: std::collections::HashMap<String, Vec<(f64, i64, u32)>> =
+            std::collections::HashMap::new();
+        let rows = stmt.query_and_then([], |r| -> Result<(String, f64, i64, u32)> {
+            Ok((
+                r.get::<_, String>(0)?,
+                r.get::<_, f64>(1)?,
+                r.get::<_, i64>(2)?,
+                r.get::<_, i64>(3)? as u32,
+            ))
+        })?;
+        for row in rows {
+            let (section, credit, ts, secs) = row?;
+            map.entry(section).or_default().push((credit, ts, secs));
+        }
+        Ok(map)
+    }
+
+    /// Per-(section, topic) practice-session observations for EWMA Performance
+    /// aggregation.
+    pub(crate) fn practice_performance_observations_by_topic(
+        &self,
+    ) -> Result<std::collections::HashMap<(String, String), Vec<(f64, i64, u32)>>> {
+        let mut stmt = self.db.prepare_cached(
+            "select section, topic,
+                case
+                    when main_wrong_first = 1 or correct = 0 then 0.0
+                    when hint_level_used = 0 then 1.0
+                    when hint_level_used = 1 then 0.6
+                    when hint_level_used = 2 then 0.3
+                    else 0.1
+                end,
+                answered_at,
+                time_on_question_seconds
+             from practice_attempts
+             where session_id is not null and selected_answer <> ''",
+        )?;
+        let mut map: std::collections::HashMap<(String, String), Vec<(f64, i64, u32)>> =
+            std::collections::HashMap::new();
+        let rows = stmt.query_and_then([], |r| -> Result<((String, String), f64, i64, u32)> {
+            Ok((
+                (r.get::<_, String>(0)?, r.get::<_, String>(1)?),
+                r.get::<_, f64>(2)?,
+                r.get::<_, i64>(3)?,
+                r.get::<_, i64>(4)? as u32,
+            ))
+        })?;
+        for row in rows {
+            let (key, credit, ts, secs) = row?;
+            map.entry(key).or_default().push((credit, ts, secs));
+        }
+        Ok(map)
+    }
+
+    /// Per-section practice-session observations for EWMA Performance aggregation:
+    /// section_db -> [(fractional credit, answered_at), ...].
+    pub(crate) fn practice_performance_observations_by_section(
+        &self,
+    ) -> Result<std::collections::HashMap<String, Vec<(f64, i64)>>> {
+        let mut stmt = self.db.prepare_cached(
+            "select section,
+                case
+                    when main_wrong_first = 1 or correct = 0 then 0.0
+                    when hint_level_used = 0 then 1.0
+                    when hint_level_used = 1 then 0.6
+                    when hint_level_used = 2 then 0.3
+                    else 0.1
+                end,
+                answered_at
+             from practice_attempts
+             where session_id is not null and selected_answer <> ''",
+        )?;
+        let mut map: std::collections::HashMap<String, Vec<(f64, i64)>> =
+            std::collections::HashMap::new();
+        let rows = stmt.query_and_then([], |r| -> Result<(String, f64, i64)> {
+            Ok((
+                r.get::<_, String>(0)?,
+                r.get::<_, f64>(1)?,
+                r.get::<_, i64>(2)?,
+            ))
+        })?;
+        for row in rows {
+            let (section, credit, ts) = row?;
+            map.entry(section).or_default().push((credit, ts));
+        }
+        Ok(map)
+    }
+
+    /// Per-(section, topic) full-length observations for EWMA Readiness aggregation.
+    pub(crate) fn full_length_readiness_observations_by_topic(
+        &self,
+    ) -> Result<std::collections::HashMap<(String, String), Vec<(f64, i64)>>> {
+        let mut stmt = self.db.prepare_cached(
+            "select a.section, a.topic, a.correct, a.answered_at from practice_attempts a \
+             join full_length_attempts f on a.full_length_attempt_id = f.id \
+             where f.completed_at is not null and f.abandoned = 0 \
+             and f.counts_for_readiness = 1",
+        )?;
+        let mut map: std::collections::HashMap<(String, String), Vec<(f64, i64)>> =
+            std::collections::HashMap::new();
+        let rows = stmt.query_and_then([], |r| -> Result<((String, String), (f64, i64))> {
+            let correct: i64 = r.get(2)?;
+            Ok((
+                (r.get::<_, String>(0)?, r.get::<_, String>(1)?),
+                (if correct != 0 { 1.0 } else { 0.0 }, r.get::<_, i64>(3)?),
+            ))
+        })?;
+        for row in rows {
+            let (key, obs) = row?;
+            map.entry(key).or_default().push(obs);
+        }
+        Ok(map)
+    }
+
+    /// Per-section full-length observations for EWMA Readiness aggregation:
+    /// section_db -> [(correct as 0/1, answered_at), ...].
+    pub(crate) fn full_length_readiness_observations_by_section(
+        &self,
+    ) -> Result<std::collections::HashMap<String, Vec<(f64, i64)>>> {
+        let mut stmt = self.db.prepare_cached(
+            "select a.section, a.correct, a.answered_at from practice_attempts a \
+             join full_length_attempts f on a.full_length_attempt_id = f.id \
+             where f.completed_at is not null and f.abandoned = 0 \
+             and f.counts_for_readiness = 1",
+        )?;
+        let mut map: std::collections::HashMap<String, Vec<(f64, i64)>> =
+            std::collections::HashMap::new();
+        let rows = stmt.query_and_then([], |r| -> Result<(String, (f64, i64))> {
+            let correct: i64 = r.get(1)?;
+            Ok((
+                r.get::<_, String>(0)?,
+                (if correct != 0 { 1.0 } else { 0.0 }, r.get::<_, i64>(2)?),
+            ))
+        })?;
+        for row in rows {
+            let (section, obs) = row?;
+            map.entry(section).or_default().push(obs);
+        }
+        Ok(map)
     }
 
     /// Per-answered practice-session attempt for EWMA Performance aggregation:

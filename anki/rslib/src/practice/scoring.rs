@@ -49,6 +49,15 @@
 pub(crate) const SECTION_MIN: u32 = 118;
 pub(crate) const SECTION_MAX: u32 = 132;
 
+/// Standard AAMC section lengths used when mapping a blended fraction to an
+/// equivalent raw score before scaling (CPBS/BBLS/PSBB 59, CARS 53).
+pub(crate) fn section_question_count(section_db: &str) -> u32 {
+    match section_db {
+        "CARS" => 53,
+        _ => 59,
+    }
+}
+
 // The user-facing named source + method for this estimate deliberately live in
 // the presentation layers that actually display them (desktop `ts/routes/
 // practice/lib.ts`, mobile `ReadinessLogic.kt`) and in the module docs above /

@@ -21,6 +21,8 @@ import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -28,8 +30,10 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -47,6 +51,8 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
 import com.ichi2.anki.R
 
 internal val CorrectGreen = Color(0xFF2E9E4F)
@@ -400,7 +406,7 @@ fun PassageCard(
  * they MUST answer the currently-revealed subquestion correctly (no skip) before
  * revealing the next tier or re-answering the main question. Presentational only
  * — timed "I'm stuck" / "I'm still stuck" triggers live on the main question in
- * PracticeActivity. Mirrors the desktop `HintLadder.svelte`.
+ * PracticeActivity. Mirrors the desktop `HintLadder.svelte` popup overlay.
  */
 @Composable
 fun HintLadderCard(
@@ -409,13 +415,55 @@ fun HintLadderCard(
     pendingChoice: String,
     hintCooldown: Int,
     wrongFlash: Int,
+    open: Boolean,
+    onDismiss: () -> Unit,
     onPendingChoiceChange: (String) -> Unit,
     onSubmitHint: (index: Int, label: String) -> Unit,
-    onReturnToMain: () -> Unit,
     modifier: Modifier = Modifier,
+) {
+    if (!open || progress.revealed <= 0) return
+
+    Dialog(
+        onDismissRequest = onDismiss,
+        properties = DialogProperties(usePlatformDefaultWidth = false),
+    ) {
+        Surface(
+            color = MaterialTheme.colorScheme.surface,
+            shape = RoundedCornerShape(12.dp),
+            tonalElevation = 6.dp,
+            modifier =
+                modifier
+                    .fillMaxWidth(0.94f)
+                    .heightIn(max = 560.dp),
+        ) {
+            HintLadderContent(
+                hints = hints,
+                progress = progress,
+                pendingChoice = pendingChoice,
+                hintCooldown = hintCooldown,
+                wrongFlash = wrongFlash,
+                onDismiss = onDismiss,
+                onPendingChoiceChange = onPendingChoiceChange,
+                onSubmitHint = onSubmitHint,
+            )
+        }
+    }
+}
+
+@Composable
+private fun HintLadderContent(
+    hints: List<HintSubquestion>,
+    progress: HintProgress,
+    pendingChoice: String,
+    hintCooldown: Int,
+    wrongFlash: Int,
+    onDismiss: () -> Unit,
+    onPendingChoiceChange: (String) -> Unit,
+    onSubmitHint: (index: Int, label: String) -> Unit,
 ) {
     val pending = pendingHintIndex(progress)
     val canSubmit = pending >= 0 && canSubmitHintAnswer(pendingChoice, hintCooldown)
+    val bodyScroll = rememberScrollState()
 
     // Clear the tentative pick after a wrong submit (caller bumps wrongFlash).
     LaunchedEffect(wrongFlash) {
@@ -424,23 +472,35 @@ fun HintLadderCard(
         }
     }
 
-    if (progress.revealed <= 0) return
-
-    Surface(
-        color = MaterialTheme.colorScheme.surfaceVariant,
-        shape = RoundedCornerShape(10.dp),
-        modifier = modifier.fillMaxWidth(),
-    ) {
-        Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+    Column {
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 14.dp, vertical = 10.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
             Text(
                 "Guided hints",
                 style = MaterialTheme.typography.titleSmall,
                 fontWeight = FontWeight.Bold,
             )
+            TextButton(onClick = onDismiss) {
+                Text("Close", style = MaterialTheme.typography.labelLarge)
+            }
+        }
+        HorizontalDivider()
+        Column(
+            Modifier
+                .heightIn(max = 480.dp)
+                .verticalScroll(bodyScroll)
+                .padding(horizontal = 14.dp, vertical = 12.dp),
+            verticalArrangement = Arrangement.spacedBy(10.dp),
+        ) {
             // Most-recently-revealed tier first (reverse of progression order):
             // the ladder still advances L1 -> L2 -> L3 with no skipping, only the
-            // DISPLAY is reversed so the newest hint sits directly under the main
-            // question. `i` remains each tier's true ladder index.
+            // DISPLAY is reversed so the newest hint sits at the top of the popup.
+            // `i` remains each tier's true ladder index.
             for (i in hintDisplayOrder(minOf(progress.revealed, hints.size))) {
                 val hint = hints[i]
                 val answered = progress.picks[i] != null
@@ -451,6 +511,14 @@ fun HintLadderCard(
                         Badge("Level ${hint.level.takeIf { it in 1..3 } ?: (i + 1)}")
                     }
                     Text(hint.prompt, style = MaterialTheme.typography.bodyMedium)
+                    if (answered) {
+                        Text(
+                            text = hintCorrectAnswerLine(hint),
+                            style = MaterialTheme.typography.bodySmall,
+                            fontWeight = FontWeight.SemiBold,
+                            color = CorrectGreen,
+                        )
+                    } else {
                     Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
                         for (c in hint.choices) {
                             HintChoiceRow(
@@ -470,29 +538,7 @@ fun HintLadderCard(
                             )
                         }
                     }
-                    if (answered) {
-                        Text(
-                            text = "Correct",
-                            color = CorrectGreen,
-                            fontWeight = FontWeight.Bold,
-                            style = MaterialTheme.typography.bodySmall,
-                        )
-                        if (hint.rationale.isNotEmpty()) {
-                            Text(
-                                hint.rationale,
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            )
-                        }
-                        // Once the latest revealed hint is answered correctly, offer a
-                        // shortcut back up to the main question (same view — the main
-                        // card is above this ladder in the scrolling column).
-                        if (canReturnToMain(progress, i, locked = false)) {
-                            Button(onClick = onReturnToMain) {
-                                Text("Return to main question")
-                            }
-                        }
-                    } else if (isCurrent) {
+                    if (isCurrent) {
                         Button(
                             enabled = canSubmit,
                             onClick = { if (pendingChoice.isNotEmpty()) onSubmitHint(i, pendingChoice) },
@@ -509,6 +555,7 @@ fun HintLadderCard(
                             style = MaterialTheme.typography.bodySmall,
                             color = if (hintCooldown > 0) FlagAmber else MaterialTheme.colorScheme.onSurfaceVariant,
                         )
+                    }
                     }
                 }
             }
@@ -622,22 +669,21 @@ fun NavStrip(
 /** Chat-style explanation gate shown after a correct MCQ answer (~1-in-5). */
 @Composable
 fun ExplanationChatCard(
-    opener: String,
     progress: ExplanationProgress,
     coachingHint: String,
     onSubmit: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     var draft by remember(progress.active) { mutableStateOf("") }
-    val botMessage =
+    val feedbackMessage =
         buildList {
-            add(opener)
             if (coachingHint.isNotBlank()) add(coachingHint)
             if (progress.lastFeedback.isNotBlank() && !progress.passed) add(progress.lastFeedback)
             if (progress.passed) {
                 add("Thanks — your explanation shows you understand why.")
             }
         }.joinToString("\n\n")
+    val feedbackEmphasized = progress.lastFeedback.isNotBlank() && !progress.passed
     Surface(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(10.dp),
@@ -649,15 +695,16 @@ fun ExplanationChatCard(
             verticalArrangement = Arrangement.spacedBy(10.dp),
         ) {
             Text(
-                text = "Explain your answer",
-                style = MaterialTheme.typography.titleSmall,
-                fontWeight = FontWeight.Bold,
+                text = EXPLANATION_INSTRUCTION,
+                style = MaterialTheme.typography.bodyMedium,
             )
-            ChatBubble(
-                text = botMessage,
-                emphasized = progress.lastFeedback.isNotBlank() && !progress.passed,
-                success = progress.passed,
-            )
+            if (feedbackMessage.isNotBlank()) {
+                ChatBubble(
+                    text = feedbackMessage,
+                    emphasized = feedbackEmphasized,
+                    success = progress.passed,
+                )
+            }
             if (!progress.passed) {
                 OutlinedTextField(
                     value = draft,

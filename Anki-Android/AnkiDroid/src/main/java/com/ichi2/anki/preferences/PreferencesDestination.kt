@@ -10,8 +10,9 @@ import com.ichi2.anki.common.destinations.PreferencesDestination
 fun PreferencesDestination.toIntent(context: Context): Intent =
     when (this) {
         PreferencesDestination.Root -> PreferencesActivity.getIntent(context)
+        // SpeedyCAT: advanced settings kept for internal deep links (e.g. collection path).
         PreferencesDestination.Advanced ->
             PreferencesActivity.getIntent(context, AdvancedSettingsFragment::class)
-        PreferencesDestination.Accessibility ->
-            PreferencesActivity.getIntent(context, AccessibilitySettingsFragment::class)
+        // SpeedyCAT: accessibility settings removed from UI; open root settings instead.
+        PreferencesDestination.Accessibility -> PreferencesActivity.getIntent(context)
     }

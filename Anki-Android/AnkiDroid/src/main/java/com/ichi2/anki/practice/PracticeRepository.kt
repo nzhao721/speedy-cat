@@ -13,6 +13,9 @@ package com.ichi2.anki.practice
 import android.content.Context
 import com.ichi2.anki.CollectionManager
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
@@ -84,11 +87,9 @@ class PracticeRepository internal constructor(
     /** The full question bank; used by the setup screen to build filters + counts. */
     fun freeStandingQuestions(): List<PracticeQuestion> = allQuestions
 
-    /** Apply a [filter], resolving missed-only against the local attempt log. */
-    fun getPracticeQuestions(filter: QuestionFilter): List<PracticeQuestion> {
-        val missed = if (filter.missedOnly) store.missedQuestionIds() else emptySet()
-        return matchingQuestions(allQuestions, filter, missed)
-    }
+    /** Apply a [filter] to the in-memory question bank. */
+    fun getPracticeQuestions(filter: QuestionFilter): List<PracticeQuestion> =
+        matchingQuestions(allQuestions, filter)
 
     /**
      * Assemble the questions for one practice session: the [sessionId] seeds a
@@ -100,10 +101,7 @@ class PracticeRepository internal constructor(
     fun getPracticeSessionQuestions(
         filter: QuestionFilter,
         sessionId: String,
-    ): List<PracticeQuestion> {
-        val missed = if (filter.missedOnly) store.missedQuestionIds() else emptySet()
-        return sessionQuestions(allQuestions, filter, missed, sessionId)
-    }
+    ): List<PracticeQuestion> = sessionQuestions(allQuestions, filter, sessionId)
 
     /** A passage together with all of its questions (id-ordered). */
     fun getCarsPassageSet(passageId: String): CarsPassageSet {
@@ -131,12 +129,15 @@ class PracticeRepository internal constructor(
     suspend fun publishResults() {
         val dir = mediaDirOrNull() ?: return
         withContext(Dispatchers.IO) {
-            PracticeResultsSync.publish(
-                mediaDir = dir,
-                deviceId = PracticeResultsSync.deviceId(appContext),
-                attempts = store.allAttempts(),
-                now = System.currentTimeMillis() / 1000,
-            )
+            val attempts = store.allAttempts()
+            val fname =
+                PracticeResultsSync.publish(
+                    mediaDir = dir,
+                    deviceId = PracticeResultsSync.deviceId(appContext),
+                    attempts = attempts,
+                    now = System.currentTimeMillis() / 1000,
+                )
+            Timber.i("SpeedyCAT-sync: published %s with %d local attempt(s) for upload", fname, attempts.size)
         }
     }
 
@@ -145,7 +146,12 @@ class PracticeRepository internal constructor(
         val dir = mediaDirOrNull() ?: return
         withContext(Dispatchers.IO) {
             val remote = PracticeResultsSync.remoteAttempts(dir, PracticeResultsSync.deviceId(appContext))
-            if (remote.isNotEmpty()) store.upsertAll(remote.map { it.toAttempt() })
+            if (remote.isEmpty()) {
+                Timber.i("SpeedyCAT-sync: ingestResults found no remote attempts to add")
+            } else {
+                store.upsertAll(remote.map { it.toAttempt() })
+                Timber.i("SpeedyCAT-sync: ingestResults upserted %d remote attempt(s) into local store", remote.size)
+            }
         }
     }
 
@@ -153,7 +159,9 @@ class PracticeRepository internal constructor(
     suspend fun remoteFullLengthSummaries(): List<FullLengthSummary> {
         val dir = mediaDirOrNull() ?: return emptyList()
         return withContext(Dispatchers.IO) {
-            PracticeResultsSync.remoteFullLength(dir, PracticeResultsSync.deviceId(appContext))
+            PracticeResultsSync
+                .remoteFullLength(dir, PracticeResultsSync.deviceId(appContext))
+                .also { Timber.i("SpeedyCAT-sync: found %d remote full-length summary(ies)", it.size) }
         }
     }
 
@@ -175,5 +183,34 @@ class PracticeRepository internal constructor(
             instance ?: synchronized(this) {
                 instance ?: PracticeRepository(context.applicationContext).also { instance = it }
             }
+
+        /**
+         * Emits after a completed media sync has ingested other devices' results
+         * into the local store. Live screens (Dashboard / Readiness) observe this
+         * and recompute their pillars, so cross-device practice/full-length data
+         * appears without waiting for the screen to be reopened. This is the
+         * mobile counterpart of the desktop `sync_did_finish` -> ingest refresh
+         * (see `anki/qt/aqt/practice.py`); without it, results that arrive on the
+         * media channel *after* the one-time on-open ingest never surface.
+         */
+        private val _resultsIngested = MutableSharedFlow<Unit>(extraBufferCapacity = 1)
+        val resultsIngested: SharedFlow<Unit> = _resultsIngested.asSharedFlow()
+
+        /**
+         * Ingest other devices' results (downloaded on the just-finished media
+         * sync) into the local store, then notify observers. Best-effort: results
+         * sync is telemetry and must never fail a sync. Call after a media sync
+         * completes (see [com.ichi2.anki.worker.SyncMediaWorker]).
+         */
+        suspend fun ingestAfterMediaSync(context: Context) {
+            Timber.i("SpeedyCAT-sync: media sync finished; ingesting cross-device results")
+            try {
+                getInstance(context).ingestResults()
+            } catch (e: Exception) {
+                Timber.w(e, "SpeedyCAT-sync: post-media-sync results ingest failed")
+            }
+            val delivered = _resultsIngested.tryEmit(Unit)
+            Timber.i("SpeedyCAT-sync: signalled live screens to recompute pillars (delivered=%b)", delivered)
+        }
     }
 }

@@ -143,14 +143,14 @@ export function buildEvaluatorPrompt(
     ].join("\n");
 }
 
-/** Chatbot opener shown to the learner (stem only). */
-export function buildUserVisiblePrompt(stem: string): string {
-    const preview = stem.trim();
-    const clipped = preview.length > 280 ? `${preview.slice(0, 277)}...` : preview;
-    return (
-        "You answered correctly. Before moving on, explain your reasoning in a few "
-        + `sentences — why is your answer right for this question?\n\n"${clipped}"`
-    );
+/** Instruction shown in the explanation gate before the learner writes. */
+export const EXPLANATION_INSTRUCTION =
+    "You answered correctly. Before moving on, explain your reasoning in a few "
+    + "sentences.";
+
+/** Chatbot opener shown to the learner (instruction only — no question quote). */
+export function buildUserVisiblePrompt(_stem: string): string {
+    return EXPLANATION_INSTRUCTION;
 }
 
 /** Progressive coaching after a failed explanation (never the full answer).

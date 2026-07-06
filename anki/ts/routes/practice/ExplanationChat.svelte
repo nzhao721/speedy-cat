@@ -5,17 +5,18 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 <script lang="ts">
     import { createEventDispatcher } from "svelte";
 
-    import type { ExplanationProgress } from "./explanationGate";
+    import {
+        EXPLANATION_INSTRUCTION,
+        type ExplanationProgress,
+    } from "./explanationGate";
 
     interface Props {
-        opener: string;
         progress: ExplanationProgress;
         coachingHint?: string;
         disabled?: boolean;
     }
 
     const {
-        opener,
         progress,
         coachingHint = "",
         disabled = false,
@@ -27,8 +28,8 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 
     let draft = $state("");
 
-    function botMessage(): string {
-        const lines: string[] = [opener];
+    function feedbackText(): string {
+        const lines: string[] = [];
         if (coachingHint.trim()) {
             lines.push(coachingHint);
         }
@@ -43,6 +44,12 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         return lines.filter((line) => line.trim() !== "").join("\n\n");
     }
 
+    const feedback = $derived(feedbackText());
+    const feedbackEmphasized = $derived(
+        progress.lastFeedback.trim() !== "" && !progress.passed && !progress.bypassed,
+    );
+    const feedbackSuccess = $derived(progress.passed);
+
     function onSubmit(): void {
         const text = draft.trim();
         if (!text || progress.checking || disabled) {
@@ -54,9 +61,18 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 </script>
 
 <div class="explanation-chat" aria-live="polite">
-    <div class="chat-head">Explain your answer</div>
+    <p class="instruction">{EXPLANATION_INSTRUCTION}</p>
 
-    <div class="bubble bot">{botMessage()}</div>
+    {#if feedback}
+        <div
+            class="feedback-box"
+            class:emphasized={feedbackEmphasized}
+            class:success={feedbackSuccess}
+            aria-label="Feedback"
+        >
+            {feedback}
+        </div>
+    {/if}
 
     {#if !progress.passed && !progress.bypassed}
         <label class="input-wrap">
@@ -90,21 +106,28 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         padding: 1rem;
         background: var(--canvas-inset);
     }
-    .chat-head {
-        font-weight: 700;
+    .instruction {
+        margin: 0;
+        line-height: 1.45;
         font-size: 0.95rem;
+        color: var(--fg);
     }
-    .bubble {
+    .feedback-box {
         white-space: pre-wrap;
         line-height: 1.45;
         padding: 0.7rem 0.85rem;
         border-radius: 10px;
         max-width: 100%;
-    }
-    .bubble.bot {
-        align-self: flex-start;
         background: var(--canvas-elevated);
         border: 1px solid var(--border-subtle);
+    }
+    .feedback-box.emphasized {
+        background: color-mix(in srgb, #e0a34e 15%, var(--canvas-elevated));
+        border-color: #e0a34e;
+    }
+    .feedback-box.success {
+        background: color-mix(in srgb, #2e9e4f 15%, var(--canvas-elevated));
+        border-color: #2e9e4f;
     }
     .input-wrap textarea {
         width: 100%;

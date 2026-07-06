@@ -2,128 +2,145 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 package com.ichi2.anki
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.OnBackPressedCallback
-import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat.Type.navigationBars
 import androidx.core.view.isVisible
 import androidx.core.view.updatePadding
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.commit
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.ichi2.anki.BottomNavController.NavigationItem
 import com.ichi2.anki.common.annotations.NeedsTest
 import com.ichi2.anki.pages.DashboardFragment
-import com.ichi2.anki.settings.Prefs
+import com.ichi2.anki.practice.PracticeActivity
+
+private const val DASHBOARD_FRAGMENT_TAG = "speedycat_dashboard"
 
 /**
- * Manages the bottom navigation bar for the home screen.
- *
- * On tablets (fragmented), this is a no-op because tablets use the navigation
- * drawer with a split pane.
+ * SpeedyCAT home navigation: Dashboard is the startup screen; Flashcards and
+ * Practice are reached from dashboard actions. Bottom nav and the navigation
+ * drawer are not used on phones.
  */
-@NeedsTest("tab switches show/hide correct fragments")
-@NeedsTest("back press returns to Home tab before exiting")
-context(deckPicker: DeckPicker)
-fun setupBottomNavigation() {
-    if (!Prefs.devBottomNavEnabled || deckPicker.fragmented) return
+@NeedsTest("startup shows Dashboard, not deck picker")
+@NeedsTest("back press returns from Flashcards to Dashboard before exiting")
+fun DeckPicker.setupBottomNavigation() {
+    if (fragmented) return
 
-    val bottomNav = deckPicker.findViewById<BottomNavigationView>(R.id.bottom_navigation)
-    val fragmentContainer = deckPicker.findViewById<View>(R.id.bottom_nav_fragment_container)
-    val contentWrapper = deckPicker.findViewById<View>(R.id.deck_picker_content_wrapper)
-    bottomNav.isVisible = true
+    val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+    bottomNav.isVisible = false
 
-    // Return to Home tab on back press when on a non-Home tab
-    val bottomNavBackCallback =
+    val contentWrapper = findViewById<View>(R.id.deck_picker_content_wrapper)
+    val fragmentContainer = findViewById<View>(R.id.bottom_nav_fragment_container)
+    val toolbarContainer = findViewById<View>(R.id.toolbar_container)
+
+    val flashcardsBackCallback =
         object : OnBackPressedCallback(enabled = false) {
             override fun handleOnBackPressed() {
-                bottomNav.selectedItemId = NavigationItem.HOME.id
+                showSpeedyCatDashboard(
+                    contentWrapper = contentWrapper,
+                    fragmentContainer = fragmentContainer,
+                    toolbarContainer = toolbarContainer,
+                    flashcardsBackCallback = this,
+                )
             }
         }
-    deckPicker.onBackPressedDispatcher.addCallback(deckPicker, bottomNavBackCallback)
+    onBackPressedDispatcher.addCallback(this, flashcardsBackCallback)
 
-    // Handle system navigation bar insets for the bottom nav
-    ViewCompat.setOnApplyWindowInsetsListener(bottomNav) { view, insets ->
+    speedyCatHomeViews =
+        DeckPicker.SpeedyCatHomeViews(
+            contentWrapper = contentWrapper,
+            fragmentContainer = fragmentContainer,
+            toolbarContainer = toolbarContainer,
+            flashcardsBackCallback = flashcardsBackCallback,
+        )
+
+    showSpeedyCatDashboard(
+        contentWrapper = contentWrapper,
+        fragmentContainer = fragmentContainer,
+        toolbarContainer = toolbarContainer,
+        flashcardsBackCallback = flashcardsBackCallback,
+    )
+}
+
+internal fun DeckPicker.showSpeedyCatDashboard(
+    contentWrapper: View,
+    fragmentContainer: View,
+    toolbarContainer: View,
+    flashcardsBackCallback: OnBackPressedCallback,
+) {
+    speedyCatOnFlashcards = false
+    flashcardsBackCallback.isEnabled = false
+    toolbarContainer.isVisible = false
+    contentWrapper.isVisible = false
+    fragmentContainer.isVisible = true
+    supportActionBar?.setDisplayHomeAsUpEnabled(false)
+
+    ViewCompat.setOnApplyWindowInsetsListener(fragmentContainer) { view, insets ->
         val navBars = insets.getInsets(navigationBars())
         view.updatePadding(bottom = navBars.bottom)
         insets
     }
 
-    bottomNav.setOnItemSelectedListener { item ->
-        val navItem = NavigationItem.fromId(item.itemId) ?: return@setOnItemSelectedListener false
-        handleNavigationItemSelected(navItem, contentWrapper, fragmentContainer, bottomNavBackCallback)
-    }
-}
-
-context(deckPicker: DeckPicker)
-private fun handleNavigationItemSelected(
-    item: NavigationItem,
-    contentWrapper: View,
-    fragmentContainer: View,
-    backCallback: OnBackPressedCallback,
-): Boolean =
-    when (item) {
-        NavigationItem.HOME -> {
-            fragmentContainer.isVisible = false
-            deckPicker.supportFragmentManager.commit { hideBottomNavFragments() }
-            contentWrapper.isVisible = true
-            backCallback.isEnabled = false
-            true
-        }
-        NavigationItem.STATS -> {
-            backCallback.isEnabled = true
-            showBottomNavFragment(
-                {
-                    DashboardFragment().apply {
-                        arguments = Bundle().apply { putBoolean(DashboardFragment.ARG_HIDE_BACK_BUTTON, true) }
-                    }
-                },
-                item.tag,
-                contentWrapper,
-                fragmentContainer,
-            )
-            true
-        }
-        NavigationItem.MORE -> {
-            backCallback.isEnabled = true
-            showBottomNavFragment(::MoreFragment, item.tag, contentWrapper, fragmentContainer)
-            true
-        }
-    }
-
-context(deckPicker: DeckPicker)
-private fun showBottomNavFragment(
-    newFragment: () -> Fragment,
-    tag: String,
-    contentWrapper: View,
-    fragmentContainer: View,
-) {
-    contentWrapper.isVisible = false
-    val bottomNav = deckPicker.findViewById<View>(R.id.bottom_navigation)
-    (fragmentContainer.layoutParams as? CoordinatorLayout.LayoutParams)?.let { lp ->
-        lp.topMargin = 0
-        lp.bottomMargin = bottomNav.height
-        fragmentContainer.layoutParams = lp
-    }
-    deckPicker.supportFragmentManager.commit {
-        hideBottomNavFragments()
-        val existing = deckPicker.supportFragmentManager.findFragmentByTag(tag)
+    supportFragmentManager.commit {
+        hideSpeedyCatHomeFragmentsIn(this)
+        val existing = supportFragmentManager.findFragmentByTag(DASHBOARD_FRAGMENT_TAG)
         if (existing != null) {
             show(existing)
         } else {
-            add(R.id.bottom_nav_fragment_container, newFragment(), tag)
+            add(
+                R.id.bottom_nav_fragment_container,
+                DashboardFragment().apply {
+                    arguments =
+                        Bundle().apply {
+                            putBoolean(DashboardFragment.ARG_HIDE_BACK_BUTTON, true)
+                        }
+                },
+                DASHBOARD_FRAGMENT_TAG,
+            )
         }
     }
-    fragmentContainer.isVisible = true
 }
 
-/** Hides any fragments currently hosted in the bottom-nav container. */
-context(deckPicker: DeckPicker)
-private fun FragmentTransaction.hideBottomNavFragments() {
-    deckPicker.supportFragmentManager.fragments.forEach { fragment ->
-        if (fragment.id == R.id.bottom_nav_fragment_container) hide(fragment)
+internal fun DeckPicker.showSpeedyCatFlashcards(
+    contentWrapper: View,
+    fragmentContainer: View,
+    toolbarContainer: View,
+    flashcardsBackCallback: OnBackPressedCallback,
+) {
+    speedyCatOnFlashcards = true
+    flashcardsBackCallback.isEnabled = true
+    toolbarContainer.isVisible = true
+    contentWrapper.isVisible = true
+    fragmentContainer.isVisible = false
+
+    supportFragmentManager.commit {
+        hideSpeedyCatHomeFragmentsIn(this)
+    }
+
+    title = getString(R.string.decks)
+    supportActionBar?.subtitle = null
+    supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    supportActionBar?.setHomeButtonEnabled(true)
+    findViewById<Toolbar>(R.id.toolbar).setNavigationOnClickListener {
+        showSpeedyCatDashboard(
+            contentWrapper = contentWrapper,
+            fragmentContainer = fragmentContainer,
+            toolbarContainer = toolbarContainer,
+            flashcardsBackCallback = flashcardsBackCallback,
+        )
+    }
+}
+
+internal fun DeckPicker.navigateToSpeedyCatPractice() {
+    startActivity(Intent(this, PracticeActivity::class.java))
+}
+
+private fun DeckPicker.hideSpeedyCatHomeFragmentsIn(transaction: FragmentTransaction) {
+    supportFragmentManager.fragments.forEach { fragment ->
+        if (fragment.id == R.id.bottom_nav_fragment_container) transaction.hide(fragment)
     }
 }

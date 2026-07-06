@@ -77,6 +77,10 @@ abstract class NavigationDrawerActivity(
         }
 
     override fun setViewBinding(binding: ViewBinding) {
+        if (!usesNavigationDrawer()) {
+            setContentView(binding.root)
+            return
+        }
         val preferences = baseContext.sharedPrefs()
 
         // Using ClosableDrawerLayout as a parent view.
@@ -104,6 +108,10 @@ abstract class NavigationDrawerActivity(
     override fun setContentView(
         @LayoutRes layoutResID: Int,
     ) {
+        if (!usesNavigationDrawer()) {
+            super.setContentView(layoutResID)
+            return
+        }
         val preferences = baseContext.sharedPrefs()
 
         // Using ClosableDrawerLayout as a parent view.
@@ -138,7 +146,10 @@ abstract class NavigationDrawerActivity(
     /** Whether android:fitsSystemWindows="true" should be applied to the navigation drawer  */
     protected open fun fitsSystemWindows(): Boolean = true
 
-    fun navDrawerIsReady(): Boolean = navigationView != null
+    /** SpeedyCAT: DeckPicker disables the navigation drawer on phones. */
+    protected open fun usesNavigationDrawer(): Boolean = true
+
+    fun navDrawerIsReady(): Boolean = usesNavigationDrawer() && navigationView != null
 
     // Navigation drawer initialisation
     @Suppress("deprecation", "API35 properly handle edge-to-edge")
@@ -220,7 +231,9 @@ abstract class NavigationDrawerActivity(
      */
     @CallSuper
     protected open fun setupBackPressedCallbacks() {
-        onBackPressedDispatcher.addCallback(this, drawerBackCallback)
+        if (usesNavigationDrawer()) {
+            onBackPressedDispatcher.addCallback(this, drawerBackCallback)
+        }
     }
 
     /**
@@ -255,6 +268,9 @@ abstract class NavigationDrawerActivity(
      */
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
+        if (!usesNavigationDrawer()) {
+            return
+        }
         // Sync the toggle state after onRestoreInstanceState has occurred.
         drawerToggle.syncState()
     }
@@ -264,6 +280,9 @@ abstract class NavigationDrawerActivity(
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
+        if (!usesNavigationDrawer()) {
+            return
+        }
         // Pass any configuration change to the drawer toggles
         drawerToggle.onConfigurationChanged(newConfig)
     }
@@ -274,6 +293,9 @@ abstract class NavigationDrawerActivity(
      * function in a noop if the drawer hasn't been initialized.
      */
     protected fun disableDrawerSwipe() {
+        if (!usesNavigationDrawer()) {
+            return
+        }
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
     }
 
@@ -282,6 +304,9 @@ abstract class NavigationDrawerActivity(
      * function in a noop if the drawer hasn't been initialized.
      */
     protected fun enableDrawerSwipe() {
+        if (!usesNavigationDrawer()) {
+            return
+        }
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
     }
 
@@ -398,7 +423,7 @@ abstract class NavigationDrawerActivity(
 
     @VisibleForTesting
     open val isDrawerOpen: Boolean
-        get() = drawerLayout.isDrawerOpen(GravityCompat.START)
+        get() = usesNavigationDrawer() && drawerLayout.isDrawerOpen(GravityCompat.START)
 
     /** Opens the drawer if closed, closes it if open */
     @Suppress("unused")

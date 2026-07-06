@@ -1,19 +1,13 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-// SPDX-FileCopyrightText: Copyright (c) 2022 Brayan Oliveira <brayandso.dev@gmail.com>
 
 package com.ichi2.anki.preferences
 
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
 import androidx.preference.ListPreference
-import androidx.preference.SwitchPreferenceCompat
-import anki.config.ConfigKey
 import com.ichi2.anki.CollectionManager
-import com.ichi2.anki.CollectionManager.withCol
 import com.ichi2.anki.R
-import com.ichi2.anki.common.crashreporting.CrashReportService
-import com.ichi2.anki.contextmenu.AnkiCardContextMenu
-import com.ichi2.anki.launchCatchingTask
+import com.ichi2.anki.common.preferences.sharedPrefs
 import com.ichi2.utils.LanguageUtil
 import com.ichi2.utils.LanguageUtil.getStringByLocale
 import com.ichi2.utils.LanguageUtil.getSystemLocale
@@ -26,38 +20,8 @@ class GeneralSettingsFragment : SettingsFragment() {
         get() = "prefs.general"
 
     override fun initSubscreen() {
-        // Build languages
         initializeLanguagePref()
-
-        // Deck for new cards
-        // Represents in the collections pref "addToCur": i.e.
-        // if true, then add note to current decks, otherwise let the note type's configuration decide
-        // Note that "addToCur" is a boolean while USE_CURRENT is "0" or "1"
-        requirePreference<ListPreference>(R.string.deck_for_new_cards_key).apply {
-            launchCatchingTask {
-                val valueIndex = if (withCol { config.getBool(ConfigKey.Bool.ADDING_DEFAULTS_TO_CURRENT_DECK) }) 0 else 1
-                setValueIndex(valueIndex)
-            }
-            setOnPreferenceChangeListener { newValue ->
-                launchCatchingTask { withCol { config.setBool(ConfigKey.Bool.ADDING_DEFAULTS_TO_CURRENT_DECK, "0" == newValue) } }
-            }
-        }
-        // Error reporting mode
-        requirePreference<ListPreference>(R.string.error_reporting_mode_key).setOnPreferenceChangeListener { newValue ->
-            CrashReportService.onPreferenceChanged(requireContext(), newValue)
-        }
-        // Anki card context menu
-        requirePreference<SwitchPreferenceCompat>(R.string.anki_card_external_context_menu_key).apply {
-            title = getString(R.string.card_browser_enable_external_context_menu, getString(R.string.context_menu_anki_card_label))
-            summary =
-                getString(
-                    R.string.card_browser_enable_external_context_menu_summary,
-                    getString(R.string.context_menu_anki_card_label),
-                )
-            setOnPreferenceChangeListener { newValue ->
-                AnkiCardContextMenu.ensureConsistentStateWithPreferenceStatus(requireContext(), newValue)
-            }
-        }
+        initializeVideoDriverPref()
     }
 
     private fun initializeLanguagePref() {
@@ -80,5 +44,24 @@ class GeneralSettingsFragment : SettingsFragment() {
                 AppCompatDelegate.setApplicationLocales(localeList)
             }
         }
+    }
+
+    private fun initializeVideoDriverPref() {
+        val softwareRenderKey = getString(R.string.disable_hardware_render_key)
+        val usesSoftwareRender = requireContext().sharedPrefs().getBoolean(softwareRenderKey, false)
+        requirePreference<ListPreference>(R.string.pref_video_driver_key).apply {
+            value = if (usesSoftwareRender) VIDEO_DRIVER_SOFTWARE else VIDEO_DRIVER_HARDWARE
+            setOnPreferenceChangeListener { newValue ->
+                requireContext().sharedPrefs()
+                    .edit()
+                    .putBoolean(softwareRenderKey, newValue == VIDEO_DRIVER_SOFTWARE)
+                    .apply()
+            }
+        }
+    }
+
+    companion object {
+        private const val VIDEO_DRIVER_HARDWARE = "hardware"
+        private const val VIDEO_DRIVER_SOFTWARE = "software"
     }
 }

@@ -80,6 +80,7 @@ import com.ichi2.anki.multimedia.audio.AudioRecordingController.RecordingState
 import com.ichi2.anki.noteeditor.NoteEditorLauncher
 import com.ichi2.anki.observability.undoableOp
 import com.ichi2.anki.pages.PostRequestUri
+import com.ichi2.anki.practice.applySpeedyCatLightAppBar
 import com.ichi2.anki.pages.toIntent
 import com.ichi2.anki.reviewer.ActionButtons
 import com.ichi2.anki.reviewer.AnswerButtons.Companion.getBackgroundColors
@@ -225,6 +226,7 @@ open class Reviewer :
         textBarLearn = findViewById(R.id.learn_number)
         textBarReview = findViewById(R.id.review_number)
         toolbar = findViewById(R.id.toolbar)
+        applySpeedyCatLightAppBar(toolbar)
         micToolBarLayer = findViewById(R.id.mic_tool_bar_layer)
         processor = BindingMap(sharedPrefs(), ViewerCommand.entries, this)
         if (sharedPrefs().getString("answerButtonPosition", "bottom") == "bottom" && !navBarNeedsScrim) {
@@ -1104,6 +1106,10 @@ open class Reviewer :
     }
 
     private fun updateScreenCounts() {
+        if (!showRemainingCardCount) {
+            hideQueueCounts()
+            return
+        }
         val queue = queueState ?: return
         super.updateActionBar()
         val actionBar = supportActionBar
@@ -1305,11 +1311,7 @@ open class Reviewer :
         if (prefWhiteboard) {
             setWhiteboardVisibility(showWhiteboard)
         }
-        if (showRemainingCardCount) {
-            textBarNew.visibility = View.VISIBLE
-            textBarLearn.visibility = View.VISIBLE
-            textBarReview.visibility = View.VISIBLE
-        }
+        hideQueueCounts()
     }
 
     override fun executeCommand(
@@ -1440,8 +1442,17 @@ open class Reviewer :
 
     override fun restoreCollectionPreferences(col: Collection) {
         super.restoreCollectionPreferences(col)
-        showRemainingCardCount = col.config.get("dueCounts") ?: true
+        // SpeedyCAT: never show new/learn/review queue counts during flashcard review.
+        showRemainingCardCount = false
+        hideQueueCounts()
         stopTimerOnAnswer = col.decks.configDictForDeckId(col.decks.current().id).stopTimerOnAnswer
+    }
+
+    private fun hideQueueCounts() {
+        if (!::textBarNew.isInitialized) return
+        textBarNew.visibility = View.GONE
+        textBarLearn.visibility = View.GONE
+        textBarReview.visibility = View.GONE
     }
 
     override fun onSingleTap(): Boolean {
@@ -1507,7 +1518,7 @@ open class Reviewer :
         )
         // Show / hide the Action bar together with the status bar
         val mode = fullscreenMode
-        window.statusBarColor = MaterialColors.getColor(this, CommonR.attr.appBarColor, 0)
+        applySpeedyCatLightAppBar(toolbar)
         val decorView = window.decorView
         decorView.setOnSystemUiVisibilityChangeListener { flags: Int ->
             val toolbar = findViewById<View>(R.id.toolbar)

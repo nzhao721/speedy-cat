@@ -4,7 +4,7 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 -->
 <!--
 SpeedyCAT: Practice Question Bank page. Orchestrates the three phases — setup
-(section / topic / missed-only / count / optional timer filters), the runner,
+(section / topic / count / optional timer filters), the runner,
 and the post-session summary.
 -->
 <script lang="ts">
@@ -14,6 +14,8 @@ and the post-session summary.
     import {
         beginPracticeSession,
         fetchQuestions,
+        fetchRecommendedTopics,
+        formatTopicLabel,
         parseQuestionCount,
         parseTimerMinutes,
         SECTIONS,
@@ -30,12 +32,12 @@ and the post-session summary.
     let bank: PracticeQuestion[] = [];
     let loadError = false;
     let starting = false;
+    let startingRecommended = false;
     let noMatch = false;
 
     // filter state — sections/topics are multi-select; empty = all.
     let selectedSections: McatSection[] = [];
     let selectedTopics: string[] = [];
-    let missedOnly = false;
     // Free-text inputs: how many questions (blank / "max" = all available) and
     // an optional timer in minutes gated by the Untimed toggle.
     let countInput = "20";
@@ -64,7 +66,10 @@ and the post-session summary.
         ),
     ).sort((a, b) => a.localeCompare(b));
 
-    $: topicDropdownOptions = topicOptions.map((t) => ({ value: t, label: t }));
+    $: topicDropdownOptions = topicOptions.map((t) => ({
+        value: t,
+        label: formatTopicLabel(t),
+    }));
 
     // drop any chosen topics that no longer apply to the selected sections
     $: {
@@ -75,8 +80,7 @@ and the post-session summary.
     }
 
     // Questions available for the current section + topic selection, used to
-    // clamp the typed count and show the "all available" hint. missed-only is
-    // resolved server-side, so it isn't reflected in this client-side count.
+    // clamp the typed count and show the "all available" hint.
     $: availableForFilter = bank.filter(
         (q) =>
             (selectedSections.length === 0 ||
@@ -91,6 +95,14 @@ and the post-session summary.
     $: timeLimit = untimed ? 0 : timerParse.seconds;
     $: canStart =
         !starting &&
+        !startingRecommended &&
+        bank.length > 0 &&
+        countParse.valid &&
+        (untimed || timerParse.valid);
+
+    $: canStartRecommended =
+        !starting &&
+        !startingRecommended &&
         bank.length > 0 &&
         countParse.valid &&
         (untimed || timerParse.valid);
@@ -113,20 +125,19 @@ and the post-session summary.
         return {
             sections: selectedSections,
             topics: selectedTopics,
-            missedOnly,
             includeFullLength: false,
             limit,
         };
     }
 
-    async function start(): Promise<void> {
+    async function startWithTopics(topics: string[]): Promise<void> {
         starting = true;
         noMatch = false;
         try {
-            const opts = currentOptions();
-            // The session owns the exact questions to serve — a per-session
-            // shuffled selection with shuffled answer choices — so we use those
-            // directly (they stay stable for this session, differ across ones).
+            const opts: FilterOptions = {
+                ...currentOptions(),
+                topics,
+            };
             const session = await beginPracticeSession(opts, timeLimit);
             if (session.questions.length === 0) {
                 noMatch = true;
@@ -139,6 +150,29 @@ and the post-session summary.
             noMatch = true;
         } finally {
             starting = false;
+            startingRecommended = false;
+        }
+    }
+
+    async function start(): Promise<void> {
+        await startWithTopics(selectedTopics);
+    }
+
+    async function startRecommended(): Promise<void> {
+        startingRecommended = true;
+        noMatch = false;
+        try {
+            const topics = await fetchRecommendedTopics();
+            selectedTopics = topics;
+            if (topics.length === 0) {
+                noMatch = true;
+                startingRecommended = false;
+                return;
+            }
+            await startWithTopics(topics);
+        } catch {
+            noMatch = true;
+            startingRecommended = false;
         }
     }
 
@@ -257,11 +291,6 @@ and the post-session summary.
                         </span>
                     {/if}
                 </div>
-
-                <label class="check">
-                    <input type="checkbox" bind:checked={missedOnly} />
-                    <span>Only questions I previously missed</span>
-                </label>
             </div>
 
             {#if noMatch}
@@ -270,9 +299,18 @@ and the post-session summary.
                 </div>
             {/if}
 
-            <button class="primary start" on:click={start} disabled={!canStart}>
-                {starting ? "Starting…" : "Start practice"}
-            </button>
+            <div class="start-actions">
+                <button class="primary start" on:click={start} disabled={!canStart}>
+                    {starting ? "Starting…" : "Start practice"}
+                </button>
+                <button
+                    class="secondary start"
+                    on:click={startRecommended}
+                    disabled={!canStartRecommended}
+                >
+                    {startingRecommended ? "Starting…" : "Start recommended session"}
+                </button>
+            </div>
         {/if}
     </div>
 {/if}
@@ -308,12 +346,6 @@ and the post-session summary.
     .field-label,
     label > span {
         color: var(--fg-subtle);
-    }
-    label.check {
-        grid-column: 1 / -1;
-        flex-direction: row;
-        align-items: center;
-        gap: 0.5rem;
     }
     .text-input {
         width: 100%;
@@ -393,8 +425,18 @@ and the post-session summary.
         color: var(--fg);
         padding: 0.4rem 0.9rem;
     }
+    .start-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+    }
     button.start {
-        align-self: flex-start;
+        width: 100%;
+        min-height: 2.75rem;
+        padding: 0.7rem 1.6rem;
+        font-size: 1rem;
+        box-sizing: border-box;
     }
     button:disabled {
         opacity: 0.6;

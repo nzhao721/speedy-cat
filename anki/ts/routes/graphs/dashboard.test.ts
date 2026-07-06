@@ -7,6 +7,7 @@ import { describe, expect, it } from "vitest";
 import {
     collectionTotalCards,
     memoryCard,
+    memoryLifetimeStudiedCount,
     memoryStudiedLine,
     pctRange,
     retrievabilityCardCount,
@@ -60,6 +61,12 @@ describe("retrievabilityCardCount", () => {
 describe("collectionTotalCards", () => {
     it("matches the card-counts graph total", () => {
         expect(collectionTotalCards(graphsWithCounts({ 80: 3 }))).toBe(135);
+    });
+});
+
+describe("memoryLifetimeStudiedCount", () => {
+    it("counts non-new cards, not today's reviews", () => {
+        expect(memoryLifetimeStudiedCount(graphsWithCounts({ 80: 3 }))).toBe(30);
     });
 });
 

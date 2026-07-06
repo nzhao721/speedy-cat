@@ -280,7 +280,7 @@ fn build_icons(build: &mut Build) -> Result<()> {
     build.add_action(
         "qt:aqt:data:qt:icons:from_src",
         CopyFiles {
-            inputs: inputs![glob!["qt/aqt/data/qt/icons/*.{png,svg}"]],
+            inputs: inputs![glob!["qt/aqt/data/qt/icons/*.{png,svg,ico}"]],
             output_folder: "qt/_aqt/data/qt/icons",
         },
     )?;

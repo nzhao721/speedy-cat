@@ -112,6 +112,20 @@ class MediaSyncer:
     def show_sync_log(self) -> None:
         aqt.dialogs.open("sync_log", self.mw, self)
 
+    def wait_until_finished(self, on_finished: Callable[[], None]) -> None:
+        "Wait for media sync to finish without showing any UI."
+        if not self.is_syncing():
+            return on_finished()
+
+        timer: QTimer
+
+        def check_finished() -> None:
+            if not self.is_syncing():
+                timer.deleteLater()
+                on_finished()
+
+        timer = self.mw.progress.timer(150, check_finished, True, False, parent=self.mw)
+
     def show_diag_until_finished(self, on_finished: Callable[[], None]) -> None:
         # nothing to do if not syncing
         if not self.is_syncing():

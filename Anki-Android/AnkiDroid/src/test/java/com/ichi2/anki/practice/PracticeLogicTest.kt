@@ -165,8 +165,7 @@ class PracticeLogicTest {
     private fun ids(
         bank: List<PracticeQuestion>,
         filter: QuestionFilter,
-        missed: Set<String> = emptySet(),
-    ) = matchingQuestions(bank, filter, missed).map { it.id }
+    ) = matchingQuestions(bank, filter).map { it.id }
 
     @Test
     fun `CARS practice serves whole passage sets rounding the limit to complete sets`() {
@@ -220,7 +219,7 @@ class PracticeLogicTest {
     }
 
     @Test
-    fun `filters for difficulty and missed narrow the set`() {
+    fun `filters for difficulty narrow the set`() {
         val bank =
             listOf(
                 q("cpbs-a", McatSection.CPBS, difficulty = Difficulty.EASY),
@@ -241,11 +240,6 @@ class PracticeLogicTest {
         assertThat(
             ids(bank, QuestionFilter(sections = listOf(McatSection.CPBS), limit = 2)),
             equalTo(listOf("cpbs-a", "cpbs-b")),
-        )
-        // missed_only restricts to the previously-missed set.
-        assertThat(
-            ids(bank, QuestionFilter(sections = listOf(McatSection.CPBS), missedOnly = true), missed = setOf("cpbs-b")),
-            equalTo(listOf("cpbs-b")),
         )
     }
 
@@ -465,8 +459,8 @@ class PracticeLogicTest {
     fun `sessionQuestions randomizes selection and answer choices per session id`() {
         val bank = (0 until 12).map { mcq("B", id = "q%02d".format(it)) }
         val filter = QuestionFilter(sections = listOf(McatSection.CPBS), limit = 6)
-        val s1 = sessionQuestions(bank, filter, emptySet(), "ps-1")
-        val s2 = sessionQuestions(bank, filter, emptySet(), "ps-2")
+        val s1 = sessionQuestions(bank, filter, "ps-1")
+        val s2 = sessionQuestions(bank, filter, "ps-2")
         assertThat(s1.size, equalTo(6))
         assertThat(s2.size, equalTo(6))
         // Every served question still exposes a valid, remapped correct answer.
@@ -627,6 +621,16 @@ class PracticeLogicTest {
     }
 
     @Test
+    fun `subsequent hint timer ticks only after popup dismissed`() {
+        val doneL1 = HintProgress(revealed = 1, picks = mapOf(0 to "A"))
+        val pendingL2 = HintProgress(revealed = 2, picks = mapOf(0 to "A"))
+
+        assertThat(shouldTickSubsequentHintTimer(ladder, doneL1, false), equalTo(false))
+        assertThat(shouldTickSubsequentHintTimer(ladder, doneL1, true), equalTo(true))
+        assertThat(shouldTickSubsequentHintTimer(ladder, pendingL2, true), equalTo(false))
+    }
+
+    @Test
     fun `wrong hint answers are rejected and picks store correct answers only`() {
         val prog = HintProgress(revealed = 1)
         val (afterWrong, wrong) = applyHintAnswer(ladder[0], 0, "B", prog)
@@ -694,20 +698,6 @@ class PracticeLogicTest {
         assertThat(hintDisplayOrder(3), equalTo(listOf(2, 1, 0)))
         // Never yields negative indices for a degenerate revealed count.
         assertThat(hintDisplayOrder(-2), equalTo(emptyList<Int>()))
-    }
-
-    @Test
-    fun `canReturnToMain only on the latest answered hint while unlocked`() {
-        // Nothing revealed yet — no shortcut.
-        assertThat(canReturnToMain(HintProgress(revealed = 0), 0, false), equalTo(false))
-        // Latest hint revealed but unanswered — no shortcut (no-skip intact).
-        assertThat(canReturnToMain(HintProgress(revealed = 2, picks = mapOf(0 to "A")), 1, false), equalTo(false))
-        // Latest hint answered — shortcut appears on that (latest) tier only.
-        val answered = HintProgress(revealed = 2, picks = mapOf(0 to "A", 1 to "A"))
-        assertThat(canReturnToMain(answered, 1, false), equalTo(true))
-        assertThat(canReturnToMain(answered, 0, false), equalTo(false))
-        // Locked (main question already submitted) — never shown.
-        assertThat(canReturnToMain(answered, 1, true), equalTo(false))
     }
 
     @Test

@@ -82,6 +82,11 @@ android {
 
     defaultConfig {
         applicationId = "com.ichi2.anki"
+        Properties speedycatLocalProperties = new Properties()
+        if (project.rootProject.file('local.properties').exists()) {
+            speedycatLocalProperties.load(project.rootProject.file('local.properties').newDataInputStream())
+        }
+        buildConfigField "Boolean", "LOCAL_BACKEND", (speedycatLocalProperties['local_backend'] == "true").toString()
         buildConfigField "Boolean", "CI", (System.getenv("CI") == "true").toString()
         buildConfigField "String", "ACRA_URL", '"https://ankidroid.org/acra/report"'
         buildConfigField "String", "BACKEND_VERSION", "\"${libs.versions.ankiBackend.get()}\""
@@ -512,8 +517,8 @@ dependencies {
         localProperties.load(project.rootProject.file('local.properties').newDataInputStream())
     }
     if (localProperties['local_backend'] == "true") {
-        implementation(files(rootProject.file("../Anki-Android-Backend/rsdroid/build/outputs/aar/rsdroid-release.aar")))
-        testImplementation(files(rootProject.file("../Anki-Android-Backend/rsdroid-testing/build/libs/rsdroid-testing.jar")))
+        implementation(files(rootProject.file("../rsdroid-build/rsdroid/build/outputs/aar/rsdroid-release.aar")))
+        testImplementation(files(rootProject.file("../rsdroid-build/rsdroid-testing/build/libs/rsdroid-testing.jar")))
     } else {
         implementation libs.ankiBackend.backend
         testImplementation libs.ankiBackend.testing

@@ -68,21 +68,48 @@ object PracticeResultsSync {
         mediaDir: File,
         deviceId: String,
     ): List<ResultsFile> {
-        if (!mediaDir.isDirectory) return emptyList()
+        if (!mediaDir.isDirectory) {
+            Timber.i("SpeedyCAT-sync: media dir %s is not a directory; nothing to ingest", mediaDir)
+            return emptyList()
+        }
         val myId = sanitizeDeviceId(deviceId)
         val files = mediaDir.listFiles() ?: return emptyList()
+        // Every `_speedycat_results_<device>.json` present on disk right now, paired
+        // with its device id. Logged so `adb logcat -s ...` shows whether the OTHER
+        // device's file actually arrived via media sync (the crux of this bug).
+        val resultFiles = files.mapNotNull { f -> deviceIdFromFilename(f.name)?.let { f to it } }
+        Timber.i(
+            "SpeedyCAT-sync: media dir %s has %d results file(s) %s (myDeviceId=%s)",
+            mediaDir,
+            resultFiles.size,
+            resultFiles.map { it.first.name },
+            myId,
+        )
         val out = mutableListOf<ResultsFile>()
-        for (f in files) {
-            val fileDevice = deviceIdFromFilename(f.name) ?: continue
-            if (fileDevice == myId) continue
+        for ((f, fileDevice) in resultFiles) {
+            if (fileDevice == myId) {
+                Timber.i("SpeedyCAT-sync: skipping own results file %s", f.name)
+                continue
+            }
             val parsed =
                 try {
                     parseResults(f.readText(Charsets.UTF_8))
                 } catch (e: Exception) {
-                    Timber.w(e, "SpeedyCAT: failed to read results file %s", f.name)
+                    Timber.w(e, "SpeedyCAT-sync: failed to read results file %s", f.name)
                     null
                 }
-            if (parsed != null) out.add(parsed)
+            if (parsed == null) {
+                Timber.w("SpeedyCAT-sync: results file %s (deviceId %s) did not parse", f.name, fileDevice)
+            } else {
+                Timber.i(
+                    "SpeedyCAT-sync: ingested file %s from deviceId %s (%d attempts, %d full-length)",
+                    f.name,
+                    fileDevice,
+                    parsed.attempts.size,
+                    parsed.fullLength.size,
+                )
+                out.add(parsed)
+            }
         }
         return out
     }

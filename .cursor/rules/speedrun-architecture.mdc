@@ -27,7 +27,7 @@ Brownfield fork of Anki. One exam = **MCAT** (472-528, 4 sections 118-132). Two 
 ## Anki-Android/ architecture
 - Modules: `:AnkiDroid` (app), `:libanki`, `:anki-common`, `:api`, `:common`, `:compat` (see `settings.gradle.kts`).
 - Backend: by default uses prebuilt `io.github.david-allison:anki-android-backend` (see `gradle/libs.versions.toml` -> `ankiBackend`). **No NDK/Rust build needed** for stock builds.
-- To ship OUR Rust change to mobile: set `local_backend=true` in `local.properties` and build `rsdroid` from `Anki-Android-Backend` (needs NDK + Rust Android targets). Deferred until the Rust change exists.
+- To ship OUR Rust change to mobile: set `local_backend=true` in `local.properties` and build `rsdroid` from `rsdroid-build` (needs NDK + Rust Android targets). Deferred until the Rust change exists.
 - App id (debug): `com.ichi2.anki.debug`. Flavors: `play` (default), `amazon`, `full`. compileSdk 36 / minSdk 24 / targetSdk 35 / AGP 9.0.1.
 
 ## Build & run (verified on this Windows machine)

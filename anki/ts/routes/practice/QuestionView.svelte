@@ -214,7 +214,8 @@ timing) lives in the parent; this component only renders and emits events.
         gap: 0.75rem;
         flex-wrap: wrap;
     }
-    .q-actions :global(.hint-stuck) {
+    .q-actions :global(.hint-stuck),
+    .q-actions :global(.hint-reopen) {
         border-radius: 6px;
         padding: 0.45rem 1rem;
         cursor: pointer;
@@ -222,6 +223,16 @@ timing) lives in the parent; this component only renders and emits events.
         border: 1px solid var(--border);
         background: var(--button-bg);
         color: var(--fg);
+    }
+    .q-actions :global(.hint-escalate) {
+        border-radius: 6px;
+        padding: 0.45rem 1rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+        border: 1px solid var(--button-primary-bg);
+        background: var(--button-primary-bg);
+        color: #fff;
+        font-weight: 600;
     }
     .q-actions :global(.nudge) {
         color: #b26a00;

@@ -159,7 +159,6 @@ class MainWebView(AnkiWebView):
             # The toolbar's hide timer will also trigger menubar hiding when in fullscreen mode
             if self.mw.pm.hide_top_bar() or self.mw.pm.hide_bottom_bar():
                 self.mw.toolbarWeb.show()
-                self.mw.bottomWeb.show()
                 handled_leave = True
 
             return handled_leave
@@ -595,6 +594,7 @@ class AnkiQt(QMainWindow):
         self._update_window_title()
         # show and raise window for osx
         self.show()
+        self._apply_app_icon()
         self.activateWindow()
         self.raise_()
 
@@ -779,11 +779,14 @@ class AnkiQt(QMainWindow):
             onsuccess()
 
         def after_sync(synced: bool) -> None:
-            self.media_syncer.show_diag_until_finished(after_media_sync)
+            if synced:
+                self.media_syncer.wait_until_finished(after_media_sync)
+            else:
+                after_media_sync()
 
         def before_sync() -> None:
             self.setEnabled(False)
-            self.maybe_auto_sync_on_open_close(after_sync)
+            self.maybe_auto_sync_on_open_close(after_sync, silent=False)
 
         self.closeAllWindows(before_sync)
 
@@ -860,8 +863,6 @@ class AnkiQt(QMainWindow):
         self.state = state
         gui_hooks.state_will_change(state, oldState)
         getattr(self, f"_{state}State", lambda *_: None)(oldState, *args)
-        if state != "resetRequired":
-            self.bottomWeb.adjustHeightToFit()
         gui_hooks.state_did_change(state, oldState)
 
     def _deckBrowserState(self, oldState: MainWindowState) -> None:
@@ -906,7 +907,7 @@ class AnkiQt(QMainWindow):
             self.reviewer.cleanup()
             self.toolbarWeb.elevate()
             self.toolbarWeb.show()
-            self.bottomWeb.show()
+            self.bottomWeb.hide()
 
     def _speedycatState(
         self, oldState: MainWindowState, mode: str = "practice"
@@ -924,7 +925,6 @@ class AnkiQt(QMainWindow):
             mode = aqt.practice.DEFAULT_STUDY_MODE
         aqt.practice.ensure_content_loaded(self)
         self.web.hide()
-        self.bottomWeb.hide()
         if self._speedycat_mode != mode or mode == "dashboard":
             self._speedycat_mode = mode
             self.speedycatWeb.load_sveltekit_page(aqt.practice.STUDY_ROUTES[mode])
@@ -1186,6 +1186,7 @@ title="{}" {}>{}</button>""".format(
         sweb = self.bottomWeb = BottomWebView(self)
         sweb.setFocusPolicy(Qt.FocusPolicy.WheelFocus)
         sweb.disable_zoom()
+        sweb.hide()
         # add in a layout
         self.mainLayout = QVBoxLayout()
         self.mainLayout.setContentsMargins(0, 0, 0, 0)
@@ -1195,6 +1196,10 @@ title="{}" {}>{}</button>""".format(
         self.mainLayout.addWidget(self.speedycatWeb)
         self.mainLayout.addWidget(sweb)
         self.form.centralwidget.setLayout(self.mainLayout)
+        # Central webviews absorb leftover height (especially when the top
+        # toolbar is collapsed during a full-length exam).
+        self.mainLayout.setStretch(1, 1)
+        self.mainLayout.setStretch(2, 1)
 
         # force webengine processes to load before cwd is changed
         if is_win:
@@ -1204,20 +1209,16 @@ title="{}" {}>{}</button>""".format(
         gui_hooks.card_review_webview_did_init(self.web, AnkiWebViewKind.MAIN)
 
     def _apply_app_icon(self) -> None:
-        """SpeedyCAT: apply the bundled icon to the app and the main window.
+        """SpeedyCAT: keep the main window icon in sync with the app icon."""
+        from aqt.utils import apply_app_icon, apply_app_icon_to_window
 
-        The Qt Designer form (main.ui) assigns the icon only to this window
-        instance and never sets one on the QApplication, so the desktop/taskbar
-        icon could appear blank. Loading it explicitly here (via the ``icons:``
-        search path registered during startup) guarantees the SpeedyCAT icon is
-        shown for the application itself and any window without its own icon.
-        """
-        icon = QIcon()
-        icon.addPixmap(QPixmap("icons:anki.png"))
-        if icon.isNull():
-            return
-        self.app.setWindowIcon(icon)
-        self.setWindowIcon(icon)
+        apply_app_icon(self.app)
+        apply_app_icon_to_window(self)
+
+    def showEvent(self, evt: QShowEvent) -> None:
+        super().showEvent(evt)
+        if is_win:
+            self._apply_app_icon()
 
     def closeAllWindows(self, onsuccess: Callable) -> None:
         aqt.dialogs.closeAll(onsuccess)
@@ -1342,7 +1343,9 @@ title="{}" {}>{}</button>""".format(
         # follow-up sync, so refresh the account label/title now (no restart).
         self._refresh_account_menu()
 
-    def _sync_collection_and_media(self, after_sync: Callable[[], None]) -> None:
+    def _sync_collection_and_media(
+        self, after_sync: Callable[[], None], *, silent: bool = False
+    ) -> None:
         "Caller should ensure auth available."
 
         def on_collection_sync_finished() -> None:
@@ -1353,12 +1356,17 @@ title="{}" {}>{}</button>""".format(
             after_sync()
 
         gui_hooks.sync_will_start()
-        sync_collection(self, on_done=on_collection_sync_finished)
+        sync_collection(self, on_done=on_collection_sync_finished, silent=silent)
 
-    def maybe_auto_sync_on_open_close(self, after_sync: Callable[[bool], None]) -> None:
+    def maybe_auto_sync_on_open_close(
+        self, after_sync: Callable[[bool], None], *, silent: bool = True
+    ) -> None:
         "If disabled, after_sync() is called immediately."
         if self.can_auto_sync():
-            self._sync_collection_and_media(lambda: after_sync(True))
+            self._sync_collection_and_media(
+                lambda: after_sync(True),
+                silent=silent,
+            )
         else:
             after_sync(False)
 
@@ -1474,11 +1482,21 @@ title="{}" {}>{}</button>""".format(
         self.stateShortcuts = []
 
     def onStudyKey(self) -> None:
-        if self.state == "overview":
-            self.col.startTimebox()
-            self.moveToState("review")
-        else:
+        if self.state == "review":
+            return
+        self.startStudying()
+
+    def startStudying(self) -> None:
+        """SpeedyCAT: begin review for the current deck, skipping the overview."""
+        if not self._selectedDeck():
+            self.moveToState("deckBrowser")
+            return
+        self.col.startTimebox()
+        if self.col.sched._is_finished():
+            # No cards due — show congrats (overview skips the stats table when finished).
             self.moveToState("overview")
+        else:
+            self.moveToState("review")
 
     def _guard_full_length_navigation(self) -> bool:
         import aqt.full_length_lockdown
@@ -2163,7 +2181,7 @@ title="{}" {}>{}</button>""".format(
                 return
             deck_id = self.col.decks.id(ret.name)
             set_current_deck(parent=self, deck_id=deck_id).success(
-                lambda out: self.moveToState("overview")
+                lambda out: self.startStudying()
             ).run_in_background()
 
         StudyDeck(

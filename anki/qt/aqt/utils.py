@@ -594,10 +594,110 @@ def hide_button_box_help_button(button_box: QDialogButtonBox) -> None:
         help_button.hide()
 
 
-def setWindowIcon(widget: QWidget) -> None:
+_WINDOWS_APP_USER_MODEL_ID = "com.speedycat.anki"
+_windows_app_user_model_id_set = False
+
+
+def setup_windows_app_user_model_id() -> None:
+    """Give the dev-mode process its own taskbar identity on Windows."""
+    global _windows_app_user_model_id_set
+    if not is_win or _windows_app_user_model_id_set or os.environ.get(
+        "SPEEDYCAT_WIN_APPID_SET"
+    ):
+        _windows_app_user_model_id_set = True
+        return
+    import ctypes
+
+    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(  # type: ignore[attr-defined]
+        _WINDOWS_APP_USER_MODEL_ID
+    )
+    os.environ["SPEEDYCAT_WIN_APPID_SET"] = "1"
+    _windows_app_user_model_id_set = True
+
+
+def app_icon_ico_path() -> Path:
+    """Absolute path to the bundled .ico used for native Windows taskbar icons."""
+    return aqt_data_path() / "qt" / "icons" / "anki.ico"
+
+
+def load_app_icon() -> QIcon:
+    """Load the bundled SpeedyCAT icon from the aqt data folder."""
+    icons_dir = aqt_data_path() / "qt" / "icons"
+    candidates = [icons_dir / "anki.ico", icons_dir / "anki.png"] if is_win else [
+        icons_dir / "anki.png"
+    ]
+    for path in candidates:
+        if path.is_file():
+            icon = QIcon(str(path.resolve()))
+            if not icon.isNull():
+                return icon
+
     icon = QIcon()
-    icon.addPixmap(QPixmap("icons:anki.png"), QIcon.Mode.Normal, QIcon.State.Off)
+    pixmap = QPixmap("icons:anki.png")
+    if not pixmap.isNull():
+        icon.addPixmap(pixmap, QIcon.Mode.Normal, QIcon.State.Off)
+    return icon
+
+
+def apply_windows_native_window_icon(widget: QWidget) -> None:
+    """Push the bundled .ico into the HWND; Qt alone is not enough under python.exe."""
+    if not is_win:
+        return
+
+    ico_path = app_icon_ico_path()
+    if not ico_path.is_file():
+        return
+
+    hwnd = int(widget.winId())
+    if not hwnd:
+        return
+
+    import ctypes
+
+    user32 = ctypes.windll.user32
+    IMAGE_ICON = 1
+    LR_LOADFROMFILE = 0x0010
+    WM_SETICON = 0x0080
+    ICON_SMALL = 0
+    ICON_BIG = 1
+    path = str(ico_path.resolve())
+
+    def load_icon(size: int) -> int:
+        handle = user32.LoadImageW(  # type: ignore[attr-defined]
+            None,
+            path,
+            IMAGE_ICON,
+            size,
+            size,
+            LR_LOADFROMFILE,
+        )
+        return int(handle or 0)
+
+    small = load_icon(16)
+    big = load_icon(32)
+    if small:
+        user32.SendMessageW(hwnd, WM_SETICON, ICON_SMALL, small)  # type: ignore[attr-defined]
+    if big:
+        user32.SendMessageW(hwnd, WM_SETICON, ICON_BIG, big)  # type: ignore[attr-defined]
+
+
+def apply_app_icon_to_window(widget: QWidget) -> None:
+    icon = load_app_icon()
+    if icon.isNull():
+        return
     widget.setWindowIcon(icon)
+    apply_windows_native_window_icon(widget)
+
+
+def apply_app_icon(app: QApplication) -> None:
+    icon = load_app_icon()
+    if icon.isNull():
+        return
+    app.setWindowIcon(icon)
+
+
+def setWindowIcon(widget: QWidget) -> None:
+    apply_app_icon_to_window(widget)
 
 
 # File handling

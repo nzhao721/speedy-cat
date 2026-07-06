@@ -1,0 +1,21 @@
+﻿---
+description: Desktop v1 shipped — do not change anki/ (desktop + Rust backend) unless the user explicitly asks
+alwaysApply: true
+---
+
+# Desktop and backend frozen
+
+SpeedyCAT desktop v1 is complete and the Windows installer has been shipped. Treat **`anki/`** as read-only by default.
+
+## Do not modify (unless the user explicitly requests)
+
+- **`anki/`** in full: desktop Qt/Python UI, **`rslib/`**, **`pylib/`**, **`proto/`**, build/installer tooling under `anki/`, and related desktop-only assets.
+
+## Still allowed
+
+- **`Anki-Android/`** and other mobile-only work may continue to change.
+- Workspace docs, Cursor rules, and **`Anki-Android/`** integration with the prebuilt backend AAR (until the user opts into a local backend build).
+
+## Rationale
+
+Avoid regressions in a validated desktop build; focus new work on mobile and ops unless the user reopens desktop or backend changes.

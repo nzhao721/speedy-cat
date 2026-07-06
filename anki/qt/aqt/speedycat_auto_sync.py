@@ -51,7 +51,7 @@ class SpeedyCatAutoSyncController:
         if not mw.can_auto_sync():
             return
         self._last_attempt = now
-        mw._sync_collection_and_media(mw._refresh_after_sync)
+        mw._sync_collection_and_media(mw._refresh_after_sync, silent=True)
 
     @staticmethod
     def _changes_need_sync(changes: OpChanges) -> bool:

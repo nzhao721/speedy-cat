@@ -12,6 +12,9 @@ let maxTime = 0;
 
 function updateTime(): void {
     const timeNode = document.getElementById("time");
+    if (!timeNode) {
+        return;
+    }
     if (maxTime === 0) {
         timeNode.textContent = "";
         return;
@@ -54,7 +57,11 @@ function showQuestion(txt: string, maxTime_: number): void {
 }
 
 function showAnswer(txt: string, stopTimer = false): void {
-    document.getElementById("middle").innerHTML = txt;
+    const middle = document.getElementById("middle");
+    if (!middle) {
+        return;
+    }
+    middle.innerHTML = txt;
     timerStopped = stopTimer;
     resizeBottomBar();
 }

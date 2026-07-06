@@ -15,83 +15,30 @@
  */
 package com.ichi2.anki.preferences
 
-import android.content.ActivityNotFoundException
 import android.os.Build
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.preference.ListPreference
-import androidx.preference.Preference
-import com.ichi2.anki.CollectionManager.TR
 import com.ichi2.anki.R
-import com.ichi2.anki.common.utils.android.showThemedToast
 import com.ichi2.anki.common.utils.android.systemIsInNightMode
-import com.ichi2.anki.deckpicker.BackgroundImage
-import com.ichi2.anki.deckpicker.BackgroundImage.FileSizeResult
 import com.ichi2.anki.settings.Prefs
+import com.ichi2.anki.settings.UiScale
 import com.ichi2.anki.settings.enums.AppTheme
-import com.ichi2.anki.snackbar.showSnackbar
-import com.ichi2.anki.ui.internationalization.sentenceCase
+import com.ichi2.preferences.SliderPreference
 import com.ichi2.themes.Themes
 import com.ichi2.themes.Themes.updateCurrentTheme
-import com.ichi2.utils.negativeButton
 import com.ichi2.utils.positiveButton
 import com.ichi2.utils.show
-import com.ichi2.utils.title
-import timber.log.Timber
 
 class AppearanceSettingsFragment : SettingsFragment() {
-    private var backgroundImage: Preference? = null
-    private var removeBackgroundPref: Preference? = null
     override val preferenceResource: Int
         get() = R.xml.preferences_appearance
     override val analyticsScreenNameConstant: String
         get() = "prefs.appearance"
 
     override fun initSubscreen() {
-        // Configure background
-        backgroundImage = requirePreference<Preference>("deckPickerBackground")
-        backgroundImage!!.title = TR.sentenceCase.selectImage
-        removeBackgroundPref = requirePreference<Preference>("removeWallPaper")
-        backgroundImage!!.onPreferenceClickListener =
-            Preference.OnPreferenceClickListener {
-                try {
-                    backgroundImageResultLauncher.launch("image/*")
-                } catch (ex: ActivityNotFoundException) {
-                    Timber.w(ex, "No app found to handle background preference change request")
-                    activity?.showSnackbar(R.string.activity_start_failed)
-                }
-                true
-            }
-        removeBackgroundPref?.setOnPreferenceClickListener {
-            showRemoveBackgroundImageDialog()
-            true
-        }
-
-        // Initially update visibility based on whether a background exists
-        updateRemoveBackgroundVisibility()
-
         setupThemePreferences()
-        setupNewStudyScreenSettings()
-    }
-
-    private fun updateRemoveBackgroundVisibility() {
-        removeBackgroundPref?.isVisible = BackgroundImage.shouldBeShown(requireContext())
-    }
-
-    private fun showRemoveBackgroundImageDialog() {
-        AlertDialog.Builder(requireContext()).show {
-            title(R.string.remove_background_image)
-            positiveButton(R.string.dialog_remove) {
-                if (BackgroundImage.remove(requireContext())) {
-                    showSnackbar(R.string.background_image_removed)
-                    updateRemoveBackgroundVisibility()
-                } else {
-                    showSnackbar(R.string.error_deleting_image)
-                }
-            }
-            negativeButton(R.string.dialog_keep)
-        }
+        setupUiScalePreference()
     }
 
     private fun setupThemePreferences() {
@@ -100,10 +47,7 @@ class AppearanceSettingsFragment : SettingsFragment() {
         val dayThemePref = requirePreference<ListPreference>(R.string.day_theme_key)
         val nightThemePref = requirePreference<ListPreference>(R.string.night_theme_key)
 
-        // Remove follow system options in android versions which do not have system dark mode
-        // When minSdk reaches 29, the only necessary change is to remove this if-block
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
-            // Drop "Follow system" option (the first one)
             appThemePref.entries = resources.getStringArray(R.array.app_theme_labels).drop(1).toTypedArray()
             appThemePref.entryValues = resources.getStringArray(R.array.app_theme_values).drop(1).toTypedArray()
             if (appTheme == AppTheme.FOLLOW_SYSTEM) {
@@ -142,62 +86,17 @@ class AppearanceSettingsFragment : SettingsFragment() {
         }
     }
 
-    private val backgroundImageResultLauncher =
-        registerForActivityResult(ActivityResultContracts.GetContent()) { selectedImage ->
-            if (selectedImage == null) {
-                if (BackgroundImage.shouldBeShown(requireContext())) {
-                    showRemoveBackgroundImageDialog()
-                } else {
-                    showSnackbar(R.string.no_image_selected)
-                }
-                return@registerForActivityResult
+    private fun setupUiScalePreference() {
+        requirePreference<SliderPreference>(R.string.pref_ui_scale_key).setOnPreferenceChangeListener { percent ->
+            if (percent == UiScale.percent(requireContext())) {
+                return@setOnPreferenceChangeListener
             }
-            // handling file may result in exception
-            try {
-                when (val sizeResult = BackgroundImage.validateBackgroundImageFileSize(this, selectedImage)) {
-                    is FileSizeResult.FileTooLarge -> {
-                        showThemedToast(requireContext(), getString(R.string.image_max_size_allowed, sizeResult.maxMB), false)
-                    }
-                    is FileSizeResult.UncompressedBitmapTooLarge -> {
-                        showThemedToast(
-                            requireContext(),
-                            getString(R.string.image_dimensions_too_large, sizeResult.width, sizeResult.height),
-                            false,
-                        )
-                    }
-                    is FileSizeResult.OK -> {
-                        BackgroundImage.import(this, selectedImage)
-                        updateRemoveBackgroundVisibility()
-                    }
+            AlertDialog.Builder(requireContext()).show {
+                setMessage(R.string.pref_ui_scale_restart_message)
+                positiveButton(R.string.dialog_ok) {
+                    ActivityCompat.recreate(requireActivity())
                 }
-            } catch (e: OutOfMemoryError) {
-                Timber.w(e)
-                showSnackbar(getString(R.string.error_selecting_image, e.localizedMessage))
-            } catch (e: Exception) {
-                Timber.w(e)
-                showSnackbar(getString(R.string.error_selecting_image, e.localizedMessage))
             }
         }
-
-    private fun setupNewStudyScreenSettings() {
-        if (!Prefs.isNewStudyScreenEnabled) return
-        for (key in legacyStudyScreenSettings) {
-            val keyString = getString(key)
-            findPreference<Preference>(keyString)?.isVisible = false
-        }
-    }
-
-    companion object {
-        val legacyStudyScreenSettings =
-            listOf(
-                R.string.study_screen_category_key,
-                R.string.custom_buttons_link_preference,
-                R.string.center_vertically_preference,
-                R.string.show_estimates_preference,
-                R.string.answer_buttons_position_preference,
-                R.string.show_eta_preference,
-                R.string.show_audio_play_buttons_key,
-                R.string.show_deck_title_key,
-            )
     }
 }

@@ -154,10 +154,10 @@ class Reviewer:
         self._recordedAudio: str | None = None
         self._combining: bool = True
         self.typeCorrect: str | None = None  # web init happens before this is set
-        # SpeedyCAT forced active recall: `_force_active_recall` mirrors the
-        # `forceActiveRecall` config (default on); `_forced_recall_active` is set
-        # per card in the type-answer filter once we have an answer to check.
-        self._force_active_recall: bool = False
+        # SpeedyCAT forced active recall: always on (not user-configurable).
+        # `_forced_recall_active` is set per card in the type-answer filter once
+        # we have an answer to check.
+        self._force_active_recall: bool = True
         self._forced_recall_active: bool = False
         # SpeedyCAT AI answer checker (per-card, additive on top of forced
         # recall). `_speedycat_force_again` locks the ratings to Again for this
@@ -395,11 +395,9 @@ class Reviewer:
         self._reps += 1
         self.state = "question"
         self.typedAnswer: str | None = None
-        # SpeedyCAT: forced active recall is config-gated (default on) and reset
-        # per card. `_forced_recall_active` is decided in the type-answer filter.
-        self._force_active_recall = bool(
-            self.mw.col.conf.get("forceActiveRecall", True)
-        )
+        # SpeedyCAT: forced active recall is always on; reset per card.
+        # `_forced_recall_active` is decided in the type-answer filter.
+        self._force_active_recall = True
         self._forced_recall_active = False
         # SpeedyCAT: clear the per-card AI-checker state for the new question.
         self._speedycat_reset_card_state()
@@ -503,7 +501,7 @@ class Reviewer:
         # answer has been submitted. This guards direct callers too (e.g.
         # auto-advance), routing them through the typed-answer fetch first.
         if (
-            self._forced_recall_active
+            self._force_active_recall
             and self.state == "question"
             and not (self.typedAnswer or "").strip()
             and not self._speedycat_force_again
@@ -611,7 +609,7 @@ class Reviewer:
             except Exception:
                 if idk:
                     self._speedycat_idk_bypass_count += 1
-        elif self._forced_recall_active:
+        elif self._force_active_recall:
             try:
                 self.mw.col.record_speedycat_honest_review()
             except Exception:
@@ -722,9 +720,7 @@ class Reviewer:
         if self.state == "question":
             self._getTypedAnswer()
         elif self.state == "answer" and aqt.mw.pm.spacebar_rates_card():
-            self.bottom.web.evalWithCallback(
-                "selectedAnswerButton()", self._onAnswerButton
-            )
+            self._answerCard(self._defaultEase())
 
     def _onAnswerButton(self, val: str) -> None:
         # button selected?
@@ -749,10 +745,10 @@ class Reviewer:
         elif url == "repaintNeeded":
             # Ensure stale frames showing previous or corrupt content are not displayed (#3668)
             self.web.update()
-        elif url == "bottomBarResized":
-            self.mw.bottomWeb.adjustHeightToFit()
         elif url == "statesMutated":
             self._states_mutated = True
+        elif url == "bottomBarResized":
+            self.mw.bottomWeb._measure_review_height()
         else:
             print("unrecognized anki link:", url)
 
@@ -797,34 +793,26 @@ class Reviewer:
                 self.typeSize = f["size"]
                 break
         if not self.typeCorrect:
-            if self.typeCorrect is None:
-                if clozeIdx:
-                    warn = tr.studying_please_run_toolsempty_cards()
-                else:
-                    warn = tr.studying_type_answer_unknown_field(val=fld)
-                return re.sub(self.typeAnsPat, warn, buf)
-            else:
-                # empty field, remove type answer pattern
-                return re.sub(self.typeAnsPat, "", buf)
-        # SpeedyCAT: gate the reveal when forced active recall is enabled.
-        self._forced_recall_active = self._force_active_recall
+            # Broken or empty {{type:...}} — fall back to injected forced-recall input.
+            buf = re.sub(self.typeAnsPat, "", buf)
+            return self._maybe_inject_forced_recall_input(buf)
+        # SpeedyCAT: every card gates the reveal behind a typed answer.
+        self._forced_recall_active = True
         return re.sub(
             self.typeAnsPat,
-            lambda _m: self._type_answer_input_html(required=self._force_active_recall),
+            lambda _m: self._type_answer_input_html(required=True),
             buf,
         )
 
     def _maybe_inject_forced_recall_input(self, buf: str) -> str:
-        """SpeedyCAT: when forced active recall is on and the template has no
-        {{type:...}} field, append a required answer box to the question and set
-        up the expected answer (the note's Back/answer field) for comparison."""
-        if not self._force_active_recall:
-            return buf
+        """SpeedyCAT: when the template has no usable {{type:...}} field, append a
+        required answer box and set up the best-known expected answer for comparison.
+
+        Image-only or otherwise textless cards still get the typed-answer gate; an
+        empty expected string means only non-empty submissions can reveal (via the
+        AI checker / deterministic path)."""
         expected = self._forced_recall_expected()
-        if not expected or not expected.strip():
-            # No usable answer to check against; don't lock the learner out.
-            return buf
-        self.typeCorrect = expected
+        self.typeCorrect = (expected or "").strip()
         self._forced_recall_active = True
         return buf + self._type_answer_input_html(required=True)
 
@@ -1094,15 +1082,15 @@ class Reviewer:
         self.typedAnswer = val or ""
         # SpeedyCAT forced active recall: block the reveal until the learner has
         # actually typed something. Re-focus the box so they can try again.
-        if self._forced_recall_active and not self.typedAnswer.strip():
+        if self._force_active_recall and not self.typedAnswer.strip():
             # Literal (not ftl) to avoid a translation-API regen dependency.
             tooltip("Type your answer before revealing the card.")
             self.web.eval("if (typeof focusTypeBox === 'function') { focusTypeBox(); }")
             return
-        # SpeedyCAT: when forced recall is active, route the reveal through the
-        # AI checker (with a deterministic fallback) so an honesty gate and the
-        # FSRS "Again" lock can apply. Otherwise reveal normally.
-        if self._forced_recall_active:
+        # SpeedyCAT: route every reveal through the AI checker (deterministic
+        # fallback when AI is off) so an honesty gate and the FSRS "Again" lock
+        # can apply.
+        if self._force_active_recall:
             self._speedycat_decide_and_reveal()
             return
         self._showAnswer()
@@ -1133,7 +1121,7 @@ class Reviewer:
         """Arm the 5s timer that reveals the 'I don't know' button (forced
         recall only)."""
         self._speedycat_clear_idk_timer()
-        if not self._forced_recall_active:
+        if not self._force_active_recall:
             return
         delay = speedycat_ai.idk_delay_ms(self._speedycat_idk_bypass_count)
         self._speedycat_idk_timer = self.mw.progress.timer(
@@ -1150,7 +1138,7 @@ class Reviewer:
 
     def _speedycat_reveal_idk_button(self) -> None:
         """Show the 'I don't know' button once the learner has been stuck 5s."""
-        if self.state == "question" and self._forced_recall_active:
+        if self.state == "question" and self._force_active_recall:
             self.web.eval(
                 "(function(){var w=document.getElementById('speedycat-idk-wrap');"
                 "if(w){w.style.display='block';}})();"
@@ -1292,20 +1280,11 @@ timerStopped = false;
         )
 
     def _showAnswerButton(self) -> None:
-        if self._forced_recall_active:
-            # SpeedyCAT: forced active recall injects an inline "Check" button in
-            # the card body that reveals the answer, so the bottom-bar "Show
-            # Answer" button is redundant and dropped (only the remaining-cards
-            # counter is kept). Cards without a Check button keep "Show Answer"
-            # (see the else branch). The Space/Enter shortcut reveals either way.
-            counts = self._remaining()
-            if counts.strip():
-                middle = (
-                    "<table cellpadding=0><tr><td class=stat2 align=center>"
-                    f"<span class=stattxt>{counts}</span></td></tr></table>"
-                )
-            else:
-                middle = ""
+        if self._force_active_recall:
+            # SpeedyCAT: Check / "I don't know" live on the card body; hide the
+            # bottom "Show Answer" bar until ease buttons appear after reveal.
+            self.mw.bottomWeb.collapse_review_bar()
+            return
         else:
             middle = """
 <button title="{}" id="ansbut" onclick='pycmd("ans");'>{}<span class=stattxt>{}</span></button>""".format(
@@ -1319,9 +1298,13 @@ timerStopped = false;
                 % middle
             )
         if self.card.should_show_timer():
-            maxTime = self.card.time_limit() / 1000
+            maxTime = self.card.time_limit() // 1000
         else:
             maxTime = 0
+        if not middle.strip() and maxTime == 0:
+            self.mw.bottomWeb.collapse_review_bar()
+            return
+        self.mw.bottomWeb.show()
         self.bottom.web.eval("showQuestion(%s,%d);" % (json.dumps(middle), maxTime))
 
     def _showEaseButtons(self) -> None:
@@ -1330,6 +1313,7 @@ timerStopped = false;
             return
         middle = self._answerButtons()
         conf = self.mw.col.decks.config_dict_for_deck_id(self.card.current_deck_id())
+        self.mw.bottomWeb.show()
         self.bottom.web.eval(
             f"showAnswer({json.dumps(middle)}, {json.dumps(conf['stopTimerOnAnswer'])});"
         )
@@ -1340,7 +1324,7 @@ timerStopped = false;
 
         counts: list[int | str]
         idx, counts_ = self._v3.counts()
-        counts = cast(list[Union[int, str]], counts_)
+        counts = cast(list[int | str], counts_)
         counts[idx] = f"<u>{counts[idx]}</u>"
 
         return f"""

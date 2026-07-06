@@ -53,9 +53,19 @@ from anki._backend import RustBackend
 from anki.buildinfo import version as _version
 from anki.collection import Collection
 from anki.consts import HELP_SITE
-from anki.utils import checksum, is_gnome, is_lin, is_mac
+from anki.utils import checksum, is_gnome, is_lin, is_mac, is_win
 from aqt import gui_hooks
 from aqt.log import setup_logging
+
+# Must run before PyQt creates any windows (dev mode runs under python.exe).
+if is_win and not os.environ.get("SPEEDYCAT_WIN_APPID_SET"):
+    import ctypes
+
+    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(  # type: ignore[attr-defined]
+        "com.speedycat.anki"
+    )
+    os.environ["SPEEDYCAT_WIN_APPID_SET"] = "1"
+
 from aqt.qt import *
 from aqt.qt import sip
 from aqt.utils import TR, tr
@@ -441,6 +451,16 @@ class AnkiApp(QApplication):
             self.restoreOverrideCursor()
             return False
 
+        elif (
+            is_win
+            and evt.type() == QEvent.Type.Show
+            and isinstance(src, QWidget)
+            and src.isWindow()
+        ):
+            from aqt.utils import apply_app_icon_to_window
+
+            apply_app_icon_to_window(src)
+
         return False
 
 
@@ -678,6 +698,9 @@ def _run(argv: list[str] | None = None, exec: bool = True) -> AnkiApp | None:
     # create the app
     QCoreApplication.setApplicationName("SpeedyCAT")
     QGuiApplication.setDesktopFileName("anki")
+    from aqt.utils import apply_app_icon, setup_windows_app_user_model_id
+
+    setup_windows_app_user_model_id()
     app = AnkiApp(argv)
     if app.secondInstance():
         # we've signaled the primary instance, so we should close
@@ -743,6 +766,7 @@ def _run(argv: list[str] | None = None, exec: bool = True) -> AnkiApp | None:
     from aqt.utils import aqt_data_folder
 
     QDir.addSearchPath("icons", os.path.join(aqt_data_folder(), "qt", "icons"))
+    apply_app_icon(app)
 
     if pmLoadResult.firstTime:
         pm.setDefaultLang(lang[0])

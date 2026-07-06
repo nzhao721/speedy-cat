@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+~ SpeedyCAT: account sign-in/out only — no sync preference toggles.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:key="@string/pref_account_screen_key"
+    android:title="@string/speedycat_account"
+    tools:context=".preferences.AccountSettingsFragment">
+
+    <Preference
+        android:key="@string/sync_account_key"
+        android:title="@string/speedycat_account"
+        android:summary="@string/speedycat_not_signed_in"
+        tools:summary="user@example.com" />
+
+</PreferenceScreen>

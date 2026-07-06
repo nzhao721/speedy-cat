@@ -40,8 +40,7 @@ completed attempts with review entry points.
         <h1>Full-Length Tests</h1>
         <p class="tagline">
             AAMC-style four-section practice exams with enforced section timers and
-            scheduled breaks. Once a section's timer ends you can't return to it —
-            just like the real MCAT.
+            scheduled breaks.
         </p>
     </header>
 

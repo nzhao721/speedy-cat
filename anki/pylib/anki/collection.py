@@ -85,6 +85,7 @@ FullLengthStats = practice_pb2.FullLengthStats
 ListFullLengthAttemptsResponse = practice_pb2.ListFullLengthAttemptsResponse
 GetFullLengthReviewResponse = practice_pb2.GetFullLengthReviewResponse
 GetTopicStatsResponse = practice_pb2.GetTopicStatsResponse
+GetRecommendedPracticeTopicsResponse = practice_pb2.GetRecommendedPracticeTopicsResponse
 GetReadinessResponse = practice_pb2.GetReadinessResponse
 SpeedycatGamingStatus = practice_pb2.SpeedycatGamingStatus
 
@@ -604,6 +605,13 @@ class Collection(DeprecatedNamesMixin):
             req.section = section
         return GetTopicStatsResponse.FromString(
             self._backend.get_topic_stats_raw(req.SerializeToString())
+        )
+
+    def get_recommended_practice_topics(self) -> GetRecommendedPracticeTopicsResponse:
+        """SpeedyCAT: engine-recommended practice topics for a session."""
+        req = practice_pb2.GetRecommendedPracticeTopicsRequest()
+        return GetRecommendedPracticeTopicsResponse.FromString(
+            self._backend.get_recommended_practice_topics_raw(req.SerializeToString())
         )
 
     def get_readiness(self, *, deck_search: str = "") -> GetReadinessResponse:

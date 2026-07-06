@@ -79,8 +79,15 @@ class TopWebView(ToolbarWebView):
 
         return False
 
+    def _full_length_lockdown_active(self) -> bool:
+        return bool(getattr(self.mw, "_full_length_lockdown", False))
+
     def on_body_classes_need_update(self) -> None:
         super().on_body_classes_need_update()
+
+        if self._full_length_lockdown_active():
+            self.collapse_for_lockdown()
+            return
 
         if self.mw.state == "review":
             if self.mw.pm.hide_top_bar():
@@ -116,6 +123,22 @@ class TopWebView(ToolbarWebView):
 
             self.hide()
 
+    def animate_height(self, height: int) -> None:
+        self.web_height = height
+
+        if self.mw.pm.reduce_motion() or height == self.height():
+            self.setFixedHeight(height)
+        else:
+            self.setMinimumHeight(0)
+            self.animation = QPropertyAnimation(
+                self, cast(QByteArray, b"maximumHeight")
+            )
+            self.animation.setDuration(int(theme_manager.var(props.TRANSITION)))
+            self.animation.setStartValue(self.height())
+            self.animation.setEndValue(height)
+            qconnect(self.animation.finished, lambda: self.setFixedHeight(height))
+            self.animation.start()
+
     def hide(self) -> None:
         super().hide()
 
@@ -124,7 +147,24 @@ class TopWebView(ToolbarWebView):
             """document.body.classList.add("hidden"); """,
         )
 
+    def collapse_for_lockdown(self) -> None:
+        """Hide the study-mode nav and reclaim its layout height (full-length exam)."""
+        self.hide()
+        self.animate_height(0)
+
+    def restore_from_lockdown(self) -> None:
+        """Restore the study-mode nav after a full-length exam ends."""
+        if self._full_length_lockdown_active():
+            return
+        super().show()
+        self.hidden = False
+        self.eval("""document.body.classList.remove("hidden"); """)
+        self.adjustHeightToFit()
+
     def show(self) -> None:
+        if self._full_length_lockdown_active():
+            return
+
         super().show()
 
         self.eval("""document.body.classList.remove("hidden"); """)
@@ -215,6 +255,8 @@ class BottomWebView(ToolbarWebView):
         super().on_body_classes_need_update()
         if self.mw.state == "review":
             self.show()
+        else:
+            self.hide()
 
     def animate_height(self, height: int) -> None:
         self.web_height = height
@@ -251,28 +293,43 @@ class BottomWebView(ToolbarWebView):
         super().hide()
 
         self.hidden = True
-        self.animate_height(1)
+        # SpeedyCAT: collapse to zero height so deck list / dashboard never
+        # show an empty beige strip (upstream used 1px).
+        self.animate_height(0)
 
     def show(self) -> None:
         super().show()
 
         self.hidden = False
         if self.mw.state == "review":
-            # delay to account for reflow
-            def cb(height: int | None):
-                # "When QWebEnginePage is deleted, the callback is triggered with an invalid value"
-                if height is not None:
-                    self.animate_height(height)
-
-            self.mw.progress.single_shot(
-                50,
-                lambda: self.evalWithCallback(
-                    "document.documentElement.offsetHeight", cb
-                ),
-                False,
-            )
+            self._measure_review_height()
         else:
             self.adjustHeightToFit()
+
+    def collapse_review_bar(self) -> None:
+        """Collapse the review bottom bar when it has no buttons to show."""
+        if self.mw.state != "review":
+            return
+        self.hidden = True
+        self.animate_height(0)
+
+    def _measure_review_height(self) -> None:
+        # delay to account for reflow (see ankitects/anki#3625)
+        def cb(height: int | None) -> None:
+            # "When QWebEnginePage is deleted, the callback is triggered with an invalid value"
+            if height is not None and height > 1:
+                self.animate_height(height)
+            else:
+                self.animate_height(0)
+
+        self.mw.progress.single_shot(
+            50,
+            lambda: self.evalWithCallback(
+                "Math.max(document.documentElement.offsetHeight, document.documentElement.scrollHeight)",
+                cb,
+            ),
+            False,
+        )
 
 
 class Toolbar:
@@ -456,11 +513,18 @@ class Toolbar:
     def set_sync_active(self, active: bool) -> None:
         method = "add" if active else "remove"
         self.web.eval(
-            f"document.getElementById('sync-spinner').classList.{method}('spin')"
+            f"""(function() {{
+    const elem = document.getElementById('sync-spinner');
+    if (elem) elem.classList.{method}('spin');
+}})();"""
         )
 
     def set_sync_status(self, status: SyncStatus) -> None:
-        self.web.eval(f"updateSyncColor({status.required})")
+        self.web.eval(
+            f"""(function() {{
+    if (typeof updateSyncColor === 'function') updateSyncColor({status.required});
+}})();"""
+        )
 
     def update_sync_status(self) -> None:
         get_sync_status(self.mw, self.mw.toolbar.set_sync_status)
@@ -477,12 +541,7 @@ class Toolbar:
         self.mw.moveToState("deckBrowser")
 
     def _studyLinkHandler(self) -> None:
-        # if overview already shown, switch to review
-        if self.mw.state == "overview":
-            self.mw.col.startTimebox()
-            self.mw.moveToState("review")
-        else:
-            self.mw.onOverview()
+        self.mw.startStudying()
 
     def _practiceLinkHandler(self) -> None:
         # SpeedyCAT: study modes render inside the main window (no pop-up);

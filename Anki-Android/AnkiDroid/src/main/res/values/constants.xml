@@ -266,8 +266,7 @@
     <!-- Preferences headers summaries -->
     <string-array name="general_summary_entries">
         <item>@string/language</item>
-        <item>@string/pref_cat_studying</item>
-        <item>@string/pref_cat_system_wide</item>
+        <item>@string/pref_video_driver_title</item>
     </string-array>
 
     <string-array name="study_screen_summary_entries">
@@ -303,7 +302,11 @@
 
     <string-array name="appearance_summary_entries">
         <item>@string/pref_cat_themes</item>
-        <item>@string/background_image_title</item>
+        <item>@string/pref_ui_scale_title</item>
+    </string-array>
+
+    <string-array name="account_summary_entries">
+        <item>@string/speedycat_account</item>
     </string-array>
 
     <string-array name="accessibility_summary_entries">

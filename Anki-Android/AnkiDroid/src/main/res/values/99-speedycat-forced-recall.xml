@@ -9,13 +9,6 @@
   ~ version.
   -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <!-- Preference key (not user-visible, must not be translated) -->
-    <string name="force_active_recall_preference" translatable="false">forceActiveRecall</string>
-
-    <!-- Settings entry: Reviewing screen -->
-    <string name="force_active_recall_title">Force active recall</string>
-    <string name="force_active_recall_summ">Require typing an answer before the card can be revealed</string>
-
     <!-- Reviewer feedback -->
     <string name="force_active_recall_type_first">Type your answer, then submit to reveal the card</string>
     <string name="force_active_recall_correct">Correct — you recalled it</string>

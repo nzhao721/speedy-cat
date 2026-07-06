@@ -382,6 +382,7 @@ open class PrefsRepository(
 
     val answerButtonsSize: Int by intPref(R.string.answer_button_size_preference, 100)
     val cardZoom: Int by intPref(R.string.card_zoom_preference, 100)
+    val uiScalePercent: Int by intPref(R.string.pref_ui_scale_key, 100)
     override val removeAppAnimations: Boolean get() = true
 
     // **************************************** Advanced **************************************** //

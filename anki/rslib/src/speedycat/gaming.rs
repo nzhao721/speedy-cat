@@ -15,11 +15,6 @@ use crate::prelude::*;
 /// Collection-config key (JSON); syncs across devices.
 pub(crate) const CONFIG_KEY: &str = "speedycatGamingStats";
 
-/// Suppress Memory when more than this many gamed lapses occur in a session
-/// window of [`SESSION_REVIEW_WINDOW`] cards.
-pub(crate) const SESSION_GAMED_LIMIT: u32 = 3;
-/// Session window size for the gamed-lapse threshold.
-pub(crate) const SESSION_REVIEW_WINDOW: u32 = 10;
 /// Suppress Memory when daily gamed lapses exceed this fraction of reviews.
 pub(crate) const DAILY_GAMED_RATE: f64 = 0.10;
 /// Cooldown from earning Memory score after further gamed lapses while suppressed.
@@ -123,9 +118,6 @@ fn memory_suppressed(stats: &GamingStats, now_ms: i64) -> Option<&'static str> {
     if now_ms < stats.lockout_until_ms {
         return Some(MEMORY_SUPPRESSION_MSG);
     }
-    if stats.session_reviews <= SESSION_REVIEW_WINDOW && stats.session_gamed > SESSION_GAMED_LIMIT {
-        return Some(MEMORY_SUPPRESSION_MSG);
-    }
     if stats.daily_reviews > 0 {
         let rate = stats.daily_gamed as f64 / stats.daily_reviews as f64;
         if rate > DAILY_GAMED_RATE {
@@ -175,13 +167,15 @@ mod test {
     }
 
     #[test]
-    fn session_threshold_suppresses_memory() {
+    fn session_burst_does_not_suppress_memory() {
         let stats = GamingStats {
             session_gamed: 4,
             session_reviews: 8,
+            daily_reviews: 100,
+            daily_gamed: 5,
             ..Default::default()
         };
-        assert!(memory_suppressed(&stats, 0).is_some());
+        assert!(memory_suppressed(&stats, 0).is_none());
     }
 
     #[test]

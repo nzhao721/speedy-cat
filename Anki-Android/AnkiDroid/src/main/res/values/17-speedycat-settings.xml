@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SpeedyCAT: preference keys and strings for stripped-down settings (desktop parity). -->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="pref_video_driver_key">videoDriver</string>
+    <string name="pref_ui_scale_key">uiScale</string>
+    <string name="pref_video_driver_title" maxLength="41">Video driver</string>
+    <string name="pref_video_driver_summary">Choose how card content is rendered. Changes take effect after restart.</string>
+    <string name="pref_ui_scale_title" maxLength="41">UI size</string>
+    <string name="pref_ui_scale_summary">Scale the interface. Changes take effect after restart.</string>
+    <string name="pref_ui_scale_restart_message">UI size changes take effect after you restart the app.</string>
+    <string name="pref_cat_user_interface" maxLength="41">User interface</string>
+    <string name="pref_account_screen_key">accountScreen</string>
+    <string name="video_driver_hardware">Hardware (OpenGL)</string>
+    <string name="video_driver_software">Software</string>
+
+    <string-array name="video_driver_labels">
+        <item>@string/video_driver_hardware</item>
+        <item>@string/video_driver_software</item>
+    </string-array>
+    <string-array name="video_driver_values">
+        <item>hardware</item>
+        <item>software</item>
+    </string-array>
+</resources>

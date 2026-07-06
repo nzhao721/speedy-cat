@@ -214,13 +214,12 @@ abstract class AbstractFlashcardViewer :
     internal var typeAnswer: TypeAnswer? = null
 
     /**
-     * SpeedyCAT "forced active recall": when enabled, the learner must type a non-empty answer
-     * and submit it before the back of the card can be revealed. Controlled by the
-     * `forceActiveRecall` preference ([R.string.force_active_recall_preference]); defaults to ON
-     * (SpeedyCAT's signature behaviour) and can be turned off via Settings → Reviewing → Advanced.
+     * SpeedyCAT "forced active recall": always on — the learner must type a non-empty answer
+     * and submit it before the back of the card can be revealed. Not user-configurable;
+     * [forceActiveRecall] exists only for unit tests that exercise the legacy reveal flow.
      */
     @VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
-    internal var forceActiveRecall = false
+    internal var forceActiveRecall = true
 
     /**
      * SpeedyCAT AI answer checker (per-card, additive on top of forced recall).
@@ -1146,13 +1145,11 @@ abstract class AbstractFlashcardViewer :
     }
 
     /**
-     * SpeedyCAT: true when the type-answer input (the "Check" affordance) is visible on the
-     * question side, so submitting the typed answer (IME "Done"/Enter) reveals the card and the
-     * separate "Show Answer" button would be redundant. Returns false whenever the answer input is
-     * absent (e.g. plain/cloze cards, or forced active recall disabled), so those cards keep
-     * "Show Answer" as their only tap-to-reveal control. The keyboard reveal is unaffected either way.
+     * SpeedyCAT: true when the separate "Show Answer" button is redundant because the learner
+     * must type and submit an answer first (forced active recall is always on).
      */
-    private fun showAnswerButtonIsRedundant(): Boolean = !displayAnswer && answerField?.isVisible == true
+    private fun showAnswerButtonIsRedundant(): Boolean =
+        !displayAnswer && (forcedRecallActive() || answerField?.isVisible == true)
 
     private fun actualHideEaseButtons() {
         easeButtonsLayout?.visibility = View.GONE
@@ -1395,7 +1392,7 @@ abstract class AbstractFlashcardViewer :
             typeAnswer!!.input = answerField!!.text.toString()
         }
         isSelecting = false
-        val forcedRecallReveal = !wasDisplayingAnswer && forceActiveRecall
+        val forcedRecallReveal = !wasDisplayingAnswer && forcedRecallActive()
         val forcedRecallVerdictHtml = if (forcedRecallReveal) forcedRecallVerdictHtml() else null
         val forcedRecallAiNoteHtml = if (forcedRecallReveal) forcedRecallAiNoteHtml() else null
         val answerContent =
@@ -1437,7 +1434,8 @@ abstract class AbstractFlashcardViewer :
      * the typed text arrives via the `typechangetext:`/`typeentertext:` URLs rather than the
      * native [answerField].
      */
-    private fun hasWebViewTypeInput(): Boolean = typeAnswer?.useInputTag == true && typeAnswer?.validForEditText() == true
+    private fun hasWebViewTypeInput(): Boolean =
+        typeAnswer?.useInputTag == true && !typeAnswer?.correct.isNullOrBlank()
 
     /** The answer the learner has typed so far, read from whichever input is active. */
     @VisibleForTesting
